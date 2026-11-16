@@ -80,8 +80,7 @@ class FocusTimerState {
 
   bool isComplete(DateTime nowUtc) {
     final planned = plannedSeconds;
-    return planned != null &&
-        elapsed(nowUtc).inMilliseconds >= planned * 1000;
+    return planned != null && elapsed(nowUtc).inMilliseconds >= planned * 1000;
   }
 
   /// The wall-clock moment the target will be reached if left running.
@@ -127,19 +126,19 @@ class FocusTimerState {
   }
 
   Map<String, Object?> toJson() => {
-        'v': 1,
-        'sessionId': sessionId,
-        'mode': mode.name,
-        'phase': phase.name,
-        'status': status.name,
-        'startedAtUtc': startedAtUtc.toIso8601String(),
-        'accumulatedMs': accumulatedMs,
-        'segmentStartedAtUtc': segmentStartedAtUtc?.toIso8601String(),
-        'plannedSeconds': plannedSeconds,
-        'taskId': taskId,
-        'projectId': projectId,
-        'completedWorkCycles': completedWorkCycles,
-      };
+    'v': 1,
+    'sessionId': sessionId,
+    'mode': mode.name,
+    'phase': phase.name,
+    'status': status.name,
+    'startedAtUtc': startedAtUtc.toIso8601String(),
+    'accumulatedMs': accumulatedMs,
+    'segmentStartedAtUtc': segmentStartedAtUtc?.toIso8601String(),
+    'plannedSeconds': plannedSeconds,
+    'taskId': taskId,
+    'projectId': projectId,
+    'completedWorkCycles': completedWorkCycles,
+  };
 
   String encode() => jsonEncode(toJson());
 

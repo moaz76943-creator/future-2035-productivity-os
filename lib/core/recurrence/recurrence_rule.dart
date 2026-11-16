@@ -80,8 +80,7 @@ class RecurrenceRule {
     if (parts['UNTIL'] case final u?) {
       final m = RegExp(r'^(\d{4})(\d{2})(\d{2})').firstMatch(u);
       if (m == null) throw FormatException('Invalid UNTIL', source);
-      until = DateTime(
-          int.parse(m[1]!), int.parse(m[2]!), int.parse(m[3]!));
+      until = DateTime(int.parse(m[1]!), int.parse(m[2]!), int.parse(m[3]!));
     }
     return RecurrenceRule(
       frequency: freq,
@@ -102,9 +101,11 @@ class RecurrenceRule {
     }
     if (count != null) b.write(';COUNT=$count');
     if (until case final u?) {
-      b.write(';UNTIL=${u.year.toString().padLeft(4, '0')}'
-          '${u.month.toString().padLeft(2, '0')}'
-          '${u.day.toString().padLeft(2, '0')}');
+      b.write(
+        ';UNTIL=${u.year.toString().padLeft(4, '0')}'
+        '${u.month.toString().padLeft(2, '0')}'
+        '${u.day.toString().padLeft(2, '0')}',
+      );
     }
     return b.toString();
   }
@@ -119,8 +120,13 @@ class RecurrenceRule {
       other.until == until;
 
   @override
-  int get hashCode => Object.hash(frequency, interval,
-      Object.hashAllUnordered(weekdays), count, until);
+  int get hashCode => Object.hash(
+    frequency,
+    interval,
+    Object.hashAllUnordered(weekdays),
+    count,
+    until,
+  );
 
   DateTime _withTime(int y, int m, int d, DateTime t) =>
       DateTime(y, m, d, t.hour, t.minute, t.second);
@@ -155,9 +161,13 @@ class RecurrenceRule {
 
     switch (frequency) {
       case Frequency.daily:
-        for (var i = 0;; i++) {
+        for (var i = 0; ; i++) {
           final t = _withTime(
-              anchor.year, anchor.month, anchor.day + i * interval, anchor);
+            anchor.year,
+            anchor.month,
+            anchor.day + i * interval,
+            anchor,
+          );
           if (!emit(t)) return;
           yield t;
         }
@@ -165,11 +175,18 @@ class RecurrenceRule {
         final days = weekdays.isEmpty ? {anchor.weekday} : weekdays;
         final sortedDays = days.toList()..sort();
         final weekStart = DateTime(
-            anchor.year, anchor.month, anchor.day - (anchor.weekday - 1));
-        for (var w = 0;; w++) {
+          anchor.year,
+          anchor.month,
+          anchor.day - (anchor.weekday - 1),
+        );
+        for (var w = 0; ; w++) {
           for (final wd in sortedDays) {
-            final t = _withTime(weekStart.year, weekStart.month,
-                weekStart.day + w * 7 * interval + (wd - 1), anchor);
+            final t = _withTime(
+              weekStart.year,
+              weekStart.month,
+              weekStart.day + w * 7 * interval + (wd - 1),
+              anchor,
+            );
             if (t.isBefore(anchor)) continue;
             if (!emit(t)) return;
             yield t;
@@ -178,13 +195,13 @@ class RecurrenceRule {
           if (w > 52 * 200) return;
         }
       case Frequency.monthly:
-        for (var i = 0;; i++) {
+        for (var i = 0; ; i++) {
           final t = _addMonthsClamped(anchor, i * interval);
           if (!emit(t)) return;
           yield t;
         }
       case Frequency.yearly:
-        for (var i = 0;; i++) {
+        for (var i = 0; ; i++) {
           final t = _addMonthsClamped(anchor, i * 12 * interval);
           if (!emit(t)) return;
           yield t;
@@ -201,8 +218,13 @@ class RecurrenceRule {
   }
 
   /// Occurrences overlapping the half-open window [from, to).
-  List<DateTime> between(DateTime start, DateTime from, DateTime to,
-      {Duration duration = Duration.zero, int limit = 500}) {
+  List<DateTime> between(
+    DateTime start,
+    DateTime from,
+    DateTime to, {
+    Duration duration = Duration.zero,
+    int limit = 500,
+  }) {
     final result = <DateTime>[];
     for (final t in occurrences(start)) {
       if (!t.isBefore(to)) break;

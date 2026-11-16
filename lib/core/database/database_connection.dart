@@ -66,7 +66,5 @@ QueryExecutor openEncryptedDatabase({
 
 /// In-memory database for tests and previews.
 AppDatabase openInMemoryDatabase() {
-  return AppDatabase(
-    NativeDatabase.memory(setup: registerSqlFunctions),
-  );
+  return AppDatabase(NativeDatabase.memory(setup: registerSqlFunctions));
 }

@@ -6,8 +6,10 @@ void main() {
     test('round-trips', () {
       const src = 'FREQ=WEEKLY;INTERVAL=2;BYDAY=MO,WE,FR;COUNT=10';
       expect(RecurrenceRule.parse(src).toString(), src);
-      expect(RecurrenceRule.parse('FREQ=DAILY;UNTIL=20261231').toString(),
-          'FREQ=DAILY;UNTIL=20261231');
+      expect(
+        RecurrenceRule.parse('FREQ=DAILY;UNTIL=20261231').toString(),
+        'FREQ=DAILY;UNTIL=20261231',
+      );
     });
     test('rejects invalid input', () {
       expect(RecurrenceRule.tryParse('FREQ=HOURLY'), isNull);
@@ -48,8 +50,10 @@ void main() {
     });
     test('yearly on Feb 29 clamps in non-leap years', () {
       final r = RecurrenceRule.parse('FREQ=YEARLY;COUNT=2');
-      expect(r.occurrences(DateTime(2028, 2, 29)).toList(),
-          [DateTime(2028, 2, 29), DateTime(2029, 2, 28)]);
+      expect(r.occurrences(DateTime(2028, 2, 29)).toList(), [
+        DateTime(2028, 2, 29),
+        DateTime(2029, 2, 28),
+      ]);
     });
     test('until is inclusive', () {
       final r = RecurrenceRule.parse('FREQ=DAILY;UNTIL=20260103');
@@ -65,11 +69,14 @@ void main() {
     test('nextAfter and between', () {
       final r = RecurrenceRule.parse('FREQ=WEEKLY');
       final start = DateTime(2026, 11, 2, 10);
-      expect(r.nextAfter(start, DateTime(2026, 11, 10)),
-          DateTime(2026, 11, 16, 10));
       expect(
-          r.between(start, DateTime(2026, 11, 1), DateTime(2026, 12, 1)).length,
-          5);
+        r.nextAfter(start, DateTime(2026, 11, 10)),
+        DateTime(2026, 11, 16, 10),
+      );
+      expect(
+        r.between(start, DateTime(2026, 11, 1), DateTime(2026, 12, 1)).length,
+        5,
+      );
     });
   });
 }

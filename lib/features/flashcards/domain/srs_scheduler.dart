@@ -3,18 +3,18 @@ import '../../../core/time/clock.dart';
 enum CardState { newCard, learning, review, relearning }
 
 CardState cardStateFromDb(String s) => switch (s) {
-      'learning' => CardState.learning,
-      'review' => CardState.review,
-      'relearning' => CardState.relearning,
-      _ => CardState.newCard,
-    };
+  'learning' => CardState.learning,
+  'review' => CardState.review,
+  'relearning' => CardState.relearning,
+  _ => CardState.newCard,
+};
 
 String cardStateToDb(CardState s) => switch (s) {
-      CardState.newCard => 'new',
-      CardState.learning => 'learning',
-      CardState.review => 'review',
-      CardState.relearning => 'relearning',
-    };
+  CardState.newCard => 'new',
+  CardState.learning => 'learning',
+  CardState.review => 'review',
+  CardState.relearning => 'relearning',
+};
 
 enum ReviewRating {
   again(1),
@@ -99,8 +99,13 @@ class SrsScheduler {
     }
   }
 
-  SrsCard _learn(SrsCard c, ReviewRating r, DateTime now, List<int> steps,
-      {required bool relearn}) {
+  SrsCard _learn(
+    SrsCard c,
+    ReviewRating r,
+    DateTime now,
+    List<int> steps, {
+    required bool relearn,
+  }) {
     final state = relearn ? CardState.relearning : CardState.learning;
     int graduate(int days) => days.clamp(1, maximumIntervalDays);
 
@@ -188,7 +193,8 @@ class SrsScheduler {
         );
       case ReviewRating.hard:
         final next = clampInterval(
-            _atLeastPlusOne(interval, (interval * 1.2).round()));
+          _atLeastPlusOne(interval, (interval * 1.2).round()),
+        );
         return SrsCard(
           state: CardState.review,
           easePermille: clampEase(c.easePermille - 150),
@@ -198,8 +204,9 @@ class SrsScheduler {
           dueAt: _dueInDays(now, next),
         );
       case ReviewRating.good:
-        final next = clampInterval(_atLeastPlusOne(
-            interval, (interval * c.easePermille / 1000).round()));
+        final next = clampInterval(
+          _atLeastPlusOne(interval, (interval * c.easePermille / 1000).round()),
+        );
         return SrsCard(
           state: CardState.review,
           easePermille: c.easePermille,
@@ -209,8 +216,12 @@ class SrsScheduler {
           dueAt: _dueInDays(now, next),
         );
       case ReviewRating.easy:
-        final next = clampInterval(_atLeastPlusOne(
-            interval, (interval * c.easePermille / 1000 * 1.3).round()));
+        final next = clampInterval(
+          _atLeastPlusOne(
+            interval,
+            (interval * c.easePermille / 1000 * 1.3).round(),
+          ),
+        );
         return SrsCard(
           state: CardState.review,
           easePermille: c.easePermille + 150,

@@ -1,0 +1,236 @@
+import 'dart:convert';
+import 'dart:io' show gzip;
+import 'dart:math' show Random;
+import 'dart:typed_data';
+
+import 'package:cryptography/cryptography.dart';
+import 'package:drift/drift.dart';
+
+import '../database/app_database.dart';
+
+/// Versioned, password-encrypted backup format.
+///
+/// ```
+/// bytes 0..3   magic "F35B"
+/// bytes 4..7   header length N (uint32 big endian)
+/// bytes 8..8+N UTF-8 JSON header (format version, KDF + cipher params)
+/// rest         AES-256-GCM ciphertext followed by 16-byte tag
+/// ```
+///
+/// The header is authenticated as associated data, so altering KDF
+/// parameters, salt or nonce makes decryption fail. The plaintext is a
+/// gzip-compressed JSON document containing the schema version and every
+/// table's rows. Restore runs inside a single transaction: either every
+/// row is restored or nothing changes.
+class BackupService {
+  BackupService(this._db, {Argon2id? kdf})
+    : _kdf =
+          kdf ??
+          Argon2id(
+            memory: 19 * 1024, // KiB — OWASP baseline
+            iterations: 2,
+            parallelism: 1,
+            hashLength: 32,
+          );
+
+  final AppDatabase _db;
+  final Argon2id _kdf;
+  static final _aes = AesGcm.with256bits();
+  static const magic = [0x46, 0x33, 0x35, 0x42]; // F35B
+  static const formatVersion = 1;
+
+  static const int minPasswordLength = 8;
+
+  Future<Map<String, Object?>> _snapshot() async {
+    final tables = <String, Object?>{};
+    for (final t in _db.allTables) {
+      final rows = await _db
+          .customSelect('SELECT * FROM "${t.actualTableName}"')
+          .get();
+      tables[t.actualTableName] = rows.map((r) => r.data).toList();
+    }
+    return {
+      'app': 'future-os',
+      'schemaVersion': _db.schemaVersion,
+      'tables': tables,
+    };
+  }
+
+  Future<Uint8List> export({required String password, DateTime? now}) async {
+    if (password.length < minPasswordLength) {
+      throw const BackupException(BackupError.weakPassword);
+    }
+    final plain = gzip.encode(utf8.encode(jsonEncode(await _snapshot())));
+    final rnd = Random.secure();
+    final salt = List<int>.generate(16, (_) => rnd.nextInt(256));
+    final nonce = _aes.newNonce();
+    final header = {
+      'format': 'future-os-backup',
+      'version': formatVersion,
+      'createdAt': (now ?? DateTime.now()).toUtc().toIso8601String(),
+      'schemaVersion': _db.schemaVersion,
+      'kdf': {
+        'alg': 'argon2id',
+        'memoryKiB': _kdf.memory,
+        'iterations': _kdf.iterations,
+        'parallelism': _kdf.parallelism,
+        'salt': base64Encode(salt),
+      },
+      'cipher': {'alg': 'aes-256-gcm', 'nonce': base64Encode(nonce)},
+    };
+    final headerBytes = utf8.encode(jsonEncode(header));
+    final key = await _kdf.deriveKeyFromPassword(
+      password: password,
+      nonce: salt,
+    );
+    final box = await _aes.encrypt(
+      plain,
+      secretKey: key,
+      nonce: nonce,
+      aad: headerBytes,
+    );
+    final out = BytesBuilder(copy: false)
+      ..add(magic)
+      ..add(
+        (ByteData(4)..setUint32(0, headerBytes.length)).buffer.asUint8List(),
+      )
+      ..add(headerBytes)
+      ..add(box.cipherText)
+      ..add(box.mac.bytes);
+    return out.takeBytes();
+  }
+
+  /// Parses and decrypts a backup without touching the database.
+  Future<Map<String, Object?>> inspect(Uint8List bytes, String password) async {
+    if (bytes.length < 8 + 16 || !_bytesEqual(bytes.sublist(0, 4), magic)) {
+      throw const BackupException(BackupError.notABackup);
+    }
+    final hlen = ByteData.sublistView(bytes, 4, 8).getUint32(0);
+    if (hlen <= 0 || 8 + hlen + 16 > bytes.length) {
+      throw const BackupException(BackupError.corrupted);
+    }
+    final headerBytes = bytes.sublist(8, 8 + hlen);
+    final Map<String, Object?> header;
+    try {
+      header = jsonDecode(utf8.decode(headerBytes)) as Map<String, Object?>;
+    } on Object {
+      throw const BackupException(BackupError.corrupted);
+    }
+    if (header['format'] != 'future-os-backup') {
+      throw const BackupException(BackupError.notABackup);
+    }
+    if ((header['version'] as int? ?? 999) > formatVersion) {
+      throw const BackupException(BackupError.newerVersion);
+    }
+    final kdfJ = header['kdf'] as Map<String, Object?>;
+    final cipherJ = header['cipher'] as Map<String, Object?>;
+    final memory = kdfJ['memoryKiB'] as int;
+    final iterations = kdfJ['iterations'] as int;
+    // Refuse absurd parameters that could hang or exhaust the device.
+    if (memory > 256 * 1024 || iterations > 20) {
+      throw const BackupException(BackupError.corrupted);
+    }
+    final kdf = Argon2id(
+      memory: memory,
+      iterations: iterations,
+      parallelism: kdfJ['parallelism'] as int,
+      hashLength: 32,
+    );
+    final key = await kdf.deriveKeyFromPassword(
+      password: password,
+      nonce: base64Decode(kdfJ['salt'] as String),
+    );
+    final body = bytes.sublist(8 + hlen);
+    final box = SecretBox(
+      body.sublist(0, body.length - 16),
+      nonce: base64Decode(cipherJ['nonce'] as String),
+      mac: Mac(body.sublist(body.length - 16)),
+    );
+    final List<int> plain;
+    try {
+      plain = await _aes.decrypt(box, secretKey: key, aad: headerBytes);
+    } on SecretBoxAuthenticationError {
+      throw const BackupException(BackupError.wrongPasswordOrTampered);
+    }
+    final doc =
+        jsonDecode(utf8.decode(gzip.decode(plain))) as Map<String, Object?>;
+    if (doc['app'] != 'future-os') {
+      throw const BackupException(BackupError.notABackup);
+    }
+    if ((doc['schemaVersion'] as int) > _db.schemaVersion) {
+      throw const BackupException(BackupError.newerVersion);
+    }
+    return doc;
+  }
+
+  /// Replaces all local data with the backup contents atomically.
+  /// Returns the number of rows restored.
+  Future<int> restore(Uint8List bytes, String password) async {
+    final doc = await inspect(bytes, password);
+    final tables = doc['tables'] as Map<String, Object?>;
+    final known = {for (final t in _db.allTables) t.actualTableName: t};
+    for (final name in tables.keys) {
+      if (!known.containsKey(name)) {
+        throw const BackupException(BackupError.corrupted);
+      }
+    }
+    var count = 0;
+    await _db.transaction(() async {
+      await _db.customStatement('PRAGMA defer_foreign_keys = ON');
+      for (final t in _db.allTables.toList().reversed) {
+        await _db.customStatement('DELETE FROM "${t.actualTableName}"');
+      }
+      // Insert in declaration order (parents before children).
+      for (final t in _db.allTables) {
+        final rows = (tables[t.actualTableName] as List?) ?? const [];
+        final allowed = t.$columns.map((c) => c.name).toSet();
+        for (final raw in rows) {
+          final row = (raw as Map).cast<String, Object?>();
+          final cols = row.keys.where(allowed.contains).toList();
+          if (cols.isEmpty) continue;
+          final placeholders = List.filled(cols.length, '?').join(', ');
+          await _db.customInsert(
+            'INSERT INTO "${t.actualTableName}" '
+            '(${cols.map((c) => '"$c"').join(', ')}) VALUES ($placeholders)',
+            variables: [for (final c in cols) _variable(row[c])],
+            updates: {t},
+          );
+          count++;
+        }
+      }
+    });
+    return count;
+  }
+
+  static Variable<Object> _variable(Object? v) => switch (v) {
+    null => const Variable(null),
+    final int i => Variable<int>(i),
+    final double d => Variable<double>(d),
+    final bool b => Variable<int>(b ? 1 : 0),
+    final String s => Variable<String>(s),
+    _ => Variable<String>(v.toString()),
+  };
+}
+
+enum BackupError {
+  weakPassword,
+  notABackup,
+  corrupted,
+  wrongPasswordOrTampered,
+  newerVersion,
+}
+
+class BackupException implements Exception {
+  const BackupException(this.error);
+  final BackupError error;
+  @override
+  String toString() => 'BackupException(${error.name})';
+}
+
+bool _bytesEqual(List<int> a, List<int> b) {
+  if (a.length != b.length) return false;
+  for (var i = 0; i < a.length; i++) {
+    if (a[i] != b[i]) return false;
+  }
+  return true;
+}

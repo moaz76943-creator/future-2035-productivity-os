@@ -46,18 +46,18 @@ class AppDatabase extends _$AppDatabase {
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
-        onCreate: (m) async {
-          await m.createAll();
-          await _createIndexes();
-        },
-        onUpgrade: (m, from, to) async {
-          // Future migrations go here, one guarded step per version, e.g.
-          // if (from < 2) { await m.addColumn(tasks, tasks.someColumn); }
-        },
-        beforeOpen: (details) async {
-          await customStatement('PRAGMA foreign_keys = ON');
-        },
-      );
+    onCreate: (m) async {
+      await m.createAll();
+      await _createIndexes();
+    },
+    onUpgrade: (m, from, to) async {
+      // Future migrations go here, one guarded step per version, e.g.
+      // if (from < 2) { await m.addColumn(tasks, tasks.someColumn); }
+    },
+    beforeOpen: (details) async {
+      await customStatement('PRAGMA foreign_keys = ON');
+    },
+  );
 
   Future<void> _createIndexes() async {
     const statements = [
@@ -87,8 +87,9 @@ class AppDatabase extends _$AppDatabase {
   // ---------------------------------------------------------------------------
 
   Future<String?> readValue(String key) async {
-    final row = await (select(keyValues)..where((t) => t.key.equals(key)))
-        .getSingleOrNull();
+    final row = await (select(
+      keyValues,
+    )..where((t) => t.key.equals(key))).getSingleOrNull();
     return row?.value;
   }
 
@@ -99,9 +100,9 @@ class AppDatabase extends _$AppDatabase {
   }
 
   Future<void> writeValue(String key, String value) {
-    return into(keyValues).insertOnConflictUpdate(
-      KeyValuesCompanion.insert(key: key, value: value),
-    );
+    return into(
+      keyValues,
+    ).insertOnConflictUpdate(KeyValuesCompanion.insert(key: key, value: value));
   }
 
   Future<void> deleteValue(String key) {

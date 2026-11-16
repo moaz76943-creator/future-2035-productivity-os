@@ -14,10 +14,10 @@ class PomodoroConfig {
   final int longBreakEvery;
 
   int secondsFor(FocusPhase phase) => switch (phase) {
-        FocusPhase.work => workMinutes * 60,
-        FocusPhase.shortBreak => shortBreakMinutes * 60,
-        FocusPhase.longBreak => longBreakMinutes * 60,
-      };
+    FocusPhase.work => workMinutes * 60,
+    FocusPhase.shortBreak => shortBreakMinutes * 60,
+    FocusPhase.longBreak => longBreakMinutes * 60,
+  };
 }
 
 enum SessionOutcome { completed, interrupted }
@@ -120,7 +120,9 @@ abstract final class FocusEngine {
 
   /// Which pomodoro phase follows [s] once it completes.
   static ({FocusPhase phase, int cycles}) nextPomodoroPhase(
-      FocusTimerState s, PomodoroConfig config) {
+    FocusTimerState s,
+    PomodoroConfig config,
+  ) {
     if (s.phase == FocusPhase.work) {
       final cycles = s.completedWorkCycles + 1;
       final long = cycles % config.longBreakEvery == 0;
@@ -129,8 +131,7 @@ abstract final class FocusEngine {
         cycles: cycles,
       );
     }
-    final cycles =
-        s.phase == FocusPhase.longBreak ? 0 : s.completedWorkCycles;
+    final cycles = s.phase == FocusPhase.longBreak ? 0 : s.completedWorkCycles;
     return (phase: FocusPhase.work, cycles: cycles);
   }
 }

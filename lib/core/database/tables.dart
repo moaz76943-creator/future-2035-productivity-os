@@ -1,3 +1,6 @@
+// ignore_for_file: recursive_getters
+// Drift column checks reference the column itself by design.
+
 import 'package:drift/drift.dart';
 
 /// All primary keys are client-generated UUID v4 strings so that records
@@ -35,8 +38,11 @@ class Tasks extends Table with Timestamps {
   TextColumn get title => text().withLength(min: 1, max: 500)();
   TextColumn get description => text().withDefault(const Constant(''))();
   TextColumn get notes => text().withDefault(const Constant(''))();
-  TextColumn get projectId =>
-      text().nullable().references(Projects, #id, onDelete: KeyAction.setNull)();
+  TextColumn get projectId => text().nullable().references(
+    Projects,
+    #id,
+    onDelete: KeyAction.setNull,
+  )();
   @ReferenceName('subtasks')
   TextColumn get parentId =>
       text().nullable().references(Tasks, #id, onDelete: KeyAction.cascade)();
@@ -130,9 +136,11 @@ class FocusSessions extends Table {
   TextColumn get outcome => text()();
   TextColumn get taskId =>
       text().nullable().references(Tasks, #id, onDelete: KeyAction.setNull)();
-  TextColumn get projectId => text()
-      .nullable()
-      .references(Projects, #id, onDelete: KeyAction.setNull)();
+  TextColumn get projectId => text().nullable().references(
+    Projects,
+    #id,
+    onDelete: KeyAction.setNull,
+  )();
   TextColumn get note => text().withDefault(const Constant(''))();
 
   @override
@@ -185,12 +193,16 @@ class Notes extends Table with Timestamps {
   /// Lightweight Markdown subset (headings, lists, checklists, bold,
   /// italic, links, [[note links]]).
   TextColumn get body => text().withDefault(const Constant(''))();
-  TextColumn get notebookId => text()
-      .nullable()
-      .references(Notebooks, #id, onDelete: KeyAction.setNull)();
-  TextColumn get projectId => text()
-      .nullable()
-      .references(Projects, #id, onDelete: KeyAction.setNull)();
+  TextColumn get notebookId => text().nullable().references(
+    Notebooks,
+    #id,
+    onDelete: KeyAction.setNull,
+  )();
+  TextColumn get projectId => text().nullable().references(
+    Projects,
+    #id,
+    onDelete: KeyAction.setNull,
+  )();
   TextColumn get category => text().withDefault(const Constant(''))();
   BoolColumn get pinned => boolean().withDefault(const Constant(false))();
   BoolColumn get favorite => boolean().withDefault(const Constant(false))();
@@ -294,9 +306,11 @@ class Goals extends Table with Timestamps {
   /// active | paused | achieved
   TextColumn get status => text().withDefault(const Constant('active'))();
   DateTimeColumn get dueDate => dateTime().nullable()();
-  TextColumn get projectId => text()
-      .nullable()
-      .references(Projects, #id, onDelete: KeyAction.setNull)();
+  TextColumn get projectId => text().nullable().references(
+    Projects,
+    #id,
+    onDelete: KeyAction.setNull,
+  )();
   DateTimeColumn get deletedAt => dateTime().nullable()();
 
   @override

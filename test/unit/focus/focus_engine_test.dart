@@ -6,10 +6,11 @@ void main() {
   final t0 = DateTime.utc(2026, 11, 16, 10);
 
   FocusTimerState countdown(int seconds) => FocusEngine.start(
-      sessionId: 's1',
-      mode: FocusMode.countdown,
-      nowUtc: t0,
-      plannedSeconds: seconds);
+    sessionId: 's1',
+    mode: FocusMode.countdown,
+    nowUtc: t0,
+    plannedSeconds: seconds,
+  );
 
   test('elapsed derives from timestamps, not ticks', () {
     final s = countdown(1500);
@@ -23,7 +24,9 @@ void main() {
     expect(s.elapsed(t0.add(const Duration(hours: 3))).inMinutes, 5);
     s = FocusEngine.resume(s, t0.add(const Duration(hours: 3)));
     expect(
-        s.elapsed(t0.add(const Duration(hours: 3, minutes: 2))).inMinutes, 7);
+      s.elapsed(t0.add(const Duration(hours: 3, minutes: 2))).inMinutes,
+      7,
+    );
   });
 
   test('pause and resume are idempotent', () {
@@ -63,7 +66,10 @@ void main() {
 
   test('count-up has no target and completes on stop', () {
     final s = FocusEngine.start(
-        sessionId: 'c', mode: FocusMode.countUp, nowUtc: t0);
+      sessionId: 'c',
+      mode: FocusMode.countUp,
+      nowUtc: t0,
+    );
     expect(s.remaining(t0), isNull);
     expect(s.isComplete(t0.add(const Duration(days: 1))), isFalse);
     final f = FocusEngine.finish(s, t0.add(const Duration(minutes: 42)));
@@ -73,9 +79,13 @@ void main() {
 
   test('countdown requires a positive target', () {
     expect(
-        () => FocusEngine.start(
-            sessionId: 'x', mode: FocusMode.countdown, nowUtc: t0),
-        throwsArgumentError);
+      () => FocusEngine.start(
+        sessionId: 'x',
+        mode: FocusMode.countdown,
+        nowUtc: t0,
+      ),
+      throwsArgumentError,
+    );
   });
 
   test('pomodoro cycle: long break after every 4th work phase', () {
@@ -85,22 +95,27 @@ void main() {
     var phase = FocusPhase.work;
     for (var i = 0; i < 8; i++) {
       final s = FocusEngine.start(
-          sessionId: '$i',
-          mode: FocusMode.pomodoro,
-          nowUtc: t0,
-          phase: phase,
-          plannedSeconds: cfg.secondsFor(phase),
-          completedWorkCycles: cycles);
+        sessionId: '$i',
+        mode: FocusMode.pomodoro,
+        nowUtc: t0,
+        phase: phase,
+        plannedSeconds: cfg.secondsFor(phase),
+        completedWorkCycles: cycles,
+      );
       final n = FocusEngine.nextPomodoroPhase(s, cfg);
       phases.add(n.phase);
       phase = n.phase;
       cycles = n.cycles;
     }
     expect(phases, [
-      FocusPhase.shortBreak, FocusPhase.work,
-      FocusPhase.shortBreak, FocusPhase.work,
-      FocusPhase.shortBreak, FocusPhase.work,
-      FocusPhase.longBreak, FocusPhase.work,
+      FocusPhase.shortBreak,
+      FocusPhase.work,
+      FocusPhase.shortBreak,
+      FocusPhase.work,
+      FocusPhase.shortBreak,
+      FocusPhase.work,
+      FocusPhase.longBreak,
+      FocusPhase.work,
     ]);
     expect(cycles, 0);
   });

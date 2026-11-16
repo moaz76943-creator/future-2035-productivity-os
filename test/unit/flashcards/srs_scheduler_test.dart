@@ -44,8 +44,11 @@ void main() {
   });
 
   test('lapse reduces ease, halves interval, enters relearning', () {
-    const card =
-        SrsCard(state: CardState.review, intervalDays: 20, repetitions: 5);
+    const card = SrsCard(
+      state: CardState.review,
+      intervalDays: 20,
+      repetitions: 5,
+    );
     final c = s.review(card, ReviewRating.again, now);
     expect(c.state, CardState.relearning);
     expect(c.lapses, 1);
@@ -58,14 +61,20 @@ void main() {
 
   test('ease never drops below minimum', () {
     var c = const SrsCard(
-        state: CardState.review, intervalDays: 5, easePermille: 1350);
+      state: CardState.review,
+      intervalDays: 5,
+      easePermille: 1350,
+    );
     c = s.review(c, ReviewRating.hard, now);
     expect(c.easePermille, SrsScheduler.minimumEase);
   });
 
   test('interval always grows by at least a day on success', () {
     const c = SrsCard(
-        state: CardState.review, intervalDays: 1, easePermille: 1300);
+      state: CardState.review,
+      intervalDays: 1,
+      easePermille: 1300,
+    );
     expect(s.review(c, ReviewRating.hard, now).intervalDays, 2);
   });
 
