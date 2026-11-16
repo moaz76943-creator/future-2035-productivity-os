@@ -55,7 +55,10 @@ void main() {
         expect(fab, findsOneWidget);
         await tester.tap(fab);
         await settle(tester);
-        await tester.pumpAndSettle();
+        // Route transitions can coexist with persistent app tickers; advance the
+        // known transition window instead of waiting for global quiescence.
+        await tester.pump(const Duration(milliseconds: 400));
+        await settle(tester);
         expect(find.byType(NoteEditorScreen), findsOneWidget);
         final notes = await db(tester, () => env.db.select(env.db.notes).get());
         expect(notes, hasLength(1));
@@ -215,7 +218,10 @@ void main() {
       await tester.pump();
       expect(find.byType(Checkbox), findsNWidgets(2));
       expect(find.text('Shopping'), findsOneWidget);
-      expect(find.textContaining('#'), findsNothing);
+      // Markdown syntax is rendered, not shown as raw source. The tags section
+      // intentionally includes a localized #tag instruction outside the preview.
+      expect(find.text('# Shopping'), findsNothing);
+      expect(find.text('- [ ] milk'), findsNothing);
 
       await tester.tap(find.byType(Checkbox).first);
       await settle(tester);
@@ -303,7 +309,15 @@ void main() {
       });
       await pumpScreen(tester, NoteEditorScreen(noteId: id), env: env);
       await settle(tester);
-      await tester.scrollUntilVisible(find.text('Write spec'), 200);
+      final linkedTasksScroll = find.ancestor(
+        of: find.text('Write spec'),
+        matching: find.byType(Scrollable),
+      ).first;
+      await tester.scrollUntilVisible(
+        find.text('Write spec'),
+        200,
+        scrollable: linkedTasksScroll,
+      );
       expect(find.text('Beta'), findsOneWidget);
       await tester.tap(find.byTooltip('Unlink'));
       await settle(tester);
