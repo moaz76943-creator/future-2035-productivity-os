@@ -36,8 +36,12 @@ Future<String> _seedHabit(
   return id;
 }
 
-Future<int> _todayCount(TestEnv env, String id) async {
-  final counts = await HabitsRepository(env.db, env.clock).watchCounts(id).first;
+Future<int> _todayCount(WidgetTester tester, TestEnv env, String id) async {
+  // Drift watch streams need the real async event loop to deliver their first
+  // query result while a widget test is running.
+  final counts = await tester.runAsync(
+    () => HabitsRepository(env.db, env.clock).watchCounts(id).first,
+  );
   return counts[Days.key(env.clock.now())] ?? 0;
 }
 
@@ -60,7 +64,7 @@ void main() {
 
       await tester.tap(find.byKey(ValueKey('checkin-$id')));
       await settle(tester);
-      expect(await _todayCount(env, id), 1);
+      expect(await _todayCount(tester, env, id), 1);
       expect(find.text(l10n.habitCountToday(1, 2)), findsOneWidget);
       expect(find.text(l10n.habitStreak(3)), findsOneWidget);
 
