@@ -23,10 +23,7 @@ void main() {
     s = FocusEngine.pause(s, t0.add(const Duration(minutes: 5)));
     expect(s.elapsed(t0.add(const Duration(hours: 3))).inMinutes, 5);
     s = FocusEngine.resume(s, t0.add(const Duration(hours: 3)));
-    expect(
-      s.elapsed(t0.add(const Duration(hours: 3, minutes: 2))).inMinutes,
-      7,
-    );
+    expect(s.elapsed(t0.add(const Duration(hours: 3, minutes: 2))).inMinutes, 7);
   });
 
   test('pause and resume are idempotent', () {
@@ -65,11 +62,7 @@ void main() {
   });
 
   test('count-up has no target and completes on stop', () {
-    final s = FocusEngine.start(
-      sessionId: 'c',
-      mode: FocusMode.countUp,
-      nowUtc: t0,
-    );
+    final s = FocusEngine.start(sessionId: 'c', mode: FocusMode.countUp, nowUtc: t0);
     expect(s.remaining(t0), isNull);
     expect(s.isComplete(t0.add(const Duration(days: 1))), isFalse);
     final f = FocusEngine.finish(s, t0.add(const Duration(minutes: 42)));
@@ -79,11 +72,7 @@ void main() {
 
   test('countdown requires a positive target', () {
     expect(
-      () => FocusEngine.start(
-        sessionId: 'x',
-        mode: FocusMode.countdown,
-        nowUtc: t0,
-      ),
+      () => FocusEngine.start(sessionId: 'x', mode: FocusMode.countdown, nowUtc: t0),
       throwsArgumentError,
     );
   });

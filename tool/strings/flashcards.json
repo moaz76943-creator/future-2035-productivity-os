@@ -1,0 +1,23 @@
+{
+  "flashcardsDueBanner": {"text": "{count, plural, =1{1 card is due for review} other{{count} cards are due for review}}", "desc": "Banner on the decks screen with the number of due cards across all decks", "placeholders": {"count": "int"}},
+  "flashcardsDueCount": {"text": "{count} due", "desc": "Compact pill on a deck: number of cards due for review", "placeholders": {"count": "int"}},
+  "flashcardsNewCount": {"text": "{count} new", "desc": "Compact pill on a deck: number of cards never studied", "placeholders": {"count": "int"}},
+  "flashcardsMatureRing": {"text": "Mature cards: {percent}", "desc": "Screen reader label for the ring showing the share of mature cards (interval of 21 days or more). percent is a formatted percentage", "placeholders": {"percent": "String"}},
+  "flashcardsValidationNonNegative": {"text": "Enter 0 or more", "desc": "Form validation for the daily new card limit"},
+  "flashcardsSearchCards": {"text": "Search cards", "desc": "Hint of the search field in a deck"},
+  "flashcardsSearchEmpty": {"text": "No cards match your search", "desc": "Shown when the card search has no results"},
+  "flashcardsCardAdded": {"text": "Card added", "desc": "Confirmation after saving a card with Save and add another"},
+  "flashcardsCardDueOn": {"text": "Due {date}", "desc": "When a card is next due; date is a formatted relative day such as Today or Nov 18", "placeholders": {"date": "String"}},
+  "flashcardsCopyToClipboard": {"text": "Copy to clipboard", "desc": "Export option: copy the deck file text"},
+  "flashcardsExportTitle": {"text": "Export deck", "desc": "Title of the export options sheet"},
+  "flashcardsDeleteDeck": {"text": "Delete deck", "desc": "Menu item"},
+  "flashcardsRatingA11y": {"text": "{rating}, next review in {interval}", "desc": "Screen reader label for a review rating button; rating is e.g. Good, interval e.g. 10 min or 4 days", "placeholders": {"rating": "String", "interval": "String"}},
+  "flashcardsQuestionA11y": {"text": "Question: {text}", "desc": "Screen reader label of the card front during review", "placeholders": {"text": "String"}},
+  "flashcardsAnswerA11y": {"text": "Answer: {text}", "desc": "Screen reader label of the card back during review", "placeholders": {"text": "String"}},
+  "flashcardsShowQuestion": {"text": "Show question", "desc": "Screen reader hint to flip the card back to the front"},
+  "flashcardsImportField": {"text": "Cards to import", "desc": "Label of the multi-line import field"},
+  "flashcardsNothingToStudy": {"text": "Nothing to study", "desc": "Title when the review queue is empty"},
+  "flashcardsReadyCount": {"text": "{count, plural, =0{No cards ready} =1{1 card ready to study} other{{count} cards ready to study}}", "desc": "Size of today's study queue under the deck header", "placeholders": {"count": "int"}},
+  "flashcardsByRating": {"text": "By rating", "desc": "Section title in the review summary listing how many times each rating was given"},
+  "flashcardsDeckNotFound": {"text": "This deck is no longer available.", "desc": "Shown when opening a deleted or missing deck"}
+}

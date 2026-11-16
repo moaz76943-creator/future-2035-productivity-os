@@ -4,17 +4,7 @@ import '../../../core/database/app_database.dart';
 import '../../../core/text/text_normalizer.dart';
 import '../../../core/time/clock.dart';
 
-enum SearchCategory {
-  task,
-  project,
-  note,
-  flashcard,
-  deck,
-  goal,
-  habit,
-  event,
-  session,
-}
+enum SearchCategory { task, project, note, flashcard, deck, goal, habit, event, session }
 
 class SearchResult {
   const SearchResult({
@@ -71,17 +61,10 @@ class SearchService {
     const fn = kNormalizeSqlFunction;
     final results = <SearchResult>[];
 
-    Future<void> run(
-      SearchCategory cat,
-      String sql,
-      SearchResult Function(QueryRow r) map,
-    ) async {
+    Future<void> run(SearchCategory cat, String sql, SearchResult Function(QueryRow r) map) async {
       if (!want(cat)) return;
       final rows = await _db
-          .customSelect(
-            '$sql LIMIT $perCategoryLimit',
-            variables: [Variable(pat)],
-          )
+          .customSelect('$sql LIMIT $perCategoryLimit', variables: [Variable(pat)])
           .get();
       results.addAll(rows.map(map));
     }
@@ -199,11 +182,7 @@ class SearchService {
     return results;
   }
 
-  static String _snippet(
-    String body,
-    String normalizedQuery, {
-    int radius = 60,
-  }) {
+  static String _snippet(String body, String normalizedQuery, {int radius = 60}) {
     final flat = body.replaceAll(RegExp(r'\s+'), ' ').trim();
     if (flat.length <= radius * 2) return flat;
     final i = TextNormalizer.normalize(flat).indexOf(normalizedQuery);
@@ -220,9 +199,7 @@ class SearchService {
     if (q.isEmpty) return;
     await _db
         .into(_db.recentSearches)
-        .insertOnConflictUpdate(
-          RecentSearchesCompanion.insert(query: q, at: _clock.nowUtc()),
-        );
+        .insertOnConflictUpdate(RecentSearchesCompanion.insert(query: q, at: _clock.nowUtc()));
     // Keep the 15 most recent.
     await _db.customStatement(
       'DELETE FROM recent_searches WHERE query NOT IN '
@@ -230,11 +207,9 @@ class SearchService {
     );
   }
 
-  Stream<List<String>> watchRecent() =>
-      (_db.select(_db.recentSearches)
-            ..orderBy([(r) => OrderingTerm.desc(r.at)]))
-          .watch()
-          .map((r) => r.map((e) => e.query).toList());
+  Stream<List<String>> watchRecent() => (_db.select(
+    _db.recentSearches,
+  )..orderBy([(r) => OrderingTerm.desc(r.at)])).watch().map((r) => r.map((e) => e.query).toList());
 
   Future<void> clearRecent() => _db.delete(_db.recentSearches).go();
 }

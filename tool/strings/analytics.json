@@ -1,0 +1,11 @@
+{
+  "analyticsRangeLabel": {"text": "Time range", "desc": "Accessibility label for the Insights time range selector"},
+  "analyticsRefresh": {"text": "Refresh", "desc": "Tooltip: recompute the Insights numbers"},
+  "analyticsOnTimeDetail": {"text": "{done} of {total} due tasks done on time", "desc": "Caption under the on-time completion rate", "placeholders": {"done": "int", "total": "int"}},
+  "analyticsProjectTasks": {"text": "{done} of {total} tasks done", "desc": "Progress caption for a project in Insights", "placeholders": {"done": "int", "total": "int"}},
+  "analyticsNoProjects": {"text": "No active projects", "desc": "Shown in Insights when there are no projects"},
+  "analyticsNoFocus": {"text": "No focus sessions in this range", "desc": "Shown in Insights when no focus time was recorded for the range"},
+  "analyticsHabitsNone": {"text": "No active habits", "desc": "Caption under habit consistency when there are no active habits"},
+  "analyticsRetentionNote": {"text": "Share of mature cards you remembered", "desc": "Caption explaining card retention"},
+  "analyticsBarValue": {"text": "{name}: {value}", "desc": "Accessibility label for one bar in the time-by-project chart", "placeholders": {"name": "String", "value": "String"}}
+}

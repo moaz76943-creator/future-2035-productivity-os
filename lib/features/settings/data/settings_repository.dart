@@ -111,47 +111,25 @@ class AppSettings {
       theme: ThemePreference.values.asNameMap()[j['theme']] ?? d.theme,
       reduceMotion: read('reduceMotion', d.reduceMotion),
       workMinutes: read('workMinutes', d.workMinutes).clamp(1, 240),
-      shortBreakMinutes: read(
-        'shortBreakMinutes',
-        d.shortBreakMinutes,
-      ).clamp(1, 60),
-      longBreakMinutes: read(
-        'longBreakMinutes',
-        d.longBreakMinutes,
-      ).clamp(1, 120),
+      shortBreakMinutes: read('shortBreakMinutes', d.shortBreakMinutes).clamp(1, 60),
+      longBreakMinutes: read('longBreakMinutes', d.longBreakMinutes).clamp(1, 120),
       longBreakEvery: read('longBreakEvery', d.longBreakEvery).clamp(2, 12),
       autoStartBreaks: read('autoStartBreaks', d.autoStartBreaks),
       focusSound: read('focusSound', d.focusSound),
-      dailyFocusTargetMinutes: read(
-        'dailyFocusTargetMinutes',
-        d.dailyFocusTargetMinutes,
-      ),
-      weeklyFocusTargetMinutes: read(
-        'weeklyFocusTargetMinutes',
-        d.weeklyFocusTargetMinutes,
-      ),
-      notificationsEnabled: read(
-        'notificationsEnabled',
-        d.notificationsEnabled,
-      ),
+      dailyFocusTargetMinutes: read('dailyFocusTargetMinutes', d.dailyFocusTargetMinutes),
+      weeklyFocusTargetMinutes: read('weeklyFocusTargetMinutes', d.weeklyFocusTargetMinutes),
+      notificationsEnabled: read('notificationsEnabled', d.notificationsEnabled),
       quietHoursEnabled: read('quietHoursEnabled', d.quietHoursEnabled),
       quietStartMinute: read('quietStartMinute', d.quietStartMinute),
       quietEndMinute: read('quietEndMinute', d.quietEndMinute),
-      reviewReminderMinute: read(
-        'reviewReminderMinute',
-        d.reviewReminderMinute,
-      ),
+      reviewReminderMinute: read('reviewReminderMinute', d.reviewReminderMinute),
       onboardingDone: read('onboardingDone', d.onboardingDone),
       assistantEnabled: read('assistantEnabled', d.assistantEnabled),
-      assistantRemoteConsent: read(
-        'assistantRemoteConsent',
-        d.assistantRemoteConsent,
-      ),
+      assistantRemoteConsent: read('assistantRemoteConsent', d.assistantRemoteConsent),
       assistantEndpoint: read('assistantEndpoint', d.assistantEndpoint),
       assistantModel: read('assistantModel', d.assistantModel),
       dashboardSections:
-          (j['dashboardSections'] as List?)?.whereType<String>().toList() ??
-          d.dashboardSections,
+          (j['dashboardSections'] as List?)?.whereType<String>().toList() ?? d.dashboardSections,
     );
   }
 
@@ -215,8 +193,7 @@ class SettingsRepository {
 
   Stream<AppSettings> watch() => _db.watchValue(key).map(_decode);
 
-  Future<void> save(AppSettings s) =>
-      _db.writeValue(key, jsonEncode(s.toJson()));
+  Future<void> save(AppSettings s) => _db.writeValue(key, jsonEncode(s.toJson()));
 
   AppSettings _decode(String? raw) {
     if (raw == null) return const AppSettings();

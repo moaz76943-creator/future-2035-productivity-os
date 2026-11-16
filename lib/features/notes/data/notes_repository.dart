@@ -13,10 +13,7 @@ class NotesRepository {
   final Clock _clock;
 
   static final _wikiLink = RegExp(r'\[\[([^\[\]]{1,200})\]\]');
-  static final _hashTag = RegExp(
-    r'(?:^|\s)#([\p{L}\p{N}_-]{1,50})',
-    unicode: true,
-  );
+  static final _hashTag = RegExp(r'(?:^|\s)#([\p{L}\p{N}_-]{1,50})', unicode: true);
 
   /// Tags written inline as `#tag` in the body.
   static Set<String> extractTags(String body) =>
@@ -56,19 +53,11 @@ class NotesRepository {
   /// Saves title/body. Returns the saved `updatedAt`. The editor calls
   /// this debounced; each call is a single transaction so content and
   /// derived tags never diverge.
-  Future<DateTime> save(
-    String id, {
-    required String title,
-    required String body,
-  }) async {
+  Future<DateTime> save(String id, {required String title, required String body}) async {
     final now = _clock.nowUtc();
     await _db.transaction(() async {
       await (_db.update(_db.notes)..where((n) => n.id.equals(id))).write(
-        NotesCompanion(
-          title: Value(title),
-          body: Value(body),
-          updatedAt: Value(now),
-        ),
+        NotesCompanion(title: Value(title), body: Value(body), updatedAt: Value(now)),
       );
       await _syncTags(id, body);
     });
@@ -76,61 +65,45 @@ class NotesRepository {
   }
 
   Future<void> _syncTags(String noteId, String body) async {
-    await (_db.delete(
-      _db.noteTags,
-    )..where((t) => t.noteId.equals(noteId))).go();
+    await (_db.delete(_db.noteTags)..where((t) => t.noteId.equals(noteId))).go();
     for (final tag in extractTags(body)) {
       await _db
           .into(_db.noteTags)
-          .insertOnConflictUpdate(
-            NoteTagsCompanion.insert(noteId: noteId, tag: tag),
-          );
+          .insertOnConflictUpdate(NoteTagsCompanion.insert(noteId: noteId, tag: tag));
     }
   }
 
-  Future<void> setFlags(
-    String id, {
-    bool? pinned,
-    bool? favorite,
-    bool? archived,
-  }) => (_db.update(_db.notes)..where((n) => n.id.equals(id))).write(
-    NotesCompanion(
-      pinned: pinned == null ? const Value.absent() : Value(pinned),
-      favorite: favorite == null ? const Value.absent() : Value(favorite),
-      archived: archived == null ? const Value.absent() : Value(archived),
-    ),
-  );
-
-  Future<void> moveTo(String id, {String? notebookId, String? projectId}) =>
+  Future<void> setFlags(String id, {bool? pinned, bool? favorite, bool? archived}) =>
       (_db.update(_db.notes)..where((n) => n.id.equals(id))).write(
         NotesCompanion(
-          notebookId: Value(notebookId),
-          projectId: Value(projectId),
+          pinned: pinned == null ? const Value.absent() : Value(pinned),
+          favorite: favorite == null ? const Value.absent() : Value(favorite),
+          archived: archived == null ? const Value.absent() : Value(archived),
         ),
       );
 
-  Future<void> softDelete(String id) =>
+  Future<void> moveTo(String id, {String? notebookId, String? projectId}) =>
       (_db.update(_db.notes)..where((n) => n.id.equals(id))).write(
-        NotesCompanion(deletedAt: Value(_clock.nowUtc())),
+        NotesCompanion(notebookId: Value(notebookId), projectId: Value(projectId)),
       );
 
-  Future<void> restore(String id) =>
-      (_db.update(_db.notes)..where((n) => n.id.equals(id))).write(
-        const NotesCompanion(deletedAt: Value(null)),
-      );
+  Future<void> softDelete(String id) => (_db.update(
+    _db.notes,
+  )..where((n) => n.id.equals(id))).write(NotesCompanion(deletedAt: Value(_clock.nowUtc())));
 
-  Future<void> purge(String id) =>
-      (_db.delete(_db.notes)..where((n) => n.id.equals(id))).go();
+  Future<void> restore(String id) => (_db.update(
+    _db.notes,
+  )..where((n) => n.id.equals(id))).write(const NotesCompanion(deletedAt: Value(null)));
 
-  Future<void> emptyTrash() =>
-      (_db.delete(_db.notes)..where((n) => n.deletedAt.isNotNull())).go();
+  Future<void> purge(String id) => (_db.delete(_db.notes)..where((n) => n.id.equals(id))).go();
+
+  Future<void> emptyTrash() => (_db.delete(_db.notes)..where((n) => n.deletedAt.isNotNull())).go();
 
   Future<NoteRow?> byId(String id) =>
       (_db.select(_db.notes)..where((n) => n.id.equals(id))).getSingleOrNull();
 
-  Stream<NoteRow?> watchById(String id) => (_db.select(
-    _db.notes,
-  )..where((n) => n.id.equals(id))).watchSingleOrNull();
+  Stream<NoteRow?> watchById(String id) =>
+      (_db.select(_db.notes)..where((n) => n.id.equals(id))).watchSingleOrNull();
 
   Stream<List<NoteRow>> watch(
     NotesView view, {
@@ -146,19 +119,9 @@ class NotesRepository {
       case NotesView.archived:
         q.where((n) => n.deletedAt.isNull() & n.archived.equals(true));
       case NotesView.pinned:
-        q.where(
-          (n) =>
-              n.deletedAt.isNull() &
-              n.archived.equals(false) &
-              n.pinned.equals(true),
-        );
+        q.where((n) => n.deletedAt.isNull() & n.archived.equals(false) & n.pinned.equals(true));
       case NotesView.favorites:
-        q.where(
-          (n) =>
-              n.deletedAt.isNull() &
-              n.archived.equals(false) &
-              n.favorite.equals(true),
-        );
+        q.where((n) => n.deletedAt.isNull() & n.archived.equals(false) & n.favorite.equals(true));
       case NotesView.all:
         q.where((n) => n.deletedAt.isNull() & n.archived.equals(false));
     }
@@ -167,16 +130,12 @@ class NotesRepository {
     if (tag != null) {
       q.where(
         (n) => existsQuery(
-          _db.select(_db.noteTags)
-            ..where((t) => t.noteId.equalsExp(n.id) & t.tag.equals(tag)),
+          _db.select(_db.noteTags)..where((t) => t.noteId.equalsExp(n.id) & t.tag.equals(tag)),
         ),
       );
     }
     q
-      ..orderBy([
-        (n) => OrderingTerm.desc(n.pinned),
-        (n) => OrderingTerm.desc(n.updatedAt),
-      ])
+      ..orderBy([(n) => OrderingTerm.desc(n.pinned), (n) => OrderingTerm.desc(n.updatedAt)])
       ..limit(limit);
     return q.watch();
   }
@@ -185,23 +144,19 @@ class NotesRepository {
     final q = _db.selectOnly(_db.noteTags, distinct: true)
       ..addColumns([_db.noteTags.tag])
       ..orderBy([OrderingTerm.asc(_db.noteTags.tag)]);
-    return q.watch().map(
-      (r) => r.map((e) => e.read(_db.noteTags.tag)!).toList(),
-    );
+    return q.watch().map((r) => r.map((e) => e.read(_db.noteTags.tag)!).toList());
   }
 
   Stream<List<String>> watchTags(String noteId) =>
-      (_db.select(_db.noteTags)..where((t) => t.noteId.equals(noteId)))
-          .watch()
-          .map((r) => r.map((e) => e.tag).toList()..sort());
+      (_db.select(_db.noteTags)..where((t) => t.noteId.equals(noteId))).watch().map(
+        (r) => r.map((e) => e.tag).toList()..sort(),
+      );
 
   /// Resolves `[[Title]]` links in a body to existing notes.
   Future<List<NoteRow>> resolveLinks(String body) async {
     final titles = extractLinks(body);
     if (titles.isEmpty) return const [];
-    return (_db.select(
-      _db.notes,
-    )..where((n) => n.deletedAt.isNull() & n.title.isIn(titles))).get();
+    return (_db.select(_db.notes)..where((n) => n.deletedAt.isNull() & n.title.isIn(titles))).get();
   }
 
   /// Notes whose body links to [title].
@@ -217,9 +172,8 @@ class NotesRepository {
   }
 
   // notebooks
-  Stream<List<NotebookRow>> watchNotebooks() => (_db.select(
-    _db.notebooks,
-  )..orderBy([(n) => OrderingTerm.asc(n.name)])).watch();
+  Stream<List<NotebookRow>> watchNotebooks() =>
+      (_db.select(_db.notebooks)..orderBy([(n) => OrderingTerm.asc(n.name)])).watch();
 
   Future<String> createNotebook(String name, int color) async {
     final id = newId();
@@ -242,39 +196,23 @@ class NotesRepository {
   // task links
   Future<void> linkTask(String noteId, String taskId) => _db
       .into(_db.noteTaskLinks)
-      .insertOnConflictUpdate(
-        NoteTaskLinksCompanion.insert(noteId: noteId, taskId: taskId),
-      );
+      .insertOnConflictUpdate(NoteTaskLinksCompanion.insert(noteId: noteId, taskId: taskId));
 
   Future<void> unlinkTask(String noteId, String taskId) => (_db.delete(
     _db.noteTaskLinks,
   )..where((l) => l.noteId.equals(noteId) & l.taskId.equals(taskId))).go();
 
   Stream<List<TaskRow>> watchLinkedTasks(String noteId) {
-    final q =
-        _db.select(_db.tasks).join([
-          innerJoin(
-            _db.noteTaskLinks,
-            _db.noteTaskLinks.taskId.equalsExp(_db.tasks.id),
-          ),
-        ])..where(
-          _db.noteTaskLinks.noteId.equals(noteId) &
-              _db.tasks.deletedAt.isNull(),
-        );
+    final q = _db.select(_db.tasks).join([
+      innerJoin(_db.noteTaskLinks, _db.noteTaskLinks.taskId.equalsExp(_db.tasks.id)),
+    ])..where(_db.noteTaskLinks.noteId.equals(noteId) & _db.tasks.deletedAt.isNull());
     return q.watch().map((r) => r.map((e) => e.readTable(_db.tasks)).toList());
   }
 
   Stream<List<NoteRow>> watchNotesForTask(String taskId) {
-    final q =
-        _db.select(_db.notes).join([
-          innerJoin(
-            _db.noteTaskLinks,
-            _db.noteTaskLinks.noteId.equalsExp(_db.notes.id),
-          ),
-        ])..where(
-          _db.noteTaskLinks.taskId.equals(taskId) &
-              _db.notes.deletedAt.isNull(),
-        );
+    final q = _db.select(_db.notes).join([
+      innerJoin(_db.noteTaskLinks, _db.noteTaskLinks.noteId.equalsExp(_db.notes.id)),
+    ])..where(_db.noteTaskLinks.taskId.equals(taskId) & _db.notes.deletedAt.isNull());
     return q.watch().map((r) => r.map((e) => e.readTable(_db.notes)).toList());
   }
 }

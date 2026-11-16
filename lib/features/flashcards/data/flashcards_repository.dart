@@ -24,11 +24,7 @@ class DeckStats {
 
 /// Owns `decks`, `flashcards` and `card_reviews`.
 class FlashcardsRepository {
-  FlashcardsRepository(
-    this._db,
-    this._clock, {
-    this.scheduler = const SrsScheduler(),
-  });
+  FlashcardsRepository(this._db, this._clock, {this.scheduler = const SrsScheduler()});
   final AppDatabase _db;
   final Clock _clock;
   final SrsScheduler scheduler;
@@ -38,6 +34,8 @@ class FlashcardsRepository {
     String description = '',
     String category = '',
     required int color,
+    int? dailyNewLimit,
+    int? dailyReviewTarget,
   }) async {
     if (name.trim().isEmpty) throw ArgumentError('name');
     final id = newId();
@@ -51,6 +49,10 @@ class FlashcardsRepository {
             description: Value(description),
             category: Value(category),
             color: color,
+            dailyNewLimit: dailyNewLimit == null ? const Value.absent() : Value(dailyNewLimit),
+            dailyReviewTarget: dailyReviewTarget == null
+                ? const Value.absent()
+                : Value(dailyReviewTarget),
             createdAt: now,
             updatedAt: now,
           ),
@@ -70,9 +72,7 @@ class FlashcardsRepository {
       name: Value(name.trim()),
       description: Value(description),
       color: Value(color),
-      dailyNewLimit: dailyNewLimit == null
-          ? const Value.absent()
-          : Value(dailyNewLimit),
+      dailyNewLimit: dailyNewLimit == null ? const Value.absent() : Value(dailyNewLimit),
       dailyReviewTarget: dailyReviewTarget == null
           ? const Value.absent()
           : Value(dailyReviewTarget),
@@ -80,15 +80,13 @@ class FlashcardsRepository {
     ),
   );
 
-  Future<void> deleteDeck(String id) =>
-      (_db.update(_db.decks)..where((d) => d.id.equals(id))).write(
-        DecksCompanion(deletedAt: Value(_clock.nowUtc())),
-      );
+  Future<void> deleteDeck(String id) => (_db.update(
+    _db.decks,
+  )..where((d) => d.id.equals(id))).write(DecksCompanion(deletedAt: Value(_clock.nowUtc())));
 
-  Future<void> restoreDeck(String id) =>
-      (_db.update(_db.decks)..where((d) => d.id.equals(id))).write(
-        const DecksCompanion(deletedAt: Value(null)),
-      );
+  Future<void> restoreDeck(String id) => (_db.update(
+    _db.decks,
+  )..where((d) => d.id.equals(id))).write(const DecksCompanion(deletedAt: Value(null)));
 
   Stream<List<DeckRow>> watchDecks() =>
       (_db.select(_db.decks)
@@ -96,16 +94,10 @@ class FlashcardsRepository {
             ..orderBy([(d) => OrderingTerm.asc(d.name)]))
           .watch();
 
-  Stream<DeckRow?> watchDeck(String id) => (_db.select(
-    _db.decks,
-  )..where((d) => d.id.equals(id))).watchSingleOrNull();
+  Stream<DeckRow?> watchDeck(String id) =>
+      (_db.select(_db.decks)..where((d) => d.id.equals(id))).watchSingleOrNull();
 
-  Future<String> addCard(
-    String deckId,
-    String front,
-    String back, {
-    String tags = '',
-  }) async {
+  Future<String> addCard(String deckId, String front, String back, {String tags = ''}) async {
     if (front.trim().isEmpty || back.trim().isEmpty) {
       throw ArgumentError('front/back');
     }
@@ -127,29 +119,60 @@ class FlashcardsRepository {
     return id;
   }
 
-  Future<void> updateCard(
-    String id,
-    String front,
-    String back, {
-    String? tags,
-  }) => (_db.update(_db.flashcards)..where((c) => c.id.equals(id))).write(
-    FlashcardsCompanion(
-      front: Value(front.trim()),
-      back: Value(back.trim()),
-      tags: tags == null ? const Value.absent() : Value(tags),
-      updatedAt: Value(_clock.nowUtc()),
-    ),
+  Future<void> updateCard(String id, String front, String back, {String? tags}) =>
+      (_db.update(_db.flashcards)..where((c) => c.id.equals(id))).write(
+        FlashcardsCompanion(
+          front: Value(front.trim()),
+          back: Value(back.trim()),
+          tags: tags == null ? const Value.absent() : Value(tags),
+          updatedAt: Value(_clock.nowUtc()),
+        ),
+      );
+
+  Future<void> deleteCard(String id) => (_db.update(
+    _db.flashcards,
+  )..where((c) => c.id.equals(id))).write(FlashcardsCompanion(deletedAt: Value(_clock.nowUtc())));
+
+  Future<void> restoreCard(String id) => (_db.update(
+    _db.flashcards,
+  )..where((c) => c.id.equals(id))).write(const FlashcardsCompanion(deletedAt: Value(null)));
+
+  Future<CardRow?> getCard(String id) =>
+      (_db.select(_db.flashcards)..where((c) => c.id.equals(id))).getSingleOrNull();
+
+  /// Scheduling state stored on [row].
+  static SrsCard srsOf(CardRow row) => SrsCard(
+    state: cardStateFromDb(row.state),
+    easePermille: row.ease,
+    intervalDays: row.intervalDays,
+    repetitions: row.repetitions,
+    lapses: row.lapses,
+    learningStep: row.learningStep,
+    dueAt: row.dueAt,
   );
 
-  Future<void> deleteCard(String id) =>
-      (_db.update(_db.flashcards)..where((c) => c.id.equals(id))).write(
-        FlashcardsCompanion(deletedAt: Value(_clock.nowUtc())),
-      );
+  /// What each rating would do to [row] if given right now. Uses the same
+  /// scheduler and clock as [recordReview], so previews match outcomes.
+  Map<ReviewRating, SrsCard> previewRatings(CardRow row) {
+    final now = _clock.now();
+    final before = srsOf(row);
+    return {for (final r in ReviewRating.values) r: scheduler.review(before, r, now)};
+  }
 
-  Future<void> restoreCard(String id) =>
-      (_db.update(_db.flashcards)..where((c) => c.id.equals(id))).write(
-        const FlashcardsCompanion(deletedAt: Value(null)),
-      );
+  /// Id of the non-deleted deck with the most due (non-new) cards, or null.
+  Future<String?> deckWithMostDue() async {
+    final now = _clock.nowUtc();
+    final c = _db.flashcards;
+    final due = c.id.count();
+    final q = _db.selectOnly(c).join([innerJoin(_db.decks, _db.decks.id.equalsExp(c.deckId))])
+      ..addColumns([c.deckId, due])
+      ..where(c.deletedAt.isNull() & _db.decks.deletedAt.isNull() & _isDue(c, now))
+      ..groupBy([c.deckId])
+      ..orderBy([OrderingTerm.desc(due)])
+      ..limit(1);
+    final row = await q.getSingleOrNull();
+    return row?.read(c.deckId);
+  }
 
   Stream<List<CardRow>> watchCards(String deckId) =>
       (_db.select(_db.flashcards)
@@ -166,10 +189,7 @@ class FlashcardsRepository {
     final count = _db.cardReviews.id.count(distinct: true);
     final q =
         _db.selectOnly(_db.cardReviews).join([
-            innerJoin(
-              _db.flashcards,
-              _db.flashcards.id.equalsExp(_db.cardReviews.cardId),
-            ),
+            innerJoin(_db.flashcards, _db.flashcards.id.equalsExp(_db.cardReviews.cardId)),
           ])
           ..addColumns([count])
           ..where(
@@ -184,29 +204,18 @@ class FlashcardsRepository {
   /// due first), then new cards up to the deck's remaining daily limit.
   Future<List<CardRow>> reviewQueue(String deckId) async {
     final now = _clock.nowUtc();
-    final deck = await (_db.select(
-      _db.decks,
-    )..where((d) => d.id.equals(deckId))).getSingle();
+    final deck = await (_db.select(_db.decks)..where((d) => d.id.equals(deckId))).getSingle();
     final due =
         await (_db.select(_db.flashcards)
-              ..where(
-                (c) =>
-                    c.deckId.equals(deckId) &
-                    c.deletedAt.isNull() &
-                    _isDue(c, now),
-              )
+              ..where((c) => c.deckId.equals(deckId) & c.deletedAt.isNull() & _isDue(c, now))
               ..orderBy([(c) => OrderingTerm.asc(c.dueAt)]))
             .get();
-    final remainingNew =
-        (deck.dailyNewLimit - await _newIntroducedToday(deckId)).clamp(0, 9999);
+    final remainingNew = (deck.dailyNewLimit - await _newIntroducedToday(deckId)).clamp(0, 9999);
     final fresh = remainingNew == 0
         ? <CardRow>[]
         : await (_db.select(_db.flashcards)
                 ..where(
-                  (c) =>
-                      c.deckId.equals(deckId) &
-                      c.deletedAt.isNull() &
-                      c.state.equals('new'),
+                  (c) => c.deckId.equals(deckId) & c.deletedAt.isNull() & c.state.equals('new'),
                 )
                 ..orderBy([(c) => OrderingTerm.asc(c.createdAt)])
                 ..limit(remainingNew))
@@ -217,23 +226,11 @@ class FlashcardsRepository {
   /// Applies a rating and stores review history in one transaction.
   Future<SrsCard> recordReview(String cardId, ReviewRating rating) {
     return _db.transaction(() async {
-      final row = await (_db.select(
-        _db.flashcards,
-      )..where((c) => c.id.equals(cardId))).getSingle();
-      final before = SrsCard(
-        state: cardStateFromDb(row.state),
-        easePermille: row.ease,
-        intervalDays: row.intervalDays,
-        repetitions: row.repetitions,
-        lapses: row.lapses,
-        learningStep: row.learningStep,
-        dueAt: row.dueAt,
-      );
+      final row = await (_db.select(_db.flashcards)..where((c) => c.id.equals(cardId))).getSingle();
+      final before = srsOf(row);
       final now = _clock.now();
       final after = scheduler.review(before, rating, now);
-      await (_db.update(
-        _db.flashcards,
-      )..where((c) => c.id.equals(cardId))).write(
+      await (_db.update(_db.flashcards)..where((c) => c.id.equals(cardId))).write(
         FlashcardsCompanion(
           state: Value(cardStateToDb(after.state)),
           ease: Value(after.easePermille),
@@ -271,8 +268,7 @@ class FlashcardsRepository {
     final fresh = c.id.count(filter: c.state.equals('new'));
     final due = c.id.count(filter: _isDue(c, now));
     final mature = c.id.count(
-      filter:
-          c.state.equals('review') & c.intervalDays.isBiggerOrEqualValue(21),
+      filter: c.state.equals('review') & c.intervalDays.isBiggerOrEqualValue(21),
     );
     final q = _db.selectOnly(c)
       ..addColumns([total, fresh, due, mature])
@@ -292,16 +288,9 @@ class FlashcardsRepository {
     final now = _clock.nowUtc();
     final c = _db.flashcards;
     final due = c.id.count();
-    final q =
-        _db.selectOnly(c).join([
-            innerJoin(_db.decks, _db.decks.id.equalsExp(c.deckId)),
-          ])
-          ..addColumns([due])
-          ..where(
-            c.deletedAt.isNull() &
-                _db.decks.deletedAt.isNull() &
-                _isDue(c, now),
-          );
+    final q = _db.selectOnly(c).join([innerJoin(_db.decks, _db.decks.id.equalsExp(c.deckId))])
+      ..addColumns([due])
+      ..where(c.deletedAt.isNull() & _db.decks.deletedAt.isNull() & _isDue(c, now));
     return q.watchSingle().map((r) => r.read(due) ?? 0);
   }
 
@@ -309,9 +298,7 @@ class FlashcardsRepository {
 
   /// Exports a deck as a versioned JSON document.
   Future<String> exportDeck(String deckId) async {
-    final deck = await (_db.select(
-      _db.decks,
-    )..where((d) => d.id.equals(deckId))).getSingle();
+    final deck = await (_db.select(_db.decks)..where((d) => d.id.equals(deckId))).getSingle();
     final cards = await (_db.select(
       _db.flashcards,
     )..where((c) => c.deckId.equals(deckId) & c.deletedAt.isNull())).get();
@@ -321,8 +308,7 @@ class FlashcardsRepository {
       'name': deck.name,
       'description': deck.description,
       'cards': [
-        for (final c in cards)
-          {'front': c.front, 'back': c.back, 'tags': c.tags},
+        for (final c in cards) {'front': c.front, 'back': c.back, 'tags': c.tags},
       ],
     });
   }
@@ -339,11 +325,7 @@ class FlashcardsRepository {
       }
       for (final c in (j['cards'] as List)) {
         final m = c as Map;
-        pairs.add((
-          '${m['front'] ?? ''}',
-          '${m['back'] ?? ''}',
-          '${m['tags'] ?? ''}',
-        ));
+        pairs.add(('${m['front'] ?? ''}', '${m['back'] ?? ''}', '${m['tags'] ?? ''}'));
       }
     } else {
       for (final line in const LineSplitter().convert(source)) {

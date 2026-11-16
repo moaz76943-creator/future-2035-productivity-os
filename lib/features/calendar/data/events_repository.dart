@@ -40,10 +40,8 @@ class EventOccurrence {
   final EventRow event;
   final DateTime start;
   final DateTime end;
-  EventKind get kind =>
-      EventKind.values.asNameMap()[event.kind] ?? EventKind.event;
-  bool overlaps(EventOccurrence o) =>
-      start.isBefore(o.end) && o.start.isBefore(end);
+  EventKind get kind => EventKind.values.asNameMap()[event.kind] ?? EventKind.event;
+  bool overlaps(EventOccurrence o) => start.isBefore(o.end) && o.start.isBefore(end);
 }
 
 class EventValidationException implements Exception {
@@ -90,11 +88,7 @@ class EventsRepository {
     await _db
         .into(_db.events)
         .insert(
-          _companion(d).copyWith(
-            id: Value(id),
-            createdAt: Value(now),
-            updatedAt: Value(now),
-          ),
+          _companion(d).copyWith(id: Value(id), createdAt: Value(now), updatedAt: Value(now)),
         );
     return id;
   }
@@ -108,9 +102,7 @@ class EventsRepository {
 
   /// Moves an event by [delta] (drag-and-drop rescheduling).
   Future<void> shift(String id, Duration delta) => _db.transaction(() async {
-    final e = await (_db.select(
-      _db.events,
-    )..where((x) => x.id.equals(id))).getSingle();
+    final e = await (_db.select(_db.events)..where((x) => x.id.equals(id))).getSingle();
     await (_db.update(_db.events)..where((x) => x.id.equals(id))).write(
       EventsCompanion(
         startAt: Value(e.startAt.add(delta)),
@@ -120,15 +112,13 @@ class EventsRepository {
     );
   });
 
-  Future<void> softDelete(String id) =>
-      (_db.update(_db.events)..where((e) => e.id.equals(id))).write(
-        EventsCompanion(deletedAt: Value(_clock.nowUtc())),
-      );
+  Future<void> softDelete(String id) => (_db.update(
+    _db.events,
+  )..where((e) => e.id.equals(id))).write(EventsCompanion(deletedAt: Value(_clock.nowUtc())));
 
-  Future<void> restore(String id) =>
-      (_db.update(_db.events)..where((e) => e.id.equals(id))).write(
-        const EventsCompanion(deletedAt: Value(null)),
-      );
+  Future<void> restore(String id) => (_db.update(
+    _db.events,
+  )..where((e) => e.id.equals(id))).write(const EventsCompanion(deletedAt: Value(null)));
 
   Future<EventRow?> byId(String id) =>
       (_db.select(_db.events)..where((e) => e.id.equals(id))).getSingleOrNull();
@@ -146,11 +136,7 @@ class EventsRepository {
     return q.watch().map((rows) => expand(rows, from, to));
   }
 
-  static List<EventOccurrence> expand(
-    List<EventRow> rows,
-    DateTime from,
-    DateTime to,
-  ) {
+  static List<EventOccurrence> expand(List<EventRow> rows, DateTime from, DateTime to) {
     final out = <EventOccurrence>[];
     for (final e in rows) {
       final duration = e.endAt.difference(e.startAt);
@@ -161,12 +147,7 @@ class EventsRepository {
         }
         continue;
       }
-      for (final s in rule.between(
-        e.startAt.toLocal(),
-        from,
-        to,
-        duration: duration,
-      )) {
+      for (final s in rule.between(e.startAt.toLocal(), from, to, duration: duration)) {
         final end = s.add(duration);
         if (end.isAfter(from)) out.add(EventOccurrence(e, s, end));
       }
@@ -176,9 +157,7 @@ class EventsRepository {
   }
 
   /// Pairs of overlapping timed (non all-day) occurrences.
-  static List<(EventOccurrence, EventOccurrence)> conflicts(
-    List<EventOccurrence> occ,
-  ) {
+  static List<(EventOccurrence, EventOccurrence)> conflicts(List<EventOccurrence> occ) {
     final timed = occ.where((o) => !o.event.allDay).toList()
       ..sort((a, b) => a.start.compareTo(b.start));
     final result = <(EventOccurrence, EventOccurrence)>[];

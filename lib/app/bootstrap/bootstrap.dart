@@ -14,6 +14,7 @@ import '../../core/database/app_database.dart';
 import '../../core/database/database_connection.dart';
 import '../../core/providers/core_providers.dart';
 import '../../core/security/secret_store.dart';
+import '../../features/notifications/data/notification_service.dart';
 import '../../features/settings/application/settings_providers.dart';
 import '../../features/settings/data/settings_repository.dart';
 import '../app.dart';
@@ -39,6 +40,9 @@ Future<void> bootstrap() async {
     final key = await obtainDatabaseKey(secrets);
     db = AppDatabase(openEncryptedDatabase(file: file, hexKey: key));
     final settings = await SettingsRepository(db).load();
+    await LocalNotificationService.shared
+        .init(settings)
+        .timeout(const Duration(seconds: 5), onTimeout: () {});
     runApp(
       ProviderScope(
         overrides: [

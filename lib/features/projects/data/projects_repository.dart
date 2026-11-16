@@ -77,21 +77,16 @@ class ProjectsRepository {
 
   Future<void> setArchived(String id, bool archived) =>
       (_db.update(_db.projects)..where((p) => p.id.equals(id))).write(
-        ProjectsCompanion(
-          archived: Value(archived),
-          updatedAt: Value(_clock.nowUtc()),
-        ),
+        ProjectsCompanion(archived: Value(archived), updatedAt: Value(_clock.nowUtc())),
       );
 
-  Future<void> softDelete(String id) =>
-      (_db.update(_db.projects)..where((p) => p.id.equals(id))).write(
-        ProjectsCompanion(deletedAt: Value(_clock.nowUtc())),
-      );
+  Future<void> softDelete(String id) => (_db.update(
+    _db.projects,
+  )..where((p) => p.id.equals(id))).write(ProjectsCompanion(deletedAt: Value(_clock.nowUtc())));
 
-  Future<void> restore(String id) =>
-      (_db.update(_db.projects)..where((p) => p.id.equals(id))).write(
-        const ProjectsCompanion(deletedAt: Value(null)),
-      );
+  Future<void> restore(String id) => (_db.update(
+    _db.projects,
+  )..where((p) => p.id.equals(id))).write(const ProjectsCompanion(deletedAt: Value(null)));
 
   Stream<List<ProjectRow>> watchAll({bool archived = false}) =>
       (_db.select(_db.projects)
@@ -99,9 +94,8 @@ class ProjectsRepository {
             ..orderBy([(p) => OrderingTerm.asc(p.name)]))
           .watch();
 
-  Stream<ProjectRow?> watchById(String id) => (_db.select(
-    _db.projects,
-  )..where((p) => p.id.equals(id))).watchSingleOrNull();
+  Stream<ProjectRow?> watchById(String id) =>
+      (_db.select(_db.projects)..where((p) => p.id.equals(id))).watchSingleOrNull();
 
   Stream<ProjectProgress> watchProgress(String id) {
     final total = _db.tasks.id.count();
@@ -110,8 +104,7 @@ class ProjectsRepository {
       ..addColumns([total, done])
       ..where(_db.tasks.projectId.equals(id) & _db.tasks.deletedAt.isNull());
     return q.watchSingle().map(
-      (r) =>
-          ProjectProgress(total: r.read(total) ?? 0, done: r.read(done) ?? 0),
+      (r) => ProjectProgress(total: r.read(total) ?? 0, done: r.read(done) ?? 0),
     );
   }
 
@@ -119,10 +112,7 @@ class ProjectsRepository {
     final sum = _db.focusSessions.activeSeconds.sum();
     final q = _db.selectOnly(_db.focusSessions)
       ..addColumns([sum])
-      ..where(
-        _db.focusSessions.projectId.equals(id) &
-            _db.focusSessions.phase.equals('work'),
-      );
+      ..where(_db.focusSessions.projectId.equals(id) & _db.focusSessions.phase.equals('work'));
     return q.watchSingle().map((r) => r.read(sum) ?? 0);
   }
 }

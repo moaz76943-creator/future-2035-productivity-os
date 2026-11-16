@@ -98,21 +98,16 @@ class GoalsRepository {
 
   Future<void> setStatus(String id, GoalStatus status) =>
       (_db.update(_db.goals)..where((g) => g.id.equals(id))).write(
-        GoalsCompanion(
-          status: Value(status.name),
-          updatedAt: Value(_clock.nowUtc()),
-        ),
+        GoalsCompanion(status: Value(status.name), updatedAt: Value(_clock.nowUtc())),
       );
 
-  Future<void> softDelete(String id) =>
-      (_db.update(_db.goals)..where((g) => g.id.equals(id))).write(
-        GoalsCompanion(deletedAt: Value(_clock.nowUtc())),
-      );
+  Future<void> softDelete(String id) => (_db.update(
+    _db.goals,
+  )..where((g) => g.id.equals(id))).write(GoalsCompanion(deletedAt: Value(_clock.nowUtc())));
 
-  Future<void> restore(String id) =>
-      (_db.update(_db.goals)..where((g) => g.id.equals(id))).write(
-        const GoalsCompanion(deletedAt: Value(null)),
-      );
+  Future<void> restore(String id) => (_db.update(
+    _db.goals,
+  )..where((g) => g.id.equals(id))).write(const GoalsCompanion(deletedAt: Value(null)));
 
   Future<void> addEntry(String goalId, double amount, {String note = ''}) => _db
       .into(_db.goalEntries)
@@ -126,6 +121,10 @@ class GoalsRepository {
         ),
       );
 
+  /// Re-inserts a previously deleted entry unchanged (used by undo).
+  Future<void> restoreEntry(GoalEntryRow entry) =>
+      _db.into(_db.goalEntries).insertOnConflictUpdate(entry);
+
   Future<void> deleteEntry(String id) =>
       (_db.delete(_db.goalEntries)..where((e) => e.id.equals(id))).go();
 
@@ -137,44 +136,31 @@ class GoalsRepository {
 
   Future<void> linkTask(String goalId, String taskId) => _db
       .into(_db.goalTasks)
-      .insertOnConflictUpdate(
-        GoalTasksCompanion.insert(goalId: goalId, taskId: taskId),
-      );
+      .insertOnConflictUpdate(GoalTasksCompanion.insert(goalId: goalId, taskId: taskId));
 
   Future<void> unlinkTask(String goalId, String taskId) => (_db.delete(
     _db.goalTasks,
   )..where((g) => g.goalId.equals(goalId) & g.taskId.equals(taskId))).go();
 
   Stream<List<TaskRow>> watchLinkedTasks(String goalId) {
-    final q =
-        _db.select(_db.tasks).join([
-          innerJoin(
-            _db.goalTasks,
-            _db.goalTasks.taskId.equalsExp(_db.tasks.id),
-          ),
-        ])..where(
-          _db.goalTasks.goalId.equals(goalId) & _db.tasks.deletedAt.isNull(),
-        );
+    final q = _db.select(_db.tasks).join([
+      innerJoin(_db.goalTasks, _db.goalTasks.taskId.equalsExp(_db.tasks.id)),
+    ])..where(_db.goalTasks.goalId.equals(goalId) & _db.tasks.deletedAt.isNull());
     return q.watch().map((r) => r.map((e) => e.readTable(_db.tasks)).toList());
   }
 
   Stream<List<GoalRow>> watchGoals({GoalStatus? status}) {
     final q = _db.select(_db.goals)..where((g) => g.deletedAt.isNull());
     if (status != null) q.where((g) => g.status.equals(status.name));
-    q.orderBy([
-      (g) => OrderingTerm.asc(g.status),
-      (g) => OrderingTerm.asc(g.title),
-    ]);
+    q.orderBy([(g) => OrderingTerm.asc(g.status), (g) => OrderingTerm.asc(g.title)]);
     return q.watch();
   }
 
-  Stream<GoalRow?> watchGoal(String id) => (_db.select(
-    _db.goals,
-  )..where((g) => g.id.equals(id))).watchSingleOrNull();
+  Stream<GoalRow?> watchGoal(String id) =>
+      (_db.select(_db.goals)..where((g) => g.id.equals(id))).watchSingleOrNull();
 
   Stream<GoalProgress> watchProgress(GoalRow goal) {
-    final period =
-        GoalPeriod.values.asNameMap()[goal.period] ?? GoalPeriod.longTerm;
+    final period = GoalPeriod.values.asNameMap()[goal.period] ?? GoalPeriod.longTerm;
     final (from, to) = periodWindow(period, _clock.now());
     final sum = _db.goalEntries.amount.sum();
     final eq = _db.selectOnly(_db.goalEntries)
@@ -189,10 +175,7 @@ class GoalsRepository {
     final count = _db.tasks.id.count();
     final tq =
         _db.selectOnly(_db.tasks).join([
-            innerJoin(
-              _db.goalTasks,
-              _db.goalTasks.taskId.equalsExp(_db.tasks.id),
-            ),
+            innerJoin(_db.goalTasks, _db.goalTasks.taskId.equalsExp(_db.tasks.id)),
           ])
           ..addColumns([count])
           ..where(

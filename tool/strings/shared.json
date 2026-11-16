@@ -1,0 +1,53 @@
+{
+  "repeatSummaryEveryN": {
+    "text": "{unit, select, day{{count, plural, =1{Every day} other{Every {count} days}}} week{{count, plural, =1{Every week} other{Every {count} weeks}}} month{{count, plural, =1{Every month} other{Every {count} months}}} other{{count, plural, =1{Every year} other{Every {count} years}}}}",
+    "desc": "Summary of a custom repeat rule. unit is one of day/week/month/year (do not translate the select keys)",
+    "placeholders": {
+      "unit": "String",
+      "count": "int"
+    }
+  },
+  "repeatOnWeekdays": {
+    "text": "on {days}",
+    "desc": "Suffix listing selected weekdays of a weekly repeat rule, e.g. 'on Mon, Wed'",
+    "placeholders": {
+      "days": "String"
+    }
+  },
+  "repeatEndsLabel": {
+    "text": "Ends",
+    "desc": "Label for the end condition of a repeat rule"
+  },
+  "repeatEndsAfter": {
+    "text": "After a number of times",
+    "desc": "Option: repeat rule ends after N occurrences"
+  },
+  "repeatCountLabel": {
+    "text": "Occurrences",
+    "desc": "Field label: number of occurrences before a repeat rule ends"
+  },
+  "reminderNone": {
+    "text": "No reminder",
+    "desc": "Option: no reminder"
+  },
+  "reminderCustomTime": {
+    "text": "At a specific time",
+    "desc": "Option: reminder at a chosen date and time"
+  },
+  "a11yDecrease": {
+    "text": "Decrease",
+    "desc": "Tooltip/screen reader label for a minus stepper button"
+  },
+  "a11yIncrease": {
+    "text": "Increase",
+    "desc": "Tooltip/screen reader label for a plus stepper button"
+  },
+  "pickTaskTitle": {
+    "text": "Choose a task",
+    "desc": "Title of the sheet used to pick a task to link"
+  },
+  "pickTaskEmpty": {
+    "text": "No open tasks",
+    "desc": "Shown in the task picker when there are no open tasks"
+  }
+}

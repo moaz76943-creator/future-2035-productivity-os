@@ -1,0 +1,11 @@
+{
+  "trashDeleteTaskTitle": {"text": "Delete this task forever?", "desc": "Confirmation title"},
+  "trashDeleteNoteTitle": {"text": "Delete this note forever?", "desc": "Confirmation title"},
+  "trashDeleteBody": {"text": "This cannot be undone.", "desc": "Confirmation body for permanent deletion"},
+  "trashEmptyTitle": {"text": "Empty trash?", "desc": "Confirmation title for emptying the trash"},
+  "trashEmptyBody": {"text": "{count, plural, =1{1 item will be deleted permanently.} other{{count} items will be deleted permanently.}}", "desc": "Confirmation body for emptying trash", "placeholders": {"count": "int"}},
+  "trashRestored": {"text": "Restored", "desc": "Snackbar after restoring an item"},
+  "trashPurged": {"text": "Deleted forever", "desc": "Snackbar after permanent deletion"},
+  "trashDeletedOn": {"text": "Deleted {date}", "desc": "Subtitle showing when the item was deleted", "placeholders": {"date": "String"}},
+  "trashCount": {"text": "{count, plural, =1{1 item} other{{count} items}}", "desc": "Number of items in trash", "placeholders": {"count": "int"}}
+}

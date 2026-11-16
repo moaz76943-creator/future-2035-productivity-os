@@ -55,26 +55,53 @@ Future<String?> promptText(
   String initial = '',
   String? hint,
   String? confirmLabel,
-}) {
-  final controller = TextEditingController(text: initial);
-  final l10n = context.l10n;
-  return showDialog<String>(
-    context: context,
-    builder: (ctx) => AlertDialog(
-      title: Text(title),
+}) =>
+    showDialog<String>(
+      context: context,
+      builder: (_) =>
+          _PromptDialog(title: title, initial: initial, hint: hint, confirmLabel: confirmLabel),
+    );
+
+/// Stateful so the controller lives exactly as long as the dialog route,
+/// including its exit animation.
+class _PromptDialog extends StatefulWidget {
+  const _PromptDialog({required this.title, required this.initial, this.hint, this.confirmLabel});
+  final String title;
+  final String initial;
+  final String? hint;
+  final String? confirmLabel;
+
+  @override
+  State<_PromptDialog> createState() => _PromptDialogState();
+}
+
+class _PromptDialogState extends State<_PromptDialog> {
+  late final _controller = TextEditingController(text: widget.initial);
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    return AlertDialog(
+      title: Text(widget.title),
       content: TextField(
-        controller: controller,
+        controller: _controller,
         autofocus: true,
-        decoration: InputDecoration(hintText: hint),
-        onSubmitted: (v) => Navigator.pop(ctx, v.trim()),
+        decoration: InputDecoration(hintText: widget.hint),
+        onSubmitted: (v) => Navigator.pop(context, v.trim()),
       ),
       actions: [
-        TextButton(onPressed: () => Navigator.pop(ctx), child: Text(l10n.actionCancel)),
+        TextButton(onPressed: () => Navigator.pop(context), child: Text(l10n.actionCancel)),
         FilledButton(
-          onPressed: () => Navigator.pop(ctx, controller.text.trim()),
-          child: Text(confirmLabel ?? l10n.actionSave),
+          onPressed: () => Navigator.pop(context, _controller.text.trim()),
+          child: Text(widget.confirmLabel ?? l10n.actionSave),
         ),
       ],
-    ),
-  ).whenComplete(controller.dispose);
+    );
+  }
 }

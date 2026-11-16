@@ -1,0 +1,7 @@
+{
+  "onboardingPrivatePointDevice": {"text": "Stored only on this device, encrypted", "desc": "Onboarding privacy bullet"},
+  "onboardingPrivatePointAccount": {"text": "No account needed", "desc": "Onboarding privacy bullet"},
+  "onboardingPrivatePointTracking": {"text": "No analytics, no tracking", "desc": "Onboarding privacy bullet"},
+  "onboardingLanguageBody": {"text": "You can change this anytime in Settings.", "desc": "Onboarding language step body"},
+  "onboardingNext": {"text": "Next", "desc": "Button moving to the next onboarding step"}
+}

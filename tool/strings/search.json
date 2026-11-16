@@ -1,0 +1,5 @@
+{
+  "searchResultCount": {"text": "{count, plural, =1{1 result} other{{count} results}}", "desc": "Number of search results, announced to screen readers", "placeholders": {"count": "int"}},
+  "searchCategoryFilter": {"text": "Filter by type", "desc": "Accessibility label for the row of search category chips"},
+  "searchRecentTap": {"text": "Search again for {query}", "desc": "Accessibility hint for a recent search entry", "placeholders": {"query": "String"}}
+}

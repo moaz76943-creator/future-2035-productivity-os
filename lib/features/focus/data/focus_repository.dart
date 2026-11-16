@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:drift/drift.dart';
 
 import '../../../core/database/app_database.dart';
@@ -14,10 +16,37 @@ class FocusRepository {
   Future<FocusTimerState?> loadActive() async =>
       FocusTimerState.tryDecode(await _db.readValue(activeKey));
 
-  Future<void> saveActive(FocusTimerState s) =>
-      _db.writeValue(activeKey, s.encode());
+  Future<void> saveActive(FocusTimerState s) => _db.writeValue(activeKey, s.encode());
 
   Future<void> clearActive() => _db.deleteValue(activeKey);
+
+  static const pendingKey = 'focus.pending';
+  static const batteryHintKey = 'focus.batteryHintSeen';
+
+  /// The pomodoro phase waiting to be started (between phases), so the
+  /// cycle position survives an app restart.
+  Future<PendingPhase?> loadPending() async {
+    final raw = await _db.readValue(pendingKey);
+    if (raw == null) return null;
+    try {
+      final j = jsonDecode(raw) as Map<String, Object?>;
+      return PendingPhase(
+        FocusPhase.values.byName(j['phase']! as String),
+        (j['cycles'] as int?) ?? 0,
+      );
+    } on Object {
+      return null;
+    }
+  }
+
+  Future<void> savePending(PendingPhase p) =>
+      _db.writeValue(pendingKey, jsonEncode({'phase': p.phase.name, 'cycles': p.cycles}));
+
+  Future<void> clearPending() => _db.deleteValue(pendingKey);
+
+  Future<bool> batteryHintSeen() async => await _db.readValue(batteryHintKey) == '1';
+
+  Future<void> markBatteryHintSeen() => _db.writeValue(batteryHintKey, '1');
 
   /// Records a finished session and clears the active state atomically.
   /// Uses the session id as primary key with `insertOrIgnore`, so a session
@@ -54,9 +83,9 @@ class FocusRepository {
     });
   }
 
-  Future<void> updateNote(String sessionId, String note) =>
-      (_db.update(_db.focusSessions)..where((s) => s.id.equals(sessionId)))
-          .write(FocusSessionsCompanion(note: Value(note)));
+  Future<void> updateNote(String sessionId, String note) => (_db.update(
+    _db.focusSessions,
+  )..where((s) => s.id.equals(sessionId))).write(FocusSessionsCompanion(note: Value(note)));
 
   Future<void> deleteSession(String id) =>
       (_db.delete(_db.focusSessions)..where((s) => s.id.equals(id))).go();
@@ -89,4 +118,11 @@ class FocusRepository {
       );
     return q.watchSingle().map((r) => r.read(sum) ?? 0);
   }
+}
+
+/// Next pomodoro phase and completed work cycles while no timer runs.
+class PendingPhase {
+  const PendingPhase(this.phase, this.cycles);
+  final FocusPhase phase;
+  final int cycles;
 }

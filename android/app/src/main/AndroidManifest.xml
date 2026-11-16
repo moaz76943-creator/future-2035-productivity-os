@@ -1,8 +1,32 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Notifications (task/event/habit/review reminders, focus timer alerts).
+         POST_NOTIFICATIONS is requested at runtime on Android 13+ only after a
+         user action (starting a focus session or enabling reminders). -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- Lets flutter_local_notifications restore scheduled alarms after reboot. -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- Exact alarms. Declared only up to API 32 (Android 12/12L), where
+         SCHEDULE_EXACT_ALARM is granted at install. On Android 13+ the app
+         therefore schedules inexact allow-while-idle alarms (typically delivered
+         within minutes, earlier when the device is awake); the Dart side checks
+         canScheduleExactNotifications() before every schedule and falls back
+         to inexact on any failure, so nothing crashes.
+         USE_EXACT_ALARM is intentionally NOT declared: Google Play restricts it
+         to alarm-clock and calendar apps. If exact focus alerts on Android 13+
+         become a requirement, drop maxSdkVersion and let the user grant
+         "Alarms & reminders" in system settings (requestExactAlarms()). -->
+    <uses-permission
+        android:name="android.permission.SCHEDULE_EXACT_ALARM"
+        android:maxSdkVersion="32" />
     <application
         android:label="future_os"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:networkSecurityConfig="@xml/network_security_config">
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -25,6 +49,21 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <!-- flutter_local_notifications: deliver scheduled notifications and
+             reschedule them after reboot or app update. -->
+        <receiver
+            android:exported="false"
+            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />
+        <receiver
+            android:exported="false"
+            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
         <meta-data

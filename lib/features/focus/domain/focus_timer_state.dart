@@ -115,9 +115,7 @@ class FocusTimerState {
       status: status ?? this.status,
       startedAtUtc: startedAtUtc,
       accumulatedMs: accumulatedMs ?? this.accumulatedMs,
-      segmentStartedAtUtc: clearSegment
-          ? null
-          : (segmentStartedAtUtc ?? this.segmentStartedAtUtc),
+      segmentStartedAtUtc: clearSegment ? null : (segmentStartedAtUtc ?? this.segmentStartedAtUtc),
       plannedSeconds: plannedSeconds,
       taskId: clearTask ? null : (taskId ?? this.taskId),
       projectId: projectId,

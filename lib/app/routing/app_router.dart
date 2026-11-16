@@ -85,7 +85,7 @@ final routerProvider = Provider<GoRouter>((ref) {
             routes: [
               GoRoute(
                 path: Routes.focus,
-                builder: (_, _) => const FocusScreen(),
+                builder: (_, s) => FocusScreen(initialTaskId: s.uri.queryParameters['task']),
               ),
             ],
           ),

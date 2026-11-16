@@ -84,8 +84,7 @@ class SrsScheduler {
 
   static const int minimumEase = 1300;
 
-  DateTime _dueInDays(DateTime now, int days) =>
-      Days.addDays(Days.startOfDay(now), days);
+  DateTime _dueInDays(DateTime now, int days) => Days.addDays(Days.startOfDay(now), days);
 
   SrsCard review(SrsCard card, ReviewRating rating, DateTime now) {
     switch (card.state) {
@@ -146,9 +145,7 @@ class SrsScheduler {
             dueAt: now.add(Duration(minutes: steps[nextStep])),
           );
         }
-        final days = relearn
-            ? graduate(c.intervalDays)
-            : graduate(graduatingIntervalDays);
+        final days = relearn ? graduate(c.intervalDays) : graduate(graduatingIntervalDays);
         return SrsCard(
           state: CardState.review,
           easePermille: c.easePermille,
@@ -159,9 +156,7 @@ class SrsScheduler {
           dueAt: _dueInDays(now, days),
         );
       case ReviewRating.easy:
-        final days = relearn
-            ? graduate(c.intervalDays + 1)
-            : graduate(easyIntervalDays);
+        final days = relearn ? graduate(c.intervalDays + 1) : graduate(easyIntervalDays);
         return SrsCard(
           state: CardState.review,
           easePermille: c.easePermille,
@@ -192,9 +187,7 @@ class SrsScheduler {
           dueAt: now.add(Duration(minutes: relearningSteps.first)),
         );
       case ReviewRating.hard:
-        final next = clampInterval(
-          _atLeastPlusOne(interval, (interval * 1.2).round()),
-        );
+        final next = clampInterval(_atLeastPlusOne(interval, (interval * 1.2).round()));
         return SrsCard(
           state: CardState.review,
           easePermille: clampEase(c.easePermille - 150),
@@ -217,10 +210,7 @@ class SrsScheduler {
         );
       case ReviewRating.easy:
         final next = clampInterval(
-          _atLeastPlusOne(
-            interval,
-            (interval * c.easePermille / 1000 * 1.3).round(),
-          ),
+          _atLeastPlusOne(interval, (interval * c.easePermille / 1000 * 1.3).round()),
         );
         return SrsCard(
           state: CardState.review,
@@ -233,6 +223,5 @@ class SrsScheduler {
     }
   }
 
-  int _atLeastPlusOne(int previous, int proposed) =>
-      proposed <= previous ? previous + 1 : proposed;
+  int _atLeastPlusOne(int previous, int proposed) => proposed <= previous ? previous + 1 : proposed;
 }

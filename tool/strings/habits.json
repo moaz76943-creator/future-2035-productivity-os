@@ -1,0 +1,127 @@
+{
+  "habitsTodaySummary": {
+    "text": "{done} of {total} done today",
+    "desc": "Summary at the top of the habits screen: habits completed today out of habits scheduled today",
+    "placeholders": {
+      "done": "int",
+      "total": "int"
+    }
+  },
+  "habitsNothingToday": {
+    "text": "No habits are scheduled for today",
+    "desc": "Shown when habits exist but none is scheduled today"
+  },
+  "habitsDecrease": {
+    "text": "Remove one check-in",
+    "desc": "Action in the check-in menu that lowers today's count by one"
+  },
+  "habitsResetToday": {
+    "text": "Reset today",
+    "desc": "Action in the check-in menu that sets today's count to zero"
+  },
+  "habitsCheckInHint": {
+    "text": "Long-press to adjust",
+    "desc": "Screen reader hint on the habit check-in button"
+  },
+  "habitsName": {
+    "text": "Name",
+    "desc": "Field label in the habit editor"
+  },
+  "habitsColor": {
+    "text": "Color",
+    "desc": "Field label in the habit editor"
+  },
+  "habitsValidationDays": {
+    "text": "Choose at least one day",
+    "desc": "Validation message when no weekday is selected in the habit schedule"
+  },
+  "habitsReminderAt": {
+    "text": "Every day at {time}",
+    "desc": "Selected daily reminder time in the habit editor",
+    "placeholders": {
+      "time": "String"
+    }
+  },
+  "habitsSetReminder": {
+    "text": "Set a reminder time",
+    "desc": "Button in the habit editor to choose a daily reminder time"
+  },
+  "habitsRemoveReminder": {
+    "text": "Remove reminder",
+    "desc": "Tooltip to clear the habit's daily reminder"
+  },
+  "habitsReminderNote": {
+    "text": "Reminders appear on scheduled days when notifications are allowed.",
+    "desc": "Helper text under the reminder field in the habit editor"
+  },
+  "habitsArchived": {
+    "text": "Habit archived",
+    "desc": "Snackbar after archiving a habit (with undo)"
+  },
+  "habitsNotFound": {
+    "text": "This habit is no longer available",
+    "desc": "Shown when opening a habit that no longer exists"
+  },
+  "habitsLast30": {
+    "text": "Last 30 days",
+    "desc": "Caption for consistency over the last 30 days"
+  },
+  "habitsConsistencyNone": {
+    "text": "Not enough data yet",
+    "desc": "Shown instead of a consistency percent when no scheduled day has passed"
+  },
+  "habitsCalendar": {
+    "text": "Check-in history",
+    "desc": "Section header for the monthly check-in calendar"
+  },
+  "habitsCalendarHint": {
+    "text": "Tap a day to correct it.",
+    "desc": "Hint under the monthly check-in calendar"
+  },
+  "habitsDaySemantics": {
+    "text": "{date}: {count} of {target}",
+    "desc": "Screen reader label for a calendar day cell: date and check-ins out of the daily target",
+    "placeholders": {
+      "date": "String",
+      "count": "int",
+      "target": "int"
+    }
+  },
+  "habitsHeatmapSemantics": {
+    "text": "Check-ins over the last 90 days. Consistency {percent}.",
+    "desc": "Screen reader summary of the habit heatmap",
+    "placeholders": {
+      "percent": "String"
+    }
+  },
+  "habitsHeatmapSemanticsEmpty": {
+    "text": "Check-ins over the last 90 days. Not enough data yet.",
+    "desc": "Screen reader summary of the habit heatmap when there is no data"
+  },
+  "habitsDays": {
+    "text": "{count, plural, =1{1 day} other{{count} days}}",
+    "desc": "A number of days, used for streak lengths",
+    "placeholders": {
+      "count": "int"
+    }
+  },
+  "habitsPausedNote": {
+    "text": "Paused days don't affect your streak.",
+    "desc": "Gentle note shown for paused habits"
+  },
+  "habitsListSeparator": {
+    "text": ", ",
+    "desc": "Separator between weekday names in a habit's schedule summary, e.g. 'Mon, Wed'. Use your language's list comma."
+  },
+  "habitsArchive": {
+    "text": "Archive habit",
+    "desc": "Menu action to archive a habit"
+  },
+  "habitsTimesPerDayValue": {
+    "text": "{count, plural, =1{Once a day} other{{count} times a day}}",
+    "desc": "Shows a habit's daily target",
+    "placeholders": {
+      "count": "int"
+    }
+  }
+}

@@ -61,8 +61,7 @@ abstract final class FocusEngine {
     String? projectId,
     int completedWorkCycles = 0,
   }) {
-    final needsTarget =
-        mode == FocusMode.pomodoro || mode == FocusMode.countdown;
+    final needsTarget = mode == FocusMode.pomodoro || mode == FocusMode.countdown;
     if (needsTarget && (plannedSeconds == null || plannedSeconds <= 0)) {
       throw ArgumentError.value(plannedSeconds, 'plannedSeconds');
     }
@@ -126,10 +125,7 @@ abstract final class FocusEngine {
     if (s.phase == FocusPhase.work) {
       final cycles = s.completedWorkCycles + 1;
       final long = cycles % config.longBreakEvery == 0;
-      return (
-        phase: long ? FocusPhase.longBreak : FocusPhase.shortBreak,
-        cycles: cycles,
-      );
+      return (phase: long ? FocusPhase.longBreak : FocusPhase.shortBreak, cycles: cycles);
     }
     final cycles = s.phase == FocusPhase.longBreak ? 0 : s.completedWorkCycles;
     return (phase: FocusPhase.work, cycles: cycles);

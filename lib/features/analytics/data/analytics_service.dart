@@ -68,8 +68,12 @@ class AnalyticsSnapshot {
   final List<DayValue> tasksCompletedByDay;
   final int tasksCompleted;
 
-  /// Tasks whose due date falls in the range.
+  /// Tasks due in the range that are already decided: completed, or past
+  /// their deadline while still open. Tasks due later today that are still
+  /// open are not counted yet.
   final int tasksDue;
+
+  /// Of [tasksDue], those completed no later than their deadline.
   final int tasksDueCompleted;
 
   /// Sum of user estimates for tasks completed in range (estimated, not
@@ -86,8 +90,7 @@ class AnalyticsSnapshot {
   final List<ProjectSlice> focusByProject;
   final List<ProjectCompletion> projects;
 
-  double? get completionRate =>
-      tasksDue == 0 ? null : tasksDueCompleted / tasksDue;
+  double? get completionRate => tasksDue == 0 ? null : tasksDueCompleted / tasksDue;
 }
 
 class AnalyticsService {
@@ -118,25 +121,35 @@ class AnalyticsService {
       sums[k] = (sums[k] ?? 0) + v;
     }
     final out = <DayValue>[];
-    for (
-      var d = Days.startOfDay(from);
-      d.isBefore(to);
-      d = Days.addDays(d, 1)
-    ) {
+    for (var d = Days.startOfDay(from); d.isBefore(to); d = Days.addDays(d, 1)) {
       out.add(DayValue(d, sums[Days.key(d)] ?? 0));
     }
     return out;
   }
 
+  /// The moment a task becomes late: its due time, or the end of the due
+  /// day when no time of day was set.
+  static DateTime deadlineOf(TaskRow t) {
+    final due = t.dueAt!.toLocal();
+    return t.dueHasTime ? due : Days.addDays(Days.startOfDay(due), 1);
+  }
+
+  /// True when [t] was completed no later than its deadline.
+  static bool completedOnTime(TaskRow t) =>
+      t.done &&
+      t.dueAt != null &&
+      t.completedAt != null &&
+      !t.completedAt!.toLocal().isAfter(deadlineOf(t));
+
   Future<AnalyticsSnapshot> compute(AnalyticsRange range) async {
     final (from, to) = window(range);
+    final now = _clock.now();
     final fromUtc = from.toUtc(), toUtc = to.toUtc();
 
     final sessions =
         await (_db.select(_db.focusSessions)..where(
               (s) =>
-                  s.startedAt.isBiggerOrEqualValue(fromUtc) &
-                  s.startedAt.isSmallerThanValue(toUtc),
+                  s.startedAt.isBiggerOrEqualValue(fromUtc) & s.startedAt.isSmallerThanValue(toUtc),
             ))
             .get();
     final work = sessions.where((s) => s.phase == 'work').toList();
@@ -176,9 +189,7 @@ class AnalyticsService {
       final today = Days.startOfDay(_clock.now());
       var total = 0.0;
       for (final h in habits) {
-        final counts = {
-          for (final l in logs.where((l) => l.habitId == h.id)) l.day: l.count,
-        };
+        final counts = {for (final l in logs.where((l) => l.habitId == h.id)) l.day: l.count};
         final created = Days.startOfDay(h.createdAt.toLocal());
         final start = created.isAfter(from) ? created : from;
         total += HabitMath.consistency(
@@ -200,21 +211,15 @@ class AnalyticsService {
                   r.reviewedAt.isSmallerThanValue(toUtc),
             ))
             .get();
-    final matureAnswers = reviews
-        .where((r) => r.stateBefore == 'review')
-        .toList();
+    final matureAnswers = reviews.where((r) => r.stateBefore == 'review').toList();
     final retention = matureAnswers.isEmpty
         ? null
-        : matureAnswers.where((r) => r.rating > 1).length /
-              matureAnswers.length;
+        : matureAnswers.where((r) => r.rating > 1).length / matureAnswers.length;
 
     final activeGoals =
         await (_db.selectOnly(_db.goals)
               ..addColumns([_db.goals.id.count()])
-              ..where(
-                _db.goals.deletedAt.isNull() &
-                    _db.goals.status.equals('active'),
-              ))
+              ..where(_db.goals.deletedAt.isNull() & _db.goals.status.equals('active')))
             .map((r) => r.read(_db.goals.id.count()) ?? 0)
             .getSingle();
 
@@ -269,12 +274,9 @@ class AnalyticsService {
         completedTasks.map((t) => (t.completedAt!.toLocal(), 1.0)),
       ),
       tasksCompleted: completedTasks.length,
-      tasksDue: dueTasks.length,
-      tasksDueCompleted: dueTasks.where((t) => t.done).length,
-      estimatedMinutesCompleted: completedTasks.fold(
-        0,
-        (a, t) => a + (t.estimateMinutes ?? 0),
-      ),
+      tasksDue: dueTasks.where((t) => t.done || !deadlineOf(t).isAfter(now)).length,
+      tasksDueCompleted: dueTasks.where(completedOnTime).length,
+      estimatedMinutesCompleted: completedTasks.fold(0, (a, t) => a + (t.estimateMinutes ?? 0)),
       habitConsistency: habitConsistency,
       reviewCount: reviews.length,
       retention: retention,

@@ -1,0 +1,54 @@
+{
+  "focusSessionDeleted": {
+    "text": "Session deleted",
+    "desc": "Snackbar after deleting a focus session from history"
+  },
+  "focusDeleteConfirm": {
+    "text": "Delete this session from your history? Its time will no longer count toward your targets.",
+    "desc": "Confirmation dialog body before deleting a focus session"
+  },
+  "focusUnlinkTask": {
+    "text": "Remove linked task",
+    "desc": "Tooltip for the button that unlinks a task from the focus session"
+  },
+  "focusNoteHint": {
+    "text": "What did you work on?",
+    "desc": "Hint text inside the optional session note field"
+  },
+  "focusTargetCaption": {
+    "text": "Measured from saved sessions",
+    "desc": "Caption under the daily and weekly focus target rings explaining where the numbers come from"
+  },
+  "focusModeLabel": {
+    "text": "Timer mode",
+    "desc": "Screen reader label for the focus mode selector"
+  },
+  "focusUpNext": {
+    "text": "Up next: {phase}",
+    "desc": "Shown between pomodoro phases, e.g. 'Up next: Short break'",
+    "placeholders": {
+      "phase": "String"
+    }
+  },
+  "focusStopwatchHint": {
+    "text": "Counts up until you stop.",
+    "desc": "Explanation shown for the stopwatch focus mode"
+  },
+  "focusOpenHint": {
+    "text": "No time limit. Stop whenever you are done.",
+    "desc": "Explanation shown for the open-ended focus mode"
+  },
+  "focusNotificationsDisabledInApp": {
+    "text": "Reminders are turned off in settings. You will not be alerted when a session ends.",
+    "desc": "Banner on focus screen when the app's own notification setting is off"
+  },
+  "focusHistoryItem": {
+    "text": "{mode}, {duration}, {when}",
+    "desc": "Screen reader summary of a history row: mode name, formatted duration, formatted date and time",
+    "placeholders": {
+      "mode": "String",
+      "duration": "String",
+      "when": "String"
+    }
+  }
+}

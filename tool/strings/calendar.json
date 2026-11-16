@@ -1,0 +1,120 @@
+{
+  "calendarTimeRange": {
+    "text": "{start} – {end}",
+    "desc": "Time range of an event, e.g. '9:00 AM – 10:00 AM'. Keep the order start then end.",
+    "placeholders": {
+      "start": "String",
+      "end": "String"
+    }
+  },
+  "calendarWeekRange": {
+    "text": "{start} – {end}",
+    "desc": "Title of the week view showing the first and last day of the week, e.g. 'Mon, Nov 16 – Sun, Nov 22'",
+    "placeholders": {
+      "start": "String",
+      "end": "String"
+    }
+  },
+  "calendarSeriesMoved": {
+    "text": "All events in this series were moved",
+    "desc": "Snackbar after dragging an occurrence of a repeating event; the whole series moves by the same amount"
+  },
+  "calendarEventReminder": {
+    "text": "Reminder",
+    "desc": "Field label in the event editor: when to remind before the event"
+  },
+  "calendarEventRepeat": {
+    "text": "Repeat",
+    "desc": "Field label in the event editor: repeat rule"
+  },
+  "calendarEventColor": {
+    "text": "Color",
+    "desc": "Field label in the event editor: event color"
+  },
+  "calendarDefaultColor": {
+    "text": "Use type color",
+    "desc": "Button that removes the custom color so the event uses the default color of its type"
+  },
+  "calendarEventLinkedTask": {
+    "text": "Linked task",
+    "desc": "Field label in the event editor: a task this event is scheduled for"
+  },
+  "calendarEventNoTask": {
+    "text": "No linked task",
+    "desc": "Placeholder when the event is not linked to a task"
+  },
+  "calendarEventsCount": {
+    "text": "{count, plural, =0{No events} =1{1 event} other{{count} events}}",
+    "desc": "Screen reader: number of events on a day",
+    "placeholders": {
+      "count": "int"
+    }
+  },
+  "calendarTasksDueCount": {
+    "text": "{count, plural, =0{no tasks due} =1{1 task due} other{{count} tasks due}}",
+    "desc": "Screen reader: number of tasks due on a day",
+    "placeholders": {
+      "count": "int"
+    }
+  },
+  "calendarDaySemantics": {
+    "text": "{date}. {events}, {tasks}",
+    "desc": "Screen reader label for a day in the month grid. date is a full date, events and tasks are the counts phrases",
+    "placeholders": {
+      "date": "String",
+      "events": "String",
+      "tasks": "String"
+    }
+  },
+  "calendarNoEventsHint": {
+    "text": "Add an event or a time block to plan this day.",
+    "desc": "Message shown under 'Nothing scheduled' for an empty day"
+  },
+  "calendarNow": {
+    "text": "Current time",
+    "desc": "Screen reader label for the line marking the current time in the day/week grid"
+  },
+  "calendarRecurring": {
+    "text": "Repeats",
+    "desc": "Screen reader / tooltip: this event repeats"
+  },
+  "calendarEventNotFound": {
+    "text": "This event no longer exists",
+    "desc": "Shown when opening an event that was deleted"
+  },
+  "calendarEventLocalTime": {
+    "text": "Times are shown in your device's time zone",
+    "desc": "Helper text in the event editor"
+  },
+  "calendarEventDeleted": {
+    "text": "Event moved to trash",
+    "desc": "Snackbar after deleting an event"
+  },
+  "calendarConflictMarker": {
+    "text": "Overlaps another event",
+    "desc": "Screen reader / tooltip on an event that overlaps another one"
+  },
+  "calendarEventSemantics": {
+    "text": "{title}, {time}",
+    "desc": "Screen reader label for an event block: event title followed by its time range",
+    "placeholders": {
+      "title": "String",
+      "time": "String"
+    }
+  },
+  "calendarSeriesEditNote": {
+    "text": "Changes apply to every event in this series",
+    "desc": "Helper text in the event editor when editing a repeating event"
+  },
+  "calendarDragHintSeries": {
+    "text": "Dragging a repeating event moves the whole series",
+    "desc": "Hint shown in week/day view about drag-and-drop on repeating events"
+  },
+  "calendarTaskDueSemantics": {
+    "text": "{title}, task due",
+    "desc": "Screen reader label for a task shown in the calendar on its due date",
+    "placeholders": {
+      "title": "String"
+    }
+  }
+}

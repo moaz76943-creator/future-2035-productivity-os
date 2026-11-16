@@ -2762,6 +2762,406 @@
   "@a11ySelected": {
     "description": "Screen reader state"
   },
+  "analyticsRangeLabel": "Time range",
+  "@analyticsRangeLabel": {
+    "description": "Accessibility label for the Insights time range selector"
+  },
+  "analyticsRefresh": "Refresh",
+  "@analyticsRefresh": {
+    "description": "Tooltip: recompute the Insights numbers"
+  },
+  "analyticsOnTimeDetail": "{done} of {total} due tasks done on time",
+  "@analyticsOnTimeDetail": {
+    "description": "Caption under the on-time completion rate",
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "analyticsProjectTasks": "{done} of {total} tasks done",
+  "@analyticsProjectTasks": {
+    "description": "Progress caption for a project in Insights",
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "analyticsNoProjects": "No active projects",
+  "@analyticsNoProjects": {
+    "description": "Shown in Insights when there are no projects"
+  },
+  "analyticsNoFocus": "No focus sessions in this range",
+  "@analyticsNoFocus": {
+    "description": "Shown in Insights when no focus time was recorded for the range"
+  },
+  "analyticsHabitsNone": "No active habits",
+  "@analyticsHabitsNone": {
+    "description": "Caption under habit consistency when there are no active habits"
+  },
+  "analyticsRetentionNote": "Share of mature cards you remembered",
+  "@analyticsRetentionNote": {
+    "description": "Caption explaining card retention"
+  },
+  "analyticsBarValue": "{name}: {value}",
+  "@analyticsBarValue": {
+    "description": "Accessibility label for one bar in the time-by-project chart",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "assistantWorkloadRule": "Free time counts {start}–{end} on workdays ({days}), minus timed events. Estimated work is the sum of estimates of open tasks due in the next 7 days.",
+  "@assistantWorkloadRule": {
+    "description": "Explains how the workload overview is calculated. start/end are formatted times, days is a localized weekday range",
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      },
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "assistantWorkdaysMonFri": "Monday–Friday",
+  "@assistantWorkdaysMonFri": {
+    "description": "Workday range used by the workload overview"
+  },
+  "assistantWorkdaysSunThu": "Sunday–Thursday",
+  "@assistantWorkdaysSunThu": {
+    "description": "Workday range used by the workload overview"
+  },
+  "assistantWorkloadDayOff": "Day off",
+  "@assistantWorkloadDayOff": {
+    "description": "Workload overview: a non-working day"
+  },
+  "assistantWorkloadDay": "{estimated} planned · {free} free",
+  "@assistantWorkloadDay": {
+    "description": "Workload overview row for one day",
+    "placeholders": {
+      "estimated": {
+        "type": "String"
+      },
+      "free": {
+        "type": "String"
+      }
+    }
+  },
+  "assistantPlanRule": "Planned from now until {end}, around today's events. Overdue tasks first, then priority, due date and estimate.",
+  "@assistantPlanRule": {
+    "description": "Explains the plan-my-day rule; end is a formatted time",
+    "placeholders": {
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "assistantTimeRange": "{start} – {end}",
+  "@assistantTimeRange": {
+    "description": "Time range, e.g. 10:00 – 10:30",
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "assistantScheduleBlocks": "Schedule as time blocks",
+  "@assistantScheduleBlocks": {
+    "description": "Button: add the planned tasks to today's calendar as time blocks"
+  },
+  "assistantScheduleConfirmTitle": "Add time blocks to your calendar?",
+  "@assistantScheduleConfirmTitle": {
+    "description": "Confirmation dialog title"
+  },
+  "assistantScheduleConfirmBody": "{count, plural, =1{1 time block will be added to today's calendar.} other{{count} time blocks will be added to today's calendar.}}",
+  "@assistantScheduleConfirmBody": {
+    "description": "Confirmation dialog message",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "assistantScheduled": "{count, plural, =1{1 time block added} other{{count} time blocks added}}",
+  "@assistantScheduled": {
+    "description": "Message after time blocks were created",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "assistantAlreadyScheduled": "Already on your calendar",
+  "@assistantAlreadyScheduled": {
+    "description": "Section: tasks that already have a time block today"
+  },
+  "assistantPlanTimeline": "Fits today",
+  "@assistantPlanTimeline": {
+    "description": "Section: tasks placed into today's free time"
+  },
+  "assistantNoEstimate": "Add an estimate to plan these",
+  "@assistantNoEstimate": {
+    "description": "Section: tasks without a time estimate"
+  },
+  "assistantNoNotes": "No notes yet. Write a note first.",
+  "@assistantNoNotes": {
+    "description": "Shown when choosing a note but none exist"
+  },
+  "assistantNoteEmpty": "This note is empty.",
+  "@assistantNoteEmpty": {
+    "description": "Shown when the chosen note has no text"
+  },
+  "assistantTasksCreated": "{count, plural, =1{1 task created} other{{count} tasks created}}",
+  "@assistantTasksCreated": {
+    "description": "Message after creating tasks from a note",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "assistantCardsCreated": "{count, plural, =1{1 card created} other{{count} cards created}}",
+  "@assistantCardsCreated": {
+    "description": "Message after creating flashcards from a note",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "assistantCreateSelected": "{count, plural, =0{Nothing selected} =1{Create 1} other{Create {count}}}",
+  "@assistantCreateSelected": {
+    "description": "Button creating the selected extracted items",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "assistantExtractHint": "Recognized: unchecked checkboxes \"- [ ]\" and lines starting with TODO: or To do:",
+  "@assistantExtractHint": {
+    "description": "Explains which lines become tasks"
+  },
+  "assistantCardsHint": "Recognized: \"term: definition\", \"term — definition\" and Q:/A: line pairs",
+  "@assistantCardsHint": {
+    "description": "Explains which lines become flashcards"
+  },
+  "assistantProviderHint": "Use any OpenAI-compatible service. The key stays in this device's secure storage and is never included in backups.",
+  "@assistantProviderHint": {
+    "description": "Explanation under the AI provider settings"
+  },
+  "assistantEndpointHelp": "For example https://api.example.com/v1",
+  "@assistantEndpointHelp": {
+    "description": "Helper text for the endpoint field"
+  },
+  "assistantApiKeyKeep": "Leave empty to keep the stored key",
+  "@assistantApiKeyKeep": {
+    "description": "Helper text for the API key field when a key is already stored"
+  },
+  "assistantApiKeyRequired": "Enter an API key",
+  "@assistantApiKeyRequired": {
+    "description": "Validation error for the API key field"
+  },
+  "assistantProviderSaved": "Provider saved",
+  "@assistantProviderSaved": {
+    "description": "Message after saving the AI provider"
+  },
+  "assistantProviderRemoved": "Provider removed and key deleted",
+  "@assistantProviderRemoved": {
+    "description": "Message after removing the AI provider"
+  },
+  "assistantRemoveProviderConfirm": "Remove the provider and delete the stored API key from this device?",
+  "@assistantRemoveProviderConfirm": {
+    "description": "Confirmation dialog message"
+  },
+  "assistantAskEveryTime": "Ask before every request",
+  "@assistantAskEveryTime": {
+    "description": "Switch: show the consent dialog before each request to the AI provider"
+  },
+  "assistantSummarizing": "Summarizing…",
+  "@assistantSummarizing": {
+    "description": "Progress label while waiting for the AI provider"
+  },
+  "assistantSummaryNote": "Generated by {host}. Review before relying on it.",
+  "@assistantSummaryNote": {
+    "description": "Caption under an AI-generated summary",
+    "placeholders": {
+      "host": {
+        "type": "String"
+      }
+    }
+  },
+  "assistantCopy": "Copy",
+  "@assistantCopy": {
+    "description": "Button: copy the summary to the clipboard"
+  },
+  "assistantCopied": "Copied",
+  "@assistantCopied": {
+    "description": "Message after copying"
+  },
+  "assistantConfigure": "Set up provider",
+  "@assistantConfigure": {
+    "description": "Button opening the AI provider settings"
+  },
+  "calendarTimeRange": "{start} – {end}",
+  "@calendarTimeRange": {
+    "description": "Time range of an event, e.g. '9:00 AM – 10:00 AM'. Keep the order start then end.",
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "calendarWeekRange": "{start} – {end}",
+  "@calendarWeekRange": {
+    "description": "Title of the week view showing the first and last day of the week, e.g. 'Mon, Nov 16 – Sun, Nov 22'",
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "calendarSeriesMoved": "All events in this series were moved",
+  "@calendarSeriesMoved": {
+    "description": "Snackbar after dragging an occurrence of a repeating event; the whole series moves by the same amount"
+  },
+  "calendarEventReminder": "Reminder",
+  "@calendarEventReminder": {
+    "description": "Field label in the event editor: when to remind before the event"
+  },
+  "calendarEventRepeat": "Repeat",
+  "@calendarEventRepeat": {
+    "description": "Field label in the event editor: repeat rule"
+  },
+  "calendarEventColor": "Color",
+  "@calendarEventColor": {
+    "description": "Field label in the event editor: event color"
+  },
+  "calendarDefaultColor": "Use type color",
+  "@calendarDefaultColor": {
+    "description": "Button that removes the custom color so the event uses the default color of its type"
+  },
+  "calendarEventLinkedTask": "Linked task",
+  "@calendarEventLinkedTask": {
+    "description": "Field label in the event editor: a task this event is scheduled for"
+  },
+  "calendarEventNoTask": "No linked task",
+  "@calendarEventNoTask": {
+    "description": "Placeholder when the event is not linked to a task"
+  },
+  "calendarEventsCount": "{count, plural, =0{No events} =1{1 event} other{{count} events}}",
+  "@calendarEventsCount": {
+    "description": "Screen reader: number of events on a day",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "calendarTasksDueCount": "{count, plural, =0{no tasks due} =1{1 task due} other{{count} tasks due}}",
+  "@calendarTasksDueCount": {
+    "description": "Screen reader: number of tasks due on a day",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "calendarDaySemantics": "{date}. {events}, {tasks}",
+  "@calendarDaySemantics": {
+    "description": "Screen reader label for a day in the month grid. date is a full date, events and tasks are the counts phrases",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "events": {
+        "type": "String"
+      },
+      "tasks": {
+        "type": "String"
+      }
+    }
+  },
+  "calendarNoEventsHint": "Add an event or a time block to plan this day.",
+  "@calendarNoEventsHint": {
+    "description": "Message shown under 'Nothing scheduled' for an empty day"
+  },
+  "calendarNow": "Current time",
+  "@calendarNow": {
+    "description": "Screen reader label for the line marking the current time in the day/week grid"
+  },
+  "calendarRecurring": "Repeats",
+  "@calendarRecurring": {
+    "description": "Screen reader / tooltip: this event repeats"
+  },
+  "calendarEventNotFound": "This event no longer exists",
+  "@calendarEventNotFound": {
+    "description": "Shown when opening an event that was deleted"
+  },
+  "calendarEventLocalTime": "Times are shown in your device's time zone",
+  "@calendarEventLocalTime": {
+    "description": "Helper text in the event editor"
+  },
+  "calendarEventDeleted": "Event moved to trash",
+  "@calendarEventDeleted": {
+    "description": "Snackbar after deleting an event"
+  },
+  "calendarConflictMarker": "Overlaps another event",
+  "@calendarConflictMarker": {
+    "description": "Screen reader / tooltip on an event that overlaps another one"
+  },
+  "calendarEventSemantics": "{title}, {time}",
+  "@calendarEventSemantics": {
+    "description": "Screen reader label for an event block: event title followed by its time range",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "calendarSeriesEditNote": "Changes apply to every event in this series",
+  "@calendarSeriesEditNote": {
+    "description": "Helper text in the event editor when editing a repeating event"
+  },
+  "calendarDragHintSeries": "Dragging a repeating event moves the whole series",
+  "@calendarDragHintSeries": {
+    "description": "Hint shown in week/day view about drag-and-drop on repeating events"
+  },
+  "calendarTaskDueSemantics": "{title}, task due",
+  "@calendarTaskDueSemantics": {
+    "description": "Screen reader label for a task shown in the calendar on its due date",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
   "startupErrorTitle": "Your data could not be opened",
   "@startupErrorTitle": {
     "description": "Title of the screen shown when the encrypted database cannot be opened at launch"
@@ -2777,5 +3177,1116 @@
   "startupErrorRetry": "Try again",
   "@startupErrorRetry": {
     "description": "Button to retry opening the data"
+  },
+  "flashcardsDueBanner": "{count, plural, =1{1 card is due for review} other{{count} cards are due for review}}",
+  "@flashcardsDueBanner": {
+    "description": "Banner on the decks screen with the number of due cards across all decks",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "flashcardsDueCount": "{count} due",
+  "@flashcardsDueCount": {
+    "description": "Compact pill on a deck: number of cards due for review",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "flashcardsNewCount": "{count} new",
+  "@flashcardsNewCount": {
+    "description": "Compact pill on a deck: number of cards never studied",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "flashcardsMatureRing": "Mature cards: {percent}",
+  "@flashcardsMatureRing": {
+    "description": "Screen reader label for the ring showing the share of mature cards (interval of 21 days or more). percent is a formatted percentage",
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "flashcardsValidationNonNegative": "Enter 0 or more",
+  "@flashcardsValidationNonNegative": {
+    "description": "Form validation for the daily new card limit"
+  },
+  "flashcardsSearchCards": "Search cards",
+  "@flashcardsSearchCards": {
+    "description": "Hint of the search field in a deck"
+  },
+  "flashcardsSearchEmpty": "No cards match your search",
+  "@flashcardsSearchEmpty": {
+    "description": "Shown when the card search has no results"
+  },
+  "flashcardsCardAdded": "Card added",
+  "@flashcardsCardAdded": {
+    "description": "Confirmation after saving a card with Save and add another"
+  },
+  "flashcardsCardDueOn": "Due {date}",
+  "@flashcardsCardDueOn": {
+    "description": "When a card is next due; date is a formatted relative day such as Today or Nov 18",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "flashcardsCopyToClipboard": "Copy to clipboard",
+  "@flashcardsCopyToClipboard": {
+    "description": "Export option: copy the deck file text"
+  },
+  "flashcardsExportTitle": "Export deck",
+  "@flashcardsExportTitle": {
+    "description": "Title of the export options sheet"
+  },
+  "flashcardsDeleteDeck": "Delete deck",
+  "@flashcardsDeleteDeck": {
+    "description": "Menu item"
+  },
+  "flashcardsRatingA11y": "{rating}, next review in {interval}",
+  "@flashcardsRatingA11y": {
+    "description": "Screen reader label for a review rating button; rating is e.g. Good, interval e.g. 10 min or 4 days",
+    "placeholders": {
+      "rating": {
+        "type": "String"
+      },
+      "interval": {
+        "type": "String"
+      }
+    }
+  },
+  "flashcardsQuestionA11y": "Question: {text}",
+  "@flashcardsQuestionA11y": {
+    "description": "Screen reader label of the card front during review",
+    "placeholders": {
+      "text": {
+        "type": "String"
+      }
+    }
+  },
+  "flashcardsAnswerA11y": "Answer: {text}",
+  "@flashcardsAnswerA11y": {
+    "description": "Screen reader label of the card back during review",
+    "placeholders": {
+      "text": {
+        "type": "String"
+      }
+    }
+  },
+  "flashcardsShowQuestion": "Show question",
+  "@flashcardsShowQuestion": {
+    "description": "Screen reader hint to flip the card back to the front"
+  },
+  "flashcardsImportField": "Cards to import",
+  "@flashcardsImportField": {
+    "description": "Label of the multi-line import field"
+  },
+  "flashcardsNothingToStudy": "Nothing to study",
+  "@flashcardsNothingToStudy": {
+    "description": "Title when the review queue is empty"
+  },
+  "flashcardsReadyCount": "{count, plural, =0{No cards ready} =1{1 card ready to study} other{{count} cards ready to study}}",
+  "@flashcardsReadyCount": {
+    "description": "Size of today's study queue under the deck header",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "flashcardsByRating": "By rating",
+  "@flashcardsByRating": {
+    "description": "Section title in the review summary listing how many times each rating was given"
+  },
+  "flashcardsDeckNotFound": "This deck is no longer available.",
+  "@flashcardsDeckNotFound": {
+    "description": "Shown when opening a deleted or missing deck"
+  },
+  "focusSessionDeleted": "Session deleted",
+  "@focusSessionDeleted": {
+    "description": "Snackbar after deleting a focus session from history"
+  },
+  "focusDeleteConfirm": "Delete this session from your history? Its time will no longer count toward your targets.",
+  "@focusDeleteConfirm": {
+    "description": "Confirmation dialog body before deleting a focus session"
+  },
+  "focusUnlinkTask": "Remove linked task",
+  "@focusUnlinkTask": {
+    "description": "Tooltip for the button that unlinks a task from the focus session"
+  },
+  "focusNoteHint": "What did you work on?",
+  "@focusNoteHint": {
+    "description": "Hint text inside the optional session note field"
+  },
+  "focusTargetCaption": "Measured from saved sessions",
+  "@focusTargetCaption": {
+    "description": "Caption under the daily and weekly focus target rings explaining where the numbers come from"
+  },
+  "focusModeLabel": "Timer mode",
+  "@focusModeLabel": {
+    "description": "Screen reader label for the focus mode selector"
+  },
+  "focusUpNext": "Up next: {phase}",
+  "@focusUpNext": {
+    "description": "Shown between pomodoro phases, e.g. 'Up next: Short break'",
+    "placeholders": {
+      "phase": {
+        "type": "String"
+      }
+    }
+  },
+  "focusStopwatchHint": "Counts up until you stop.",
+  "@focusStopwatchHint": {
+    "description": "Explanation shown for the stopwatch focus mode"
+  },
+  "focusOpenHint": "No time limit. Stop whenever you are done.",
+  "@focusOpenHint": {
+    "description": "Explanation shown for the open-ended focus mode"
+  },
+  "focusNotificationsDisabledInApp": "Reminders are turned off in settings. You will not be alerted when a session ends.",
+  "@focusNotificationsDisabledInApp": {
+    "description": "Banner on focus screen when the app's own notification setting is off"
+  },
+  "focusHistoryItem": "{mode}, {duration}, {when}",
+  "@focusHistoryItem": {
+    "description": "Screen reader summary of a history row: mode name, formatted duration, formatted date and time",
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      },
+      "duration": {
+        "type": "String"
+      },
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "goalsFilterAll": "All",
+  "@goalsFilterAll": {
+    "description": "Filter chip on the goals screen: show goals of every period or status"
+  },
+  "goalsFilterPeriod": "Period filter",
+  "@goalsFilterPeriod": {
+    "description": "Screen reader label for the row of period filter chips on the goals screen"
+  },
+  "goalsFilterStatus": "Status filter",
+  "@goalsFilterStatus": {
+    "description": "Screen reader label for the status filter on the goals screen"
+  },
+  "goalsEmptyFiltered": "No goals match this filter",
+  "@goalsEmptyFiltered": {
+    "description": "Shown when goals exist but none match the selected filters"
+  },
+  "goalsDueOn": "Due {date}",
+  "@goalsDueOn": {
+    "description": "Goal deadline shown on a goal card, e.g. 'Due Nov 30, 2026'",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "goalsDeadline": "Deadline (optional)",
+  "@goalsDeadline": {
+    "description": "Field label in the goal editor"
+  },
+  "goalsNoDeadline": "No deadline",
+  "@goalsNoDeadline": {
+    "description": "Shown in the goal editor when no deadline is set"
+  },
+  "goalsSetDeadline": "Set deadline",
+  "@goalsSetDeadline": {
+    "description": "Button in the goal editor to choose a deadline date"
+  },
+  "goalsRemoveDeadline": "Remove deadline",
+  "@goalsRemoveDeadline": {
+    "description": "Tooltip for clearing the deadline in the goal editor"
+  },
+  "goalsDescription": "Description (optional)",
+  "@goalsDescription": {
+    "description": "Field label in the goal editor"
+  },
+  "goalsTitleLabel": "Title",
+  "@goalsTitleLabel": {
+    "description": "Field label for the goal title in the goal editor"
+  },
+  "goalsAmountWithUnit": "{amount} {unit}",
+  "@goalsAmountWithUnit": {
+    "description": "A number followed by the goal's unit, e.g. '12 pages'. Reorder if your language puts the unit first.",
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "goalsCardSemantics": "{title}, {progress}, {status}",
+  "@goalsCardSemantics": {
+    "description": "Screen reader label for a goal card: title, progress such as '3 of 10', and status such as 'Active'",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "progress": {
+        "type": "String"
+      },
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "goalsReached": "Target reached",
+  "@goalsReached": {
+    "description": "Shown when progress in the current period meets the target"
+  },
+  "goalsLogged": "Progress logged",
+  "@goalsLogged": {
+    "description": "Snackbar after adding a goal progress entry"
+  },
+  "goalsEntryDeleted": "Entry removed",
+  "@goalsEntryDeleted": {
+    "description": "Snackbar after deleting a goal progress entry (with undo)"
+  },
+  "goalsDeleteEntry": "Remove entry",
+  "@goalsDeleteEntry": {
+    "description": "Tooltip for deleting one goal progress entry"
+  },
+  "goalsDeleted": "Goal deleted",
+  "@goalsDeleted": {
+    "description": "Snackbar after deleting a goal (with undo)"
+  },
+  "goalsMarkActive": "Mark as active",
+  "@goalsMarkActive": {
+    "description": "Menu action to make an achieved or paused goal active again"
+  },
+  "goalsNotFound": "This goal is no longer available",
+  "@goalsNotFound": {
+    "description": "Shown when opening a goal that was deleted"
+  },
+  "goalsLinkTask": "Link a task",
+  "@goalsLinkTask": {
+    "description": "Button to link an existing task to a goal"
+  },
+  "goalsNoLinkedTasks": "No linked tasks yet",
+  "@goalsNoLinkedTasks": {
+    "description": "Empty state of the linked tasks section of a goal"
+  },
+  "goalsUnlinkTask": "Unlink task",
+  "@goalsUnlinkTask": {
+    "description": "Tooltip for removing the link between a task and a goal"
+  },
+  "goalsTaskOpen": "Not completed yet",
+  "@goalsTaskOpen": {
+    "description": "Screen reader state of a linked task that is not done"
+  },
+  "goalsTaskLinked": "Task linked",
+  "@goalsTaskLinked": {
+    "description": "Snackbar after linking a task to a goal"
+  },
+  "goalsTaskUnlinked": "Task unlinked",
+  "@goalsTaskUnlinked": {
+    "description": "Snackbar after unlinking a task from a goal (with undo)"
+  },
+  "goalsFromTasks": "Includes {count, plural, =1{1 completed linked task} other{{count} completed linked tasks}} this period",
+  "@goalsFromTasks": {
+    "description": "Note under the goal progress ring explaining contributions from completed linked tasks",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "goalsHistoryAllTime": "Entries from earlier periods are kept here but count only toward their own period.",
+  "@goalsHistoryAllTime": {
+    "description": "Explanation under the goal history header for non-long-term goals"
+  },
+  "goalsPercentOfTarget": "{percent} of target",
+  "@goalsPercentOfTarget": {
+    "description": "Under the progress ring, e.g. '40% of target'",
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "habitsTodaySummary": "{done} of {total} done today",
+  "@habitsTodaySummary": {
+    "description": "Summary at the top of the habits screen: habits completed today out of habits scheduled today",
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "habitsNothingToday": "No habits are scheduled for today",
+  "@habitsNothingToday": {
+    "description": "Shown when habits exist but none is scheduled today"
+  },
+  "habitsDecrease": "Remove one check-in",
+  "@habitsDecrease": {
+    "description": "Action in the check-in menu that lowers today's count by one"
+  },
+  "habitsResetToday": "Reset today",
+  "@habitsResetToday": {
+    "description": "Action in the check-in menu that sets today's count to zero"
+  },
+  "habitsCheckInHint": "Long-press to adjust",
+  "@habitsCheckInHint": {
+    "description": "Screen reader hint on the habit check-in button"
+  },
+  "habitsName": "Name",
+  "@habitsName": {
+    "description": "Field label in the habit editor"
+  },
+  "habitsColor": "Color",
+  "@habitsColor": {
+    "description": "Field label in the habit editor"
+  },
+  "habitsValidationDays": "Choose at least one day",
+  "@habitsValidationDays": {
+    "description": "Validation message when no weekday is selected in the habit schedule"
+  },
+  "habitsReminderAt": "Every day at {time}",
+  "@habitsReminderAt": {
+    "description": "Selected daily reminder time in the habit editor",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "habitsSetReminder": "Set a reminder time",
+  "@habitsSetReminder": {
+    "description": "Button in the habit editor to choose a daily reminder time"
+  },
+  "habitsRemoveReminder": "Remove reminder",
+  "@habitsRemoveReminder": {
+    "description": "Tooltip to clear the habit's daily reminder"
+  },
+  "habitsReminderNote": "Reminders appear on scheduled days when notifications are allowed.",
+  "@habitsReminderNote": {
+    "description": "Helper text under the reminder field in the habit editor"
+  },
+  "habitsArchived": "Habit archived",
+  "@habitsArchived": {
+    "description": "Snackbar after archiving a habit (with undo)"
+  },
+  "habitsNotFound": "This habit is no longer available",
+  "@habitsNotFound": {
+    "description": "Shown when opening a habit that no longer exists"
+  },
+  "habitsLast30": "Last 30 days",
+  "@habitsLast30": {
+    "description": "Caption for consistency over the last 30 days"
+  },
+  "habitsConsistencyNone": "Not enough data yet",
+  "@habitsConsistencyNone": {
+    "description": "Shown instead of a consistency percent when no scheduled day has passed"
+  },
+  "habitsCalendar": "Check-in history",
+  "@habitsCalendar": {
+    "description": "Section header for the monthly check-in calendar"
+  },
+  "habitsCalendarHint": "Tap a day to correct it.",
+  "@habitsCalendarHint": {
+    "description": "Hint under the monthly check-in calendar"
+  },
+  "habitsDaySemantics": "{date}: {count} of {target}",
+  "@habitsDaySemantics": {
+    "description": "Screen reader label for a calendar day cell: date and check-ins out of the daily target",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "habitsHeatmapSemantics": "Check-ins over the last 90 days. Consistency {percent}.",
+  "@habitsHeatmapSemantics": {
+    "description": "Screen reader summary of the habit heatmap",
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "habitsHeatmapSemanticsEmpty": "Check-ins over the last 90 days. Not enough data yet.",
+  "@habitsHeatmapSemanticsEmpty": {
+    "description": "Screen reader summary of the habit heatmap when there is no data"
+  },
+  "habitsDays": "{count, plural, =1{1 day} other{{count} days}}",
+  "@habitsDays": {
+    "description": "A number of days, used for streak lengths",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "habitsPausedNote": "Paused days don't affect your streak.",
+  "@habitsPausedNote": {
+    "description": "Gentle note shown for paused habits"
+  },
+  "habitsListSeparator": ", ",
+  "@habitsListSeparator": {
+    "description": "Separator between weekday names in a habit's schedule summary, e.g. 'Mon, Wed'. Use your language's list comma."
+  },
+  "habitsArchive": "Archive habit",
+  "@habitsArchive": {
+    "description": "Menu action to archive a habit"
+  },
+  "habitsTimesPerDayValue": "{count, plural, =1{Once a day} other{{count} times a day}}",
+  "@habitsTimesPerDayValue": {
+    "description": "Shows a habit's daily target",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "notesSectionOthers": "Other notes",
+  "@notesSectionOthers": {
+    "description": "Notes list: section header for notes that are not pinned"
+  },
+  "notesAllNotebooks": "All notebooks",
+  "@notesAllNotebooks": {
+    "description": "Notes list: filter chip showing notes from every notebook"
+  },
+  "notesNotebookName": "Notebook name",
+  "@notesNotebookName": {
+    "description": "Field label when creating a notebook"
+  },
+  "notesNotebookColor": "Color",
+  "@notesNotebookColor": {
+    "description": "Label above the color choices when creating a notebook"
+  },
+  "notesDeleteNotebook": "Delete notebook",
+  "@notesDeleteNotebook": {
+    "description": "Action to delete a notebook"
+  },
+  "notesDeleteNotebookMessage": "The notebook is removed. Its notes are kept and appear under All notebooks.",
+  "@notesDeleteNotebookMessage": {
+    "description": "Confirmation message when deleting a notebook"
+  },
+  "notesTagFilter": "#{tag}",
+  "@notesTagFilter": {
+    "description": "Chip showing a note tag; keep the # sign",
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "notesEmptyPinned": "Pin important notes to keep them at the top.",
+  "@notesEmptyPinned": {
+    "description": "Empty state for the pinned notes view"
+  },
+  "notesEmptyFavorites": "Notes you mark as favorite appear here.",
+  "@notesEmptyFavorites": {
+    "description": "Empty state for the favorite notes view"
+  },
+  "notesEmptyArchived": "Archived notes appear here.",
+  "@notesEmptyArchived": {
+    "description": "Empty state for the archived notes view"
+  },
+  "notesEmptyFiltered": "No notes match these filters.",
+  "@notesEmptyFiltered": {
+    "description": "Empty state when notebook or tag filters hide all notes"
+  },
+  "notesArchivedSnack": "Note archived",
+  "@notesArchivedSnack": {
+    "description": "Snackbar after archiving a note"
+  },
+  "notesUnarchivedSnack": "Note moved back to your notes",
+  "@notesUnarchivedSnack": {
+    "description": "Snackbar after unarchiving a note"
+  },
+  "notesChecklistProgress": "{done} of {total} done",
+  "@notesChecklistProgress": {
+    "description": "Checklist progress on a note card",
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "notesUpdatedAt": "{day} · {time}",
+  "@notesUpdatedAt": {
+    "description": "Note card timestamp: relative day and time, e.g. 'Today · 10:05'",
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "notesFormatting": "Formatting",
+  "@notesFormatting": {
+    "description": "Accessibility label for the markdown formatting toolbar"
+  },
+  "notesWrite": "Write",
+  "@notesWrite": {
+    "description": "Toggle back from preview to editing a note"
+  },
+  "notesPreviewEmpty": "Nothing to preview yet.",
+  "@notesPreviewEmpty": {
+    "description": "Preview shown for an empty note"
+  },
+  "notesBacklinksEmpty": "No other notes link here yet. Link to this note with [[{title}]].",
+  "@notesBacklinksEmpty": {
+    "description": "Empty backlinks section; keep the [[ ]] brackets",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "notesBacklinksNeedTitle": "Give this note a title so other notes can link to it.",
+  "@notesBacklinksNeedTitle": {
+    "description": "Backlinks section when the note has no title"
+  },
+  "notesLinkedTasksEmpty": "No tasks linked to this note.",
+  "@notesLinkedTasksEmpty": {
+    "description": "Empty linked tasks section"
+  },
+  "notesLinkMissing": "There is no note titled \"{title}\" yet.",
+  "@notesLinkMissing": {
+    "description": "Snackbar after tapping a [[link]] to a note that does not exist",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "notesNotFound": "This note no longer exists.",
+  "@notesNotFound": {
+    "description": "Shown when opening a note that was deleted"
+  },
+  "notesCheckboxSemantics": "Checklist item: {label}",
+  "@notesCheckboxSemantics": {
+    "description": "Accessibility label for a checkbox in the note preview",
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "notesOpenLinkedNote": "Open note {title}",
+  "@notesOpenLinkedNote": {
+    "description": "Accessibility hint for a [[link]] in the note preview",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "notesTagsHint": "Add tags by writing #tag in the note.",
+  "@notesTagsHint": {
+    "description": "Hint in the tags section of a note without tags"
+  },
+  "notesTaskDone": "Completed",
+  "@notesTaskDone": {
+    "description": "Accessibility label for a linked task that is done"
+  },
+  "notifTimerDoneBody": "The time you set has passed.",
+  "@notifTimerDoneBody": {
+    "description": "Notification body when a plain focus timer (not pomodoro) reaches its set length"
+  },
+  "onboardingPrivatePointDevice": "Stored only on this device, encrypted",
+  "@onboardingPrivatePointDevice": {
+    "description": "Onboarding privacy bullet"
+  },
+  "onboardingPrivatePointAccount": "No account needed",
+  "@onboardingPrivatePointAccount": {
+    "description": "Onboarding privacy bullet"
+  },
+  "onboardingPrivatePointTracking": "No analytics, no tracking",
+  "@onboardingPrivatePointTracking": {
+    "description": "Onboarding privacy bullet"
+  },
+  "onboardingLanguageBody": "You can change this anytime in Settings.",
+  "@onboardingLanguageBody": {
+    "description": "Onboarding language step body"
+  },
+  "onboardingNext": "Next",
+  "@onboardingNext": {
+    "description": "Button moving to the next onboarding step"
+  },
+  "projectsActive": "Active",
+  "@projectsActive": {
+    "description": "Section for active projects"
+  },
+  "projectNameHint": "e.g. Product launch",
+  "@projectNameHint": {
+    "description": "Hint for project name"
+  },
+  "projectGoalHint": "What does done look like?",
+  "@projectGoalHint": {
+    "description": "Hint for project goal field"
+  },
+  "projectNoDeadline": "No deadline",
+  "@projectNoDeadline": {
+    "description": "Shown when a project has no deadline"
+  },
+  "projectTasksOpen": "Open tasks",
+  "@projectTasksOpen": {
+    "description": "Section header in project detail"
+  },
+  "projectTasksCompleted": "Completed tasks",
+  "@projectTasksCompleted": {
+    "description": "Section header in project detail"
+  },
+  "projectAddTask": "Add task to project",
+  "@projectAddTask": {
+    "description": "Button"
+  },
+  "projectAddNote": "New project note",
+  "@projectAddNote": {
+    "description": "Button creating a note linked to the project"
+  },
+  "projectLinkedNotes": "Notes",
+  "@projectLinkedNotes": {
+    "description": "Section header for notes linked to the project"
+  },
+  "projectNoTasks": "No tasks in this project yet",
+  "@projectNoTasks": {
+    "description": "Empty state"
+  },
+  "projectArchivedBadge": "Archived",
+  "@projectArchivedBadge": {
+    "description": "Badge on an archived project"
+  },
+  "projectDeleted": "Project moved to trash",
+  "@projectDeleted": {
+    "description": "Snackbar"
+  },
+  "projectDeleteMessage": "Tasks stay in your list without a project.",
+  "@projectDeleteMessage": {
+    "description": "Explains what happens to tasks when a project is deleted"
+  },
+  "projectSemantics": "{name}, {percent} percent complete",
+  "@projectSemantics": {
+    "description": "Screen reader label for a project card",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "searchResultCount": "{count, plural, =1{1 result} other{{count} results}}",
+  "@searchResultCount": {
+    "description": "Number of search results, announced to screen readers",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "searchCategoryFilter": "Filter by type",
+  "@searchCategoryFilter": {
+    "description": "Accessibility label for the row of search category chips"
+  },
+  "searchRecentTap": "Search again for {query}",
+  "@searchRecentTap": {
+    "description": "Accessibility hint for a recent search entry",
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsLanguageHint": "Choose the language for the whole app. Names are shown in their own language.",
+  "@settingsLanguageHint": {
+    "description": "Help text in the language picker sheet"
+  },
+  "settingsThemeHint": "Light, dark or follow the system",
+  "@settingsThemeHint": {
+    "description": "Subtitle of the theme setting"
+  },
+  "settingsDecrease": "Decrease {setting}",
+  "@settingsDecrease": {
+    "description": "Tooltip for a minus button of a numeric setting; {setting} is the setting name",
+    "placeholders": {
+      "setting": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsIncrease": "Increase {setting}",
+  "@settingsIncrease": {
+    "description": "Tooltip for a plus button of a numeric setting; {setting} is the setting name",
+    "placeholders": {
+      "setting": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsQuietStart": "Starts",
+  "@settingsQuietStart": {
+    "description": "Label for the start time of quiet hours"
+  },
+  "settingsQuietEnd": "Ends",
+  "@settingsQuietEnd": {
+    "description": "Label for the end time of quiet hours"
+  },
+  "settingsNotificationsHint": "This saves your preference in the app. The system may also ask for permission.",
+  "@settingsNotificationsHint": {
+    "description": "Help text below the reminders toggle"
+  },
+  "settingsDashboardHint": "Drag to reorder. Turn off sections you do not need.",
+  "@settingsDashboardHint": {
+    "description": "Help text for customizing home sections"
+  },
+  "settingsDashboardReorder": "Reorder {section}",
+  "@settingsDashboardReorder": {
+    "description": "Accessibility label for the drag handle of a home section",
+    "placeholders": {
+      "section": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsDashboardReset": "Restore default order",
+  "@settingsDashboardReset": {
+    "description": "Button resetting home sections"
+  },
+  "settingsAssistantDesc": "Optional planning help. Nothing leaves this device unless you connect a provider.",
+  "@settingsAssistantDesc": {
+    "description": "Subtitle of the assistant toggle"
+  },
+  "settingsAssistantSetup": "Assistant and provider setup",
+  "@settingsAssistantSetup": {
+    "description": "Row opening the assistant screen"
+  },
+  "settingsTrashDesc": "Restore or permanently delete removed items",
+  "@settingsTrashDesc": {
+    "description": "Subtitle of the trash row"
+  },
+  "settingsEraseFirstBody": "This cannot be undone. Consider creating an encrypted backup first.",
+  "@settingsEraseFirstBody": {
+    "description": "First confirmation before erasing all data"
+  },
+  "settingsEraseTypeLabel": "Type {word}",
+  "@settingsEraseTypeLabel": {
+    "description": "Text field label in the erase dialog; {word} is the confirmation word",
+    "placeholders": {
+      "word": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsEraseFailed": "Data could not be erased. Nothing was changed.",
+  "@settingsEraseFailed": {
+    "description": "Error snackbar when erasing fails"
+  },
+  "settingsAboutTagline": "A private, local-first productivity workspace.",
+  "@settingsAboutTagline": {
+    "description": "Short description in the About section"
+  },
+  "backupShowPassword": "Show password",
+  "@backupShowPassword": {
+    "description": "Tooltip for the reveal password button"
+  },
+  "backupHidePassword": "Hide password",
+  "@backupHidePassword": {
+    "description": "Tooltip for the hide password button"
+  },
+  "backupSaved": "Backup saved",
+  "@backupSaved": {
+    "description": "Snackbar after the backup file was saved"
+  },
+  "backupFailed": "The backup could not be created. Your data is unchanged.",
+  "@backupFailed": {
+    "description": "Error when creating a backup fails"
+  },
+  "backupReadFailed": "The selected file could not be read.",
+  "@backupReadFailed": {
+    "description": "Error when the picked backup file cannot be read"
+  },
+  "backupRestoreFailed": "Restore failed. Nothing was changed.",
+  "@backupRestoreFailed": {
+    "description": "Generic restore error"
+  },
+  "backupShareSubject": "Future OS encrypted backup",
+  "@backupShareSubject": {
+    "description": "Subject used when sharing the backup file"
+  },
+  "repeatSummaryEveryN": "{unit, select, day{{count, plural, =1{Every day} other{Every {count} days}}} week{{count, plural, =1{Every week} other{Every {count} weeks}}} month{{count, plural, =1{Every month} other{Every {count} months}}} other{{count, plural, =1{Every year} other{Every {count} years}}}}",
+  "@repeatSummaryEveryN": {
+    "description": "Summary of a custom repeat rule. unit is one of day/week/month/year (do not translate the select keys)",
+    "placeholders": {
+      "unit": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "repeatOnWeekdays": "on {days}",
+  "@repeatOnWeekdays": {
+    "description": "Suffix listing selected weekdays of a weekly repeat rule, e.g. 'on Mon, Wed'",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "repeatEndsLabel": "Ends",
+  "@repeatEndsLabel": {
+    "description": "Label for the end condition of a repeat rule"
+  },
+  "repeatEndsAfter": "After a number of times",
+  "@repeatEndsAfter": {
+    "description": "Option: repeat rule ends after N occurrences"
+  },
+  "repeatCountLabel": "Occurrences",
+  "@repeatCountLabel": {
+    "description": "Field label: number of occurrences before a repeat rule ends"
+  },
+  "reminderNone": "No reminder",
+  "@reminderNone": {
+    "description": "Option: no reminder"
+  },
+  "reminderCustomTime": "At a specific time",
+  "@reminderCustomTime": {
+    "description": "Option: reminder at a chosen date and time"
+  },
+  "a11yDecrease": "Decrease",
+  "@a11yDecrease": {
+    "description": "Tooltip/screen reader label for a minus stepper button"
+  },
+  "a11yIncrease": "Increase",
+  "@a11yIncrease": {
+    "description": "Tooltip/screen reader label for a plus stepper button"
+  },
+  "pickTaskTitle": "Choose a task",
+  "@pickTaskTitle": {
+    "description": "Title of the sheet used to pick a task to link"
+  },
+  "pickTaskEmpty": "No open tasks",
+  "@pickTaskEmpty": {
+    "description": "Shown in the task picker when there are no open tasks"
+  },
+  "tasksSearchTooltip": "Search tasks",
+  "@tasksSearchTooltip": {
+    "description": "Tooltip for search icon on the tasks screen"
+  },
+  "tasksSectionOverdue": "Overdue",
+  "@tasksSectionOverdue": {
+    "description": "Section header for overdue tasks in the Today view"
+  },
+  "tasksSectionToday": "Today",
+  "@tasksSectionToday": {
+    "description": "Section header for tasks due today"
+  },
+  "tasksRecurringSemantics": "Repeats",
+  "@tasksRecurringSemantics": {
+    "description": "Screen reader label for the repeat icon on a task"
+  },
+  "tasksFilterPriorityAtLeast": "Minimum priority",
+  "@tasksFilterPriorityAtLeast": {
+    "description": "Filter label"
+  },
+  "tasksFilterCategory": "Category",
+  "@tasksFilterCategory": {
+    "description": "Filter label"
+  },
+  "tasksFilterAnyCategory": "Any category",
+  "@tasksFilterAnyCategory": {
+    "description": "Filter option"
+  },
+  "tasksFilterLabel": "Label",
+  "@tasksFilterLabel": {
+    "description": "Filter label"
+  },
+  "tasksFilterAnyLabel": "Any label",
+  "@tasksFilterAnyLabel": {
+    "description": "Filter option"
+  },
+  "tasksFilterReset": "Reset filters",
+  "@tasksFilterReset": {
+    "description": "Button"
+  },
+  "tasksViewByProject": "By project",
+  "@tasksViewByProject": {
+    "description": "Task view grouping tasks by project"
+  },
+  "tasksViewByPriority": "By priority",
+  "@tasksViewByPriority": {
+    "description": "Task view grouping tasks by priority"
+  },
+  "tasksViewByCategory": "By category",
+  "@tasksViewByCategory": {
+    "description": "Task view grouping tasks by category"
+  },
+  "tasksGroupNoCategory": "No category",
+  "@tasksGroupNoCategory": {
+    "description": "Group header for tasks without category"
+  },
+  "taskBlockedBy": "Blocked by {count, plural, =1{1 task} other{{count} tasks}}",
+  "@taskBlockedBy": {
+    "description": "Indicator that a task waits for other unfinished tasks",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "taskBlockedWarning": "This task is blocked by unfinished tasks. Complete it anyway?",
+  "@taskBlockedWarning": {
+    "description": "Confirmation when completing a task with open blockers"
+  },
+  "taskDeleteConfirm": "Move this task to trash?",
+  "@taskDeleteConfirm": {
+    "description": "Confirmation title"
+  },
+  "taskStartFocus": "Focus on this task",
+  "@taskStartFocus": {
+    "description": "Button in task editor that opens the focus timer linked to this task"
+  },
+  "taskRemoveDate": "Remove date",
+  "@taskRemoveDate": {
+    "description": "Button that clears a date field"
+  },
+  "taskAllDay": "No specific time",
+  "@taskAllDay": {
+    "description": "Toggle off state: due date without time"
+  },
+  "taskSaved": "Task saved",
+  "@taskSaved": {
+    "description": "Snackbar after saving"
+  },
+  "taskCreated": "Task created",
+  "@taskCreated": {
+    "description": "Snackbar after quick add"
+  },
+  "taskReminderNeedsDue": "Set a due date to use relative reminders",
+  "@taskReminderNeedsDue": {
+    "description": "Hint in reminder picker"
+  },
+  "taskEstimateValue": "Estimate: {value}",
+  "@taskEstimateValue": {
+    "description": "Estimated duration shown on a task",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "taskTrackedValue": "Tracked: {value}",
+  "@taskTrackedValue": {
+    "description": "Measured focus time on a task",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "taskSubtaskDetailsHint": "Save the task first to add subtasks, checklist items, labels and dependencies.",
+  "@taskSubtaskDetailsHint": {
+    "description": "Hint shown in the new task editor"
+  },
+  "taskNoLabels": "No labels yet",
+  "@taskNoLabels": {
+    "description": "Empty label list"
+  },
+  "taskLabelName": "Label name",
+  "@taskLabelName": {
+    "description": "Field label"
+  },
+  "taskMoreDetails": "Details",
+  "@taskMoreDetails": {
+    "description": "Section header in task editor for notes and description"
+  },
+  "taskPlanning": "Planning",
+  "@taskPlanning": {
+    "description": "Section header in task editor for dates, repeat, reminders"
+  },
+  "taskOrganize": "Organize",
+  "@taskOrganize": {
+    "description": "Section header in task editor for project, category, labels"
+  },
+  "taskBreakdown": "Breakdown",
+  "@taskBreakdown": {
+    "description": "Section header in task editor for subtasks, checklist, dependencies"
+  },
+  "trashDeleteTaskTitle": "Delete this task forever?",
+  "@trashDeleteTaskTitle": {
+    "description": "Confirmation title"
+  },
+  "trashDeleteNoteTitle": "Delete this note forever?",
+  "@trashDeleteNoteTitle": {
+    "description": "Confirmation title"
+  },
+  "trashDeleteBody": "This cannot be undone.",
+  "@trashDeleteBody": {
+    "description": "Confirmation body for permanent deletion"
+  },
+  "trashEmptyTitle": "Empty trash?",
+  "@trashEmptyTitle": {
+    "description": "Confirmation title for emptying the trash"
+  },
+  "trashEmptyBody": "{count, plural, =1{1 item will be deleted permanently.} other{{count} items will be deleted permanently.}}",
+  "@trashEmptyBody": {
+    "description": "Confirmation body for emptying trash",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "trashRestored": "Restored",
+  "@trashRestored": {
+    "description": "Snackbar after restoring an item"
+  },
+  "trashPurged": "Deleted forever",
+  "@trashPurged": {
+    "description": "Snackbar after permanent deletion"
+  },
+  "trashDeletedOn": "Deleted {date}",
+  "@trashDeletedOn": {
+    "description": "Subtitle showing when the item was deleted",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "trashCount": "{count, plural, =1{1 item} other{{count} items}}",
+  "@trashCount": {
+    "description": "Number of items in trash",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
   }
 }

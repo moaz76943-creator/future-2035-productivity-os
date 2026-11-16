@@ -1,13 +1,61 @@
+import 'dart:convert';
+
 import 'package:drift/drift.dart';
 
 import '../../../core/database/app_database.dart';
 import '../../../core/ids.dart';
 import '../../../core/time/clock.dart';
 
+/// A period during which a habit was paused, as local day keys (yyyymmdd).
+/// [toKey] is inclusive; null means the pause is still ongoing.
+class PauseSpan {
+  const PauseSpan(this.fromKey, [this.toKey]);
+  final int fromKey;
+  final int? toKey;
+
+  bool contains(int dayKey) => dayKey >= fromKey && (toKey == null || dayKey <= toKey!);
+
+  Map<String, Object?> toJson() => {'from': fromKey, 'to': toKey};
+  static PauseSpan fromJson(Map<String, Object?> j) =>
+      PauseSpan(j['from']! as int, j['to'] as int?);
+
+  @override
+  bool operator ==(Object other) =>
+      other is PauseSpan && other.fromKey == fromKey && other.toKey == toKey;
+  @override
+  int get hashCode => Object.hash(fromKey, toKey);
+}
+
 /// Pure streak / consistency maths, separated for testing.
+///
+/// Paused days (see [PauseSpan]) are treated like unscheduled days: they
+/// never break a streak and are not counted as scheduled. A paused day that
+/// was nevertheless completed still counts as a completed scheduled day.
 abstract final class HabitMath {
   static bool scheduledOn(int weekdayMask, DateTime day) =>
       (weekdayMask >> (day.weekday - 1)) & 1 == 1;
+
+  static bool pausedOn(List<PauseSpan> pauses, int dayKey) {
+    for (final p in pauses) {
+      if (p.contains(dayKey)) return true;
+    }
+    return false;
+  }
+
+  /// Whether [day] counts for streaks/consistency, and whether it is done.
+  static (bool counts, bool done) _evaluate(
+    int weekdayMask,
+    int targetPerDay,
+    Map<int, int> countsByDay,
+    List<PauseSpan> pauses,
+    DateTime day,
+  ) {
+    if (!scheduledOn(weekdayMask, day)) return (false, false);
+    final k = Days.key(day);
+    final done = (countsByDay[k] ?? 0) >= targetPerDay;
+    if (!done && pauses.isNotEmpty && pausedOn(pauses, k)) return (false, false);
+    return (true, done);
+  }
 
   /// Consecutive scheduled days completed, ending today (or yesterday if
   /// today is not yet done — an unfinished today doesn't break a streak).
@@ -17,6 +65,7 @@ abstract final class HabitMath {
     required int targetPerDay,
     required Map<int, int> countsByDay,
     required DateTime today,
+    List<PauseSpan> pauses = const [],
     int maxLookbackDays = 3660,
   }) {
     if (weekdayMask == 0) return 0;
@@ -24,8 +73,8 @@ abstract final class HabitMath {
     var day = Days.startOfDay(today);
     var first = true;
     for (var i = 0; i < maxLookbackDays; i++) {
-      if (scheduledOn(weekdayMask, day)) {
-        final done = (countsByDay[Days.key(day)] ?? 0) >= targetPerDay;
+      final (counts, done) = _evaluate(weekdayMask, targetPerDay, countsByDay, pauses, day);
+      if (counts) {
         if (done) {
           streak++;
         } else if (!first) {
@@ -44,15 +93,13 @@ abstract final class HabitMath {
     required Map<int, int> countsByDay,
     required DateTime from,
     required DateTime to,
+    List<PauseSpan> pauses = const [],
   }) {
     var best = 0, run = 0;
-    for (
-      var d = Days.startOfDay(from);
-      !d.isAfter(to);
-      d = Days.addDays(d, 1)
-    ) {
-      if (!scheduledOn(weekdayMask, d)) continue;
-      if ((countsByDay[Days.key(d)] ?? 0) >= targetPerDay) {
+    for (var d = Days.startOfDay(from); !d.isAfter(to); d = Days.addDays(d, 1)) {
+      final (counts, done) = _evaluate(weekdayMask, targetPerDay, countsByDay, pauses, d);
+      if (!counts) continue;
+      if (done) {
         run++;
         if (run > best) best = run;
       } else {
@@ -69,16 +116,14 @@ abstract final class HabitMath {
     required Map<int, int> countsByDay,
     required DateTime from,
     required DateTime to,
+    List<PauseSpan> pauses = const [],
   }) {
     var scheduled = 0, done = 0;
-    for (
-      var d = Days.startOfDay(from);
-      !d.isAfter(to);
-      d = Days.addDays(d, 1)
-    ) {
-      if (!scheduledOn(weekdayMask, d)) continue;
+    for (var d = Days.startOfDay(from); !d.isAfter(to); d = Days.addDays(d, 1)) {
+      final (counts, isDone) = _evaluate(weekdayMask, targetPerDay, countsByDay, pauses, d);
+      if (!counts) continue;
       scheduled++;
-      if ((countsByDay[Days.key(d)] ?? 0) >= targetPerDay) done++;
+      if (isDone) done++;
     }
     return scheduled == 0 ? 0 : done / scheduled;
   }
@@ -138,28 +183,75 @@ class HabitsRepository {
     ),
   );
 
-  Future<void> setPaused(String id, bool paused) =>
-      (_db.update(_db.habits)..where((h) => h.id.equals(id))).write(
-        HabitsCompanion(paused: Value(paused)),
-      );
+  /// Key in the key/value store holding the habit's pause history (JSON).
+  static String pausesKey(String habitId) => 'habit.pauses.$habitId';
 
-  Future<void> archive(String id) =>
-      (_db.update(_db.habits)..where((h) => h.id.equals(id))).write(
-        const HabitsCompanion(archived: Value(true)),
-      );
+  static List<PauseSpan> decodePauses(String? raw) {
+    if (raw == null || raw.isEmpty) return const [];
+    try {
+      final list = jsonDecode(raw) as List<Object?>;
+      return [for (final e in list) PauseSpan.fromJson((e! as Map).cast<String, Object?>())];
+    } on Object {
+      return const [];
+    }
+  }
 
-  Future<void> unarchive(String id) =>
-      (_db.update(_db.habits)..where((h) => h.id.equals(id))).write(
-        const HabitsCompanion(archived: Value(false)),
-      );
+  static String encodePauses(List<PauseSpan> spans) =>
+      jsonEncode([for (final s in spans) s.toJson()]);
+
+  /// Pausing opens a pause span starting today; resuming closes it on
+  /// yesterday (today counts normally again). A span shorter than one day
+  /// is dropped. Paused days never break a streak.
+  Future<void> setPaused(String id, bool paused) => _db.transaction(() async {
+    await (_db.update(_db.habits)..where((h) => h.id.equals(id))).write(
+      HabitsCompanion(paused: Value(paused), updatedAt: Value(_clock.nowUtc())),
+    );
+    final today = Days.startOfDay(_clock.now());
+    final spans = [...decodePauses(await _db.readValue(pausesKey(id)))];
+    final openIndex = spans.indexWhere((s) => s.toKey == null);
+    if (paused) {
+      if (openIndex >= 0) return;
+      spans.add(PauseSpan(Days.key(today)));
+    } else {
+      if (openIndex < 0) return;
+      final open = spans.removeAt(openIndex);
+      final end = Days.key(Days.addDays(today, -1));
+      if (end >= open.fromKey) spans.add(PauseSpan(open.fromKey, end));
+    }
+    spans.sort((a, b) => a.fromKey.compareTo(b.fromKey));
+    if (spans.isEmpty) {
+      await _db.deleteValue(pausesKey(id));
+    } else {
+      await _db.writeValue(pausesKey(id), encodePauses(spans));
+    }
+  });
+
+  Stream<List<PauseSpan>> watchPauses(String habitId) =>
+      _db.watchValue(pausesKey(habitId)).map(decodePauses);
+
+  /// Pause history for every habit, keyed by habit id.
+  Stream<Map<String, List<PauseSpan>>> watchAllPauses() {
+    const prefix = 'habit.pauses.';
+    return (_db.select(_db.keyValues)..where((k) => k.key.like('$prefix%'))).watch().map(
+      (rows) => {for (final r in rows) r.key.substring(prefix.length): decodePauses(r.value)},
+    );
+  }
+
+  Stream<HabitRow?> watchHabit(String id) =>
+      (_db.select(_db.habits)..where((h) => h.id.equals(id))).watchSingleOrNull();
+
+  Future<void> archive(String id) => (_db.update(
+    _db.habits,
+  )..where((h) => h.id.equals(id))).write(const HabitsCompanion(archived: Value(true)));
+
+  Future<void> unarchive(String id) => (_db.update(
+    _db.habits,
+  )..where((h) => h.id.equals(id))).write(const HabitsCompanion(archived: Value(false)));
 
   Stream<List<HabitRow>> watchHabits() =>
       (_db.select(_db.habits)
             ..where((h) => h.archived.equals(false))
-            ..orderBy([
-              (h) => OrderingTerm.asc(h.paused),
-              (h) => OrderingTerm.asc(h.name),
-            ]))
+            ..orderBy([(h) => OrderingTerm.asc(h.paused), (h) => OrderingTerm.asc(h.name)]))
           .watch();
 
   /// Sets today's (or [day]'s) count. 0 removes the log.
@@ -173,11 +265,7 @@ class HabitsRepository {
       await _db
           .into(_db.habitLogs)
           .insertOnConflictUpdate(
-            HabitLogsCompanion.insert(
-              habitId: habitId,
-              day: k,
-              count: Value(count),
-            ),
+            HabitLogsCompanion.insert(habitId: habitId, day: k, count: Value(count)),
           );
     }
   }
@@ -185,28 +273,26 @@ class HabitsRepository {
   Future<void> increment(String habitId, DateTime day) async {
     final k = Days.key(day);
     await _db.transaction(() async {
-      final row =
-          await (_db.select(_db.habitLogs)
-                ..where((l) => l.habitId.equals(habitId) & l.day.equals(k)))
-              .getSingleOrNull();
+      final row = await (_db.select(
+        _db.habitLogs,
+      )..where((l) => l.habitId.equals(habitId) & l.day.equals(k))).getSingleOrNull();
       await setCount(habitId, day, (row?.count ?? 0) + 1);
     });
   }
 
   Stream<Map<int, int>> watchCounts(String habitId, {int days = 400}) {
     final from = Days.key(Days.addDays(Days.startOfDay(_clock.now()), -days));
-    return (_db.select(_db.habitLogs)..where(
-          (l) => l.habitId.equals(habitId) & l.day.isBiggerOrEqualValue(from),
-        ))
+    return (_db.select(_db.habitLogs)
+          ..where((l) => l.habitId.equals(habitId) & l.day.isBiggerOrEqualValue(from)))
         .watch()
         .map((rows) => {for (final r in rows) r.day: r.count});
   }
 
   Stream<Map<String, Map<int, int>>> watchAllCounts({int days = 120}) {
     final from = Days.key(Days.addDays(Days.startOfDay(_clock.now()), -days));
-    return (_db.select(
-      _db.habitLogs,
-    )..where((l) => l.day.isBiggerOrEqualValue(from))).watch().map((rows) {
+    return (_db.select(_db.habitLogs)..where((l) => l.day.isBiggerOrEqualValue(from))).watch().map((
+      rows,
+    ) {
       final m = <String, Map<int, int>>{};
       for (final r in rows) {
         (m[r.habitId] ??= {})[r.day] = r.count;

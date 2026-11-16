@@ -8,6 +8,7 @@ import 'package:future_os/core/security/secret_store.dart';
 import 'package:future_os/core/time/clock.dart';
 import 'package:future_os/features/settings/application/settings_providers.dart';
 import 'package:future_os/features/settings/data/settings_repository.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -24,6 +25,7 @@ Future<TestEnv> pumpScreen(
   AppSettings settings = const AppSettings(onboardingDone: true),
   List overrides = const [],
   Size size = const Size(412, 915),
+  bool withRouter = false,
 }) async {
   await initializeDateFormatting();
   final e = env ?? TestEnv();
@@ -31,22 +33,42 @@ Future<TestEnv> pumpScreen(
   tester.view.devicePixelRatio = 3;
   addTearDown(tester.view.reset);
   final locale = AppLocales.byTag(localeTag)!.locale;
-  await tester.pumpWidget(ProviderScope(
-    overrides: [
-      databaseProvider.overrideWithValue(e.db),
-      clockProvider.overrideWithValue(e.clock),
-      secretStoreProvider.overrideWithValue(MemorySecretStore()),
-      initialSettingsProvider.overrideWithValue(settings.copyWith(localeTag: localeTag)),
-      ...overrides,
-    ],
-    child: MaterialApp(
-      locale: locale,
-      supportedLocales: AppLocales.locales,
-      localizationsDelegates: AppLocales.delegates,
-      theme: AppTheme.build(brightness: Brightness.light, locale: locale),
-      home: MotionScope(reduceMotion: true, child: child),
+  await tester.pumpWidget(
+    ProviderScope(
+      overrides: [
+        databaseProvider.overrideWithValue(e.db),
+        clockProvider.overrideWithValue(e.clock),
+        secretStoreProvider.overrideWithValue(MemorySecretStore()),
+        initialSettingsProvider.overrideWithValue(settings.copyWith(localeTag: localeTag)),
+        ...overrides,
+      ],
+      child: withRouter
+          ? MaterialApp.router(
+              locale: locale,
+              supportedLocales: AppLocales.locales,
+              localizationsDelegates: AppLocales.delegates,
+              theme: AppTheme.build(brightness: Brightness.light, locale: locale),
+              routerConfig: GoRouter(
+                routes: [
+                  GoRoute(
+                    path: '/',
+                    builder: (_, _) => MotionScope(reduceMotion: true, child: child),
+                  ),
+                ],
+                // Any navigation away from the screen under test lands here so
+                // tests can assert the target location.
+                errorBuilder: (_, state) => Scaffold(body: Text('route:${state.uri}')),
+              ),
+            )
+          : MaterialApp(
+              locale: locale,
+              supportedLocales: AppLocales.locales,
+              localizationsDelegates: AppLocales.delegates,
+              theme: AppTheme.build(brightness: Brightness.light, locale: locale),
+              home: MotionScope(reduceMotion: true, child: child),
+            ),
     ),
-  ));
+  );
   await tester.pump();
   return e;
 }

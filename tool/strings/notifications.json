@@ -1,0 +1,3 @@
+{
+  "notifTimerDoneBody": {"text": "The time you set has passed.", "desc": "Notification body when a plain focus timer (not pomodoro) reaches its set length"}
+}

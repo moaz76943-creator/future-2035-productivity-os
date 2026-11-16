@@ -1,0 +1,16 @@
+{
+  "projectsActive": {"text": "Active", "desc": "Section for active projects"},
+  "projectNameHint": {"text": "e.g. Product launch", "desc": "Hint for project name"},
+  "projectGoalHint": {"text": "What does done look like?", "desc": "Hint for project goal field"},
+  "projectNoDeadline": {"text": "No deadline", "desc": "Shown when a project has no deadline"},
+  "projectTasksOpen": {"text": "Open tasks", "desc": "Section header in project detail"},
+  "projectTasksCompleted": {"text": "Completed tasks", "desc": "Section header in project detail"},
+  "projectAddTask": {"text": "Add task to project", "desc": "Button"},
+  "projectAddNote": {"text": "New project note", "desc": "Button creating a note linked to the project"},
+  "projectLinkedNotes": {"text": "Notes", "desc": "Section header for notes linked to the project"},
+  "projectNoTasks": {"text": "No tasks in this project yet", "desc": "Empty state"},
+  "projectArchivedBadge": {"text": "Archived", "desc": "Badge on an archived project"},
+  "projectDeleted": {"text": "Project moved to trash", "desc": "Snackbar"},
+  "projectDeleteMessage": {"text": "Tasks stay in your list without a project.", "desc": "Explains what happens to tasks when a project is deleted"},
+  "projectSemantics": {"text": "{name}, {percent} percent complete", "desc": "Screen reader label for a project card", "placeholders": {"name": "String", "percent": "int"}}
+}
