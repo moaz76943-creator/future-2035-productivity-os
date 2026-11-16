@@ -1,0 +1,2781 @@
+{
+  "@@locale": "en",
+  "appName": "Future OS",
+  "@appName": {
+    "description": "Application name shown in launcher and about screen. Brand name; may stay in Latin script."
+  },
+  "navHome": "Home",
+  "@navHome": {
+    "description": "Bottom navigation: dashboard tab"
+  },
+  "navTasks": "Tasks",
+  "@navTasks": {
+    "description": "Bottom navigation: tasks tab"
+  },
+  "navFocus": "Focus",
+  "@navFocus": {
+    "description": "Bottom navigation: focus timer tab"
+  },
+  "navCalendar": "Calendar",
+  "@navCalendar": {
+    "description": "Bottom navigation: calendar tab"
+  },
+  "navSpaces": "Spaces",
+  "@navSpaces": {
+    "description": "Bottom navigation: hub with all other modules"
+  },
+  "moduleProjects": "Projects",
+  "@moduleProjects": {
+    "description": "Module name"
+  },
+  "moduleNotes": "Notes",
+  "@moduleNotes": {
+    "description": "Module name"
+  },
+  "moduleFlashcards": "Flashcards",
+  "@moduleFlashcards": {
+    "description": "Module name"
+  },
+  "moduleGoals": "Goals",
+  "@moduleGoals": {
+    "description": "Module name"
+  },
+  "moduleHabits": "Habits",
+  "@moduleHabits": {
+    "description": "Module name"
+  },
+  "moduleAnalytics": "Insights",
+  "@moduleAnalytics": {
+    "description": "Module name for analytics"
+  },
+  "moduleSearch": "Search",
+  "@moduleSearch": {
+    "description": "Module name"
+  },
+  "moduleAssistant": "Assistant",
+  "@moduleAssistant": {
+    "description": "Module name for the optional productivity assistant"
+  },
+  "moduleSettings": "Settings",
+  "@moduleSettings": {
+    "description": "Module name"
+  },
+  "moduleTrash": "Trash",
+  "@moduleTrash": {
+    "description": "Recently deleted items"
+  },
+  "spacesSubtitle": "Everything you organize, in one place",
+  "@spacesSubtitle": {
+    "description": "Subtitle on the Spaces hub"
+  },
+  "actionSave": "Save",
+  "@actionSave": {
+    "description": "Button"
+  },
+  "actionCancel": "Cancel",
+  "@actionCancel": {
+    "description": "Button"
+  },
+  "actionDelete": "Delete",
+  "@actionDelete": {
+    "description": "Button"
+  },
+  "actionEdit": "Edit",
+  "@actionEdit": {
+    "description": "Button"
+  },
+  "actionDone": "Done",
+  "@actionDone": {
+    "description": "Button"
+  },
+  "actionAdd": "Add",
+  "@actionAdd": {
+    "description": "Button"
+  },
+  "actionCreate": "Create",
+  "@actionCreate": {
+    "description": "Button"
+  },
+  "actionClose": "Close",
+  "@actionClose": {
+    "description": "Button / tooltip"
+  },
+  "actionBack": "Back",
+  "@actionBack": {
+    "description": "Tooltip for back navigation"
+  },
+  "actionUndo": "Undo",
+  "@actionUndo": {
+    "description": "Snackbar action"
+  },
+  "actionRestore": "Restore",
+  "@actionRestore": {
+    "description": "Button: restore from trash"
+  },
+  "actionRetry": "Try again",
+  "@actionRetry": {
+    "description": "Button after an error"
+  },
+  "actionContinue": "Continue",
+  "@actionContinue": {
+    "description": "Button"
+  },
+  "actionSkip": "Skip",
+  "@actionSkip": {
+    "description": "Button"
+  },
+  "actionArchive": "Archive",
+  "@actionArchive": {
+    "description": "Button"
+  },
+  "actionUnarchive": "Unarchive",
+  "@actionUnarchive": {
+    "description": "Button"
+  },
+  "actionPin": "Pin",
+  "@actionPin": {
+    "description": "Button"
+  },
+  "actionUnpin": "Unpin",
+  "@actionUnpin": {
+    "description": "Button"
+  },
+  "actionMore": "More options",
+  "@actionMore": {
+    "description": "Tooltip for overflow menu"
+  },
+  "actionClear": "Clear",
+  "@actionClear": {
+    "description": "Button: clear a field or list"
+  },
+  "actionSearch": "Search",
+  "@actionSearch": {
+    "description": "Tooltip"
+  },
+  "actionFilter": "Filter",
+  "@actionFilter": {
+    "description": "Tooltip"
+  },
+  "actionSort": "Sort",
+  "@actionSort": {
+    "description": "Label"
+  },
+  "actionShare": "Share",
+  "@actionShare": {
+    "description": "Button"
+  },
+  "actionImport": "Import",
+  "@actionImport": {
+    "description": "Button"
+  },
+  "actionExport": "Export",
+  "@actionExport": {
+    "description": "Button"
+  },
+  "actionPause": "Pause",
+  "@actionPause": {
+    "description": "Button"
+  },
+  "actionResume": "Resume",
+  "@actionResume": {
+    "description": "Button"
+  },
+  "actionStart": "Start",
+  "@actionStart": {
+    "description": "Button"
+  },
+  "actionStop": "Stop",
+  "@actionStop": {
+    "description": "Button"
+  },
+  "actionComplete": "Complete",
+  "@actionComplete": {
+    "description": "Button"
+  },
+  "actionReopen": "Reopen",
+  "@actionReopen": {
+    "description": "Button: mark a completed task as not done"
+  },
+  "actionDeleteForever": "Delete forever",
+  "@actionDeleteForever": {
+    "description": "Button: permanent deletion"
+  },
+  "actionEmptyTrash": "Empty trash",
+  "@actionEmptyTrash": {
+    "description": "Button"
+  },
+  "actionSelect": "Select",
+  "@actionSelect": {
+    "description": "Button"
+  },
+  "actionNone": "None",
+  "@actionNone": {
+    "description": "Option meaning no selection"
+  },
+  "actionLink": "Link",
+  "@actionLink": {
+    "description": "Button: link items"
+  },
+  "actionUnlink": "Unlink",
+  "@actionUnlink": {
+    "description": "Button"
+  },
+  "actionCustomize": "Customize",
+  "@actionCustomize": {
+    "description": "Button"
+  },
+  "actionReset": "Reset",
+  "@actionReset": {
+    "description": "Button"
+  },
+  "actionOpen": "Open",
+  "@actionOpen": {
+    "description": "Button"
+  },
+  "actionEnable": "Enable",
+  "@actionEnable": {
+    "description": "Button"
+  },
+  "actionDisable": "Disable",
+  "@actionDisable": {
+    "description": "Button"
+  },
+  "actionAllow": "Allow",
+  "@actionAllow": {
+    "description": "Button for permission"
+  },
+  "actionNotNow": "Not now",
+  "@actionNotNow": {
+    "description": "Button to decline"
+  },
+  "actionPreview": "Preview",
+  "@actionPreview": {
+    "description": "Toggle to preview formatted note"
+  },
+  "actionLog": "Log progress",
+  "@actionLog": {
+    "description": "Button for goal progress"
+  },
+  "stateLoading": "Loading…",
+  "@stateLoading": {
+    "description": "Accessibility label while content loads"
+  },
+  "stateSaving": "Saving…",
+  "@stateSaving": {
+    "description": "Note save status"
+  },
+  "stateSaved": "Saved",
+  "@stateSaved": {
+    "description": "Note save status"
+  },
+  "stateUnsaved": "Unsaved changes",
+  "@stateUnsaved": {
+    "description": "Note save status"
+  },
+  "errorGenericTitle": "Something went wrong",
+  "@errorGenericTitle": {
+    "description": "Error state title"
+  },
+  "errorGenericMessage": "Your data is safe. Please try again.",
+  "@errorGenericMessage": {
+    "description": "Error state message"
+  },
+  "errorLoadFailed": "This content could not be loaded.",
+  "@errorLoadFailed": {
+    "description": "Error message"
+  },
+  "errorSaveFailed": "Could not save. Your changes are still here.",
+  "@errorSaveFailed": {
+    "description": "Error snackbar"
+  },
+  "validationRequired": "This field is required",
+  "@validationRequired": {
+    "description": "Form validation"
+  },
+  "validationTitleRequired": "Please enter a title",
+  "@validationTitleRequired": {
+    "description": "Form validation"
+  },
+  "validationNameRequired": "Please enter a name",
+  "@validationNameRequired": {
+    "description": "Form validation"
+  },
+  "validationTooLong": "This is too long",
+  "@validationTooLong": {
+    "description": "Form validation"
+  },
+  "validationEndBeforeStart": "The end must be after the start",
+  "@validationEndBeforeStart": {
+    "description": "Form validation for events"
+  },
+  "validationStartAfterDue": "The start date must be before the due date",
+  "@validationStartAfterDue": {
+    "description": "Form validation for tasks"
+  },
+  "validationPositiveNumber": "Enter a number greater than zero",
+  "@validationPositiveNumber": {
+    "description": "Form validation"
+  },
+  "validationDependencyCycle": "This would create a circular dependency",
+  "@validationDependencyCycle": {
+    "description": "Error when linking tasks"
+  },
+  "validationInvalidRepeat": "This repeat rule is not valid",
+  "@validationInvalidRepeat": {
+    "description": "Error for invalid recurrence"
+  },
+  "deletedItem": "Moved to trash",
+  "@deletedItem": {
+    "description": "Snackbar after deleting an item"
+  },
+  "restoredItem": "Restored",
+  "@restoredItem": {
+    "description": "Snackbar after restoring"
+  },
+  "untitled": "Untitled",
+  "@untitled": {
+    "description": "Placeholder title for notes without a title"
+  },
+  "noProject": "No project",
+  "@noProject": {
+    "description": "Option / label when a task has no project"
+  },
+  "confirmDeleteTitle": "Delete permanently?",
+  "@confirmDeleteTitle": {
+    "description": "Dialog title"
+  },
+  "confirmDeleteMessage": "This cannot be undone.",
+  "@confirmDeleteMessage": {
+    "description": "Dialog message"
+  },
+  "greetingMorning": "Good morning",
+  "@greetingMorning": {
+    "description": "Dashboard greeting before noon"
+  },
+  "greetingAfternoon": "Good afternoon",
+  "@greetingAfternoon": {
+    "description": "Dashboard greeting 12:00–17:59"
+  },
+  "greetingEvening": "Good evening",
+  "@greetingEvening": {
+    "description": "Dashboard greeting 18:00 onwards"
+  },
+  "dashboardTitle": "Today",
+  "@dashboardTitle": {
+    "description": "Dashboard heading"
+  },
+  "dashFocusToday": "Today's focus",
+  "@dashFocusToday": {
+    "description": "Dashboard focus card title"
+  },
+  "dashFocusOfTarget": "{done} of {target}",
+  "@dashFocusOfTarget": {
+    "description": "Focus minutes done of target, e.g. \"45 min of 2 h\". Both are formatted durations.",
+    "placeholders": {
+      "done": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "dashStartFocus": "Start focus",
+  "@dashStartFocus": {
+    "description": "Button on dashboard focus card"
+  },
+  "dashFocusRunning": "Session in progress",
+  "@dashFocusRunning": {
+    "description": "Dashboard focus card when timer is running"
+  },
+  "dashTodayTasks": "Due today",
+  "@dashTodayTasks": {
+    "description": "Dashboard section title"
+  },
+  "dashAgenda": "Agenda",
+  "@dashAgenda": {
+    "description": "Dashboard section title: upcoming events"
+  },
+  "dashHabits": "Habits today",
+  "@dashHabits": {
+    "description": "Dashboard section title"
+  },
+  "dashGoals": "Goals",
+  "@dashGoals": {
+    "description": "Dashboard section title"
+  },
+  "dashReview": "Review",
+  "@dashReview": {
+    "description": "Dashboard section title for flashcards"
+  },
+  "dashRecentNotes": "Recent notes",
+  "@dashRecentNotes": {
+    "description": "Dashboard section title"
+  },
+  "dashInsight": "Suggestion",
+  "@dashInsight": {
+    "description": "Dashboard section with a recommendation"
+  },
+  "dashSeeAll": "See all",
+  "@dashSeeAll": {
+    "description": "Dashboard section action"
+  },
+  "dashNoTasksToday": "Nothing due today. A clear runway.",
+  "@dashNoTasksToday": {
+    "description": "Empty text on dashboard"
+  },
+  "dashNoEvents": "No more events today",
+  "@dashNoEvents": {
+    "description": "Empty text on dashboard"
+  },
+  "dashNoHabits": "Create a habit to track it here",
+  "@dashNoHabits": {
+    "description": "Empty text on dashboard"
+  },
+  "dashNoGoals": "Set a goal to see your progress",
+  "@dashNoGoals": {
+    "description": "Empty text on dashboard"
+  },
+  "dashNoNotes": "Your latest notes will appear here",
+  "@dashNoNotes": {
+    "description": "Empty text on dashboard"
+  },
+  "dashCardsDue": "{count, plural, =0{No cards due} =1{1 card due} other{{count} cards due}}",
+  "@dashCardsDue": {
+    "description": "Flashcards due count",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dashReviewNow": "Review now",
+  "@dashReviewNow": {
+    "description": "Button"
+  },
+  "dashCustomizeTitle": "Dashboard sections",
+  "@dashCustomizeTitle": {
+    "description": "Bottom sheet title for customizing dashboard"
+  },
+  "dashCustomizeHint": "Choose what appears on your home screen.",
+  "@dashCustomizeHint": {
+    "description": "Hint in customize sheet"
+  },
+  "dashSectionFocus": "Focus",
+  "@dashSectionFocus": {
+    "description": "Dashboard section name in customize list"
+  },
+  "dashSectionToday": "Tasks due today",
+  "@dashSectionToday": {
+    "description": "Dashboard section name"
+  },
+  "dashSectionAgenda": "Agenda",
+  "@dashSectionAgenda": {
+    "description": "Dashboard section name"
+  },
+  "dashSectionHabits": "Habits",
+  "@dashSectionHabits": {
+    "description": "Dashboard section name"
+  },
+  "dashSectionGoals": "Goals",
+  "@dashSectionGoals": {
+    "description": "Dashboard section name"
+  },
+  "dashSectionReview": "Flashcard review",
+  "@dashSectionReview": {
+    "description": "Dashboard section name"
+  },
+  "dashSectionNotes": "Recent notes",
+  "@dashSectionNotes": {
+    "description": "Dashboard section name"
+  },
+  "dashSectionInsight": "Suggestions",
+  "@dashSectionInsight": {
+    "description": "Dashboard section name"
+  },
+  "quickAddTask": "New task",
+  "@quickAddTask": {
+    "description": "Quick action"
+  },
+  "quickAddNote": "New note",
+  "@quickAddNote": {
+    "description": "Quick action"
+  },
+  "quickAddEvent": "New event",
+  "@quickAddEvent": {
+    "description": "Quick action"
+  },
+  "quickStartFocus": "Focus",
+  "@quickStartFocus": {
+    "description": "Quick action"
+  },
+  "insightOverdue": "{count, plural, =1{You have 1 overdue task. Reschedule or finish it first.} other{You have {count} overdue tasks. Start with the most important one.}}",
+  "@insightOverdue": {
+    "description": "Rule-based suggestion",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "insightFocusGap": "You are {minutes} minutes away from your daily focus target.",
+  "@insightFocusGap": {
+    "description": "Rule-based suggestion",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "insightCardsDue": "Review your due flashcards now while they are fresh.",
+  "@insightCardsDue": {
+    "description": "Rule-based suggestion"
+  },
+  "insightAllClear": "Everything is on track. Plan tomorrow or take a mindful break.",
+  "@insightAllClear": {
+    "description": "Rule-based suggestion"
+  },
+  "insightHabitStreak": "Keep your streak: {habit} is still open today.",
+  "@insightHabitStreak": {
+    "description": "Rule-based suggestion",
+    "placeholders": {
+      "habit": {
+        "type": "String"
+      }
+    }
+  },
+  "focusTitle": "Focus",
+  "@focusTitle": {
+    "description": "Screen title"
+  },
+  "focusModePomodoro": "Pomodoro",
+  "@focusModePomodoro": {
+    "description": "Timer mode"
+  },
+  "focusModeCountdown": "Timer",
+  "@focusModeCountdown": {
+    "description": "Timer mode: count down from a chosen duration"
+  },
+  "focusModeCountUp": "Stopwatch",
+  "@focusModeCountUp": {
+    "description": "Timer mode: count up"
+  },
+  "focusModeOpen": "Open",
+  "@focusModeOpen": {
+    "description": "Timer mode: open-ended session"
+  },
+  "focusPhaseWork": "Focus",
+  "@focusPhaseWork": {
+    "description": "Pomodoro phase label"
+  },
+  "focusPhaseShortBreak": "Short break",
+  "@focusPhaseShortBreak": {
+    "description": "Pomodoro phase label"
+  },
+  "focusPhaseLongBreak": "Long break",
+  "@focusPhaseLongBreak": {
+    "description": "Pomodoro phase label"
+  },
+  "focusReady": "Ready when you are",
+  "@focusReady": {
+    "description": "Label before a session starts"
+  },
+  "focusPaused": "Paused",
+  "@focusPaused": {
+    "description": "Label when timer paused"
+  },
+  "focusRunning": "In focus",
+  "@focusRunning": {
+    "description": "Label when timer running"
+  },
+  "focusElapsed": "Elapsed",
+  "@focusElapsed": {
+    "description": "Label for elapsed time"
+  },
+  "focusRemaining": "Remaining",
+  "@focusRemaining": {
+    "description": "Label for remaining time"
+  },
+  "focusDuration": "Duration",
+  "@focusDuration": {
+    "description": "Label for planned duration"
+  },
+  "focusLinkTask": "Link a task",
+  "@focusLinkTask": {
+    "description": "Button to link a task to a session"
+  },
+  "focusLinkedTask": "Working on",
+  "@focusLinkedTask": {
+    "description": "Label above the linked task title"
+  },
+  "focusNoTask": "No task linked",
+  "@focusNoTask": {
+    "description": "Placeholder"
+  },
+  "focusCycle": "Cycle {current} of {total}",
+  "@focusCycle": {
+    "description": "Pomodoro cycle indicator",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "focusSkipBreak": "Skip break",
+  "@focusSkipBreak": {
+    "description": "Button"
+  },
+  "focusStartBreak": "Start break",
+  "@focusStartBreak": {
+    "description": "Button"
+  },
+  "focusStartNext": "Start next focus",
+  "@focusStartNext": {
+    "description": "Button"
+  },
+  "focusSessionComplete": "Session complete",
+  "@focusSessionComplete": {
+    "description": "Dialog title when a session finishes"
+  },
+  "focusSessionStopped": "Session saved",
+  "@focusSessionStopped": {
+    "description": "Dialog title when user stops early"
+  },
+  "focusSessionSummary": "You focused for {duration}.",
+  "@focusSessionSummary": {
+    "description": "Dialog body",
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      }
+    }
+  },
+  "focusAddNote": "Add a note about this session",
+  "@focusAddNote": {
+    "description": "Text field hint"
+  },
+  "focusHistory": "History",
+  "@focusHistory": {
+    "description": "Section title"
+  },
+  "focusNoHistory": "Completed sessions will appear here",
+  "@focusNoHistory": {
+    "description": "Empty state"
+  },
+  "focusTargets": "Targets",
+  "@focusTargets": {
+    "description": "Section title"
+  },
+  "focusDailyTarget": "Daily target",
+  "@focusDailyTarget": {
+    "description": "Label"
+  },
+  "focusWeeklyTarget": "Weekly target",
+  "@focusWeeklyTarget": {
+    "description": "Label"
+  },
+  "focusOutcomeCompleted": "Completed",
+  "@focusOutcomeCompleted": {
+    "description": "Session outcome label"
+  },
+  "focusOutcomeInterrupted": "Stopped early",
+  "@focusOutcomeInterrupted": {
+    "description": "Session outcome label"
+  },
+  "focusRecovered": "Your session continued while the app was closed.",
+  "@focusRecovered": {
+    "description": "Info after restoring a running timer"
+  },
+  "focusCompletedWhileAway": "A session finished while the app was closed and has been saved.",
+  "@focusCompletedWhileAway": {
+    "description": "Info after restore"
+  },
+  "focusNotificationsOff": "Notifications are off. You will not be alerted when a session ends.",
+  "@focusNotificationsOff": {
+    "description": "Warning banner"
+  },
+  "focusBatteryHint": "Some devices pause apps in the background. The timer stays accurate, but alerts may be delayed. Allow unrestricted battery use for reliable alerts.",
+  "@focusBatteryHint": {
+    "description": "Info about battery optimization"
+  },
+  "focusOpenSettings": "Open settings",
+  "@focusOpenSettings": {
+    "description": "Button to open system settings"
+  },
+  "focusStopConfirmTitle": "Stop this session?",
+  "@focusStopConfirmTitle": {
+    "description": "Dialog title"
+  },
+  "focusStopConfirmMessage": "Time focused so far will be saved.",
+  "@focusStopConfirmMessage": {
+    "description": "Dialog message"
+  },
+  "focusDiscard": "Discard",
+  "@focusDiscard": {
+    "description": "Dialog action to discard the session without saving"
+  },
+  "focusMinutesLabel": "{minutes, plural, =1{1 minute} other{{minutes} minutes}}",
+  "@focusMinutesLabel": {
+    "description": "Duration selector label",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "focusTimerSemantics": "{phase}, {time} remaining",
+  "@focusTimerSemantics": {
+    "description": "Screen reader description of timer",
+    "placeholders": {
+      "phase": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "focusTimerSemanticsElapsed": "{phase}, {time} elapsed",
+  "@focusTimerSemanticsElapsed": {
+    "description": "Screen reader description of timer",
+    "placeholders": {
+      "phase": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "focusDeleteSession": "Delete session",
+  "@focusDeleteSession": {
+    "description": "Menu item"
+  },
+  "tasksTitle": "Tasks",
+  "@tasksTitle": {
+    "description": "Screen title"
+  },
+  "tasksViewToday": "Today",
+  "@tasksViewToday": {
+    "description": "Task view"
+  },
+  "tasksViewUpcoming": "Upcoming",
+  "@tasksViewUpcoming": {
+    "description": "Task view"
+  },
+  "tasksViewAll": "All",
+  "@tasksViewAll": {
+    "description": "Task view"
+  },
+  "tasksViewOverdue": "Overdue",
+  "@tasksViewOverdue": {
+    "description": "Task view"
+  },
+  "tasksViewCompleted": "Completed",
+  "@tasksViewCompleted": {
+    "description": "Task view"
+  },
+  "tasksQuickAddHint": "Add a task…",
+  "@tasksQuickAddHint": {
+    "description": "Quick add text field hint"
+  },
+  "tasksEmptyTitle": "All clear",
+  "@tasksEmptyTitle": {
+    "description": "Empty state title"
+  },
+  "tasksEmptyMessage": "Add a task to start shaping your day.",
+  "@tasksEmptyMessage": {
+    "description": "Empty state message"
+  },
+  "tasksEmptyCompleted": "Completed tasks will appear here.",
+  "@tasksEmptyCompleted": {
+    "description": "Empty state for completed view"
+  },
+  "taskNew": "New task",
+  "@taskNew": {
+    "description": "Editor title"
+  },
+  "taskEdit": "Edit task",
+  "@taskEdit": {
+    "description": "Editor title"
+  },
+  "taskTitleLabel": "Title",
+  "@taskTitleLabel": {
+    "description": "Field label"
+  },
+  "taskTitleHint": "What needs to be done?",
+  "@taskTitleHint": {
+    "description": "Field hint"
+  },
+  "taskDescriptionLabel": "Description",
+  "@taskDescriptionLabel": {
+    "description": "Field label"
+  },
+  "taskNotesLabel": "Notes",
+  "@taskNotesLabel": {
+    "description": "Field label"
+  },
+  "taskPriority": "Priority",
+  "@taskPriority": {
+    "description": "Field label"
+  },
+  "priorityNone": "None",
+  "@priorityNone": {
+    "description": "Priority level"
+  },
+  "priorityLow": "Low",
+  "@priorityLow": {
+    "description": "Priority level"
+  },
+  "priorityMedium": "Medium",
+  "@priorityMedium": {
+    "description": "Priority level"
+  },
+  "priorityHigh": "High",
+  "@priorityHigh": {
+    "description": "Priority level"
+  },
+  "priorityUrgent": "Urgent",
+  "@priorityUrgent": {
+    "description": "Priority level"
+  },
+  "taskDueDate": "Due date",
+  "@taskDueDate": {
+    "description": "Field label"
+  },
+  "taskStartDate": "Start date",
+  "@taskStartDate": {
+    "description": "Field label"
+  },
+  "taskReminder": "Reminder",
+  "@taskReminder": {
+    "description": "Field label"
+  },
+  "taskRepeat": "Repeat",
+  "@taskRepeat": {
+    "description": "Field label"
+  },
+  "taskProject": "Project",
+  "@taskProject": {
+    "description": "Field label"
+  },
+  "taskCategory": "Category",
+  "@taskCategory": {
+    "description": "Field label"
+  },
+  "taskCategoryHint": "e.g. Work, Home, Study",
+  "@taskCategoryHint": {
+    "description": "Field hint"
+  },
+  "taskEstimate": "Estimate",
+  "@taskEstimate": {
+    "description": "Field label for time estimate"
+  },
+  "taskEstimateMinutes": "Estimate (minutes)",
+  "@taskEstimateMinutes": {
+    "description": "Field label"
+  },
+  "taskTracked": "Tracked focus",
+  "@taskTracked": {
+    "description": "Label for measured focus time on a task"
+  },
+  "taskLabels": "Labels",
+  "@taskLabels": {
+    "description": "Section title"
+  },
+  "taskAddLabel": "New label",
+  "@taskAddLabel": {
+    "description": "Field hint"
+  },
+  "taskChecklist": "Checklist",
+  "@taskChecklist": {
+    "description": "Section title"
+  },
+  "taskAddChecklistItem": "Add an item",
+  "@taskAddChecklistItem": {
+    "description": "Field hint"
+  },
+  "taskSubtasks": "Subtasks",
+  "@taskSubtasks": {
+    "description": "Section title"
+  },
+  "taskAddSubtask": "Add a subtask",
+  "@taskAddSubtask": {
+    "description": "Field hint"
+  },
+  "taskDependencies": "Blocked by",
+  "@taskDependencies": {
+    "description": "Section title for task dependencies"
+  },
+  "taskAddDependency": "Add a blocking task",
+  "@taskAddDependency": {
+    "description": "Button"
+  },
+  "taskLinkedNotes": "Linked notes",
+  "@taskLinkedNotes": {
+    "description": "Section title"
+  },
+  "taskSetTime": "Set time",
+  "@taskSetTime": {
+    "description": "Button to add time of day to a due date"
+  },
+  "taskNoDate": "No date",
+  "@taskNoDate": {
+    "description": "Placeholder"
+  },
+  "taskCompleted": "Task completed",
+  "@taskCompleted": {
+    "description": "Snackbar"
+  },
+  "taskNextOccurrence": "Next occurrence created",
+  "@taskNextOccurrence": {
+    "description": "Snackbar after completing a recurring task"
+  },
+  "taskSubtaskProgress": "{done}/{total}",
+  "@taskSubtaskProgress": {
+    "description": "Subtask progress compact label",
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "taskDueOn": "Due {date}",
+  "@taskDueOn": {
+    "description": "Due date label",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "taskOverdueBy": "{days, plural, =1{1 day overdue} other{{days} days overdue}}",
+  "@taskOverdueBy": {
+    "description": "Overdue label",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "taskCheckboxSemantics": "Mark \"{title}\" as done",
+  "@taskCheckboxSemantics": {
+    "description": "Screen reader label for task checkbox",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "taskCheckboxSemanticsDone": "Mark \"{title}\" as not done",
+  "@taskCheckboxSemanticsDone": {
+    "description": "Screen reader label for completed task checkbox",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "sortSmart": "Smart",
+  "@sortSmart": {
+    "description": "Sort option"
+  },
+  "sortDueDate": "Due date",
+  "@sortDueDate": {
+    "description": "Sort option"
+  },
+  "sortPriority": "Priority",
+  "@sortPriority": {
+    "description": "Sort option"
+  },
+  "sortCreated": "Newest",
+  "@sortCreated": {
+    "description": "Sort option"
+  },
+  "sortTitle": "Title",
+  "@sortTitle": {
+    "description": "Sort option"
+  },
+  "filterAllProjects": "All projects",
+  "@filterAllProjects": {
+    "description": "Filter option"
+  },
+  "filterAnyPriority": "Any priority",
+  "@filterAnyPriority": {
+    "description": "Filter option"
+  },
+  "filterTitle": "Filter and sort",
+  "@filterTitle": {
+    "description": "Sheet title"
+  },
+  "dateToday": "Today",
+  "@dateToday": {
+    "description": "Relative date"
+  },
+  "dateTomorrow": "Tomorrow",
+  "@dateTomorrow": {
+    "description": "Relative date"
+  },
+  "dateYesterday": "Yesterday",
+  "@dateYesterday": {
+    "description": "Relative date"
+  },
+  "dateNextWeek": "Next week",
+  "@dateNextWeek": {
+    "description": "Quick date option"
+  },
+  "repeatNever": "Does not repeat",
+  "@repeatNever": {
+    "description": "Recurrence option"
+  },
+  "repeatDaily": "Every day",
+  "@repeatDaily": {
+    "description": "Recurrence option"
+  },
+  "repeatWeekdays": "Every weekday",
+  "@repeatWeekdays": {
+    "description": "Recurrence option (Mon–Fri)"
+  },
+  "repeatWeekly": "Every week",
+  "@repeatWeekly": {
+    "description": "Recurrence option"
+  },
+  "repeatMonthly": "Every month",
+  "@repeatMonthly": {
+    "description": "Recurrence option"
+  },
+  "repeatYearly": "Every year",
+  "@repeatYearly": {
+    "description": "Recurrence option"
+  },
+  "repeatCustom": "Custom",
+  "@repeatCustom": {
+    "description": "Recurrence option"
+  },
+  "repeatEvery": "Repeat every",
+  "@repeatEvery": {
+    "description": "Label in custom recurrence editor"
+  },
+  "repeatOnDays": "On days",
+  "@repeatOnDays": {
+    "description": "Label in custom recurrence editor"
+  },
+  "repeatUnitDays": "{count, plural, =1{day} other{days}}",
+  "@repeatUnitDays": {
+    "description": "Recurrence unit",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "repeatUnitWeeks": "{count, plural, =1{week} other{weeks}}",
+  "@repeatUnitWeeks": {
+    "description": "Recurrence unit",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "repeatUnitMonths": "{count, plural, =1{month} other{months}}",
+  "@repeatUnitMonths": {
+    "description": "Recurrence unit",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "repeatUnitYears": "{count, plural, =1{year} other{years}}",
+  "@repeatUnitYears": {
+    "description": "Recurrence unit",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "repeatEndsCount": "Ends after {count, plural, =1{1 time} other{{count} times}}",
+  "@repeatEndsCount": {
+    "description": "Recurrence end",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "repeatEndsNever": "Never ends",
+  "@repeatEndsNever": {
+    "description": "Recurrence end"
+  },
+  "reminderAtTime": "At time of event",
+  "@reminderAtTime": {
+    "description": "Reminder option"
+  },
+  "reminderMinutesBefore": "{minutes, plural, =1{1 minute before} other{{minutes} minutes before}}",
+  "@reminderMinutesBefore": {
+    "description": "Reminder option",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "reminderHoursBefore": "{hours, plural, =1{1 hour before} other{{hours} hours before}}",
+  "@reminderHoursBefore": {
+    "description": "Reminder option",
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "reminderDayBefore": "1 day before",
+  "@reminderDayBefore": {
+    "description": "Reminder option"
+  },
+  "projectsTitle": "Projects",
+  "@projectsTitle": {
+    "description": "Screen title"
+  },
+  "projectsEmptyTitle": "No projects yet",
+  "@projectsEmptyTitle": {
+    "description": "Empty state"
+  },
+  "projectsEmptyMessage": "Group related tasks, notes and focus time.",
+  "@projectsEmptyMessage": {
+    "description": "Empty state"
+  },
+  "projectNew": "New project",
+  "@projectNew": {
+    "description": "Editor title"
+  },
+  "projectEdit": "Edit project",
+  "@projectEdit": {
+    "description": "Editor title"
+  },
+  "projectName": "Name",
+  "@projectName": {
+    "description": "Field label"
+  },
+  "projectDescription": "Description",
+  "@projectDescription": {
+    "description": "Field label"
+  },
+  "projectGoal": "Goal",
+  "@projectGoal": {
+    "description": "Field label: what the project aims to achieve"
+  },
+  "projectDeadline": "Deadline",
+  "@projectDeadline": {
+    "description": "Field label"
+  },
+  "projectColor": "Color",
+  "@projectColor": {
+    "description": "Field label"
+  },
+  "projectIcon": "Icon",
+  "@projectIcon": {
+    "description": "Field label"
+  },
+  "projectNotes": "Project notes",
+  "@projectNotes": {
+    "description": "Field label"
+  },
+  "projectProgress": "Progress",
+  "@projectProgress": {
+    "description": "Label"
+  },
+  "projectTasksDone": "{done} of {total} tasks done",
+  "@projectTasksDone": {
+    "description": "Progress text",
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "projectFocusTime": "Focus time",
+  "@projectFocusTime": {
+    "description": "Stat label"
+  },
+  "projectArchived": "Archived projects",
+  "@projectArchived": {
+    "description": "Section title"
+  },
+  "projectShowArchived": "Show archived",
+  "@projectShowArchived": {
+    "description": "Toggle"
+  },
+  "projectDaysLeft": "{days, plural, =0{Due today} =1{1 day left} other{{days} days left}}",
+  "@projectDaysLeft": {
+    "description": "Deadline countdown",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "projectOverdue": "Past deadline",
+  "@projectOverdue": {
+    "description": "Deadline label"
+  },
+  "calendarTitle": "Calendar",
+  "@calendarTitle": {
+    "description": "Screen title"
+  },
+  "calendarMonth": "Month",
+  "@calendarMonth": {
+    "description": "View option"
+  },
+  "calendarWeek": "Week",
+  "@calendarWeek": {
+    "description": "View option"
+  },
+  "calendarDay": "Day",
+  "@calendarDay": {
+    "description": "View option"
+  },
+  "calendarToday": "Today",
+  "@calendarToday": {
+    "description": "Button to jump to today"
+  },
+  "calendarPrevious": "Previous",
+  "@calendarPrevious": {
+    "description": "Tooltip: go to previous period"
+  },
+  "calendarNext": "Next",
+  "@calendarNext": {
+    "description": "Tooltip: go to next period"
+  },
+  "calendarNoEvents": "Nothing scheduled",
+  "@calendarNoEvents": {
+    "description": "Empty day"
+  },
+  "calendarAllDay": "All day",
+  "@calendarAllDay": {
+    "description": "Label"
+  },
+  "eventNew": "New event",
+  "@eventNew": {
+    "description": "Editor title"
+  },
+  "eventEdit": "Edit event",
+  "@eventEdit": {
+    "description": "Editor title"
+  },
+  "eventTitleHint": "Event title",
+  "@eventTitleHint": {
+    "description": "Field hint"
+  },
+  "eventStarts": "Starts",
+  "@eventStarts": {
+    "description": "Field label"
+  },
+  "eventEnds": "Ends",
+  "@eventEnds": {
+    "description": "Field label"
+  },
+  "eventKind": "Type",
+  "@eventKind": {
+    "description": "Field label"
+  },
+  "eventKindEvent": "Event",
+  "@eventKindEvent": {
+    "description": "Event type"
+  },
+  "eventKindTimeBlock": "Time block",
+  "@eventKindTimeBlock": {
+    "description": "Event type"
+  },
+  "eventKindFocus": "Focus session",
+  "@eventKindFocus": {
+    "description": "Event type"
+  },
+  "eventKindGoal": "Personal goal",
+  "@eventKindGoal": {
+    "description": "Event type"
+  },
+  "eventDescription": "Details",
+  "@eventDescription": {
+    "description": "Field label"
+  },
+  "eventConflict": "{count, plural, =1{Overlaps with 1 event} other{Overlaps with {count} events}}",
+  "@eventConflict": {
+    "description": "Conflict warning",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "eventConflictsToday": "Scheduling conflicts on this day",
+  "@eventConflictsToday": {
+    "description": "Banner"
+  },
+  "calendarTaskDue": "Task due",
+  "@calendarTaskDue": {
+    "description": "Label for tasks displayed on the calendar"
+  },
+  "calendarDragHint": "Long-press and drag an event to reschedule it",
+  "@calendarDragHint": {
+    "description": "Hint text"
+  },
+  "calendarRescheduled": "Event moved",
+  "@calendarRescheduled": {
+    "description": "Snackbar after drag and drop"
+  },
+  "calendarScheduleTask": "Schedule as time block",
+  "@calendarScheduleTask": {
+    "description": "Action to create a time block from a task"
+  },
+  "calendarLegend": "Legend",
+  "@calendarLegend": {
+    "description": "Title for color legend"
+  },
+  "notesTitle": "Notes",
+  "@notesTitle": {
+    "description": "Screen title"
+  },
+  "notesViewAll": "All",
+  "@notesViewAll": {
+    "description": "Notes view"
+  },
+  "notesViewPinned": "Pinned",
+  "@notesViewPinned": {
+    "description": "Notes view"
+  },
+  "notesViewFavorites": "Favorites",
+  "@notesViewFavorites": {
+    "description": "Notes view"
+  },
+  "notesViewArchived": "Archived",
+  "@notesViewArchived": {
+    "description": "Notes view"
+  },
+  "notesNotebooks": "Notebooks",
+  "@notesNotebooks": {
+    "description": "Section title"
+  },
+  "notesTags": "Tags",
+  "@notesTags": {
+    "description": "Section title"
+  },
+  "notesNewNotebook": "New notebook",
+  "@notesNewNotebook": {
+    "description": "Button / dialog title"
+  },
+  "notesNoNotebook": "No notebook",
+  "@notesNoNotebook": {
+    "description": "Option"
+  },
+  "notesEmptyTitle": "A blank canvas",
+  "@notesEmptyTitle": {
+    "description": "Empty state"
+  },
+  "notesEmptyMessage": "Capture ideas, meeting notes and knowledge.",
+  "@notesEmptyMessage": {
+    "description": "Empty state"
+  },
+  "noteTitleHint": "Title",
+  "@noteTitleHint": {
+    "description": "Field hint"
+  },
+  "noteBodyHint": "Start writing… Use # for tags and [[Title]] to link notes.",
+  "@noteBodyHint": {
+    "description": "Field hint"
+  },
+  "noteFavorite": "Favorite",
+  "@noteFavorite": {
+    "description": "Action"
+  },
+  "noteUnfavorite": "Remove from favorites",
+  "@noteUnfavorite": {
+    "description": "Action"
+  },
+  "noteMoveTo": "Move to notebook",
+  "@noteMoveTo": {
+    "description": "Action"
+  },
+  "noteBacklinks": "Linked from",
+  "@noteBacklinks": {
+    "description": "Section title for notes that link here"
+  },
+  "noteLinkedTasks": "Linked tasks",
+  "@noteLinkedTasks": {
+    "description": "Section title"
+  },
+  "noteLinkTask": "Link a task",
+  "@noteLinkTask": {
+    "description": "Action"
+  },
+  "noteLinkProject": "Project",
+  "@noteLinkProject": {
+    "description": "Field label"
+  },
+  "noteFormatHeading": "Heading",
+  "@noteFormatHeading": {
+    "description": "Formatting toolbar tooltip"
+  },
+  "noteFormatBold": "Bold",
+  "@noteFormatBold": {
+    "description": "Formatting toolbar tooltip"
+  },
+  "noteFormatItalic": "Italic",
+  "@noteFormatItalic": {
+    "description": "Formatting toolbar tooltip"
+  },
+  "noteFormatList": "Bulleted list",
+  "@noteFormatList": {
+    "description": "Formatting toolbar tooltip"
+  },
+  "noteFormatChecklist": "Checklist",
+  "@noteFormatChecklist": {
+    "description": "Formatting toolbar tooltip"
+  },
+  "noteFormatLink": "Link",
+  "@noteFormatLink": {
+    "description": "Formatting toolbar tooltip"
+  },
+  "noteEdited": "Edited {time}",
+  "@noteEdited": {
+    "description": "Note metadata",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "noteWordCount": "{count, plural, =1{1 word} other{{count} words}}",
+  "@noteWordCount": {
+    "description": "Note metadata",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "flashTitle": "Flashcards",
+  "@flashTitle": {
+    "description": "Screen title"
+  },
+  "flashEmptyTitle": "Build your first deck",
+  "@flashEmptyTitle": {
+    "description": "Empty state"
+  },
+  "flashEmptyMessage": "Spaced repetition shows each card right before you would forget it.",
+  "@flashEmptyMessage": {
+    "description": "Empty state"
+  },
+  "deckNew": "New deck",
+  "@deckNew": {
+    "description": "Editor title"
+  },
+  "deckEdit": "Edit deck",
+  "@deckEdit": {
+    "description": "Editor title"
+  },
+  "deckName": "Deck name",
+  "@deckName": {
+    "description": "Field label"
+  },
+  "deckDescription": "Description",
+  "@deckDescription": {
+    "description": "Field label"
+  },
+  "deckDailyNew": "New cards per day",
+  "@deckDailyNew": {
+    "description": "Field label"
+  },
+  "deckDailyReview": "Daily review target",
+  "@deckDailyReview": {
+    "description": "Field label"
+  },
+  "deckCards": "{count, plural, =0{No cards} =1{1 card} other{{count} cards}}",
+  "@deckCards": {
+    "description": "Card count",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deckDue": "Due",
+  "@deckDue": {
+    "description": "Stat label"
+  },
+  "deckNewCards": "New",
+  "@deckNewCards": {
+    "description": "Stat label"
+  },
+  "deckMature": "Mature",
+  "@deckMature": {
+    "description": "Stat label: well-learned cards"
+  },
+  "deckStudy": "Study",
+  "@deckStudy": {
+    "description": "Button to start review"
+  },
+  "deckNothingDue": "Nothing due right now. Come back later.",
+  "@deckNothingDue": {
+    "description": "Message when no cards are due"
+  },
+  "deckEmptyCards": "Add cards to start learning.",
+  "@deckEmptyCards": {
+    "description": "Empty state for deck"
+  },
+  "cardNew": "New card",
+  "@cardNew": {
+    "description": "Editor title"
+  },
+  "cardEdit": "Edit card",
+  "@cardEdit": {
+    "description": "Editor title"
+  },
+  "cardFront": "Front",
+  "@cardFront": {
+    "description": "Field label"
+  },
+  "cardBack": "Back",
+  "@cardBack": {
+    "description": "Field label"
+  },
+  "cardFrontHint": "Question or term",
+  "@cardFrontHint": {
+    "description": "Field hint"
+  },
+  "cardBackHint": "Answer or definition",
+  "@cardBackHint": {
+    "description": "Field hint"
+  },
+  "cardTags": "Tags",
+  "@cardTags": {
+    "description": "Field label"
+  },
+  "cardAddAnother": "Save and add another",
+  "@cardAddAnother": {
+    "description": "Button"
+  },
+  "reviewShowAnswer": "Show answer",
+  "@reviewShowAnswer": {
+    "description": "Button"
+  },
+  "reviewAgain": "Again",
+  "@reviewAgain": {
+    "description": "Review rating"
+  },
+  "reviewHard": "Hard",
+  "@reviewHard": {
+    "description": "Review rating"
+  },
+  "reviewGood": "Good",
+  "@reviewGood": {
+    "description": "Review rating"
+  },
+  "reviewEasy": "Easy",
+  "@reviewEasy": {
+    "description": "Review rating"
+  },
+  "reviewProgress": "{done} of {total}",
+  "@reviewProgress": {
+    "description": "Review progress",
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "reviewFinishedTitle": "Session complete",
+  "@reviewFinishedTitle": {
+    "description": "Review summary title"
+  },
+  "reviewFinishedMessage": "{count, plural, =1{You reviewed 1 card.} other{You reviewed {count} cards.}}",
+  "@reviewFinishedMessage": {
+    "description": "Review summary",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reviewTapToFlip": "Tap to reveal the answer",
+  "@reviewTapToFlip": {
+    "description": "Hint"
+  },
+  "importCardsTitle": "Import cards",
+  "@importCardsTitle": {
+    "description": "Dialog title"
+  },
+  "importCardsHint": "Paste one card per line as front and back separated by a tab or semicolon, or paste an exported deck file.",
+  "@importCardsHint": {
+    "description": "Help text"
+  },
+  "importCardsResult": "{count, plural, =0{No cards imported} =1{1 card imported} other{{count} cards imported}}",
+  "@importCardsResult": {
+    "description": "Snackbar",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importFailed": "This content could not be imported.",
+  "@importFailed": {
+    "description": "Error"
+  },
+  "exportCopied": "Deck exported",
+  "@exportCopied": {
+    "description": "Snackbar after export"
+  },
+  "intervalMinutes": "{count, plural, =1{1 min} other{{count} min}}",
+  "@intervalMinutes": {
+    "description": "Next review interval preview",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "intervalDays": "{count, plural, =1{1 day} other{{count} days}}",
+  "@intervalDays": {
+    "description": "Next review interval preview",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "goalsTitle": "Goals",
+  "@goalsTitle": {
+    "description": "Screen title"
+  },
+  "goalsEmptyTitle": "Aim for something",
+  "@goalsEmptyTitle": {
+    "description": "Empty state"
+  },
+  "goalsEmptyMessage": "Set daily, weekly, monthly or long-term goals and track real progress.",
+  "@goalsEmptyMessage": {
+    "description": "Empty state"
+  },
+  "goalNew": "New goal",
+  "@goalNew": {
+    "description": "Editor title"
+  },
+  "goalEdit": "Edit goal",
+  "@goalEdit": {
+    "description": "Editor title"
+  },
+  "goalTitleHint": "What do you want to achieve?",
+  "@goalTitleHint": {
+    "description": "Field hint"
+  },
+  "goalPeriod": "Period",
+  "@goalPeriod": {
+    "description": "Field label"
+  },
+  "goalPeriodDaily": "Daily",
+  "@goalPeriodDaily": {
+    "description": "Goal period"
+  },
+  "goalPeriodWeekly": "Weekly",
+  "@goalPeriodWeekly": {
+    "description": "Goal period"
+  },
+  "goalPeriodMonthly": "Monthly",
+  "@goalPeriodMonthly": {
+    "description": "Goal period"
+  },
+  "goalPeriodLongTerm": "Long-term",
+  "@goalPeriodLongTerm": {
+    "description": "Goal period"
+  },
+  "goalTarget": "Target",
+  "@goalTarget": {
+    "description": "Field label"
+  },
+  "goalUnit": "Unit",
+  "@goalUnit": {
+    "description": "Field label"
+  },
+  "goalUnitHint": "e.g. pages, km, hours",
+  "@goalUnitHint": {
+    "description": "Field hint"
+  },
+  "goalStatusActive": "Active",
+  "@goalStatusActive": {
+    "description": "Goal status"
+  },
+  "goalStatusPaused": "Paused",
+  "@goalStatusPaused": {
+    "description": "Goal status"
+  },
+  "goalStatusAchieved": "Achieved",
+  "@goalStatusAchieved": {
+    "description": "Goal status"
+  },
+  "goalPause": "Pause goal",
+  "@goalPause": {
+    "description": "Action"
+  },
+  "goalResume": "Resume goal",
+  "@goalResume": {
+    "description": "Action"
+  },
+  "goalMarkAchieved": "Mark as achieved",
+  "@goalMarkAchieved": {
+    "description": "Action"
+  },
+  "goalProgressOf": "{current} of {target}",
+  "@goalProgressOf": {
+    "description": "Goal progress text; values are formatted numbers",
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "goalLogAmount": "Amount",
+  "@goalLogAmount": {
+    "description": "Field label when logging progress"
+  },
+  "goalLogNote": "Note (optional)",
+  "@goalLogNote": {
+    "description": "Field label"
+  },
+  "goalHistory": "History",
+  "@goalHistory": {
+    "description": "Section title"
+  },
+  "goalNoHistory": "Logged progress will appear here",
+  "@goalNoHistory": {
+    "description": "Empty state"
+  },
+  "goalLinkedTasks": "Linked tasks",
+  "@goalLinkedTasks": {
+    "description": "Section title"
+  },
+  "goalLinkedTasksHint": "Each completed linked task counts as 1 toward this goal.",
+  "@goalLinkedTasksHint": {
+    "description": "Help text"
+  },
+  "goalThisPeriod": "This period",
+  "@goalThisPeriod": {
+    "description": "Label for current period progress"
+  },
+  "habitsTitle": "Habits",
+  "@habitsTitle": {
+    "description": "Screen title"
+  },
+  "habitsEmptyTitle": "Small steps, every day",
+  "@habitsEmptyTitle": {
+    "description": "Empty state"
+  },
+  "habitsEmptyMessage": "Create a habit and check it off when you do it.",
+  "@habitsEmptyMessage": {
+    "description": "Empty state"
+  },
+  "habitNew": "New habit",
+  "@habitNew": {
+    "description": "Editor title"
+  },
+  "habitEdit": "Edit habit",
+  "@habitEdit": {
+    "description": "Editor title"
+  },
+  "habitNameHint": "e.g. Read 20 pages",
+  "@habitNameHint": {
+    "description": "Field hint"
+  },
+  "habitDays": "Schedule",
+  "@habitDays": {
+    "description": "Field label"
+  },
+  "habitEveryDay": "Every day",
+  "@habitEveryDay": {
+    "description": "Schedule summary"
+  },
+  "habitTargetPerDay": "Times per day",
+  "@habitTargetPerDay": {
+    "description": "Field label"
+  },
+  "habitReminder": "Daily reminder",
+  "@habitReminder": {
+    "description": "Field label"
+  },
+  "habitStreak": "{count, plural, =0{No streak} =1{1-day streak} other{{count}-day streak}}",
+  "@habitStreak": {
+    "description": "Streak label",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "habitBestStreak": "Best streak",
+  "@habitBestStreak": {
+    "description": "Stat label"
+  },
+  "habitCurrentStreak": "Current streak",
+  "@habitCurrentStreak": {
+    "description": "Stat label"
+  },
+  "habitConsistency": "Consistency",
+  "@habitConsistency": {
+    "description": "Stat label"
+  },
+  "habitLast90": "Last 90 days",
+  "@habitLast90": {
+    "description": "Heatmap caption"
+  },
+  "habitPaused": "Paused",
+  "@habitPaused": {
+    "description": "Label"
+  },
+  "habitPause": "Pause habit",
+  "@habitPause": {
+    "description": "Action"
+  },
+  "habitResume": "Resume habit",
+  "@habitResume": {
+    "description": "Action"
+  },
+  "habitDoneToday": "Done today",
+  "@habitDoneToday": {
+    "description": "Label"
+  },
+  "habitCountToday": "{count} of {target} today",
+  "@habitCountToday": {
+    "description": "Habit progress",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "habitToggleSemantics": "Check in \"{name}\"",
+  "@habitToggleSemantics": {
+    "description": "Screen reader label",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "habitNotScheduledToday": "Not scheduled today",
+  "@habitNotScheduledToday": {
+    "description": "Label"
+  },
+  "analyticsTitle": "Insights",
+  "@analyticsTitle": {
+    "description": "Screen title"
+  },
+  "rangeWeek": "7 days",
+  "@rangeWeek": {
+    "description": "Analytics range"
+  },
+  "rangeMonth": "30 days",
+  "@rangeMonth": {
+    "description": "Analytics range"
+  },
+  "rangeQuarter": "90 days",
+  "@rangeQuarter": {
+    "description": "Analytics range"
+  },
+  "statFocusTime": "Focus time",
+  "@statFocusTime": {
+    "description": "Stat label"
+  },
+  "statSessions": "Sessions",
+  "@statSessions": {
+    "description": "Stat label"
+  },
+  "statSessionsDetail": "{completed} completed · {interrupted} stopped early",
+  "@statSessionsDetail": {
+    "description": "Stat caption",
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "interrupted": {
+        "type": "int"
+      }
+    }
+  },
+  "statTasksDone": "Tasks completed",
+  "@statTasksDone": {
+    "description": "Stat label"
+  },
+  "statCompletionRate": "On-time completion",
+  "@statCompletionRate": {
+    "description": "Stat label: share of tasks due in range that are done"
+  },
+  "statHabitConsistency": "Habit consistency",
+  "@statHabitConsistency": {
+    "description": "Stat label"
+  },
+  "statRetention": "Card retention",
+  "@statRetention": {
+    "description": "Stat label"
+  },
+  "statReviews": "Reviews",
+  "@statReviews": {
+    "description": "Stat label"
+  },
+  "statActiveGoals": "Active goals",
+  "@statActiveGoals": {
+    "description": "Stat label"
+  },
+  "statEstimated": "Estimated work completed",
+  "@statEstimated": {
+    "description": "Stat label for sum of estimates"
+  },
+  "statEstimatedNote": "Based on your estimates, not measured time",
+  "@statEstimatedNote": {
+    "description": "Caption distinguishing estimates from measurements"
+  },
+  "statMeasuredNote": "Measured from focus sessions",
+  "@statMeasuredNote": {
+    "description": "Caption"
+  },
+  "chartFocusByDay": "Focus minutes per day",
+  "@chartFocusByDay": {
+    "description": "Chart title"
+  },
+  "chartTasksByDay": "Tasks completed per day",
+  "@chartTasksByDay": {
+    "description": "Chart title"
+  },
+  "chartTimeByProject": "Time by project",
+  "@chartTimeByProject": {
+    "description": "Chart title"
+  },
+  "chartProjectProgress": "Project progress",
+  "@chartProjectProgress": {
+    "description": "Chart title"
+  },
+  "chartSemanticsTotal": "{title}: total {total}, best day {best}",
+  "@chartSemanticsTotal": {
+    "description": "Screen reader summary for charts",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      },
+      "best": {
+        "type": "String"
+      }
+    }
+  },
+  "analyticsNoData": "Not enough data yet",
+  "@analyticsNoData": {
+    "description": "Placeholder when a statistic cannot be computed"
+  },
+  "analyticsUnassigned": "Unassigned",
+  "@analyticsUnassigned": {
+    "description": "Label for focus time without a project"
+  },
+  "searchHint": "Search everything…",
+  "@searchHint": {
+    "description": "Search field hint"
+  },
+  "searchRecent": "Recent searches",
+  "@searchRecent": {
+    "description": "Section title"
+  },
+  "searchClearRecent": "Clear recent searches",
+  "@searchClearRecent": {
+    "description": "Button"
+  },
+  "searchNoResults": "No results for \"{query}\"",
+  "@searchNoResults": {
+    "description": "Empty state",
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "searchStartTyping": "Search across tasks, notes, cards, goals, events and more. Search stays on this device.",
+  "@searchStartTyping": {
+    "description": "Initial hint"
+  },
+  "searchCatTask": "Tasks",
+  "@searchCatTask": {
+    "description": "Result category"
+  },
+  "searchCatProject": "Projects",
+  "@searchCatProject": {
+    "description": "Result category"
+  },
+  "searchCatNote": "Notes",
+  "@searchCatNote": {
+    "description": "Result category"
+  },
+  "searchCatFlashcard": "Cards",
+  "@searchCatFlashcard": {
+    "description": "Result category"
+  },
+  "searchCatDeck": "Decks",
+  "@searchCatDeck": {
+    "description": "Result category"
+  },
+  "searchCatGoal": "Goals",
+  "@searchCatGoal": {
+    "description": "Result category"
+  },
+  "searchCatHabit": "Habits",
+  "@searchCatHabit": {
+    "description": "Result category"
+  },
+  "searchCatEvent": "Events",
+  "@searchCatEvent": {
+    "description": "Result category"
+  },
+  "searchCatSession": "Sessions",
+  "@searchCatSession": {
+    "description": "Result category"
+  },
+  "searchAll": "All",
+  "@searchAll": {
+    "description": "Filter chip"
+  },
+  "assistantTitle": "Assistant",
+  "@assistantTitle": {
+    "description": "Screen title"
+  },
+  "assistantIntro": "Planning help that works on your device. Optionally connect an AI provider you choose for summaries and generation.",
+  "@assistantIntro": {
+    "description": "Intro text"
+  },
+  "assistantOnDevice": "On-device",
+  "@assistantOnDevice": {
+    "description": "Badge: processing stays on the phone"
+  },
+  "assistantCloud": "AI provider",
+  "@assistantCloud": {
+    "description": "Badge: processing uses the configured external provider"
+  },
+  "assistantPlanDay": "Plan my day",
+  "@assistantPlanDay": {
+    "description": "Action"
+  },
+  "assistantPlanDayDesc": "Orders open tasks by urgency, priority and estimate, and fits them around your events.",
+  "@assistantPlanDayDesc": {
+    "description": "Action description"
+  },
+  "assistantExtractTasks": "Extract tasks from a note",
+  "@assistantExtractTasks": {
+    "description": "Action"
+  },
+  "assistantExtractTasksDesc": "Finds checklist items and action lines in a note and turns them into tasks.",
+  "@assistantExtractTasksDesc": {
+    "description": "Action description"
+  },
+  "assistantMakeCards": "Make flashcards from a note",
+  "@assistantMakeCards": {
+    "description": "Action"
+  },
+  "assistantMakeCardsDesc": "Turns \"term: definition\" and question/answer lines into cards.",
+  "@assistantMakeCardsDesc": {
+    "description": "Action description"
+  },
+  "assistantSummarize": "Summarize a note",
+  "@assistantSummarize": {
+    "description": "Action"
+  },
+  "assistantSummarizeDesc": "Requires an AI provider. The note is sent only after you confirm.",
+  "@assistantSummarizeDesc": {
+    "description": "Action description"
+  },
+  "assistantWorkload": "Workload overview",
+  "@assistantWorkload": {
+    "description": "Action"
+  },
+  "assistantWorkloadDesc": "Compares estimated work with your free time this week.",
+  "@assistantWorkloadDesc": {
+    "description": "Action description"
+  },
+  "assistantPlanEmpty": "No open tasks to plan. Enjoy the space.",
+  "@assistantPlanEmpty": {
+    "description": "Result when nothing to plan"
+  },
+  "assistantPlanCapacity": "Free focus time today: {time}",
+  "@assistantPlanCapacity": {
+    "description": "Plan summary",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "assistantPlanOverflow": "These may not fit today:",
+  "@assistantPlanOverflow": {
+    "description": "Plan section header"
+  },
+  "assistantChooseNote": "Choose a note",
+  "@assistantChooseNote": {
+    "description": "Picker title"
+  },
+  "assistantFoundTasks": "{count, plural, =0{No tasks found in this note} =1{1 task found} other{{count} tasks found}}",
+  "@assistantFoundTasks": {
+    "description": "Result",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "assistantFoundCards": "{count, plural, =0{No cards found in this note} =1{1 card found} other{{count} cards found}}",
+  "@assistantFoundCards": {
+    "description": "Result",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "assistantCreateAll": "Create all",
+  "@assistantCreateAll": {
+    "description": "Button"
+  },
+  "assistantChooseDeck": "Choose a deck",
+  "@assistantChooseDeck": {
+    "description": "Picker title"
+  },
+  "assistantCreated": "Created",
+  "@assistantCreated": {
+    "description": "Snackbar"
+  },
+  "assistantWorkloadResult": "Estimated work: {estimated}. Free time: {free}.",
+  "@assistantWorkloadResult": {
+    "description": "Result",
+    "placeholders": {
+      "estimated": {
+        "type": "String"
+      },
+      "free": {
+        "type": "String"
+      }
+    }
+  },
+  "assistantWorkloadOver": "You have more planned than time available. Consider moving lower-priority tasks.",
+  "@assistantWorkloadOver": {
+    "description": "Result advice"
+  },
+  "assistantWorkloadOk": "Your plan fits in your available time.",
+  "@assistantWorkloadOk": {
+    "description": "Result advice"
+  },
+  "assistantWorkloadUnestimated": "{count, plural, =1{1 open task has no estimate.} other{{count} open tasks have no estimate.}}",
+  "@assistantWorkloadUnestimated": {
+    "description": "Result note",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "assistantProviderTitle": "AI provider",
+  "@assistantProviderTitle": {
+    "description": "Section title"
+  },
+  "assistantProviderOff": "No provider connected. On-device tools still work.",
+  "@assistantProviderOff": {
+    "description": "Status"
+  },
+  "assistantProviderOn": "Connected to {host}",
+  "@assistantProviderOn": {
+    "description": "Status",
+    "placeholders": {
+      "host": {
+        "type": "String"
+      }
+    }
+  },
+  "assistantEndpoint": "API endpoint (HTTPS)",
+  "@assistantEndpoint": {
+    "description": "Field label: OpenAI-compatible chat completions URL"
+  },
+  "assistantModel": "Model",
+  "@assistantModel": {
+    "description": "Field label"
+  },
+  "assistantApiKey": "API key",
+  "@assistantApiKey": {
+    "description": "Field label"
+  },
+  "assistantApiKeyStored": "Stored securely on this device",
+  "@assistantApiKeyStored": {
+    "description": "Help text"
+  },
+  "assistantHttpsOnly": "Only HTTPS endpoints are allowed",
+  "@assistantHttpsOnly": {
+    "description": "Validation"
+  },
+  "assistantConsentTitle": "Send this content to your AI provider?",
+  "@assistantConsentTitle": {
+    "description": "Consent dialog title"
+  },
+  "assistantConsentBody": "The selected note text will leave this device and be processed by {host}. Nothing else is sent.",
+  "@assistantConsentBody": {
+    "description": "Consent dialog body",
+    "placeholders": {
+      "host": {
+        "type": "String"
+      }
+    }
+  },
+  "assistantConsentAlways": "Do not ask again for this provider",
+  "@assistantConsentAlways": {
+    "description": "Checkbox"
+  },
+  "assistantSend": "Send",
+  "@assistantSend": {
+    "description": "Button"
+  },
+  "assistantUnavailable": "The AI provider could not be reached. Try again later.",
+  "@assistantUnavailable": {
+    "description": "Error"
+  },
+  "assistantDisabledTitle": "Assistant is off",
+  "@assistantDisabledTitle": {
+    "description": "Empty state"
+  },
+  "assistantDisabledMessage": "Turn it on to use planning tools. No data leaves your device unless you connect a provider and confirm each request.",
+  "@assistantDisabledMessage": {
+    "description": "Empty state"
+  },
+  "assistantSummaryTitle": "Summary",
+  "@assistantSummaryTitle": {
+    "description": "Result title"
+  },
+  "assistantRemoveProvider": "Remove provider",
+  "@assistantRemoveProvider": {
+    "description": "Button"
+  },
+  "settingsTitle": "Settings",
+  "@settingsTitle": {
+    "description": "Screen title"
+  },
+  "settingsGeneral": "General",
+  "@settingsGeneral": {
+    "description": "Section"
+  },
+  "settingsLanguage": "Language",
+  "@settingsLanguage": {
+    "description": "Setting"
+  },
+  "settingsLanguageSystem": "Device language",
+  "@settingsLanguageSystem": {
+    "description": "Option: follow device language"
+  },
+  "settingsAppearance": "Appearance",
+  "@settingsAppearance": {
+    "description": "Section"
+  },
+  "settingsTheme": "Theme",
+  "@settingsTheme": {
+    "description": "Setting"
+  },
+  "themeLight": "Light",
+  "@themeLight": {
+    "description": "Theme option"
+  },
+  "themeDark": "Dark",
+  "@themeDark": {
+    "description": "Theme option"
+  },
+  "themeSystem": "System",
+  "@themeSystem": {
+    "description": "Theme option"
+  },
+  "settingsReduceMotion": "Reduce motion",
+  "@settingsReduceMotion": {
+    "description": "Setting"
+  },
+  "settingsReduceMotionDesc": "Minimize animations and moving backgrounds",
+  "@settingsReduceMotionDesc": {
+    "description": "Setting description"
+  },
+  "settingsFocus": "Focus timer",
+  "@settingsFocus": {
+    "description": "Section"
+  },
+  "settingsWorkLength": "Focus length",
+  "@settingsWorkLength": {
+    "description": "Setting"
+  },
+  "settingsShortBreak": "Short break",
+  "@settingsShortBreak": {
+    "description": "Setting"
+  },
+  "settingsLongBreak": "Long break",
+  "@settingsLongBreak": {
+    "description": "Setting"
+  },
+  "settingsLongBreakEvery": "Long break after",
+  "@settingsLongBreakEvery": {
+    "description": "Setting"
+  },
+  "settingsCycles": "{count, plural, =1{1 session} other{{count} sessions}}",
+  "@settingsCycles": {
+    "description": "Value for long break interval",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsAutoBreaks": "Start breaks automatically",
+  "@settingsAutoBreaks": {
+    "description": "Setting"
+  },
+  "settingsSound": "Completion sound",
+  "@settingsSound": {
+    "description": "Setting"
+  },
+  "settingsDailyFocusTarget": "Daily focus target",
+  "@settingsDailyFocusTarget": {
+    "description": "Setting"
+  },
+  "settingsWeeklyFocusTarget": "Weekly focus target",
+  "@settingsWeeklyFocusTarget": {
+    "description": "Setting"
+  },
+  "settingsNotifications": "Notifications",
+  "@settingsNotifications": {
+    "description": "Section"
+  },
+  "settingsNotificationsEnable": "Allow reminders",
+  "@settingsNotificationsEnable": {
+    "description": "Setting"
+  },
+  "settingsQuietHours": "Quiet hours",
+  "@settingsQuietHours": {
+    "description": "Setting"
+  },
+  "settingsQuietHoursDesc": "Habit, goal and review reminders are silenced from {start} to {end}",
+  "@settingsQuietHoursDesc": {
+    "description": "Setting description",
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsReviewReminder": "Flashcard review reminder",
+  "@settingsReviewReminder": {
+    "description": "Setting"
+  },
+  "settingsPermissionDenied": "Notifications are blocked in system settings.",
+  "@settingsPermissionDenied": {
+    "description": "Warning"
+  },
+  "settingsPrivacy": "Privacy and data",
+  "@settingsPrivacy": {
+    "description": "Section"
+  },
+  "settingsPrivacyStatement": "Your data is stored only on this device and encrypted. There is no account, no analytics and no tracking.",
+  "@settingsPrivacyStatement": {
+    "description": "Privacy statement"
+  },
+  "settingsBackup": "Create encrypted backup",
+  "@settingsBackup": {
+    "description": "Setting"
+  },
+  "settingsBackupDesc": "Protected with a password you choose",
+  "@settingsBackupDesc": {
+    "description": "Setting description"
+  },
+  "settingsRestore": "Restore from backup",
+  "@settingsRestore": {
+    "description": "Setting"
+  },
+  "settingsRestoreDesc": "Replaces all data on this device",
+  "@settingsRestoreDesc": {
+    "description": "Setting description"
+  },
+  "settingsErase": "Erase all data",
+  "@settingsErase": {
+    "description": "Setting"
+  },
+  "settingsEraseDesc": "Permanently delete everything on this device",
+  "@settingsEraseDesc": {
+    "description": "Setting description"
+  },
+  "settingsEraseConfirmTitle": "Erase all data?",
+  "@settingsEraseConfirmTitle": {
+    "description": "Dialog title"
+  },
+  "settingsEraseConfirmBody": "Every task, note, card, goal, habit, event and session will be deleted permanently. Type {word} to confirm.",
+  "@settingsEraseConfirmBody": {
+    "description": "Dialog body; {word} is the confirmation word",
+    "placeholders": {
+      "word": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsEraseWord": "ERASE",
+  "@settingsEraseWord": {
+    "description": "Word the user must type to confirm erasing. Translate to a single short word."
+  },
+  "settingsErased": "All data erased",
+  "@settingsErased": {
+    "description": "Snackbar"
+  },
+  "backupPassword": "Backup password",
+  "@backupPassword": {
+    "description": "Field label"
+  },
+  "backupPasswordConfirm": "Confirm password",
+  "@backupPasswordConfirm": {
+    "description": "Field label"
+  },
+  "backupPasswordHint": "At least {count} characters. It cannot be recovered if lost.",
+  "@backupPasswordHint": {
+    "description": "Help text",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "backupPasswordMismatch": "Passwords do not match",
+  "@backupPasswordMismatch": {
+    "description": "Validation"
+  },
+  "backupPasswordShort": "Password is too short",
+  "@backupPasswordShort": {
+    "description": "Validation"
+  },
+  "backupCreating": "Encrypting backup…",
+  "@backupCreating": {
+    "description": "Progress"
+  },
+  "backupCreated": "Backup ready to save",
+  "@backupCreated": {
+    "description": "Snackbar"
+  },
+  "backupRestoring": "Verifying and restoring…",
+  "@backupRestoring": {
+    "description": "Progress"
+  },
+  "backupRestored": "{count, plural, =1{Restored 1 item} other{Restored {count} items}}",
+  "@backupRestored": {
+    "description": "Snackbar",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "backupWrongPassword": "Wrong password, or the file was modified.",
+  "@backupWrongPassword": {
+    "description": "Error"
+  },
+  "backupNotABackup": "This file is not a Future OS backup.",
+  "@backupNotABackup": {
+    "description": "Error"
+  },
+  "backupCorrupted": "The backup file is damaged.",
+  "@backupCorrupted": {
+    "description": "Error"
+  },
+  "backupNewer": "This backup was made by a newer version of the app. Please update first.",
+  "@backupNewer": {
+    "description": "Error"
+  },
+  "backupRestoreConfirmTitle": "Replace all data?",
+  "@backupRestoreConfirmTitle": {
+    "description": "Dialog title"
+  },
+  "backupRestoreConfirmBody": "Everything currently on this device will be replaced by the backup. If restoring fails, nothing changes.",
+  "@backupRestoreConfirmBody": {
+    "description": "Dialog body"
+  },
+  "settingsAbout": "About",
+  "@settingsAbout": {
+    "description": "Section"
+  },
+  "settingsVersion": "Version {version}",
+  "@settingsVersion": {
+    "description": "About text",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsLicenses": "Open-source licenses",
+  "@settingsLicenses": {
+    "description": "Setting"
+  },
+  "settingsAssistant": "Assistant",
+  "@settingsAssistant": {
+    "description": "Setting"
+  },
+  "settingsAssistantEnable": "Enable assistant",
+  "@settingsAssistantEnable": {
+    "description": "Setting"
+  },
+  "settingsDashboard": "Home sections",
+  "@settingsDashboard": {
+    "description": "Setting"
+  },
+  "settingsTrash": "Trash",
+  "@settingsTrash": {
+    "description": "Setting"
+  },
+  "settingsMinutesValue": "{minutes} min",
+  "@settingsMinutesValue": {
+    "description": "Compact minutes value in settings",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "trashEmpty": "Trash is empty",
+  "@trashEmpty": {
+    "description": "Empty state"
+  },
+  "trashHint": "Deleted items stay here until you remove them.",
+  "@trashHint": {
+    "description": "Help text"
+  },
+  "trashTasks": "Tasks",
+  "@trashTasks": {
+    "description": "Section"
+  },
+  "trashNotes": "Notes",
+  "@trashNotes": {
+    "description": "Section"
+  },
+  "onboardWelcomeTitle": "Welcome to your future workspace",
+  "@onboardWelcomeTitle": {
+    "description": "Onboarding step 1 title"
+  },
+  "onboardWelcomeBody": "Tasks, focus, calendar, notes, flashcards, goals and habits — together, beautifully simple.",
+  "@onboardWelcomeBody": {
+    "description": "Onboarding step 1 body"
+  },
+  "onboardPrivateTitle": "Private by design",
+  "@onboardPrivateTitle": {
+    "description": "Onboarding step 2 title"
+  },
+  "onboardPrivateBody": "Everything stays on this device, encrypted. No account. No tracking. You stay in control.",
+  "@onboardPrivateBody": {
+    "description": "Onboarding step 2 body"
+  },
+  "onboardLanguageTitle": "Choose your language",
+  "@onboardLanguageTitle": {
+    "description": "Onboarding step 3 title"
+  },
+  "onboardNotifTitle": "Gentle reminders",
+  "@onboardNotifTitle": {
+    "description": "Onboarding step 4 title"
+  },
+  "onboardNotifBody": "Allow notifications for task reminders and focus alerts. You can change this anytime.",
+  "@onboardNotifBody": {
+    "description": "Onboarding step 4 body"
+  },
+  "onboardGetStarted": "Get started",
+  "@onboardGetStarted": {
+    "description": "Final onboarding button"
+  },
+  "onboardStep": "Step {current} of {total}",
+  "@onboardStep": {
+    "description": "Accessibility label for onboarding progress",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "notifChannelReminders": "Reminders",
+  "@notifChannelReminders": {
+    "description": "Android notification channel name"
+  },
+  "notifChannelRemindersDesc": "Task, event, habit and goal reminders",
+  "@notifChannelRemindersDesc": {
+    "description": "Android notification channel description"
+  },
+  "notifChannelFocus": "Focus timer",
+  "@notifChannelFocus": {
+    "description": "Android notification channel name"
+  },
+  "notifChannelFocusDesc": "Alerts when a focus session or break ends",
+  "@notifChannelFocusDesc": {
+    "description": "Android notification channel description"
+  },
+  "notifTaskTitle": "Task reminder",
+  "@notifTaskTitle": {
+    "description": "Notification title"
+  },
+  "notifEventTitle": "Upcoming event",
+  "@notifEventTitle": {
+    "description": "Notification title"
+  },
+  "notifEventBody": "{title} at {time}",
+  "@notifEventBody": {
+    "description": "Notification body",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "notifFocusDoneTitle": "Focus session complete",
+  "@notifFocusDoneTitle": {
+    "description": "Notification title"
+  },
+  "notifFocusDoneBody": "Great work. Time for a break.",
+  "@notifFocusDoneBody": {
+    "description": "Notification body"
+  },
+  "notifBreakDoneTitle": "Break is over",
+  "@notifBreakDoneTitle": {
+    "description": "Notification title"
+  },
+  "notifBreakDoneBody": "Ready for the next focus session?",
+  "@notifBreakDoneBody": {
+    "description": "Notification body"
+  },
+  "notifHabitTitle": "Habit reminder",
+  "@notifHabitTitle": {
+    "description": "Notification title"
+  },
+  "notifReviewTitle": "Flashcards are ready",
+  "@notifReviewTitle": {
+    "description": "Notification title"
+  },
+  "notifReviewBody": "A short review keeps your memory strong.",
+  "@notifReviewBody": {
+    "description": "Notification body"
+  },
+  "durationHoursMinutes": "{hours} h {minutes} min",
+  "@durationHoursMinutes": {
+    "description": "Compact duration",
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "durationHours": "{hours} h",
+  "@durationHours": {
+    "description": "Compact duration",
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "durationMinutes": "{minutes} min",
+  "@durationMinutes": {
+    "description": "Compact duration",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "percentValue": "{value}%",
+  "@percentValue": {
+    "description": "Percentage",
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "weekdaysShort": "M,T,W,T,F,S,S",
+  "@weekdaysShort": {
+    "description": "Comma separated single-letter weekday initials starting Monday, used in habit schedule chips. Must contain exactly 7 comma-separated items."
+  },
+  "a11yOpenMenu": "Open menu",
+  "@a11yOpenMenu": {
+    "description": "Screen reader label"
+  },
+  "a11yProgress": "Progress {value} percent",
+  "@a11yProgress": {
+    "description": "Screen reader label",
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "a11yPriority": "Priority: {level}",
+  "@a11yPriority": {
+    "description": "Screen reader label",
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "a11yColor": "Color {index}",
+  "@a11yColor": {
+    "description": "Screen reader label for color swatch",
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "a11ySelected": "Selected",
+  "@a11ySelected": {
+    "description": "Screen reader state"
+  },
+  "startupErrorTitle": "Your data could not be opened",
+  "@startupErrorTitle": {
+    "description": "Title of the screen shown when the encrypted database cannot be opened at launch"
+  },
+  "startupErrorLocked": "The encryption key for this device's data is not available. Nothing has been deleted. Restarting the device often helps. If you recently restored the device, restore your data from an encrypted backup instead.",
+  "@startupErrorLocked": {
+    "description": "Explanation when the device key is unavailable or does not match"
+  },
+  "startupErrorCipher": "This device does not support the encrypted storage the app requires. Nothing has been saved unencrypted.",
+  "@startupErrorCipher": {
+    "description": "Explanation when the database encryption library is missing"
+  },
+  "startupErrorRetry": "Try again",
+  "@startupErrorRetry": {
+    "description": "Button to retry opening the data"
+  }
+}

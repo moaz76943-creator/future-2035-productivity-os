@@ -1,0 +1,6 @@
+{
+  "startupErrorTitle": {"text": "Your data could not be opened", "desc": "Title of the screen shown when the encrypted database cannot be opened at launch"},
+  "startupErrorLocked": {"text": "The encryption key for this device's data is not available. Nothing has been deleted. Restarting the device often helps. If you recently restored the device, restore your data from an encrypted backup instead.", "desc": "Explanation when the device key is unavailable or does not match"},
+  "startupErrorCipher": {"text": "This device does not support the encrypted storage the app requires. Nothing has been saved unencrypted.", "desc": "Explanation when the database encryption library is missing"},
+  "startupErrorRetry": {"text": "Try again", "desc": "Button to retry opening the data"}
+}
