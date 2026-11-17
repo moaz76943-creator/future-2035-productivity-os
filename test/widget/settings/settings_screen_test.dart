@@ -43,13 +43,13 @@ void main() {
     expect(Directionality.of(tester.element(find.byType(SettingsScreen))), TextDirection.ltr);
 
     await tester.tap(find.byKey(const ValueKey('settings-language')));
-    await tester.pumpAndSettle();
+    await settle(tester);
     // Only native names are listed.
     expect(find.text('العربية'), findsOneWidget);
     expect(find.text('Español'), findsOneWidget);
     expect(find.text(en.settingsLanguageSystem), findsWidgets);
     await tester.tap(find.byKey(const ValueKey('lang-ar')));
-    await tester.pumpAndSettle();
+    await settle(tester);
     await settle(tester);
 
     final c = containerOf(tester, SettingsScreen);
@@ -61,9 +61,9 @@ void main() {
 
     // Back to device language.
     await tester.tap(find.byKey(const ValueKey('settings-language')));
-    await tester.pumpAndSettle();
+    await settle(tester);
     await tester.tap(find.byKey(const ValueKey('lang-system')));
-    await tester.pumpAndSettle();
+    await settle(tester);
     expect(c.read(settingsProvider).localeTag, isNull);
     await env.dispose();
   });
@@ -120,10 +120,10 @@ void main() {
       final erase = find.byKey(const ValueKey('settings-erase'));
       await scrollTo(tester, erase);
       await tester.tap(erase);
-      await tester.pumpAndSettle();
+      await settle(tester);
       expect(find.text(l10n.settingsEraseFirstBody), findsOneWidget);
       await tester.tap(find.text(l10n.actionContinue));
-      await tester.pumpAndSettle();
+      await settle(tester);
 
       FilledButton confirm() =>
           tester.widget<FilledButton>(find.byKey(const ValueKey('erase-confirm')));
@@ -139,7 +139,7 @@ void main() {
       await tester.pump();
       expect(confirm().onPressed, isNotNull);
       await tester.tap(find.byKey(const ValueKey('erase-confirm')));
-      await tester.pumpAndSettle();
+      await settle(tester);
       await settle(tester);
 
       final rows = await env.db.select(env.db.tasks).get();
@@ -158,11 +158,11 @@ void main() {
       final erase = find.byKey(const ValueKey('settings-erase'));
       await scrollTo(tester, erase);
       await tester.tap(erase);
-      await tester.pumpAndSettle();
+      await settle(tester);
       await tester.tap(find.text(l10n.actionContinue));
-      await tester.pumpAndSettle();
+      await settle(tester);
       await tester.tap(find.text(l10n.actionCancel));
-      await tester.pumpAndSettle();
+      await settle(tester);
       expect(await env.db.select(env.db.tasks).get(), hasLength(1));
       await env.dispose();
     });
@@ -216,7 +216,7 @@ void main() {
     final backup = find.byKey(const ValueKey('settings-backup'));
     await scrollTo(tester, backup);
     await tester.tap(backup);
-    await tester.pumpAndSettle();
+    await settle(tester);
 
     await tester.enterText(find.byKey(const ValueKey('backup-password')), 'short');
     await tester.tap(find.text(en.actionCreate));
