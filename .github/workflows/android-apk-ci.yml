@@ -45,10 +45,10 @@ jobs:
         run: flutter analyze
 
       - name: Run unit tests
-        run: flutter test test/unit --reporter expanded --concurrency=4 --timeout=2m
+        run: flutter test test/unit --reporter expanded --concurrency=2 --timeout=2m
 
       - name: Run widget tests
-        run: flutter test test/widget --reporter expanded --concurrency=4 --timeout=2m
+        run: flutter test test/widget --reporter expanded --concurrency=2 --timeout=2m
 
   build-debug-apk:
     name: Build and upload Android debug APK
