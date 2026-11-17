@@ -3,10 +3,8 @@ name: Android APK CI
 on:
   push:
     branches:
-      - ci/safe-android-apk-build
-  pull_request:
-    branches:
-      - main
+      - 'repair/**'
+  workflow_dispatch:
   workflow_dispatch:
 
 permissions:
