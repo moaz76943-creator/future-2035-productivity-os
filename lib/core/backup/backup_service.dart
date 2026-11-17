@@ -245,11 +245,45 @@ class BackupService {
   /// Returns the number of rows restored.
   Future<int> restore(Uint8List bytes, String password) async {
     final doc = await inspect(bytes, password);
-    final tables = doc['tables'] as Map<String, Object?>;
+    final rawTables = doc['tables'];
+    if (rawTables is! Map) {
+      throw const BackupException(BackupError.corrupted);
+    }
+    final Map<String, Object?> tables;
+    try {
+      tables = Map<String, Object?>.from(rawTables);
+    } on Object {
+      throw const BackupException(BackupError.corrupted);
+    }
     final known = {for (final t in _db.allTables) t.actualTableName: t};
-    for (final name in tables.keys) {
-      if (!known.containsKey(name)) {
+    // A format-v1 export always contains every table. Refuse partial snapshots:
+    // otherwise omitted tables would be silently emptied during replacement.
+    if (tables.keys.toSet().difference(known.keys.toSet()).isNotEmpty ||
+        known.keys.toSet().difference(tables.keys.toSet()).isNotEmpty) {
+      throw const BackupException(BackupError.corrupted);
+    }
+    for (final entry in tables.entries) {
+      final rows = entry.value;
+      if (rows is! List) {
         throw const BackupException(BackupError.corrupted);
+      }
+      final allowed = known[entry.key]!.$columns.map((c) => c.name).toSet();
+      for (final raw in rows) {
+        if (raw is! Map) {
+          throw const BackupException(BackupError.corrupted);
+        }
+        try {
+          final row = Map<String, Object?>.from(raw);
+          if (row.keys.any((key) => !allowed.contains(key))) {
+            // Unknown columns are rejected rather than silently ignored. A
+            // future schema needs an explicit migration/backup version.
+            throw const BackupException(BackupError.corrupted);
+          }
+        } on BackupException {
+          rethrow;
+        } on Object {
+          throw const BackupException(BackupError.corrupted);
+        }
       }
     }
     var count = 0;
