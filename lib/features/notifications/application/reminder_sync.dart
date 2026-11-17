@@ -169,8 +169,12 @@ class ReminderSync {
       scheduled.remove(id);
     }
     for (final n in diff.schedule) {
-      await service.schedule(n);
-      scheduled[n.id] = ScheduledRecord.of(n);
+      final succeeded = await service.schedule(n);
+      if (succeeded) {
+        scheduled[n.id] = ScheduledRecord.of(n);
+      }
+      // On failure leave the record unchanged so the next reconciliation
+      // retries this notification instead of falsely marking it scheduled.
     }
     diff.forget.forEach(scheduled.remove);
     if (_disposed) return;
