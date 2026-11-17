@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - ci/safe-android-apk-build
+      - 'repair/**'
   pull_request:
     branches:
       - main
@@ -14,14 +15,46 @@ permissions:
 
 concurrency:
   group: android-apk-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  verify-and-build:
-    name: Verify Flutter app and build debug APK
+  verify:
+    name: Analyze and test Flutter app
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.50.0'
+          channel: stable
+          cache: true
+
+      - name: Resolve dependencies
+        run: flutter pub get
+
+      - name: Generate Drift sources
+        run: dart run build_runner build --delete-conflicting-outputs
+
+      - name: Generate localizations
+        run: flutter gen-l10n
+
+      - name: Analyze
+        run: flutter analyze
+
+      - name: Run unit tests
+        run: flutter test test/unit --reporter expanded --concurrency=4 --timeout=2m
+
+      - name: Run widget tests
+        run: flutter test test/widget --reporter expanded --concurrency=4 --timeout=2m
+
+  build-debug-apk:
+    name: Build and upload Android debug APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -63,17 +96,10 @@ jobs:
       - name: Generate localizations
         run: flutter gen-l10n
 
-      - name: Analyze
-        run: flutter analyze
-
-      - name: Run tests
-        run: flutter test --reporter expanded
-
       - name: Build debug APK
         run: flutter build apk --debug
 
       - name: Upload debug APK
-        if: always() && hashFiles('build/app/outputs/flutter-apk/app-debug.apk') != ''
         uses: actions/upload-artifact@v4
         with:
           name: future-2035-debug-apk
