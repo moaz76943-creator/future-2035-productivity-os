@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - ci/safe-android-apk-build
-      - 'repair/**'
   pull_request:
     branches:
       - main
