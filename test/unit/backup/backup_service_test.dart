@@ -97,10 +97,16 @@ void main() {
       env.clock,
     ).create(const TaskDraft(title: 'keep existing data'));
 
+    final tables = {
+      for (final table in env.db.allTables)
+        table.actualTableName: table.actualTableName == 'tasks'
+            ? 'not-a-row-list'
+            : <Object?>[],
+    };
     final bytes = await _backupWithPayload({
       'app': 'future-os',
       'schemaVersion': 1,
-      'tables': {'tasks': 'not-a-row-list'},
+      'tables': tables,
     });
     await expectLater(
       BackupService(env.db, kdf: _fastKdf).restore(bytes, 'password-123'),
