@@ -49,6 +49,34 @@ void main() {
     await env.dispose();
   });
 
+  test('malformed authenticated-container header is rejected as a backup error', () async {
+    final env = TestEnv();
+    addTearDown(env.dispose);
+    final svc = BackupService(env.db, kdf: _fastKdf);
+    final header = Uint8List.fromList(
+      '{"format":"future-os-backup","version":1,"kdf":"invalid","cipher":{}}'.codeUnits,
+    );
+    final bytes = Uint8List.fromList([
+      ...BackupService.magic,
+      (header.length >> 24) & 0xff,
+      (header.length >> 16) & 0xff,
+      (header.length >> 8) & 0xff,
+      header.length & 0xff,
+      ...header,
+      ...List<int>.filled(16, 0),
+    ]);
+    await expectLater(
+      svc.inspect(bytes, 'password-123'),
+      throwsA(
+        isA<BackupException>().having(
+          (e) => e.error,
+          'error',
+          BackupError.corrupted,
+        ),
+      ),
+    );
+  });
+
   test(
     'wrong password, tampering and garbage are rejected without changes',
     () async {
