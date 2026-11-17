@@ -45,6 +45,15 @@ jobs:
           dart --version
           java -version
 
+      - name: Bootstrap missing Gradle wrapper
+        run: bash tool/bootstrap_android_wrapper.sh
+
+      - name: Verify Gradle wrapper
+        run: |
+          test -x android/gradlew
+          test -s android/gradle/wrapper/gradle-wrapper.jar
+          grep -F 'gradle-9.5.0-all.zip' android/gradle/wrapper/gradle-wrapper.properties
+
       - name: Resolve dependencies
         run: flutter pub get
 
