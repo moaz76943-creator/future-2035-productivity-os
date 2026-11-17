@@ -37,6 +37,7 @@ class ReminderSync {
   StreamSubscription<List<EventOccurrence>>? _eventsSub;
   AppLifecycleListener? _lifecycle;
   Timer? _debounceTimer;
+  Timer? _retryTimer;
   Future<void> _running = Future.value();
   bool _disposed = false;
 
@@ -168,22 +169,32 @@ class ReminderSync {
       await service.cancel(id);
       scheduled.remove(id);
     }
+    var retryNeeded = false;
     for (final n in diff.schedule) {
       final succeeded = await service.schedule(n);
       if (succeeded) {
         scheduled[n.id] = ScheduledRecord.of(n);
+      } else {
+        // On failure leave the record unchanged so reconciliation retries it.
+        retryNeeded = true;
       }
-      // On failure leave the record unchanged so the next reconciliation
-      // retries this notification instead of falsely marking it scheduled.
     }
     diff.forget.forEach(scheduled.remove);
     if (_disposed) return;
     await sources.saveScheduled(scheduled);
+    if (retryNeeded) {
+      _retryTimer?.cancel();
+      _retryTimer = Timer(const Duration(seconds: 30), _schedule);
+    } else {
+      _retryTimer?.cancel();
+      _retryTimer = null;
+    }
   }
 
   void dispose() {
     _disposed = true;
     _debounceTimer?.cancel();
+    _retryTimer?.cancel();
     _lifecycle?.dispose();
     unawaited(_eventsSub?.cancel());
     for (final s in _subs) {
