@@ -101,66 +101,144 @@ class BackupService {
   }
 
   /// Parses and decrypts a backup without touching the database.
+  static const int maxBackupBytes = 64 * 1024 * 1024;
+  static const int maxHeaderBytes = 64 * 1024;
+  static const int maxRestoredBytes = 128 * 1024 * 1024;
+
+  /// Parses and decrypts a backup without touching the database.
+  ///
+  /// Untrusted headers are validated before constructing the KDF. Malformed
+  /// containers are normalized to [BackupException] and decompression is
+  /// bounded to prevent resource-exhaustion backups.
   Future<Map<String, Object?>> inspect(Uint8List bytes, String password) async {
+    if (bytes.length > maxBackupBytes) {
+      throw const BackupException(BackupError.corrupted);
+    }
     if (bytes.length < 8 + 16 || !_bytesEqual(bytes.sublist(0, 4), magic)) {
       throw const BackupException(BackupError.notABackup);
     }
     final hlen = ByteData.sublistView(bytes, 4, 8).getUint32(0);
-    if (hlen <= 0 || 8 + hlen + 16 > bytes.length) {
+    if (hlen <= 0 || hlen > maxHeaderBytes || 8 + hlen + 16 > bytes.length) {
       throw const BackupException(BackupError.corrupted);
     }
-    final headerBytes = bytes.sublist(8, 8 + hlen);
-    final Map<String, Object?> header;
+
     try {
-      header = jsonDecode(utf8.decode(headerBytes)) as Map<String, Object?>;
+      final headerBytes = bytes.sublist(8, 8 + hlen);
+      final decodedHeader = jsonDecode(utf8.decode(headerBytes));
+      if (decodedHeader is! Map) {
+        throw const BackupException(BackupError.corrupted);
+      }
+      final header = Map<String, Object?>.from(decodedHeader);
+      if (header['format'] != 'future-os-backup') {
+        throw const BackupException(BackupError.notABackup);
+      }
+      final version = header['version'];
+      if (version is! int || version < 1) {
+        throw const BackupException(BackupError.corrupted);
+      }
+      if (version > formatVersion) {
+        throw const BackupException(BackupError.newerVersion);
+      }
+      if (version != formatVersion) {
+        throw const BackupException(BackupError.corrupted);
+      }
+
+      final kdfValue = header['kdf'];
+      final cipherValue = header['cipher'];
+      if (kdfValue is! Map || cipherValue is! Map) {
+        throw const BackupException(BackupError.corrupted);
+      }
+      final kdfJ = Map<String, Object?>.from(kdfValue);
+      final cipherJ = Map<String, Object?>.from(cipherValue);
+      if (kdfJ['alg'] != 'argon2id' || cipherJ['alg'] != 'aes-256-gcm') {
+        throw const BackupException(BackupError.corrupted);
+      }
+
+      final memory = kdfJ['memoryKiB'];
+      final iterations = kdfJ['iterations'];
+      final parallelism = kdfJ['parallelism'];
+      if (memory is! int ||
+          iterations is! int ||
+          parallelism is! int ||
+          memory <= 0 ||
+          memory > 256 * 1024 ||
+          iterations < 1 ||
+          iterations > 20 ||
+          parallelism < 1 ||
+          parallelism > 16) {
+        throw const BackupException(BackupError.corrupted);
+      }
+
+      final saltValue = kdfJ['salt'];
+      final nonceValue = cipherJ['nonce'];
+      if (saltValue is! String || nonceValue is! String) {
+        throw const BackupException(BackupError.corrupted);
+      }
+      final salt = base64Decode(saltValue);
+      final nonce = base64Decode(nonceValue);
+      if (salt.length != 16 || nonce.length != _aes.nonceLength) {
+        throw const BackupException(BackupError.corrupted);
+      }
+
+      final body = bytes.sublist(8 + hlen);
+      if (body.length < 16) {
+        throw const BackupException(BackupError.corrupted);
+      }
+      final kdf = Argon2id(
+        memory: memory,
+        iterations: iterations,
+        parallelism: parallelism,
+        hashLength: 32,
+      );
+      final key = await kdf.deriveKeyFromPassword(password: password, nonce: salt);
+      final box = SecretBox(
+        body.sublist(0, body.length - 16),
+        nonce: nonce,
+        mac: Mac(body.sublist(body.length - 16)),
+      );
+      final List<int> plain;
+      try {
+        plain = await _aes.decrypt(box, secretKey: key, aad: headerBytes);
+      } on SecretBoxAuthenticationError {
+        throw const BackupException(BackupError.wrongPasswordOrTampered);
+      }
+
+      final expanded = await _gunzipBounded(plain);
+      final decodedDocument = jsonDecode(utf8.decode(expanded));
+      if (decodedDocument is! Map) {
+        throw const BackupException(BackupError.corrupted);
+      }
+      final doc = Map<String, Object?>.from(decodedDocument);
+      if (doc['app'] != 'future-os') {
+        throw const BackupException(BackupError.notABackup);
+      }
+      final schemaVersion = doc['schemaVersion'];
+      if (schemaVersion is! int || schemaVersion < 1) {
+        throw const BackupException(BackupError.corrupted);
+      }
+      if (schemaVersion > _db.schemaVersion) {
+        throw const BackupException(BackupError.newerVersion);
+      }
+      if (doc['tables'] is! Map) {
+        throw const BackupException(BackupError.corrupted);
+      }
+      return doc;
+    } on BackupException {
+      rethrow;
     } on Object {
       throw const BackupException(BackupError.corrupted);
     }
-    if (header['format'] != 'future-os-backup') {
-      throw const BackupException(BackupError.notABackup);
+  }
+
+  Future<Uint8List> _gunzipBounded(List<int> compressed) async {
+    final out = BytesBuilder(copy: false);
+    await for (final chunk in gzip.decoder.bind(Stream<List<int>>.value(compressed))) {
+      if (out.length + chunk.length > maxRestoredBytes) {
+        throw const BackupException(BackupError.corrupted);
+      }
+      out.add(chunk);
     }
-    if ((header['version'] as int? ?? 999) > formatVersion) {
-      throw const BackupException(BackupError.newerVersion);
-    }
-    final kdfJ = header['kdf'] as Map<String, Object?>;
-    final cipherJ = header['cipher'] as Map<String, Object?>;
-    final memory = kdfJ['memoryKiB'] as int;
-    final iterations = kdfJ['iterations'] as int;
-    // Refuse absurd parameters that could hang or exhaust the device.
-    if (memory > 256 * 1024 || iterations > 20) {
-      throw const BackupException(BackupError.corrupted);
-    }
-    final kdf = Argon2id(
-      memory: memory,
-      iterations: iterations,
-      parallelism: kdfJ['parallelism'] as int,
-      hashLength: 32,
-    );
-    final key = await kdf.deriveKeyFromPassword(
-      password: password,
-      nonce: base64Decode(kdfJ['salt'] as String),
-    );
-    final body = bytes.sublist(8 + hlen);
-    final box = SecretBox(
-      body.sublist(0, body.length - 16),
-      nonce: base64Decode(cipherJ['nonce'] as String),
-      mac: Mac(body.sublist(body.length - 16)),
-    );
-    final List<int> plain;
-    try {
-      plain = await _aes.decrypt(box, secretKey: key, aad: headerBytes);
-    } on SecretBoxAuthenticationError {
-      throw const BackupException(BackupError.wrongPasswordOrTampered);
-    }
-    final doc =
-        jsonDecode(utf8.decode(gzip.decode(plain))) as Map<String, Object?>;
-    if (doc['app'] != 'future-os') {
-      throw const BackupException(BackupError.notABackup);
-    }
-    if ((doc['schemaVersion'] as int) > _db.schemaVersion) {
-      throw const BackupException(BackupError.newerVersion);
-    }
-    return doc;
+    return out.takeBytes();
   }
 
   /// Replaces all local data with the backup contents atomically.
