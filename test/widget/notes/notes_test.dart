@@ -105,10 +105,10 @@ void main() {
       await pumpScreen(tester, routed(), env: env);
       await settle(tester);
       await tester.tap(find.byTooltip('More options'));
-      await tester.pumpAndSettle();
+      await settle(tester);
       await tester.tap(find.text('Delete'));
       await settle(tester);
-      await tester.pumpAndSettle();
+      await settle(tester);
       expect(find.text('Temp'), findsNothing);
       expect((await db(tester, () => repo.byId(id)))!.deletedAt, isNotNull);
       await tester.tap(find.text('Undo'));
