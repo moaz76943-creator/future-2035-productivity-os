@@ -42,7 +42,7 @@ abstract class NotificationService {
 
   /// Re-creates channels with names in [l10n] (Android updates names in place).
   Future<void> updateChannels(AppLocalizations l10n);
-  Future<void> schedule(PlannedNotification n, {bool silent = false});
+  Future<bool> schedule(PlannedNotification n, {bool silent = false});
   Future<void> cancel(int id);
 
   /// Routes from tapped notifications.
@@ -203,8 +203,8 @@ class LocalNotificationService implements NotificationService {
   }
 
   @override
-  Future<void> schedule(PlannedNotification n, {bool silent = false}) async {
-    if (!_ready) return;
+  Future<bool> schedule(PlannedNotification n, {bool silent = false}) async {
+    if (!_ready) return false;
     final l10n = _l10n;
     final isFocus = n.channel == NotificationChannelKind.focus;
     final details = NotificationDetails(
@@ -242,20 +242,25 @@ class LocalNotificationService implements NotificationService {
       payload: n.payload,
       matchDateTimeComponents: components,
     );
+    var exact = false;
     try {
-      final exact = await canScheduleExact();
-      try {
-        await go(
-          exact
-              ? AndroidScheduleMode.exactAllowWhileIdle
-              : AndroidScheduleMode.inexactAllowWhileIdle,
-        );
-      } on Object {
-        // Exact alarm permission can be revoked between check and call.
-        if (exact) await go(AndroidScheduleMode.inexactAllowWhileIdle);
-      }
+      exact = await canScheduleExact();
+      await go(
+        exact
+            ? AndroidScheduleMode.exactAllowWhileIdle
+            : AndroidScheduleMode.inexactAllowWhileIdle,
+      );
+      return true;
     } on Object {
-      // A failed schedule must never break the calling flow.
+      // Exact alarm permission can be revoked between check and call.
+      // Retry inexactly, but report failure if the OS still rejects it.
+      if (!exact) return false;
+      try {
+        await go(AndroidScheduleMode.inexactAllowWhileIdle);
+        return true;
+      } on Object {
+        return false;
+      }
     }
   }
 
