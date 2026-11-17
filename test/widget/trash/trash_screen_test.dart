@@ -67,7 +67,7 @@ void main() {
           matching: find.byTooltip(l10n.actionDeleteForever),
         ),
       );
-      await tester.pumpAndSettle();
+      await settle(tester);
       expect(find.text(l10n.trashDeleteNoteTitle), findsOneWidget);
       await tester.tap(find.widgetWithText(FilledButton, l10n.actionDeleteForever));
       await settle(tester);
@@ -84,7 +84,7 @@ void main() {
     await pumpScreen(tester, const TrashScreen(), env: env);
     await settle(tester);
     await tester.tap(find.byKey(const ValueKey('trash-empty-all')));
-    await tester.pumpAndSettle();
+    await settle(tester);
     expect(find.text(l10n.trashEmptyBody(3)), findsOneWidget);
     await tester.tap(find.widgetWithText(FilledButton, l10n.actionEmptyTrash));
     await settle(tester);
@@ -107,9 +107,9 @@ void main() {
         matching: find.byTooltip(l10n.actionDeleteForever),
       ),
     );
-    await tester.pumpAndSettle();
+    await settle(tester);
     await tester.tap(find.text(l10n.actionCancel));
-    await tester.pumpAndSettle();
+    await settle(tester);
     expect(await TasksRepository(env.db, env.clock).byId(parent), isNotNull);
     await env.dispose();
   });
