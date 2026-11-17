@@ -161,11 +161,11 @@ class BackupService {
           iterations is! int ||
           parallelism is! int ||
           memory <= 0 ||
-          memory > 256 * 1024 ||
+          memory > 64 * 1024 ||
           iterations < 1 ||
-          iterations > 20 ||
+          iterations > 6 ||
           parallelism < 1 ||
-          parallelism > 16) {
+          parallelism > 4) {
         throw const BackupException(BackupError.corrupted);
       }
 
