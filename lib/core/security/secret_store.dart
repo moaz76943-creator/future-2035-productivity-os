@@ -62,26 +62,22 @@ Future<String> obtainDatabaseKey(
 }) async {
   final existing = await store.read(SecretKeys.databaseKey);
   if (existing != null) {
-    if (RegExp(r'^[0-9a-f]{64}  final rnd = Random.secure();
-  final hex = List.generate(32, (_) => rnd.nextInt(256).toRadixString(16).padLeft(2, '0')).join();
-  await store.write(SecretKeys.databaseKey, hex);
-  // Read back to make sure it was persisted before any data is written.
-  final check = await store.read(SecretKeys.databaseKey);
-  if (check != hex) throw StateError('secure storage did not persist the database key');
-  return hex;
-}
-
-final secretStoreProvider = Provider<SecretStore>((ref) => const PlatformSecretStore());
-).hasMatch(existing)) return existing;
+    if (RegExp(r'^[0-9a-f]{64}$').hasMatch(existing)) return existing;
     throw const DatabaseKeyUnavailableException();
   }
   if (databaseExists) throw const DatabaseKeyUnavailableException();
+
   final rnd = Random.secure();
-  final hex = List.generate(32, (_) => rnd.nextInt(256).toRadixString(16).padLeft(2, '0')).join();
+  final hex = List.generate(
+    32,
+    (_) => rnd.nextInt(256).toRadixString(16).padLeft(2, '0'),
+  ).join();
   await store.write(SecretKeys.databaseKey, hex);
   // Read back to make sure it was persisted before any data is written.
   final check = await store.read(SecretKeys.databaseKey);
-  if (check != hex) throw StateError('secure storage did not persist the database key');
+  if (check != hex) {
+    throw StateError('secure storage did not persist the database key');
+  }
   return hex;
 }
 
