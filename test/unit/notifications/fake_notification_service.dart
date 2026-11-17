@@ -11,6 +11,7 @@ class FakeNotificationService implements NotificationService {
 
   NotificationAccess accessValue;
   bool ready;
+  bool scheduleSucceeds = true;
   final scheduled = <int, PlannedNotification>{};
   final cancelled = <int>[];
   final log = <String>[];
@@ -39,9 +40,11 @@ class FakeNotificationService implements NotificationService {
   @override
   Future<void> updateChannels(AppLocalizations l10n) async => channelL10n = l10n;
   @override
-  Future<void> schedule(PlannedNotification n, {bool silent = false}) async {
-    scheduled[n.id] = n;
+  Future<bool> schedule(PlannedNotification n, {bool silent = false}) async {
     log.add('schedule ${n.id}');
+    if (!scheduleSucceeds || !ready) return false;
+    scheduled[n.id] = n;
+    return true;
   }
 
   @override
