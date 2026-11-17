@@ -1,13 +1,10 @@
-import 'dart:async';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:future_os/core/providers/core_providers.dart';
-import 'package:future_os/core/time/clock.dart';
 import 'package:future_os/features/notifications/application/notification_providers.dart';
 import 'package:future_os/features/notifications/application/reminder_sync.dart';
 import 'package:future_os/features/notifications/data/reminder_sources.dart';
-import 'package:future_os/features/notifications/data/notification_service.dart';
 import 'package:future_os/features/notifications/domain/notification_ids.dart';
 import 'package:future_os/features/settings/application/settings_providers.dart';
 import 'package:future_os/features/settings/data/settings_repository.dart';
