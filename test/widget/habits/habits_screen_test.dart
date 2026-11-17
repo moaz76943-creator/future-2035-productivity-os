@@ -42,7 +42,7 @@ Future<int> _todayCount(WidgetTester tester, TestEnv env, String id) async {
   final counts = await tester.runAsync(
     () => HabitsRepository(env.db, env.clock).watchCounts(id).first,
   );
-  return counts[Days.key(env.clock.now())] ?? 0;
+  return counts?[Days.key(env.clock.now())] ?? 0;
 }
 
 void main() {
@@ -70,24 +70,24 @@ void main() {
 
       await tester.tap(find.byKey(ValueKey('checkin-$id')));
       await settle(tester);
-      expect(await _todayCount(env, id), 2);
+      expect(await _todayCount(tester, env, id), 2);
       expect(find.text(l10n.habitStreak(4)), findsOneWidget);
       expect(find.text(l10n.habitsTodaySummary(1, 1)), findsOneWidget);
 
       // At the target, a tap opens adjustments rather than over-counting.
       await tester.tap(find.byKey(ValueKey('checkin-$id')));
       await settle(tester);
-      expect(await _todayCount(env, id), 2);
+      expect(await _todayCount(tester, env, id), 2);
       await tester.tap(find.byKey(const ValueKey('adjust-decrease')));
       await settle(tester);
-      expect(await _todayCount(env, id), 1);
+      expect(await _todayCount(tester, env, id), 1);
 
       // Long-press → reset.
       await tester.longPress(find.byKey(ValueKey('checkin-$id')));
       await settle(tester);
       await tester.tap(find.byKey(const ValueKey('adjust-reset')));
       await settle(tester);
-      expect(await _todayCount(env, id), 0);
+      expect(await _todayCount(tester, env, id), 0);
     });
   }
 
