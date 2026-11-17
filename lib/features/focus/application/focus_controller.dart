@@ -79,6 +79,7 @@ final focusControllerProvider = NotifierProvider<FocusController, FocusControlle
 class FocusController extends Notifier<FocusControllerState> {
   Future<void> _queue = Future.value();
   Timer? _completionTimer;
+  Timer? _notificationRetryTimer;
   bool _askedPermission = false;
   late Future<void> restored;
 
@@ -99,7 +100,10 @@ class FocusController extends Notifier<FocusControllerState> {
 
   @override
   FocusControllerState build() {
-    ref.onDispose(() => _completionTimer?.cancel());
+    ref.onDispose(() {
+      _completionTimer?.cancel();
+      _notificationRetryTimer?.cancel();
+    });
     ref.listen<AppSettings>(settingsProvider, (prev, next) {
       if (prev?.notificationsEnabled != next.notificationsEnabled ||
           prev?.focusSound != next.focusSound ||
@@ -374,6 +378,8 @@ class FocusController extends Notifier<FocusControllerState> {
   Future<void> _afterChange() async {
     _completionTimer?.cancel();
     _completionTimer = null;
+    _notificationRetryTimer?.cancel();
+    _notificationRetryTimer = null;
     final s = state.active;
     final now = _nowUtc;
     final end = s?.expectedEndUtc(now);
@@ -390,10 +396,18 @@ class FocusController extends Notifier<FocusControllerState> {
       await _notifications.cancel(NotificationIds.focus);
       return;
     }
-    await _notifications.schedule(
+    final scheduled = await _notifications.schedule(
       focusEndNotification(s, end, settings),
       silent: !settings.focusSound,
     );
+    if (!scheduled && ref.mounted) {
+      // If the OS rejects the alert, retry while the same focus phase remains
+      // active. The persisted timer state is still authoritative on restart.
+      _notificationRetryTimer = Timer(
+        const Duration(seconds: 30),
+        () => unawaited(_serial(_afterChange)),
+      );
+    }
   }
 
   Future<void> _maybeAskPermission() async {
