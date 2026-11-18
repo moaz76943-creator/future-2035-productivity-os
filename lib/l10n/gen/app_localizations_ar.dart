@@ -2184,32 +2184,32 @@ class AppLocalizationsAr extends AppLocalizations {
   String get a11ySelected => 'محدد';
 
   @override
-  String get analyticsRangeLabel => 'Time range';
+  String get analyticsRangeLabel => 'النطاق الزمني';
 
   @override
-  String get analyticsRefresh => 'Refresh';
+  String get analyticsRefresh => 'تحديث';
 
   @override
   String analyticsOnTimeDetail(int done, int total) {
-    return '$done of $total due tasks done on time';
+    return 'تم إنجاز $done من $total مهمة مستحقة في موعدها';
   }
 
   @override
   String analyticsProjectTasks(int done, int total) {
-    return '$done of $total tasks done';
+    return 'تم إنجاز $done من $total مهمة';
   }
 
   @override
-  String get analyticsNoProjects => 'No active projects';
+  String get analyticsNoProjects => 'لا توجد مشاريع نشطة';
 
   @override
-  String get analyticsNoFocus => 'No focus sessions in this range';
+  String get analyticsNoFocus => 'لا توجد جلسات تركيز في هذا النطاق';
 
   @override
-  String get analyticsHabitsNone => 'No active habits';
+  String get analyticsHabitsNone => 'لا توجد عادات نشطة';
 
   @override
-  String get analyticsRetentionNote => 'Share of mature cards you remembered';
+  String get analyticsRetentionNote => 'نسبة البطاقات الراسخة التي تذكّرتها';
 
   @override
   String analyticsBarValue(String name, String value) {
@@ -2218,26 +2218,26 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String assistantWorkloadRule(String start, String end, String days) {
-    return 'Free time counts $start–$end on workdays ($days), minus timed events. Estimated work is the sum of estimates of open tasks due in the next 7 days.';
+    return 'يُحتسب الوقت الحر من $start إلى $end في أيام العمل ($days)، بعد خصم الأحداث المحددة بوقت. العمل المقدَّر هو مجموع تقديرات المهام المفتوحة المستحقة خلال الأيام السبعة القادمة.';
   }
 
   @override
-  String get assistantWorkdaysMonFri => 'Monday–Friday';
+  String get assistantWorkdaysMonFri => 'الاثنين–الجمعة';
 
   @override
-  String get assistantWorkdaysSunThu => 'Sunday–Thursday';
+  String get assistantWorkdaysSunThu => 'الأحد–الخميس';
 
   @override
-  String get assistantWorkloadDayOff => 'Day off';
+  String get assistantWorkloadDayOff => 'يوم عطلة';
 
   @override
   String assistantWorkloadDay(String estimated, String free) {
-    return '$estimated planned · $free free';
+    return '$estimated مخطط · $free متاح';
   }
 
   @override
   String assistantPlanRule(String end) {
-    return 'Planned from now until $end, around today\'s events. Overdue tasks first, then priority, due date and estimate.';
+    return 'تم التخطيط من الآن حتى $end مع مراعاة أحداث اليوم. المهام المتأخرة أولًا، ثم الأولوية وتاريخ الاستحقاق والتقدير.';
   }
 
   @override
@@ -2246,18 +2246,22 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get assistantScheduleBlocks => 'Schedule as time blocks';
+  String get assistantScheduleBlocks => 'جدولة ككتل زمنية';
 
   @override
-  String get assistantScheduleConfirmTitle => 'Add time blocks to your calendar?';
+  String get assistantScheduleConfirmTitle => 'إضافة الكتل الزمنية إلى التقويم؟';
 
   @override
   String assistantScheduleConfirmBody(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count time blocks will be added to today\'s calendar.',
-      one: '1 time block will be added to today\'s calendar.',
+      other: 'ستتم إضافة $count كتلة زمنية إلى تقويم اليوم.',
+      many: 'ستتم إضافة $count كتلة زمنية إلى تقويم اليوم.',
+      few: 'ستتم إضافة $count كتل زمنية إلى تقويم اليوم.',
+      two: 'ستتم إضافة كتلتين زمنيتين إلى تقويم اليوم.',
+      one: 'ستتم إضافة كتلة زمنية واحدة إلى تقويم اليوم.',
+      zero: 'ستتم إضافة $count كتلة زمنية إلى تقويم اليوم.',
     );
     return '$_temp0';
   }
@@ -2267,34 +2271,42 @@ class AppLocalizationsAr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count time blocks added',
-      one: '1 time block added',
+      other: 'تمت إضافة $count كتلة زمنية',
+      many: 'تمت إضافة $count كتلة زمنية',
+      few: 'تمت إضافة $count كتل زمنية',
+      two: 'تمت إضافة كتلتين زمنيتين',
+      one: 'تمت إضافة كتلة زمنية واحدة',
+      zero: 'تمت إضافة $count كتلة زمنية',
     );
     return '$_temp0';
   }
 
   @override
-  String get assistantAlreadyScheduled => 'Already on your calendar';
+  String get assistantAlreadyScheduled => 'موجودة في التقويم بالفعل';
 
   @override
-  String get assistantPlanTimeline => 'Fits today';
+  String get assistantPlanTimeline => 'ما يناسب اليوم';
 
   @override
-  String get assistantNoEstimate => 'Add an estimate to plan these';
+  String get assistantNoEstimate => 'أضف تقديرًا للوقت للتخطيط لهذه المهام';
 
   @override
-  String get assistantNoNotes => 'No notes yet. Write a note first.';
+  String get assistantNoNotes => 'لا توجد ملاحظات بعد. اكتب ملاحظة أولًا.';
 
   @override
-  String get assistantNoteEmpty => 'This note is empty.';
+  String get assistantNoteEmpty => 'هذه الملاحظة فارغة.';
 
   @override
   String assistantTasksCreated(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count tasks created',
-      one: '1 task created',
+      other: 'تم إنشاء $count مهمة',
+      many: 'تم إنشاء $count مهمة',
+      few: 'تم إنشاء $count مهام',
+      two: 'تم إنشاء مهمتين',
+      one: 'تم إنشاء مهمة واحدة',
+      zero: 'تم إنشاء $count مهمة',
     );
     return '$_temp0';
   }
@@ -2304,8 +2316,12 @@ class AppLocalizationsAr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count cards created',
-      one: '1 card created',
+      other: 'تم إنشاء $count بطاقة',
+      many: 'تم إنشاء $count بطاقة',
+      few: 'تم إنشاء $count بطاقات',
+      two: 'تم إنشاء بطاقتين',
+      one: 'تم إنشاء بطاقة واحدة',
+      zero: 'تم إنشاء $count بطاقة',
     );
     return '$_temp0';
   }
@@ -2315,63 +2331,66 @@ class AppLocalizationsAr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Create $count',
-      one: 'Create 1',
-      zero: 'Nothing selected',
+      other: 'إنشاء $count',
+      many: 'إنشاء $count',
+      few: 'إنشاء $count',
+      two: 'إنشاء $count',
+      one: 'إنشاء 1',
+      zero: 'لم يتم تحديد شيء',
     );
     return '$_temp0';
   }
 
   @override
   String get assistantExtractHint =>
-      'Recognized: unchecked checkboxes \"- [ ]\" and lines starting with TODO: or To do:';
+      'ما يتم التعرّف عليه: مربعات الاختيار غير المحددة \"- [ ]\" والأسطر التي تبدأ بـ TODO: أو To do:';
 
   @override
   String get assistantCardsHint =>
-      'Recognized: \"term: definition\", \"term — definition\" and Q:/A: line pairs';
+      'ما يتم التعرّف عليه: \"المصطلح: التعريف\" و\"المصطلح — التعريف\" وأزواج الأسطر Q:/A:';
 
   @override
   String get assistantProviderHint =>
-      'Use any OpenAI-compatible service. The key stays in this device\'s secure storage and is never included in backups.';
+      'استخدم أي خدمة متوافقة مع OpenAI. يبقى المفتاح في التخزين الآمن لهذا الجهاز ولا يُضمَّن أبدًا في النسخ الاحتياطية.';
 
   @override
-  String get assistantEndpointHelp => 'For example https://api.example.com/v1';
+  String get assistantEndpointHelp => 'مثال: https://api.example.com/v1';
 
   @override
-  String get assistantApiKeyKeep => 'Leave empty to keep the stored key';
+  String get assistantApiKeyKeep => 'اتركه فارغًا للإبقاء على المفتاح المحفوظ';
 
   @override
-  String get assistantApiKeyRequired => 'Enter an API key';
+  String get assistantApiKeyRequired => 'أدخل مفتاح API';
 
   @override
-  String get assistantProviderSaved => 'Provider saved';
+  String get assistantProviderSaved => 'تم حفظ المزوّد';
 
   @override
-  String get assistantProviderRemoved => 'Provider removed and key deleted';
+  String get assistantProviderRemoved => 'تمت إزالة المزوّد وحذف المفتاح';
 
   @override
   String get assistantRemoveProviderConfirm =>
-      'Remove the provider and delete the stored API key from this device?';
+      'إزالة المزوّد وحذف مفتاح API المحفوظ من هذا الجهاز؟';
 
   @override
-  String get assistantAskEveryTime => 'Ask before every request';
+  String get assistantAskEveryTime => 'السؤال قبل كل طلب';
 
   @override
-  String get assistantSummarizing => 'Summarizing…';
+  String get assistantSummarizing => 'جارٍ التلخيص…';
 
   @override
   String assistantSummaryNote(String host) {
-    return 'Generated by $host. Review before relying on it.';
+    return 'تم إنشاؤه بواسطة $host. راجعه قبل الاعتماد عليه.';
   }
 
   @override
-  String get assistantCopy => 'Copy';
+  String get assistantCopy => 'نسخ';
 
   @override
-  String get assistantCopied => 'Copied';
+  String get assistantCopied => 'تم النسخ';
 
   @override
-  String get assistantConfigure => 'Set up provider';
+  String get assistantConfigure => 'إعداد المزوّد';
 
   @override
   String calendarTimeRange(String start, String end) {
@@ -2384,34 +2403,37 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get calendarSeriesMoved => 'All events in this series were moved';
+  String get calendarSeriesMoved => 'تم نقل جميع الأحداث في هذه السلسلة';
 
   @override
-  String get calendarEventReminder => 'Reminder';
+  String get calendarEventReminder => 'التذكير';
 
   @override
-  String get calendarEventRepeat => 'Repeat';
+  String get calendarEventRepeat => 'التكرار';
 
   @override
-  String get calendarEventColor => 'Color';
+  String get calendarEventColor => 'اللون';
 
   @override
-  String get calendarDefaultColor => 'Use type color';
+  String get calendarDefaultColor => 'استخدام لون النوع';
 
   @override
-  String get calendarEventLinkedTask => 'Linked task';
+  String get calendarEventLinkedTask => 'المهمة المرتبطة';
 
   @override
-  String get calendarEventNoTask => 'No linked task';
+  String get calendarEventNoTask => 'لا توجد مهمة مرتبطة';
 
   @override
   String calendarEventsCount(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count events',
-      one: '1 event',
-      zero: 'No events',
+      other: '$count حدث',
+      many: '$count حدثًا',
+      few: '$count أحداث',
+      two: 'حدثان',
+      one: 'حدث واحد',
+      zero: 'لا توجد أحداث',
     );
     return '$_temp0';
   }
@@ -2421,236 +2443,245 @@ class AppLocalizationsAr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count tasks due',
-      one: '1 task due',
-      zero: 'no tasks due',
+      other: '$count مهمة مستحقة',
+      many: '$count مهمة مستحقة',
+      few: '$count مهام مستحقة',
+      two: 'مهمتان مستحقتان',
+      one: 'مهمة واحدة مستحقة',
+      zero: 'لا توجد مهام مستحقة',
     );
     return '$_temp0';
   }
 
   @override
   String calendarDaySemantics(String date, String events, String tasks) {
-    return '$date. $events, $tasks';
+    return '$date. $events، $tasks';
   }
 
   @override
-  String get calendarNoEventsHint => 'Add an event or a time block to plan this day.';
+  String get calendarNoEventsHint => 'أضف حدثًا أو كتلة زمنية لتخطيط هذا اليوم.';
 
   @override
-  String get calendarNow => 'Current time';
+  String get calendarNow => 'الوقت الحالي';
 
   @override
-  String get calendarRecurring => 'Repeats';
+  String get calendarRecurring => 'متكرر';
 
   @override
-  String get calendarEventNotFound => 'This event no longer exists';
+  String get calendarEventNotFound => 'هذا الحدث لم يعد موجودًا';
 
   @override
-  String get calendarEventLocalTime => 'Times are shown in your device\'s time zone';
+  String get calendarEventLocalTime => 'تُعرض الأوقات بحسب المنطقة الزمنية لجهازك';
 
   @override
-  String get calendarEventDeleted => 'Event moved to trash';
+  String get calendarEventDeleted => 'تم نقل الحدث إلى المهملات';
 
   @override
-  String get calendarConflictMarker => 'Overlaps another event';
+  String get calendarConflictMarker => 'يتداخل مع حدث آخر';
 
   @override
   String calendarEventSemantics(String title, String time) {
-    return '$title, $time';
+    return '$title، $time';
   }
 
   @override
-  String get calendarSeriesEditNote => 'Changes apply to every event in this series';
+  String get calendarSeriesEditNote => 'تُطبَّق التغييرات على جميع الأحداث في هذه السلسلة';
 
   @override
-  String get calendarDragHintSeries => 'Dragging a repeating event moves the whole series';
+  String get calendarDragHintSeries => 'سحب حدث متكرر ينقل السلسلة بأكملها';
 
   @override
   String calendarTaskDueSemantics(String title) {
-    return '$title, task due';
+    return '$title، مهمة مستحقة';
   }
 
   @override
-  String get startupErrorTitle => 'Your data could not be opened';
+  String get startupErrorTitle => 'تعذّر فتح بياناتك';
 
   @override
   String get startupErrorLocked =>
-      'The encryption key for this device\'s data is not available. Nothing has been deleted. Restarting the device often helps. If you recently restored the device, restore your data from an encrypted backup instead.';
+      'مفتاح التشفير الخاص ببيانات هذا الجهاز غير متاح. لم يتم حذف أي شيء. غالبًا ما تحل إعادة تشغيل الجهاز المشكلة. إذا استعدت الجهاز مؤخرًا، فاستعد بياناتك من نسخة احتياطية مشفّرة.';
 
   @override
   String get startupErrorCipher =>
-      'This device does not support the encrypted storage the app requires. Nothing has been saved unencrypted.';
+      'هذا الجهاز لا يدعم التخزين المشفّر الذي يتطلبه التطبيق. لم يتم حفظ أي شيء بدون تشفير.';
 
   @override
-  String get startupErrorRetry => 'Try again';
+  String get startupErrorRetry => 'حاول مرة أخرى';
 
   @override
   String flashcardsDueBanner(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count cards are due for review',
-      one: '1 card is due for review',
+      other: '$count بطاقة مستحقة للمراجعة',
+      many: '$count بطاقة مستحقة للمراجعة',
+      few: '$count بطاقات مستحقة للمراجعة',
+      two: 'بطاقتان مستحقتان للمراجعة',
+      one: 'بطاقة واحدة مستحقة للمراجعة',
+      zero: '$count بطاقة مستحقة للمراجعة',
     );
     return '$_temp0';
   }
 
   @override
   String flashcardsDueCount(int count) {
-    return '$count due';
+    return '$count مستحقة';
   }
 
   @override
   String flashcardsNewCount(int count) {
-    return '$count new';
+    return '$count جديدة';
   }
 
   @override
   String flashcardsMatureRing(String percent) {
-    return 'Mature cards: $percent';
+    return 'البطاقات الراسخة: $percent';
   }
 
   @override
-  String get flashcardsValidationNonNegative => 'Enter 0 or more';
+  String get flashcardsValidationNonNegative => 'أدخل 0 أو أكثر';
 
   @override
-  String get flashcardsSearchCards => 'Search cards';
+  String get flashcardsSearchCards => 'البحث في البطاقات';
 
   @override
-  String get flashcardsSearchEmpty => 'No cards match your search';
+  String get flashcardsSearchEmpty => 'لا توجد بطاقات مطابقة لبحثك';
 
   @override
-  String get flashcardsCardAdded => 'Card added';
+  String get flashcardsCardAdded => 'تمت إضافة البطاقة';
 
   @override
   String flashcardsCardDueOn(String date) {
-    return 'Due $date';
+    return 'تستحق في $date';
   }
 
   @override
-  String get flashcardsCopyToClipboard => 'Copy to clipboard';
+  String get flashcardsCopyToClipboard => 'نسخ إلى الحافظة';
 
   @override
-  String get flashcardsExportTitle => 'Export deck';
+  String get flashcardsExportTitle => 'تصدير المجموعة';
 
   @override
-  String get flashcardsDeleteDeck => 'Delete deck';
+  String get flashcardsDeleteDeck => 'حذف المجموعة';
 
   @override
   String flashcardsRatingA11y(String rating, String interval) {
-    return '$rating, next review in $interval';
+    return '$rating، المراجعة التالية بعد $interval';
   }
 
   @override
   String flashcardsQuestionA11y(String text) {
-    return 'Question: $text';
+    return 'السؤال: $text';
   }
 
   @override
   String flashcardsAnswerA11y(String text) {
-    return 'Answer: $text';
+    return 'الإجابة: $text';
   }
 
   @override
-  String get flashcardsShowQuestion => 'Show question';
+  String get flashcardsShowQuestion => 'إظهار السؤال';
 
   @override
-  String get flashcardsImportField => 'Cards to import';
+  String get flashcardsImportField => 'البطاقات المراد استيرادها';
 
   @override
-  String get flashcardsNothingToStudy => 'Nothing to study';
+  String get flashcardsNothingToStudy => 'لا شيء للدراسة';
 
   @override
   String flashcardsReadyCount(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count cards ready to study',
-      one: '1 card ready to study',
-      zero: 'No cards ready',
+      other: '$count بطاقة جاهزة للدراسة',
+      many: '$count بطاقة جاهزة للدراسة',
+      few: '$count بطاقات جاهزة للدراسة',
+      two: 'بطاقتان جاهزتان للدراسة',
+      one: 'بطاقة واحدة جاهزة للدراسة',
+      zero: 'لا توجد بطاقات جاهزة',
     );
     return '$_temp0';
   }
 
   @override
-  String get flashcardsByRating => 'By rating';
+  String get flashcardsByRating => 'حسب التقييم';
 
   @override
-  String get flashcardsDeckNotFound => 'This deck is no longer available.';
+  String get flashcardsDeckNotFound => 'هذه المجموعة لم تعد متاحة.';
 
   @override
-  String get focusSessionDeleted => 'Session deleted';
+  String get focusSessionDeleted => 'تم حذف الجلسة';
 
   @override
-  String get focusDeleteConfirm =>
-      'Delete this session from your history? Its time will no longer count toward your targets.';
+  String get focusDeleteConfirm => 'حذف هذه الجلسة من السجل؟ لن يُحتسب وقتها ضمن أهدافك بعد الآن.';
 
   @override
-  String get focusUnlinkTask => 'Remove linked task';
+  String get focusUnlinkTask => 'إزالة المهمة المرتبطة';
 
   @override
-  String get focusNoteHint => 'What did you work on?';
+  String get focusNoteHint => 'على ماذا عملت؟';
 
   @override
-  String get focusTargetCaption => 'Measured from saved sessions';
+  String get focusTargetCaption => 'محسوب من الجلسات المحفوظة';
 
   @override
-  String get focusModeLabel => 'Timer mode';
+  String get focusModeLabel => 'وضع المؤقت';
 
   @override
   String focusUpNext(String phase) {
-    return 'Up next: $phase';
+    return 'التالي: $phase';
   }
 
   @override
-  String get focusStopwatchHint => 'Counts up until you stop.';
+  String get focusStopwatchHint => 'يعدّ تصاعديًا حتى توقفه.';
 
   @override
-  String get focusOpenHint => 'No time limit. Stop whenever you are done.';
+  String get focusOpenHint => 'بلا حد زمني. أوقفه متى انتهيت.';
 
   @override
   String get focusNotificationsDisabledInApp =>
-      'Reminders are turned off in settings. You will not be alerted when a session ends.';
+      'التذكيرات متوقفة في الإعدادات. لن يتم تنبيهك عند انتهاء الجلسة.';
 
   @override
   String focusHistoryItem(String mode, String duration, String when) {
-    return '$mode, $duration, $when';
+    return '$mode، $duration، $when';
   }
 
   @override
-  String get goalsFilterAll => 'All';
+  String get goalsFilterAll => 'الكل';
 
   @override
-  String get goalsFilterPeriod => 'Period filter';
+  String get goalsFilterPeriod => 'تصفية حسب الفترة';
 
   @override
-  String get goalsFilterStatus => 'Status filter';
+  String get goalsFilterStatus => 'تصفية حسب الحالة';
 
   @override
-  String get goalsEmptyFiltered => 'No goals match this filter';
+  String get goalsEmptyFiltered => 'لا توجد أهداف مطابقة لهذا الفلتر';
 
   @override
   String goalsDueOn(String date) {
-    return 'Due $date';
+    return 'الموعد $date';
   }
 
   @override
-  String get goalsDeadline => 'Deadline (optional)';
+  String get goalsDeadline => 'الموعد النهائي (اختياري)';
 
   @override
-  String get goalsNoDeadline => 'No deadline';
+  String get goalsNoDeadline => 'بلا موعد نهائي';
 
   @override
-  String get goalsSetDeadline => 'Set deadline';
+  String get goalsSetDeadline => 'تحديد موعد نهائي';
 
   @override
-  String get goalsRemoveDeadline => 'Remove deadline';
+  String get goalsRemoveDeadline => 'إزالة الموعد النهائي';
 
   @override
-  String get goalsDescription => 'Description (optional)';
+  String get goalsDescription => 'الوصف (اختياري)';
 
   @override
-  String get goalsTitleLabel => 'Title';
+  String get goalsTitleLabel => 'العنوان';
 
   @override
   String goalsAmountWithUnit(String amount, String unit) {
@@ -2659,189 +2690,200 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String goalsCardSemantics(String title, String progress, String status) {
-    return '$title, $progress, $status';
+    return '$title، $progress، $status';
   }
 
   @override
-  String get goalsReached => 'Target reached';
+  String get goalsReached => 'تم بلوغ الهدف';
 
   @override
-  String get goalsLogged => 'Progress logged';
+  String get goalsLogged => 'تم تسجيل التقدم';
 
   @override
-  String get goalsEntryDeleted => 'Entry removed';
+  String get goalsEntryDeleted => 'تمت إزالة الإدخال';
 
   @override
-  String get goalsDeleteEntry => 'Remove entry';
+  String get goalsDeleteEntry => 'إزالة الإدخال';
 
   @override
-  String get goalsDeleted => 'Goal deleted';
+  String get goalsDeleted => 'تم حذف الهدف';
 
   @override
-  String get goalsMarkActive => 'Mark as active';
+  String get goalsMarkActive => 'تعيين كنشط';
 
   @override
-  String get goalsNotFound => 'This goal is no longer available';
+  String get goalsNotFound => 'هذا الهدف لم يعد متاحًا';
 
   @override
-  String get goalsLinkTask => 'Link a task';
+  String get goalsLinkTask => 'ربط مهمة';
 
   @override
-  String get goalsNoLinkedTasks => 'No linked tasks yet';
+  String get goalsNoLinkedTasks => 'لا توجد مهام مرتبطة بعد';
 
   @override
-  String get goalsUnlinkTask => 'Unlink task';
+  String get goalsUnlinkTask => 'إلغاء ربط المهمة';
 
   @override
-  String get goalsTaskOpen => 'Not completed yet';
+  String get goalsTaskOpen => 'لم تكتمل بعد';
 
   @override
-  String get goalsTaskLinked => 'Task linked';
+  String get goalsTaskLinked => 'تم ربط المهمة';
 
   @override
-  String get goalsTaskUnlinked => 'Task unlinked';
+  String get goalsTaskUnlinked => 'تم إلغاء ربط المهمة';
 
   @override
   String goalsFromTasks(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count completed linked tasks',
-      one: '1 completed linked task',
+      other: '$count مهمة مكتملة مرتبطة',
+      many: '$count مهمة مكتملة مرتبطة',
+      few: '$count مهام مكتملة مرتبطة',
+      two: 'مهمتين مكتملتين مرتبطتين',
+      one: 'مهمة مكتملة مرتبطة واحدة',
+      zero: '$count مهمة مكتملة مرتبطة',
     );
-    return 'Includes $_temp0 this period';
+    return 'يتضمن $_temp0 في هذه الفترة';
   }
 
   @override
   String get goalsHistoryAllTime =>
-      'Entries from earlier periods are kept here but count only toward their own period.';
+      'تُحفظ الإدخالات من الفترات السابقة هنا، لكنها تُحتسب فقط ضمن فترتها.';
 
   @override
   String goalsPercentOfTarget(String percent) {
-    return '$percent of target';
+    return '$percent من الهدف';
   }
 
   @override
   String habitsTodaySummary(int done, int total) {
-    return '$done of $total done today';
+    return 'تم إنجاز $done من $total اليوم';
   }
 
   @override
-  String get habitsNothingToday => 'No habits are scheduled for today';
+  String get habitsNothingToday => 'لا توجد عادات مجدولة لهذا اليوم';
 
   @override
-  String get habitsDecrease => 'Remove one check-in';
+  String get habitsDecrease => 'إزالة تسجيل واحد';
 
   @override
-  String get habitsResetToday => 'Reset today';
+  String get habitsResetToday => 'إعادة تعيين اليوم';
 
   @override
-  String get habitsCheckInHint => 'Long-press to adjust';
+  String get habitsCheckInHint => 'اضغط مطولًا للتعديل';
 
   @override
-  String get habitsName => 'Name';
+  String get habitsName => 'الاسم';
 
   @override
-  String get habitsColor => 'Color';
+  String get habitsColor => 'اللون';
 
   @override
-  String get habitsValidationDays => 'Choose at least one day';
+  String get habitsValidationDays => 'اختر يومًا واحدًا على الأقل';
 
   @override
   String habitsReminderAt(String time) {
-    return 'Every day at $time';
+    return 'كل يوم في $time';
   }
 
   @override
-  String get habitsSetReminder => 'Set a reminder time';
+  String get habitsSetReminder => 'تحديد وقت التذكير';
 
   @override
-  String get habitsRemoveReminder => 'Remove reminder';
+  String get habitsRemoveReminder => 'إزالة التذكير';
 
   @override
-  String get habitsReminderNote =>
-      'Reminders appear on scheduled days when notifications are allowed.';
+  String get habitsReminderNote => 'تظهر التذكيرات في الأيام المجدولة عند السماح بالإشعارات.';
 
   @override
-  String get habitsArchived => 'Habit archived';
+  String get habitsArchived => 'تمت أرشفة العادة';
 
   @override
-  String get habitsNotFound => 'This habit is no longer available';
+  String get habitsNotFound => 'هذه العادة لم تعد متاحة';
 
   @override
-  String get habitsLast30 => 'Last 30 days';
+  String get habitsLast30 => 'آخر 30 يومًا';
 
   @override
-  String get habitsConsistencyNone => 'Not enough data yet';
+  String get habitsConsistencyNone => 'لا توجد بيانات كافية بعد';
 
   @override
-  String get habitsCalendar => 'Check-in history';
+  String get habitsCalendar => 'سجل التسجيلات';
 
   @override
-  String get habitsCalendarHint => 'Tap a day to correct it.';
+  String get habitsCalendarHint => 'اضغط على يوم لتصحيحه.';
 
   @override
   String habitsDaySemantics(String date, int count, int target) {
-    return '$date: $count of $target';
+    return '$date: $count من $target';
   }
 
   @override
   String habitsHeatmapSemantics(String percent) {
-    return 'Check-ins over the last 90 days. Consistency $percent.';
+    return 'التسجيلات خلال آخر 90 يومًا. الانتظام $percent.';
   }
 
   @override
-  String get habitsHeatmapSemanticsEmpty => 'Check-ins over the last 90 days. Not enough data yet.';
+  String get habitsHeatmapSemanticsEmpty =>
+      'التسجيلات خلال آخر 90 يومًا. لا توجد بيانات كافية بعد.';
 
   @override
   String habitsDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '1 day',
+      other: '$count يوم',
+      many: '$count يومًا',
+      few: '$count أيام',
+      two: 'يومان',
+      one: 'يوم واحد',
+      zero: '$count يوم',
     );
     return '$_temp0';
   }
 
   @override
-  String get habitsPausedNote => 'Paused days don\'t affect your streak.';
+  String get habitsPausedNote => 'الأيام الموقوفة مؤقتًا لا تؤثر على سلسلتك المتواصلة.';
 
   @override
-  String get habitsListSeparator => ', ';
+  String get habitsListSeparator => '، ';
 
   @override
-  String get habitsArchive => 'Archive habit';
+  String get habitsArchive => 'أرشفة العادة';
 
   @override
   String habitsTimesPerDayValue(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count times a day',
-      one: 'Once a day',
+      other: '$count مرة يوميًا',
+      many: '$count مرة يوميًا',
+      few: '$count مرات يوميًا',
+      two: 'مرتان يوميًا',
+      one: 'مرة واحدة يوميًا',
+      zero: '$count مرة يوميًا',
     );
     return '$_temp0';
   }
 
   @override
-  String get notesSectionOthers => 'Other notes';
+  String get notesSectionOthers => 'ملاحظات أخرى';
 
   @override
-  String get notesAllNotebooks => 'All notebooks';
+  String get notesAllNotebooks => 'كل الدفاتر';
 
   @override
-  String get notesNotebookName => 'Notebook name';
+  String get notesNotebookName => 'اسم الدفتر';
 
   @override
-  String get notesNotebookColor => 'Color';
+  String get notesNotebookColor => 'اللون';
 
   @override
-  String get notesDeleteNotebook => 'Delete notebook';
+  String get notesDeleteNotebook => 'حذف الدفتر';
 
   @override
-  String get notesDeleteNotebookMessage =>
-      'The notebook is removed. Its notes are kept and appear under All notebooks.';
+  String get notesDeleteNotebookMessage => 'سيتم حذف الدفتر. تبقى ملاحظاته وتظهر ضمن كل الدفاتر.';
 
   @override
   String notesTagFilter(String tag) {
@@ -2849,26 +2891,26 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get notesEmptyPinned => 'Pin important notes to keep them at the top.';
+  String get notesEmptyPinned => 'ثبّت الملاحظات المهمة لإبقائها في الأعلى.';
 
   @override
-  String get notesEmptyFavorites => 'Notes you mark as favorite appear here.';
+  String get notesEmptyFavorites => 'تظهر هنا الملاحظات التي تضعها في المفضلة.';
 
   @override
-  String get notesEmptyArchived => 'Archived notes appear here.';
+  String get notesEmptyArchived => 'تظهر هنا الملاحظات المؤرشفة.';
 
   @override
-  String get notesEmptyFiltered => 'No notes match these filters.';
+  String get notesEmptyFiltered => 'لا توجد ملاحظات مطابقة لهذه الفلاتر.';
 
   @override
-  String get notesArchivedSnack => 'Note archived';
+  String get notesArchivedSnack => 'تمت أرشفة الملاحظة';
 
   @override
-  String get notesUnarchivedSnack => 'Note moved back to your notes';
+  String get notesUnarchivedSnack => 'تمت إعادة الملاحظة إلى ملاحظاتك';
 
   @override
   String notesChecklistProgress(int done, int total) {
-    return '$done of $total done';
+    return 'تم إنجاز $done من $total';
   }
 
   @override
@@ -2877,109 +2919,110 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get notesFormatting => 'Formatting';
+  String get notesFormatting => 'التنسيق';
 
   @override
-  String get notesWrite => 'Write';
+  String get notesWrite => 'كتابة';
 
   @override
-  String get notesPreviewEmpty => 'Nothing to preview yet.';
+  String get notesPreviewEmpty => 'لا شيء للمعاينة بعد.';
 
   @override
   String notesBacklinksEmpty(String title) {
-    return 'No other notes link here yet. Link to this note with [[$title]].';
+    return 'لا توجد ملاحظات أخرى تشير إلى هذه الملاحظة بعد. اربط بهذه الملاحظة باستخدام [[$title]].';
   }
 
   @override
-  String get notesBacklinksNeedTitle => 'Give this note a title so other notes can link to it.';
+  String get notesBacklinksNeedTitle =>
+      'أعطِ هذه الملاحظة عنوانًا حتى تتمكن الملاحظات الأخرى من الربط بها.';
 
   @override
-  String get notesLinkedTasksEmpty => 'No tasks linked to this note.';
+  String get notesLinkedTasksEmpty => 'لا توجد مهام مرتبطة بهذه الملاحظة.';
 
   @override
   String notesLinkMissing(String title) {
-    return 'There is no note titled \"$title\" yet.';
+    return 'لا توجد ملاحظة بعنوان \"$title\" بعد.';
   }
 
   @override
-  String get notesNotFound => 'This note no longer exists.';
+  String get notesNotFound => 'هذه الملاحظة لم تعد موجودة.';
 
   @override
   String notesCheckboxSemantics(String label) {
-    return 'Checklist item: $label';
+    return 'عنصر قائمة تحقق: $label';
   }
 
   @override
   String notesOpenLinkedNote(String title) {
-    return 'Open note $title';
+    return 'فتح الملاحظة $title';
   }
 
   @override
-  String get notesTagsHint => 'Add tags by writing #tag in the note.';
+  String get notesTagsHint => 'أضف وسومًا بكتابة #وسم داخل الملاحظة.';
 
   @override
-  String get notesTaskDone => 'Completed';
+  String get notesTaskDone => 'مكتملة';
 
   @override
-  String get notifTimerDoneBody => 'The time you set has passed.';
+  String get notifTimerDoneBody => 'انقضى الوقت الذي حددته.';
 
   @override
-  String get onboardingPrivatePointDevice => 'Stored only on this device, encrypted';
+  String get onboardingPrivatePointDevice => 'مخزّنة على هذا الجهاز فقط، ومشفّرة';
 
   @override
-  String get onboardingPrivatePointAccount => 'No account needed';
+  String get onboardingPrivatePointAccount => 'لا حاجة إلى حساب';
 
   @override
-  String get onboardingPrivatePointTracking => 'No analytics, no tracking';
+  String get onboardingPrivatePointTracking => 'بلا تحليلات ولا تتبّع';
 
   @override
-  String get onboardingLanguageBody => 'You can change this anytime in Settings.';
+  String get onboardingLanguageBody => 'يمكنك تغيير ذلك في أي وقت من الإعدادات.';
 
   @override
-  String get onboardingNext => 'Next';
+  String get onboardingNext => 'التالي';
 
   @override
-  String get projectsActive => 'Active';
+  String get projectsActive => 'نشطة';
 
   @override
-  String get projectNameHint => 'e.g. Product launch';
+  String get projectNameHint => 'مثال: إطلاق منتج';
 
   @override
-  String get projectGoalHint => 'What does done look like?';
+  String get projectGoalHint => 'كيف يبدو الإنجاز؟';
 
   @override
-  String get projectNoDeadline => 'No deadline';
+  String get projectNoDeadline => 'بلا موعد نهائي';
 
   @override
-  String get projectTasksOpen => 'Open tasks';
+  String get projectTasksOpen => 'المهام المفتوحة';
 
   @override
-  String get projectTasksCompleted => 'Completed tasks';
+  String get projectTasksCompleted => 'المهام المكتملة';
 
   @override
-  String get projectAddTask => 'Add task to project';
+  String get projectAddTask => 'إضافة مهمة إلى المشروع';
 
   @override
-  String get projectAddNote => 'New project note';
+  String get projectAddNote => 'ملاحظة مشروع جديدة';
 
   @override
-  String get projectLinkedNotes => 'Notes';
+  String get projectLinkedNotes => 'الملاحظات';
 
   @override
-  String get projectNoTasks => 'No tasks in this project yet';
+  String get projectNoTasks => 'لا توجد مهام في هذا المشروع بعد';
 
   @override
-  String get projectArchivedBadge => 'Archived';
+  String get projectArchivedBadge => 'مؤرشف';
 
   @override
-  String get projectDeleted => 'Project moved to trash';
+  String get projectDeleted => 'تم نقل المشروع إلى المهملات';
 
   @override
-  String get projectDeleteMessage => 'Tasks stay in your list without a project.';
+  String get projectDeleteMessage => 'تبقى المهام في قائمتك بدون مشروع.';
 
   @override
   String projectSemantics(String name, int percent) {
-    return '$name, $percent percent complete';
+    return '$name، مكتمل بنسبة $percent بالمئة';
   }
 
   @override
@@ -2987,129 +3030,145 @@ class AppLocalizationsAr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count results',
-      one: '1 result',
+      other: '$count نتيجة',
+      many: '$count نتيجة',
+      few: '$count نتائج',
+      two: 'نتيجتان',
+      one: 'نتيجة واحدة',
+      zero: '$count نتيجة',
     );
     return '$_temp0';
   }
 
   @override
-  String get searchCategoryFilter => 'Filter by type';
+  String get searchCategoryFilter => 'تصفية حسب النوع';
 
   @override
   String searchRecentTap(String query) {
-    return 'Search again for $query';
+    return 'البحث مرة أخرى عن $query';
   }
 
   @override
-  String get settingsLanguageHint =>
-      'Choose the language for the whole app. Names are shown in their own language.';
+  String get settingsLanguageHint => 'اختر لغة التطبيق بالكامل. تُعرض أسماء اللغات بلغتها.';
 
   @override
-  String get settingsThemeHint => 'Light, dark or follow the system';
+  String get settingsThemeHint => 'فاتح أو داكن أو بحسب النظام';
 
   @override
   String settingsDecrease(String setting) {
-    return 'Decrease $setting';
+    return 'تقليل $setting';
   }
 
   @override
   String settingsIncrease(String setting) {
-    return 'Increase $setting';
+    return 'زيادة $setting';
   }
 
   @override
-  String get settingsQuietStart => 'Starts';
+  String get settingsQuietStart => 'يبدأ';
 
   @override
-  String get settingsQuietEnd => 'Ends';
+  String get settingsQuietEnd => 'ينتهي';
 
   @override
   String get settingsNotificationsHint =>
-      'This saves your preference in the app. The system may also ask for permission.';
+      'يحفظ هذا تفضيلك داخل التطبيق. وقد يطلب النظام أيضًا إذنًا.';
 
   @override
-  String get settingsDashboardHint => 'Drag to reorder. Turn off sections you do not need.';
+  String get settingsDashboardHint => 'اسحب لإعادة الترتيب. أوقف الأقسام التي لا تحتاجها.';
 
   @override
   String settingsDashboardReorder(String section) {
-    return 'Reorder $section';
+    return 'إعادة ترتيب $section';
   }
 
   @override
-  String get settingsDashboardReset => 'Restore default order';
+  String get settingsDashboardReset => 'استعادة الترتيب الافتراضي';
 
   @override
   String get settingsAssistantDesc =>
-      'Optional planning help. Nothing leaves this device unless you connect a provider.';
+      'مساعدة اختيارية في التخطيط. لا يغادر أي شيء هذا الجهاز ما لم تربط مزوّدًا.';
 
   @override
-  String get settingsAssistantSetup => 'Assistant and provider setup';
+  String get settingsAssistantSetup => 'إعداد المساعد والمزوّد';
 
   @override
-  String get settingsTrashDesc => 'Restore or permanently delete removed items';
+  String get settingsTrashDesc => 'استعادة العناصر المحذوفة أو حذفها نهائيًا';
 
   @override
   String get settingsEraseFirstBody =>
-      'This cannot be undone. Consider creating an encrypted backup first.';
+      'لا يمكن التراجع عن هذا. فكّر في إنشاء نسخة احتياطية مشفّرة أولًا.';
 
   @override
   String settingsEraseTypeLabel(String word) {
-    return 'Type $word';
+    return 'اكتب $word';
   }
 
   @override
-  String get settingsEraseFailed => 'Data could not be erased. Nothing was changed.';
+  String get settingsEraseFailed => 'تعذّر مسح البيانات. لم يتغير شيء.';
 
   @override
-  String get settingsAboutTagline => 'A private, local-first productivity workspace.';
+  String get settingsAboutTagline => 'مساحة إنتاجية خاصة تعمل محليًا أولًا.';
 
   @override
-  String get backupShowPassword => 'Show password';
+  String get backupShowPassword => 'إظهار كلمة المرور';
 
   @override
-  String get backupHidePassword => 'Hide password';
+  String get backupHidePassword => 'إخفاء كلمة المرور';
 
   @override
-  String get backupSaved => 'Backup saved';
+  String get backupSaved => 'تم حفظ النسخة الاحتياطية';
 
   @override
-  String get backupFailed => 'The backup could not be created. Your data is unchanged.';
+  String get backupFailed => 'تعذّر إنشاء النسخة الاحتياطية. بياناتك لم تتغير.';
 
   @override
-  String get backupReadFailed => 'The selected file could not be read.';
+  String get backupReadFailed => 'تعذّرت قراءة الملف المحدد.';
 
   @override
-  String get backupRestoreFailed => 'Restore failed. Nothing was changed.';
+  String get backupRestoreFailed => 'فشلت الاستعادة. لم يتغير شيء.';
 
   @override
-  String get backupShareSubject => 'Future OS encrypted backup';
+  String get backupShareSubject => 'نسخة Future OS الاحتياطية المشفّرة';
 
   @override
   String repeatSummaryEveryN(String unit, int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Every $count days',
-      one: 'Every day',
+      other: 'كل $count يوم',
+      many: 'كل $count يومًا',
+      few: 'كل $count أيام',
+      two: 'كل يومين',
+      one: 'كل يوم',
+      zero: 'كل $count يوم',
     );
     String _temp1 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Every $count weeks',
-      one: 'Every week',
+      other: 'كل $count أسبوع',
+      many: 'كل $count أسبوعًا',
+      few: 'كل $count أسابيع',
+      two: 'كل أسبوعين',
+      one: 'كل أسبوع',
     );
     String _temp2 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Every $count months',
-      one: 'Every month',
+      other: 'كل $count شهر',
+      many: 'كل $count شهرًا',
+      few: 'كل $count أشهر',
+      two: 'كل شهرين',
+      one: 'كل شهر',
     );
     String _temp3 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Every $count years',
-      one: 'Every year',
+      other: 'كل $count سنة',
+      many: 'كل $count سنة',
+      few: 'كل $count سنوات',
+      two: 'كل سنتين',
+      one: 'كل سنة',
     );
     String _temp4 = intl.Intl.selectLogic(unit, {
       'day': '$_temp0',
@@ -3122,177 +3181,186 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String repeatOnWeekdays(String days) {
-    return 'on $days';
+    return 'في $days';
   }
 
   @override
-  String get repeatEndsLabel => 'Ends';
+  String get repeatEndsLabel => 'ينتهي';
 
   @override
-  String get repeatEndsAfter => 'After a number of times';
+  String get repeatEndsAfter => 'بعد عدد من المرات';
 
   @override
-  String get repeatCountLabel => 'Occurrences';
+  String get repeatCountLabel => 'عدد التكرارات';
 
   @override
-  String get reminderNone => 'No reminder';
+  String get reminderNone => 'بلا تذكير';
 
   @override
-  String get reminderCustomTime => 'At a specific time';
+  String get reminderCustomTime => 'في وقت محدد';
 
   @override
-  String get a11yDecrease => 'Decrease';
+  String get a11yDecrease => 'تقليل';
 
   @override
-  String get a11yIncrease => 'Increase';
+  String get a11yIncrease => 'زيادة';
 
   @override
-  String get pickTaskTitle => 'Choose a task';
+  String get pickTaskTitle => 'اختر مهمة';
 
   @override
-  String get pickTaskEmpty => 'No open tasks';
+  String get pickTaskEmpty => 'لا توجد مهام مفتوحة';
 
   @override
-  String get tasksSearchTooltip => 'Search tasks';
+  String get tasksSearchTooltip => 'البحث في المهام';
 
   @override
-  String get tasksSectionOverdue => 'Overdue';
+  String get tasksSectionOverdue => 'متأخرة';
 
   @override
-  String get tasksSectionToday => 'Today';
+  String get tasksSectionToday => 'اليوم';
 
   @override
-  String get tasksRecurringSemantics => 'Repeats';
+  String get tasksRecurringSemantics => 'متكررة';
 
   @override
-  String get tasksFilterPriorityAtLeast => 'Minimum priority';
+  String get tasksFilterPriorityAtLeast => 'الحد الأدنى للأولوية';
 
   @override
-  String get tasksFilterCategory => 'Category';
+  String get tasksFilterCategory => 'الفئة';
 
   @override
-  String get tasksFilterAnyCategory => 'Any category';
+  String get tasksFilterAnyCategory => 'أي فئة';
 
   @override
-  String get tasksFilterLabel => 'Label';
+  String get tasksFilterLabel => 'الوسم';
 
   @override
-  String get tasksFilterAnyLabel => 'Any label';
+  String get tasksFilterAnyLabel => 'أي وسم';
 
   @override
-  String get tasksFilterReset => 'Reset filters';
+  String get tasksFilterReset => 'إعادة تعيين الفلاتر';
 
   @override
-  String get tasksViewByProject => 'By project';
+  String get tasksViewByProject => 'حسب المشروع';
 
   @override
-  String get tasksViewByPriority => 'By priority';
+  String get tasksViewByPriority => 'حسب الأولوية';
 
   @override
-  String get tasksViewByCategory => 'By category';
+  String get tasksViewByCategory => 'حسب الفئة';
 
   @override
-  String get tasksGroupNoCategory => 'No category';
+  String get tasksGroupNoCategory => 'بلا فئة';
 
   @override
   String taskBlockedBy(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count tasks',
-      one: '1 task',
+      other: '$count مهمة',
+      many: '$count مهمة',
+      few: '$count مهام',
+      two: 'مهمتين',
+      one: 'مهمة واحدة',
+      zero: '$count مهمة',
     );
-    return 'Blocked by $_temp0';
+    return 'بانتظار $_temp0';
   }
 
   @override
-  String get taskBlockedWarning => 'This task is blocked by unfinished tasks. Complete it anyway?';
+  String get taskBlockedWarning =>
+      'هذه المهمة معلّقة بمهام غير مكتملة. هل تريد إكمالها على أي حال؟';
 
   @override
-  String get taskDeleteConfirm => 'Move this task to trash?';
+  String get taskDeleteConfirm => 'نقل هذه المهمة إلى المهملات؟';
 
   @override
-  String get taskStartFocus => 'Focus on this task';
+  String get taskStartFocus => 'التركيز على هذه المهمة';
 
   @override
-  String get taskRemoveDate => 'Remove date';
+  String get taskRemoveDate => 'إزالة التاريخ';
 
   @override
-  String get taskAllDay => 'No specific time';
+  String get taskAllDay => 'بلا وقت محدد';
 
   @override
-  String get taskSaved => 'Task saved';
+  String get taskSaved => 'تم حفظ المهمة';
 
   @override
-  String get taskCreated => 'Task created';
+  String get taskCreated => 'تم إنشاء المهمة';
 
   @override
-  String get taskReminderNeedsDue => 'Set a due date to use relative reminders';
+  String get taskReminderNeedsDue => 'حدّد تاريخ استحقاق لاستخدام التذكيرات النسبية';
 
   @override
   String taskEstimateValue(String value) {
-    return 'Estimate: $value';
+    return 'التقدير: $value';
   }
 
   @override
   String taskTrackedValue(String value) {
-    return 'Tracked: $value';
+    return 'المسجَّل: $value';
   }
 
   @override
   String get taskSubtaskDetailsHint =>
-      'Save the task first to add subtasks, checklist items, labels and dependencies.';
+      'احفظ المهمة أولًا لإضافة المهام الفرعية وعناصر قائمة التحقق والوسوم والتبعيات.';
 
   @override
-  String get taskNoLabels => 'No labels yet';
+  String get taskNoLabels => 'لا توجد وسوم بعد';
 
   @override
-  String get taskLabelName => 'Label name';
+  String get taskLabelName => 'اسم الوسم';
 
   @override
-  String get taskMoreDetails => 'Details';
+  String get taskMoreDetails => 'التفاصيل';
 
   @override
-  String get taskPlanning => 'Planning';
+  String get taskPlanning => 'التخطيط';
 
   @override
-  String get taskOrganize => 'Organize';
+  String get taskOrganize => 'التنظيم';
 
   @override
-  String get taskBreakdown => 'Breakdown';
+  String get taskBreakdown => 'التقسيم';
 
   @override
-  String get trashDeleteTaskTitle => 'Delete this task forever?';
+  String get trashDeleteTaskTitle => 'حذف هذه المهمة نهائيًا؟';
 
   @override
-  String get trashDeleteNoteTitle => 'Delete this note forever?';
+  String get trashDeleteNoteTitle => 'حذف هذه الملاحظة نهائيًا؟';
 
   @override
-  String get trashDeleteBody => 'This cannot be undone.';
+  String get trashDeleteBody => 'لا يمكن التراجع عن هذا.';
 
   @override
-  String get trashEmptyTitle => 'Empty trash?';
+  String get trashEmptyTitle => 'إفراغ المهملات؟';
 
   @override
   String trashEmptyBody(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count items will be deleted permanently.',
-      one: '1 item will be deleted permanently.',
+      other: 'سيتم حذف $count عنصر نهائيًا.',
+      many: 'سيتم حذف $count عنصرًا نهائيًا.',
+      few: 'سيتم حذف $count عناصر نهائيًا.',
+      two: 'سيتم حذف عنصرين نهائيًا.',
+      one: 'سيتم حذف عنصر واحد نهائيًا.',
+      zero: 'سيتم حذف $count عنصر نهائيًا.',
     );
     return '$_temp0';
   }
 
   @override
-  String get trashRestored => 'Restored';
+  String get trashRestored => 'تمت الاستعادة';
 
   @override
-  String get trashPurged => 'Deleted forever';
+  String get trashPurged => 'تم الحذف نهائيًا';
 
   @override
   String trashDeletedOn(String date) {
-    return 'Deleted $date';
+    return 'حُذف في $date';
   }
 
   @override
@@ -3300,8 +3368,12 @@ class AppLocalizationsAr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count items',
-      one: '1 item',
+      other: '$count عنصر',
+      many: '$count عنصرًا',
+      few: '$count عناصر',
+      two: 'عنصران',
+      one: 'عنصر واحد',
+      zero: '$count عنصر',
     );
     return '$_temp0';
   }

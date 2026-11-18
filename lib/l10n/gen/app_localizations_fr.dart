@@ -2104,60 +2104,60 @@ class AppLocalizationsFr extends AppLocalizations {
   String get a11ySelected => 'Sélectionné';
 
   @override
-  String get analyticsRangeLabel => 'Time range';
+  String get analyticsRangeLabel => 'Période';
 
   @override
-  String get analyticsRefresh => 'Refresh';
+  String get analyticsRefresh => 'Actualiser';
 
   @override
   String analyticsOnTimeDetail(int done, int total) {
-    return '$done of $total due tasks done on time';
+    return '$done tâches sur $total à échéance terminées à temps';
   }
 
   @override
   String analyticsProjectTasks(int done, int total) {
-    return '$done of $total tasks done';
+    return '$done tâches sur $total terminées';
   }
 
   @override
-  String get analyticsNoProjects => 'No active projects';
+  String get analyticsNoProjects => 'Aucun projet actif';
 
   @override
-  String get analyticsNoFocus => 'No focus sessions in this range';
+  String get analyticsNoFocus => 'Aucune séance de concentration sur cette période';
 
   @override
-  String get analyticsHabitsNone => 'No active habits';
+  String get analyticsHabitsNone => 'Aucune habitude active';
 
   @override
-  String get analyticsRetentionNote => 'Share of mature cards you remembered';
+  String get analyticsRetentionNote => 'Part des fiches maîtrisées dont vous vous êtes souvenu';
 
   @override
   String analyticsBarValue(String name, String value) {
-    return '$name: $value';
+    return '$name : $value';
   }
 
   @override
   String assistantWorkloadRule(String start, String end, String days) {
-    return 'Free time counts $start–$end on workdays ($days), minus timed events. Estimated work is the sum of estimates of open tasks due in the next 7 days.';
+    return 'Le temps libre compte de $start à $end les jours ouvrés ($days), hors événements horaires. Le travail estimé correspond à la somme des estimations des tâches ouvertes à échéance dans les 7 prochains jours.';
   }
 
   @override
-  String get assistantWorkdaysMonFri => 'Monday–Friday';
+  String get assistantWorkdaysMonFri => 'Lundi–vendredi';
 
   @override
-  String get assistantWorkdaysSunThu => 'Sunday–Thursday';
+  String get assistantWorkdaysSunThu => 'Dimanche–jeudi';
 
   @override
-  String get assistantWorkloadDayOff => 'Day off';
+  String get assistantWorkloadDayOff => 'Jour de repos';
 
   @override
   String assistantWorkloadDay(String estimated, String free) {
-    return '$estimated planned · $free free';
+    return '$estimated prévues · $free libres';
   }
 
   @override
   String assistantPlanRule(String end) {
-    return 'Planned from now until $end, around today\'s events. Overdue tasks first, then priority, due date and estimate.';
+    return 'Planifié de maintenant jusqu’à $end, en tenant compte des événements du jour. D’abord les tâches en retard, puis par priorité, échéance et estimation.';
   }
 
   @override
@@ -2166,18 +2166,18 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get assistantScheduleBlocks => 'Schedule as time blocks';
+  String get assistantScheduleBlocks => 'Planifier en blocs horaires';
 
   @override
-  String get assistantScheduleConfirmTitle => 'Add time blocks to your calendar?';
+  String get assistantScheduleConfirmTitle => 'Ajouter des blocs horaires à votre calendrier ?';
 
   @override
   String assistantScheduleConfirmBody(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count time blocks will be added to today\'s calendar.',
-      one: '1 time block will be added to today\'s calendar.',
+      other: '$count blocs horaires seront ajoutés au calendrier d’aujourd’hui.',
+      one: '1 bloc horaire sera ajouté au calendrier d’aujourd’hui.',
     );
     return '$_temp0';
   }
@@ -2187,34 +2187,34 @@ class AppLocalizationsFr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count time blocks added',
-      one: '1 time block added',
+      other: '$count blocs horaires ajoutés',
+      one: '1 bloc horaire ajouté',
     );
     return '$_temp0';
   }
 
   @override
-  String get assistantAlreadyScheduled => 'Already on your calendar';
+  String get assistantAlreadyScheduled => 'Déjà dans votre calendrier';
 
   @override
-  String get assistantPlanTimeline => 'Fits today';
+  String get assistantPlanTimeline => 'Tient dans la journée';
 
   @override
-  String get assistantNoEstimate => 'Add an estimate to plan these';
+  String get assistantNoEstimate => 'Ajoutez une estimation pour les planifier';
 
   @override
-  String get assistantNoNotes => 'No notes yet. Write a note first.';
+  String get assistantNoNotes => 'Aucune note pour l’instant. Écrivez d’abord une note.';
 
   @override
-  String get assistantNoteEmpty => 'This note is empty.';
+  String get assistantNoteEmpty => 'Cette note est vide.';
 
   @override
   String assistantTasksCreated(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count tasks created',
-      one: '1 task created',
+      other: '$count tâches créées',
+      one: '1 tâche créée',
     );
     return '$_temp0';
   }
@@ -2224,8 +2224,8 @@ class AppLocalizationsFr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count cards created',
-      one: '1 card created',
+      other: '$count fiches créées',
+      one: '1 fiche créée',
     );
     return '$_temp0';
   }
@@ -2235,63 +2235,63 @@ class AppLocalizationsFr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Create $count',
-      one: 'Create 1',
-      zero: 'Nothing selected',
+      other: 'Créer $count',
+      one: 'Créer 1',
+      zero: 'Rien de sélectionné',
     );
     return '$_temp0';
   }
 
   @override
   String get assistantExtractHint =>
-      'Recognized: unchecked checkboxes \"- [ ]\" and lines starting with TODO: or To do:';
+      'Reconnus : cases non cochées « - [ ] » et lignes commençant par TODO: ou To do:';
 
   @override
   String get assistantCardsHint =>
-      'Recognized: \"term: definition\", \"term — definition\" and Q:/A: line pairs';
+      'Reconnus : « terme: définition », « terme — définition » et paires de lignes Q:/A:';
 
   @override
   String get assistantProviderHint =>
-      'Use any OpenAI-compatible service. The key stays in this device\'s secure storage and is never included in backups.';
+      'Utilisez n’importe quel service compatible OpenAI. La clé reste dans le stockage sécurisé de cet appareil et n’est jamais incluse dans les sauvegardes.';
 
   @override
-  String get assistantEndpointHelp => 'For example https://api.example.com/v1';
+  String get assistantEndpointHelp => 'Par exemple https://api.example.com/v1';
 
   @override
-  String get assistantApiKeyKeep => 'Leave empty to keep the stored key';
+  String get assistantApiKeyKeep => 'Laissez vide pour conserver la clé enregistrée';
 
   @override
-  String get assistantApiKeyRequired => 'Enter an API key';
+  String get assistantApiKeyRequired => 'Saisissez une clé API';
 
   @override
-  String get assistantProviderSaved => 'Provider saved';
+  String get assistantProviderSaved => 'Fournisseur enregistré';
 
   @override
-  String get assistantProviderRemoved => 'Provider removed and key deleted';
+  String get assistantProviderRemoved => 'Fournisseur retiré et clé supprimée';
 
   @override
   String get assistantRemoveProviderConfirm =>
-      'Remove the provider and delete the stored API key from this device?';
+      'Retirer le fournisseur et supprimer la clé API enregistrée sur cet appareil ?';
 
   @override
-  String get assistantAskEveryTime => 'Ask before every request';
+  String get assistantAskEveryTime => 'Demander avant chaque requête';
 
   @override
-  String get assistantSummarizing => 'Summarizing…';
+  String get assistantSummarizing => 'Résumé en cours…';
 
   @override
   String assistantSummaryNote(String host) {
-    return 'Generated by $host. Review before relying on it.';
+    return 'Généré par $host. À vérifier avant de vous y fier.';
   }
 
   @override
-  String get assistantCopy => 'Copy';
+  String get assistantCopy => 'Copier';
 
   @override
-  String get assistantCopied => 'Copied';
+  String get assistantCopied => 'Copié';
 
   @override
-  String get assistantConfigure => 'Set up provider';
+  String get assistantConfigure => 'Configurer le fournisseur';
 
   @override
   String calendarTimeRange(String start, String end) {
@@ -2304,34 +2304,34 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get calendarSeriesMoved => 'All events in this series were moved';
+  String get calendarSeriesMoved => 'Tous les événements de cette série ont été déplacés';
 
   @override
-  String get calendarEventReminder => 'Reminder';
+  String get calendarEventReminder => 'Rappel';
 
   @override
-  String get calendarEventRepeat => 'Repeat';
+  String get calendarEventRepeat => 'Répétition';
 
   @override
-  String get calendarEventColor => 'Color';
+  String get calendarEventColor => 'Couleur';
 
   @override
-  String get calendarDefaultColor => 'Use type color';
+  String get calendarDefaultColor => 'Utiliser la couleur du type';
 
   @override
-  String get calendarEventLinkedTask => 'Linked task';
+  String get calendarEventLinkedTask => 'Tâche liée';
 
   @override
-  String get calendarEventNoTask => 'No linked task';
+  String get calendarEventNoTask => 'Aucune tâche liée';
 
   @override
   String calendarEventsCount(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count events',
-      one: '1 event',
-      zero: 'No events',
+      other: '$count événements',
+      one: '1 événement',
+      zero: 'Aucun événement',
     );
     return '$_temp0';
   }
@@ -2341,9 +2341,9 @@ class AppLocalizationsFr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count tasks due',
-      one: '1 task due',
-      zero: 'no tasks due',
+      other: '$count tâches à échéance',
+      one: '1 tâche à échéance',
+      zero: 'aucune tâche à échéance',
     );
     return '$_temp0';
   }
@@ -2354,25 +2354,27 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get calendarNoEventsHint => 'Add an event or a time block to plan this day.';
+  String get calendarNoEventsHint =>
+      'Ajoutez un événement ou un bloc horaire pour planifier cette journée.';
 
   @override
-  String get calendarNow => 'Current time';
+  String get calendarNow => 'Heure actuelle';
 
   @override
-  String get calendarRecurring => 'Repeats';
+  String get calendarRecurring => 'Récurrent';
 
   @override
-  String get calendarEventNotFound => 'This event no longer exists';
+  String get calendarEventNotFound => 'Cet événement n’existe plus';
 
   @override
-  String get calendarEventLocalTime => 'Times are shown in your device\'s time zone';
+  String get calendarEventLocalTime =>
+      'Les heures sont affichées dans le fuseau horaire de votre appareil';
 
   @override
-  String get calendarEventDeleted => 'Event moved to trash';
+  String get calendarEventDeleted => 'Événement placé dans la corbeille';
 
   @override
-  String get calendarConflictMarker => 'Overlaps another event';
+  String get calendarConflictMarker => 'Chevauche un autre événement';
 
   @override
   String calendarEventSemantics(String title, String time) {
@@ -2380,14 +2382,15 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get calendarSeriesEditNote => 'Changes apply to every event in this series';
+  String get calendarSeriesEditNote =>
+      'Les modifications s’appliquent à tous les événements de cette série';
 
   @override
-  String get calendarDragHintSeries => 'Dragging a repeating event moves the whole series';
+  String get calendarDragHintSeries => 'Déplacer un événement récurrent déplace toute la série';
 
   @override
   String calendarTaskDueSemantics(String title) {
-    return '$title, task due';
+    return '$title, tâche à échéance';
   }
 
   @override
@@ -2409,128 +2412,128 @@ class AppLocalizationsFr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count cards are due for review',
-      one: '1 card is due for review',
+      other: '$count fiches à réviser',
+      one: '1 fiche à réviser',
     );
     return '$_temp0';
   }
 
   @override
   String flashcardsDueCount(int count) {
-    return '$count due';
+    return '$count à réviser';
   }
 
   @override
   String flashcardsNewCount(int count) {
-    return '$count new';
+    return '$count nouvelles';
   }
 
   @override
   String flashcardsMatureRing(String percent) {
-    return 'Mature cards: $percent';
+    return 'Fiches maîtrisées : $percent';
   }
 
   @override
-  String get flashcardsValidationNonNegative => 'Enter 0 or more';
+  String get flashcardsValidationNonNegative => 'Saisissez 0 ou plus';
 
   @override
-  String get flashcardsSearchCards => 'Search cards';
+  String get flashcardsSearchCards => 'Rechercher des fiches';
 
   @override
-  String get flashcardsSearchEmpty => 'No cards match your search';
+  String get flashcardsSearchEmpty => 'Aucune fiche ne correspond à votre recherche';
 
   @override
-  String get flashcardsCardAdded => 'Card added';
+  String get flashcardsCardAdded => 'Fiche ajoutée';
 
   @override
   String flashcardsCardDueOn(String date) {
-    return 'Due $date';
+    return 'À réviser $date';
   }
 
   @override
-  String get flashcardsCopyToClipboard => 'Copy to clipboard';
+  String get flashcardsCopyToClipboard => 'Copier dans le presse-papiers';
 
   @override
-  String get flashcardsExportTitle => 'Export deck';
+  String get flashcardsExportTitle => 'Exporter le paquet';
 
   @override
-  String get flashcardsDeleteDeck => 'Delete deck';
+  String get flashcardsDeleteDeck => 'Supprimer le paquet';
 
   @override
   String flashcardsRatingA11y(String rating, String interval) {
-    return '$rating, next review in $interval';
+    return '$rating, prochaine révision dans $interval';
   }
 
   @override
   String flashcardsQuestionA11y(String text) {
-    return 'Question: $text';
+    return 'Question : $text';
   }
 
   @override
   String flashcardsAnswerA11y(String text) {
-    return 'Answer: $text';
+    return 'Réponse : $text';
   }
 
   @override
-  String get flashcardsShowQuestion => 'Show question';
+  String get flashcardsShowQuestion => 'Afficher la question';
 
   @override
-  String get flashcardsImportField => 'Cards to import';
+  String get flashcardsImportField => 'Fiches à importer';
 
   @override
-  String get flashcardsNothingToStudy => 'Nothing to study';
+  String get flashcardsNothingToStudy => 'Rien à réviser';
 
   @override
   String flashcardsReadyCount(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count cards ready to study',
-      one: '1 card ready to study',
-      zero: 'No cards ready',
+      other: '$count fiches prêtes à réviser',
+      one: '1 fiche prête à réviser',
+      zero: 'Aucune fiche prête',
     );
     return '$_temp0';
   }
 
   @override
-  String get flashcardsByRating => 'By rating';
+  String get flashcardsByRating => 'Par évaluation';
 
   @override
-  String get flashcardsDeckNotFound => 'This deck is no longer available.';
+  String get flashcardsDeckNotFound => 'Ce paquet n’est plus disponible.';
 
   @override
-  String get focusSessionDeleted => 'Session deleted';
+  String get focusSessionDeleted => 'Séance supprimée';
 
   @override
   String get focusDeleteConfirm =>
-      'Delete this session from your history? Its time will no longer count toward your targets.';
+      'Supprimer cette séance de votre historique ? Sa durée ne comptera plus dans vos objectifs.';
 
   @override
-  String get focusUnlinkTask => 'Remove linked task';
+  String get focusUnlinkTask => 'Retirer la tâche liée';
 
   @override
-  String get focusNoteHint => 'What did you work on?';
+  String get focusNoteHint => 'Sur quoi avez-vous travaillé ?';
 
   @override
-  String get focusTargetCaption => 'Measured from saved sessions';
+  String get focusTargetCaption => 'Calculé d’après les séances enregistrées';
 
   @override
-  String get focusModeLabel => 'Timer mode';
+  String get focusModeLabel => 'Mode du minuteur';
 
   @override
   String focusUpNext(String phase) {
-    return 'Up next: $phase';
+    return 'Ensuite : $phase';
   }
 
   @override
-  String get focusStopwatchHint => 'Counts up until you stop.';
+  String get focusStopwatchHint => 'Compte jusqu’à ce que vous arrêtiez.';
 
   @override
-  String get focusOpenHint => 'No time limit. Stop whenever you are done.';
+  String get focusOpenHint => 'Sans limite de temps. Arrêtez quand vous avez terminé.';
 
   @override
   String get focusNotificationsDisabledInApp =>
-      'Reminders are turned off in settings. You will not be alerted when a session ends.';
+      'Les rappels sont désactivés dans les réglages. Vous ne serez pas averti à la fin d’une séance.';
 
   @override
   String focusHistoryItem(String mode, String duration, String when) {
@@ -2538,39 +2541,39 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get goalsFilterAll => 'All';
+  String get goalsFilterAll => 'Tous';
 
   @override
-  String get goalsFilterPeriod => 'Period filter';
+  String get goalsFilterPeriod => 'Filtre par période';
 
   @override
-  String get goalsFilterStatus => 'Status filter';
+  String get goalsFilterStatus => 'Filtre par statut';
 
   @override
-  String get goalsEmptyFiltered => 'No goals match this filter';
+  String get goalsEmptyFiltered => 'Aucun objectif ne correspond à ce filtre';
 
   @override
   String goalsDueOn(String date) {
-    return 'Due $date';
+    return 'Échéance : $date';
   }
 
   @override
-  String get goalsDeadline => 'Deadline (optional)';
+  String get goalsDeadline => 'Échéance (facultatif)';
 
   @override
-  String get goalsNoDeadline => 'No deadline';
+  String get goalsNoDeadline => 'Sans échéance';
 
   @override
-  String get goalsSetDeadline => 'Set deadline';
+  String get goalsSetDeadline => 'Définir une échéance';
 
   @override
-  String get goalsRemoveDeadline => 'Remove deadline';
+  String get goalsRemoveDeadline => 'Supprimer l’échéance';
 
   @override
-  String get goalsDescription => 'Description (optional)';
+  String get goalsDescription => 'Description (facultatif)';
 
   @override
-  String get goalsTitleLabel => 'Title';
+  String get goalsTitleLabel => 'Titre';
 
   @override
   String goalsAmountWithUnit(String amount, String unit) {
@@ -2583,185 +2586,186 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get goalsReached => 'Target reached';
+  String get goalsReached => 'Objectif atteint';
 
   @override
-  String get goalsLogged => 'Progress logged';
+  String get goalsLogged => 'Progression enregistrée';
 
   @override
-  String get goalsEntryDeleted => 'Entry removed';
+  String get goalsEntryDeleted => 'Entrée supprimée';
 
   @override
-  String get goalsDeleteEntry => 'Remove entry';
+  String get goalsDeleteEntry => 'Supprimer l’entrée';
 
   @override
-  String get goalsDeleted => 'Goal deleted';
+  String get goalsDeleted => 'Objectif supprimé';
 
   @override
-  String get goalsMarkActive => 'Mark as active';
+  String get goalsMarkActive => 'Marquer comme actif';
 
   @override
-  String get goalsNotFound => 'This goal is no longer available';
+  String get goalsNotFound => 'Cet objectif n’est plus disponible';
 
   @override
-  String get goalsLinkTask => 'Link a task';
+  String get goalsLinkTask => 'Lier une tâche';
 
   @override
-  String get goalsNoLinkedTasks => 'No linked tasks yet';
+  String get goalsNoLinkedTasks => 'Aucune tâche liée pour l’instant';
 
   @override
-  String get goalsUnlinkTask => 'Unlink task';
+  String get goalsUnlinkTask => 'Dissocier la tâche';
 
   @override
-  String get goalsTaskOpen => 'Not completed yet';
+  String get goalsTaskOpen => 'Pas encore terminée';
 
   @override
-  String get goalsTaskLinked => 'Task linked';
+  String get goalsTaskLinked => 'Tâche liée';
 
   @override
-  String get goalsTaskUnlinked => 'Task unlinked';
+  String get goalsTaskUnlinked => 'Tâche dissociée';
 
   @override
   String goalsFromTasks(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count completed linked tasks',
-      one: '1 completed linked task',
+      other: '$count tâches liées terminées',
+      one: '1 tâche liée terminée',
     );
-    return 'Includes $_temp0 this period';
+    return 'Inclut $_temp0 sur cette période';
   }
 
   @override
   String get goalsHistoryAllTime =>
-      'Entries from earlier periods are kept here but count only toward their own period.';
+      'Les entrées des périodes précédentes sont conservées ici, mais ne comptent que pour leur propre période.';
 
   @override
   String goalsPercentOfTarget(String percent) {
-    return '$percent of target';
+    return '$percent de l’objectif';
   }
 
   @override
   String habitsTodaySummary(int done, int total) {
-    return '$done of $total done today';
+    return '$done sur $total faites aujourd’hui';
   }
 
   @override
-  String get habitsNothingToday => 'No habits are scheduled for today';
+  String get habitsNothingToday => 'Aucune habitude n’est prévue aujourd’hui';
 
   @override
-  String get habitsDecrease => 'Remove one check-in';
+  String get habitsDecrease => 'Retirer un pointage';
 
   @override
-  String get habitsResetToday => 'Reset today';
+  String get habitsResetToday => 'Réinitialiser aujourd’hui';
 
   @override
-  String get habitsCheckInHint => 'Long-press to adjust';
+  String get habitsCheckInHint => 'Appui long pour ajuster';
 
   @override
-  String get habitsName => 'Name';
+  String get habitsName => 'Nom';
 
   @override
-  String get habitsColor => 'Color';
+  String get habitsColor => 'Couleur';
 
   @override
-  String get habitsValidationDays => 'Choose at least one day';
+  String get habitsValidationDays => 'Choisissez au moins un jour';
 
   @override
   String habitsReminderAt(String time) {
-    return 'Every day at $time';
+    return 'Tous les jours à $time';
   }
 
   @override
-  String get habitsSetReminder => 'Set a reminder time';
+  String get habitsSetReminder => 'Définir une heure de rappel';
 
   @override
-  String get habitsRemoveReminder => 'Remove reminder';
+  String get habitsRemoveReminder => 'Supprimer le rappel';
 
   @override
   String get habitsReminderNote =>
-      'Reminders appear on scheduled days when notifications are allowed.';
+      'Les rappels apparaissent les jours prévus lorsque les notifications sont autorisées.';
 
   @override
-  String get habitsArchived => 'Habit archived';
+  String get habitsArchived => 'Habitude archivée';
 
   @override
-  String get habitsNotFound => 'This habit is no longer available';
+  String get habitsNotFound => 'Cette habitude n’est plus disponible';
 
   @override
-  String get habitsLast30 => 'Last 30 days';
+  String get habitsLast30 => '30 derniers jours';
 
   @override
-  String get habitsConsistencyNone => 'Not enough data yet';
+  String get habitsConsistencyNone => 'Pas encore assez de données';
 
   @override
-  String get habitsCalendar => 'Check-in history';
+  String get habitsCalendar => 'Historique des pointages';
 
   @override
-  String get habitsCalendarHint => 'Tap a day to correct it.';
+  String get habitsCalendarHint => 'Touchez un jour pour le corriger.';
 
   @override
   String habitsDaySemantics(String date, int count, int target) {
-    return '$date: $count of $target';
+    return '$date : $count sur $target';
   }
 
   @override
   String habitsHeatmapSemantics(String percent) {
-    return 'Check-ins over the last 90 days. Consistency $percent.';
+    return 'Pointages des 90 derniers jours. Régularité : $percent.';
   }
 
   @override
-  String get habitsHeatmapSemanticsEmpty => 'Check-ins over the last 90 days. Not enough data yet.';
+  String get habitsHeatmapSemanticsEmpty =>
+      'Pointages des 90 derniers jours. Pas encore assez de données.';
 
   @override
   String habitsDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '1 day',
+      other: '$count jours',
+      one: '1 jour',
     );
     return '$_temp0';
   }
 
   @override
-  String get habitsPausedNote => 'Paused days don\'t affect your streak.';
+  String get habitsPausedNote => 'Les jours en pause n’affectent pas votre série.';
 
   @override
   String get habitsListSeparator => ', ';
 
   @override
-  String get habitsArchive => 'Archive habit';
+  String get habitsArchive => 'Archiver l’habitude';
 
   @override
   String habitsTimesPerDayValue(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count times a day',
-      one: 'Once a day',
+      other: '$count fois par jour',
+      one: 'Une fois par jour',
     );
     return '$_temp0';
   }
 
   @override
-  String get notesSectionOthers => 'Other notes';
+  String get notesSectionOthers => 'Autres notes';
 
   @override
-  String get notesAllNotebooks => 'All notebooks';
+  String get notesAllNotebooks => 'Tous les carnets';
 
   @override
-  String get notesNotebookName => 'Notebook name';
+  String get notesNotebookName => 'Nom du carnet';
 
   @override
-  String get notesNotebookColor => 'Color';
+  String get notesNotebookColor => 'Couleur';
 
   @override
-  String get notesDeleteNotebook => 'Delete notebook';
+  String get notesDeleteNotebook => 'Supprimer le carnet';
 
   @override
   String get notesDeleteNotebookMessage =>
-      'The notebook is removed. Its notes are kept and appear under All notebooks.';
+      'Le carnet est supprimé. Ses notes sont conservées et apparaissent dans Tous les carnets.';
 
   @override
   String notesTagFilter(String tag) {
@@ -2769,26 +2773,26 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get notesEmptyPinned => 'Pin important notes to keep them at the top.';
+  String get notesEmptyPinned => 'Épinglez les notes importantes pour les garder en haut.';
 
   @override
-  String get notesEmptyFavorites => 'Notes you mark as favorite appear here.';
+  String get notesEmptyFavorites => 'Les notes que vous ajoutez aux favoris apparaissent ici.';
 
   @override
-  String get notesEmptyArchived => 'Archived notes appear here.';
+  String get notesEmptyArchived => 'Les notes archivées apparaissent ici.';
 
   @override
-  String get notesEmptyFiltered => 'No notes match these filters.';
+  String get notesEmptyFiltered => 'Aucune note ne correspond à ces filtres.';
 
   @override
-  String get notesArchivedSnack => 'Note archived';
+  String get notesArchivedSnack => 'Note archivée';
 
   @override
-  String get notesUnarchivedSnack => 'Note moved back to your notes';
+  String get notesUnarchivedSnack => 'Note replacée dans vos notes';
 
   @override
   String notesChecklistProgress(int done, int total) {
-    return '$done of $total done';
+    return '$done sur $total faits';
   }
 
   @override
@@ -2797,109 +2801,110 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get notesFormatting => 'Formatting';
+  String get notesFormatting => 'Mise en forme';
 
   @override
-  String get notesWrite => 'Write';
+  String get notesWrite => 'Écrire';
 
   @override
-  String get notesPreviewEmpty => 'Nothing to preview yet.';
+  String get notesPreviewEmpty => 'Rien à prévisualiser pour l’instant.';
 
   @override
   String notesBacklinksEmpty(String title) {
-    return 'No other notes link here yet. Link to this note with [[$title]].';
+    return 'Aucune autre note ne renvoie ici pour l’instant. Liez cette note avec [[$title]].';
   }
 
   @override
-  String get notesBacklinksNeedTitle => 'Give this note a title so other notes can link to it.';
+  String get notesBacklinksNeedTitle =>
+      'Donnez un titre à cette note pour que d’autres notes puissent y renvoyer.';
 
   @override
-  String get notesLinkedTasksEmpty => 'No tasks linked to this note.';
+  String get notesLinkedTasksEmpty => 'Aucune tâche liée à cette note.';
 
   @override
   String notesLinkMissing(String title) {
-    return 'There is no note titled \"$title\" yet.';
+    return 'Il n’existe pas encore de note intitulée « $title ».';
   }
 
   @override
-  String get notesNotFound => 'This note no longer exists.';
+  String get notesNotFound => 'Cette note n’existe plus.';
 
   @override
   String notesCheckboxSemantics(String label) {
-    return 'Checklist item: $label';
+    return 'Élément de liste : $label';
   }
 
   @override
   String notesOpenLinkedNote(String title) {
-    return 'Open note $title';
+    return 'Ouvrir la note $title';
   }
 
   @override
-  String get notesTagsHint => 'Add tags by writing #tag in the note.';
+  String get notesTagsHint => 'Ajoutez des étiquettes en écrivant #étiquette dans la note.';
 
   @override
-  String get notesTaskDone => 'Completed';
+  String get notesTaskDone => 'Terminée';
 
   @override
-  String get notifTimerDoneBody => 'The time you set has passed.';
+  String get notifTimerDoneBody => 'Le temps que vous avez défini est écoulé.';
 
   @override
-  String get onboardingPrivatePointDevice => 'Stored only on this device, encrypted';
+  String get onboardingPrivatePointDevice => 'Stocké uniquement sur cet appareil, chiffré';
 
   @override
-  String get onboardingPrivatePointAccount => 'No account needed';
+  String get onboardingPrivatePointAccount => 'Aucun compte nécessaire';
 
   @override
-  String get onboardingPrivatePointTracking => 'No analytics, no tracking';
+  String get onboardingPrivatePointTracking => 'Aucune analyse d’usage, aucun suivi';
 
   @override
-  String get onboardingLanguageBody => 'You can change this anytime in Settings.';
+  String get onboardingLanguageBody => 'Vous pouvez la modifier à tout moment dans les réglages.';
 
   @override
-  String get onboardingNext => 'Next';
+  String get onboardingNext => 'Suivant';
 
   @override
-  String get projectsActive => 'Active';
+  String get projectsActive => 'Actifs';
 
   @override
-  String get projectNameHint => 'e.g. Product launch';
+  String get projectNameHint => 'p. ex. Lancement du produit';
 
   @override
-  String get projectGoalHint => 'What does done look like?';
+  String get projectGoalHint => 'À quoi ressemble la réussite ?';
 
   @override
-  String get projectNoDeadline => 'No deadline';
+  String get projectNoDeadline => 'Sans échéance';
 
   @override
-  String get projectTasksOpen => 'Open tasks';
+  String get projectTasksOpen => 'Tâches ouvertes';
 
   @override
-  String get projectTasksCompleted => 'Completed tasks';
+  String get projectTasksCompleted => 'Tâches terminées';
 
   @override
-  String get projectAddTask => 'Add task to project';
+  String get projectAddTask => 'Ajouter une tâche au projet';
 
   @override
-  String get projectAddNote => 'New project note';
+  String get projectAddNote => 'Nouvelle note de projet';
 
   @override
   String get projectLinkedNotes => 'Notes';
 
   @override
-  String get projectNoTasks => 'No tasks in this project yet';
+  String get projectNoTasks => 'Aucune tâche dans ce projet pour l’instant';
 
   @override
-  String get projectArchivedBadge => 'Archived';
+  String get projectArchivedBadge => 'Archivé';
 
   @override
-  String get projectDeleted => 'Project moved to trash';
+  String get projectDeleted => 'Projet placé dans la corbeille';
 
   @override
-  String get projectDeleteMessage => 'Tasks stay in your list without a project.';
+  String get projectDeleteMessage => 'Les tâches restent dans votre liste, sans projet.';
 
   @override
   String projectSemantics(String name, int percent) {
-    return '$name, $percent percent complete';
+    return '$name, $percent pour cent terminé';
   }
 
   @override
@@ -2907,129 +2912,130 @@ class AppLocalizationsFr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count results',
-      one: '1 result',
+      other: '$count résultats',
+      one: '1 résultat',
     );
     return '$_temp0';
   }
 
   @override
-  String get searchCategoryFilter => 'Filter by type';
+  String get searchCategoryFilter => 'Filtrer par type';
 
   @override
   String searchRecentTap(String query) {
-    return 'Search again for $query';
+    return 'Rechercher à nouveau $query';
   }
 
   @override
   String get settingsLanguageHint =>
-      'Choose the language for the whole app. Names are shown in their own language.';
+      'Choisissez la langue de toute l’app. Les noms s’affichent dans leur propre langue.';
 
   @override
-  String get settingsThemeHint => 'Light, dark or follow the system';
+  String get settingsThemeHint => 'Clair, sombre ou selon le système';
 
   @override
   String settingsDecrease(String setting) {
-    return 'Decrease $setting';
+    return 'Diminuer : $setting';
   }
 
   @override
   String settingsIncrease(String setting) {
-    return 'Increase $setting';
+    return 'Augmenter : $setting';
   }
 
   @override
-  String get settingsQuietStart => 'Starts';
+  String get settingsQuietStart => 'Début';
 
   @override
-  String get settingsQuietEnd => 'Ends';
+  String get settingsQuietEnd => 'Fin';
 
   @override
   String get settingsNotificationsHint =>
-      'This saves your preference in the app. The system may also ask for permission.';
+      'Cela enregistre votre préférence dans l’app. Le système peut aussi demander une autorisation.';
 
   @override
-  String get settingsDashboardHint => 'Drag to reorder. Turn off sections you do not need.';
+  String get settingsDashboardHint =>
+      'Faites glisser pour réorganiser. Désactivez les sections inutiles.';
 
   @override
   String settingsDashboardReorder(String section) {
-    return 'Reorder $section';
+    return 'Réorganiser $section';
   }
 
   @override
-  String get settingsDashboardReset => 'Restore default order';
+  String get settingsDashboardReset => 'Rétablir l’ordre par défaut';
 
   @override
   String get settingsAssistantDesc =>
-      'Optional planning help. Nothing leaves this device unless you connect a provider.';
+      'Aide à la planification facultative. Rien ne quitte cet appareil tant que vous ne connectez pas de fournisseur.';
 
   @override
-  String get settingsAssistantSetup => 'Assistant and provider setup';
+  String get settingsAssistantSetup => 'Configuration de l’assistant et du fournisseur';
 
   @override
-  String get settingsTrashDesc => 'Restore or permanently delete removed items';
+  String get settingsTrashDesc => 'Restaurer ou supprimer définitivement les éléments retirés';
 
   @override
   String get settingsEraseFirstBody =>
-      'This cannot be undone. Consider creating an encrypted backup first.';
+      'Cette action est irréversible. Pensez à créer d’abord une sauvegarde chiffrée.';
 
   @override
   String settingsEraseTypeLabel(String word) {
-    return 'Type $word';
+    return 'Saisissez $word';
   }
 
   @override
-  String get settingsEraseFailed => 'Data could not be erased. Nothing was changed.';
+  String get settingsEraseFailed => 'Impossible d’effacer les données. Rien n’a été modifié.';
 
   @override
-  String get settingsAboutTagline => 'A private, local-first productivity workspace.';
+  String get settingsAboutTagline => 'Un espace de productivité privé, local d’abord.';
 
   @override
-  String get backupShowPassword => 'Show password';
+  String get backupShowPassword => 'Afficher le mot de passe';
 
   @override
-  String get backupHidePassword => 'Hide password';
+  String get backupHidePassword => 'Masquer le mot de passe';
 
   @override
-  String get backupSaved => 'Backup saved';
+  String get backupSaved => 'Sauvegarde enregistrée';
 
   @override
-  String get backupFailed => 'The backup could not be created. Your data is unchanged.';
+  String get backupFailed => 'La sauvegarde n’a pas pu être créée. Vos données sont inchangées.';
 
   @override
-  String get backupReadFailed => 'The selected file could not be read.';
+  String get backupReadFailed => 'Le fichier sélectionné n’a pas pu être lu.';
 
   @override
-  String get backupRestoreFailed => 'Restore failed. Nothing was changed.';
+  String get backupRestoreFailed => 'Échec de la restauration. Rien n’a été modifié.';
 
   @override
-  String get backupShareSubject => 'Future OS encrypted backup';
+  String get backupShareSubject => 'Sauvegarde chiffrée Future OS';
 
   @override
   String repeatSummaryEveryN(String unit, int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Every $count days',
-      one: 'Every day',
+      other: 'Tous les $count jours',
+      one: 'Tous les jours',
     );
     String _temp1 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Every $count weeks',
-      one: 'Every week',
+      other: 'Toutes les $count semaines',
+      one: 'Toutes les semaines',
     );
     String _temp2 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Every $count months',
-      one: 'Every month',
+      other: 'Tous les $count mois',
+      one: 'Tous les mois',
     );
     String _temp3 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Every $count years',
-      one: 'Every year',
+      other: 'Tous les $count ans',
+      one: 'Tous les ans',
     );
     String _temp4 = intl.Intl.selectLogic(unit, {
       'day': '$_temp0',
@@ -3042,177 +3048,178 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String repeatOnWeekdays(String days) {
-    return 'on $days';
+    return 'le $days';
   }
 
   @override
-  String get repeatEndsLabel => 'Ends';
+  String get repeatEndsLabel => 'Fin';
 
   @override
-  String get repeatEndsAfter => 'After a number of times';
+  String get repeatEndsAfter => 'Après un nombre de fois';
 
   @override
   String get repeatCountLabel => 'Occurrences';
 
   @override
-  String get reminderNone => 'No reminder';
+  String get reminderNone => 'Aucun rappel';
 
   @override
-  String get reminderCustomTime => 'At a specific time';
+  String get reminderCustomTime => 'À une heure précise';
 
   @override
-  String get a11yDecrease => 'Decrease';
+  String get a11yDecrease => 'Diminuer';
 
   @override
-  String get a11yIncrease => 'Increase';
+  String get a11yIncrease => 'Augmenter';
 
   @override
-  String get pickTaskTitle => 'Choose a task';
+  String get pickTaskTitle => 'Choisir une tâche';
 
   @override
-  String get pickTaskEmpty => 'No open tasks';
+  String get pickTaskEmpty => 'Aucune tâche ouverte';
 
   @override
-  String get tasksSearchTooltip => 'Search tasks';
+  String get tasksSearchTooltip => 'Rechercher des tâches';
 
   @override
-  String get tasksSectionOverdue => 'Overdue';
+  String get tasksSectionOverdue => 'En retard';
 
   @override
-  String get tasksSectionToday => 'Today';
+  String get tasksSectionToday => 'Aujourd’hui';
 
   @override
-  String get tasksRecurringSemantics => 'Repeats';
+  String get tasksRecurringSemantics => 'Récurrente';
 
   @override
-  String get tasksFilterPriorityAtLeast => 'Minimum priority';
+  String get tasksFilterPriorityAtLeast => 'Priorité minimale';
 
   @override
-  String get tasksFilterCategory => 'Category';
+  String get tasksFilterCategory => 'Catégorie';
 
   @override
-  String get tasksFilterAnyCategory => 'Any category';
+  String get tasksFilterAnyCategory => 'Toute catégorie';
 
   @override
-  String get tasksFilterLabel => 'Label';
+  String get tasksFilterLabel => 'Étiquette';
 
   @override
-  String get tasksFilterAnyLabel => 'Any label';
+  String get tasksFilterAnyLabel => 'Toute étiquette';
 
   @override
-  String get tasksFilterReset => 'Reset filters';
+  String get tasksFilterReset => 'Réinitialiser les filtres';
 
   @override
-  String get tasksViewByProject => 'By project';
+  String get tasksViewByProject => 'Par projet';
 
   @override
-  String get tasksViewByPriority => 'By priority';
+  String get tasksViewByPriority => 'Par priorité';
 
   @override
-  String get tasksViewByCategory => 'By category';
+  String get tasksViewByCategory => 'Par catégorie';
 
   @override
-  String get tasksGroupNoCategory => 'No category';
+  String get tasksGroupNoCategory => 'Sans catégorie';
 
   @override
   String taskBlockedBy(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count tasks',
-      one: '1 task',
+      other: '$count tâches',
+      one: '1 tâche',
     );
-    return 'Blocked by $_temp0';
+    return 'Bloquée par $_temp0';
   }
 
   @override
-  String get taskBlockedWarning => 'This task is blocked by unfinished tasks. Complete it anyway?';
+  String get taskBlockedWarning =>
+      'Cette tâche est bloquée par des tâches non terminées. La terminer quand même ?';
 
   @override
-  String get taskDeleteConfirm => 'Move this task to trash?';
+  String get taskDeleteConfirm => 'Placer cette tâche dans la corbeille ?';
 
   @override
-  String get taskStartFocus => 'Focus on this task';
+  String get taskStartFocus => 'Se concentrer sur cette tâche';
 
   @override
-  String get taskRemoveDate => 'Remove date';
+  String get taskRemoveDate => 'Supprimer la date';
 
   @override
-  String get taskAllDay => 'No specific time';
+  String get taskAllDay => 'Pas d’heure précise';
 
   @override
-  String get taskSaved => 'Task saved';
+  String get taskSaved => 'Tâche enregistrée';
 
   @override
-  String get taskCreated => 'Task created';
+  String get taskCreated => 'Tâche créée';
 
   @override
-  String get taskReminderNeedsDue => 'Set a due date to use relative reminders';
+  String get taskReminderNeedsDue => 'Définissez une échéance pour utiliser les rappels relatifs';
 
   @override
   String taskEstimateValue(String value) {
-    return 'Estimate: $value';
+    return 'Estimation : $value';
   }
 
   @override
   String taskTrackedValue(String value) {
-    return 'Tracked: $value';
+    return 'Suivi : $value';
   }
 
   @override
   String get taskSubtaskDetailsHint =>
-      'Save the task first to add subtasks, checklist items, labels and dependencies.';
+      'Enregistrez d’abord la tâche pour ajouter des sous-tâches, éléments de liste, étiquettes et dépendances.';
 
   @override
-  String get taskNoLabels => 'No labels yet';
+  String get taskNoLabels => 'Aucune étiquette pour l’instant';
 
   @override
-  String get taskLabelName => 'Label name';
+  String get taskLabelName => 'Nom de l’étiquette';
 
   @override
-  String get taskMoreDetails => 'Details';
+  String get taskMoreDetails => 'Détails';
 
   @override
-  String get taskPlanning => 'Planning';
+  String get taskPlanning => 'Planification';
 
   @override
-  String get taskOrganize => 'Organize';
+  String get taskOrganize => 'Organisation';
 
   @override
-  String get taskBreakdown => 'Breakdown';
+  String get taskBreakdown => 'Décomposition';
 
   @override
-  String get trashDeleteTaskTitle => 'Delete this task forever?';
+  String get trashDeleteTaskTitle => 'Supprimer définitivement cette tâche ?';
 
   @override
-  String get trashDeleteNoteTitle => 'Delete this note forever?';
+  String get trashDeleteNoteTitle => 'Supprimer définitivement cette note ?';
 
   @override
-  String get trashDeleteBody => 'This cannot be undone.';
+  String get trashDeleteBody => 'Cette action est irréversible.';
 
   @override
-  String get trashEmptyTitle => 'Empty trash?';
+  String get trashEmptyTitle => 'Vider la corbeille ?';
 
   @override
   String trashEmptyBody(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count items will be deleted permanently.',
-      one: '1 item will be deleted permanently.',
+      other: '$count éléments seront supprimés définitivement.',
+      one: '1 élément sera supprimé définitivement.',
     );
     return '$_temp0';
   }
 
   @override
-  String get trashRestored => 'Restored';
+  String get trashRestored => 'Restauré';
 
   @override
-  String get trashPurged => 'Deleted forever';
+  String get trashPurged => 'Supprimé définitivement';
 
   @override
   String trashDeletedOn(String date) {
-    return 'Deleted $date';
+    return 'Supprimé $date';
   }
 
   @override
@@ -3220,8 +3227,8 @@ class AppLocalizationsFr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count items',
-      one: '1 item',
+      other: '$count éléments',
+      one: '1 élément',
     );
     return '$_temp0';
   }

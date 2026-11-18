@@ -70,9 +70,6 @@ jobs:
           PY_CHECK
 
       - name: Run Unit, Widget & Responsive Multi-Width Tests
-        run: |
-          if [ -d test ] && [ -n "$(ls -A test/*.dart 2>/dev/null)" ]; then
-            flutter test
-          else
-            echo "No Dart tests yet; gate ready for Phase 1+."
-          fi
+        # Tests live in test/unit/** and test/widget/**; the old `ls test/*.dart`
+        # probe found nothing there and silently skipped the whole suite.
+        run: flutter test --timeout=3m
