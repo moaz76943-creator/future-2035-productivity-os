@@ -55,6 +55,9 @@ jobs:
     name: Build and upload Android debug APK
     runs-on: ubuntu-latest
     timeout-minutes: 45
+    # Write access only for this job, only to publish the QA pre-release below.
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -99,7 +102,29 @@ jobs:
       - name: Build debug APK
         run: flutter build apk --debug
 
+      # Actions artifact storage can hit the account quota; a pre-release asset does
+      # not count against it, so every main build stays downloadable for QA.
+      - name: Publish QA pre-release (debug APK, debug-signed, not for the store)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          APK=build/app/outputs/flutter-apk/app-debug.apk
+          test -s "$APK"
+          SHORT=${GITHUB_SHA::7}
+          cp "$APK" "future2035-qa-$SHORT-debug.apk"
+          sha256sum "future2035-qa-$SHORT-debug.apk" > SHA256SUMS
+          VERSION=$(grep -E '^version:' pubspec.yaml | awk '{print $2}')
+          gh release delete "qa-$SHORT" --yes --cleanup-tag 2>/dev/null || true
+          gh release create "qa-$SHORT" "future2035-qa-$SHORT-debug.apk" SHA256SUMS \
+            --prerelease --target "$GITHUB_SHA" --title "QA build $SHORT (debug)" \
+            --notes "Debug-signed QA APK built from $GITHUB_SHA (version $VERSION). For testing only; not for distribution."
+
       - name: Upload debug APK
+        # The build itself is verified above; on main the APK is also published as a
+        # pre-release asset. Only this upload may fail (account artifact quota).
+        continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
           name: future-2035-debug-apk
