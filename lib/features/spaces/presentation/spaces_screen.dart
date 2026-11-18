@@ -109,9 +109,12 @@ class SpacesScreen extends ConsumerWidget {
               SliverPadding(
                 padding: const EdgeInsets.fromLTRB(Space.page, Space.xl, Space.page, 120),
                 sliver: SliverGrid.builder(
-                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                  // Tile height grows with the system font scale: orb (fixed) + up to two
+                  // label lines and a caption (scaled). A fixed 128px clipped the text at
+                  // 150%/200% font size.
+                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 120,
-                    mainAxisExtent: 128,
+                    mainAxisExtent: 76 + MediaQuery.textScalerOf(context).scale(52),
                     crossAxisSpacing: Space.sm,
                     mainAxisSpacing: Space.md,
                   ),
@@ -149,7 +152,8 @@ class _Featured extends StatelessWidget {
       hue: space.hue,
       onTap: () => context.push(space.route),
       child: SizedBox(
-        height: 112,
+        // Icon (fixed) + title + caption (scaled with the font size).
+        height: 68 + MediaQuery.textScalerOf(context).scale(44),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

@@ -11,6 +11,7 @@ import '../../../core/design_system/components/states.dart';
 import '../../../core/design_system/components/surfaces.dart';
 import '../../../core/design_system/tokens.dart';
 import '../../../core/providers/core_providers.dart';
+import '../../../core/speech/tts_service.dart';
 import '../../../l10n/gen/app_localizations.dart';
 import '../application/flashcards_providers.dart';
 import '../domain/srs_scheduler.dart';
@@ -42,9 +43,15 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
 
   int get _reviewed => _counts.values.fold(0, (a, b) => a + b);
 
+  CardRow? get _currentCard {
+    final q = _queue;
+    return q != null && _index < q.length ? q[_index] : null;
+  }
+
   @override
   void initState() {
     super.initState();
+    _tts;
     _load();
   }
 
@@ -54,6 +61,42 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
       if (mounted) setState(() => _queue = q);
     } catch (_) {
       if (mounted) setState(() => _failed = true);
+    }
+  }
+
+  // Read once while the element is alive; `ref` must not be used in dispose().
+  late final TtsService _tts = ref.read(ttsServiceProvider);
+
+  @override
+  void dispose() {
+    _tts.stop();
+    super.dispose();
+  }
+
+  /// Speaks the side that is showing. Text-to-speech is optional: when the
+  /// device has no engine or voice the user is told so and review goes on.
+  Future<void> _speak(String text) async {
+    final messenger = ScaffoldMessenger.of(context);
+    final l10n = context.l10n;
+    final tag = Localizations.localeOf(context).toLanguageTag();
+    final result = await _tts.speak(text, languageTag: tag);
+    if (!mounted) return;
+    final message = switch (result) {
+      TtsResult.ok || TtsResult.empty => null,
+      TtsResult.languageUnavailable => l10n.flashcardsTtsLanguageUnavailable,
+      TtsResult.unavailable => l10n.flashcardsTtsUnavailable,
+    };
+    if (message != null) {
+      messenger
+        ..hideCurrentSnackBar()
+        // Floats above the Show answer / rating bar so the message never covers them.
+        ..showSnackBar(
+          SnackBar(
+            content: Text(message),
+            behavior: SnackBarBehavior.floating,
+            margin: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, 52 + Space.lg + Space.md),
+          ),
+        );
     }
   }
 
@@ -97,6 +140,15 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
         backgroundColor: Colors.transparent,
         surfaceTintColor: Colors.transparent,
         title: Text(deck?.name ?? l10n.flashTitle, maxLines: 1, overflow: TextOverflow.ellipsis),
+        actions: [
+          if (_currentCard case final card?)
+            IconButton(
+              key: const Key('reviewSpeakButton'),
+              tooltip: l10n.flashcardsReadAloud,
+              icon: const Icon(Icons.volume_up_rounded),
+              onPressed: () => _speak(_flipped ? card.back : card.front),
+            ),
+        ],
       ),
       extendBodyBehindAppBar: false,
       body: AuroraBackground(

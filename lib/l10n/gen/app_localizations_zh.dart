@@ -2002,60 +2002,60 @@ class AppLocalizationsZh extends AppLocalizations {
   String get a11ySelected => '已选择';
 
   @override
-  String get analyticsRangeLabel => 'Time range';
+  String get analyticsRangeLabel => '时间范围';
 
   @override
-  String get analyticsRefresh => 'Refresh';
+  String get analyticsRefresh => '刷新';
 
   @override
   String analyticsOnTimeDetail(int done, int total) {
-    return '$done of $total due tasks done on time';
+    return '$total 个到期任务中有 $done 个按时完成';
   }
 
   @override
   String analyticsProjectTasks(int done, int total) {
-    return '$done of $total tasks done';
+    return '已完成 $done / $total 个任务';
   }
 
   @override
-  String get analyticsNoProjects => 'No active projects';
+  String get analyticsNoProjects => '没有进行中的项目';
 
   @override
-  String get analyticsNoFocus => 'No focus sessions in this range';
+  String get analyticsNoFocus => '此范围内没有专注记录';
 
   @override
-  String get analyticsHabitsNone => 'No active habits';
+  String get analyticsHabitsNone => '没有进行中的习惯';
 
   @override
-  String get analyticsRetentionNote => 'Share of mature cards you remembered';
+  String get analyticsRetentionNote => '已掌握卡片中你记住的比例';
 
   @override
   String analyticsBarValue(String name, String value) {
-    return '$name: $value';
+    return '$name：$value';
   }
 
   @override
   String assistantWorkloadRule(String start, String end, String days) {
-    return 'Free time counts $start–$end on workdays ($days), minus timed events. Estimated work is the sum of estimates of open tasks due in the next 7 days.';
+    return '空闲时间按工作日（$days）$start–$end 计算，并扣除有具体时间的日程。预计工作量为未来 7 天内到期的未完成任务的预估时长之和。';
   }
 
   @override
-  String get assistantWorkdaysMonFri => 'Monday–Friday';
+  String get assistantWorkdaysMonFri => '周一至周五';
 
   @override
-  String get assistantWorkdaysSunThu => 'Sunday–Thursday';
+  String get assistantWorkdaysSunThu => '周日至周四';
 
   @override
-  String get assistantWorkloadDayOff => 'Day off';
+  String get assistantWorkloadDayOff => '休息日';
 
   @override
   String assistantWorkloadDay(String estimated, String free) {
-    return '$estimated planned · $free free';
+    return '计划 $estimated · 空闲 $free';
   }
 
   @override
   String assistantPlanRule(String end) {
-    return 'Planned from now until $end, around today\'s events. Overdue tasks first, then priority, due date and estimate.';
+    return '从现在到 $end 为止，避开今天的日程进行规划。优先安排逾期任务，其次按优先级、截止日期和预估时长排序。';
   }
 
   @override
@@ -2064,67 +2064,51 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get assistantScheduleBlocks => 'Schedule as time blocks';
+  String get assistantScheduleBlocks => '安排为时间块';
 
   @override
-  String get assistantScheduleConfirmTitle => 'Add time blocks to your calendar?';
+  String get assistantScheduleConfirmTitle => '将时间块添加到日历？';
 
   @override
   String assistantScheduleConfirmBody(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count time blocks will be added to today\'s calendar.',
-      one: '1 time block will be added to today\'s calendar.',
+      other: '将向今天的日历添加 $count 个时间块。',
     );
     return '$_temp0';
   }
 
   @override
   String assistantScheduled(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count time blocks added',
-      one: '1 time block added',
-    );
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '已添加 $count 个时间块');
     return '$_temp0';
   }
 
   @override
-  String get assistantAlreadyScheduled => 'Already on your calendar';
+  String get assistantAlreadyScheduled => '已在日历中';
 
   @override
-  String get assistantPlanTimeline => 'Fits today';
+  String get assistantPlanTimeline => '今天可完成';
 
   @override
-  String get assistantNoEstimate => 'Add an estimate to plan these';
+  String get assistantNoEstimate => '添加预估时长后才能规划这些任务';
 
   @override
-  String get assistantNoNotes => 'No notes yet. Write a note first.';
+  String get assistantNoNotes => '还没有笔记，请先写一条笔记。';
 
   @override
-  String get assistantNoteEmpty => 'This note is empty.';
+  String get assistantNoteEmpty => '这条笔记是空的。';
 
   @override
   String assistantTasksCreated(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count tasks created',
-      one: '1 task created',
-    );
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '已创建 $count 个任务');
     return '$_temp0';
   }
 
   @override
   String assistantCardsCreated(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count cards created',
-      one: '1 card created',
-    );
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '已创建 $count 张卡片');
     return '$_temp0';
   }
 
@@ -2133,63 +2117,58 @@ class AppLocalizationsZh extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Create $count',
-      one: 'Create 1',
-      zero: 'Nothing selected',
+      other: '创建 $count 项',
+      zero: '未选择任何项',
     );
     return '$_temp0';
   }
 
   @override
-  String get assistantExtractHint =>
-      'Recognized: unchecked checkboxes \"- [ ]\" and lines starting with TODO: or To do:';
+  String get assistantExtractHint => '可识别：未勾选的复选框“- [ ]”，以及以 TODO: 或 To do: 开头的行';
 
   @override
-  String get assistantCardsHint =>
-      'Recognized: \"term: definition\", \"term — definition\" and Q:/A: line pairs';
+  String get assistantCardsHint => '可识别：“术语: 定义”“术语 — 定义”以及成对的 Q:/A: 行';
 
   @override
-  String get assistantProviderHint =>
-      'Use any OpenAI-compatible service. The key stays in this device\'s secure storage and is never included in backups.';
+  String get assistantProviderHint => '可使用任何兼容 OpenAI 的服务。密钥仅保存在本设备的安全存储中，不会包含在备份里。';
 
   @override
-  String get assistantEndpointHelp => 'For example https://api.example.com/v1';
+  String get assistantEndpointHelp => '例如 https://api.example.com/v1';
 
   @override
-  String get assistantApiKeyKeep => 'Leave empty to keep the stored key';
+  String get assistantApiKeyKeep => '留空则保留已存储的密钥';
 
   @override
-  String get assistantApiKeyRequired => 'Enter an API key';
+  String get assistantApiKeyRequired => '请输入 API 密钥';
 
   @override
-  String get assistantProviderSaved => 'Provider saved';
+  String get assistantProviderSaved => '服务商已保存';
 
   @override
-  String get assistantProviderRemoved => 'Provider removed and key deleted';
+  String get assistantProviderRemoved => '服务商已移除，密钥已删除';
 
   @override
-  String get assistantRemoveProviderConfirm =>
-      'Remove the provider and delete the stored API key from this device?';
+  String get assistantRemoveProviderConfirm => '移除该服务商，并从此设备删除已存储的 API 密钥？';
 
   @override
-  String get assistantAskEveryTime => 'Ask before every request';
+  String get assistantAskEveryTime => '每次请求前询问';
 
   @override
-  String get assistantSummarizing => 'Summarizing…';
+  String get assistantSummarizing => '正在总结…';
 
   @override
   String assistantSummaryNote(String host) {
-    return 'Generated by $host. Review before relying on it.';
+    return '由 $host 生成。使用前请先核对。';
   }
 
   @override
-  String get assistantCopy => 'Copy';
+  String get assistantCopy => '复制';
 
   @override
-  String get assistantCopied => 'Copied';
+  String get assistantCopied => '已复制';
 
   @override
-  String get assistantConfigure => 'Set up provider';
+  String get assistantConfigure => '设置服务商';
 
   @override
   String calendarTimeRange(String start, String end) {
@@ -2202,34 +2181,33 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get calendarSeriesMoved => 'All events in this series were moved';
+  String get calendarSeriesMoved => '此系列中的所有日程均已移动';
 
   @override
-  String get calendarEventReminder => 'Reminder';
+  String get calendarEventReminder => '提醒';
 
   @override
-  String get calendarEventRepeat => 'Repeat';
+  String get calendarEventRepeat => '重复';
 
   @override
-  String get calendarEventColor => 'Color';
+  String get calendarEventColor => '颜色';
 
   @override
-  String get calendarDefaultColor => 'Use type color';
+  String get calendarDefaultColor => '使用类型颜色';
 
   @override
-  String get calendarEventLinkedTask => 'Linked task';
+  String get calendarEventLinkedTask => '关联任务';
 
   @override
-  String get calendarEventNoTask => 'No linked task';
+  String get calendarEventNoTask => '无关联任务';
 
   @override
   String calendarEventsCount(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count events',
-      one: '1 event',
-      zero: 'No events',
+      other: '$count 个日程',
+      zero: '没有日程',
     );
     return '$_temp0';
   }
@@ -2239,236 +2217,226 @@ class AppLocalizationsZh extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count tasks due',
-      one: '1 task due',
-      zero: 'no tasks due',
+      other: '$count 个任务到期',
+      zero: '没有到期任务',
     );
     return '$_temp0';
   }
 
   @override
   String calendarDaySemantics(String date, String events, String tasks) {
-    return '$date. $events, $tasks';
+    return '$date。$events，$tasks';
   }
 
   @override
-  String get calendarNoEventsHint => 'Add an event or a time block to plan this day.';
+  String get calendarNoEventsHint => '添加日程或时间块来规划这一天。';
 
   @override
-  String get calendarNow => 'Current time';
+  String get calendarNow => '当前时间';
 
   @override
-  String get calendarRecurring => 'Repeats';
+  String get calendarRecurring => '重复';
 
   @override
-  String get calendarEventNotFound => 'This event no longer exists';
+  String get calendarEventNotFound => '此日程已不存在';
 
   @override
-  String get calendarEventLocalTime => 'Times are shown in your device\'s time zone';
+  String get calendarEventLocalTime => '时间按你设备的时区显示';
 
   @override
-  String get calendarEventDeleted => 'Event moved to trash';
+  String get calendarEventDeleted => '日程已移至回收站';
 
   @override
-  String get calendarConflictMarker => 'Overlaps another event';
+  String get calendarConflictMarker => '与其他日程重叠';
 
   @override
   String calendarEventSemantics(String title, String time) {
-    return '$title, $time';
+    return '$title，$time';
   }
 
   @override
-  String get calendarSeriesEditNote => 'Changes apply to every event in this series';
+  String get calendarSeriesEditNote => '更改将应用于此系列中的所有日程';
 
   @override
-  String get calendarDragHintSeries => 'Dragging a repeating event moves the whole series';
+  String get calendarDragHintSeries => '拖动重复日程会移动整个系列';
 
   @override
   String calendarTaskDueSemantics(String title) {
-    return '$title, task due';
+    return '$title，任务到期';
   }
 
   @override
-  String get startupErrorTitle => 'Your data could not be opened';
+  String get startupErrorTitle => '无法打开你的数据';
 
   @override
   String get startupErrorLocked =>
-      'The encryption key for this device\'s data is not available. Nothing has been deleted. Restarting the device often helps. If you recently restored the device, restore your data from an encrypted backup instead.';
+      '无法获取此设备数据的加密密钥。没有任何内容被删除。重启设备通常可以解决问题。如果你最近恢复过设备，请改为从加密备份中恢复数据。';
 
   @override
-  String get startupErrorCipher =>
-      'This device does not support the encrypted storage the app requires. Nothing has been saved unencrypted.';
+  String get startupErrorCipher => '此设备不支持应用所需的加密存储。没有任何内容以未加密方式保存。';
 
   @override
-  String get startupErrorRetry => 'Try again';
+  String get startupErrorRetry => '重试';
 
   @override
   String flashcardsDueBanner(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count cards are due for review',
-      one: '1 card is due for review',
-    );
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '有 $count 张卡片待复习');
     return '$_temp0';
   }
 
   @override
   String flashcardsDueCount(int count) {
-    return '$count due';
+    return '$count 待复习';
   }
 
   @override
   String flashcardsNewCount(int count) {
-    return '$count new';
+    return '$count 新卡';
   }
 
   @override
   String flashcardsMatureRing(String percent) {
-    return 'Mature cards: $percent';
+    return '已掌握卡片：$percent';
   }
 
   @override
-  String get flashcardsValidationNonNegative => 'Enter 0 or more';
+  String get flashcardsValidationNonNegative => '请输入 0 或更大的数字';
 
   @override
-  String get flashcardsSearchCards => 'Search cards';
+  String get flashcardsSearchCards => '搜索卡片';
 
   @override
-  String get flashcardsSearchEmpty => 'No cards match your search';
+  String get flashcardsSearchEmpty => '没有符合搜索条件的卡片';
 
   @override
-  String get flashcardsCardAdded => 'Card added';
+  String get flashcardsCardAdded => '卡片已添加';
 
   @override
   String flashcardsCardDueOn(String date) {
-    return 'Due $date';
+    return '$date到期';
   }
 
   @override
-  String get flashcardsCopyToClipboard => 'Copy to clipboard';
+  String get flashcardsCopyToClipboard => '复制到剪贴板';
 
   @override
-  String get flashcardsExportTitle => 'Export deck';
+  String get flashcardsExportTitle => '导出卡组';
 
   @override
-  String get flashcardsDeleteDeck => 'Delete deck';
+  String get flashcardsDeleteDeck => '删除卡组';
 
   @override
   String flashcardsRatingA11y(String rating, String interval) {
-    return '$rating, next review in $interval';
+    return '$rating，下次复习：$interval后';
   }
 
   @override
   String flashcardsQuestionA11y(String text) {
-    return 'Question: $text';
+    return '问题：$text';
   }
 
   @override
   String flashcardsAnswerA11y(String text) {
-    return 'Answer: $text';
+    return '答案：$text';
   }
 
   @override
-  String get flashcardsShowQuestion => 'Show question';
+  String get flashcardsShowQuestion => '显示问题';
 
   @override
-  String get flashcardsImportField => 'Cards to import';
+  String get flashcardsImportField => '要导入的卡片';
 
   @override
-  String get flashcardsNothingToStudy => 'Nothing to study';
+  String get flashcardsNothingToStudy => '没有需要学习的内容';
 
   @override
   String flashcardsReadyCount(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count cards ready to study',
-      one: '1 card ready to study',
-      zero: 'No cards ready',
+      other: '$count 张卡片可学习',
+      zero: '没有可学习的卡片',
     );
     return '$_temp0';
   }
 
   @override
-  String get flashcardsByRating => 'By rating';
+  String get flashcardsByRating => '按评分';
 
   @override
-  String get flashcardsDeckNotFound => 'This deck is no longer available.';
+  String get flashcardsDeckNotFound => '此卡组已不可用。';
 
   @override
-  String get focusSessionDeleted => 'Session deleted';
+  String get focusSessionDeleted => '记录已删除';
 
   @override
-  String get focusDeleteConfirm =>
-      'Delete this session from your history? Its time will no longer count toward your targets.';
+  String get focusDeleteConfirm => '从历史记录中删除此次专注？其时长将不再计入你的目标。';
 
   @override
-  String get focusUnlinkTask => 'Remove linked task';
+  String get focusUnlinkTask => '移除关联任务';
 
   @override
-  String get focusNoteHint => 'What did you work on?';
+  String get focusNoteHint => '你做了什么？';
 
   @override
-  String get focusTargetCaption => 'Measured from saved sessions';
+  String get focusTargetCaption => '根据已保存的专注记录统计';
 
   @override
-  String get focusModeLabel => 'Timer mode';
+  String get focusModeLabel => '计时模式';
 
   @override
   String focusUpNext(String phase) {
-    return 'Up next: $phase';
+    return '接下来：$phase';
   }
 
   @override
-  String get focusStopwatchHint => 'Counts up until you stop.';
+  String get focusStopwatchHint => '持续正向计时，直到你停止。';
 
   @override
-  String get focusOpenHint => 'No time limit. Stop whenever you are done.';
+  String get focusOpenHint => '不限时。完成后随时停止。';
 
   @override
-  String get focusNotificationsDisabledInApp =>
-      'Reminders are turned off in settings. You will not be alerted when a session ends.';
+  String get focusNotificationsDisabledInApp => '设置中已关闭提醒。专注结束时你不会收到通知。';
 
   @override
   String focusHistoryItem(String mode, String duration, String when) {
-    return '$mode, $duration, $when';
+    return '$mode，$duration，$when';
   }
 
   @override
-  String get goalsFilterAll => 'All';
+  String get goalsFilterAll => '全部';
 
   @override
-  String get goalsFilterPeriod => 'Period filter';
+  String get goalsFilterPeriod => '周期筛选';
 
   @override
-  String get goalsFilterStatus => 'Status filter';
+  String get goalsFilterStatus => '状态筛选';
 
   @override
-  String get goalsEmptyFiltered => 'No goals match this filter';
+  String get goalsEmptyFiltered => '没有符合此筛选条件的目标';
 
   @override
   String goalsDueOn(String date) {
-    return 'Due $date';
+    return '截止 $date';
   }
 
   @override
-  String get goalsDeadline => 'Deadline (optional)';
+  String get goalsDeadline => '截止日期（可选）';
 
   @override
-  String get goalsNoDeadline => 'No deadline';
+  String get goalsNoDeadline => '无截止日期';
 
   @override
-  String get goalsSetDeadline => 'Set deadline';
+  String get goalsSetDeadline => '设置截止日期';
 
   @override
-  String get goalsRemoveDeadline => 'Remove deadline';
+  String get goalsRemoveDeadline => '移除截止日期';
 
   @override
-  String get goalsDescription => 'Description (optional)';
+  String get goalsDescription => '描述（可选）';
 
   @override
-  String get goalsTitleLabel => 'Title';
+  String get goalsTitleLabel => '标题';
 
   @override
   String goalsAmountWithUnit(String amount, String unit) {
@@ -2477,189 +2445,180 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String goalsCardSemantics(String title, String progress, String status) {
-    return '$title, $progress, $status';
+    return '$title，$progress，$status';
   }
 
   @override
-  String get goalsReached => 'Target reached';
+  String get goalsReached => '已达成目标';
 
   @override
-  String get goalsLogged => 'Progress logged';
+  String get goalsLogged => '进度已记录';
 
   @override
-  String get goalsEntryDeleted => 'Entry removed';
+  String get goalsEntryDeleted => '记录已移除';
 
   @override
-  String get goalsDeleteEntry => 'Remove entry';
+  String get goalsDeleteEntry => '移除记录';
 
   @override
-  String get goalsDeleted => 'Goal deleted';
+  String get goalsDeleted => '目标已删除';
 
   @override
-  String get goalsMarkActive => 'Mark as active';
+  String get goalsMarkActive => '标记为进行中';
 
   @override
-  String get goalsNotFound => 'This goal is no longer available';
+  String get goalsNotFound => '此目标已不可用';
 
   @override
-  String get goalsLinkTask => 'Link a task';
+  String get goalsLinkTask => '关联任务';
 
   @override
-  String get goalsNoLinkedTasks => 'No linked tasks yet';
+  String get goalsNoLinkedTasks => '还没有关联任务';
 
   @override
-  String get goalsUnlinkTask => 'Unlink task';
+  String get goalsUnlinkTask => '取消关联任务';
 
   @override
-  String get goalsTaskOpen => 'Not completed yet';
+  String get goalsTaskOpen => '尚未完成';
 
   @override
-  String get goalsTaskLinked => 'Task linked';
+  String get goalsTaskLinked => '任务已关联';
 
   @override
-  String get goalsTaskUnlinked => 'Task unlinked';
+  String get goalsTaskUnlinked => '已取消关联任务';
 
   @override
   String goalsFromTasks(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count completed linked tasks',
-      one: '1 completed linked task',
-    );
-    return 'Includes $_temp0 this period';
-  }
-
-  @override
-  String get goalsHistoryAllTime =>
-      'Entries from earlier periods are kept here but count only toward their own period.';
-
-  @override
-  String goalsPercentOfTarget(String percent) {
-    return '$percent of target';
-  }
-
-  @override
-  String habitsTodaySummary(int done, int total) {
-    return '$done of $total done today';
-  }
-
-  @override
-  String get habitsNothingToday => 'No habits are scheduled for today';
-
-  @override
-  String get habitsDecrease => 'Remove one check-in';
-
-  @override
-  String get habitsResetToday => 'Reset today';
-
-  @override
-  String get habitsCheckInHint => 'Long-press to adjust';
-
-  @override
-  String get habitsName => 'Name';
-
-  @override
-  String get habitsColor => 'Color';
-
-  @override
-  String get habitsValidationDays => 'Choose at least one day';
-
-  @override
-  String habitsReminderAt(String time) {
-    return 'Every day at $time';
-  }
-
-  @override
-  String get habitsSetReminder => 'Set a reminder time';
-
-  @override
-  String get habitsRemoveReminder => 'Remove reminder';
-
-  @override
-  String get habitsReminderNote =>
-      'Reminders appear on scheduled days when notifications are allowed.';
-
-  @override
-  String get habitsArchived => 'Habit archived';
-
-  @override
-  String get habitsNotFound => 'This habit is no longer available';
-
-  @override
-  String get habitsLast30 => 'Last 30 days';
-
-  @override
-  String get habitsConsistencyNone => 'Not enough data yet';
-
-  @override
-  String get habitsCalendar => 'Check-in history';
-
-  @override
-  String get habitsCalendarHint => 'Tap a day to correct it.';
-
-  @override
-  String habitsDaySemantics(String date, int count, int target) {
-    return '$date: $count of $target';
-  }
-
-  @override
-  String habitsHeatmapSemantics(String percent) {
-    return 'Check-ins over the last 90 days. Consistency $percent.';
-  }
-
-  @override
-  String get habitsHeatmapSemanticsEmpty => 'Check-ins over the last 90 days. Not enough data yet.';
-
-  @override
-  String habitsDays(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count days',
-      one: '1 day',
+      other: '本周期包含 $count 个已完成的关联任务',
     );
     return '$_temp0';
   }
 
   @override
-  String get habitsPausedNote => 'Paused days don\'t affect your streak.';
+  String get goalsHistoryAllTime => '更早周期的记录会保留在这里，但只计入其所属的周期。';
 
   @override
-  String get habitsListSeparator => ', ';
+  String goalsPercentOfTarget(String percent) {
+    return '目标的 $percent';
+  }
 
   @override
-  String get habitsArchive => 'Archive habit';
+  String habitsTodaySummary(int done, int total) {
+    return '今天已完成 $done / $total';
+  }
+
+  @override
+  String get habitsNothingToday => '今天没有安排习惯';
+
+  @override
+  String get habitsDecrease => '减少一次打卡';
+
+  @override
+  String get habitsResetToday => '重置今天';
+
+  @override
+  String get habitsCheckInHint => '长按可调整';
+
+  @override
+  String get habitsName => '名称';
+
+  @override
+  String get habitsColor => '颜色';
+
+  @override
+  String get habitsValidationDays => '请至少选择一天';
+
+  @override
+  String habitsReminderAt(String time) {
+    return '每天 $time';
+  }
+
+  @override
+  String get habitsSetReminder => '设置提醒时间';
+
+  @override
+  String get habitsRemoveReminder => '移除提醒';
+
+  @override
+  String get habitsReminderNote => '开启通知权限后，提醒会在安排的日期出现。';
+
+  @override
+  String get habitsArchived => '习惯已归档';
+
+  @override
+  String get habitsNotFound => '此习惯已不可用';
+
+  @override
+  String get habitsLast30 => '最近 30 天';
+
+  @override
+  String get habitsConsistencyNone => '数据尚不足';
+
+  @override
+  String get habitsCalendar => '打卡历史';
+
+  @override
+  String get habitsCalendarHint => '点按某一天即可修正。';
+
+  @override
+  String habitsDaySemantics(String date, int count, int target) {
+    return '$date：$count / $target';
+  }
+
+  @override
+  String habitsHeatmapSemantics(String percent) {
+    return '最近 90 天的打卡情况。坚持率 $percent。';
+  }
+
+  @override
+  String get habitsHeatmapSemanticsEmpty => '最近 90 天的打卡情况。数据尚不足。';
+
+  @override
+  String habitsDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count 天');
+    return '$_temp0';
+  }
+
+  @override
+  String get habitsPausedNote => '暂停的日子不会影响你的连续记录。';
+
+  @override
+  String get habitsListSeparator => '、';
+
+  @override
+  String get habitsArchive => '归档习惯';
 
   @override
   String habitsTimesPerDayValue(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count times a day',
-      one: 'Once a day',
+      other: '每天 $count 次',
+      one: '每天一次',
     );
     return '$_temp0';
   }
 
   @override
-  String get notesSectionOthers => 'Other notes';
+  String get notesSectionOthers => '其他笔记';
 
   @override
-  String get notesAllNotebooks => 'All notebooks';
+  String get notesAllNotebooks => '所有笔记本';
 
   @override
-  String get notesNotebookName => 'Notebook name';
+  String get notesNotebookName => '笔记本名称';
 
   @override
-  String get notesNotebookColor => 'Color';
+  String get notesNotebookColor => '颜色';
 
   @override
-  String get notesDeleteNotebook => 'Delete notebook';
+  String get notesDeleteNotebook => '删除笔记本';
 
   @override
-  String get notesDeleteNotebookMessage =>
-      'The notebook is removed. Its notes are kept and appear under All notebooks.';
+  String get notesDeleteNotebookMessage => '笔记本将被移除，其中的笔记会保留，并显示在“所有笔记本”下。';
 
   @override
   String notesTagFilter(String tag) {
@@ -2667,26 +2626,26 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get notesEmptyPinned => 'Pin important notes to keep them at the top.';
+  String get notesEmptyPinned => '将重要笔记置顶，让它们保持在最前面。';
 
   @override
-  String get notesEmptyFavorites => 'Notes you mark as favorite appear here.';
+  String get notesEmptyFavorites => '你标记为收藏的笔记会显示在这里。';
 
   @override
-  String get notesEmptyArchived => 'Archived notes appear here.';
+  String get notesEmptyArchived => '已归档的笔记会显示在这里。';
 
   @override
-  String get notesEmptyFiltered => 'No notes match these filters.';
+  String get notesEmptyFiltered => '没有符合这些筛选条件的笔记。';
 
   @override
-  String get notesArchivedSnack => 'Note archived';
+  String get notesArchivedSnack => '笔记已归档';
 
   @override
-  String get notesUnarchivedSnack => 'Note moved back to your notes';
+  String get notesUnarchivedSnack => '笔记已移回你的笔记';
 
   @override
   String notesChecklistProgress(int done, int total) {
-    return '$done of $total done';
+    return '已完成 $done / $total';
   }
 
   @override
@@ -2695,239 +2654,230 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get notesFormatting => 'Formatting';
+  String get notesFormatting => '格式';
 
   @override
-  String get notesWrite => 'Write';
+  String get notesWrite => '编写';
 
   @override
-  String get notesPreviewEmpty => 'Nothing to preview yet.';
+  String get notesPreviewEmpty => '暂无可预览的内容。';
 
   @override
   String notesBacklinksEmpty(String title) {
-    return 'No other notes link here yet. Link to this note with [[$title]].';
+    return '还没有其他笔记链接到这里。使用 [[$title]] 链接到这条笔记。';
   }
 
   @override
-  String get notesBacklinksNeedTitle => 'Give this note a title so other notes can link to it.';
+  String get notesBacklinksNeedTitle => '为这条笔记添加标题，其他笔记才能链接到它。';
 
   @override
-  String get notesLinkedTasksEmpty => 'No tasks linked to this note.';
+  String get notesLinkedTasksEmpty => '没有任务关联到这条笔记。';
 
   @override
   String notesLinkMissing(String title) {
-    return 'There is no note titled \"$title\" yet.';
+    return '还没有标题为“$title”的笔记。';
   }
 
   @override
-  String get notesNotFound => 'This note no longer exists.';
+  String get notesNotFound => '这条笔记已不存在。';
 
   @override
   String notesCheckboxSemantics(String label) {
-    return 'Checklist item: $label';
+    return '清单项：$label';
   }
 
   @override
   String notesOpenLinkedNote(String title) {
-    return 'Open note $title';
+    return '打开笔记 $title';
   }
 
   @override
-  String get notesTagsHint => 'Add tags by writing #tag in the note.';
+  String get notesTagsHint => '在笔记中输入 #标签 即可添加标签。';
 
   @override
-  String get notesTaskDone => 'Completed';
+  String get notesTaskDone => '已完成';
 
   @override
-  String get notifTimerDoneBody => 'The time you set has passed.';
+  String get notifTimerDoneBody => '你设定的时间已到。';
 
   @override
-  String get onboardingPrivatePointDevice => 'Stored only on this device, encrypted';
+  String get onboardingPrivatePointDevice => '仅存储在此设备上，并已加密';
 
   @override
-  String get onboardingPrivatePointAccount => 'No account needed';
+  String get onboardingPrivatePointAccount => '无需账号';
 
   @override
-  String get onboardingPrivatePointTracking => 'No analytics, no tracking';
+  String get onboardingPrivatePointTracking => '无分析，无追踪';
 
   @override
-  String get onboardingLanguageBody => 'You can change this anytime in Settings.';
+  String get onboardingLanguageBody => '你可以随时在设置中更改。';
 
   @override
-  String get onboardingNext => 'Next';
+  String get onboardingNext => '下一步';
 
   @override
-  String get projectsActive => 'Active';
+  String get projectsActive => '进行中';
 
   @override
-  String get projectNameHint => 'e.g. Product launch';
+  String get projectNameHint => '例如：产品发布';
 
   @override
-  String get projectGoalHint => 'What does done look like?';
+  String get projectGoalHint => '完成时是什么样子？';
 
   @override
-  String get projectNoDeadline => 'No deadline';
+  String get projectNoDeadline => '无截止日期';
 
   @override
-  String get projectTasksOpen => 'Open tasks';
+  String get projectTasksOpen => '未完成任务';
 
   @override
-  String get projectTasksCompleted => 'Completed tasks';
+  String get projectTasksCompleted => '已完成任务';
 
   @override
-  String get projectAddTask => 'Add task to project';
+  String get projectAddTask => '向项目添加任务';
 
   @override
-  String get projectAddNote => 'New project note';
+  String get projectAddNote => '新建项目笔记';
 
   @override
-  String get projectLinkedNotes => 'Notes';
+  String get projectLinkedNotes => '笔记';
 
   @override
-  String get projectNoTasks => 'No tasks in this project yet';
+  String get projectNoTasks => '此项目中还没有任务';
 
   @override
-  String get projectArchivedBadge => 'Archived';
+  String get projectArchivedBadge => '已归档';
 
   @override
-  String get projectDeleted => 'Project moved to trash';
+  String get projectDeleted => '项目已移至回收站';
 
   @override
-  String get projectDeleteMessage => 'Tasks stay in your list without a project.';
+  String get projectDeleteMessage => '任务会保留在你的列表中，但不再属于任何项目。';
 
   @override
   String projectSemantics(String name, int percent) {
-    return '$name, $percent percent complete';
+    return '$name，已完成 $percent%';
   }
 
   @override
   String searchResultCount(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count results',
-      one: '1 result',
-    );
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count 条结果');
     return '$_temp0';
   }
 
   @override
-  String get searchCategoryFilter => 'Filter by type';
+  String get searchCategoryFilter => '按类型筛选';
 
   @override
   String searchRecentTap(String query) {
-    return 'Search again for $query';
+    return '再次搜索 $query';
   }
 
   @override
-  String get settingsLanguageHint =>
-      'Choose the language for the whole app. Names are shown in their own language.';
+  String get settingsLanguageHint => '选择整个应用的语言。语言名称以其自身语言显示。';
 
   @override
-  String get settingsThemeHint => 'Light, dark or follow the system';
+  String get settingsThemeHint => '浅色、深色或跟随系统';
 
   @override
   String settingsDecrease(String setting) {
-    return 'Decrease $setting';
+    return '减小$setting';
   }
 
   @override
   String settingsIncrease(String setting) {
-    return 'Increase $setting';
+    return '增大$setting';
   }
 
   @override
-  String get settingsQuietStart => 'Starts';
+  String get settingsQuietStart => '开始';
 
   @override
-  String get settingsQuietEnd => 'Ends';
+  String get settingsQuietEnd => '结束';
 
   @override
-  String get settingsNotificationsHint =>
-      'This saves your preference in the app. The system may also ask for permission.';
+  String get settingsNotificationsHint => '这会在应用内保存你的偏好。系统也可能会请求权限。';
 
   @override
-  String get settingsDashboardHint => 'Drag to reorder. Turn off sections you do not need.';
+  String get settingsDashboardHint => '拖动以重新排序。关闭你不需要的模块。';
 
   @override
   String settingsDashboardReorder(String section) {
-    return 'Reorder $section';
+    return '重新排序$section';
   }
 
   @override
-  String get settingsDashboardReset => 'Restore default order';
+  String get settingsDashboardReset => '恢复默认顺序';
 
   @override
-  String get settingsAssistantDesc =>
-      'Optional planning help. Nothing leaves this device unless you connect a provider.';
+  String get settingsAssistantDesc => '可选的规划帮助。除非你连接服务商，否则不会有任何内容离开此设备。';
 
   @override
-  String get settingsAssistantSetup => 'Assistant and provider setup';
+  String get settingsAssistantSetup => '助手与服务商设置';
 
   @override
-  String get settingsTrashDesc => 'Restore or permanently delete removed items';
+  String get settingsTrashDesc => '恢复或永久删除已移除的项目';
 
   @override
-  String get settingsEraseFirstBody =>
-      'This cannot be undone. Consider creating an encrypted backup first.';
+  String get settingsEraseFirstBody => '此操作无法撤销。建议先创建一份加密备份。';
 
   @override
   String settingsEraseTypeLabel(String word) {
-    return 'Type $word';
+    return '输入 $word';
   }
 
   @override
-  String get settingsEraseFailed => 'Data could not be erased. Nothing was changed.';
+  String get settingsEraseFailed => '无法清除数据。没有任何更改。';
 
   @override
-  String get settingsAboutTagline => 'A private, local-first productivity workspace.';
+  String get settingsAboutTagline => '一个私密、本地优先的效率工作空间。';
 
   @override
-  String get backupShowPassword => 'Show password';
+  String get backupShowPassword => '显示密码';
 
   @override
-  String get backupHidePassword => 'Hide password';
+  String get backupHidePassword => '隐藏密码';
 
   @override
-  String get backupSaved => 'Backup saved';
+  String get backupSaved => '备份已保存';
 
   @override
-  String get backupFailed => 'The backup could not be created. Your data is unchanged.';
+  String get backupFailed => '无法创建备份。你的数据未受影响。';
 
   @override
-  String get backupReadFailed => 'The selected file could not be read.';
+  String get backupReadFailed => '无法读取所选文件。';
 
   @override
-  String get backupRestoreFailed => 'Restore failed. Nothing was changed.';
+  String get backupRestoreFailed => '恢复失败。没有任何更改。';
 
   @override
-  String get backupShareSubject => 'Future OS encrypted backup';
+  String get backupShareSubject => 'Future OS 加密备份';
 
   @override
   String repeatSummaryEveryN(String unit, int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Every $count days',
-      one: 'Every day',
+      other: '每 $count 天',
+      one: '每天',
     );
     String _temp1 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Every $count weeks',
-      one: 'Every week',
+      other: '每 $count 周',
+      one: '每周',
     );
     String _temp2 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Every $count months',
-      one: 'Every month',
+      other: '每 $count 个月',
+      one: '每月',
     );
     String _temp3 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Every $count years',
-      one: 'Every year',
+      other: '每 $count 年',
+      one: '每年',
     );
     String _temp4 = intl.Intl.selectLogic(unit, {
       'day': '$_temp0',
@@ -2940,187 +2890,180 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String repeatOnWeekdays(String days) {
-    return 'on $days';
+    return '于$days';
   }
 
   @override
-  String get repeatEndsLabel => 'Ends';
+  String get repeatEndsLabel => '结束';
 
   @override
-  String get repeatEndsAfter => 'After a number of times';
+  String get repeatEndsAfter => '重复若干次后';
 
   @override
-  String get repeatCountLabel => 'Occurrences';
+  String get repeatCountLabel => '重复次数';
 
   @override
-  String get reminderNone => 'No reminder';
+  String get reminderNone => '不提醒';
 
   @override
-  String get reminderCustomTime => 'At a specific time';
+  String get reminderCustomTime => '在指定时间';
 
   @override
-  String get a11yDecrease => 'Decrease';
+  String get a11yDecrease => '减少';
 
   @override
-  String get a11yIncrease => 'Increase';
+  String get a11yIncrease => '增加';
 
   @override
-  String get pickTaskTitle => 'Choose a task';
+  String get pickTaskTitle => '选择任务';
 
   @override
-  String get pickTaskEmpty => 'No open tasks';
+  String get pickTaskEmpty => '没有未完成的任务';
 
   @override
-  String get tasksSearchTooltip => 'Search tasks';
+  String get tasksSearchTooltip => '搜索任务';
 
   @override
-  String get tasksSectionOverdue => 'Overdue';
+  String get tasksSectionOverdue => '已逾期';
 
   @override
-  String get tasksSectionToday => 'Today';
+  String get tasksSectionToday => '今天';
 
   @override
-  String get tasksRecurringSemantics => 'Repeats';
+  String get tasksRecurringSemantics => '重复';
 
   @override
-  String get tasksFilterPriorityAtLeast => 'Minimum priority';
+  String get tasksFilterPriorityAtLeast => '最低优先级';
 
   @override
-  String get tasksFilterCategory => 'Category';
+  String get tasksFilterCategory => '分类';
 
   @override
-  String get tasksFilterAnyCategory => 'Any category';
+  String get tasksFilterAnyCategory => '任意分类';
 
   @override
-  String get tasksFilterLabel => 'Label';
+  String get tasksFilterLabel => '标签';
 
   @override
-  String get tasksFilterAnyLabel => 'Any label';
+  String get tasksFilterAnyLabel => '任意标签';
 
   @override
-  String get tasksFilterReset => 'Reset filters';
+  String get tasksFilterReset => '重置筛选';
 
   @override
-  String get tasksViewByProject => 'By project';
+  String get tasksViewByProject => '按项目';
 
   @override
-  String get tasksViewByPriority => 'By priority';
+  String get tasksViewByPriority => '按优先级';
 
   @override
-  String get tasksViewByCategory => 'By category';
+  String get tasksViewByCategory => '按分类';
 
   @override
-  String get tasksGroupNoCategory => 'No category';
+  String get tasksGroupNoCategory => '无分类';
 
   @override
   String taskBlockedBy(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count tasks',
-      one: '1 task',
-    );
-    return 'Blocked by $_temp0';
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '被 $count 个任务阻塞');
+    return '$_temp0';
   }
 
   @override
-  String get taskBlockedWarning => 'This task is blocked by unfinished tasks. Complete it anyway?';
+  String get taskBlockedWarning => '此任务被未完成的任务阻塞。仍要完成它吗？';
 
   @override
-  String get taskDeleteConfirm => 'Move this task to trash?';
+  String get taskDeleteConfirm => '将此任务移至回收站？';
 
   @override
-  String get taskStartFocus => 'Focus on this task';
+  String get taskStartFocus => '专注于此任务';
 
   @override
-  String get taskRemoveDate => 'Remove date';
+  String get taskRemoveDate => '移除日期';
 
   @override
-  String get taskAllDay => 'No specific time';
+  String get taskAllDay => '无具体时间';
 
   @override
-  String get taskSaved => 'Task saved';
+  String get taskSaved => '任务已保存';
 
   @override
-  String get taskCreated => 'Task created';
+  String get taskCreated => '任务已创建';
 
   @override
-  String get taskReminderNeedsDue => 'Set a due date to use relative reminders';
+  String get taskReminderNeedsDue => '设置截止日期后才能使用相对提醒';
 
   @override
   String taskEstimateValue(String value) {
-    return 'Estimate: $value';
+    return '预估：$value';
   }
 
   @override
   String taskTrackedValue(String value) {
-    return 'Tracked: $value';
+    return '已记录：$value';
   }
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Save the task first to add subtasks, checklist items, labels and dependencies.';
+  String get taskSubtaskDetailsHint => '请先保存任务，再添加子任务、清单项、标签和依赖关系。';
 
   @override
-  String get taskNoLabels => 'No labels yet';
+  String get taskNoLabels => '还没有标签';
 
   @override
-  String get taskLabelName => 'Label name';
+  String get taskLabelName => '标签名称';
 
   @override
-  String get taskMoreDetails => 'Details';
+  String get taskMoreDetails => '详情';
 
   @override
-  String get taskPlanning => 'Planning';
+  String get taskPlanning => '规划';
 
   @override
-  String get taskOrganize => 'Organize';
+  String get taskOrganize => '整理';
 
   @override
-  String get taskBreakdown => 'Breakdown';
+  String get taskBreakdown => '拆解';
 
   @override
-  String get trashDeleteTaskTitle => 'Delete this task forever?';
+  String get trashDeleteTaskTitle => '永久删除此任务？';
 
   @override
-  String get trashDeleteNoteTitle => 'Delete this note forever?';
+  String get trashDeleteNoteTitle => '永久删除此笔记？';
 
   @override
-  String get trashDeleteBody => 'This cannot be undone.';
+  String get trashDeleteBody => '此操作无法撤销。';
 
   @override
-  String get trashEmptyTitle => 'Empty trash?';
+  String get trashEmptyTitle => '清空回收站？';
 
   @override
   String trashEmptyBody(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count items will be deleted permanently.',
-      one: '1 item will be deleted permanently.',
-    );
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '将永久删除 $count 个项目。');
     return '$_temp0';
   }
 
   @override
-  String get trashRestored => 'Restored';
+  String get trashRestored => '已恢复';
 
   @override
-  String get trashPurged => 'Deleted forever';
+  String get trashPurged => '已永久删除';
 
   @override
   String trashDeletedOn(String date) {
-    return 'Deleted $date';
+    return '删除于 $date';
   }
 
   @override
   String trashCount(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count items',
-      one: '1 item',
-    );
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count 个项目');
     return '$_temp0';
   }
+
+  @override
+  String get flashcardsReadAloud => '朗读';
+
+  @override
+  String get flashcardsTtsUnavailable => '此设备不支持文字转语音。';
+
+  @override
+  String get flashcardsTtsLanguageUnavailable => '此语言未安装语音。请在 Android 文字转语音设置中添加。';
 }
