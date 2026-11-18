@@ -66,7 +66,7 @@ void main() {
           Directionality.of(tester.element(find.byType(NoteEditorScreen))),
           tag == 'ar' ? TextDirection.rtl : TextDirection.ltr,
         );
-        await env.dispose();
+        await closeEnv(tester, env);
       });
     }
 
@@ -95,7 +95,7 @@ void main() {
       await settle(tester);
       expect(find.text('Fav'), findsOneWidget);
       expect(find.text('Roadmap'), findsNothing);
-      await env.dispose();
+      await closeEnv(tester, env);
     });
 
     testWidgets('delete from the menu with undo restores the note', (tester) async {
@@ -115,7 +115,7 @@ void main() {
       await settle(tester);
       expect((await db(tester, () => repo.byId(id)))!.deletedAt, isNull);
       expect(find.text('Temp'), findsOneWidget);
-      await env.dispose();
+      await closeEnv(tester, env);
     });
 
     testWidgets('large font and long text render without overflow', (tester) async {
@@ -133,7 +133,7 @@ void main() {
       await pumpScreen(tester, scaled(routed(), 2.0), localeTag: 'ru', env: env);
       await settle(tester);
       expect(tester.takeException(), isNull);
-      await env.dispose();
+      await closeEnv(tester, env);
     });
   });
 
@@ -157,7 +157,7 @@ void main() {
       expect(saved.body, 'Agenda for #team today');
       expect(find.text('Saved'), findsOneWidget);
       expect(find.text('#team'), findsOneWidget); // tag chip from note_tags
-      await env.dispose();
+      await closeEnv(tester, env);
     });
 
     testWidgets('pending edits are saved when the editor closes', (tester) async {
@@ -171,7 +171,7 @@ void main() {
       await tester.pumpWidget(const SizedBox());
       await settle(tester);
       expect((await db(tester, () => repo.byId(id)))!.body, 'do not lose me');
-      await env.dispose();
+      await closeEnv(tester, env);
     });
 
     testWidgets('untouched blank note is removed on close', (tester) async {
@@ -183,7 +183,7 @@ void main() {
       await tester.pumpWidget(const SizedBox());
       await settle(tester);
       expect(await db(tester, () => repo.byId(id)), isNull);
-      await env.dispose();
+      await closeEnv(tester, env);
     });
 
     testWidgets('toolbar bold wraps the selection', (tester) async {
@@ -202,7 +202,7 @@ void main() {
       expect(field.controller!.text, '- [ ] hello **world**');
       await waitAutosave(tester);
       expect((await db(tester, () => repo.byId(id)))!.body, '- [ ] hello **world**');
-      await env.dispose();
+      await closeEnv(tester, env);
     });
 
     testWidgets('preview renders markdown and checkbox toggles the source', (tester) async {
@@ -230,7 +230,7 @@ void main() {
         '# Shopping\n- [x] milk\n- [x] **bread**',
       );
       expect(tester.widget<Checkbox>(find.byType(Checkbox).first).value, isTrue);
-      await env.dispose();
+      await closeEnv(tester, env);
     });
 
     testWidgets('Arabic content is RTL, Latin content LTR, in the Arabic UI', (tester) async {
@@ -264,7 +264,7 @@ void main() {
       expect(Directionality.of(tester.element(find.text('مرحبا'))), TextDirection.rtl);
       await waitAutosave(tester);
       expect((await db(tester, () => repo.byId(id)))!.body, 'مرحبا\nHello');
-      await env.dispose();
+      await closeEnv(tester, env);
     });
 
     testWidgets('Chinese word count counts characters', (tester) async {
@@ -281,7 +281,7 @@ void main() {
       final l10n = AppLocalizations.of(tester.element(find.byType(NoteEditorScreen)));
       expect(find.text(l10n.noteWordCount(4)), findsOneWidget);
       expect(tester.takeException(), isNull);
-      await env.dispose();
+      await closeEnv(tester, env);
     });
 
     testWidgets('missing note shows not found', (tester) async {
@@ -289,7 +289,7 @@ void main() {
       await pumpScreen(tester, const NoteEditorScreen(noteId: 'nope'), env: env);
       await settle(tester);
       expect(find.text('This note no longer exists.'), findsOneWidget);
-      await env.dispose();
+      await closeEnv(tester, env);
     });
 
     testWidgets('linked tasks and backlinks render from stored data', (tester) async {
@@ -323,7 +323,7 @@ void main() {
       await settle(tester);
       expect(find.text('Write spec'), findsNothing);
       expect(find.text('No tasks linked to this note.'), findsOneWidget);
-      await env.dispose();
+      await closeEnv(tester, env);
     });
   });
 }

@@ -85,3 +85,13 @@ const allLocaleTags = ['ar', 'en', 'zh-CN', 'es', 'ru', 'fr', 'pt-BR', 'hi-IN'];
 
 /// Unused import guard for Clock in helper consumers.
 typedef TestClock = FixedClock;
+
+/// Unmounts the screen while fake time can still advance (Riverpod cancels
+/// drift stream queries, which schedules zero-delay timers), then closes the
+/// database on the real event loop. A plain `env.dispose()` with a screen still
+/// mounted, or from a tear-down, can wait forever.
+Future<void> closeEnv(WidgetTester tester, TestEnv env) async {
+  await tester.pumpWidget(const SizedBox.shrink());
+  await settle(tester);
+  await tester.runAsync(env.dispose);
+}

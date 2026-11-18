@@ -156,27 +156,6 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
           sliver: SliverList.list(
             children: [
               if (fs.notice case final n?) _NoticeCard(notice: n, onClose: _ctrl.clearNotice),
-              if (!enabled)
-                _InfoBanner(
-                  icon: Icons.notifications_off_rounded,
-                  message: l10n.focusNotificationsDisabledInApp,
-                  actionLabel: l10n.focusOpenSettings,
-                  onAction: () => context.push(Routes.settings),
-                )
-              else if (access == NotificationAccess.denied)
-                _InfoBanner(
-                  icon: Icons.notifications_off_rounded,
-                  message: l10n.focusNotificationsOff,
-                  actionLabel: l10n.focusOpenSettings,
-                  onAction: () => ref.read(notificationServiceProvider).openSystemSettings(),
-                )
-              else if (_showBatteryHint)
-                _InfoBanner(
-                  icon: Icons.battery_saver_rounded,
-                  message: l10n.focusBatteryHint,
-                  actionLabel: l10n.actionClose,
-                  onAction: () => setState(() => _showBatteryHint = false),
-                ),
               _ModeSelector(
                 value: fs.active?.mode ?? _mode,
                 enabled: fs.ready && fs.active == null,
@@ -204,6 +183,29 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
                 mode: _mode,
               ),
               const SizedBox(height: Space.md),
+              // Permission and battery hints sit below the controls: placed above the timer they pushed
+              // Start below the fold on a 412x915 phone.
+              if (!enabled)
+                _InfoBanner(
+                  icon: Icons.notifications_off_rounded,
+                  message: l10n.focusNotificationsDisabledInApp,
+                  actionLabel: l10n.focusOpenSettings,
+                  onAction: () => context.push(Routes.settings),
+                )
+              else if (access == NotificationAccess.denied)
+                _InfoBanner(
+                  icon: Icons.notifications_off_rounded,
+                  message: l10n.focusNotificationsOff,
+                  actionLabel: l10n.focusOpenSettings,
+                  onAction: () => ref.read(notificationServiceProvider).openSystemSettings(),
+                )
+              else if (_showBatteryHint)
+                _InfoBanner(
+                  icon: Icons.battery_saver_rounded,
+                  message: l10n.focusBatteryHint,
+                  actionLabel: l10n.actionClose,
+                  onAction: () => setState(() => _showBatteryHint = false),
+                ),
               _LinkedTask(
                 taskId: fs.active != null && fs.active!.phase != FocusPhase.work
                     ? null
@@ -253,40 +255,12 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
   Future<void> _askNote(FinishedSession f) async {
     if (!mounted) return;
     final l10n = context.l10n;
-    final controller = TextEditingController();
-    final completed = f.outcome == SessionOutcome.completed;
+    // The dialog owns its controller: disposing it here, as soon as showDialog
+    // returns, crashed the still-animating exit transition.
     final note = await showDialog<String>(
       context: context,
-      builder: (ctx) => AlertDialog(
-        title: Text(completed ? l10n.focusSessionComplete : l10n.focusSessionStopped),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(l10n.focusSessionSummary(ctx.fmt.duration(Duration(seconds: f.activeSeconds)))),
-            const SizedBox(height: Space.md),
-            TextField(
-              controller: controller,
-              maxLines: 3,
-              minLines: 1,
-              textCapitalization: TextCapitalization.sentences,
-              decoration: InputDecoration(
-                labelText: l10n.focusAddNote,
-                hintText: l10n.focusNoteHint,
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          TextButton(onPressed: () => Navigator.pop(ctx), child: Text(l10n.actionSkip)),
-          FilledButton(
-            onPressed: () => Navigator.pop(ctx, controller.text.trim()),
-            child: Text(l10n.actionSave),
-          ),
-        ],
-      ),
+      builder: (ctx) => _SessionNoteDialog(session: f),
     );
-    controller.dispose();
     if (note != null && note.isNotEmpty) await _ctrl.saveNote(f.id, note);
   }
 
@@ -934,6 +908,56 @@ class _HistoryRow extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class _SessionNoteDialog extends StatefulWidget {
+  const _SessionNoteDialog({required this.session});
+  final FinishedSession session;
+
+  @override
+  State<_SessionNoteDialog> createState() => _SessionNoteDialogState();
+}
+
+class _SessionNoteDialogState extends State<_SessionNoteDialog> {
+  final _controller = TextEditingController();
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final f = widget.session;
+    final completed = f.outcome == SessionOutcome.completed;
+    return AlertDialog(
+      title: Text(completed ? l10n.focusSessionComplete : l10n.focusSessionStopped),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(l10n.focusSessionSummary(context.fmt.duration(Duration(seconds: f.activeSeconds)))),
+          const SizedBox(height: Space.md),
+          TextField(
+            controller: _controller,
+            maxLines: 3,
+            minLines: 1,
+            textCapitalization: TextCapitalization.sentences,
+            decoration: InputDecoration(labelText: l10n.focusAddNote, hintText: l10n.focusNoteHint),
+          ),
+        ],
+      ),
+      actions: [
+        TextButton(onPressed: () => Navigator.pop(context), child: Text(l10n.actionSkip)),
+        FilledButton(
+          onPressed: () => Navigator.pop(context, _controller.text.trim()),
+          child: Text(l10n.actionSave),
+        ),
+      ],
     );
   }
 }

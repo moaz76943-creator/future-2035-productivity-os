@@ -6,7 +6,6 @@ import 'package:future_os/app/routing/routes.dart';
 import 'package:future_os/core/design_system/app_theme.dart';
 import 'package:future_os/core/providers/core_providers.dart';
 import 'package:future_os/core/security/secret_store.dart';
-import 'package:future_os/core/time/clock.dart';
 import 'package:future_os/features/settings/application/settings_providers.dart';
 import 'package:future_os/features/settings/data/settings_repository.dart';
 import 'package:go_router/go_router.dart';
@@ -50,10 +49,15 @@ void main() {
     await settle(tester);
 
     router.go('/this/route/does/not/exist');
+    // Let the page transition finish before acting, as a user would.
+    await tester.pump(const Duration(seconds: 1));
     await settle(tester);
     expect(find.byKey(const ValueKey('route-not-found')), findsOneWidget);
 
     await tester.tap(find.widgetWithText(OutlinedButton, 'Home'));
+    for (var i = 0; i < 6; i++) {
+      await tester.pump(const Duration(milliseconds: 500));
+    }
     await settle(tester);
     expect(find.byKey(const ValueKey('route-not-found')), findsNothing);
     expect(router.routerDelegate.currentConfiguration.uri.path, Routes.home);
