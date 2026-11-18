@@ -3393,4 +3393,146 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get focusSeriesComplete => 'Série concluída. Muito bem!';
+
+  @override
+  String get exportDone => 'Exportação pronta';
+
+  @override
+  String get filterAll => 'Todas';
+
+  @override
+  String importCardsResultDetail(int added, int duplicates, int invalid) {
+    return '$added importadas · $duplicates duplicadas ignoradas · $invalid linhas incompletas';
+  }
+
+  @override
+  String get flashcardsSuspend => 'Suspender cartão';
+
+  @override
+  String get flashcardsResume => 'Retomar cartão';
+
+  @override
+  String get flashcardsSuspended => 'Cartão suspenso: não será agendado';
+
+  @override
+  String get flashcardsResumed => 'Cartão retomado';
+
+  @override
+  String get flashcardsSuspendedFilter => 'Suspensos';
+
+  @override
+  String get flashcardsExportCsv => 'Exportar como CSV';
+
+  @override
+  String flashcardsShownOf(int shown, int total) {
+    return '$shown de $total cartões';
+  }
+
+  @override
+  String get flashcardsImportFile => 'De arquivo';
+
+  @override
+  String get speechTitle => 'Voz';
+
+  @override
+  String get speechAppLanguage => 'Idioma do app';
+
+  @override
+  String get speechFrontLanguage => 'Idioma da frente';
+
+  @override
+  String get speechBackLanguage => 'Idioma do verso';
+
+  @override
+  String get speechRepeat => 'Repetir cada leitura';
+
+  @override
+  String get speechRate => 'Velocidade';
+
+  @override
+  String get speechAutoRead => 'Ler a pergunta automaticamente';
+
+  @override
+  String get speechHint =>
+      'Usa as vozes instaladas no aparelho, offline. Se um idioma não tiver voz, você será avisado e nenhuma outra será usada.';
+
+  @override
+  String get studyHowTitle => 'Como você quer estudar?';
+
+  @override
+  String studyDueCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Revisar $count cartões',
+      one: 'Revisar 1 cartão',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get studyPracticeAll => 'Praticar todos (sem alterar o agendamento)';
+
+  @override
+  String get studyPracticeMistakes => 'Praticar erros recentes';
+
+  @override
+  String get studyPracticeHint =>
+      'A prática não altera quando os cartões vencem. A revisão atualiza o agendamento.';
+
+  @override
+  String get studyModeClassic => 'Clássico';
+
+  @override
+  String get studyModeReverse => 'Inverso';
+
+  @override
+  String get studyModeMixed => 'Nos dois sentidos';
+
+  @override
+  String get studyModeTyped => 'Digitar a resposta';
+
+  @override
+  String get studyModeChoice => 'Múltipla escolha';
+
+  @override
+  String get studyModeListening => 'Escuta';
+
+  @override
+  String get studyPractice => 'prática';
+
+  @override
+  String get studyNoMistakes => 'Nenhum erro recente neste baralho. Ótimo!';
+
+  @override
+  String get studyTypeAnswer => 'Digite sua resposta';
+
+  @override
+  String get studyCheck => 'Verificar';
+
+  @override
+  String get studyKnewIt => 'Eu sabia';
+
+  @override
+  String get studyDidntKnow => 'Não sabia';
+
+  @override
+  String studyMistakes(int count) {
+    return 'Erros ($count)';
+  }
+
+  @override
+  String get studyRepeatMistakes => 'Repetir os erros';
+
+  @override
+  String get studyCorrect => 'Correto';
+
+  @override
+  String get studyAlmost => 'Quase: confira a grafia';
+
+  @override
+  String get studyWrong => 'Não exatamente';
+
+  @override
+  String get studyShowText => 'Mostrar o texto';
 }

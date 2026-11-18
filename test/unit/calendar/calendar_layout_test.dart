@@ -165,6 +165,9 @@ void main() {
     expect(r.from, DateTime(2026, 3, 25));
     expect(r.to, DateTime(2026, 4, 24));
     expect(CalendarMath.step(CalendarView.agenda, DateTime(2026, 3, 25), 1), DateTime(2026, 4, 24));
-    expect(CalendarMath.step(CalendarView.agenda, DateTime(2026, 3, 25), -1), DateTime(2026, 2, 23));
+    expect(
+      CalendarMath.step(CalendarView.agenda, DateTime(2026, 3, 25), -1),
+      DateTime(2026, 2, 23),
+    );
   });
 }

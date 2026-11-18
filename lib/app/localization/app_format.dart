@@ -18,10 +18,7 @@ class AppFormat {
   String _w(String s) => TextNormalizer.westernDigits(s);
 
   String number(num value, {int decimals = 0}) {
-    final f = NumberFormat.decimalPatternDigits(
-      locale: _loc,
-      decimalDigits: decimals,
-    );
+    final f = NumberFormat.decimalPatternDigits(locale: _loc, decimalDigits: decimals);
     return _w(f.format(value));
   }
 
@@ -34,15 +31,13 @@ class AppFormat {
   String dayShort(DateTime t) => _w(DateFormat.MMMEd(_loc).format(t.toLocal()));
 
   /// Monday, November 16, 2026
-  String dayLong(DateTime t) =>
-      _w(DateFormat.yMMMMEEEEd(_loc).format(t.toLocal()));
+  String dayLong(DateTime t) => _w(DateFormat.yMMMMEEEEd(_loc).format(t.toLocal()));
 
   /// Nov 16, 2026
   String date(DateTime t) => _w(DateFormat.yMMMd(_loc).format(t.toLocal()));
 
   /// November 2026
-  String monthYear(DateTime t) =>
-      _w(DateFormat.yMMMM(_loc).format(t.toLocal()));
+  String monthYear(DateTime t) => _w(DateFormat.yMMMM(_loc).format(t.toLocal()));
 
   /// Mon
   String weekdayShort(DateTime t) => _w(DateFormat.E(_loc).format(t.toLocal()));
@@ -94,8 +89,7 @@ class AppFormat {
 extension L10nX on BuildContext {
   AppLocalizations get l10n => AppLocalizations.of(this);
 
-  SupportedLanguage get language =>
-      AppLocales.forLocale(Localizations.maybeLocaleOf(this));
+  SupportedLanguage get language => AppLocales.forLocale(Localizations.maybeLocaleOf(this));
 
   AppFormat get fmt => AppFormat(language, AppLocalizations.of(this));
 }

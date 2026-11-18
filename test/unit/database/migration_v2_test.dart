@@ -33,6 +33,9 @@ void main() {
     raw.execute('DROP TABLE milestones');
     raw.execute('ALTER TABLE tasks DROP COLUMN status');
     raw.execute('ALTER TABLE tasks DROP COLUMN archived_at');
+    raw.execute('ALTER TABLE flashcards DROP COLUMN suspended');
+    raw.execute('ALTER TABLE decks DROP COLUMN front_lang');
+    raw.execute('ALTER TABLE decks DROP COLUMN back_lang');
     raw.execute('PRAGMA user_version = 1');
     raw.close();
 
@@ -41,7 +44,7 @@ void main() {
     final cards = await db.select(db.flashcards).get();
     expect(cards.single.front, 'hola');
     expect(cards.single.extra, '');
-    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 4);
+    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 5);
     await (db.update(db.flashcards)..where((c) => c.id.equals('c1'))).write(
       const FlashcardsCompanion(extra: Value('{"example":"¡Hola!"}')),
     );
@@ -65,6 +68,9 @@ void main() {
     raw.execute('DROP TABLE milestones');
     raw.execute('ALTER TABLE tasks DROP COLUMN status');
     raw.execute('ALTER TABLE tasks DROP COLUMN archived_at');
+    raw.execute('ALTER TABLE flashcards DROP COLUMN suspended');
+    raw.execute('ALTER TABLE decks DROP COLUMN front_lang');
+    raw.execute('ALTER TABLE decks DROP COLUMN back_lang');
     raw.execute('PRAGMA user_version = 2');
     raw.close();
 
@@ -83,7 +89,7 @@ void main() {
           ),
         );
     expect((await db.select(db.milestones).getSingle()).title, 'Draft');
-    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 4);
+    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 5);
   });
 
   test('upgrading a v3 database adds task status and archive without touching tasks', () async {
@@ -100,6 +106,9 @@ void main() {
     );
     raw.execute('ALTER TABLE tasks DROP COLUMN status');
     raw.execute('ALTER TABLE tasks DROP COLUMN archived_at');
+    raw.execute('ALTER TABLE flashcards DROP COLUMN suspended');
+    raw.execute('ALTER TABLE decks DROP COLUMN front_lang');
+    raw.execute('ALTER TABLE decks DROP COLUMN back_lang');
     raw.execute('PRAGMA user_version = 3');
     raw.close();
 
@@ -109,6 +118,38 @@ void main() {
     expect(t.title, 'Write intro');
     expect(t.status, 'notStarted');
     expect(t.archivedAt, isNull);
-    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 4);
+    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 5);
+  });
+
+  test('upgrading a v4 database adds card suspension and deck languages', () async {
+    final dir = await Directory.systemTemp.createTemp('fos_mig5');
+    addTearDown(() => dir.delete(recursive: true));
+    final file = File('${dir.path}/db.sqlite');
+    final seed = AppDatabase(NativeDatabase(file));
+    await seed.customSelect('SELECT 1').get();
+    await seed.close();
+    final raw = sqlite3.open(file.path);
+    final now = "'${DateTime.utc(2026, 11, 1).toIso8601String()}'";
+    raw.execute(
+      "INSERT INTO decks (id, name, color, created_at, updated_at) VALUES ('d1', 'Words', 1, $now, $now)",
+    );
+    raw.execute(
+      "INSERT INTO flashcards (id, deck_id, front, back, created_at, updated_at) "
+      "VALUES ('c1', 'd1', 'hola', 'hello', $now, $now)",
+    );
+    raw.execute('ALTER TABLE flashcards DROP COLUMN suspended');
+    raw.execute('ALTER TABLE decks DROP COLUMN front_lang');
+    raw.execute('ALTER TABLE decks DROP COLUMN back_lang');
+    raw.execute('PRAGMA user_version = 4');
+    raw.close();
+
+    final db = AppDatabase(NativeDatabase(file));
+    addTearDown(db.close);
+    final card = await db.select(db.flashcards).getSingle();
+    expect(card.suspended, isFalse);
+    final deck = await db.select(db.decks).getSingle();
+    expect(deck.frontLang, '');
+    expect(deck.backLang, '');
+    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 5);
   });
 }

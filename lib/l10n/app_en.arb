@@ -4509,5 +4509,202 @@
   "focusSeriesComplete": "Series complete. Well done!",
   "@focusSeriesComplete": {
     "description": "focusSeriesComplete"
+  },
+  "exportDone": "Export ready",
+  "@exportDone": {
+    "description": "exportDone"
+  },
+  "filterAll": "All",
+  "@filterAll": {
+    "description": "filterAll"
+  },
+  "importCardsResultDetail": "{added} imported · {duplicates} duplicates skipped · {invalid} incomplete rows",
+  "@importCardsResultDetail": {
+    "description": "Import summary",
+    "placeholders": {
+      "added": {
+        "type": "int"
+      },
+      "duplicates": {
+        "type": "int"
+      },
+      "invalid": {
+        "type": "int"
+      }
+    }
+  },
+  "flashcardsSuspend": "Suspend card",
+  "@flashcardsSuspend": {
+    "description": "flashcardsSuspend"
+  },
+  "flashcardsResume": "Resume card",
+  "@flashcardsResume": {
+    "description": "flashcardsResume"
+  },
+  "flashcardsSuspended": "Card suspended: it will not be scheduled",
+  "@flashcardsSuspended": {
+    "description": "flashcardsSuspended"
+  },
+  "flashcardsResumed": "Card resumed",
+  "@flashcardsResumed": {
+    "description": "flashcardsResumed"
+  },
+  "flashcardsSuspendedFilter": "Suspended",
+  "@flashcardsSuspendedFilter": {
+    "description": "flashcardsSuspendedFilter"
+  },
+  "flashcardsExportCsv": "Export as CSV",
+  "@flashcardsExportCsv": {
+    "description": "flashcardsExportCsv"
+  },
+  "flashcardsShownOf": "{shown} of {total} cards",
+  "@flashcardsShownOf": {
+    "description": "Filtered card count",
+    "placeholders": {
+      "shown": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "flashcardsImportFile": "From file",
+  "@flashcardsImportFile": {
+    "description": "flashcardsImportFile"
+  },
+  "speechTitle": "Speech",
+  "@speechTitle": {
+    "description": "speechTitle"
+  },
+  "speechAppLanguage": "App language",
+  "@speechAppLanguage": {
+    "description": "speechAppLanguage"
+  },
+  "speechFrontLanguage": "Front language",
+  "@speechFrontLanguage": {
+    "description": "speechFrontLanguage"
+  },
+  "speechBackLanguage": "Back language",
+  "@speechBackLanguage": {
+    "description": "speechBackLanguage"
+  },
+  "speechRepeat": "Repeat each reading",
+  "@speechRepeat": {
+    "description": "speechRepeat"
+  },
+  "speechRate": "Speed",
+  "@speechRate": {
+    "description": "speechRate"
+  },
+  "speechAutoRead": "Read the question automatically",
+  "@speechAutoRead": {
+    "description": "speechAutoRead"
+  },
+  "speechHint": "Uses the voices installed on this device, offline. If a language has no voice, you will be told and nothing else is used instead.",
+  "@speechHint": {
+    "description": "speechHint"
+  },
+  "studyHowTitle": "How do you want to study?",
+  "@studyHowTitle": {
+    "description": "studyHowTitle"
+  },
+  "studyDueCount": "{count, plural, =1{Review 1 card} other{Review {count} cards}}",
+  "@studyDueCount": {
+    "description": "Scheduled study button",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "studyPracticeAll": "Practice all cards (schedule unchanged)",
+  "@studyPracticeAll": {
+    "description": "studyPracticeAll"
+  },
+  "studyPracticeMistakes": "Practice recent mistakes",
+  "@studyPracticeMistakes": {
+    "description": "studyPracticeMistakes"
+  },
+  "studyPracticeHint": "Practice rounds never change when cards are due. Review updates the schedule.",
+  "@studyPracticeHint": {
+    "description": "studyPracticeHint"
+  },
+  "studyModeClassic": "Classic",
+  "@studyModeClassic": {
+    "description": "studyModeClassic"
+  },
+  "studyModeReverse": "Reverse",
+  "@studyModeReverse": {
+    "description": "studyModeReverse"
+  },
+  "studyModeMixed": "Both ways",
+  "@studyModeMixed": {
+    "description": "studyModeMixed"
+  },
+  "studyModeTyped": "Type the answer",
+  "@studyModeTyped": {
+    "description": "studyModeTyped"
+  },
+  "studyModeChoice": "Multiple choice",
+  "@studyModeChoice": {
+    "description": "studyModeChoice"
+  },
+  "studyModeListening": "Listening",
+  "@studyModeListening": {
+    "description": "studyModeListening"
+  },
+  "studyPractice": "practice",
+  "@studyPractice": {
+    "description": "studyPractice"
+  },
+  "studyNoMistakes": "No recent mistakes in this deck. Nice!",
+  "@studyNoMistakes": {
+    "description": "studyNoMistakes"
+  },
+  "studyTypeAnswer": "Type your answer",
+  "@studyTypeAnswer": {
+    "description": "studyTypeAnswer"
+  },
+  "studyCheck": "Check",
+  "@studyCheck": {
+    "description": "studyCheck"
+  },
+  "studyKnewIt": "I knew it",
+  "@studyKnewIt": {
+    "description": "studyKnewIt"
+  },
+  "studyDidntKnow": "Didn't know",
+  "@studyDidntKnow": {
+    "description": "studyDidntKnow"
+  },
+  "studyMistakes": "Missed ({count})",
+  "@studyMistakes": {
+    "description": "Summary header",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "studyRepeatMistakes": "Repeat the missed cards",
+  "@studyRepeatMistakes": {
+    "description": "studyRepeatMistakes"
+  },
+  "studyCorrect": "Correct",
+  "@studyCorrect": {
+    "description": "studyCorrect"
+  },
+  "studyAlmost": "Almost — check the spelling",
+  "@studyAlmost": {
+    "description": "studyAlmost"
+  },
+  "studyWrong": "Not quite",
+  "@studyWrong": {
+    "description": "studyWrong"
+  },
+  "studyShowText": "Show the text",
+  "@studyShowText": {
+    "description": "studyShowText"
   }
 }

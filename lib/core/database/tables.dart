@@ -263,6 +263,10 @@ class Decks extends Table with Timestamps {
   IntColumn get dailyNewLimit => integer().withDefault(const Constant(20))();
   IntColumn get dailyReviewTarget =>
       integer().withDefault(const Constant(50))();
+
+  /// BCP-47 speech languages of the front and back ('' = app language). v5.
+  TextColumn get frontLang => text().withDefault(const Constant(''))();
+  TextColumn get backLang => text().withDefault(const Constant(''))();
   DateTimeColumn get deletedAt => dateTime().nullable()();
 
   @override
@@ -292,6 +296,9 @@ class Flashcards extends Table with Timestamps {
   IntColumn get lapses => integer().withDefault(const Constant(0))();
   IntColumn get learningStep => integer().withDefault(const Constant(0))();
   DateTimeColumn get dueAt => dateTime().nullable()();
+
+  /// Suspended cards stay in the deck but are never scheduled. v5.
+  BoolColumn get suspended => boolean().withDefault(const Constant(false))();
   DateTimeColumn get deletedAt => dateTime().nullable()();
 
   @override

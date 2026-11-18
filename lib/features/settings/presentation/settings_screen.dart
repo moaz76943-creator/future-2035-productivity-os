@@ -549,22 +549,25 @@ class _DashboardSection extends StatelessWidget {
                 ),
           title: Text(label, maxLines: 2, overflow: TextOverflow.ellipsis),
           // Separate node from the title: give the switch its own label for TalkBack.
-          trailing: Semantics(label: label, child: Switch(
-            value: on,
-            // Keep at least one section so Home is never blank.
-            onChanged: on && enabled.length <= 1
-                ? null
-                : (v) => set(
-                    (c) => c.copyWith(
-                      dashboardSections: v
-                          ? [...enabled, id]
-                          : [
-                              for (final e in enabled)
-                                if (e != id) e,
-                            ],
+          trailing: Semantics(
+            label: label,
+            child: Switch(
+              value: on,
+              // Keep at least one section so Home is never blank.
+              onChanged: on && enabled.length <= 1
+                  ? null
+                  : (v) => set(
+                      (c) => c.copyWith(
+                        dashboardSections: v
+                            ? [...enabled, id]
+                            : [
+                                for (final e in enabled)
+                                  if (e != id) e,
+                              ],
+                      ),
                     ),
-                  ),
-          )),
+            ),
+          ),
         ),
       );
     }

@@ -30,10 +30,7 @@ void main() {
     expect(history.single.outcome, 'completed');
     expect(
       await repo
-          .watchWorkSeconds(
-            t0.subtract(const Duration(days: 1)),
-            t0.add(const Duration(days: 1)),
-          )
+          .watchWorkSeconds(t0.subtract(const Duration(days: 1)), t0.add(const Duration(days: 1)))
           .first,
       1500,
     );

@@ -35,41 +35,32 @@ void main() {
       expect(await r.watch(NotesView.all, tag: 'work').first, hasLength(1));
     });
     test('arabic hashtags are extracted', () {
-      expect(NotesRepository.extractTags('مرحبا #عمل و #دراسة'), {
-        'عمل',
-        'دراسة',
-      });
+      expect(NotesRepository.extractTags('مرحبا #عمل و #دراسة'), {'عمل', 'دراسة'});
     });
   });
 
   group('flashcards', () {
-    test(
-      'queue respects due cards and daily new limit; reviews persist',
-      () async {
-        final r = FlashcardsRepository(env.db, env.clock);
-        final deck = await r.createDeck('Español', color: 0xFFFF6B6B);
-        await env.db.customStatement('UPDATE decks SET daily_new_limit = 2');
-        for (var i = 0; i < 5; i++) {
-          await r.addCard(deck, 'front $i', 'back $i');
-        }
-        var queue = await r.reviewQueue(deck);
-        expect(queue, hasLength(2));
-        await r.recordReview(queue.first.id, ReviewRating.easy);
-        queue = await r.reviewQueue(deck);
-        expect(queue, hasLength(1), reason: 'one new slot left today');
-        final stats = await r.watchDeckStats(deck).first;
-        expect(stats.total, 5);
-        expect(stats.newCount, 4);
-        env.clock.advance(const Duration(days: 4));
-        expect(
-          await FlashcardsRepository(env.db, env.clock).watchTotalDue().first,
-          1,
-        );
-        final reviews = await env.db.select(env.db.cardReviews).get();
-        expect(reviews.single.rating, 4);
-        expect(reviews.single.stateBefore, 'new');
-      },
-    );
+    test('queue respects due cards and daily new limit; reviews persist', () async {
+      final r = FlashcardsRepository(env.db, env.clock);
+      final deck = await r.createDeck('Español', color: 0xFFFF6B6B);
+      await env.db.customStatement('UPDATE decks SET daily_new_limit = 2');
+      for (var i = 0; i < 5; i++) {
+        await r.addCard(deck, 'front $i', 'back $i');
+      }
+      var queue = await r.reviewQueue(deck);
+      expect(queue, hasLength(2));
+      await r.recordReview(queue.first.id, ReviewRating.easy);
+      queue = await r.reviewQueue(deck);
+      expect(queue, hasLength(1), reason: 'one new slot left today');
+      final stats = await r.watchDeckStats(deck).first;
+      expect(stats.total, 5);
+      expect(stats.newCount, 4);
+      env.clock.advance(const Duration(days: 4));
+      expect(await FlashcardsRepository(env.db, env.clock).watchTotalDue().first, 1);
+      final reviews = await env.db.select(env.db.cardReviews).get();
+      expect(reviews.single.rating, 4);
+      expect(reviews.single.stateBefore, 'new');
+    });
     test('import tab separated and JSON round-trip', () async {
       final r = FlashcardsRepository(env.db, env.clock);
       final deck = await r.createDeck('Words', color: 1);
@@ -77,10 +68,7 @@ void main() {
       final json = await r.exportDeck(deck);
       final deck2 = await r.createDeck('Copy', color: 1);
       expect(await r.importInto(deck2, json), 2);
-      expect(
-        () => r.importInto(deck2, '{"format":"other"}'),
-        throwsFormatException,
-      );
+      expect(() => r.importInto(deck2, '{"format":"other"}'), throwsFormatException);
     });
   });
 
@@ -88,11 +76,7 @@ void main() {
     test('progress uses current period window and linked tasks', () async {
       final g = GoalsRepository(env.db, env.clock);
       final tasks = TasksRepository(env.db, env.clock);
-      final id = await g.create(
-        title: 'Read',
-        period: GoalPeriod.daily,
-        target: 3,
-      );
+      final id = await g.create(title: 'Read', period: GoalPeriod.daily, target: 3);
       await g.addEntry(id, 1);
       final t = await tasks.create(const TaskDraft(title: 'chapter'));
       await g.linkTask(id, t);
@@ -177,20 +161,14 @@ void main() {
           end: DateTime(2026, 11, 18, 10),
         ),
       );
-      final occ = await r
-          .watchOccurrences(DateTime(2026, 11, 16), DateTime(2026, 11, 23))
-          .first;
+      final occ = await r.watchOccurrences(DateTime(2026, 11, 16), DateTime(2026, 11, 23)).first;
       expect(occ.where((o) => o.event.title == 'Standup'), hasLength(7));
       final c = EventsRepository.conflicts(occ);
       expect(c, hasLength(1));
       expect(c.single.$2.event.title, 'Review');
       expect(
         () => r.create(
-          EventDraft(
-            title: 'x',
-            start: DateTime(2026, 1, 1, 10),
-            end: DateTime(2026, 1, 1, 9),
-          ),
+          EventDraft(title: 'x', start: DateTime(2026, 1, 1, 10), end: DateTime(2026, 1, 1, 9)),
         ),
         throwsA(isA<EventValidationException>()),
       );
@@ -198,11 +176,7 @@ void main() {
     test('shift moves an event', () async {
       final r = EventsRepository(env.db, env.clock);
       final id = await r.create(
-        EventDraft(
-          title: 'x',
-          start: DateTime(2026, 11, 16, 9),
-          end: DateTime(2026, 11, 16, 10),
-        ),
+        EventDraft(title: 'x', start: DateTime(2026, 11, 16, 9), end: DateTime(2026, 11, 16, 10)),
       );
       await r.shift(id, const Duration(hours: 2));
       expect((await r.byId(id))!.startAt.toLocal(), DateTime(2026, 11, 16, 11));
@@ -213,9 +187,7 @@ void main() {
     test('round trip and defaults on corrupt data', () async {
       final r = SettingsRepository(env.db);
       expect((await r.load()).workMinutes, 25);
-      await r.save(
-        const AppSettings().copyWith(localeTag: 'ar', workMinutes: 50),
-      );
+      await r.save(const AppSettings().copyWith(localeTag: 'ar', workMinutes: 50));
       final s = await r.load();
       expect(s.localeTag, 'ar');
       expect(s.workMinutes, 50);

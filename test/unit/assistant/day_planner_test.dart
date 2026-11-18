@@ -53,11 +53,10 @@ void main() {
     expect(plan.capacityMinutes, 120);
     expect(plan.overflow.map((t) => t.id), ['big']);
     expect(plan.unestimated.map((t) => t.id), ['n']);
-    expect([for (final b in plan.blocks) (b.task.id, b.start, b.end)], [
-      ('m', at(19), at(19, 45)),
-      ('t', at(19, 45), at(20)),
-      ('s', at(21), at(21, 30)),
-    ]);
+    expect(
+      [for (final b in plan.blocks) (b.task.id, b.start, b.end)],
+      [('m', at(19), at(19, 45)), ('t', at(19, 45), at(20)), ('s', at(21), at(21, 30))],
+    );
     expect(plan.plannedMinutes, 90);
   });
 

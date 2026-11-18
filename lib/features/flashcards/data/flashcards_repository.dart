@@ -1,11 +1,15 @@
 import 'dart:convert';
 
+import 'dart:math' as math;
+
 import 'package:drift/drift.dart';
 
 import '../../../core/database/app_database.dart';
 import '../../../core/ids.dart';
 import '../../../core/time/clock.dart';
 import '../domain/card_extras.dart';
+import '../domain/study.dart';
+import '../domain/card_import.dart';
 import '../domain/srs_scheduler.dart';
 
 class DeckStats {
@@ -133,16 +137,15 @@ class FlashcardsRepository {
     String back, {
     String? tags,
     CardExtras? extras,
-  }) =>
-      (_db.update(_db.flashcards)..where((c) => c.id.equals(id))).write(
-        FlashcardsCompanion(
-          front: Value(front.trim()),
-          back: Value(back.trim()),
-          tags: tags == null ? const Value.absent() : Value(tags),
-          extra: extras == null ? const Value.absent() : Value(extras.encode()),
-          updatedAt: Value(_clock.nowUtc()),
-        ),
-      );
+  }) => (_db.update(_db.flashcards)..where((c) => c.id.equals(id))).write(
+    FlashcardsCompanion(
+      front: Value(front.trim()),
+      back: Value(back.trim()),
+      tags: tags == null ? const Value.absent() : Value(tags),
+      extra: extras == null ? const Value.absent() : Value(extras.encode()),
+      updatedAt: Value(_clock.nowUtc()),
+    ),
+  );
 
   Future<void> deleteCard(String id) => (_db.update(
     _db.flashcards,
@@ -196,7 +199,9 @@ class FlashcardsRepository {
           .watch();
 
   Expression<bool> _isDue(Flashcards c, DateTime nowUtc) =>
-      c.state.equals('new').not() & c.dueAt.isSmallerOrEqualValue(nowUtc);
+      c.state.equals('new').not() &
+      c.suspended.equals(false) &
+      c.dueAt.isSmallerOrEqualValue(nowUtc);
 
   /// Number of new cards already introduced today in [deckId].
   Future<int> _newIntroducedToday(String deckId) async {
@@ -230,7 +235,11 @@ class FlashcardsRepository {
         ? <CardRow>[]
         : await (_db.select(_db.flashcards)
                 ..where(
-                  (c) => c.deckId.equals(deckId) & c.deletedAt.isNull() & c.state.equals('new'),
+                  (c) =>
+                      c.deckId.equals(deckId) &
+                      c.deletedAt.isNull() &
+                      c.suspended.equals(false) &
+                      c.state.equals('new'),
                 )
                 ..orderBy([(c) => OrderingTerm.asc(c.createdAt)])
                 ..limit(remainingNew))
@@ -280,7 +289,7 @@ class FlashcardsRepository {
     final now = _clock.nowUtc();
     final c = _db.flashcards;
     final total = c.id.count();
-    final fresh = c.id.count(filter: c.state.equals('new'));
+    final fresh = c.id.count(filter: c.state.equals('new') & c.suspended.equals(false));
     final due = c.id.count(filter: _isDue(c, now));
     final mature = c.id.count(
       filter: c.state.equals('review') & c.intervalDays.isBiggerOrEqualValue(21),
@@ -335,43 +344,162 @@ class FlashcardsRepository {
     });
   }
 
-  /// Imports either the JSON deck format or tab/semicolon separated
-  /// `front<TAB>back` lines. Returns the number of cards imported.
-  Future<int> importInto(String deckId, String source) async {
-    final pairs = <(String, String, String, CardExtras)>[];
+  /// Imports the JSON deck format or CSV / TSV / semicolon text (quoted
+  /// fields and a header row supported, see [CardImportParser]). Cards whose
+  /// front already exists in the deck (ignoring case and diacritics) are
+  /// skipped. All-or-nothing: one transaction.
+  Future<ImportResult> importCards(String deckId, String source) async {
+    if (source.length > maxImportChars) throw const FormatException('too large');
+    final List<ImportedCard> cards;
+    var invalid = 0;
     final trimmed = source.trimLeft();
     if (trimmed.startsWith('{')) {
       final j = jsonDecode(trimmed);
-      if (j is! Map || j['format'] != 'future-os-deck') {
+      if (j is! Map || j['format'] != 'future-os-deck' || j['cards'] is! List) {
         throw const FormatException('Unsupported deck format');
       }
-      for (final c in (j['cards'] as List)) {
-        final m = c as Map;
-        final fields = m['fields'];
-        pairs.add((
-          '${m['front'] ?? ''}',
-          '${m['back'] ?? ''}',
-          '${m['tags'] ?? ''}',
-          fields is Map ? CardExtras.decode(jsonEncode(fields)) : const CardExtras(),
-        ));
+      cards = [];
+      for (final c in j['cards'] as List) {
+        if (c is! Map) {
+          invalid++;
+          continue;
+        }
+        final fields = c['fields'];
+        final front = '${c['front'] ?? ''}'.trim(), back = '${c['back'] ?? ''}'.trim();
+        if (front.isEmpty || back.isEmpty) {
+          invalid++;
+          continue;
+        }
+        cards.add(
+          ImportedCard(
+            front,
+            back,
+            tags: '${c['tags'] ?? ''}',
+            extras: fields is Map ? CardExtras.decode(jsonEncode(fields)) : const CardExtras(),
+          ),
+        );
       }
     } else {
-      for (final line in const LineSplitter().convert(source)) {
-        if (line.trim().isEmpty) continue;
-        final sep = line.contains('\t') ? '\t' : ';';
-        final i = line.indexOf(sep);
-        if (i <= 0) continue;
-        pairs.add((line.substring(0, i), line.substring(i + 1), '', const CardExtras()));
-      }
+      final parsed = CardImportParser.parse(source);
+      cards = parsed.cards;
+      invalid = parsed.invalid;
     }
-    var n = 0;
+    var added = 0, duplicates = 0;
     await _db.transaction(() async {
-      for (final (f, b, t, x) in pairs) {
-        if (f.trim().isEmpty || b.trim().isEmpty) continue;
-        await addCard(deckId, f, b, tags: t, extras: x);
-        n++;
+      final existing = {
+        for (final f
+            in await (_db.selectOnly(_db.flashcards)
+                  ..addColumns([_db.flashcards.front])
+                  ..where(_db.flashcards.deckId.equals(deckId) & _db.flashcards.deletedAt.isNull()))
+                .map((r) => r.read(_db.flashcards.front)!)
+                .get())
+          StudyRules.searchKey(f),
+      };
+      for (final c in cards) {
+        if (!existing.add(StudyRules.searchKey(c.front))) {
+          duplicates++;
+          continue;
+        }
+        await addCard(deckId, c.front, c.back, tags: c.tags, extras: c.extras);
+        added++;
       }
     });
-    return n;
+    return ImportResult(added: added, duplicates: duplicates, invalid: invalid);
   }
+
+  /// Back-compat wrapper: number of cards imported.
+  Future<int> importInto(String deckId, String source) async =>
+      (await importCards(deckId, source)).added;
+
+  static const maxImportChars = 8 * 1024 * 1024;
+
+  /// CSV with a header row (front, back, tags, optional fields). Cells that
+  /// a spreadsheet would execute as formulas are neutralised.
+  Future<String> exportCsv(String deckId) async {
+    final cards =
+        await (_db.select(_db.flashcards)
+              ..where((c) => c.deckId.equals(deckId) & c.deletedAt.isNull())
+              ..orderBy([(c) => OrderingTerm.asc(c.createdAt)]))
+            .get();
+    final cols = ['front', 'back', 'tags', for (final f in CardField.values) f.name];
+    final out = StringBuffer()..writeln(cols.join(','));
+    for (final c in cards) {
+      final x = CardExtras.decode(c.extra);
+      out.writeln(
+        [
+          c.front,
+          c.back,
+          c.tags,
+          for (final f in CardField.values) x[f] ?? '',
+        ].map(CardImportParser.csvCell).join(','),
+      );
+    }
+    return out.toString();
+  }
+
+  // ---- study helpers -------------------------------------------------------
+
+  /// Front already used in [deckId] (ignoring case/diacritics), if any.
+  Future<CardRow?> findDuplicate(String deckId, String front, {String? exceptId}) async {
+    final key = StudyRules.searchKey(front);
+    if (key.isEmpty) return null;
+    final cards = await (_db.select(
+      _db.flashcards,
+    )..where((c) => c.deckId.equals(deckId) & c.deletedAt.isNull())).get();
+    for (final c in cards) {
+      if (c.id != exceptId && StudyRules.searchKey(c.front) == key) return c;
+    }
+    return null;
+  }
+
+  Future<void> setSuspended(String cardId, bool suspended) =>
+      (_db.update(_db.flashcards)..where((c) => c.id.equals(cardId))).write(
+        FlashcardsCompanion(suspended: Value(suspended), updatedAt: Value(_clock.nowUtc())),
+      );
+
+  Future<void> setDeckLanguages(String deckId, {required String front, required String back}) =>
+      (_db.update(_db.decks)..where((d) => d.id.equals(deckId))).write(
+        DecksCompanion(
+          frontLang: Value(front),
+          backLang: Value(back),
+          updatedAt: Value(_clock.nowUtc()),
+        ),
+      );
+
+  /// Cards for a practice round (no scheduling): every active card, or only
+  /// the ones answered wrong recently. Shuffled with [random].
+  Future<List<CardRow>> practiceCards(
+    String deckId, {
+    required bool mistakesOnly,
+    math.Random? random,
+  }) async {
+    final active =
+        await (_db.select(_db.flashcards)..where(
+              (c) => c.deckId.equals(deckId) & c.deletedAt.isNull() & c.suspended.equals(false),
+            ))
+            .get();
+    var cards = active;
+    if (mistakesOnly) {
+      final since = _clock.nowUtc().subtract(const Duration(days: 14));
+      final missed =
+          await (_db.selectOnly(_db.cardReviews)
+                ..addColumns([_db.cardReviews.cardId])
+                ..where(
+                  _db.cardReviews.rating.equals(ReviewRating.again.value) &
+                      _db.cardReviews.reviewedAt.isBiggerOrEqualValue(since),
+                ))
+              .map((r) => r.read(_db.cardReviews.cardId)!)
+              .get();
+      final ids = missed.toSet();
+      cards = active.where((c) => ids.contains(c.id) || c.lapses > 0).toList();
+    }
+    return cards..shuffle(random ?? math.Random());
+  }
+}
+
+class ImportResult {
+  const ImportResult({required this.added, required this.duplicates, required this.invalid});
+  final int added;
+  final int duplicates;
+  final int invalid;
 }
