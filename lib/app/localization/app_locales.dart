@@ -53,41 +53,17 @@ abstract final class AppLocales {
 
   /// Display order in the language picker.
   static const all = <SupportedLanguage>[
-    SupportedLanguage(
-      tag: 'ar',
-      locale: Locale('ar'),
-      nativeName: 'العربية',
-      intlLocale: 'ar',
-    ),
+    SupportedLanguage(tag: 'ar', locale: Locale('ar'), nativeName: 'العربية', intlLocale: 'ar'),
     english,
     SupportedLanguage(
       tag: 'zh-CN',
-      locale: Locale.fromSubtags(
-        languageCode: 'zh',
-        scriptCode: 'Hans',
-        countryCode: 'CN',
-      ),
+      locale: Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans', countryCode: 'CN'),
       nativeName: '中文',
       intlLocale: 'zh_CN',
     ),
-    SupportedLanguage(
-      tag: 'es',
-      locale: Locale('es'),
-      nativeName: 'Español',
-      intlLocale: 'es',
-    ),
-    SupportedLanguage(
-      tag: 'ru',
-      locale: Locale('ru'),
-      nativeName: 'Русский',
-      intlLocale: 'ru',
-    ),
-    SupportedLanguage(
-      tag: 'fr',
-      locale: Locale('fr'),
-      nativeName: 'Français',
-      intlLocale: 'fr',
-    ),
+    SupportedLanguage(tag: 'es', locale: Locale('es'), nativeName: 'Español', intlLocale: 'es'),
+    SupportedLanguage(tag: 'ru', locale: Locale('ru'), nativeName: 'Русский', intlLocale: 'ru'),
+    SupportedLanguage(tag: 'fr', locale: Locale('fr'), nativeName: 'Français', intlLocale: 'fr'),
     SupportedLanguage(
       tag: 'pt-BR',
       locale: Locale('pt', 'BR'),
@@ -125,10 +101,7 @@ abstract final class AppLocales {
 
   /// Resolves the language to use: explicit user choice first, then the
   /// first supported device language, then English.
-  static SupportedLanguage resolve(
-    String? userTag,
-    List<Locale> deviceLocales,
-  ) {
+  static SupportedLanguage resolve(String? userTag, List<Locale> deviceLocales) {
     final chosen = byTag(userTag);
     if (chosen != null) return chosen;
     for (final d in deviceLocales) {

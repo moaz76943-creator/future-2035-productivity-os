@@ -5657,6 +5657,258 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Series complete. Well done!'**
   String get focusSeriesComplete;
+
+  /// exportDone
+  ///
+  /// In en, this message translates to:
+  /// **'Export ready'**
+  String get exportDone;
+
+  /// filterAll
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get filterAll;
+
+  /// Import summary
+  ///
+  /// In en, this message translates to:
+  /// **'{added} imported · {duplicates} duplicates skipped · {invalid} incomplete rows'**
+  String importCardsResultDetail(int added, int duplicates, int invalid);
+
+  /// flashcardsSuspend
+  ///
+  /// In en, this message translates to:
+  /// **'Suspend card'**
+  String get flashcardsSuspend;
+
+  /// flashcardsResume
+  ///
+  /// In en, this message translates to:
+  /// **'Resume card'**
+  String get flashcardsResume;
+
+  /// flashcardsSuspended
+  ///
+  /// In en, this message translates to:
+  /// **'Card suspended: it will not be scheduled'**
+  String get flashcardsSuspended;
+
+  /// flashcardsResumed
+  ///
+  /// In en, this message translates to:
+  /// **'Card resumed'**
+  String get flashcardsResumed;
+
+  /// flashcardsSuspendedFilter
+  ///
+  /// In en, this message translates to:
+  /// **'Suspended'**
+  String get flashcardsSuspendedFilter;
+
+  /// flashcardsExportCsv
+  ///
+  /// In en, this message translates to:
+  /// **'Export as CSV'**
+  String get flashcardsExportCsv;
+
+  /// Filtered card count
+  ///
+  /// In en, this message translates to:
+  /// **'{shown} of {total} cards'**
+  String flashcardsShownOf(int shown, int total);
+
+  /// flashcardsImportFile
+  ///
+  /// In en, this message translates to:
+  /// **'From file'**
+  String get flashcardsImportFile;
+
+  /// speechTitle
+  ///
+  /// In en, this message translates to:
+  /// **'Speech'**
+  String get speechTitle;
+
+  /// speechAppLanguage
+  ///
+  /// In en, this message translates to:
+  /// **'App language'**
+  String get speechAppLanguage;
+
+  /// speechFrontLanguage
+  ///
+  /// In en, this message translates to:
+  /// **'Front language'**
+  String get speechFrontLanguage;
+
+  /// speechBackLanguage
+  ///
+  /// In en, this message translates to:
+  /// **'Back language'**
+  String get speechBackLanguage;
+
+  /// speechRepeat
+  ///
+  /// In en, this message translates to:
+  /// **'Repeat each reading'**
+  String get speechRepeat;
+
+  /// speechRate
+  ///
+  /// In en, this message translates to:
+  /// **'Speed'**
+  String get speechRate;
+
+  /// speechAutoRead
+  ///
+  /// In en, this message translates to:
+  /// **'Read the question automatically'**
+  String get speechAutoRead;
+
+  /// speechHint
+  ///
+  /// In en, this message translates to:
+  /// **'Uses the voices installed on this device, offline. If a language has no voice, you will be told and nothing else is used instead.'**
+  String get speechHint;
+
+  /// studyHowTitle
+  ///
+  /// In en, this message translates to:
+  /// **'How do you want to study?'**
+  String get studyHowTitle;
+
+  /// Scheduled study button
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Review 1 card} other{Review {count} cards}}'**
+  String studyDueCount(int count);
+
+  /// studyPracticeAll
+  ///
+  /// In en, this message translates to:
+  /// **'Practice all cards (schedule unchanged)'**
+  String get studyPracticeAll;
+
+  /// studyPracticeMistakes
+  ///
+  /// In en, this message translates to:
+  /// **'Practice recent mistakes'**
+  String get studyPracticeMistakes;
+
+  /// studyPracticeHint
+  ///
+  /// In en, this message translates to:
+  /// **'Practice rounds never change when cards are due. Review updates the schedule.'**
+  String get studyPracticeHint;
+
+  /// studyModeClassic
+  ///
+  /// In en, this message translates to:
+  /// **'Classic'**
+  String get studyModeClassic;
+
+  /// studyModeReverse
+  ///
+  /// In en, this message translates to:
+  /// **'Reverse'**
+  String get studyModeReverse;
+
+  /// studyModeMixed
+  ///
+  /// In en, this message translates to:
+  /// **'Both ways'**
+  String get studyModeMixed;
+
+  /// studyModeTyped
+  ///
+  /// In en, this message translates to:
+  /// **'Type the answer'**
+  String get studyModeTyped;
+
+  /// studyModeChoice
+  ///
+  /// In en, this message translates to:
+  /// **'Multiple choice'**
+  String get studyModeChoice;
+
+  /// studyModeListening
+  ///
+  /// In en, this message translates to:
+  /// **'Listening'**
+  String get studyModeListening;
+
+  /// studyPractice
+  ///
+  /// In en, this message translates to:
+  /// **'practice'**
+  String get studyPractice;
+
+  /// studyNoMistakes
+  ///
+  /// In en, this message translates to:
+  /// **'No recent mistakes in this deck. Nice!'**
+  String get studyNoMistakes;
+
+  /// studyTypeAnswer
+  ///
+  /// In en, this message translates to:
+  /// **'Type your answer'**
+  String get studyTypeAnswer;
+
+  /// studyCheck
+  ///
+  /// In en, this message translates to:
+  /// **'Check'**
+  String get studyCheck;
+
+  /// studyKnewIt
+  ///
+  /// In en, this message translates to:
+  /// **'I knew it'**
+  String get studyKnewIt;
+
+  /// studyDidntKnow
+  ///
+  /// In en, this message translates to:
+  /// **'Didn\'t know'**
+  String get studyDidntKnow;
+
+  /// Summary header
+  ///
+  /// In en, this message translates to:
+  /// **'Missed ({count})'**
+  String studyMistakes(int count);
+
+  /// studyRepeatMistakes
+  ///
+  /// In en, this message translates to:
+  /// **'Repeat the missed cards'**
+  String get studyRepeatMistakes;
+
+  /// studyCorrect
+  ///
+  /// In en, this message translates to:
+  /// **'Correct'**
+  String get studyCorrect;
+
+  /// studyAlmost
+  ///
+  /// In en, this message translates to:
+  /// **'Almost — check the spelling'**
+  String get studyAlmost;
+
+  /// studyWrong
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite'**
+  String get studyWrong;
+
+  /// studyShowText
+  ///
+  /// In en, this message translates to:
+  /// **'Show the text'**
+  String get studyShowText;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

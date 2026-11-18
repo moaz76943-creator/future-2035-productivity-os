@@ -16,7 +16,10 @@ abstract final class Routes {
   static String note(String id) => '/notes/$id';
   static const flashcards = '/flashcards';
   static String deck(String id) => '/flashcards/$id';
-  static String review(String deckId) => '/flashcards/$deckId/review';
+  static String review(String deckId, {String? mode, String? scope}) => Uri(
+    path: '/flashcards/$deckId/review',
+    queryParameters: {'mode': ?mode, 'scope': ?scope},
+  ).toString().replaceFirst(RegExp(r'\?$'), '');
   static const goals = '/goals';
   static String goal(String id) => '/goals/$id';
   static const habits = '/habits';

@@ -9,6 +9,7 @@ import '../../features/calendar/presentation/event_editor_screen.dart';
 import '../../features/dashboard/presentation/dashboard_screen.dart';
 import '../../features/flashcards/presentation/deck_screen.dart';
 import '../../features/flashcards/presentation/decks_screen.dart';
+import '../../features/flashcards/domain/study.dart';
 import '../../features/flashcards/presentation/review_screen.dart';
 import '../../features/focus/presentation/focus_screen.dart';
 import '../../features/goals/presentation/goal_detail_screen.dart';
@@ -37,20 +38,12 @@ final rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 DateTime? _parseDate(String? v) => v == null ? null : DateTime.tryParse(v);
 
 final routerProvider = Provider<GoRouter>((ref) {
-  final onboarding = ValueNotifier<bool>(
-    ref.read(settingsProvider).onboardingDone,
-  );
-  ref.listen(
-    settingsProvider.select((s) => s.onboardingDone),
-    (_, v) => onboarding.value = v,
-  );
+  final onboarding = ValueNotifier<bool>(ref.read(settingsProvider).onboardingDone);
+  ref.listen(settingsProvider.select((s) => s.onboardingDone), (_, v) => onboarding.value = v);
   ref.onDispose(onboarding.dispose);
 
-  GoRoute page(String path, Widget Function(GoRouterState s) build) => GoRoute(
-    path: path,
-    parentNavigatorKey: rootNavigatorKey,
-    builder: (context, s) => build(s),
-  );
+  GoRoute page(String path, Widget Function(GoRouterState s) build) =>
+      GoRoute(path: path, parentNavigatorKey: rootNavigatorKey, builder: (context, s) => build(s));
 
   final router = GoRouter(
     navigatorKey: rootNavigatorKey,
@@ -80,20 +73,10 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (context, state, shell) => AppShell(shell: shell),
         branches: [
           StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: Routes.home,
-                builder: (_, _) => const DashboardScreen(),
-              ),
-            ],
+            routes: [GoRoute(path: Routes.home, builder: (_, _) => const DashboardScreen())],
           ),
           StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: Routes.tasks,
-                builder: (_, _) => const TasksScreen(),
-              ),
-            ],
+            routes: [GoRoute(path: Routes.tasks, builder: (_, _) => const TasksScreen())],
           ),
           StatefulShellBranch(
             routes: [
@@ -104,20 +87,10 @@ final routerProvider = Provider<GoRouter>((ref) {
             ],
           ),
           StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: Routes.calendar,
-                builder: (_, _) => const CalendarScreen(),
-              ),
-            ],
+            routes: [GoRoute(path: Routes.calendar, builder: (_, _) => const CalendarScreen())],
           ),
           StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: Routes.spaces,
-                builder: (_, _) => const SpacesScreen(),
-              ),
-            ],
+            routes: [GoRoute(path: Routes.spaces, builder: (_, _) => const SpacesScreen())],
           ),
         ],
       ),
@@ -129,49 +102,30 @@ final routerProvider = Provider<GoRouter>((ref) {
           initialDue: _parseDate(s.uri.queryParameters['due']),
         ),
       ),
-      page(
-        '/task/:id',
-        (s) => TaskEditorScreen(taskId: s.pathParameters['id']),
-      ),
+      page('/task/:id', (s) => TaskEditorScreen(taskId: s.pathParameters['id'])),
       page(
         Routes.eventNew,
-        (s) => EventEditorScreen(
-          start: _parseDate(s.uri.queryParameters['start']),
-        ),
+        (s) => EventEditorScreen(start: _parseDate(s.uri.queryParameters['start'])),
       ),
-      page(
-        '/event/:id',
-        (s) => EventEditorScreen(eventId: s.pathParameters['id']),
-      ),
+      page('/event/:id', (s) => EventEditorScreen(eventId: s.pathParameters['id'])),
       page(Routes.projects, (_) => const ProjectsScreen()),
-      page(
-        '/projects/:id',
-        (s) => ProjectDetailScreen(projectId: s.pathParameters['id']!),
-      ),
+      page('/projects/:id', (s) => ProjectDetailScreen(projectId: s.pathParameters['id']!)),
       page(Routes.notes, (_) => const NotesScreen()),
-      page(
-        '/notes/:id',
-        (s) => NoteEditorScreen(noteId: s.pathParameters['id']!),
-      ),
+      page('/notes/:id', (s) => NoteEditorScreen(noteId: s.pathParameters['id']!)),
       page(Routes.flashcards, (_) => const DecksScreen()),
-      page(
-        '/flashcards/:id',
-        (s) => DeckScreen(deckId: s.pathParameters['id']!),
-      ),
+      page('/flashcards/:id', (s) => DeckScreen(deckId: s.pathParameters['id']!)),
       page(
         '/flashcards/:id/review',
-        (s) => ReviewScreen(deckId: s.pathParameters['id']!),
+        (s) => ReviewScreen(
+          deckId: s.pathParameters['id']!,
+          mode: studyModeFromName(s.uri.queryParameters['mode']),
+          scope: studyScopeFromName(s.uri.queryParameters['scope']) ?? StudyScope.scheduled,
+        ),
       ),
       page(Routes.goals, (_) => const GoalsScreen()),
-      page(
-        '/goals/:id',
-        (s) => GoalDetailScreen(goalId: s.pathParameters['id']!),
-      ),
+      page('/goals/:id', (s) => GoalDetailScreen(goalId: s.pathParameters['id']!)),
       page(Routes.habits, (_) => const HabitsScreen()),
-      page(
-        '/habits/:id',
-        (s) => HabitDetailScreen(habitId: s.pathParameters['id']!),
-      ),
+      page('/habits/:id', (s) => HabitDetailScreen(habitId: s.pathParameters['id']!)),
       page(Routes.insights, (_) => const AnalyticsScreen()),
       page(Routes.search, (_) => const SearchScreen()),
       page(Routes.assistant, (_) => const AssistantScreen()),

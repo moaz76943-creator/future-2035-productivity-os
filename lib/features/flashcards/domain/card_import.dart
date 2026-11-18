@@ -113,7 +113,8 @@ abstract final class CardImportParser {
   }
 
   static ParsedImport parse(String text) {
-    final all = rows(text.replaceAll('﻿', ''), detectDelimiter(text));
+    final delimiter = detectDelimiter(text);
+    final all = rows(text.replaceAll('\uFEFF', ''), delimiter);
     if (all.isEmpty) return const ParsedImport([], 0);
     var columns = ['front', 'back', 'tags'];
     var body = all;
@@ -124,7 +125,17 @@ abstract final class CardImportParser {
     }
     final cards = <ImportedCard>[];
     var invalid = 0;
-    for (final r in body) {
+    for (var r in body) {
+      // Pasted lists often mix separators line by line ("a<TAB>b", "c;d").
+      if (r.length == 1) {
+        for (final alt in const ['\t', ';']) {
+          if (alt != delimiter && r.first.contains(alt)) {
+            final i = r.first.indexOf(alt);
+            r = [r.first.substring(0, i), r.first.substring(i + 1)];
+            break;
+          }
+        }
+      }
       String cell(String name) {
         final i = columns.indexOf(name);
         if (i < 0 || i >= r.length) return '';

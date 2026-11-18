@@ -19,6 +19,10 @@ class AppSettings {
     this.sessionRounds = 0,
     this.skipLastBreak = true,
     this.focusPresets = const [],
+    this.flashSpeechRepeat = 1,
+    this.flashSpeechRatePercent = 100,
+    this.flashAutoSpeak = false,
+    this.flashStudyMode = 'classic',
     this.focusSound = true,
     this.dailyFocusTargetMinutes = 120,
     this.weeklyFocusTargetMinutes = 600,
@@ -56,6 +60,15 @@ class AppSettings {
 
   /// Saved session plans, newest first.
   final List<FocusPreset> focusPresets;
+
+  /// Flashcard speech: times each text is spoken (1–9), speed in percent
+  /// (50–200) and whether the question is read automatically.
+  final int flashSpeechRepeat;
+  final int flashSpeechRatePercent;
+  final bool flashAutoSpeak;
+
+  /// Last chosen study mode (StudyMode name).
+  final String flashStudyMode;
   final bool focusSound;
   final int dailyFocusTargetMinutes;
   final int weeklyFocusTargetMinutes;
@@ -103,6 +116,10 @@ class AppSettings {
     'sessionRounds': sessionRounds,
     'skipLastBreak': skipLastBreak,
     'focusPresets': [for (final p in focusPresets) p.toJson()],
+    'flashSpeechRepeat': flashSpeechRepeat,
+    'flashSpeechRatePercent': flashSpeechRatePercent,
+    'flashAutoSpeak': flashAutoSpeak,
+    'flashStudyMode': flashStudyMode,
     'focusSound': focusSound,
     'dailyFocusTargetMinutes': dailyFocusTargetMinutes,
     'weeklyFocusTargetMinutes': weeklyFocusTargetMinutes,
@@ -142,6 +159,13 @@ class AppSettings {
         for (final p in (j['focusPresets'] as List?) ?? const [])
           if (p is Map) ?FocusPreset.tryParse(p.cast<String, Object?>()),
       ].take(FocusPreset.maxCount).toList(),
+      flashSpeechRepeat: read('flashSpeechRepeat', d.flashSpeechRepeat).clamp(1, 9),
+      flashSpeechRatePercent: read(
+        'flashSpeechRatePercent',
+        d.flashSpeechRatePercent,
+      ).clamp(50, 200),
+      flashAutoSpeak: read('flashAutoSpeak', d.flashAutoSpeak),
+      flashStudyMode: read('flashStudyMode', d.flashStudyMode),
       focusSound: read('focusSound', d.focusSound),
       dailyFocusTargetMinutes: read('dailyFocusTargetMinutes', d.dailyFocusTargetMinutes),
       weeklyFocusTargetMinutes: read('weeklyFocusTargetMinutes', d.weeklyFocusTargetMinutes),
@@ -174,6 +198,10 @@ class AppSettings {
     int? sessionRounds,
     bool? skipLastBreak,
     List<FocusPreset>? focusPresets,
+    int? flashSpeechRepeat,
+    int? flashSpeechRatePercent,
+    bool? flashAutoSpeak,
+    String? flashStudyMode,
     bool? focusSound,
     int? dailyFocusTargetMinutes,
     int? weeklyFocusTargetMinutes,
@@ -202,6 +230,10 @@ class AppSettings {
     'sessionRounds': ?sessionRounds,
     'skipLastBreak': ?skipLastBreak,
     if (focusPresets != null) 'focusPresets': [for (final p in focusPresets) p.toJson()],
+    'flashSpeechRepeat': ?flashSpeechRepeat,
+    'flashSpeechRatePercent': ?flashSpeechRatePercent,
+    'flashAutoSpeak': ?flashAutoSpeak,
+    'flashStudyMode': ?flashStudyMode,
     'focusSound': ?focusSound,
     'dailyFocusTargetMinutes': ?dailyFocusTargetMinutes,
     'weeklyFocusTargetMinutes': ?weeklyFocusTargetMinutes,
