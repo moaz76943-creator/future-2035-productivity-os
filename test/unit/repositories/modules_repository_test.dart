@@ -55,7 +55,10 @@ void main() {
       final stats = await r.watchDeckStats(deck).first;
       expect(stats.total, 5);
       expect(stats.newCount, 4);
-      env.clock.advance(const Duration(days: 4));
+      // FSRS-4.5: a new card answered Easy is first due after ~14 days.
+      env.clock.advance(const Duration(days: 13));
+      expect(await FlashcardsRepository(env.db, env.clock).watchTotalDue().first, 0);
+      env.clock.advance(const Duration(days: 1));
       expect(await FlashcardsRepository(env.db, env.clock).watchTotalDue().first, 1);
       final reviews = await env.db.select(env.db.cardReviews).get();
       expect(reviews.single.rating, 4);
