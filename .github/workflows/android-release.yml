@@ -89,7 +89,7 @@ jobs:
             || { echo "::error::APK is not signed with the expected upload key"; exit 1; }
           if grep -qi "CN=Android Debug" certs.txt; then echo "::error::debug-signed"; exit 1; fi
           "$BT/aapt2" dump badging "$APK" | head -1 | tee badging.txt
-          grep -q "name='app.future2035.future_os'" badging.txt
+          grep -q "name='com.deepfocus.study'" badging.txt
           jarsigner -verify "$AAB" > /dev/null
           sha256sum "$APK" "$AAB" | tee SHA256SUMS
           rm -f "$RUNNER_TEMP/upload.jks"
