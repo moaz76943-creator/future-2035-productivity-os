@@ -603,18 +603,22 @@ class _ImportDialog extends ConsumerStatefulWidget {
 }
 
 class _ImportDialogState extends ConsumerState<_ImportDialog> {
+  /// Shown inside the dialog: a snackbar would sit under the dialog barrier.
+  String? _error;
+
   Future<void> _pickFile() async {
     final l10n = context.l10n;
+    setState(() => _error = null);
     try {
       final bytes = await ref.read(backupFilesProvider).pick();
       if (bytes == null || !mounted) return;
       if (bytes.length > 8 * 1024 * 1024) {
-        showMessage(context, l10n.importFailed);
+        setState(() => _error = l10n.importFailed);
         return;
       }
       setState(() => _controller.text = utf8.decode(bytes, allowMalformed: true));
     } catch (_) {
-      if (mounted) showMessage(context, l10n.importFailed);
+      if (mounted) setState(() => _error = l10n.flashcardsImportFileFailed);
     }
   }
 
@@ -642,6 +646,8 @@ class _ImportDialogState extends ConsumerState<_ImportDialog> {
           decoration: InputDecoration(
             labelText: l10n.flashcardsImportField,
             helperText: l10n.importCardsHint,
+            errorText: _error,
+            errorMaxLines: 3,
             helperMaxLines: 5,
             alignLabelWithHint: true,
           ),

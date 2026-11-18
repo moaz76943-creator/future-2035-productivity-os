@@ -3535,4 +3535,8 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get studyShowText => 'Mostrar el texto';
+
+  @override
+  String get flashcardsImportFileFailed =>
+      'No se pudo abrir el archivo. Puedes pegar su contenido.';
 }

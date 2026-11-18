@@ -3527,4 +3527,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get studyShowText => 'पाठ दिखाएँ';
+
+  @override
+  String get flashcardsImportFileFailed => 'फ़ाइल नहीं खुल सकी। आप उसकी सामग्री पेस्ट कर सकते हैं।';
 }

@@ -3683,4 +3683,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get studyShowText => 'أظهر النص';
+
+  @override
+  String get flashcardsImportFileFailed => 'تعذّر فتح الملف. يمكنك لصق محتواه بدلًا من ذلك.';
 }
