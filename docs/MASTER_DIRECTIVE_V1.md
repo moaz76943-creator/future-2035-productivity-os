@@ -11,3 +11,6 @@
 - **Zero Dead Buttons:** 100% of visible interactive controls must have defined, tested behavior and real state/database persistence.
 - **Responsiveness:** Must pass at widths `320, 360, 375, 390, 412, 430, 600, 768, 840, 1024` (zero RenderFlex/RenderBox overflow, safe areas respected, keyboard handling, TalkBack semantics).
 - **Visual & Functional Regression Gate:** Every change must pass `flutter analyze`, `flutter test`, responsive multi-width layout checks, and primary button/journey verification before release.
+
+## ACTIVE PRIORITY PHASE: FLASHCARDS PRO SYSTEM
+Read and execute `docs/FLASHCARDS_MASTER_DIRECTIVE.md` in full, and update `state/future2035_phases.json` (`flashcards_pro_system`) upon completion.
