@@ -6881,6 +6881,16 @@ class $FlashcardsTable extends Flashcards
     ),
     defaultValue: const Constant(false),
   );
+  static const VerificationMeta _customMeta = const VerificationMeta('custom');
+  @override
+  late final GeneratedColumn<String> custom = GeneratedColumn<String>(
+    'custom',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(''),
+  );
   static const VerificationMeta _deletedAtMeta = const VerificationMeta(
     'deletedAt',
   );
@@ -6914,6 +6924,7 @@ class $FlashcardsTable extends Flashcards
     difficulty,
     lastReviewAt,
     favorite,
+    custom,
     deletedAt,
   ];
   @override
@@ -7069,6 +7080,12 @@ class $FlashcardsTable extends Flashcards
         favorite.isAcceptableOrUnknown(data['favorite']!, _favoriteMeta),
       );
     }
+    if (data.containsKey('custom')) {
+      context.handle(
+        _customMeta,
+        custom.isAcceptableOrUnknown(data['custom']!, _customMeta),
+      );
+    }
     if (data.containsKey('deleted_at')) {
       context.handle(
         _deletedAtMeta,
@@ -7164,6 +7181,10 @@ class $FlashcardsTable extends Flashcards
         DriftSqlType.bool,
         data['${effectivePrefix}favorite'],
       )!,
+      custom: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}custom'],
+      )!,
       deletedAt: attachedDatabase.typeMapping.read(
         DriftSqlType.dateTime,
         data['${effectivePrefix}deleted_at'],
@@ -7212,6 +7233,9 @@ class CardRow extends DataClass implements Insertable<CardRow> {
 
   /// Marked as favourite by the user. v6.
   final bool favorite;
+
+  /// Values of the deck's custom fields as JSON {fieldId: text}. v7.
+  final String custom;
   final DateTime? deletedAt;
   const CardRow({
     required this.createdAt,
@@ -7234,6 +7258,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     required this.difficulty,
     this.lastReviewAt,
     required this.favorite,
+    required this.custom,
     this.deletedAt,
   });
   @override
@@ -7263,6 +7288,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
       map['last_review_at'] = Variable<DateTime>(lastReviewAt);
     }
     map['favorite'] = Variable<bool>(favorite);
+    map['custom'] = Variable<String>(custom);
     if (!nullToAbsent || deletedAt != null) {
       map['deleted_at'] = Variable<DateTime>(deletedAt);
     }
@@ -7295,6 +7321,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
           ? const Value.absent()
           : Value(lastReviewAt),
       favorite: Value(favorite),
+      custom: Value(custom),
       deletedAt: deletedAt == null && nullToAbsent
           ? const Value.absent()
           : Value(deletedAt),
@@ -7327,6 +7354,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
       difficulty: serializer.fromJson<double>(json['difficulty']),
       lastReviewAt: serializer.fromJson<DateTime?>(json['lastReviewAt']),
       favorite: serializer.fromJson<bool>(json['favorite']),
+      custom: serializer.fromJson<String>(json['custom']),
       deletedAt: serializer.fromJson<DateTime?>(json['deletedAt']),
     );
   }
@@ -7354,6 +7382,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
       'difficulty': serializer.toJson<double>(difficulty),
       'lastReviewAt': serializer.toJson<DateTime?>(lastReviewAt),
       'favorite': serializer.toJson<bool>(favorite),
+      'custom': serializer.toJson<String>(custom),
       'deletedAt': serializer.toJson<DateTime?>(deletedAt),
     };
   }
@@ -7379,6 +7408,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     double? difficulty,
     Value<DateTime?> lastReviewAt = const Value.absent(),
     bool? favorite,
+    String? custom,
     Value<DateTime?> deletedAt = const Value.absent(),
   }) => CardRow(
     createdAt: createdAt ?? this.createdAt,
@@ -7401,6 +7431,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     difficulty: difficulty ?? this.difficulty,
     lastReviewAt: lastReviewAt.present ? lastReviewAt.value : this.lastReviewAt,
     favorite: favorite ?? this.favorite,
+    custom: custom ?? this.custom,
     deletedAt: deletedAt.present ? deletedAt.value : this.deletedAt,
   );
   CardRow copyWithCompanion(FlashcardsCompanion data) {
@@ -7435,6 +7466,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
           ? data.lastReviewAt.value
           : this.lastReviewAt,
       favorite: data.favorite.present ? data.favorite.value : this.favorite,
+      custom: data.custom.present ? data.custom.value : this.custom,
       deletedAt: data.deletedAt.present ? data.deletedAt.value : this.deletedAt,
     );
   }
@@ -7462,6 +7494,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
           ..write('difficulty: $difficulty, ')
           ..write('lastReviewAt: $lastReviewAt, ')
           ..write('favorite: $favorite, ')
+          ..write('custom: $custom, ')
           ..write('deletedAt: $deletedAt')
           ..write(')'))
         .toString();
@@ -7489,6 +7522,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     difficulty,
     lastReviewAt,
     favorite,
+    custom,
     deletedAt,
   ]);
   @override
@@ -7515,6 +7549,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
           other.difficulty == this.difficulty &&
           other.lastReviewAt == this.lastReviewAt &&
           other.favorite == this.favorite &&
+          other.custom == this.custom &&
           other.deletedAt == this.deletedAt);
 }
 
@@ -7539,6 +7574,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
   final Value<double> difficulty;
   final Value<DateTime?> lastReviewAt;
   final Value<bool> favorite;
+  final Value<String> custom;
   final Value<DateTime?> deletedAt;
   final Value<int> rowid;
   const FlashcardsCompanion({
@@ -7562,6 +7598,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     this.difficulty = const Value.absent(),
     this.lastReviewAt = const Value.absent(),
     this.favorite = const Value.absent(),
+    this.custom = const Value.absent(),
     this.deletedAt = const Value.absent(),
     this.rowid = const Value.absent(),
   });
@@ -7586,6 +7623,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     this.difficulty = const Value.absent(),
     this.lastReviewAt = const Value.absent(),
     this.favorite = const Value.absent(),
+    this.custom = const Value.absent(),
     this.deletedAt = const Value.absent(),
     this.rowid = const Value.absent(),
   }) : createdAt = Value(createdAt),
@@ -7594,7 +7632,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
        deckId = Value(deckId),
        front = Value(front),
        back = Value(back);
-  static Insertable<CardRow> custom({
+  static Insertable<CardRow> createCustom({
     Expression<DateTime>? createdAt,
     Expression<DateTime>? updatedAt,
     Expression<String>? id,
@@ -7615,6 +7653,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     Expression<double>? difficulty,
     Expression<DateTime>? lastReviewAt,
     Expression<bool>? favorite,
+    Expression<String>? custom,
     Expression<DateTime>? deletedAt,
     Expression<int>? rowid,
   }) {
@@ -7639,6 +7678,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
       if (difficulty != null) 'difficulty': difficulty,
       if (lastReviewAt != null) 'last_review_at': lastReviewAt,
       if (favorite != null) 'favorite': favorite,
+      if (custom != null) 'custom': custom,
       if (deletedAt != null) 'deleted_at': deletedAt,
       if (rowid != null) 'rowid': rowid,
     });
@@ -7665,6 +7705,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     Value<double>? difficulty,
     Value<DateTime?>? lastReviewAt,
     Value<bool>? favorite,
+    Value<String>? custom,
     Value<DateTime?>? deletedAt,
     Value<int>? rowid,
   }) {
@@ -7689,6 +7730,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
       difficulty: difficulty ?? this.difficulty,
       lastReviewAt: lastReviewAt ?? this.lastReviewAt,
       favorite: favorite ?? this.favorite,
+      custom: custom ?? this.custom,
       deletedAt: deletedAt ?? this.deletedAt,
       rowid: rowid ?? this.rowid,
     );
@@ -7757,6 +7799,9 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     if (favorite.present) {
       map['favorite'] = Variable<bool>(favorite.value);
     }
+    if (custom.present) {
+      map['custom'] = Variable<String>(custom.value);
+    }
     if (deletedAt.present) {
       map['deleted_at'] = Variable<DateTime>(deletedAt.value);
     }
@@ -7789,6 +7834,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
           ..write('difficulty: $difficulty, ')
           ..write('lastReviewAt: $lastReviewAt, ')
           ..write('favorite: $favorite, ')
+          ..write('custom: $custom, ')
           ..write('deletedAt: $deletedAt, ')
           ..write('rowid: $rowid')
           ..write(')'))
@@ -11545,6 +11591,509 @@ class MilestonesCompanion extends UpdateCompanion<MilestoneRow> {
   }
 }
 
+class $CardMediaTable extends CardMedia
+    with TableInfo<$CardMediaTable, CardMediaRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $CardMediaTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _cardIdMeta = const VerificationMeta('cardId');
+  @override
+  late final GeneratedColumn<String> cardId = GeneratedColumn<String>(
+    'card_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES flashcards (id) ON DELETE CASCADE',
+    ),
+  );
+  static const VerificationMeta _sideMeta = const VerificationMeta('side');
+  @override
+  late final GeneratedColumn<String> side = GeneratedColumn<String>(
+    'side',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _kindMeta = const VerificationMeta('kind');
+  @override
+  late final GeneratedColumn<String> kind = GeneratedColumn<String>(
+    'kind',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _mimeMeta = const VerificationMeta('mime');
+  @override
+  late final GeneratedColumn<String> mime = GeneratedColumn<String>(
+    'mime',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(''),
+  );
+  static const VerificationMeta _nameMeta = const VerificationMeta('name');
+  @override
+  late final GeneratedColumn<String> name = GeneratedColumn<String>(
+    'name',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(''),
+  );
+  static const VerificationMeta _bytesMeta = const VerificationMeta('bytes');
+  @override
+  late final GeneratedColumn<Uint8List> bytes = GeneratedColumn<Uint8List>(
+    'bytes',
+    aliasedName,
+    false,
+    type: DriftSqlType.blob,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    cardId,
+    side,
+    kind,
+    mime,
+    name,
+    bytes,
+    createdAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'card_media';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<CardMediaRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('card_id')) {
+      context.handle(
+        _cardIdMeta,
+        cardId.isAcceptableOrUnknown(data['card_id']!, _cardIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_cardIdMeta);
+    }
+    if (data.containsKey('side')) {
+      context.handle(
+        _sideMeta,
+        side.isAcceptableOrUnknown(data['side']!, _sideMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_sideMeta);
+    }
+    if (data.containsKey('kind')) {
+      context.handle(
+        _kindMeta,
+        kind.isAcceptableOrUnknown(data['kind']!, _kindMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_kindMeta);
+    }
+    if (data.containsKey('mime')) {
+      context.handle(
+        _mimeMeta,
+        mime.isAcceptableOrUnknown(data['mime']!, _mimeMeta),
+      );
+    }
+    if (data.containsKey('name')) {
+      context.handle(
+        _nameMeta,
+        name.isAcceptableOrUnknown(data['name']!, _nameMeta),
+      );
+    }
+    if (data.containsKey('bytes')) {
+      context.handle(
+        _bytesMeta,
+        bytes.isAcceptableOrUnknown(data['bytes']!, _bytesMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_bytesMeta);
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  CardMediaRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return CardMediaRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      cardId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}card_id'],
+      )!,
+      side: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}side'],
+      )!,
+      kind: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}kind'],
+      )!,
+      mime: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}mime'],
+      )!,
+      name: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}name'],
+      )!,
+      bytes: attachedDatabase.typeMapping.read(
+        DriftSqlType.blob,
+        data['${effectivePrefix}bytes'],
+      )!,
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+    );
+  }
+
+  @override
+  $CardMediaTable createAlias(String alias) {
+    return $CardMediaTable(attachedDatabase, alias);
+  }
+}
+
+class CardMediaRow extends DataClass implements Insertable<CardMediaRow> {
+  final String id;
+  final String cardId;
+
+  /// front | back
+  final String side;
+
+  /// image | audio
+  final String kind;
+  final String mime;
+  final String name;
+  final Uint8List bytes;
+  final DateTime createdAt;
+  const CardMediaRow({
+    required this.id,
+    required this.cardId,
+    required this.side,
+    required this.kind,
+    required this.mime,
+    required this.name,
+    required this.bytes,
+    required this.createdAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['card_id'] = Variable<String>(cardId);
+    map['side'] = Variable<String>(side);
+    map['kind'] = Variable<String>(kind);
+    map['mime'] = Variable<String>(mime);
+    map['name'] = Variable<String>(name);
+    map['bytes'] = Variable<Uint8List>(bytes);
+    map['created_at'] = Variable<DateTime>(createdAt);
+    return map;
+  }
+
+  CardMediaCompanion toCompanion(bool nullToAbsent) {
+    return CardMediaCompanion(
+      id: Value(id),
+      cardId: Value(cardId),
+      side: Value(side),
+      kind: Value(kind),
+      mime: Value(mime),
+      name: Value(name),
+      bytes: Value(bytes),
+      createdAt: Value(createdAt),
+    );
+  }
+
+  factory CardMediaRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return CardMediaRow(
+      id: serializer.fromJson<String>(json['id']),
+      cardId: serializer.fromJson<String>(json['cardId']),
+      side: serializer.fromJson<String>(json['side']),
+      kind: serializer.fromJson<String>(json['kind']),
+      mime: serializer.fromJson<String>(json['mime']),
+      name: serializer.fromJson<String>(json['name']),
+      bytes: serializer.fromJson<Uint8List>(json['bytes']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'cardId': serializer.toJson<String>(cardId),
+      'side': serializer.toJson<String>(side),
+      'kind': serializer.toJson<String>(kind),
+      'mime': serializer.toJson<String>(mime),
+      'name': serializer.toJson<String>(name),
+      'bytes': serializer.toJson<Uint8List>(bytes),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+    };
+  }
+
+  CardMediaRow copyWith({
+    String? id,
+    String? cardId,
+    String? side,
+    String? kind,
+    String? mime,
+    String? name,
+    Uint8List? bytes,
+    DateTime? createdAt,
+  }) => CardMediaRow(
+    id: id ?? this.id,
+    cardId: cardId ?? this.cardId,
+    side: side ?? this.side,
+    kind: kind ?? this.kind,
+    mime: mime ?? this.mime,
+    name: name ?? this.name,
+    bytes: bytes ?? this.bytes,
+    createdAt: createdAt ?? this.createdAt,
+  );
+  CardMediaRow copyWithCompanion(CardMediaCompanion data) {
+    return CardMediaRow(
+      id: data.id.present ? data.id.value : this.id,
+      cardId: data.cardId.present ? data.cardId.value : this.cardId,
+      side: data.side.present ? data.side.value : this.side,
+      kind: data.kind.present ? data.kind.value : this.kind,
+      mime: data.mime.present ? data.mime.value : this.mime,
+      name: data.name.present ? data.name.value : this.name,
+      bytes: data.bytes.present ? data.bytes.value : this.bytes,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('CardMediaRow(')
+          ..write('id: $id, ')
+          ..write('cardId: $cardId, ')
+          ..write('side: $side, ')
+          ..write('kind: $kind, ')
+          ..write('mime: $mime, ')
+          ..write('name: $name, ')
+          ..write('bytes: $bytes, ')
+          ..write('createdAt: $createdAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    cardId,
+    side,
+    kind,
+    mime,
+    name,
+    $driftBlobEquality.hash(bytes),
+    createdAt,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is CardMediaRow &&
+          other.id == this.id &&
+          other.cardId == this.cardId &&
+          other.side == this.side &&
+          other.kind == this.kind &&
+          other.mime == this.mime &&
+          other.name == this.name &&
+          $driftBlobEquality.equals(other.bytes, this.bytes) &&
+          other.createdAt == this.createdAt);
+}
+
+class CardMediaCompanion extends UpdateCompanion<CardMediaRow> {
+  final Value<String> id;
+  final Value<String> cardId;
+  final Value<String> side;
+  final Value<String> kind;
+  final Value<String> mime;
+  final Value<String> name;
+  final Value<Uint8List> bytes;
+  final Value<DateTime> createdAt;
+  final Value<int> rowid;
+  const CardMediaCompanion({
+    this.id = const Value.absent(),
+    this.cardId = const Value.absent(),
+    this.side = const Value.absent(),
+    this.kind = const Value.absent(),
+    this.mime = const Value.absent(),
+    this.name = const Value.absent(),
+    this.bytes = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  CardMediaCompanion.insert({
+    required String id,
+    required String cardId,
+    required String side,
+    required String kind,
+    this.mime = const Value.absent(),
+    this.name = const Value.absent(),
+    required Uint8List bytes,
+    required DateTime createdAt,
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       cardId = Value(cardId),
+       side = Value(side),
+       kind = Value(kind),
+       bytes = Value(bytes),
+       createdAt = Value(createdAt);
+  static Insertable<CardMediaRow> custom({
+    Expression<String>? id,
+    Expression<String>? cardId,
+    Expression<String>? side,
+    Expression<String>? kind,
+    Expression<String>? mime,
+    Expression<String>? name,
+    Expression<Uint8List>? bytes,
+    Expression<DateTime>? createdAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (cardId != null) 'card_id': cardId,
+      if (side != null) 'side': side,
+      if (kind != null) 'kind': kind,
+      if (mime != null) 'mime': mime,
+      if (name != null) 'name': name,
+      if (bytes != null) 'bytes': bytes,
+      if (createdAt != null) 'created_at': createdAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  CardMediaCompanion copyWith({
+    Value<String>? id,
+    Value<String>? cardId,
+    Value<String>? side,
+    Value<String>? kind,
+    Value<String>? mime,
+    Value<String>? name,
+    Value<Uint8List>? bytes,
+    Value<DateTime>? createdAt,
+    Value<int>? rowid,
+  }) {
+    return CardMediaCompanion(
+      id: id ?? this.id,
+      cardId: cardId ?? this.cardId,
+      side: side ?? this.side,
+      kind: kind ?? this.kind,
+      mime: mime ?? this.mime,
+      name: name ?? this.name,
+      bytes: bytes ?? this.bytes,
+      createdAt: createdAt ?? this.createdAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (cardId.present) {
+      map['card_id'] = Variable<String>(cardId.value);
+    }
+    if (side.present) {
+      map['side'] = Variable<String>(side.value);
+    }
+    if (kind.present) {
+      map['kind'] = Variable<String>(kind.value);
+    }
+    if (mime.present) {
+      map['mime'] = Variable<String>(mime.value);
+    }
+    if (name.present) {
+      map['name'] = Variable<String>(name.value);
+    }
+    if (bytes.present) {
+      map['bytes'] = Variable<Uint8List>(bytes.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('CardMediaCompanion(')
+          ..write('id: $id, ')
+          ..write('cardId: $cardId, ')
+          ..write('side: $side, ')
+          ..write('kind: $kind, ')
+          ..write('mime: $mime, ')
+          ..write('name: $name, ')
+          ..write('bytes: $bytes, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   $AppDatabaseManager get managers => $AppDatabaseManager(this);
@@ -11573,6 +12122,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final $KeyValuesTable keyValues = $KeyValuesTable(this);
   late final $RecentSearchesTable recentSearches = $RecentSearchesTable(this);
   late final $MilestonesTable milestones = $MilestonesTable(this);
+  late final $CardMediaTable cardMedia = $CardMediaTable(this);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
@@ -11601,6 +12151,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     keyValues,
     recentSearches,
     milestones,
+    cardMedia,
   ];
   @override
   StreamQueryUpdateRules get streamUpdateRules => const StreamQueryUpdateRules([
@@ -11764,6 +12315,13 @@ abstract class _$AppDatabase extends GeneratedDatabase {
         limitUpdateKind: UpdateKind.delete,
       ),
       result: [TableUpdate('milestones', kind: UpdateKind.delete)],
+    ),
+    WritePropagation(
+      on: TableUpdateQuery.onTableName(
+        'flashcards',
+        limitUpdateKind: UpdateKind.delete,
+      ),
+      result: [TableUpdate('card_media', kind: UpdateKind.delete)],
     ),
   ]);
   @override
@@ -18418,6 +18976,7 @@ typedef $$FlashcardsTableCreateCompanionBuilder = FlashcardsCompanion Function({
   Value<double> difficulty,
   Value<DateTime?> lastReviewAt,
   Value<bool> favorite,
+  Value<String> custom,
   Value<DateTime?> deletedAt,
   Value<int> rowid,
 });
@@ -18442,6 +19001,7 @@ typedef $$FlashcardsTableUpdateCompanionBuilder = FlashcardsCompanion Function({
   Value<double> difficulty,
   Value<DateTime?> lastReviewAt,
   Value<bool> favorite,
+  Value<String> custom,
   Value<DateTime?> deletedAt,
   Value<int> rowid,
 });
@@ -18480,6 +19040,24 @@ final class $$FlashcardsTableReferences
     ).filter((f) => f.cardId.id.sqlEquals($_itemColumn<String>('id')!));
 
     final cache = $_typedResult.readTableOrNull(_cardReviewsRefsTable($_db));
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
+
+  static MultiTypedResultKey<$CardMediaTable, List<CardMediaRow>>
+  _cardMediaRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
+    db.cardMedia,
+    aliasName: 'flashcards__id__card_media__card_id',
+  );
+
+  $$CardMediaTableProcessedTableManager get cardMediaRefs {
+    final manager = $$CardMediaTableTableManager(
+      $_db,
+      $_db.cardMedia,
+    ).filter((f) => f.cardId.id.sqlEquals($_itemColumn<String>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(_cardMediaRefsTable($_db));
     return ProcessedTableManager(
       manager.$state.copyWith(prefetchedData: cache),
     );
@@ -18590,6 +19168,11 @@ class $$FlashcardsTableFilterComposer
     builder: (column) => ColumnFilters(column),
   );
 
+  ColumnFilters<String> get custom => $composableBuilder(
+    column: $table.custom,
+    builder: (column) => ColumnFilters(column),
+  );
+
   ColumnFilters<DateTime> get deletedAt => $composableBuilder(
     column: $table.deletedAt,
     builder: (column) => ColumnFilters(column),
@@ -18634,6 +19217,31 @@ class $$FlashcardsTableFilterComposer
           }) => $$CardReviewsTableFilterComposer(
             $db: $db,
             $table: $db.cardReviews,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+
+  Expression<bool> cardMediaRefs(
+    Expression<bool> Function($$CardMediaTableFilterComposer f) f,
+  ) {
+    final $$CardMediaTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.cardMedia,
+      getReferencedColumn: (t) => t.cardId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$CardMediaTableFilterComposer(
+            $db: $db,
+            $table: $db.cardMedia,
             $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
             joinBuilder: joinBuilder,
             $removeJoinBuilderFromRootComposer:
@@ -18748,6 +19356,11 @@ class $$FlashcardsTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<String> get custom => $composableBuilder(
+    column: $table.custom,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<DateTime> get deletedAt => $composableBuilder(
     column: $table.deletedAt,
     builder: (column) => ColumnOrderings(column),
@@ -18853,6 +19466,9 @@ class $$FlashcardsTableAnnotationComposer
   GeneratedColumn<bool> get favorite =>
       $composableBuilder(column: $table.favorite, builder: (column) => column);
 
+  GeneratedColumn<String> get custom =>
+      $composableBuilder(column: $table.custom, builder: (column) => column);
+
   GeneratedColumn<DateTime> get deletedAt =>
       $composableBuilder(column: $table.deletedAt, builder: (column) => column);
 
@@ -18903,6 +19519,31 @@ class $$FlashcardsTableAnnotationComposer
     );
     return f(composer);
   }
+
+  Expression<T> cardMediaRefs<T extends Object>(
+    Expression<T> Function($$CardMediaTableAnnotationComposer a) f,
+  ) {
+    final $$CardMediaTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.cardMedia,
+      getReferencedColumn: (t) => t.cardId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$CardMediaTableAnnotationComposer(
+            $db: $db,
+            $table: $db.cardMedia,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
 }
 
 class $$FlashcardsTableTableManager
@@ -18918,7 +19559,11 @@ class $$FlashcardsTableTableManager
           $$FlashcardsTableUpdateCompanionBuilder,
           (CardRow, $$FlashcardsTableReferences),
           CardRow,
-          PrefetchHooks Function({bool deckId, bool cardReviewsRefs})
+          PrefetchHooks Function({
+            bool deckId,
+            bool cardReviewsRefs,
+            bool cardMediaRefs,
+          })
         > {
   $$FlashcardsTableTableManager(_$AppDatabase db, $FlashcardsTable table)
     : super(
@@ -18953,6 +19598,7 @@ class $$FlashcardsTableTableManager
                 Value<double> difficulty = const Value.absent(),
                 Value<DateTime?> lastReviewAt = const Value.absent(),
                 Value<bool> favorite = const Value.absent(),
+                Value<String> custom = const Value.absent(),
                 Value<DateTime?> deletedAt = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => FlashcardsCompanion(
@@ -18976,6 +19622,7 @@ class $$FlashcardsTableTableManager
                 difficulty: difficulty,
                 lastReviewAt: lastReviewAt,
                 favorite: favorite,
+                custom: custom,
                 deletedAt: deletedAt,
                 rowid: rowid,
               ),
@@ -19001,6 +19648,7 @@ class $$FlashcardsTableTableManager
                 Value<double> difficulty = const Value.absent(),
                 Value<DateTime?> lastReviewAt = const Value.absent(),
                 Value<bool> favorite = const Value.absent(),
+                Value<String> custom = const Value.absent(),
                 Value<DateTime?> deletedAt = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => FlashcardsCompanion.insert(
@@ -19024,6 +19672,7 @@ class $$FlashcardsTableTableManager
                 difficulty: difficulty,
                 lastReviewAt: lastReviewAt,
                 favorite: favorite,
+                custom: custom,
                 deletedAt: deletedAt,
                 rowid: rowid,
               ),
@@ -19035,66 +19684,94 @@ class $$FlashcardsTableTableManager
                 ),
               )
               .toList(),
-          prefetchHooksCallback: ({deckId = false, cardReviewsRefs = false}) {
-            return PrefetchHooks(
-              db: db,
-              explicitlyWatchedTables: [if (cardReviewsRefs) db.cardReviews],
-              addJoins:
-                  <
-                    T extends TableManagerState<
-                      dynamic,
-                      dynamic,
-                      dynamic,
-                      dynamic,
-                      dynamic,
-                      dynamic,
-                      dynamic,
-                      dynamic,
-                      dynamic,
-                      dynamic,
-                      dynamic
-                    >
-                  >(state) {
-                    if (deckId) {
-                      state = state.withJoin(
-                        currentTable: table,
-                        currentColumn: table.deckId,
-                        referencedTable: $$FlashcardsTableReferences
-                            ._deckIdTable(db),
-                        referencedColumn: $$FlashcardsTableReferences
-                            ._deckIdTable(db)
-                            .id,
-                      ) as T;
-                    }
+          prefetchHooksCallback:
+              ({
+                deckId = false,
+                cardReviewsRefs = false,
+                cardMediaRefs = false,
+              }) {
+                return PrefetchHooks(
+                  db: db,
+                  explicitlyWatchedTables: [
+                    if (cardReviewsRefs) db.cardReviews,
+                    if (cardMediaRefs) db.cardMedia,
+                  ],
+                  addJoins:
+                      <
+                        T extends TableManagerState<
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic
+                        >
+                      >(state) {
+                        if (deckId) {
+                          state = state.withJoin(
+                            currentTable: table,
+                            currentColumn: table.deckId,
+                            referencedTable: $$FlashcardsTableReferences
+                                ._deckIdTable(db),
+                            referencedColumn: $$FlashcardsTableReferences
+                                ._deckIdTable(db)
+                                .id,
+                          ) as T;
+                        }
 
-                    return state;
+                        return state;
+                      },
+                  getPrefetchedDataCallback: (items) async {
+                    return [
+                      if (cardReviewsRefs)
+                        await $_getPrefetchedDataByColumns<
+                          CardRow,
+                          $FlashcardsTable,
+                          ReviewRow,
+                          $CardReviewsTable
+                        >(
+                          currentTable: table,
+                          referencedTable: $$FlashcardsTableReferences
+                              ._cardReviewsRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$FlashcardsTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).cardReviewsRefs,
+                          currentColumn: 'id',
+                          referencedColumn: 'card_id',
+                          typedResults: items,
+                        ),
+                      if (cardMediaRefs)
+                        await $_getPrefetchedDataByColumns<
+                          CardRow,
+                          $FlashcardsTable,
+                          CardMediaRow,
+                          $CardMediaTable
+                        >(
+                          currentTable: table,
+                          referencedTable: $$FlashcardsTableReferences
+                              ._cardMediaRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$FlashcardsTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).cardMediaRefs,
+                          currentColumn: 'id',
+                          referencedColumn: 'card_id',
+                          typedResults: items,
+                        ),
+                    ];
                   },
-              getPrefetchedDataCallback: (items) async {
-                return [
-                  if (cardReviewsRefs)
-                    await $_getPrefetchedDataByColumns<
-                      CardRow,
-                      $FlashcardsTable,
-                      ReviewRow,
-                      $CardReviewsTable
-                    >(
-                      currentTable: table,
-                      referencedTable: $$FlashcardsTableReferences
-                          ._cardReviewsRefsTable(db),
-                      managerFromTypedResult: (p0) =>
-                          $$FlashcardsTableReferences(
-                            db,
-                            table,
-                            p0,
-                          ).cardReviewsRefs,
-                      currentColumn: 'id',
-                      referencedColumn: 'card_id',
-                      typedResults: items,
-                    ),
-                ];
+                );
               },
-            );
-          },
         ),
       );
 }
@@ -19111,7 +19788,11 @@ typedef $$FlashcardsTableProcessedTableManager =
       $$FlashcardsTableUpdateCompanionBuilder,
       (CardRow, $$FlashcardsTableReferences),
       CardRow,
-      PrefetchHooks Function({bool deckId, bool cardReviewsRefs})
+      PrefetchHooks Function({
+        bool deckId,
+        bool cardReviewsRefs,
+        bool cardMediaRefs,
+      })
     >;
 typedef $$CardReviewsTableCreateCompanionBuilder =
     CardReviewsCompanion Function({
@@ -22180,6 +22861,376 @@ typedef $$MilestonesTableProcessedTableManager =
       MilestoneRow,
       PrefetchHooks Function({bool projectId})
     >;
+typedef $$CardMediaTableCreateCompanionBuilder = CardMediaCompanion Function({
+  required String id,
+  required String cardId,
+  required String side,
+  required String kind,
+  Value<String> mime,
+  Value<String> name,
+  required Uint8List bytes,
+  required DateTime createdAt,
+  Value<int> rowid,
+});
+typedef $$CardMediaTableUpdateCompanionBuilder = CardMediaCompanion Function({
+  Value<String> id,
+  Value<String> cardId,
+  Value<String> side,
+  Value<String> kind,
+  Value<String> mime,
+  Value<String> name,
+  Value<Uint8List> bytes,
+  Value<DateTime> createdAt,
+  Value<int> rowid,
+});
+
+final class $$CardMediaTableReferences
+    extends BaseReferences<_$AppDatabase, $CardMediaTable, CardMediaRow> {
+  $$CardMediaTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static $FlashcardsTable _cardIdTable(_$AppDatabase db) =>
+      db.flashcards.createAlias('card_media__card_id__flashcards__id');
+
+  $$FlashcardsTableProcessedTableManager get cardId {
+    final $_column = $_itemColumn<String>('card_id')!;
+
+    final manager = $$FlashcardsTableTableManager(
+      $_db,
+      $_db.flashcards,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_cardIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+}
+
+class $$CardMediaTableFilterComposer
+    extends Composer<_$AppDatabase, $CardMediaTable> {
+  $$CardMediaTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get side => $composableBuilder(
+    column: $table.side,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get kind => $composableBuilder(
+    column: $table.kind,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get mime => $composableBuilder(
+    column: $table.mime,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get name => $composableBuilder(
+    column: $table.name,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<Uint8List> get bytes => $composableBuilder(
+    column: $table.bytes,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  $$FlashcardsTableFilterComposer get cardId {
+    final $$FlashcardsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.cardId,
+      referencedTable: $db.flashcards,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$FlashcardsTableFilterComposer(
+            $db: $db,
+            $table: $db.flashcards,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$CardMediaTableOrderingComposer
+    extends Composer<_$AppDatabase, $CardMediaTable> {
+  $$CardMediaTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get side => $composableBuilder(
+    column: $table.side,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get kind => $composableBuilder(
+    column: $table.kind,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get mime => $composableBuilder(
+    column: $table.mime,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get name => $composableBuilder(
+    column: $table.name,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<Uint8List> get bytes => $composableBuilder(
+    column: $table.bytes,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  $$FlashcardsTableOrderingComposer get cardId {
+    final $$FlashcardsTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.cardId,
+      referencedTable: $db.flashcards,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$FlashcardsTableOrderingComposer(
+            $db: $db,
+            $table: $db.flashcards,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$CardMediaTableAnnotationComposer
+    extends Composer<_$AppDatabase, $CardMediaTable> {
+  $$CardMediaTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get side =>
+      $composableBuilder(column: $table.side, builder: (column) => column);
+
+  GeneratedColumn<String> get kind =>
+      $composableBuilder(column: $table.kind, builder: (column) => column);
+
+  GeneratedColumn<String> get mime =>
+      $composableBuilder(column: $table.mime, builder: (column) => column);
+
+  GeneratedColumn<String> get name =>
+      $composableBuilder(column: $table.name, builder: (column) => column);
+
+  GeneratedColumn<Uint8List> get bytes =>
+      $composableBuilder(column: $table.bytes, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  $$FlashcardsTableAnnotationComposer get cardId {
+    final $$FlashcardsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.cardId,
+      referencedTable: $db.flashcards,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$FlashcardsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.flashcards,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$CardMediaTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $CardMediaTable,
+          CardMediaRow,
+          $$CardMediaTableFilterComposer,
+          $$CardMediaTableOrderingComposer,
+          $$CardMediaTableAnnotationComposer,
+          $$CardMediaTableCreateCompanionBuilder,
+          $$CardMediaTableUpdateCompanionBuilder,
+          (CardMediaRow, $$CardMediaTableReferences),
+          CardMediaRow,
+          PrefetchHooks Function({bool cardId})
+        > {
+  $$CardMediaTableTableManager(_$AppDatabase db, $CardMediaTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$CardMediaTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$CardMediaTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$CardMediaTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<String> cardId = const Value.absent(),
+                Value<String> side = const Value.absent(),
+                Value<String> kind = const Value.absent(),
+                Value<String> mime = const Value.absent(),
+                Value<String> name = const Value.absent(),
+                Value<Uint8List> bytes = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => CardMediaCompanion(
+                id: id,
+                cardId: cardId,
+                side: side,
+                kind: kind,
+                mime: mime,
+                name: name,
+                bytes: bytes,
+                createdAt: createdAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required String cardId,
+                required String side,
+                required String kind,
+                Value<String> mime = const Value.absent(),
+                Value<String> name = const Value.absent(),
+                required Uint8List bytes,
+                required DateTime createdAt,
+                Value<int> rowid = const Value.absent(),
+              }) => CardMediaCompanion.insert(
+                id: id,
+                cardId: cardId,
+                side: side,
+                kind: kind,
+                mime: mime,
+                name: name,
+                bytes: bytes,
+                createdAt: createdAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$CardMediaTable, CardMediaRow>(table),
+                  $$CardMediaTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: ({cardId = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [],
+              addJoins:
+                  <
+                    T extends TableManagerState<
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic
+                    >
+                  >(state) {
+                    if (cardId) {
+                      state = state.withJoin(
+                        currentTable: table,
+                        currentColumn: table.cardId,
+                        referencedTable: $$CardMediaTableReferences
+                            ._cardIdTable(db),
+                        referencedColumn: $$CardMediaTableReferences
+                            ._cardIdTable(db)
+                            .id,
+                      ) as T;
+                    }
+
+                    return state;
+                  },
+              getPrefetchedDataCallback: (items) async {
+                return [];
+              },
+            );
+          },
+        ),
+      );
+}
+
+typedef $$CardMediaTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $CardMediaTable,
+      CardMediaRow,
+      $$CardMediaTableFilterComposer,
+      $$CardMediaTableOrderingComposer,
+      $$CardMediaTableAnnotationComposer,
+      $$CardMediaTableCreateCompanionBuilder,
+      $$CardMediaTableUpdateCompanionBuilder,
+      (CardMediaRow, $$CardMediaTableReferences),
+      CardMediaRow,
+      PrefetchHooks Function({bool cardId})
+    >;
 
 class $AppDatabaseManager {
   final _$AppDatabase _db;
@@ -22230,4 +23281,6 @@ class $AppDatabaseManager {
       $$RecentSearchesTableTableManager(_db, _db.recentSearches);
   $$MilestonesTableTableManager get milestones =>
       $$MilestonesTableTableManager(_db, _db.milestones);
+  $$CardMediaTableTableManager get cardMedia =>
+      $$CardMediaTableTableManager(_db, _db.cardMedia);
 }

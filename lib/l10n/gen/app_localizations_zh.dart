@@ -3560,4 +3560,80 @@ class AppLocalizationsZh extends AppLocalizations {
   String flashcardsRevealNext(String field) {
     return '显示$field';
   }
+
+  @override
+  String flashcardsMediaTooLarge(int mb) {
+    return '文件超过 $mb MB。';
+  }
+
+  @override
+  String get flashcardsImage => '图片';
+
+  @override
+  String get flashcardsAudio => '音频';
+
+  @override
+  String get flashcardsAddImage => '添加图片';
+
+  @override
+  String get flashcardsAddAudio => '添加音频';
+
+  @override
+  String get flashcardsPlayAudio => '播放录音';
+
+  @override
+  String get flashcardsAudioUnavailable => '此设备无法播放该录音。';
+
+  @override
+  String get flashcardsCustomFields => '自定义字段';
+
+  @override
+  String get flashcardsTemplates => '模板';
+
+  @override
+  String flashcardsNewFieldName(int n) {
+    return '字段 $n';
+  }
+
+  @override
+  String get flashcardsAddField => '添加字段';
+
+  @override
+  String get flashcardsFieldName => '字段名称';
+
+  @override
+  String get flashcardsFieldLangDefault => '同面语言';
+
+  @override
+  String get flashcardsTemplateConfirm => '模板设定字段显示方式并添加其字段，现有卡片和字段保持不变。';
+
+  @override
+  String get flashcardsApplyTemplate => '应用';
+
+  @override
+  String get templateVocabulary => '词汇';
+
+  @override
+  String get templateTwoTranslations => '双语翻译词';
+
+  @override
+  String get templateQuestionAnswer => '问答';
+
+  @override
+  String get templateDefinition => '术语与定义';
+
+  @override
+  String get templateGrammar => '语法规则';
+
+  @override
+  String get templateFieldPlural => '复数';
+
+  @override
+  String get templateFieldTranslation2 => '第二译文';
+
+  @override
+  String get templateFieldSynonyms => '同义词';
+
+  @override
+  String get templateFieldRule => '规则';
 }

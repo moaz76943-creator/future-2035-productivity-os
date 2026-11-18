@@ -134,4 +134,32 @@ void main() {
     expect(i.perDay.last, 3);
     expect(i.recent.map((r) => r.cardId).toSet(), {a, b});
   });
+
+  test(
+    'media: one image/audio per side, size limits, copied with the card, cascade delete',
+    () async {
+      final d = await repo.createDeck('D', color: 1);
+      final c = await repo.addCard(d, 'perro', 'dog', custom: {'c1': 'perros'});
+      await repo.addMedia(c, side: 'front', kind: 'image', bytes: [1, 2, 3], name: 'a.png');
+      await repo.addMedia(c, side: 'front', kind: 'image', bytes: [4, 5], name: 'b.png');
+      await repo.addMedia(c, side: 'back', kind: 'audio', bytes: [9], name: 'dog.m4a');
+      final m = await repo.mediaFor(c);
+      expect(m, hasLength(2));
+      expect(m.firstWhere((x) => x.kind == 'image').bytes, [4, 5]);
+      expect(
+        () => repo.addMedia(
+          c,
+          side: 'front',
+          kind: 'image',
+          bytes: List.filled(FlashcardsRepository.maxImageBytes + 1, 0),
+        ),
+        throwsA(isA<MediaTooLarge>()),
+      );
+      final copy = await repo.duplicateCard(c);
+      expect(await repo.mediaFor(copy), hasLength(2));
+      expect((await repo.getCard(copy))!.custom, '{"c1":"perros"}');
+      await env.db.customStatement("DELETE FROM flashcards WHERE id = '$c'");
+      expect(await repo.mediaFor(c), isEmpty);
+    },
+  );
 }

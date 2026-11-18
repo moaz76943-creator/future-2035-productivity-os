@@ -5016,5 +5016,111 @@
         "type": "String"
       }
     }
+  },
+  "flashcardsMediaTooLarge": "This file is larger than {mb} MB.",
+  "@flashcardsMediaTooLarge": {
+    "description": "Media size",
+    "placeholders": {
+      "mb": {
+        "type": "int"
+      }
+    }
+  },
+  "flashcardsImage": "Image",
+  "@flashcardsImage": {
+    "description": "flashcardsImage"
+  },
+  "flashcardsAudio": "Audio",
+  "@flashcardsAudio": {
+    "description": "flashcardsAudio"
+  },
+  "flashcardsAddImage": "Add image",
+  "@flashcardsAddImage": {
+    "description": "flashcardsAddImage"
+  },
+  "flashcardsAddAudio": "Add audio",
+  "@flashcardsAddAudio": {
+    "description": "flashcardsAddAudio"
+  },
+  "flashcardsPlayAudio": "Play recording",
+  "@flashcardsPlayAudio": {
+    "description": "flashcardsPlayAudio"
+  },
+  "flashcardsAudioUnavailable": "This recording cannot be played on this device.",
+  "@flashcardsAudioUnavailable": {
+    "description": "flashcardsAudioUnavailable"
+  },
+  "flashcardsCustomFields": "Your fields",
+  "@flashcardsCustomFields": {
+    "description": "flashcardsCustomFields"
+  },
+  "flashcardsTemplates": "Templates",
+  "@flashcardsTemplates": {
+    "description": "flashcardsTemplates"
+  },
+  "flashcardsNewFieldName": "Field {n}",
+  "@flashcardsNewFieldName": {
+    "description": "Default custom field name",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "flashcardsAddField": "Add field",
+  "@flashcardsAddField": {
+    "description": "flashcardsAddField"
+  },
+  "flashcardsFieldName": "Field name",
+  "@flashcardsFieldName": {
+    "description": "flashcardsFieldName"
+  },
+  "flashcardsFieldLangDefault": "Side language",
+  "@flashcardsFieldLangDefault": {
+    "description": "flashcardsFieldLangDefault"
+  },
+  "flashcardsTemplateConfirm": "The template sets how fields are shown and adds its fields. Your cards and existing fields stay as they are.",
+  "@flashcardsTemplateConfirm": {
+    "description": "flashcardsTemplateConfirm"
+  },
+  "flashcardsApplyTemplate": "Apply",
+  "@flashcardsApplyTemplate": {
+    "description": "flashcardsApplyTemplate"
+  },
+  "templateVocabulary": "Vocabulary",
+  "@templateVocabulary": {
+    "description": "templateVocabulary"
+  },
+  "templateTwoTranslations": "Word with two translations",
+  "@templateTwoTranslations": {
+    "description": "templateTwoTranslations"
+  },
+  "templateQuestionAnswer": "Question and answer",
+  "@templateQuestionAnswer": {
+    "description": "templateQuestionAnswer"
+  },
+  "templateDefinition": "Term and definition",
+  "@templateDefinition": {
+    "description": "templateDefinition"
+  },
+  "templateGrammar": "Grammar rule",
+  "@templateGrammar": {
+    "description": "templateGrammar"
+  },
+  "templateFieldPlural": "Plural",
+  "@templateFieldPlural": {
+    "description": "templateFieldPlural"
+  },
+  "templateFieldTranslation2": "Second translation",
+  "@templateFieldTranslation2": {
+    "description": "templateFieldTranslation2"
+  },
+  "templateFieldSynonyms": "Synonyms",
+  "@templateFieldSynonyms": {
+    "description": "templateFieldSynonyms"
+  },
+  "templateFieldRule": "Rule",
+  "@templateFieldRule": {
+    "description": "templateFieldRule"
   }
 }

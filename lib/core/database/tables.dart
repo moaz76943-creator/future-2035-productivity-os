@@ -308,7 +308,32 @@ class Flashcards extends Table with Timestamps {
 
   /// Marked as favourite by the user. v6.
   BoolColumn get favorite => boolean().withDefault(const Constant(false))();
+
+  /// Values of the deck's custom fields as JSON {fieldId: text}. v7.
+  TextColumn get custom => text().withDefault(const Constant(''))();
   DateTimeColumn get deletedAt => dateTime().nullable()();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+
+/// Image or audio attached to one side of a card. Stored inside the
+/// encrypted database (so it is protected and included in backups). v7.
+@DataClassName('CardMediaRow')
+class CardMedia extends Table {
+  TextColumn get id => text()();
+  TextColumn get cardId =>
+      text().references(Flashcards, #id, onDelete: KeyAction.cascade)();
+
+  /// front | back
+  TextColumn get side => text()();
+
+  /// image | audio
+  TextColumn get kind => text()();
+  TextColumn get mime => text().withDefault(const Constant(''))();
+  TextColumn get name => text().withDefault(const Constant(''))();
+  BlobColumn get bytes => blob()();
+  DateTimeColumn get createdAt => dateTime()();
 
   @override
   Set<Column> get primaryKey => {id};

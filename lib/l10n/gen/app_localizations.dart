@@ -6275,6 +6275,150 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Show {field}'**
   String flashcardsRevealNext(String field);
+
+  /// Media size
+  ///
+  /// In en, this message translates to:
+  /// **'This file is larger than {mb} MB.'**
+  String flashcardsMediaTooLarge(int mb);
+
+  /// flashcardsImage
+  ///
+  /// In en, this message translates to:
+  /// **'Image'**
+  String get flashcardsImage;
+
+  /// flashcardsAudio
+  ///
+  /// In en, this message translates to:
+  /// **'Audio'**
+  String get flashcardsAudio;
+
+  /// flashcardsAddImage
+  ///
+  /// In en, this message translates to:
+  /// **'Add image'**
+  String get flashcardsAddImage;
+
+  /// flashcardsAddAudio
+  ///
+  /// In en, this message translates to:
+  /// **'Add audio'**
+  String get flashcardsAddAudio;
+
+  /// flashcardsPlayAudio
+  ///
+  /// In en, this message translates to:
+  /// **'Play recording'**
+  String get flashcardsPlayAudio;
+
+  /// flashcardsAudioUnavailable
+  ///
+  /// In en, this message translates to:
+  /// **'This recording cannot be played on this device.'**
+  String get flashcardsAudioUnavailable;
+
+  /// flashcardsCustomFields
+  ///
+  /// In en, this message translates to:
+  /// **'Your fields'**
+  String get flashcardsCustomFields;
+
+  /// flashcardsTemplates
+  ///
+  /// In en, this message translates to:
+  /// **'Templates'**
+  String get flashcardsTemplates;
+
+  /// Default custom field name
+  ///
+  /// In en, this message translates to:
+  /// **'Field {n}'**
+  String flashcardsNewFieldName(int n);
+
+  /// flashcardsAddField
+  ///
+  /// In en, this message translates to:
+  /// **'Add field'**
+  String get flashcardsAddField;
+
+  /// flashcardsFieldName
+  ///
+  /// In en, this message translates to:
+  /// **'Field name'**
+  String get flashcardsFieldName;
+
+  /// flashcardsFieldLangDefault
+  ///
+  /// In en, this message translates to:
+  /// **'Side language'**
+  String get flashcardsFieldLangDefault;
+
+  /// flashcardsTemplateConfirm
+  ///
+  /// In en, this message translates to:
+  /// **'The template sets how fields are shown and adds its fields. Your cards and existing fields stay as they are.'**
+  String get flashcardsTemplateConfirm;
+
+  /// flashcardsApplyTemplate
+  ///
+  /// In en, this message translates to:
+  /// **'Apply'**
+  String get flashcardsApplyTemplate;
+
+  /// templateVocabulary
+  ///
+  /// In en, this message translates to:
+  /// **'Vocabulary'**
+  String get templateVocabulary;
+
+  /// templateTwoTranslations
+  ///
+  /// In en, this message translates to:
+  /// **'Word with two translations'**
+  String get templateTwoTranslations;
+
+  /// templateQuestionAnswer
+  ///
+  /// In en, this message translates to:
+  /// **'Question and answer'**
+  String get templateQuestionAnswer;
+
+  /// templateDefinition
+  ///
+  /// In en, this message translates to:
+  /// **'Term and definition'**
+  String get templateDefinition;
+
+  /// templateGrammar
+  ///
+  /// In en, this message translates to:
+  /// **'Grammar rule'**
+  String get templateGrammar;
+
+  /// templateFieldPlural
+  ///
+  /// In en, this message translates to:
+  /// **'Plural'**
+  String get templateFieldPlural;
+
+  /// templateFieldTranslation2
+  ///
+  /// In en, this message translates to:
+  /// **'Second translation'**
+  String get templateFieldTranslation2;
+
+  /// templateFieldSynonyms
+  ///
+  /// In en, this message translates to:
+  /// **'Synonyms'**
+  String get templateFieldSynonyms;
+
+  /// templateFieldRule
+  ///
+  /// In en, this message translates to:
+  /// **'Rule'**
+  String get templateFieldRule;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

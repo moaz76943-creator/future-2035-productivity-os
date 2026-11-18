@@ -3742,4 +3742,81 @@ class AppLocalizationsHi extends AppLocalizations {
   String flashcardsRevealNext(String field) {
     return '$field दिखाएँ';
   }
+
+  @override
+  String flashcardsMediaTooLarge(int mb) {
+    return 'यह फ़ाइल $mb MB से बड़ी है।';
+  }
+
+  @override
+  String get flashcardsImage => 'चित्र';
+
+  @override
+  String get flashcardsAudio => 'ऑडियो';
+
+  @override
+  String get flashcardsAddImage => 'चित्र जोड़ें';
+
+  @override
+  String get flashcardsAddAudio => 'ऑडियो जोड़ें';
+
+  @override
+  String get flashcardsPlayAudio => 'रिकॉर्डिंग चलाएँ';
+
+  @override
+  String get flashcardsAudioUnavailable => 'यह रिकॉर्डिंग इस डिवाइस पर नहीं चल सकती।';
+
+  @override
+  String get flashcardsCustomFields => 'आपके फ़ील्ड';
+
+  @override
+  String get flashcardsTemplates => 'टेम्पलेट';
+
+  @override
+  String flashcardsNewFieldName(int n) {
+    return 'फ़ील्ड $n';
+  }
+
+  @override
+  String get flashcardsAddField => 'फ़ील्ड जोड़ें';
+
+  @override
+  String get flashcardsFieldName => 'फ़ील्ड का नाम';
+
+  @override
+  String get flashcardsFieldLangDefault => 'पक्ष की भाषा';
+
+  @override
+  String get flashcardsTemplateConfirm =>
+      'टेम्पलेट फ़ील्ड दिखाने का तरीका तय करता है और अपने फ़ील्ड जोड़ता है। आपके कार्ड और फ़ील्ड वैसे ही रहते हैं।';
+
+  @override
+  String get flashcardsApplyTemplate => 'लागू करें';
+
+  @override
+  String get templateVocabulary => 'शब्दावली';
+
+  @override
+  String get templateTwoTranslations => 'दो अनुवाद वाला शब्द';
+
+  @override
+  String get templateQuestionAnswer => 'प्रश्न-उत्तर';
+
+  @override
+  String get templateDefinition => 'शब्द और परिभाषा';
+
+  @override
+  String get templateGrammar => 'व्याकरण नियम';
+
+  @override
+  String get templateFieldPlural => 'बहुवचन';
+
+  @override
+  String get templateFieldTranslation2 => 'दूसरा अनुवाद';
+
+  @override
+  String get templateFieldSynonyms => 'पर्यायवाची';
+
+  @override
+  String get templateFieldRule => 'नियम';
 }

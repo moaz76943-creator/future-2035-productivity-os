@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:math' as math;
+import 'dart:typed_data';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_ui/material_ui.dart';
@@ -12,6 +13,7 @@ import '../../../core/design_system/components/states.dart';
 import '../../../core/design_system/components/surfaces.dart';
 import '../../../core/design_system/tokens.dart';
 import '../../../core/providers/core_providers.dart';
+import '../../../core/speech/audio_service.dart';
 import '../../../core/speech/tts_service.dart';
 import '../../../l10n/gen/app_localizations.dart';
 import '../../settings/application/settings_providers.dart';
@@ -193,6 +195,87 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
     final deck = ref.read(deckProvider(widget.deckId)).value;
     final lang = front ? deck?.frontLang : deck?.backLang;
     return (lang == null || lang.isEmpty) ? Localizations.localeOf(context).toLanguageTag() : lang;
+  }
+
+  CardSide _questionSide(CardRow card) => _reversed(card) ? CardSide.back : CardSide.front;
+
+  /// Custom fields of one face: the question face or the answer face.
+  List<FieldItem> _sideItems(CardRow card, CardLayout layout, {required bool question}) {
+    final qSide = _questionSide(card);
+    final side = question ? qSide : (qSide == CardSide.front ? CardSide.back : CardSide.front);
+    final values = CardCustom.decode(card.custom);
+    return [
+      for (final f in layout.customFields)
+        if (f.side == side && values[f.id] != null)
+          FieldItem(
+            key: f.id,
+            label: f.name,
+            value: values[f.id]!,
+            speak: () => _say(
+              values[f.id]!,
+              f.lang.isNotEmpty ? f.lang : _langTag(front: f.side == CardSide.front),
+            ),
+          ),
+    ];
+  }
+
+  /// Answer side: built-in fields in layout order, then custom answer fields.
+  List<FieldItem> _answerItems(CardRow card, CardLayout layout) {
+    final l10n = context.l10n;
+    final extras = CardExtras.decode(card.extra);
+    return [
+      for (final f in layout.visible)
+        if (extras[f] case final v?)
+          FieldItem(
+            key: f.name,
+            label: layout.labelOf(f) ?? cardFieldLabel(l10n, f),
+            value: v,
+            speak: () {
+              final lang = layout.fieldLangs[f];
+              if (lang != null && lang.isNotEmpty) {
+                _say(v, lang);
+              } else {
+                _speakField(f, v);
+              }
+            },
+          ),
+      ..._sideItems(card, layout, question: false),
+    ];
+  }
+
+  Uint8List? _image(List<CardMediaRow> media, {required bool question, required CardRow card}) {
+    final front = question != _reversed(card);
+    return media
+        .where((m) => m.kind == 'image' && m.side == (front ? 'front' : 'back'))
+        .firstOrNull
+        ?.bytes;
+  }
+
+  VoidCallback? _audioOf(
+    List<CardMediaRow> media, {
+    required bool question,
+    required CardRow card,
+  }) {
+    final front = question != _reversed(card);
+    final clip = media
+        .where((m) => m.kind == 'audio' && m.side == (front ? 'front' : 'back'))
+        .firstOrNull;
+    if (clip == null) return null;
+    return () async {
+      final messenger = ScaffoldMessenger.of(context);
+      final l10n = context.l10n;
+      await _tts.stop();
+      final dot = clip.name.lastIndexOf('.');
+      final ok = await ref
+          .read(audioClipPlayerProvider)
+          .play(
+            clip.bytes,
+            extension: dot < 0 ? 'm4a' : clip.name.substring(dot + 1).toLowerCase(),
+          );
+      if (!ok && mounted) {
+        messenger.showSnackBar(SnackBar(content: Text(l10n.flashcardsAudioUnavailable)));
+      }
+    };
   }
 
   /// Optional fields are spoken on their own: the example in the front
@@ -401,6 +484,7 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
     final card = queue[_index];
     final question = _question(card);
     final layout = ref.watch(cardLayoutProvider(widget.deckId)).value ?? const CardLayout();
+    final media = ref.watch(cardMediaProvider(card.id)).value ?? const <CardMediaRow>[];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -439,6 +523,12 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
               verdict: _match,
               onSpeakField: _speakField,
               layout: layout,
+              items: _answerItems(card, layout),
+              questionItems: _sideItems(card, layout, question: true),
+              questionImage: _image(media, question: true, card: card),
+              answerImage: _image(media, question: false, card: card),
+              onPlayQuestionAudio: _audioOf(media, question: true, card: card),
+              onPlayAnswerAudio: _audioOf(media, question: false, card: card),
               revealed: layout.stepReveal ? _revealed : 1 << 30,
               onRevealMore: layout.stepReveal ? () => setState(() => _revealed++) : null,
               // Answer modes flip only by answering.
@@ -724,21 +814,32 @@ class _FlipCard extends StatelessWidget {
     this.layout = const CardLayout(),
     this.revealed = 1 << 30,
     this.onRevealMore,
+    this.items = const [],
+    this.questionItems = const [],
+    this.questionImage,
+    this.answerImage,
+    this.onPlayQuestionAudio,
+    this.onPlayAnswerAudio,
   });
 
   /// Deck layout: order, names and visibility of the optional fields.
   final CardLayout layout;
 
-  /// How many optional fields are shown (step-by-step reveal).
+  /// How many answer items are shown (step-by-step reveal).
   final int revealed;
   final VoidCallback? onRevealMore;
 
-  List<CardField> get _fields => [
-    for (final f in layout.visible)
-      if (extras[f] != null) f,
-  ];
+  /// Optional answer-side fields in display order (built-in, then custom).
+  final List<FieldItem> items;
 
-  /// Speaks one optional field (example, explanation…) on its own.
+  /// Custom fields that belong to the question side.
+  final List<FieldItem> questionItems;
+  final Uint8List? questionImage;
+  final Uint8List? answerImage;
+  final VoidCallback? onPlayQuestionAudio;
+  final VoidCallback? onPlayAnswerAudio;
+
+  /// Speaks one optional field (kept for callers that speak built-in fields).
   final void Function(CardField field, String text)? onSpeakField;
 
   /// Question text (the back of the card in reverse mode).
@@ -786,8 +887,58 @@ class _FlipCard extends StatelessWidget {
   Widget _face(BuildContext context, {required bool showBack}) {
     final lux = context.lux;
     final l10n = context.l10n;
-    String label(CardField f) => layout.labelOf(f) ?? cardFieldLabel(l10n, f);
-    final shownFields = revealed.clamp(0, _fields.length);
+    final shownFields = revealed.clamp(0, items.length);
+    Widget image(Uint8List bytes, String key) => Padding(
+      padding: const EdgeInsets.only(bottom: Space.md),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(Radii.md),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxHeight: 200),
+          child: Image.memory(
+            bytes,
+            key: Key(key),
+            fit: BoxFit.contain,
+            gaplessPlayback: true,
+            errorBuilder: (_, _, _) => Icon(Icons.broken_image_outlined, color: lux.ink3),
+          ),
+        ),
+      ),
+    );
+    Widget audio(VoidCallback play, String key) => Padding(
+      padding: const EdgeInsets.only(top: Space.xs),
+      child: TextButton.icon(
+        key: Key(key),
+        onPressed: play,
+        icon: const Icon(Icons.play_circle_outline_rounded),
+        label: Text(l10n.flashcardsPlayAudio),
+      ),
+    );
+    Widget item(FieldItem f) => Column(
+      children: [
+        const SizedBox(height: Space.md),
+        Text(
+          f.label,
+          textAlign: TextAlign.center,
+          style: context.text.labelMedium?.copyWith(color: lux.ink3),
+        ),
+        const SizedBox(height: Space.xxs),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Flexible(
+              child: Text(f.value, textAlign: TextAlign.center, style: context.text.bodyLarge),
+            ),
+            if (f.speak != null)
+              IconButton(
+                key: Key('speakField_${f.key}'),
+                tooltip: l10n.flashcardsSpeakField(f.label),
+                onPressed: f.speak,
+                icon: const Icon(Icons.volume_up_outlined, size: 20),
+              ),
+          ],
+        ),
+      ],
+    );
     return LuxCard(
       key: ValueKey(showBack),
       radius: Radii.xl,
@@ -809,43 +960,21 @@ class _FlipCard extends StatelessWidget {
                   child: Divider(color: lux.hairline),
                 ),
                 Text(back, textAlign: TextAlign.center, style: context.text.headlineSmall),
-                for (final (i, f) in _fields.indexed)
-                  if (i < shownFields) ...[
-                    const SizedBox(height: Space.md),
-                    Text(
-                      label(f),
-                      textAlign: TextAlign.center,
-                      style: context.text.labelMedium?.copyWith(color: lux.ink3),
-                    ),
-                    const SizedBox(height: Space.xxs),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Flexible(
-                          child: Text(
-                            extras[f]!,
-                            textAlign: TextAlign.center,
-                            style: context.text.bodyLarge,
-                          ),
-                        ),
-                        if (onSpeakField != null)
-                          IconButton(
-                            key: Key('speakField_${f.name}'),
-                            tooltip: l10n.flashcardsSpeakField(label(f)),
-                            onPressed: () => onSpeakField!(f, extras[f]!),
-                            icon: const Icon(Icons.volume_up_outlined, size: 20),
-                          ),
-                      ],
-                    ),
-                  ],
-                if (shownFields < _fields.length && onRevealMore != null)
+                if (answerImage != null) ...[
+                  const SizedBox(height: Space.md),
+                  image(answerImage!, 'answerImage'),
+                ],
+                if (onPlayAnswerAudio != null) audio(onPlayAnswerAudio!, 'answerAudio'),
+                for (final (i, f) in items.indexed)
+                  if (i < shownFields) item(f),
+                if (shownFields < items.length && onRevealMore != null)
                   Padding(
                     padding: const EdgeInsets.only(top: Space.md),
                     child: TextButton.icon(
                       key: const Key('revealNextField'),
                       onPressed: onRevealMore,
                       icon: const Icon(Icons.expand_more_rounded),
-                      label: Text(l10n.flashcardsRevealNext(label(_fields[shownFields]))),
+                      label: Text(l10n.flashcardsRevealNext(items[shownFields].label)),
                     ),
                   ),
               ] else if (hideFront) ...[
@@ -857,7 +986,10 @@ class _FlipCard extends StatelessWidget {
                   child: Text(l10n.studyShowText),
                 ),
               ] else ...[
+                if (questionImage != null) image(questionImage!, 'questionImage'),
                 Text(front, textAlign: TextAlign.center, style: context.text.headlineSmall),
+                for (final f in questionItems) item(f),
+                if (onPlayQuestionAudio != null) audio(onPlayQuestionAudio!, 'questionAudio'),
                 if (onFlip != null) ...[
                   const SizedBox(height: Space.lg),
                   Text(
@@ -921,6 +1053,7 @@ class _FlipCard extends StatelessWidget {
               l10n.flashcardsAnswerA11y(back),
               for (final f in CardField.values)
                 if (extras[f] case final v?) '${layout.labelOf(f) ?? cardFieldLabel(l10n, f)}: $v',
+              for (final i in items.where((i) => i.key.startsWith('c'))) '${i.label}: ${i.value}',
             ].join('. ')
           : l10n.flashcardsQuestionA11y(front),
       hint: onFlip == null ? null : (flipped ? l10n.flashcardsShowQuestion : l10n.reviewTapToFlip),
@@ -1044,4 +1177,13 @@ class _RatingButton extends StatelessWidget {
       ),
     );
   }
+}
+
+/// One optional field shown on a card face.
+class FieldItem {
+  const FieldItem({required this.key, required this.label, required this.value, this.speak});
+  final String key;
+  final String label;
+  final String value;
+  final VoidCallback? speak;
 }

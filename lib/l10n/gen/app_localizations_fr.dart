@@ -3756,4 +3756,81 @@ class AppLocalizationsFr extends AppLocalizations {
   String flashcardsRevealNext(String field) {
     return 'Afficher $field';
   }
+
+  @override
+  String flashcardsMediaTooLarge(int mb) {
+    return 'Ce fichier dépasse $mb Mo.';
+  }
+
+  @override
+  String get flashcardsImage => 'Image';
+
+  @override
+  String get flashcardsAudio => 'Audio';
+
+  @override
+  String get flashcardsAddImage => 'Ajouter une image';
+
+  @override
+  String get flashcardsAddAudio => 'Ajouter un audio';
+
+  @override
+  String get flashcardsPlayAudio => 'Lire l’enregistrement';
+
+  @override
+  String get flashcardsAudioUnavailable => 'Impossible de lire cet enregistrement ici.';
+
+  @override
+  String get flashcardsCustomFields => 'Vos champs';
+
+  @override
+  String get flashcardsTemplates => 'Modèles';
+
+  @override
+  String flashcardsNewFieldName(int n) {
+    return 'Champ $n';
+  }
+
+  @override
+  String get flashcardsAddField => 'Ajouter un champ';
+
+  @override
+  String get flashcardsFieldName => 'Nom du champ';
+
+  @override
+  String get flashcardsFieldLangDefault => 'Langue du côté';
+
+  @override
+  String get flashcardsTemplateConfirm =>
+      'Le modèle définit l’affichage et ajoute ses champs. Vos cartes et champs restent intacts.';
+
+  @override
+  String get flashcardsApplyTemplate => 'Appliquer';
+
+  @override
+  String get templateVocabulary => 'Vocabulaire';
+
+  @override
+  String get templateTwoTranslations => 'Mot avec deux traductions';
+
+  @override
+  String get templateQuestionAnswer => 'Question-réponse';
+
+  @override
+  String get templateDefinition => 'Terme et définition';
+
+  @override
+  String get templateGrammar => 'Règle de grammaire';
+
+  @override
+  String get templateFieldPlural => 'Pluriel';
+
+  @override
+  String get templateFieldTranslation2 => 'Deuxième traduction';
+
+  @override
+  String get templateFieldSynonyms => 'Synonymes';
+
+  @override
+  String get templateFieldRule => 'Règle';
 }
