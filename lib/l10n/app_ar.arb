@@ -1051,5 +1051,16 @@
   "templateFieldPlural": "الجمع",
   "templateFieldTranslation2": "الترجمة الثانية",
   "templateFieldSynonyms": "المرادفات",
-  "templateFieldRule": "القاعدة"
+  "templateFieldRule": "القاعدة",
+  "deckCategory": "المستوى أو الموضوع",
+  "deckCategoryHint": "مثال: A1، طب",
+  "flashcardsSearchAll": "البحث في كل البطاقات",
+  "flashcardsSearchAllHint": "كلمة، ترجمة، مثال، ملاحظة، وسم…",
+  "flashcardsAllDecks": "كل المجموعات",
+  "flashcardsAllLanguages": "كل اللغات",
+  "flashcardsLangUnset": "لغة غير محددة",
+  "flashcardsLevelUnset": "بلا مستوى أو موضوع",
+  "flashcardsByLanguage": "التقدّم حسب اللغة",
+  "flashcardsByLevel": "التقدّم حسب المستوى أو الموضوع",
+  "flashcardsGroupLine": "{decks} مجموعات · {cards} بطاقة · {mature} محفوظة · {due} مستحقة · {correct} صحيحة (30 يومًا)"
 }

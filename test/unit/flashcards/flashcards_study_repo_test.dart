@@ -162,4 +162,21 @@ void main() {
       expect(await repo.mediaFor(c), isEmpty);
     },
   );
+
+  test('overview groups by front language and level with measured numbers', () async {
+    final es = await repo.createDeck('ES', color: 1, category: 'A1');
+    await repo.setDeckLanguages(es, front: 'es-ES', back: 'ar');
+    final es2 = await repo.createDeck('ES 2', color: 1, category: 'A2');
+    await repo.setDeckLanguages(es2, front: 'es-MX', back: 'ar');
+    final a = await repo.addCard(es, 'a', '1');
+    await repo.addCard(es2, 'b', '2');
+    await repo.recordReview(a, ReviewRating.good);
+    await repo.recordReview(a, ReviewRating.again);
+    final o = await repo.overview();
+    expect(o.byLanguage['es']!.cards, 2);
+    expect(o.byLanguage['es']!.decks, 2);
+    expect(o.byLanguage['es']!.correctRate, 0.5);
+    expect(o.byLevel.keys.toSet(), {'A1', 'A2'});
+    expect(o.byLevel['A2']!.reviews, 0);
+  });
 }

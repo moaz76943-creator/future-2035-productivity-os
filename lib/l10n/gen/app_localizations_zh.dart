@@ -3636,4 +3636,39 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get templateFieldRule => '规则';
+
+  @override
+  String get deckCategory => '级别或主题';
+
+  @override
+  String get deckCategoryHint => '例如：A1、医学';
+
+  @override
+  String get flashcardsSearchAll => '搜索全部卡片';
+
+  @override
+  String get flashcardsSearchAllHint => '单词、译文、例句、笔记、标签…';
+
+  @override
+  String get flashcardsAllDecks => '全部卡组';
+
+  @override
+  String get flashcardsAllLanguages => '全部语言';
+
+  @override
+  String get flashcardsLangUnset => '未设置语言';
+
+  @override
+  String get flashcardsLevelUnset => '无级别或主题';
+
+  @override
+  String get flashcardsByLanguage => '按语言的进度';
+
+  @override
+  String get flashcardsByLevel => '按级别/主题的进度';
+
+  @override
+  String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct) {
+    return '$decks 个卡组 · $cards 张卡 · $mature 已掌握 · $due 待复习 · 正确率 $correct（30 天）';
+  }
 }

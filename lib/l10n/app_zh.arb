@@ -1051,5 +1051,16 @@
   "templateFieldPlural": "复数",
   "templateFieldTranslation2": "第二译文",
   "templateFieldSynonyms": "同义词",
-  "templateFieldRule": "规则"
+  "templateFieldRule": "规则",
+  "deckCategory": "级别或主题",
+  "deckCategoryHint": "例如：A1、医学",
+  "flashcardsSearchAll": "搜索全部卡片",
+  "flashcardsSearchAllHint": "单词、译文、例句、笔记、标签…",
+  "flashcardsAllDecks": "全部卡组",
+  "flashcardsAllLanguages": "全部语言",
+  "flashcardsLangUnset": "未设置语言",
+  "flashcardsLevelUnset": "无级别或主题",
+  "flashcardsByLanguage": "按语言的进度",
+  "flashcardsByLevel": "按级别/主题的进度",
+  "flashcardsGroupLine": "{decks} 个卡组 · {cards} 张卡 · {mature} 已掌握 · {due} 待复习 · 正确率 {correct}（30 天）"
 }

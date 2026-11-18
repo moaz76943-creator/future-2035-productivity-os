@@ -1051,5 +1051,16 @@
   "templateFieldPlural": "Plural",
   "templateFieldTranslation2": "Segunda traducción",
   "templateFieldSynonyms": "Sinónimos",
-  "templateFieldRule": "Regla"
+  "templateFieldRule": "Regla",
+  "deckCategory": "Nivel o tema",
+  "deckCategoryHint": "p. ej., A1, Medicina",
+  "flashcardsSearchAll": "Buscar en todas",
+  "flashcardsSearchAllHint": "Palabra, traducción, ejemplo, nota, etiqueta…",
+  "flashcardsAllDecks": "Todos los mazos",
+  "flashcardsAllLanguages": "Todos los idiomas",
+  "flashcardsLangUnset": "Idioma sin definir",
+  "flashcardsLevelUnset": "Sin nivel ni tema",
+  "flashcardsByLanguage": "Progreso por idioma",
+  "flashcardsByLevel": "Progreso por nivel o tema",
+  "flashcardsGroupLine": "{decks} mazos · {cards} tarjetas · {mature} maduras · {due} pendientes · {correct} correctas (30 días)"
 }

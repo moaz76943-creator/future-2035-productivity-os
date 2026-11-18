@@ -3977,4 +3977,39 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get templateFieldRule => 'القاعدة';
+
+  @override
+  String get deckCategory => 'المستوى أو الموضوع';
+
+  @override
+  String get deckCategoryHint => 'مثال: A1، طب';
+
+  @override
+  String get flashcardsSearchAll => 'البحث في كل البطاقات';
+
+  @override
+  String get flashcardsSearchAllHint => 'كلمة، ترجمة، مثال، ملاحظة، وسم…';
+
+  @override
+  String get flashcardsAllDecks => 'كل المجموعات';
+
+  @override
+  String get flashcardsAllLanguages => 'كل اللغات';
+
+  @override
+  String get flashcardsLangUnset => 'لغة غير محددة';
+
+  @override
+  String get flashcardsLevelUnset => 'بلا مستوى أو موضوع';
+
+  @override
+  String get flashcardsByLanguage => 'التقدّم حسب اللغة';
+
+  @override
+  String get flashcardsByLevel => 'التقدّم حسب المستوى أو الموضوع';
+
+  @override
+  String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct) {
+    return '$decks مجموعات · $cards بطاقة · $mature محفوظة · $due مستحقة · $correct صحيحة (30 يومًا)';
+  }
 }

@@ -70,6 +70,7 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
         deck.id,
         name: r.name,
         description: r.description,
+        category: r.category,
         color: r.color,
         dailyNewLimit: r.dailyNewLimit,
         dailyReviewTarget: r.dailyReviewTarget,

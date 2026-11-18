@@ -5122,5 +5122,66 @@
   "templateFieldRule": "Rule",
   "@templateFieldRule": {
     "description": "templateFieldRule"
+  },
+  "deckCategory": "Level or topic",
+  "@deckCategory": {
+    "description": "deckCategory"
+  },
+  "deckCategoryHint": "e.g. A1, Medicine",
+  "@deckCategoryHint": {
+    "description": "deckCategoryHint"
+  },
+  "flashcardsSearchAll": "Search all cards",
+  "@flashcardsSearchAll": {
+    "description": "flashcardsSearchAll"
+  },
+  "flashcardsSearchAllHint": "Word, translation, example, note, tag…",
+  "@flashcardsSearchAllHint": {
+    "description": "flashcardsSearchAllHint"
+  },
+  "flashcardsAllDecks": "All decks",
+  "@flashcardsAllDecks": {
+    "description": "flashcardsAllDecks"
+  },
+  "flashcardsAllLanguages": "All languages",
+  "@flashcardsAllLanguages": {
+    "description": "flashcardsAllLanguages"
+  },
+  "flashcardsLangUnset": "Language not set",
+  "@flashcardsLangUnset": {
+    "description": "flashcardsLangUnset"
+  },
+  "flashcardsLevelUnset": "No level or topic",
+  "@flashcardsLevelUnset": {
+    "description": "flashcardsLevelUnset"
+  },
+  "flashcardsByLanguage": "Progress by language",
+  "@flashcardsByLanguage": {
+    "description": "flashcardsByLanguage"
+  },
+  "flashcardsByLevel": "Progress by level or topic",
+  "@flashcardsByLevel": {
+    "description": "flashcardsByLevel"
+  },
+  "flashcardsGroupLine": "{decks} decks · {cards} cards · {mature} mature · {due} due · {correct} correct (30 days)",
+  "@flashcardsGroupLine": {
+    "description": "Group stats",
+    "placeholders": {
+      "decks": {
+        "type": "int"
+      },
+      "cards": {
+        "type": "int"
+      },
+      "mature": {
+        "type": "int"
+      },
+      "due": {
+        "type": "int"
+      },
+      "correct": {
+        "type": "String"
+      }
+    }
   }
 }

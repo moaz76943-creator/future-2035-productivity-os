@@ -1051,5 +1051,16 @@
   "templateFieldPlural": "Множественное число",
   "templateFieldTranslation2": "Второй перевод",
   "templateFieldSynonyms": "Синонимы",
-  "templateFieldRule": "Правило"
+  "templateFieldRule": "Правило",
+  "deckCategory": "Уровень или тема",
+  "deckCategoryHint": "например, A1, Медицина",
+  "flashcardsSearchAll": "Поиск по всем карточкам",
+  "flashcardsSearchAllHint": "Слово, перевод, пример, заметка, тег…",
+  "flashcardsAllDecks": "Все колоды",
+  "flashcardsAllLanguages": "Все языки",
+  "flashcardsLangUnset": "Язык не указан",
+  "flashcardsLevelUnset": "Без уровня и темы",
+  "flashcardsByLanguage": "Прогресс по языкам",
+  "flashcardsByLevel": "Прогресс по уровням и темам",
+  "flashcardsGroupLine": "Колод: {decks} · карточек: {cards} · выучено: {mature} · к повтору: {due} · верно: {correct} (30 дн.)"
 }

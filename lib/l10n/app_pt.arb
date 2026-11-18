@@ -1051,5 +1051,16 @@
   "templateFieldPlural": "Plural",
   "templateFieldTranslation2": "Segunda tradução",
   "templateFieldSynonyms": "Sinônimos",
-  "templateFieldRule": "Regra"
+  "templateFieldRule": "Regra",
+  "deckCategory": "Nível ou tema",
+  "deckCategoryHint": "ex.: A1, Medicina",
+  "flashcardsSearchAll": "Buscar em todos",
+  "flashcardsSearchAllHint": "Palavra, tradução, exemplo, nota, etiqueta…",
+  "flashcardsAllDecks": "Todos os baralhos",
+  "flashcardsAllLanguages": "Todos os idiomas",
+  "flashcardsLangUnset": "Idioma não definido",
+  "flashcardsLevelUnset": "Sem nível ou tema",
+  "flashcardsByLanguage": "Progresso por idioma",
+  "flashcardsByLevel": "Progresso por nível ou tema",
+  "flashcardsGroupLine": "{decks} baralhos · {cards} cartões · {mature} maduros · {due} pendentes · {correct} corretas (30 dias)"
 }

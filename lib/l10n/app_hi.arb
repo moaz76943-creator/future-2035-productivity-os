@@ -1051,5 +1051,16 @@
   "templateFieldPlural": "बहुवचन",
   "templateFieldTranslation2": "दूसरा अनुवाद",
   "templateFieldSynonyms": "पर्यायवाची",
-  "templateFieldRule": "नियम"
+  "templateFieldRule": "नियम",
+  "deckCategory": "स्तर या विषय",
+  "deckCategoryHint": "जैसे A1, चिकित्सा",
+  "flashcardsSearchAll": "सभी कार्ड खोजें",
+  "flashcardsSearchAllHint": "शब्द, अनुवाद, उदाहरण, नोट, टैग…",
+  "flashcardsAllDecks": "सभी डेक",
+  "flashcardsAllLanguages": "सभी भाषाएँ",
+  "flashcardsLangUnset": "भाषा तय नहीं",
+  "flashcardsLevelUnset": "कोई स्तर या विषय नहीं",
+  "flashcardsByLanguage": "भाषा के अनुसार प्रगति",
+  "flashcardsByLevel": "स्तर/विषय के अनुसार प्रगति",
+  "flashcardsGroupLine": "{decks} डेक · {cards} कार्ड · {mature} पक्के · {due} बाकी · {correct} सही (30 दिन)"
 }

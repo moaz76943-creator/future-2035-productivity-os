@@ -6419,6 +6419,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Rule'**
   String get templateFieldRule;
+
+  /// deckCategory
+  ///
+  /// In en, this message translates to:
+  /// **'Level or topic'**
+  String get deckCategory;
+
+  /// deckCategoryHint
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. A1, Medicine'**
+  String get deckCategoryHint;
+
+  /// flashcardsSearchAll
+  ///
+  /// In en, this message translates to:
+  /// **'Search all cards'**
+  String get flashcardsSearchAll;
+
+  /// flashcardsSearchAllHint
+  ///
+  /// In en, this message translates to:
+  /// **'Word, translation, example, note, tag…'**
+  String get flashcardsSearchAllHint;
+
+  /// flashcardsAllDecks
+  ///
+  /// In en, this message translates to:
+  /// **'All decks'**
+  String get flashcardsAllDecks;
+
+  /// flashcardsAllLanguages
+  ///
+  /// In en, this message translates to:
+  /// **'All languages'**
+  String get flashcardsAllLanguages;
+
+  /// flashcardsLangUnset
+  ///
+  /// In en, this message translates to:
+  /// **'Language not set'**
+  String get flashcardsLangUnset;
+
+  /// flashcardsLevelUnset
+  ///
+  /// In en, this message translates to:
+  /// **'No level or topic'**
+  String get flashcardsLevelUnset;
+
+  /// flashcardsByLanguage
+  ///
+  /// In en, this message translates to:
+  /// **'Progress by language'**
+  String get flashcardsByLanguage;
+
+  /// flashcardsByLevel
+  ///
+  /// In en, this message translates to:
+  /// **'Progress by level or topic'**
+  String get flashcardsByLevel;
+
+  /// Group stats
+  ///
+  /// In en, this message translates to:
+  /// **'{decks} decks · {cards} cards · {mature} mature · {due} due · {correct} correct (30 days)'**
+  String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

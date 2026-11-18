@@ -15,9 +15,13 @@ class DeckFormResult {
     required this.color,
     required this.dailyNewLimit,
     required this.dailyReviewTarget,
+    this.category = '',
   });
   final String name;
   final String description;
+
+  /// Level or topic used to group decks (e.g. "A1", "Medicine").
+  final String category;
   final int color;
   final int dailyNewLimit;
   final int dailyReviewTarget;
@@ -46,6 +50,7 @@ class _DeckFormSheetState extends State<_DeckFormSheet> {
   final _form = GlobalKey<FormState>();
   late final _name = TextEditingController(text: widget.initial?.name ?? '');
   late final _description = TextEditingController(text: widget.initial?.description ?? '');
+  late final _category = TextEditingController(text: widget.initial?.category ?? '');
   late final _newLimit = TextEditingController(text: '${widget.initial?.dailyNewLimit ?? 20}');
   late final _reviewTarget = TextEditingController(
     text: '${widget.initial?.dailyReviewTarget ?? 50}',
@@ -58,6 +63,7 @@ class _DeckFormSheetState extends State<_DeckFormSheet> {
     _description.dispose();
     _newLimit.dispose();
     _reviewTarget.dispose();
+    _category.dispose();
     super.dispose();
   }
 
@@ -68,6 +74,7 @@ class _DeckFormSheetState extends State<_DeckFormSheet> {
       DeckFormResult(
         name: _name.text.trim(),
         description: _description.text.trim(),
+        category: _category.text.trim(),
         color: _color,
         dailyNewLimit: int.parse(_newLimit.text.trim()),
         dailyReviewTarget: int.parse(_reviewTarget.text.trim()),
@@ -114,6 +121,17 @@ class _DeckFormSheetState extends State<_DeckFormSheet> {
                 maxLines: 4,
                 textCapitalization: TextCapitalization.sentences,
                 decoration: InputDecoration(labelText: l10n.deckDescription),
+              ),
+              const SizedBox(height: Space.sm),
+              TextFormField(
+                key: const Key('deckCategoryField'),
+                controller: _category,
+                maxLength: 60,
+                buildCounter: (_, {required currentLength, required isFocused, maxLength}) => null,
+                decoration: InputDecoration(
+                  labelText: l10n.deckCategory,
+                  hintText: l10n.deckCategoryHint,
+                ),
               ),
               const SizedBox(height: Space.md),
               ColorSwatchPicker(value: _color, onChanged: (c) => setState(() => _color = c)),

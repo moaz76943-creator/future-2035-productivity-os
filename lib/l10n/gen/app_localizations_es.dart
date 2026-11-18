@@ -3828,4 +3828,39 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get templateFieldRule => 'Regla';
+
+  @override
+  String get deckCategory => 'Nivel o tema';
+
+  @override
+  String get deckCategoryHint => 'p. ej., A1, Medicina';
+
+  @override
+  String get flashcardsSearchAll => 'Buscar en todas';
+
+  @override
+  String get flashcardsSearchAllHint => 'Palabra, traducción, ejemplo, nota, etiqueta…';
+
+  @override
+  String get flashcardsAllDecks => 'Todos los mazos';
+
+  @override
+  String get flashcardsAllLanguages => 'Todos los idiomas';
+
+  @override
+  String get flashcardsLangUnset => 'Idioma sin definir';
+
+  @override
+  String get flashcardsLevelUnset => 'Sin nivel ni tema';
+
+  @override
+  String get flashcardsByLanguage => 'Progreso por idioma';
+
+  @override
+  String get flashcardsByLevel => 'Progreso por nivel o tema';
+
+  @override
+  String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct) {
+    return '$decks mazos · $cards tarjetas · $mature maduras · $due pendientes · $correct correctas (30 días)';
+  }
 }

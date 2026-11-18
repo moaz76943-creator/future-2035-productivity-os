@@ -1051,5 +1051,16 @@
   "templateFieldPlural": "Pluriel",
   "templateFieldTranslation2": "Deuxième traduction",
   "templateFieldSynonyms": "Synonymes",
-  "templateFieldRule": "Règle"
+  "templateFieldRule": "Règle",
+  "deckCategory": "Niveau ou thème",
+  "deckCategoryHint": "ex. A1, Médecine",
+  "flashcardsSearchAll": "Rechercher toutes les cartes",
+  "flashcardsSearchAllHint": "Mot, traduction, exemple, note, étiquette…",
+  "flashcardsAllDecks": "Tous les paquets",
+  "flashcardsAllLanguages": "Toutes les langues",
+  "flashcardsLangUnset": "Langue non définie",
+  "flashcardsLevelUnset": "Sans niveau ni thème",
+  "flashcardsByLanguage": "Progrès par langue",
+  "flashcardsByLevel": "Progrès par niveau ou thème",
+  "flashcardsGroupLine": "{decks} paquets · {cards} cartes · {mature} acquises · {due} à revoir · {correct} justes (30 j)"
 }

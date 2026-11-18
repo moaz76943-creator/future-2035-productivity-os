@@ -3933,4 +3933,39 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get templateFieldRule => 'Правило';
+
+  @override
+  String get deckCategory => 'Уровень или тема';
+
+  @override
+  String get deckCategoryHint => 'например, A1, Медицина';
+
+  @override
+  String get flashcardsSearchAll => 'Поиск по всем карточкам';
+
+  @override
+  String get flashcardsSearchAllHint => 'Слово, перевод, пример, заметка, тег…';
+
+  @override
+  String get flashcardsAllDecks => 'Все колоды';
+
+  @override
+  String get flashcardsAllLanguages => 'Все языки';
+
+  @override
+  String get flashcardsLangUnset => 'Язык не указан';
+
+  @override
+  String get flashcardsLevelUnset => 'Без уровня и темы';
+
+  @override
+  String get flashcardsByLanguage => 'Прогресс по языкам';
+
+  @override
+  String get flashcardsByLevel => 'Прогресс по уровням и темам';
+
+  @override
+  String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct) {
+    return 'Колод: $decks · карточек: $cards · выучено: $mature · к повтору: $due · верно: $correct (30 дн.)';
+  }
 }
