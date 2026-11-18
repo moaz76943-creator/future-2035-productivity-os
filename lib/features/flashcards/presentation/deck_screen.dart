@@ -1013,10 +1013,14 @@ class _ImportDialogState extends ConsumerState<_ImportDialog> {
           label: Text(l10n.flashcardsImportFile),
         ),
         TextButton(onPressed: () => Navigator.pop(context), child: Text(l10n.actionCancel)),
-        FilledButton(
-          key: const Key('importNextButton'),
-          onPressed: _next,
-          child: Text(l10n.importNext),
+        // Enabled once there is something to preview.
+        ValueListenableBuilder<TextEditingValue>(
+          valueListenable: _controller,
+          builder: (_, v, _) => FilledButton(
+            key: const Key('importNextButton'),
+            onPressed: v.text.trim().isEmpty ? null : _next,
+            child: Text(l10n.importNext),
+          ),
         ),
       ],
     );

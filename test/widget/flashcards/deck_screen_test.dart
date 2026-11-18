@@ -48,6 +48,7 @@ void main() {
       await tester.tap(find.byKey(const Key('importButton')));
       await settle(tester);
       await tester.enterText(find.byKey(const Key('importField')), 'hola\thello\nadiós;bye\n\nbad');
+      await tester.pump();
       await tester.tap(find.byKey(const Key('importNextButton')));
       await settle(tester);
       // Preview: columns guessed as front / back.
@@ -75,6 +76,7 @@ void main() {
     await tester.tap(find.byKey(const Key('importButton')));
     await settle(tester);
     await tester.enterText(find.byKey(const Key('importField')), '{"format":"other"}');
+    await tester.pump();
     await tester.tap(find.byKey(const Key('importNextButton')));
     await settle(tester);
     expect(find.text(l10n.importFailed), findsOneWidget);
@@ -302,6 +304,7 @@ void main() {
       find.byKey(const Key('importField')),
       'la llave\tTengo la llave\tkey\nel puente\tUn puente largo\tbridge',
     );
+    await tester.pump();
     await tester.tap(find.byKey(const Key('importNextButton')));
     await settle(tester);
     await tester.tap(find.byKey(const Key('importColumn_1')));
