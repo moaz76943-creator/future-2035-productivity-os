@@ -56,6 +56,7 @@ jobs:
         run: |
           git config user.name "future2035-relay-bot"
           git config user.email "actions@github.com"
+          git checkout -B hermes/future-2035-upgrade
           printf '%s\n' "$GOOGLE_KEYS_LIST" > /tmp/keys.list
           JOB_START=$(date +%s)
           MAX_WALL=12600
@@ -64,12 +65,12 @@ jobs:
             git add -A
             if ! git diff --cached --quiet; then
               git commit -m "chore(relay-hop-${{ inputs.hop || '1' }}): checkpoint verified FUTURE 2035 progress" || true
-              git pull origin main --rebase || true
-              git push origin main || true
+              git pull origin hermes/future-2035-upgrade --rebase || true
+              git push -u origin hermes/future-2035-upgrade || true
             fi
           }
 
-          PROMPT="Read docs/MASTER_DIRECTIVE_V1.md and state/future2035_phases.json. Work directly on main. CRITICAL: (1) If current_phase is PHASE_0_DISCOVERY, finish and save state/PHASE_0_AUDIT.md first, mark PHASE_0_DISCOVERY COMPLETED, and advance to PHASE_1_BUILD_FOUNDATION. (2) Complete ONE phase at a time cleanly—preserve working code, fix root causes, ensure zero dead buttons, White Luxury UI, responsive tests (320,360,412,600,840,1024), RTL + Western digits (0-9). (3) Verify flutter analyze, flutter test, and flutter build apk --debug pass, update state/future2035_phases.json and REPORT.md, and commit."
+          PROMPT="Read docs/MASTER_DIRECTIVE_V1.md and state/future2035_phases.json. Work ONLY on branch hermes/future-2035-upgrade (never push directly to main). CRITICAL: (1) If current_phase is PHASE_0_DISCOVERY, finish and save state/PHASE_0_AUDIT.md first, mark PHASE_0_DISCOVERY COMPLETED, and advance to PHASE_1_BUILD_FOUNDATION. (2) Complete ONE phase at a time cleanly—preserve working code, fix root causes, ensure zero dead buttons, White Luxury UI, responsive tests (320,360,412,600,840,1024), RTL + Western digits (0-9). (3) Verify flutter analyze, flutter test, and flutter build apk --debug pass, update state/future2035_phases.json and REPORT.md, and commit."
           DONE=0
 
           for MODEL in "gemini-4-hydrogen" "gemini-3.1-pro-preview" "gemini-3.8-flash" "gemini-3.6-flash"; do
@@ -110,11 +111,12 @@ jobs:
         run: |
           git config user.name "future2035-relay-bot"
           git config user.email "actions@github.com"
+          git checkout -B hermes/future-2035-upgrade
           git add -A
           if ! git diff --cached --quiet; then
             git commit -m "chore(relay-hop-${{ inputs.hop || '1' }}): final hop checkpoint" || true
-            git pull origin main --rebase || true
-            git push origin main || true
+            git pull origin hermes/future-2035-upgrade --rebase || true
+            git push -u origin hermes/future-2035-upgrade || true
           fi
           CURRENT_HOP="${{ inputs.hop || '1' }}"
           MAX_HOPS="${{ inputs.max_hops || '40' }}"
