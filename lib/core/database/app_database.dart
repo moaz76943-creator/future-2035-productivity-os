@@ -43,7 +43,7 @@ class AppDatabase extends _$AppDatabase {
   /// Bump when the schema changes and add a step in [migration].
   /// Never drop user tables to resolve a migration problem.
   @override
-  int get schemaVersion => 4;
+  int get schemaVersion => 5;
 
   /// Tables introduced after schema v1, by version. Older backups lack them and
   /// restore them empty instead of being rejected.
@@ -72,6 +72,12 @@ class AppDatabase extends _$AppDatabase {
         // v4: task work status and archive. Existing tasks: not started, not archived.
         await m.addColumn(tasks, tasks.status);
         await m.addColumn(tasks, tasks.archivedAt);
+      }
+      if (from < 5) {
+        // v5: suspended flashcards and per-deck speech languages.
+        await m.addColumn(flashcards, flashcards.suspended);
+        await m.addColumn(decks, decks.frontLang);
+        await m.addColumn(decks, decks.backLang);
       }
     },
     beforeOpen: (details) async {

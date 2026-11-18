@@ -40,6 +40,7 @@ class ReminderSources {
         c.deletedAt.isNull() &
             _db.decks.deletedAt.isNull() &
             c.state.equals('new').not() &
+            c.suspended.equals(false) &
             c.dueAt.isNotNull(),
       );
     return q.watchSingle().map((r) => r.read(earliest));

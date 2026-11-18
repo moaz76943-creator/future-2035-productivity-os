@@ -30,16 +30,9 @@ void main() {
     expect((await s.search('reunion')).single.category, SearchCategory.task);
     expect((await s.search('项目')).single.category, SearchCategory.note);
     expect((await s.search('ежик')).single.title, 'Заметка');
-    expect(
-      await s.search('100%'),
-      isEmpty,
-      reason: 'LIKE wildcards are escaped',
-    );
+    expect(await s.search('100%'), isEmpty, reason: 'LIKE wildcards are escaped');
     expect(await s.search('   '), isEmpty);
-    expect(
-      (await s.search('réunion', categories: {SearchCategory.note})),
-      isEmpty,
-    );
+    expect((await s.search('réunion', categories: {SearchCategory.note})), isEmpty);
 
     await s.remember('one');
     await s.remember('two');

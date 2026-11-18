@@ -19,9 +19,8 @@ void main() {
         'https://api.example.com/v1/chat/completions',
       );
       expect(
-        AssistantEndpoint.chatCompletionsUrl(
-          ' https://h.example/openai/v1/chat/completions/ ',
-        ).toString(),
+        AssistantEndpoint.chatCompletionsUrl(' https://h.example/openai/v1/chat/completions/ ')
+            .toString(),
         'https://h.example/openai/v1/chat/completions',
       );
       expect(AssistantEndpoint.host('HTTPS://API.Example.com/v1'), 'api.example.com');

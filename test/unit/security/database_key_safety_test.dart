@@ -19,8 +19,7 @@ void main() {
   });
 
   test('does not silently rotate a malformed stored key', () async {
-    final store = MemorySecretStore()
-      ..values[SecretKeys.databaseKey] = 'malformed-key';
+    final store = MemorySecretStore()..values[SecretKeys.databaseKey] = 'malformed-key';
     await expectLater(
       obtainDatabaseKey(store, databaseExists: false),
       throwsA(isA<DatabaseKeyUnavailableException>()),
@@ -30,12 +29,8 @@ void main() {
 
   test('reuses a valid existing key', () async {
     const key = '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef';
-    final store = MemorySecretStore()
-      ..values[SecretKeys.databaseKey] = key;
-    expect(
-      await obtainDatabaseKey(store, databaseExists: true),
-      key,
-    );
+    final store = MemorySecretStore()..values[SecretKeys.databaseKey] = key;
+    expect(await obtainDatabaseKey(store, databaseExists: true), key);
     expect(await store.read(SecretKeys.databaseKey), key);
   });
 }

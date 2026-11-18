@@ -1,4 +1,3 @@
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:future_os/core/providers/core_providers.dart';
@@ -17,9 +16,10 @@ void main() {
   test('failed OS scheduling is not persisted and is retried', () async {
     final env = TestEnv();
     final reminderAt = env.clock.now().add(const Duration(hours: 1));
-    await TasksRepository(env.db, env.clock).create(
-      TaskDraft(title: 'Retry notification', reminderAt: reminderAt),
-    );
+    await TasksRepository(
+      env.db,
+      env.clock,
+    ).create(TaskDraft(title: 'Retry notification', reminderAt: reminderAt));
 
     final service = FakeNotificationService()..scheduleSucceeds = false;
     final container = ProviderContainer(
@@ -42,9 +42,7 @@ void main() {
     await Future<void>.delayed(const Duration(milliseconds: 500));
     await sync.flush();
 
-    final id = NotificationIds.task(
-      (await env.db.select(env.db.tasks).getSingle()).id,
-    );
+    final id = NotificationIds.task((await env.db.select(env.db.tasks).getSingle()).id);
     expect(service.log, contains('schedule $id'));
     expect(await ReminderSources(env.db).loadScheduled(), isEmpty);
 

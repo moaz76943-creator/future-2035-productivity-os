@@ -6051,6 +6051,30 @@ class $DecksTable extends Decks with TableInfo<$DecksTable, DeckRow> {
     requiredDuringInsert: false,
     defaultValue: const Constant(50),
   );
+  static const VerificationMeta _frontLangMeta = const VerificationMeta(
+    'frontLang',
+  );
+  @override
+  late final GeneratedColumn<String> frontLang = GeneratedColumn<String>(
+    'front_lang',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(''),
+  );
+  static const VerificationMeta _backLangMeta = const VerificationMeta(
+    'backLang',
+  );
+  @override
+  late final GeneratedColumn<String> backLang = GeneratedColumn<String>(
+    'back_lang',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(''),
+  );
   static const VerificationMeta _deletedAtMeta = const VerificationMeta(
     'deletedAt',
   );
@@ -6073,6 +6097,8 @@ class $DecksTable extends Decks with TableInfo<$DecksTable, DeckRow> {
     color,
     dailyNewLimit,
     dailyReviewTarget,
+    frontLang,
+    backLang,
     deletedAt,
   ];
   @override
@@ -6157,6 +6183,18 @@ class $DecksTable extends Decks with TableInfo<$DecksTable, DeckRow> {
         ),
       );
     }
+    if (data.containsKey('front_lang')) {
+      context.handle(
+        _frontLangMeta,
+        frontLang.isAcceptableOrUnknown(data['front_lang']!, _frontLangMeta),
+      );
+    }
+    if (data.containsKey('back_lang')) {
+      context.handle(
+        _backLangMeta,
+        backLang.isAcceptableOrUnknown(data['back_lang']!, _backLangMeta),
+      );
+    }
     if (data.containsKey('deleted_at')) {
       context.handle(
         _deletedAtMeta,
@@ -6208,6 +6246,14 @@ class $DecksTable extends Decks with TableInfo<$DecksTable, DeckRow> {
         DriftSqlType.int,
         data['${effectivePrefix}daily_review_target'],
       )!,
+      frontLang: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}front_lang'],
+      )!,
+      backLang: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}back_lang'],
+      )!,
       deletedAt: attachedDatabase.typeMapping.read(
         DriftSqlType.dateTime,
         data['${effectivePrefix}deleted_at'],
@@ -6231,6 +6277,10 @@ class DeckRow extends DataClass implements Insertable<DeckRow> {
   final int color;
   final int dailyNewLimit;
   final int dailyReviewTarget;
+
+  /// BCP-47 speech languages of the front and back ('' = app language). v5.
+  final String frontLang;
+  final String backLang;
   final DateTime? deletedAt;
   const DeckRow({
     required this.createdAt,
@@ -6242,6 +6292,8 @@ class DeckRow extends DataClass implements Insertable<DeckRow> {
     required this.color,
     required this.dailyNewLimit,
     required this.dailyReviewTarget,
+    required this.frontLang,
+    required this.backLang,
     this.deletedAt,
   });
   @override
@@ -6256,6 +6308,8 @@ class DeckRow extends DataClass implements Insertable<DeckRow> {
     map['color'] = Variable<int>(color);
     map['daily_new_limit'] = Variable<int>(dailyNewLimit);
     map['daily_review_target'] = Variable<int>(dailyReviewTarget);
+    map['front_lang'] = Variable<String>(frontLang);
+    map['back_lang'] = Variable<String>(backLang);
     if (!nullToAbsent || deletedAt != null) {
       map['deleted_at'] = Variable<DateTime>(deletedAt);
     }
@@ -6273,6 +6327,8 @@ class DeckRow extends DataClass implements Insertable<DeckRow> {
       color: Value(color),
       dailyNewLimit: Value(dailyNewLimit),
       dailyReviewTarget: Value(dailyReviewTarget),
+      frontLang: Value(frontLang),
+      backLang: Value(backLang),
       deletedAt: deletedAt == null && nullToAbsent
           ? const Value.absent()
           : Value(deletedAt),
@@ -6294,6 +6350,8 @@ class DeckRow extends DataClass implements Insertable<DeckRow> {
       color: serializer.fromJson<int>(json['color']),
       dailyNewLimit: serializer.fromJson<int>(json['dailyNewLimit']),
       dailyReviewTarget: serializer.fromJson<int>(json['dailyReviewTarget']),
+      frontLang: serializer.fromJson<String>(json['frontLang']),
+      backLang: serializer.fromJson<String>(json['backLang']),
       deletedAt: serializer.fromJson<DateTime?>(json['deletedAt']),
     );
   }
@@ -6310,6 +6368,8 @@ class DeckRow extends DataClass implements Insertable<DeckRow> {
       'color': serializer.toJson<int>(color),
       'dailyNewLimit': serializer.toJson<int>(dailyNewLimit),
       'dailyReviewTarget': serializer.toJson<int>(dailyReviewTarget),
+      'frontLang': serializer.toJson<String>(frontLang),
+      'backLang': serializer.toJson<String>(backLang),
       'deletedAt': serializer.toJson<DateTime?>(deletedAt),
     };
   }
@@ -6324,6 +6384,8 @@ class DeckRow extends DataClass implements Insertable<DeckRow> {
     int? color,
     int? dailyNewLimit,
     int? dailyReviewTarget,
+    String? frontLang,
+    String? backLang,
     Value<DateTime?> deletedAt = const Value.absent(),
   }) => DeckRow(
     createdAt: createdAt ?? this.createdAt,
@@ -6335,6 +6397,8 @@ class DeckRow extends DataClass implements Insertable<DeckRow> {
     color: color ?? this.color,
     dailyNewLimit: dailyNewLimit ?? this.dailyNewLimit,
     dailyReviewTarget: dailyReviewTarget ?? this.dailyReviewTarget,
+    frontLang: frontLang ?? this.frontLang,
+    backLang: backLang ?? this.backLang,
     deletedAt: deletedAt.present ? deletedAt.value : this.deletedAt,
   );
   DeckRow copyWithCompanion(DecksCompanion data) {
@@ -6354,6 +6418,8 @@ class DeckRow extends DataClass implements Insertable<DeckRow> {
       dailyReviewTarget: data.dailyReviewTarget.present
           ? data.dailyReviewTarget.value
           : this.dailyReviewTarget,
+      frontLang: data.frontLang.present ? data.frontLang.value : this.frontLang,
+      backLang: data.backLang.present ? data.backLang.value : this.backLang,
       deletedAt: data.deletedAt.present ? data.deletedAt.value : this.deletedAt,
     );
   }
@@ -6370,6 +6436,8 @@ class DeckRow extends DataClass implements Insertable<DeckRow> {
           ..write('color: $color, ')
           ..write('dailyNewLimit: $dailyNewLimit, ')
           ..write('dailyReviewTarget: $dailyReviewTarget, ')
+          ..write('frontLang: $frontLang, ')
+          ..write('backLang: $backLang, ')
           ..write('deletedAt: $deletedAt')
           ..write(')'))
         .toString();
@@ -6386,6 +6454,8 @@ class DeckRow extends DataClass implements Insertable<DeckRow> {
     color,
     dailyNewLimit,
     dailyReviewTarget,
+    frontLang,
+    backLang,
     deletedAt,
   );
   @override
@@ -6401,6 +6471,8 @@ class DeckRow extends DataClass implements Insertable<DeckRow> {
           other.color == this.color &&
           other.dailyNewLimit == this.dailyNewLimit &&
           other.dailyReviewTarget == this.dailyReviewTarget &&
+          other.frontLang == this.frontLang &&
+          other.backLang == this.backLang &&
           other.deletedAt == this.deletedAt);
 }
 
@@ -6414,6 +6486,8 @@ class DecksCompanion extends UpdateCompanion<DeckRow> {
   final Value<int> color;
   final Value<int> dailyNewLimit;
   final Value<int> dailyReviewTarget;
+  final Value<String> frontLang;
+  final Value<String> backLang;
   final Value<DateTime?> deletedAt;
   final Value<int> rowid;
   const DecksCompanion({
@@ -6426,6 +6500,8 @@ class DecksCompanion extends UpdateCompanion<DeckRow> {
     this.color = const Value.absent(),
     this.dailyNewLimit = const Value.absent(),
     this.dailyReviewTarget = const Value.absent(),
+    this.frontLang = const Value.absent(),
+    this.backLang = const Value.absent(),
     this.deletedAt = const Value.absent(),
     this.rowid = const Value.absent(),
   });
@@ -6439,6 +6515,8 @@ class DecksCompanion extends UpdateCompanion<DeckRow> {
     required int color,
     this.dailyNewLimit = const Value.absent(),
     this.dailyReviewTarget = const Value.absent(),
+    this.frontLang = const Value.absent(),
+    this.backLang = const Value.absent(),
     this.deletedAt = const Value.absent(),
     this.rowid = const Value.absent(),
   }) : createdAt = Value(createdAt),
@@ -6456,6 +6534,8 @@ class DecksCompanion extends UpdateCompanion<DeckRow> {
     Expression<int>? color,
     Expression<int>? dailyNewLimit,
     Expression<int>? dailyReviewTarget,
+    Expression<String>? frontLang,
+    Expression<String>? backLang,
     Expression<DateTime>? deletedAt,
     Expression<int>? rowid,
   }) {
@@ -6469,6 +6549,8 @@ class DecksCompanion extends UpdateCompanion<DeckRow> {
       if (color != null) 'color': color,
       if (dailyNewLimit != null) 'daily_new_limit': dailyNewLimit,
       if (dailyReviewTarget != null) 'daily_review_target': dailyReviewTarget,
+      if (frontLang != null) 'front_lang': frontLang,
+      if (backLang != null) 'back_lang': backLang,
       if (deletedAt != null) 'deleted_at': deletedAt,
       if (rowid != null) 'rowid': rowid,
     });
@@ -6484,6 +6566,8 @@ class DecksCompanion extends UpdateCompanion<DeckRow> {
     Value<int>? color,
     Value<int>? dailyNewLimit,
     Value<int>? dailyReviewTarget,
+    Value<String>? frontLang,
+    Value<String>? backLang,
     Value<DateTime?>? deletedAt,
     Value<int>? rowid,
   }) {
@@ -6497,6 +6581,8 @@ class DecksCompanion extends UpdateCompanion<DeckRow> {
       color: color ?? this.color,
       dailyNewLimit: dailyNewLimit ?? this.dailyNewLimit,
       dailyReviewTarget: dailyReviewTarget ?? this.dailyReviewTarget,
+      frontLang: frontLang ?? this.frontLang,
+      backLang: backLang ?? this.backLang,
       deletedAt: deletedAt ?? this.deletedAt,
       rowid: rowid ?? this.rowid,
     );
@@ -6532,6 +6618,12 @@ class DecksCompanion extends UpdateCompanion<DeckRow> {
     if (dailyReviewTarget.present) {
       map['daily_review_target'] = Variable<int>(dailyReviewTarget.value);
     }
+    if (frontLang.present) {
+      map['front_lang'] = Variable<String>(frontLang.value);
+    }
+    if (backLang.present) {
+      map['back_lang'] = Variable<String>(backLang.value);
+    }
     if (deletedAt.present) {
       map['deleted_at'] = Variable<DateTime>(deletedAt.value);
     }
@@ -6553,6 +6645,8 @@ class DecksCompanion extends UpdateCompanion<DeckRow> {
           ..write('color: $color, ')
           ..write('dailyNewLimit: $dailyNewLimit, ')
           ..write('dailyReviewTarget: $dailyReviewTarget, ')
+          ..write('frontLang: $frontLang, ')
+          ..write('backLang: $backLang, ')
           ..write('deletedAt: $deletedAt, ')
           ..write('rowid: $rowid')
           ..write(')'))
@@ -6722,6 +6816,21 @@ class $FlashcardsTable extends Flashcards
     type: DriftSqlType.dateTime,
     requiredDuringInsert: false,
   );
+  static const VerificationMeta _suspendedMeta = const VerificationMeta(
+    'suspended',
+  );
+  @override
+  late final GeneratedColumn<bool> suspended = GeneratedColumn<bool>(
+    'suspended',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("suspended" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
   static const VerificationMeta _deletedAtMeta = const VerificationMeta(
     'deletedAt',
   );
@@ -6750,6 +6859,7 @@ class $FlashcardsTable extends Flashcards
     lapses,
     learningStep,
     dueAt,
+    suspended,
     deletedAt,
   ];
   @override
@@ -6872,6 +6982,12 @@ class $FlashcardsTable extends Flashcards
         dueAt.isAcceptableOrUnknown(data['due_at']!, _dueAtMeta),
       );
     }
+    if (data.containsKey('suspended')) {
+      context.handle(
+        _suspendedMeta,
+        suspended.isAcceptableOrUnknown(data['suspended']!, _suspendedMeta),
+      );
+    }
     if (data.containsKey('deleted_at')) {
       context.handle(
         _deletedAtMeta,
@@ -6947,6 +7063,10 @@ class $FlashcardsTable extends Flashcards
         DriftSqlType.dateTime,
         data['${effectivePrefix}due_at'],
       ),
+      suspended: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}suspended'],
+      )!,
       deletedAt: attachedDatabase.typeMapping.read(
         DriftSqlType.dateTime,
         data['${effectivePrefix}deleted_at'],
@@ -6983,6 +7103,9 @@ class CardRow extends DataClass implements Insertable<CardRow> {
   final int lapses;
   final int learningStep;
   final DateTime? dueAt;
+
+  /// Suspended cards stay in the deck but are never scheduled. v5.
+  final bool suspended;
   final DateTime? deletedAt;
   const CardRow({
     required this.createdAt,
@@ -7000,6 +7123,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     required this.lapses,
     required this.learningStep,
     this.dueAt,
+    required this.suspended,
     this.deletedAt,
   });
   @override
@@ -7022,6 +7146,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     if (!nullToAbsent || dueAt != null) {
       map['due_at'] = Variable<DateTime>(dueAt);
     }
+    map['suspended'] = Variable<bool>(suspended);
     if (!nullToAbsent || deletedAt != null) {
       map['deleted_at'] = Variable<DateTime>(deletedAt);
     }
@@ -7047,6 +7172,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
       dueAt: dueAt == null && nullToAbsent
           ? const Value.absent()
           : Value(dueAt),
+      suspended: Value(suspended),
       deletedAt: deletedAt == null && nullToAbsent
           ? const Value.absent()
           : Value(deletedAt),
@@ -7074,6 +7200,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
       lapses: serializer.fromJson<int>(json['lapses']),
       learningStep: serializer.fromJson<int>(json['learningStep']),
       dueAt: serializer.fromJson<DateTime?>(json['dueAt']),
+      suspended: serializer.fromJson<bool>(json['suspended']),
       deletedAt: serializer.fromJson<DateTime?>(json['deletedAt']),
     );
   }
@@ -7096,6 +7223,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
       'lapses': serializer.toJson<int>(lapses),
       'learningStep': serializer.toJson<int>(learningStep),
       'dueAt': serializer.toJson<DateTime?>(dueAt),
+      'suspended': serializer.toJson<bool>(suspended),
       'deletedAt': serializer.toJson<DateTime?>(deletedAt),
     };
   }
@@ -7116,6 +7244,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     int? lapses,
     int? learningStep,
     Value<DateTime?> dueAt = const Value.absent(),
+    bool? suspended,
     Value<DateTime?> deletedAt = const Value.absent(),
   }) => CardRow(
     createdAt: createdAt ?? this.createdAt,
@@ -7133,6 +7262,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     lapses: lapses ?? this.lapses,
     learningStep: learningStep ?? this.learningStep,
     dueAt: dueAt.present ? dueAt.value : this.dueAt,
+    suspended: suspended ?? this.suspended,
     deletedAt: deletedAt.present ? deletedAt.value : this.deletedAt,
   );
   CardRow copyWithCompanion(FlashcardsCompanion data) {
@@ -7158,6 +7288,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
           ? data.learningStep.value
           : this.learningStep,
       dueAt: data.dueAt.present ? data.dueAt.value : this.dueAt,
+      suspended: data.suspended.present ? data.suspended.value : this.suspended,
       deletedAt: data.deletedAt.present ? data.deletedAt.value : this.deletedAt,
     );
   }
@@ -7180,6 +7311,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
           ..write('lapses: $lapses, ')
           ..write('learningStep: $learningStep, ')
           ..write('dueAt: $dueAt, ')
+          ..write('suspended: $suspended, ')
           ..write('deletedAt: $deletedAt')
           ..write(')'))
         .toString();
@@ -7202,6 +7334,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     lapses,
     learningStep,
     dueAt,
+    suspended,
     deletedAt,
   );
   @override
@@ -7223,6 +7356,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
           other.lapses == this.lapses &&
           other.learningStep == this.learningStep &&
           other.dueAt == this.dueAt &&
+          other.suspended == this.suspended &&
           other.deletedAt == this.deletedAt);
 }
 
@@ -7242,6 +7376,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
   final Value<int> lapses;
   final Value<int> learningStep;
   final Value<DateTime?> dueAt;
+  final Value<bool> suspended;
   final Value<DateTime?> deletedAt;
   final Value<int> rowid;
   const FlashcardsCompanion({
@@ -7260,6 +7395,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     this.lapses = const Value.absent(),
     this.learningStep = const Value.absent(),
     this.dueAt = const Value.absent(),
+    this.suspended = const Value.absent(),
     this.deletedAt = const Value.absent(),
     this.rowid = const Value.absent(),
   });
@@ -7279,6 +7415,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     this.lapses = const Value.absent(),
     this.learningStep = const Value.absent(),
     this.dueAt = const Value.absent(),
+    this.suspended = const Value.absent(),
     this.deletedAt = const Value.absent(),
     this.rowid = const Value.absent(),
   }) : createdAt = Value(createdAt),
@@ -7303,6 +7440,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     Expression<int>? lapses,
     Expression<int>? learningStep,
     Expression<DateTime>? dueAt,
+    Expression<bool>? suspended,
     Expression<DateTime>? deletedAt,
     Expression<int>? rowid,
   }) {
@@ -7322,6 +7460,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
       if (lapses != null) 'lapses': lapses,
       if (learningStep != null) 'learning_step': learningStep,
       if (dueAt != null) 'due_at': dueAt,
+      if (suspended != null) 'suspended': suspended,
       if (deletedAt != null) 'deleted_at': deletedAt,
       if (rowid != null) 'rowid': rowid,
     });
@@ -7343,6 +7482,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     Value<int>? lapses,
     Value<int>? learningStep,
     Value<DateTime?>? dueAt,
+    Value<bool>? suspended,
     Value<DateTime?>? deletedAt,
     Value<int>? rowid,
   }) {
@@ -7362,6 +7502,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
       lapses: lapses ?? this.lapses,
       learningStep: learningStep ?? this.learningStep,
       dueAt: dueAt ?? this.dueAt,
+      suspended: suspended ?? this.suspended,
       deletedAt: deletedAt ?? this.deletedAt,
       rowid: rowid ?? this.rowid,
     );
@@ -7415,6 +7556,9 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     if (dueAt.present) {
       map['due_at'] = Variable<DateTime>(dueAt.value);
     }
+    if (suspended.present) {
+      map['suspended'] = Variable<bool>(suspended.value);
+    }
     if (deletedAt.present) {
       map['deleted_at'] = Variable<DateTime>(deletedAt.value);
     }
@@ -7442,6 +7586,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
           ..write('lapses: $lapses, ')
           ..write('learningStep: $learningStep, ')
           ..write('dueAt: $dueAt, ')
+          ..write('suspended: $suspended, ')
           ..write('deletedAt: $deletedAt, ')
           ..write('rowid: $rowid')
           ..write(')'))
@@ -17626,6 +17771,8 @@ typedef $$DecksTableCreateCompanionBuilder = DecksCompanion Function({
   required int color,
   Value<int> dailyNewLimit,
   Value<int> dailyReviewTarget,
+  Value<String> frontLang,
+  Value<String> backLang,
   Value<DateTime?> deletedAt,
   Value<int> rowid,
 });
@@ -17639,6 +17786,8 @@ typedef $$DecksTableUpdateCompanionBuilder = DecksCompanion Function({
   Value<int> color,
   Value<int> dailyNewLimit,
   Value<int> dailyReviewTarget,
+  Value<String> frontLang,
+  Value<String> backLang,
   Value<DateTime?> deletedAt,
   Value<int> rowid,
 });
@@ -17716,6 +17865,16 @@ class $$DecksTableFilterComposer extends Composer<_$AppDatabase, $DecksTable> {
 
   ColumnFilters<int> get dailyReviewTarget => $composableBuilder(
     column: $table.dailyReviewTarget,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get frontLang => $composableBuilder(
+    column: $table.frontLang,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get backLang => $composableBuilder(
+    column: $table.backLang,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -17804,6 +17963,16 @@ class $$DecksTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<String> get frontLang => $composableBuilder(
+    column: $table.frontLang,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get backLang => $composableBuilder(
+    column: $table.backLang,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<DateTime> get deletedAt => $composableBuilder(
     column: $table.deletedAt,
     builder: (column) => ColumnOrderings(column),
@@ -17851,6 +18020,12 @@ class $$DecksTableAnnotationComposer
     column: $table.dailyReviewTarget,
     builder: (column) => column,
   );
+
+  GeneratedColumn<String> get frontLang =>
+      $composableBuilder(column: $table.frontLang, builder: (column) => column);
+
+  GeneratedColumn<String> get backLang =>
+      $composableBuilder(column: $table.backLang, builder: (column) => column);
 
   GeneratedColumn<DateTime> get deletedAt =>
       $composableBuilder(column: $table.deletedAt, builder: (column) => column);
@@ -17918,6 +18093,8 @@ class $$DecksTableTableManager
                 Value<int> color = const Value.absent(),
                 Value<int> dailyNewLimit = const Value.absent(),
                 Value<int> dailyReviewTarget = const Value.absent(),
+                Value<String> frontLang = const Value.absent(),
+                Value<String> backLang = const Value.absent(),
                 Value<DateTime?> deletedAt = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => DecksCompanion(
@@ -17930,6 +18107,8 @@ class $$DecksTableTableManager
                 color: color,
                 dailyNewLimit: dailyNewLimit,
                 dailyReviewTarget: dailyReviewTarget,
+                frontLang: frontLang,
+                backLang: backLang,
                 deletedAt: deletedAt,
                 rowid: rowid,
               ),
@@ -17944,6 +18123,8 @@ class $$DecksTableTableManager
                 required int color,
                 Value<int> dailyNewLimit = const Value.absent(),
                 Value<int> dailyReviewTarget = const Value.absent(),
+                Value<String> frontLang = const Value.absent(),
+                Value<String> backLang = const Value.absent(),
                 Value<DateTime?> deletedAt = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => DecksCompanion.insert(
@@ -17956,6 +18137,8 @@ class $$DecksTableTableManager
                 color: color,
                 dailyNewLimit: dailyNewLimit,
                 dailyReviewTarget: dailyReviewTarget,
+                frontLang: frontLang,
+                backLang: backLang,
                 deletedAt: deletedAt,
                 rowid: rowid,
               ),
@@ -18028,6 +18211,7 @@ typedef $$FlashcardsTableCreateCompanionBuilder = FlashcardsCompanion Function({
   Value<int> lapses,
   Value<int> learningStep,
   Value<DateTime?> dueAt,
+  Value<bool> suspended,
   Value<DateTime?> deletedAt,
   Value<int> rowid,
 });
@@ -18047,6 +18231,7 @@ typedef $$FlashcardsTableUpdateCompanionBuilder = FlashcardsCompanion Function({
   Value<int> lapses,
   Value<int> learningStep,
   Value<DateTime?> dueAt,
+  Value<bool> suspended,
   Value<DateTime?> deletedAt,
   Value<int> rowid,
 });
@@ -18167,6 +18352,11 @@ class $$FlashcardsTableFilterComposer
 
   ColumnFilters<DateTime> get dueAt => $composableBuilder(
     column: $table.dueAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get suspended => $composableBuilder(
+    column: $table.suspended,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -18303,6 +18493,11 @@ class $$FlashcardsTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<bool> get suspended => $composableBuilder(
+    column: $table.suspended,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<DateTime> get deletedAt => $composableBuilder(
     column: $table.deletedAt,
     builder: (column) => ColumnOrderings(column),
@@ -18388,6 +18583,9 @@ class $$FlashcardsTableAnnotationComposer
 
   GeneratedColumn<DateTime> get dueAt =>
       $composableBuilder(column: $table.dueAt, builder: (column) => column);
+
+  GeneratedColumn<bool> get suspended =>
+      $composableBuilder(column: $table.suspended, builder: (column) => column);
 
   GeneratedColumn<DateTime> get deletedAt =>
       $composableBuilder(column: $table.deletedAt, builder: (column) => column);
@@ -18484,6 +18682,7 @@ class $$FlashcardsTableTableManager
                 Value<int> lapses = const Value.absent(),
                 Value<int> learningStep = const Value.absent(),
                 Value<DateTime?> dueAt = const Value.absent(),
+                Value<bool> suspended = const Value.absent(),
                 Value<DateTime?> deletedAt = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => FlashcardsCompanion(
@@ -18502,6 +18701,7 @@ class $$FlashcardsTableTableManager
                 lapses: lapses,
                 learningStep: learningStep,
                 dueAt: dueAt,
+                suspended: suspended,
                 deletedAt: deletedAt,
                 rowid: rowid,
               ),
@@ -18522,6 +18722,7 @@ class $$FlashcardsTableTableManager
                 Value<int> lapses = const Value.absent(),
                 Value<int> learningStep = const Value.absent(),
                 Value<DateTime?> dueAt = const Value.absent(),
+                Value<bool> suspended = const Value.absent(),
                 Value<DateTime?> deletedAt = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => FlashcardsCompanion.insert(
@@ -18540,6 +18741,7 @@ class $$FlashcardsTableTableManager
                 lapses: lapses,
                 learningStep: learningStep,
                 dueAt: dueAt,
+                suspended: suspended,
                 deletedAt: deletedAt,
                 rowid: rowid,
               ),
