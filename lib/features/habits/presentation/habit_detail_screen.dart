@@ -4,6 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../app/localization/app_format.dart';
+import '../../../app/routing/navigation.dart';
+import '../../../app/routing/routes.dart';
 import '../../../core/database/app_database.dart';
 import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/components/charts.dart';
@@ -116,7 +118,7 @@ class HabitDetailScreen extends ConsumerWidget {
               action: SnackBarAction(label: l10n.actionUndo, onPressed: () => repo.unarchive(h.id)),
             ),
           );
-        if (context.mounted) await Navigator.of(context).maybePop();
+        if (context.mounted) leaveScreen(context, Routes.habits);
     }
   }
 }

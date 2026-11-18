@@ -3,6 +3,8 @@ import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../app/localization/app_format.dart';
+import '../../../app/routing/navigation.dart';
+import '../../../app/routing/routes.dart';
 import '../../../core/database/app_database.dart';
 import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/components/states.dart';
@@ -272,7 +274,7 @@ class _EventEditorScreenState extends ConsumerState<EventEditorScreen> {
       return;
     }
     if (!mounted) return;
-    await Navigator.of(context).maybePop();
+    leaveScreen(context, Routes.calendar);
   }
 
   Future<void> _delete() async {
@@ -283,7 +285,7 @@ class _EventEditorScreenState extends ConsumerState<EventEditorScreen> {
     final messenger = ScaffoldMessenger.maybeOf(context);
     await repo.softDelete(id);
     if (!mounted) return;
-    await Navigator.of(context).maybePop();
+    leaveScreen(context, Routes.calendar);
     messenger
       ?..hideCurrentSnackBar()
       ..showSnackBar(

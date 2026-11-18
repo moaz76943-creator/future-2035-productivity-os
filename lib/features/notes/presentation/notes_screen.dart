@@ -420,7 +420,7 @@ class NoteCard extends ConsumerWidget {
               ),
               IconButton(
                 tooltip: l10n.actionMore,
-                visualDensity: VisualDensity.compact,
+                // Full 48dp target: the compact density made this a 40px tap area.
                 icon: Icon(Icons.more_horiz_rounded, color: lux.ink3, size: 20),
                 onPressed: () => showNoteActions(context, ref, note),
               ),

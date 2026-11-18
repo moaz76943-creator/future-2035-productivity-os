@@ -208,6 +208,7 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
             ),
           ],
           floatingActionButton: FloatingActionButton.extended(
+            heroTag: 'deck-card-fab',
             key: const Key('addCardFab'),
             onPressed: () => showCardForm(context, deckId: deck.id),
             icon: const Icon(Icons.add_rounded),

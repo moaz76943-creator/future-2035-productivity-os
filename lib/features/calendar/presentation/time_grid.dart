@@ -407,7 +407,11 @@ class _DayColumnState extends State<DayColumn> {
     return LayoutBuilder(
       builder: (context, c) {
         final width = c.maxWidth;
-        return GestureDetector(
+        // Tapping the empty grid creates an event; TalkBack needs to know that too.
+        return Semantics(
+          container: true,
+          label: '${l10n.eventNew}, ${context.fmt.dayLong(widget.day)}',
+          child: GestureDetector(
           behavior: HitTestBehavior.opaque,
           onTapUp: (d) {
             final minute = ((d.localPosition.dy / kHourHeight * 60) ~/ 30) * 30;
@@ -461,7 +465,7 @@ class _DayColumnState extends State<DayColumn> {
                 ),
             ],
           ),
-        );
+        ));
       },
     );
   }

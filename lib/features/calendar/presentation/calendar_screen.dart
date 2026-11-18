@@ -155,7 +155,16 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
     return ModuleScaffold(
       title: l10n.calendarTitle,
       hue: ModuleHue.calendar,
-      actions: [TextButton(onPressed: _today, child: Text(l10n.calendarToday))],
+      actions: [
+        TextButton(
+          // Disabled while today is already shown, so the tap is never silently ignored.
+          onPressed: CalendarMath.sameDay(_selected, _now) &&
+                  CalendarMath.sameDay(_anchor, CalendarMath.day(_now))
+              ? null
+              : _today,
+          child: Text(l10n.calendarToday),
+        ),
+      ],
       floatingActionButton: FloatingActionButton(
         heroTag: 'calendar-fab',
         tooltip: l10n.eventNew,

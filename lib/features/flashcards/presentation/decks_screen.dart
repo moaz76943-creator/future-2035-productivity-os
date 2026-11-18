@@ -47,6 +47,7 @@ class DecksScreen extends ConsumerWidget {
       title: l10n.flashTitle,
       hue: _hue,
       floatingActionButton: FloatingActionButton.extended(
+        heroTag: 'decks-fab',
         key: const Key('newDeckFab'),
         onPressed: () => _createDeck(context, ref),
         icon: const Icon(Icons.add_rounded),

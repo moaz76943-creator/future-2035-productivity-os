@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../app/localization/app_format.dart';
+import '../../../app/routing/navigation.dart';
 import '../../../app/routing/routes.dart';
 import '../../../core/database/app_database.dart';
 import '../../../core/design_system/app_theme.dart';
@@ -143,7 +144,7 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
       if (!mounted) return true;
       if (pop) {
         showMessage(context, l10n.taskSaved);
-        context.pop();
+        leaveScreen(context, Routes.tasks);
       }
       return true;
     } on TaskValidationException catch (e) {
@@ -177,7 +178,7 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
     await repo.softDelete(id);
     if (!mounted) return;
     showUndoSnack(context, context.l10n.deletedItem, onUndo: () => repo.restore(id));
-    context.pop();
+    leaveScreen(context, Routes.tasks);
   }
 
   // ---- reminder ------------------------------------------------------------
