@@ -82,6 +82,8 @@ class RemoteAssistant {
   final SecretStore secrets;
   final Duration timeout;
 
+  static const maxResponseBytes = 1024 * 1024;
+
   static const maxInputChars = 16000;
 
   Future<bool> hasKey() async {
@@ -131,29 +133,39 @@ class RemoteAssistant {
       ],
     });
 
-    final http.Response res;
+    final int status;
+    final List<int> responseBytes;
     try {
-      res = await client
-          .post(
-            url,
-            headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json',
-              'Authorization': 'Bearer ${key.trim()}',
-            },
-            body: body,
-          )
-          .timeout(timeout);
+      final request = http.Request('POST', url)
+        ..followRedirects = false
+        ..headers.addAll({
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': 'Bearer ${key.trim()}',
+        })
+        ..body = body;
+      final streamed = await client.send(request).timeout(timeout);
+      status = streamed.statusCode;
+      // Bounded read: a misbehaving endpoint cannot make the app buffer an
+      // unlimited response.
+      final out = <int>[];
+      await for (final chunk in streamed.stream.timeout(timeout)) {
+        out.addAll(chunk);
+        if (out.length > maxResponseBytes) throw const AssistantUnavailable('too large');
+      }
+      responseBytes = out;
     } on TimeoutException {
       throw const AssistantUnavailable('timeout');
+    } on AssistantUnavailable {
+      rethrow;
     } on Object {
       throw const AssistantUnavailable('network');
     }
-    if (res.statusCode < 200 || res.statusCode >= 300) {
-      throw AssistantUnavailable('http ${res.statusCode}');
+    if (status < 200 || status >= 300) {
+      throw AssistantUnavailable('http $status');
     }
     try {
-      final json = jsonDecode(utf8.decode(res.bodyBytes)) as Map<String, Object?>;
+      final json = jsonDecode(utf8.decode(responseBytes)) as Map<String, Object?>;
       final choices = json['choices'] as List;
       final message = (choices.first as Map)['message'] as Map;
       final content = (message['content'] as String).trim();
