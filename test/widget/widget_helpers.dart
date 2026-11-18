@@ -95,3 +95,16 @@ Future<void> closeEnv(WidgetTester tester, TestEnv env) async {
   await settle(tester);
   await tester.runAsync(env.dispose);
 }
+
+/// Scrolls the page until [target] is built and visible. Screens use lazy
+/// slivers, so rows below the fold do not exist until scrolled to.
+Future<void> scrollPageTo(WidgetTester tester, Finder target) async {
+  await tester.scrollUntilVisible(
+    target,
+    200,
+    scrollable: find
+        .byWidgetPredicate((w) => w is Scrollable && w.axisDirection == AxisDirection.down)
+        .first,
+  );
+  await tester.pump();
+}

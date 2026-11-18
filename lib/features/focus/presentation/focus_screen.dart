@@ -254,7 +254,6 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
 
   Future<void> _askNote(FinishedSession f) async {
     if (!mounted) return;
-    final l10n = context.l10n;
     // The dialog owns its controller: disposing it here, as soon as showDialog
     // returns, crashed the still-animating exit transition.
     final note = await showDialog<String>(

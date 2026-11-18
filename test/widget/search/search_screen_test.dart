@@ -1,6 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:future_os/features/notes/data/notes_repository.dart';
-import 'package:future_os/features/search/data/search_service.dart';
 import 'package:future_os/features/search/presentation/search_screen.dart';
 import 'package:future_os/features/tasks/data/tasks_repository.dart';
 import 'package:material_ui/material_ui.dart';
@@ -70,7 +69,9 @@ void main() {
     await settle(tester);
     expect(find.text('Recent searches'), findsOneWidget);
     expect(find.widgetWithText(ListTile, 'budget'), findsOneWidget);
-    expect(await SearchService(env.db, env.clock).watchRecent().first, ['budget']);
+    // One-shot read on the real event loop: a drift watch() stream never delivers in a widget test.
+    final recent = await tester.runAsync(() => env.db.select(env.db.recentSearches).get());
+    expect(recent!.map((r) => r.query).toList(), ['budget']);
 
     await tester.tap(find.text('Clear recent searches'));
     await settle(tester);
