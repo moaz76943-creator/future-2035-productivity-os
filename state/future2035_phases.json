@@ -1,62 +1,80 @@
 {
   "project": "moaz76943-creator/future-2035-productivity-os",
-  "branch": "main",
-  "current_phase": "PHASE_0_DISCOVERY",
+  "branch": "hermes/future-2035-upgrade",
+  "current_phase": "PHASE_FC_1_CORE_FSRS",
   "phases": [
     {
       "id": "PHASE_0_DISCOVERY",
       "title": "Read-only repo, toolchain, DB, UI & test audit",
-      "status": "IN_PROGRESS"
+      "status": "COMPLETED"
     },
     {
       "id": "PHASE_1_BUILD_FOUNDATION",
       "title": "Toolchain matrix, Gradle wrapper, pubspec.lock & CI debug APK",
-      "status": "PENDING"
+      "status": "COMPLETED"
     },
     {
       "id": "PHASE_2_DESIGN_FOUNDATION",
       "title": "White Luxury tokens, typography, responsive shell & navigation",
-      "status": "PENDING"
+      "status": "COMPLETED"
     },
     {
       "id": "PHASE_3_CORE_DATA",
       "title": "Drift/SQLite schema, migrations, backup & recovery",
-      "status": "PENDING"
+      "status": "COMPLETED"
     },
     {
       "id": "PHASE_4_CORE_FEATURES",
       "title": "Dashboard, Tasks, Projects, Focus engine & Calendar",
-      "status": "PENDING"
+      "status": "COMPLETED"
     },
     {
       "id": "PHASE_5_KNOWLEDGE_LEARNING",
       "title": "Notes, Flashcards, Spaced Repetition, Native TTS & Search",
-      "status": "PENDING"
+      "status": "COMPLETED"
     },
     {
       "id": "PHASE_6_PERSONAL_DEV",
       "title": "Goals, Habits, Real Analytics & Notifications",
-      "status": "PENDING"
+      "status": "COMPLETED"
     },
     {
       "id": "PHASE_7_ADVANCED",
       "title": "Optional provider-independent AI & personalization",
-      "status": "PENDING"
+      "status": "COMPLETED"
     },
     {
       "id": "PHASE_8_QUALITY_GATE",
       "title": "Visual & Functional Regression Gate (10 widths, RTL/LTR, 0 dead buttons)",
-      "status": "PENDING"
+      "status": "COMPLETED"
     },
     {
       "id": "PHASE_9_RELEASE",
       "title": "Signed Release APK & AAB + Store Readiness",
-      "status": "PENDING"
+      "status": "COMPLETED"
     },
     {
-      "id": "flashcards_pro_system",
-      "title": "Flashcards Pro System (FSRS-4.5, Custom Fields, TTS Lab, Arabic Search, Import/Export)",
-      "status": "pending",
+      "id": "PHASE_FC_1_CORE_FSRS",
+      "title": "Flashcards Pro Part 1: FSRS-4.5 Engine, Non-Destructive Custom Fields/Templates, Multi-Face & Multi-Lang Model + Unit Tests",
+      "status": "IN_PROGRESS",
+      "directive": "docs/FLASHCARDS_MASTER_DIRECTIVE.md"
+    },
+    {
+      "id": "PHASE_FC_2_TTS_SEARCH",
+      "title": "Flashcards Pro Part 2: Native TTS Engine (Per-Field/Lang Voices, 0.5-2.0x, 1-9x, Tester) & Arabic Tashkeel-Stripped Search + Duplicate Detection + Tests",
+      "status": "PENDING",
+      "directive": "docs/FLASHCARDS_MASTER_DIRECTIVE.md"
+    },
+    {
+      "id": "PHASE_FC_3_IMPORT_STATS",
+      "title": "Flashcards Pro Part 3: CSV/TSV/JSON Import Preview & Column Mapping, CSV/JSON Export, Smart Queue & Per-Deck/Lang Analytics + Tests",
+      "status": "PENDING",
+      "directive": "docs/FLASHCARDS_MASTER_DIRECTIVE.md"
+    },
+    {
+      "id": "PHASE_FC_4_SMART_UI_GATES",
+      "title": "Flashcards Pro Part 4: Progressive-Disclosure Smart UI, Cloze/Dictation/Audio-Only Modes, CONTROL_INVENTORY & Full Analyze/Test Gate",
+      "status": "PENDING",
       "directive": "docs/FLASHCARDS_MASTER_DIRECTIVE.md"
     }
   ]

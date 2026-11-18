@@ -75,7 +75,7 @@ jobs:
             fi
           }
 
-          PROMPT="Read docs/MASTER_DIRECTIVE_V1.md and state/future2035_phases.json. Work ONLY on branch hermes/future-2035-upgrade (never push directly to main). CRITICAL: (1) If current_phase is PHASE_0_DISCOVERY, finish and save state/PHASE_0_AUDIT.md first, mark PHASE_0_DISCOVERY COMPLETED, and advance to PHASE_1_BUILD_FOUNDATION. (2) Complete ONE phase at a time cleanly—preserve working code, fix root causes, ensure zero dead buttons, White Luxury UI, responsive tests (320,360,412,600,840,1024), RTL + Western digits (0-9). (3) Verify flutter analyze, flutter test, and flutter build apk --debug pass, update state/future2035_phases.json and REPORT.md, and commit."
+          PROMPT="Read docs/FLASHCARDS_MASTER_DIRECTIVE.md, docs/MASTER_DIRECTIVE_V1.md, and state/future2035_phases.json. Work ONLY on branch hermes/future-2035-upgrade. CRITICAL: (1) Complete ONLY the single current IN_PROGRESS phase in state/future2035_phases.json without rewriting existing working code. (2) Enforce Western digits (0-9), zero Hebrew (he/iw), smart progressive-disclosure buttons, and update docs/qa/CONTROL_INVENTORY.md + test/widget/control_inventory_test.dart for any new controls. (3) Before finishing, you MUST pass: flutter analyze --no-fatal-infos, flutter test, and python3 tool/check_l10n.py. (4) Mark the finished phase COMPLETED in state/future2035_phases.json, set the next phase IN_PROGRESS, and commit."
           DONE=0
 
           for MODEL in "gemini-4-hydrogen" "gemini-3.1-pro-preview" "gemini-3.8-flash" "gemini-3.6-flash"; do
@@ -86,7 +86,7 @@ jobs:
               [ $((NOW - JOB_START)) -ge $MAX_WALL ] && break 2
               IDX=$((IDX + 1))
               echo "Trying Gemini key #$IDX with $MODEL..."
-              if GEMINI_API_KEY="$K" GOOGLE_API_KEY="$K" timeout 120m hermes chat --cli --yolo --oneshot --provider gemini -m "$MODEL" -q "$PROMPT"; then
+              if GEMINI_API_KEY="$K" GOOGLE_API_KEY="$K" timeout 25m hermes chat --cli --yolo --oneshot --provider gemini -m "$MODEL" -q "$PROMPT"; then
                 DONE=1
                 save_progress
                 break 2
@@ -98,13 +98,13 @@ jobs:
 
           NOW=$(date +%s)
           if [ "$DONE" -eq 0 ] && [ $((NOW - JOB_START)) -lt $MAX_WALL ] && [ -n "${OPENROUTER_API_KEY:-}" ]; then
-            timeout 120m hermes chat --cli --yolo --oneshot -m "openrouter/free" -q "$PROMPT" && DONE=1 || true
+            timeout 25m hermes chat --cli --yolo --oneshot -m "openrouter/free" -q "$PROMPT" && DONE=1 || true
             save_progress
           fi
 
           NOW=$(date +%s)
           if [ "$DONE" -eq 0 ] && [ $((NOW - JOB_START)) -lt $MAX_WALL ] && [ -n "${NVIDIA_API_KEY:-}" ]; then
-            timeout 120m hermes chat --cli --yolo --oneshot --provider nvidia -m "nvidia/nemotron-3-ultra-550b-a55b" -q "$PROMPT" || true
+            timeout 25m hermes chat --cli --yolo --oneshot --provider nvidia -m "nvidia/nemotron-3-ultra-550b-a55b" -q "$PROMPT" || true
             save_progress
           fi
           rm -f /tmp/keys.list
@@ -128,5 +128,5 @@ jobs:
           ALL_DONE=$(python3 -c "import json; d=json.load(open('state/future2035_phases.json')); print('1' if all(p['status']=='COMPLETED' for p in d['phases']) else '0')" 2>/dev/null || echo "0")
           if [ "$ALL_DONE" = "0" ] && [ "$CURRENT_HOP" -lt "$MAX_HOPS" ]; then
             NEXT_HOP=$((CURRENT_HOP + 1))
-            gh workflow run hermes-relay.yml -f hop="$NEXT_HOP" -f max_hops="$MAX_HOPS" --ref main || true
+            gh workflow run hermes-relay.yml -f hop="$NEXT_HOP" -f max_hops="$MAX_HOPS" --ref hermes/future-2035-upgrade || true
           fi
