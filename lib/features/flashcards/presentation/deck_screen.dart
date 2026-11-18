@@ -145,7 +145,15 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
       await Clipboard.setData(ClipboardData(text: json));
       if (mounted) showMessage(context, l10n.exportCopied);
     } else if (action == 'share') {
-      await SharePlus.instance.share(ShareParams(text: json, subject: deck.name, title: deck.name));
+      try {
+        await SharePlus.instance.share(
+          ShareParams(text: json, subject: deck.name, title: deck.name),
+        );
+      } on Object {
+        // No share target / plugin failure: never lose the export. Copy it instead.
+        await Clipboard.setData(ClipboardData(text: json));
+        if (mounted) showMessage(context, l10n.exportCopied);
+      }
     }
   }
 

@@ -1,4 +1,4 @@
-name: FUTURE 2035 Hydrogen & 3.8-Flash 9-Key Cloud Relay
+name: FUTURE 2035 Zero-Loss 9-Key Cloud Relay
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ on:
         default: "1"
       max_hops:
         description: "Maximum relay hops"
-        default: "30"
+        default: "40"
 
 permissions:
   contents: write
@@ -27,6 +27,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Free Runner Disk Space for Android NDK/CMake
+        run: sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/share/boost || true
+
       - name: Set up Java 17 & Flutter
         uses: actions/setup-java@v4
         with:
@@ -38,48 +41,69 @@ jobs:
           channel: 'stable'
           cache: true
 
-      - name: Free Runner Disk Space for Android NDK/CMake
-        run: sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/share/boost || true
-
       - name: Install Hermes Agent
         run: |
           curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash -s -- --non-interactive --skip-browser --skip-computer-use
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
-      - name: Run Ranked Hydrogen & 3.8-Flash 9-Key Cycle
+      - name: Run Zero-Loss Ranked Cycle (Auto-Push Every Step, Safe 3.5h Cutoff)
         if: always()
         env:
           GOOGLE_KEYS_LIST: ${{ secrets.GOOGLE_KEYS_LIST }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          git config user.name "future2035-relay-bot"
+          git config user.email "actions@github.com"
           printf '%s\n' "$GOOGLE_KEYS_LIST" > /tmp/keys.list
-          PROMPT="Read docs/MASTER_DIRECTIVE_V1.md and state/future2035_phases.json. STRICT RULES: (1) If current_phase is PHASE_0_DISCOVERY, perform a full read-only audit of the existing repository (branches, Flutter/Dart/AGP/Gradle/Kotlin versions, Drift/Riverpod/GoRouter, UI, tests, and CI) and write state/PHASE_0_AUDIT.md WITHOUT rewriting existing working code. (2) Advance only ONE phase per hop. Never skip or fake features. Every visible button must have a real handler and widget test. (3) Enforce White Luxury UI, responsive multi-width tests (320, 360, 412, 600, 840, 1024), Arabic RTL + Western digits (0-9). (4) Before marking any phase COMPLETED, flutter analyze, flutter test, and flutter build apk --debug MUST actually pass. Update state/future2035_phases.json and REPORT.md with real evidence."
+          JOB_START=$(date +%s)
+          MAX_WALL=12600
+
+          save_progress() {
+            git add -A
+            if ! git diff --cached --quiet; then
+              git commit -m "chore(relay-hop-${{ inputs.hop || '1' }}): checkpoint verified FUTURE 2035 progress" || true
+              git pull origin main --rebase || true
+              git push origin main || true
+            fi
+          }
+
+          PROMPT="Read docs/MASTER_DIRECTIVE_V1.md and state/future2035_phases.json. Work directly on main. CRITICAL: (1) If current_phase is PHASE_0_DISCOVERY, finish and save state/PHASE_0_AUDIT.md first, mark PHASE_0_DISCOVERY COMPLETED, and advance to PHASE_1_BUILD_FOUNDATION. (2) Complete ONE phase at a time cleanly—preserve working code, fix root causes, ensure zero dead buttons, White Luxury UI, responsive tests (320,360,412,600,840,1024), RTL + Western digits (0-9). (3) Verify flutter analyze, flutter test, and flutter build apk --debug pass, update state/future2035_phases.json and REPORT.md, and commit."
           DONE=0
+
           for MODEL in "gemini-4-hydrogen" "gemini-3.1-pro-preview" "gemini-3.8-flash" "gemini-3.6-flash"; do
             IDX=0
             while IFS= read -r K; do
               [ -n "$K" ] || continue
+              NOW=$(date +%s)
+              [ $((NOW - JOB_START)) -ge $MAX_WALL ] && break 2
               IDX=$((IDX + 1))
-              echo "Trying Gemini key #$IDX with model $MODEL..."
-              if GEMINI_API_KEY="$K" GOOGLE_API_KEY="$K" timeout 240m hermes chat --cli --yolo --oneshot --provider gemini -m "$MODEL" -q "$PROMPT"; then
+              echo "Trying Gemini key #$IDX with $MODEL..."
+              if GEMINI_API_KEY="$K" GOOGLE_API_KEY="$K" timeout 120m hermes chat --cli --yolo --oneshot --provider gemini -m "$MODEL" -q "$PROMPT"; then
                 DONE=1
+                save_progress
                 break 2
               fi
+              save_progress
               sleep 2
             done < /tmp/keys.list
           done
 
-          if [ "$DONE" -eq 0 ] && [ -n "${OPENROUTER_API_KEY:-}" ]; then
-            timeout 240m hermes chat --cli --yolo --oneshot -m "openrouter/free" -q "$PROMPT" && DONE=1 || true
+          NOW=$(date +%s)
+          if [ "$DONE" -eq 0 ] && [ $((NOW - JOB_START)) -lt $MAX_WALL ] && [ -n "${OPENROUTER_API_KEY:-}" ]; then
+            timeout 120m hermes chat --cli --yolo --oneshot -m "openrouter/free" -q "$PROMPT" && DONE=1 || true
+            save_progress
           fi
 
-          if [ "$DONE" -eq 0 ] && [ -n "${NVIDIA_API_KEY:-}" ]; then
-            timeout 240m hermes chat --cli --yolo --oneshot --provider nvidia -m "nvidia/nemotron-3-ultra-550b-a55b" -q "$PROMPT" || true
+          NOW=$(date +%s)
+          if [ "$DONE" -eq 0 ] && [ $((NOW - JOB_START)) -lt $MAX_WALL ] && [ -n "${NVIDIA_API_KEY:-}" ]; then
+            timeout 120m hermes chat --cli --yolo --oneshot --provider nvidia -m "nvidia/nemotron-3-ultra-550b-a55b" -q "$PROMPT" || true
+            save_progress
           fi
           rm -f /tmp/keys.list
 
-      - name: Commit & Push + Trigger Next Hop
+      - name: Final Push & Trigger Next Relay Hop
         if: always()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -88,11 +112,12 @@ jobs:
           git config user.email "actions@github.com"
           git add -A
           if ! git diff --cached --quiet; then
-            git commit -m "chore(relay-hop-${{ inputs.hop || '1' }}): advance FUTURE 2035 engineering phase"
-            git push origin main
+            git commit -m "chore(relay-hop-${{ inputs.hop || '1' }}): final hop checkpoint" || true
+            git pull origin main --rebase || true
+            git push origin main || true
           fi
           CURRENT_HOP="${{ inputs.hop || '1' }}"
-          MAX_HOPS="${{ inputs.max_hops || '30' }}"
+          MAX_HOPS="${{ inputs.max_hops || '40' }}"
           ALL_DONE=$(python3 -c "import json; d=json.load(open('state/future2035_phases.json')); print('1' if all(p['status']=='COMPLETED' for p in d['phases']) else '0')" 2>/dev/null || echo "0")
           if [ "$ALL_DONE" = "0" ] && [ "$CURRENT_HOP" -lt "$MAX_HOPS" ]; then
             NEXT_HOP=$((CURRENT_HOP + 1))
