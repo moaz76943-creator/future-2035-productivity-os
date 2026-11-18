@@ -3389,7 +3389,7 @@ class AppLocalizationsAr extends AppLocalizations {
       'لا يوجد صوت مثبّت لهذه اللغة. أضف صوتًا من إعدادات تحويل النص إلى كلام في أندرويد.';
 
   @override
-  String get calendarAgenda => 'جدول الأعمال';
+  String get calendarAgenda => 'جدول';
 
   @override
   String projectIconName(String name) {

@@ -885,7 +885,7 @@
   "flashcardsReadAloud": "قراءة بصوت عالٍ",
   "flashcardsTtsUnavailable": "تحويل النص إلى كلام غير متاح على هذا الجهاز.",
   "flashcardsTtsLanguageUnavailable": "لا يوجد صوت مثبّت لهذه اللغة. أضف صوتًا من إعدادات تحويل النص إلى كلام في أندرويد.",
-  "calendarAgenda": "جدول الأعمال",
+  "calendarAgenda": "جدول",
   "projectIconName": "{name, select, spark{شرارة} rocket{صاروخ} book{كتاب} work{عمل} home{منزل} heart{قلب} code{برمجة} palette{ألوان} fitness{لياقة} school{دراسة} travel{سفر} money{ادخار} other{أيقونة}}",
   "cardMoreFields": "حقول إضافية",
   "cardFieldExample": "مثال",

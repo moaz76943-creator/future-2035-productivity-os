@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'dart:async';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -453,8 +454,12 @@ class _TimerHero extends ConsumerWidget {
     final semantics = countsDown
         ? l10n.focusTimerSemantics(phaseLabel, clock)
         : l10n.focusTimerSemanticsElapsed(phaseLabel, clock);
-    final width = MediaQuery.sizeOf(context).width;
-    final size = (width - Space.page * 2 - Space.xl * 2).clamp(200.0, 300.0);
+    // Sized by width and height so Start stays above the fold on short phones.
+    final screen = MediaQuery.sizeOf(context);
+    final floor = math.min(300.0, MediaQuery.textScalerOf(context).scale(160));
+    final double size = math
+        .min(screen.width - Space.page * 2 - Space.xl * 2, screen.height * 0.3)
+        .clamp(floor, 300.0);
 
     return LuxCard(
       padding: const EdgeInsets.all(Space.xl),
