@@ -9,6 +9,8 @@ on:
 
 permissions:
   contents: read
+  # gitleaks-action lists the PR's commits on pull_request events.
+  pull-requests: read
 
 jobs:
   regression_gate:
