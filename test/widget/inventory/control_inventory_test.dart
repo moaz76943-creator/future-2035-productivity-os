@@ -128,6 +128,31 @@ bool _inHorizontalScroll(SemanticsNode node) {
   return false;
 }
 
+/// Open dialogs, bottom sheets and menus: their modal barrier is exposed to accessibility
+/// as "Dismiss" (or "Scrim" for sheets). Page transitions have no such node.
+int _barriers(WidgetTester tester) {
+  var n = 0;
+  void visit(SemanticsNode node) {
+    final l = node.getSemanticsData().label;
+    if (!node.isMergedIntoParent && (l == 'Dismiss' || l == 'Scrim')) n++;
+    node.visitChildren((c) {
+      visit(c);
+      return true;
+    });
+  }
+
+  visit(_root(tester));
+  return n;
+}
+
+Future<void> _quiesce(WidgetTester tester) async {
+  await tester.pump(const Duration(milliseconds: 400));
+  await settle(tester);
+  await tester.pump(const Duration(seconds: 1));
+  await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 150)));
+  await settle(tester);
+}
+
 SemanticsOwner _owner(WidgetTester tester) =>
     tester.binding.renderViews.first.owner!.semanticsOwner!;
 
@@ -353,6 +378,7 @@ void main() {
             continue;
           }
           final sig = _signature(tester, router);
+          final barriersBefore = _barriers(tester);
           await tester.tapAt(c.rect.center);
           await tester.pump(const Duration(milliseconds: 400));
           await settle(tester);
@@ -361,6 +387,7 @@ void main() {
           await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 150)));
           await settle(tester);
           final error = tester.takeException();
+          final openedOverlay = _barriers(tester) > barriersBefore;
           final changed = _signature(tester, router) != sig;
           var result = error != null ? 'ERROR: $error' : (changed ? 'OK' : 'NO_EFFECT');
           if (result == 'NO_EFFECT') {
@@ -409,6 +436,65 @@ void main() {
             problems.add('$path: "${c.label}" does nothing');
           }
           rows.add(row);
+          if (result == 'OK' && openedOverlay) {
+            // Second level: every control inside the dialog / sheet / menu this control opens,
+            // each tapped from a freshly opened overlay.
+            List<_Control> innerOf(List<_Control> now) => [
+              for (final x in now)
+                if (!before.any(
+                  (b) => b.label == x.label && (b.rect.center - x.rect.center).distance < 4,
+                ))
+                  x,
+            ];
+            final first = innerOf(_controls(tester, view));
+            final innerSeen = <String>{};
+            for (var j = 0; j < first.length; j++) {
+              await _open(tester, router, path, offset);
+              await tester.tapAt(c.rect.center);
+              await _quiesce(tester);
+              final inner = innerOf(_controls(tester, view));
+              if (j >= inner.length) break;
+              final ic = inner[j];
+              if (!innerSeen.add('${ic.role}|${ic.label}')) continue;
+              final irow = <String, Object?>{
+                'screen': '${row['screen']} > ${c.label}',
+                'label': ic.label,
+                'role': ic.role,
+                'size': '${ic.rect.width.round()}x${ic.rect.height.round()}',
+                'enabled': ic.enabled,
+              };
+              if (ic.label.isEmpty) problems.add('$path > ${c.label}: unlabeled ${ic.role}');
+              if (!ic.enabled || ic.role == 'textField') {
+                irow['result'] = ic.enabled ? 'TEXT_INPUT' : 'DISABLED';
+                rows.add(irow);
+                continue;
+              }
+              final isig = _signature(tester, router);
+              await tester.tapAt(ic.rect.center);
+              await _quiesce(tester);
+              final ierr = tester.takeException();
+              var ires = ierr != null
+                  ? 'ERROR: $ierr'
+                  : (_signature(tester, router) != isig ? 'OK' : 'NO_EFFECT');
+              if (ires == 'NO_EFFECT' && ic.selected) ires = 'OK_ALREADY_SELECTED';
+              if (ires == 'NO_EFFECT') {
+                final again = _controls(
+                  tester,
+                  view,
+                ).where((x) => (x.rect.center - ic.rect.center).distance < 4).firstOrNull;
+                if (again != null) {
+                  _owner(tester).performAction(again.id, SemanticsAction.tap);
+                  await _quiesce(tester);
+                  if (_signature(tester, router) != isig) ires = 'OK_PARTLY_OFFSCREEN';
+                }
+              }
+              irow['result'] = ires;
+              if (ierr != null) problems.add('$path > ${c.label} > "${ic.label}" threw $ierr');
+              if (ires == 'NO_EFFECT')
+                problems.add('$path > ${c.label} > "${ic.label}" does nothing');
+              rows.add(irow);
+            }
+          }
           await _open(tester, router, path, offset);
         }
         if (pos == null || offset >= pos.maxScrollExtent) break;
@@ -420,5 +506,5 @@ void main() {
     semantics.dispose();
     await closeEnv(tester, env);
     expect(problems, isEmpty, reason: problems.join('\n'));
-  }, timeout: const Timeout(Duration(minutes: 20)));
+  }, timeout: const Timeout(Duration(minutes: 45)));
 }
