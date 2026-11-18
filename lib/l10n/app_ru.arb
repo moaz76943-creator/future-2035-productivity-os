@@ -1008,5 +1008,10 @@
   "flashcardsStatRecallCaption": "Оценка FSRS по повторённым",
   "flashcardsStatActivity": "Повторений в день · всего {count}",
   "flashcardsStatHistory": "Последние ответы",
-  "flashcardsStatNoHistory": "Повторений пока нет. Занимайтесь, и здесь появится прогресс."
+  "flashcardsStatNoHistory": "Повторений пока нет. Занимайтесь, и здесь появится прогресс.",
+  "flashcardsSpeakField": "Прочитать: {field}",
+  "speechVoice": "Голос",
+  "speechVoiceDefault": "По умолчанию",
+  "speechVoiceOnline": "нужен интернет",
+  "speechTest": "Проверить голос"
 }

@@ -3831,4 +3831,21 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get flashcardsStatNoHistory => 'لا مراجعات بعد. ادرس المجموعة لترى تقدّمك هنا.';
+
+  @override
+  String flashcardsSpeakField(String field) {
+    return 'قراءة $field بصوت';
+  }
+
+  @override
+  String get speechVoice => 'الصوت';
+
+  @override
+  String get speechVoiceDefault => 'الافتراضي في الجهاز';
+
+  @override
+  String get speechVoiceOnline => 'يحتاج إنترنت';
+
+  @override
+  String get speechTest => 'تجربة الصوت';
 }

@@ -4912,5 +4912,30 @@
   "flashcardsStatNoHistory": "No reviews yet. Study the deck to see your progress here.",
   "@flashcardsStatNoHistory": {
     "description": "flashcardsStatNoHistory"
+  },
+  "flashcardsSpeakField": "Read {field} aloud",
+  "@flashcardsSpeakField": {
+    "description": "Speak one field",
+    "placeholders": {
+      "field": {
+        "type": "String"
+      }
+    }
+  },
+  "speechVoice": "Voice",
+  "@speechVoice": {
+    "description": "speechVoice"
+  },
+  "speechVoiceDefault": "Device default",
+  "@speechVoiceDefault": {
+    "description": "speechVoiceDefault"
+  },
+  "speechVoiceOnline": "needs internet",
+  "@speechVoiceOnline": {
+    "description": "speechVoiceOnline"
+  },
+  "speechTest": "Test voice",
+  "@speechTest": {
+    "description": "speechTest"
   }
 }

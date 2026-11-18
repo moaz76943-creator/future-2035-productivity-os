@@ -1008,5 +1008,10 @@
   "flashcardsStatRecallCaption": "Estimación FSRS, tarjetas repasadas",
   "flashcardsStatActivity": "Repasos por día · {count} en total",
   "flashcardsStatHistory": "Últimas respuestas",
-  "flashcardsStatNoHistory": "Aún no hay repasos. Estudia el mazo para ver tu progreso."
+  "flashcardsStatNoHistory": "Aún no hay repasos. Estudia el mazo para ver tu progreso.",
+  "flashcardsSpeakField": "Leer {field} en voz alta",
+  "speechVoice": "Voz",
+  "speechVoiceDefault": "Predeterminada del dispositivo",
+  "speechVoiceOnline": "requiere internet",
+  "speechTest": "Probar voz"
 }

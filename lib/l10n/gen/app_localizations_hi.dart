@@ -3673,4 +3673,21 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get flashcardsStatNoHistory => 'अभी कोई समीक्षा नहीं। प्रगति देखने के लिए डेक पढ़ें।';
+
+  @override
+  String flashcardsSpeakField(String field) {
+    return '$field पढ़कर सुनाएँ';
+  }
+
+  @override
+  String get speechVoice => 'आवाज़';
+
+  @override
+  String get speechVoiceDefault => 'डिवाइस डिफ़ॉल्ट';
+
+  @override
+  String get speechVoiceOnline => 'इंटरनेट चाहिए';
+
+  @override
+  String get speechTest => 'आवाज़ जाँचें';
 }

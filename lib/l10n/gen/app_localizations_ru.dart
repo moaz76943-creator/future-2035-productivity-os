@@ -3788,4 +3788,21 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get flashcardsStatNoHistory =>
       'Повторений пока нет. Занимайтесь, и здесь появится прогресс.';
+
+  @override
+  String flashcardsSpeakField(String field) {
+    return 'Прочитать: $field';
+  }
+
+  @override
+  String get speechVoice => 'Голос';
+
+  @override
+  String get speechVoiceDefault => 'По умолчанию';
+
+  @override
+  String get speechVoiceOnline => 'нужен интернет';
+
+  @override
+  String get speechTest => 'Проверить голос';
 }

@@ -6161,6 +6161,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No reviews yet. Study the deck to see your progress here.'**
   String get flashcardsStatNoHistory;
+
+  /// Speak one field
+  ///
+  /// In en, this message translates to:
+  /// **'Read {field} aloud'**
+  String flashcardsSpeakField(String field);
+
+  /// speechVoice
+  ///
+  /// In en, this message translates to:
+  /// **'Voice'**
+  String get speechVoice;
+
+  /// speechVoiceDefault
+  ///
+  /// In en, this message translates to:
+  /// **'Device default'**
+  String get speechVoiceDefault;
+
+  /// speechVoiceOnline
+  ///
+  /// In en, this message translates to:
+  /// **'needs internet'**
+  String get speechVoiceOnline;
+
+  /// speechTest
+  ///
+  /// In en, this message translates to:
+  /// **'Test voice'**
+  String get speechTest;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

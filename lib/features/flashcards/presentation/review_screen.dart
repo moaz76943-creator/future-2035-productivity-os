@@ -179,21 +179,33 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
   /// optional: when the device has no engine or voice the user is told so
   /// and the session goes on.
   Future<void> _speak(CardRow card, {required bool question}) async {
+    final frontSide = question != _reversed(card);
+    await _say(frontSide ? card.front : card.back, _langTag(front: frontSide));
+  }
+
+  /// Speech language of a side: the deck setting, else the app language.
+  String _langTag({required bool front}) {
+    final deck = ref.read(deckProvider(widget.deckId)).value;
+    final lang = front ? deck?.frontLang : deck?.backLang;
+    return (lang == null || lang.isEmpty) ? Localizations.localeOf(context).toLanguageTag() : lang;
+  }
+
+  /// Optional fields are spoken on their own: the example in the front
+  /// language (it usually illustrates the word), the rest in the back language.
+  Future<void> _speakField(CardField f, String text) =>
+      _say(text, _langTag(front: f == CardField.example || f == CardField.pronunciation));
+
+  /// Speaks [text] in [tag] with the user's speed, repetitions and voice.
+  Future<void> _say(String text, String tag) async {
     final messenger = ScaffoldMessenger.of(context);
     final l10n = context.l10n;
     final settings = ref.read(settingsProvider);
-    final deck = ref.read(deckProvider(widget.deckId)).value;
-    final frontSide = question != _reversed(card);
-    final lang = frontSide ? deck?.frontLang : deck?.backLang;
-    final tag = (lang == null || lang.isEmpty)
-        ? Localizations.localeOf(context).toLanguageTag()
-        : lang;
-    final text = frontSide ? card.front : card.back;
     final result = await _tts.speak(
       text,
       languageTag: tag,
       rate: settings.flashSpeechRatePercent / 100,
       repeat: settings.flashSpeechRepeat,
+      voice: settings.flashVoices[tag.split(RegExp('[-_]')).first.toLowerCase()],
     );
     if (!mounted) return;
     final message = switch (result) {
@@ -419,6 +431,7 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
               hideFront: !_questionShown && !_flipped,
               onRevealFront: () => setState(() => _questionShown = true),
               verdict: _match,
+              onSpeakField: _speakField,
               // Answer modes flip only by answering.
               onFlip: _mode == StudyMode.typed || _mode == StudyMode.choice
                   ? null
@@ -698,7 +711,11 @@ class _FlipCard extends StatelessWidget {
     this.hideFront = false,
     this.onRevealFront,
     this.verdict,
+    this.onSpeakField,
   });
+
+  /// Speaks one optional field (example, explanation…) on its own.
+  final void Function(CardField field, String text)? onSpeakField;
 
   /// Question text (the back of the card in reverse mode).
   final String front;
@@ -775,7 +792,25 @@ class _FlipCard extends StatelessWidget {
                       style: context.text.labelMedium?.copyWith(color: lux.ink3),
                     ),
                     const SizedBox(height: Space.xxs),
-                    Text(value, textAlign: TextAlign.center, style: context.text.bodyLarge),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Flexible(
+                          child: Text(
+                            value,
+                            textAlign: TextAlign.center,
+                            style: context.text.bodyLarge,
+                          ),
+                        ),
+                        if (onSpeakField != null)
+                          IconButton(
+                            key: Key('speakField_${f.name}'),
+                            tooltip: l10n.flashcardsSpeakField(cardFieldLabel(l10n, f)),
+                            onPressed: () => onSpeakField!(f, value),
+                            icon: const Icon(Icons.volume_up_outlined, size: 20),
+                          ),
+                      ],
+                    ),
                   ],
               ] else if (hideFront) ...[
                 Icon(Icons.hearing_rounded, size: 48, color: _hue.a),

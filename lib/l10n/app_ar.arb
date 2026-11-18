@@ -1008,5 +1008,10 @@
   "flashcardsStatRecallCaption": "تقدير FSRS للبطاقات المراجَعة",
   "flashcardsStatActivity": "المراجعات يوميًا · المجموع {count}",
   "flashcardsStatHistory": "آخر الإجابات",
-  "flashcardsStatNoHistory": "لا مراجعات بعد. ادرس المجموعة لترى تقدّمك هنا."
+  "flashcardsStatNoHistory": "لا مراجعات بعد. ادرس المجموعة لترى تقدّمك هنا.",
+  "flashcardsSpeakField": "قراءة {field} بصوت",
+  "speechVoice": "الصوت",
+  "speechVoiceDefault": "الافتراضي في الجهاز",
+  "speechVoiceOnline": "يحتاج إنترنت",
+  "speechTest": "تجربة الصوت"
 }

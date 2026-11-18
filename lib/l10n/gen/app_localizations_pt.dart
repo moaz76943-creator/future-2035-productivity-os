@@ -3683,4 +3683,21 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get flashcardsStatNoHistory =>
       'Ainda sem revisões. Estude o baralho para ver o progresso.';
+
+  @override
+  String flashcardsSpeakField(String field) {
+    return 'Ler $field em voz alta';
+  }
+
+  @override
+  String get speechVoice => 'Voz';
+
+  @override
+  String get speechVoiceDefault => 'Padrão do aparelho';
+
+  @override
+  String get speechVoiceOnline => 'requer internet';
+
+  @override
+  String get speechTest => 'Testar voz';
 }

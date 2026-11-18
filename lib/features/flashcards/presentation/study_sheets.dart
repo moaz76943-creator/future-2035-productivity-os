@@ -10,6 +10,7 @@ import '../../../core/database/app_database.dart';
 import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/tokens.dart';
 import '../../focus/presentation/session_plan.dart' show PlanStepper;
+import '../../../core/speech/tts_service.dart';
 import '../../settings/application/settings_providers.dart';
 import '../application/flashcards_providers.dart';
 import '../domain/study.dart';
@@ -238,6 +239,88 @@ class _SpeechSheet extends ConsumerStatefulWidget {
 class _SpeechSheetState extends ConsumerState<_SpeechSheet> {
   late String _front = widget.deck.frontLang;
   late String _back = widget.deck.backLang;
+  late final Future<List<TtsVoice>> _voices = ref.read(ttsServiceProvider).voices();
+  String? _testError;
+
+  String _effective(String tag) =>
+      tag.isEmpty ? Localizations.localeOf(context).toLanguageTag() : tag;
+
+  String _lang(String tag) => _effective(tag).split(RegExp('[-_]')).first.toLowerCase();
+
+  Future<void> _test(String tag) async {
+    final l10n = context.l10n;
+    final s = ref.read(settingsProvider);
+    final eff = _effective(tag);
+    final sample =
+        speechLanguageNames[eff] ??
+        speechLanguageNames.entries
+            .firstWhere((e) => e.key.startsWith(_lang(tag)), orElse: () => MapEntry(eff, eff))
+            .value;
+    final r = await ref
+        .read(ttsServiceProvider)
+        .speak(
+          sample,
+          languageTag: eff,
+          rate: s.flashSpeechRatePercent / 100,
+          voice: s.flashVoices[_lang(tag)],
+        );
+    if (!mounted) return;
+    setState(
+      () => _testError = switch (r) {
+        TtsResult.ok || TtsResult.empty => null,
+        TtsResult.languageUnavailable => l10n.flashcardsTtsLanguageUnavailable,
+        TtsResult.unavailable => l10n.flashcardsTtsUnavailable,
+      },
+    );
+  }
+
+  /// Voice choice for the language of [tag], with a test button.
+  Widget _voiceRow(String tag, List<TtsVoice> all, Key key) {
+    final l10n = context.l10n;
+    final lang = _lang(tag);
+    final options = all.where((v) => v.language == lang && !v.notInstalled).toList();
+    final current = ref.watch(settingsProvider.select((s) => s.flashVoices[lang]));
+    final value = options.any((v) => v.name == current) ? current : null;
+    return Row(
+      children: [
+        Expanded(
+          child: DropdownButtonFormField<String?>(
+            key: key,
+            initialValue: value,
+            isExpanded: true,
+            decoration: InputDecoration(labelText: l10n.speechVoice),
+            items: [
+              DropdownMenuItem<String?>(child: Text(l10n.speechVoiceDefault)),
+              for (final v in options)
+                DropdownMenuItem<String?>(
+                  value: v.name,
+                  child: Text(
+                    v.network ? '${v.name} · ${l10n.speechVoiceOnline}' : v.name,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+            ],
+            onChanged: (name) => unawaited(
+              ref.read(settingsProvider.notifier).update((s) {
+                final m = {...s.flashVoices};
+                if (name == null) {
+                  m.remove(lang);
+                } else {
+                  m[lang] = name;
+                }
+                return s.copyWith(flashVoices: m);
+              }),
+            ),
+          ),
+        ),
+        IconButton(
+          tooltip: l10n.speechTest,
+          onPressed: () => _test(tag),
+          icon: const Icon(Icons.play_circle_outline_rounded),
+        ),
+      ],
+    );
+  }
 
   String _name(String tag) {
     if (tag.isEmpty) return context.l10n.speechAppLanguage;
@@ -281,6 +364,11 @@ class _SpeechSheetState extends ConsumerState<_SpeechSheet> {
             (v) => setState(() => _front = v),
             const Key('speechFront'),
           ),
+          FutureBuilder<List<TtsVoice>>(
+            future: _voices,
+            builder: (context, snap) =>
+                _voiceRow(_front, snap.data ?? const [], const Key('voiceFront')),
+          ),
           const SizedBox(height: Space.md),
           _picker(
             l10n.speechBackLanguage,
@@ -288,6 +376,20 @@ class _SpeechSheetState extends ConsumerState<_SpeechSheet> {
             (v) => setState(() => _back = v),
             const Key('speechBack'),
           ),
+          FutureBuilder<List<TtsVoice>>(
+            future: _voices,
+            builder: (context, snap) =>
+                _voiceRow(_back, snap.data ?? const [], const Key('voiceBack')),
+          ),
+          if (_testError != null)
+            Padding(
+              padding: const EdgeInsets.only(top: Space.xs),
+              child: Text(
+                _testError!,
+                key: const Key('speechTestError'),
+                style: context.text.bodySmall?.copyWith(color: context.lux.danger),
+              ),
+            ),
           const SizedBox(height: Space.md),
           PlanStepper(
             key: const Key('speechRepeat'),

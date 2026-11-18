@@ -3493,4 +3493,21 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get flashcardsStatNoHistory => '暂无复习记录，学习后这里会显示进度。';
+
+  @override
+  String flashcardsSpeakField(String field) {
+    return '朗读$field';
+  }
+
+  @override
+  String get speechVoice => '语音';
+
+  @override
+  String get speechVoiceDefault => '设备默认';
+
+  @override
+  String get speechVoiceOnline => '需联网';
+
+  @override
+  String get speechTest => '试听';
 }

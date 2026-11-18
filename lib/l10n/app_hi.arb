@@ -1008,5 +1008,10 @@
   "flashcardsStatRecallCaption": "FSRS अनुमान, दोहराए कार्ड",
   "flashcardsStatActivity": "प्रतिदिन समीक्षाएँ · कुल {count}",
   "flashcardsStatHistory": "हाल के उत्तर",
-  "flashcardsStatNoHistory": "अभी कोई समीक्षा नहीं। प्रगति देखने के लिए डेक पढ़ें।"
+  "flashcardsStatNoHistory": "अभी कोई समीक्षा नहीं। प्रगति देखने के लिए डेक पढ़ें।",
+  "flashcardsSpeakField": "{field} पढ़कर सुनाएँ",
+  "speechVoice": "आवाज़",
+  "speechVoiceDefault": "डिवाइस डिफ़ॉल्ट",
+  "speechVoiceOnline": "इंटरनेट चाहिए",
+  "speechTest": "आवाज़ जाँचें"
 }

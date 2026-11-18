@@ -3663,4 +3663,21 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get flashcardsStatNoHistory => 'No reviews yet. Study the deck to see your progress here.';
+
+  @override
+  String flashcardsSpeakField(String field) {
+    return 'Read $field aloud';
+  }
+
+  @override
+  String get speechVoice => 'Voice';
+
+  @override
+  String get speechVoiceDefault => 'Device default';
+
+  @override
+  String get speechVoiceOnline => 'needs internet';
+
+  @override
+  String get speechTest => 'Test voice';
 }
