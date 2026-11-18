@@ -31,6 +31,8 @@ void main() {
     raw.execute('ALTER TABLE flashcards DROP COLUMN extra');
     raw.execute('DROP INDEX IF EXISTS idx_milestones_project');
     raw.execute('DROP TABLE milestones');
+    raw.execute('ALTER TABLE tasks DROP COLUMN status');
+    raw.execute('ALTER TABLE tasks DROP COLUMN archived_at');
     raw.execute('PRAGMA user_version = 1');
     raw.close();
 
@@ -39,7 +41,7 @@ void main() {
     final cards = await db.select(db.flashcards).get();
     expect(cards.single.front, 'hola');
     expect(cards.single.extra, '');
-    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 3);
+    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 4);
     await (db.update(db.flashcards)..where((c) => c.id.equals('c1'))).write(
       const FlashcardsCompanion(extra: Value('{"example":"¡Hola!"}')),
     );
@@ -61,6 +63,8 @@ void main() {
     );
     raw.execute('DROP INDEX IF EXISTS idx_milestones_project');
     raw.execute('DROP TABLE milestones');
+    raw.execute('ALTER TABLE tasks DROP COLUMN status');
+    raw.execute('ALTER TABLE tasks DROP COLUMN archived_at');
     raw.execute('PRAGMA user_version = 2');
     raw.close();
 
@@ -79,6 +83,32 @@ void main() {
           ),
         );
     expect((await db.select(db.milestones).getSingle()).title, 'Draft');
-    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 3);
+    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 4);
+  });
+
+  test('upgrading a v3 database adds task status and archive without touching tasks', () async {
+    final dir = await Directory.systemTemp.createTemp('fos_mig4');
+    addTearDown(() => dir.delete(recursive: true));
+    final file = File('${dir.path}/db.sqlite');
+    final seed = AppDatabase(NativeDatabase(file));
+    await seed.customSelect('SELECT 1').get();
+    await seed.close();
+    final raw = sqlite3.open(file.path);
+    final now = "'${DateTime.utc(2026, 11, 1).toIso8601String()}'";
+    raw.execute(
+      "INSERT INTO tasks (id, title, created_at, updated_at) VALUES ('t1', 'Write intro', $now, $now)",
+    );
+    raw.execute('ALTER TABLE tasks DROP COLUMN status');
+    raw.execute('ALTER TABLE tasks DROP COLUMN archived_at');
+    raw.execute('PRAGMA user_version = 3');
+    raw.close();
+
+    final db = AppDatabase(NativeDatabase(file));
+    addTearDown(db.close);
+    final t = await db.select(db.tasks).getSingle();
+    expect(t.title, 'Write intro');
+    expect(t.status, 'notStarted');
+    expect(t.archivedAt, isNull);
+    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 4);
   });
 }

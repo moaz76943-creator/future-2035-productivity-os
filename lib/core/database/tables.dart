@@ -70,6 +70,11 @@ class Tasks extends Table with Timestamps {
       .check(priority.isBetweenValues(0, 4))();
   BoolColumn get done => boolean().withDefault(const Constant(false))();
   DateTimeColumn get completedAt => dateTime().nullable()();
+
+  /// Work state of an open task: `notStarted` | `inProgress` (schema v4).
+  /// Completion stays in [done]; archived tasks have [archivedAt] set.
+  TextColumn get status => text().withDefault(const Constant('notStarted'))();
+  DateTimeColumn get archivedAt => dateTime().nullable()();
   DateTimeColumn get startAt => dateTime().nullable()();
   DateTimeColumn get dueAt => dateTime().nullable()();
 

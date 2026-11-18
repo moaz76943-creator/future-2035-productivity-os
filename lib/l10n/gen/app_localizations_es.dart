@@ -3309,4 +3309,30 @@ class AppLocalizationsEs extends AppLocalizations {
   String calendarMilestone(String project) {
     return 'Hito · $project';
   }
+
+  @override
+  String get tasksViewInbox => 'Bandeja';
+
+  @override
+  String get tasksViewArchived => 'Archivadas';
+
+  @override
+  String get tasksEmptyInbox =>
+      'Aquí llegan las tareas sin proyecto ni fecha. Organízalas cuando tengas un momento.';
+
+  @override
+  String get tasksEmptyArchived =>
+      'Las tareas archivadas se guardan aquí, fuera de tus listas y recordatorios.';
+
+  @override
+  String get taskArchivedBadge => 'Archivada';
+
+  @override
+  String get taskStatusInProgress => 'En curso';
+
+  @override
+  String get taskArchived => 'Tarea archivada';
+
+  @override
+  String get taskUnarchived => 'Tarea restaurada del archivo';
 }

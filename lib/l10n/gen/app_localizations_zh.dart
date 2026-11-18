@@ -3135,4 +3135,28 @@ class AppLocalizationsZh extends AppLocalizations {
   String calendarMilestone(String project) {
     return '里程碑 · $project';
   }
+
+  @override
+  String get tasksViewInbox => '收件箱';
+
+  @override
+  String get tasksViewArchived => '已归档';
+
+  @override
+  String get tasksEmptyInbox => '没有项目或日期的任务会出现在这里，有空时整理一下。';
+
+  @override
+  String get tasksEmptyArchived => '已归档的任务保存在这里，不会出现在列表和提醒中。';
+
+  @override
+  String get taskArchivedBadge => '已归档';
+
+  @override
+  String get taskStatusInProgress => '进行中';
+
+  @override
+  String get taskArchived => '任务已归档';
+
+  @override
+  String get taskUnarchived => '任务已从归档中恢复';
 }

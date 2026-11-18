@@ -900,5 +900,13 @@
   "milestonesEmpty": "Вех пока нет. Добавьте контрольные точки с датами, чтобы видеть проект в календаре.",
   "milestoneDeleted": "Веха удалена",
   "milestoneDoneA11y": "Отметить веху «{title}» как выполненную",
-  "calendarMilestone": "Веха · {project}"
+  "calendarMilestone": "Веха · {project}",
+  "tasksViewInbox": "Входящие",
+  "tasksViewArchived": "Архив",
+  "tasksEmptyInbox": "Сюда попадают задачи без проекта и даты. Разберите их, когда будет минутка.",
+  "tasksEmptyArchived": "Архивные задачи хранятся здесь, вне списков и напоминаний.",
+  "taskArchivedBadge": "В архиве",
+  "taskStatusInProgress": "В работе",
+  "taskArchived": "Задача перемещена в архив",
+  "taskUnarchived": "Задача возвращена из архива"
 }

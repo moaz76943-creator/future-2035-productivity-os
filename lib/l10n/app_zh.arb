@@ -900,5 +900,13 @@
   "milestonesEmpty": "还没有里程碑。添加带日期的节点，在日历中跟踪项目。",
   "milestoneDeleted": "已删除里程碑",
   "milestoneDoneA11y": "将里程碑“{title}”标记为完成",
-  "calendarMilestone": "里程碑 · {project}"
+  "calendarMilestone": "里程碑 · {project}",
+  "tasksViewInbox": "收件箱",
+  "tasksViewArchived": "已归档",
+  "tasksEmptyInbox": "没有项目或日期的任务会出现在这里，有空时整理一下。",
+  "tasksEmptyArchived": "已归档的任务保存在这里，不会出现在列表和提醒中。",
+  "taskArchivedBadge": "已归档",
+  "taskStatusInProgress": "进行中",
+  "taskArchived": "任务已归档",
+  "taskUnarchived": "任务已从归档中恢复"
 }

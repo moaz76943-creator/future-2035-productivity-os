@@ -201,27 +201,31 @@ class _Detail extends ConsumerWidget {
             ),
           ),
           const SizedBox(height: Space.md),
-          Row(
-            children: [
-              Expanded(
-                child: StatTile(
-                  value: context.fmt.duration(Duration(seconds: focus)),
-                  label: l10n.projectFocusTime,
-                  caption: l10n.statMeasuredNote,
-                  hue: ModuleHue.focus,
-                  icon: Icons.timer_outlined,
+          // Equal-height tiles even when only one carries a caption.
+          IntrinsicHeight(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  child: StatTile(
+                    value: context.fmt.duration(Duration(seconds: focus)),
+                    label: l10n.projectFocusTime,
+                    caption: l10n.statMeasuredNote,
+                    hue: ModuleHue.focus,
+                    icon: Icons.timer_outlined,
+                  ),
                 ),
-              ),
-              const SizedBox(width: Space.sm),
-              Expanded(
-                child: StatTile(
-                  value: context.fmt.number(open.length),
-                  label: l10n.projectTasksOpen,
-                  hue: ModuleHue.tasks,
-                  icon: Icons.radio_button_unchecked_rounded,
+                const SizedBox(width: Space.sm),
+                Expanded(
+                  child: StatTile(
+                    value: context.fmt.number(open.length),
+                    label: l10n.projectTasksOpen,
+                    hue: ModuleHue.tasks,
+                    icon: Icons.radio_button_unchecked_rounded,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           if (project.description.isNotEmpty) ...[
             const SizedBox(height: Space.md),

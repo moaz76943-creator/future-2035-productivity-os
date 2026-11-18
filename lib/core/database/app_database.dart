@@ -43,7 +43,7 @@ class AppDatabase extends _$AppDatabase {
   /// Bump when the schema changes and add a step in [migration].
   /// Never drop user tables to resolve a migration problem.
   @override
-  int get schemaVersion => 3;
+  int get schemaVersion => 4;
 
   /// Tables introduced after schema v1, by version. Older backups lack them and
   /// restore them empty instead of being rejected.
@@ -67,6 +67,11 @@ class AppDatabase extends _$AppDatabase {
         await customStatement(
           'CREATE INDEX IF NOT EXISTS idx_milestones_project ON milestones (project_id, due_at)',
         );
+      }
+      if (from < 4) {
+        // v4: task work status and archive. Existing tasks: not started, not archived.
+        await m.addColumn(tasks, tasks.status);
+        await m.addColumn(tasks, tasks.archivedAt);
       }
     },
     beforeOpen: (details) async {

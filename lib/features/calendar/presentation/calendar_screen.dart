@@ -163,7 +163,8 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
       actions: [
         TextButton(
           // Disabled while today is already shown, so the tap is never silently ignored.
-          onPressed: CalendarMath.sameDay(_selected, _now) &&
+          onPressed:
+              CalendarMath.sameDay(_selected, _now) &&
                   CalendarMath.sameDay(_anchor, CalendarMath.day(_now))
               ? null
               : _today,
@@ -203,10 +204,10 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
           SegmentedButton<CalendarView>(
             showSelectedIcon: false,
             segments: [
-              ButtonSegment(value: CalendarView.month, label: Text(l10n.calendarMonth)),
-              ButtonSegment(value: CalendarView.week, label: Text(l10n.calendarWeek)),
-              ButtonSegment(value: CalendarView.day, label: Text(l10n.calendarDay)),
-              ButtonSegment(value: CalendarView.agenda, label: Text(l10n.calendarAgenda)),
+              ButtonSegment(value: CalendarView.month, label: _segLabel(l10n.calendarMonth)),
+              ButtonSegment(value: CalendarView.week, label: _segLabel(l10n.calendarWeek)),
+              ButtonSegment(value: CalendarView.day, label: _segLabel(l10n.calendarDay)),
+              ButtonSegment(value: CalendarView.agenda, label: _segLabel(l10n.calendarAgenda)),
             ],
             selected: {_view},
             onSelectionChanged: (s) => _setView(s.first),
@@ -402,3 +403,8 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
     return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: sections);
   }
 }
+
+/// Segment labels stay on one line; long translations shrink instead of
+/// wrapping into a two-line segment.
+Widget _segLabel(String text) =>
+    FittedBox(fit: BoxFit.scaleDown, child: Text(text, maxLines: 1, softWrap: false));

@@ -7,6 +7,7 @@ import '../../../app/routing/navigation.dart';
 import '../../../app/routing/routes.dart';
 import '../../../core/database/app_database.dart';
 import '../../../core/design_system/app_theme.dart';
+import '../../../core/design_system/components/indicators.dart';
 import '../../../core/design_system/components/surfaces.dart';
 import '../../../core/design_system/tokens.dart';
 import '../../../core/time/clock.dart';
@@ -181,6 +182,34 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
     leaveScreen(context, Routes.tasks);
   }
 
+  Future<void> _toggleArchive() async {
+    final id = _id;
+    if (id == null) return;
+    final repo = ref.read(tasksRepositoryProvider);
+    final l10n = context.l10n;
+    if (_loaded?.archivedAt != null) {
+      await repo.unarchive(id);
+      final fresh = await repo.byId(id);
+      if (!mounted) return;
+      setState(() => _loaded = fresh);
+      showMessage(context, l10n.taskUnarchived);
+      return;
+    }
+    await repo.archive(id);
+    if (!mounted) return;
+    showUndoSnack(context, l10n.taskArchived, onUndo: () => repo.unarchive(id));
+    leaveScreen(context, Routes.tasks);
+  }
+
+  Future<void> _setInProgress(bool on) async {
+    final id = _id;
+    if (id == null) return;
+    final repo = ref.read(tasksRepositoryProvider);
+    await repo.setInProgress(id, on);
+    final fresh = await repo.byId(id);
+    if (mounted) setState(() => _loaded = fresh);
+  }
+
   // ---- reminder ------------------------------------------------------------
 
   String _reminderLabel() {
@@ -259,6 +288,15 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
         actions: [
           if (!_isNew)
             IconButton(
+              key: const Key('taskArchiveButton'),
+              tooltip: _loaded?.archivedAt != null ? l10n.actionUnarchive : l10n.actionArchive,
+              icon: Icon(
+                _loaded?.archivedAt != null ? Icons.unarchive_outlined : Icons.inventory_2_outlined,
+              ),
+              onPressed: _toggleArchive,
+            ),
+          if (!_isNew)
+            IconButton(
               tooltip: l10n.actionDelete,
               icon: const Icon(Icons.delete_outline_rounded),
               onPressed: _delete,
@@ -295,6 +333,23 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
                   _formError!,
                   style: context.text.bodyMedium?.copyWith(color: context.lux.danger),
                 ),
+              ),
+            if (_loaded?.archivedAt != null)
+              Padding(
+                padding: const EdgeInsets.only(top: Space.sm),
+                child: Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: LuxPill(label: l10n.taskArchivedBadge),
+                ),
+              ),
+            if (!_isNew && !(_loaded?.done ?? false))
+              SwitchListTile(
+                key: const Key('taskInProgressSwitch'),
+                contentPadding: EdgeInsets.zero,
+                secondary: const Icon(Icons.play_circle_outline_rounded),
+                title: Text(l10n.taskStatusInProgress),
+                value: _loaded?.status == TaskStatus.inProgress,
+                onChanged: _setInProgress,
               ),
             const SizedBox(height: Space.lg),
             _PrioritySelector(value: _priority, onChanged: (p) => setState(() => _priority = p)),

@@ -104,9 +104,9 @@ class ProjectsRepository {
     return _db
         .customSelect(
           'SELECT '
-          '(SELECT COUNT(*) FROM tasks WHERE project_id = ?1 AND deleted_at IS NULL) + '
+          '(SELECT COUNT(*) FROM tasks WHERE project_id = ?1 AND deleted_at IS NULL AND archived_at IS NULL) + '
           '(SELECT COUNT(*) FROM milestones WHERE project_id = ?1 AND deleted_at IS NULL) AS total, '
-          '(SELECT COUNT(*) FROM tasks WHERE project_id = ?1 AND deleted_at IS NULL AND done = 1) + '
+          '(SELECT COUNT(*) FROM tasks WHERE project_id = ?1 AND deleted_at IS NULL AND archived_at IS NULL AND done = 1) + '
           '(SELECT COUNT(*) FROM milestones WHERE project_id = ?1 AND deleted_at IS NULL AND done = 1) AS done',
           variables: [Variable.withString(id)],
           readsFrom: {_db.tasks, _db.milestones},
@@ -114,7 +114,6 @@ class ProjectsRepository {
         .watchSingle()
         .map((r) => ProjectProgress(total: r.read<int>('total'), done: r.read<int>('done')));
   }
-
 
   Stream<int> watchFocusSeconds(String id) {
     final sum = _db.focusSessions.activeSeconds.sum();

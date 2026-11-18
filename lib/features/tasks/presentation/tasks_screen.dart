@@ -22,7 +22,18 @@ import 'widgets/task_visuals.dart';
 
 /// Presentation-level views. The first five map to [TaskView]; the grouped
 /// views show all open tasks grouped by an attribute.
-enum TasksTab { today, upcoming, all, overdue, completed, byProject, byPriority, byCategory }
+enum TasksTab {
+  today,
+  inbox,
+  upcoming,
+  all,
+  overdue,
+  completed,
+  byProject,
+  byPriority,
+  byCategory,
+  archived,
+}
 
 final tasksTabProvider = NotifierProvider<_TabController, TasksTab>(_TabController.new);
 
@@ -37,6 +48,8 @@ TaskView _viewFor(TasksTab t) => switch (t) {
   TasksTab.upcoming => TaskView.upcoming,
   TasksTab.overdue => TaskView.overdue,
   TasksTab.completed => TaskView.completed,
+  TasksTab.inbox => TaskView.inbox,
+  TasksTab.archived => TaskView.archived,
   _ => TaskView.all,
 };
 
@@ -110,6 +123,8 @@ class _TabsRow extends ConsumerWidget {
     final l10n = context.l10n;
     String label(TasksTab t) => switch (t) {
       TasksTab.today => l10n.tasksViewToday,
+      TasksTab.inbox => l10n.tasksViewInbox,
+      TasksTab.archived => l10n.tasksViewArchived,
       TasksTab.upcoming => l10n.tasksViewUpcoming,
       TasksTab.all => l10n.tasksViewAll,
       TasksTab.overdue => l10n.tasksViewOverdue,
@@ -121,6 +136,7 @@ class _TabsRow extends ConsumerWidget {
     return SizedBox(
       height: 52,
       child: ListView(
+        key: const Key('tasksTabs'),
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: Space.page),
         children: [
@@ -189,7 +205,9 @@ class _QuickAddState extends ConsumerState<_QuickAdd> {
 
   @override
   Widget build(BuildContext context) {
-    if (widget.tab == TasksTab.completed) return const SizedBox(height: Space.xs);
+    if (widget.tab == TasksTab.completed || widget.tab == TasksTab.archived) {
+      return const SizedBox(height: Space.xs);
+    }
     return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(Space.page, Space.xs, Space.page, Space.sm),
       child: TextField(
@@ -228,10 +246,20 @@ class _TaskList extends ConsumerWidget {
     if (tasks.isEmpty) {
       return SliverToBoxAdapter(
         child: EmptyState(
-          icon: tab == TasksTab.completed ? Icons.done_all_rounded : Icons.wb_twilight_rounded,
+          icon: switch (tab) {
+            TasksTab.completed => Icons.done_all_rounded,
+            TasksTab.archived => Icons.inventory_2_outlined,
+            TasksTab.inbox => Icons.inbox_outlined,
+            _ => Icons.wb_twilight_rounded,
+          },
           hue: ModuleHue.tasks,
           title: l10n.tasksEmptyTitle,
-          message: tab == TasksTab.completed ? l10n.tasksEmptyCompleted : l10n.tasksEmptyMessage,
+          message: switch (tab) {
+            TasksTab.completed => l10n.tasksEmptyCompleted,
+            TasksTab.archived => l10n.tasksEmptyArchived,
+            TasksTab.inbox => l10n.tasksEmptyInbox,
+            _ => l10n.tasksEmptyMessage,
+          },
         ),
       );
     }

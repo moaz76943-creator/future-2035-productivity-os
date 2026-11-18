@@ -849,6 +849,27 @@ class $TasksTable extends Tasks with TableInfo<$TasksTable, TaskRow> {
     type: DriftSqlType.dateTime,
     requiredDuringInsert: false,
   );
+  static const VerificationMeta _statusMeta = const VerificationMeta('status');
+  @override
+  late final GeneratedColumn<String> status = GeneratedColumn<String>(
+    'status',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant('notStarted'),
+  );
+  static const VerificationMeta _archivedAtMeta = const VerificationMeta(
+    'archivedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> archivedAt = GeneratedColumn<DateTime>(
+    'archived_at',
+    aliasedName,
+    true,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+  );
   static const VerificationMeta _startAtMeta = const VerificationMeta(
     'startAt',
   );
@@ -954,6 +975,8 @@ class $TasksTable extends Tasks with TableInfo<$TasksTable, TaskRow> {
     priority,
     done,
     completedAt,
+    status,
+    archivedAt,
     startAt,
     dueAt,
     dueHasTime,
@@ -1056,6 +1079,18 @@ class $TasksTable extends Tasks with TableInfo<$TasksTable, TaskRow> {
           data['completed_at']!,
           _completedAtMeta,
         ),
+      );
+    }
+    if (data.containsKey('status')) {
+      context.handle(
+        _statusMeta,
+        status.isAcceptableOrUnknown(data['status']!, _statusMeta),
+      );
+    }
+    if (data.containsKey('archived_at')) {
+      context.handle(
+        _archivedAtMeta,
+        archivedAt.isAcceptableOrUnknown(data['archived_at']!, _archivedAtMeta),
       );
     }
     if (data.containsKey('start_at')) {
@@ -1169,6 +1204,14 @@ class $TasksTable extends Tasks with TableInfo<$TasksTable, TaskRow> {
         DriftSqlType.dateTime,
         data['${effectivePrefix}completed_at'],
       ),
+      status: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}status'],
+      )!,
+      archivedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}archived_at'],
+      ),
       startAt: attachedDatabase.typeMapping.read(
         DriftSqlType.dateTime,
         data['${effectivePrefix}start_at'],
@@ -1225,6 +1268,11 @@ class TaskRow extends DataClass implements Insertable<TaskRow> {
   final int priority;
   final bool done;
   final DateTime? completedAt;
+
+  /// Work state of an open task: `notStarted` | `inProgress` (schema v4).
+  /// Completion stays in [done]; archived tasks have [archivedAt] set.
+  final String status;
+  final DateTime? archivedAt;
   final DateTime? startAt;
   final DateTime? dueAt;
 
@@ -1250,6 +1298,8 @@ class TaskRow extends DataClass implements Insertable<TaskRow> {
     required this.priority,
     required this.done,
     this.completedAt,
+    required this.status,
+    this.archivedAt,
     this.startAt,
     this.dueAt,
     required this.dueHasTime,
@@ -1279,6 +1329,10 @@ class TaskRow extends DataClass implements Insertable<TaskRow> {
     map['done'] = Variable<bool>(done);
     if (!nullToAbsent || completedAt != null) {
       map['completed_at'] = Variable<DateTime>(completedAt);
+    }
+    map['status'] = Variable<String>(status);
+    if (!nullToAbsent || archivedAt != null) {
+      map['archived_at'] = Variable<DateTime>(archivedAt);
     }
     if (!nullToAbsent || startAt != null) {
       map['start_at'] = Variable<DateTime>(startAt);
@@ -1323,6 +1377,10 @@ class TaskRow extends DataClass implements Insertable<TaskRow> {
       completedAt: completedAt == null && nullToAbsent
           ? const Value.absent()
           : Value(completedAt),
+      status: Value(status),
+      archivedAt: archivedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(archivedAt),
       startAt: startAt == null && nullToAbsent
           ? const Value.absent()
           : Value(startAt),
@@ -1364,6 +1422,8 @@ class TaskRow extends DataClass implements Insertable<TaskRow> {
       priority: serializer.fromJson<int>(json['priority']),
       done: serializer.fromJson<bool>(json['done']),
       completedAt: serializer.fromJson<DateTime?>(json['completedAt']),
+      status: serializer.fromJson<String>(json['status']),
+      archivedAt: serializer.fromJson<DateTime?>(json['archivedAt']),
       startAt: serializer.fromJson<DateTime?>(json['startAt']),
       dueAt: serializer.fromJson<DateTime?>(json['dueAt']),
       dueHasTime: serializer.fromJson<bool>(json['dueHasTime']),
@@ -1390,6 +1450,8 @@ class TaskRow extends DataClass implements Insertable<TaskRow> {
       'priority': serializer.toJson<int>(priority),
       'done': serializer.toJson<bool>(done),
       'completedAt': serializer.toJson<DateTime?>(completedAt),
+      'status': serializer.toJson<String>(status),
+      'archivedAt': serializer.toJson<DateTime?>(archivedAt),
       'startAt': serializer.toJson<DateTime?>(startAt),
       'dueAt': serializer.toJson<DateTime?>(dueAt),
       'dueHasTime': serializer.toJson<bool>(dueHasTime),
@@ -1414,6 +1476,8 @@ class TaskRow extends DataClass implements Insertable<TaskRow> {
     int? priority,
     bool? done,
     Value<DateTime?> completedAt = const Value.absent(),
+    String? status,
+    Value<DateTime?> archivedAt = const Value.absent(),
     Value<DateTime?> startAt = const Value.absent(),
     Value<DateTime?> dueAt = const Value.absent(),
     bool? dueHasTime,
@@ -1435,6 +1499,8 @@ class TaskRow extends DataClass implements Insertable<TaskRow> {
     priority: priority ?? this.priority,
     done: done ?? this.done,
     completedAt: completedAt.present ? completedAt.value : this.completedAt,
+    status: status ?? this.status,
+    archivedAt: archivedAt.present ? archivedAt.value : this.archivedAt,
     startAt: startAt.present ? startAt.value : this.startAt,
     dueAt: dueAt.present ? dueAt.value : this.dueAt,
     dueHasTime: dueHasTime ?? this.dueHasTime,
@@ -1464,6 +1530,10 @@ class TaskRow extends DataClass implements Insertable<TaskRow> {
       completedAt: data.completedAt.present
           ? data.completedAt.value
           : this.completedAt,
+      status: data.status.present ? data.status.value : this.status,
+      archivedAt: data.archivedAt.present
+          ? data.archivedAt.value
+          : this.archivedAt,
       startAt: data.startAt.present ? data.startAt.value : this.startAt,
       dueAt: data.dueAt.present ? data.dueAt.value : this.dueAt,
       dueHasTime: data.dueHasTime.present
@@ -1498,6 +1568,8 @@ class TaskRow extends DataClass implements Insertable<TaskRow> {
           ..write('priority: $priority, ')
           ..write('done: $done, ')
           ..write('completedAt: $completedAt, ')
+          ..write('status: $status, ')
+          ..write('archivedAt: $archivedAt, ')
           ..write('startAt: $startAt, ')
           ..write('dueAt: $dueAt, ')
           ..write('dueHasTime: $dueHasTime, ')
@@ -1511,7 +1583,7 @@ class TaskRow extends DataClass implements Insertable<TaskRow> {
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode => Object.hashAll([
     createdAt,
     updatedAt,
     id,
@@ -1524,6 +1596,8 @@ class TaskRow extends DataClass implements Insertable<TaskRow> {
     priority,
     done,
     completedAt,
+    status,
+    archivedAt,
     startAt,
     dueAt,
     dueHasTime,
@@ -1532,7 +1606,7 @@ class TaskRow extends DataClass implements Insertable<TaskRow> {
     estimateMinutes,
     sortOrder,
     deletedAt,
-  );
+  ]);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -1549,6 +1623,8 @@ class TaskRow extends DataClass implements Insertable<TaskRow> {
           other.priority == this.priority &&
           other.done == this.done &&
           other.completedAt == this.completedAt &&
+          other.status == this.status &&
+          other.archivedAt == this.archivedAt &&
           other.startAt == this.startAt &&
           other.dueAt == this.dueAt &&
           other.dueHasTime == this.dueHasTime &&
@@ -1572,6 +1648,8 @@ class TasksCompanion extends UpdateCompanion<TaskRow> {
   final Value<int> priority;
   final Value<bool> done;
   final Value<DateTime?> completedAt;
+  final Value<String> status;
+  final Value<DateTime?> archivedAt;
   final Value<DateTime?> startAt;
   final Value<DateTime?> dueAt;
   final Value<bool> dueHasTime;
@@ -1594,6 +1672,8 @@ class TasksCompanion extends UpdateCompanion<TaskRow> {
     this.priority = const Value.absent(),
     this.done = const Value.absent(),
     this.completedAt = const Value.absent(),
+    this.status = const Value.absent(),
+    this.archivedAt = const Value.absent(),
     this.startAt = const Value.absent(),
     this.dueAt = const Value.absent(),
     this.dueHasTime = const Value.absent(),
@@ -1617,6 +1697,8 @@ class TasksCompanion extends UpdateCompanion<TaskRow> {
     this.priority = const Value.absent(),
     this.done = const Value.absent(),
     this.completedAt = const Value.absent(),
+    this.status = const Value.absent(),
+    this.archivedAt = const Value.absent(),
     this.startAt = const Value.absent(),
     this.dueAt = const Value.absent(),
     this.dueHasTime = const Value.absent(),
@@ -1643,6 +1725,8 @@ class TasksCompanion extends UpdateCompanion<TaskRow> {
     Expression<int>? priority,
     Expression<bool>? done,
     Expression<DateTime>? completedAt,
+    Expression<String>? status,
+    Expression<DateTime>? archivedAt,
     Expression<DateTime>? startAt,
     Expression<DateTime>? dueAt,
     Expression<bool>? dueHasTime,
@@ -1666,6 +1750,8 @@ class TasksCompanion extends UpdateCompanion<TaskRow> {
       if (priority != null) 'priority': priority,
       if (done != null) 'done': done,
       if (completedAt != null) 'completed_at': completedAt,
+      if (status != null) 'status': status,
+      if (archivedAt != null) 'archived_at': archivedAt,
       if (startAt != null) 'start_at': startAt,
       if (dueAt != null) 'due_at': dueAt,
       if (dueHasTime != null) 'due_has_time': dueHasTime,
@@ -1691,6 +1777,8 @@ class TasksCompanion extends UpdateCompanion<TaskRow> {
     Value<int>? priority,
     Value<bool>? done,
     Value<DateTime?>? completedAt,
+    Value<String>? status,
+    Value<DateTime?>? archivedAt,
     Value<DateTime?>? startAt,
     Value<DateTime?>? dueAt,
     Value<bool>? dueHasTime,
@@ -1714,6 +1802,8 @@ class TasksCompanion extends UpdateCompanion<TaskRow> {
       priority: priority ?? this.priority,
       done: done ?? this.done,
       completedAt: completedAt ?? this.completedAt,
+      status: status ?? this.status,
+      archivedAt: archivedAt ?? this.archivedAt,
       startAt: startAt ?? this.startAt,
       dueAt: dueAt ?? this.dueAt,
       dueHasTime: dueHasTime ?? this.dueHasTime,
@@ -1765,6 +1855,12 @@ class TasksCompanion extends UpdateCompanion<TaskRow> {
     if (completedAt.present) {
       map['completed_at'] = Variable<DateTime>(completedAt.value);
     }
+    if (status.present) {
+      map['status'] = Variable<String>(status.value);
+    }
+    if (archivedAt.present) {
+      map['archived_at'] = Variable<DateTime>(archivedAt.value);
+    }
     if (startAt.present) {
       map['start_at'] = Variable<DateTime>(startAt.value);
     }
@@ -1810,6 +1906,8 @@ class TasksCompanion extends UpdateCompanion<TaskRow> {
           ..write('priority: $priority, ')
           ..write('done: $done, ')
           ..write('completedAt: $completedAt, ')
+          ..write('status: $status, ')
+          ..write('archivedAt: $archivedAt, ')
           ..write('startAt: $startAt, ')
           ..write('dueAt: $dueAt, ')
           ..write('dueHasTime: $dueHasTime, ')
@@ -12154,6 +12252,8 @@ typedef $$TasksTableCreateCompanionBuilder = TasksCompanion Function({
   Value<int> priority,
   Value<bool> done,
   Value<DateTime?> completedAt,
+  Value<String> status,
+  Value<DateTime?> archivedAt,
   Value<DateTime?> startAt,
   Value<DateTime?> dueAt,
   Value<bool> dueHasTime,
@@ -12177,6 +12277,8 @@ typedef $$TasksTableUpdateCompanionBuilder = TasksCompanion Function({
   Value<int> priority,
   Value<bool> done,
   Value<DateTime?> completedAt,
+  Value<String> status,
+  Value<DateTime?> archivedAt,
   Value<DateTime?> startAt,
   Value<DateTime?> dueAt,
   Value<bool> dueHasTime,
@@ -12429,6 +12531,16 @@ class $$TasksTableFilterComposer extends Composer<_$AppDatabase, $TasksTable> {
 
   ColumnFilters<DateTime> get completedAt => $composableBuilder(
     column: $table.completedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get status => $composableBuilder(
+    column: $table.status,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get archivedAt => $composableBuilder(
+    column: $table.archivedAt,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -12778,6 +12890,16 @@ class $$TasksTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<String> get status => $composableBuilder(
+    column: $table.status,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get archivedAt => $composableBuilder(
+    column: $table.archivedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<DateTime> get startAt => $composableBuilder(
     column: $table.startAt,
     builder: (column) => ColumnOrderings(column),
@@ -12905,6 +13027,14 @@ class $$TasksTableAnnotationComposer
 
   GeneratedColumn<DateTime> get completedAt => $composableBuilder(
     column: $table.completedAt,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get status =>
+      $composableBuilder(column: $table.status, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get archivedAt => $composableBuilder(
+    column: $table.archivedAt,
     builder: (column) => column,
   );
 
@@ -13238,6 +13368,8 @@ class $$TasksTableTableManager
                 Value<int> priority = const Value.absent(),
                 Value<bool> done = const Value.absent(),
                 Value<DateTime?> completedAt = const Value.absent(),
+                Value<String> status = const Value.absent(),
+                Value<DateTime?> archivedAt = const Value.absent(),
                 Value<DateTime?> startAt = const Value.absent(),
                 Value<DateTime?> dueAt = const Value.absent(),
                 Value<bool> dueHasTime = const Value.absent(),
@@ -13260,6 +13392,8 @@ class $$TasksTableTableManager
                 priority: priority,
                 done: done,
                 completedAt: completedAt,
+                status: status,
+                archivedAt: archivedAt,
                 startAt: startAt,
                 dueAt: dueAt,
                 dueHasTime: dueHasTime,
@@ -13284,6 +13418,8 @@ class $$TasksTableTableManager
                 Value<int> priority = const Value.absent(),
                 Value<bool> done = const Value.absent(),
                 Value<DateTime?> completedAt = const Value.absent(),
+                Value<String> status = const Value.absent(),
+                Value<DateTime?> archivedAt = const Value.absent(),
                 Value<DateTime?> startAt = const Value.absent(),
                 Value<DateTime?> dueAt = const Value.absent(),
                 Value<bool> dueHasTime = const Value.absent(),
@@ -13306,6 +13442,8 @@ class $$TasksTableTableManager
                 priority: priority,
                 done: done,
                 completedAt: completedAt,
+                status: status,
+                archivedAt: archivedAt,
                 startAt: startAt,
                 dueAt: dueAt,
                 dueHasTime: dueHasTime,

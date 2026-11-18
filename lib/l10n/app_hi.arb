@@ -900,5 +900,13 @@
   "milestonesEmpty": "अभी कोई माइलस्टोन नहीं। कैलेंडर पर प्रोजेक्ट ट्रैक करने के लिए तारीख़ वाले पड़ाव जोड़ें।",
   "milestoneDeleted": "माइलस्टोन हटाया गया",
   "milestoneDoneA11y": "माइलस्टोन \"{title}\" को पूरा चिह्नित करें",
-  "calendarMilestone": "माइलस्टोन · {project}"
+  "calendarMilestone": "माइलस्टोन · {project}",
+  "tasksViewInbox": "इनबॉक्स",
+  "tasksViewArchived": "संग्रहीत",
+  "tasksEmptyInbox": "बिना प्रोजेक्ट या तारीख वाले कार्य यहाँ आते हैं। समय मिलने पर इन्हें व्यवस्थित करें।",
+  "tasksEmptyArchived": "संग्रहीत कार्य यहाँ रखे जाते हैं, आपकी सूचियों और रिमाइंडर से अलग।",
+  "taskArchivedBadge": "संग्रहीत",
+  "taskStatusInProgress": "प्रगति में",
+  "taskArchived": "कार्य संग्रहीत किया गया",
+  "taskUnarchived": "कार्य संग्रह से वापस लाया गया"
 }

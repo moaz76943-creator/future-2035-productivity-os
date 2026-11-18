@@ -5513,6 +5513,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Milestone · {project}'**
   String calendarMilestone(String project);
+
+  /// Task status / archive UI
+  ///
+  /// In en, this message translates to:
+  /// **'Inbox'**
+  String get tasksViewInbox;
+
+  /// Task status / archive UI
+  ///
+  /// In en, this message translates to:
+  /// **'Archived'**
+  String get tasksViewArchived;
+
+  /// Task status / archive UI
+  ///
+  /// In en, this message translates to:
+  /// **'Tasks without a project or date land here. Sort them when you have a minute.'**
+  String get tasksEmptyInbox;
+
+  /// Task status / archive UI
+  ///
+  /// In en, this message translates to:
+  /// **'Archived tasks are kept here, out of your lists and reminders.'**
+  String get tasksEmptyArchived;
+
+  /// Task status / archive UI
+  ///
+  /// In en, this message translates to:
+  /// **'Archived'**
+  String get taskArchivedBadge;
+
+  /// Task status / archive UI
+  ///
+  /// In en, this message translates to:
+  /// **'In progress'**
+  String get taskStatusInProgress;
+
+  /// Task status / archive UI
+  ///
+  /// In en, this message translates to:
+  /// **'Task archived'**
+  String get taskArchived;
+
+  /// Task status / archive UI
+  ///
+  /// In en, this message translates to:
+  /// **'Task restored from archive'**
+  String get taskUnarchived;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

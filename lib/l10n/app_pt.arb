@@ -900,5 +900,13 @@
   "milestonesEmpty": "Ainda não há marcos. Adicione etapas com data para acompanhar o projeto no calendário.",
   "milestoneDeleted": "Marco excluído",
   "milestoneDoneA11y": "Marcar o marco \"{title}\" como concluído",
-  "calendarMilestone": "Marco · {project}"
+  "calendarMilestone": "Marco · {project}",
+  "tasksViewInbox": "Caixa de entrada",
+  "tasksViewArchived": "Arquivadas",
+  "tasksEmptyInbox": "Tarefas sem projeto ou data chegam aqui. Organize-as quando tiver um minuto.",
+  "tasksEmptyArchived": "Tarefas arquivadas ficam aqui, fora das suas listas e lembretes.",
+  "taskArchivedBadge": "Arquivada",
+  "taskStatusInProgress": "Em andamento",
+  "taskArchived": "Tarefa arquivada",
+  "taskUnarchived": "Tarefa restaurada do arquivo"
 }

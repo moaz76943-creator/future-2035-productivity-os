@@ -20,11 +20,7 @@ void main() {
     );
     expect(
       () => repo.create(
-        TaskDraft(
-          title: 'x',
-          startAt: DateTime(2026, 11, 20),
-          dueAt: DateTime(2026, 11, 18),
-        ),
+        TaskDraft(title: 'x', startAt: DateTime(2026, 11, 20), dueAt: DateTime(2026, 11, 18)),
       ),
       throwsA(isA<TaskValidationException>()),
     );
@@ -35,18 +31,14 @@ void main() {
   });
 
   test('views: today, upcoming, overdue, completed', () async {
-    await repo.create(
-      TaskDraft(title: 'today', dueAt: DateTime(2026, 11, 16, 18)),
-    );
+    await repo.create(TaskDraft(title: 'today', dueAt: DateTime(2026, 11, 16, 18)));
     await repo.create(TaskDraft(title: 'late', dueAt: DateTime(2026, 11, 14)));
     await repo.create(TaskDraft(title: 'later', dueAt: DateTime(2026, 11, 20)));
     final doneId = await repo.create(const TaskDraft(title: 'done'));
     await repo.complete(doneId);
 
     Future<List<String>> titles(TaskView v) async =>
-        (await repo.watch(TaskFilter(view: v)).first)
-            .map((t) => t.title)
-            .toList();
+        (await repo.watch(TaskFilter(view: v)).first).map((t) => t.title).toList();
 
     expect(await titles(TaskView.today), ['late', 'today']);
     expect(await titles(TaskView.overdue), ['late']);
@@ -78,11 +70,7 @@ void main() {
 
   test('last occurrence of a COUNT series does not recur', () async {
     final id = await repo.create(
-      TaskDraft(
-        title: 'x',
-        dueAt: DateTime(2026, 11, 16),
-        recurrence: 'FREQ=DAILY;COUNT=1',
-      ),
+      TaskDraft(title: 'x', dueAt: DateTime(2026, 11, 16), recurrence: 'FREQ=DAILY;COUNT=1'),
     );
     expect(await repo.complete(id), isNull);
   });
@@ -110,16 +98,11 @@ void main() {
     await repo.create(TaskDraft(title: 'b', projectId: p, priority: 1));
     await repo.create(TaskDraft(title: 'a', projectId: p, priority: 4));
     await repo.create(const TaskDraft(title: 'c', priority: 3));
-    final inProject = await repo
-        .watch(TaskFilter(projectId: p, sort: TaskSort.priority))
-        .first;
+    final inProject = await repo.watch(TaskFilter(projectId: p, sort: TaskSort.priority)).first;
     expect(inProject.map((t) => t.title), ['a', 'b']);
     final high = await repo.watch(const TaskFilter(minPriority: 3)).first;
     expect(high.map((t) => t.title).toSet(), {'a', 'c'});
-    final progress = await ProjectsRepository(
-      env.db,
-      env.clock,
-    ).watchProgress(p).first;
+    final progress = await ProjectsRepository(env.db, env.clock).watchProgress(p).first;
     expect(progress.total, 2);
   });
 
@@ -129,14 +112,8 @@ void main() {
     final c = await repo.create(const TaskDraft(title: 'c'));
     await repo.addDependency(a, b);
     await repo.addDependency(b, c);
-    expect(
-      () => repo.addDependency(c, a),
-      throwsA(isA<TaskValidationException>()),
-    );
-    expect(
-      () => repo.addDependency(a, a),
-      throwsA(isA<TaskValidationException>()),
-    );
+    expect(() => repo.addDependency(c, a), throwsA(isA<TaskValidationException>()));
+    expect(() => repo.addDependency(a, a), throwsA(isA<TaskValidationException>()));
     expect((await repo.watchBlockers(a).first).single.id, b);
   });
 
@@ -149,5 +126,42 @@ void main() {
     expect(await repo.watch(TaskFilter(labelId: l)).first, hasLength(1));
     await repo.setLabel(t, l, false);
     expect(await repo.watchLabelsFor(t).first, isEmpty);
+  });
+
+  test('inbox, in-progress status and archive', () async {
+    final inbox = await repo.create(const TaskDraft(title: 'loose'));
+    final dated = await repo.create(TaskDraft(title: 'dated', dueAt: DateTime(2026, 11, 16, 18)));
+    final pid = await ProjectsRepository(
+      env.db,
+      env.clock,
+    ).create(const ProjectDraft(name: 'P', color: 0xFF6C4CFF));
+    await repo.create(TaskDraft(title: 'filed', projectId: pid));
+    final sub = await repo.create(TaskDraft(title: 'child', parentId: inbox));
+
+    Future<List<String>> titles(TaskView v) async =>
+        (await repo.watch(TaskFilter(view: v)).first).map((t) => t.title).toList();
+
+    expect(await titles(TaskView.inbox), ['loose']);
+
+    await repo.setInProgress(dated, true);
+    expect((await repo.byId(dated))!.status, TaskStatus.inProgress);
+    await repo.setInProgress(dated, false);
+    expect((await repo.byId(dated))!.status, TaskStatus.notStarted);
+
+    await repo.archive(inbox);
+    await repo.archive(inbox); // idempotent: keeps the first archive moment
+    expect(await titles(TaskView.inbox), isEmpty);
+    expect(await titles(TaskView.all), isNot(contains('loose')));
+    expect(await titles(TaskView.archived), ['loose']);
+    expect((await repo.byId(sub))!.archivedAt, isNotNull);
+
+    await repo.archive(dated);
+    final day = DateTime(2026, 11, 16);
+    expect(await repo.watchForDay(day).first, isEmpty);
+    expect(await titles(TaskView.today), isEmpty);
+
+    await repo.unarchive(inbox);
+    expect(await titles(TaskView.inbox), ['loose']);
+    expect((await repo.byId(sub))!.archivedAt, isNull);
   });
 }
