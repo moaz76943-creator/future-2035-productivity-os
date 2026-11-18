@@ -76,6 +76,18 @@
       "title": "Flashcards Pro Part 4: Progressive-Disclosure Smart UI, Cloze/Dictation/Audio-Only Modes, CONTROL_INVENTORY & Full Analyze/Test Gate",
       "status": "PENDING",
       "directive": "docs/FLASHCARDS_MASTER_DIRECTIVE.md"
+    },
+    {
+      "id": "PHASE_L10N_1_REGISTRY_AND_LEAK_AUDIT",
+      "title": "L10n Part 1: Create tool/languages_registry.json (50 locales, no he/iw) & tool/l10n_manager.py + Eliminate all hardcoded strings in lib/",
+      "status": "PENDING",
+      "directive": "docs/L10N_50_LANGUAGES_DIRECTIVE.md"
+    },
+    {
+      "id": "PHASE_L10N_2_50_LOCALES_AND_GATES",
+      "title": "L10n Part 2: Idiomatic 50-Locale ARB Translations, Western Digits, RTL/Long-String Overflow Tests, Zero Dead Buttons & Full Audit Pass",
+      "status": "PENDING",
+      "directive": "docs/L10N_50_LANGUAGES_DIRECTIVE.md"
     }
   ]
 }
