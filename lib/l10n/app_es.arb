@@ -994,5 +994,19 @@
   "flashcardsRecall": "Recuerdo {value}",
   "flashcardsDuplicateTitle": "Posible duplicado",
   "flashcardsDuplicateMessage": "Este mazo ya tiene «{front}» → «{back}». ¿Guardar igualmente?",
-  "flashcardsSaveAnyway": "Guardar igualmente"
+  "flashcardsSaveAnyway": "Guardar igualmente",
+  "flashcardsStats": "Estadísticas",
+  "flashcardsStatTotal": "Tarjetas",
+  "flashcardsStatLearning": "Aprendiendo",
+  "flashcardsStatMatureCaption": "Recordadas 21+ días",
+  "flashcardsStatReviewsToday": "Repasos hoy",
+  "flashcardsStatCorrect": "Respuestas correctas",
+  "flashcardsStatLastDays": "Últimos {days} días",
+  "flashcardsStatForget": "Tasa de olvido",
+  "flashcardsStatForgetCaption": "«Otra vez» en tarjetas aprendidas",
+  "flashcardsStatRecall": "Recuerdo ahora",
+  "flashcardsStatRecallCaption": "Estimación FSRS, tarjetas repasadas",
+  "flashcardsStatActivity": "Repasos por día · {count} en total",
+  "flashcardsStatHistory": "Últimas respuestas",
+  "flashcardsStatNoHistory": "Aún no hay repasos. Estudia el mazo para ver tu progreso."
 }

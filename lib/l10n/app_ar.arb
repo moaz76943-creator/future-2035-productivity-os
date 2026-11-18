@@ -994,5 +994,19 @@
   "flashcardsRecall": "التذكّر {value}",
   "flashcardsDuplicateTitle": "بطاقة مكرّرة محتملة",
   "flashcardsDuplicateMessage": "هذه المجموعة فيها بطاقة «{front}» ← «{back}». هل تريد الحفظ على أي حال؟",
-  "flashcardsSaveAnyway": "احفظ على أي حال"
+  "flashcardsSaveAnyway": "احفظ على أي حال",
+  "flashcardsStats": "الإحصائيات",
+  "flashcardsStatTotal": "البطاقات",
+  "flashcardsStatLearning": "قيد التعلّم",
+  "flashcardsStatMatureCaption": "محفوظة لأكثر من 21 يومًا",
+  "flashcardsStatReviewsToday": "مراجعات اليوم",
+  "flashcardsStatCorrect": "الإجابات الصحيحة",
+  "flashcardsStatLastDays": "آخر {days} يومًا",
+  "flashcardsStatForget": "معدّل النسيان",
+  "flashcardsStatForgetCaption": "«مرة أخرى» على بطاقات محفوظة",
+  "flashcardsStatRecall": "التذكّر الآن",
+  "flashcardsStatRecallCaption": "تقدير FSRS للبطاقات المراجَعة",
+  "flashcardsStatActivity": "المراجعات يوميًا · المجموع {count}",
+  "flashcardsStatHistory": "آخر الإجابات",
+  "flashcardsStatNoHistory": "لا مراجعات بعد. ادرس المجموعة لترى تقدّمك هنا."
 }

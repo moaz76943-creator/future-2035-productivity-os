@@ -994,5 +994,19 @@
   "flashcardsRecall": "Lembrança {value}",
   "flashcardsDuplicateTitle": "Possível duplicado",
   "flashcardsDuplicateMessage": "Este baralho já tem “{front}” → “{back}”. Salvar mesmo assim?",
-  "flashcardsSaveAnyway": "Salvar mesmo assim"
+  "flashcardsSaveAnyway": "Salvar mesmo assim",
+  "flashcardsStats": "Estatísticas",
+  "flashcardsStatTotal": "Cartões",
+  "flashcardsStatLearning": "Aprendendo",
+  "flashcardsStatMatureCaption": "Lembrados por 21+ dias",
+  "flashcardsStatReviewsToday": "Revisões hoje",
+  "flashcardsStatCorrect": "Respostas corretas",
+  "flashcardsStatLastDays": "Últimos {days} dias",
+  "flashcardsStatForget": "Taxa de esquecimento",
+  "flashcardsStatForgetCaption": "“De novo” em cartões aprendidos",
+  "flashcardsStatRecall": "Lembrança agora",
+  "flashcardsStatRecallCaption": "Estimativa FSRS, cartões revisados",
+  "flashcardsStatActivity": "Revisões por dia · {count} no total",
+  "flashcardsStatHistory": "Últimas respostas",
+  "flashcardsStatNoHistory": "Ainda sem revisões. Estude o baralho para ver o progresso."
 }

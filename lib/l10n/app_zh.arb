@@ -994,5 +994,19 @@
   "flashcardsRecall": "记忆 {value}",
   "flashcardsDuplicateTitle": "可能重复",
   "flashcardsDuplicateMessage": "该卡组已有“{front}”→“{back}”。仍要保存吗？",
-  "flashcardsSaveAnyway": "仍然保存"
+  "flashcardsSaveAnyway": "仍然保存",
+  "flashcardsStats": "统计",
+  "flashcardsStatTotal": "卡片",
+  "flashcardsStatLearning": "学习中",
+  "flashcardsStatMatureCaption": "记住 21 天以上",
+  "flashcardsStatReviewsToday": "今日复习",
+  "flashcardsStatCorrect": "正确率",
+  "flashcardsStatLastDays": "最近 {days} 天",
+  "flashcardsStatForget": "遗忘率",
+  "flashcardsStatForgetCaption": "已掌握卡片选“重来”",
+  "flashcardsStatRecall": "当前记忆",
+  "flashcardsStatRecallCaption": "FSRS 估计（已复习卡片）",
+  "flashcardsStatActivity": "每日复习 · 共 {count} 次",
+  "flashcardsStatHistory": "最近作答",
+  "flashcardsStatNoHistory": "暂无复习记录，学习后这里会显示进度。"
 }

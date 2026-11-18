@@ -511,6 +511,70 @@ class FlashcardsRepository {
   /// A card the user struggles with: high FSRS difficulty or repeated lapses.
   static bool isHard(CardRow c) => c.difficulty >= 7 || c.lapses >= 3;
 
+  // ---- statistics ----------------------------------------------------------
+
+  /// Measured statistics for one deck. Every number comes from stored cards
+  /// and the review log; nothing is estimated except the recall probability,
+  /// which is the FSRS model's value for each reviewed card.
+  Future<DeckInsights> deckInsights(String deckId, {int days = 14}) async {
+    final now = _clock.now();
+    final cards = await (_db.select(
+      _db.flashcards,
+    )..where((c) => c.deckId.equals(deckId) & c.deletedAt.isNull())).get();
+    final since = Days.addDays(Days.startOfDay(now), -(days - 1)).toUtc();
+    final ids = {for (final c in cards) c.id};
+    final reviews = ids.isEmpty
+        ? <ReviewRow>[]
+        : await (_db.select(_db.cardReviews)
+                ..where((r) => r.cardId.isIn(ids) & r.reviewedAt.isBiggerOrEqualValue(since))
+                ..orderBy([(r) => OrderingTerm.desc(r.reviewedAt)]))
+              .get();
+    final perDay = List<int>.filled(days, 0);
+    final start = Days.startOfDay(now);
+    for (final r in reviews) {
+      final d = Days.startOfDay(r.reviewedAt.toLocal());
+      final i = days - 1 - start.difference(d).inDays;
+      if (i >= 0 && i < days) perDay[i]++;
+    }
+    final matured = reviews.where((r) => r.stateBefore == 'review').toList();
+    final recalls = [
+      for (final c in cards)
+        if (!c.suspended) ?srsOf(c).retrievability(now.toUtc()),
+    ];
+    final today = Days.startOfDay(now).toUtc();
+    return DeckInsights(
+      total: cards.length,
+      newCards: cards.where((c) => c.state == 'new').length,
+      learning: cards.where((c) => c.state == 'learning' || c.state == 'relearning').length,
+      mature: cards.where((c) => c.state == 'review' && c.stability >= 21).length,
+      suspended: cards.where((c) => c.suspended).length,
+      hard: cards.where((c) => !c.suspended && isHard(c)).length,
+      favorites: cards.where((c) => c.favorite).length,
+      dueNow: cards
+          .where(
+            (c) =>
+                !c.suspended &&
+                c.state != 'new' &&
+                c.dueAt != null &&
+                !c.dueAt!.isAfter(now.toUtc()),
+          )
+          .length,
+      reviewsToday: reviews.where((r) => !r.reviewedAt.isBefore(today)).length,
+      reviewsInRange: reviews.length,
+      correctRate: reviews.isEmpty
+          ? null
+          : reviews.where((r) => r.rating > 1).length / reviews.length,
+      forgetRate: matured.isEmpty
+          ? null
+          : matured.where((r) => r.rating == 1).length / matured.length,
+      averageRecall: recalls.isEmpty ? null : recalls.reduce((a, b) => a + b) / recalls.length,
+      perDay: perDay,
+      firstDay: Days.addDays(start, -(days - 1)),
+      recent: reviews.take(30).toList(),
+      fronts: {for (final c in cards) c.id: c.front},
+    );
+  }
+
   // ---- organisation --------------------------------------------------------
 
   Future<void> setFavorite(Iterable<String> ids, bool favorite) =>
@@ -567,6 +631,45 @@ class FlashcardsRepository {
 
 /// Which active cards a practice round uses.
 enum PracticeFilter { all, mistakes, newOnly, hard, favorites }
+
+class DeckInsights {
+  const DeckInsights({
+    required this.total,
+    required this.newCards,
+    required this.learning,
+    required this.mature,
+    required this.suspended,
+    required this.hard,
+    required this.favorites,
+    required this.dueNow,
+    required this.reviewsToday,
+    required this.reviewsInRange,
+    required this.correctRate,
+    required this.forgetRate,
+    required this.averageRecall,
+    required this.perDay,
+    required this.firstDay,
+    required this.recent,
+    required this.fronts,
+  });
+  final int total, newCards, learning, mature, suspended, hard, favorites, dueNow;
+  final int reviewsToday, reviewsInRange;
+
+  /// Share of answers that were not "Again" (null without reviews).
+  final double? correctRate;
+
+  /// Share of "Again" among reviews of graduated cards (lapses).
+  final double? forgetRate;
+
+  /// Mean FSRS recall probability of reviewed, active cards right now.
+  final double? averageRecall;
+
+  /// Reviews per day, oldest first, starting at [firstDay].
+  final List<int> perDay;
+  final DateTime firstDay;
+  final List<ReviewRow> recent;
+  final Map<String, String> fronts;
+}
 
 class ImportResult {
   const ImportResult({required this.added, required this.duplicates, required this.invalid});

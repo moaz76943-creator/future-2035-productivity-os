@@ -10,6 +10,7 @@ import '../../features/dashboard/presentation/dashboard_screen.dart';
 import '../../features/flashcards/presentation/deck_screen.dart';
 import '../../features/flashcards/presentation/decks_screen.dart';
 import '../../features/flashcards/domain/study.dart';
+import '../../features/flashcards/presentation/deck_stats_screen.dart';
 import '../../features/flashcards/presentation/review_screen.dart';
 import '../../features/focus/presentation/focus_screen.dart';
 import '../../features/goals/presentation/goal_detail_screen.dart';
@@ -114,6 +115,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       page('/notes/:id', (s) => NoteEditorScreen(noteId: s.pathParameters['id']!)),
       page(Routes.flashcards, (_) => const DecksScreen()),
       page('/flashcards/:id', (s) => DeckScreen(deckId: s.pathParameters['id']!)),
+      page('/flashcards/:id/stats', (s) => DeckStatsScreen(deckId: s.pathParameters['id']!)),
       page(
         '/flashcards/:id/review',
         (s) => ReviewScreen(

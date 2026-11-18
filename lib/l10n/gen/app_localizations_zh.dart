@@ -3447,4 +3447,50 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get flashcardsSaveAnyway => '仍然保存';
+
+  @override
+  String get flashcardsStats => '统计';
+
+  @override
+  String get flashcardsStatTotal => '卡片';
+
+  @override
+  String get flashcardsStatLearning => '学习中';
+
+  @override
+  String get flashcardsStatMatureCaption => '记住 21 天以上';
+
+  @override
+  String get flashcardsStatReviewsToday => '今日复习';
+
+  @override
+  String get flashcardsStatCorrect => '正确率';
+
+  @override
+  String flashcardsStatLastDays(int days) {
+    return '最近 $days 天';
+  }
+
+  @override
+  String get flashcardsStatForget => '遗忘率';
+
+  @override
+  String get flashcardsStatForgetCaption => '已掌握卡片选“重来”';
+
+  @override
+  String get flashcardsStatRecall => '当前记忆';
+
+  @override
+  String get flashcardsStatRecallCaption => 'FSRS 估计（已复习卡片）';
+
+  @override
+  String flashcardsStatActivity(int count) {
+    return '每日复习 · 共 $count 次';
+  }
+
+  @override
+  String get flashcardsStatHistory => '最近作答';
+
+  @override
+  String get flashcardsStatNoHistory => '暂无复习记录，学习后这里会显示进度。';
 }

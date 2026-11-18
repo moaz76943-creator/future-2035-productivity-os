@@ -994,5 +994,19 @@
   "flashcardsRecall": "Память {value}",
   "flashcardsDuplicateTitle": "Возможный дубликат",
   "flashcardsDuplicateMessage": "В колоде уже есть «{front}» → «{back}». Всё равно сохранить?",
-  "flashcardsSaveAnyway": "Всё равно сохранить"
+  "flashcardsSaveAnyway": "Всё равно сохранить",
+  "flashcardsStats": "Статистика",
+  "flashcardsStatTotal": "Карточки",
+  "flashcardsStatLearning": "Изучаются",
+  "flashcardsStatMatureCaption": "Помнятся 21+ день",
+  "flashcardsStatReviewsToday": "Повторений сегодня",
+  "flashcardsStatCorrect": "Верные ответы",
+  "flashcardsStatLastDays": "За {days} дн.",
+  "flashcardsStatForget": "Доля забывания",
+  "flashcardsStatForgetCaption": "«Снова» по выученным",
+  "flashcardsStatRecall": "Память сейчас",
+  "flashcardsStatRecallCaption": "Оценка FSRS по повторённым",
+  "flashcardsStatActivity": "Повторений в день · всего {count}",
+  "flashcardsStatHistory": "Последние ответы",
+  "flashcardsStatNoHistory": "Повторений пока нет. Занимайтесь, и здесь появится прогресс."
 }

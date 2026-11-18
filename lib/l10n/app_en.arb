@@ -4846,5 +4846,71 @@
   "flashcardsSaveAnyway": "Save anyway",
   "@flashcardsSaveAnyway": {
     "description": "flashcardsSaveAnyway"
+  },
+  "flashcardsStats": "Statistics",
+  "@flashcardsStats": {
+    "description": "flashcardsStats"
+  },
+  "flashcardsStatTotal": "Cards",
+  "@flashcardsStatTotal": {
+    "description": "flashcardsStatTotal"
+  },
+  "flashcardsStatLearning": "Learning",
+  "@flashcardsStatLearning": {
+    "description": "flashcardsStatLearning"
+  },
+  "flashcardsStatMatureCaption": "Remembered for 21+ days",
+  "@flashcardsStatMatureCaption": {
+    "description": "flashcardsStatMatureCaption"
+  },
+  "flashcardsStatReviewsToday": "Reviews today",
+  "@flashcardsStatReviewsToday": {
+    "description": "flashcardsStatReviewsToday"
+  },
+  "flashcardsStatCorrect": "Correct answers",
+  "@flashcardsStatCorrect": {
+    "description": "flashcardsStatCorrect"
+  },
+  "flashcardsStatLastDays": "Last {days} days",
+  "@flashcardsStatLastDays": {
+    "description": "Caption",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "flashcardsStatForget": "Forgetting rate",
+  "@flashcardsStatForget": {
+    "description": "flashcardsStatForget"
+  },
+  "flashcardsStatForgetCaption": "“Again” on learned cards",
+  "@flashcardsStatForgetCaption": {
+    "description": "flashcardsStatForgetCaption"
+  },
+  "flashcardsStatRecall": "Recall now",
+  "@flashcardsStatRecall": {
+    "description": "flashcardsStatRecall"
+  },
+  "flashcardsStatRecallCaption": "FSRS estimate, reviewed cards",
+  "@flashcardsStatRecallCaption": {
+    "description": "flashcardsStatRecallCaption"
+  },
+  "flashcardsStatActivity": "Reviews per day · {count} in total",
+  "@flashcardsStatActivity": {
+    "description": "Chart header",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "flashcardsStatHistory": "Latest answers",
+  "@flashcardsStatHistory": {
+    "description": "flashcardsStatHistory"
+  },
+  "flashcardsStatNoHistory": "No reviews yet. Study the deck to see your progress here.",
+  "@flashcardsStatNoHistory": {
+    "description": "flashcardsStatNoHistory"
   }
 }

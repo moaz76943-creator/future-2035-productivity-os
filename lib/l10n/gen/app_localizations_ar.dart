@@ -3785,4 +3785,50 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get flashcardsSaveAnyway => 'احفظ على أي حال';
+
+  @override
+  String get flashcardsStats => 'الإحصائيات';
+
+  @override
+  String get flashcardsStatTotal => 'البطاقات';
+
+  @override
+  String get flashcardsStatLearning => 'قيد التعلّم';
+
+  @override
+  String get flashcardsStatMatureCaption => 'محفوظة لأكثر من 21 يومًا';
+
+  @override
+  String get flashcardsStatReviewsToday => 'مراجعات اليوم';
+
+  @override
+  String get flashcardsStatCorrect => 'الإجابات الصحيحة';
+
+  @override
+  String flashcardsStatLastDays(int days) {
+    return 'آخر $days يومًا';
+  }
+
+  @override
+  String get flashcardsStatForget => 'معدّل النسيان';
+
+  @override
+  String get flashcardsStatForgetCaption => '«مرة أخرى» على بطاقات محفوظة';
+
+  @override
+  String get flashcardsStatRecall => 'التذكّر الآن';
+
+  @override
+  String get flashcardsStatRecallCaption => 'تقدير FSRS للبطاقات المراجَعة';
+
+  @override
+  String flashcardsStatActivity(int count) {
+    return 'المراجعات يوميًا · المجموع $count';
+  }
+
+  @override
+  String get flashcardsStatHistory => 'آخر الإجابات';
+
+  @override
+  String get flashcardsStatNoHistory => 'لا مراجعات بعد. ادرس المجموعة لترى تقدّمك هنا.';
 }

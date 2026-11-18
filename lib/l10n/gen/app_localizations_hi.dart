@@ -3627,4 +3627,50 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get flashcardsSaveAnyway => 'फिर भी सहेजें';
+
+  @override
+  String get flashcardsStats => 'आँकड़े';
+
+  @override
+  String get flashcardsStatTotal => 'कार्ड';
+
+  @override
+  String get flashcardsStatLearning => 'सीख रहे';
+
+  @override
+  String get flashcardsStatMatureCaption => '21+ दिन याद';
+
+  @override
+  String get flashcardsStatReviewsToday => 'आज की समीक्षाएँ';
+
+  @override
+  String get flashcardsStatCorrect => 'सही उत्तर';
+
+  @override
+  String flashcardsStatLastDays(int days) {
+    return 'पिछले $days दिन';
+  }
+
+  @override
+  String get flashcardsStatForget => 'भूलने की दर';
+
+  @override
+  String get flashcardsStatForgetCaption => 'सीखे कार्ड पर “फिर से”';
+
+  @override
+  String get flashcardsStatRecall => 'अभी याद';
+
+  @override
+  String get flashcardsStatRecallCaption => 'FSRS अनुमान, दोहराए कार्ड';
+
+  @override
+  String flashcardsStatActivity(int count) {
+    return 'प्रतिदिन समीक्षाएँ · कुल $count';
+  }
+
+  @override
+  String get flashcardsStatHistory => 'हाल के उत्तर';
+
+  @override
+  String get flashcardsStatNoHistory => 'अभी कोई समीक्षा नहीं। प्रगति देखने के लिए डेक पढ़ें।';
 }

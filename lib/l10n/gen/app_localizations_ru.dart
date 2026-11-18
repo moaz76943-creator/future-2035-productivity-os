@@ -3741,4 +3741,51 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get flashcardsSaveAnyway => 'Всё равно сохранить';
+
+  @override
+  String get flashcardsStats => 'Статистика';
+
+  @override
+  String get flashcardsStatTotal => 'Карточки';
+
+  @override
+  String get flashcardsStatLearning => 'Изучаются';
+
+  @override
+  String get flashcardsStatMatureCaption => 'Помнятся 21+ день';
+
+  @override
+  String get flashcardsStatReviewsToday => 'Повторений сегодня';
+
+  @override
+  String get flashcardsStatCorrect => 'Верные ответы';
+
+  @override
+  String flashcardsStatLastDays(int days) {
+    return 'За $days дн.';
+  }
+
+  @override
+  String get flashcardsStatForget => 'Доля забывания';
+
+  @override
+  String get flashcardsStatForgetCaption => '«Снова» по выученным';
+
+  @override
+  String get flashcardsStatRecall => 'Память сейчас';
+
+  @override
+  String get flashcardsStatRecallCaption => 'Оценка FSRS по повторённым';
+
+  @override
+  String flashcardsStatActivity(int count) {
+    return 'Повторений в день · всего $count';
+  }
+
+  @override
+  String get flashcardsStatHistory => 'Последние ответы';
+
+  @override
+  String get flashcardsStatNoHistory =>
+      'Повторений пока нет. Занимайтесь, и здесь появится прогресс.';
 }

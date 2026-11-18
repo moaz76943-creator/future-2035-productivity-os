@@ -994,5 +994,19 @@
   "flashcardsRecall": "याद {value}",
   "flashcardsDuplicateTitle": "संभावित दोहराव",
   "flashcardsDuplicateMessage": "इस डेक में पहले से “{front}” → “{back}” है। फिर भी सहेजें?",
-  "flashcardsSaveAnyway": "फिर भी सहेजें"
+  "flashcardsSaveAnyway": "फिर भी सहेजें",
+  "flashcardsStats": "आँकड़े",
+  "flashcardsStatTotal": "कार्ड",
+  "flashcardsStatLearning": "सीख रहे",
+  "flashcardsStatMatureCaption": "21+ दिन याद",
+  "flashcardsStatReviewsToday": "आज की समीक्षाएँ",
+  "flashcardsStatCorrect": "सही उत्तर",
+  "flashcardsStatLastDays": "पिछले {days} दिन",
+  "flashcardsStatForget": "भूलने की दर",
+  "flashcardsStatForgetCaption": "सीखे कार्ड पर “फिर से”",
+  "flashcardsStatRecall": "अभी याद",
+  "flashcardsStatRecallCaption": "FSRS अनुमान, दोहराए कार्ड",
+  "flashcardsStatActivity": "प्रतिदिन समीक्षाएँ · कुल {count}",
+  "flashcardsStatHistory": "हाल के उत्तर",
+  "flashcardsStatNoHistory": "अभी कोई समीक्षा नहीं। प्रगति देखने के लिए डेक पढ़ें।"
 }

@@ -6077,6 +6077,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Save anyway'**
   String get flashcardsSaveAnyway;
+
+  /// flashcardsStats
+  ///
+  /// In en, this message translates to:
+  /// **'Statistics'**
+  String get flashcardsStats;
+
+  /// flashcardsStatTotal
+  ///
+  /// In en, this message translates to:
+  /// **'Cards'**
+  String get flashcardsStatTotal;
+
+  /// flashcardsStatLearning
+  ///
+  /// In en, this message translates to:
+  /// **'Learning'**
+  String get flashcardsStatLearning;
+
+  /// flashcardsStatMatureCaption
+  ///
+  /// In en, this message translates to:
+  /// **'Remembered for 21+ days'**
+  String get flashcardsStatMatureCaption;
+
+  /// flashcardsStatReviewsToday
+  ///
+  /// In en, this message translates to:
+  /// **'Reviews today'**
+  String get flashcardsStatReviewsToday;
+
+  /// flashcardsStatCorrect
+  ///
+  /// In en, this message translates to:
+  /// **'Correct answers'**
+  String get flashcardsStatCorrect;
+
+  /// Caption
+  ///
+  /// In en, this message translates to:
+  /// **'Last {days} days'**
+  String flashcardsStatLastDays(int days);
+
+  /// flashcardsStatForget
+  ///
+  /// In en, this message translates to:
+  /// **'Forgetting rate'**
+  String get flashcardsStatForget;
+
+  /// flashcardsStatForgetCaption
+  ///
+  /// In en, this message translates to:
+  /// **'“Again” on learned cards'**
+  String get flashcardsStatForgetCaption;
+
+  /// flashcardsStatRecall
+  ///
+  /// In en, this message translates to:
+  /// **'Recall now'**
+  String get flashcardsStatRecall;
+
+  /// flashcardsStatRecallCaption
+  ///
+  /// In en, this message translates to:
+  /// **'FSRS estimate, reviewed cards'**
+  String get flashcardsStatRecallCaption;
+
+  /// Chart header
+  ///
+  /// In en, this message translates to:
+  /// **'Reviews per day · {count} in total'**
+  String flashcardsStatActivity(int count);
+
+  /// flashcardsStatHistory
+  ///
+  /// In en, this message translates to:
+  /// **'Latest answers'**
+  String get flashcardsStatHistory;
+
+  /// flashcardsStatNoHistory
+  ///
+  /// In en, this message translates to:
+  /// **'No reviews yet. Study the deck to see your progress here.'**
+  String get flashcardsStatNoHistory;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

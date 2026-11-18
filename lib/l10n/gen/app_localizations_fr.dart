@@ -3640,4 +3640,51 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get flashcardsSaveAnyway => 'Enregistrer quand même';
+
+  @override
+  String get flashcardsStats => 'Statistiques';
+
+  @override
+  String get flashcardsStatTotal => 'Cartes';
+
+  @override
+  String get flashcardsStatLearning => 'En apprentissage';
+
+  @override
+  String get flashcardsStatMatureCaption => 'Retenues 21 jours et plus';
+
+  @override
+  String get flashcardsStatReviewsToday => 'Révisions aujourd’hui';
+
+  @override
+  String get flashcardsStatCorrect => 'Bonnes réponses';
+
+  @override
+  String flashcardsStatLastDays(int days) {
+    return '$days derniers jours';
+  }
+
+  @override
+  String get flashcardsStatForget => 'Taux d’oubli';
+
+  @override
+  String get flashcardsStatForgetCaption => '« À revoir » sur cartes acquises';
+
+  @override
+  String get flashcardsStatRecall => 'Rappel actuel';
+
+  @override
+  String get flashcardsStatRecallCaption => 'Estimation FSRS, cartes révisées';
+
+  @override
+  String flashcardsStatActivity(int count) {
+    return 'Révisions par jour · $count au total';
+  }
+
+  @override
+  String get flashcardsStatHistory => 'Dernières réponses';
+
+  @override
+  String get flashcardsStatNoHistory =>
+      'Pas encore de révisions. Étudiez le paquet pour voir vos progrès.';
 }

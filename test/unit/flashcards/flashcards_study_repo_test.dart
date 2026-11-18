@@ -112,4 +112,26 @@ void main() {
       'n',
     ]);
   });
+
+  test('deck insights are measured from cards and the review log', () async {
+    final d = await repo.createDeck('D', color: 1);
+    final a = await repo.addCard(d, 'a', '1');
+    final b = await repo.addCard(d, 'b', '2');
+    await repo.addCard(d, 'c', '3');
+    await repo.recordReview(a, ReviewRating.again);
+    await repo.recordReview(a, ReviewRating.good);
+    await repo.recordReview(b, ReviewRating.easy);
+    await repo.setFavorite([b], true);
+    final i = await repo.deckInsights(d);
+    expect(i.total, 3);
+    expect(i.newCards, 1);
+    expect(i.favorites, 1);
+    expect(i.reviewsToday, 3);
+    expect(i.reviewsInRange, 3);
+    expect(i.correctRate, closeTo(2 / 3, 1e-9));
+    expect(i.forgetRate, isNull, reason: 'no graduated card was reviewed yet');
+    expect(i.averageRecall, isNotNull);
+    expect(i.perDay.last, 3);
+    expect(i.recent.map((r) => r.cardId).toSet(), {a, b});
+  });
 }
