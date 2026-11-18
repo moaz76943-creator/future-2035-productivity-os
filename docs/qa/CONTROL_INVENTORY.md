@@ -5,7 +5,7 @@ Environment: widget tests on Flutter 3.50.0, 412x915 logical px, English, realis
 (project, task with subtask, event, note, deck with 2 cards, goal, habit). Every page is walked a
 viewport at a time. This is not an on-device test (TalkBack, real touch, OEM behaviour are NOT covered).
 
-**232 controls on 25 screens.** OK: 207, OK_ALREADY_SELECTED: 8, OK_VERIFIED_SEPARATELY: 2, TEXT_INPUT: 15
+**806 controls on 67 screens.** OK: 701, OK_ALREADY_SELECTED: 28, OK_PARTLY_OFFSCREEN: 31, TEXT_INPUT: 46
 
 The test fails on: an exception from a tap, a control that does nothing (pointer and accessibility action),
 an unlabeled control, or a fully visible touch target smaller than 44x44.
@@ -29,14 +29,24 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Today's focus 0% Today's focus 0 min of 2 h Start focus / 0% | tappable | 372x124 | OK |
 | Search | button | 48x48 | OK |
 | Customize | button | 48x48 | OK |
-| Home Tab 1 of 5 | button | 78x68 | OK_ALREADY_SELECTED |
-| Tasks Tab 2 of 5 | button | 78x68 | OK |
-| Focus Tab 3 of 5 | button | 78x68 | OK |
 | Calendar Tab 4 of 5 | button | 78x68 | OK |
 | Spaces Tab 5 of 5 | button | 78x68 | OK |
 | You are 120 minutes away from your daily focus target. | tappable | 372x95 | OK |
-| Ideas First draft notes | tappable | 200x120 | OK |
 | No cards due | tappable | 372x76 | OK |
+| Home Tab 1 of 5 | button | 78x68 | OK_ALREADY_SELECTED |
+| Tasks Tab 2 of 5 | button | 78x68 | OK |
+| Focus Tab 3 of 5 | button | 78x68 | OK |
+
+## `/ > Customize`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x268 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Focus | switch | 412x56 | OK |
+| Agenda | switch | 412x56 | OK |
+| Goals | switch | 412x56 | OK |
+| Recent notes | switch | 412x56 | OK |
 
 ## `/tasks`
 
@@ -45,8 +55,8 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Mark "Write chapter 2" as done Write chapter 2 Today 0/1 Thesis Priority: Medium | checkbox | 412x94 | OK |
 | Add a task… | textField | 372x52 | TEXT_INPUT |
 | Today | button | 102x52 | OK_ALREADY_SELECTED |
-| Upcoming | button | 140x52 | OK |
-| Overdue | button | 51x52 | OK |
+| Inbox | button | 102x52 | OK |
+| All | button | 25x52 | OK |
 | Search tasks | button | 48x48 | OK |
 | Filter and sort | button | 48x48 | OK |
 | New task | button | 56x56 | OK |
@@ -55,6 +65,26 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Focus Tab 3 of 5 | button | 78x68 | OK |
 | Calendar Tab 4 of 5 | button | 78x68 | OK |
 | Spaces Tab 5 of 5 | button | 78x68 | OK |
+
+## `/tasks > Filter and sort`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x232 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Smart | button | 102x48 | OK_ALREADY_SELECTED |
+| Due date | button | 140x48 | OK |
+| Priority | button | 140x48 | OK |
+| Newest | button | 114x48 | OK |
+| Title | button | 102x48 | OK |
+| All projects | button | 190x48 | OK_ALREADY_SELECTED |
+| Thesis | button | 134x48 | OK |
+| Any priority | button | 190x48 | OK_ALREADY_SELECTED |
+| Low | button | 96x48 | OK |
+| Medium | button | 134x48 | OK |
+| High | button | 109x48 | OK |
+| Urgent | button | 134x48 | OK |
+| Reset filters | button | 372x48 | OK |
 
 ## `/focus`
 
@@ -71,10 +101,36 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Spaces Tab 5 of 5 | button | 78x68 | OK |
 | Pause | button | 141x48 | OK |
 | Stop | button | 122x48 | OK |
-| Link a task Working on No task linked | button | 372x102 | OK |
 | Link a task | button | 179x48 | OK |
 | Home Tab 1 of 5 | button | 78x68 | OK |
-| Resume | button | 155x23 | OK |
+| Working on: Write chapter 2 Working on Write chapter 2 | button | 372x80 | OK |
+| Remove linked task | button | 48x48 | OK |
+
+## `/focus > Stop`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Dismiss | tappable | 412x915 | OK_PARTLY_OFFSCREEN |
+| Cancel | button | 109x48 | OK |
+| Discard | button | 123x48 | OK |
+
+## `/focus > Link a task`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x147 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Search | textField | 372x52 | TEXT_INPUT |
+| Write chapter 2 Today | button | 412x72 | OK |
+
+## `/focus > Working on: Write chapter 2 Working on Write chapter 2`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x147 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Search | textField | 372x52 | TEXT_INPUT |
+| Write chapter 2 Today | button | 412x72 | OK |
 
 ## `/calendar`
 
@@ -130,11 +186,127 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Description | textField | 372x9 | TEXT_INPUT |
 | Save | button | 100x48 | OK |
 
+## `/task/new > Due date No date`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Dismiss | tappable | 412x915 | OK |
+| Switch to input | button | 48x48 | OK |
+| Previous month | button | 48x48 | OK |
+| Next month | button | 48x48 | OK |
+| 1, Sunday, November 1, 2026 | button | 48x48 | OK |
+| 2, Monday, November 2, 2026 | button | 48x48 | OK |
+| 3, Tuesday, November 3, 2026 | button | 48x48 | OK |
+| 4, Wednesday, November 4, 2026 | button | 48x48 | OK |
+| 5, Thursday, November 5, 2026 | button | 48x48 | OK |
+| 6, Friday, November 6, 2026 | button | 48x48 | OK |
+| 7, Saturday, November 7, 2026 | button | 48x48 | OK |
+| 8, Sunday, November 8, 2026 | button | 48x48 | OK |
+| 9, Monday, November 9, 2026 | button | 48x48 | OK |
+| 10, Tuesday, November 10, 2026 | button | 48x48 | OK |
+| 11, Wednesday, November 11, 2026 | button | 48x48 | OK |
+| 12, Thursday, November 12, 2026 | button | 48x48 | OK |
+| 13, Friday, November 13, 2026 | button | 48x48 | OK |
+| 14, Saturday, November 14, 2026 | button | 48x48 | OK |
+| 15, Sunday, November 15, 2026 | button | 48x48 | OK |
+| 16, Monday, November 16, 2026 | button | 48x48 | OK |
+| 17, Tuesday, November 17, 2026 | button | 48x48 | OK |
+| 18, Wednesday, November 18, 2026, Today | button | 48x48 | OK_ALREADY_SELECTED |
+| 19, Thursday, November 19, 2026 | button | 48x48 | OK |
+| 20, Friday, November 20, 2026 | button | 48x48 | OK |
+| 21, Saturday, November 21, 2026 | button | 48x48 | OK |
+| 22, Sunday, November 22, 2026 | button | 48x48 | OK |
+| 23, Monday, November 23, 2026 | button | 48x48 | OK |
+| 24, Tuesday, November 24, 2026 | button | 48x48 | OK |
+| 25, Wednesday, November 25, 2026 | button | 48x48 | OK |
+| 26, Thursday, November 26, 2026 | button | 48x48 | OK |
+| 27, Friday, November 27, 2026 | button | 48x48 | OK |
+| 28, Saturday, November 28, 2026 | button | 48x48 | OK |
+| 29, Sunday, November 29, 2026 | button | 48x48 | OK |
+| 30, Monday, November 30, 2026 | button | 48x48 | OK |
+| Select year November 2026 | button | 232x52 | OK |
+| Cancel | button | 109x48 | OK |
+| OK | button | 52x48 | OK |
+
+## `/task/new > Start date No date`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Dismiss | tappable | 412x915 | OK |
+| Switch to input | button | 48x48 | OK |
+| Previous month | button | 48x48 | OK |
+| Next month | button | 48x48 | OK |
+| 1, Sunday, November 1, 2026 | button | 48x48 | OK |
+| 2, Monday, November 2, 2026 | button | 48x48 | OK |
+| 3, Tuesday, November 3, 2026 | button | 48x48 | OK |
+| 4, Wednesday, November 4, 2026 | button | 48x48 | OK |
+| 5, Thursday, November 5, 2026 | button | 48x48 | OK |
+| 6, Friday, November 6, 2026 | button | 48x48 | OK |
+| 7, Saturday, November 7, 2026 | button | 48x48 | OK |
+| 8, Sunday, November 8, 2026 | button | 48x48 | OK |
+| 9, Monday, November 9, 2026 | button | 48x48 | OK |
+| 10, Tuesday, November 10, 2026 | button | 48x48 | OK |
+| 11, Wednesday, November 11, 2026 | button | 48x48 | OK |
+| 12, Thursday, November 12, 2026 | button | 48x48 | OK |
+| 13, Friday, November 13, 2026 | button | 48x48 | OK |
+| 14, Saturday, November 14, 2026 | button | 48x48 | OK |
+| 15, Sunday, November 15, 2026 | button | 48x48 | OK |
+| 16, Monday, November 16, 2026 | button | 48x48 | OK |
+| 17, Tuesday, November 17, 2026 | button | 48x48 | OK |
+| 18, Wednesday, November 18, 2026, Today | button | 48x48 | OK_ALREADY_SELECTED |
+| 19, Thursday, November 19, 2026 | button | 48x48 | OK |
+| 20, Friday, November 20, 2026 | button | 48x48 | OK |
+| 21, Saturday, November 21, 2026 | button | 48x48 | OK |
+| 22, Sunday, November 22, 2026 | button | 48x48 | OK |
+| 23, Monday, November 23, 2026 | button | 48x48 | OK |
+| 24, Tuesday, November 24, 2026 | button | 48x48 | OK |
+| 25, Wednesday, November 25, 2026 | button | 48x48 | OK |
+| 26, Thursday, November 26, 2026 | button | 48x48 | OK |
+| 27, Friday, November 27, 2026 | button | 48x48 | OK |
+| 28, Saturday, November 28, 2026 | button | 48x48 | OK |
+| 29, Sunday, November 29, 2026 | button | 48x48 | OK |
+| 30, Monday, November 30, 2026 | button | 48x48 | OK |
+| Select year November 2026 | button | 232x52 | OK |
+| Cancel | button | 109x48 | OK |
+| OK | button | 52x48 | OK |
+
+## `/task/new > Reminder No reminder`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x691 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| No reminder | button | 412x56 | OK |
+| At a specific time | button | 412x56 | OK |
+
+## `/task/new > Repeat Does not repeat`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x418 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Does not repeat | button | 372x56 | OK |
+| Every day | button | 372x56 | OK |
+| Every weekday | button | 372x56 | OK |
+| Every week | button | 372x56 | OK |
+| Every month | button | 372x56 | OK |
+| Every year | button | 372x56 | OK |
+| Custom | button | 372x56 | OK |
+
+## `/task/new > Project No project`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Dismiss | tappable | 412x915 | OK |
+| No project | button | 412x48 | OK |
+| Thesis | button | 412x48 | OK |
+
 ## `/task/:id`
 
 | Control (accessibility label) | Role | Size | Result |
 |---|---|---|---|
 | Title / Write chapter 2 | textField | 372x76 | TEXT_INPUT |
+| In progress | switch | 372x56 | OK |
 | None | button | 109x48 | OK |
 | Low | button | 96x48 | OK |
 | Medium | button | 134x48 | OK |
@@ -147,10 +319,143 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Reminder No reminder | button | 372x72 | OK |
 | Repeat Does not repeat | button | 372x72 | OK |
 | Estimate (minutes) | textField | 372x52 | TEXT_INPUT |
-| Project Thesis | button | 372x52 | OK |
-| Category | textField | 372x31 | TEXT_INPUT |
+| Project Thesis | button | 372x39 | OK |
+| Archive | button | 48x48 | OK |
 | Delete | button | 48x48 | OK |
 | Save | button | 100x48 | OK |
+| Unarchive | button | 48x48 | OK |
+
+## `/task/:id > Due date Monday, November 16, 2026`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Dismiss | tappable | 412x915 | OK |
+| Switch to input | button | 48x48 | OK |
+| Previous month | button | 48x48 | OK |
+| Next month | button | 48x48 | OK |
+| 1, Sunday, November 1, 2026 | button | 48x48 | OK |
+| 2, Monday, November 2, 2026 | button | 48x48 | OK |
+| 3, Tuesday, November 3, 2026 | button | 48x48 | OK |
+| 4, Wednesday, November 4, 2026 | button | 48x48 | OK |
+| 5, Thursday, November 5, 2026 | button | 48x48 | OK |
+| 6, Friday, November 6, 2026 | button | 48x48 | OK |
+| 7, Saturday, November 7, 2026 | button | 48x48 | OK |
+| 8, Sunday, November 8, 2026 | button | 48x48 | OK |
+| 9, Monday, November 9, 2026 | button | 48x48 | OK |
+| 10, Tuesday, November 10, 2026 | button | 48x48 | OK |
+| 11, Wednesday, November 11, 2026 | button | 48x48 | OK |
+| 12, Thursday, November 12, 2026 | button | 48x48 | OK |
+| 13, Friday, November 13, 2026 | button | 48x48 | OK |
+| 14, Saturday, November 14, 2026 | button | 48x48 | OK |
+| 15, Sunday, November 15, 2026 | button | 48x48 | OK |
+| 16, Monday, November 16, 2026 | button | 48x48 | OK_ALREADY_SELECTED |
+| 17, Tuesday, November 17, 2026 | button | 48x48 | OK |
+| 18, Wednesday, November 18, 2026, Today | button | 48x48 | OK |
+| 19, Thursday, November 19, 2026 | button | 48x48 | OK |
+| 20, Friday, November 20, 2026 | button | 48x48 | OK |
+| 21, Saturday, November 21, 2026 | button | 48x48 | OK |
+| 22, Sunday, November 22, 2026 | button | 48x48 | OK |
+| 23, Monday, November 23, 2026 | button | 48x48 | OK |
+| 24, Tuesday, November 24, 2026 | button | 48x48 | OK |
+| 25, Wednesday, November 25, 2026 | button | 48x48 | OK |
+| 26, Thursday, November 26, 2026 | button | 48x48 | OK |
+| 27, Friday, November 27, 2026 | button | 48x48 | OK |
+| 28, Saturday, November 28, 2026 | button | 48x48 | OK |
+| 29, Sunday, November 29, 2026 | button | 48x48 | OK |
+| 30, Monday, November 30, 2026 | button | 48x48 | OK |
+| Select year November 2026 | button | 232x52 | OK |
+| Cancel | button | 109x48 | OK |
+| OK | button | 52x48 | OK |
+
+## `/task/:id > Set time No specific time`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Dismiss | tappable | 412x915 | OK |
+| AM | checkbox | 52x48 | OK |
+| PM | checkbox | 52x48 | OK_ALREADY_SELECTED |
+| Switch to text input mode | button | 48x48 | OK |
+| Cancel | button | 109x48 | OK |
+| OK | button | 52x48 | OK |
+
+## `/task/:id > Start date No date`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Dismiss | tappable | 412x915 | OK |
+| Switch to input | button | 48x48 | OK |
+| Previous month | button | 48x48 | OK |
+| Next month | button | 48x48 | OK |
+| 1, Sunday, November 1, 2026 | button | 48x48 | OK |
+| 2, Monday, November 2, 2026 | button | 48x48 | OK |
+| 3, Tuesday, November 3, 2026 | button | 48x48 | OK |
+| 4, Wednesday, November 4, 2026 | button | 48x48 | OK |
+| 5, Thursday, November 5, 2026 | button | 48x48 | OK |
+| 6, Friday, November 6, 2026 | button | 48x48 | OK |
+| 7, Saturday, November 7, 2026 | button | 48x48 | OK |
+| 8, Sunday, November 8, 2026 | button | 48x48 | OK |
+| 9, Monday, November 9, 2026 | button | 48x48 | OK |
+| 10, Tuesday, November 10, 2026 | button | 48x48 | OK |
+| 11, Wednesday, November 11, 2026 | button | 48x48 | OK |
+| 12, Thursday, November 12, 2026 | button | 48x48 | OK |
+| 13, Friday, November 13, 2026 | button | 48x48 | OK |
+| 14, Saturday, November 14, 2026 | button | 48x48 | OK |
+| 15, Sunday, November 15, 2026 | button | 48x48 | OK |
+| 16, Monday, November 16, 2026 | button | 48x48 | OK_ALREADY_SELECTED |
+| 17, Tuesday, November 17, 2026 | button | 48x48 | OK |
+| 18, Wednesday, November 18, 2026, Today | button | 48x48 | OK |
+| 19, Thursday, November 19, 2026 | button | 48x48 | OK |
+| 20, Friday, November 20, 2026 | button | 48x48 | OK |
+| 21, Saturday, November 21, 2026 | button | 48x48 | OK |
+| 22, Sunday, November 22, 2026 | button | 48x48 | OK |
+| 23, Monday, November 23, 2026 | button | 48x48 | OK |
+| 24, Tuesday, November 24, 2026 | button | 48x48 | OK |
+| 25, Wednesday, November 25, 2026 | button | 48x48 | OK |
+| 26, Thursday, November 26, 2026 | button | 48x48 | OK |
+| 27, Friday, November 27, 2026 | button | 48x48 | OK |
+| 28, Saturday, November 28, 2026 | button | 48x48 | OK |
+| 29, Sunday, November 29, 2026 | button | 48x48 | OK |
+| 30, Monday, November 30, 2026 | button | 48x48 | OK |
+| Select year November 2026 | button | 232x52 | OK |
+| Cancel | button | 109x48 | OK |
+| OK | button | 52x48 | OK |
+
+## `/task/:id > Reminder No reminder`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x419 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| No reminder | button | 412x56 | OK |
+| At time of event | button | 412x56 | OK |
+| 5 minutes before | button | 412x56 | OK |
+| 15 minutes before | button | 412x56 | OK |
+| 30 minutes before | button | 412x56 | OK |
+| 1 hour before | button | 412x56 | OK |
+| 1 day before | button | 412x56 | OK |
+| At a specific time | button | 412x56 | OK |
+
+## `/task/:id > Repeat Does not repeat`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x418 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Does not repeat | button | 372x56 | OK |
+| Every day | button | 372x56 | OK |
+| Every weekday | button | 372x56 | OK |
+| Every week | button | 372x56 | OK |
+| Every month | button | 372x56 | OK |
+| Every year | button | 372x56 | OK |
+| Custom | button | 372x56 | OK |
+
+## `/task/:id > Project Thesis`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Dismiss | tappable | 412x915 | OK |
+| No project | button | 412x48 | OK |
+| Thesis | button | 412x48 | OK |
 
 ## `/event/new`
 
@@ -168,6 +473,112 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Reminder No reminder / Reminder | tappable | 372x72 | OK |
 | Linked task No linked task | button | 372x72 | OK |
 | Save | button | 100x48 | OK |
+
+## `/event/new > Starts Mon, Nov 16 · 11:00 AM`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Dismiss | tappable | 412x915 | OK |
+| Switch to input | button | 48x48 | OK |
+| Previous month | button | 48x48 | OK |
+| Next month | button | 48x48 | OK |
+| 1, Sunday, November 1, 2026 | button | 48x48 | OK |
+| 2, Monday, November 2, 2026 | button | 48x48 | OK |
+| 3, Tuesday, November 3, 2026 | button | 48x48 | OK |
+| 4, Wednesday, November 4, 2026 | button | 48x48 | OK |
+| 5, Thursday, November 5, 2026 | button | 48x48 | OK |
+| 6, Friday, November 6, 2026 | button | 48x48 | OK |
+| 7, Saturday, November 7, 2026 | button | 48x48 | OK |
+| 8, Sunday, November 8, 2026 | button | 48x48 | OK |
+| 9, Monday, November 9, 2026 | button | 48x48 | OK |
+| 10, Tuesday, November 10, 2026 | button | 48x48 | OK |
+| 11, Wednesday, November 11, 2026 | button | 48x48 | OK |
+| 12, Thursday, November 12, 2026 | button | 48x48 | OK |
+| 13, Friday, November 13, 2026 | button | 48x48 | OK |
+| 14, Saturday, November 14, 2026 | button | 48x48 | OK |
+| 15, Sunday, November 15, 2026 | button | 48x48 | OK |
+| 16, Monday, November 16, 2026 | button | 48x48 | OK_ALREADY_SELECTED |
+| 17, Tuesday, November 17, 2026 | button | 48x48 | OK |
+| 18, Wednesday, November 18, 2026, Today | button | 48x48 | OK |
+| 19, Thursday, November 19, 2026 | button | 48x48 | OK |
+| 20, Friday, November 20, 2026 | button | 48x48 | OK |
+| 21, Saturday, November 21, 2026 | button | 48x48 | OK |
+| 22, Sunday, November 22, 2026 | button | 48x48 | OK |
+| 23, Monday, November 23, 2026 | button | 48x48 | OK |
+| 24, Tuesday, November 24, 2026 | button | 48x48 | OK |
+| 25, Wednesday, November 25, 2026 | button | 48x48 | OK |
+| 26, Thursday, November 26, 2026 | button | 48x48 | OK |
+| 27, Friday, November 27, 2026 | button | 48x48 | OK |
+| 28, Saturday, November 28, 2026 | button | 48x48 | OK |
+| 29, Sunday, November 29, 2026 | button | 48x48 | OK |
+| 30, Monday, November 30, 2026 | button | 48x48 | OK |
+| Select year November 2026 | button | 232x52 | OK |
+| Cancel | button | 109x48 | OK |
+| OK | button | 52x48 | OK |
+
+## `/event/new > Ends Mon, Nov 16 · 12:00 PM`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Dismiss | tappable | 412x915 | OK |
+| Switch to input | button | 48x48 | OK |
+| Previous month | button | 48x48 | OK |
+| Next month | button | 48x48 | OK |
+| 1, Sunday, November 1, 2026 | button | 48x48 | OK |
+| 2, Monday, November 2, 2026 | button | 48x48 | OK |
+| 3, Tuesday, November 3, 2026 | button | 48x48 | OK |
+| 4, Wednesday, November 4, 2026 | button | 48x48 | OK |
+| 5, Thursday, November 5, 2026 | button | 48x48 | OK |
+| 6, Friday, November 6, 2026 | button | 48x48 | OK |
+| 7, Saturday, November 7, 2026 | button | 48x48 | OK |
+| 8, Sunday, November 8, 2026 | button | 48x48 | OK |
+| 9, Monday, November 9, 2026 | button | 48x48 | OK |
+| 10, Tuesday, November 10, 2026 | button | 48x48 | OK |
+| 11, Wednesday, November 11, 2026 | button | 48x48 | OK |
+| 12, Thursday, November 12, 2026 | button | 48x48 | OK |
+| 13, Friday, November 13, 2026 | button | 48x48 | OK |
+| 14, Saturday, November 14, 2026 | button | 48x48 | OK |
+| 15, Sunday, November 15, 2026 | button | 48x48 | OK |
+| 16, Monday, November 16, 2026 | button | 48x48 | OK_ALREADY_SELECTED |
+| 17, Tuesday, November 17, 2026 | button | 48x48 | OK |
+| 18, Wednesday, November 18, 2026, Today | button | 48x48 | OK |
+| 19, Thursday, November 19, 2026 | button | 48x48 | OK |
+| 20, Friday, November 20, 2026 | button | 48x48 | OK |
+| 21, Saturday, November 21, 2026 | button | 48x48 | OK |
+| 22, Sunday, November 22, 2026 | button | 48x48 | OK |
+| 23, Monday, November 23, 2026 | button | 48x48 | OK |
+| 24, Tuesday, November 24, 2026 | button | 48x48 | OK |
+| 25, Wednesday, November 25, 2026 | button | 48x48 | OK |
+| 26, Thursday, November 26, 2026 | button | 48x48 | OK |
+| 27, Friday, November 27, 2026 | button | 48x48 | OK |
+| 28, Saturday, November 28, 2026 | button | 48x48 | OK |
+| 29, Sunday, November 29, 2026 | button | 48x48 | OK |
+| 30, Monday, November 30, 2026 | button | 48x48 | OK |
+| Select year November 2026 | button | 232x52 | OK |
+| Cancel | button | 109x48 | OK |
+| OK | button | 52x48 | OK |
+
+## `/event/new > Repeat Does not repeat`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x418 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Does not repeat | button | 372x56 | OK |
+| Every day | button | 372x56 | OK |
+| Every weekday | button | 372x56 | OK |
+| Every week | button | 372x56 | OK |
+| Every month | button | 372x56 | OK |
+| Every year | button | 372x56 | OK |
+| Custom | button | 372x56 | OK |
+
+## `/event/new > Linked task No linked task`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x227 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Search | textField | 372x52 | TEXT_INPUT |
 
 ## `/event/:id`
 
@@ -191,7 +602,112 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Color 5 | button | 48x48 | OK |
 | Color 6 | button | 48x48 | OK |
 | Delete | button | 48x48 | OK |
-| Undo | button | 88x48 | OK |
+
+## `/event/:id > Starts Mon, Nov 16 · 11:00 AM`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Dismiss | tappable | 412x915 | OK |
+| Switch to input | button | 48x48 | OK |
+| Previous month | button | 48x48 | OK |
+| Next month | button | 48x48 | OK |
+| 1, Sunday, November 1, 2026 | button | 48x48 | OK |
+| 2, Monday, November 2, 2026 | button | 48x48 | OK |
+| 3, Tuesday, November 3, 2026 | button | 48x48 | OK |
+| 4, Wednesday, November 4, 2026 | button | 48x48 | OK |
+| 5, Thursday, November 5, 2026 | button | 48x48 | OK |
+| 6, Friday, November 6, 2026 | button | 48x48 | OK |
+| 7, Saturday, November 7, 2026 | button | 48x48 | OK |
+| 8, Sunday, November 8, 2026 | button | 48x48 | OK |
+| 9, Monday, November 9, 2026 | button | 48x48 | OK |
+| 10, Tuesday, November 10, 2026 | button | 48x48 | OK |
+| 11, Wednesday, November 11, 2026 | button | 48x48 | OK |
+| 12, Thursday, November 12, 2026 | button | 48x48 | OK |
+| 13, Friday, November 13, 2026 | button | 48x48 | OK |
+| 14, Saturday, November 14, 2026 | button | 48x48 | OK |
+| 15, Sunday, November 15, 2026 | button | 48x48 | OK |
+| 16, Monday, November 16, 2026 | button | 48x48 | OK_ALREADY_SELECTED |
+| 17, Tuesday, November 17, 2026 | button | 48x48 | OK |
+| 18, Wednesday, November 18, 2026, Today | button | 48x48 | OK |
+| 19, Thursday, November 19, 2026 | button | 48x48 | OK |
+| 20, Friday, November 20, 2026 | button | 48x48 | OK |
+| 21, Saturday, November 21, 2026 | button | 48x48 | OK |
+| 22, Sunday, November 22, 2026 | button | 48x48 | OK |
+| 23, Monday, November 23, 2026 | button | 48x48 | OK |
+| 24, Tuesday, November 24, 2026 | button | 48x48 | OK |
+| 25, Wednesday, November 25, 2026 | button | 48x48 | OK |
+| 26, Thursday, November 26, 2026 | button | 48x48 | OK |
+| 27, Friday, November 27, 2026 | button | 48x48 | OK |
+| 28, Saturday, November 28, 2026 | button | 48x48 | OK |
+| 29, Sunday, November 29, 2026 | button | 48x48 | OK |
+| 30, Monday, November 30, 2026 | button | 48x48 | OK |
+| Select year November 2026 | button | 232x52 | OK |
+| Cancel | button | 109x48 | OK |
+| OK | button | 52x48 | OK |
+
+## `/event/:id > Ends Mon, Nov 16 · 12:00 PM`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Dismiss | tappable | 412x915 | OK |
+| Switch to input | button | 48x48 | OK |
+| Previous month | button | 48x48 | OK |
+| Next month | button | 48x48 | OK |
+| 1, Sunday, November 1, 2026 | button | 48x48 | OK |
+| 2, Monday, November 2, 2026 | button | 48x48 | OK |
+| 3, Tuesday, November 3, 2026 | button | 48x48 | OK |
+| 4, Wednesday, November 4, 2026 | button | 48x48 | OK |
+| 5, Thursday, November 5, 2026 | button | 48x48 | OK |
+| 6, Friday, November 6, 2026 | button | 48x48 | OK |
+| 7, Saturday, November 7, 2026 | button | 48x48 | OK |
+| 8, Sunday, November 8, 2026 | button | 48x48 | OK |
+| 9, Monday, November 9, 2026 | button | 48x48 | OK |
+| 10, Tuesday, November 10, 2026 | button | 48x48 | OK |
+| 11, Wednesday, November 11, 2026 | button | 48x48 | OK |
+| 12, Thursday, November 12, 2026 | button | 48x48 | OK |
+| 13, Friday, November 13, 2026 | button | 48x48 | OK |
+| 14, Saturday, November 14, 2026 | button | 48x48 | OK |
+| 15, Sunday, November 15, 2026 | button | 48x48 | OK |
+| 16, Monday, November 16, 2026 | button | 48x48 | OK_ALREADY_SELECTED |
+| 17, Tuesday, November 17, 2026 | button | 48x48 | OK |
+| 18, Wednesday, November 18, 2026, Today | button | 48x48 | OK |
+| 19, Thursday, November 19, 2026 | button | 48x48 | OK |
+| 20, Friday, November 20, 2026 | button | 48x48 | OK |
+| 21, Saturday, November 21, 2026 | button | 48x48 | OK |
+| 22, Sunday, November 22, 2026 | button | 48x48 | OK |
+| 23, Monday, November 23, 2026 | button | 48x48 | OK |
+| 24, Tuesday, November 24, 2026 | button | 48x48 | OK |
+| 25, Wednesday, November 25, 2026 | button | 48x48 | OK |
+| 26, Thursday, November 26, 2026 | button | 48x48 | OK |
+| 27, Friday, November 27, 2026 | button | 48x48 | OK |
+| 28, Saturday, November 28, 2026 | button | 48x48 | OK |
+| 29, Sunday, November 29, 2026 | button | 48x48 | OK |
+| 30, Monday, November 30, 2026 | button | 48x48 | OK |
+| Select year November 2026 | button | 232x52 | OK |
+| Cancel | button | 109x48 | OK |
+| OK | button | 52x48 | OK |
+
+## `/event/:id > Repeat Does not repeat`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x418 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Does not repeat | button | 372x56 | OK |
+| Every day | button | 372x56 | OK |
+| Every weekday | button | 372x56 | OK |
+| Every week | button | 372x56 | OK |
+| Every month | button | 372x56 | OK |
+| Every year | button | 372x56 | OK |
+| Custom | button | 372x56 | OK |
+
+## `/event/:id > Linked task No linked task`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x227 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Search | textField | 372x52 | TEXT_INPUT |
 
 ## `/projects`
 
@@ -201,16 +717,98 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Show archived | button | 48x48 | OK |
 | New project | button | 221x56 | OK |
 
+## `/projects > New project`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x130 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Name e.g. Product launch | textField | 372x52 | TEXT_INPUT |
+| Goal | textField | 372x52 | TEXT_INPUT |
+| Description | textField | 372x76 | TEXT_INPUT |
+| Deadline No deadline | button | 372x72 | OK |
+| Color 1 | button | 48x48 | OK_ALREADY_SELECTED |
+| Color 2 | button | 48x48 | OK |
+| Color 3 | button | 48x48 | OK |
+| Color 4 | button | 48x48 | OK |
+| Color 5 | button | 48x48 | OK |
+| Color 6 | button | 48x48 | OK |
+| Color 7 | button | 48x48 | OK |
+| Color 8 | button | 48x48 | OK |
+| Color 9 | button | 48x48 | OK |
+| Color 10 | button | 48x48 | OK |
+| Color 11 | button | 48x48 | OK |
+| Color 12 | button | 48x48 | OK |
+| Spark / Spark | button | 58x48 | OK_ALREADY_SELECTED |
+| Rocket / Rocket | button | 58x48 | OK |
+| Book / Book | button | 58x48 | OK |
+| Work / Work | button | 58x48 | OK |
+| Home / Home | button | 58x48 | OK |
+| Heart / Heart | button | 58x48 | OK |
+| Code / Code | button | 58x48 | OK |
+| Palette / Palette | button | 58x48 | OK |
+| Fitness / Fitness | button | 58x48 | OK |
+| School / School | button | 58x48 | OK |
+| Travel / Travel | button | 58x48 | OK |
+| Savings / Savings | button | 58x48 | OK |
+| Save | button | 372x48 | OK |
+
 ## `/projects/:id`
 
 | Control (accessibility label) | Role | Size | Result |
 |---|---|---|---|
+| Add milestone | button | 207x48 | OK |
 | New project note | button | 250x48 | OK |
 | Ideas | tappable | 372x54 | OK |
 | Edit | button | 48x48 | OK |
 | More options | button | 44x48 | OK |
 | Add task to project | button | 56x56 | OK |
-| More options | button | 48x48 | OK |
+
+## `/projects/:id > Add milestone`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Dismiss | tappable | 412x915 | OK |
+| Milestone | textField | 283x52 | TEXT_INPUT |
+| Due date No date | button | 283x72 | OK |
+| Cancel | button | 109x48 | OK |
+| Save | button | 100x48 | OK |
+
+## `/projects/:id > Edit`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x130 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Name / Thesis | textField | 372x52 | TEXT_INPUT |
+| Goal | textField | 372x52 | TEXT_INPUT |
+| Description | textField | 372x76 | TEXT_INPUT |
+| Deadline No deadline | button | 372x72 | OK |
+| Color 1 | button | 48x48 | OK_ALREADY_SELECTED |
+| Color 2 | button | 48x48 | OK |
+| Color 3 | button | 48x48 | OK |
+| Color 4 | button | 48x48 | OK |
+| Color 5 | button | 48x48 | OK |
+| Color 6 | button | 48x48 | OK |
+| Color 7 | button | 48x48 | OK |
+| Color 8 | button | 48x48 | OK |
+| Color 9 | button | 48x48 | OK |
+| Color 10 | button | 48x48 | OK |
+| Color 11 | button | 48x48 | OK |
+| Color 12 | button | 48x48 | OK |
+| Spark / Spark | button | 58x48 | OK_ALREADY_SELECTED |
+| Rocket / Rocket | button | 58x48 | OK |
+| Book / Book | button | 58x48 | OK |
+| Work / Work | button | 58x48 | OK |
+| Home / Home | button | 58x48 | OK |
+| Heart / Heart | button | 58x48 | OK |
+| Code / Code | button | 58x48 | OK |
+| Palette / Palette | button | 58x48 | OK |
+| Fitness / Fitness | button | 58x48 | OK |
+| School / School | button | 58x48 | OK |
+| Travel / Travel | button | 58x48 | OK |
+| Savings / Savings | button | 58x48 | OK |
+| Save | button | 372x48 | OK |
 
 ## `/notes`
 
@@ -224,8 +822,39 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Pinned | button | 134x48 | OK |
 | Favorites | button | 142x48 | OK |
 | New note | button | 179x56 | OK |
-| New notebook | button | 181x48 | OK |
-| Favorites | button | 146x48 | OK |
+
+## `/notes > More options`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x587 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Pin | button | 412x56 | OK |
+| First draft notes | textField | 372x250 | TEXT_INPUT |
+| Link a task | button | 179x48 | OK |
+| Heading | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Bold | button | 48x48 | OK_PARTLY_OFFSCREEN |
+
+## `/notes > New notebook`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Dismiss | tappable | 412x915 | OK |
+| Notebook name | textField | 284x74 | TEXT_INPUT |
+| Color 1 | button | 48x48 | OK |
+| Color 2 | button | 48x48 | OK |
+| Color 3 | button | 48x48 | OK |
+| Color 4 | button | 48x48 | OK |
+| Color 5 | button | 48x48 | OK_ALREADY_SELECTED |
+| Color 6 | button | 48x48 | OK |
+| Color 7 | button | 48x48 | OK |
+| Color 8 | button | 48x48 | OK |
+| Color 9 | button | 48x48 | OK |
+| Color 10 | button | 48x48 | OK |
+| Color 11 | button | 48x48 | OK |
+| Color 12 | button | 48x48 | OK |
+| Cancel | button | 109x48 | OK |
+| Create | button | 129x48 | OK |
 
 ## `/notes/:id`
 
@@ -234,7 +863,7 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Ideas | textField | 372x48 | TEXT_INPUT |
 | No notebook / Move to notebook | button | 198x48 | OK |
 | Thesis / Project | button | 134x48 | OK |
-| First draft notes | textField | 372x250 | TEXT_INPUT |
+| # First draft notes**** | textField | 372x250 | TEXT_INPUT |
 | Link a task | button | 179x48 | OK |
 | Heading | button | 48x48 | OK |
 | Bold | button | 48x48 | OK |
@@ -243,12 +872,35 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Checklist | button | 48x48 | OK |
 | Link | button | 48x48 | OK |
 | Preview | button | 48x48 | OK |
-| Pin | button | 48x48 | OK |
+| Unpin | button | 48x48 | OK |
 | Favorite | button | 48x48 | OK |
 | More options | button | 48x48 | OK |
-| - [ ] # First draft notes****__[[]] | textField | 372x250 | TEXT_INPUT |
-| Unpin | button | 48x48 | OK_VERIFIED_SEPARATELY |
-| Remove from favorites | button | 48x48 | OK_VERIFIED_SEPARATELY |
+
+## `/notes/:id > No notebook | Move to notebook`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x725 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| No notebook | button | 412x56 | OK |
+| New notebook | button | 412x56 | OK |
+
+## `/notes/:id > Thesis | Project`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x725 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| No project | button | 412x56 | OK |
+| Thesis | button | 412x56 | OK |
+
+## `/notes/:id > Link a task`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x227 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Search | textField | 372x52 | TEXT_INPUT |
 
 ## `/flashcards`
 
@@ -256,6 +908,31 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 |---|---|---|---|
 | Mature cards: 0% Spanish 2 cards 2 new | tappable | 372x84 | OK |
 | New deck | button | 179x56 | OK |
+
+## `/flashcards > New deck`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x370 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Deck name | textField | 372x52 | TEXT_INPUT |
+| Description | textField | 372x52 | TEXT_INPUT |
+| Color 1 | button | 48x48 | OK_ALREADY_SELECTED |
+| Color 2 | button | 48x48 | OK |
+| Color 3 | button | 48x48 | OK |
+| Color 4 | button | 48x48 | OK |
+| Color 5 | button | 48x48 | OK |
+| Color 6 | button | 48x48 | OK |
+| Color 7 | button | 48x48 | OK |
+| Color 8 | button | 48x48 | OK |
+| Color 9 | button | 48x48 | OK |
+| Color 10 | button | 48x48 | OK |
+| Color 11 | button | 48x48 | OK |
+| Color 12 | button | 48x48 | OK |
+| New cards per day / 20 | textField | 372x52 | TEXT_INPUT |
+| Daily review target / 50 | textField | 372x52 | TEXT_INPUT |
+| Cancel | button | 109x48 | OK |
+| Create | button | 129x48 | OK |
 
 ## `/flashcards/:id`
 
@@ -269,17 +946,59 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Export | button | 48x48 | OK |
 | More options | button | 48x48 | OK |
 | New card | button | 179x56 | OK |
-| gracias thank you New | tappable | 372x89 | OK |
-| Undo | button | 88x48 | OK |
+
+## `/flashcards/:id > hola hello New`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x478 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Front / hola | textField | 372x52 | TEXT_INPUT |
+| Back / hello | textField | 372x76 | TEXT_INPUT |
+| Tags | textField | 372x52 | TEXT_INPUT |
+| More fields | button | 209x48 | OK |
+| Cancel | button | 109x48 | OK |
+| Save | button | 100x48 | OK |
+
+## `/flashcards/:id > Import`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Dismiss | tappable | 412x915 | OK_PARTLY_OFFSCREEN |
+| Cards to import | textField | 262x218 | TEXT_INPUT |
+| Cancel | button | 109x48 | OK |
+| Import | button | 129x48 | OK |
+
+## `/flashcards/:id > Export`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x706 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Share | button | 412x56 | OK |
+| Copy to clipboard | button | 412x56 | OK |
+
+## `/flashcards/:id > New card`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x366 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Front Question or term | textField | 372x52 | TEXT_INPUT |
+| Back | textField | 372x76 | TEXT_INPUT |
+| Tags | textField | 372x52 | TEXT_INPUT |
+| More fields | button | 209x48 | OK |
+| Done | button | 80x48 | OK |
+| Save and add another | button | 322x48 | OK |
+| Save | button | 100x48 | OK |
 
 ## `/flashcards/:id/review`
 
 | Control (accessibility label) | Role | Size | Result |
 |---|---|---|---|
-| Question: hola / Tap to reveal the answer | button | 372x723 | OK |
+| Question: gracias / Tap to reveal the answer | button | 372x723 | OK |
 | Show answer | button | 372x52 | OK |
 | Read aloud | button | 44x48 | OK |
-| Read aloud | button | 48x48 | OK |
 
 ## `/goals`
 
@@ -294,8 +1013,24 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Weekly | button | 114x48 | OK |
 | Monthly | button | 73x48 | OK |
 | New goal | button | 179x56 | OK |
-| Achieved | button | 24x48 | OK |
-| Monthly | button | 76x48 | OK |
+
+## `/goals > New goal`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x274 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Title What do you want to achieve? | textField | 372x52 | TEXT_INPUT |
+| Daily | button | 102x48 | OK |
+| Weekly | button | 114x48 | OK_ALREADY_SELECTED |
+| Monthly | button | 127x48 | OK |
+| Long-term | button | 152x48 | OK |
+| Target / 1 | textField | 180x52 | TEXT_INPUT |
+| Unit | textField | 180x52 | TEXT_INPUT |
+| Description (optional) | textField | 372x52 | TEXT_INPUT |
+| Deadline (optional) No deadline | button | 372x122 | OK |
+| Set deadline | button | 193x48 | OK |
+| Create | button | 372x48 | OK |
 
 ## `/goals/:id`
 
@@ -303,7 +1038,25 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 |---|---|---|---|
 | Log progress | button | 239x48 | OK |
 | Link a task | button | 179x48 | OK |
-| More options | button | 48x48 | OK |
+| Remove entry | button | 48x48 | OK |
+
+## `/goals/:id > Log progress`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x593 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Amount / 1 | textField | 372x52 | TEXT_INPUT |
+| Note (optional) | textField | 372x52 | TEXT_INPUT |
+| Save | button | 372x48 | OK |
+
+## `/goals/:id > Link a task`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x227 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Search | textField | 372x52 | TEXT_INPUT |
 
 ## `/habits`
 
@@ -311,7 +1064,28 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 |---|---|---|---|
 | Meditate No streak Check in "Meditate" | checkbox | 408x92 | OK |
 | New habit | button | 193x56 | OK |
-| Meditate No streak Check in "Meditate" | checkbox | 412x92 | OK |
+
+## `/habits > New habit`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Name e.g. Read 20 pages | textField | 372x52 | TEXT_INPUT |
+| Color 1 | button | 48x48 | OK |
+| Color 2 | button | 48x48 | OK |
+| Color 3 | button | 48x48 | OK_ALREADY_SELECTED |
+| Color 4 | button | 48x48 | OK |
+| Color 5 | button | 48x48 | OK |
+| Color 6 | button | 48x48 | OK |
+| Color 7 | button | 48x48 | OK |
+| Color 8 | button | 48x48 | OK |
+| Color 9 | button | 48x48 | OK |
+| Color 10 | button | 48x48 | OK |
+| Color 11 | button | 48x48 | OK |
+| Color 12 | button | 48x48 | OK |
+| Increase | button | 48x48 | OK |
+| Daily reminder No reminder | button | 372x428 | OK |
+| Set a reminder time | button | 292x48 | OK |
 
 ## `/habits/:id`
 
@@ -338,17 +1112,12 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Projects | button | 140x48 | OK |
 | Notes | button | 47x48 | OK |
 | Search everything… | textField | 372x52 | TEXT_INPUT |
-| Notes | button | 51x48 | OK |
 
 ## `/assistant`
 
 | Control (accessibility label) | Role | Size | Result |
 |---|---|---|---|
 | Enable assistant | button | 296x48 | OK |
-| Plan my day. Orders open tasks by urgency, priority and estimate, and fits them around you | button | 372x143 | OK |
-| Extract tasks from a note. Finds checklist items and action lines in a note and turns them | button | 372x144 | OK |
-| Make flashcards from a note. Turns "term: definition" and question/answer lines into cards | button | 372x144 | OK |
-| Workload overview. Compares estimated work with your free time this week. | button | 372x107 | OK |
 
 ## `/settings`
 
@@ -367,7 +1136,22 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Increase Long break | button | 48x48 | OK |
 | Decrease Long break after | button | 48x30 | OK |
 | Increase Long break after | button | 48x30 | OK |
-| General Language Device language | button | 412x149 | OK |
+
+## `/settings > General Language Device language`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x218 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Device language | button | 412x56 | OK |
+| العربية | button | 412x56 | OK |
+| English | button | 412x56 | OK |
+| 中文 | button | 412x56 | OK |
+| Español | button | 412x56 | OK |
+| Русский | button | 412x56 | OK |
+| Français | button | 412x56 | OK |
+| Português (Brasil) | button | 412x56 | OK |
+| हिन्दी | button | 412x56 | OK |
 
 ## `/trash`
 
