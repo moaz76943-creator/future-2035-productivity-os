@@ -3413,4 +3413,29 @@ class AppLocalizationsRu extends AppLocalizations {
   String calendarMilestone(String project) {
     return 'Веха · $project';
   }
+
+  @override
+  String get tasksViewInbox => 'Входящие';
+
+  @override
+  String get tasksViewArchived => 'Архив';
+
+  @override
+  String get tasksEmptyInbox =>
+      'Сюда попадают задачи без проекта и даты. Разберите их, когда будет минутка.';
+
+  @override
+  String get tasksEmptyArchived => 'Архивные задачи хранятся здесь, вне списков и напоминаний.';
+
+  @override
+  String get taskArchivedBadge => 'В архиве';
+
+  @override
+  String get taskStatusInProgress => 'В работе';
+
+  @override
+  String get taskArchived => 'Задача перемещена в архив';
+
+  @override
+  String get taskUnarchived => 'Задача возвращена из архива';
 }

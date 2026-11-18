@@ -900,5 +900,13 @@
   "milestonesEmpty": "Aún no hay hitos. Añade puntos de control con fecha para seguir el proyecto en el calendario.",
   "milestoneDeleted": "Hito eliminado",
   "milestoneDoneA11y": "Marcar el hito \"{title}\" como completado",
-  "calendarMilestone": "Hito · {project}"
+  "calendarMilestone": "Hito · {project}",
+  "tasksViewInbox": "Bandeja",
+  "tasksViewArchived": "Archivadas",
+  "tasksEmptyInbox": "Aquí llegan las tareas sin proyecto ni fecha. Organízalas cuando tengas un momento.",
+  "tasksEmptyArchived": "Las tareas archivadas se guardan aquí, fuera de tus listas y recordatorios.",
+  "taskArchivedBadge": "Archivada",
+  "taskStatusInProgress": "En curso",
+  "taskArchived": "Tarea archivada",
+  "taskUnarchived": "Tarea restaurada del archivo"
 }

@@ -900,5 +900,13 @@
   "milestonesEmpty": "لا توجد مراحل بعد. أضف محطات بتواريخ لمتابعة المشروع في التقويم.",
   "milestoneDeleted": "تم حذف المرحلة",
   "milestoneDoneA11y": "تعليم المرحلة \"{title}\" كمكتملة",
-  "calendarMilestone": "مرحلة · {project}"
+  "calendarMilestone": "مرحلة · {project}",
+  "tasksViewInbox": "الوارد",
+  "tasksViewArchived": "المؤرشفة",
+  "tasksEmptyInbox": "تصل هنا المهام التي ليس لها مشروع أو تاريخ. رتّبها عندما يتسنى لك ذلك.",
+  "tasksEmptyArchived": "تُحفظ المهام المؤرشفة هنا، بعيدًا عن قوائمك وتذكيراتك.",
+  "taskArchivedBadge": "مؤرشفة",
+  "taskStatusInProgress": "قيد التنفيذ",
+  "taskArchived": "تمت أرشفة المهمة",
+  "taskUnarchived": "تمت استعادة المهمة من الأرشيف"
 }

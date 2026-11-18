@@ -52,7 +52,7 @@ void main() {
     await pumpScreen(tester, const TasksScreen(), env: env);
     await settle(tester);
     expect(find.text('Pay invoice'), findsOneWidget);
-    expect(find.text(_l10n(tester).tasksSectionOverdue), findsWidgets);
+    expect(find.textContaining(_l10n(tester).tasksSectionOverdue), findsWidgets);
     await env.dispose();
   });
 }

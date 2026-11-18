@@ -168,6 +168,7 @@ class AnalyticsService {
         await (_db.select(_db.tasks)..where(
               (t) =>
                   t.deletedAt.isNull() &
+                  t.archivedAt.isNull() &
                   t.dueAt.isBiggerOrEqualValue(fromUtc) &
                   t.dueAt.isSmallerThanValue(toUtc),
             ))

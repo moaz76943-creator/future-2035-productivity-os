@@ -900,5 +900,13 @@
   "milestonesEmpty": "Aucun jalon pour l’instant. Ajoutez des étapes datées pour suivre le projet dans le calendrier.",
   "milestoneDeleted": "Jalon supprimé",
   "milestoneDoneA11y": "Marquer le jalon « {title} » comme terminé",
-  "calendarMilestone": "Jalon · {project}"
+  "calendarMilestone": "Jalon · {project}",
+  "tasksViewInbox": "Boîte de réception",
+  "tasksViewArchived": "Archivées",
+  "tasksEmptyInbox": "Les tâches sans projet ni date arrivent ici. Triez-les quand vous avez une minute.",
+  "tasksEmptyArchived": "Les tâches archivées sont conservées ici, hors de vos listes et rappels.",
+  "taskArchivedBadge": "Archivée",
+  "taskStatusInProgress": "En cours",
+  "taskArchived": "Tâche archivée",
+  "taskUnarchived": "Tâche restaurée depuis les archives"
 }

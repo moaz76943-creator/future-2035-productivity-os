@@ -5,7 +5,14 @@ import '../../../core/ids.dart';
 import '../../../core/recurrence/recurrence_rule.dart';
 import '../../../core/time/clock.dart';
 
-enum TaskView { today, upcoming, all, completed, overdue }
+enum TaskView { today, upcoming, all, completed, overdue, inbox, archived }
+
+/// Workflow status of an open task. Completion stays in `done`; archived
+/// tasks are hidden from every view except [TaskView.archived].
+abstract final class TaskStatus {
+  static const notStarted = 'notStarted';
+  static const inProgress = 'inProgress';
+}
 
 enum TaskSort { smart, dueDate, priority, created, title }
 
@@ -263,6 +270,31 @@ class TasksRepository {
     });
   }
 
+  /// Marks an open task as being worked on (or back to not started).
+  Future<void> setInProgress(String id, bool inProgress) async {
+    await (_db.update(_db.tasks)..where((t) => t.id.equals(id))).write(
+      TasksCompanion(
+        status: Value(inProgress ? TaskStatus.inProgress : TaskStatus.notStarted),
+        updatedAt: Value(_clock.nowUtc()),
+      ),
+    );
+  }
+
+  /// Hides a task (and its subtasks) from every view, reminder and count
+  /// without deleting it. Idempotent.
+  Future<void> archive(String id) async {
+    final now = _clock.nowUtc();
+    await (_db.update(_db.tasks)
+          ..where((t) => (t.id.equals(id) | t.parentId.equals(id)) & t.archivedAt.isNull()))
+        .write(TasksCompanion(archivedAt: Value(now), updatedAt: Value(now)));
+  }
+
+  Future<void> unarchive(String id) async {
+    await (_db.update(_db.tasks)..where((t) => t.id.equals(id) | t.parentId.equals(id))).write(
+      TasksCompanion(archivedAt: const Value(null), updatedAt: Value(_clock.nowUtc())),
+    );
+  }
+
   Future<void> restore(String id) async {
     await (_db.update(_db.tasks)..where((t) => t.id.equals(id) | t.parentId.equals(id))).write(
       TasksCompanion(deletedAt: const Value(null), updatedAt: Value(_clock.nowUtc())),
@@ -283,6 +315,11 @@ class TasksRepository {
     final startToday = Days.startOfDay(now).toUtc();
     final startTomorrow = Days.addDays(Days.startOfDay(now), 1).toUtc();
     final q = _db.select(_db.tasks)..where((t) => t.deletedAt.isNull() & t.parentId.isNull());
+    if (f.view == TaskView.archived) {
+      q.where((t) => t.archivedAt.isNotNull());
+    } else {
+      q.where((t) => t.archivedAt.isNull());
+    }
 
     switch (f.view) {
       case TaskView.today:
@@ -295,6 +332,10 @@ class TasksRepository {
         q.where((t) => t.done.equals(true));
       case TaskView.all:
         q.where((t) => t.done.equals(false));
+      case TaskView.inbox:
+        q.where((t) => t.done.equals(false) & t.projectId.isNull() & t.dueAt.isNull());
+      case TaskView.archived:
+        break;
     }
     if (f.projectId case final p?) q.where((t) => t.projectId.equals(p));
     if (f.minPriority case final p?) {
@@ -312,6 +353,7 @@ class TasksRepository {
 
     q.orderBy(switch (f.sort) {
       TaskSort.smart when f.view == TaskView.completed => [(t) => OrderingTerm.desc(t.completedAt)],
+      TaskSort.smart when f.view == TaskView.archived => [(t) => OrderingTerm.desc(t.archivedAt)],
       TaskSort.smart => [
         (t) => OrderingTerm(expression: t.dueAt.isNull(), mode: OrderingMode.asc),
         (t) => OrderingTerm.asc(t.dueAt),
@@ -341,6 +383,7 @@ class TasksRepository {
     return (_db.select(_db.tasks)..where(
           (t) =>
               t.deletedAt.isNull() &
+              t.archivedAt.isNull() &
               t.dueAt.isBiggerOrEqualValue(s) &
               t.dueAt.isSmallerThanValue(e),
         ))
@@ -351,6 +394,7 @@ class TasksRepository {
       (_db.select(_db.tasks)..where(
             (t) =>
                 t.deletedAt.isNull() &
+                t.archivedAt.isNull() &
                 t.dueAt.isBiggerOrEqualValue(from.toUtc()) &
                 t.dueAt.isSmallerThanValue(to.toUtc()),
           ))

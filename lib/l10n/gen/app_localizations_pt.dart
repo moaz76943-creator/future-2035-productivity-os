@@ -3309,4 +3309,30 @@ class AppLocalizationsPt extends AppLocalizations {
   String calendarMilestone(String project) {
     return 'Marco · $project';
   }
+
+  @override
+  String get tasksViewInbox => 'Caixa de entrada';
+
+  @override
+  String get tasksViewArchived => 'Arquivadas';
+
+  @override
+  String get tasksEmptyInbox =>
+      'Tarefas sem projeto ou data chegam aqui. Organize-as quando tiver um minuto.';
+
+  @override
+  String get tasksEmptyArchived =>
+      'Tarefas arquivadas ficam aqui, fora das suas listas e lembretes.';
+
+  @override
+  String get taskArchivedBadge => 'Arquivada';
+
+  @override
+  String get taskStatusInProgress => 'Em andamento';
+
+  @override
+  String get taskArchived => 'Tarefa arquivada';
+
+  @override
+  String get taskUnarchived => 'Tarefa restaurada do arquivo';
 }

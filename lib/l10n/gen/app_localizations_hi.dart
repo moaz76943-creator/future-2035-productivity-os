@@ -3301,4 +3301,30 @@ class AppLocalizationsHi extends AppLocalizations {
   String calendarMilestone(String project) {
     return 'माइलस्टोन · $project';
   }
+
+  @override
+  String get tasksViewInbox => 'इनबॉक्स';
+
+  @override
+  String get tasksViewArchived => 'संग्रहीत';
+
+  @override
+  String get tasksEmptyInbox =>
+      'बिना प्रोजेक्ट या तारीख वाले कार्य यहाँ आते हैं। समय मिलने पर इन्हें व्यवस्थित करें।';
+
+  @override
+  String get tasksEmptyArchived =>
+      'संग्रहीत कार्य यहाँ रखे जाते हैं, आपकी सूचियों और रिमाइंडर से अलग।';
+
+  @override
+  String get taskArchivedBadge => 'संग्रहीत';
+
+  @override
+  String get taskStatusInProgress => 'प्रगति में';
+
+  @override
+  String get taskArchived => 'कार्य संग्रहीत किया गया';
+
+  @override
+  String get taskUnarchived => 'कार्य संग्रह से वापस लाया गया';
 }

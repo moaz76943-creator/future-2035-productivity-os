@@ -15,8 +15,13 @@ class ReminderSources {
 
   /// Open, non-deleted tasks that carry a reminder moment.
   Stream<List<TaskReminderInput>> watchTaskReminders() =>
-      (_db.select(_db.tasks)
-            ..where((t) => t.reminderAt.isNotNull() & t.done.equals(false) & t.deletedAt.isNull()))
+      (_db.select(_db.tasks)..where(
+            (t) =>
+                t.reminderAt.isNotNull() &
+                t.done.equals(false) &
+                t.deletedAt.isNull() &
+                t.archivedAt.isNull(),
+          ))
           .watch()
           .map(
             (rows) => [

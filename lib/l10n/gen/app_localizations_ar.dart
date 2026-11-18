@@ -3456,4 +3456,29 @@ class AppLocalizationsAr extends AppLocalizations {
   String calendarMilestone(String project) {
     return 'مرحلة · $project';
   }
+
+  @override
+  String get tasksViewInbox => 'الوارد';
+
+  @override
+  String get tasksViewArchived => 'المؤرشفة';
+
+  @override
+  String get tasksEmptyInbox =>
+      'تصل هنا المهام التي ليس لها مشروع أو تاريخ. رتّبها عندما يتسنى لك ذلك.';
+
+  @override
+  String get tasksEmptyArchived => 'تُحفظ المهام المؤرشفة هنا، بعيدًا عن قوائمك وتذكيراتك.';
+
+  @override
+  String get taskArchivedBadge => 'مؤرشفة';
+
+  @override
+  String get taskStatusInProgress => 'قيد التنفيذ';
+
+  @override
+  String get taskArchived => 'تمت أرشفة المهمة';
+
+  @override
+  String get taskUnarchived => 'تمت استعادة المهمة من الأرشيف';
 }

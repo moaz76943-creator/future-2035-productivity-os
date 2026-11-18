@@ -13,6 +13,7 @@ import '../../../../core/providers/core_providers.dart';
 import '../../../../core/time/clock.dart';
 import '../../../../shared/widgets/dialogs.dart';
 import '../../application/tasks_providers.dart';
+import '../../data/tasks_repository.dart';
 import 'task_visuals.dart';
 
 /// Completes or reopens a task with feedback and undo.
@@ -65,6 +66,10 @@ class TaskTile extends ConsumerWidget {
     final overdue = !task.done && due != null && due.isBefore(Days.startOfDay(now));
     final subtasks = ref.watch(subtasksProvider(task.id)).value ?? const [];
     final meta = <Widget>[
+      if (task.archivedAt != null)
+        LuxPill(label: l10n.taskArchivedBadge)
+      else if (!task.done && task.status == TaskStatus.inProgress)
+        LuxPill(label: l10n.taskStatusInProgress, color: ModuleHue.focus.a),
       if (due != null)
         _Meta(
           icon: Icons.event_rounded,

@@ -4379,5 +4379,37 @@
         "type": "String"
       }
     }
+  },
+  "tasksViewInbox": "Inbox",
+  "tasksViewArchived": "Archived",
+  "tasksEmptyInbox": "Tasks without a project or date land here. Sort them when you have a minute.",
+  "tasksEmptyArchived": "Archived tasks are kept here, out of your lists and reminders.",
+  "taskArchivedBadge": "Archived",
+  "taskStatusInProgress": "In progress",
+  "taskArchived": "Task archived",
+  "taskUnarchived": "Task restored from archive",
+  "@tasksViewInbox": {
+    "description": "Task status / archive UI"
+  },
+  "@tasksViewArchived": {
+    "description": "Task status / archive UI"
+  },
+  "@tasksEmptyInbox": {
+    "description": "Task status / archive UI"
+  },
+  "@tasksEmptyArchived": {
+    "description": "Task status / archive UI"
+  },
+  "@taskArchivedBadge": {
+    "description": "Task status / archive UI"
+  },
+  "@taskStatusInProgress": {
+    "description": "Task status / archive UI"
+  },
+  "@taskArchived": {
+    "description": "Task status / archive UI"
+  },
+  "@taskUnarchived": {
+    "description": "Task status / archive UI"
   }
 }
