@@ -3221,4 +3221,7 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get flashcardsTtsLanguageUnavailable =>
       'No voice is installed for this language. Add one in Android text-to-speech settings.';
+
+  @override
+  String get calendarAgenda => 'Agenda';
 }

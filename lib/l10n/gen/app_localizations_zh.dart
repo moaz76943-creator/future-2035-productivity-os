@@ -3066,4 +3066,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get flashcardsTtsLanguageUnavailable => '此语言未安装语音。请在 Android 文字转语音设置中添加。';
+
+  @override
+  String get calendarAgenda => '日程';
 }

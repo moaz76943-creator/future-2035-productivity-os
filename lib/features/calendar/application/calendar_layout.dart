@@ -6,7 +6,10 @@
 /// wall-clock DateTimes (occurrences are already expanded in local time).
 library;
 
-enum CalendarView { month, week, day }
+enum CalendarView { month, week, day, agenda }
+
+/// Days covered by one page of the agenda view.
+const kAgendaDays = 30;
 
 /// Half-open interval [from, to).
 class DateRange {
@@ -75,6 +78,9 @@ abstract final class CalendarMath {
         return DateRange(s, addDays(s, 7));
       case CalendarView.day:
         return dayRange(anchor);
+      case CalendarView.agenda:
+        final d = day(anchor);
+        return DateRange(d, addDays(d, kAgendaDays));
     }
   }
 
@@ -90,6 +96,8 @@ abstract final class CalendarMath {
         return addDays(day(anchor), 7 * direction);
       case CalendarView.day:
         return addDays(day(anchor), direction);
+      case CalendarView.agenda:
+        return addDays(day(anchor), kAgendaDays * direction);
     }
   }
 

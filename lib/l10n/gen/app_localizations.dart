@@ -5417,6 +5417,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No voice is installed for this language. Add one in Android text-to-speech settings.'**
   String get flashcardsTtsLanguageUnavailable;
+
+  /// Calendar view: list of upcoming days with events and due tasks
+  ///
+  /// In en, this message translates to:
+  /// **'Agenda'**
+  String get calendarAgenda;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

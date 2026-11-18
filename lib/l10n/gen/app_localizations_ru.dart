@@ -3343,4 +3343,7 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get flashcardsTtsLanguageUnavailable =>
       'Для этого языка не установлен голос. Добавьте его в настройках синтеза речи Android.';
+
+  @override
+  String get calendarAgenda => 'Повестка';
 }

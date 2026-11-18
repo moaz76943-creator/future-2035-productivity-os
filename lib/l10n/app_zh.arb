@@ -884,5 +884,6 @@
   "trashCount": "{count, plural, other{{count} 个项目}}",
   "flashcardsReadAloud": "朗读",
   "flashcardsTtsUnavailable": "此设备不支持文字转语音。",
-  "flashcardsTtsLanguageUnavailable": "此语言未安装语音。请在 Android 文字转语音设置中添加。"
+  "flashcardsTtsLanguageUnavailable": "此语言未安装语音。请在 Android 文字转语音设置中添加。",
+  "calendarAgenda": "日程"
 }

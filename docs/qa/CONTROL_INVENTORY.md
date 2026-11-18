@@ -83,8 +83,8 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Seminar, 11:00 AM – 12:00 PM | button | 372x63 | OK |
 | Write chapter 2 Task due | tappable | 372x64 | OK |
 | Schedule as time block | button | 48x48 | OK |
-| Month | button | 124x48 | OK_ALREADY_SELECTED |
-| Week | button | 124x48 | OK |
+| Month | button | 93x48 | OK_ALREADY_SELECTED |
+| Week | button | 93x48 | OK |
 | New event, Friday, November 20, 2026 | tappable | 50x851 | OK |
 | New event, Saturday, November 21, 2026 | tappable | 50x851 | OK |
 | New event, Sunday, November 22, 2026 | tappable | 50x851 | OK |

@@ -85,6 +85,36 @@ void main() {
     await env.dispose();
   });
 
+  testWidgets('agenda lists the next 30 days grouped by day and pages forward', (tester) async {
+    final env = TestEnv();
+    await seed(tester, env);
+    await db(tester, () async {
+      await eventsOf(env).create(
+        EventDraft(title: 'Seminar', start: DateTime(2026, 11, 20, 9), end: DateTime(2026, 11, 20, 10)),
+      );
+      await eventsOf(env).create(
+        EventDraft(title: 'Far away', start: DateTime(2026, 12, 30, 9), end: DateTime(2026, 12, 30, 10)),
+      );
+    });
+    await pumpScreen(tester, routed(), env: env);
+    await settle(tester);
+    final l10n = l10nOf(tester);
+    await tester.tap(find.text(l10n.calendarAgenda));
+    await settle(tester);
+    expect(find.text('Design review'), findsOneWidget);
+    expect(find.text('Send invoice'), findsOneWidget);
+    await scrollPageTo(tester, find.text('Seminar'));
+    expect(find.text('Seminar'), findsOneWidget);
+    expect(find.text('Far away'), findsNothing, reason: 'outside the 30-day page');
+    await tester.drag(find.byType(Scrollable).first, const Offset(0, 2000));
+    await settle(tester);
+    await tester.tap(find.byTooltip(l10n.calendarNext));
+    await settle(tester);
+    expect(find.text('Far away'), findsOneWidget);
+    expect(find.text('Design review'), findsNothing);
+    await env.dispose();
+  });
+
   testWidgets('week view lays out overlapping events side by side', (tester) async {
     final env = TestEnv();
     await seed(tester, env);

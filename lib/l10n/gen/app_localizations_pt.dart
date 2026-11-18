@@ -3239,4 +3239,7 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get flashcardsTtsLanguageUnavailable =>
       'Nenhuma voz instalada para este idioma. Adicione uma nas configurações de conversão de texto em fala do Android.';
+
+  @override
+  String get calendarAgenda => 'Agenda';
 }
