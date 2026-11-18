@@ -5909,6 +5909,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Show the text'**
   String get studyShowText;
+
+  /// flashcardsImportFileFailed
+  ///
+  /// In en, this message translates to:
+  /// **'The file could not be opened. You can paste its content instead.'**
+  String get flashcardsImportFileFailed;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

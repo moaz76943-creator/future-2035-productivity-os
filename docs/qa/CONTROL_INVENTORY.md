@@ -5,7 +5,7 @@ Environment: widget tests on Flutter 3.50.0, 412x915 logical px, English, realis
 (project, task with subtask, event, note, deck with 2 cards, goal, habit). Every page is walked a
 viewport at a time. This is not an on-device test (TalkBack, real touch, OEM behaviour are NOT covered).
 
-**806 controls on 67 screens.** OK: 701, OK_ALREADY_SELECTED: 28, OK_PARTLY_OFFSCREEN: 31, TEXT_INPUT: 46
+**825 controls on 68 screens.** OK: 717, OK_ALREADY_SELECTED: 29, OK_PARTLY_OFFSCREEN: 33, TEXT_INPUT: 46
 
 The test fails on: an exception from a tap, a control that does nothing (pointer and accessibility action),
 an unlabeled control, or a fully visible touch target smaller than 44x44.
@@ -101,7 +101,7 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Spaces Tab 5 of 5 | button | 78x68 | OK |
 | Pause | button | 141x48 | OK |
 | Stop | button | 122x48 | OK |
-| Link a task | button | 179x48 | OK |
+| Link a task | button | 144x52 | OK |
 | Home Tab 1 of 5 | button | 78x68 | OK |
 | Working on: Write chapter 2 Working on Write chapter 2 | button | 372x80 | OK |
 | Remove linked task | button | 48x48 | OK |
@@ -211,8 +211,8 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | 15, Sunday, November 15, 2026 | button | 48x48 | OK |
 | 16, Monday, November 16, 2026 | button | 48x48 | OK |
 | 17, Tuesday, November 17, 2026 | button | 48x48 | OK |
-| 18, Wednesday, November 18, 2026, Today | button | 48x48 | OK_ALREADY_SELECTED |
-| 19, Thursday, November 19, 2026 | button | 48x48 | OK |
+| 18, Wednesday, November 18, 2026 | button | 48x48 | OK |
+| 19, Thursday, November 19, 2026, Today | button | 48x48 | OK_ALREADY_SELECTED |
 | 20, Friday, November 20, 2026 | button | 48x48 | OK |
 | 21, Saturday, November 21, 2026 | button | 48x48 | OK |
 | 22, Sunday, November 22, 2026 | button | 48x48 | OK |
@@ -253,8 +253,8 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | 15, Sunday, November 15, 2026 | button | 48x48 | OK |
 | 16, Monday, November 16, 2026 | button | 48x48 | OK |
 | 17, Tuesday, November 17, 2026 | button | 48x48 | OK |
-| 18, Wednesday, November 18, 2026, Today | button | 48x48 | OK_ALREADY_SELECTED |
-| 19, Thursday, November 19, 2026 | button | 48x48 | OK |
+| 18, Wednesday, November 18, 2026 | button | 48x48 | OK |
+| 19, Thursday, November 19, 2026, Today | button | 48x48 | OK_ALREADY_SELECTED |
 | 20, Friday, November 20, 2026 | button | 48x48 | OK |
 | 21, Saturday, November 21, 2026 | button | 48x48 | OK |
 | 22, Sunday, November 22, 2026 | button | 48x48 | OK |
@@ -350,8 +350,8 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | 15, Sunday, November 15, 2026 | button | 48x48 | OK |
 | 16, Monday, November 16, 2026 | button | 48x48 | OK_ALREADY_SELECTED |
 | 17, Tuesday, November 17, 2026 | button | 48x48 | OK |
-| 18, Wednesday, November 18, 2026, Today | button | 48x48 | OK |
-| 19, Thursday, November 19, 2026 | button | 48x48 | OK |
+| 18, Wednesday, November 18, 2026 | button | 48x48 | OK |
+| 19, Thursday, November 19, 2026, Today | button | 48x48 | OK |
 | 20, Friday, November 20, 2026 | button | 48x48 | OK |
 | 21, Saturday, November 21, 2026 | button | 48x48 | OK |
 | 22, Sunday, November 22, 2026 | button | 48x48 | OK |
@@ -371,9 +371,9 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 
 | Control (accessibility label) | Role | Size | Result |
 |---|---|---|---|
-| Dismiss | tappable | 412x915 | OK |
-| AM | checkbox | 52x48 | OK |
-| PM | checkbox | 52x48 | OK_ALREADY_SELECTED |
+| Dismiss | tappable | 412x915 | OK_PARTLY_OFFSCREEN |
+| AM | checkbox | 52x48 | OK_ALREADY_SELECTED |
+| PM | checkbox | 52x48 | OK |
 | Switch to text input mode | button | 48x48 | OK |
 | Cancel | button | 109x48 | OK |
 | OK | button | 52x48 | OK |
@@ -403,8 +403,8 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | 15, Sunday, November 15, 2026 | button | 48x48 | OK |
 | 16, Monday, November 16, 2026 | button | 48x48 | OK_ALREADY_SELECTED |
 | 17, Tuesday, November 17, 2026 | button | 48x48 | OK |
-| 18, Wednesday, November 18, 2026, Today | button | 48x48 | OK |
-| 19, Thursday, November 19, 2026 | button | 48x48 | OK |
+| 18, Wednesday, November 18, 2026 | button | 48x48 | OK |
+| 19, Thursday, November 19, 2026, Today | button | 48x48 | OK |
 | 20, Friday, November 20, 2026 | button | 48x48 | OK |
 | 21, Saturday, November 21, 2026 | button | 48x48 | OK |
 | 22, Sunday, November 22, 2026 | button | 48x48 | OK |
@@ -499,8 +499,8 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | 15, Sunday, November 15, 2026 | button | 48x48 | OK |
 | 16, Monday, November 16, 2026 | button | 48x48 | OK_ALREADY_SELECTED |
 | 17, Tuesday, November 17, 2026 | button | 48x48 | OK |
-| 18, Wednesday, November 18, 2026, Today | button | 48x48 | OK |
-| 19, Thursday, November 19, 2026 | button | 48x48 | OK |
+| 18, Wednesday, November 18, 2026 | button | 48x48 | OK |
+| 19, Thursday, November 19, 2026, Today | button | 48x48 | OK |
 | 20, Friday, November 20, 2026 | button | 48x48 | OK |
 | 21, Saturday, November 21, 2026 | button | 48x48 | OK |
 | 22, Sunday, November 22, 2026 | button | 48x48 | OK |
@@ -541,8 +541,8 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | 15, Sunday, November 15, 2026 | button | 48x48 | OK |
 | 16, Monday, November 16, 2026 | button | 48x48 | OK_ALREADY_SELECTED |
 | 17, Tuesday, November 17, 2026 | button | 48x48 | OK |
-| 18, Wednesday, November 18, 2026, Today | button | 48x48 | OK |
-| 19, Thursday, November 19, 2026 | button | 48x48 | OK |
+| 18, Wednesday, November 18, 2026 | button | 48x48 | OK |
+| 19, Thursday, November 19, 2026, Today | button | 48x48 | OK |
 | 20, Friday, November 20, 2026 | button | 48x48 | OK |
 | 21, Saturday, November 21, 2026 | button | 48x48 | OK |
 | 22, Sunday, November 22, 2026 | button | 48x48 | OK |
@@ -628,8 +628,8 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | 15, Sunday, November 15, 2026 | button | 48x48 | OK |
 | 16, Monday, November 16, 2026 | button | 48x48 | OK_ALREADY_SELECTED |
 | 17, Tuesday, November 17, 2026 | button | 48x48 | OK |
-| 18, Wednesday, November 18, 2026, Today | button | 48x48 | OK |
-| 19, Thursday, November 19, 2026 | button | 48x48 | OK |
+| 18, Wednesday, November 18, 2026 | button | 48x48 | OK |
+| 19, Thursday, November 19, 2026, Today | button | 48x48 | OK |
 | 20, Friday, November 20, 2026 | button | 48x48 | OK |
 | 21, Saturday, November 21, 2026 | button | 48x48 | OK |
 | 22, Sunday, November 22, 2026 | button | 48x48 | OK |
@@ -670,8 +670,8 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | 15, Sunday, November 15, 2026 | button | 48x48 | OK |
 | 16, Monday, November 16, 2026 | button | 48x48 | OK_ALREADY_SELECTED |
 | 17, Tuesday, November 17, 2026 | button | 48x48 | OK |
-| 18, Wednesday, November 18, 2026, Today | button | 48x48 | OK |
-| 19, Thursday, November 19, 2026 | button | 48x48 | OK |
+| 18, Wednesday, November 18, 2026 | button | 48x48 | OK |
+| 19, Thursday, November 19, 2026, Today | button | 48x48 | OK |
 | 20, Friday, November 20, 2026 | button | 48x48 | OK |
 | 21, Saturday, November 21, 2026 | button | 48x48 | OK |
 | 22, Sunday, November 22, 2026 | button | 48x48 | OK |
@@ -939,7 +939,12 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Control (accessibility label) | Role | Size | Result |
 |---|---|---|---|
 | Search cards | textField | 372x52 | TEXT_INPUT |
+| All | button | 76x48 | OK |
+| New | button | 76x48 | OK |
+| Due | button | 76x48 | OK |
+| Suspended | button | 136x48 | OK |
 | hola hello New | tappable | 372x89 | OK |
+| Suspend card | button | 48x48 | OK |
 | Delete | button | 48x48 | OK |
 | Study | button | 332x48 | OK |
 | Import | button | 48x48 | OK |
@@ -960,12 +965,29 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Cancel | button | 109x48 | OK |
 | Save | button | 100x48 | OK |
 
+## `/flashcards/:id > Study`
+
+| Control (accessibility label) | Role | Size | Result |
+|---|---|---|---|
+| Scrim | tappable | 412x223 | OK |
+| Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
+| Classic | button | 147x48 | OK_ALREADY_SELECTED |
+| Reverse | button | 147x48 | OK |
+| Both ways | button | 172x48 | OK |
+| Type the answer | button | 249x48 | OK |
+| Multiple choice | button | 249x48 | OK |
+| Listening | button | 172x48 | OK |
+| Review 1 card | button | 372x52 | OK |
+| Practice all cards (schedule unchanged) | button | 372x64 | OK |
+| Practice recent mistakes | button | 372x64 | OK |
+
 ## `/flashcards/:id > Import`
 
 | Control (accessibility label) | Role | Size | Result |
 |---|---|---|---|
 | Dismiss | tappable | 412x915 | OK_PARTLY_OFFSCREEN |
-| Cards to import | textField | 262x218 | TEXT_INPUT |
+| Cards to import | textField | 284x218 | TEXT_INPUT |
+| From file | button | 181x48 | OK |
 | Cancel | button | 109x48 | OK |
 | Import | button | 129x48 | OK |
 
@@ -996,9 +1018,10 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 
 | Control (accessibility label) | Role | Size | Result |
 |---|---|---|---|
-| Question: gracias / Tap to reveal the answer | button | 372x723 | OK |
+| Show the text | button | 207x48 | OK |
 | Show answer | button | 372x52 | OK |
-| Read aloud | button | 44x48 | OK |
+| Read aloud | button | 48x48 | OK |
+| More options | button | 44x48 | OK |
 
 ## `/goals`
 
@@ -1134,8 +1157,9 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Increase Short break | button | 48x48 | OK |
 | Decrease Long break | button | 48x48 | OK |
 | Increase Long break | button | 48x48 | OK |
-| Decrease Long break after | button | 48x30 | OK |
-| Increase Long break after | button | 48x30 | OK |
+| Decrease Long break after | button | 48x48 | OK |
+| Increase Long break after | button | 48x48 | OK |
+| Start breaks automatically | switch | 372x7 | OK |
 
 ## `/settings > General Language Device language`
 

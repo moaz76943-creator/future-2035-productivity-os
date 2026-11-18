@@ -966,5 +966,6 @@
   "studyCorrect": "सही",
   "studyAlmost": "लगभग — वर्तनी जाँचें",
   "studyWrong": "सही नहीं",
-  "studyShowText": "पाठ दिखाएँ"
+  "studyShowText": "पाठ दिखाएँ",
+  "flashcardsImportFileFailed": "फ़ाइल नहीं खुल सकी। आप उसकी सामग्री पेस्ट कर सकते हैं।"
 }

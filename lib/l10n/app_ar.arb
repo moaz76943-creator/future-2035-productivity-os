@@ -966,5 +966,6 @@
   "studyCorrect": "صحيح",
   "studyAlmost": "قريب — راجع الإملاء",
   "studyWrong": "ليست صحيحة",
-  "studyShowText": "أظهر النص"
+  "studyShowText": "أظهر النص",
+  "flashcardsImportFileFailed": "تعذّر فتح الملف. يمكنك لصق محتواه بدلًا من ذلك."
 }

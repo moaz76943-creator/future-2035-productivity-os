@@ -3639,4 +3639,8 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get studyShowText => 'Показать текст';
+
+  @override
+  String get flashcardsImportFileFailed =>
+      'Не удалось открыть файл. Можно вставить его содержимое.';
 }

@@ -966,5 +966,6 @@
   "studyCorrect": "正确",
   "studyAlmost": "差一点——注意拼写",
   "studyWrong": "不对",
-  "studyShowText": "显示文字"
+  "studyShowText": "显示文字",
+  "flashcardsImportFileFailed": "无法打开文件，可以改为粘贴其内容。"
 }

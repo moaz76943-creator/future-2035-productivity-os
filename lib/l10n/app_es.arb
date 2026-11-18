@@ -966,5 +966,6 @@
   "studyCorrect": "Correcto",
   "studyAlmost": "Casi: revisa la ortografía",
   "studyWrong": "No exactamente",
-  "studyShowText": "Mostrar el texto"
+  "studyShowText": "Mostrar el texto",
+  "flashcardsImportFileFailed": "No se pudo abrir el archivo. Puedes pegar su contenido."
 }

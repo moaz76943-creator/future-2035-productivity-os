@@ -3352,4 +3352,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get studyShowText => '显示文字';
+
+  @override
+  String get flashcardsImportFileFailed => '无法打开文件，可以改为粘贴其内容。';
 }

@@ -966,5 +966,6 @@
   "studyCorrect": "Верно",
   "studyAlmost": "Почти — проверьте написание",
   "studyWrong": "Неверно",
-  "studyShowText": "Показать текст"
+  "studyShowText": "Показать текст",
+  "flashcardsImportFileFailed": "Не удалось открыть файл. Можно вставить его содержимое."
 }

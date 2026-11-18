@@ -4706,5 +4706,9 @@
   "studyShowText": "Show the text",
   "@studyShowText": {
     "description": "studyShowText"
+  },
+  "flashcardsImportFileFailed": "The file could not be opened. You can paste its content instead.",
+  "@flashcardsImportFileFailed": {
+    "description": "flashcardsImportFileFailed"
   }
 }
