@@ -1,0 +1,23 @@
+name: FUTURE 2035 Auto-Resume After Quota Reset
+
+on:
+  schedule:
+    - cron: '25 0,8 * * *'
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  resume:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Resume Relay if Phases Remain
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ALL_DONE=$(python3 -c "import json; d=json.load(open('state/future2035_phases.json')); print('1' if all(p['status']=='COMPLETED' for p in d['phases']) else '0')" 2>/dev/null || echo "0")
+          if [ "$ALL_DONE" = "0" ]; then
+            gh workflow run hermes-relay.yml -f hop="1" -f max_hops="30" --ref main
+          fi

@@ -1,0 +1,109 @@
+name: FUTURE 2035 Sequential 9-Key Cloud Relay
+
+on:
+  workflow_dispatch:
+    inputs:
+      hop:
+        description: "Current relay hop"
+        default: "1"
+      max_hops:
+        description: "Maximum relay hops"
+        default: "30"
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: future2035-relay-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  autonomous_engineer:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Java 17 & Flutter
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Install Hermes Agent
+        run: |
+          curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash -s -- --non-interactive --skip-browser --skip-computer-use
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Run Sequential 9-Key Gemini & Multi-Provider Cycle
+        if: always()
+        env:
+          GOOGLE_KEYS_LIST: ${{ secrets.GOOGLE_KEYS_LIST }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+        run: |
+          printf '%s\n' "$GOOGLE_KEYS_LIST" > /tmp/keys.list
+          KEY_COUNT=$(grep -c '[^[:space:]]' /tmp/keys.list || true)
+          echo "Loaded $KEY_COUNT Gemini keys for sequential rotation."
+
+          PROMPT="Read docs/MASTER_DIRECTIVE_V1.md and state/future2035_phases.json. CRITICAL: If current_phase is PHASE_0_DISCOVERY, perform a thorough read-only audit of the existing repository (branches, pubspec, Gradle, Drift, Riverpod, GoRouter, UI, tests, CI) and write state/PHASE_0_AUDIT.md WITHOUT rewriting the app. Then advance incrementally one phase at a time: preserve all working code, fix root causes, ensure zero dead buttons, enforce White Luxury UI + Western digits (0-9) + RTL/LTR, run flutter analyze and flutter test, update state/future2035_phases.json and REPORT.md, and commit cleanly to main."
+
+          DONE=0
+          # 1. Sequential rotation across all 9 Gemini API keys
+          for MODEL in "gemini-2.5-flash" "gemini-3.5-flash-lite"; do
+            IDX=0
+            while IFS= read -r K; do
+              [ -n "$K" ] || continue
+              IDX=$((IDX + 1))
+              echo "Trying Gemini key #$IDX with $MODEL..."
+              if GEMINI_API_KEY="$K" GOOGLE_API_KEY="$K" timeout 240m hermes chat --cli --yolo --oneshot --provider gemini -m "$MODEL" -q "$PROMPT"; then
+                DONE=1
+                break 2
+              fi
+              sleep 3
+            done < /tmp/keys.list
+          done
+
+          # 2. Fallback to OpenRouter free pool if all 9 Gemini keys hit quota
+          if [ "$DONE" -eq 0 ] && [ -n "${OPENROUTER_API_KEY:-}" ]; then
+            echo "All 9 Gemini keys exhausted; falling back to OpenRouter..."
+            if timeout 240m hermes chat --cli --yolo --oneshot -m "openrouter/free" -q "$PROMPT"; then
+              DONE=1
+            fi
+          fi
+
+          # 3. Fallback to NVIDIA NIM
+          if [ "$DONE" -eq 0 ] && [ -n "${NVIDIA_API_KEY:-}" ]; then
+            echo "Falling back to NVIDIA NIM..."
+            timeout 240m hermes chat --cli --yolo --oneshot --provider nvidia -m "nvidia/nemotron-3-ultra-550b-a55b" -q "$PROMPT" || true
+          fi
+
+          rm -f /tmp/keys.list
+
+      - name: Commit & Push Progress + Trigger Next Relay Hop
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "future2035-relay-bot"
+          git config user.email "actions@github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(relay-hop-${{ inputs.hop || '1' }}): advance FUTURE 2035 engineering phase"
+            git push origin main
+          fi
+          CURRENT_HOP="${{ inputs.hop || '1' }}"
+          MAX_HOPS="${{ inputs.max_hops || '30' }}"
+          ALL_DONE=$(python3 -c "import json; d=json.load(open('state/future2035_phases.json')); print('1' if all(p['status']=='COMPLETED' for p in d['phases']) else '0')" 2>/dev/null || echo "0")
+          if [ "$ALL_DONE" = "0" ] && [ "$CURRENT_HOP" -lt "$MAX_HOPS" ]; then
+            NEXT_HOP=$((CURRENT_HOP + 1))
+            gh workflow run hermes-relay.yml -f hop="$NEXT_HOP" -f max_hops="$MAX_HOPS" --ref main || true
+          fi
