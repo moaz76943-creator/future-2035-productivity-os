@@ -21,6 +21,10 @@ FUTURE 2035 brings your planning, focus and learning together — on your device
 • Private by design: encrypted on-device storage, no ads, no tracking; password-encrypted backups
 • Optional AI summaries with your own provider, only after you consent
 
-**Screenshots:** capture from a real build (debug overlay off) — do not use mock-ups.
+**Screenshots:** `docs/store/screenshots/{en,ar}/` — 1080×1920 phone screenshots rendered from the
+real screens (bundled fonts, no debug banner) with sample content entered through the app's own
+repositories. Regenerate after UI changes:
+`STORE_SCREENSHOTS=1 flutter test test/store/store_screenshots_test.dart` then copy
+`build/store_screenshots/*` here. Before submission, compare against a device capture; no mock-ups.
 
 **Content rating:** questionnaire to be completed in Play Console (no user-generated sharing, no ads).
