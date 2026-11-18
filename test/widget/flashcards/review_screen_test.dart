@@ -47,7 +47,7 @@ void main() {
       expect(find.text(l10n.intervalMinutes(1)), findsOneWidget); // again
       expect(find.text(l10n.intervalMinutes(6)), findsOneWidget); // hard
       expect(find.text(l10n.intervalMinutes(10)), findsOneWidget); // good
-      expect(find.text(l10n.intervalDays(4)), findsOneWidget); // easy
+      expect(find.text(l10n.intervalDays(14)), findsOneWidget); // easy (FSRS-4.5)
       expect(
         find.bySemanticsLabel(l10n.flashcardsRatingA11y(l10n.reviewGood, l10n.intervalMinutes(10))),
         findsOneWidget,

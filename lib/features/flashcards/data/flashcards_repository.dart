@@ -161,7 +161,9 @@ class FlashcardsRepository {
   /// Scheduling state stored on [row].
   static SrsCard srsOf(CardRow row) => SrsCard(
     state: cardStateFromDb(row.state),
-    easePermille: row.ease,
+    stability: row.stability,
+    difficulty: row.difficulty,
+    lastReviewAt: row.lastReviewAt,
     intervalDays: row.intervalDays,
     repetitions: row.repetitions,
     lapses: row.lapses,
@@ -257,7 +259,9 @@ class FlashcardsRepository {
       await (_db.update(_db.flashcards)..where((c) => c.id.equals(cardId))).write(
         FlashcardsCompanion(
           state: Value(cardStateToDb(after.state)),
-          ease: Value(after.easePermille),
+          stability: Value(after.stability),
+          difficulty: Value(after.difficulty),
+          lastReviewAt: Value(after.lastReviewAt?.toUtc()),
           intervalDays: Value(after.intervalDays),
           repetitions: Value(after.repetitions),
           lapses: Value(after.lapses),
@@ -277,8 +281,9 @@ class FlashcardsRepository {
               stateBefore: row.state,
               intervalBefore: row.intervalDays,
               intervalAfter: after.intervalDays,
-              easeBefore: row.ease,
-              easeAfter: after.easePermille,
+              // Review log keeps the memory state: difficulty ×100 in the ease columns.
+              easeBefore: (row.difficulty * 100).round(),
+              easeAfter: (after.difficulty * 100).round(),
             ),
           );
       return after;

@@ -43,7 +43,7 @@ class AppDatabase extends _$AppDatabase {
   /// Bump when the schema changes and add a step in [migration].
   /// Never drop user tables to resolve a migration problem.
   @override
-  int get schemaVersion => 5;
+  int get schemaVersion => 6;
 
   /// Tables introduced after schema v1, by version. Older backups lack them and
   /// restore them empty instead of being rejected.
@@ -78,6 +78,22 @@ class AppDatabase extends _$AppDatabase {
         await m.addColumn(flashcards, flashcards.suspended);
         await m.addColumn(decks, decks.frontLang);
         await m.addColumn(decks, decks.backLang);
+      }
+      if (from < 6) {
+        // v6: FSRS-4.5 memory state and favourites. Reviewed cards get a
+        // starting state from their SM-2 data: stability = current interval,
+        // difficulty from the ease factor (2.5 → 5), last review from history.
+        await m.addColumn(flashcards, flashcards.stability);
+        await m.addColumn(flashcards, flashcards.difficulty);
+        await m.addColumn(flashcards, flashcards.lastReviewAt);
+        await m.addColumn(flashcards, flashcards.favorite);
+        await customStatement('''
+          UPDATE flashcards SET
+            stability = MAX(interval_days, 0.5),
+            difficulty = MIN(10.0, MAX(1.0, 5.0 + (2500 - ease) / 200.0)),
+            last_review_at = (SELECT MAX(reviewed_at) FROM card_reviews r WHERE r.card_id = flashcards.id)
+          WHERE state <> 'new'
+        ''');
       }
     },
     beforeOpen: (details) async {
