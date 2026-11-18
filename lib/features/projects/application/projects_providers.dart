@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/database/app_database.dart';
 import '../../../core/providers/core_providers.dart';
+import '../data/milestones_repository.dart';
 import '../data/projects_repository.dart';
 
 final projectsRepositoryProvider = Provider<ProjectsRepository>(
@@ -18,4 +19,12 @@ final projectByIdProvider = StreamProvider.autoDispose.family<ProjectRow?, Strin
 
 final projectProgressProvider = StreamProvider.autoDispose.family<ProjectProgress, String>(
   (ref, id) => ref.watch(projectsRepositoryProvider).watchProgress(id),
+);
+
+final milestonesRepositoryProvider = Provider<MilestonesRepository>(
+  (ref) => MilestonesRepository(ref.watch(databaseProvider), ref.watch(clockProvider)),
+);
+
+final milestonesProvider = StreamProvider.autoDispose.family<List<MilestoneRow>, String>(
+  (ref, projectId) => ref.watch(milestonesRepositoryProvider).watchForProject(projectId),
 );

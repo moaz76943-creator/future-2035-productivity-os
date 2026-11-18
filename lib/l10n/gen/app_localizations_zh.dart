@@ -3069,4 +3069,70 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get calendarAgenda => '日程';
+
+  @override
+  String projectIconName(String name) {
+    String _temp0 = intl.Intl.selectLogic(name, {
+      'spark': '火花',
+      'rocket': '火箭',
+      'book': '书本',
+      'work': '工作',
+      'home': '家',
+      'heart': '爱心',
+      'code': '代码',
+      'palette': '调色板',
+      'fitness': '健身',
+      'school': '学习',
+      'travel': '旅行',
+      'money': '储蓄',
+      'other': '图标',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String get cardMoreFields => '更多字段';
+
+  @override
+  String get cardFieldExample => '例句';
+
+  @override
+  String get cardFieldExplanation => '解释';
+
+  @override
+  String get cardFieldPronunciation => '发音';
+
+  @override
+  String get cardFieldNotes => '补充说明';
+
+  @override
+  String get projectMilestones => '里程碑';
+
+  @override
+  String get milestoneAdd => '添加里程碑';
+
+  @override
+  String get milestoneEdit => '编辑里程碑';
+
+  @override
+  String get milestoneTitleLabel => '里程碑';
+
+  @override
+  String get milestoneNoDate => '无日期';
+
+  @override
+  String get milestonesEmpty => '还没有里程碑。添加带日期的节点，在日历中跟踪项目。';
+
+  @override
+  String get milestoneDeleted => '已删除里程碑';
+
+  @override
+  String milestoneDoneA11y(String title) {
+    return '将里程碑“$title”标记为完成';
+  }
+
+  @override
+  String calendarMilestone(String project) {
+    return '里程碑 · $project';
+  }
 }

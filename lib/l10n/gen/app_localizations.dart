@@ -5423,6 +5423,96 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Agenda'**
   String get calendarAgenda;
+
+  /// Accessibility label of a project icon choice
+  ///
+  /// In en, this message translates to:
+  /// **'{name, select, spark{Spark} rocket{Rocket} book{Book} work{Work} home{Home} heart{Heart} code{Code} palette{Palette} fitness{Fitness} school{School} travel{Travel} money{Savings} other{Icon}}'**
+  String projectIconName(String name);
+
+  /// Optional flashcard field (card editor and review back side)
+  ///
+  /// In en, this message translates to:
+  /// **'More fields'**
+  String get cardMoreFields;
+
+  /// Optional flashcard field (card editor and review back side)
+  ///
+  /// In en, this message translates to:
+  /// **'Example'**
+  String get cardFieldExample;
+
+  /// Optional flashcard field (card editor and review back side)
+  ///
+  /// In en, this message translates to:
+  /// **'Explanation'**
+  String get cardFieldExplanation;
+
+  /// Optional flashcard field (card editor and review back side)
+  ///
+  /// In en, this message translates to:
+  /// **'Pronunciation'**
+  String get cardFieldPronunciation;
+
+  /// Optional flashcard field (card editor and review back side)
+  ///
+  /// In en, this message translates to:
+  /// **'Additional notes'**
+  String get cardFieldNotes;
+
+  /// Project milestones (project screen and calendar)
+  ///
+  /// In en, this message translates to:
+  /// **'Milestones'**
+  String get projectMilestones;
+
+  /// Project milestones (project screen and calendar)
+  ///
+  /// In en, this message translates to:
+  /// **'Add milestone'**
+  String get milestoneAdd;
+
+  /// Project milestones (project screen and calendar)
+  ///
+  /// In en, this message translates to:
+  /// **'Edit milestone'**
+  String get milestoneEdit;
+
+  /// Project milestones (project screen and calendar)
+  ///
+  /// In en, this message translates to:
+  /// **'Milestone'**
+  String get milestoneTitleLabel;
+
+  /// Project milestones (project screen and calendar)
+  ///
+  /// In en, this message translates to:
+  /// **'No date'**
+  String get milestoneNoDate;
+
+  /// Project milestones (project screen and calendar)
+  ///
+  /// In en, this message translates to:
+  /// **'No milestones yet. Add checkpoints with dates to track the project on the calendar.'**
+  String get milestonesEmpty;
+
+  /// Project milestones (project screen and calendar)
+  ///
+  /// In en, this message translates to:
+  /// **'Milestone deleted'**
+  String get milestoneDeleted;
+
+  /// Project milestones (project screen and calendar)
+  ///
+  /// In en, this message translates to:
+  /// **'Mark milestone \"{title}\" as done'**
+  String milestoneDoneA11y(String title);
+
+  /// Project milestones (project screen and calendar)
+  ///
+  /// In en, this message translates to:
+  /// **'Milestone · {project}'**
+  String calendarMilestone(String project);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

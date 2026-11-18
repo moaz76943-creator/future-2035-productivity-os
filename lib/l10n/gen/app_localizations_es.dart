@@ -3242,4 +3242,71 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get calendarAgenda => 'Agenda';
+
+  @override
+  String projectIconName(String name) {
+    String _temp0 = intl.Intl.selectLogic(name, {
+      'spark': 'Chispa',
+      'rocket': 'Cohete',
+      'book': 'Libro',
+      'work': 'Trabajo',
+      'home': 'Casa',
+      'heart': 'Corazón',
+      'code': 'Código',
+      'palette': 'Paleta',
+      'fitness': 'Ejercicio',
+      'school': 'Escuela',
+      'travel': 'Viaje',
+      'money': 'Ahorro',
+      'other': 'Icono',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String get cardMoreFields => 'Más campos';
+
+  @override
+  String get cardFieldExample => 'Ejemplo';
+
+  @override
+  String get cardFieldExplanation => 'Explicación';
+
+  @override
+  String get cardFieldPronunciation => 'Pronunciación';
+
+  @override
+  String get cardFieldNotes => 'Notas adicionales';
+
+  @override
+  String get projectMilestones => 'Hitos';
+
+  @override
+  String get milestoneAdd => 'Añadir hito';
+
+  @override
+  String get milestoneEdit => 'Editar hito';
+
+  @override
+  String get milestoneTitleLabel => 'Hito';
+
+  @override
+  String get milestoneNoDate => 'Sin fecha';
+
+  @override
+  String get milestonesEmpty =>
+      'Aún no hay hitos. Añade puntos de control con fecha para seguir el proyecto en el calendario.';
+
+  @override
+  String get milestoneDeleted => 'Hito eliminado';
+
+  @override
+  String milestoneDoneA11y(String title) {
+    return 'Marcar el hito \"$title\" como completado';
+  }
+
+  @override
+  String calendarMilestone(String project) {
+    return 'Hito · $project';
+  }
 }

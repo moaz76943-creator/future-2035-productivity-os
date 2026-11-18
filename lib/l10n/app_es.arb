@@ -885,5 +885,20 @@
   "flashcardsReadAloud": "Leer en voz alta",
   "flashcardsTtsUnavailable": "La conversión de texto a voz no está disponible en este dispositivo.",
   "flashcardsTtsLanguageUnavailable": "No hay ninguna voz instalada para este idioma. Añade una en los ajustes de texto a voz de Android.",
-  "calendarAgenda": "Agenda"
+  "calendarAgenda": "Agenda",
+  "projectIconName": "{name, select, spark{Chispa} rocket{Cohete} book{Libro} work{Trabajo} home{Casa} heart{Corazón} code{Código} palette{Paleta} fitness{Ejercicio} school{Escuela} travel{Viaje} money{Ahorro} other{Icono}}",
+  "cardMoreFields": "Más campos",
+  "cardFieldExample": "Ejemplo",
+  "cardFieldExplanation": "Explicación",
+  "cardFieldPronunciation": "Pronunciación",
+  "cardFieldNotes": "Notas adicionales",
+  "projectMilestones": "Hitos",
+  "milestoneAdd": "Añadir hito",
+  "milestoneEdit": "Editar hito",
+  "milestoneTitleLabel": "Hito",
+  "milestoneNoDate": "Sin fecha",
+  "milestonesEmpty": "Aún no hay hitos. Añade puntos de control con fecha para seguir el proyecto en el calendario.",
+  "milestoneDeleted": "Hito eliminado",
+  "milestoneDoneA11y": "Marcar el hito \"{title}\" como completado",
+  "calendarMilestone": "Hito · {project}"
 }

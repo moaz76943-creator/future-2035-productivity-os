@@ -3346,4 +3346,71 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get calendarAgenda => 'Повестка';
+
+  @override
+  String projectIconName(String name) {
+    String _temp0 = intl.Intl.selectLogic(name, {
+      'spark': 'Искра',
+      'rocket': 'Ракета',
+      'book': 'Книга',
+      'work': 'Работа',
+      'home': 'Дом',
+      'heart': 'Сердце',
+      'code': 'Код',
+      'palette': 'Палитра',
+      'fitness': 'Фитнес',
+      'school': 'Учёба',
+      'travel': 'Путешествие',
+      'money': 'Накопления',
+      'other': 'Значок',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String get cardMoreFields => 'Дополнительные поля';
+
+  @override
+  String get cardFieldExample => 'Пример';
+
+  @override
+  String get cardFieldExplanation => 'Пояснение';
+
+  @override
+  String get cardFieldPronunciation => 'Произношение';
+
+  @override
+  String get cardFieldNotes => 'Дополнительные заметки';
+
+  @override
+  String get projectMilestones => 'Вехи';
+
+  @override
+  String get milestoneAdd => 'Добавить веху';
+
+  @override
+  String get milestoneEdit => 'Изменить веху';
+
+  @override
+  String get milestoneTitleLabel => 'Веха';
+
+  @override
+  String get milestoneNoDate => 'Без даты';
+
+  @override
+  String get milestonesEmpty =>
+      'Вех пока нет. Добавьте контрольные точки с датами, чтобы видеть проект в календаре.';
+
+  @override
+  String get milestoneDeleted => 'Веха удалена';
+
+  @override
+  String milestoneDoneA11y(String title) {
+    return 'Отметить веху «$title» как выполненную';
+  }
+
+  @override
+  String calendarMilestone(String project) {
+    return 'Веха · $project';
+  }
 }

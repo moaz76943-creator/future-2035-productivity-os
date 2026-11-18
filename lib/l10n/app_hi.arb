@@ -885,5 +885,20 @@
   "flashcardsReadAloud": "ज़ोर से पढ़ें",
   "flashcardsTtsUnavailable": "इस डिवाइस पर टेक्स्ट-टू-स्पीच उपलब्ध नहीं है।",
   "flashcardsTtsLanguageUnavailable": "इस भाषा के लिए कोई आवाज़ इंस्टॉल नहीं है। Android की टेक्स्ट-टू-स्पीच सेटिंग में जोड़ें।",
-  "calendarAgenda": "एजेंडा"
+  "calendarAgenda": "एजेंडा",
+  "projectIconName": "{name, select, spark{चिंगारी} rocket{रॉकेट} book{किताब} work{काम} home{घर} heart{दिल} code{कोड} palette{रंग-पट्टिका} fitness{फ़िटनेस} school{स्कूल} travel{यात्रा} money{बचत} other{आइकन}}",
+  "cardMoreFields": "और फ़ील्ड",
+  "cardFieldExample": "उदाहरण",
+  "cardFieldExplanation": "व्याख्या",
+  "cardFieldPronunciation": "उच्चारण",
+  "cardFieldNotes": "अतिरिक्त नोट्स",
+  "projectMilestones": "माइलस्टोन",
+  "milestoneAdd": "माइलस्टोन जोड़ें",
+  "milestoneEdit": "माइलस्टोन संपादित करें",
+  "milestoneTitleLabel": "माइलस्टोन",
+  "milestoneNoDate": "कोई तारीख़ नहीं",
+  "milestonesEmpty": "अभी कोई माइलस्टोन नहीं। कैलेंडर पर प्रोजेक्ट ट्रैक करने के लिए तारीख़ वाले पड़ाव जोड़ें।",
+  "milestoneDeleted": "माइलस्टोन हटाया गया",
+  "milestoneDoneA11y": "माइलस्टोन \"{title}\" को पूरा चिह्नित करें",
+  "calendarMilestone": "माइलस्टोन · {project}"
 }

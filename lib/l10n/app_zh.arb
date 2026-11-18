@@ -885,5 +885,20 @@
   "flashcardsReadAloud": "朗读",
   "flashcardsTtsUnavailable": "此设备不支持文字转语音。",
   "flashcardsTtsLanguageUnavailable": "此语言未安装语音。请在 Android 文字转语音设置中添加。",
-  "calendarAgenda": "日程"
+  "calendarAgenda": "日程",
+  "projectIconName": "{name, select, spark{火花} rocket{火箭} book{书本} work{工作} home{家} heart{爱心} code{代码} palette{调色板} fitness{健身} school{学习} travel{旅行} money{储蓄} other{图标}}",
+  "cardMoreFields": "更多字段",
+  "cardFieldExample": "例句",
+  "cardFieldExplanation": "解释",
+  "cardFieldPronunciation": "发音",
+  "cardFieldNotes": "补充说明",
+  "projectMilestones": "里程碑",
+  "milestoneAdd": "添加里程碑",
+  "milestoneEdit": "编辑里程碑",
+  "milestoneTitleLabel": "里程碑",
+  "milestoneNoDate": "无日期",
+  "milestonesEmpty": "还没有里程碑。添加带日期的节点，在日历中跟踪项目。",
+  "milestoneDeleted": "已删除里程碑",
+  "milestoneDoneA11y": "将里程碑“{title}”标记为完成",
+  "calendarMilestone": "里程碑 · {project}"
 }

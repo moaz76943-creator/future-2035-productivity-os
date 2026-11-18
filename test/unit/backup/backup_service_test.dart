@@ -189,4 +189,71 @@ void main() {
       await env.dispose();
     },
   );
+
+  test(
+    'a schema v1 backup (no milestones table, no flashcards.extra) restores after the upgrade',
+    () async {
+      final env = TestEnv();
+      addTearDown(env.dispose);
+      final now = DateTime.utc(2026, 11, 1).toIso8601String();
+      final tables = <String, Object?>{
+        for (final t in env.db.allTables)
+          if (t.actualTableName != 'milestones') t.actualTableName: <Object?>[],
+      };
+      tables['decks'] = [
+        {
+          'id': 'd1',
+          'name': 'Old deck',
+          'description': '',
+          'category': '',
+          'color': 1,
+          'daily_new_limit': 20,
+          'daily_review_target': 100,
+          'created_at': now,
+          'updated_at': now,
+        },
+      ];
+      tables['flashcards'] = [
+        {
+          'id': 'c1',
+          'deck_id': 'd1',
+          'front': 'hola',
+          'back': 'hello',
+          'tags': '',
+          'state': 'new',
+          'ease': 2500,
+          'interval_days': 0,
+          'repetitions': 0,
+          'lapses': 0,
+          'learning_step': 0,
+          'created_at': now,
+          'updated_at': now,
+        },
+      ];
+      final bytes = await _backupWithPayload({
+        'app': 'future-os',
+        'schemaVersion': 1,
+        'tables': tables,
+      });
+      await BackupService(env.db, kdf: _fastKdf).restore(bytes, 'password-123');
+      final card = await env.db.select(env.db.flashcards).getSingle();
+      expect(card.front, 'hola');
+      expect(card.extra, '');
+      expect(await env.db.select(env.db.milestones).get(), isEmpty);
+    },
+  );
+
+  test('a backup from a newer schema is refused as newer, not as corrupted', () async {
+    final env = TestEnv();
+    addTearDown(env.dispose);
+    final bytes = await _backupWithPayload({
+      'app': 'future-os',
+      'schemaVersion': env.db.schemaVersion + 1,
+      'tables': {for (final t in env.db.allTables) t.actualTableName: <Object?>[]},
+    });
+    await expectLater(
+      BackupService(env.db, kdf: _fastKdf).restore(bytes, 'password-123'),
+      throwsA(isA<BackupException>().having((e) => e.error, 'error', BackupError.newerVersion)),
+    );
+  });
 }

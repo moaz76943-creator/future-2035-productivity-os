@@ -97,16 +97,24 @@ class ProjectsRepository {
   Stream<ProjectRow?> watchById(String id) =>
       (_db.select(_db.projects)..where((p) => p.id.equals(id))).watchSingleOrNull();
 
+  /// Progress = completed items / all items, where items are the project's
+  /// tasks (subtasks included) and milestones. Deleted (trashed) tasks and
+  /// milestones do not count. A project with no items reports 0 of 0.
   Stream<ProjectProgress> watchProgress(String id) {
-    final total = _db.tasks.id.count();
-    final done = _db.tasks.id.count(filter: _db.tasks.done.equals(true));
-    final q = _db.selectOnly(_db.tasks)
-      ..addColumns([total, done])
-      ..where(_db.tasks.projectId.equals(id) & _db.tasks.deletedAt.isNull());
-    return q.watchSingle().map(
-      (r) => ProjectProgress(total: r.read(total) ?? 0, done: r.read(done) ?? 0),
-    );
+    return _db
+        .customSelect(
+          'SELECT '
+          '(SELECT COUNT(*) FROM tasks WHERE project_id = ?1 AND deleted_at IS NULL) + '
+          '(SELECT COUNT(*) FROM milestones WHERE project_id = ?1 AND deleted_at IS NULL) AS total, '
+          '(SELECT COUNT(*) FROM tasks WHERE project_id = ?1 AND deleted_at IS NULL AND done = 1) + '
+          '(SELECT COUNT(*) FROM milestones WHERE project_id = ?1 AND deleted_at IS NULL AND done = 1) AS done',
+          variables: [Variable.withString(id)],
+          readsFrom: {_db.tasks, _db.milestones},
+        )
+        .watchSingle()
+        .map((r) => ProjectProgress(total: r.read<int>('total'), done: r.read<int>('done')));
   }
+
 
   Stream<int> watchFocusSeconds(String id) {
     final sum = _db.focusSessions.activeSeconds.sum();

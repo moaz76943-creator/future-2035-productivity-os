@@ -885,5 +885,20 @@
   "flashcardsReadAloud": "قراءة بصوت عالٍ",
   "flashcardsTtsUnavailable": "تحويل النص إلى كلام غير متاح على هذا الجهاز.",
   "flashcardsTtsLanguageUnavailable": "لا يوجد صوت مثبّت لهذه اللغة. أضف صوتًا من إعدادات تحويل النص إلى كلام في أندرويد.",
-  "calendarAgenda": "جدول الأعمال"
+  "calendarAgenda": "جدول الأعمال",
+  "projectIconName": "{name, select, spark{شرارة} rocket{صاروخ} book{كتاب} work{عمل} home{منزل} heart{قلب} code{برمجة} palette{ألوان} fitness{لياقة} school{دراسة} travel{سفر} money{ادخار} other{أيقونة}}",
+  "cardMoreFields": "حقول إضافية",
+  "cardFieldExample": "مثال",
+  "cardFieldExplanation": "شرح",
+  "cardFieldPronunciation": "النطق",
+  "cardFieldNotes": "ملاحظات إضافية",
+  "projectMilestones": "المراحل",
+  "milestoneAdd": "إضافة مرحلة",
+  "milestoneEdit": "تعديل المرحلة",
+  "milestoneTitleLabel": "المرحلة",
+  "milestoneNoDate": "بدون تاريخ",
+  "milestonesEmpty": "لا توجد مراحل بعد. أضف محطات بتواريخ لمتابعة المشروع في التقويم.",
+  "milestoneDeleted": "تم حذف المرحلة",
+  "milestoneDoneA11y": "تعليم المرحلة \"{title}\" كمكتملة",
+  "calendarMilestone": "مرحلة · {project}"
 }

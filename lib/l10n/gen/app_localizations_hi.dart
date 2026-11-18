@@ -3234,4 +3234,71 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get calendarAgenda => 'एजेंडा';
+
+  @override
+  String projectIconName(String name) {
+    String _temp0 = intl.Intl.selectLogic(name, {
+      'spark': 'चिंगारी',
+      'rocket': 'रॉकेट',
+      'book': 'किताब',
+      'work': 'काम',
+      'home': 'घर',
+      'heart': 'दिल',
+      'code': 'कोड',
+      'palette': 'रंग-पट्टिका',
+      'fitness': 'फ़िटनेस',
+      'school': 'स्कूल',
+      'travel': 'यात्रा',
+      'money': 'बचत',
+      'other': 'आइकन',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String get cardMoreFields => 'और फ़ील्ड';
+
+  @override
+  String get cardFieldExample => 'उदाहरण';
+
+  @override
+  String get cardFieldExplanation => 'व्याख्या';
+
+  @override
+  String get cardFieldPronunciation => 'उच्चारण';
+
+  @override
+  String get cardFieldNotes => 'अतिरिक्त नोट्स';
+
+  @override
+  String get projectMilestones => 'माइलस्टोन';
+
+  @override
+  String get milestoneAdd => 'माइलस्टोन जोड़ें';
+
+  @override
+  String get milestoneEdit => 'माइलस्टोन संपादित करें';
+
+  @override
+  String get milestoneTitleLabel => 'माइलस्टोन';
+
+  @override
+  String get milestoneNoDate => 'कोई तारीख़ नहीं';
+
+  @override
+  String get milestonesEmpty =>
+      'अभी कोई माइलस्टोन नहीं। कैलेंडर पर प्रोजेक्ट ट्रैक करने के लिए तारीख़ वाले पड़ाव जोड़ें।';
+
+  @override
+  String get milestoneDeleted => 'माइलस्टोन हटाया गया';
+
+  @override
+  String milestoneDoneA11y(String title) {
+    return 'माइलस्टोन \"$title\" को पूरा चिह्नित करें';
+  }
+
+  @override
+  String calendarMilestone(String project) {
+    return 'माइलस्टोन · $project';
+  }
 }

@@ -3390,4 +3390,70 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get calendarAgenda => 'جدول الأعمال';
+
+  @override
+  String projectIconName(String name) {
+    String _temp0 = intl.Intl.selectLogic(name, {
+      'spark': 'شرارة',
+      'rocket': 'صاروخ',
+      'book': 'كتاب',
+      'work': 'عمل',
+      'home': 'منزل',
+      'heart': 'قلب',
+      'code': 'برمجة',
+      'palette': 'ألوان',
+      'fitness': 'لياقة',
+      'school': 'دراسة',
+      'travel': 'سفر',
+      'money': 'ادخار',
+      'other': 'أيقونة',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String get cardMoreFields => 'حقول إضافية';
+
+  @override
+  String get cardFieldExample => 'مثال';
+
+  @override
+  String get cardFieldExplanation => 'شرح';
+
+  @override
+  String get cardFieldPronunciation => 'النطق';
+
+  @override
+  String get cardFieldNotes => 'ملاحظات إضافية';
+
+  @override
+  String get projectMilestones => 'المراحل';
+
+  @override
+  String get milestoneAdd => 'إضافة مرحلة';
+
+  @override
+  String get milestoneEdit => 'تعديل المرحلة';
+
+  @override
+  String get milestoneTitleLabel => 'المرحلة';
+
+  @override
+  String get milestoneNoDate => 'بدون تاريخ';
+
+  @override
+  String get milestonesEmpty => 'لا توجد مراحل بعد. أضف محطات بتواريخ لمتابعة المشروع في التقويم.';
+
+  @override
+  String get milestoneDeleted => 'تم حذف المرحلة';
+
+  @override
+  String milestoneDoneA11y(String title) {
+    return 'تعليم المرحلة \"$title\" كمكتملة';
+  }
+
+  @override
+  String calendarMilestone(String project) {
+    return 'مرحلة · $project';
+  }
 }

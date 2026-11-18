@@ -885,5 +885,20 @@
   "flashcardsReadAloud": "Прочитать вслух",
   "flashcardsTtsUnavailable": "Синтез речи недоступен на этом устройстве.",
   "flashcardsTtsLanguageUnavailable": "Для этого языка не установлен голос. Добавьте его в настройках синтеза речи Android.",
-  "calendarAgenda": "Повестка"
+  "calendarAgenda": "Повестка",
+  "projectIconName": "{name, select, spark{Искра} rocket{Ракета} book{Книга} work{Работа} home{Дом} heart{Сердце} code{Код} palette{Палитра} fitness{Фитнес} school{Учёба} travel{Путешествие} money{Накопления} other{Значок}}",
+  "cardMoreFields": "Дополнительные поля",
+  "cardFieldExample": "Пример",
+  "cardFieldExplanation": "Пояснение",
+  "cardFieldPronunciation": "Произношение",
+  "cardFieldNotes": "Дополнительные заметки",
+  "projectMilestones": "Вехи",
+  "milestoneAdd": "Добавить веху",
+  "milestoneEdit": "Изменить веху",
+  "milestoneTitleLabel": "Веха",
+  "milestoneNoDate": "Без даты",
+  "milestonesEmpty": "Вех пока нет. Добавьте контрольные точки с датами, чтобы видеть проект в календаре.",
+  "milestoneDeleted": "Веха удалена",
+  "milestoneDoneA11y": "Отметить веху «{title}» как выполненную",
+  "calendarMilestone": "Веха · {project}"
 }

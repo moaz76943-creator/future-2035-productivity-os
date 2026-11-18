@@ -32,6 +32,22 @@ class Projects extends Table with Timestamps {
   Set<Column> get primaryKey => {id};
 }
 
+/// A dated checkpoint of a project (schema v3). Shown in the project and on
+/// the calendar; completed milestones count toward project progress.
+@DataClassName('MilestoneRow')
+class Milestones extends Table with Timestamps {
+  TextColumn get id => text()();
+  TextColumn get projectId => text().references(Projects, #id, onDelete: KeyAction.cascade)();
+  TextColumn get title => text().withLength(min: 1, max: 200)();
+  DateTimeColumn get dueAt => dateTime().nullable()();
+  BoolColumn get done => boolean().withDefault(const Constant(false))();
+  DateTimeColumn get doneAt => dateTime().nullable()();
+  DateTimeColumn get deletedAt => dateTime().nullable()();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+
 @DataClassName('TaskRow')
 class Tasks extends Table with Timestamps {
   TextColumn get id => text()();
@@ -256,6 +272,10 @@ class Flashcards extends Table with Timestamps {
   TextColumn get front => text()();
   TextColumn get back => text()();
   TextColumn get tags => text().withDefault(const Constant(''))();
+
+  /// Optional fields (example, explanation, pronunciation, notes) as JSON; see
+  /// CardExtras. Added in schema v2.
+  TextColumn get extra => text().withDefault(const Constant(''))();
 
   /// new | learning | review | relearning
   TextColumn get state => text().withDefault(const Constant('new'))();

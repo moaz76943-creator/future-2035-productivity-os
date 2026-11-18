@@ -141,7 +141,14 @@ class _ProjectEditorState extends ConsumerState<_ProjectEditor> {
               children: [
                 for (final e in projectIcons.entries)
                   ChoiceChip(
-                    label: Icon(e.value, size: 20, color: Color(_color)),
+                    // Icon-only chips need a name for TalkBack.
+                    tooltip: l10n.projectIconName(e.key),
+                    label: Icon(
+                      e.value,
+                      size: 20,
+                      color: Color(_color),
+                      semanticLabel: l10n.projectIconName(e.key),
+                    ),
                     selected: _icon == e.key,
                     onSelected: (_) => setState(() => _icon = e.key),
                   ),

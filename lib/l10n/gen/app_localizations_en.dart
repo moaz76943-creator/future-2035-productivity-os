@@ -3224,4 +3224,71 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get calendarAgenda => 'Agenda';
+
+  @override
+  String projectIconName(String name) {
+    String _temp0 = intl.Intl.selectLogic(name, {
+      'spark': 'Spark',
+      'rocket': 'Rocket',
+      'book': 'Book',
+      'work': 'Work',
+      'home': 'Home',
+      'heart': 'Heart',
+      'code': 'Code',
+      'palette': 'Palette',
+      'fitness': 'Fitness',
+      'school': 'School',
+      'travel': 'Travel',
+      'money': 'Savings',
+      'other': 'Icon',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String get cardMoreFields => 'More fields';
+
+  @override
+  String get cardFieldExample => 'Example';
+
+  @override
+  String get cardFieldExplanation => 'Explanation';
+
+  @override
+  String get cardFieldPronunciation => 'Pronunciation';
+
+  @override
+  String get cardFieldNotes => 'Additional notes';
+
+  @override
+  String get projectMilestones => 'Milestones';
+
+  @override
+  String get milestoneAdd => 'Add milestone';
+
+  @override
+  String get milestoneEdit => 'Edit milestone';
+
+  @override
+  String get milestoneTitleLabel => 'Milestone';
+
+  @override
+  String get milestoneNoDate => 'No date';
+
+  @override
+  String get milestonesEmpty =>
+      'No milestones yet. Add checkpoints with dates to track the project on the calendar.';
+
+  @override
+  String get milestoneDeleted => 'Milestone deleted';
+
+  @override
+  String milestoneDoneA11y(String title) {
+    return 'Mark milestone \"$title\" as done';
+  }
+
+  @override
+  String calendarMilestone(String project) {
+    return 'Milestone · $project';
+  }
 }
