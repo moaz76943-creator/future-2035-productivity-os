@@ -3,15 +3,61 @@
   "branch": "main",
   "current_phase": "PHASE_0_DISCOVERY",
   "phases": [
-    {"id": "PHASE_0_DISCOVERY", "title": "Read-only repo, toolchain, DB, UI & test audit", "status": "IN_PROGRESS"},
-    {"id": "PHASE_1_BUILD_FOUNDATION", "title": "Toolchain matrix, Gradle wrapper, pubspec.lock & CI debug APK", "status": "PENDING"},
-    {"id": "PHASE_2_DESIGN_FOUNDATION", "title": "White Luxury tokens, typography, responsive shell & navigation", "status": "PENDING"},
-    {"id": "PHASE_3_CORE_DATA", "title": "Drift/SQLite schema, migrations, backup & recovery", "status": "PENDING"},
-    {"id": "PHASE_4_CORE_FEATURES", "title": "Dashboard, Tasks, Projects, Focus engine & Calendar", "status": "PENDING"},
-    {"id": "PHASE_5_KNOWLEDGE_LEARNING", "title": "Notes, Flashcards, Spaced Repetition, Native TTS & Search", "status": "PENDING"},
-    {"id": "PHASE_6_PERSONAL_DEV", "title": "Goals, Habits, Real Analytics & Notifications", "status": "PENDING"},
-    {"id": "PHASE_7_ADVANCED", "title": "Optional provider-independent AI & personalization", "status": "PENDING"},
-    {"id": "PHASE_8_QUALITY_GATE", "title": "Visual & Functional Regression Gate (10 widths, RTL/LTR, 0 dead buttons)", "status": "PENDING"},
-    {"id": "PHASE_9_RELEASE", "title": "Signed Release APK & AAB + Store Readiness", "status": "PENDING"}
+    {
+      "id": "PHASE_0_DISCOVERY",
+      "title": "Read-only repo, toolchain, DB, UI & test audit",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "PHASE_1_BUILD_FOUNDATION",
+      "title": "Toolchain matrix, Gradle wrapper, pubspec.lock & CI debug APK",
+      "status": "PENDING"
+    },
+    {
+      "id": "PHASE_2_DESIGN_FOUNDATION",
+      "title": "White Luxury tokens, typography, responsive shell & navigation",
+      "status": "PENDING"
+    },
+    {
+      "id": "PHASE_3_CORE_DATA",
+      "title": "Drift/SQLite schema, migrations, backup & recovery",
+      "status": "PENDING"
+    },
+    {
+      "id": "PHASE_4_CORE_FEATURES",
+      "title": "Dashboard, Tasks, Projects, Focus engine & Calendar",
+      "status": "PENDING"
+    },
+    {
+      "id": "PHASE_5_KNOWLEDGE_LEARNING",
+      "title": "Notes, Flashcards, Spaced Repetition, Native TTS & Search",
+      "status": "PENDING"
+    },
+    {
+      "id": "PHASE_6_PERSONAL_DEV",
+      "title": "Goals, Habits, Real Analytics & Notifications",
+      "status": "PENDING"
+    },
+    {
+      "id": "PHASE_7_ADVANCED",
+      "title": "Optional provider-independent AI & personalization",
+      "status": "PENDING"
+    },
+    {
+      "id": "PHASE_8_QUALITY_GATE",
+      "title": "Visual & Functional Regression Gate (10 widths, RTL/LTR, 0 dead buttons)",
+      "status": "PENDING"
+    },
+    {
+      "id": "PHASE_9_RELEASE",
+      "title": "Signed Release APK & AAB + Store Readiness",
+      "status": "PENDING"
+    },
+    {
+      "id": "flashcards_pro_system",
+      "title": "Flashcards Pro System (FSRS-4.5, Custom Fields, TTS Lab, Arabic Search, Import/Export)",
+      "status": "pending",
+      "directive": "docs/FLASHCARDS_MASTER_DIRECTIVE.md"
+    }
   ]
 }
