@@ -718,7 +718,13 @@ class _LinkedTask extends ConsumerWidget {
               icon: const Icon(Icons.link_off_rounded),
             )
           else if (enabled)
-            TextButton(onPressed: onPick, child: Text(l10n.focusLinkTask)),
+            // Flexible: at large text sizes the label wraps instead of overflowing.
+            Flexible(
+              child: TextButton(
+                onPressed: onPick,
+                child: Text(l10n.focusLinkTask, maxLines: 2, textAlign: TextAlign.center),
+              ),
+            ),
         ],
       ),
     );
