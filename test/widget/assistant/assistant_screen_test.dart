@@ -38,6 +38,8 @@ void main() {
       expect(find.byKey(const ValueKey('assistant-enable')), findsNothing);
       if (tag == 'en') {
         expect(find.text('Plan my day'), findsOneWidget);
+        // The cloud tools section is below the fold of a lazy list.
+        await scrollPageTo(tester, find.text('Summarize a note'));
         expect(find.text('No provider connected. On-device tools still work.'), findsWidgets);
       }
       expect(tester.takeException(), isNull);
@@ -111,9 +113,7 @@ void main() {
     await env.dispose();
   });
 
-  testWidgets('summarize without provider opens provider setup, never the network', (
-    tester,
-  ) async {
+  testWidgets('summarize without provider opens provider setup, never the network', (tester) async {
     final env = await pumpScreen(
       tester,
       const AssistantScreen(),
@@ -121,6 +121,7 @@ void main() {
       overrides: [noNetwork],
     );
     await settle(tester);
+    await scrollPageTo(tester, find.text('Summarize a note'));
     await tester.tap(find.text('Summarize a note'));
     await settle(tester);
     expect(find.text('API endpoint (HTTPS)'), findsOneWidget);

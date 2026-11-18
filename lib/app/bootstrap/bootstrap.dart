@@ -37,7 +37,7 @@ Future<void> bootstrap() async {
   try {
     final dir = await getApplicationSupportDirectory();
     final file = File(p.join(dir.path, databaseFileName));
-    final key = await obtainDatabaseKey(secrets);
+    final key = await obtainDatabaseKey(secrets, databaseExists: await file.exists());
     db = AppDatabase(openEncryptedDatabase(file: file, hexKey: key));
     final settings = await SettingsRepository(db).load();
     await LocalNotificationService.shared

@@ -9,6 +9,8 @@ on:
 
 permissions:
   contents: read
+  # gitleaks-action lists the PR's commits on pull_request events.
+  pull-requests: read
 
 jobs:
   regression_gate:
@@ -23,6 +25,9 @@ jobs:
         uses: gitleaks/gitleaks-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # The SARIF upload consumed account artifact storage; when the quota was hit the
+          # scan itself failed. Findings still fail this step and appear in the log.
+          GITLEAKS_ENABLE_UPLOAD_ARTIFACT: false
 
       - name: Set up Java 17
         uses: actions/setup-java@v4
@@ -33,7 +38,8 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
+          flutter-version: '3.50.0'
+          channel: stable
           cache: true
 
       - name: Toolchain & Dependency Audit
@@ -41,11 +47,14 @@ jobs:
           flutter --version
           dart --version
           java -version
-          [ -f pubspec.yaml ] && flutter pub get
+          flutter pub get --enforce-lockfile
+          dart run build_runner build --delete-conflicting-outputs
+          flutter gen-l10n
+          git diff --exit-code -- lib/core/database/app_database.g.dart lib/l10n/gen || { echo "Committed generated sources are stale"; exit 1; }
 
       - name: Static Analysis & Western Digit / Localization Guard
         run: |
-          flutter analyze || true
+          flutter analyze
           python3 - << 'PY_CHECK'
           import pathlib, re, sys
           non_western = re.compile(r'[\u0660-\u0669\u06F0-\u06F9]')

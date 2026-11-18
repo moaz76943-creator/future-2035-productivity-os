@@ -1,4 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Network is used only by the optional, user-configured HTTPS assistant.
+         The app remains local-first and asks for consent before sending note text. -->
+    <uses-permission android:name="android.permission.INTERNET" />
     <!-- Notifications (task/event/habit/review reminders, focus timer alerts).
          POST_NOTIFICATIONS is requested at runtime on Android 13+ only after a
          user action (starting a focus session or enabling reminders). -->
@@ -20,7 +23,7 @@
         android:name="android.permission.SCHEDULE_EXACT_ALARM"
         android:maxSdkVersion="32" />
     <application
-        android:label="future_os"
+        android:label="Future 2035"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:allowBackup="false"

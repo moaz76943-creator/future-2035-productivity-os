@@ -29,15 +29,15 @@ void main() {
       expect(find.bySemanticsLabel(l10n.onboardStep(1, 4)), findsOneWidget);
 
       await tester.tap(find.byKey(const ValueKey('onboard-next')));
-      await tester.pumpAndSettle();
+      await settle(tester);
       expect(find.text(l10n.onboardPrivateTitle), findsOneWidget);
       await tester.tap(find.byKey(const ValueKey('onboard-next')));
-      await tester.pumpAndSettle();
+      await settle(tester);
       expect(find.text(l10n.onboardLanguageTitle), findsOneWidget);
       expect(find.text('العربية'), findsOneWidget);
       expect(find.text('हिन्दी'), findsOneWidget);
       await tester.tap(find.byKey(const ValueKey('onboard-next')));
-      await tester.pumpAndSettle();
+      await settle(tester);
       expect(find.text(l10n.onboardNotifTitle), findsOneWidget);
       expect(find.bySemanticsLabel(l10n.onboardStep(4, 4)), findsOneWidget);
 
@@ -76,10 +76,10 @@ void main() {
     await settle(tester);
     for (var i = 0; i < 2; i++) {
       await tester.tap(find.byKey(const ValueKey('onboard-next')));
-      await tester.pumpAndSettle();
+      await settle(tester);
     }
     await tester.tap(find.byKey(const ValueKey('lang-ar')));
-    await tester.pumpAndSettle();
+    await settle(tester);
     expect(containerOf(tester, OnboardingScreen).read(settingsProvider).localeTag, 'ar');
     expect(Directionality.of(tester.element(find.byType(OnboardingScreen))), TextDirection.rtl);
     expect(find.text(l10nAr.onboardLanguageTitle), findsOneWidget);
@@ -98,7 +98,7 @@ void main() {
     await settle(tester);
     for (var i = 0; i < 3; i++) {
       await tester.tap(find.byKey(const ValueKey('onboard-next')));
-      await tester.pumpAndSettle();
+      await settle(tester);
     }
     expect(tester.takeException(), isNull);
     await env.dispose();

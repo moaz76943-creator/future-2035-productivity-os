@@ -40,7 +40,6 @@ void main() {
   for (final tag in ['en', 'ar']) {
     testWidgets('start, pause, resume and discard a session ($tag)', (tester) async {
       final env = TestEnv();
-      addTearDown(env.dispose);
       final fake = FakeNotificationService();
       await pumpScreen(
         tester,
@@ -93,11 +92,12 @@ void main() {
       expect(find.byKey(const ValueKey('focus-start')), findsOneWidget);
       expect(fake.scheduled, isEmpty);
       expect(await _rows(tester, env), 0);
+      // Close in the body: closing drift from a tear-down never completes under fake async.
+      await env.dispose();
     });
 
     testWidgets('saving a stopped session asks for an optional note ($tag)', (tester) async {
       final env = TestEnv();
-      addTearDown(env.dispose);
       await pumpScreen(
         tester,
         const FocusScreen(),
@@ -122,11 +122,12 @@ void main() {
       expect(rows.single.note, 'Outline done');
       expect(rows.single.activeSeconds, 300);
       expect(rows.single.outcome, 'interrupted');
+      // Close in the body: closing drift from a tear-down never completes under fake async.
+      await env.dispose();
     });
 
     testWidgets('history rows can be deleted ($tag)', (tester) async {
       final env = TestEnv();
-      addTearDown(env.dispose);
       await _seedSession(env, note: 'Deep work');
       await pumpScreen(
         tester,
@@ -147,11 +148,12 @@ void main() {
       expect(find.text('Deep work'), findsNothing);
       expect(find.text(l10n.focusNoHistory), findsOneWidget);
       expect(await _rows(tester, env), 0);
+      // Close in the body: closing drift from a tear-down never completes under fake async.
+      await env.dispose();
     });
 
     testWidgets('denied notifications show a localized banner ($tag)', (tester) async {
       final env = TestEnv();
-      addTearDown(env.dispose);
       final fake = FakeNotificationService(accessValue: NotificationAccess.denied);
       await pumpScreen(
         tester,
@@ -167,12 +169,13 @@ void main() {
       await tester.tap(find.text(l10n.focusOpenSettings));
       await settle(tester);
       expect(fake.settingsOpened, 1);
+      // Close in the body: closing drift from a tear-down never completes under fake async.
+      await env.dispose();
     });
   }
 
   testWidgets('battery hint shows once when notifications are allowed', (tester) async {
     final env = TestEnv();
-    addTearDown(env.dispose);
     final fake = FakeNotificationService();
     await pumpScreen(
       tester,
@@ -199,11 +202,12 @@ void main() {
     );
     await settle(tester);
     expect(find.text(l10n.focusBatteryHint), findsNothing);
+    // Close in the body: closing drift from a tear-down never completes under fake async.
+    await env.dispose();
   });
 
   testWidgets('large text in Arabic lays out without overflow', (tester) async {
     final env = TestEnv();
-    addTearDown(env.dispose);
     await _seedSession(env, note: 'ملاحظة طويلة جدا ' * 8);
     await pumpScreen(
       tester,
@@ -220,11 +224,12 @@ void main() {
     await settle(tester);
     expect(tester.takeException(), isNull);
     expect(find.byKey(const ValueKey('focus-clock')), findsOneWidget);
+    // Close in the body: closing drift from a tear-down never completes under fake async.
+    await env.dispose();
   });
 
   testWidgets('initialTaskId preselects the linked task', (tester) async {
     final env = TestEnv();
-    addTearDown(env.dispose);
     final t = env.clock.now();
     await env.db
         .into(env.db.tasks)
@@ -236,6 +241,14 @@ void main() {
       overrides: [notificationServiceProvider.overrideWithValue(FakeNotificationService())],
     );
     await settle(tester);
+    // The linked-task card sits below the timer controls and the permission hints.
+    await tester.scrollUntilVisible(
+      find.text('Essay'),
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
     expect(find.text('Essay'), findsOneWidget);
+    // Close in the body: closing drift from a tear-down never completes under fake async.
+    await env.dispose();
   });
 }

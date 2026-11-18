@@ -209,6 +209,21 @@ void main() {
     c.dispose();
   });
 
+  test('failed focus alert scheduling does not stop the timer and retries', () async {
+    notifications.scheduleSucceeds = false;
+    final c = await launch();
+    final ctrl = c.read(focusControllerProvider.notifier);
+    await ctrl.start(mode: FocusMode.pomodoro);
+    expect(c.read(focusControllerProvider).active!.isRunning, isTrue);
+    expect(notifications.scheduled, isNot(contains(NotificationIds.focus)));
+
+    notifications.scheduleSucceeds = true;
+    await ctrl.pause();
+    await ctrl.resume();
+    expect(notifications.scheduled, contains(NotificationIds.focus));
+    c.dispose();
+  });
+
   test('focus alert is localized and respects the notifications setting', () async {
     var c = await launch(settings: const AppSettings(localeTag: 'ar'));
     await c.read(focusControllerProvider.notifier).start(mode: FocusMode.pomodoro);

@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:io' show gzip;
+import 'dart:math' show Random;
 import 'dart:typed_data';
 
 import 'package:cryptography/cryptography.dart';
@@ -16,6 +19,43 @@ final _fastKdf = Argon2id(
   parallelism: 1,
   hashLength: 32,
 );
+
+Future<Uint8List> _backupWithPayload(Map<String, Object?> payload) async {
+  final aes = AesGcm.with256bits();
+  final salt = List<int>.generate(16, (_) => Random.secure().nextInt(256));
+  final nonce = aes.newNonce();
+  final header = {
+    'format': 'future-os-backup',
+    'version': BackupService.formatVersion,
+    'createdAt': DateTime.utc(2026).toIso8601String(),
+    'schemaVersion': 1,
+    'kdf': {
+      'alg': 'argon2id',
+      'memoryKiB': _fastKdf.memory,
+      'iterations': _fastKdf.iterations,
+      'parallelism': _fastKdf.parallelism,
+      'salt': base64Encode(salt),
+    },
+    'cipher': {'alg': 'aes-256-gcm', 'nonce': base64Encode(nonce)},
+  };
+  final headerBytes = utf8.encode(jsonEncode(header));
+  final key = await _fastKdf.deriveKeyFromPassword(
+    password: 'password-123',
+    nonce: salt,
+  );
+  final plain = gzip.encode(utf8.encode(jsonEncode(payload)));
+  final box = await aes.encrypt(plain, secretKey: key, nonce: nonce, aad: headerBytes);
+  return Uint8List.fromList([
+    ...BackupService.magic,
+    (headerBytes.length >> 24) & 0xff,
+    (headerBytes.length >> 16) & 0xff,
+    (headerBytes.length >> 8) & 0xff,
+    headerBytes.length & 0xff,
+    ...headerBytes,
+    ...box.cipherText,
+    ...box.mac.bytes,
+  ]);
+}
 
 void main() {
   test('export → restore into empty database reproduces data', () async {
@@ -47,6 +87,65 @@ void main() {
     expect(await target.select(target.noteTags).get(), hasLength(1));
     await target.close();
     await env.dispose();
+  });
+
+  test('malformed table rows are rejected before existing data is replaced', () async {
+    final env = TestEnv();
+    addTearDown(env.dispose);
+    await TasksRepository(
+      env.db,
+      env.clock,
+    ).create(const TaskDraft(title: 'keep existing data'));
+
+    final tables = {
+      for (final table in env.db.allTables)
+        table.actualTableName: table.actualTableName == 'tasks'
+            ? 'not-a-row-list'
+            : <Object?>[],
+    };
+    final bytes = await _backupWithPayload({
+      'app': 'future-os',
+      'schemaVersion': 1,
+      'tables': tables,
+    });
+    await expectLater(
+      BackupService(env.db, kdf: _fastKdf).restore(bytes, 'password-123'),
+      throwsA(
+        isA<BackupException>().having((e) => e.error, 'error', BackupError.corrupted),
+      ),
+    );
+    expect(
+      (await env.db.select(env.db.tasks).get()).single.title,
+      'keep existing data',
+    );
+  });
+
+  test('malformed authenticated-container header is rejected as a backup error', () async {
+    final env = TestEnv();
+    addTearDown(env.dispose);
+    final svc = BackupService(env.db, kdf: _fastKdf);
+    final header = Uint8List.fromList(
+      '{"format":"future-os-backup","version":1,"kdf":"invalid","cipher":{}}'.codeUnits,
+    );
+    final bytes = Uint8List.fromList([
+      ...BackupService.magic,
+      (header.length >> 24) & 0xff,
+      (header.length >> 16) & 0xff,
+      (header.length >> 8) & 0xff,
+      header.length & 0xff,
+      ...header,
+      ...List<int>.filled(16, 0),
+    ]);
+    await expectLater(
+      svc.inspect(bytes, 'password-123'),
+      throwsA(
+        isA<BackupException>().having(
+          (e) => e.error,
+          'error',
+          BackupError.corrupted,
+        ),
+      ),
+    );
   });
 
   test(

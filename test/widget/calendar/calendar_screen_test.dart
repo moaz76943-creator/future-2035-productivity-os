@@ -155,7 +155,7 @@ void main() {
     expect(pos.dy, inExclusiveRange(0, 915));
     await tester.tapAt(pos);
     await settle(tester);
-    await tester.pumpAndSettle();
+    await settle(tester);
     final editor = tester.widget<EventEditorScreen>(find.byType(EventEditorScreen));
     expect(editor.start, DateTime(2026, 11, 16, 16));
     await env.dispose();

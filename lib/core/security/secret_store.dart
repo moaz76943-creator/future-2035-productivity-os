@@ -45,17 +45,39 @@ abstract final class SecretKeys {
   static const assistantApiKey = 'fos.assistant.apikey.v1';
 }
 
-/// Returns the 256-bit database key, creating it on first launch with a
-/// cryptographically secure RNG. The key is never derived from user input.
-Future<String> obtainDatabaseKey(SecretStore store) async {
+/// Raised rather than rotating a missing or malformed key when an encrypted
+/// database already exists. Silent key replacement would make existing data
+/// permanently unreadable.
+class DatabaseKeyUnavailableException implements Exception {
+  const DatabaseKeyUnavailableException();
+  @override
+  String toString() => 'DatabaseKeyUnavailableException';
+}
+
+/// Returns the 256-bit database key. A new key is created only for a fresh
+/// install; an existing encrypted database is never paired with a new key.
+Future<String> obtainDatabaseKey(
+  SecretStore store, {
+  required bool databaseExists,
+}) async {
   final existing = await store.read(SecretKeys.databaseKey);
-  if (existing != null && RegExp(r'^[0-9a-f]{64}$').hasMatch(existing)) return existing;
+  if (existing != null) {
+    if (RegExp(r'^[0-9a-f]{64}$').hasMatch(existing)) return existing;
+    throw const DatabaseKeyUnavailableException();
+  }
+  if (databaseExists) throw const DatabaseKeyUnavailableException();
+
   final rnd = Random.secure();
-  final hex = List.generate(32, (_) => rnd.nextInt(256).toRadixString(16).padLeft(2, '0')).join();
+  final hex = List.generate(
+    32,
+    (_) => rnd.nextInt(256).toRadixString(16).padLeft(2, '0'),
+  ).join();
   await store.write(SecretKeys.databaseKey, hex);
   // Read back to make sure it was persisted before any data is written.
   final check = await store.read(SecretKeys.databaseKey);
-  if (check != hex) throw StateError('secure storage did not persist the database key');
+  if (check != hex) {
+    throw StateError('secure storage did not persist the database key');
+  }
   return hex;
 }
 

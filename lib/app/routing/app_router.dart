@@ -27,6 +27,8 @@ import '../../features/spaces/presentation/spaces_screen.dart';
 import '../../features/tasks/presentation/task_editor_screen.dart';
 import '../../features/tasks/presentation/tasks_screen.dart';
 import '../../features/trash/presentation/trash_screen.dart';
+import '../../core/design_system/components/states.dart';
+import '../localization/app_format.dart';
 import '../shell/app_shell.dart';
 import 'routes.dart';
 
@@ -54,6 +56,18 @@ final routerProvider = Provider<GoRouter>((ref) {
     navigatorKey: rootNavigatorKey,
     initialLocation: Routes.home,
     refreshListenable: onboarding,
+    // Unknown or stale links (old notifications, removed records) get a recovery screen, never a blank page.
+    errorBuilder: (context, state) => Scaffold(
+      key: const ValueKey('route-not-found'),
+      body: SafeArea(
+        child: ErrorState(
+          title: context.l10n.errorGenericTitle,
+          message: context.l10n.errorLoadFailed,
+          retryLabel: context.l10n.navHome,
+          onRetry: () => context.go(Routes.home),
+        ),
+      ),
+    ),
     redirect: (context, state) {
       final done = onboarding.value;
       final atOnboarding = state.matchedLocation == Routes.onboarding;
