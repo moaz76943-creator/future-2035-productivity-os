@@ -1013,5 +1013,11 @@
   "speechVoice": "Voz",
   "speechVoiceDefault": "Predeterminada del dispositivo",
   "speechVoiceOnline": "requiere internet",
-  "speechTest": "Probar voz"
+  "speechTest": "Probar voz",
+  "importNext": "Vista previa",
+  "importPreviewTitle": "Asigna columnas a campos",
+  "importIgnoreColumn": "Ignorar",
+  "importColumn": "Columna {n}",
+  "importPreviewSummary": "{ready} tarjetas listas · se omitirán {invalid} filas incompletas",
+  "importNeedFrontBack": "Elige qué columnas son el anverso y el reverso."
 }

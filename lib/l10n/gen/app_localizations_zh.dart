@@ -3510,4 +3510,26 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get speechTest => '试听';
+
+  @override
+  String get importNext => '预览';
+
+  @override
+  String get importPreviewTitle => '将列对应到字段';
+
+  @override
+  String get importIgnoreColumn => '忽略';
+
+  @override
+  String importColumn(int n) {
+    return '第 $n 列';
+  }
+
+  @override
+  String importPreviewSummary(int ready, int invalid) {
+    return '$ready 张卡片就绪 · 将跳过 $invalid 行不完整数据';
+  }
+
+  @override
+  String get importNeedFrontBack => '请选择正面和背面对应的列。';
 }

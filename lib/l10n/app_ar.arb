@@ -1013,5 +1013,11 @@
   "speechVoice": "الصوت",
   "speechVoiceDefault": "الافتراضي في الجهاز",
   "speechVoiceOnline": "يحتاج إنترنت",
-  "speechTest": "تجربة الصوت"
+  "speechTest": "تجربة الصوت",
+  "importNext": "معاينة",
+  "importPreviewTitle": "اربط الأعمدة بالحقول",
+  "importIgnoreColumn": "تجاهل",
+  "importColumn": "العمود {n}",
+  "importPreviewSummary": "{ready} بطاقة جاهزة · سيتم تخطّي {invalid} صفوف ناقصة",
+  "importNeedFrontBack": "اختر أي عمود هو الوجه الأمامي وأيها الخلفي."
 }

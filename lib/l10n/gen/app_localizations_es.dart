@@ -3699,4 +3699,26 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get speechTest => 'Probar voz';
+
+  @override
+  String get importNext => 'Vista previa';
+
+  @override
+  String get importPreviewTitle => 'Asigna columnas a campos';
+
+  @override
+  String get importIgnoreColumn => 'Ignorar';
+
+  @override
+  String importColumn(int n) {
+    return 'Columna $n';
+  }
+
+  @override
+  String importPreviewSummary(int ready, int invalid) {
+    return '$ready tarjetas listas · se omitirán $invalid filas incompletas';
+  }
+
+  @override
+  String get importNeedFrontBack => 'Elige qué columnas son el anverso y el reverso.';
 }

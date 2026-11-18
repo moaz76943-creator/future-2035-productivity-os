@@ -3690,4 +3690,26 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get speechTest => 'आवाज़ जाँचें';
+
+  @override
+  String get importNext => 'पूर्वावलोकन';
+
+  @override
+  String get importPreviewTitle => 'कॉलम को फ़ील्ड से मिलाएँ';
+
+  @override
+  String get importIgnoreColumn => 'अनदेखा करें';
+
+  @override
+  String importColumn(int n) {
+    return 'कॉलम $n';
+  }
+
+  @override
+  String importPreviewSummary(int ready, int invalid) {
+    return '$ready कार्ड तैयार · $invalid अधूरी पंक्तियाँ छोड़ी जाएँगी';
+  }
+
+  @override
+  String get importNeedFrontBack => 'चुनें कि कौन से कॉलम सामने और पीछे हैं।';
 }

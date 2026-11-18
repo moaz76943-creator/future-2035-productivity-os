@@ -6191,6 +6191,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Test voice'**
   String get speechTest;
+
+  /// importNext
+  ///
+  /// In en, this message translates to:
+  /// **'Preview'**
+  String get importNext;
+
+  /// importPreviewTitle
+  ///
+  /// In en, this message translates to:
+  /// **'Match columns to fields'**
+  String get importPreviewTitle;
+
+  /// importIgnoreColumn
+  ///
+  /// In en, this message translates to:
+  /// **'Ignore'**
+  String get importIgnoreColumn;
+
+  /// Column label
+  ///
+  /// In en, this message translates to:
+  /// **'Column {n}'**
+  String importColumn(int n);
+
+  /// Preview counts
+  ///
+  /// In en, this message translates to:
+  /// **'{ready} cards ready · {invalid} incomplete rows will be skipped'**
+  String importPreviewSummary(int ready, int invalid);
+
+  /// importNeedFrontBack
+  ///
+  /// In en, this message translates to:
+  /// **'Choose which columns are the front and the back.'**
+  String get importNeedFrontBack;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

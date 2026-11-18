@@ -3700,4 +3700,26 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get speechTest => 'Testar voz';
+
+  @override
+  String get importNext => 'Pré-visualizar';
+
+  @override
+  String get importPreviewTitle => 'Associe colunas aos campos';
+
+  @override
+  String get importIgnoreColumn => 'Ignorar';
+
+  @override
+  String importColumn(int n) {
+    return 'Coluna $n';
+  }
+
+  @override
+  String importPreviewSummary(int ready, int invalid) {
+    return '$ready cartões prontos · $invalid linhas incompletas serão ignoradas';
+  }
+
+  @override
+  String get importNeedFrontBack => 'Escolha quais colunas são a frente e o verso.';
 }

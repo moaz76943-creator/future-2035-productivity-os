@@ -4937,5 +4937,42 @@
   "speechTest": "Test voice",
   "@speechTest": {
     "description": "speechTest"
+  },
+  "importNext": "Preview",
+  "@importNext": {
+    "description": "importNext"
+  },
+  "importPreviewTitle": "Match columns to fields",
+  "@importPreviewTitle": {
+    "description": "importPreviewTitle"
+  },
+  "importIgnoreColumn": "Ignore",
+  "@importIgnoreColumn": {
+    "description": "importIgnoreColumn"
+  },
+  "importColumn": "Column {n}",
+  "@importColumn": {
+    "description": "Column label",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "importPreviewSummary": "{ready} cards ready · {invalid} incomplete rows will be skipped",
+  "@importPreviewSummary": {
+    "description": "Preview counts",
+    "placeholders": {
+      "ready": {
+        "type": "int"
+      },
+      "invalid": {
+        "type": "int"
+      }
+    }
+  },
+  "importNeedFrontBack": "Choose which columns are the front and the back.",
+  "@importNeedFrontBack": {
+    "description": "importNeedFrontBack"
   }
 }

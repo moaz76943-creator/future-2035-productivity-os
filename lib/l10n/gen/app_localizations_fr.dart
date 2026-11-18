@@ -3704,4 +3704,26 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get speechTest => 'Tester la voix';
+
+  @override
+  String get importNext => 'Aperçu';
+
+  @override
+  String get importPreviewTitle => 'Associer les colonnes aux champs';
+
+  @override
+  String get importIgnoreColumn => 'Ignorer';
+
+  @override
+  String importColumn(int n) {
+    return 'Colonne $n';
+  }
+
+  @override
+  String importPreviewSummary(int ready, int invalid) {
+    return '$ready cartes prêtes · $invalid lignes incomplètes ignorées';
+  }
+
+  @override
+  String get importNeedFrontBack => 'Choisissez les colonnes du recto et du verso.';
 }

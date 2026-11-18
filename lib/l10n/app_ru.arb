@@ -1013,5 +1013,11 @@
   "speechVoice": "Голос",
   "speechVoiceDefault": "По умолчанию",
   "speechVoiceOnline": "нужен интернет",
-  "speechTest": "Проверить голос"
+  "speechTest": "Проверить голос",
+  "importNext": "Просмотр",
+  "importPreviewTitle": "Сопоставьте столбцы и поля",
+  "importIgnoreColumn": "Пропустить",
+  "importColumn": "Столбец {n}",
+  "importPreviewSummary": "Готово карточек: {ready} · неполных строк пропустим: {invalid}",
+  "importNeedFrontBack": "Выберите столбцы для лицевой и оборотной стороны."
 }

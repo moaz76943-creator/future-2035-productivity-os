@@ -1013,5 +1013,11 @@
   "speechVoice": "आवाज़",
   "speechVoiceDefault": "डिवाइस डिफ़ॉल्ट",
   "speechVoiceOnline": "इंटरनेट चाहिए",
-  "speechTest": "आवाज़ जाँचें"
+  "speechTest": "आवाज़ जाँचें",
+  "importNext": "पूर्वावलोकन",
+  "importPreviewTitle": "कॉलम को फ़ील्ड से मिलाएँ",
+  "importIgnoreColumn": "अनदेखा करें",
+  "importColumn": "कॉलम {n}",
+  "importPreviewSummary": "{ready} कार्ड तैयार · {invalid} अधूरी पंक्तियाँ छोड़ी जाएँगी",
+  "importNeedFrontBack": "चुनें कि कौन से कॉलम सामने और पीछे हैं।"
 }

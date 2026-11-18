@@ -48,6 +48,10 @@ void main() {
       await tester.tap(find.byKey(const Key('importButton')));
       await settle(tester);
       await tester.enterText(find.byKey(const Key('importField')), 'hola\thello\nadiós;bye\n\nbad');
+      await tester.tap(find.byKey(const Key('importNextButton')));
+      await settle(tester);
+      // Preview: columns guessed as front / back.
+      expect(find.text(l10n.importPreviewSummary(2, 1)), findsOneWidget);
       await tester.tap(find.byKey(const Key('importConfirmButton')));
       await settle(tester);
 
@@ -71,7 +75,7 @@ void main() {
     await tester.tap(find.byKey(const Key('importButton')));
     await settle(tester);
     await tester.enterText(find.byKey(const Key('importField')), '{"format":"other"}');
-    await tester.tap(find.byKey(const Key('importConfirmButton')));
+    await tester.tap(find.byKey(const Key('importNextButton')));
     await settle(tester);
     expect(find.text(l10n.importFailed), findsOneWidget);
     expect(await _cardCount(env, tester), 0);
@@ -286,5 +290,36 @@ void main() {
     await settle(tester);
     expect(await _cardCount(env, tester), 1);
     await closeEnv(tester, env);
+  });
+
+  testWidgets('import preview: remap columns before importing', (tester) async {
+    final (env, _) = await _setup(tester);
+    final l10n = _l10n(tester);
+    await tester.tap(find.byKey(const Key('importButton')));
+    await settle(tester);
+    // Columns: word, example, meaning (no header) → map 2nd to example, 3rd to back.
+    await tester.enterText(
+      find.byKey(const Key('importField')),
+      'la llave\tTengo la llave\tkey\nel puente\tUn puente largo\tbridge',
+    );
+    await tester.tap(find.byKey(const Key('importNextButton')));
+    await settle(tester);
+    await tester.tap(find.byKey(const Key('importColumn_1')));
+    await settle(tester);
+    await tester.tap(find.text(l10n.cardFieldExample).last);
+    await settle(tester);
+    expect(find.text(l10n.importNeedFrontBack), findsOneWidget);
+    await tester.tap(find.byKey(const Key('importColumn_2')));
+    await settle(tester);
+    await tester.tap(find.text(l10n.cardBack).last);
+    await settle(tester);
+    expect(find.text(l10n.importPreviewSummary(2, 0)), findsOneWidget);
+    await tester.tap(find.byKey(const Key('importConfirmButton')));
+    await settle(tester);
+    final rows = (await tester.runAsync(() => env.db.select(env.db.flashcards).get()))!;
+    final key = rows.firstWhere((c) => c.front == 'la llave');
+    expect(key.back, 'key');
+    expect(key.extra, contains('Tengo la llave'));
+    await env.dispose();
   });
 }

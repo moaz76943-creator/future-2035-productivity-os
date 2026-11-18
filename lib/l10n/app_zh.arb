@@ -1013,5 +1013,11 @@
   "speechVoice": "语音",
   "speechVoiceDefault": "设备默认",
   "speechVoiceOnline": "需联网",
-  "speechTest": "试听"
+  "speechTest": "试听",
+  "importNext": "预览",
+  "importPreviewTitle": "将列对应到字段",
+  "importIgnoreColumn": "忽略",
+  "importColumn": "第 {n} 列",
+  "importPreviewSummary": "{ready} 张卡片就绪 · 将跳过 {invalid} 行不完整数据",
+  "importNeedFrontBack": "请选择正面和背面对应的列。"
 }

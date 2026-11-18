@@ -3805,4 +3805,26 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get speechTest => 'Проверить голос';
+
+  @override
+  String get importNext => 'Просмотр';
+
+  @override
+  String get importPreviewTitle => 'Сопоставьте столбцы и поля';
+
+  @override
+  String get importIgnoreColumn => 'Пропустить';
+
+  @override
+  String importColumn(int n) {
+    return 'Столбец $n';
+  }
+
+  @override
+  String importPreviewSummary(int ready, int invalid) {
+    return 'Готово карточек: $ready · неполных строк пропустим: $invalid';
+  }
+
+  @override
+  String get importNeedFrontBack => 'Выберите столбцы для лицевой и оборотной стороны.';
 }

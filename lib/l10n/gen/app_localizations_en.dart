@@ -3680,4 +3680,26 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get speechTest => 'Test voice';
+
+  @override
+  String get importNext => 'Preview';
+
+  @override
+  String get importPreviewTitle => 'Match columns to fields';
+
+  @override
+  String get importIgnoreColumn => 'Ignore';
+
+  @override
+  String importColumn(int n) {
+    return 'Column $n';
+  }
+
+  @override
+  String importPreviewSummary(int ready, int invalid) {
+    return '$ready cards ready · $invalid incomplete rows will be skipped';
+  }
+
+  @override
+  String get importNeedFrontBack => 'Choose which columns are the front and the back.';
 }

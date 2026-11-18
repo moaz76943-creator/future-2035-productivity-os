@@ -389,6 +389,15 @@ class FlashcardsRepository {
       cards = parsed.cards;
       invalid = parsed.invalid;
     }
+    return importParsed(deckId, cards, invalid: invalid);
+  }
+
+  /// Adds parsed cards, skipping fronts already in the deck. One transaction.
+  Future<ImportResult> importParsed(
+    String deckId,
+    List<ImportedCard> cards, {
+    int invalid = 0,
+  }) async {
     var added = 0, duplicates = 0;
     await _db.transaction(() async {
       final existing = {

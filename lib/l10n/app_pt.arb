@@ -1013,5 +1013,11 @@
   "speechVoice": "Voz",
   "speechVoiceDefault": "Padrão do aparelho",
   "speechVoiceOnline": "requer internet",
-  "speechTest": "Testar voz"
+  "speechTest": "Testar voz",
+  "importNext": "Pré-visualizar",
+  "importPreviewTitle": "Associe colunas aos campos",
+  "importIgnoreColumn": "Ignorar",
+  "importColumn": "Coluna {n}",
+  "importPreviewSummary": "{ready} cartões prontos · {invalid} linhas incompletas serão ignoradas",
+  "importNeedFrontBack": "Escolha quais colunas são a frente e o verso."
 }

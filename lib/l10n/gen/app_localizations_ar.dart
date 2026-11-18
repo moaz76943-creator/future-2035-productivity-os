@@ -3848,4 +3848,26 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get speechTest => 'تجربة الصوت';
+
+  @override
+  String get importNext => 'معاينة';
+
+  @override
+  String get importPreviewTitle => 'اربط الأعمدة بالحقول';
+
+  @override
+  String get importIgnoreColumn => 'تجاهل';
+
+  @override
+  String importColumn(int n) {
+    return 'العمود $n';
+  }
+
+  @override
+  String importPreviewSummary(int ready, int invalid) {
+    return '$ready بطاقة جاهزة · سيتم تخطّي $invalid صفوف ناقصة';
+  }
+
+  @override
+  String get importNeedFrontBack => 'اختر أي عمود هو الوجه الأمامي وأيها الخلفي.';
 }
