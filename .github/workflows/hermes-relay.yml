@@ -56,7 +56,12 @@ jobs:
         run: |
           git config user.name "future2035-relay-bot"
           git config user.email "actions@github.com"
-          git checkout -B hermes/future-2035-upgrade
+          if git ls-remote --exit-code --heads origin hermes/future-2035-upgrade >/dev/null 2>&1; then
+            git fetch origin hermes/future-2035-upgrade
+            git checkout -B hermes/future-2035-upgrade origin/hermes/future-2035-upgrade
+          else
+            git checkout -B hermes/future-2035-upgrade
+          fi
           printf '%s\n' "$GOOGLE_KEYS_LIST" > /tmp/keys.list
           JOB_START=$(date +%s)
           MAX_WALL=12600
