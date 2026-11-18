@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../app/localization/app_format.dart';
+import '../../../app/routing/navigation.dart';
 import '../../../app/routing/routes.dart';
 import '../../../core/database/app_database.dart';
 import '../../../core/design_system/app_theme.dart';
@@ -111,7 +112,7 @@ class _Detail extends ConsumerWidget {
                     l10n.projectDeleted,
                     onUndo: () => repo.restore(project.id),
                   );
-                  context.pop();
+                  leaveScreen(context, Routes.projects);
               }
             },
             itemBuilder: (_) => [

@@ -150,6 +150,7 @@ class _QuickAdd extends ConsumerStatefulWidget {
 class _QuickAddState extends ConsumerState<_QuickAdd> {
   final _c = TextEditingController();
   final _focus = FocusNode();
+  bool _busy = false;
 
   @override
   void dispose() {
@@ -160,7 +161,18 @@ class _QuickAddState extends ConsumerState<_QuickAdd> {
 
   Future<void> _submit() async {
     final title = _c.text.trim();
-    if (title.isEmpty) return;
+    // Empty input: the Add button is disabled; the keyboard action just keeps focus.
+    // _busy blocks a second task from a double tap while the first one saves.
+    if (title.isEmpty || _busy) return;
+    setState(() => _busy = true);
+    try {
+      await _create(title);
+    } finally {
+      if (mounted) setState(() => _busy = false);
+    }
+  }
+
+  Future<void> _create(String title) async {
     final now = ref.read(clockProvider).now();
     final due = switch (widget.tab) {
       TasksTab.today || TasksTab.overdue => Days.startOfDay(now),
@@ -189,10 +201,13 @@ class _QuickAddState extends ConsumerState<_QuickAdd> {
         decoration: InputDecoration(
           hintText: context.l10n.tasksQuickAddHint,
           prefixIcon: const Icon(Icons.add_task_rounded),
-          suffixIcon: IconButton(
-            tooltip: context.l10n.actionAdd,
-            icon: const Icon(Icons.arrow_upward_rounded),
-            onPressed: _submit,
+          suffixIcon: ValueListenableBuilder<TextEditingValue>(
+            valueListenable: _c,
+            builder: (context, value, _) => IconButton(
+              tooltip: context.l10n.actionAdd,
+              icon: const Icon(Icons.arrow_upward_rounded),
+              onPressed: value.text.trim().isEmpty || _busy ? null : _submit,
+            ),
           ),
         ),
         onSubmitted: (_) => _submit(),
