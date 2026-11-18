@@ -54,10 +54,16 @@ class DayAgenda extends StatelessWidget {
     required this.onOpenTask,
     required this.onScheduleTask,
     required this.onNewEvent,
+    this.milestones = const [],
+    this.onOpenProject,
   });
 
   final List<EventOccurrence> events;
   final List<TaskRow> tasks;
+
+  /// Project milestones due that day (distinct type from events and tasks).
+  final List<(MilestoneRow, ProjectRow)> milestones;
+  final ValueChanged<String>? onOpenProject;
   final Set<EventOccurrence> conflicts;
   final ValueChanged<EventOccurrence> onOpenEvent;
   final ValueChanged<TaskRow> onOpenTask;
@@ -67,7 +73,7 @@ class DayAgenda extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    if (events.isEmpty && tasks.isEmpty) {
+    if (events.isEmpty && tasks.isEmpty && milestones.isEmpty) {
       return Padding(
         padding: const EdgeInsets.symmetric(horizontal: Space.page),
         child: EmptyState(
@@ -99,6 +105,45 @@ class DayAgenda extends StatelessWidget {
                 occurrence: o,
                 conflict: conflicts.contains(o),
                 onTap: () => onOpenEvent(o),
+              ),
+            ),
+          for (final (m, p) in milestones)
+            Padding(
+              padding: const EdgeInsets.only(bottom: Space.sm),
+              child: LuxCard(
+                key: ValueKey('cal-milestone-${m.id}'),
+                elevated: false,
+                onTap: onOpenProject == null ? null : () => onOpenProject!(p.id),
+                padding: const EdgeInsetsDirectional.fromSTEB(Space.md, Space.sm, Space.md, Space.sm),
+                child: Row(
+                  children: [
+                    Icon(
+                      m.done ? Icons.flag_rounded : Icons.outlined_flag_rounded,
+                      color: Color(p.color),
+                      size: 20,
+                    ),
+                    const SizedBox(width: Space.sm),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            m.title,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: context.text.bodyLarge?.copyWith(
+                              decoration: m.done ? TextDecoration.lineThrough : null,
+                            ),
+                          ),
+                          Text(
+                            l10n.calendarMilestone(p.name),
+                            style: context.text.labelSmall?.copyWith(color: context.lux.ink3),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           for (final t in tasks)

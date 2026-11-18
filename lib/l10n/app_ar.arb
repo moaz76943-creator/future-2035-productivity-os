@@ -891,5 +891,14 @@
   "cardFieldExample": "مثال",
   "cardFieldExplanation": "شرح",
   "cardFieldPronunciation": "النطق",
-  "cardFieldNotes": "ملاحظات إضافية"
+  "cardFieldNotes": "ملاحظات إضافية",
+  "projectMilestones": "المراحل",
+  "milestoneAdd": "إضافة مرحلة",
+  "milestoneEdit": "تعديل المرحلة",
+  "milestoneTitleLabel": "المرحلة",
+  "milestoneNoDate": "بدون تاريخ",
+  "milestonesEmpty": "لا توجد مراحل بعد. أضف محطات بتواريخ لمتابعة المشروع في التقويم.",
+  "milestoneDeleted": "تم حذف المرحلة",
+  "milestoneDoneA11y": "تعليم المرحلة \"{title}\" كمكتملة",
+  "calendarMilestone": "مرحلة · {project}"
 }

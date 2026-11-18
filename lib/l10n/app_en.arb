@@ -4333,5 +4333,51 @@
   "cardFieldNotes": "Additional notes",
   "@cardFieldNotes": {
     "description": "Optional flashcard field (card editor and review back side)"
+  },
+  "projectMilestones": "Milestones",
+  "@projectMilestones": {
+    "description": "Project milestones (project screen and calendar)"
+  },
+  "milestoneAdd": "Add milestone",
+  "@milestoneAdd": {
+    "description": "Project milestones (project screen and calendar)"
+  },
+  "milestoneEdit": "Edit milestone",
+  "@milestoneEdit": {
+    "description": "Project milestones (project screen and calendar)"
+  },
+  "milestoneTitleLabel": "Milestone",
+  "@milestoneTitleLabel": {
+    "description": "Project milestones (project screen and calendar)"
+  },
+  "milestoneNoDate": "No date",
+  "@milestoneNoDate": {
+    "description": "Project milestones (project screen and calendar)"
+  },
+  "milestonesEmpty": "No milestones yet. Add checkpoints with dates to track the project on the calendar.",
+  "@milestonesEmpty": {
+    "description": "Project milestones (project screen and calendar)"
+  },
+  "milestoneDeleted": "Milestone deleted",
+  "@milestoneDeleted": {
+    "description": "Project milestones (project screen and calendar)"
+  },
+  "milestoneDoneA11y": "Mark milestone \"{title}\" as done",
+  "@milestoneDoneA11y": {
+    "description": "Project milestones (project screen and calendar)",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "calendarMilestone": "Milestone · {project}",
+  "@calendarMilestone": {
+    "description": "Project milestones (project screen and calendar)",
+    "placeholders": {
+      "project": {
+        "type": "String"
+      }
+    }
   }
 }

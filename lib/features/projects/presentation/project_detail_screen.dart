@@ -19,6 +19,7 @@ import '../../tasks/application/tasks_providers.dart';
 import '../../tasks/data/tasks_repository.dart';
 import '../../tasks/presentation/widgets/task_tile.dart';
 import '../application/projects_providers.dart';
+import 'milestones_section.dart';
 import 'project_editor_sheet.dart';
 import 'project_visuals.dart';
 import 'projects_screen.dart';
@@ -226,6 +227,7 @@ class _Detail extends ConsumerWidget {
             const SizedBox(height: Space.md),
             Text(project.description, style: context.text.bodyMedium),
           ],
+          MilestonesSection(projectId: project.id),
           SectionHeader(
             title: l10n.projectTasksOpen,
             padding: const EdgeInsets.only(top: Space.xl, bottom: Space.xs),

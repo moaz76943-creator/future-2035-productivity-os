@@ -891,5 +891,14 @@
   "cardFieldExample": "Exemple",
   "cardFieldExplanation": "Explication",
   "cardFieldPronunciation": "Prononciation",
-  "cardFieldNotes": "Notes supplémentaires"
+  "cardFieldNotes": "Notes supplémentaires",
+  "projectMilestones": "Jalons",
+  "milestoneAdd": "Ajouter un jalon",
+  "milestoneEdit": "Modifier le jalon",
+  "milestoneTitleLabel": "Jalon",
+  "milestoneNoDate": "Sans date",
+  "milestonesEmpty": "Aucun jalon pour l’instant. Ajoutez des étapes datées pour suivre le projet dans le calendrier.",
+  "milestoneDeleted": "Jalon supprimé",
+  "milestoneDoneA11y": "Marquer le jalon « {title} » comme terminé",
+  "calendarMilestone": "Jalon · {project}"
 }

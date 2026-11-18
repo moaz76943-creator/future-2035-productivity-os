@@ -34,6 +34,7 @@ const String kNormalizeSqlFunction = 'fos_normalize';
     HabitLogs,
     KeyValues,
     RecentSearches,
+    Milestones,
   ],
 )
 class AppDatabase extends _$AppDatabase {
@@ -42,7 +43,11 @@ class AppDatabase extends _$AppDatabase {
   /// Bump when the schema changes and add a step in [migration].
   /// Never drop user tables to resolve a migration problem.
   @override
-  int get schemaVersion => 2;
+  int get schemaVersion => 3;
+
+  /// Tables introduced after schema v1, by version. Older backups lack them and
+  /// restore them empty instead of being rejected.
+  static const tablesAddedIn = {'milestones': 3};
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -55,6 +60,13 @@ class AppDatabase extends _$AppDatabase {
       if (from < 2) {
         // v2: optional flashcard fields. Existing cards get '' (no extras).
         await m.addColumn(flashcards, flashcards.extra);
+      }
+      if (from < 3) {
+        // v3: project milestones.
+        await m.createTable(milestones);
+        await customStatement(
+          'CREATE INDEX IF NOT EXISTS idx_milestones_project ON milestones (project_id, due_at)',
+        );
       }
     },
     beforeOpen: (details) async {
@@ -79,6 +91,7 @@ class AppDatabase extends _$AppDatabase {
       'CREATE INDEX IF NOT EXISTS idx_reviews_at ON card_reviews (reviewed_at)',
       'CREATE INDEX IF NOT EXISTS idx_goal_entries_goal ON goal_entries (goal_id, at)',
       'CREATE INDEX IF NOT EXISTS idx_habit_logs_day ON habit_logs (day)',
+      'CREATE INDEX IF NOT EXISTS idx_milestones_project ON milestones (project_id, due_at)',
     ];
     for (final s in statements) {
       await customStatement(s);

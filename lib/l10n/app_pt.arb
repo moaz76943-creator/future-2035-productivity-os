@@ -891,5 +891,14 @@
   "cardFieldExample": "Exemplo",
   "cardFieldExplanation": "Explicação",
   "cardFieldPronunciation": "Pronúncia",
-  "cardFieldNotes": "Notas adicionais"
+  "cardFieldNotes": "Notas adicionais",
+  "projectMilestones": "Marcos",
+  "milestoneAdd": "Adicionar marco",
+  "milestoneEdit": "Editar marco",
+  "milestoneTitleLabel": "Marco",
+  "milestoneNoDate": "Sem data",
+  "milestonesEmpty": "Ainda não há marcos. Adicione etapas com data para acompanhar o projeto no calendário.",
+  "milestoneDeleted": "Marco excluído",
+  "milestoneDoneA11y": "Marcar o marco \"{title}\" como concluído",
+  "calendarMilestone": "Marco · {project}"
 }

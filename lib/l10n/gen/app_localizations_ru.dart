@@ -3381,4 +3381,36 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get cardFieldNotes => 'Дополнительные заметки';
+
+  @override
+  String get projectMilestones => 'Вехи';
+
+  @override
+  String get milestoneAdd => 'Добавить веху';
+
+  @override
+  String get milestoneEdit => 'Изменить веху';
+
+  @override
+  String get milestoneTitleLabel => 'Веха';
+
+  @override
+  String get milestoneNoDate => 'Без даты';
+
+  @override
+  String get milestonesEmpty =>
+      'Вех пока нет. Добавьте контрольные точки с датами, чтобы видеть проект в календаре.';
+
+  @override
+  String get milestoneDeleted => 'Веха удалена';
+
+  @override
+  String milestoneDoneA11y(String title) {
+    return 'Отметить веху «$title» как выполненную';
+  }
+
+  @override
+  String calendarMilestone(String project) {
+    return 'Веха · $project';
+  }
 }

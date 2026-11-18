@@ -155,6 +155,7 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
     final range = CalendarMath.rangeFor(_view, _anchor);
     final occ = ref.watch(occurrencesProvider(range));
     final tasks = ref.watch(tasksDueProvider(range));
+    final milestones = ref.watch(milestonesDueProvider(range)).value ?? const [];
 
     return ModuleScaffold(
       title: l10n.calendarTitle,
@@ -184,7 +185,7 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
             data: (events) => AsyncValueView<List<TaskRow>>(
               value: tasks,
               onRetry: () => ref.invalidate(tasksDueProvider(range)),
-              data: (dueTasks) => _body(context, events, dueTasks),
+              data: (dueTasks) => _body(context, events, dueTasks, milestones),
             ),
           ),
         ),
@@ -241,7 +242,22 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
     );
   }
 
-  Widget _body(BuildContext context, List<EventOccurrence> events, List<TaskRow> tasks) {
+  List<(MilestoneRow, ProjectRow)> _milestonesOn(
+    List<(MilestoneRow, ProjectRow)> all,
+    DateTime day,
+  ) => [
+    for (final e in all)
+      if (e.$1.dueAt != null && CalendarMath.sameDay(e.$1.dueAt!.toLocal(), day)) e,
+  ];
+
+  void _openProject(String id) => context.push(Routes.project(id));
+
+  Widget _body(
+    BuildContext context,
+    List<EventOccurrence> events,
+    List<TaskRow> tasks,
+    List<(MilestoneRow, ProjectRow)> milestones,
+  ) {
     final conflicts = conflictingOccurrences(events);
     switch (_view) {
       case CalendarView.month:
@@ -265,6 +281,8 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
             DayAgenda(
               events: dayEvents,
               tasks: dayTasks,
+              milestones: _milestonesOn(milestones, _selected),
+              onOpenProject: _openProject,
               conflicts: conflicts,
               onOpenEvent: _openEvent,
               onOpenTask: _openTask,
@@ -274,7 +292,7 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
           ],
         );
       case CalendarView.agenda:
-        return _agenda(context, events, tasks, conflicts);
+        return _agenda(context, events, tasks, conflicts, milestones);
       case CalendarView.week:
       case CalendarView.day:
         final days = _view == CalendarView.week
@@ -340,6 +358,7 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
     List<EventOccurrence> events,
     List<TaskRow> tasks,
     Set<EventOccurrence> conflicts,
+    List<(MilestoneRow, ProjectRow)> milestones,
   ) {
     final fmt = context.fmt;
     final sections = <Widget>[];
@@ -350,13 +369,16 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
         for (final t in tasks)
           if (t.dueAt != null && CalendarMath.sameDay(t.dueAt!.toLocal(), d)) t,
       ];
-      if (dayEvents.isEmpty && dayTasks.isEmpty) continue;
+      final dayMilestones = _milestonesOn(milestones, d);
+      if (dayEvents.isEmpty && dayTasks.isEmpty && dayMilestones.isEmpty) continue;
       sections
         ..add(SectionHeader(title: fmt.dayLong(d)))
         ..add(
           DayAgenda(
             events: dayEvents,
             tasks: dayTasks,
+            milestones: dayMilestones,
+            onOpenProject: _openProject,
             conflicts: conflicts,
             onOpenEvent: _openEvent,
             onOpenTask: _openTask,

@@ -3425,4 +3425,35 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get cardFieldNotes => 'ملاحظات إضافية';
+
+  @override
+  String get projectMilestones => 'المراحل';
+
+  @override
+  String get milestoneAdd => 'إضافة مرحلة';
+
+  @override
+  String get milestoneEdit => 'تعديل المرحلة';
+
+  @override
+  String get milestoneTitleLabel => 'المرحلة';
+
+  @override
+  String get milestoneNoDate => 'بدون تاريخ';
+
+  @override
+  String get milestonesEmpty => 'لا توجد مراحل بعد. أضف محطات بتواريخ لمتابعة المشروع في التقويم.';
+
+  @override
+  String get milestoneDeleted => 'تم حذف المرحلة';
+
+  @override
+  String milestoneDoneA11y(String title) {
+    return 'تعليم المرحلة \"$title\" كمكتملة';
+  }
+
+  @override
+  String calendarMilestone(String project) {
+    return 'مرحلة · $project';
+  }
 }

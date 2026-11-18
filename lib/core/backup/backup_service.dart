@@ -256,10 +256,22 @@ class BackupService {
       throw const BackupException(BackupError.corrupted);
     }
     final known = {for (final t in _db.allTables) t.actualTableName: t};
-    // A format-v1 export always contains every table. Refuse partial snapshots:
-    // otherwise omitted tables would be silently emptied during replacement.
+    final backupSchema = doc['schemaVersion'];
+    if (backupSchema is! int || backupSchema < 1) {
+      throw const BackupException(BackupError.corrupted);
+    }
+    if (backupSchema > _db.schemaVersion) {
+      throw const BackupException(BackupError.newerVersion);
+    }
+    // An export contains every table of its schema version. Refuse partial
+    // snapshots (omitted tables would be silently emptied); only tables added
+    // in a later schema than the backup's may be absent, and restore empty.
+    final mayBeAbsent = {
+      for (final e in AppDatabase.tablesAddedIn.entries)
+        if (e.value > backupSchema) e.key,
+    };
     if (tables.keys.toSet().difference(known.keys.toSet()).isNotEmpty ||
-        known.keys.toSet().difference(tables.keys.toSet()).isNotEmpty) {
+        known.keys.toSet().difference(tables.keys.toSet()).difference(mayBeAbsent).isNotEmpty) {
       throw const BackupException(BackupError.corrupted);
     }
     for (final entry in tables.entries) {

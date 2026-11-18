@@ -3269,4 +3269,36 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get cardFieldNotes => 'अतिरिक्त नोट्स';
+
+  @override
+  String get projectMilestones => 'माइलस्टोन';
+
+  @override
+  String get milestoneAdd => 'माइलस्टोन जोड़ें';
+
+  @override
+  String get milestoneEdit => 'माइलस्टोन संपादित करें';
+
+  @override
+  String get milestoneTitleLabel => 'माइलस्टोन';
+
+  @override
+  String get milestoneNoDate => 'कोई तारीख़ नहीं';
+
+  @override
+  String get milestonesEmpty =>
+      'अभी कोई माइलस्टोन नहीं। कैलेंडर पर प्रोजेक्ट ट्रैक करने के लिए तारीख़ वाले पड़ाव जोड़ें।';
+
+  @override
+  String get milestoneDeleted => 'माइलस्टोन हटाया गया';
+
+  @override
+  String milestoneDoneA11y(String title) {
+    return 'माइलस्टोन \"$title\" को पूरा चिह्नित करें';
+  }
+
+  @override
+  String calendarMilestone(String project) {
+    return 'माइलस्टोन · $project';
+  }
 }

@@ -891,5 +891,14 @@
   "cardFieldExample": "Пример",
   "cardFieldExplanation": "Пояснение",
   "cardFieldPronunciation": "Произношение",
-  "cardFieldNotes": "Дополнительные заметки"
+  "cardFieldNotes": "Дополнительные заметки",
+  "projectMilestones": "Вехи",
+  "milestoneAdd": "Добавить веху",
+  "milestoneEdit": "Изменить веху",
+  "milestoneTitleLabel": "Веха",
+  "milestoneNoDate": "Без даты",
+  "milestonesEmpty": "Вех пока нет. Добавьте контрольные точки с датами, чтобы видеть проект в календаре.",
+  "milestoneDeleted": "Веха удалена",
+  "milestoneDoneA11y": "Отметить веху «{title}» как выполненную",
+  "calendarMilestone": "Веха · {project}"
 }

@@ -3104,4 +3104,35 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get cardFieldNotes => '补充说明';
+
+  @override
+  String get projectMilestones => '里程碑';
+
+  @override
+  String get milestoneAdd => '添加里程碑';
+
+  @override
+  String get milestoneEdit => '编辑里程碑';
+
+  @override
+  String get milestoneTitleLabel => '里程碑';
+
+  @override
+  String get milestoneNoDate => '无日期';
+
+  @override
+  String get milestonesEmpty => '还没有里程碑。添加带日期的节点，在日历中跟踪项目。';
+
+  @override
+  String get milestoneDeleted => '已删除里程碑';
+
+  @override
+  String milestoneDoneA11y(String title) {
+    return '将里程碑“$title”标记为完成';
+  }
+
+  @override
+  String calendarMilestone(String project) {
+    return '里程碑 · $project';
+  }
 }

@@ -3277,4 +3277,36 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get cardFieldNotes => 'Notas adicionais';
+
+  @override
+  String get projectMilestones => 'Marcos';
+
+  @override
+  String get milestoneAdd => 'Adicionar marco';
+
+  @override
+  String get milestoneEdit => 'Editar marco';
+
+  @override
+  String get milestoneTitleLabel => 'Marco';
+
+  @override
+  String get milestoneNoDate => 'Sem data';
+
+  @override
+  String get milestonesEmpty =>
+      'Ainda não há marcos. Adicione etapas com data para acompanhar o projeto no calendário.';
+
+  @override
+  String get milestoneDeleted => 'Marco excluído';
+
+  @override
+  String milestoneDoneA11y(String title) {
+    return 'Marcar o marco \"$title\" como concluído';
+  }
+
+  @override
+  String calendarMilestone(String project) {
+    return 'Marco · $project';
+  }
 }

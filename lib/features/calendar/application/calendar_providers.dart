@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/database/app_database.dart';
 import '../../../core/providers/core_providers.dart';
+import '../../projects/application/projects_providers.dart';
 import '../../tasks/application/tasks_providers.dart';
 import '../data/events_repository.dart';
 import 'calendar_layout.dart';
@@ -19,6 +20,12 @@ final occurrencesProvider = StreamProvider.autoDispose.family<List<EventOccurren
 final tasksDueProvider = StreamProvider.autoDispose.family<List<TaskRow>, DateRange>(
   (ref, r) => ref.watch(tasksRepositoryProvider).watchDueBetween(r.from, r.to),
 );
+
+/// Project milestones due inside a [DateRange], with their project.
+final milestonesDueProvider =
+    StreamProvider.autoDispose.family<List<(MilestoneRow, ProjectRow)>, DateRange>(
+      (ref, r) => ref.watch(milestonesRepositoryProvider).watchDueBetween(r.from, r.to),
+    );
 
 /// A single stored event (null when missing or deleted).
 final eventByIdProvider = FutureProvider.autoDispose.family<EventRow?, String>(

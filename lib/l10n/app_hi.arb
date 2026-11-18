@@ -891,5 +891,14 @@
   "cardFieldExample": "उदाहरण",
   "cardFieldExplanation": "व्याख्या",
   "cardFieldPronunciation": "उच्चारण",
-  "cardFieldNotes": "अतिरिक्त नोट्स"
+  "cardFieldNotes": "अतिरिक्त नोट्स",
+  "projectMilestones": "माइलस्टोन",
+  "milestoneAdd": "माइलस्टोन जोड़ें",
+  "milestoneEdit": "माइलस्टोन संपादित करें",
+  "milestoneTitleLabel": "माइलस्टोन",
+  "milestoneNoDate": "कोई तारीख़ नहीं",
+  "milestonesEmpty": "अभी कोई माइलस्टोन नहीं। कैलेंडर पर प्रोजेक्ट ट्रैक करने के लिए तारीख़ वाले पड़ाव जोड़ें।",
+  "milestoneDeleted": "माइलस्टोन हटाया गया",
+  "milestoneDoneA11y": "माइलस्टोन \"{title}\" को पूरा चिह्नित करें",
+  "calendarMilestone": "माइलस्टोन · {project}"
 }

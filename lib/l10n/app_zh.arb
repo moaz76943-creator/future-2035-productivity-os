@@ -891,5 +891,14 @@
   "cardFieldExample": "例句",
   "cardFieldExplanation": "解释",
   "cardFieldPronunciation": "发音",
-  "cardFieldNotes": "补充说明"
+  "cardFieldNotes": "补充说明",
+  "projectMilestones": "里程碑",
+  "milestoneAdd": "添加里程碑",
+  "milestoneEdit": "编辑里程碑",
+  "milestoneTitleLabel": "里程碑",
+  "milestoneNoDate": "无日期",
+  "milestonesEmpty": "还没有里程碑。添加带日期的节点，在日历中跟踪项目。",
+  "milestoneDeleted": "已删除里程碑",
+  "milestoneDoneA11y": "将里程碑“{title}”标记为完成",
+  "calendarMilestone": "里程碑 · {project}"
 }

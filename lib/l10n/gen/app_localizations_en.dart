@@ -3259,4 +3259,36 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get cardFieldNotes => 'Additional notes';
+
+  @override
+  String get projectMilestones => 'Milestones';
+
+  @override
+  String get milestoneAdd => 'Add milestone';
+
+  @override
+  String get milestoneEdit => 'Edit milestone';
+
+  @override
+  String get milestoneTitleLabel => 'Milestone';
+
+  @override
+  String get milestoneNoDate => 'No date';
+
+  @override
+  String get milestonesEmpty =>
+      'No milestones yet. Add checkpoints with dates to track the project on the calendar.';
+
+  @override
+  String get milestoneDeleted => 'Milestone deleted';
+
+  @override
+  String milestoneDoneA11y(String title) {
+    return 'Mark milestone \"$title\" as done';
+  }
+
+  @override
+  String calendarMilestone(String project) {
+    return 'Milestone · $project';
+  }
 }

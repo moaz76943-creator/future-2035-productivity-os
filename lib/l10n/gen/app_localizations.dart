@@ -5459,6 +5459,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Additional notes'**
   String get cardFieldNotes;
+
+  /// Project milestones (project screen and calendar)
+  ///
+  /// In en, this message translates to:
+  /// **'Milestones'**
+  String get projectMilestones;
+
+  /// Project milestones (project screen and calendar)
+  ///
+  /// In en, this message translates to:
+  /// **'Add milestone'**
+  String get milestoneAdd;
+
+  /// Project milestones (project screen and calendar)
+  ///
+  /// In en, this message translates to:
+  /// **'Edit milestone'**
+  String get milestoneEdit;
+
+  /// Project milestones (project screen and calendar)
+  ///
+  /// In en, this message translates to:
+  /// **'Milestone'**
+  String get milestoneTitleLabel;
+
+  /// Project milestones (project screen and calendar)
+  ///
+  /// In en, this message translates to:
+  /// **'No date'**
+  String get milestoneNoDate;
+
+  /// Project milestones (project screen and calendar)
+  ///
+  /// In en, this message translates to:
+  /// **'No milestones yet. Add checkpoints with dates to track the project on the calendar.'**
+  String get milestonesEmpty;
+
+  /// Project milestones (project screen and calendar)
+  ///
+  /// In en, this message translates to:
+  /// **'Milestone deleted'**
+  String get milestoneDeleted;
+
+  /// Project milestones (project screen and calendar)
+  ///
+  /// In en, this message translates to:
+  /// **'Mark milestone \"{title}\" as done'**
+  String milestoneDoneA11y(String title);
+
+  /// Project milestones (project screen and calendar)
+  ///
+  /// In en, this message translates to:
+  /// **'Milestone · {project}'**
+  String calendarMilestone(String project);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

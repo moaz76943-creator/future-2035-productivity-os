@@ -32,6 +32,22 @@ class Projects extends Table with Timestamps {
   Set<Column> get primaryKey => {id};
 }
 
+/// A dated checkpoint of a project (schema v3). Shown in the project and on
+/// the calendar; completed milestones count toward project progress.
+@DataClassName('MilestoneRow')
+class Milestones extends Table with Timestamps {
+  TextColumn get id => text()();
+  TextColumn get projectId => text().references(Projects, #id, onDelete: KeyAction.cascade)();
+  TextColumn get title => text().withLength(min: 1, max: 200)();
+  DateTimeColumn get dueAt => dateTime().nullable()();
+  BoolColumn get done => boolean().withDefault(const Constant(false))();
+  DateTimeColumn get doneAt => dateTime().nullable()();
+  DateTimeColumn get deletedAt => dateTime().nullable()();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+
 @DataClassName('TaskRow')
 class Tasks extends Table with Timestamps {
   TextColumn get id => text()();

@@ -891,5 +891,14 @@
   "cardFieldExample": "Ejemplo",
   "cardFieldExplanation": "Explicación",
   "cardFieldPronunciation": "Pronunciación",
-  "cardFieldNotes": "Notas adicionales"
+  "cardFieldNotes": "Notas adicionales",
+  "projectMilestones": "Hitos",
+  "milestoneAdd": "Añadir hito",
+  "milestoneEdit": "Editar hito",
+  "milestoneTitleLabel": "Hito",
+  "milestoneNoDate": "Sin fecha",
+  "milestonesEmpty": "Aún no hay hitos. Añade puntos de control con fecha para seguir el proyecto en el calendario.",
+  "milestoneDeleted": "Hito eliminado",
+  "milestoneDoneA11y": "Marcar el hito \"{title}\" como completado",
+  "calendarMilestone": "Hito · {project}"
 }

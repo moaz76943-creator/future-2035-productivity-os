@@ -3281,4 +3281,36 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get cardFieldNotes => 'Notes supplémentaires';
+
+  @override
+  String get projectMilestones => 'Jalons';
+
+  @override
+  String get milestoneAdd => 'Ajouter un jalon';
+
+  @override
+  String get milestoneEdit => 'Modifier le jalon';
+
+  @override
+  String get milestoneTitleLabel => 'Jalon';
+
+  @override
+  String get milestoneNoDate => 'Sans date';
+
+  @override
+  String get milestonesEmpty =>
+      'Aucun jalon pour l’instant. Ajoutez des étapes datées pour suivre le projet dans le calendrier.';
+
+  @override
+  String get milestoneDeleted => 'Jalon supprimé';
+
+  @override
+  String milestoneDoneA11y(String title) {
+    return 'Marquer le jalon « $title » comme terminé';
+  }
+
+  @override
+  String calendarMilestone(String project) {
+    return 'Jalon · $project';
+  }
 }
