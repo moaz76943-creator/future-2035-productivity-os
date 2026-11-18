@@ -50,6 +50,28 @@ Future<Uint8List> _backupWithPayload(Map<String, Object?> payload) async {
 }
 
 void main() {
+  test('key derivation on a background isolate produces the same backup format', () async {
+    final env = TestEnv();
+    await TasksRepository(env.db, env.clock).create(const TaskDraft(title: 'isolate'));
+    final bytes = await BackupService(
+      env.db,
+      kdf: _fastKdf,
+      offloadKdf: true,
+    ).export(password: 'correct horse');
+    // Readable both inline and offloaded: same KDF, same key.
+    final target = openInMemoryDatabase();
+    expect(
+      await BackupService(target, kdf: _fastKdf).restore(bytes, 'correct horse'),
+      greaterThan(0),
+    );
+    expect(
+      await BackupService(target, kdf: _fastKdf, offloadKdf: true).inspect(bytes, 'correct horse'),
+      isNotEmpty,
+    );
+    await target.close();
+    await env.dispose();
+  });
+
   test('export → restore into empty database reproduces data', () async {
     final env = TestEnv();
     final tasks = TasksRepository(env.db, env.clock);
