@@ -471,20 +471,27 @@ class FlashcardsRepository {
         ),
       );
 
-  /// Cards for a practice round (no scheduling): every active card, or only
-  /// the ones answered wrong recently. Shuffled with [random].
+  /// Cards for a practice round (no scheduling), shuffled with [random].
   Future<List<CardRow>> practiceCards(
     String deckId, {
-    required bool mistakesOnly,
+    bool mistakesOnly = false,
+    PracticeFilter filter = PracticeFilter.all,
     math.Random? random,
   }) async {
+    final f = mistakesOnly ? PracticeFilter.mistakes : filter;
     final active =
         await (_db.select(_db.flashcards)..where(
               (c) => c.deckId.equals(deckId) & c.deletedAt.isNull() & c.suspended.equals(false),
             ))
             .get();
-    var cards = active;
-    if (mistakesOnly) {
+    var cards = switch (f) {
+      PracticeFilter.all => active,
+      PracticeFilter.newOnly => active.where((c) => c.state == 'new').toList(),
+      PracticeFilter.hard => active.where(isHard).toList(),
+      PracticeFilter.favorites => active.where((c) => c.favorite).toList(),
+      PracticeFilter.mistakes => active,
+    };
+    if (f == PracticeFilter.mistakes) {
       final since = _clock.nowUtc().subtract(const Duration(days: 14));
       final missed =
           await (_db.selectOnly(_db.cardReviews)
@@ -500,7 +507,66 @@ class FlashcardsRepository {
     }
     return cards..shuffle(random ?? math.Random());
   }
+
+  /// A card the user struggles with: high FSRS difficulty or repeated lapses.
+  static bool isHard(CardRow c) => c.difficulty >= 7 || c.lapses >= 3;
+
+  // ---- organisation --------------------------------------------------------
+
+  Future<void> setFavorite(Iterable<String> ids, bool favorite) =>
+      (_db.update(_db.flashcards)..where((c) => c.id.isIn(ids))).write(
+        FlashcardsCompanion(favorite: Value(favorite), updatedAt: Value(_clock.nowUtc())),
+      );
+
+  Future<void> setSuspendedMany(Iterable<String> ids, bool suspended) =>
+      (_db.update(_db.flashcards)..where((c) => c.id.isIn(ids))).write(
+        FlashcardsCompanion(suspended: Value(suspended), updatedAt: Value(_clock.nowUtc())),
+      );
+
+  Future<void> deleteCards(Iterable<String> ids) =>
+      (_db.update(_db.flashcards)..where((c) => c.id.isIn(ids))).write(
+        FlashcardsCompanion(deletedAt: Value(_clock.nowUtc()), updatedAt: Value(_clock.nowUtc())),
+      );
+
+  Future<void> restoreCards(Iterable<String> ids) =>
+      (_db.update(_db.flashcards)..where((c) => c.id.isIn(ids))).write(
+        FlashcardsCompanion(deletedAt: const Value(null), updatedAt: Value(_clock.nowUtc())),
+      );
+
+  /// Moves cards (with their schedule and history) to another deck.
+  Future<void> moveCards(Iterable<String> ids, String toDeckId) =>
+      (_db.update(_db.flashcards)..where((c) => c.id.isIn(ids))).write(
+        FlashcardsCompanion(deckId: Value(toDeckId), updatedAt: Value(_clock.nowUtc())),
+      );
+
+  /// Adds [tag] to each card (no duplicates).
+  Future<void> addTag(Iterable<String> ids, String tag) async {
+    final t = tag.trim().replaceAll(RegExp(r'[,\s]+'), '-');
+    if (t.isEmpty) return;
+    await _db.transaction(() async {
+      final rows = await (_db.select(_db.flashcards)..where((c) => c.id.isIn(ids))).get();
+      for (final r in rows) {
+        final tags = r.tags.split(RegExp(r'[,\s]+')).where((x) => x.isNotEmpty).toList();
+        if (tags.contains(t)) continue;
+        await (_db.update(_db.flashcards)..where((c) => c.id.equals(r.id))).write(
+          FlashcardsCompanion(
+            tags: Value([...tags, t].join(' ')),
+            updatedAt: Value(_clock.nowUtc()),
+          ),
+        );
+      }
+    });
+  }
+
+  /// A new card with the same content (and tags), starting as new.
+  Future<String> duplicateCard(String id) async {
+    final c = (await getCard(id))!;
+    return addCard(c.deckId, c.front, c.back, tags: c.tags, extras: CardExtras.decode(c.extra));
+  }
 }
+
+/// Which active cards a practice round uses.
+enum PracticeFilter { all, mistakes, newOnly, hard, favorites }
 
 class ImportResult {
   const ImportResult({required this.added, required this.duplicates, required this.invalid});

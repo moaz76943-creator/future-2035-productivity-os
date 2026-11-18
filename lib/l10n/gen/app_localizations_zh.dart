@@ -3355,4 +3355,96 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get flashcardsImportFileFailed => '无法打开文件，可以改为粘贴其内容。';
+
+  @override
+  String get studyNoMatchingCards => '暂时没有符合条件的卡片。';
+
+  @override
+  String get studyPracticeNew => '仅新卡';
+
+  @override
+  String get studyPracticeHard => '困难卡片';
+
+  @override
+  String get studyPracticeFavorites => '收藏';
+
+  @override
+  String get studySessionSize => '每次卡片数';
+
+  @override
+  String get studySessionAll => '全部';
+
+  @override
+  String get studyOrder => '顺序';
+
+  @override
+  String get studyOrderDue => '最早到期优先';
+
+  @override
+  String get studyOrderRandom => '随机';
+
+  @override
+  String get studyOrderHardest => '最难优先';
+
+  @override
+  String get flashcardsHard => '困难';
+
+  @override
+  String get flashcardsFavorites => '收藏';
+
+  @override
+  String get flashcardsFavorite => '加入收藏';
+
+  @override
+  String get flashcardsUnfavorite => '取消收藏';
+
+  @override
+  String get flashcardsDuplicate => '复制';
+
+  @override
+  String get flashcardsMoveTo => '移动到卡组';
+
+  @override
+  String get flashcardsNoOtherDeck => '请先创建另一个卡组。';
+
+  @override
+  String flashcardsMoved(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '已移动 $count 张卡片');
+    return '$_temp0';
+  }
+
+  @override
+  String get flashcardsAddTag => '添加标签';
+
+  @override
+  String get flashcardsTagHint => '例如：动词';
+
+  @override
+  String flashcardsSelected(int count) {
+    return '已选 $count';
+  }
+
+  @override
+  String get flashcardsSelectAll => '全选当前';
+
+  @override
+  String flashcardsSelectCard(String front) {
+    return '选择 $front';
+  }
+
+  @override
+  String flashcardsRecall(String value) {
+    return '记忆 $value';
+  }
+
+  @override
+  String get flashcardsDuplicateTitle => '可能重复';
+
+  @override
+  String flashcardsDuplicateMessage(String front, String back) {
+    return '该卡组已有“$front”→“$back”。仍要保存吗？';
+  }
+
+  @override
+  String get flashcardsSaveAnyway => '仍然保存';
 }

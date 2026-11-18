@@ -5915,6 +5915,168 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The file could not be opened. You can paste its content instead.'**
   String get flashcardsImportFileFailed;
+
+  /// studyNoMatchingCards
+  ///
+  /// In en, this message translates to:
+  /// **'No cards match this choice yet.'**
+  String get studyNoMatchingCards;
+
+  /// studyPracticeNew
+  ///
+  /// In en, this message translates to:
+  /// **'New only'**
+  String get studyPracticeNew;
+
+  /// studyPracticeHard
+  ///
+  /// In en, this message translates to:
+  /// **'Hard cards'**
+  String get studyPracticeHard;
+
+  /// studyPracticeFavorites
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites'**
+  String get studyPracticeFavorites;
+
+  /// studySessionSize
+  ///
+  /// In en, this message translates to:
+  /// **'Cards per session'**
+  String get studySessionSize;
+
+  /// studySessionAll
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get studySessionAll;
+
+  /// studyOrder
+  ///
+  /// In en, this message translates to:
+  /// **'Order'**
+  String get studyOrder;
+
+  /// studyOrderDue
+  ///
+  /// In en, this message translates to:
+  /// **'Most overdue first'**
+  String get studyOrderDue;
+
+  /// studyOrderRandom
+  ///
+  /// In en, this message translates to:
+  /// **'Random'**
+  String get studyOrderRandom;
+
+  /// studyOrderHardest
+  ///
+  /// In en, this message translates to:
+  /// **'Hardest first'**
+  String get studyOrderHardest;
+
+  /// flashcardsHard
+  ///
+  /// In en, this message translates to:
+  /// **'Hard'**
+  String get flashcardsHard;
+
+  /// flashcardsFavorites
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites'**
+  String get flashcardsFavorites;
+
+  /// flashcardsFavorite
+  ///
+  /// In en, this message translates to:
+  /// **'Add to favorites'**
+  String get flashcardsFavorite;
+
+  /// flashcardsUnfavorite
+  ///
+  /// In en, this message translates to:
+  /// **'Remove from favorites'**
+  String get flashcardsUnfavorite;
+
+  /// flashcardsDuplicate
+  ///
+  /// In en, this message translates to:
+  /// **'Duplicate'**
+  String get flashcardsDuplicate;
+
+  /// flashcardsMoveTo
+  ///
+  /// In en, this message translates to:
+  /// **'Move to deck'**
+  String get flashcardsMoveTo;
+
+  /// flashcardsNoOtherDeck
+  ///
+  /// In en, this message translates to:
+  /// **'Create another deck first.'**
+  String get flashcardsNoOtherDeck;
+
+  /// Snackbar
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Card moved} other{{count} cards moved}}'**
+  String flashcardsMoved(int count);
+
+  /// flashcardsAddTag
+  ///
+  /// In en, this message translates to:
+  /// **'Add tag'**
+  String get flashcardsAddTag;
+
+  /// flashcardsTagHint
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. verbs'**
+  String get flashcardsTagHint;
+
+  /// Selection count
+  ///
+  /// In en, this message translates to:
+  /// **'{count} selected'**
+  String flashcardsSelected(int count);
+
+  /// flashcardsSelectAll
+  ///
+  /// In en, this message translates to:
+  /// **'Select all shown'**
+  String get flashcardsSelectAll;
+
+  /// Checkbox label
+  ///
+  /// In en, this message translates to:
+  /// **'Select {front}'**
+  String flashcardsSelectCard(String front);
+
+  /// Recall probability pill
+  ///
+  /// In en, this message translates to:
+  /// **'Recall {value}'**
+  String flashcardsRecall(String value);
+
+  /// flashcardsDuplicateTitle
+  ///
+  /// In en, this message translates to:
+  /// **'Possible duplicate'**
+  String get flashcardsDuplicateTitle;
+
+  /// Duplicate dialog
+  ///
+  /// In en, this message translates to:
+  /// **'This deck already has “{front}” → “{back}”. Save anyway?'**
+  String flashcardsDuplicateMessage(String front, String back);
+
+  /// flashcardsSaveAnyway
+  ///
+  /// In en, this message translates to:
+  /// **'Save anyway'**
+  String get flashcardsSaveAnyway;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

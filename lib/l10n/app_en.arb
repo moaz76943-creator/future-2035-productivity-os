@@ -4710,5 +4710,141 @@
   "flashcardsImportFileFailed": "The file could not be opened. You can paste its content instead.",
   "@flashcardsImportFileFailed": {
     "description": "flashcardsImportFileFailed"
+  },
+  "studyNoMatchingCards": "No cards match this choice yet.",
+  "@studyNoMatchingCards": {
+    "description": "studyNoMatchingCards"
+  },
+  "studyPracticeNew": "New only",
+  "@studyPracticeNew": {
+    "description": "studyPracticeNew"
+  },
+  "studyPracticeHard": "Hard cards",
+  "@studyPracticeHard": {
+    "description": "studyPracticeHard"
+  },
+  "studyPracticeFavorites": "Favorites",
+  "@studyPracticeFavorites": {
+    "description": "studyPracticeFavorites"
+  },
+  "studySessionSize": "Cards per session",
+  "@studySessionSize": {
+    "description": "studySessionSize"
+  },
+  "studySessionAll": "All",
+  "@studySessionAll": {
+    "description": "studySessionAll"
+  },
+  "studyOrder": "Order",
+  "@studyOrder": {
+    "description": "studyOrder"
+  },
+  "studyOrderDue": "Most overdue first",
+  "@studyOrderDue": {
+    "description": "studyOrderDue"
+  },
+  "studyOrderRandom": "Random",
+  "@studyOrderRandom": {
+    "description": "studyOrderRandom"
+  },
+  "studyOrderHardest": "Hardest first",
+  "@studyOrderHardest": {
+    "description": "studyOrderHardest"
+  },
+  "flashcardsHard": "Hard",
+  "@flashcardsHard": {
+    "description": "flashcardsHard"
+  },
+  "flashcardsFavorites": "Favorites",
+  "@flashcardsFavorites": {
+    "description": "flashcardsFavorites"
+  },
+  "flashcardsFavorite": "Add to favorites",
+  "@flashcardsFavorite": {
+    "description": "flashcardsFavorite"
+  },
+  "flashcardsUnfavorite": "Remove from favorites",
+  "@flashcardsUnfavorite": {
+    "description": "flashcardsUnfavorite"
+  },
+  "flashcardsDuplicate": "Duplicate",
+  "@flashcardsDuplicate": {
+    "description": "flashcardsDuplicate"
+  },
+  "flashcardsMoveTo": "Move to deck",
+  "@flashcardsMoveTo": {
+    "description": "flashcardsMoveTo"
+  },
+  "flashcardsNoOtherDeck": "Create another deck first.",
+  "@flashcardsNoOtherDeck": {
+    "description": "flashcardsNoOtherDeck"
+  },
+  "flashcardsMoved": "{count, plural, =1{Card moved} other{{count} cards moved}}",
+  "@flashcardsMoved": {
+    "description": "Snackbar",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "flashcardsAddTag": "Add tag",
+  "@flashcardsAddTag": {
+    "description": "flashcardsAddTag"
+  },
+  "flashcardsTagHint": "e.g. verbs",
+  "@flashcardsTagHint": {
+    "description": "flashcardsTagHint"
+  },
+  "flashcardsSelected": "{count} selected",
+  "@flashcardsSelected": {
+    "description": "Selection count",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "flashcardsSelectAll": "Select all shown",
+  "@flashcardsSelectAll": {
+    "description": "flashcardsSelectAll"
+  },
+  "flashcardsSelectCard": "Select {front}",
+  "@flashcardsSelectCard": {
+    "description": "Checkbox label",
+    "placeholders": {
+      "front": {
+        "type": "String"
+      }
+    }
+  },
+  "flashcardsRecall": "Recall {value}",
+  "@flashcardsRecall": {
+    "description": "Recall probability pill",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "flashcardsDuplicateTitle": "Possible duplicate",
+  "@flashcardsDuplicateTitle": {
+    "description": "flashcardsDuplicateTitle"
+  },
+  "flashcardsDuplicateMessage": "This deck already has “{front}” → “{back}”. Save anyway?",
+  "@flashcardsDuplicateMessage": {
+    "description": "Duplicate dialog",
+    "placeholders": {
+      "front": {
+        "type": "String"
+      },
+      "back": {
+        "type": "String"
+      }
+    }
+  },
+  "flashcardsSaveAnyway": "Save anyway",
+  "@flashcardsSaveAnyway": {
+    "description": "flashcardsSaveAnyway"
   }
 }

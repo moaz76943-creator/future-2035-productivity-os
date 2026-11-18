@@ -30,7 +30,9 @@ const _hue = ModuleHue.flashcards;
 enum _DeckMenu { edit, speech, exportCsv, delete }
 
 /// Card list filters.
-enum _CardFilter { all, newCards, due, suspended }
+enum _CardFilter { all, newCards, due, hard, favorites, suspended }
+
+enum _CardAction { favorite, duplicate, move, suspend }
 
 class DeckScreen extends ConsumerStatefulWidget {
   const DeckScreen({super.key, required this.deckId});
@@ -45,6 +47,9 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
   String _query = '';
   _CardFilter _filter = _CardFilter.all;
   String? _tag;
+
+  /// Multi-select (long-press a card). Empty = normal mode.
+  final Set<String> _selected = {};
 
   FlashcardsRepository get _repo => ref.read(flashcardsRepositoryProvider);
 
@@ -200,6 +205,104 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
     );
   }
 
+  Future<String?> _pickDeck(String exceptId) async {
+    final l10n = context.l10n;
+    final decks = (await _repo.watchDecks().first).where((d) => d.id != exceptId).toList();
+    if (!mounted) return null;
+    if (decks.isEmpty) {
+      showMessage(context, l10n.flashcardsNoOtherDeck);
+      return null;
+    }
+    return showModalBottomSheet<String>(
+      context: context,
+      showDragHandle: true,
+      useSafeArea: true,
+      builder: (ctx) => SafeArea(
+        child: ListView(
+          shrinkWrap: true,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: Space.page),
+              child: Text(l10n.flashcardsMoveTo, style: ctx.text.titleLarge),
+            ),
+            for (final d in decks)
+              ListTile(
+                leading: Icon(Icons.style_rounded, color: Color(d.color)),
+                title: Text(d.name),
+                onTap: () => Navigator.pop(ctx, d.id),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Future<void> _cardAction(CardRow card, _CardAction a) async {
+    final l10n = context.l10n;
+    switch (a) {
+      case _CardAction.favorite:
+        await _repo.setFavorite([card.id], !card.favorite);
+      case _CardAction.duplicate:
+        final id = await _repo.duplicateCard(card.id);
+        final copy = await _repo.getCard(id);
+        if (mounted && copy != null) {
+          await showCardForm(context, deckId: card.deckId, initial: copy);
+        }
+      case _CardAction.move:
+        final to = await _pickDeck(card.deckId);
+        if (to == null) return;
+        await _repo.moveCards([card.id], to);
+        if (mounted) {
+          showUndoSnack(
+            context,
+            l10n.flashcardsMoved(1),
+            onUndo: () => _repo.moveCards([card.id], card.deckId),
+          );
+        }
+      case _CardAction.suspend:
+        await _toggleSuspend(card);
+    }
+  }
+
+  Future<void> _bulk(String action, List<CardRow> all) async {
+    final l10n = context.l10n;
+    final ids = _selected.toList();
+    final repo = _repo;
+    switch (action) {
+      case 'favorite':
+        final allFav = all.where((c) => _selected.contains(c.id)).every((c) => c.favorite);
+        await repo.setFavorite(ids, !allFav);
+      case 'suspend':
+        final allSusp = all.where((c) => _selected.contains(c.id)).every((c) => c.suspended);
+        await repo.setSuspendedMany(ids, !allSusp);
+      case 'tag':
+        final tag = await promptText(
+          context,
+          title: l10n.flashcardsAddTag,
+          hint: l10n.flashcardsTagHint,
+        );
+        if (tag == null || tag.trim().isEmpty) return;
+        await repo.addTag(ids, tag);
+      case 'move':
+        final to = await _pickDeck(widget.deckId);
+        if (to == null) return;
+        await repo.moveCards(ids, to);
+        if (mounted) {
+          showUndoSnack(
+            context,
+            l10n.flashcardsMoved(ids.length),
+            onUndo: () => repo.moveCards(ids, widget.deckId),
+          );
+        }
+      case 'delete':
+        await repo.deleteCards(ids);
+        if (mounted) {
+          showUndoSnack(context, l10n.deletedItem, onUndo: () => repo.restoreCards(ids));
+        }
+    }
+    if (mounted) setState(_selected.clear);
+  }
+
   Future<void> _deleteCard(CardRow card) async {
     final repo = _repo;
     await repo.deleteCard(card.id);
@@ -313,6 +416,8 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
               _CardFilter.newCards => c.state == 'new' && !c.suspended,
               _CardFilter.due =>
                 c.state != 'new' && !c.suspended && c.dueAt != null && !c.dueAt!.isAfter(now),
+              _CardFilter.hard => !c.suspended && FlashcardsRepository.isHard(c),
+              _CardFilter.favorites => c.favorite,
               _CardFilter.suspended => c.suspended,
             };
             if (!ok) return false;
@@ -363,6 +468,8 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
                               _CardFilter.all => l10n.filterAll,
                               _CardFilter.newCards => l10n.deckNewCards,
                               _CardFilter.due => l10n.deckDue,
+                              _CardFilter.hard => l10n.flashcardsHard,
+                              _CardFilter.favorites => l10n.flashcardsFavorites,
                               _CardFilter.suspended => l10n.flashcardsSuspendedFilter,
                             }),
                             selected: _filter == f,
@@ -382,6 +489,70 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
                   ),
                 ),
               ),
+              if (_selected.isNotEmpty)
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(Space.page, Space.sm, Space.page, 0),
+                    child: LuxCard(
+                      key: const Key('bulkBar'),
+                      elevated: false,
+                      padding: const EdgeInsets.symmetric(horizontal: Space.xs, vertical: 2),
+                      child: Wrap(
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: [
+                          IconButton(
+                            tooltip: l10n.actionClose,
+                            onPressed: () => setState(_selected.clear),
+                            icon: const Icon(Icons.close_rounded),
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.only(end: Space.xs),
+                            child: Text(
+                              l10n.flashcardsSelected(_selected.length),
+                              style: context.text.titleSmall,
+                            ),
+                          ),
+                          IconButton(
+                            tooltip: l10n.flashcardsSelectAll,
+                            onPressed: () =>
+                                setState(() => _selected.addAll(shown.map((c) => c.id))),
+                            icon: const Icon(Icons.select_all_rounded),
+                          ),
+                          IconButton(
+                            key: const Key('bulkFavorite'),
+                            tooltip: l10n.flashcardsFavorite,
+                            onPressed: () => _bulk('favorite', all),
+                            icon: const Icon(Icons.star_outline_rounded),
+                          ),
+                          IconButton(
+                            key: const Key('bulkSuspend'),
+                            tooltip: l10n.flashcardsSuspend,
+                            onPressed: () => _bulk('suspend', all),
+                            icon: const Icon(Icons.pause_circle_outline_rounded),
+                          ),
+                          IconButton(
+                            key: const Key('bulkTag'),
+                            tooltip: l10n.flashcardsAddTag,
+                            onPressed: () => _bulk('tag', all),
+                            icon: const Icon(Icons.sell_outlined),
+                          ),
+                          IconButton(
+                            key: const Key('bulkMove'),
+                            tooltip: l10n.flashcardsMoveTo,
+                            onPressed: () => _bulk('move', all),
+                            icon: const Icon(Icons.drive_file_move_outline),
+                          ),
+                          IconButton(
+                            key: const Key('bulkDelete'),
+                            tooltip: l10n.actionDelete,
+                            onPressed: () => _bulk('delete', all),
+                            icon: const Icon(Icons.delete_outline_rounded),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
               SliverToBoxAdapter(
                 child: SectionHeader(
                   title: shown.length == all.length
@@ -405,12 +576,24 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
                   sliver: SliverList.separated(
                     itemCount: shown.length,
                     separatorBuilder: (_, _) => const SizedBox(height: Space.xs),
-                    itemBuilder: (_, i) => _CardTile(
-                      card: shown[i],
-                      onTap: () => showCardForm(context, deckId: deck.id, initial: shown[i]),
-                      onDelete: () => _deleteCard(shown[i]),
-                      onToggleSuspend: () => _toggleSuspend(shown[i]),
-                    ),
+                    itemBuilder: (_, i) {
+                      final c = shown[i];
+                      void toggle() => setState(
+                        () =>
+                            _selected.contains(c.id) ? _selected.remove(c.id) : _selected.add(c.id),
+                      );
+                      return _CardTile(
+                        card: c,
+                        selecting: _selected.isNotEmpty,
+                        selected: _selected.contains(c.id),
+                        onTap: _selected.isNotEmpty
+                            ? toggle
+                            : () => showCardForm(context, deckId: deck.id, initial: c),
+                        onLongPress: toggle,
+                        onDelete: () => _deleteCard(c),
+                        onAction: (a) => _cardAction(c, a),
+                      );
+                    },
                   ),
                 ),
             ],
@@ -517,13 +700,19 @@ class _CardTile extends ConsumerWidget {
   const _CardTile({
     required this.card,
     required this.onTap,
+    required this.onLongPress,
     required this.onDelete,
-    required this.onToggleSuspend,
+    required this.onAction,
+    this.selecting = false,
+    this.selected = false,
   });
   final CardRow card;
   final VoidCallback onTap;
+  final VoidCallback onLongPress;
   final VoidCallback onDelete;
-  final VoidCallback onToggleSuspend;
+  final ValueChanged<_CardAction> onAction;
+  final bool selecting;
+  final bool selected;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -538,56 +727,85 @@ class _CardTile extends ConsumerWidget {
         : card.state == 'new' || card.dueAt == null
         ? l10n.deckNewCards
         : l10n.flashcardsCardDueOn(context.fmt.relativeDay(card.dueAt!, now));
-    return LuxCard(
-      onTap: onTap,
-      elevated: false,
-      padding: const EdgeInsetsDirectional.fromSTEB(Space.md, Space.sm, Space.xxs, Space.sm),
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  card.front,
-                  style: context.text.titleSmall,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                const SizedBox(height: 2),
-                Text(
-                  card.back,
-                  style: context.text.bodySmall?.copyWith(color: context.lux.ink2),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                const SizedBox(height: Space.xxs),
-                Wrap(
-                  spacing: Space.xxs,
-                  runSpacing: Space.xxs,
-                  children: [
-                    LuxPill(label: status, color: _hue.a),
-                    for (final t in tags) LuxPill(label: t),
-                  ],
-                ),
-              ],
+    final recall = FlashcardsRepository.srsOf(card).retrievability(now.toUtc());
+    return GestureDetector(
+      onLongPress: onLongPress,
+      child: LuxCard(
+        onTap: onTap,
+        elevated: false,
+        accent: selected ? _hue.a : null,
+        padding: const EdgeInsetsDirectional.fromSTEB(Space.md, Space.sm, Space.xxs, Space.sm),
+        child: Row(
+          children: [
+            if (selecting)
+              Checkbox(
+                value: selected,
+                onChanged: (_) => onTap(),
+                semanticLabel: l10n.flashcardsSelectCard(card.front),
+              ),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    card.front,
+                    style: context.text.titleSmall,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    card.back,
+                    style: context.text.bodySmall?.copyWith(color: context.lux.ink2),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  const SizedBox(height: Space.xxs),
+                  Wrap(
+                    spacing: Space.xxs,
+                    runSpacing: Space.xxs,
+                    children: [
+                      LuxPill(label: status, color: _hue.a),
+                      if (recall != null && !card.suspended)
+                        LuxPill(label: l10n.flashcardsRecall(context.fmt.percent(recall))),
+                      if (FlashcardsRepository.isHard(card)) LuxPill(label: l10n.flashcardsHard),
+                      for (final t in tags) LuxPill(label: t),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-          IconButton(
-            tooltip: card.suspended ? l10n.flashcardsResume : l10n.flashcardsSuspend,
-            onPressed: onToggleSuspend,
-            icon: Icon(
-              card.suspended
-                  ? Icons.play_circle_outline_rounded
-                  : Icons.pause_circle_outline_rounded,
-            ),
-          ),
-          IconButton(
-            tooltip: l10n.actionDelete,
-            onPressed: onDelete,
-            icon: const Icon(Icons.delete_outline_rounded),
-          ),
-        ],
+            if (!selecting) ...[
+              IconButton(
+                tooltip: card.favorite ? l10n.flashcardsUnfavorite : l10n.flashcardsFavorite,
+                isSelected: card.favorite,
+                onPressed: () => onAction(_CardAction.favorite),
+                icon: const Icon(Icons.star_outline_rounded),
+                selectedIcon: Icon(Icons.star_rounded, color: Palette.aurora),
+              ),
+              PopupMenuButton<_CardAction>(
+                tooltip: l10n.actionMore,
+                onSelected: onAction,
+                itemBuilder: (_) => [
+                  PopupMenuItem(
+                    value: _CardAction.suspend,
+                    child: Text(card.suspended ? l10n.flashcardsResume : l10n.flashcardsSuspend),
+                  ),
+                  PopupMenuItem(
+                    value: _CardAction.duplicate,
+                    child: Text(l10n.flashcardsDuplicate),
+                  ),
+                  PopupMenuItem(value: _CardAction.move, child: Text(l10n.flashcardsMoveTo)),
+                ],
+              ),
+              IconButton(
+                tooltip: l10n.actionDelete,
+                onPressed: onDelete,
+                icon: const Icon(Icons.delete_outline_rounded),
+              ),
+            ],
+          ],
+        ),
       ),
     );
   }

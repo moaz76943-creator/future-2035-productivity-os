@@ -98,6 +98,66 @@ class _StudySheet extends ConsumerWidget {
             icon: const Icon(Icons.replay_rounded),
             label: Text(l10n.studyPracticeMistakes),
           ),
+          const SizedBox(height: Space.xs),
+          Wrap(
+            spacing: Space.xs,
+            runSpacing: Space.xs,
+            children: [
+              ActionChip(
+                key: const Key('practiceNewButton'),
+                avatar: const Icon(Icons.fiber_new_rounded, size: 18),
+                label: Text(l10n.studyPracticeNew),
+                onPressed: () => go(StudyScope.practiceNew),
+              ),
+              ActionChip(
+                key: const Key('practiceHardButton'),
+                avatar: const Icon(Icons.local_fire_department_outlined, size: 18),
+                label: Text(l10n.studyPracticeHard),
+                onPressed: () => go(StudyScope.practiceHard),
+              ),
+              ActionChip(
+                key: const Key('practiceFavoritesButton'),
+                avatar: const Icon(Icons.star_outline_rounded, size: 18),
+                label: Text(l10n.studyPracticeFavorites),
+                onPressed: () => go(StudyScope.practiceFavorites),
+              ),
+            ],
+          ),
+          const Divider(height: Space.xl),
+          PlanStepper(
+            key: const Key('studySessionSize'),
+            label: l10n.studySessionSize,
+            value: settings.flashSessionSize,
+            min: 0,
+            max: 500,
+            display: (v) => v == 0 ? l10n.studySessionAll : context.fmt.number(v),
+            onChanged: (v) => unawaited(
+              ref.read(settingsProvider.notifier).update((s) => s.copyWith(flashSessionSize: v)),
+            ),
+          ),
+          const SizedBox(height: Space.xs),
+          Text(l10n.studyOrder, style: context.text.labelLarge),
+          const SizedBox(height: Space.xs),
+          Wrap(
+            spacing: Space.xs,
+            children: [
+              for (final o in StudyOrder.values)
+                ChoiceChip(
+                  key: Key('studyOrder_${o.name}'),
+                  label: Text(switch (o) {
+                    StudyOrder.due => l10n.studyOrderDue,
+                    StudyOrder.random => l10n.studyOrderRandom,
+                    StudyOrder.hardest => l10n.studyOrderHardest,
+                  }),
+                  selected: studyOrderFromName(settings.flashOrder) == o,
+                  onSelected: (_) => unawaited(
+                    ref
+                        .read(settingsProvider.notifier)
+                        .update((s) => s.copyWith(flashOrder: o.name)),
+                  ),
+                ),
+            ],
+          ),
           const SizedBox(height: Space.sm),
           Text(
             l10n.studyPracticeHint,

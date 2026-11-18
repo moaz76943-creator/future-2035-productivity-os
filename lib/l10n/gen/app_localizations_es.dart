@@ -3539,4 +3539,101 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get flashcardsImportFileFailed =>
       'No se pudo abrir el archivo. Puedes pegar su contenido.';
+
+  @override
+  String get studyNoMatchingCards => 'Aún no hay tarjetas para esta opción.';
+
+  @override
+  String get studyPracticeNew => 'Solo nuevas';
+
+  @override
+  String get studyPracticeHard => 'Tarjetas difíciles';
+
+  @override
+  String get studyPracticeFavorites => 'Favoritas';
+
+  @override
+  String get studySessionSize => 'Tarjetas por sesión';
+
+  @override
+  String get studySessionAll => 'Todas';
+
+  @override
+  String get studyOrder => 'Orden';
+
+  @override
+  String get studyOrderDue => 'Más atrasadas primero';
+
+  @override
+  String get studyOrderRandom => 'Aleatorio';
+
+  @override
+  String get studyOrderHardest => 'Más difíciles primero';
+
+  @override
+  String get flashcardsHard => 'Difícil';
+
+  @override
+  String get flashcardsFavorites => 'Favoritas';
+
+  @override
+  String get flashcardsFavorite => 'Añadir a favoritas';
+
+  @override
+  String get flashcardsUnfavorite => 'Quitar de favoritas';
+
+  @override
+  String get flashcardsDuplicate => 'Duplicar';
+
+  @override
+  String get flashcardsMoveTo => 'Mover a mazo';
+
+  @override
+  String get flashcardsNoOtherDeck => 'Crea otro mazo primero.';
+
+  @override
+  String flashcardsMoved(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count tarjetas movidas',
+      one: 'Tarjeta movida',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get flashcardsAddTag => 'Añadir etiqueta';
+
+  @override
+  String get flashcardsTagHint => 'p. ej., verbos';
+
+  @override
+  String flashcardsSelected(int count) {
+    return '$count seleccionadas';
+  }
+
+  @override
+  String get flashcardsSelectAll => 'Seleccionar todo lo visible';
+
+  @override
+  String flashcardsSelectCard(String front) {
+    return 'Seleccionar $front';
+  }
+
+  @override
+  String flashcardsRecall(String value) {
+    return 'Recuerdo $value';
+  }
+
+  @override
+  String get flashcardsDuplicateTitle => 'Posible duplicado';
+
+  @override
+  String flashcardsDuplicateMessage(String front, String back) {
+    return 'Este mazo ya tiene «$front» → «$back». ¿Guardar igualmente?';
+  }
+
+  @override
+  String get flashcardsSaveAnyway => 'Guardar igualmente';
 }

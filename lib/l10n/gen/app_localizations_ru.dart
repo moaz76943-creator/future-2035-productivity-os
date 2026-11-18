@@ -3643,4 +3643,102 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get flashcardsImportFileFailed =>
       'Не удалось открыть файл. Можно вставить его содержимое.';
+
+  @override
+  String get studyNoMatchingCards => 'Пока нет подходящих карточек.';
+
+  @override
+  String get studyPracticeNew => 'Только новые';
+
+  @override
+  String get studyPracticeHard => 'Сложные карточки';
+
+  @override
+  String get studyPracticeFavorites => 'Избранное';
+
+  @override
+  String get studySessionSize => 'Карточек за сессию';
+
+  @override
+  String get studySessionAll => 'Все';
+
+  @override
+  String get studyOrder => 'Порядок';
+
+  @override
+  String get studyOrderDue => 'Сначала просроченные';
+
+  @override
+  String get studyOrderRandom => 'Случайно';
+
+  @override
+  String get studyOrderHardest => 'Сначала сложные';
+
+  @override
+  String get flashcardsHard => 'Сложная';
+
+  @override
+  String get flashcardsFavorites => 'Избранное';
+
+  @override
+  String get flashcardsFavorite => 'В избранное';
+
+  @override
+  String get flashcardsUnfavorite => 'Убрать из избранного';
+
+  @override
+  String get flashcardsDuplicate => 'Дублировать';
+
+  @override
+  String get flashcardsMoveTo => 'Переместить в колоду';
+
+  @override
+  String get flashcardsNoOtherDeck => 'Сначала создайте другую колоду.';
+
+  @override
+  String flashcardsMoved(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Перемещено $count карточек',
+      few: 'Перемещены $count карточки',
+      one: 'Перемещена $count карточка',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get flashcardsAddTag => 'Добавить тег';
+
+  @override
+  String get flashcardsTagHint => 'например, глаголы';
+
+  @override
+  String flashcardsSelected(int count) {
+    return 'Выбрано: $count';
+  }
+
+  @override
+  String get flashcardsSelectAll => 'Выбрать все показанные';
+
+  @override
+  String flashcardsSelectCard(String front) {
+    return 'Выбрать «$front»';
+  }
+
+  @override
+  String flashcardsRecall(String value) {
+    return 'Память $value';
+  }
+
+  @override
+  String get flashcardsDuplicateTitle => 'Возможный дубликат';
+
+  @override
+  String flashcardsDuplicateMessage(String front, String back) {
+    return 'В колоде уже есть «$front» → «$back». Всё равно сохранить?';
+  }
+
+  @override
+  String get flashcardsSaveAnyway => 'Всё равно сохранить';
 }

@@ -3686,4 +3686,103 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get flashcardsImportFileFailed => 'تعذّر فتح الملف. يمكنك لصق محتواه بدلًا من ذلك.';
+
+  @override
+  String get studyNoMatchingCards => 'لا توجد بطاقات مطابقة لهذا الاختيار بعد.';
+
+  @override
+  String get studyPracticeNew => 'الجديدة فقط';
+
+  @override
+  String get studyPracticeHard => 'البطاقات الصعبة';
+
+  @override
+  String get studyPracticeFavorites => 'المفضلة';
+
+  @override
+  String get studySessionSize => 'عدد البطاقات في الجلسة';
+
+  @override
+  String get studySessionAll => 'الكل';
+
+  @override
+  String get studyOrder => 'الترتيب';
+
+  @override
+  String get studyOrderDue => 'الأقدم استحقاقًا أولًا';
+
+  @override
+  String get studyOrderRandom => 'عشوائي';
+
+  @override
+  String get studyOrderHardest => 'الأصعب أولًا';
+
+  @override
+  String get flashcardsHard => 'صعبة';
+
+  @override
+  String get flashcardsFavorites => 'المفضلة';
+
+  @override
+  String get flashcardsFavorite => 'إضافة إلى المفضلة';
+
+  @override
+  String get flashcardsUnfavorite => 'إزالة من المفضلة';
+
+  @override
+  String get flashcardsDuplicate => 'إنشاء نسخة';
+
+  @override
+  String get flashcardsMoveTo => 'نقل إلى مجموعة';
+
+  @override
+  String get flashcardsNoOtherDeck => 'أنشئ مجموعة أخرى أولًا.';
+
+  @override
+  String flashcardsMoved(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'نُقلت $count بطاقة',
+      few: 'نُقلت $count بطاقات',
+      two: 'نُقلت بطاقتان',
+      one: 'نُقلت البطاقة',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get flashcardsAddTag => 'إضافة وسم';
+
+  @override
+  String get flashcardsTagHint => 'مثال: أفعال';
+
+  @override
+  String flashcardsSelected(int count) {
+    return 'المحدد: $count';
+  }
+
+  @override
+  String get flashcardsSelectAll => 'تحديد كل المعروض';
+
+  @override
+  String flashcardsSelectCard(String front) {
+    return 'تحديد $front';
+  }
+
+  @override
+  String flashcardsRecall(String value) {
+    return 'التذكّر $value';
+  }
+
+  @override
+  String get flashcardsDuplicateTitle => 'بطاقة مكرّرة محتملة';
+
+  @override
+  String flashcardsDuplicateMessage(String front, String back) {
+    return 'هذه المجموعة فيها بطاقة «$front» ← «$back». هل تريد الحفظ على أي حال؟';
+  }
+
+  @override
+  String get flashcardsSaveAnyway => 'احفظ على أي حال';
 }

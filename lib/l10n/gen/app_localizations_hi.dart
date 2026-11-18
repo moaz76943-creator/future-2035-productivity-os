@@ -3530,4 +3530,101 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get flashcardsImportFileFailed => 'फ़ाइल नहीं खुल सकी। आप उसकी सामग्री पेस्ट कर सकते हैं।';
+
+  @override
+  String get studyNoMatchingCards => 'इस विकल्प से मेल खाते कार्ड अभी नहीं हैं।';
+
+  @override
+  String get studyPracticeNew => 'केवल नए';
+
+  @override
+  String get studyPracticeHard => 'कठिन कार्ड';
+
+  @override
+  String get studyPracticeFavorites => 'पसंदीदा';
+
+  @override
+  String get studySessionSize => 'प्रति सत्र कार्ड';
+
+  @override
+  String get studySessionAll => 'सभी';
+
+  @override
+  String get studyOrder => 'क्रम';
+
+  @override
+  String get studyOrderDue => 'सबसे पुराने पहले';
+
+  @override
+  String get studyOrderRandom => 'यादृच्छिक';
+
+  @override
+  String get studyOrderHardest => 'सबसे कठिन पहले';
+
+  @override
+  String get flashcardsHard => 'कठिन';
+
+  @override
+  String get flashcardsFavorites => 'पसंदीदा';
+
+  @override
+  String get flashcardsFavorite => 'पसंदीदा में जोड़ें';
+
+  @override
+  String get flashcardsUnfavorite => 'पसंदीदा से हटाएँ';
+
+  @override
+  String get flashcardsDuplicate => 'प्रतिलिपि बनाएँ';
+
+  @override
+  String get flashcardsMoveTo => 'डेक में ले जाएँ';
+
+  @override
+  String get flashcardsNoOtherDeck => 'पहले दूसरा डेक बनाएँ।';
+
+  @override
+  String flashcardsMoved(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count कार्ड ले जाए गए',
+      one: 'कार्ड ले जाया गया',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get flashcardsAddTag => 'टैग जोड़ें';
+
+  @override
+  String get flashcardsTagHint => 'जैसे क्रियाएँ';
+
+  @override
+  String flashcardsSelected(int count) {
+    return '$count चुने गए';
+  }
+
+  @override
+  String get flashcardsSelectAll => 'दिखाए गए सभी चुनें';
+
+  @override
+  String flashcardsSelectCard(String front) {
+    return '$front चुनें';
+  }
+
+  @override
+  String flashcardsRecall(String value) {
+    return 'याद $value';
+  }
+
+  @override
+  String get flashcardsDuplicateTitle => 'संभावित दोहराव';
+
+  @override
+  String flashcardsDuplicateMessage(String front, String back) {
+    return 'इस डेक में पहले से “$front” → “$back” है। फिर भी सहेजें?';
+  }
+
+  @override
+  String get flashcardsSaveAnyway => 'फिर भी सहेजें';
 }

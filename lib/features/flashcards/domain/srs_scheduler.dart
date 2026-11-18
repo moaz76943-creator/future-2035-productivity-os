@@ -164,7 +164,13 @@ class SrsScheduler {
     return _steps(seeded, r, now, learningSteps, relearn: false, step: 0, first: true);
   }
 
-  SrsCard _learn(SrsCard c, ReviewRating r, DateTime now, List<int> steps, {required bool relearn}) {
+  SrsCard _learn(
+    SrsCard c,
+    ReviewRating r,
+    DateTime now,
+    List<int> steps, {
+    required bool relearn,
+  }) {
     final updated = SrsCard(
       state: c.state,
       stability: c.stability > 0 ? c.stability : Fsrs.initStability(r),

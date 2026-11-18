@@ -3520,4 +3520,101 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get flashcardsImportFileFailed =>
       'The file could not be opened. You can paste its content instead.';
+
+  @override
+  String get studyNoMatchingCards => 'No cards match this choice yet.';
+
+  @override
+  String get studyPracticeNew => 'New only';
+
+  @override
+  String get studyPracticeHard => 'Hard cards';
+
+  @override
+  String get studyPracticeFavorites => 'Favorites';
+
+  @override
+  String get studySessionSize => 'Cards per session';
+
+  @override
+  String get studySessionAll => 'All';
+
+  @override
+  String get studyOrder => 'Order';
+
+  @override
+  String get studyOrderDue => 'Most overdue first';
+
+  @override
+  String get studyOrderRandom => 'Random';
+
+  @override
+  String get studyOrderHardest => 'Hardest first';
+
+  @override
+  String get flashcardsHard => 'Hard';
+
+  @override
+  String get flashcardsFavorites => 'Favorites';
+
+  @override
+  String get flashcardsFavorite => 'Add to favorites';
+
+  @override
+  String get flashcardsUnfavorite => 'Remove from favorites';
+
+  @override
+  String get flashcardsDuplicate => 'Duplicate';
+
+  @override
+  String get flashcardsMoveTo => 'Move to deck';
+
+  @override
+  String get flashcardsNoOtherDeck => 'Create another deck first.';
+
+  @override
+  String flashcardsMoved(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count cards moved',
+      one: 'Card moved',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get flashcardsAddTag => 'Add tag';
+
+  @override
+  String get flashcardsTagHint => 'e.g. verbs';
+
+  @override
+  String flashcardsSelected(int count) {
+    return '$count selected';
+  }
+
+  @override
+  String get flashcardsSelectAll => 'Select all shown';
+
+  @override
+  String flashcardsSelectCard(String front) {
+    return 'Select $front';
+  }
+
+  @override
+  String flashcardsRecall(String value) {
+    return 'Recall $value';
+  }
+
+  @override
+  String get flashcardsDuplicateTitle => 'Possible duplicate';
+
+  @override
+  String flashcardsDuplicateMessage(String front, String back) {
+    return 'This deck already has “$front” → “$back”. Save anyway?';
+  }
+
+  @override
+  String get flashcardsSaveAnyway => 'Save anyway';
 }

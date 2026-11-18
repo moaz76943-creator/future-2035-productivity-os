@@ -33,10 +33,23 @@ enum StudyScope {
 
   /// Cards recently answered wrong (lapses or "Again" in the last 14 days).
   practiceMistakes,
+
+  /// Only cards never studied.
+  practiceNew,
+
+  /// Only hard cards (high difficulty or repeated lapses).
+  practiceHard,
+
+  /// Only favourites.
+  practiceFavorites,
 }
+
+/// Order of cards in a session.
+enum StudyOrder { due, random, hardest }
 
 StudyMode? studyModeFromName(String? s) => StudyMode.values.asNameMap()[s];
 StudyScope? studyScopeFromName(String? s) => StudyScope.values.asNameMap()[s];
+StudyOrder studyOrderFromName(String? s) => StudyOrder.values.asNameMap()[s] ?? StudyOrder.due;
 
 /// Result of comparing a typed answer with the card.
 enum AnswerMatch { exact, close, wrong }

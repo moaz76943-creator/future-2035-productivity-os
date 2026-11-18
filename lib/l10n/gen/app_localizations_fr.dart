@@ -3543,4 +3543,101 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get flashcardsImportFileFailed =>
       'Impossible d’ouvrir le fichier. Vous pouvez coller son contenu.';
+
+  @override
+  String get studyNoMatchingCards => 'Aucune carte ne correspond pour l’instant.';
+
+  @override
+  String get studyPracticeNew => 'Nouvelles seulement';
+
+  @override
+  String get studyPracticeHard => 'Cartes difficiles';
+
+  @override
+  String get studyPracticeFavorites => 'Favoris';
+
+  @override
+  String get studySessionSize => 'Cartes par séance';
+
+  @override
+  String get studySessionAll => 'Toutes';
+
+  @override
+  String get studyOrder => 'Ordre';
+
+  @override
+  String get studyOrderDue => 'Plus en retard d’abord';
+
+  @override
+  String get studyOrderRandom => 'Aléatoire';
+
+  @override
+  String get studyOrderHardest => 'Plus difficiles d’abord';
+
+  @override
+  String get flashcardsHard => 'Difficile';
+
+  @override
+  String get flashcardsFavorites => 'Favoris';
+
+  @override
+  String get flashcardsFavorite => 'Ajouter aux favoris';
+
+  @override
+  String get flashcardsUnfavorite => 'Retirer des favoris';
+
+  @override
+  String get flashcardsDuplicate => 'Dupliquer';
+
+  @override
+  String get flashcardsMoveTo => 'Déplacer vers un paquet';
+
+  @override
+  String get flashcardsNoOtherDeck => 'Créez d’abord un autre paquet.';
+
+  @override
+  String flashcardsMoved(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count cartes déplacées',
+      one: 'Carte déplacée',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get flashcardsAddTag => 'Ajouter une étiquette';
+
+  @override
+  String get flashcardsTagHint => 'ex. verbes';
+
+  @override
+  String flashcardsSelected(int count) {
+    return '$count sélectionnées';
+  }
+
+  @override
+  String get flashcardsSelectAll => 'Tout sélectionner';
+
+  @override
+  String flashcardsSelectCard(String front) {
+    return 'Sélectionner $front';
+  }
+
+  @override
+  String flashcardsRecall(String value) {
+    return 'Rappel $value';
+  }
+
+  @override
+  String get flashcardsDuplicateTitle => 'Doublon possible';
+
+  @override
+  String flashcardsDuplicateMessage(String front, String back) {
+    return 'Ce paquet contient déjà « $front » → « $back ». Enregistrer quand même ?';
+  }
+
+  @override
+  String get flashcardsSaveAnyway => 'Enregistrer quand même';
 }

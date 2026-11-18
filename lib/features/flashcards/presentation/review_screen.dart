@@ -16,6 +16,7 @@ import '../../../core/speech/tts_service.dart';
 import '../../../l10n/gen/app_localizations.dart';
 import '../../settings/application/settings_providers.dart';
 import '../application/flashcards_providers.dart';
+import '../data/flashcards_repository.dart' show PracticeFilter;
 import '../domain/card_extras.dart';
 import '../domain/srs_scheduler.dart';
 import '../domain/study.dart';
@@ -117,19 +118,35 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
   Future<void> _load() async {
     final repo = ref.read(flashcardsRepositoryProvider);
     try {
-      final q = widget.cards != null
+      final settings = ref.read(settingsProvider);
+      PracticeFilter? filter(StudyScope s) => switch (s) {
+        StudyScope.scheduled => null,
+        StudyScope.practiceAll => PracticeFilter.all,
+        StudyScope.practiceMistakes => PracticeFilter.mistakes,
+        StudyScope.practiceNew => PracticeFilter.newOnly,
+        StudyScope.practiceHard => PracticeFilter.hard,
+        StudyScope.practiceFavorites => PracticeFilter.favorites,
+      };
+      final f = filter(widget.scope);
+      var q = widget.cards != null
           ? [...widget.cards!]
-          : switch (widget.scope) {
-              StudyScope.scheduled => await repo.reviewQueue(widget.deckId),
-              StudyScope.practiceAll => await repo.practiceCards(
-                widget.deckId,
-                mistakesOnly: false,
-              ),
-              StudyScope.practiceMistakes => await repo.practiceCards(
-                widget.deckId,
-                mistakesOnly: true,
-              ),
-            };
+          : f == null
+          ? await repo.reviewQueue(widget.deckId)
+          : await repo.practiceCards(widget.deckId, filter: f);
+      if (widget.cards == null) {
+        // User-chosen order and session size (0 = everything available).
+        switch (studyOrderFromName(settings.flashOrder)) {
+          case StudyOrder.random:
+            q.shuffle(_random);
+          case StudyOrder.hardest:
+            q.sort((a, b) => b.difficulty.compareTo(a.difficulty));
+          case StudyOrder.due:
+            break;
+        }
+        if (settings.flashSessionSize > 0 && q.length > settings.flashSessionSize) {
+          q = q.take(settings.flashSessionSize).toList();
+        }
+      }
       List<CardRow> all = const [];
       if (_mode == StudyMode.choice) all = await repo.watchCards(widget.deckId).first;
       if (!mounted) return;
@@ -352,9 +369,11 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
           icon: Icons.check_circle_outline_rounded,
           hue: _hue,
           title: l10n.flashcardsNothingToStudy,
-          message: widget.scope == StudyScope.practiceMistakes
-              ? l10n.studyNoMistakes
-              : l10n.deckNothingDue,
+          message: switch (widget.scope) {
+            StudyScope.practiceMistakes => l10n.studyNoMistakes,
+            StudyScope.scheduled => l10n.deckNothingDue,
+            _ => l10n.studyNoMatchingCards,
+          },
           actionLabel: l10n.actionBack,
           onAction: () => Navigator.of(context).maybePop(),
         ),

@@ -78,4 +78,38 @@ void main() {
     expect(d!.frontLang, 'es-ES');
     expect(d.backLang, 'ar');
   });
+
+  test('organisation: favourites, move, tag, duplicate, bulk delete/restore', () async {
+    final a = await repo.createDeck('A', color: 1);
+    final b = await repo.createDeck('B', color: 1);
+    final x = await repo.addCard(a, 'x', '1', tags: 'one');
+    final y = await repo.addCard(a, 'y', '2');
+    await repo.setFavorite([x], true);
+    expect(await repo.practiceCards(a, filter: PracticeFilter.favorites), hasLength(1));
+    await repo.addTag([x, y], 'verbs');
+    await repo.addTag([x], 'verbs');
+    expect((await repo.getCard(x))!.tags, 'one verbs');
+    final copy = await repo.duplicateCard(y);
+    expect((await repo.getCard(copy))!.front, 'y');
+    expect((await repo.getCard(copy))!.state, 'new');
+    await repo.moveCards([x, y], b);
+    expect((await repo.watchCards(b).first).map((c) => c.front).toSet(), {'x', 'y'});
+    await repo.deleteCards([x, y]);
+    expect(await repo.watchCards(b).first, isEmpty);
+    await repo.restoreCards([x, y]);
+    expect(await repo.watchCards(b).first, hasLength(2));
+  });
+
+  test('hard and new-only practice filters', () async {
+    final d = await repo.createDeck('D', color: 1);
+    final hard = await repo.addCard(d, 'h', '1');
+    await repo.addCard(d, 'n', '2');
+    for (var i = 0; i < 3; i++) {
+      await repo.recordReview(hard, ReviewRating.again);
+    }
+    expect((await repo.practiceCards(d, filter: PracticeFilter.hard)).map((c) => c.front), ['h']);
+    expect((await repo.practiceCards(d, filter: PracticeFilter.newOnly)).map((c) => c.front), [
+      'n',
+    ]);
+  });
 }
