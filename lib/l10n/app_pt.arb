@@ -881,5 +881,8 @@
   "trashRestored": "Restaurado",
   "trashPurged": "Excluído de vez",
   "trashDeletedOn": "Excluído em {date}",
-  "trashCount": "{count, plural, =1{1 item} other{{count} itens}}"
+  "trashCount": "{count, plural, =1{1 item} other{{count} itens}}",
+  "flashcardsReadAloud": "Ler em voz alta",
+  "flashcardsTtsUnavailable": "A conversão de texto em fala não está disponível neste dispositivo.",
+  "flashcardsTtsLanguageUnavailable": "Nenhuma voz instalada para este idioma. Adicione uma nas configurações de conversão de texto em fala do Android."
 }

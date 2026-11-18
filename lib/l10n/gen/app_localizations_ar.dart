@@ -3377,4 +3377,14 @@ class AppLocalizationsAr extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get flashcardsReadAloud => 'قراءة بصوت عالٍ';
+
+  @override
+  String get flashcardsTtsUnavailable => 'تحويل النص إلى كلام غير متاح على هذا الجهاز.';
+
+  @override
+  String get flashcardsTtsLanguageUnavailable =>
+      'لا يوجد صوت مثبّت لهذه اللغة. أضف صوتًا من إعدادات تحويل النص إلى كلام في أندرويد.';
 }

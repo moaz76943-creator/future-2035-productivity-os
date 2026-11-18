@@ -3211,4 +3211,14 @@ class AppLocalizationsEn extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get flashcardsReadAloud => 'Read aloud';
+
+  @override
+  String get flashcardsTtsUnavailable => 'Text-to-speech isn’t available on this device.';
+
+  @override
+  String get flashcardsTtsLanguageUnavailable =>
+      'No voice is installed for this language. Add one in Android text-to-speech settings.';
 }

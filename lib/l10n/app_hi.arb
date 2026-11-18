@@ -881,5 +881,8 @@
   "trashRestored": "पुनर्स्थापित किया गया",
   "trashPurged": "हमेशा के लिए हटाया गया",
   "trashDeletedOn": "हटाया गया {date}",
-  "trashCount": "{count, plural, =1{1 आइटम} other{{count} आइटम}}"
+  "trashCount": "{count, plural, =1{1 आइटम} other{{count} आइटम}}",
+  "flashcardsReadAloud": "ज़ोर से पढ़ें",
+  "flashcardsTtsUnavailable": "इस डिवाइस पर टेक्स्ट-टू-स्पीच उपलब्ध नहीं है।",
+  "flashcardsTtsLanguageUnavailable": "इस भाषा के लिए कोई आवाज़ इंस्टॉल नहीं है। Android की टेक्स्ट-टू-स्पीच सेटिंग में जोड़ें।"
 }

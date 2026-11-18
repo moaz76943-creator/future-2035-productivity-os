@@ -881,5 +881,8 @@
   "trashRestored": "已恢复",
   "trashPurged": "已永久删除",
   "trashDeletedOn": "删除于 {date}",
-  "trashCount": "{count, plural, other{{count} 个项目}}"
+  "trashCount": "{count, plural, other{{count} 个项目}}",
+  "flashcardsReadAloud": "朗读",
+  "flashcardsTtsUnavailable": "此设备不支持文字转语音。",
+  "flashcardsTtsLanguageUnavailable": "此语言未安装语音。请在 Android 文字转语音设置中添加。"
 }

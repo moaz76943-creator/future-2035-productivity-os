@@ -4288,5 +4288,17 @@
         "type": "int"
       }
     }
+  },
+  "flashcardsReadAloud": "Read aloud",
+  "@flashcardsReadAloud": {
+    "description": "Button: speak the visible side of the flashcard with Android text-to-speech"
+  },
+  "flashcardsTtsUnavailable": "Text-to-speech isn’t available on this device.",
+  "@flashcardsTtsUnavailable": {
+    "description": "Shown when no text-to-speech engine works"
+  },
+  "flashcardsTtsLanguageUnavailable": "No voice is installed for this language. Add one in Android text-to-speech settings.",
+  "@flashcardsTtsLanguageUnavailable": {
+    "description": "Shown when the engine has no voice for the language"
   }
 }

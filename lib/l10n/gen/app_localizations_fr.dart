@@ -3232,4 +3232,15 @@ class AppLocalizationsFr extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get flashcardsReadAloud => 'Lire à voix haute';
+
+  @override
+  String get flashcardsTtsUnavailable =>
+      'La synthèse vocale n’est pas disponible sur cet appareil.';
+
+  @override
+  String get flashcardsTtsLanguageUnavailable =>
+      'Aucune voix n’est installée pour cette langue. Ajoutez-en une dans les paramètres de synthèse vocale d’Android.';
 }

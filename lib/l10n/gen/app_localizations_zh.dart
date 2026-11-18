@@ -3057,4 +3057,13 @@ class AppLocalizationsZh extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count 个项目');
     return '$_temp0';
   }
+
+  @override
+  String get flashcardsReadAloud => '朗读';
+
+  @override
+  String get flashcardsTtsUnavailable => '此设备不支持文字转语音。';
+
+  @override
+  String get flashcardsTtsLanguageUnavailable => '此语言未安装语音。请在 Android 文字转语音设置中添加。';
 }

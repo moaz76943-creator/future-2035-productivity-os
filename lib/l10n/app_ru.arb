@@ -881,5 +881,8 @@
   "trashRestored": "Восстановлено",
   "trashPurged": "Удалено навсегда",
   "trashDeletedOn": "Удалено: {date}",
-  "trashCount": "{count, plural, one{{count} элемент} few{{count} элемента} many{{count} элементов} other{{count} элемента}}"
+  "trashCount": "{count, plural, one{{count} элемент} few{{count} элемента} many{{count} элементов} other{{count} элемента}}",
+  "flashcardsReadAloud": "Прочитать вслух",
+  "flashcardsTtsUnavailable": "Синтез речи недоступен на этом устройстве.",
+  "flashcardsTtsLanguageUnavailable": "Для этого языка не установлен голос. Добавьте его в настройках синтеза речи Android."
 }

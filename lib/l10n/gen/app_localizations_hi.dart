@@ -3221,4 +3221,14 @@ class AppLocalizationsHi extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get flashcardsReadAloud => 'ज़ोर से पढ़ें';
+
+  @override
+  String get flashcardsTtsUnavailable => 'इस डिवाइस पर टेक्स्ट-टू-स्पीच उपलब्ध नहीं है।';
+
+  @override
+  String get flashcardsTtsLanguageUnavailable =>
+      'इस भाषा के लिए कोई आवाज़ इंस्टॉल नहीं है। Android की टेक्स्ट-टू-स्पीच सेटिंग में जोड़ें।';
 }

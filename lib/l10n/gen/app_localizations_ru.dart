@@ -3333,4 +3333,14 @@ class AppLocalizationsRu extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get flashcardsReadAloud => 'Прочитать вслух';
+
+  @override
+  String get flashcardsTtsUnavailable => 'Синтез речи недоступен на этом устройстве.';
+
+  @override
+  String get flashcardsTtsLanguageUnavailable =>
+      'Для этого языка не установлен голос. Добавьте его в настройках синтеза речи Android.';
 }

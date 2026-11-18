@@ -3228,4 +3228,15 @@ class AppLocalizationsPt extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get flashcardsReadAloud => 'Ler em voz alta';
+
+  @override
+  String get flashcardsTtsUnavailable =>
+      'A conversão de texto em fala não está disponível neste dispositivo.';
+
+  @override
+  String get flashcardsTtsLanguageUnavailable =>
+      'Nenhuma voz instalada para este idioma. Adicione uma nas configurações de conversão de texto em fala do Android.';
 }

@@ -5399,6 +5399,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{count, plural, =1{1 item} other{{count} items}}'**
   String trashCount(int count);
+
+  /// Button: speak the visible side of the flashcard with Android text-to-speech
+  ///
+  /// In en, this message translates to:
+  /// **'Read aloud'**
+  String get flashcardsReadAloud;
+
+  /// Shown when no text-to-speech engine works
+  ///
+  /// In en, this message translates to:
+  /// **'Text-to-speech isn’t available on this device.'**
+  String get flashcardsTtsUnavailable;
+
+  /// Shown when the engine has no voice for the language
+  ///
+  /// In en, this message translates to:
+  /// **'No voice is installed for this language. Add one in Android text-to-speech settings.'**
+  String get flashcardsTtsLanguageUnavailable;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
