@@ -99,27 +99,52 @@ jobs:
       - name: Generate localizations
         run: flutter gen-l10n
 
-      - name: Build debug APK
-        run: flutter build apk --debug
+      # One QA signing key across CI runs, so a newer QA build installs over the
+      # previous one (a fresh runner key forces uninstalling and losing data).
+      # The key lives only in the Actions cache, never in the repository.
+      - name: Restore QA debug keystore
+        uses: actions/cache@v4
+        with:
+          path: ~/.android/debug.keystore
+          key: future2035-qa-debug-keystore-v1
+
+      - name: Create QA debug keystore if missing
+        run: |
+          mkdir -p ~/.android
+          if [ ! -s ~/.android/debug.keystore ]; then
+            keytool -genkeypair -v -keystore ~/.android/debug.keystore -storepass android \
+              -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 \
+              -dname "CN=Android Debug,O=Android,C=US"
+          fi
+          keytool -list -v -keystore ~/.android/debug.keystore -storepass android | grep -E 'SHA256:' | head -1
+
+      # Profile = AOT-compiled like the store build (smooth, fast start) but
+      # debug-signed; a debug build runs the JIT and feels slow and janky.
+      - name: Build QA APK (profile, AOT)
+        run: flutter build apk --profile
 
       # Actions artifact storage can hit the account quota; a pre-release asset does
       # not count against it, so every main build stays downloadable for QA.
-      - name: Publish QA pre-release (debug APK, debug-signed, not for the store)
+      - name: Publish QA pre-release (profile APK, debug-signed, not for the store)
         if: github.event_name == 'push' && github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
-          APK=build/app/outputs/flutter-apk/app-debug.apk
+          APK=build/app/outputs/flutter-apk/app-profile.apk
           test -s "$APK"
           SHORT=${GITHUB_SHA::7}
-          cp "$APK" "future2035-qa-$SHORT-debug.apk"
-          sha256sum "future2035-qa-$SHORT-debug.apk" > SHA256SUMS
+          cp "$APK" "future2035-qa-$SHORT.apk"
+          sha256sum "future2035-qa-$SHORT.apk" > SHA256SUMS
           VERSION=$(grep -E '^version:' pubspec.yaml | awk '{print $2}')
           gh release delete "qa-$SHORT" --yes --cleanup-tag 2>/dev/null || true
-          gh release create "qa-$SHORT" "future2035-qa-$SHORT-debug.apk" SHA256SUMS \
-            --prerelease --target "$GITHUB_SHA" --title "QA build $SHORT (debug)" \
-            --notes "Debug-signed QA APK built from $GITHUB_SHA (version $VERSION). For testing only; not for distribution."
+          gh release create "qa-$SHORT" "future2035-qa-$SHORT.apk" SHA256SUMS \
+            --prerelease --target "$GITHUB_SHA" --title "QA build $SHORT" \
+            --notes "AOT (profile) QA APK built from $GITHUB_SHA (version $VERSION), signed with the CI QA key. Installs over earlier QA builds. For testing only; not for distribution."
+          # Keep the five newest QA pre-releases; older ones are superseded.
+          gh release list --limit 100 --json tagName,isPrerelease,createdAt \
+            --jq '[.[] | select(.isPrerelease and (.tagName | startswith("qa-")))] | sort_by(.createdAt) | reverse | .[5:] | .[].tagName' |
+            while read -r old; do gh release delete "$old" --yes --cleanup-tag || true; done
 
       - name: Upload debug APK
         # The build itself is verified above; on main the APK is also published as a
@@ -127,7 +152,7 @@ jobs:
         continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
-          name: future-2035-debug-apk
-          path: build/app/outputs/flutter-apk/app-debug.apk
+          name: future-2035-qa-apk
+          path: build/app/outputs/flutter-apk/app-profile.apk
           if-no-files-found: error
           retention-days: 14

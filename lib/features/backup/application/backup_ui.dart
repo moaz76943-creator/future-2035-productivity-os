@@ -88,5 +88,5 @@ class PlatformBackupFiles implements BackupFiles {
 final backupFilesProvider = Provider<BackupFiles>((ref) => const PlatformBackupFiles());
 
 final backupServiceProvider = Provider<BackupService>(
-  (ref) => BackupService(ref.watch(databaseProvider)),
+  (ref) => BackupService(ref.watch(databaseProvider), offloadKdf: true),
 );

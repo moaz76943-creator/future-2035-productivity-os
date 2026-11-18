@@ -11,6 +11,7 @@ class _FakeTts implements TtsService {
   _FakeTts(this.result);
   final TtsResult result;
   final spoken = <(String, String?)>[];
+  final repeats = <int>[];
   int stops = 0;
 
   @override
@@ -19,8 +20,10 @@ class _FakeTts implements TtsService {
     String? languageTag,
     double rate = 1,
     double pitch = 1,
+    int repeat = 1,
   }) async {
     spoken.add((text, languageTag));
+    repeats.add(repeat);
     return result;
   }
 

@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io' show gzip;
+import 'dart:isolate';
 import 'dart:math' show Random;
 import 'dart:typed_data';
 
@@ -23,7 +24,7 @@ import '../database/app_database.dart';
 /// table's rows. Restore runs inside a single transaction: either every
 /// row is restored or nothing changes.
 class BackupService {
-  BackupService(this._db, {Argon2id? kdf})
+  BackupService(this._db, {Argon2id? kdf, this.offloadKdf = false})
     : _kdf =
           kdf ??
           Argon2id(
@@ -35,6 +36,27 @@ class BackupService {
 
   final AppDatabase _db;
   final Argon2id _kdf;
+
+  /// Derive keys on a background isolate. Argon2id with 19 MiB runs for
+  /// seconds in pure Dart; on the UI isolate it froze the screen (no
+  /// progress indicator, "app not responding" risk). Tests keep it inline.
+  final bool offloadKdf;
+
+  Future<SecretKey> _derive(Argon2id kdf, String password, List<int> salt) async {
+    if (!offloadKdf) return kdf.deriveKeyFromPassword(password: password, nonce: salt);
+    final m = kdf.memory, it = kdf.iterations, par = kdf.parallelism, len = kdf.hashLength;
+    final bytes = await Isolate.run(() async {
+      final k = await Argon2id(
+        memory: m,
+        iterations: it,
+        parallelism: par,
+        hashLength: len,
+      ).deriveKeyFromPassword(password: password, nonce: salt);
+      return k.extractBytes();
+    });
+    return SecretKey(bytes);
+  }
+
   static final _aes = AesGcm.with256bits();
   static const magic = [0x46, 0x33, 0x35, 0x42]; // F35B
   static const formatVersion = 1;
@@ -44,16 +66,10 @@ class BackupService {
   Future<Map<String, Object?>> _snapshot() async {
     final tables = <String, Object?>{};
     for (final t in _db.allTables) {
-      final rows = await _db
-          .customSelect('SELECT * FROM "${t.actualTableName}"')
-          .get();
+      final rows = await _db.customSelect('SELECT * FROM "${t.actualTableName}"').get();
       tables[t.actualTableName] = rows.map((r) => r.data).toList();
     }
-    return {
-      'app': 'future-os',
-      'schemaVersion': _db.schemaVersion,
-      'tables': tables,
-    };
+    return {'app': 'future-os', 'schemaVersion': _db.schemaVersion, 'tables': tables};
   }
 
   Future<Uint8List> export({required String password, DateTime? now}) async {
@@ -79,21 +95,11 @@ class BackupService {
       'cipher': {'alg': 'aes-256-gcm', 'nonce': base64Encode(nonce)},
     };
     final headerBytes = utf8.encode(jsonEncode(header));
-    final key = await _kdf.deriveKeyFromPassword(
-      password: password,
-      nonce: salt,
-    );
-    final box = await _aes.encrypt(
-      plain,
-      secretKey: key,
-      nonce: nonce,
-      aad: headerBytes,
-    );
+    final key = await _derive(_kdf, password, salt);
+    final box = await _aes.encrypt(plain, secretKey: key, nonce: nonce, aad: headerBytes);
     final out = BytesBuilder(copy: false)
       ..add(magic)
-      ..add(
-        (ByteData(4)..setUint32(0, headerBytes.length)).buffer.asUint8List(),
-      )
+      ..add((ByteData(4)..setUint32(0, headerBytes.length)).buffer.asUint8List())
       ..add(headerBytes)
       ..add(box.cipherText)
       ..add(box.mac.bytes);
@@ -190,7 +196,7 @@ class BackupService {
         parallelism: parallelism,
         hashLength: 32,
       );
-      final key = await kdf.deriveKeyFromPassword(password: password, nonce: salt);
+      final key = await _derive(kdf, password, salt);
       final box = SecretBox(
         body.sublist(0, body.length - 16),
         nonce: nonce,
@@ -336,13 +342,7 @@ class BackupService {
   };
 }
 
-enum BackupError {
-  weakPassword,
-  notABackup,
-  corrupted,
-  wrongPasswordOrTampered,
-  newerVersion,
-}
+enum BackupError { weakPassword, notABackup, corrupted, wrongPasswordOrTampered, newerVersion }
 
 class BackupException implements Exception {
   const BackupException(this.error);

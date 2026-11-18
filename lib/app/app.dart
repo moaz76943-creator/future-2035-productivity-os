@@ -43,13 +43,8 @@ class FutureOsApp extends ConsumerWidget {
         final mq = MediaQuery.of(context);
         return MediaQuery(
           // Support large accessibility text while keeping layouts usable.
-          data: mq.copyWith(
-            textScaler: mq.textScaler.clamp(maxScaleFactor: 2.0),
-          ),
-          child: MotionScope(
-            reduceMotion: settings.reduceMotion,
-            child: child!,
-          ),
+          data: mq.copyWith(textScaler: mq.textScaler.clamp(maxScaleFactor: 2.0)),
+          child: MotionScope(reduceMotion: settings.reduceMotion, child: child!),
         );
       },
     );

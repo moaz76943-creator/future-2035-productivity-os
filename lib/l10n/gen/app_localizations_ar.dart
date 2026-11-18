@@ -3481,4 +3481,209 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get taskUnarchived => 'تمت استعادة المهمة من الأرشيف';
+
+  @override
+  String get focusPlanTitle => 'خطة الجلسات';
+
+  @override
+  String focusPlanTotal(String duration) {
+    return 'المجموع $duration';
+  }
+
+  @override
+  String get focusPlanRounds => 'عدد الجلسات';
+
+  @override
+  String get focusPlanUnlimited => '∞';
+
+  @override
+  String get focusPlanLongEvery => 'راحة طويلة بعد';
+
+  @override
+  String get focusPlanSkipLastBreak => 'تخطّي آخر راحة';
+
+  @override
+  String get focusPlanAutoBreaks => 'بدء الراحة تلقائيًا';
+
+  @override
+  String get focusPlanAutoFocus => 'بدء التركيز تلقائيًا بعد الراحة';
+
+  @override
+  String get focusPlanSave => 'حفظ الخطة';
+
+  @override
+  String get focusPlanNameHint => 'مثال: مراجعة الامتحان';
+
+  @override
+  String get focusPlanSaved => 'تم حفظ الخطة';
+
+  @override
+  String focusPlanPresetA11y(String name, int work, int rest) {
+    return '$name: تركيز $work د، راحة $rest د';
+  }
+
+  @override
+  String focusPlanDecrease(String label) {
+    return 'إنقاص $label';
+  }
+
+  @override
+  String focusPlanIncrease(String label) {
+    return 'زيادة $label';
+  }
+
+  @override
+  String focusRoundOf(int current, int total) {
+    return 'الجلسة $current من $total';
+  }
+
+  @override
+  String get focusSeriesComplete => 'اكتملت خطة الجلسات. أحسنت!';
+
+  @override
+  String get exportDone => 'التصدير جاهز';
+
+  @override
+  String get filterAll => 'الكل';
+
+  @override
+  String importCardsResultDetail(int added, int duplicates, int invalid) {
+    return 'تم استيراد $added · تخطّي $duplicates مكرّرة · $invalid صفوف ناقصة';
+  }
+
+  @override
+  String get flashcardsSuspend => 'إيقاف البطاقة مؤقتًا';
+
+  @override
+  String get flashcardsResume => 'استئناف البطاقة';
+
+  @override
+  String get flashcardsSuspended => 'أُوقفت البطاقة: لن تُجدول للمراجعة';
+
+  @override
+  String get flashcardsResumed => 'استؤنفت البطاقة';
+
+  @override
+  String get flashcardsSuspendedFilter => 'موقوفة';
+
+  @override
+  String get flashcardsExportCsv => 'تصدير بصيغة CSV';
+
+  @override
+  String flashcardsShownOf(int shown, int total) {
+    return '$shown من $total بطاقة';
+  }
+
+  @override
+  String get flashcardsImportFile => 'من ملف';
+
+  @override
+  String get speechTitle => 'النطق الصوتي';
+
+  @override
+  String get speechAppLanguage => 'لغة التطبيق';
+
+  @override
+  String get speechFrontLanguage => 'لغة الوجه الأمامي';
+
+  @override
+  String get speechBackLanguage => 'لغة الوجه الخلفي';
+
+  @override
+  String get speechRepeat => 'تكرار كل قراءة';
+
+  @override
+  String get speechRate => 'السرعة';
+
+  @override
+  String get speechAutoRead => 'قراءة السؤال تلقائيًا';
+
+  @override
+  String get speechHint =>
+      'يستخدم الأصوات المثبتة على جهازك دون إنترنت. إذا لم يتوفر صوت للغة ستُبلَّغ بذلك ولن تُستخدم لغة أخرى بدلًا منها.';
+
+  @override
+  String get studyHowTitle => 'كيف تريد أن تدرس؟';
+
+  @override
+  String studyDueCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'مراجعة $count بطاقة',
+      few: 'مراجعة $count بطاقات',
+      two: 'مراجعة بطاقتين',
+      one: 'مراجعة بطاقة واحدة',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get studyPracticeAll => 'تدرّب على كل البطاقات (دون تغيير الجدولة)';
+
+  @override
+  String get studyPracticeMistakes => 'تدرّب على الأخطاء الأخيرة';
+
+  @override
+  String get studyPracticeHint =>
+      'جولات التدريب لا تغيّر مواعيد البطاقات. المراجعة هي التي تحدّث الجدولة.';
+
+  @override
+  String get studyModeClassic => 'كلاسيكي';
+
+  @override
+  String get studyModeReverse => 'معكوس';
+
+  @override
+  String get studyModeMixed => 'بالاتجاهين';
+
+  @override
+  String get studyModeTyped => 'اكتب الجواب';
+
+  @override
+  String get studyModeChoice => 'اختيار من متعدد';
+
+  @override
+  String get studyModeListening => 'استماع';
+
+  @override
+  String get studyPractice => 'تدريب';
+
+  @override
+  String get studyNoMistakes => 'لا أخطاء حديثة في هذه المجموعة. رائع!';
+
+  @override
+  String get studyTypeAnswer => 'اكتب جوابك';
+
+  @override
+  String get studyCheck => 'تحقّق';
+
+  @override
+  String get studyKnewIt => 'عرفتها';
+
+  @override
+  String get studyDidntKnow => 'لم أعرفها';
+
+  @override
+  String studyMistakes(int count) {
+    return 'الأخطاء ($count)';
+  }
+
+  @override
+  String get studyRepeatMistakes => 'أعد البطاقات الخاطئة';
+
+  @override
+  String get studyCorrect => 'صحيح';
+
+  @override
+  String get studyAlmost => 'قريب — راجع الإملاء';
+
+  @override
+  String get studyWrong => 'ليست صحيحة';
+
+  @override
+  String get studyShowText => 'أظهر النص';
+
+  @override
+  String get flashcardsImportFileFailed => 'تعذّر فتح الملف. يمكنك لصق محتواه بدلًا من ذلك.';
 }

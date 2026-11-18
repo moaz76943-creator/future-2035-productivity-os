@@ -1,11 +1,12 @@
+import 'dart:async';
+import 'dart:convert';
+
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../../../app/localization/app_format.dart';
-import '../../../app/routing/routes.dart';
 import '../../../core/database/app_database.dart';
 import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/components/indicators.dart';
@@ -16,14 +17,20 @@ import '../../../core/providers/core_providers.dart';
 import '../../../shared/widgets/async_value_view.dart';
 import '../../../shared/widgets/dialogs.dart';
 import '../../../shared/widgets/module_scaffold.dart';
+import '../../backup/application/backup_ui.dart';
 import '../application/flashcards_providers.dart';
+import '../domain/study.dart';
+import 'study_sheets.dart';
 import '../data/flashcards_repository.dart';
 import 'widgets/card_form_sheet.dart';
 import 'widgets/deck_form_sheet.dart';
 
 const _hue = ModuleHue.flashcards;
 
-enum _DeckMenu { edit, delete }
+enum _DeckMenu { edit, speech, exportCsv, delete }
+
+/// Card list filters.
+enum _CardFilter { all, newCards, due, suspended }
 
 class DeckScreen extends ConsumerStatefulWidget {
   const DeckScreen({super.key, required this.deckId});
@@ -36,6 +43,8 @@ class DeckScreen extends ConsumerStatefulWidget {
 class _DeckScreenState extends ConsumerState<DeckScreen> {
   final _search = TextEditingController();
   String _query = '';
+  _CardFilter _filter = _CardFilter.all;
+  String? _tag;
 
   FlashcardsRepository get _repo => ref.read(flashcardsRepositoryProvider);
 
@@ -90,8 +99,14 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
     );
     if (source == null || source.trim().isEmpty || !mounted) return;
     try {
-      final n = await _repo.importInto(widget.deckId, source);
-      if (mounted) showMessage(context, l10n.importCardsResult(n));
+      final r = await _repo.importCards(widget.deckId, source);
+      if (!mounted) return;
+      showMessage(
+        context,
+        r.duplicates == 0 && r.invalid == 0
+            ? l10n.importCardsResult(r.added)
+            : l10n.importCardsResultDetail(r.added, r.duplicates, r.invalid),
+      );
     } catch (_) {
       if (mounted) showMessage(context, l10n.importFailed);
     }
@@ -157,6 +172,34 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
     }
   }
 
+  Future<void> _exportCsv(DeckRow deck) async {
+    final l10n = context.l10n;
+    try {
+      final csv = await _repo.exportCsv(deck.id);
+      // UTF-8 with BOM so spreadsheet apps read Arabic and accents correctly.
+      final bytes = Uint8List.fromList([0xEF, 0xBB, 0xBF, ...utf8.encode(csv)]);
+      final safe = deck.name.replaceAll(RegExp(r'[^\p{L}\p{N}_-]+', unicode: true), '_');
+      final result = await ref
+          .read(backupFilesProvider)
+          .save('$safe.csv', bytes, subject: deck.name);
+      if (mounted && result != BackupSaveResult.cancelled) showMessage(context, l10n.exportDone);
+    } catch (_) {
+      if (mounted) showMessage(context, l10n.errorGenericMessage);
+    }
+  }
+
+  Future<void> _toggleSuspend(CardRow card) async {
+    final l10n = context.l10n;
+    final repo = _repo;
+    await repo.setSuspended(card.id, !card.suspended);
+    if (!mounted) return;
+    showUndoSnack(
+      context,
+      card.suspended ? l10n.flashcardsResumed : l10n.flashcardsSuspended,
+      onUndo: () => repo.setSuspended(card.id, card.suspended),
+    );
+  }
+
   Future<void> _deleteCard(CardRow card) async {
     final repo = _repo;
     await repo.deleteCard(card.id);
@@ -207,10 +250,14 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
               tooltip: l10n.actionMore,
               onSelected: (m) => switch (m) {
                 _DeckMenu.edit => _editDeck(deck),
+                _DeckMenu.speech => showSpeechSheet(context, deck),
+                _DeckMenu.exportCsv => _exportCsv(deck),
                 _DeckMenu.delete => _deleteDeck(deck),
               },
               itemBuilder: (_) => [
                 PopupMenuItem(value: _DeckMenu.edit, child: Text(l10n.deckEdit)),
+                PopupMenuItem(value: _DeckMenu.speech, child: Text(l10n.speechTitle)),
+                PopupMenuItem(value: _DeckMenu.exportCsv, child: Text(l10n.flashcardsExportCsv)),
                 PopupMenuItem(value: _DeckMenu.delete, child: Text(l10n.flashcardsDeleteDeck)),
               ],
             ),
@@ -254,17 +301,25 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
               ),
             );
           }
-          final q = _query.trim().toLowerCase();
-          final shown = q.isEmpty
-              ? all
-              : all
-                    .where(
-                      (c) =>
-                          c.front.toLowerCase().contains(q) ||
-                          c.back.toLowerCase().contains(q) ||
-                          c.tags.toLowerCase().contains(q),
-                    )
-                    .toList();
+          // Case-, accent- and Arabic-diacritic-insensitive search.
+          final q = StudyRules.searchKey(_query);
+          final now = ref.read(clockProvider).nowUtc();
+          final tags = <String>{
+            for (final c in all) ...c.tags.split(RegExp(r'[,\s]+')).where((t) => t.isNotEmpty),
+          }.toList()..sort();
+          final shown = all.where((c) {
+            final ok = switch (_filter) {
+              _CardFilter.all => true,
+              _CardFilter.newCards => c.state == 'new' && !c.suspended,
+              _CardFilter.due =>
+                c.state != 'new' && !c.suspended && c.dueAt != null && !c.dueAt!.isAfter(now),
+              _CardFilter.suspended => c.suspended,
+            };
+            if (!ok) return false;
+            if (_tag != null && !c.tags.split(RegExp(r'[,\s]+')).contains(_tag)) return false;
+            if (q.isEmpty) return true;
+            return StudyRules.searchKey('${c.front} ${c.back} ${c.tags}').contains(q);
+          }).toList();
           return SliverMainAxisGroup(
             slivers: [
               SliverToBoxAdapter(
@@ -291,7 +346,49 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
                   ),
                 ),
               ),
-              SliverToBoxAdapter(child: SectionHeader(title: l10n.deckCards(all.length))),
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 56,
+                  child: ListView(
+                    key: const Key('cardFilters'),
+                    scrollDirection: Axis.horizontal,
+                    padding: const EdgeInsets.fromLTRB(Space.page, Space.xs, Space.page, 0),
+                    children: [
+                      for (final f in _CardFilter.values)
+                        Padding(
+                          padding: const EdgeInsetsDirectional.only(end: Space.xs),
+                          child: ChoiceChip(
+                            key: Key('cardFilter_${f.name}'),
+                            label: Text(switch (f) {
+                              _CardFilter.all => l10n.filterAll,
+                              _CardFilter.newCards => l10n.deckNewCards,
+                              _CardFilter.due => l10n.deckDue,
+                              _CardFilter.suspended => l10n.flashcardsSuspendedFilter,
+                            }),
+                            selected: _filter == f,
+                            onSelected: (_) => setState(() => _filter = f),
+                          ),
+                        ),
+                      for (final t in tags)
+                        Padding(
+                          padding: const EdgeInsetsDirectional.only(end: Space.xs),
+                          child: FilterChip(
+                            label: Text('#$t'),
+                            selected: _tag == t,
+                            onSelected: (on) => setState(() => _tag = on ? t : null),
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: SectionHeader(
+                  title: shown.length == all.length
+                      ? l10n.deckCards(all.length)
+                      : l10n.flashcardsShownOf(shown.length, all.length),
+                ),
+              ),
               if (shown.isEmpty)
                 SliverToBoxAdapter(
                   child: Padding(
@@ -312,6 +409,7 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
                       card: shown[i],
                       onTap: () => showCardForm(context, deckId: deck.id, initial: shown[i]),
                       onDelete: () => _deleteCard(shown[i]),
+                      onToggleSuspend: () => _toggleSuspend(shown[i]),
                     ),
                   ),
                 ),
@@ -335,6 +433,7 @@ class _DeckHeader extends ConsumerWidget {
     final queue = ref.watch(studyQueueSizeProvider(deck.id)).value;
     final mature = stats == null || stats.total == 0 ? 0.0 : stats.mature / stats.total;
     final canStudy = (queue ?? 0) > 0;
+    final hasCards = (stats?.total ?? 0) > 0;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: Space.page),
       child: LuxCard(
@@ -378,7 +477,8 @@ class _DeckHeader extends ConsumerWidget {
             const SizedBox(height: Space.sm),
             FilledButton.icon(
               key: const Key('studyButton'),
-              onPressed: canStudy ? () => context.push(Routes.review(deck.id)) : null,
+              // Opens mode + scope choice; practice works even when nothing is due.
+              onPressed: hasCards ? () => showStudySheet(context, deck) : null,
               icon: const Icon(Icons.school_rounded),
               label: Text(l10n.deckStudy),
             ),
@@ -414,10 +514,16 @@ class _Metric extends StatelessWidget {
 }
 
 class _CardTile extends ConsumerWidget {
-  const _CardTile({required this.card, required this.onTap, required this.onDelete});
+  const _CardTile({
+    required this.card,
+    required this.onTap,
+    required this.onDelete,
+    required this.onToggleSuspend,
+  });
   final CardRow card;
   final VoidCallback onTap;
   final VoidCallback onDelete;
+  final VoidCallback onToggleSuspend;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -427,7 +533,9 @@ class _CardTile extends ConsumerWidget {
         .split(RegExp(r'[,\s]+'))
         .where((t) => t.isNotEmpty)
         .toList(growable: false);
-    final status = card.state == 'new' || card.dueAt == null
+    final status = card.suspended
+        ? l10n.flashcardsSuspendedFilter
+        : card.state == 'new' || card.dueAt == null
         ? l10n.deckNewCards
         : l10n.flashcardsCardDueOn(context.fmt.relativeDay(card.dueAt!, now));
     return LuxCard(
@@ -466,6 +574,15 @@ class _CardTile extends ConsumerWidget {
             ),
           ),
           IconButton(
+            tooltip: card.suspended ? l10n.flashcardsResume : l10n.flashcardsSuspend,
+            onPressed: onToggleSuspend,
+            icon: Icon(
+              card.suspended
+                  ? Icons.play_circle_outline_rounded
+                  : Icons.pause_circle_outline_rounded,
+            ),
+          ),
+          IconButton(
             tooltip: l10n.actionDelete,
             onPressed: onDelete,
             icon: const Icon(Icons.delete_outline_rounded),
@@ -478,14 +595,33 @@ class _CardTile extends ConsumerWidget {
 
 /// Paste box for importing cards. Owns its controller so it outlives the
 /// dialog's closing animation.
-class _ImportDialog extends StatefulWidget {
+class _ImportDialog extends ConsumerStatefulWidget {
   const _ImportDialog();
 
   @override
-  State<_ImportDialog> createState() => _ImportDialogState();
+  ConsumerState<_ImportDialog> createState() => _ImportDialogState();
 }
 
-class _ImportDialogState extends State<_ImportDialog> {
+class _ImportDialogState extends ConsumerState<_ImportDialog> {
+  /// Shown inside the dialog: a snackbar would sit under the dialog barrier.
+  String? _error;
+
+  Future<void> _pickFile() async {
+    final l10n = context.l10n;
+    setState(() => _error = null);
+    try {
+      final bytes = await ref.read(backupFilesProvider).pick();
+      if (bytes == null || !mounted) return;
+      if (bytes.length > 8 * 1024 * 1024) {
+        setState(() => _error = l10n.importFailed);
+        return;
+      }
+      setState(() => _controller.text = utf8.decode(bytes, allowMalformed: true));
+    } catch (_) {
+      if (mounted) setState(() => _error = l10n.flashcardsImportFileFailed);
+    }
+  }
+
   final _controller = TextEditingController();
 
   @override
@@ -510,12 +646,20 @@ class _ImportDialogState extends State<_ImportDialog> {
           decoration: InputDecoration(
             labelText: l10n.flashcardsImportField,
             helperText: l10n.importCardsHint,
+            errorText: _error,
+            errorMaxLines: 3,
             helperMaxLines: 5,
             alignLabelWithHint: true,
           ),
         ),
       ),
       actions: [
+        TextButton.icon(
+          key: const Key('importFileButton'),
+          onPressed: _pickFile,
+          icon: const Icon(Icons.attach_file_rounded),
+          label: Text(l10n.flashcardsImportFile),
+        ),
         TextButton(onPressed: () => Navigator.pop(context), child: Text(l10n.actionCancel)),
         FilledButton(
           key: const Key('importConfirmButton'),

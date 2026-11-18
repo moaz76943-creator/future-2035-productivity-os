@@ -13,12 +13,7 @@ import 'package:future_os/features/tasks/data/tasks_repository.dart';
 import '../../helpers.dart';
 
 // Low-cost KDF parameters keep the test fast; production uses the defaults.
-final _fastKdf = Argon2id(
-  memory: 256,
-  iterations: 1,
-  parallelism: 1,
-  hashLength: 32,
-);
+final _fastKdf = Argon2id(memory: 256, iterations: 1, parallelism: 1, hashLength: 32);
 
 Future<Uint8List> _backupWithPayload(Map<String, Object?> payload) async {
   final aes = AesGcm.with256bits();
@@ -39,10 +34,7 @@ Future<Uint8List> _backupWithPayload(Map<String, Object?> payload) async {
     'cipher': {'alg': 'aes-256-gcm', 'nonce': base64Encode(nonce)},
   };
   final headerBytes = utf8.encode(jsonEncode(header));
-  final key = await _fastKdf.deriveKeyFromPassword(
-    password: 'password-123',
-    nonce: salt,
-  );
+  final key = await _fastKdf.deriveKeyFromPassword(password: 'password-123', nonce: salt);
   final plain = gzip.encode(utf8.encode(jsonEncode(payload)));
   final box = await aes.encrypt(plain, secretKey: key, nonce: nonce, aad: headerBytes);
   return Uint8List.fromList([
@@ -58,28 +50,41 @@ Future<Uint8List> _backupWithPayload(Map<String, Object?> payload) async {
 }
 
 void main() {
+  test('key derivation on a background isolate produces the same backup format', () async {
+    final env = TestEnv();
+    await TasksRepository(env.db, env.clock).create(const TaskDraft(title: 'isolate'));
+    final bytes = await BackupService(
+      env.db,
+      kdf: _fastKdf,
+      offloadKdf: true,
+    ).export(password: 'correct horse');
+    // Readable both inline and offloaded: same KDF, same key.
+    final target = openInMemoryDatabase();
+    expect(
+      await BackupService(target, kdf: _fastKdf).restore(bytes, 'correct horse'),
+      greaterThan(0),
+    );
+    expect(
+      await BackupService(target, kdf: _fastKdf, offloadKdf: true).inspect(bytes, 'correct horse'),
+      isNotEmpty,
+    );
+    await target.close();
+    await env.dispose();
+  });
+
   test('export → restore into empty database reproduces data', () async {
     final env = TestEnv();
     final tasks = TasksRepository(env.db, env.clock);
     final p = await tasks.create(const TaskDraft(title: 'parent ✓ مهمة'));
     await tasks.create(TaskDraft(title: 'child', parentId: p, priority: 3));
     await tasks.addChecklistItem(p, 'step');
-    await NotesRepository(
-      env.db,
-      env.clock,
-    ).create(title: 'n', body: '#tag body');
+    await NotesRepository(env.db, env.clock).create(title: 'n', body: '#tag body');
 
-    final bytes = await BackupService(
-      env.db,
-      kdf: _fastKdf,
-    ).export(password: 'correct horse');
+    final bytes = await BackupService(env.db, kdf: _fastKdf).export(password: 'correct horse');
     expect(String.fromCharCodes(bytes).contains('مهمة'), isFalse);
 
     final target = openInMemoryDatabase();
-    final restored = await BackupService(
-      target,
-      kdf: _fastKdf,
-    ).restore(bytes, 'correct horse');
+    final restored = await BackupService(target, kdf: _fastKdf).restore(bytes, 'correct horse');
     expect(restored, greaterThanOrEqualTo(5));
     final rows = await target.select(target.tasks).get();
     expect(rows.map((r) => r.title).toSet(), {'parent ✓ مهمة', 'child'});
@@ -92,16 +97,11 @@ void main() {
   test('malformed table rows are rejected before existing data is replaced', () async {
     final env = TestEnv();
     addTearDown(env.dispose);
-    await TasksRepository(
-      env.db,
-      env.clock,
-    ).create(const TaskDraft(title: 'keep existing data'));
+    await TasksRepository(env.db, env.clock).create(const TaskDraft(title: 'keep existing data'));
 
     final tables = {
       for (final table in env.db.allTables)
-        table.actualTableName: table.actualTableName == 'tasks'
-            ? 'not-a-row-list'
-            : <Object?>[],
+        table.actualTableName: table.actualTableName == 'tasks' ? 'not-a-row-list' : <Object?>[],
     };
     final bytes = await _backupWithPayload({
       'app': 'future-os',
@@ -110,14 +110,9 @@ void main() {
     });
     await expectLater(
       BackupService(env.db, kdf: _fastKdf).restore(bytes, 'password-123'),
-      throwsA(
-        isA<BackupException>().having((e) => e.error, 'error', BackupError.corrupted),
-      ),
+      throwsA(isA<BackupException>().having((e) => e.error, 'error', BackupError.corrupted)),
     );
-    expect(
-      (await env.db.select(env.db.tasks).get()).single.title,
-      'keep existing data',
-    );
+    expect((await env.db.select(env.db.tasks).get()).single.title, 'keep existing data');
   });
 
   test('malformed authenticated-container header is rejected as a backup error', () async {
@@ -138,57 +133,33 @@ void main() {
     ]);
     await expectLater(
       svc.inspect(bytes, 'password-123'),
-      throwsA(
-        isA<BackupException>().having(
-          (e) => e.error,
-          'error',
-          BackupError.corrupted,
-        ),
-      ),
+      throwsA(isA<BackupException>().having((e) => e.error, 'error', BackupError.corrupted)),
     );
   });
 
-  test(
-    'wrong password, tampering and garbage are rejected without changes',
-    () async {
-      final env = TestEnv();
-      await TasksRepository(
-        env.db,
-        env.clock,
-      ).create(const TaskDraft(title: 'keep me'));
-      final svc = BackupService(env.db, kdf: _fastKdf);
-      final bytes = await svc.export(password: 'password-1');
+  test('wrong password, tampering and garbage are rejected without changes', () async {
+    final env = TestEnv();
+    await TasksRepository(env.db, env.clock).create(const TaskDraft(title: 'keep me'));
+    final svc = BackupService(env.db, kdf: _fastKdf);
+    final bytes = await svc.export(password: 'password-1');
 
-      Future<BackupError> errorOf(Future<Object?> f) async {
-        try {
-          await f;
-        } on BackupException catch (e) {
-          return e.error;
-        }
-        fail('expected BackupException');
+    Future<BackupError> errorOf(Future<Object?> f) async {
+      try {
+        await f;
+      } on BackupException catch (e) {
+        return e.error;
       }
+      fail('expected BackupException');
+    }
 
-      expect(
-        await errorOf(svc.restore(bytes, 'password-2')),
-        BackupError.wrongPasswordOrTampered,
-      );
-      final tampered = Uint8List.fromList(bytes)..[bytes.length - 20] ^= 0x01;
-      expect(
-        await errorOf(svc.restore(tampered, 'password-1')),
-        BackupError.wrongPasswordOrTampered,
-      );
-      expect(
-        await errorOf(svc.restore(Uint8List.fromList([1, 2, 3]), 'x')),
-        BackupError.notABackup,
-      );
-      expect(
-        await errorOf(svc.export(password: 'short')),
-        BackupError.weakPassword,
-      );
-      expect((await env.db.select(env.db.tasks).get()).single.title, 'keep me');
-      await env.dispose();
-    },
-  );
+    expect(await errorOf(svc.restore(bytes, 'password-2')), BackupError.wrongPasswordOrTampered);
+    final tampered = Uint8List.fromList(bytes)..[bytes.length - 20] ^= 0x01;
+    expect(await errorOf(svc.restore(tampered, 'password-1')), BackupError.wrongPasswordOrTampered);
+    expect(await errorOf(svc.restore(Uint8List.fromList([1, 2, 3]), 'x')), BackupError.notABackup);
+    expect(await errorOf(svc.export(password: 'short')), BackupError.weakPassword);
+    expect((await env.db.select(env.db.tasks).get()).single.title, 'keep me');
+    await env.dispose();
+  });
 
   test(
     'a schema v1 backup (no milestones table, no flashcards.extra) restores after the upgrade',

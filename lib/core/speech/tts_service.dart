@@ -6,7 +6,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 enum TtsResult { ok, unavailable, languageUnavailable, empty }
 
 abstract interface class TtsService {
-  Future<TtsResult> speak(String text, {String? languageTag, double rate, double pitch});
+  Future<TtsResult> speak(
+    String text, {
+    String? languageTag,
+    double rate,
+    double pitch,
+    int repeat,
+  });
   Future<void> stop();
 }
 
@@ -22,6 +28,7 @@ class PlatformTtsService implements TtsService {
     String? languageTag,
     double rate = 1.0,
     double pitch = 1.0,
+    int repeat = 1,
   }) async {
     if (text.trim().isEmpty) return TtsResult.empty;
     try {
@@ -30,6 +37,7 @@ class PlatformTtsService implements TtsService {
         'languageTag': languageTag,
         'rate': rate,
         'pitch': pitch,
+        'repeat': repeat.clamp(1, 9),
       });
       return switch (code) {
         'ok' => TtsResult.ok,

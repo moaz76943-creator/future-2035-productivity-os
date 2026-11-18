@@ -3438,4 +3438,209 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get taskUnarchived => 'Задача возвращена из архива';
+
+  @override
+  String get focusPlanTitle => 'План сессий';
+
+  @override
+  String focusPlanTotal(String duration) {
+    return 'Всего $duration';
+  }
+
+  @override
+  String get focusPlanRounds => 'Сессии фокуса';
+
+  @override
+  String get focusPlanUnlimited => '∞';
+
+  @override
+  String get focusPlanLongEvery => 'Длинный перерыв после';
+
+  @override
+  String get focusPlanSkipLastBreak => 'Пропустить последний перерыв';
+
+  @override
+  String get focusPlanAutoBreaks => 'Начинать перерывы автоматически';
+
+  @override
+  String get focusPlanAutoFocus => 'Начинать фокус после перерыва';
+
+  @override
+  String get focusPlanSave => 'Сохранить план';
+
+  @override
+  String get focusPlanNameHint => 'например, Экзамен';
+
+  @override
+  String get focusPlanSaved => 'План сохранён';
+
+  @override
+  String focusPlanPresetA11y(String name, int work, int rest) {
+    return '$name: фокус $work мин, перерыв $rest мин';
+  }
+
+  @override
+  String focusPlanDecrease(String label) {
+    return 'Уменьшить: $label';
+  }
+
+  @override
+  String focusPlanIncrease(String label) {
+    return 'Увеличить: $label';
+  }
+
+  @override
+  String focusRoundOf(int current, int total) {
+    return 'Сессия $current из $total';
+  }
+
+  @override
+  String get focusSeriesComplete => 'Серия завершена. Отлично!';
+
+  @override
+  String get exportDone => 'Экспорт готов';
+
+  @override
+  String get filterAll => 'Все';
+
+  @override
+  String importCardsResultDetail(int added, int duplicates, int invalid) {
+    return 'Импортировано $added · пропущено дубликатов $duplicates · неполных строк $invalid';
+  }
+
+  @override
+  String get flashcardsSuspend => 'Приостановить карточку';
+
+  @override
+  String get flashcardsResume => 'Возобновить карточку';
+
+  @override
+  String get flashcardsSuspended => 'Карточка приостановлена и не будет планироваться';
+
+  @override
+  String get flashcardsResumed => 'Карточка возобновлена';
+
+  @override
+  String get flashcardsSuspendedFilter => 'Приостановленные';
+
+  @override
+  String get flashcardsExportCsv => 'Экспорт в CSV';
+
+  @override
+  String flashcardsShownOf(int shown, int total) {
+    return '$shown из $total карточек';
+  }
+
+  @override
+  String get flashcardsImportFile => 'Из файла';
+
+  @override
+  String get speechTitle => 'Озвучивание';
+
+  @override
+  String get speechAppLanguage => 'Язык приложения';
+
+  @override
+  String get speechFrontLanguage => 'Язык лицевой стороны';
+
+  @override
+  String get speechBackLanguage => 'Язык оборотной стороны';
+
+  @override
+  String get speechRepeat => 'Повторять чтение';
+
+  @override
+  String get speechRate => 'Скорость';
+
+  @override
+  String get speechAutoRead => 'Читать вопрос автоматически';
+
+  @override
+  String get speechHint =>
+      'Используются голоса, установленные на устройстве, без интернета. Если для языка нет голоса, вы увидите сообщение — другой язык не подставляется.';
+
+  @override
+  String get studyHowTitle => 'Как будете заниматься?';
+
+  @override
+  String studyDueCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Повторить $count карточек',
+      few: 'Повторить $count карточки',
+      one: 'Повторить $count карточку',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get studyPracticeAll => 'Тренировка по всем (график не меняется)';
+
+  @override
+  String get studyPracticeMistakes => 'Тренировать недавние ошибки';
+
+  @override
+  String get studyPracticeHint =>
+      'Тренировка не меняет сроки карточек. График обновляет только повторение.';
+
+  @override
+  String get studyModeClassic => 'Классика';
+
+  @override
+  String get studyModeReverse => 'Обратный';
+
+  @override
+  String get studyModeMixed => 'В обе стороны';
+
+  @override
+  String get studyModeTyped => 'Ввод ответа';
+
+  @override
+  String get studyModeChoice => 'Выбор ответа';
+
+  @override
+  String get studyModeListening => 'Аудирование';
+
+  @override
+  String get studyPractice => 'тренировка';
+
+  @override
+  String get studyNoMistakes => 'Недавних ошибок в этой колоде нет. Отлично!';
+
+  @override
+  String get studyTypeAnswer => 'Введите ответ';
+
+  @override
+  String get studyCheck => 'Проверить';
+
+  @override
+  String get studyKnewIt => 'Знал';
+
+  @override
+  String get studyDidntKnow => 'Не знал';
+
+  @override
+  String studyMistakes(int count) {
+    return 'Ошибки ($count)';
+  }
+
+  @override
+  String get studyRepeatMistakes => 'Повторить ошибки';
+
+  @override
+  String get studyCorrect => 'Верно';
+
+  @override
+  String get studyAlmost => 'Почти — проверьте написание';
+
+  @override
+  String get studyWrong => 'Неверно';
+
+  @override
+  String get studyShowText => 'Показать текст';
+
+  @override
+  String get flashcardsImportFileFailed =>
+      'Не удалось открыть файл. Можно вставить его содержимое.';
 }

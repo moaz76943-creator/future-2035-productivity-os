@@ -28,6 +28,7 @@ class MainActivity : FlutterActivity() {
                     val tag = call.argument<String>("languageTag")
                     val rate = (call.argument<Double>("rate") ?: 1.0).toFloat().coerceIn(0.25f, 3f)
                     val pitch = (call.argument<Double>("pitch") ?: 1.0).toFloat().coerceIn(0.5f, 2f)
+                    val repeat = (call.argument<Int>("repeat") ?: 1).coerceIn(1, 9)
                     if (text.isBlank()) { result.success("empty"); return@setMethodCallHandler }
                     withEngine { engine ->
                         if (engine == null) { result.success("unavailable"); return@withEngine }
@@ -39,7 +40,14 @@ class MainActivity : FlutterActivity() {
                         }
                         engine.setSpeechRate(rate)
                         engine.setPitch(pitch)
-                        val code = engine.speak(text, TextToSpeech.QUEUE_FLUSH, Bundle(), "future_os_tts")
+                        var code = engine.speak(text, TextToSpeech.QUEUE_FLUSH, Bundle(), "future_os_tts_0")
+                        // Repetitions are queued natively with a short pause between them, so
+                        // they play back-to-back and a later stop() cancels all of them.
+                        for (i in 1 until repeat) {
+                            if (code != TextToSpeech.SUCCESS) break
+                            engine.playSilentUtterance(700, TextToSpeech.QUEUE_ADD, "future_os_gap_$i")
+                            code = engine.speak(text, TextToSpeech.QUEUE_ADD, Bundle(), "future_os_tts_$i")
+                        }
                         result.success(if (code == TextToSpeech.SUCCESS) "ok" else "unavailable")
                     }
                 }

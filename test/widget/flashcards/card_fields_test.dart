@@ -36,7 +36,11 @@ void main() {
 
     await pumpScreen(tester, ReviewScreen(deckId: deck), env: env);
     await settle(tester);
-    expect(find.text('El gato duerme.'), findsNothing, reason: 'question side shows the front only');
+    expect(
+      find.text('El gato duerme.'),
+      findsNothing,
+      reason: 'question side shows the front only',
+    );
     await tester.tap(find.byKey(const Key('showAnswerButton')));
     await settle(tester);
     await tester.pump(const Duration(seconds: 1));
@@ -54,7 +58,9 @@ void main() {
     final json = await repo.exportDeck(a);
     final b = await repo.createDeck('B', color: 2);
     expect(await repo.importInto(b, json), 1);
-    final imported = await (env.db.select(env.db.flashcards)..where((c) => c.deckId.equals(b))).getSingle();
+    final imported = await (env.db.select(
+      env.db.flashcards,
+    )..where((c) => c.deckId.equals(b))).getSingle();
     expect(CardExtras.decode(imported.extra)[CardField.notes], 'masculine');
     await env.dispose();
   });

@@ -69,14 +69,8 @@ void main() {
     test('nextAfter and between', () {
       final r = RecurrenceRule.parse('FREQ=WEEKLY');
       final start = DateTime(2026, 11, 2, 10);
-      expect(
-        r.nextAfter(start, DateTime(2026, 11, 10)),
-        DateTime(2026, 11, 16, 10),
-      );
-      expect(
-        r.between(start, DateTime(2026, 11, 1), DateTime(2026, 12, 1)).length,
-        5,
-      );
+      expect(r.nextAfter(start, DateTime(2026, 11, 10)), DateTime(2026, 11, 16, 10));
+      expect(r.between(start, DateTime(2026, 11, 1), DateTime(2026, 12, 1)).length, 5);
     });
   });
 }

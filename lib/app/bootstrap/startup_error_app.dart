@@ -37,16 +37,9 @@ class StartupErrorApp extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Icon(
-                      Icons.lock_outline_rounded,
-                      size: 48,
-                      color: context.lux.danger,
-                    ),
+                    Icon(Icons.lock_outline_rounded, size: 48, color: context.lux.danger),
                     const SizedBox(height: Space.lg),
-                    Text(
-                      l10n.startupErrorTitle,
-                      style: context.text.headlineSmall,
-                    ),
+                    Text(l10n.startupErrorTitle, style: context.text.headlineSmall),
                     const SizedBox(height: Space.sm),
                     Text(
                       reason == StartupFailure.cipherUnavailable
@@ -55,10 +48,7 @@ class StartupErrorApp extends StatelessWidget {
                       style: context.text.bodyLarge,
                     ),
                     const SizedBox(height: Space.xl),
-                    FilledButton(
-                      onPressed: bootstrap,
-                      child: Text(l10n.startupErrorRetry),
-                    ),
+                    FilledButton(onPressed: bootstrap, child: Text(l10n.startupErrorRetry)),
                   ],
                 ),
               ),

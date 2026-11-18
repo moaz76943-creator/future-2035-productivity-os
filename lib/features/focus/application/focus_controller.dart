@@ -17,7 +17,8 @@ import '../domain/focus_timer_state.dart';
 import 'focus_providers.dart';
 
 /// One-time message about what happened while the app was closed.
-enum FocusNotice { recovered, completedWhileAway }
+/// [seriesComplete]: the planned number of focus sessions is done.
+enum FocusNotice { recovered, completedWhileAway, seriesComplete }
 
 class FocusControllerState {
   const FocusControllerState({
@@ -95,6 +96,8 @@ class FocusController extends Notifier<FocusControllerState> {
       shortBreakMinutes: s.shortBreakMinutes,
       longBreakMinutes: s.longBreakMinutes,
       longBreakEvery: s.longBreakEvery,
+      rounds: s.sessionRounds,
+      skipLastBreak: s.skipLastBreak,
     );
   }
 
@@ -145,7 +148,13 @@ class FocusController extends Notifier<FocusControllerState> {
     if (saved.isRunning && saved.isComplete(_nowUtc)) {
       _set(FocusControllerState(ready: true, active: saved, linkedTaskId: saved.taskId));
       await _completeChain(saved);
-      _set(state.copyWith(notice: FocusNotice.completedWhileAway, clearFinished: true));
+      final done = state.notice == FocusNotice.seriesComplete;
+      _set(
+        state.copyWith(
+          notice: done ? FocusNotice.seriesComplete : FocusNotice.completedWhileAway,
+          clearFinished: true,
+        ),
+      );
       return;
     }
     _set(
@@ -226,11 +235,13 @@ class FocusController extends Notifier<FocusControllerState> {
     // After a stopped break the next phase is focus, keeping the cycle.
     PendingPhase? pending;
     if (s.mode == FocusMode.pomodoro && s.phase != FocusPhase.work) {
-      pending = PendingPhase(
-        FocusPhase.work,
-        s.phase == FocusPhase.longBreak ? 0 : s.completedWorkCycles,
-      );
-      await _repo.savePending(pending);
+      final rounds = _config.rounds;
+      if (rounds > 0 && s.completedWorkCycles >= rounds) {
+        await _repo.clearPending();
+      } else {
+        pending = PendingPhase(FocusPhase.work, s.completedWorkCycles);
+        await _repo.savePending(pending);
+      }
     } else {
       await _repo.clearPending();
     }
@@ -251,13 +262,25 @@ class FocusController extends Notifier<FocusControllerState> {
     final s = state.active;
     final cycles = switch ((s, state.pending)) {
       (final a?, _) when a.mode == FocusMode.pomodoro && a.phase != FocusPhase.work =>
-        a.phase == FocusPhase.longBreak ? 0 : a.completedWorkCycles,
-      (null, final p?) when p.phase != FocusPhase.work =>
-        p.phase == FocusPhase.longBreak ? 0 : p.cycles,
+        a.completedWorkCycles,
+      (null, final p?) when p.phase != FocusPhase.work => p.cycles,
       _ => null,
     };
     if (cycles == null) return;
     if (s != null) await _repo.clearActive();
+    // Skipping the final break of a limited series ends the series.
+    if (_config.rounds > 0 && cycles >= _config.rounds) {
+      await _repo.clearPending();
+      _set(
+        FocusControllerState(
+          ready: true,
+          linkedTaskId: state.linkedTaskId,
+          notice: FocusNotice.seriesComplete,
+        ),
+      );
+      await _afterChange();
+      return;
+    }
     final work = FocusEngine.start(
       sessionId: newId(),
       mode: FocusMode.pomodoro,
@@ -314,8 +337,9 @@ class FocusController extends Notifier<FocusControllerState> {
     var s = start;
     FinishedSession? lastWork;
     final now = _nowUtc;
-    final auto = _settings.autoStartBreaks;
-    for (var guard = 0; guard < 64; guard++) {
+    final autoBreaks = _settings.autoStartBreaks;
+    final autoFocus = _settings.autoStartFocus;
+    for (var guard = 0; guard < 400; guard++) {
       final f = FocusEngine.finish(s, now);
       await _repo.recordFinished(f);
       if (f.phase == FocusPhase.work) lastWork = f;
@@ -332,13 +356,30 @@ class FocusController extends Notifier<FocusControllerState> {
         return;
       }
       final next = FocusEngine.nextPomodoroPhase(s, _config);
-      if (next.phase != FocusPhase.work && auto) {
+      final nextPhase = next.phase;
+      if (nextPhase == null) {
+        // Planned series finished.
+        await _repo.clearPending();
+        _set(
+          FocusControllerState(
+            ready: true,
+            linkedTaskId: state.linkedTaskId,
+            justFinished: lastWork,
+            notice: FocusNotice.seriesComplete,
+          ),
+        );
+        await _afterChange();
+        return;
+      }
+      final auto = nextPhase == FocusPhase.work ? autoFocus : autoBreaks;
+      if (auto) {
         final brk = FocusEngine.start(
           sessionId: newId(),
           mode: FocusMode.pomodoro,
           nowUtc: f.endedAtUtc,
-          phase: next.phase,
-          plannedSeconds: _config.secondsFor(next.phase),
+          phase: nextPhase,
+          plannedSeconds: _config.secondsFor(nextPhase),
+          taskId: nextPhase == FocusPhase.work ? state.linkedTaskId : null,
           completedWorkCycles: next.cycles,
         );
         if (brk.isComplete(now)) {
@@ -358,7 +399,7 @@ class FocusController extends Notifier<FocusControllerState> {
         await _afterChange();
         return;
       }
-      final pending = PendingPhase(next.phase, next.cycles);
+      final pending = PendingPhase(nextPhase, next.cycles);
       await _repo.savePending(pending);
       _set(
         FocusControllerState(

@@ -92,8 +92,8 @@ void main() {
         completedWorkCycles: cycles,
       );
       final n = FocusEngine.nextPomodoroPhase(s, cfg);
-      phases.add(n.phase);
-      phase = n.phase;
+      phases.add(n.phase!);
+      phase = n.phase!;
       cycles = n.cycles;
     }
     expect(phases, [
@@ -106,7 +106,47 @@ void main() {
       FocusPhase.longBreak,
       FocusPhase.work,
     ]);
-    expect(cycles, 0);
+    // Cycles now count every focus session in the series (needed for a
+    // limited number of rounds); the long break still falls on each 4th.
+    expect(cycles, 4);
+  });
+
+  PomodoroConfig limited(int rounds, {bool skipLast = true}) =>
+      PomodoroConfig(rounds: rounds, skipLastBreak: skipLast);
+
+  FocusTimerState phaseState(FocusPhase p, int cycles) => FocusEngine.start(
+    sessionId: 'x',
+    mode: FocusMode.pomodoro,
+    nowUtc: t0,
+    phase: p,
+    plannedSeconds: 60,
+    completedWorkCycles: cycles,
+  );
+
+  test('limited series ends after the last focus session when the last break is skipped', () {
+    final cfg = limited(3);
+    expect(
+      FocusEngine.nextPomodoroPhase(phaseState(FocusPhase.work, 1), cfg).phase,
+      FocusPhase.shortBreak,
+    );
+    final end = FocusEngine.nextPomodoroPhase(phaseState(FocusPhase.work, 2), cfg);
+    expect(end.phase, isNull);
+    expect(end.cycles, 3);
+  });
+
+  test('limited series with a final break ends after that break', () {
+    final cfg = limited(2, skipLast: false);
+    final last = FocusEngine.nextPomodoroPhase(phaseState(FocusPhase.work, 1), cfg);
+    expect(last.phase, FocusPhase.shortBreak);
+    expect(FocusEngine.nextPomodoroPhase(phaseState(FocusPhase.shortBreak, 2), cfg).phase, isNull);
+  });
+
+  test('series length adds focus and breaks (long break on every 4th)', () {
+    const cfg = PomodoroConfig(rounds: 4); // 4x25 + 3 short breaks
+    expect(cfg.seriesLength, const Duration(minutes: 115));
+    const withLast = PomodoroConfig(rounds: 4, skipLastBreak: false); // + long break
+    expect(withLast.seriesLength, const Duration(minutes: 130));
+    expect(const PomodoroConfig().seriesLength, isNull);
   });
 
   test('state JSON round-trips and rejects garbage', () {

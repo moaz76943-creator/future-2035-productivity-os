@@ -51,7 +51,8 @@ void main() {
       await tester.tap(find.byKey(const Key('importConfirmButton')));
       await settle(tester);
 
-      expect(find.text(l10n.importCardsResult(2)), findsOneWidget);
+      // The line without an answer ('bad') is reported, not silently dropped.
+      expect(find.text(l10n.importCardsResultDetail(2, 0, 1)), findsOneWidget);
       expect(await _cardCount(env, tester), 2);
       expect(find.text('hola'), findsOneWidget);
       expect(find.text('adiós'), findsOneWidget);
@@ -161,5 +162,60 @@ void main() {
     await settle(tester);
     expect(tester.takeException(), isNull);
     await env.dispose();
+  });
+
+  testWidgets('study sheet: choose a mode and start a practice round; filters and suspend', (
+    tester,
+  ) async {
+    final env = TestEnv();
+    final repo = FlashcardsRepository(env.db, env.clock);
+    late String deck;
+    await tester.runAsync(() async {
+      deck = await repo.createDeck('Words', color: 0xFF6C4CFF);
+      await repo.addCard(deck, 'hola', 'hello', tags: 'greet');
+      await repo.addCard(deck, 'mesa', 'table');
+    });
+    await pumpScreen(tester, DeckScreen(deckId: deck), env: env, withRouter: true);
+    await settle(tester);
+    final l10n = _l10n(tester);
+
+    // Tag filter and suspension.
+    final filters = find.descendant(
+      of: find.byKey(const Key('cardFilters')),
+      matching: find.byType(Scrollable),
+    );
+    await scrollPageTo(tester, find.byKey(const Key('cardFilters')));
+    await tester.scrollUntilVisible(find.text('#greet'), 100, scrollable: filters);
+    await tester.tap(find.text('#greet'));
+    await settle(tester);
+    expect(find.text(l10n.flashcardsShownOf(1, 2)), findsOneWidget);
+    await tester.tap(find.byTooltip(l10n.flashcardsSuspend).first);
+    await settle(tester);
+    final hola = (await tester.runAsync(() => env.db.select(env.db.flashcards).get()))!
+        .firstWhere((c) => c.front == 'hola');
+    expect(hola.suspended, isTrue);
+    await tester.tap(find.text('#greet'));
+    await settle(tester);
+    await tester.scrollUntilVisible(
+      find.byKey(const Key('cardFilter_suspended')),
+      -100,
+      scrollable: filters,
+    );
+    await tester.tap(find.byKey(const Key('cardFilter_suspended')));
+    await settle(tester);
+    expect(find.text(l10n.flashcardsShownOf(1, 2)), findsOneWidget);
+
+    // Study sheet → typed mode → practice all.
+    await tester.drag(find.byType(Scrollable).first, const Offset(0, 2000));
+    await settle(tester);
+    await tester.tap(find.byKey(const Key('studyButton')));
+    await settle(tester);
+    await tester.tap(find.byKey(const Key('studyMode_typed')));
+    await settle(tester);
+    await tester.tap(find.byKey(const Key('practiceAllButton')));
+    await settle(tester);
+    expect(find.textContaining('mode=typed'), findsOneWidget);
+    expect(find.textContaining('scope=practiceAll'), findsOneWidget);
+    await closeEnv(tester, env);
   });
 }

@@ -3159,4 +3159,200 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get taskUnarchived => '任务已从归档中恢复';
+
+  @override
+  String get focusPlanTitle => '专注计划';
+
+  @override
+  String focusPlanTotal(String duration) {
+    return '共 $duration';
+  }
+
+  @override
+  String get focusPlanRounds => '专注次数';
+
+  @override
+  String get focusPlanUnlimited => '∞';
+
+  @override
+  String get focusPlanLongEvery => '长休息间隔';
+
+  @override
+  String get focusPlanSkipLastBreak => '跳过最后一次休息';
+
+  @override
+  String get focusPlanAutoBreaks => '自动开始休息';
+
+  @override
+  String get focusPlanAutoFocus => '休息后自动开始专注';
+
+  @override
+  String get focusPlanSave => '保存计划';
+
+  @override
+  String get focusPlanNameHint => '例如：备考';
+
+  @override
+  String get focusPlanSaved => '计划已保存';
+
+  @override
+  String focusPlanPresetA11y(String name, int work, int rest) {
+    return '$name：专注 $work 分钟，休息 $rest 分钟';
+  }
+
+  @override
+  String focusPlanDecrease(String label) {
+    return '减少$label';
+  }
+
+  @override
+  String focusPlanIncrease(String label) {
+    return '增加$label';
+  }
+
+  @override
+  String focusRoundOf(int current, int total) {
+    return '第 $current 次，共 $total 次';
+  }
+
+  @override
+  String get focusSeriesComplete => '计划完成，做得好！';
+
+  @override
+  String get exportDone => '导出完成';
+
+  @override
+  String get filterAll => '全部';
+
+  @override
+  String importCardsResultDetail(int added, int duplicates, int invalid) {
+    return '已导入 $added · 跳过重复 $duplicates · 不完整行 $invalid';
+  }
+
+  @override
+  String get flashcardsSuspend => '暂停卡片';
+
+  @override
+  String get flashcardsResume => '恢复卡片';
+
+  @override
+  String get flashcardsSuspended => '卡片已暂停，不再安排复习';
+
+  @override
+  String get flashcardsResumed => '卡片已恢复';
+
+  @override
+  String get flashcardsSuspendedFilter => '已暂停';
+
+  @override
+  String get flashcardsExportCsv => '导出为 CSV';
+
+  @override
+  String flashcardsShownOf(int shown, int total) {
+    return '$shown/$total 张卡片';
+  }
+
+  @override
+  String get flashcardsImportFile => '从文件';
+
+  @override
+  String get speechTitle => '朗读';
+
+  @override
+  String get speechAppLanguage => '应用语言';
+
+  @override
+  String get speechFrontLanguage => '正面语言';
+
+  @override
+  String get speechBackLanguage => '背面语言';
+
+  @override
+  String get speechRepeat => '每次朗读重复';
+
+  @override
+  String get speechRate => '语速';
+
+  @override
+  String get speechAutoRead => '自动朗读问题';
+
+  @override
+  String get speechHint => '使用设备上已安装的离线语音。若某语言没有语音，会提示您，不会改用其他语言。';
+
+  @override
+  String get studyHowTitle => '想怎么学习？';
+
+  @override
+  String studyDueCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '复习 $count 张卡片');
+    return '$_temp0';
+  }
+
+  @override
+  String get studyPracticeAll => '练习全部卡片（不改变复习计划）';
+
+  @override
+  String get studyPracticeMistakes => '练习最近答错的';
+
+  @override
+  String get studyPracticeHint => '练习不会改变到期时间，复习才会更新计划。';
+
+  @override
+  String get studyModeClassic => '经典';
+
+  @override
+  String get studyModeReverse => '反向';
+
+  @override
+  String get studyModeMixed => '双向';
+
+  @override
+  String get studyModeTyped => '输入答案';
+
+  @override
+  String get studyModeChoice => '选择题';
+
+  @override
+  String get studyModeListening => '听力';
+
+  @override
+  String get studyPractice => '练习';
+
+  @override
+  String get studyNoMistakes => '这组卡片最近没有错题，很棒！';
+
+  @override
+  String get studyTypeAnswer => '输入你的答案';
+
+  @override
+  String get studyCheck => '检查';
+
+  @override
+  String get studyKnewIt => '我会';
+
+  @override
+  String get studyDidntKnow => '不会';
+
+  @override
+  String studyMistakes(int count) {
+    return '答错（$count）';
+  }
+
+  @override
+  String get studyRepeatMistakes => '重做答错的卡片';
+
+  @override
+  String get studyCorrect => '正确';
+
+  @override
+  String get studyAlmost => '差一点——注意拼写';
+
+  @override
+  String get studyWrong => '不对';
+
+  @override
+  String get studyShowText => '显示文字';
+
+  @override
+  String get flashcardsImportFileFailed => '无法打开文件，可以改为粘贴其内容。';
 }

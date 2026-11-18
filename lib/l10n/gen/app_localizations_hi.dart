@@ -3327,4 +3327,207 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get taskUnarchived => 'कार्य संग्रह से वापस लाया गया';
+
+  @override
+  String get focusPlanTitle => 'सत्र योजना';
+
+  @override
+  String focusPlanTotal(String duration) {
+    return 'कुल $duration';
+  }
+
+  @override
+  String get focusPlanRounds => 'फोकस सत्र';
+
+  @override
+  String get focusPlanUnlimited => '∞';
+
+  @override
+  String get focusPlanLongEvery => 'लंबा ब्रेक इतने के बाद';
+
+  @override
+  String get focusPlanSkipLastBreak => 'आख़िरी ब्रेक छोड़ें';
+
+  @override
+  String get focusPlanAutoBreaks => 'ब्रेक अपने आप शुरू करें';
+
+  @override
+  String get focusPlanAutoFocus => 'ब्रेक के बाद फोकस अपने आप शुरू करें';
+
+  @override
+  String get focusPlanSave => 'योजना सहेजें';
+
+  @override
+  String get focusPlanNameHint => 'जैसे परीक्षा तैयारी';
+
+  @override
+  String get focusPlanSaved => 'योजना सहेजी गई';
+
+  @override
+  String focusPlanPresetA11y(String name, int work, int rest) {
+    return '$name: $work मिनट फोकस, $rest मिनट ब्रेक';
+  }
+
+  @override
+  String focusPlanDecrease(String label) {
+    return '$label घटाएँ';
+  }
+
+  @override
+  String focusPlanIncrease(String label) {
+    return '$label बढ़ाएँ';
+  }
+
+  @override
+  String focusRoundOf(int current, int total) {
+    return 'सत्र $current / $total';
+  }
+
+  @override
+  String get focusSeriesComplete => 'श्रृंखला पूरी हुई। शाबाश!';
+
+  @override
+  String get exportDone => 'निर्यात तैयार';
+
+  @override
+  String get filterAll => 'सभी';
+
+  @override
+  String importCardsResultDetail(int added, int duplicates, int invalid) {
+    return '$added आयात · $duplicates दोहराव छोड़े · $invalid अधूरी पंक्तियाँ';
+  }
+
+  @override
+  String get flashcardsSuspend => 'कार्ड रोकें';
+
+  @override
+  String get flashcardsResume => 'कार्ड फिर शुरू करें';
+
+  @override
+  String get flashcardsSuspended => 'कार्ड रोका गया: इसे शेड्यूल नहीं किया जाएगा';
+
+  @override
+  String get flashcardsResumed => 'कार्ड फिर शुरू';
+
+  @override
+  String get flashcardsSuspendedFilter => 'रुके हुए';
+
+  @override
+  String get flashcardsExportCsv => 'CSV के रूप में निर्यात';
+
+  @override
+  String flashcardsShownOf(int shown, int total) {
+    return '$total में से $shown कार्ड';
+  }
+
+  @override
+  String get flashcardsImportFile => 'फ़ाइल से';
+
+  @override
+  String get speechTitle => 'वाणी';
+
+  @override
+  String get speechAppLanguage => 'ऐप की भाषा';
+
+  @override
+  String get speechFrontLanguage => 'सामने की भाषा';
+
+  @override
+  String get speechBackLanguage => 'पीछे की भाषा';
+
+  @override
+  String get speechRepeat => 'हर पठन दोहराएँ';
+
+  @override
+  String get speechRate => 'गति';
+
+  @override
+  String get speechAutoRead => 'प्रश्न अपने आप पढ़ें';
+
+  @override
+  String get speechHint =>
+      'डिवाइस पर इंस्टॉल आवाज़ें ऑफ़लाइन उपयोग होती हैं। किसी भाषा की आवाज़ न हो तो आपको बताया जाएगा, कोई दूसरी भाषा नहीं ली जाएगी।';
+
+  @override
+  String get studyHowTitle => 'आप कैसे पढ़ना चाहते हैं?';
+
+  @override
+  String studyDueCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count कार्ड दोहराएँ',
+      one: '1 कार्ड दोहराएँ',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get studyPracticeAll => 'सभी कार्ड का अभ्यास (शेड्यूल नहीं बदलेगा)';
+
+  @override
+  String get studyPracticeMistakes => 'हाल की गलतियों का अभ्यास';
+
+  @override
+  String get studyPracticeHint =>
+      'अभ्यास से कार्ड की तारीखें नहीं बदलतीं। दोहराने से शेड्यूल अपडेट होता है।';
+
+  @override
+  String get studyModeClassic => 'सामान्य';
+
+  @override
+  String get studyModeReverse => 'उल्टा';
+
+  @override
+  String get studyModeMixed => 'दोनों ओर';
+
+  @override
+  String get studyModeTyped => 'उत्तर लिखें';
+
+  @override
+  String get studyModeChoice => 'बहुविकल्प';
+
+  @override
+  String get studyModeListening => 'सुनना';
+
+  @override
+  String get studyPractice => 'अभ्यास';
+
+  @override
+  String get studyNoMistakes => 'इस डेक में हाल की कोई गलती नहीं। बढ़िया!';
+
+  @override
+  String get studyTypeAnswer => 'अपना उत्तर लिखें';
+
+  @override
+  String get studyCheck => 'जाँचें';
+
+  @override
+  String get studyKnewIt => 'मुझे पता था';
+
+  @override
+  String get studyDidntKnow => 'नहीं पता था';
+
+  @override
+  String studyMistakes(int count) {
+    return 'गलत ($count)';
+  }
+
+  @override
+  String get studyRepeatMistakes => 'गलत कार्ड दोहराएँ';
+
+  @override
+  String get studyCorrect => 'सही';
+
+  @override
+  String get studyAlmost => 'लगभग — वर्तनी जाँचें';
+
+  @override
+  String get studyWrong => 'सही नहीं';
+
+  @override
+  String get studyShowText => 'पाठ दिखाएँ';
+
+  @override
+  String get flashcardsImportFileFailed => 'फ़ाइल नहीं खुल सकी। आप उसकी सामग्री पेस्ट कर सकते हैं।';
 }
