@@ -4300,5 +4300,9 @@
   "flashcardsTtsLanguageUnavailable": "No voice is installed for this language. Add one in Android text-to-speech settings.",
   "@flashcardsTtsLanguageUnavailable": {
     "description": "Shown when the engine has no voice for the language"
+  },
+  "calendarAgenda": "Agenda",
+  "@calendarAgenda": {
+    "description": "Calendar view: list of upcoming days with events and due tasks"
   }
 }

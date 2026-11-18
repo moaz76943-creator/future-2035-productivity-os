@@ -3243,4 +3243,7 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get flashcardsTtsLanguageUnavailable =>
       'Aucune voix n’est installée pour cette langue. Ajoutez-en une dans les paramètres de synthèse vocale d’Android.';
+
+  @override
+  String get calendarAgenda => 'Agenda';
 }

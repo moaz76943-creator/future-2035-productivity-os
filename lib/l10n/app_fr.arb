@@ -884,5 +884,6 @@
   "trashCount": "{count, plural, =1{1 élément} other{{count} éléments}}",
   "flashcardsReadAloud": "Lire à voix haute",
   "flashcardsTtsUnavailable": "La synthèse vocale n’est pas disponible sur cet appareil.",
-  "flashcardsTtsLanguageUnavailable": "Aucune voix n’est installée pour cette langue. Ajoutez-en une dans les paramètres de synthèse vocale d’Android."
+  "flashcardsTtsLanguageUnavailable": "Aucune voix n’est installée pour cette langue. Ajoutez-en une dans les paramètres de synthèse vocale d’Android.",
+  "calendarAgenda": "Agenda"
 }

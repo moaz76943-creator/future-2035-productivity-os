@@ -11,7 +11,7 @@ FUTURE 2035 brings your planning, focus and learning together — on your device
 
 • Tasks with projects, subtasks, priorities, due dates, reminders and repeats
 • Focus timer: Pomodoro, custom timer and stopwatch, linked to the task you are working on
-• Calendar with day, week and month views, recurring and all-day events
+• Calendar with day, week, month and agenda views, recurring and all-day events
 • Notes with Markdown, checklists, tags, notebooks and links to projects and tasks
 • Flashcards with spaced repetition (Again / Hard / Good / Easy) and read-aloud
 • Goals and habits with streaks

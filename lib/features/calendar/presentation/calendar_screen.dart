@@ -142,6 +142,10 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
         return context.l10n.calendarWeekRange(fmt.dayShort(days.first), fmt.dayShort(days.last));
       }(),
       CalendarView.day => fmt.dayLong(_anchor),
+      CalendarView.agenda => context.l10n.calendarWeekRange(
+        fmt.dayShort(_anchor),
+        fmt.dayShort(CalendarMath.addDays(_anchor, kAgendaDays - 1)),
+      ),
     };
   }
 
@@ -201,6 +205,7 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
               ButtonSegment(value: CalendarView.month, label: Text(l10n.calendarMonth)),
               ButtonSegment(value: CalendarView.week, label: Text(l10n.calendarWeek)),
               ButtonSegment(value: CalendarView.day, label: Text(l10n.calendarDay)),
+              ButtonSegment(value: CalendarView.agenda, label: Text(l10n.calendarAgenda)),
             ],
             selected: {_view},
             onSelectionChanged: (s) => _setView(s.first),
@@ -268,6 +273,8 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
             ),
           ],
         );
+      case CalendarView.agenda:
+        return _agenda(context, events, tasks, conflicts);
       case CalendarView.week:
       case CalendarView.day:
         final days = _view == CalendarView.week
@@ -324,5 +331,52 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
           ],
         );
     }
+  }
+
+  /// Upcoming events and due tasks for the next [kAgendaDays] days, grouped by
+  /// day. Days with nothing scheduled are skipped.
+  Widget _agenda(
+    BuildContext context,
+    List<EventOccurrence> events,
+    List<TaskRow> tasks,
+    Set<EventOccurrence> conflicts,
+  ) {
+    final fmt = context.fmt;
+    final sections = <Widget>[];
+    for (var i = 0; i < kAgendaDays; i++) {
+      final d = CalendarMath.addDays(_anchor, i);
+      final dayEvents = itemsOnDay(events, d, start: (o) => o.start, end: (o) => o.end);
+      final dayTasks = [
+        for (final t in tasks)
+          if (t.dueAt != null && CalendarMath.sameDay(t.dueAt!.toLocal(), d)) t,
+      ];
+      if (dayEvents.isEmpty && dayTasks.isEmpty) continue;
+      sections
+        ..add(SectionHeader(title: fmt.dayLong(d)))
+        ..add(
+          DayAgenda(
+            events: dayEvents,
+            tasks: dayTasks,
+            conflicts: conflicts,
+            onOpenEvent: _openEvent,
+            onOpenTask: _openTask,
+            onScheduleTask: _scheduleTask,
+            onNewEvent: () => _newEvent(CalendarMath.atMinute(d, 9 * 60)),
+          ),
+        );
+    }
+    if (sections.isEmpty) {
+      // Same empty state as a free day, with a create action.
+      return DayAgenda(
+        events: const [],
+        tasks: const [],
+        conflicts: conflicts,
+        onOpenEvent: _openEvent,
+        onOpenTask: _openTask,
+        onScheduleTask: _scheduleTask,
+        onNewEvent: () => _newEvent(_defaultStart()),
+      );
+    }
+    return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: sections);
   }
 }

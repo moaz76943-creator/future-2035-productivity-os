@@ -159,4 +159,12 @@ void main() {
       expect(slots.every((s) => s.columns == 3), isTrue);
     });
   });
+
+  test('agenda covers 30 days from the anchor and pages by 30 days', () {
+    final r = CalendarMath.rangeFor(CalendarView.agenda, DateTime(2026, 3, 25, 15));
+    expect(r.from, DateTime(2026, 3, 25));
+    expect(r.to, DateTime(2026, 4, 24));
+    expect(CalendarMath.step(CalendarView.agenda, DateTime(2026, 3, 25), 1), DateTime(2026, 4, 24));
+    expect(CalendarMath.step(CalendarView.agenda, DateTime(2026, 3, 25), -1), DateTime(2026, 2, 23));
+  });
 }

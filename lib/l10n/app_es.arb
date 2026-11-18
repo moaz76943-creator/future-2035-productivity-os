@@ -884,5 +884,6 @@
   "trashCount": "{count, plural, =1{1 elemento} other{{count} elementos}}",
   "flashcardsReadAloud": "Leer en voz alta",
   "flashcardsTtsUnavailable": "La conversión de texto a voz no está disponible en este dispositivo.",
-  "flashcardsTtsLanguageUnavailable": "No hay ninguna voz instalada para este idioma. Añade una en los ajustes de texto a voz de Android."
+  "flashcardsTtsLanguageUnavailable": "No hay ninguna voz instalada para este idioma. Añade una en los ajustes de texto a voz de Android.",
+  "calendarAgenda": "Agenda"
 }
