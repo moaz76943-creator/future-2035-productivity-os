@@ -1,5 +1,6 @@
 import 'package:material_ui/material_ui.dart';
 
+import '../../app/shell/app_shell.dart';
 import '../../core/design_system/app_theme.dart';
 import '../../core/design_system/components/surfaces.dart';
 import '../../core/design_system/tokens.dart';
@@ -32,27 +33,42 @@ class ModuleScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final canPop = showBack ?? Navigator.of(context).canPop();
+    final lux = context.lux;
     return Scaffold(
-      floatingActionButton: floatingActionButton,
+      floatingActionButton: floatingActionButton == null
+          ? null
+          : NavClearFab(child: floatingActionButton!),
       body: AuroraBackground(
         hue: hue,
         intensity: 0.6,
         child: CustomScrollView(
           slivers: [
-            SliverAppBar.large(
+            // Medium header: the large one left ~150px of empty space above the
+            // content on phones. Content scrolling under the pinned bar gets a
+            // solid backdrop instead of showing through the transparent bar.
+            SliverAppBar.medium(
               automaticallyImplyLeading: canPop,
-              backgroundColor: Colors.transparent,
+              backgroundColor: WidgetStateColor.resolveWith(
+                (states) => states.contains(WidgetState.scrolledUnder)
+                    ? lux.background.withValues(alpha: 0.97)
+                    : Colors.transparent,
+              ),
               surfaceTintColor: Colors.transparent,
               title: Text(title, maxLines: 1, overflow: TextOverflow.ellipsis),
-              actions: [...actions, const SizedBox(width: Space.xs)],
+              actions: [
+                ...actions,
+                const SizedBox(width: Space.xs),
+              ],
               bottom: bottom,
             ),
             if (subtitle != null)
               SliverToBoxAdapter(
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.md),
-                  child: Text(subtitle!,
-                      style: context.text.bodyMedium?.copyWith(color: context.lux.ink2)),
+                  child: Text(
+                    subtitle!,
+                    style: context.text.bodyMedium?.copyWith(color: context.lux.ink2),
+                  ),
                 ),
               ),
             ...slivers,

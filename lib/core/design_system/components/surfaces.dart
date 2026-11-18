@@ -1,4 +1,3 @@
-import 'dart:math' as math;
 import 'dart:ui' as ui;
 
 import 'package:material_ui/material_ui.dart';
@@ -27,10 +26,12 @@ extension MotionX on BuildContext {
   Duration motion(Duration d) => reduceMotion ? Duration.zero : d;
 }
 
-/// Soft luminous background: a white field with two slowly drifting aurora
-/// glows. Rendered with a single CustomPainter; the animation stops when
-/// reduced motion is on and runs at a very low frequency otherwise.
-class AuroraBackground extends StatefulWidget {
+/// Soft luminous background: a white field with two aurora glows.
+///
+/// Painted once and cached in its own layer. An earlier version animated the
+/// glows every frame, which kept the GPU busy on every screen and forced the
+/// blurred navigation bar to re-blur continuously (jank and battery drain).
+class AuroraBackground extends StatelessWidget {
   const AuroraBackground({
     super.key,
     required this.child,
@@ -42,62 +43,37 @@ class AuroraBackground extends StatefulWidget {
   final double intensity;
 
   @override
-  State<AuroraBackground> createState() => _AuroraBackgroundState();
-}
-
-class _AuroraBackgroundState extends State<AuroraBackground>
-    with SingleTickerProviderStateMixin {
-  late final AnimationController _c =
-      AnimationController(vsync: this, duration: const Duration(seconds: 24));
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    if (context.reduceMotion) {
-      _c.stop();
-    } else if (!_c.isAnimating) {
-      _c.repeat();
-    }
-  }
-
-  @override
-  void dispose() {
-    _c.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     final lux = context.lux;
-    return CustomPaint(
-      painter: _AuroraPainter(
-        animation: _c,
-        a: widget.hue.a,
-        b: widget.hue.b,
-        base: lux.background,
-        strength: (lux.isDark ? 0.28 : 0.16) * widget.intensity,
-      ),
-      child: widget.child,
+    return Stack(
+      fit: StackFit.passthrough,
+      children: [
+        Positioned.fill(
+          child: RepaintBoundary(
+            child: CustomPaint(
+              painter: _AuroraPainter(
+                a: hue.a,
+                b: hue.b,
+                base: lux.background,
+                strength: (lux.isDark ? 0.28 : 0.16) * intensity,
+              ),
+            ),
+          ),
+        ),
+        child,
+      ],
     );
   }
 }
 
 class _AuroraPainter extends CustomPainter {
-  _AuroraPainter({
-    required this.animation,
-    required this.a,
-    required this.b,
-    required this.base,
-    required this.strength,
-  }) : super(repaint: animation);
-  final Animation<double> animation;
+  _AuroraPainter({required this.a, required this.b, required this.base, required this.strength});
   final Color a, b, base;
   final double strength;
 
   @override
   void paint(Canvas canvas, Size size) {
     canvas.drawRect(Offset.zero & size, Paint()..color = base);
-    final t = animation.value * 2 * math.pi;
     void glow(Color c, Offset center, double radius) {
       final shader = ui.Gradient.radial(center, radius, [
         c.withValues(alpha: strength),
@@ -107,10 +83,8 @@ class _AuroraPainter extends CustomPainter {
     }
 
     final w = size.width, h = size.height;
-    glow(a, Offset(w * (0.15 + 0.08 * math.sin(t)), h * (0.06 + 0.03 * math.cos(t))),
-        w * 0.85);
-    glow(b, Offset(w * (0.95 - 0.08 * math.cos(t)), h * (0.22 + 0.04 * math.sin(t))),
-        w * 0.75);
+    glow(a, Offset(w * 0.15, h * 0.08), w * 0.85);
+    glow(b, Offset(w * 0.9, h * 0.22), w * 0.75);
   }
 
   @override
@@ -125,7 +99,7 @@ class GlassPanel extends StatelessWidget {
     required this.child,
     this.radius = Radii.xl,
     this.padding = EdgeInsets.zero,
-    this.blur = 22,
+    this.blur = 14,
   });
   final Widget child;
   final double radius;
@@ -191,26 +165,25 @@ class LuxCard extends StatelessWidget {
     final br = BorderRadius.circular(radius);
     Widget content = Padding(padding: padding, child: child);
     if (accent != null) {
-      content = Stack(children: [
-        content,
-        PositionedDirectional(
-          start: 0,
-          top: 14,
-          bottom: 14,
-          child: Container(
-            width: 3,
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadiusDirectional.horizontal(
-                      end: Radius.circular(3))
-                  .resolve(Directionality.of(context)),
-              color: accent,
-              boxShadow: [
-                BoxShadow(color: accent!.withValues(alpha: 0.5), blurRadius: 8),
-              ],
+      content = Stack(
+        children: [
+          content,
+          PositionedDirectional(
+            start: 0,
+            top: 14,
+            bottom: 14,
+            child: Container(
+              width: 3,
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadiusDirectional.horizontal(end: Radius.circular(3))
+                    .resolve(Directionality.of(context)),
+                color: accent,
+                boxShadow: [BoxShadow(color: accent!.withValues(alpha: 0.5), blurRadius: 8)],
+              ),
             ),
           ),
-        ),
-      ]);
+        ],
+      );
     }
     final decorated = DecoratedBox(
       decoration: BoxDecoration(
@@ -220,12 +193,16 @@ class LuxCard extends StatelessWidget {
         boxShadow: elevated
             ? [
                 BoxShadow(
-                    color: lux.shadow, blurRadius: 24, offset: const Offset(0, 10),
-                    spreadRadius: -12),
+                  color: lux.shadow,
+                  blurRadius: 24,
+                  offset: const Offset(0, 10),
+                  spreadRadius: -12,
+                ),
                 BoxShadow(
-                    color: lux.shadow.withValues(alpha: 0.05),
-                    blurRadius: 2,
-                    offset: const Offset(0, 1)),
+                  color: lux.shadow.withValues(alpha: 0.05),
+                  blurRadius: 2,
+                  offset: const Offset(0, 1),
+                ),
               ]
             : null,
       ),
@@ -240,7 +217,11 @@ class LuxCard extends StatelessWidget {
     );
     if (semanticLabel == null) return decorated;
     return Semantics(
-        label: semanticLabel, button: onTap != null, container: true, child: decorated);
+      label: semanticLabel,
+      button: onTap != null,
+      container: true,
+      child: decorated,
+    );
   }
 }
 
@@ -267,10 +248,11 @@ class AuroraCard extends StatelessWidget {
         gradient: hue.gradient,
         boxShadow: [
           BoxShadow(
-              color: hue.a.withValues(alpha: 0.35),
-              blurRadius: 32,
-              offset: const Offset(0, 16),
-              spreadRadius: -12),
+            color: hue.a.withValues(alpha: 0.35),
+            blurRadius: 32,
+            offset: const Offset(0, 16),
+            spreadRadius: -12,
+          ),
         ],
       ),
       child: Material(
@@ -304,8 +286,7 @@ class _SheenPainter extends CustomPainter {
       ..strokeWidth = 1
       ..color = Colors.white.withValues(alpha: 0.12);
     for (var i = 1; i <= 3; i++) {
-      canvas.drawCircle(
-          Offset(size.width * 1.02, size.height * 1.1), size.height * 0.45 * i, ring);
+      canvas.drawCircle(Offset(size.width * 1.02, size.height * 1.1), size.height * 0.45 * i, ring);
     }
   }
 
@@ -338,10 +319,11 @@ class IconOrb extends StatelessWidget {
         boxShadow: glow
             ? [
                 BoxShadow(
-                    color: hue.a.withValues(alpha: 0.35),
-                    blurRadius: 14,
-                    offset: const Offset(0, 6),
-                    spreadRadius: -4),
+                  color: hue.a.withValues(alpha: 0.35),
+                  blurRadius: 14,
+                  offset: const Offset(0, 6),
+                  spreadRadius: -4,
+                ),
               ]
             : null,
       ),

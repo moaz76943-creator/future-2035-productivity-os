@@ -153,7 +153,9 @@ class _Featured extends StatelessWidget {
       onTap: () => context.push(space.route),
       child: SizedBox(
         // Icon (fixed) + title + caption (scaled with the font size).
-        height: 68 + MediaQuery.textScalerOf(context).scale(44),
+        // Two lines for the title and the caption: long translations
+        // (e.g. Arabic "البطاقات التعليمية") were cut with an ellipsis.
+        height: 64 + MediaQuery.textScalerOf(context).scale(84),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -161,14 +163,14 @@ class _Featured extends StatelessWidget {
             const Spacer(),
             Text(
               space.label,
-              maxLines: 1,
+              maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: context.text.titleMedium?.copyWith(color: Colors.white),
+              style: context.text.titleMedium?.copyWith(color: Colors.white, height: 1.2),
             ),
             if (space.caption != null)
               Text(
                 space.caption!,
-                maxLines: 1,
+                maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: context.text.labelMedium?.copyWith(
                   color: Colors.white.withValues(alpha: 0.9),
