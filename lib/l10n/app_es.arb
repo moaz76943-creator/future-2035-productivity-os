@@ -1019,5 +1019,13 @@
   "importIgnoreColumn": "Ignorar",
   "importColumn": "Columna {n}",
   "importPreviewSummary": "{ready} tarjetas listas · se omitirán {invalid} filas incompletas",
-  "importNeedFrontBack": "Elige qué columnas son el anverso y el reverso."
+  "importNeedFrontBack": "Elige qué columnas son el anverso y el reverso.",
+  "actionMoveUp": "Subir",
+  "actionMoveDown": "Bajar",
+  "flashcardsLayoutTitle": "Diseño de la tarjeta",
+  "flashcardsLayoutHint": "Renombra, oculta o reordena los campos extra de este mazo. El contenido nunca cambia.",
+  "flashcardsLayoutShow": "Mostrar {field} al estudiar",
+  "flashcardsLayoutStepReveal": "Mostrar la respuesta paso a paso",
+  "flashcardsLayoutStepRevealHint": "Primero el reverso; cada campo extra se abre con un toque.",
+  "flashcardsRevealNext": "Mostrar {field}"
 }

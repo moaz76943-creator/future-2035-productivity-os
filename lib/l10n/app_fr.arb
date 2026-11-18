@@ -1019,5 +1019,13 @@
   "importIgnoreColumn": "Ignorer",
   "importColumn": "Colonne {n}",
   "importPreviewSummary": "{ready} cartes prêtes · {invalid} lignes incomplètes ignorées",
-  "importNeedFrontBack": "Choisissez les colonnes du recto et du verso."
+  "importNeedFrontBack": "Choisissez les colonnes du recto et du verso.",
+  "actionMoveUp": "Monter",
+  "actionMoveDown": "Descendre",
+  "flashcardsLayoutTitle": "Mise en page de la carte",
+  "flashcardsLayoutHint": "Renommez, masquez ou réordonnez les champs de ce paquet. Le contenu n’est jamais modifié.",
+  "flashcardsLayoutShow": "Afficher {field} pendant l’étude",
+  "flashcardsLayoutStepReveal": "Révéler la réponse étape par étape",
+  "flashcardsLayoutStepRevealHint": "Le verso d’abord ; chaque champ s’ouvre d’un toucher.",
+  "flashcardsRevealNext": "Afficher {field}"
 }

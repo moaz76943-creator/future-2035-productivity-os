@@ -6227,6 +6227,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Choose which columns are the front and the back.'**
   String get importNeedFrontBack;
+
+  /// actionMoveUp
+  ///
+  /// In en, this message translates to:
+  /// **'Move up'**
+  String get actionMoveUp;
+
+  /// actionMoveDown
+  ///
+  /// In en, this message translates to:
+  /// **'Move down'**
+  String get actionMoveDown;
+
+  /// flashcardsLayoutTitle
+  ///
+  /// In en, this message translates to:
+  /// **'Card layout'**
+  String get flashcardsLayoutTitle;
+
+  /// flashcardsLayoutHint
+  ///
+  /// In en, this message translates to:
+  /// **'Rename, hide or reorder the extra fields for this deck. Card content is never changed.'**
+  String get flashcardsLayoutHint;
+
+  /// Checkbox
+  ///
+  /// In en, this message translates to:
+  /// **'Show {field} while studying'**
+  String flashcardsLayoutShow(String field);
+
+  /// flashcardsLayoutStepReveal
+  ///
+  /// In en, this message translates to:
+  /// **'Reveal the answer step by step'**
+  String get flashcardsLayoutStepReveal;
+
+  /// flashcardsLayoutStepRevealHint
+  ///
+  /// In en, this message translates to:
+  /// **'The back appears first; each extra field opens with a tap.'**
+  String get flashcardsLayoutStepRevealHint;
+
+  /// Step reveal
+  ///
+  /// In en, this message translates to:
+  /// **'Show {field}'**
+  String flashcardsRevealNext(String field);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

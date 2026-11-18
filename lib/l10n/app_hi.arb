@@ -1019,5 +1019,13 @@
   "importIgnoreColumn": "अनदेखा करें",
   "importColumn": "कॉलम {n}",
   "importPreviewSummary": "{ready} कार्ड तैयार · {invalid} अधूरी पंक्तियाँ छोड़ी जाएँगी",
-  "importNeedFrontBack": "चुनें कि कौन से कॉलम सामने और पीछे हैं।"
+  "importNeedFrontBack": "चुनें कि कौन से कॉलम सामने और पीछे हैं।",
+  "actionMoveUp": "ऊपर ले जाएँ",
+  "actionMoveDown": "नीचे ले जाएँ",
+  "flashcardsLayoutTitle": "कार्ड लेआउट",
+  "flashcardsLayoutHint": "इस डेक के अतिरिक्त फ़ील्ड का नाम बदलें, छिपाएँ या क्रम बदलें। सामग्री कभी नहीं बदलती।",
+  "flashcardsLayoutShow": "पढ़ते समय {field} दिखाएँ",
+  "flashcardsLayoutStepReveal": "उत्तर क्रम से दिखाएँ",
+  "flashcardsLayoutStepRevealHint": "पहले पिछला भाग; हर अतिरिक्त फ़ील्ड टैप से खुलता है।",
+  "flashcardsRevealNext": "{field} दिखाएँ"
 }

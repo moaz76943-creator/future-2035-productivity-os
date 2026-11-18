@@ -18,6 +18,7 @@ import '../../settings/application/settings_providers.dart';
 import '../application/flashcards_providers.dart';
 import '../data/flashcards_repository.dart' show PracticeFilter;
 import '../domain/card_extras.dart';
+import '../domain/card_layout.dart';
 import '../domain/srs_scheduler.dart';
 import '../domain/study.dart';
 import 'widgets/card_form_sheet.dart' show cardFieldLabel, showCardForm;
@@ -73,6 +74,9 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
   bool _flipped = false;
   bool _busy = false;
   bool _questionShown = false;
+
+  /// Optional fields revealed so far when the deck reveals them step by step.
+  int _revealed = 0;
   AnswerMatch? _match;
   String? _picked;
   List<String>? _options;
@@ -165,6 +169,7 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
     final card = _currentCard;
     if (card == null) return;
     _typed.clear();
+    _revealed = 0;
     _match = null;
     _picked = null;
     _questionShown = _mode != StudyMode.listening;
@@ -395,6 +400,7 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
 
     final card = queue[_index];
     final question = _question(card);
+    final layout = ref.watch(cardLayoutProvider(widget.deckId)).value ?? const CardLayout();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -432,6 +438,9 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
               onRevealFront: () => setState(() => _questionShown = true),
               verdict: _match,
               onSpeakField: _speakField,
+              layout: layout,
+              revealed: layout.stepReveal ? _revealed : 1 << 30,
+              onRevealMore: layout.stepReveal ? () => setState(() => _revealed++) : null,
               // Answer modes flip only by answering.
               onFlip: _mode == StudyMode.typed || _mode == StudyMode.choice
                   ? null
@@ -712,7 +721,22 @@ class _FlipCard extends StatelessWidget {
     this.onRevealFront,
     this.verdict,
     this.onSpeakField,
+    this.layout = const CardLayout(),
+    this.revealed = 1 << 30,
+    this.onRevealMore,
   });
+
+  /// Deck layout: order, names and visibility of the optional fields.
+  final CardLayout layout;
+
+  /// How many optional fields are shown (step-by-step reveal).
+  final int revealed;
+  final VoidCallback? onRevealMore;
+
+  List<CardField> get _fields => [
+    for (final f in layout.visible)
+      if (extras[f] != null) f,
+  ];
 
   /// Speaks one optional field (example, explanation…) on its own.
   final void Function(CardField field, String text)? onSpeakField;
@@ -762,6 +786,8 @@ class _FlipCard extends StatelessWidget {
   Widget _face(BuildContext context, {required bool showBack}) {
     final lux = context.lux;
     final l10n = context.l10n;
+    String label(CardField f) => layout.labelOf(f) ?? cardFieldLabel(l10n, f);
+    final shownFields = revealed.clamp(0, _fields.length);
     return LuxCard(
       key: ValueKey(showBack),
       radius: Radii.xl,
@@ -783,11 +809,11 @@ class _FlipCard extends StatelessWidget {
                   child: Divider(color: lux.hairline),
                 ),
                 Text(back, textAlign: TextAlign.center, style: context.text.headlineSmall),
-                for (final f in CardField.values)
-                  if (extras[f] case final value?) ...[
+                for (final (i, f) in _fields.indexed)
+                  if (i < shownFields) ...[
                     const SizedBox(height: Space.md),
                     Text(
-                      cardFieldLabel(l10n, f),
+                      label(f),
                       textAlign: TextAlign.center,
                       style: context.text.labelMedium?.copyWith(color: lux.ink3),
                     ),
@@ -797,7 +823,7 @@ class _FlipCard extends StatelessWidget {
                       children: [
                         Flexible(
                           child: Text(
-                            value,
+                            extras[f]!,
                             textAlign: TextAlign.center,
                             style: context.text.bodyLarge,
                           ),
@@ -805,13 +831,23 @@ class _FlipCard extends StatelessWidget {
                         if (onSpeakField != null)
                           IconButton(
                             key: Key('speakField_${f.name}'),
-                            tooltip: l10n.flashcardsSpeakField(cardFieldLabel(l10n, f)),
-                            onPressed: () => onSpeakField!(f, value),
+                            tooltip: l10n.flashcardsSpeakField(label(f)),
+                            onPressed: () => onSpeakField!(f, extras[f]!),
                             icon: const Icon(Icons.volume_up_outlined, size: 20),
                           ),
                       ],
                     ),
                   ],
+                if (shownFields < _fields.length && onRevealMore != null)
+                  Padding(
+                    padding: const EdgeInsets.only(top: Space.md),
+                    child: TextButton.icon(
+                      key: const Key('revealNextField'),
+                      onPressed: onRevealMore,
+                      icon: const Icon(Icons.expand_more_rounded),
+                      label: Text(l10n.flashcardsRevealNext(label(_fields[shownFields]))),
+                    ),
+                  ),
               ] else if (hideFront) ...[
                 Icon(Icons.hearing_rounded, size: 48, color: _hue.a),
                 const SizedBox(height: Space.md),
@@ -884,7 +920,7 @@ class _FlipCard extends StatelessWidget {
                 },
               l10n.flashcardsAnswerA11y(back),
               for (final f in CardField.values)
-                if (extras[f] case final v?) '${cardFieldLabel(l10n, f)}: $v',
+                if (extras[f] case final v?) '${layout.labelOf(f) ?? cardFieldLabel(l10n, f)}: $v',
             ].join('. ')
           : l10n.flashcardsQuestionA11y(front),
       hint: onFlip == null ? null : (flipped ? l10n.flashcardsShowQuestion : l10n.reviewTapToFlip),

@@ -1019,5 +1019,13 @@
   "importIgnoreColumn": "تجاهل",
   "importColumn": "العمود {n}",
   "importPreviewSummary": "{ready} بطاقة جاهزة · سيتم تخطّي {invalid} صفوف ناقصة",
-  "importNeedFrontBack": "اختر أي عمود هو الوجه الأمامي وأيها الخلفي."
+  "importNeedFrontBack": "اختر أي عمود هو الوجه الأمامي وأيها الخلفي.",
+  "actionMoveUp": "تحريك لأعلى",
+  "actionMoveDown": "تحريك لأسفل",
+  "flashcardsLayoutTitle": "تصميم البطاقة",
+  "flashcardsLayoutHint": "أعد تسمية الحقول الإضافية لهذه المجموعة أو أخفِها أو غيّر ترتيبها. محتوى البطاقات لا يتغيّر أبدًا.",
+  "flashcardsLayoutShow": "إظهار {field} أثناء الدراسة",
+  "flashcardsLayoutStepReveal": "إظهار الإجابة تدريجيًا",
+  "flashcardsLayoutStepRevealHint": "يظهر الوجه الخلفي أولًا، ثم يُفتح كل حقل إضافي بلمسة.",
+  "flashcardsRevealNext": "إظهار {field}"
 }

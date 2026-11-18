@@ -1019,5 +1019,13 @@
   "importIgnoreColumn": "Ignorar",
   "importColumn": "Coluna {n}",
   "importPreviewSummary": "{ready} cartões prontos · {invalid} linhas incompletas serão ignoradas",
-  "importNeedFrontBack": "Escolha quais colunas são a frente e o verso."
+  "importNeedFrontBack": "Escolha quais colunas são a frente e o verso.",
+  "actionMoveUp": "Mover para cima",
+  "actionMoveDown": "Mover para baixo",
+  "flashcardsLayoutTitle": "Layout do cartão",
+  "flashcardsLayoutHint": "Renomeie, oculte ou reordene os campos extras deste baralho. O conteúdo nunca muda.",
+  "flashcardsLayoutShow": "Mostrar {field} ao estudar",
+  "flashcardsLayoutStepReveal": "Revelar a resposta passo a passo",
+  "flashcardsLayoutStepRevealHint": "Primeiro o verso; cada campo extra abre com um toque.",
+  "flashcardsRevealNext": "Mostrar {field}"
 }

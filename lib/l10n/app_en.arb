@@ -4974,5 +4974,47 @@
   "importNeedFrontBack": "Choose which columns are the front and the back.",
   "@importNeedFrontBack": {
     "description": "importNeedFrontBack"
+  },
+  "actionMoveUp": "Move up",
+  "@actionMoveUp": {
+    "description": "actionMoveUp"
+  },
+  "actionMoveDown": "Move down",
+  "@actionMoveDown": {
+    "description": "actionMoveDown"
+  },
+  "flashcardsLayoutTitle": "Card layout",
+  "@flashcardsLayoutTitle": {
+    "description": "flashcardsLayoutTitle"
+  },
+  "flashcardsLayoutHint": "Rename, hide or reorder the extra fields for this deck. Card content is never changed.",
+  "@flashcardsLayoutHint": {
+    "description": "flashcardsLayoutHint"
+  },
+  "flashcardsLayoutShow": "Show {field} while studying",
+  "@flashcardsLayoutShow": {
+    "description": "Checkbox",
+    "placeholders": {
+      "field": {
+        "type": "String"
+      }
+    }
+  },
+  "flashcardsLayoutStepReveal": "Reveal the answer step by step",
+  "@flashcardsLayoutStepReveal": {
+    "description": "flashcardsLayoutStepReveal"
+  },
+  "flashcardsLayoutStepRevealHint": "The back appears first; each extra field opens with a tap.",
+  "@flashcardsLayoutStepRevealHint": {
+    "description": "flashcardsLayoutStepRevealHint"
+  },
+  "flashcardsRevealNext": "Show {field}",
+  "@flashcardsRevealNext": {
+    "description": "Step reveal",
+    "placeholders": {
+      "field": {
+        "type": "String"
+      }
+    }
   }
 }

@@ -3532,4 +3532,32 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get importNeedFrontBack => '请选择正面和背面对应的列。';
+
+  @override
+  String get actionMoveUp => '上移';
+
+  @override
+  String get actionMoveDown => '下移';
+
+  @override
+  String get flashcardsLayoutTitle => '卡片布局';
+
+  @override
+  String get flashcardsLayoutHint => '重命名、隐藏或调整本卡组附加字段的顺序，卡片内容不会改变。';
+
+  @override
+  String flashcardsLayoutShow(String field) {
+    return '学习时显示$field';
+  }
+
+  @override
+  String get flashcardsLayoutStepReveal => '逐步显示答案';
+
+  @override
+  String get flashcardsLayoutStepRevealHint => '先显示背面，点按逐个展开附加字段。';
+
+  @override
+  String flashcardsRevealNext(String field) {
+    return '显示$field';
+  }
 }

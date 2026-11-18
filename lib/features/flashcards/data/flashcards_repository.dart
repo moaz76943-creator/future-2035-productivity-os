@@ -10,6 +10,7 @@ import '../../../core/time/clock.dart';
 import '../domain/card_extras.dart';
 import '../domain/study.dart';
 import '../domain/card_import.dart';
+import '../domain/card_layout.dart';
 import '../domain/srs_scheduler.dart';
 
 class DeckStats {
@@ -519,6 +520,19 @@ class FlashcardsRepository {
 
   /// A card the user struggles with: high FSRS difficulty or repeated lapses.
   static bool isHard(CardRow c) => c.difficulty >= 7 || c.lapses >= 3;
+
+  // ---- card layout ---------------------------------------------------------
+
+  static String _layoutKey(String deckId) => 'deck.layout.$deckId';
+
+  Stream<CardLayout> watchLayout(String deckId) =>
+      _db.watchValue(_layoutKey(deckId)).map(CardLayout.decode);
+
+  Future<CardLayout> layout(String deckId) async =>
+      CardLayout.decode(await _db.readValue(_layoutKey(deckId)));
+
+  Future<void> saveLayout(String deckId, CardLayout layout) =>
+      _db.writeValue(_layoutKey(deckId), layout.encode());
 
   // ---- statistics ----------------------------------------------------------
 

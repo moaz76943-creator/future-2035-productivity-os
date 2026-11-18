@@ -3712,4 +3712,34 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get importNeedFrontBack => 'चुनें कि कौन से कॉलम सामने और पीछे हैं।';
+
+  @override
+  String get actionMoveUp => 'ऊपर ले जाएँ';
+
+  @override
+  String get actionMoveDown => 'नीचे ले जाएँ';
+
+  @override
+  String get flashcardsLayoutTitle => 'कार्ड लेआउट';
+
+  @override
+  String get flashcardsLayoutHint =>
+      'इस डेक के अतिरिक्त फ़ील्ड का नाम बदलें, छिपाएँ या क्रम बदलें। सामग्री कभी नहीं बदलती।';
+
+  @override
+  String flashcardsLayoutShow(String field) {
+    return 'पढ़ते समय $field दिखाएँ';
+  }
+
+  @override
+  String get flashcardsLayoutStepReveal => 'उत्तर क्रम से दिखाएँ';
+
+  @override
+  String get flashcardsLayoutStepRevealHint =>
+      'पहले पिछला भाग; हर अतिरिक्त फ़ील्ड टैप से खुलता है।';
+
+  @override
+  String flashcardsRevealNext(String field) {
+    return '$field दिखाएँ';
+  }
 }

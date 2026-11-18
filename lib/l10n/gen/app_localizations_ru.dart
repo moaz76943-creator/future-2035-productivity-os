@@ -3827,4 +3827,33 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get importNeedFrontBack => 'Выберите столбцы для лицевой и оборотной стороны.';
+
+  @override
+  String get actionMoveUp => 'Выше';
+
+  @override
+  String get actionMoveDown => 'Ниже';
+
+  @override
+  String get flashcardsLayoutTitle => 'Вид карточки';
+
+  @override
+  String get flashcardsLayoutHint =>
+      'Переименуйте, скройте или упорядочьте поля этой колоды. Содержимое карточек не меняется.';
+
+  @override
+  String flashcardsLayoutShow(String field) {
+    return 'Показывать «$field» при занятиях';
+  }
+
+  @override
+  String get flashcardsLayoutStepReveal => 'Открывать ответ по шагам';
+
+  @override
+  String get flashcardsLayoutStepRevealHint => 'Сначала оборот, затем каждое поле по нажатию.';
+
+  @override
+  String flashcardsRevealNext(String field) {
+    return 'Показать: $field';
+  }
 }

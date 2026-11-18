@@ -3726,4 +3726,34 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get importNeedFrontBack => 'Choisissez les colonnes du recto et du verso.';
+
+  @override
+  String get actionMoveUp => 'Monter';
+
+  @override
+  String get actionMoveDown => 'Descendre';
+
+  @override
+  String get flashcardsLayoutTitle => 'Mise en page de la carte';
+
+  @override
+  String get flashcardsLayoutHint =>
+      'Renommez, masquez ou réordonnez les champs de ce paquet. Le contenu n’est jamais modifié.';
+
+  @override
+  String flashcardsLayoutShow(String field) {
+    return 'Afficher $field pendant l’étude';
+  }
+
+  @override
+  String get flashcardsLayoutStepReveal => 'Révéler la réponse étape par étape';
+
+  @override
+  String get flashcardsLayoutStepRevealHint =>
+      'Le verso d’abord ; chaque champ s’ouvre d’un toucher.';
+
+  @override
+  String flashcardsRevealNext(String field) {
+    return 'Afficher $field';
+  }
 }

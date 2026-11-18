@@ -1019,5 +1019,13 @@
   "importIgnoreColumn": "忽略",
   "importColumn": "第 {n} 列",
   "importPreviewSummary": "{ready} 张卡片就绪 · 将跳过 {invalid} 行不完整数据",
-  "importNeedFrontBack": "请选择正面和背面对应的列。"
+  "importNeedFrontBack": "请选择正面和背面对应的列。",
+  "actionMoveUp": "上移",
+  "actionMoveDown": "下移",
+  "flashcardsLayoutTitle": "卡片布局",
+  "flashcardsLayoutHint": "重命名、隐藏或调整本卡组附加字段的顺序，卡片内容不会改变。",
+  "flashcardsLayoutShow": "学习时显示{field}",
+  "flashcardsLayoutStepReveal": "逐步显示答案",
+  "flashcardsLayoutStepRevealHint": "先显示背面，点按逐个展开附加字段。",
+  "flashcardsRevealNext": "显示{field}"
 }

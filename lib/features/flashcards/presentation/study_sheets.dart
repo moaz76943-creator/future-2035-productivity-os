@@ -14,7 +14,10 @@ import '../../../core/speech/tts_service.dart';
 import '../../settings/application/settings_providers.dart';
 import '../application/flashcards_providers.dart';
 import '../domain/study.dart';
+import '../domain/card_extras.dart';
+import '../domain/card_layout.dart';
 import 'review_screen.dart' show studyModeLabel;
+import 'widgets/card_form_sheet.dart' show cardFieldLabel;
 
 IconData studyModeIcon(StudyMode m) => switch (m) {
   StudyMode.classic => Icons.style_rounded,
@@ -418,6 +421,149 @@ class _SpeechSheetState extends ConsumerState<_SpeechSheet> {
             onChanged: (v) => unawaited(ctrl.update((c) => c.copyWith(flashAutoSpeak: v))),
           ),
           Text(l10n.speechHint, style: context.text.bodySmall?.copyWith(color: context.lux.ink2)),
+        ],
+      ),
+    );
+  }
+}
+
+/// Card layout for one deck: rename, hide and reorder the optional fields,
+/// and reveal them one at a time on the answer side. Content is never changed.
+Future<void> showLayoutSheet(BuildContext context, DeckRow deck) => showModalBottomSheet<void>(
+  context: context,
+  isScrollControlled: true,
+  useSafeArea: true,
+  showDragHandle: true,
+  builder: (_) => _LayoutSheet(deck: deck),
+);
+
+class _LayoutSheet extends ConsumerStatefulWidget {
+  const _LayoutSheet({required this.deck});
+  final DeckRow deck;
+
+  @override
+  ConsumerState<_LayoutSheet> createState() => _LayoutSheetState();
+}
+
+class _LayoutSheetState extends ConsumerState<_LayoutSheet> {
+  CardLayout? _layout;
+  final Map<CardField, TextEditingController> _names = {};
+
+  @override
+  void initState() {
+    super.initState();
+    unawaited(
+      ref.read(flashcardsRepositoryProvider).layout(widget.deck.id).then((l) {
+        if (!mounted) return;
+        setState(() {
+          _layout = l;
+          for (final f in CardField.values) {
+            _names[f] = TextEditingController(text: l.labels[f] ?? '');
+          }
+        });
+      }),
+    );
+  }
+
+  @override
+  void dispose() {
+    for (final c in _names.values) {
+      c.dispose();
+    }
+    super.dispose();
+  }
+
+  void _save(CardLayout next) {
+    setState(() => _layout = next);
+    unawaited(ref.read(flashcardsRepositoryProvider).saveLayout(widget.deck.id, next));
+  }
+
+  void _move(CardField f, int delta) {
+    final l = _layout!;
+    final order = [...l.order];
+    final i = order.indexOf(f);
+    final j = i + delta;
+    if (j < 0 || j >= order.length) return;
+    order
+      ..removeAt(i)
+      ..insert(j, f);
+    _save(l.copyWith(order: order));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final l = _layout;
+    if (l == null) return const SizedBox(height: 200);
+    return SingleChildScrollView(
+      padding: EdgeInsets.fromLTRB(
+        Space.page,
+        0,
+        Space.page,
+        Space.lg + MediaQuery.viewInsetsOf(context).bottom,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Semantics(
+            header: true,
+            child: Text(l10n.flashcardsLayoutTitle, style: context.text.titleLarge),
+          ),
+          const SizedBox(height: Space.xs),
+          Text(
+            l10n.flashcardsLayoutHint,
+            style: context.text.bodySmall?.copyWith(color: context.lux.ink2),
+          ),
+          const SizedBox(height: Space.md),
+          for (final (i, f) in l.order.indexed)
+            Padding(
+              padding: const EdgeInsets.only(bottom: Space.sm),
+              child: Row(
+                children: [
+                  Checkbox(
+                    key: Key('layoutShow_${f.name}'),
+                    value: !l.hidden.contains(f),
+                    semanticLabel: l10n.flashcardsLayoutShow(cardFieldLabel(l10n, f)),
+                    onChanged: (v) => _save(
+                      l.copyWith(hidden: v == true ? ({...l.hidden}..remove(f)) : {...l.hidden, f}),
+                    ),
+                  ),
+                  Expanded(
+                    child: TextField(
+                      key: Key('layoutName_${f.name}'),
+                      controller: _names[f],
+                      maxLength: CardLayout.maxLabel,
+                      buildCounter: (_, {required currentLength, required isFocused, maxLength}) =>
+                          null,
+                      decoration: InputDecoration(
+                        labelText: cardFieldLabel(l10n, f),
+                        hintText: cardFieldLabel(l10n, f),
+                        isDense: true,
+                      ),
+                      onChanged: (v) => _save(l.copyWith(labels: {...l.labels, f: v})),
+                    ),
+                  ),
+                  IconButton(
+                    tooltip: l10n.actionMoveUp,
+                    onPressed: i == 0 ? null : () => _move(f, -1),
+                    icon: const Icon(Icons.arrow_upward_rounded),
+                  ),
+                  IconButton(
+                    tooltip: l10n.actionMoveDown,
+                    onPressed: i == l.order.length - 1 ? null : () => _move(f, 1),
+                    icon: const Icon(Icons.arrow_downward_rounded),
+                  ),
+                ],
+              ),
+            ),
+          SwitchListTile(
+            key: const Key('layoutStepReveal'),
+            contentPadding: EdgeInsets.zero,
+            title: Text(l10n.flashcardsLayoutStepReveal),
+            subtitle: Text(l10n.flashcardsLayoutStepRevealHint),
+            value: l.stepReveal,
+            onChanged: (v) => _save(l.copyWith(stepReveal: v)),
+          ),
         ],
       ),
     );

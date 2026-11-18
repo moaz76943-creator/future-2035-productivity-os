@@ -30,7 +30,7 @@ import 'widgets/deck_form_sheet.dart';
 
 const _hue = ModuleHue.flashcards;
 
-enum _DeckMenu { edit, stats, speech, exportCsv, delete }
+enum _DeckMenu { edit, stats, layout, speech, exportCsv, delete }
 
 /// Card list filters.
 enum _CardFilter { all, newCards, due, hard, favorites, suspended }
@@ -370,6 +370,7 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
               onSelected: (m) => switch (m) {
                 _DeckMenu.edit => _editDeck(deck),
                 _DeckMenu.stats => context.push(Routes.deckStats(deck.id)),
+                _DeckMenu.layout => showLayoutSheet(context, deck),
                 _DeckMenu.speech => showSpeechSheet(context, deck),
                 _DeckMenu.exportCsv => _exportCsv(deck),
                 _DeckMenu.delete => _deleteDeck(deck),
@@ -377,6 +378,7 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
               itemBuilder: (_) => [
                 PopupMenuItem(value: _DeckMenu.edit, child: Text(l10n.deckEdit)),
                 PopupMenuItem(value: _DeckMenu.stats, child: Text(l10n.flashcardsStats)),
+                PopupMenuItem(value: _DeckMenu.layout, child: Text(l10n.flashcardsLayoutTitle)),
                 PopupMenuItem(value: _DeckMenu.speech, child: Text(l10n.speechTitle)),
                 PopupMenuItem(value: _DeckMenu.exportCsv, child: Text(l10n.flashcardsExportCsv)),
                 PopupMenuItem(value: _DeckMenu.delete, child: Text(l10n.flashcardsDeleteDeck)),

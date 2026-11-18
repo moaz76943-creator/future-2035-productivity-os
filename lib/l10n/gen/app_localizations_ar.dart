@@ -3870,4 +3870,34 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get importNeedFrontBack => 'اختر أي عمود هو الوجه الأمامي وأيها الخلفي.';
+
+  @override
+  String get actionMoveUp => 'تحريك لأعلى';
+
+  @override
+  String get actionMoveDown => 'تحريك لأسفل';
+
+  @override
+  String get flashcardsLayoutTitle => 'تصميم البطاقة';
+
+  @override
+  String get flashcardsLayoutHint =>
+      'أعد تسمية الحقول الإضافية لهذه المجموعة أو أخفِها أو غيّر ترتيبها. محتوى البطاقات لا يتغيّر أبدًا.';
+
+  @override
+  String flashcardsLayoutShow(String field) {
+    return 'إظهار $field أثناء الدراسة';
+  }
+
+  @override
+  String get flashcardsLayoutStepReveal => 'إظهار الإجابة تدريجيًا';
+
+  @override
+  String get flashcardsLayoutStepRevealHint =>
+      'يظهر الوجه الخلفي أولًا، ثم يُفتح كل حقل إضافي بلمسة.';
+
+  @override
+  String flashcardsRevealNext(String field) {
+    return 'إظهار $field';
+  }
 }

@@ -3722,4 +3722,34 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get importNeedFrontBack => 'Escolha quais colunas são a frente e o verso.';
+
+  @override
+  String get actionMoveUp => 'Mover para cima';
+
+  @override
+  String get actionMoveDown => 'Mover para baixo';
+
+  @override
+  String get flashcardsLayoutTitle => 'Layout do cartão';
+
+  @override
+  String get flashcardsLayoutHint =>
+      'Renomeie, oculte ou reordene os campos extras deste baralho. O conteúdo nunca muda.';
+
+  @override
+  String flashcardsLayoutShow(String field) {
+    return 'Mostrar $field ao estudar';
+  }
+
+  @override
+  String get flashcardsLayoutStepReveal => 'Revelar a resposta passo a passo';
+
+  @override
+  String get flashcardsLayoutStepRevealHint =>
+      'Primeiro o verso; cada campo extra abre com um toque.';
+
+  @override
+  String flashcardsRevealNext(String field) {
+    return 'Mostrar $field';
+  }
 }
