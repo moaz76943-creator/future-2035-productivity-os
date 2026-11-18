@@ -1,4 +1,4 @@
-name: FUTURE 2035 Sequential 9-Key Cloud Relay
+name: FUTURE 2035 Hydrogen & 3.8-Flash 9-Key Cloud Relay
 
 on:
   workflow_dispatch:
@@ -43,7 +43,7 @@ jobs:
           curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash -s -- --non-interactive --skip-browser --skip-computer-use
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
-      - name: Run Sequential 9-Key Gemini & Multi-Provider Cycle
+      - name: Run Ranked Hydrogen & 3.8-Flash 9-Key Cycle
         if: always()
         env:
           GOOGLE_KEYS_LIST: ${{ secrets.GOOGLE_KEYS_LIST }}
@@ -51,44 +51,33 @@ jobs:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
         run: |
           printf '%s\n' "$GOOGLE_KEYS_LIST" > /tmp/keys.list
-          KEY_COUNT=$(grep -c '[^[:space:]]' /tmp/keys.list || true)
-          echo "Loaded $KEY_COUNT Gemini keys for sequential rotation."
-
-          PROMPT="Read docs/MASTER_DIRECTIVE_V1.md and state/future2035_phases.json. CRITICAL: If current_phase is PHASE_0_DISCOVERY, perform a thorough read-only audit of the existing repository (branches, pubspec, Gradle, Drift, Riverpod, GoRouter, UI, tests, CI) and write state/PHASE_0_AUDIT.md WITHOUT rewriting the app. Then advance incrementally one phase at a time: preserve all working code, fix root causes, ensure zero dead buttons, enforce White Luxury UI + Western digits (0-9) + RTL/LTR, run flutter analyze and flutter test, update state/future2035_phases.json and REPORT.md, and commit cleanly to main."
-
+          PROMPT="Read docs/MASTER_DIRECTIVE_V1.md and state/future2035_phases.json. STRICT RULES: (1) If current_phase is PHASE_0_DISCOVERY, perform a full read-only audit of the existing repository (branches, Flutter/Dart/AGP/Gradle/Kotlin versions, Drift/Riverpod/GoRouter, UI, tests, and CI) and write state/PHASE_0_AUDIT.md WITHOUT rewriting existing working code. (2) Advance only ONE phase per hop. Never skip or fake features. Every visible button must have a real handler and widget test. (3) Enforce White Luxury UI, responsive multi-width tests (320, 360, 412, 600, 840, 1024), Arabic RTL + Western digits (0-9). (4) Before marking any phase COMPLETED, flutter analyze, flutter test, and flutter build apk --debug MUST actually pass. Update state/future2035_phases.json and REPORT.md with real evidence."
           DONE=0
-          # 1. Sequential rotation across all 9 Gemini API keys
-          for MODEL in "gemini-2.5-flash" "gemini-3.5-flash-lite"; do
+
+          for MODEL in "gemini-4-hydrogen" "gemini-3.8-flash" "gemini-3.6-flash"; do
             IDX=0
             while IFS= read -r K; do
               [ -n "$K" ] || continue
               IDX=$((IDX + 1))
-              echo "Trying Gemini key #$IDX with $MODEL..."
+              echo "Trying Gemini key #$IDX with model $MODEL..."
               if GEMINI_API_KEY="$K" GOOGLE_API_KEY="$K" timeout 240m hermes chat --cli --yolo --oneshot --provider gemini -m "$MODEL" -q "$PROMPT"; then
                 DONE=1
                 break 2
               fi
-              sleep 3
+              sleep 2
             done < /tmp/keys.list
           done
 
-          # 2. Fallback to OpenRouter free pool if all 9 Gemini keys hit quota
           if [ "$DONE" -eq 0 ] && [ -n "${OPENROUTER_API_KEY:-}" ]; then
-            echo "All 9 Gemini keys exhausted; falling back to OpenRouter..."
-            if timeout 240m hermes chat --cli --yolo --oneshot -m "openrouter/free" -q "$PROMPT"; then
-              DONE=1
-            fi
+            timeout 240m hermes chat --cli --yolo --oneshot -m "openrouter/free" -q "$PROMPT" && DONE=1 || true
           fi
 
-          # 3. Fallback to NVIDIA NIM
           if [ "$DONE" -eq 0 ] && [ -n "${NVIDIA_API_KEY:-}" ]; then
-            echo "Falling back to NVIDIA NIM..."
             timeout 240m hermes chat --cli --yolo --oneshot --provider nvidia -m "nvidia/nemotron-3-ultra-550b-a55b" -q "$PROMPT" || true
           fi
-
           rm -f /tmp/keys.list
 
-      - name: Commit & Push Progress + Trigger Next Relay Hop
+      - name: Commit & Push + Trigger Next Hop
         if: always()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
