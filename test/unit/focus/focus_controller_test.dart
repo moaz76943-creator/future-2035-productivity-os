@@ -10,6 +10,7 @@ import 'package:future_os/features/notifications/application/notification_provid
 import 'package:future_os/features/notifications/domain/notification_ids.dart';
 import 'package:future_os/features/settings/application/settings_providers.dart';
 import 'package:future_os/features/settings/data/settings_repository.dart';
+import 'package:future_os/features/tasks/data/tasks_repository.dart';
 import 'package:future_os/l10n/gen/app_localizations.dart';
 import 'package:material_ui/material_ui.dart' show Locale;
 
@@ -253,6 +254,72 @@ void main() {
     final s = c.read(focusControllerProvider);
     expect(s.ready, isTrue);
     expect(s.active, isNull);
+    c.dispose();
+  });
+
+  test('a fully automatic limited series runs while away and ends with a notice', () async {
+    const settings = AppSettings(
+      workMinutes: 10,
+      shortBreakMinutes: 2,
+      sessionRounds: 3,
+      autoStartBreaks: true,
+      autoStartFocus: true,
+    );
+    var c = await launch(settings: settings);
+    await c.read(focusControllerProvider.notifier).start(mode: FocusMode.pomodoro);
+    c.dispose();
+
+    // 3 x 10 min focus + 2 x 2 min breaks = 34 min; the last break is skipped.
+    env.clock.advance(const Duration(minutes: 40));
+    c = await launch(settings: settings);
+    final s = c.read(focusControllerProvider);
+    expect(s.active, isNull);
+    expect(s.pending, isNull);
+    expect(s.notice, FocusNotice.seriesComplete);
+    final sessions = await env.db.select(env.db.focusSessions).get();
+    expect(sessions.where((r) => r.phase == 'work'), hasLength(3));
+    expect(sessions, hasLength(5));
+    expect(notifications.scheduled, isNot(contains(NotificationIds.focus)));
+    c.dispose();
+  });
+
+  test('auto-start focus resumes the series after a break with the linked task', () async {
+    const settings = AppSettings(autoStartFocus: true);
+    final c = await launch(settings: settings);
+    final ctrl = c.read(focusControllerProvider.notifier);
+    final taskId = await TasksRepository(env.db, env.clock).create(const TaskDraft(title: 'Read'));
+    await ctrl.linkTask(taskId);
+    await ctrl.start(mode: FocusMode.pomodoro);
+    env.clock.advance(const Duration(minutes: 25));
+    await ctrl.checkCompletion();
+    await ctrl.skipBreak();
+    // Short break is skipped manually; now finish the next focus + break.
+    env.clock.advance(const Duration(minutes: 25));
+    await ctrl.checkCompletion();
+    expect(c.read(focusControllerProvider).pending!.phase, FocusPhase.shortBreak);
+    await ctrl.start(mode: FocusMode.pomodoro);
+    env.clock.advance(const Duration(minutes: 5));
+    await ctrl.checkCompletion();
+    final s = c.read(focusControllerProvider);
+    expect(s.active!.phase, FocusPhase.work);
+    expect(s.active!.taskId, taskId);
+    expect(s.active!.completedWorkCycles, 2);
+    c.dispose();
+  });
+
+  test('skipping the final break of a limited series ends it', () async {
+    const settings = AppSettings(sessionRounds: 1, skipLastBreak: false);
+    final c = await launch(settings: settings);
+    final ctrl = c.read(focusControllerProvider.notifier);
+    await ctrl.start(mode: FocusMode.pomodoro);
+    env.clock.advance(const Duration(minutes: 25));
+    await ctrl.checkCompletion();
+    expect(c.read(focusControllerProvider).pending!.phase, FocusPhase.shortBreak);
+    await ctrl.skipBreak();
+    final s = c.read(focusControllerProvider);
+    expect(s.active, isNull);
+    expect(s.pending, isNull);
+    expect(s.notice, FocusNotice.seriesComplete);
     c.dispose();
   });
 }

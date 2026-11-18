@@ -908,5 +908,21 @@
   "taskArchivedBadge": "已归档",
   "taskStatusInProgress": "进行中",
   "taskArchived": "任务已归档",
-  "taskUnarchived": "任务已从归档中恢复"
+  "taskUnarchived": "任务已从归档中恢复",
+  "focusPlanTitle": "专注计划",
+  "focusPlanTotal": "共 {duration}",
+  "focusPlanRounds": "专注次数",
+  "focusPlanUnlimited": "∞",
+  "focusPlanLongEvery": "长休息间隔",
+  "focusPlanSkipLastBreak": "跳过最后一次休息",
+  "focusPlanAutoBreaks": "自动开始休息",
+  "focusPlanAutoFocus": "休息后自动开始专注",
+  "focusPlanSave": "保存计划",
+  "focusPlanNameHint": "例如：备考",
+  "focusPlanSaved": "计划已保存",
+  "focusPlanPresetA11y": "{name}：专注 {work} 分钟，休息 {rest} 分钟",
+  "focusPlanDecrease": "减少{label}",
+  "focusPlanIncrease": "增加{label}",
+  "focusRoundOf": "第 {current} 次，共 {total} 次",
+  "focusSeriesComplete": "计划完成，做得好！"
 }

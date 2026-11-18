@@ -5561,6 +5561,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Task restored from archive'**
   String get taskUnarchived;
+
+  /// focusPlanTitle
+  ///
+  /// In en, this message translates to:
+  /// **'Session plan'**
+  String get focusPlanTitle;
+
+  /// Total planned time of the series
+  ///
+  /// In en, this message translates to:
+  /// **'Total {duration}'**
+  String focusPlanTotal(String duration);
+
+  /// focusPlanRounds
+  ///
+  /// In en, this message translates to:
+  /// **'Focus sessions'**
+  String get focusPlanRounds;
+
+  /// focusPlanUnlimited
+  ///
+  /// In en, this message translates to:
+  /// **'∞'**
+  String get focusPlanUnlimited;
+
+  /// focusPlanLongEvery
+  ///
+  /// In en, this message translates to:
+  /// **'Long break after'**
+  String get focusPlanLongEvery;
+
+  /// focusPlanSkipLastBreak
+  ///
+  /// In en, this message translates to:
+  /// **'Skip the last break'**
+  String get focusPlanSkipLastBreak;
+
+  /// focusPlanAutoBreaks
+  ///
+  /// In en, this message translates to:
+  /// **'Start breaks automatically'**
+  String get focusPlanAutoBreaks;
+
+  /// focusPlanAutoFocus
+  ///
+  /// In en, this message translates to:
+  /// **'Start focus automatically after a break'**
+  String get focusPlanAutoFocus;
+
+  /// focusPlanSave
+  ///
+  /// In en, this message translates to:
+  /// **'Save plan'**
+  String get focusPlanSave;
+
+  /// focusPlanNameHint
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. Exam prep'**
+  String get focusPlanNameHint;
+
+  /// focusPlanSaved
+  ///
+  /// In en, this message translates to:
+  /// **'Plan saved'**
+  String get focusPlanSaved;
+
+  /// Tooltip of a saved plan chip
+  ///
+  /// In en, this message translates to:
+  /// **'{name}: {work} min focus, {rest} min break'**
+  String focusPlanPresetA11y(String name, int work, int rest);
+
+  /// Stepper minus button
+  ///
+  /// In en, this message translates to:
+  /// **'Decrease {label}'**
+  String focusPlanDecrease(String label);
+
+  /// Stepper plus button
+  ///
+  /// In en, this message translates to:
+  /// **'Increase {label}'**
+  String focusPlanIncrease(String label);
+
+  /// Position in a limited series
+  ///
+  /// In en, this message translates to:
+  /// **'Session {current} of {total}'**
+  String focusRoundOf(int current, int total);
+
+  /// focusSeriesComplete
+  ///
+  /// In en, this message translates to:
+  /// **'Series complete. Well done!'**
+  String get focusSeriesComplete;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

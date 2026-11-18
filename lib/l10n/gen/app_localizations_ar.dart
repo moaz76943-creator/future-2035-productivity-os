@@ -3481,4 +3481,62 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get taskUnarchived => 'تمت استعادة المهمة من الأرشيف';
+
+  @override
+  String get focusPlanTitle => 'خطة الجلسات';
+
+  @override
+  String focusPlanTotal(String duration) {
+    return 'المجموع $duration';
+  }
+
+  @override
+  String get focusPlanRounds => 'عدد الجلسات';
+
+  @override
+  String get focusPlanUnlimited => '∞';
+
+  @override
+  String get focusPlanLongEvery => 'راحة طويلة بعد';
+
+  @override
+  String get focusPlanSkipLastBreak => 'تخطّي آخر راحة';
+
+  @override
+  String get focusPlanAutoBreaks => 'بدء الراحة تلقائيًا';
+
+  @override
+  String get focusPlanAutoFocus => 'بدء التركيز تلقائيًا بعد الراحة';
+
+  @override
+  String get focusPlanSave => 'حفظ الخطة';
+
+  @override
+  String get focusPlanNameHint => 'مثال: مراجعة الامتحان';
+
+  @override
+  String get focusPlanSaved => 'تم حفظ الخطة';
+
+  @override
+  String focusPlanPresetA11y(String name, int work, int rest) {
+    return '$name: تركيز $work د، راحة $rest د';
+  }
+
+  @override
+  String focusPlanDecrease(String label) {
+    return 'إنقاص $label';
+  }
+
+  @override
+  String focusPlanIncrease(String label) {
+    return 'زيادة $label';
+  }
+
+  @override
+  String focusRoundOf(int current, int total) {
+    return 'الجلسة $current من $total';
+  }
+
+  @override
+  String get focusSeriesComplete => 'اكتملت خطة الجلسات. أحسنت!';
 }

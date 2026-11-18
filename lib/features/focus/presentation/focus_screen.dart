@@ -28,6 +28,7 @@ import '../application/focus_controller.dart';
 import '../application/focus_providers.dart';
 import '../domain/focus_engine.dart';
 import '../domain/focus_timer_state.dart';
+import 'session_plan.dart';
 
 /// Lengths offered for the plain timer mode, in minutes.
 const focusCountdownChoices = [5, 10, 15, 25, 45, 60, 90];
@@ -162,11 +163,6 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
                 enabled: fs.ready && fs.active == null,
                 onChanged: (m) => setState(() => _mode = m),
               ),
-              if (fs.active == null && _mode == FocusMode.countdown)
-                _CountdownChoices(
-                  value: _countdownMinutes,
-                  onChanged: (m) => setState(() => _countdownMinutes = m),
-                ),
               const SizedBox(height: Space.md),
               _TimerHero(
                 state: fs,
@@ -218,6 +214,21 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
                 },
                 onUnlink: () => _ctrl.linkTask(null),
               ),
+              const SizedBox(height: Space.md),
+              // The plan sits under Start: the timer and its button stay above the fold.
+              if ((fs.active?.mode ?? _mode) == FocusMode.pomodoro)
+                Padding(
+                  padding: const EdgeInsets.only(bottom: Space.md),
+                  child: SessionPlanCard(locked: !fs.ready),
+                )
+              else if (fs.active == null && _mode == FocusMode.countdown)
+                Padding(
+                  padding: const EdgeInsets.only(bottom: Space.md),
+                  child: _CountdownChoices(
+                    value: _countdownMinutes,
+                    onChanged: (m) => setState(() => _countdownMinutes = m),
+                  ),
+                ),
             ],
           ),
         ),
@@ -288,12 +299,16 @@ class _NoticeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     return _InfoBanner(
-      icon: notice == FocusNotice.completedWhileAway
-          ? Icons.check_circle_rounded
-          : Icons.history_rounded,
-      message: notice == FocusNotice.completedWhileAway
-          ? l10n.focusCompletedWhileAway
-          : l10n.focusRecovered,
+      icon: switch (notice) {
+        FocusNotice.recovered => Icons.history_rounded,
+        FocusNotice.completedWhileAway => Icons.check_circle_rounded,
+        FocusNotice.seriesComplete => Icons.emoji_events_rounded,
+      },
+      message: switch (notice) {
+        FocusNotice.recovered => l10n.focusRecovered,
+        FocusNotice.completedWhileAway => l10n.focusCompletedWhileAway,
+        FocusNotice.seriesComplete => l10n.focusSeriesComplete,
+      },
       actionLabel: l10n.actionClose,
       onAction: onClose,
     );
@@ -377,12 +392,20 @@ class _CountdownChoices extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    return Padding(
-      padding: const EdgeInsetsDirectional.only(top: Space.sm),
+    return LuxCard(
+      padding: const EdgeInsets.fromLTRB(Space.md, Space.xs, Space.md, Space.md),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(l10n.focusDuration, style: context.text.labelLarge),
+          PlanStepper(
+            key: const Key('countdownStepper'),
+            label: l10n.focusDuration,
+            value: value,
+            min: 1,
+            max: 600,
+            display: (v) => context.fmt.minutes(v),
+            onChanged: onChanged,
+          ),
           const SizedBox(height: Space.xs),
           Wrap(
             spacing: Space.xs,
@@ -424,6 +447,7 @@ class _TimerHero extends ConsumerWidget {
       shortBreakMinutes: settings.shortBreakMinutes,
       longBreakMinutes: settings.longBreakMinutes,
       longBreakEvery: settings.longBreakEvery,
+      rounds: settings.sessionRounds,
     );
 
     final Duration shown;
@@ -518,10 +542,16 @@ class _TimerHero extends ConsumerWidget {
           const SizedBox(height: Space.md),
           if (mode == FocusMode.pomodoro)
             LuxPill(
-              label: l10n.focusCycle(
-                focusCyclePosition(phase, cycles, config.longBreakEvery),
-                config.longBreakEvery,
-              ),
+              key: const Key('focusCyclePill'),
+              label: config.rounds > 0
+                  ? l10n.focusRoundOf(
+                      (phase == FocusPhase.work ? cycles + 1 : cycles).clamp(1, config.rounds),
+                      config.rounds,
+                    )
+                  : l10n.focusCycle(
+                      focusCyclePosition(phase, cycles, config.longBreakEvery),
+                      config.longBreakEvery,
+                    ),
               color: ModuleHue.focus.a,
             )
           else if (mode == FocusMode.countUp)

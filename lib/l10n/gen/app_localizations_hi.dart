@@ -3327,4 +3327,62 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get taskUnarchived => 'कार्य संग्रह से वापस लाया गया';
+
+  @override
+  String get focusPlanTitle => 'सत्र योजना';
+
+  @override
+  String focusPlanTotal(String duration) {
+    return 'कुल $duration';
+  }
+
+  @override
+  String get focusPlanRounds => 'फोकस सत्र';
+
+  @override
+  String get focusPlanUnlimited => '∞';
+
+  @override
+  String get focusPlanLongEvery => 'लंबा ब्रेक इतने के बाद';
+
+  @override
+  String get focusPlanSkipLastBreak => 'आख़िरी ब्रेक छोड़ें';
+
+  @override
+  String get focusPlanAutoBreaks => 'ब्रेक अपने आप शुरू करें';
+
+  @override
+  String get focusPlanAutoFocus => 'ब्रेक के बाद फोकस अपने आप शुरू करें';
+
+  @override
+  String get focusPlanSave => 'योजना सहेजें';
+
+  @override
+  String get focusPlanNameHint => 'जैसे परीक्षा तैयारी';
+
+  @override
+  String get focusPlanSaved => 'योजना सहेजी गई';
+
+  @override
+  String focusPlanPresetA11y(String name, int work, int rest) {
+    return '$name: $work मिनट फोकस, $rest मिनट ब्रेक';
+  }
+
+  @override
+  String focusPlanDecrease(String label) {
+    return '$label घटाएँ';
+  }
+
+  @override
+  String focusPlanIncrease(String label) {
+    return '$label बढ़ाएँ';
+  }
+
+  @override
+  String focusRoundOf(int current, int total) {
+    return 'सत्र $current / $total';
+  }
+
+  @override
+  String get focusSeriesComplete => 'श्रृंखला पूरी हुई। शाबाश!';
 }

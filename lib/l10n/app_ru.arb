@@ -908,5 +908,21 @@
   "taskArchivedBadge": "В архиве",
   "taskStatusInProgress": "В работе",
   "taskArchived": "Задача перемещена в архив",
-  "taskUnarchived": "Задача возвращена из архива"
+  "taskUnarchived": "Задача возвращена из архива",
+  "focusPlanTitle": "План сессий",
+  "focusPlanTotal": "Всего {duration}",
+  "focusPlanRounds": "Сессии фокуса",
+  "focusPlanUnlimited": "∞",
+  "focusPlanLongEvery": "Длинный перерыв после",
+  "focusPlanSkipLastBreak": "Пропустить последний перерыв",
+  "focusPlanAutoBreaks": "Начинать перерывы автоматически",
+  "focusPlanAutoFocus": "Начинать фокус после перерыва",
+  "focusPlanSave": "Сохранить план",
+  "focusPlanNameHint": "например, Экзамен",
+  "focusPlanSaved": "План сохранён",
+  "focusPlanPresetA11y": "{name}: фокус {work} мин, перерыв {rest} мин",
+  "focusPlanDecrease": "Уменьшить: {label}",
+  "focusPlanIncrease": "Увеличить: {label}",
+  "focusRoundOf": "Сессия {current} из {total}",
+  "focusSeriesComplete": "Серия завершена. Отлично!"
 }

@@ -908,5 +908,21 @@
   "taskArchivedBadge": "مؤرشفة",
   "taskStatusInProgress": "قيد التنفيذ",
   "taskArchived": "تمت أرشفة المهمة",
-  "taskUnarchived": "تمت استعادة المهمة من الأرشيف"
+  "taskUnarchived": "تمت استعادة المهمة من الأرشيف",
+  "focusPlanTitle": "خطة الجلسات",
+  "focusPlanTotal": "المجموع {duration}",
+  "focusPlanRounds": "عدد الجلسات",
+  "focusPlanUnlimited": "∞",
+  "focusPlanLongEvery": "راحة طويلة بعد",
+  "focusPlanSkipLastBreak": "تخطّي آخر راحة",
+  "focusPlanAutoBreaks": "بدء الراحة تلقائيًا",
+  "focusPlanAutoFocus": "بدء التركيز تلقائيًا بعد الراحة",
+  "focusPlanSave": "حفظ الخطة",
+  "focusPlanNameHint": "مثال: مراجعة الامتحان",
+  "focusPlanSaved": "تم حفظ الخطة",
+  "focusPlanPresetA11y": "{name}: تركيز {work} د، راحة {rest} د",
+  "focusPlanDecrease": "إنقاص {label}",
+  "focusPlanIncrease": "زيادة {label}",
+  "focusRoundOf": "الجلسة {current} من {total}",
+  "focusSeriesComplete": "اكتملت خطة الجلسات. أحسنت!"
 }

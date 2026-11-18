@@ -3159,4 +3159,62 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get taskUnarchived => '任务已从归档中恢复';
+
+  @override
+  String get focusPlanTitle => '专注计划';
+
+  @override
+  String focusPlanTotal(String duration) {
+    return '共 $duration';
+  }
+
+  @override
+  String get focusPlanRounds => '专注次数';
+
+  @override
+  String get focusPlanUnlimited => '∞';
+
+  @override
+  String get focusPlanLongEvery => '长休息间隔';
+
+  @override
+  String get focusPlanSkipLastBreak => '跳过最后一次休息';
+
+  @override
+  String get focusPlanAutoBreaks => '自动开始休息';
+
+  @override
+  String get focusPlanAutoFocus => '休息后自动开始专注';
+
+  @override
+  String get focusPlanSave => '保存计划';
+
+  @override
+  String get focusPlanNameHint => '例如：备考';
+
+  @override
+  String get focusPlanSaved => '计划已保存';
+
+  @override
+  String focusPlanPresetA11y(String name, int work, int rest) {
+    return '$name：专注 $work 分钟，休息 $rest 分钟';
+  }
+
+  @override
+  String focusPlanDecrease(String label) {
+    return '减少$label';
+  }
+
+  @override
+  String focusPlanIncrease(String label) {
+    return '增加$label';
+  }
+
+  @override
+  String focusRoundOf(int current, int total) {
+    return '第 $current 次，共 $total 次';
+  }
+
+  @override
+  String get focusSeriesComplete => '计划完成，做得好！';
 }

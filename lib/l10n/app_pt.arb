@@ -908,5 +908,21 @@
   "taskArchivedBadge": "Arquivada",
   "taskStatusInProgress": "Em andamento",
   "taskArchived": "Tarefa arquivada",
-  "taskUnarchived": "Tarefa restaurada do arquivo"
+  "taskUnarchived": "Tarefa restaurada do arquivo",
+  "focusPlanTitle": "Plano de sessões",
+  "focusPlanTotal": "Total {duration}",
+  "focusPlanRounds": "Sessões de foco",
+  "focusPlanUnlimited": "∞",
+  "focusPlanLongEvery": "Pausa longa após",
+  "focusPlanSkipLastBreak": "Pular a última pausa",
+  "focusPlanAutoBreaks": "Iniciar pausas automaticamente",
+  "focusPlanAutoFocus": "Iniciar o foco após a pausa",
+  "focusPlanSave": "Salvar plano",
+  "focusPlanNameHint": "ex.: Prova",
+  "focusPlanSaved": "Plano salvo",
+  "focusPlanPresetA11y": "{name}: {work} min de foco, {rest} min de pausa",
+  "focusPlanDecrease": "Diminuir {label}",
+  "focusPlanIncrease": "Aumentar {label}",
+  "focusRoundOf": "Sessão {current} de {total}",
+  "focusSeriesComplete": "Série concluída. Muito bem!"
 }

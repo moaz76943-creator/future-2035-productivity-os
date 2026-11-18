@@ -908,5 +908,21 @@
   "taskArchivedBadge": "संग्रहीत",
   "taskStatusInProgress": "प्रगति में",
   "taskArchived": "कार्य संग्रहीत किया गया",
-  "taskUnarchived": "कार्य संग्रह से वापस लाया गया"
+  "taskUnarchived": "कार्य संग्रह से वापस लाया गया",
+  "focusPlanTitle": "सत्र योजना",
+  "focusPlanTotal": "कुल {duration}",
+  "focusPlanRounds": "फोकस सत्र",
+  "focusPlanUnlimited": "∞",
+  "focusPlanLongEvery": "लंबा ब्रेक इतने के बाद",
+  "focusPlanSkipLastBreak": "आख़िरी ब्रेक छोड़ें",
+  "focusPlanAutoBreaks": "ब्रेक अपने आप शुरू करें",
+  "focusPlanAutoFocus": "ब्रेक के बाद फोकस अपने आप शुरू करें",
+  "focusPlanSave": "योजना सहेजें",
+  "focusPlanNameHint": "जैसे परीक्षा तैयारी",
+  "focusPlanSaved": "योजना सहेजी गई",
+  "focusPlanPresetA11y": "{name}: {work} मिनट फोकस, {rest} मिनट ब्रेक",
+  "focusPlanDecrease": "{label} घटाएँ",
+  "focusPlanIncrease": "{label} बढ़ाएँ",
+  "focusRoundOf": "सत्र {current} / {total}",
+  "focusSeriesComplete": "श्रृंखला पूरी हुई। शाबाश!"
 }

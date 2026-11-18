@@ -3339,4 +3339,62 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get taskUnarchived => 'Tâche restaurée depuis les archives';
+
+  @override
+  String get focusPlanTitle => 'Plan de séances';
+
+  @override
+  String focusPlanTotal(String duration) {
+    return 'Total $duration';
+  }
+
+  @override
+  String get focusPlanRounds => 'Séances de concentration';
+
+  @override
+  String get focusPlanUnlimited => '∞';
+
+  @override
+  String get focusPlanLongEvery => 'Longue pause après';
+
+  @override
+  String get focusPlanSkipLastBreak => 'Sauter la dernière pause';
+
+  @override
+  String get focusPlanAutoBreaks => 'Lancer les pauses automatiquement';
+
+  @override
+  String get focusPlanAutoFocus => 'Reprendre la concentration après la pause';
+
+  @override
+  String get focusPlanSave => 'Enregistrer le plan';
+
+  @override
+  String get focusPlanNameHint => 'ex. Révisions';
+
+  @override
+  String get focusPlanSaved => 'Plan enregistré';
+
+  @override
+  String focusPlanPresetA11y(String name, int work, int rest) {
+    return '$name : $work min de concentration, $rest min de pause';
+  }
+
+  @override
+  String focusPlanDecrease(String label) {
+    return 'Diminuer $label';
+  }
+
+  @override
+  String focusPlanIncrease(String label) {
+    return 'Augmenter $label';
+  }
+
+  @override
+  String focusRoundOf(int current, int total) {
+    return 'Séance $current sur $total';
+  }
+
+  @override
+  String get focusSeriesComplete => 'Série terminée. Bravo !';
 }

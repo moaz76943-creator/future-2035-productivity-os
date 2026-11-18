@@ -3438,4 +3438,62 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get taskUnarchived => 'Задача возвращена из архива';
+
+  @override
+  String get focusPlanTitle => 'План сессий';
+
+  @override
+  String focusPlanTotal(String duration) {
+    return 'Всего $duration';
+  }
+
+  @override
+  String get focusPlanRounds => 'Сессии фокуса';
+
+  @override
+  String get focusPlanUnlimited => '∞';
+
+  @override
+  String get focusPlanLongEvery => 'Длинный перерыв после';
+
+  @override
+  String get focusPlanSkipLastBreak => 'Пропустить последний перерыв';
+
+  @override
+  String get focusPlanAutoBreaks => 'Начинать перерывы автоматически';
+
+  @override
+  String get focusPlanAutoFocus => 'Начинать фокус после перерыва';
+
+  @override
+  String get focusPlanSave => 'Сохранить план';
+
+  @override
+  String get focusPlanNameHint => 'например, Экзамен';
+
+  @override
+  String get focusPlanSaved => 'План сохранён';
+
+  @override
+  String focusPlanPresetA11y(String name, int work, int rest) {
+    return '$name: фокус $work мин, перерыв $rest мин';
+  }
+
+  @override
+  String focusPlanDecrease(String label) {
+    return 'Уменьшить: $label';
+  }
+
+  @override
+  String focusPlanIncrease(String label) {
+    return 'Увеличить: $label';
+  }
+
+  @override
+  String focusRoundOf(int current, int total) {
+    return 'Сессия $current из $total';
+  }
+
+  @override
+  String get focusSeriesComplete => 'Серия завершена. Отлично!';
 }

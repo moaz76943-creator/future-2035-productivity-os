@@ -25,7 +25,7 @@ PLURAL_CATS = {
 SAME_OK = {'appName', 'percentValue', 'taskSubtaskProgress', 'durationHours', 'durationMinutes',
            'durationHoursMinutes', 'settingsMinutesValue', 'focusModePomodoro', 'statSessionsDetail',
            'dashFocusOfTarget', 'reviewProgress', 'goalProgressOf', 'intervalMinutes', 'habitCountToday',
-           'notifEventBody', 'weekdaysShort',
+           'notifEventBody', 'weekdaysShort', 'focusPlanTotal',
            # Pure placeholder/format strings: nothing to translate.
            'analyticsBarValue', 'assistantTimeRange', 'calendarTimeRange', 'calendarWeekRange',
            'goalsAmountWithUnit', 'notesTagFilter', 'notesUpdatedAt', 'calendarDaySemantics',

@@ -6,12 +6,29 @@ class PomodoroConfig {
     this.shortBreakMinutes = 5,
     this.longBreakMinutes = 15,
     this.longBreakEvery = 4,
+    this.rounds = 0,
+    this.skipLastBreak = true,
   });
 
   final int workMinutes;
   final int shortBreakMinutes;
   final int longBreakMinutes;
   final int longBreakEvery;
+
+  /// Focus sessions in the series; 0 = no limit.
+  final int rounds;
+  final bool skipLastBreak;
+
+  /// Planned length of the whole series, or null when unlimited.
+  Duration? get seriesLength {
+    if (rounds <= 0) return null;
+    var minutes = rounds * workMinutes;
+    final breaks = skipLastBreak ? rounds - 1 : rounds;
+    for (var i = 1; i <= breaks; i++) {
+      minutes += i % longBreakEvery == 0 ? longBreakMinutes : shortBreakMinutes;
+    }
+    return Duration(minutes: minutes);
+  }
 
   int secondsFor(FocusPhase phase) => switch (phase) {
     FocusPhase.work => workMinutes * 60,
@@ -117,17 +134,24 @@ abstract final class FocusEngine {
     );
   }
 
-  /// Which pomodoro phase follows [s] once it completes.
-  static ({FocusPhase phase, int cycles}) nextPomodoroPhase(
+  /// Which pomodoro phase follows [s] once it completes; a null phase means
+  /// the series is finished. `cycles` counts focus sessions completed in the
+  /// series (the long break falls on every `longBreakEvery`-th one).
+  static ({FocusPhase? phase, int cycles}) nextPomodoroPhase(
     FocusTimerState s,
     PomodoroConfig config,
   ) {
+    final limited = config.rounds > 0;
     if (s.phase == FocusPhase.work) {
       final cycles = s.completedWorkCycles + 1;
+      if (limited && cycles >= config.rounds && config.skipLastBreak) {
+        return (phase: null, cycles: cycles);
+      }
       final long = cycles % config.longBreakEvery == 0;
       return (phase: long ? FocusPhase.longBreak : FocusPhase.shortBreak, cycles: cycles);
     }
-    final cycles = s.phase == FocusPhase.longBreak ? 0 : s.completedWorkCycles;
+    final cycles = s.completedWorkCycles;
+    if (limited && cycles >= config.rounds) return (phase: null, cycles: cycles);
     return (phase: FocusPhase.work, cycles: cycles);
   }
 }

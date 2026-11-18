@@ -4411,5 +4411,103 @@
   },
   "@taskUnarchived": {
     "description": "Task status / archive UI"
+  },
+  "focusPlanTitle": "Session plan",
+  "@focusPlanTitle": {
+    "description": "focusPlanTitle"
+  },
+  "focusPlanTotal": "Total {duration}",
+  "@focusPlanTotal": {
+    "description": "Total planned time of the series",
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      }
+    }
+  },
+  "focusPlanRounds": "Focus sessions",
+  "@focusPlanRounds": {
+    "description": "focusPlanRounds"
+  },
+  "focusPlanUnlimited": "∞",
+  "@focusPlanUnlimited": {
+    "description": "focusPlanUnlimited"
+  },
+  "focusPlanLongEvery": "Long break after",
+  "@focusPlanLongEvery": {
+    "description": "focusPlanLongEvery"
+  },
+  "focusPlanSkipLastBreak": "Skip the last break",
+  "@focusPlanSkipLastBreak": {
+    "description": "focusPlanSkipLastBreak"
+  },
+  "focusPlanAutoBreaks": "Start breaks automatically",
+  "@focusPlanAutoBreaks": {
+    "description": "focusPlanAutoBreaks"
+  },
+  "focusPlanAutoFocus": "Start focus automatically after a break",
+  "@focusPlanAutoFocus": {
+    "description": "focusPlanAutoFocus"
+  },
+  "focusPlanSave": "Save plan",
+  "@focusPlanSave": {
+    "description": "focusPlanSave"
+  },
+  "focusPlanNameHint": "e.g. Exam prep",
+  "@focusPlanNameHint": {
+    "description": "focusPlanNameHint"
+  },
+  "focusPlanSaved": "Plan saved",
+  "@focusPlanSaved": {
+    "description": "focusPlanSaved"
+  },
+  "focusPlanPresetA11y": "{name}: {work} min focus, {rest} min break",
+  "@focusPlanPresetA11y": {
+    "description": "Tooltip of a saved plan chip",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "work": {
+        "type": "int"
+      },
+      "rest": {
+        "type": "int"
+      }
+    }
+  },
+  "focusPlanDecrease": "Decrease {label}",
+  "@focusPlanDecrease": {
+    "description": "Stepper minus button",
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "focusPlanIncrease": "Increase {label}",
+  "@focusPlanIncrease": {
+    "description": "Stepper plus button",
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "focusRoundOf": "Session {current} of {total}",
+  "@focusRoundOf": {
+    "description": "Position in a limited series",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "focusSeriesComplete": "Series complete. Well done!",
+  "@focusSeriesComplete": {
+    "description": "focusSeriesComplete"
   }
 }

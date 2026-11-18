@@ -15,6 +15,10 @@ class AppSettings {
     this.longBreakMinutes = 15,
     this.longBreakEvery = 4,
     this.autoStartBreaks = false,
+    this.autoStartFocus = false,
+    this.sessionRounds = 0,
+    this.skipLastBreak = true,
+    this.focusPresets = const [],
     this.focusSound = true,
     this.dailyFocusTargetMinutes = 120,
     this.weeklyFocusTargetMinutes = 600,
@@ -40,6 +44,18 @@ class AppSettings {
   final int longBreakMinutes;
   final int longBreakEvery;
   final bool autoStartBreaks;
+
+  /// Starts the next focus phase automatically when a break ends.
+  final bool autoStartFocus;
+
+  /// Number of focus sessions in a series; 0 means no limit.
+  final int sessionRounds;
+
+  /// Ends the series right after the last focus session (no final break).
+  final bool skipLastBreak;
+
+  /// Saved session plans, newest first.
+  final List<FocusPreset> focusPresets;
   final bool focusSound;
   final int dailyFocusTargetMinutes;
   final int weeklyFocusTargetMinutes;
@@ -83,6 +99,10 @@ class AppSettings {
     'longBreakMinutes': longBreakMinutes,
     'longBreakEvery': longBreakEvery,
     'autoStartBreaks': autoStartBreaks,
+    'autoStartFocus': autoStartFocus,
+    'sessionRounds': sessionRounds,
+    'skipLastBreak': skipLastBreak,
+    'focusPresets': [for (final p in focusPresets) p.toJson()],
     'focusSound': focusSound,
     'dailyFocusTargetMinutes': dailyFocusTargetMinutes,
     'weeklyFocusTargetMinutes': weeklyFocusTargetMinutes,
@@ -115,6 +135,13 @@ class AppSettings {
       longBreakMinutes: read('longBreakMinutes', d.longBreakMinutes).clamp(1, 120),
       longBreakEvery: read('longBreakEvery', d.longBreakEvery).clamp(2, 12),
       autoStartBreaks: read('autoStartBreaks', d.autoStartBreaks),
+      autoStartFocus: read('autoStartFocus', d.autoStartFocus),
+      sessionRounds: read('sessionRounds', d.sessionRounds).clamp(0, 99),
+      skipLastBreak: read('skipLastBreak', d.skipLastBreak),
+      focusPresets: [
+        for (final p in (j['focusPresets'] as List?) ?? const [])
+          if (p is Map) ?FocusPreset.tryParse(p.cast<String, Object?>()),
+      ].take(FocusPreset.maxCount).toList(),
       focusSound: read('focusSound', d.focusSound),
       dailyFocusTargetMinutes: read('dailyFocusTargetMinutes', d.dailyFocusTargetMinutes),
       weeklyFocusTargetMinutes: read('weeklyFocusTargetMinutes', d.weeklyFocusTargetMinutes),
@@ -143,6 +170,10 @@ class AppSettings {
     int? longBreakMinutes,
     int? longBreakEvery,
     bool? autoStartBreaks,
+    bool? autoStartFocus,
+    int? sessionRounds,
+    bool? skipLastBreak,
+    List<FocusPreset>? focusPresets,
     bool? focusSound,
     int? dailyFocusTargetMinutes,
     int? weeklyFocusTargetMinutes,
@@ -167,6 +198,10 @@ class AppSettings {
     'longBreakMinutes': ?longBreakMinutes,
     'longBreakEvery': ?longBreakEvery,
     'autoStartBreaks': ?autoStartBreaks,
+    'autoStartFocus': ?autoStartFocus,
+    'sessionRounds': ?sessionRounds,
+    'skipLastBreak': ?skipLastBreak,
+    if (focusPresets != null) 'focusPresets': [for (final p in focusPresets) p.toJson()],
     'focusSound': ?focusSound,
     'dailyFocusTargetMinutes': ?dailyFocusTargetMinutes,
     'weeklyFocusTargetMinutes': ?weeklyFocusTargetMinutes,
@@ -182,6 +217,67 @@ class AppSettings {
     'assistantModel': ?assistantModel,
     'dashboardSections': ?dashboardSections,
   });
+}
+
+/// A named, saved focus plan (lengths in minutes).
+class FocusPreset {
+  const FocusPreset({
+    required this.name,
+    required this.workMinutes,
+    required this.shortBreakMinutes,
+    required this.longBreakMinutes,
+    required this.longBreakEvery,
+    required this.rounds,
+  });
+
+  static const maxCount = 12;
+  static const maxName = 40;
+
+  final String name;
+  final int workMinutes;
+  final int shortBreakMinutes;
+  final int longBreakMinutes;
+  final int longBreakEvery;
+  final int rounds;
+
+  Map<String, Object?> toJson() => {
+    'name': name,
+    'work': workMinutes,
+    'short': shortBreakMinutes,
+    'long': longBreakMinutes,
+    'every': longBreakEvery,
+    'rounds': rounds,
+  };
+
+  static FocusPreset? tryParse(Map<String, Object?> j) {
+    final name = j['name'];
+    int? n(String k, int lo, int hi) => switch (j[k]) {
+      final int v when v >= lo && v <= hi => v,
+      _ => null,
+    };
+    final work = n('work', 1, 240), short = n('short', 1, 60), long = n('long', 1, 120);
+    final every = n('every', 2, 12), rounds = n('rounds', 0, 99);
+    if (name is! String || name.trim().isEmpty || name.length > maxName) return null;
+    if (work == null || short == null || long == null || every == null || rounds == null) {
+      return null;
+    }
+    return FocusPreset(
+      name: name.trim(),
+      workMinutes: work,
+      shortBreakMinutes: short,
+      longBreakMinutes: long,
+      longBreakEvery: every,
+      rounds: rounds,
+    );
+  }
+
+  /// True when [s] currently uses exactly this plan.
+  bool matches(AppSettings s) =>
+      s.workMinutes == workMinutes &&
+      s.shortBreakMinutes == shortBreakMinutes &&
+      s.longBreakMinutes == longBreakMinutes &&
+      s.longBreakEvery == longBreakEvery &&
+      s.sessionRounds == rounds;
 }
 
 class SettingsRepository {
