@@ -4304,5 +4304,34 @@
   "calendarAgenda": "Agenda",
   "@calendarAgenda": {
     "description": "Calendar view: list of upcoming days with events and due tasks"
+  },
+  "projectIconName": "{name, select, spark{Spark} rocket{Rocket} book{Book} work{Work} home{Home} heart{Heart} code{Code} palette{Palette} fitness{Fitness} school{School} travel{Travel} money{Savings} other{Icon}}",
+  "@projectIconName": {
+    "description": "Accessibility label of a project icon choice",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "cardMoreFields": "More fields",
+  "@cardMoreFields": {
+    "description": "Optional flashcard field (card editor and review back side)"
+  },
+  "cardFieldExample": "Example",
+  "@cardFieldExample": {
+    "description": "Optional flashcard field (card editor and review back side)"
+  },
+  "cardFieldExplanation": "Explanation",
+  "@cardFieldExplanation": {
+    "description": "Optional flashcard field (card editor and review back side)"
+  },
+  "cardFieldPronunciation": "Pronunciation",
+  "@cardFieldPronunciation": {
+    "description": "Optional flashcard field (card editor and review back side)"
+  },
+  "cardFieldNotes": "Additional notes",
+  "@cardFieldNotes": {
+    "description": "Optional flashcard field (card editor and review back side)"
   }
 }

@@ -147,10 +147,13 @@ class _HabitEditorSheetState extends ConsumerState<HabitEditorSheet> {
                 children: [
                   Expanded(child: Text(l10n.habitDays, style: context.text.labelLarge)),
                   TextButton(
-                    onPressed: () => setState(() {
-                      _weekdays = 127;
-                      _daysError = false;
-                    }),
+                    // Disabled when every day is already selected (the tap would do nothing).
+                    onPressed: _weekdays == 127
+                        ? null
+                        : () => setState(() {
+                            _weekdays = 127;
+                            _daysError = false;
+                          }),
                     child: Text(l10n.habitEveryDay),
                   ),
                 ],

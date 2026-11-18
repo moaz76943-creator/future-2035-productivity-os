@@ -14,7 +14,9 @@ import '../../../core/providers/core_providers.dart';
 import '../../../core/speech/tts_service.dart';
 import '../../../l10n/gen/app_localizations.dart';
 import '../application/flashcards_providers.dart';
+import '../domain/card_extras.dart';
 import '../domain/srs_scheduler.dart';
+import 'widgets/card_form_sheet.dart' show cardFieldLabel;
 
 const _hue = ModuleHue.flashcards;
 
@@ -221,6 +223,7 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
               key: ValueKey('card-$_index'),
               front: card.front,
               back: card.back,
+              extras: CardExtras.decode(card.extra),
               flipped: _flipped,
               onFlip: () => setState(() => _flipped = !_flipped),
             ),
@@ -314,9 +317,11 @@ class _FlipCard extends StatelessWidget {
     required this.back,
     required this.flipped,
     required this.onFlip,
+    this.extras = const CardExtras(),
   });
   final String front;
   final String back;
+  final CardExtras extras;
   final bool flipped;
   final VoidCallback onFlip;
 
@@ -342,6 +347,17 @@ class _FlipCard extends StatelessWidget {
                   child: Divider(color: lux.hairline),
                 ),
                 Text(back, textAlign: TextAlign.center, style: context.text.headlineSmall),
+                for (final f in CardField.values)
+                  if (extras[f] case final value?) ...[
+                    const SizedBox(height: Space.md),
+                    Text(
+                      cardFieldLabel(context.l10n, f),
+                      textAlign: TextAlign.center,
+                      style: context.text.labelMedium?.copyWith(color: lux.ink3),
+                    ),
+                    const SizedBox(height: Space.xxs),
+                    Text(value, textAlign: TextAlign.center, style: context.text.bodyLarge),
+                  ],
               ] else ...[
                 Text(front, textAlign: TextAlign.center, style: context.text.headlineSmall),
                 const SizedBox(height: Space.lg),
@@ -390,7 +406,13 @@ class _FlipCard extends StatelessWidget {
       key: const Key('flipCard'),
       button: true,
       container: true,
-      label: flipped ? l10n.flashcardsAnswerA11y(back) : l10n.flashcardsQuestionA11y(front),
+      label: flipped
+          ? [
+              l10n.flashcardsAnswerA11y(back),
+              for (final f in CardField.values)
+                if (extras[f] case final v?) '${cardFieldLabel(l10n, f)}: $v',
+            ].join('. ')
+          : l10n.flashcardsQuestionA11y(front),
       hint: flipped ? l10n.flashcardsShowQuestion : l10n.reviewTapToFlip,
       onTap: onFlip,
       excludeSemantics: true,

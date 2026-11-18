@@ -257,6 +257,10 @@ class Flashcards extends Table with Timestamps {
   TextColumn get back => text()();
   TextColumn get tags => text().withDefault(const Constant(''))();
 
+  /// Optional fields (example, explanation, pronunciation, notes) as JSON; see
+  /// CardExtras. Added in schema v2.
+  TextColumn get extra => text().withDefault(const Constant(''))();
+
   /// new | learning | review | relearning
   TextColumn get state => text().withDefault(const Constant('new'))();
 

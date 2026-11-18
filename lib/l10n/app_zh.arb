@@ -885,5 +885,11 @@
   "flashcardsReadAloud": "朗读",
   "flashcardsTtsUnavailable": "此设备不支持文字转语音。",
   "flashcardsTtsLanguageUnavailable": "此语言未安装语音。请在 Android 文字转语音设置中添加。",
-  "calendarAgenda": "日程"
+  "calendarAgenda": "日程",
+  "projectIconName": "{name, select, spark{火花} rocket{火箭} book{书本} work{工作} home{家} heart{爱心} code{代码} palette{调色板} fitness{健身} school{学习} travel{旅行} money{储蓄} other{图标}}",
+  "cardMoreFields": "更多字段",
+  "cardFieldExample": "例句",
+  "cardFieldExplanation": "解释",
+  "cardFieldPronunciation": "发音",
+  "cardFieldNotes": "补充说明"
 }

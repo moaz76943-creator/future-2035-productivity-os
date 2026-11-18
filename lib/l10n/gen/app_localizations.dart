@@ -5423,6 +5423,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Agenda'**
   String get calendarAgenda;
+
+  /// Accessibility label of a project icon choice
+  ///
+  /// In en, this message translates to:
+  /// **'{name, select, spark{Spark} rocket{Rocket} book{Book} work{Work} home{Home} heart{Heart} code{Code} palette{Palette} fitness{Fitness} school{School} travel{Travel} money{Savings} other{Icon}}'**
+  String projectIconName(String name);
+
+  /// Optional flashcard field (card editor and review back side)
+  ///
+  /// In en, this message translates to:
+  /// **'More fields'**
+  String get cardMoreFields;
+
+  /// Optional flashcard field (card editor and review back side)
+  ///
+  /// In en, this message translates to:
+  /// **'Example'**
+  String get cardFieldExample;
+
+  /// Optional flashcard field (card editor and review back side)
+  ///
+  /// In en, this message translates to:
+  /// **'Explanation'**
+  String get cardFieldExplanation;
+
+  /// Optional flashcard field (card editor and review back side)
+  ///
+  /// In en, this message translates to:
+  /// **'Pronunciation'**
+  String get cardFieldPronunciation;
+
+  /// Optional flashcard field (card editor and review back side)
+  ///
+  /// In en, this message translates to:
+  /// **'Additional notes'**
+  String get cardFieldNotes;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

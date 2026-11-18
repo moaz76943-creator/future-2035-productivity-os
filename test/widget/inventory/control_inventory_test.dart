@@ -212,7 +212,8 @@ List<_Control> _controls(WidgetTester tester, Size view) {
             r,
             _role(d),
             f.isEnabled != Tristate.isFalse,
-            f.isSelected == Tristate.isTrue,
+            // Selected chip/tab, or a radio-like option that is already on (time picker AM/PM).
+            f.isSelected == Tristate.isTrue || f.isChecked == CheckedState.isTrue,
             _inHorizontalScroll(node),
           ),
         );
@@ -490,8 +491,9 @@ void main() {
               }
               irow['result'] = ires;
               if (ierr != null) problems.add('$path > ${c.label} > "${ic.label}" threw $ierr');
-              if (ires == 'NO_EFFECT')
+              if (ires == 'NO_EFFECT') {
                 problems.add('$path > ${c.label} > "${ic.label}" does nothing');
+              }
               rows.add(irow);
             }
           }

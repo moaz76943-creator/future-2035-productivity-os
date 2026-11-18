@@ -885,5 +885,11 @@
   "flashcardsReadAloud": "Lire à voix haute",
   "flashcardsTtsUnavailable": "La synthèse vocale n’est pas disponible sur cet appareil.",
   "flashcardsTtsLanguageUnavailable": "Aucune voix n’est installée pour cette langue. Ajoutez-en une dans les paramètres de synthèse vocale d’Android.",
-  "calendarAgenda": "Agenda"
+  "calendarAgenda": "Agenda",
+  "projectIconName": "{name, select, spark{Étincelle} rocket{Fusée} book{Livre} work{Travail} home{Maison} heart{Cœur} code{Code} palette{Palette} fitness{Sport} school{École} travel{Voyage} money{Épargne} other{Icône}}",
+  "cardMoreFields": "Plus de champs",
+  "cardFieldExample": "Exemple",
+  "cardFieldExplanation": "Explication",
+  "cardFieldPronunciation": "Prononciation",
+  "cardFieldNotes": "Notes supplémentaires"
 }

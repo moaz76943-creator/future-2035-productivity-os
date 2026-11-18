@@ -42,7 +42,7 @@ class AppDatabase extends _$AppDatabase {
   /// Bump when the schema changes and add a step in [migration].
   /// Never drop user tables to resolve a migration problem.
   @override
-  int get schemaVersion => 1;
+  int get schemaVersion => 2;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -51,8 +51,11 @@ class AppDatabase extends _$AppDatabase {
       await _createIndexes();
     },
     onUpgrade: (m, from, to) async {
-      // Future migrations go here, one guarded step per version, e.g.
-      // if (from < 2) { await m.addColumn(tasks, tasks.someColumn); }
+      // One guarded step per version. Never drop or recreate user tables here.
+      if (from < 2) {
+        // v2: optional flashcard fields. Existing cards get '' (no extras).
+        await m.addColumn(flashcards, flashcards.extra);
+      }
     },
     beforeOpen: (details) async {
       await customStatement('PRAGMA foreign_keys = ON');

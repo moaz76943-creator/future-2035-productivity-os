@@ -885,5 +885,11 @@
   "flashcardsReadAloud": "Ler em voz alta",
   "flashcardsTtsUnavailable": "A conversão de texto em fala não está disponível neste dispositivo.",
   "flashcardsTtsLanguageUnavailable": "Nenhuma voz instalada para este idioma. Adicione uma nas configurações de conversão de texto em fala do Android.",
-  "calendarAgenda": "Agenda"
+  "calendarAgenda": "Agenda",
+  "projectIconName": "{name, select, spark{Faísca} rocket{Foguete} book{Livro} work{Trabalho} home{Casa} heart{Coração} code{Código} palette{Paleta} fitness{Exercício} school{Escola} travel{Viagem} money{Economia} other{Ícone}}",
+  "cardMoreFields": "Mais campos",
+  "cardFieldExample": "Exemplo",
+  "cardFieldExplanation": "Explicação",
+  "cardFieldPronunciation": "Pronúncia",
+  "cardFieldNotes": "Notas adicionais"
 }

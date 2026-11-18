@@ -6,6 +6,8 @@ import '../../../../core/database/app_database.dart';
 import '../../../../core/design_system/app_theme.dart';
 import '../../../../core/design_system/tokens.dart';
 import '../../application/flashcards_providers.dart';
+import '../../domain/card_extras.dart';
+import '../../../../l10n/gen/app_localizations.dart';
 
 /// Bottom sheet to add cards to [deckId] or edit [initial]. Persists
 /// directly through the repository.
@@ -34,6 +36,13 @@ class _CardFormSheetState extends ConsumerState<_CardFormSheet> {
   late final _front = TextEditingController(text: widget.initial?.front ?? '');
   late final _back = TextEditingController(text: widget.initial?.back ?? '');
   late final _tags = TextEditingController(text: widget.initial?.tags ?? '');
+  late final CardExtras _initialExtras = CardExtras.decode(widget.initial?.extra ?? '');
+  late final Map<CardField, TextEditingController> _extra = {
+    for (final f in CardField.values) f: TextEditingController(text: _initialExtras[f] ?? ''),
+  };
+  late bool _showExtra = !_initialExtras.isEmpty;
+
+  CardExtras get _extras => CardExtras({for (final e in _extra.entries) e.key: e.value.text});
   int _added = 0;
   bool _saving = false;
 
@@ -42,6 +51,9 @@ class _CardFormSheetState extends ConsumerState<_CardFormSheet> {
     _front.dispose();
     _back.dispose();
     _tags.dispose();
+    for (final c in _extra.values) {
+      c.dispose();
+    }
     _frontFocus.dispose();
     super.dispose();
   }
@@ -53,9 +65,21 @@ class _CardFormSheetState extends ConsumerState<_CardFormSheet> {
     try {
       final initial = widget.initial;
       if (initial == null) {
-        await repo.addCard(widget.deckId, _front.text, _back.text, tags: _tags.text);
+        await repo.addCard(
+          widget.deckId,
+          _front.text,
+          _back.text,
+          tags: _tags.text,
+          extras: _extras,
+        );
       } else {
-        await repo.updateCard(initial.id, _front.text, _back.text, tags: _tags.text.trim());
+        await repo.updateCard(
+          initial.id,
+          _front.text,
+          _back.text,
+          tags: _tags.text.trim(),
+          extras: _extras,
+        );
       }
     } catch (_) {
       if (mounted) {
@@ -72,6 +96,9 @@ class _CardFormSheetState extends ConsumerState<_CardFormSheet> {
         _added++;
         _front.clear();
         _back.clear();
+        for (final c in _extra.values) {
+          c.clear();
+        }
       });
       _form.currentState?.reset();
       _frontFocus.requestFocus();
@@ -143,6 +170,32 @@ class _CardFormSheetState extends ConsumerState<_CardFormSheet> {
                 controller: _tags,
                 decoration: InputDecoration(labelText: l10n.cardTags),
               ),
+              const SizedBox(height: Space.xs),
+              // Optional fields beyond front/back; hidden until wanted so the quick path stays short.
+              Align(
+                alignment: AlignmentDirectional.centerStart,
+                child: TextButton.icon(
+                  key: const Key('cardMoreFieldsButton'),
+                  onPressed: () => setState(() => _showExtra = !_showExtra),
+                  icon: Icon(_showExtra ? Icons.expand_less_rounded : Icons.expand_more_rounded),
+                  label: Text(l10n.cardMoreFields),
+                ),
+              ),
+              if (_showExtra)
+                for (final f in CardField.values) ...[
+                  const SizedBox(height: Space.sm),
+                  TextFormField(
+                    key: Key('cardField_${f.name}'),
+                    controller: _extra[f],
+                    minLines: 1,
+                    maxLines: 4,
+                    maxLength: CardExtras.maxLength,
+                    buildCounter: (_, {required currentLength, required isFocused, maxLength}) =>
+                        null,
+                    textCapitalization: TextCapitalization.sentences,
+                    decoration: InputDecoration(labelText: cardFieldLabel(l10n, f)),
+                  ),
+                ],
               const SizedBox(height: Space.lg),
               Wrap(
                 alignment: WrapAlignment.end,
@@ -173,3 +226,10 @@ class _CardFormSheetState extends ConsumerState<_CardFormSheet> {
     );
   }
 }
+
+String cardFieldLabel(AppLocalizations l10n, CardField f) => switch (f) {
+  CardField.example => l10n.cardFieldExample,
+  CardField.explanation => l10n.cardFieldExplanation,
+  CardField.pronunciation => l10n.cardFieldPronunciation,
+  CardField.notes => l10n.cardFieldNotes,
+};

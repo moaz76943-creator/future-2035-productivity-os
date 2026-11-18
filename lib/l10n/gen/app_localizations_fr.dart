@@ -3246,4 +3246,39 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get calendarAgenda => 'Agenda';
+
+  @override
+  String projectIconName(String name) {
+    String _temp0 = intl.Intl.selectLogic(name, {
+      'spark': 'Étincelle',
+      'rocket': 'Fusée',
+      'book': 'Livre',
+      'work': 'Travail',
+      'home': 'Maison',
+      'heart': 'Cœur',
+      'code': 'Code',
+      'palette': 'Palette',
+      'fitness': 'Sport',
+      'school': 'École',
+      'travel': 'Voyage',
+      'money': 'Épargne',
+      'other': 'Icône',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String get cardMoreFields => 'Plus de champs';
+
+  @override
+  String get cardFieldExample => 'Exemple';
+
+  @override
+  String get cardFieldExplanation => 'Explication';
+
+  @override
+  String get cardFieldPronunciation => 'Prononciation';
+
+  @override
+  String get cardFieldNotes => 'Notes supplémentaires';
 }

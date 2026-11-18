@@ -5,6 +5,7 @@ import 'package:drift/drift.dart';
 import '../../../core/database/app_database.dart';
 import '../../../core/ids.dart';
 import '../../../core/time/clock.dart';
+import '../domain/card_extras.dart';
 import '../domain/srs_scheduler.dart';
 
 class DeckStats {
@@ -97,7 +98,13 @@ class FlashcardsRepository {
   Stream<DeckRow?> watchDeck(String id) =>
       (_db.select(_db.decks)..where((d) => d.id.equals(id))).watchSingleOrNull();
 
-  Future<String> addCard(String deckId, String front, String back, {String tags = ''}) async {
+  Future<String> addCard(
+    String deckId,
+    String front,
+    String back, {
+    String tags = '',
+    CardExtras extras = const CardExtras(),
+  }) async {
     if (front.trim().isEmpty || back.trim().isEmpty) {
       throw ArgumentError('front/back');
     }
@@ -112,6 +119,7 @@ class FlashcardsRepository {
             front: front.trim(),
             back: back.trim(),
             tags: Value(tags.trim()),
+            extra: Value(extras.encode()),
             createdAt: now,
             updatedAt: now,
           ),
@@ -119,12 +127,19 @@ class FlashcardsRepository {
     return id;
   }
 
-  Future<void> updateCard(String id, String front, String back, {String? tags}) =>
+  Future<void> updateCard(
+    String id,
+    String front,
+    String back, {
+    String? tags,
+    CardExtras? extras,
+  }) =>
       (_db.update(_db.flashcards)..where((c) => c.id.equals(id))).write(
         FlashcardsCompanion(
           front: Value(front.trim()),
           back: Value(back.trim()),
           tags: tags == null ? const Value.absent() : Value(tags),
+          extra: extras == null ? const Value.absent() : Value(extras.encode()),
           updatedAt: Value(_clock.nowUtc()),
         ),
       );
@@ -308,7 +323,14 @@ class FlashcardsRepository {
       'name': deck.name,
       'description': deck.description,
       'cards': [
-        for (final c in cards) {'front': c.front, 'back': c.back, 'tags': c.tags},
+        for (final c in cards)
+          {
+            'front': c.front,
+            'back': c.back,
+            'tags': c.tags,
+            // Optional fields (version 1 readers ignore unknown keys).
+            if (c.extra.isNotEmpty) 'fields': jsonDecode(c.extra),
+          },
       ],
     });
   }
@@ -316,7 +338,7 @@ class FlashcardsRepository {
   /// Imports either the JSON deck format or tab/semicolon separated
   /// `front<TAB>back` lines. Returns the number of cards imported.
   Future<int> importInto(String deckId, String source) async {
-    final pairs = <(String, String, String)>[];
+    final pairs = <(String, String, String, CardExtras)>[];
     final trimmed = source.trimLeft();
     if (trimmed.startsWith('{')) {
       final j = jsonDecode(trimmed);
@@ -325,7 +347,13 @@ class FlashcardsRepository {
       }
       for (final c in (j['cards'] as List)) {
         final m = c as Map;
-        pairs.add(('${m['front'] ?? ''}', '${m['back'] ?? ''}', '${m['tags'] ?? ''}'));
+        final fields = m['fields'];
+        pairs.add((
+          '${m['front'] ?? ''}',
+          '${m['back'] ?? ''}',
+          '${m['tags'] ?? ''}',
+          fields is Map ? CardExtras.decode(jsonEncode(fields)) : const CardExtras(),
+        ));
       }
     } else {
       for (final line in const LineSplitter().convert(source)) {
@@ -333,14 +361,14 @@ class FlashcardsRepository {
         final sep = line.contains('\t') ? '\t' : ';';
         final i = line.indexOf(sep);
         if (i <= 0) continue;
-        pairs.add((line.substring(0, i), line.substring(i + 1), ''));
+        pairs.add((line.substring(0, i), line.substring(i + 1), '', const CardExtras()));
       }
     }
     var n = 0;
     await _db.transaction(() async {
-      for (final (f, b, t) in pairs) {
+      for (final (f, b, t, x) in pairs) {
         if (f.trim().isEmpty || b.trim().isEmpty) continue;
-        await addCard(deckId, f, b, tags: t);
+        await addCard(deckId, f, b, tags: t, extras: x);
         n++;
       }
     });

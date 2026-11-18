@@ -3346,4 +3346,39 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get calendarAgenda => 'Повестка';
+
+  @override
+  String projectIconName(String name) {
+    String _temp0 = intl.Intl.selectLogic(name, {
+      'spark': 'Искра',
+      'rocket': 'Ракета',
+      'book': 'Книга',
+      'work': 'Работа',
+      'home': 'Дом',
+      'heart': 'Сердце',
+      'code': 'Код',
+      'palette': 'Палитра',
+      'fitness': 'Фитнес',
+      'school': 'Учёба',
+      'travel': 'Путешествие',
+      'money': 'Накопления',
+      'other': 'Значок',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String get cardMoreFields => 'Дополнительные поля';
+
+  @override
+  String get cardFieldExample => 'Пример';
+
+  @override
+  String get cardFieldExplanation => 'Пояснение';
+
+  @override
+  String get cardFieldPronunciation => 'Произношение';
+
+  @override
+  String get cardFieldNotes => 'Дополнительные заметки';
 }
