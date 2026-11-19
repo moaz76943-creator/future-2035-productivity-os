@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- All traffic must use TLS. The app is local-first; the only optional network
-     use is a user-configured HTTPS assistant endpoint. -->
+     use is a user-configured HTTPS assistant endpoint.
+     Certificate pinning for known hosts can be added via <pin-set> under domain-config.
+     Dynamic user endpoints rely on the Dart PinnedHttpClient + Play Integrity attestation.
+     R8 + ProGuard obfuscation + encrypted storage protect the rest. -->
 <network-security-config>
     <base-config cleartextTrafficPermitted="false">
         <trust-anchors>
             <certificates src="system" />
         </trust-anchors>
     </base-config>
+    <!-- Example pin-set for a known provider (replace with real SPKI SHA-256 pins):
+    <domain-config>
+        <domain includeSubdomains="true">api.openai.com</domain>
+        <pin-set expiration="2027-01-01">
+            <pin digest="SHA-256">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</pin>
+        </pin-set>
+    </domain-config>
+    -->
 </network-security-config>
