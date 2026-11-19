@@ -46,6 +46,8 @@ void main() {
     raw.execute('ALTER TABLE flashcards DROP COLUMN custom');
     raw.execute('ALTER TABLE decks DROP COLUMN front_lang');
     raw.execute('ALTER TABLE decks DROP COLUMN back_lang');
+    raw.execute('DROP INDEX IF EXISTS idx_note_images_note');
+    raw.execute('DROP TABLE note_images');
     raw.execute('PRAGMA user_version = 1');
     raw.close();
 
@@ -54,7 +56,7 @@ void main() {
     final cards = await db.select(db.flashcards).get();
     expect(cards.single.front, 'hola');
     expect(cards.single.extra, '');
-    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 7);
+    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 8);
     await (db.update(db.flashcards)..where((c) => c.id.equals('c1'))).write(
       const FlashcardsCompanion(extra: Value('{"example":"¡Hola!"}')),
     );
@@ -88,6 +90,8 @@ void main() {
     raw.execute('ALTER TABLE flashcards DROP COLUMN custom');
     raw.execute('ALTER TABLE decks DROP COLUMN front_lang');
     raw.execute('ALTER TABLE decks DROP COLUMN back_lang');
+    raw.execute('DROP INDEX IF EXISTS idx_note_images_note');
+    raw.execute('DROP TABLE note_images');
     raw.execute('PRAGMA user_version = 2');
     raw.close();
 
@@ -106,7 +110,7 @@ void main() {
           ),
         );
     expect((await db.select(db.milestones).getSingle()).title, 'Draft');
-    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 7);
+    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 8);
   });
 
   test('upgrading a v3 database adds task status and archive without touching tasks', () async {
@@ -133,6 +137,8 @@ void main() {
     raw.execute('ALTER TABLE flashcards DROP COLUMN custom');
     raw.execute('ALTER TABLE decks DROP COLUMN front_lang');
     raw.execute('ALTER TABLE decks DROP COLUMN back_lang');
+    raw.execute('DROP INDEX IF EXISTS idx_note_images_note');
+    raw.execute('DROP TABLE note_images');
     raw.execute('PRAGMA user_version = 3');
     raw.close();
 
@@ -142,7 +148,7 @@ void main() {
     expect(t.title, 'Write intro');
     expect(t.status, 'notStarted');
     expect(t.archivedAt, isNull);
-    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 7);
+    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 8);
   });
 
   test('upgrading a v4 database adds card suspension and deck languages', () async {
@@ -171,6 +177,8 @@ void main() {
     raw.execute('ALTER TABLE flashcards DROP COLUMN custom');
     raw.execute('ALTER TABLE decks DROP COLUMN front_lang');
     raw.execute('ALTER TABLE decks DROP COLUMN back_lang');
+    raw.execute('DROP INDEX IF EXISTS idx_note_images_note');
+    raw.execute('DROP TABLE note_images');
     raw.execute('PRAGMA user_version = 4');
     raw.close();
 
@@ -181,7 +189,7 @@ void main() {
     final deck = await db.select(db.decks).getSingle();
     expect(deck.frontLang, '');
     expect(deck.backLang, '');
-    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 7);
+    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 8);
   });
 
   test('upgrading a v5 database derives an FSRS state from SM-2 data', () async {
@@ -213,6 +221,8 @@ void main() {
     raw.execute('DROP INDEX IF EXISTS idx_card_media_card');
     raw.execute('DROP TABLE card_media');
     raw.execute('ALTER TABLE flashcards DROP COLUMN custom');
+    raw.execute('DROP INDEX IF EXISTS idx_note_images_note');
+    raw.execute('DROP TABLE note_images');
     raw.execute('PRAGMA user_version = 5');
     raw.close();
 
@@ -225,7 +235,7 @@ void main() {
     expect(cards['c1']!.favorite, isFalse);
     expect(cards['c2']!.stability, 0);
     expect(cards['c2']!.lastReviewAt, isNull);
-    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 7);
+    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 8);
   });
 
   test('upgrading a v6 database adds custom field values and card media', () async {
@@ -247,6 +257,8 @@ void main() {
     raw.execute('DROP INDEX IF EXISTS idx_card_media_card');
     raw.execute('DROP TABLE card_media');
     raw.execute('ALTER TABLE flashcards DROP COLUMN custom');
+    raw.execute('DROP INDEX IF EXISTS idx_note_images_note');
+    raw.execute('DROP TABLE note_images');
     raw.execute('PRAGMA user_version = 6');
     raw.close();
 
@@ -266,6 +278,40 @@ void main() {
           ),
         );
     expect((await db.select(db.cardMedia).getSingle()).bytes, [1, 2, 3]);
-    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 7);
+    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 8);
+  });
+
+  test('upgrading a v7 database adds note pictures and keeps notes', () async {
+    final dir = await Directory.systemTemp.createTemp('fos_mig8');
+    addTearDown(() => dir.delete(recursive: true));
+    final file = File('${dir.path}/db.sqlite');
+    final seed = AppDatabase(NativeDatabase(file));
+    await seed.customSelect('SELECT 1').get();
+    await seed.close();
+    final raw = sqlite3.open(file.path);
+    final now = "'${DateTime.utc(2026, 11).toIso8601String()}'";
+    raw.execute(
+      "INSERT INTO notes (id, title, body, created_at, updated_at) VALUES ('n1', 'Old', 'text', $now, $now)",
+    );
+    raw.execute('DROP INDEX IF EXISTS idx_note_images_note');
+    raw.execute('DROP TABLE note_images');
+    raw.execute('PRAGMA user_version = 7');
+    raw.close();
+
+    final db = AppDatabase(NativeDatabase(file));
+    addTearDown(db.close);
+    expect((await db.select(db.notes).getSingle()).body, 'text');
+    await db
+        .into(db.noteImages)
+        .insert(
+          NoteImagesCompanion.insert(
+            id: 'i1',
+            noteId: 'n1',
+            bytes: Uint8List.fromList([1, 2, 3]),
+            createdAt: DateTime.utc(2026, 11),
+          ),
+        );
+    expect((await db.select(db.noteImages).getSingle()).bytes, [1, 2, 3]);
+    expect((await db.customSelect('PRAGMA user_version').getSingle()).read<int>('user_version'), 8);
   });
 }

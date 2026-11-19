@@ -9,12 +9,15 @@ import '../../../../core/speech/audio_recorder.dart';
 import '../../../../shared/widgets/dialogs.dart';
 import '../../../../shared/widgets/mic_button.dart';
 import '../../application/flashcards_providers.dart';
-import '../../application/media_picker.dart';
+import '../../../../core/platform/media_picker.dart';
 import '../../data/flashcards_repository.dart';
 import '../../domain/card_layout.dart';
 import '../../domain/card_extras.dart';
 import 'record_sheet.dart';
-import '../../../../l10n/gen/app_localizations.dart';
+
+import '../../domain/card_field_labels.dart';
+
+export '../../domain/card_field_labels.dart';
 
 part 'card_form_sheet/show_card_form.dart';
 part 'card_form_sheet/card_form_sheet_state.dart';
@@ -31,10 +34,3 @@ Future<void> showCardForm(BuildContext context, {required String deckId, CardRow
     builder: (ctx) => _CardFormSheet(deckId: deckId, initial: initial),
   );
 }
-
-String cardFieldLabel(AppLocalizations l10n, CardField f) => switch (f) {
-  CardField.example => l10n.cardFieldExample,
-  CardField.explanation => l10n.cardFieldExplanation,
-  CardField.pronunciation => l10n.cardFieldPronunciation,
-  CardField.notes => l10n.cardFieldNotes,
-};

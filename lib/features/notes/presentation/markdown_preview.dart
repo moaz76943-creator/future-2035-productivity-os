@@ -5,6 +5,8 @@ import '../../../app/localization/app_format.dart';
 import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/tokens.dart';
 import '../application/note_text.dart';
+import '../data/note_images.dart';
+import 'note_image_view.dart';
 
 /// Safe renderer for the note markdown subset: headings, bold, italic,
 /// bullet/numbered lists, checklists, quotes, `[[wiki links]]` and `#tags`.
@@ -162,6 +164,8 @@ class _MarkdownPreviewState extends State<MarkdownPreview> {
       Widget block;
       if (line.trim().isEmpty) {
         block = const SizedBox(height: Space.xs);
+      } else if (NoteImageRefs.line.firstMatch(line) case final m?) {
+        block = NoteImageView(id: m.group(1)!, maxHeight: 360);
       } else if (_heading.firstMatch(line) case final m?) {
         final level = m.group(1)!.length;
         final style =

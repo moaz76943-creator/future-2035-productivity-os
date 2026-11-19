@@ -4527,7 +4527,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get faqNotesA =>
-      'Write freely with checklists and formatting, pin or favourite important notes, add tags and link notes to tasks. The microphone button lets you dictate.';
+      'Write freely with checklists and formatting, pin or favourite important notes, add tags and link notes to tasks. The microphone button lets you dictate. A new note can start from a template (lecture, book summary, journal, weekly plan), and the picture button adds photos.';
 
   @override
   String get faqHabitsQ => 'How are habit streaks counted?';
@@ -4627,4 +4627,127 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tourDone => 'Let’s begin';
+
+  @override
+  String get transferColTitle => 'Title';
+
+  @override
+  String get transferColNotes => 'Notes';
+
+  @override
+  String get transferColBody => 'Text';
+
+  @override
+  String get transferColDue => 'Due date';
+
+  @override
+  String get transferColPriority => 'Priority (0-3)';
+
+  @override
+  String get transferColDone => 'Done';
+
+  @override
+  String get transferColProject => 'Project';
+
+  @override
+  String get transferColCategory => 'Category';
+
+  @override
+  String get transferTitle => 'Import and export';
+
+  @override
+  String get transferSaveAs => 'Save as';
+
+  @override
+  String get transferImport => 'Import from a file';
+
+  @override
+  String get transferImportTasksHint =>
+      'Excel, CSV or a table in Word. Columns: title, due date (2026-12-31), priority 0-3, done, project, notes. Tasks already in the app are skipped.';
+
+  @override
+  String get transferImportNotesHint =>
+      'Word, Markdown or text files become a note. Excel or CSV: one note per row (title, text).';
+
+  @override
+  String get transferSaved => 'File saved';
+
+  @override
+  String get transferFailed => 'The file could not be made. Nothing was changed.';
+
+  @override
+  String get transferUnsupported =>
+      'This file can’t be read here. Use Excel, CSV, Word, Markdown or text.';
+
+  @override
+  String transferImported(int added) {
+    String _temp0 = intl.Intl.pluralLogic(
+      added,
+      locale: localeName,
+      other: '$added added',
+      one: '1 added',
+      zero: 'Nothing new to add',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get transferFormatText => 'Text';
+
+  @override
+  String get transferAllNotes => 'All notes';
+
+  @override
+  String get transferThisNote => 'This note';
+
+  @override
+  String get transferDeckFormats => 'Save as Excel, Word or PDF';
+
+  @override
+  String get faqFilesQ => 'Can I use Excel, Word or PDF files?';
+
+  @override
+  String get faqFilesA =>
+      'Yes. Tasks and Notes have an import and export button (two arrows) at the top, and every deck has it in its menu. Save as Excel, CSV, Word or PDF, or bring in Excel, CSV, Word, Markdown or text files. Column names can be in any of the app’s languages, and files you saved can always be imported again.';
+
+  @override
+  String get tplLecture => 'Lecture';
+
+  @override
+  String get tplBook => 'Book summary';
+
+  @override
+  String get tplJournal => 'Journal';
+
+  @override
+  String get tplWeek => 'Weekly plan';
+
+  @override
+  String get tplLectureBody => '## Key points\n- \n\n## Questions\n- [ ] \n\n## Summary\n';
+
+  @override
+  String get tplBookBody =>
+      '## Main idea\n\n## What I learned\n- \n\n## Quotes\n> \n\n## To apply\n- [ ] \n';
+
+  @override
+  String get tplJournalBody => '## Grateful for\n- \n\n## Today’s focus\n- [ ] \n\n## Notes\n';
+
+  @override
+  String get tplWeekBody =>
+      '## Goals this week\n- [ ] \n\n### Saturday\n- [ ] \n\n### Sunday\n- [ ] \n\n### Monday\n- [ ] \n\n### Tuesday\n- [ ] \n\n### Wednesday\n- [ ] \n\n### Thursday\n- [ ] \n\n### Friday\n- [ ] \n';
+
+  @override
+  String get tplHint => 'Start from a template';
+
+  @override
+  String get noteImage => 'Picture';
+
+  @override
+  String get noteAddImage => 'Add picture';
+
+  @override
+  String get noteImageUnreadable => 'This file isn’t a picture the app can read.';
+
+  @override
+  String get noteImageTooLarge => 'This picture is too large.';
 }

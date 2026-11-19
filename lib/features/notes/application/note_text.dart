@@ -48,6 +48,7 @@ abstract final class NoteText {
     });
     return lines
         .join('\n')
+        .replaceAll(RegExp(r'!\[[^\]]*\]\(img:[A-Za-z0-9_-]{1,64}\)'), '')
         .replaceAllMapped(RegExp(r'\[\[([^\[\]]{1,200})\]\]'), (m) => m.group(1)!)
         .replaceAllMapped(RegExp(r'\[([^\]]*)\]\([^)]*\)'), (m) => m.group(1)!)
         .replaceAll(RegExp(r'\*\*|__|`'), '')

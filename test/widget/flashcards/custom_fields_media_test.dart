@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:future_os/features/flashcards/application/media_picker.dart';
+import 'package:future_os/core/platform/media_picker.dart';
 import 'package:future_os/features/flashcards/data/flashcards_repository.dart';
 import 'package:future_os/features/flashcards/domain/card_layout.dart';
 import 'package:future_os/features/flashcards/presentation/deck_screen.dart';

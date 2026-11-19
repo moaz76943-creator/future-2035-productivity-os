@@ -4328,7 +4328,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get faqNotesQ => '笔记能做什么？';
 
   @override
-  String get faqNotesA => '可使用清单和格式自由书写，置顶或收藏重要笔记，添加标签并关联到任务。点击麦克风按钮即可语音输入。';
+  String get faqNotesA =>
+      '可使用清单和格式自由书写，置顶或收藏重要笔记，添加标签并关联到任务。点击麦克风按钮即可语音输入。 新笔记可从模板开始（课堂笔记、读书笔记、日记、周计划），图片按钮可添加照片。';
 
   @override
   String get faqHabitsQ => '习惯的连续天数如何计算？';
@@ -4416,4 +4417,118 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get tourDone => '开始吧';
+
+  @override
+  String get transferColTitle => '标题';
+
+  @override
+  String get transferColNotes => '备注';
+
+  @override
+  String get transferColBody => '正文';
+
+  @override
+  String get transferColDue => '截止日期';
+
+  @override
+  String get transferColPriority => '优先级 (0-3)';
+
+  @override
+  String get transferColDone => '已完成';
+
+  @override
+  String get transferColProject => '项目';
+
+  @override
+  String get transferColCategory => '类别';
+
+  @override
+  String get transferTitle => '导入和导出';
+
+  @override
+  String get transferSaveAs => '另存为';
+
+  @override
+  String get transferImport => '从文件导入';
+
+  @override
+  String get transferImportTasksHint =>
+      'Excel、CSV 或 Word 表格。列：标题、截止日期（2026-12-31）、优先级 0-3、已完成、项目、备注。已有任务会被跳过。';
+
+  @override
+  String get transferImportNotesHint => 'Word、Markdown 或文本文件会成为一条笔记。Excel 或 CSV：每行一条笔记（标题、正文）。';
+
+  @override
+  String get transferSaved => '文件已保存';
+
+  @override
+  String get transferFailed => '无法生成文件，未做任何更改。';
+
+  @override
+  String get transferUnsupported => '此处无法读取该文件。请使用 Excel、CSV、Word、Markdown 或文本。';
+
+  @override
+  String transferImported(int added) {
+    String _temp0 = intl.Intl.pluralLogic(added, locale: localeName, other: '已添加 $added 项');
+    return '$_temp0';
+  }
+
+  @override
+  String get transferFormatText => '文本';
+
+  @override
+  String get transferAllNotes => '全部笔记';
+
+  @override
+  String get transferThisNote => '这条笔记';
+
+  @override
+  String get transferDeckFormats => '保存为 Excel、Word 或 PDF';
+
+  @override
+  String get faqFilesQ => '可以使用 Excel、Word 或 PDF 文件吗？';
+
+  @override
+  String get faqFilesA =>
+      '可以。任务和笔记顶部有导入导出按钮（两个箭头），每个卡组的菜单里也有。可保存为 Excel、CSV、Word 或 PDF，也可导入 Excel、CSV、Word、Markdown 或文本文件。列名可用应用支持的任意语言，保存的文件随时可再次导入。';
+
+  @override
+  String get tplLecture => '课堂笔记';
+
+  @override
+  String get tplBook => '读书笔记';
+
+  @override
+  String get tplJournal => '日记';
+
+  @override
+  String get tplWeek => '周计划';
+
+  @override
+  String get tplLectureBody => '## 要点\n- \n\n## 问题\n- [ ] \n\n## 总结\n';
+
+  @override
+  String get tplBookBody => '## 核心观点\n\n## 我的收获\n- \n\n## 摘录\n> \n\n## 行动\n- [ ] \n';
+
+  @override
+  String get tplJournalBody => '## 感恩\n- \n\n## 今日重点\n- [ ] \n\n## 随记\n';
+
+  @override
+  String get tplWeekBody =>
+      '## 本周目标\n- [ ] \n\n### 周六\n- [ ] \n\n### 周日\n- [ ] \n\n### 周一\n- [ ] \n\n### 周二\n- [ ] \n\n### 周三\n- [ ] \n\n### 周四\n- [ ] \n\n### 周五\n- [ ] \n';
+
+  @override
+  String get tplHint => '从模板开始';
+
+  @override
+  String get noteImage => '图片';
+
+  @override
+  String get noteAddImage => '添加图片';
+
+  @override
+  String get noteImageUnreadable => '该文件不是应用可读取的图片。';
+
+  @override
+  String get noteImageTooLarge => '图片过大。';
 }

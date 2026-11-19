@@ -4547,7 +4547,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get faqNotesA =>
-      'Escribe con listas y formato, fija o marca como favoritas las notas importantes, añade etiquetas y enlaza notas con tareas. El botón del micrófono te deja dictar.';
+      'Escribe con listas y formato, fija o marca como favoritas las notas importantes, añade etiquetas y enlaza notas con tareas. El botón del micrófono te deja dictar. Una nota nueva puede empezar con una plantilla (clase, resumen de libro, diario, plan semanal) y el botón de imagen añade fotos.';
 
   @override
   String get faqHabitsQ => '¿Cómo se cuentan las rachas de hábitos?';
@@ -4647,4 +4647,127 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get tourDone => 'Empecemos';
+
+  @override
+  String get transferColTitle => 'Título';
+
+  @override
+  String get transferColNotes => 'Notas';
+
+  @override
+  String get transferColBody => 'Texto';
+
+  @override
+  String get transferColDue => 'Fecha límite';
+
+  @override
+  String get transferColPriority => 'Prioridad (0-3)';
+
+  @override
+  String get transferColDone => 'Hecha';
+
+  @override
+  String get transferColProject => 'Proyecto';
+
+  @override
+  String get transferColCategory => 'Categoría';
+
+  @override
+  String get transferTitle => 'Importar y exportar';
+
+  @override
+  String get transferSaveAs => 'Guardar como';
+
+  @override
+  String get transferImport => 'Importar desde un archivo';
+
+  @override
+  String get transferImportTasksHint =>
+      'Excel, CSV o una tabla de Word. Columnas: título, fecha límite (2026-12-31), prioridad 0-3, hecha, proyecto, notas. Las tareas que ya existen se omiten.';
+
+  @override
+  String get transferImportNotesHint =>
+      'Los archivos Word, Markdown o de texto se convierten en una nota. Excel o CSV: una nota por fila (título, texto).';
+
+  @override
+  String get transferSaved => 'Archivo guardado';
+
+  @override
+  String get transferFailed => 'No se pudo crear el archivo. No se cambió nada.';
+
+  @override
+  String get transferUnsupported =>
+      'Este archivo no se puede leer aquí. Usa Excel, CSV, Word, Markdown o texto.';
+
+  @override
+  String transferImported(int added) {
+    String _temp0 = intl.Intl.pluralLogic(
+      added,
+      locale: localeName,
+      other: '$added añadidos',
+      one: '1 añadido',
+      zero: 'Nada nuevo que añadir',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get transferFormatText => 'Texto';
+
+  @override
+  String get transferAllNotes => 'Todas las notas';
+
+  @override
+  String get transferThisNote => 'Esta nota';
+
+  @override
+  String get transferDeckFormats => 'Guardar como Excel, Word o PDF';
+
+  @override
+  String get faqFilesQ => '¿Puedo usar archivos de Excel, Word o PDF?';
+
+  @override
+  String get faqFilesA =>
+      'Sí. Tareas y Notas tienen arriba un botón de importar y exportar (dos flechas), y cada mazo lo tiene en su menú. Guarda como Excel, CSV, Word o PDF, o importa archivos de Excel, CSV, Word, Markdown o texto. Las columnas pueden estar en cualquier idioma de la app y lo que guardes siempre se puede volver a importar.';
+
+  @override
+  String get tplLecture => 'Clase';
+
+  @override
+  String get tplBook => 'Resumen de libro';
+
+  @override
+  String get tplJournal => 'Diario';
+
+  @override
+  String get tplWeek => 'Plan semanal';
+
+  @override
+  String get tplLectureBody => '## Ideas clave\n- \n\n## Preguntas\n- [ ] \n\n## Resumen\n';
+
+  @override
+  String get tplBookBody =>
+      '## Idea principal\n\n## Qué aprendí\n- \n\n## Citas\n> \n\n## Para aplicar\n- [ ] \n';
+
+  @override
+  String get tplJournalBody => '## Agradezco\n- \n\n## Enfoque de hoy\n- [ ] \n\n## Notas\n';
+
+  @override
+  String get tplWeekBody =>
+      '## Metas de la semana\n- [ ] \n\n### Sábado\n- [ ] \n\n### Domingo\n- [ ] \n\n### Lunes\n- [ ] \n\n### Martes\n- [ ] \n\n### Miércoles\n- [ ] \n\n### Jueves\n- [ ] \n\n### Viernes\n- [ ] \n';
+
+  @override
+  String get tplHint => 'Empieza con una plantilla';
+
+  @override
+  String get noteImage => 'Imagen';
+
+  @override
+  String get noteAddImage => 'Añadir imagen';
+
+  @override
+  String get noteImageUnreadable => 'Este archivo no es una imagen que la app pueda leer.';
+
+  @override
+  String get noteImageTooLarge => 'Esta imagen es demasiado grande.';
 }

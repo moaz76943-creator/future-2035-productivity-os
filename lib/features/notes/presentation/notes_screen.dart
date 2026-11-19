@@ -19,6 +19,7 @@ import '../application/note_text.dart';
 import '../application/notes_providers.dart';
 import '../data/notes_repository.dart';
 import 'note_actions.dart';
+import 'notes_transfer_sheet.dart';
 
 part 'notes_screen/notes_screen_state.dart';
 part 'notes_screen/note_card.dart';

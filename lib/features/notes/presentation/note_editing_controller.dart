@@ -1,5 +1,8 @@
 import 'package:material_ui/material_ui.dart';
 
+import '../data/note_images.dart';
+import 'note_image_view.dart';
+
 /// The note text field shows formatting, not symbols: `**bold**` is bold,
 /// `# Heading` is a heading, `- [ ]` is a check box, `- ` a bullet, `[[link]]`
 /// a link. The markdown stays in the text (so notes remain plain text that
@@ -46,6 +49,24 @@ class NoteEditingController extends TextEditingController {
   }
 
   void _line(List<InlineSpan> out, String line, int index, TextStyle base) {
+    // A picture line: the first character carries the picture, the rest of
+    // the reference is invisible.
+    if (NoteImageRefs.line.firstMatch(line) case final m?) {
+      out
+        ..add(
+          WidgetSpan(
+            alignment: PlaceholderAlignment.middle,
+            child: LayoutBuilder(
+              builder: (_, c) => SizedBox(
+                width: c.maxWidth.isFinite ? c.maxWidth - 8 : 280,
+                child: NoteImageView(id: m.group(1)!),
+              ),
+            ),
+          ),
+        )
+        ..add(TextSpan(text: line.substring(1), style: _hidden));
+      return;
+    }
     if (_checkbox.firstMatch(line) case final m?) {
       final checked = m.group(4) != ' ';
       out

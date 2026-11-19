@@ -50,6 +50,14 @@ class _NotesScreenState extends ConsumerState<NotesScreen> {
     return ModuleScaffold(
       title: l10n.notesTitle,
       hue: hue,
+      actions: [
+        IconButton(
+          key: const Key('notesTransfer'),
+          tooltip: l10n.transferTitle,
+          icon: const Icon(Icons.import_export_rounded),
+          onPressed: () => showNotesTransfer(context, ref),
+        ),
+      ],
       floatingActionButton: FloatingActionButton.extended(
         heroTag: 'notes-fab',
         onPressed: _create,

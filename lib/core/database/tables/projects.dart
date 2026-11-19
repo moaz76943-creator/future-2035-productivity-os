@@ -209,6 +209,19 @@ class NoteTags extends Table {
   Set<Column> get primaryKey => {noteId, tag};
 }
 
+/// Pictures in notes (schema v8). The note text refers to one with a line
+/// `![](img:<id>)`. Kept in the database so backups include them.
+class NoteImages extends Table {
+  TextColumn get id => text()();
+  TextColumn get noteId => text().references(Notes, #id, onDelete: KeyAction.cascade)();
+  TextColumn get mime => text().withDefault(const Constant('image/jpeg'))();
+  BlobColumn get bytes => blob()();
+  DateTimeColumn get createdAt => dateTime()();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+
 class NoteTaskLinks extends Table {
   TextColumn get noteId => text().references(Notes, #id, onDelete: KeyAction.cascade)();
   TextColumn get taskId => text().references(Tasks, #id, onDelete: KeyAction.cascade)();

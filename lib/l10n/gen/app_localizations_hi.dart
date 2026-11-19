@@ -4539,7 +4539,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get faqNotesA =>
-      'चेकलिस्ट और फ़ॉर्मैटिंग के साथ लिखें, ज़रूरी नोट्स पिन या पसंदीदा करें, टैग जोड़ें और नोट्स को कार्यों से जोड़ें। माइक्रोफ़ोन बटन से बोलकर लिखें।';
+      'चेकलिस्ट और फ़ॉर्मैटिंग के साथ लिखें, ज़रूरी नोट्स पिन या पसंदीदा करें, टैग जोड़ें और नोट्स को कार्यों से जोड़ें। माइक्रोफ़ोन बटन से बोलकर लिखें। नया नोट किसी टेम्पलेट (व्याख्यान, पुस्तक सारांश, डायरी, साप्ताहिक योजना) से शुरू हो सकता है, और चित्र बटन से फ़ोटो जोड़ें।';
 
   @override
   String get faqHabitsQ => 'आदतों की लगातार गिनती कैसे होती है?';
@@ -4639,4 +4639,127 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get tourDone => 'शुरू करें';
+
+  @override
+  String get transferColTitle => 'शीर्षक';
+
+  @override
+  String get transferColNotes => 'टिप्पणियाँ';
+
+  @override
+  String get transferColBody => 'पाठ';
+
+  @override
+  String get transferColDue => 'नियत तारीख';
+
+  @override
+  String get transferColPriority => 'प्राथमिकता (0-3)';
+
+  @override
+  String get transferColDone => 'पूरा';
+
+  @override
+  String get transferColProject => 'प्रोजेक्ट';
+
+  @override
+  String get transferColCategory => 'श्रेणी';
+
+  @override
+  String get transferTitle => 'आयात और निर्यात';
+
+  @override
+  String get transferSaveAs => 'इस रूप में सहेजें';
+
+  @override
+  String get transferImport => 'फ़ाइल से आयात';
+
+  @override
+  String get transferImportTasksHint =>
+      'Excel, CSV या Word की तालिका। कॉलम: शीर्षक, नियत तारीख (2026-12-31), प्राथमिकता 0-3, पूरा, प्रोजेक्ट, टिप्पणियाँ। पहले से मौजूद कार्य छोड़ दिए जाते हैं।';
+
+  @override
+  String get transferImportNotesHint =>
+      'Word, Markdown या टेक्स्ट फ़ाइल एक नोट बनती है। Excel या CSV: हर पंक्ति एक नोट (शीर्षक, पाठ)।';
+
+  @override
+  String get transferSaved => 'फ़ाइल सहेजी गई';
+
+  @override
+  String get transferFailed => 'फ़ाइल नहीं बन सकी। कुछ नहीं बदला।';
+
+  @override
+  String get transferUnsupported =>
+      'यह फ़ाइल यहाँ नहीं पढ़ी जा सकती। Excel, CSV, Word, Markdown या टेक्स्ट इस्तेमाल करें।';
+
+  @override
+  String transferImported(int added) {
+    String _temp0 = intl.Intl.pluralLogic(
+      added,
+      locale: localeName,
+      other: '$added जोड़े गए',
+      one: '1 जोड़ा गया',
+      zero: 'जोड़ने को कुछ नया नहीं',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get transferFormatText => 'टेक्स्ट';
+
+  @override
+  String get transferAllNotes => 'सभी नोट्स';
+
+  @override
+  String get transferThisNote => 'यह नोट';
+
+  @override
+  String get transferDeckFormats => 'Excel, Word या PDF के रूप में सहेजें';
+
+  @override
+  String get faqFilesQ => 'क्या मैं Excel, Word या PDF फ़ाइलें इस्तेमाल कर सकता हूँ?';
+
+  @override
+  String get faqFilesA =>
+      'हाँ। कार्य और नोट्स में ऊपर आयात-निर्यात बटन (दो तीर) है, और हर डेक के मेनू में भी। Excel, CSV, Word या PDF के रूप में सहेजें, या Excel, CSV, Word, Markdown या टेक्स्ट फ़ाइलें लाएँ। कॉलम के नाम ऐप की किसी भी भाषा में हो सकते हैं, और सहेजी फ़ाइलें फिर से आयात हो सकती हैं।';
+
+  @override
+  String get tplLecture => 'व्याख्यान';
+
+  @override
+  String get tplBook => 'पुस्तक सारांश';
+
+  @override
+  String get tplJournal => 'डायरी';
+
+  @override
+  String get tplWeek => 'साप्ताहिक योजना';
+
+  @override
+  String get tplLectureBody => '## मुख्य बातें\n- \n\n## प्रश्न\n- [ ] \n\n## सारांश\n';
+
+  @override
+  String get tplBookBody =>
+      '## मुख्य विचार\n\n## मैंने क्या सीखा\n- \n\n## उद्धरण\n> \n\n## अमल में लाना\n- [ ] \n';
+
+  @override
+  String get tplJournalBody => '## आभारी हूँ\n- \n\n## आज का फ़ोकस\n- [ ] \n\n## नोट्स\n';
+
+  @override
+  String get tplWeekBody =>
+      '## इस सप्ताह के लक्ष्य\n- [ ] \n\n### शनिवार\n- [ ] \n\n### रविवार\n- [ ] \n\n### सोमवार\n- [ ] \n\n### मंगलवार\n- [ ] \n\n### बुधवार\n- [ ] \n\n### गुरुवार\n- [ ] \n\n### शुक्रवार\n- [ ] \n';
+
+  @override
+  String get tplHint => 'टेम्पलेट से शुरू करें';
+
+  @override
+  String get noteImage => 'चित्र';
+
+  @override
+  String get noteAddImage => 'चित्र जोड़ें';
+
+  @override
+  String get noteImageUnreadable => 'यह फ़ाइल ऐसा चित्र नहीं है जिसे ऐप पढ़ सके।';
+
+  @override
+  String get noteImageTooLarge => 'यह चित्र बहुत बड़ा है।';
 }

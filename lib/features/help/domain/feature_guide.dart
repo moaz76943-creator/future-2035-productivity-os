@@ -99,6 +99,14 @@ final featureGuide = <GuideEntry>[
     answer: (l) => l.faqImportA,
   ),
   GuideEntry(
+    id: 'files',
+    route: Routes.tasks,
+    icon: Icons.import_export_rounded,
+    hue: ModuleHue.tasks,
+    question: (l) => l.faqFilesQ,
+    answer: (l) => l.faqFilesA,
+  ),
+  GuideEntry(
     id: 'notes',
     route: Routes.notes,
     icon: Icons.edit_note_rounded,

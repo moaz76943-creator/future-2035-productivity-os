@@ -6090,7 +6090,7 @@
   "@faqNotesQ": {
     "description": "FAQ question"
   },
-  "faqNotesA": "Write freely with checklists and formatting, pin or favourite important notes, add tags and link notes to tasks. The microphone button lets you dictate.",
+  "faqNotesA": "Write freely with checklists and formatting, pin or favourite important notes, add tags and link notes to tasks. The microphone button lets you dictate. A new note can start from a template (lecture, book summary, journal, weekly plan), and the picture button adds photos.",
   "@faqNotesA": {
     "description": "FAQ answer"
   },
@@ -6209,5 +6209,154 @@
   "tourDone": "Let’s begin",
   "@tourDone": {
     "description": "Tour: finish"
+  },
+  "transferColTitle": "Title",
+  "@transferColTitle": {
+    "description": "File column header"
+  },
+  "transferColNotes": "Notes",
+  "@transferColNotes": {
+    "description": "File column header: task notes"
+  },
+  "transferColBody": "Text",
+  "@transferColBody": {
+    "description": "File column header: note text"
+  },
+  "transferColDue": "Due date",
+  "@transferColDue": {
+    "description": "File column header: due date (YYYY-MM-DD)"
+  },
+  "transferColPriority": "Priority (0-3)",
+  "@transferColPriority": {
+    "description": "File column header: 0–3"
+  },
+  "transferColDone": "Done",
+  "@transferColDone": {
+    "description": "File column header"
+  },
+  "transferColProject": "Project",
+  "@transferColProject": {
+    "description": "File column header"
+  },
+  "transferColCategory": "Category",
+  "@transferColCategory": {
+    "description": "File column header"
+  },
+  "transferTitle": "Import and export",
+  "@transferTitle": {
+    "description": "Sheet title / menu item"
+  },
+  "transferSaveAs": "Save as",
+  "@transferSaveAs": {
+    "description": "Section: export formats"
+  },
+  "transferImport": "Import from a file",
+  "@transferImport": {
+    "description": "Button: import a file"
+  },
+  "transferImportTasksHint": "Excel, CSV or a table in Word. Columns: title, due date (2026-12-31), priority 0-3, done, project, notes. Tasks already in the app are skipped.",
+  "@transferImportTasksHint": {
+    "description": "Hint under import"
+  },
+  "transferImportNotesHint": "Word, Markdown or text files become a note. Excel or CSV: one note per row (title, text).",
+  "@transferImportNotesHint": {
+    "description": "Hint under import"
+  },
+  "transferSaved": "File saved",
+  "@transferSaved": {
+    "description": "Snackbar"
+  },
+  "transferFailed": "The file could not be made. Nothing was changed.",
+  "@transferFailed": {
+    "description": "Snackbar"
+  },
+  "transferUnsupported": "This file can’t be read here. Use Excel, CSV, Word, Markdown or text.",
+  "@transferUnsupported": {
+    "description": "Snackbar"
+  },
+  "transferImported": "{added, plural, =0{Nothing new to add} =1{1 added} other{{added} added}}",
+  "@transferImported": {
+    "description": "Snackbar after import",
+    "placeholders": {
+      "added": {
+        "type": "int"
+      }
+    }
+  },
+  "transferFormatText": "Text",
+  "@transferFormatText": {
+    "description": "Format name: plain text"
+  },
+  "transferAllNotes": "All notes",
+  "@transferAllNotes": {
+    "description": "Section: export every note"
+  },
+  "transferThisNote": "This note",
+  "@transferThisNote": {
+    "description": "Section: export the open note"
+  },
+  "transferDeckFormats": "Save as Excel, Word or PDF",
+  "@transferDeckFormats": {
+    "description": "Deck menu: save the deck as Excel, Word or PDF"
+  },
+  "faqFilesQ": "Can I use Excel, Word or PDF files?",
+  "@faqFilesQ": {
+    "description": "FAQ question"
+  },
+  "faqFilesA": "Yes. Tasks and Notes have an import and export button (two arrows) at the top, and every deck has it in its menu. Save as Excel, CSV, Word or PDF, or bring in Excel, CSV, Word, Markdown or text files. Column names can be in any of the app’s languages, and files you saved can always be imported again.",
+  "@faqFilesA": {
+    "description": "FAQ answer"
+  },
+  "tplLecture": "Lecture",
+  "@tplLecture": {
+    "description": "Note template name"
+  },
+  "tplBook": "Book summary",
+  "@tplBook": {
+    "description": "Note template name"
+  },
+  "tplJournal": "Journal",
+  "@tplJournal": {
+    "description": "Note template name"
+  },
+  "tplWeek": "Weekly plan",
+  "@tplWeek": {
+    "description": "Note template name"
+  },
+  "tplLectureBody": "## Key points\n- \n\n## Questions\n- [ ] \n\n## Summary\n",
+  "@tplLectureBody": {
+    "description": "Template body: markdown headings (#) and checklist (- [ ]); keep the symbols"
+  },
+  "tplBookBody": "## Main idea\n\n## What I learned\n- \n\n## Quotes\n> \n\n## To apply\n- [ ] \n",
+  "@tplBookBody": {
+    "description": "Template body: markdown; keep the symbols"
+  },
+  "tplJournalBody": "## Grateful for\n- \n\n## Today’s focus\n- [ ] \n\n## Notes\n",
+  "@tplJournalBody": {
+    "description": "Template body: markdown; keep the symbols"
+  },
+  "tplWeekBody": "## Goals this week\n- [ ] \n\n### Saturday\n- [ ] \n\n### Sunday\n- [ ] \n\n### Monday\n- [ ] \n\n### Tuesday\n- [ ] \n\n### Wednesday\n- [ ] \n\n### Thursday\n- [ ] \n\n### Friday\n- [ ] \n",
+  "@tplWeekBody": {
+    "description": "Template body: markdown; keep the symbols"
+  },
+  "tplHint": "Start from a template",
+  "@tplHint": {
+    "description": "Shown above template chips"
+  },
+  "noteImage": "Picture",
+  "@noteImage": {
+    "description": "Accessibility label of a picture in a note"
+  },
+  "noteAddImage": "Add picture",
+  "@noteAddImage": {
+    "description": "Toolbar: add a picture to the note"
+  },
+  "noteImageUnreadable": "This file isn’t a picture the app can read.",
+  "@noteImageUnreadable": {
+    "description": "Picked file is not a picture"
+  },
+  "noteImageTooLarge": "This picture is too large.",
+  "@noteImageTooLarge": {
+    "description": "Picture too large even after shrinking"
   }
 }

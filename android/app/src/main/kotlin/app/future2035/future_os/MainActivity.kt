@@ -30,6 +30,8 @@ class MainActivity : FlutterActivity() {
     private var shortcuts: ShortcutsBridge? = null
     private var dnd: DndBridge? = null
     private var homeWidget: MethodChannel? = null
+    private var pdf: PdfExport? = null
+    private var images: ImageShrink? = null
     private var pendingSpeech: MethodChannel.Result? = null
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
@@ -53,6 +55,14 @@ class MainActivity : FlutterActivity() {
         // Home screen widget texts.
         homeWidget?.setMethodCallHandler(null)
         homeWidget = HomeWidgetProvider.bind(applicationContext, flutterEngine.dartExecutor.binaryMessenger)
+
+        // PDF export of notes, tasks and decks.
+        pdf?.dispose()
+        pdf = PdfExport(flutterEngine.dartExecutor.binaryMessenger)
+
+        // Pictures in notes: upright, scaled, JPEG.
+        images?.dispose()
+        images = ImageShrink(flutterEngine.dartExecutor.binaryMessenger)
 
         // Voice typing through the phone's speech screen (no microphone permission here).
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "future_os/speech_input").setMethodCallHandler { call, result ->
@@ -252,6 +262,10 @@ class MainActivity : FlutterActivity() {
         dnd = null
         homeWidget?.setMethodCallHandler(null)
         homeWidget = null
+        pdf?.dispose()
+        pdf = null
+        images?.dispose()
+        images = null
         // The sounds may keep playing; only the bridge to this engine is dropped.
         soundscape?.detach()
         soundscape = null

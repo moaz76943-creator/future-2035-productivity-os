@@ -7671,7 +7671,7 @@ abstract class AppLocalizations {
   /// FAQ answer
   ///
   /// In en, this message translates to:
-  /// **'Write freely with checklists and formatting, pin or favourite important notes, add tags and link notes to tasks. The microphone button lets you dictate.'**
+  /// **'Write freely with checklists and formatting, pin or favourite important notes, add tags and link notes to tasks. The microphone button lets you dictate. A new note can start from a template (lecture, book summary, journal, weekly plan), and the picture button adds photos.'**
   String get faqNotesA;
 
   /// FAQ question
@@ -7847,6 +7847,222 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Let’s begin'**
   String get tourDone;
+
+  /// File column header
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get transferColTitle;
+
+  /// File column header: task notes
+  ///
+  /// In en, this message translates to:
+  /// **'Notes'**
+  String get transferColNotes;
+
+  /// File column header: note text
+  ///
+  /// In en, this message translates to:
+  /// **'Text'**
+  String get transferColBody;
+
+  /// File column header: due date (YYYY-MM-DD)
+  ///
+  /// In en, this message translates to:
+  /// **'Due date'**
+  String get transferColDue;
+
+  /// File column header: 0–3
+  ///
+  /// In en, this message translates to:
+  /// **'Priority (0-3)'**
+  String get transferColPriority;
+
+  /// File column header
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get transferColDone;
+
+  /// File column header
+  ///
+  /// In en, this message translates to:
+  /// **'Project'**
+  String get transferColProject;
+
+  /// File column header
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get transferColCategory;
+
+  /// Sheet title / menu item
+  ///
+  /// In en, this message translates to:
+  /// **'Import and export'**
+  String get transferTitle;
+
+  /// Section: export formats
+  ///
+  /// In en, this message translates to:
+  /// **'Save as'**
+  String get transferSaveAs;
+
+  /// Button: import a file
+  ///
+  /// In en, this message translates to:
+  /// **'Import from a file'**
+  String get transferImport;
+
+  /// Hint under import
+  ///
+  /// In en, this message translates to:
+  /// **'Excel, CSV or a table in Word. Columns: title, due date (2026-12-31), priority 0-3, done, project, notes. Tasks already in the app are skipped.'**
+  String get transferImportTasksHint;
+
+  /// Hint under import
+  ///
+  /// In en, this message translates to:
+  /// **'Word, Markdown or text files become a note. Excel or CSV: one note per row (title, text).'**
+  String get transferImportNotesHint;
+
+  /// Snackbar
+  ///
+  /// In en, this message translates to:
+  /// **'File saved'**
+  String get transferSaved;
+
+  /// Snackbar
+  ///
+  /// In en, this message translates to:
+  /// **'The file could not be made. Nothing was changed.'**
+  String get transferFailed;
+
+  /// Snackbar
+  ///
+  /// In en, this message translates to:
+  /// **'This file can’t be read here. Use Excel, CSV, Word, Markdown or text.'**
+  String get transferUnsupported;
+
+  /// Snackbar after import
+  ///
+  /// In en, this message translates to:
+  /// **'{added, plural, =0{Nothing new to add} =1{1 added} other{{added} added}}'**
+  String transferImported(int added);
+
+  /// Format name: plain text
+  ///
+  /// In en, this message translates to:
+  /// **'Text'**
+  String get transferFormatText;
+
+  /// Section: export every note
+  ///
+  /// In en, this message translates to:
+  /// **'All notes'**
+  String get transferAllNotes;
+
+  /// Section: export the open note
+  ///
+  /// In en, this message translates to:
+  /// **'This note'**
+  String get transferThisNote;
+
+  /// Deck menu: save the deck as Excel, Word or PDF
+  ///
+  /// In en, this message translates to:
+  /// **'Save as Excel, Word or PDF'**
+  String get transferDeckFormats;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'Can I use Excel, Word or PDF files?'**
+  String get faqFilesQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Yes. Tasks and Notes have an import and export button (two arrows) at the top, and every deck has it in its menu. Save as Excel, CSV, Word or PDF, or bring in Excel, CSV, Word, Markdown or text files. Column names can be in any of the app’s languages, and files you saved can always be imported again.'**
+  String get faqFilesA;
+
+  /// Note template name
+  ///
+  /// In en, this message translates to:
+  /// **'Lecture'**
+  String get tplLecture;
+
+  /// Note template name
+  ///
+  /// In en, this message translates to:
+  /// **'Book summary'**
+  String get tplBook;
+
+  /// Note template name
+  ///
+  /// In en, this message translates to:
+  /// **'Journal'**
+  String get tplJournal;
+
+  /// Note template name
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly plan'**
+  String get tplWeek;
+
+  /// Template body: markdown headings (#) and checklist (- [ ]); keep the symbols
+  ///
+  /// In en, this message translates to:
+  /// **'## Key points\n- \n\n## Questions\n- [ ] \n\n## Summary\n'**
+  String get tplLectureBody;
+
+  /// Template body: markdown; keep the symbols
+  ///
+  /// In en, this message translates to:
+  /// **'## Main idea\n\n## What I learned\n- \n\n## Quotes\n> \n\n## To apply\n- [ ] \n'**
+  String get tplBookBody;
+
+  /// Template body: markdown; keep the symbols
+  ///
+  /// In en, this message translates to:
+  /// **'## Grateful for\n- \n\n## Today’s focus\n- [ ] \n\n## Notes\n'**
+  String get tplJournalBody;
+
+  /// Template body: markdown; keep the symbols
+  ///
+  /// In en, this message translates to:
+  /// **'## Goals this week\n- [ ] \n\n### Saturday\n- [ ] \n\n### Sunday\n- [ ] \n\n### Monday\n- [ ] \n\n### Tuesday\n- [ ] \n\n### Wednesday\n- [ ] \n\n### Thursday\n- [ ] \n\n### Friday\n- [ ] \n'**
+  String get tplWeekBody;
+
+  /// Shown above template chips
+  ///
+  /// In en, this message translates to:
+  /// **'Start from a template'**
+  String get tplHint;
+
+  /// Accessibility label of a picture in a note
+  ///
+  /// In en, this message translates to:
+  /// **'Picture'**
+  String get noteImage;
+
+  /// Toolbar: add a picture to the note
+  ///
+  /// In en, this message translates to:
+  /// **'Add picture'**
+  String get noteAddImage;
+
+  /// Picked file is not a picture
+  ///
+  /// In en, this message translates to:
+  /// **'This file isn’t a picture the app can read.'**
+  String get noteImageUnreadable;
+
+  /// Picture too large even after shrinking
+  ///
+  /// In en, this message translates to:
+  /// **'This picture is too large.'**
+  String get noteImageTooLarge;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

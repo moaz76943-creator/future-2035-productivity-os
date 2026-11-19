@@ -26,7 +26,7 @@ extension _DeckMenuSheet on _DeckScreenState {
             item(_DeckMenu.importFile, Icons.download_rounded, l10n.actionImport),
             SectionHeader(title: l10n.actionExport),
             item(_DeckMenu.exportJson, Icons.upload_rounded, l10n.actionExport),
-            item(_DeckMenu.exportCsv, Icons.table_view_rounded, l10n.flashcardsExportCsv),
+            item(_DeckMenu.exportCsv, Icons.table_view_rounded, l10n.transferDeckFormats),
             SectionHeader(title: l10n.flashMenuDeck),
             item(_DeckMenu.edit, Icons.edit_outlined, l10n.deckEdit),
             item(_DeckMenu.stats, Icons.insights_rounded, l10n.flashcardsStats),
@@ -51,7 +51,7 @@ extension _DeckMenuSheet on _DeckScreenState {
       case _DeckMenu.exportJson:
         await _export(deck);
       case _DeckMenu.exportCsv:
-        await _exportCsv(deck);
+        await _exportFormats(deck);
       case _DeckMenu.edit:
         await _editDeck(deck);
       case _DeckMenu.stats:

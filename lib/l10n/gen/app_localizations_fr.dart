@@ -4557,7 +4557,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get faqNotesA =>
-      'Écrivez librement avec listes et mise en forme, épinglez ou mettez en favori les notes importantes, ajoutez des étiquettes et liez des notes à des tâches. Le bouton micro permet de dicter.';
+      'Écrivez librement avec listes et mise en forme, épinglez ou mettez en favori les notes importantes, ajoutez des étiquettes et liez des notes à des tâches. Le bouton micro permet de dicter. Une nouvelle note peut partir d’un modèle (cours, résumé de livre, journal, plan de la semaine), et le bouton image ajoute des photos.';
 
   @override
   String get faqHabitsQ => 'Comment les séries d’habitudes sont-elles comptées ?';
@@ -4657,4 +4657,128 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get tourDone => 'C’est parti';
+
+  @override
+  String get transferColTitle => 'Titre';
+
+  @override
+  String get transferColNotes => 'Remarques';
+
+  @override
+  String get transferColBody => 'Contenu';
+
+  @override
+  String get transferColDue => 'Échéance';
+
+  @override
+  String get transferColPriority => 'Priorité (0-3)';
+
+  @override
+  String get transferColDone => 'Terminée';
+
+  @override
+  String get transferColProject => 'Projet';
+
+  @override
+  String get transferColCategory => 'Catégorie';
+
+  @override
+  String get transferTitle => 'Importer et exporter';
+
+  @override
+  String get transferSaveAs => 'Enregistrer en';
+
+  @override
+  String get transferImport => 'Importer un fichier';
+
+  @override
+  String get transferImportTasksHint =>
+      'Excel, CSV ou un tableau Word. Colonnes : titre, échéance (2026-12-31), priorité 0-3, terminée, projet, remarques. Les tâches déjà présentes sont ignorées.';
+
+  @override
+  String get transferImportNotesHint =>
+      'Les fichiers Word, Markdown ou texte deviennent une note. Excel ou CSV : une note par ligne (titre, contenu).';
+
+  @override
+  String get transferSaved => 'Fichier enregistré';
+
+  @override
+  String get transferFailed => 'Le fichier n’a pas pu être créé. Rien n’a changé.';
+
+  @override
+  String get transferUnsupported =>
+      'Ce fichier ne peut pas être lu ici. Utilisez Excel, CSV, Word, Markdown ou du texte.';
+
+  @override
+  String transferImported(int added) {
+    String _temp0 = intl.Intl.pluralLogic(
+      added,
+      locale: localeName,
+      other: '$added ajoutés',
+      one: '1 ajouté',
+      zero: 'Rien de nouveau',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get transferFormatText => 'Texte';
+
+  @override
+  String get transferAllNotes => 'Toutes les notes';
+
+  @override
+  String get transferThisNote => 'Cette note';
+
+  @override
+  String get transferDeckFormats => 'Enregistrer en Excel, Word ou PDF';
+
+  @override
+  String get faqFilesQ => 'Puis-je utiliser des fichiers Excel, Word ou PDF ?';
+
+  @override
+  String get faqFilesA =>
+      'Oui. Tâches et Notes ont en haut un bouton importer/exporter (deux flèches), et chaque paquet l’a dans son menu. Enregistrez en Excel, CSV, Word ou PDF, ou importez des fichiers Excel, CSV, Word, Markdown ou texte. Les colonnes peuvent être dans n’importe quelle langue de l’app, et vos fichiers se réimportent toujours.';
+
+  @override
+  String get tplLecture => 'Cours';
+
+  @override
+  String get tplBook => 'Résumé de livre';
+
+  @override
+  String get tplJournal => 'Journal intime';
+
+  @override
+  String get tplWeek => 'Plan de la semaine';
+
+  @override
+  String get tplLectureBody => '## Points clés\n- \n\n## Questions\n- [ ] \n\n## Résumé\n';
+
+  @override
+  String get tplBookBody =>
+      '## Idée principale\n\n## Ce que j’ai appris\n- \n\n## Citations\n> \n\n## À appliquer\n- [ ] \n';
+
+  @override
+  String get tplJournalBody =>
+      '## Reconnaissant pour\n- \n\n## Objectif du jour\n- [ ] \n\n## Notes\n';
+
+  @override
+  String get tplWeekBody =>
+      '## Objectifs de la semaine\n- [ ] \n\n### Samedi\n- [ ] \n\n### Dimanche\n- [ ] \n\n### Lundi\n- [ ] \n\n### Mardi\n- [ ] \n\n### Mercredi\n- [ ] \n\n### Jeudi\n- [ ] \n\n### Vendredi\n- [ ] \n';
+
+  @override
+  String get tplHint => 'Partir d’un modèle';
+
+  @override
+  String get noteImage => 'Image';
+
+  @override
+  String get noteAddImage => 'Ajouter une image';
+
+  @override
+  String get noteImageUnreadable => 'Ce fichier n’est pas une image lisible par l’app.';
+
+  @override
+  String get noteImageTooLarge => 'Cette image est trop grande.';
 }

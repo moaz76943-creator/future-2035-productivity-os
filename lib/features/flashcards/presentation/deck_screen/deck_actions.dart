@@ -146,20 +146,29 @@ extension _DeckActions on _DeckScreenState {
     }
   }
 
-  Future<void> _exportCsv(DeckRow deck) async {
+  /// The deck as Excel, CSV, Word or PDF (the same columns the import reads).
+  Future<void> _exportFormats(DeckRow deck) {
     final l10n = context.l10n;
-    try {
-      final csv = await _repo.exportCsv(deck.id);
-      // UTF-8 with BOM so spreadsheet apps read Arabic and accents correctly.
-      final bytes = Uint8List.fromList([0xEF, 0xBB, 0xBF, ...utf8.encode(csv)]);
-      final safe = deck.name.replaceAll(RegExp(r'[^\p{L}\p{N}_-]+', unicode: true), '_');
-      final result = await ref
-          .read(backupFilesProvider)
-          .save('$safe.csv', bytes, subject: deck.name);
-      if (mounted && result != BackupSaveResult.cancelled) showMessage(context, l10n.exportDone);
-    } catch (_) {
-      if (mounted) showMessage(context, l10n.errorGenericMessage);
-    }
+    final rtl = Directionality.of(context) == TextDirection.rtl;
+    final encoder = ref.read(transferEncoderProvider);
+    final transfer = CardsTransfer(ref.read(databaseProvider));
+    return showTransferSheet(
+      context,
+      exports: [
+        ExportGroup(
+          formats: const [
+            TransferFormat.xlsx,
+            TransferFormat.csv,
+            TransferFormat.docx,
+            TransferFormat.pdf,
+          ],
+          build: (f) async => (
+            safeFileName(deck.name, f, fallback: 'deck'),
+            await encoder.table(await transfer.table(deck.id, deck.name, l10n, rtl: rtl), f),
+          ),
+        ),
+      ],
+    );
   }
 
   Future<void> _toggleSuspend(CardRow card) async {

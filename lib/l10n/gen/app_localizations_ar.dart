@@ -4709,7 +4709,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get faqNotesA =>
-      'اكتب بحرية مع قوائم التحقق والتنسيق، وثبّت الملاحظات المهمة أو أضفها للمفضلة، وأضف وسوماً واربطها بالمهام. زر الميكروفون يتيح لك الإملاء.';
+      'اكتب بحرية مع قوائم التحقق والتنسيق، وثبّت الملاحظات المهمة أو أضفها للمفضلة، وأضف وسوماً واربطها بالمهام. زر الميكروفون يتيح لك الإملاء. ويمكن أن تبدأ الملاحظة الجديدة من قالب (محاضرة، ملخص كتاب، يوميات، خطة الأسبوع)، وزر الصورة يضيف صوراً.';
 
   @override
   String get faqHabitsQ => 'كيف تُحسب أيام العادة المتتالية؟';
@@ -4808,4 +4808,130 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get tourDone => 'لنبدأ';
+
+  @override
+  String get transferColTitle => 'العنوان';
+
+  @override
+  String get transferColNotes => 'ملاحظات';
+
+  @override
+  String get transferColBody => 'النص';
+
+  @override
+  String get transferColDue => 'تاريخ الاستحقاق';
+
+  @override
+  String get transferColPriority => 'الأولوية (0-3)';
+
+  @override
+  String get transferColDone => 'منجزة';
+
+  @override
+  String get transferColProject => 'المشروع';
+
+  @override
+  String get transferColCategory => 'التصنيف';
+
+  @override
+  String get transferTitle => 'استيراد وتصدير';
+
+  @override
+  String get transferSaveAs => 'حفظ بصيغة';
+
+  @override
+  String get transferImport => 'استيراد من ملف';
+
+  @override
+  String get transferImportTasksHint =>
+      'Excel أو CSV أو جدول في Word. الأعمدة: العنوان، تاريخ الاستحقاق (2026-12-31)، الأولوية 0-3، منجزة، المشروع، ملاحظات. المهام الموجودة مسبقاً تُتجاوز.';
+
+  @override
+  String get transferImportNotesHint =>
+      'ملفات Word وMarkdown والنص تصبح ملاحظة. Excel أو CSV: ملاحظة لكل صف (العنوان، النص).';
+
+  @override
+  String get transferSaved => 'تم حفظ الملف';
+
+  @override
+  String get transferFailed => 'تعذّر إنشاء الملف. لم يتغيّر شيء.';
+
+  @override
+  String get transferUnsupported =>
+      'لا يمكن قراءة هذا الملف هنا. استخدم Excel أو CSV أو Word أو Markdown أو نصاً.';
+
+  @override
+  String transferImported(int added) {
+    String _temp0 = intl.Intl.pluralLogic(
+      added,
+      locale: localeName,
+      other: 'أُضيف $added عنصر',
+      many: 'أُضيف $added عنصراً',
+      few: 'أُضيفت $added عناصر',
+      two: 'أُضيف عنصران',
+      one: 'أُضيف عنصر واحد',
+      zero: 'لا جديد للإضافة',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get transferFormatText => 'نص';
+
+  @override
+  String get transferAllNotes => 'كل الملاحظات';
+
+  @override
+  String get transferThisNote => 'هذه الملاحظة';
+
+  @override
+  String get transferDeckFormats => 'حفظ كملف Excel أو Word أو PDF';
+
+  @override
+  String get faqFilesQ => 'هل يمكنني استخدام ملفات Excel وWord وPDF؟';
+
+  @override
+  String get faqFilesA =>
+      'نعم. في أعلى المهام والملاحظات زر استيراد وتصدير (سهمان)، وفي قائمة كل مجموعة بطاقات. احفظ كملف Excel أو CSV أو Word أو PDF، أو استورد ملفات Excel أو CSV أو Word أو Markdown أو نصية. يمكن أن تكون أسماء الأعمدة بأي لغة من لغات التطبيق، والملفات التي تحفظها يمكن استيرادها دائماً من جديد.';
+
+  @override
+  String get tplLecture => 'محاضرة';
+
+  @override
+  String get tplBook => 'ملخص كتاب';
+
+  @override
+  String get tplJournal => 'يوميات';
+
+  @override
+  String get tplWeek => 'خطة الأسبوع';
+
+  @override
+  String get tplLectureBody => '## النقاط الرئيسية\n- \n\n## أسئلة\n- [ ] \n\n## الخلاصة\n';
+
+  @override
+  String get tplBookBody =>
+      '## الفكرة الرئيسية\n\n## ماذا تعلمت\n- \n\n## اقتباسات\n> \n\n## للتطبيق\n- [ ] \n';
+
+  @override
+  String get tplJournalBody => '## أشكر الله على\n- \n\n## تركيز اليوم\n- [ ] \n\n## ملاحظات\n';
+
+  @override
+  String get tplWeekBody =>
+      '## أهداف هذا الأسبوع\n- [ ] \n\n### السبت\n- [ ] \n\n### الأحد\n- [ ] \n\n### الاثنين\n- [ ] \n\n### الثلاثاء\n- [ ] \n\n### الأربعاء\n- [ ] \n\n### الخميس\n- [ ] \n\n### الجمعة\n- [ ] \n';
+
+  @override
+  String get tplHint => 'ابدأ من قالب';
+
+  @override
+  String get noteImage => 'صورة';
+
+  @override
+  String get noteAddImage => 'إضافة صورة';
+
+  @override
+  String get noteImageUnreadable => 'هذا الملف ليس صورة يمكن للتطبيق قراءتها.';
+
+  @override
+  String get noteImageTooLarge => 'هذه الصورة كبيرة جداً.';
 }

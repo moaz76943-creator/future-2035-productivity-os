@@ -17,6 +17,7 @@ import '../../../shared/widgets/module_scaffold.dart';
 import '../../projects/application/projects_providers.dart';
 import '../application/tasks_providers.dart';
 import '../data/tasks_repository.dart';
+import 'tasks_transfer_sheet.dart';
 import 'widgets/task_tile.dart';
 import 'widgets/task_visuals.dart';
 
@@ -89,6 +90,12 @@ class TasksScreen extends ConsumerWidget {
             showDragHandle: true,
             builder: (_) => const _FilterSheet(),
           ),
+        ),
+        IconButton(
+          key: const Key('tasksTransfer'),
+          tooltip: l10n.transferTitle,
+          icon: const Icon(Icons.import_export_rounded),
+          onPressed: () => showTasksTransfer(context, ref),
         ),
       ],
       floatingActionButton: FloatingActionButton(

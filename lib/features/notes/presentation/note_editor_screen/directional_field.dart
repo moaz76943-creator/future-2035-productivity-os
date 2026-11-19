@@ -112,7 +112,10 @@ class _MetaRow extends ConsumerWidget {
 }
 
 class _FormatToolbar extends StatelessWidget {
-  const _FormatToolbar({required this.onApply, required this.body});
+  const _FormatToolbar({required this.onApply, required this.body, this.onImage});
+
+  /// Adds a picture at the cursor.
+  final VoidCallback? onImage;
   final void Function(TextEditingValue Function(TextEditingValue)) onApply;
 
   /// The note text: the line under the cursor lights up its format button.
@@ -172,6 +175,14 @@ class _FormatToolbar extends StatelessWidget {
                               )
                             : null,
                         onPressed: () => onApply(fn),
+                      ),
+                    if (onImage != null)
+                      IconButton(
+                        key: const Key('note-add-image'),
+                        tooltip: l10n.noteAddImage,
+                        icon: const Icon(Icons.add_photo_alternate_outlined),
+                        color: lux.ink2,
+                        onPressed: onImage,
                       ),
                   ],
                 );

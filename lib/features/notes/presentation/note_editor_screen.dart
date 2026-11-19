@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:typed_data';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -19,7 +20,11 @@ import '../../../shared/widgets/mic_button.dart';
 import '../../../shared/widgets/task_picker.dart';
 import '../../projects/application/projects_providers.dart';
 import '../application/note_text.dart';
+import '../../../core/platform/media_picker.dart';
+import '../data/note_images.dart';
 import 'note_editing_controller.dart';
+import 'note_templates.dart';
+import 'notes_transfer_sheet.dart';
 import '../application/notes_providers.dart';
 import '../data/notes_repository.dart';
 import 'markdown_preview.dart';
@@ -27,6 +32,7 @@ import 'note_actions.dart';
 
 part 'note_editor_screen/note_editor_screen_state.dart';
 part 'note_editor_screen/directional_field.dart';
+part 'note_editor_screen/note_editor_actions.dart';
 
 enum NoteSaveStatus { saved, unsaved, saving, failed }
 

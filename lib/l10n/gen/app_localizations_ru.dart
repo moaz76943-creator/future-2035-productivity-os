@@ -4661,7 +4661,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get faqNotesA =>
-      'Пишите со списками и форматированием, закрепляйте важные заметки или добавляйте в избранное, ставьте теги и связывайте заметки с задачами. Кнопка микрофона позволяет диктовать.';
+      'Пишите со списками и форматированием, закрепляйте важные заметки или добавляйте в избранное, ставьте теги и связывайте заметки с задачами. Кнопка микрофона позволяет диктовать. Новую заметку можно начать с шаблона (лекция, конспект книги, дневник, план на неделю), а кнопка изображения добавляет фото.';
 
   @override
   String get faqHabitsQ => 'Как считаются серии привычек?';
@@ -4761,4 +4761,130 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get tourDone => 'Начнём';
+
+  @override
+  String get transferColTitle => 'Название';
+
+  @override
+  String get transferColNotes => 'Заметки';
+
+  @override
+  String get transferColBody => 'Текст';
+
+  @override
+  String get transferColDue => 'Срок';
+
+  @override
+  String get transferColPriority => 'Приоритет (0-3)';
+
+  @override
+  String get transferColDone => 'Выполнена';
+
+  @override
+  String get transferColProject => 'Проект';
+
+  @override
+  String get transferColCategory => 'Категория';
+
+  @override
+  String get transferTitle => 'Импорт и экспорт';
+
+  @override
+  String get transferSaveAs => 'Сохранить как';
+
+  @override
+  String get transferImport => 'Импорт из файла';
+
+  @override
+  String get transferImportTasksHint =>
+      'Excel, CSV или таблица Word. Столбцы: название, срок (2026-12-31), приоритет 0-3, выполнена, проект, заметки. Уже существующие задачи пропускаются.';
+
+  @override
+  String get transferImportNotesHint =>
+      'Файлы Word, Markdown или текст становятся заметкой. Excel или CSV: заметка на строку (название, текст).';
+
+  @override
+  String get transferSaved => 'Файл сохранён';
+
+  @override
+  String get transferFailed => 'Не удалось создать файл. Ничего не изменено.';
+
+  @override
+  String get transferUnsupported =>
+      'Этот файл нельзя прочитать здесь. Используйте Excel, CSV, Word, Markdown или текст.';
+
+  @override
+  String transferImported(int added) {
+    String _temp0 = intl.Intl.pluralLogic(
+      added,
+      locale: localeName,
+      other: 'Добавлено $added',
+      many: 'Добавлено $added',
+      few: 'Добавлено $added',
+      one: 'Добавлен $added',
+      zero: 'Нечего добавить',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get transferFormatText => 'Текст';
+
+  @override
+  String get transferAllNotes => 'Все заметки';
+
+  @override
+  String get transferThisNote => 'Эта заметка';
+
+  @override
+  String get transferDeckFormats => 'Сохранить как Excel, Word или PDF';
+
+  @override
+  String get faqFilesQ => 'Можно ли работать с файлами Excel, Word и PDF?';
+
+  @override
+  String get faqFilesA =>
+      'Да. В «Задачах» и «Заметках» вверху есть кнопка импорта и экспорта (две стрелки), а у каждой колоды — в меню. Сохраняйте в Excel, CSV, Word или PDF или загружайте файлы Excel, CSV, Word, Markdown и текст. Столбцы могут называться на любом языке приложения, а сохранённые файлы всегда можно импортировать снова.';
+
+  @override
+  String get tplLecture => 'Лекция';
+
+  @override
+  String get tplBook => 'Конспект книги';
+
+  @override
+  String get tplJournal => 'Дневник';
+
+  @override
+  String get tplWeek => 'План на неделю';
+
+  @override
+  String get tplLectureBody => '## Главное\n- \n\n## Вопросы\n- [ ] \n\n## Итог\n';
+
+  @override
+  String get tplBookBody =>
+      '## Главная мысль\n\n## Что я узнал\n- \n\n## Цитаты\n> \n\n## Применить\n- [ ] \n';
+
+  @override
+  String get tplJournalBody => '## Благодарен за\n- \n\n## Фокус дня\n- [ ] \n\n## Заметки\n';
+
+  @override
+  String get tplWeekBody =>
+      '## Цели недели\n- [ ] \n\n### Суббота\n- [ ] \n\n### Воскресенье\n- [ ] \n\n### Понедельник\n- [ ] \n\n### Вторник\n- [ ] \n\n### Среда\n- [ ] \n\n### Четверг\n- [ ] \n\n### Пятница\n- [ ] \n';
+
+  @override
+  String get tplHint => 'Начать с шаблона';
+
+  @override
+  String get noteImage => 'Изображение';
+
+  @override
+  String get noteAddImage => 'Добавить изображение';
+
+  @override
+  String get noteImageUnreadable =>
+      'Этот файл не является изображением, которое может прочитать приложение.';
+
+  @override
+  String get noteImageTooLarge => 'Изображение слишком большое.';
 }

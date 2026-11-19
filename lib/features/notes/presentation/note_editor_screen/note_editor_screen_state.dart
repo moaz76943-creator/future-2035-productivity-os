@@ -2,6 +2,7 @@ part of '../note_editor_screen.dart';
 
 class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with WidgetsBindingObserver {
   late final NotesRepository _repo;
+  late final NoteImagesRepository _images;
   final _title = TextEditingController();
   final _body = NoteEditingController();
   final _bodyFocus = FocusNode();
@@ -24,6 +25,7 @@ class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with Widget
   void initState() {
     super.initState();
     _repo = ref.read(notesRepositoryProvider);
+    _images = ref.read(noteImagesRepositoryProvider);
     _body
       ..onToggleCheckbox = _toggleCheckbox
       ..accent = ModuleHue.notes.b;
@@ -119,8 +121,13 @@ class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with Widget
           _savedBody.trim().isEmpty) {
         // An untouched blank note leaves nothing behind.
         _repo.purge(widget.noteId).catchError((_) {});
-      } else if (_dirty) {
-        _repo.save(widget.noteId, title: title, body: body).catchError((_) => DateTime(0));
+      } else {
+        // Pictures removed from the text are deleted when the note closes
+        // (not while editing, so undo can still bring them back).
+        final id = widget.noteId;
+        (_dirty ? _repo.save(id, title: title, body: body) : Future.value(DateTime(0)))
+            .then((_) => _images.removeUnused(id, body))
+            .catchError((_) => 0);
       }
     }
     _title.dispose();
@@ -142,72 +149,6 @@ class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with Widget
     // Same length: the cursor stays where it was.
     _body.value = _body.value.copyWith(text: next);
     _flush();
-  }
-
-  Future<void> _openLink(String title) async {
-    await _flush();
-    final found = await _repo.resolveLinks('[[$title]]');
-    if (!mounted) return;
-    final target = found.where((n) => n.id != widget.noteId).firstOrNull;
-    if (target != null) {
-      context.push(Routes.note(target.id));
-      return;
-    }
-    final l10n = context.l10n;
-    ScaffoldMessenger.maybeOf(context)
-      ?..hideCurrentSnackBar()
-      ..showSnackBar(
-        SnackBar(
-          behavior: SnackBarBehavior.floating,
-          content: Text(l10n.notesLinkMissing(title)),
-          action: SnackBarAction(
-            label: l10n.actionCreate,
-            onPressed: () async {
-              final id = await _repo.create(title: title);
-              if (mounted) context.push(Routes.note(id));
-            },
-          ),
-        ),
-      );
-  }
-
-  Future<void> _delete() async {
-    await _flush();
-    await _repo.softDelete(widget.noteId);
-    _deleted = true;
-    if (!mounted) return;
-    final messenger = ScaffoldMessenger.maybeOf(context);
-    final l10n = context.l10n;
-    final repo = _repo;
-    final id = widget.noteId;
-    if (Navigator.of(context).canPop()) Navigator.of(context).pop();
-    messenger
-      ?..hideCurrentSnackBar()
-      ..showSnackBar(
-        SnackBar(
-          behavior: SnackBarBehavior.floating,
-          content: Text(l10n.deletedItem),
-          action: SnackBarAction(label: l10n.actionUndo, onPressed: () => repo.restore(id)),
-        ),
-      );
-  }
-
-  Future<void> _moveNotebook(NoteRow note) async {
-    final picked = await pickNotebook(context, ref, current: note.notebookId);
-    if (picked == null) return;
-    await _repo.moveTo(note.id, notebookId: picked.value, projectId: note.projectId);
-  }
-
-  Future<void> _moveProject(NoteRow note) async {
-    final picked = await pickProject(context, current: note.projectId);
-    if (picked == null) return;
-    await _repo.moveTo(note.id, notebookId: note.notebookId, projectId: picked.value);
-  }
-
-  Future<void> _linkTask(List<TaskRow> linked) async {
-    final task = await pickTask(context, exclude: {for (final t in linked) t.id});
-    if (task == null) return;
-    await _repo.linkTask(widget.noteId, task.id);
   }
 
   // ------------------------------------------------------------------- build
@@ -284,6 +225,9 @@ class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with Widget
                     }
                   case 'move':
                     await _moveNotebook(note);
+                  case 'file':
+                    await _flush(); // the file holds what is on screen
+                    if (context.mounted) await showNoteTransferById(context, ref, note.id);
                   case 'delete':
                     await _delete();
                 }
@@ -294,6 +238,7 @@ class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with Widget
                   child: Text(note.archived ? l10n.actionUnarchive : l10n.actionArchive),
                 ),
                 PopupMenuItem(value: 'move', child: Text(l10n.noteMoveTo)),
+                PopupMenuItem(value: 'file', child: Text(l10n.transferTitle)),
                 PopupMenuItem(
                   value: 'delete',
                   child: Text(l10n.actionDelete, style: TextStyle(color: lux.danger)),
@@ -343,6 +288,7 @@ class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with Widget
                   onNotebook: note == null ? null : () => _moveNotebook(note),
                   onProject: note == null ? null : () => _moveProject(note),
                 ),
+                if (!_preview) NoteTemplatesRow(title: _title, body: _body),
                 const SizedBox(height: Space.sm),
                 if (_preview)
                   ValueListenableBuilder(
@@ -387,7 +333,7 @@ class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with Widget
               ],
             ),
           ),
-          if (!_preview) _FormatToolbar(onApply: _apply, body: _body),
+          if (!_preview) _FormatToolbar(onApply: _apply, body: _body, onImage: _addImage),
         ],
       ),
     );
