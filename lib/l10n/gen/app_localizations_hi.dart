@@ -3854,4 +3854,20 @@ class AppLocalizationsHi extends AppLocalizations {
   String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct) {
     return '$decks डेक · $cards कार्ड · $mature पक्के · $due बाकी · $correct सही (30 दिन)';
   }
+
+  @override
+  String get flashcardsRecord => 'रिकॉर्ड करें';
+
+  @override
+  String get flashcardsRecording => 'रिकॉर्डिंग हो रही है…';
+
+  @override
+  String get flashcardsRecordStop => 'रोकें और रखें';
+
+  @override
+  String get flashcardsMicDenied =>
+      'माइक्रोफ़ोन की अनुमति बंद है। रिकॉर्ड करने के लिए सिस्टम सेटिंग में इसकी अनुमति दें।';
+
+  @override
+  String get flashcardsRecordFailed => 'इस डिवाइस पर रिकॉर्डिंग उपलब्ध नहीं है।';
 }

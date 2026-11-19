@@ -1062,5 +1062,10 @@
   "flashcardsLevelUnset": "بلا مستوى أو موضوع",
   "flashcardsByLanguage": "التقدّم حسب اللغة",
   "flashcardsByLevel": "التقدّم حسب المستوى أو الموضوع",
-  "flashcardsGroupLine": "{decks} مجموعات · {cards} بطاقة · {mature} محفوظة · {due} مستحقة · {correct} صحيحة (30 يومًا)"
+  "flashcardsGroupLine": "{decks} مجموعات · {cards} بطاقة · {mature} محفوظة · {due} مستحقة · {correct} صحيحة (30 يومًا)",
+  "flashcardsRecord": "تسجيل",
+  "flashcardsRecording": "جارٍ التسجيل…",
+  "flashcardsRecordStop": "إيقاف وحفظ",
+  "flashcardsMicDenied": "الوصول إلى الميكروفون متوقف. اسمح به من إعدادات النظام لتتمكن من التسجيل.",
+  "flashcardsRecordFailed": "التسجيل غير متاح على هذا الجهاز."
 }

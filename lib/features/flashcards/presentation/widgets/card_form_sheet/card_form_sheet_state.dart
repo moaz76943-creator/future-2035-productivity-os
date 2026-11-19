@@ -1,6 +1,9 @@
 part of '../card_form_sheet.dart';
 
 class _CardFormSheetState extends ConsumerState<_CardFormSheet> {
+  /// setState for the extension parts (keeps setState protected).
+  void _update(VoidCallback fn) => setState(fn);
+
   final _form = GlobalKey<FormState>();
   final _frontFocus = FocusNode();
   late final _front = TextEditingController(text: widget.initial?.front ?? '');
@@ -45,94 +48,6 @@ class _CardFormSheetState extends ConsumerState<_CardFormSheet> {
   /// Shown inside the sheet: a snackbar would sit under the sheet's barrier.
   String? _mediaError;
   String? _mediaErrorSide;
-
-  Future<void> _pickMedia(String side, String kind) async {
-    final l10n = context.l10n;
-    setState(() {
-      _mediaError = null;
-      _mediaErrorSide = side;
-    });
-    try {
-      final picked = await ref.read(mediaPickerProvider).pick(image: kind == 'image');
-      if (picked == null || !mounted) return;
-      final limit = kind == 'image'
-          ? FlashcardsRepository.maxImageBytes
-          : FlashcardsRepository.maxAudioBytes;
-      if (picked.bytes.length > limit) {
-        setState(() => _mediaError = l10n.flashcardsMediaTooLarge(limit ~/ (1024 * 1024)));
-        return;
-      }
-      setState(() => _media['$side:$kind'] = picked);
-    } catch (_) {
-      if (mounted) setState(() => _mediaError = l10n.flashcardsImportFileFailed);
-    }
-  }
-
-  /// Applies picked / removed media to [cardId].
-  Future<void> _saveMedia(String cardId) async {
-    final repo = ref.read(flashcardsRepositoryProvider);
-    for (final e in _media.entries) {
-      final [side, kind] = e.key.split(':');
-      final picked = e.value;
-      if (picked == null) {
-        for (final m in _existing.where((m) => m.side == side && m.kind == kind)) {
-          await repo.removeMedia(m.id);
-        }
-      } else {
-        await repo.addMedia(
-          cardId,
-          side: side,
-          kind: kind,
-          bytes: picked.bytes,
-          name: picked.name,
-          mime: kind == 'image' ? 'image/${picked.extension}' : 'audio/${picked.extension}',
-        );
-      }
-    }
-  }
-
-  Widget _mediaRow(String side) {
-    final l10n = context.l10n;
-    Widget slot(String kind) {
-      final key = '$side:$kind';
-      final picked = _media[key];
-      final existing = _existing.where((m) => m.side == side && m.kind == kind).firstOrNull;
-      final has = _media.containsKey(key) ? picked != null : existing != null;
-      final name = picked?.name ?? existing?.name ?? '';
-      final isImage = kind == 'image';
-      return InputChip(
-        key: Key('media_${side}_$kind'),
-        avatar: Icon(isImage ? Icons.image_outlined : Icons.mic_none_rounded, size: 18),
-        label: Text(
-          has
-              ? (name.isEmpty ? (isImage ? l10n.flashcardsImage : l10n.flashcardsAudio) : name)
-              : (isImage ? l10n.flashcardsAddImage : l10n.flashcardsAddAudio),
-          overflow: TextOverflow.ellipsis,
-        ),
-        onPressed: () => _pickMedia(side, kind),
-        onDeleted: has ? () => setState(() => _media[key] = null) : null,
-        deleteButtonTooltipMessage: l10n.actionDelete,
-      );
-    }
-
-    return Padding(
-      padding: const EdgeInsets.only(top: Space.xs),
-      child: Wrap(
-        spacing: Space.xs,
-        runSpacing: Space.xs,
-        children: [
-          slot('image'),
-          slot('audio'),
-          if (_mediaError != null && _mediaErrorSide == side)
-            Text(
-              _mediaError!,
-              key: Key('mediaError_$side'),
-              style: context.text.bodySmall?.copyWith(color: context.lux.danger),
-            ),
-        ],
-      ),
-    );
-  }
 
   Widget _customFields(CardLayout layout, CardSide side) {
     final fields = layout.customFields.where((f) => f.side == side).toList();

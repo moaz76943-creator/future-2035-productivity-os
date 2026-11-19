@@ -6485,6 +6485,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{decks} decks · {cards} cards · {mature} mature · {due} due · {correct} correct (30 days)'**
   String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct);
+
+  /// Chip in the card form: record a voice clip with the microphone
+  ///
+  /// In en, this message translates to:
+  /// **'Record'**
+  String get flashcardsRecord;
+
+  /// Title of the sheet while the microphone is recording
+  ///
+  /// In en, this message translates to:
+  /// **'Recording…'**
+  String get flashcardsRecording;
+
+  /// Button: stop recording and keep the clip on the card
+  ///
+  /// In en, this message translates to:
+  /// **'Stop and keep'**
+  String get flashcardsRecordStop;
+
+  /// Inline error when microphone permission is refused
+  ///
+  /// In en, this message translates to:
+  /// **'Microphone access is off. Allow it in the system settings to record.'**
+  String get flashcardsMicDenied;
+
+  /// Inline error when recording cannot start on this device
+  ///
+  /// In en, this message translates to:
+  /// **'Recording isn\'t available on this device.'**
+  String get flashcardsRecordFailed;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
