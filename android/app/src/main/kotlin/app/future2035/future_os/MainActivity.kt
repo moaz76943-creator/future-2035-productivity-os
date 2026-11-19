@@ -4,6 +4,8 @@ import android.media.MediaPlayer
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
+import com.google.android.play.core.integrity.IntegrityManagerFactory
+import com.google.android.play.core.integrity.IntegrityTokenRequest
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
@@ -13,6 +15,8 @@ import java.util.Locale
  * Native Android Text-to-Speech on channel `future_os/tts` (no paid or network service).
  * Every call answers instead of throwing, so flashcards keep working when no engine,
  * voice or language data is installed.
+ *
+ * Play Integrity on channel `future_os/integrity` for device/app attestation.
  */
 class MainActivity : FlutterActivity() {
     private var tts: TextToSpeech? = null
@@ -23,6 +27,8 @@ class MainActivity : FlutterActivity() {
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
+
+        // Existing TTS channel
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "future_os/tts").setMethodCallHandler { call, result ->
             when (call.method) {
                 "speak" -> {
@@ -57,8 +63,6 @@ class MainActivity : FlutterActivity() {
                         engine.setSpeechRate(rate)
                         engine.setPitch(pitch)
                         var code = engine.speak(text, TextToSpeech.QUEUE_FLUSH, Bundle(), "future_os_tts_0")
-                        // Repetitions are queued natively with a short pause between them, so
-                        // they play back-to-back and a later stop() cancels all of them.
                         for (i in 1 until repeat) {
                             if (code != TextToSpeech.SUCCESS) break
                             engine.playSilentUtterance(700, TextToSpeech.QUEUE_ADD, "future_os_gap_$i")
@@ -88,6 +92,35 @@ class MainActivity : FlutterActivity() {
             when (call.method) {
                 "play" -> playAudio(call.argument<String>("path"), result)
                 "stop" -> { stopAudio(); result.success(null) }
+                else -> result.notImplemented()
+            }
+        }
+
+        // Play Integrity channel
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "future_os/integrity").setMethodCallHandler { call, result ->
+            when (call.method) {
+                "requestIntegrityToken" -> {
+                    val nonce = call.argument<String>("nonce")
+                    if (nonce.isNullOrBlank()) {
+                        result.error("INVALID_NONCE", "Nonce is required", null)
+                        return@setMethodCallHandler
+                    }
+                    try {
+                        val integrityManager = IntegrityManagerFactory.create(applicationContext)
+                        val tokenRequest = IntegrityTokenRequest.builder()
+                            .setNonce(nonce)
+                            .build()
+                        integrityManager.requestIntegrityToken(tokenRequest)
+                            .addOnSuccessListener { response ->
+                                result.success(response.token())
+                            }
+                            .addOnFailureListener { e ->
+                                result.error("INTEGRITY_FAILED", e.message ?: "Unknown", null)
+                            }
+                    } catch (e: Exception) {
+                        result.error("INTEGRITY_ERROR", e.message ?: "Exception", null)
+                    }
+                }
                 else -> result.notImplemented()
             }
         }
