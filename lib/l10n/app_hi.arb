@@ -1126,5 +1126,12 @@
   "flashToday": "आज",
   "flashStudyNow": "पढ़ें",
   "flashTodayAnswered": "{count, plural, =0{कोई कार्ड हल नहीं} =1{1 कार्ड हल किया} other{{count} कार्ड हल किए}}",
-  "soundForestRain": "जंगल में बारिश"
+  "soundForestRain": "जंगल में बारिश",
+  "autoBackupTitle": "स्वचालित बैकअप",
+  "autoBackupDesc": "हर दिन इस फ़ोन पर; आख़िरी 7 रखे जाते हैं",
+  "autoBackupHint": "ये प्रतियाँ इसी फ़ोन पर रहती हैं और ऐप हटाने पर मिट जाती हैं। नए फ़ोन पर जाने के लिए “बैकअप” से फ़ाइल सहेजें।",
+  "autoBackupNone": "अभी कोई स्वचालित बैकअप नहीं। पहला आज बनेगा।",
+  "autoBackupRestore": "पुनर्स्थापित करें",
+  "autoBackupConfirm": "क्या सारा मौजूदा डेटा {date} के बैकअप से बदलें?",
+  "autoBackupRestored": "पुनर्स्थापित हो गया।"
 }

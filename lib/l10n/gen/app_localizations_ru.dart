@@ -4182,4 +4182,28 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get soundForestRain => 'Дождь в лесу';
+
+  @override
+  String get autoBackupTitle => 'Автоматические копии';
+
+  @override
+  String get autoBackupDesc => 'Каждый день на этом телефоне; хранятся последние 7';
+
+  @override
+  String get autoBackupHint =>
+      'Эти копии хранятся на телефоне и удаляются вместе с приложением. Для переноса на новый телефон сохраните файл через «Резервная копия».';
+
+  @override
+  String get autoBackupNone => 'Автоматических копий пока нет. Первая будет создана сегодня.';
+
+  @override
+  String get autoBackupRestore => 'Восстановить';
+
+  @override
+  String autoBackupConfirm(String date) {
+    return 'Заменить все текущие данные копией от $date?';
+  }
+
+  @override
+  String get autoBackupRestored => 'Восстановлено.';
 }

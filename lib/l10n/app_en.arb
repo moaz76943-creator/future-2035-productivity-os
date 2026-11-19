@@ -5464,5 +5464,38 @@
   "soundForestRain": "Rain in the forest",
   "@soundForestRain": {
     "description": "Sound name: rain falling in a forest"
+  },
+  "autoBackupTitle": "Automatic backups",
+  "@autoBackupTitle": {
+    "description": "Settings row and sheet title"
+  },
+  "autoBackupDesc": "Every day on this phone; the last 7 are kept",
+  "@autoBackupDesc": {
+    "description": "Settings row subtitle"
+  },
+  "autoBackupHint": "These copies stay on this phone and are removed if the app is uninstalled. To move to a new phone, use “Back up” to save a file.",
+  "@autoBackupHint": {
+    "description": "Explains where automatic backups live"
+  },
+  "autoBackupNone": "No automatic backup yet. The first one is made today.",
+  "@autoBackupNone": {
+    "description": "No automatic backup exists yet"
+  },
+  "autoBackupRestore": "Restore",
+  "@autoBackupRestore": {
+    "description": "Button: restore this automatic backup"
+  },
+  "autoBackupConfirm": "Replace all current data with the backup from {date}?",
+  "@autoBackupConfirm": {
+    "description": "Confirm restoring an automatic backup",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "autoBackupRestored": "Restored.",
+  "@autoBackupRestored": {
+    "description": "Message after restoring"
   }
 }

@@ -4055,4 +4055,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get soundForestRain => 'Rain in the forest';
+
+  @override
+  String get autoBackupTitle => 'Automatic backups';
+
+  @override
+  String get autoBackupDesc => 'Every day on this phone; the last 7 are kept';
+
+  @override
+  String get autoBackupHint =>
+      'These copies stay on this phone and are removed if the app is uninstalled. To move to a new phone, use “Back up” to save a file.';
+
+  @override
+  String get autoBackupNone => 'No automatic backup yet. The first one is made today.';
+
+  @override
+  String get autoBackupRestore => 'Restore';
+
+  @override
+  String autoBackupConfirm(String date) {
+    return 'Replace all current data with the backup from $date?';
+  }
+
+  @override
+  String get autoBackupRestored => 'Restored.';
 }

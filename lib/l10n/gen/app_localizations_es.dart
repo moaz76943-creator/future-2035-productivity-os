@@ -4075,4 +4075,28 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get soundForestRain => 'Lluvia en el bosque';
+
+  @override
+  String get autoBackupTitle => 'Copias automáticas';
+
+  @override
+  String get autoBackupDesc => 'Cada día en este teléfono; se guardan las 7 últimas';
+
+  @override
+  String get autoBackupHint =>
+      'Estas copias se quedan en el teléfono y se borran si se desinstala la app. Para cambiar de teléfono, usa «Copia de seguridad» y guarda un archivo.';
+
+  @override
+  String get autoBackupNone => 'Aún no hay copias automáticas. La primera se hace hoy.';
+
+  @override
+  String get autoBackupRestore => 'Restaurar';
+
+  @override
+  String autoBackupConfirm(String date) {
+    return '¿Reemplazar todos los datos actuales por la copia del $date?';
+  }
+
+  @override
+  String get autoBackupRestored => 'Restaurado.';
 }

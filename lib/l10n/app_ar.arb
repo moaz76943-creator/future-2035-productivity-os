@@ -1126,5 +1126,12 @@
   "flashToday": "اليوم",
   "flashStudyNow": "ادرس",
   "flashTodayAnswered": "{count, plural, zero{لم تُجب عن أي بطاقة} one{بطاقة واحدة مُجابة} two{بطاقتان مُجابتان} few{{count} بطاقات مُجابة} many{{count} بطاقة مُجابة} other{{count} بطاقة مُجابة}}",
-  "soundForestRain": "مطر في الغابة"
+  "soundForestRain": "مطر في الغابة",
+  "autoBackupTitle": "النسخ الاحتياطي التلقائي",
+  "autoBackupDesc": "يومياً على هذا الهاتف، ويُحتفظ بآخر 7 نسخ",
+  "autoBackupHint": "تبقى هذه النسخ على هذا الهاتف وتُحذف إذا أُزيل التطبيق. للانتقال إلى هاتف جديد استخدم «نسخ احتياطي» لحفظ ملف.",
+  "autoBackupNone": "لا توجد نسخة تلقائية بعد. تُنشأ أول نسخة اليوم.",
+  "autoBackupRestore": "استعادة",
+  "autoBackupConfirm": "استبدال كل البيانات الحالية بالنسخة المحفوظة في {date}؟",
+  "autoBackupRestored": "تمت الاستعادة."
 }

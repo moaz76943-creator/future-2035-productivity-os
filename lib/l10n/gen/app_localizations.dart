@@ -6869,6 +6869,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Rain in the forest'**
   String get soundForestRain;
+
+  /// Settings row and sheet title
+  ///
+  /// In en, this message translates to:
+  /// **'Automatic backups'**
+  String get autoBackupTitle;
+
+  /// Settings row subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Every day on this phone; the last 7 are kept'**
+  String get autoBackupDesc;
+
+  /// Explains where automatic backups live
+  ///
+  /// In en, this message translates to:
+  /// **'These copies stay on this phone and are removed if the app is uninstalled. To move to a new phone, use “Back up” to save a file.'**
+  String get autoBackupHint;
+
+  /// No automatic backup exists yet
+  ///
+  /// In en, this message translates to:
+  /// **'No automatic backup yet. The first one is made today.'**
+  String get autoBackupNone;
+
+  /// Button: restore this automatic backup
+  ///
+  /// In en, this message translates to:
+  /// **'Restore'**
+  String get autoBackupRestore;
+
+  /// Confirm restoring an automatic backup
+  ///
+  /// In en, this message translates to:
+  /// **'Replace all current data with the backup from {date}?'**
+  String autoBackupConfirm(String date);
+
+  /// Message after restoring
+  ///
+  /// In en, this message translates to:
+  /// **'Restored.'**
+  String get autoBackupRestored;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

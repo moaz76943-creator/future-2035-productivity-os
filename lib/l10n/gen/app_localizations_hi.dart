@@ -4066,4 +4066,28 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get soundForestRain => 'जंगल में बारिश';
+
+  @override
+  String get autoBackupTitle => 'स्वचालित बैकअप';
+
+  @override
+  String get autoBackupDesc => 'हर दिन इस फ़ोन पर; आख़िरी 7 रखे जाते हैं';
+
+  @override
+  String get autoBackupHint =>
+      'ये प्रतियाँ इसी फ़ोन पर रहती हैं और ऐप हटाने पर मिट जाती हैं। नए फ़ोन पर जाने के लिए “बैकअप” से फ़ाइल सहेजें।';
+
+  @override
+  String get autoBackupNone => 'अभी कोई स्वचालित बैकअप नहीं। पहला आज बनेगा।';
+
+  @override
+  String get autoBackupRestore => 'पुनर्स्थापित करें';
+
+  @override
+  String autoBackupConfirm(String date) {
+    return 'क्या सारा मौजूदा डेटा $date के बैकअप से बदलें?';
+  }
+
+  @override
+  String get autoBackupRestored => 'पुनर्स्थापित हो गया।';
 }

@@ -1126,5 +1126,12 @@
   "flashToday": "今天",
   "flashStudyNow": "学习",
   "flashTodayAnswered": "{count, plural, =0{今天还没有答题} other{已答 {count} 张卡片}}",
-  "soundForestRain": "林中雨"
+  "soundForestRain": "林中雨",
+  "autoBackupTitle": "自动备份",
+  "autoBackupDesc": "每天保存在本机，保留最近 7 份",
+  "autoBackupHint": "这些副本保存在本机，卸载应用时会被删除。换手机时请用“备份”保存文件。",
+  "autoBackupNone": "还没有自动备份，今天会生成第一份。",
+  "autoBackupRestore": "恢复",
+  "autoBackupConfirm": "用 {date} 的备份替换当前所有数据？",
+  "autoBackupRestored": "已恢复。"
 }

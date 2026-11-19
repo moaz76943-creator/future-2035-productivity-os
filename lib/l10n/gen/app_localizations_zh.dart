@@ -3879,4 +3879,27 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get soundForestRain => '林中雨';
+
+  @override
+  String get autoBackupTitle => '自动备份';
+
+  @override
+  String get autoBackupDesc => '每天保存在本机，保留最近 7 份';
+
+  @override
+  String get autoBackupHint => '这些副本保存在本机，卸载应用时会被删除。换手机时请用“备份”保存文件。';
+
+  @override
+  String get autoBackupNone => '还没有自动备份，今天会生成第一份。';
+
+  @override
+  String get autoBackupRestore => '恢复';
+
+  @override
+  String autoBackupConfirm(String date) {
+    return '用 $date 的备份替换当前所有数据？';
+  }
+
+  @override
+  String get autoBackupRestored => '已恢复。';
 }

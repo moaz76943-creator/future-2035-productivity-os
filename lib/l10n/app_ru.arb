@@ -1126,5 +1126,12 @@
   "flashToday": "Сегодня",
   "flashStudyNow": "Учить",
   "flashTodayAnswered": "{count, plural, =0{Нет ответов} one{{count} ответ} few{{count} ответа} many{{count} ответов} other{{count} ответа}}",
-  "soundForestRain": "Дождь в лесу"
+  "soundForestRain": "Дождь в лесу",
+  "autoBackupTitle": "Автоматические копии",
+  "autoBackupDesc": "Каждый день на этом телефоне; хранятся последние 7",
+  "autoBackupHint": "Эти копии хранятся на телефоне и удаляются вместе с приложением. Для переноса на новый телефон сохраните файл через «Резервная копия».",
+  "autoBackupNone": "Автоматических копий пока нет. Первая будет создана сегодня.",
+  "autoBackupRestore": "Восстановить",
+  "autoBackupConfirm": "Заменить все текущие данные копией от {date}?",
+  "autoBackupRestored": "Восстановлено."
 }

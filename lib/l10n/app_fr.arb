@@ -1126,5 +1126,12 @@
   "flashToday": "Aujourd’hui",
   "flashStudyNow": "Étudier",
   "flashTodayAnswered": "{count, plural, =0{Aucune carte répondue} =1{1 carte répondue} other{{count} cartes répondues}}",
-  "soundForestRain": "Pluie en forêt"
+  "soundForestRain": "Pluie en forêt",
+  "autoBackupTitle": "Sauvegardes automatiques",
+  "autoBackupDesc": "Chaque jour sur ce téléphone ; les 7 dernières sont gardées",
+  "autoBackupHint": "Ces copies restent sur ce téléphone et sont supprimées si l’app est désinstallée. Pour changer de téléphone, utilisez « Sauvegarder » pour enregistrer un fichier.",
+  "autoBackupNone": "Pas encore de sauvegarde automatique. La première est faite aujourd’hui.",
+  "autoBackupRestore": "Restaurer",
+  "autoBackupConfirm": "Remplacer toutes les données actuelles par la sauvegarde du {date} ?",
+  "autoBackupRestored": "Restauré."
 }

@@ -4226,4 +4226,28 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get soundForestRain => 'مطر في الغابة';
+
+  @override
+  String get autoBackupTitle => 'النسخ الاحتياطي التلقائي';
+
+  @override
+  String get autoBackupDesc => 'يومياً على هذا الهاتف، ويُحتفظ بآخر 7 نسخ';
+
+  @override
+  String get autoBackupHint =>
+      'تبقى هذه النسخ على هذا الهاتف وتُحذف إذا أُزيل التطبيق. للانتقال إلى هاتف جديد استخدم «نسخ احتياطي» لحفظ ملف.';
+
+  @override
+  String get autoBackupNone => 'لا توجد نسخة تلقائية بعد. تُنشأ أول نسخة اليوم.';
+
+  @override
+  String get autoBackupRestore => 'استعادة';
+
+  @override
+  String autoBackupConfirm(String date) {
+    return 'استبدال كل البيانات الحالية بالنسخة المحفوظة في $date؟';
+  }
+
+  @override
+  String get autoBackupRestored => 'تمت الاستعادة.';
 }

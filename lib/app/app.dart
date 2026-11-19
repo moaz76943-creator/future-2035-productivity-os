@@ -3,6 +3,7 @@ import 'package:material_ui/material_ui.dart';
 
 import '../core/design_system/app_theme.dart';
 import '../core/design_system/components/surfaces.dart';
+import '../features/backup/application/auto_backup_providers.dart';
 import '../features/notifications/application/reminder_sync.dart';
 import '../features/settings/application/settings_providers.dart';
 import '../features/settings/data/settings_repository.dart';
@@ -20,6 +21,8 @@ class FutureOsApp extends ConsumerWidget {
     // Keeps OS notifications in sync with stored data and restores the
     // focus timer at launch.
     ref.watch(reminderSyncProvider);
+    // Quiet daily backup (Android).
+    ref.watch(autoBackupRunnerProvider);
     final language = AppLocales.resolve(
       settings.localeTag,
       WidgetsBinding.instance.platformDispatcher.locales,

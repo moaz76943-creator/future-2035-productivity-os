@@ -15,6 +15,7 @@ import '../../../shared/widgets/pickers.dart';
 import '../../backup/presentation/backup_flows.dart';
 import '../application/settings_providers.dart';
 import '../data/settings_repository.dart';
+import '../../backup/presentation/auto_backup_sheet.dart';
 import 'end_tone_sheet.dart';
 import 'language_options.dart';
 
@@ -265,6 +266,13 @@ class SettingsScreen extends ConsumerWidget {
                   title: l10n.settingsRestore,
                   subtitle: l10n.settingsRestoreDesc,
                   onTap: () => restoreBackupFlow(context, ref),
+                ),
+                _NavRow(
+                  key: const ValueKey('settings-auto-backup'),
+                  icon: Icons.history_rounded,
+                  title: l10n.autoBackupTitle,
+                  subtitle: l10n.autoBackupDesc,
+                  onTap: () => showAutoBackups(context),
                 ),
                 _NavRow(
                   key: const ValueKey('settings-erase'),
