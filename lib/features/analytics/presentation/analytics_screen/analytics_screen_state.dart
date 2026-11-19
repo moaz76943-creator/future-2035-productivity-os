@@ -149,7 +149,7 @@ class _Body extends ConsumerWidget {
           hue: ModuleHue.tasks,
           range: range,
           now: now,
-          formatValue: (v) => fmt.number(v),
+          formatValue: fmt.number,
           emptyMessage: l10n.analyticsNoData,
         ),
         SectionHeader(title: l10n.chartTimeByProject),

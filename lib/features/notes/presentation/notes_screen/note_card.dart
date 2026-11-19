@@ -88,8 +88,8 @@ class NoteCard extends ConsumerWidget {
             children: [
               if (note.pinned) Icon(Icons.push_pin, size: 14, color: hue.a),
               if (note.favorite)
-                Padding(
-                  padding: const EdgeInsetsDirectional.only(start: 2),
+                const Padding(
+                  padding: EdgeInsetsDirectional.only(start: 2),
                   child: Icon(Icons.star_rounded, size: 15, color: Palette.champagne),
                 ),
               if (note.pinned || note.favorite) const SizedBox(width: Space.xxs),

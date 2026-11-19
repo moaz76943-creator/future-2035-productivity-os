@@ -9,7 +9,7 @@ void main() {
     final tasks = [
       PlanTask(id: 'a', title: 'A', priority: 1, dueAt: at(0), estimateMinutes: 30),
       PlanTask(id: 'b', title: 'B', priority: 4, dueAt: at(0, 0, 17), estimateMinutes: 30),
-      PlanTask(id: 'c', title: 'C', priority: 0, dueAt: at(0, 0, 14), estimateMinutes: 60),
+      PlanTask(id: 'c', title: 'C', dueAt: at(0, 0, 14), estimateMinutes: 60),
       PlanTask(id: 'd', title: 'D', priority: 4, dueAt: at(0), estimateMinutes: 90),
       PlanTask(id: 'e', title: 'E', priority: 4, dueAt: at(0), estimateMinutes: 15),
       PlanTask(id: 'f', title: 'F', priority: 4, dueAt: at(0)),
@@ -46,7 +46,7 @@ void main() {
         PlanTask(id: 'big', title: 'Big', priority: 3, dueAt: at(0), estimateMinutes: 90),
         PlanTask(id: 'm', title: 'Medium', priority: 2, dueAt: at(0), estimateMinutes: 45),
         PlanTask(id: 's', title: 'Small', priority: 1, dueAt: at(0), estimateMinutes: 30),
-        PlanTask(id: 't', title: 'Tiny', priority: 0, dueAt: at(0), estimateMinutes: 15),
+        PlanTask(id: 't', title: 'Tiny', dueAt: at(0), estimateMinutes: 15),
         PlanTask(id: 'n', title: 'No estimate', priority: 4, dueAt: at(0)),
       ],
     );

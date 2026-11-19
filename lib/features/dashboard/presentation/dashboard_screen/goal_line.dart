@@ -107,7 +107,6 @@ class _NoteChip extends StatelessWidget {
     return SizedBox(
       width: 200,
       child: LuxCard(
-        padding: const EdgeInsets.all(Space.md),
         accent: ModuleHue.notes.a,
         onTap: () => context.push(Routes.note(note.id)),
         child: Column(

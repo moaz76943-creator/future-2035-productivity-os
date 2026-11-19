@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/misc.dart' show Override;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:future_os/app/localization/app_locales.dart';
 import 'package:future_os/core/design_system/app_theme.dart';
@@ -23,7 +24,7 @@ Future<TestEnv> pumpScreen(
   String localeTag = 'en',
   TestEnv? env,
   AppSettings settings = const AppSettings(onboardingDone: true),
-  List overrides = const [],
+  List<Override> overrides = const [],
   Size size = const Size(412, 915),
   bool withRouter = false,
 }) async {

@@ -28,7 +28,7 @@ void main() {
         clockProvider.overrideWithValue(env.clock),
         notificationServiceProvider.overrideWithValue(service),
         initialSettingsProvider.overrideWithValue(
-          const AppSettings(onboardingDone: true, notificationsEnabled: true),
+          const AppSettings(onboardingDone: true),
         ),
       ],
     );

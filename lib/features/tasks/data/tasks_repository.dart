@@ -263,13 +263,13 @@ class TasksRepository {
       TaskSort.smart when f.view == TaskView.completed => [(t) => OrderingTerm.desc(t.completedAt)],
       TaskSort.smart when f.view == TaskView.archived => [(t) => OrderingTerm.desc(t.archivedAt)],
       TaskSort.smart => [
-        (t) => OrderingTerm(expression: t.dueAt.isNull(), mode: OrderingMode.asc),
+        (t) => OrderingTerm(expression: t.dueAt.isNull()),
         (t) => OrderingTerm.asc(t.dueAt),
         (t) => OrderingTerm.desc(t.priority),
         (t) => OrderingTerm.asc(t.sortOrder),
       ],
       TaskSort.dueDate => [
-        (t) => OrderingTerm(expression: t.dueAt.isNull(), mode: OrderingMode.asc),
+        (t) => OrderingTerm(expression: t.dueAt.isNull()),
         (t) => OrderingTerm.asc(t.dueAt),
       ],
       TaskSort.priority => [(t) => OrderingTerm.desc(t.priority), (t) => OrderingTerm.asc(t.dueAt)],

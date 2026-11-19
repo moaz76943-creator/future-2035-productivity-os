@@ -7,6 +7,10 @@ costs. Newest last. Status: Accepted unless noted.
 All data lives in one SQLite database on the device, opened through Drift with SQLite3 Multiple
 Ciphers; the key is generated on first run and kept in the platform keystore (`SecretStore`).
 No account, sync or analytics. **Why:** privacy and a study app that works anywhere.
+Two optional exceptions need the `INTERNET` permission, and neither is used unless the user acts:
+the cloud assistant, which runs only when the user enters their own HTTPS endpoint and agrees
+before any note text is sent (`features/assistant/data/remote_assistant.dart`), and Play Integrity
+(ADR-009). The built-in assistant runs fully offline.
 **Cost:** no cross-device sync; backup is a user-held encrypted file (ADR-007).
 
 ## ADR-002 Riverpod 3 + GoRouter, feature folders

@@ -34,9 +34,9 @@ void main() {
 
     test('addDays uses calendar fields across month and year ends', () {
       expect(CalendarMath.addDays(DateTime(2026, 3, 28), 1), DateTime(2026, 3, 29));
-      expect(CalendarMath.addDays(DateTime(2026, 3, 31), 1), DateTime(2026, 4, 1));
-      expect(CalendarMath.addDays(DateTime(2026, 12, 31), 1), DateTime(2027, 1, 1));
-      expect(CalendarMath.addDays(DateTime(2026, 3, 1), -1), DateTime(2026, 2, 28));
+      expect(CalendarMath.addDays(DateTime(2026, 3, 31), 1), DateTime(2026, 4));
+      expect(CalendarMath.addDays(DateTime(2026, 12, 31), 1), DateTime(2027));
+      expect(CalendarMath.addDays(DateTime(2026, 3), -1), DateTime(2026, 2, 28));
     });
 
     test('month grid covers whole Monday-first weeks', () {
@@ -46,7 +46,7 @@ void main() {
       expect(days.length % 7, 0);
       expect(days.length, 42);
       final feb = CalendarMath.monthGridDays(DateTime(2027, 2));
-      expect(feb.first, DateTime(2027, 2, 1)); // Feb 1 2027 is a Monday
+      expect(feb.first, DateTime(2027, 2)); // Feb 1 2027 is a Monday
       expect(feb.length, 28);
     });
 
@@ -89,7 +89,7 @@ void main() {
     test('short events get a minimum height and stay inside the day', () {
       final s = lay([
         item('s', DateTime(2026, 5, 1, 23, 55), DateTime(2026, 5, 2)),
-      ], DateTime(2026, 5, 1)).single;
+      ], DateTime(2026, 5)).single;
       expect(s.endMinute, 1440);
       expect(s.endMinute - s.startMinute, 20);
     });

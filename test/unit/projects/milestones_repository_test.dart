@@ -23,7 +23,7 @@ void main() {
     final tasks = TasksRepository(env.db, env.clock);
     final t1 = await tasks.create(TaskDraft(title: 'Write', projectId: project));
     await tasks.create(TaskDraft(title: 'Edit', projectId: project));
-    final m1 = await milestones.add(project, 'Draft done', dueAt: DateTime(2026, 12, 1));
+    final m1 = await milestones.add(project, 'Draft done', dueAt: DateTime(2026, 12));
     final m2 = await milestones.add(project, 'Submit');
     expect((await projects.watchProgress(project).first).total, 4);
 
@@ -52,8 +52,8 @@ void main() {
     expect(() => milestones.add(project, '   '), throwsArgumentError);
     final undated = await milestones.add(project, 'Someday');
     final later = await milestones.add(project, 'Later', dueAt: DateTime(2027, 1, 10));
-    final sooner = await milestones.add(project, 'Sooner', dueAt: DateTime(2026, 12, 1));
-    final done = await milestones.add(project, 'Done one', dueAt: DateTime(2026, 11, 1));
+    final sooner = await milestones.add(project, 'Sooner', dueAt: DateTime(2026, 12));
+    final done = await milestones.add(project, 'Done one', dueAt: DateTime(2026, 11));
     await milestones.setDone(done, true);
     final order = (await milestones.watchForProject(project).first).map((m) => m.id).toList();
     expect(order, [sooner, later, undated, done]);
@@ -61,7 +61,7 @@ void main() {
 
   test('calendar range returns dated milestones of live projects only', () async {
     await milestones.add(project, 'In range', dueAt: DateTime(2026, 11, 20, 23, 59));
-    await milestones.add(project, 'Out of range', dueAt: DateTime(2027, 2, 1));
+    await milestones.add(project, 'Out of range', dueAt: DateTime(2027, 2));
     await milestones.add(project, 'Undated');
     final other = await projects.create(const ProjectDraft(name: 'Gone', color: 2));
     await milestones.add(other, 'Of trashed project', dueAt: DateTime(2026, 11, 21));

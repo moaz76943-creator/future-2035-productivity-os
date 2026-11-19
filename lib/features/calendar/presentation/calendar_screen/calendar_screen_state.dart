@@ -304,7 +304,7 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
                 scrollRequest: _scrollRequest,
                 onOpenEvent: _openEvent,
                 onOpenTask: _openTask,
-                onCreateAt: (t) => _newEvent(t),
+                onCreateAt: _newEvent,
                 onMove: _move,
                 onDayTap: (d) {
                   setState(() {

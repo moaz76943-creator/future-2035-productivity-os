@@ -142,7 +142,6 @@ class _Body extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(0, Space.xl, 0, Space.sm),
           ),
           LuxCard(
-            padding: const EdgeInsets.all(Space.md),
             child: GlowBarChart(
               points: points,
               hue: _hue,

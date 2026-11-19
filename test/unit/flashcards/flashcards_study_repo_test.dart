@@ -24,7 +24,7 @@ void main() {
     await repo.setSuspended(a, true);
     expect((await repo.reviewQueue(deck)).map((c) => c.front), ['b']);
     expect((await repo.watchDeckStats(deck).first).newCount, 1);
-    expect(await repo.practiceCards(deck, mistakesOnly: false), hasLength(1));
+    expect(await repo.practiceCards(deck), hasLength(1));
     await repo.setSuspended(a, false);
     expect(await repo.reviewQueue(deck), hasLength(2));
   });
@@ -68,7 +68,7 @@ void main() {
     await repo.recordReview(b, ReviewRating.good);
     final m = await repo.practiceCards(deck, mistakesOnly: true, random: math.Random(1));
     expect(m.map((c) => c.id), [a]);
-    expect(await repo.practiceCards(deck, mistakesOnly: false), hasLength(2));
+    expect(await repo.practiceCards(deck), hasLength(2));
   });
 
   test('deck speech languages are stored', () async {

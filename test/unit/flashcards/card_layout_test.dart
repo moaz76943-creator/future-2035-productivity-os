@@ -30,7 +30,7 @@ void main() {
   test('custom fields, field languages and templates', () {
     const l = CardLayout(
       customFields: [
-        CustomField(id: 'c1', name: 'Plural', lang: 'de-DE', side: CardSide.back),
+        CustomField(id: 'c1', name: 'Plural', lang: 'de-DE'),
         CustomField(id: 'c2', name: 'Hint', side: CardSide.front),
       ],
       fieldLangs: {CardField.example: 'es-ES'},

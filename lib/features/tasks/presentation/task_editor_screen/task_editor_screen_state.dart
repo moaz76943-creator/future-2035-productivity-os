@@ -72,7 +72,7 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
           Padding(
             padding: const EdgeInsetsDirectional.only(end: Space.sm),
             child: FilledButton(
-              onPressed: _saving ? null : () => _save(),
+              onPressed: _saving ? null : _save,
               child: Text(l10n.actionSave),
             ),
           ),

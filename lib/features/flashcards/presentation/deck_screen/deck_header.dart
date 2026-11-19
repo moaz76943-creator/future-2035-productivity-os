@@ -177,7 +177,7 @@ class _CardTile extends ConsumerWidget {
                 isSelected: card.favorite,
                 onPressed: () => onAction(_CardAction.favorite),
                 icon: const Icon(Icons.star_outline_rounded),
-                selectedIcon: Icon(Icons.star_rounded, color: Palette.aurora),
+                selectedIcon: const Icon(Icons.star_rounded, color: Palette.aurora),
               ),
               PopupMenuButton<_CardAction>(
                 tooltip: l10n.actionMore,

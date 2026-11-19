@@ -79,7 +79,7 @@ class _ProjectSelector extends ConsumerWidget {
         prefixIcon: const Icon(Icons.workspaces_outline),
       ),
       items: [
-        DropdownMenuItem(value: null, child: Text(l10n.noProject)),
+        DropdownMenuItem(child: Text(l10n.noProject)),
         for (final p in projects)
           DropdownMenuItem(
             value: p.id,
@@ -171,7 +171,7 @@ class _LabelsEditor extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
     final all = ref.watch(labelsProvider).value ?? const <LabelRow>[];
-    final mine = {for (final l in ref.watch(taskLabelsProvider(taskId)).value ?? const []) l.id};
+    final mine = {for (final l in ref.watch(taskLabelsProvider(taskId)).value ?? const <LabelRow>[]) l.id};
     final repo = ref.read(tasksRepositoryProvider);
     return Padding(
       padding: const EdgeInsets.only(top: Space.md),

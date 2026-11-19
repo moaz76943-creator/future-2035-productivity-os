@@ -167,7 +167,6 @@ class _Heatmap extends StatelessWidget {
               hue: ModuleHue.habits,
               semanticsLabel: semanticsLabel,
               cell: cell,
-              gap: gap,
             ),
           ),
         );

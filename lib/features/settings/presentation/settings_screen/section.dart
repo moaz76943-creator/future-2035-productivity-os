@@ -19,7 +19,7 @@ class _Section extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 for (var i = 0; i < children.length; i++) ...[
-                  if (i > 0) Divider(height: 1, indent: Space.md, endIndent: Space.md),
+                  if (i > 0) const Divider(height: 1, indent: Space.md, endIndent: Space.md),
                   children[i],
                 ],
               ],
