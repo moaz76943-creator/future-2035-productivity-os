@@ -1062,5 +1062,10 @@
   "flashcardsLevelUnset": "无级别或主题",
   "flashcardsByLanguage": "按语言的进度",
   "flashcardsByLevel": "按级别/主题的进度",
-  "flashcardsGroupLine": "{decks} 个卡组 · {cards} 张卡 · {mature} 已掌握 · {due} 待复习 · 正确率 {correct}（30 天）"
+  "flashcardsGroupLine": "{decks} 个卡组 · {cards} 张卡 · {mature} 已掌握 · {due} 待复习 · 正确率 {correct}（30 天）",
+  "flashcardsRecord": "录音",
+  "flashcardsRecording": "正在录音…",
+  "flashcardsRecordStop": "停止并保留",
+  "flashcardsMicDenied": "麦克风权限已关闭。请在系统设置中允许后再录音。",
+  "flashcardsRecordFailed": "此设备无法录音。"
 }

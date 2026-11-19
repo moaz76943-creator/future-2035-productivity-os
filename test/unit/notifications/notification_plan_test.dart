@@ -176,7 +176,7 @@ void main() {
     expect(review(DateTime(2026, 11, 15))!.at, DateTime(2026, 11, 16, 19));
     expect(review(DateTime(2026, 11, 16, 20))!.at, DateTime(2026, 11, 17, 19));
     expect(review(DateTime(2026, 11, 19, 8))!.at, DateTime(2026, 11, 19, 19));
-    expect(review(DateTime(2027, 2, 1)), isNull);
+    expect(review(DateTime(2027, 2)), isNull);
     expect(review(DateTime(2026, 11, 15))!.title, en.notifReviewTitle);
   });
 

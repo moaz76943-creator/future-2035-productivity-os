@@ -1,6 +1,10 @@
 package app.future2035.future_os
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.media.MediaPlayer
+import android.media.MediaRecorder
+import android.os.Build
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
@@ -21,6 +25,9 @@ import java.util.Locale
 class MainActivity : FlutterActivity() {
     private var tts: TextToSpeech? = null
     private var player: MediaPlayer? = null
+    private var recorder: MediaRecorder? = null
+    private var recordFile: java.io.File? = null
+    private var pendingRecord: MethodChannel.Result? = null
     private var ready = false
     private var failed = false
     private val waiting = mutableListOf<() -> Unit>()
@@ -92,6 +99,9 @@ class MainActivity : FlutterActivity() {
             when (call.method) {
                 "play" -> playAudio(call.argument<String>("path"), result)
                 "stop" -> { stopAudio(); result.success(null) }
+                "recordStart" -> recordStart(result)
+                "recordStop" -> result.success(recordStop(keep = true))
+                "recordCancel" -> { recordStop(keep = false); result.success(null) }
                 else -> result.notImplemented()
             }
         }
@@ -154,6 +164,70 @@ class MainActivity : FlutterActivity() {
         player = null
     }
 
+    /**
+     * Records a card clip (AAC in MPEG-4) into the app cache, at most 5 minutes.
+     * The microphone permission is asked only here, when the user taps Record.
+     * Answers "ok", "denied" or "unavailable".
+     */
+    private fun recordStart(result: MethodChannel.Result) {
+        if (checkSelfPermission(Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            if (pendingRecord != null) { result.success("unavailable"); return }
+            pendingRecord = result
+            requestPermissions(arrayOf(Manifest.permission.RECORD_AUDIO), RECORD_REQUEST)
+            return
+        }
+        result.success(beginRecording())
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode != RECORD_REQUEST) return
+        val r = pendingRecord ?: return
+        pendingRecord = null
+        val granted = grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED
+        r.success(if (granted) beginRecording() else "denied")
+    }
+
+    private fun beginRecording(): String {
+        recordStop(keep = false)
+        stopAudio()
+        val file = java.io.File(cacheDir, "card_recording.m4a")
+        return try {
+            val r = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) MediaRecorder(this) else @Suppress("DEPRECATION") MediaRecorder()
+            r.setAudioSource(MediaRecorder.AudioSource.MIC)
+            r.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
+            r.setAudioEncoder(MediaRecorder.AudioEncoder.AAC)
+            r.setAudioEncodingBitRate(64000)
+            r.setAudioSamplingRate(44100)
+            r.setMaxDuration(5 * 60 * 1000)
+            r.setOutputFile(file.path)
+            r.prepare()
+            r.start()
+            recorder = r
+            recordFile = file
+            "ok"
+        } catch (e: Exception) {
+            recordStop(keep = false)
+            "unavailable"
+        }
+    }
+
+    /** Stops recording; returns the file path when [keep] and something was recorded. */
+    private fun recordStop(keep: Boolean): String? {
+        val r = recorder
+        recorder = null
+        var ok = r != null
+        if (r != null) {
+            try { r.stop() } catch (_: Exception) { ok = false } // too short or already stopped at max duration
+            r.release()
+        }
+        val file = recordFile
+        recordFile = null
+        if (keep && ok && file != null && file.exists() && file.length() > 0) return file.path
+        file?.delete()
+        return null
+    }
+
     /** Lazily binds the engine once; later calls wait for the first init result. */
     private fun withEngine(block: (TextToSpeech?) -> Unit) {
         if (ready) { block(tts); return }
@@ -179,10 +253,15 @@ class MainActivity : FlutterActivity() {
     }
 
     override fun onDestroy() {
+        recordStop(keep = false)
         stopAudio()
         tts?.stop()
         tts?.shutdown()
         tts = null
         super.onDestroy()
+    }
+
+    private companion object {
+        const val RECORD_REQUEST = 4207
     }
 }

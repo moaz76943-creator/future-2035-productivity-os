@@ -3671,4 +3671,19 @@ class AppLocalizationsZh extends AppLocalizations {
   String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct) {
     return '$decks 个卡组 · $cards 张卡 · $mature 已掌握 · $due 待复习 · 正确率 $correct（30 天）';
   }
+
+  @override
+  String get flashcardsRecord => '录音';
+
+  @override
+  String get flashcardsRecording => '正在录音…';
+
+  @override
+  String get flashcardsRecordStop => '停止并保留';
+
+  @override
+  String get flashcardsMicDenied => '麦克风权限已关闭。请在系统设置中允许后再录音。';
+
+  @override
+  String get flashcardsRecordFailed => '此设备无法录音。';
 }

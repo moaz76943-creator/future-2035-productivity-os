@@ -1062,5 +1062,10 @@
   "flashcardsLevelUnset": "कोई स्तर या विषय नहीं",
   "flashcardsByLanguage": "भाषा के अनुसार प्रगति",
   "flashcardsByLevel": "स्तर/विषय के अनुसार प्रगति",
-  "flashcardsGroupLine": "{decks} डेक · {cards} कार्ड · {mature} पक्के · {due} बाकी · {correct} सही (30 दिन)"
+  "flashcardsGroupLine": "{decks} डेक · {cards} कार्ड · {mature} पक्के · {due} बाकी · {correct} सही (30 दिन)",
+  "flashcardsRecord": "रिकॉर्ड करें",
+  "flashcardsRecording": "रिकॉर्डिंग हो रही है…",
+  "flashcardsRecordStop": "रोकें और रखें",
+  "flashcardsMicDenied": "माइक्रोफ़ोन की अनुमति बंद है। रिकॉर्ड करने के लिए सिस्टम सेटिंग में इसकी अनुमति दें।",
+  "flashcardsRecordFailed": "इस डिवाइस पर रिकॉर्डिंग उपलब्ध नहीं है।"
 }

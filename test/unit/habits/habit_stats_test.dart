@@ -57,7 +57,7 @@ void main() {
         weekdayMask: 127,
         targetPerDay: 1,
         countsByDay: counts,
-        from: DateTime(2026, 11, 1),
+        from: DateTime(2026, 11),
         to: DateTime(2026, 11, 5),
         pauses: pauses,
       );
@@ -66,7 +66,7 @@ void main() {
         weekdayMask: 127,
         targetPerDay: 1,
         countsByDay: counts,
-        from: DateTime(2026, 11, 1),
+        from: DateTime(2026, 11),
         to: DateTime(2026, 11, 5),
         pauses: pauses,
       );
@@ -74,7 +74,7 @@ void main() {
     });
 
     test('pause span json round trip', () {
-      final spans = [PauseSpan(20261101, 20261103), PauseSpan(20261110)];
+      final spans = [const PauseSpan(20261101, 20261103), const PauseSpan(20261110)];
       expect(HabitsRepository.decodePauses(HabitsRepository.encodePauses(spans)), spans);
       expect(HabitsRepository.decodePauses('not json'), isEmpty);
       expect(HabitsRepository.decodePauses(null), isEmpty);
@@ -202,7 +202,7 @@ void main() {
     test('month grid is Monday-first and DST safe', () {
       final g = HabitStats.monthGrid(2026, 11); // Nov 1 2026 is a Sunday
       expect(g.first.take(6).every((d) => d == null), isTrue);
-      expect(g.first[6], DateTime(2026, 11, 1));
+      expect(g.first[6], DateTime(2026, 11));
       final days = g.expand((w) => w).whereType<DateTime>().toList();
       expect(days, hasLength(30));
       expect(days.map(Days.key).toSet(), hasLength(30));

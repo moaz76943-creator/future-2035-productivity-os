@@ -181,7 +181,7 @@ void main() {
     () async {
       final env = TestEnv();
       addTearDown(env.dispose);
-      final now = DateTime.utc(2026, 11, 1).toIso8601String();
+      final now = DateTime.utc(2026, 11).toIso8601String();
       final tables = <String, Object?>{
         for (final t in env.db.allTables)
           if (t.actualTableName != 'milestones') t.actualTableName: <Object?>[],

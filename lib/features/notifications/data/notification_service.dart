@@ -63,6 +63,7 @@ class LocalNotificationService implements NotificationService {
   static final shared = LocalNotificationService._();
 
   final _plugin = FlutterLocalNotificationsPlugin();
+  // Lives as long as the process: this service is the app-wide singleton `shared`.
   final _taps = StreamController<String>.broadcast();
   bool _ready = false;
   bool _tzReady = false;

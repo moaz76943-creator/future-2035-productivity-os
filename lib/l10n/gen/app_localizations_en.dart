@@ -3844,4 +3844,20 @@ class AppLocalizationsEn extends AppLocalizations {
   String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct) {
     return '$decks decks · $cards cards · $mature mature · $due due · $correct correct (30 days)';
   }
+
+  @override
+  String get flashcardsRecord => 'Record';
+
+  @override
+  String get flashcardsRecording => 'Recording…';
+
+  @override
+  String get flashcardsRecordStop => 'Stop and keep';
+
+  @override
+  String get flashcardsMicDenied =>
+      'Microphone access is off. Allow it in the system settings to record.';
+
+  @override
+  String get flashcardsRecordFailed => 'Recording isn\'t available on this device.';
 }

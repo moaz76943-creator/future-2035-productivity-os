@@ -141,7 +141,7 @@ void main() {
     testWidgets('typing autosaves after the debounce and shows Saved', (tester) async {
       final env = TestEnv();
       final repo = repoOf(env);
-      final id = await db(tester, () => repo.create());
+      final id = await db(tester, repo.create);
       await pumpScreen(tester, NoteEditorScreen(noteId: id), env: env);
       await settle(tester);
 
@@ -177,7 +177,7 @@ void main() {
     testWidgets('untouched blank note is removed on close', (tester) async {
       final env = TestEnv();
       final repo = repoOf(env);
-      final id = await db(tester, () => repo.create());
+      final id = await db(tester, repo.create);
       await pumpScreen(tester, NoteEditorScreen(noteId: id), env: env);
       await settle(tester);
       await tester.pumpWidget(const SizedBox());

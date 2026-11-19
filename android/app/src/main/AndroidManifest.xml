@@ -7,6 +7,9 @@
          user action (starting a focus session or enabling reminders). -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- Flashcard voice recordings. Asked only when the user taps Record; audio stays
+         on the device (encrypted database), nothing is uploaded. -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <!-- Lets flutter_local_notifications restore scheduled alarms after reboot. -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <!-- Exact alarms. Declared only up to API 32 (Android 12/12L), where

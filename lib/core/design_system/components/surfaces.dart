@@ -55,7 +55,8 @@ class AuroraBackground extends StatelessWidget {
                 a: hue.a,
                 b: hue.b,
                 base: lux.background,
-                strength: (lux.isDark ? 0.28 : 0.16) * intensity,
+                // Dark: a faint glow only, so the page stays AMOLED black.
+                strength: (lux.isDark ? 0.12 : 0.16) * intensity,
               ),
             ),
           ),

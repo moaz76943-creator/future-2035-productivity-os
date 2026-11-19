@@ -1062,5 +1062,10 @@
   "flashcardsLevelUnset": "Sem nível ou tema",
   "flashcardsByLanguage": "Progresso por idioma",
   "flashcardsByLevel": "Progresso por nível ou tema",
-  "flashcardsGroupLine": "{decks} baralhos · {cards} cartões · {mature} maduros · {due} pendentes · {correct} corretas (30 dias)"
+  "flashcardsGroupLine": "{decks} baralhos · {cards} cartões · {mature} maduros · {due} pendentes · {correct} corretas (30 dias)",
+  "flashcardsRecord": "Gravar",
+  "flashcardsRecording": "Gravando…",
+  "flashcardsRecordStop": "Parar e manter",
+  "flashcardsMicDenied": "O acesso ao microfone está desativado. Permita-o nas configurações do sistema para gravar.",
+  "flashcardsRecordFailed": "A gravação não está disponível neste dispositivo."
 }

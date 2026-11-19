@@ -4012,4 +4012,20 @@ class AppLocalizationsAr extends AppLocalizations {
   String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct) {
     return '$decks مجموعات · $cards بطاقة · $mature محفوظة · $due مستحقة · $correct صحيحة (30 يومًا)';
   }
+
+  @override
+  String get flashcardsRecord => 'تسجيل';
+
+  @override
+  String get flashcardsRecording => 'جارٍ التسجيل…';
+
+  @override
+  String get flashcardsRecordStop => 'إيقاف وحفظ';
+
+  @override
+  String get flashcardsMicDenied =>
+      'الوصول إلى الميكروفون متوقف. اسمح به من إعدادات النظام لتتمكن من التسجيل.';
+
+  @override
+  String get flashcardsRecordFailed => 'التسجيل غير متاح على هذا الجهاز.';
 }

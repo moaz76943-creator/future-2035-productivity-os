@@ -5183,5 +5183,25 @@
         "type": "String"
       }
     }
+  },
+  "flashcardsRecord": "Record",
+  "@flashcardsRecord": {
+    "description": "Chip in the card form: record a voice clip with the microphone"
+  },
+  "flashcardsRecording": "Recording…",
+  "@flashcardsRecording": {
+    "description": "Title of the sheet while the microphone is recording"
+  },
+  "flashcardsRecordStop": "Stop and keep",
+  "@flashcardsRecordStop": {
+    "description": "Button: stop recording and keep the clip on the card"
+  },
+  "flashcardsMicDenied": "Microphone access is off. Allow it in the system settings to record.",
+  "@flashcardsMicDenied": {
+    "description": "Inline error when microphone permission is refused"
+  },
+  "flashcardsRecordFailed": "Recording isn't available on this device.",
+  "@flashcardsRecordFailed": {
+    "description": "Inline error when recording cannot start on this device"
   }
 }

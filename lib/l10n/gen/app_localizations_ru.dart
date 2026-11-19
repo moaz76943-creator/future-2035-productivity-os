@@ -3968,4 +3968,20 @@ class AppLocalizationsRu extends AppLocalizations {
   String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct) {
     return 'Колод: $decks · карточек: $cards · выучено: $mature · к повтору: $due · верно: $correct (30 дн.)';
   }
+
+  @override
+  String get flashcardsRecord => 'Записать';
+
+  @override
+  String get flashcardsRecording => 'Идёт запись…';
+
+  @override
+  String get flashcardsRecordStop => 'Остановить и сохранить';
+
+  @override
+  String get flashcardsMicDenied =>
+      'Доступ к микрофону выключен. Разрешите его в настройках системы, чтобы записывать.';
+
+  @override
+  String get flashcardsRecordFailed => 'Запись недоступна на этом устройстве.';
 }

@@ -9,7 +9,7 @@ implemented and covered by automated tests, but sound or files on a real phone s
 | Several meanings / translations | Done — one per line or `;` in the answer, and custom fields such as "Second translation" with their own language |
 | Original text separated from translation | Done — front/back plus optional and custom fields |
 | Examples, notes, pronunciation, explanation, tags | Done |
-| Images and audio | Done — one image and one recording per side, stored encrypted in the database and included in backups (device check) |
+| Images and audio | Done — one image and one recording per side, attached from a file or recorded in the app (microphone, up to 5 minutes), stored encrypted in the database and included in backups (device check) |
 | Multi-face cards | Done as step-by-step reveal: back, then each field one tap at a time; custom fields can sit on the front |
 | Several languages in one card | Done — speech language per side, per built-in field and per custom field |
 | Bulk editing | Done — multi-select: favourite, suspend, tag, move, delete (undo) |
@@ -24,5 +24,5 @@ implemented and covered by automated tests, but sound or files on a real phone s
 | Statistics per deck and per language/level | Done — counts, due, hard, reviews per day, correct rate, forgetting rate, FSRS recall estimate, history |
 | Smart review: due first, daily new limit, relearning same session, new/hard/favourites/mistakes only, session size and order | Done |
 
-Known limits: recordings are attached from files (no in-app recorder); one image and one recording per side;
+Known limits: one image and one recording per side;
 custom fields per deck up to 12.

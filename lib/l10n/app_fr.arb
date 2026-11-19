@@ -1062,5 +1062,10 @@
   "flashcardsLevelUnset": "Sans niveau ni thème",
   "flashcardsByLanguage": "Progrès par langue",
   "flashcardsByLevel": "Progrès par niveau ou thème",
-  "flashcardsGroupLine": "{decks} paquets · {cards} cartes · {mature} acquises · {due} à revoir · {correct} justes (30 j)"
+  "flashcardsGroupLine": "{decks} paquets · {cards} cartes · {mature} acquises · {due} à revoir · {correct} justes (30 j)",
+  "flashcardsRecord": "Enregistrer",
+  "flashcardsRecording": "Enregistrement…",
+  "flashcardsRecordStop": "Arrêter et garder",
+  "flashcardsMicDenied": "L’accès au micro est désactivé. Autorisez-le dans les réglages du système pour enregistrer.",
+  "flashcardsRecordFailed": "L’enregistrement n’est pas disponible sur cet appareil."
 }

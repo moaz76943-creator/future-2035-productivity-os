@@ -205,15 +205,13 @@ enum CardTemplate { vocabulary, twoTranslations, questionAnswer, definition, gra
 
 CardLayout templateLayout(CardTemplate t, {required String Function(String key) name}) =>
     switch (t) {
-      CardTemplate.vocabulary => CardLayout(
-        order: const [
+      CardTemplate.vocabulary => const CardLayout(
+        order: [
           CardField.pronunciation,
           CardField.example,
           CardField.explanation,
           CardField.notes,
         ],
-        stepReveal: false,
-        customFields: [CustomField(id: 'c1', name: name('plural'), side: CardSide.back)],
       ),
       CardTemplate.twoTranslations => CardLayout(
         order: const [
@@ -222,7 +220,7 @@ CardLayout templateLayout(CardTemplate t, {required String Function(String key) 
           CardField.explanation,
           CardField.notes,
         ],
-        customFields: [CustomField(id: 'c1', name: name('translation2'), side: CardSide.back)],
+        customFields: [CustomField(id: 'c1', name: name('translation2'))],
       ),
       CardTemplate.questionAnswer => const CardLayout(
         order: [CardField.explanation, CardField.example, CardField.notes, CardField.pronunciation],
@@ -236,7 +234,7 @@ CardLayout templateLayout(CardTemplate t, {required String Function(String key) 
           CardField.notes,
           CardField.pronunciation,
         ],
-        customFields: [CustomField(id: 'c1', name: name('synonyms'), side: CardSide.back)],
+        customFields: [CustomField(id: 'c1', name: name('synonyms'))],
       ),
       CardTemplate.grammar => CardLayout(
         order: const [

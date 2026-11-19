@@ -17,11 +17,12 @@ abstract final class Palette {
   static const ink2 = Color(0xFF454B66); // secondary text
   static const ink3 = Color(0xFF6E7491); // tertiary (meets 4.5:1 on white)
 
-  // Foundation (dark) — deep navy, not inverted grey.
-  static const abyss = Color(0xFF080B1D);
-  static const midnight = Color(0xFF0F1430);
-  static const dusk = Color(0xFF181E40);
-  static const twilight = Color(0xFF242B52);
+  // Foundation (dark) — true AMOLED black with near-black, faintly cool
+  // surfaces (pixels off on OLED; cards still separate from the page).
+  static const abyss = Color(0xFF000000);
+  static const midnight = Color(0xFF0B0B11);
+  static const dusk = Color(0xFF15151E);
+  static const twilight = Color(0xFF262633);
   static const moon = Color(0xFFEDEFFA);
   static const moon2 = Color(0xFFB4B9D6);
   static const moon3 = Color(0xFF8A90B2);

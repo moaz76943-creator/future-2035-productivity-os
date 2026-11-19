@@ -137,9 +137,9 @@ abstract final class CardImportParser {
   static ImportPreview preview(String text) {
     final delimiter = detectDelimiter(text);
     final all = rows(text.replaceAll('\uFEFF', ''), delimiter);
-    if (all.isEmpty) return ImportPreview(rows: const [], columns: const [], hasHeader: false);
+    if (all.isEmpty) return const ImportPreview(rows: [], columns: [], hasHeader: false);
     final normalized = [
-      for (var r in all)
+      for (final r in all)
         // Pasted lists often mix separators line by line ("a<TAB>b", "c;d").
         if (r.length == 1) _splitMixed(r, delimiter) else r,
     ];

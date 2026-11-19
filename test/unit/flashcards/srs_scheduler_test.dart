@@ -90,7 +90,7 @@ void main() {
   });
 
   test('a card reviewed late gains more stability than one reviewed on time', () {
-    final onTime = s.review(reviewCard(daysAgo: 10), ReviewRating.good, now);
+    final onTime = s.review(reviewCard(), ReviewRating.good, now);
     final late = s.review(reviewCard(daysAgo: 40), ReviewRating.good, now);
     expect(late.stability, greaterThan(onTime.stability));
   });
