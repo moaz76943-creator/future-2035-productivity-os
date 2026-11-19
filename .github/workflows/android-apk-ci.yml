@@ -45,6 +45,11 @@ jobs:
       - name: Analyze
         run: flutter analyze
 
+      - name: Translations and licenses
+        run: |
+          python3 tool/check_l10n.py
+          python3 tool/third_party_licenses.py --check
+
       - name: Run unit tests
         run: flutter test test/unit --reporter expanded --concurrency=2 --timeout=2m
 

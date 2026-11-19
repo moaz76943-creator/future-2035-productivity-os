@@ -15,6 +15,7 @@ import '../../../shared/widgets/dialogs.dart';
 import '../../../shared/widgets/module_scaffold.dart';
 import '../application/flashcards_providers.dart';
 import 'widgets/deck_form_sheet.dart';
+import '../data/flashcards_repository.dart';
 
 const _hue = ModuleHue.flashcards;
 

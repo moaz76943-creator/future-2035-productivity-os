@@ -82,6 +82,11 @@ flutter:
   uses-material-design: true
   generate: true
 
+  assets:
+    - assets/fonts/OFL-Manrope.txt
+    - assets/fonts/OFL-ReadexPro.txt
+    - assets/fonts/OFL-NotoSansDevanagari.txt
+
   fonts:
     - family: Manrope
       fonts:

@@ -16,55 +16,12 @@ import '../domain/focus_engine.dart';
 import '../domain/focus_timer_state.dart';
 import 'focus_providers.dart';
 
+part 'focus_controller/focus_controller_state.dart';
+part 'focus_controller/chain.dart';
+
 /// One-time message about what happened while the app was closed.
 /// [seriesComplete]: the planned number of focus sessions is done.
 enum FocusNotice { recovered, completedWhileAway, seriesComplete }
-
-class FocusControllerState {
-  const FocusControllerState({
-    this.ready = false,
-    this.active,
-    this.pending,
-    this.linkedTaskId,
-    this.notice,
-    this.justFinished,
-  });
-
-  /// False until the persisted state has been restored.
-  final bool ready;
-  final FocusTimerState? active;
-
-  /// Pomodoro phase waiting to start when no timer runs.
-  final PendingPhase? pending;
-
-  /// Task chosen for the next (or current) work session.
-  final String? linkedTaskId;
-  final FocusNotice? notice;
-
-  /// A session that just ended in the foreground; the screen offers a note.
-  final FinishedSession? justFinished;
-
-  FocusControllerState copyWith({
-    bool? ready,
-    FocusTimerState? active,
-    bool clearActive = false,
-    PendingPhase? pending,
-    bool clearPending = false,
-    String? linkedTaskId,
-    bool clearTask = false,
-    FocusNotice? notice,
-    bool clearNotice = false,
-    FinishedSession? justFinished,
-    bool clearFinished = false,
-  }) => FocusControllerState(
-    ready: ready ?? this.ready,
-    active: clearActive ? null : (active ?? this.active),
-    pending: clearPending ? null : (pending ?? this.pending),
-    linkedTaskId: clearTask ? null : (linkedTaskId ?? this.linkedTaskId),
-    notice: clearNotice ? null : (notice ?? this.notice),
-    justFinished: clearFinished ? null : (justFinished ?? this.justFinished),
-  );
-}
 
 final focusControllerProvider = NotifierProvider<FocusController, FocusControllerState>(
   FocusController.new,
@@ -132,6 +89,12 @@ class FocusController extends Notifier<FocusControllerState> {
 
   void _set(FocusControllerState s) {
     if (ref.mounted) state = s;
+  }
+
+  /// Read access for the extension parts (state and ref stay protected).
+  FocusControllerState get _current => state;
+  void _invalidateAccess() {
+    if (ref.mounted) ref.invalidate(notificationAccessProvider);
   }
 
   // ---------------------------------------------------------------------------
@@ -326,94 +289,6 @@ class FocusController extends Notifier<FocusControllerState> {
 
   void consumeFinished() => _set(state.copyWith(clearFinished: true));
 
-  // ---------------------------------------------------------------------------
-  // Internals
-
-  /// Records [s] as completed at its completion moment, then follows the
-  /// pomodoro cycle. Auto-started breaks begin at the moment the previous
-  /// phase ended, so a chain that elapsed while the app was closed is
-  /// reconstructed exactly.
-  Future<void> _completeChain(FocusTimerState start) async {
-    var s = start;
-    FinishedSession? lastWork;
-    final now = _nowUtc;
-    final autoBreaks = _settings.autoStartBreaks;
-    final autoFocus = _settings.autoStartFocus;
-    for (var guard = 0; guard < 400; guard++) {
-      final f = FocusEngine.finish(s, now);
-      await _repo.recordFinished(f);
-      if (f.phase == FocusPhase.work) lastWork = f;
-      if (s.mode != FocusMode.pomodoro) {
-        await _repo.clearPending();
-        _set(
-          FocusControllerState(
-            ready: true,
-            linkedTaskId: state.linkedTaskId,
-            justFinished: lastWork,
-          ),
-        );
-        await _afterChange();
-        return;
-      }
-      final next = FocusEngine.nextPomodoroPhase(s, _config);
-      final nextPhase = next.phase;
-      if (nextPhase == null) {
-        // Planned series finished.
-        await _repo.clearPending();
-        _set(
-          FocusControllerState(
-            ready: true,
-            linkedTaskId: state.linkedTaskId,
-            justFinished: lastWork,
-            notice: FocusNotice.seriesComplete,
-          ),
-        );
-        await _afterChange();
-        return;
-      }
-      final auto = nextPhase == FocusPhase.work ? autoFocus : autoBreaks;
-      if (auto) {
-        final brk = FocusEngine.start(
-          sessionId: newId(),
-          mode: FocusMode.pomodoro,
-          nowUtc: f.endedAtUtc,
-          phase: nextPhase,
-          plannedSeconds: _config.secondsFor(nextPhase),
-          taskId: nextPhase == FocusPhase.work ? state.linkedTaskId : null,
-          completedWorkCycles: next.cycles,
-        );
-        if (brk.isComplete(now)) {
-          s = brk;
-          continue;
-        }
-        await _repo.saveActive(brk);
-        await _repo.clearPending();
-        _set(
-          FocusControllerState(
-            ready: true,
-            active: brk,
-            linkedTaskId: state.linkedTaskId,
-            justFinished: lastWork,
-          ),
-        );
-        await _afterChange();
-        return;
-      }
-      final pending = PendingPhase(nextPhase, next.cycles);
-      await _repo.savePending(pending);
-      _set(
-        FocusControllerState(
-          ready: true,
-          pending: pending,
-          linkedTaskId: state.linkedTaskId,
-          justFinished: lastWork,
-        ),
-      );
-      await _afterChange();
-      return;
-    }
-  }
-
   /// Keeps the phase-end notification and the in-process completion timer
   /// in step with the current state.
   Future<void> _afterChange() async {
@@ -448,16 +323,6 @@ class FocusController extends Notifier<FocusControllerState> {
         const Duration(seconds: 30),
         () => unawaited(_serial(_afterChange)),
       );
-    }
-  }
-
-  Future<void> _maybeAskPermission() async {
-    if (_askedPermission || !_settings.notificationsEnabled) return;
-    _askedPermission = true;
-    final svc = _notifications;
-    if (await svc.access() == NotificationAccess.denied) {
-      await svc.requestPermission();
-      if (ref.mounted) ref.invalidate(notificationAccessProvider);
     }
   }
 }

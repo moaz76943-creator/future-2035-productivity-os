@@ -226,6 +226,7 @@ Stream<R> _combine<A, B, R>(Stream<A> a, Stream<B> b, R Function(A, B) f) {
     ..onCancel = () async {
       await sa?.cancel();
       await sb?.cancel();
+      await controller.close();
     };
   return controller.stream;
 }
