@@ -205,6 +205,7 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
             ),
             _Section(
               title: l10n.taskOrganize,
+              collapsed: _isNew,
               children: [
                 _ProjectSelector(
                   value: _projectId,
@@ -217,6 +218,7 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
             ),
             _Section(
               title: l10n.taskMoreDetails,
+              collapsed: _isNew,
               children: [
                 TextField(
                   controller: _description,
@@ -235,6 +237,7 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
             ),
             _Section(
               title: l10n.taskBreakdown,
+              collapsed: _isNew,
               children: [
                 if (_isNew)
                   Text(

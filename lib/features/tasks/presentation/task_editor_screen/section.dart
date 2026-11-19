@@ -1,12 +1,29 @@
 part of '../task_editor_screen.dart';
 
 class _Section extends StatelessWidget {
-  const _Section({required this.title, required this.children});
+  const _Section({required this.title, required this.children, this.collapsed = false});
   final String title;
   final List<Widget> children;
 
+  /// A new task starts with the rarely used parts folded away, so the form is short.
+  final bool collapsed;
+
   @override
   Widget build(BuildContext context) {
+    if (collapsed) {
+      return Padding(
+        padding: const EdgeInsets.only(top: Space.md),
+        child: ExpansionTile(
+          tilePadding: EdgeInsets.zero,
+          shape: const Border(),
+          collapsedShape: const Border(),
+          maintainState: true,
+          title: Text(title, style: context.text.titleSmall),
+          childrenPadding: const EdgeInsets.only(bottom: Space.sm),
+          children: children,
+        ),
+      );
+    }
     return Padding(
       padding: const EdgeInsets.only(top: Space.xl),
       child: Column(

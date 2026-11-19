@@ -227,7 +227,11 @@ class _CardSearchScreenState extends ConsumerState<CardSearchScreen> {
                               ),
                             ),
                             const SizedBox(width: Space.xs),
-                            LuxPill(label: d.name, color: Color(d.color)),
+                            // A long deck name shortens instead of overflowing the row.
+                            ConstrainedBox(
+                              constraints: const BoxConstraints(maxWidth: 120),
+                              child: LuxPill(label: d.name, color: Color(d.color)),
+                            ),
                           ],
                         ),
                       );
