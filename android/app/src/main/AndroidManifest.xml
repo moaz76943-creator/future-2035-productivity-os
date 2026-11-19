@@ -10,6 +10,10 @@
     <!-- Flashcard voice recordings. Asked only when the user taps Record; audio stays
          on the device (encrypted database), nothing is uploaded. -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- Nature sounds keep playing with the screen off: a media-playback foreground
+         service with a notification (pause / play / stop). -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
     <!-- Lets flutter_local_notifications restore scheduled alarms after reboot. -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <!-- Exact alarms. Declared only up to API 32 (Android 12/12L), where
@@ -55,6 +59,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <service
+            android:name=".sound.SoundscapeService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
         <!-- flutter_local_notifications: deliver scheduled notifications and
              reschedule them after reboot or app update. -->
         <receiver

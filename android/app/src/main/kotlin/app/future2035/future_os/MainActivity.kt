@@ -13,6 +13,7 @@ import com.google.android.play.core.integrity.IntegrityTokenRequest
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
+import app.future2035.future_os.sound.SoundscapeChannel
 import java.util.Locale
 
 /**
@@ -28,12 +29,16 @@ class MainActivity : FlutterActivity() {
     private var recorder: MediaRecorder? = null
     private var recordFile: java.io.File? = null
     private var pendingRecord: MethodChannel.Result? = null
+    private var soundscape: SoundscapeChannel? = null
     private var ready = false
     private var failed = false
     private val waiting = mutableListOf<() -> Unit>()
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
+        // Nature sounds (playback lives in SoundEngine / SoundscapeService).
+        soundscape?.detach()
+        soundscape = SoundscapeChannel(applicationContext, flutterEngine.dartExecutor.binaryMessenger)
 
         // Existing TTS channel
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "future_os/tts").setMethodCallHandler { call, result ->
@@ -250,6 +255,13 @@ class MainActivity : FlutterActivity() {
                 pending.forEach { it() }
             }
         }
+    }
+
+    override fun cleanUpFlutterEngine(flutterEngine: FlutterEngine) {
+        // The sounds may keep playing; only the bridge to this engine is dropped.
+        soundscape?.detach()
+        soundscape = null
+        super.cleanUpFlutterEngine(flutterEngine)
     }
 
     override fun onDestroy() {
