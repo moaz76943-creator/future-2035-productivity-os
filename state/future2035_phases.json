@@ -88,6 +88,18 @@
       "title": "L10n Part 2: Idiomatic 50-Locale ARB Translations, Western Digits, RTL/Long-String Overflow Tests, Zero Dead Buttons & Full Audit Pass",
       "status": "PENDING",
       "directive": "docs/L10N_50_LANGUAGES_DIRECTIVE.md"
+    },
+    {
+      "id": "PHASE_ARCH_1_DOCS_AND_IP_AUDIT",
+      "title": "Architecture Part 1: Create docs/REPO_MAP.md, docs/ADR.md, THIRD_PARTY_LICENSES.md + Wire showLicensePage & Clean Dead Code",
+      "status": "PENDING",
+      "directive": "docs/MODULAR_REFACTOR_DIRECTIVE.md"
+    },
+    {
+      "id": "PHASE_ARCH_2_400LINE_MODULAR_SPLIT",
+      "title": "Architecture Part 2: Split All >400-Line Dart Files Into Clean Cohesive Modules + Dispose/Leak Audit + Full Analyze & Test Pass",
+      "status": "PENDING",
+      "directive": "docs/MODULAR_REFACTOR_DIRECTIVE.md"
     }
   ]
 }
