@@ -4315,7 +4315,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get faqFlashcardsA =>
-      '掌握好的卡片间隔更久再出现，答错的很快再出现（间隔重复）。每次作答选择“重来”“困难”“良好”或“简单”。可设置每日目标，并在“今天”卡片上保持连续天数。 在卡组中设置考试日期，即可看到剩余天数和每天要学的新卡片数。';
+      '掌握好的卡片间隔更久再出现，答错的很快再出现（间隔重复）。每次作答选择“重来”“困难”“良好”或“简单”。可设置每日目标，并在“今天”卡片上保持连续天数。 在卡组中设置考试日期，即可看到剩余天数和每天要学的新卡片数。 选择“我的顺序”即可拖动卡片排序，点按任一面的喇叭收听，并在朗读菜单中设置语速和重复次数。';
 
   @override
   String get faqImportQ => '可以从 Anki 或 Excel 导入卡片吗？';
@@ -4769,4 +4769,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get smartReviewTimeUse => '使用';
+
+  @override
+  String get widgetNewNote => '新笔记';
 }

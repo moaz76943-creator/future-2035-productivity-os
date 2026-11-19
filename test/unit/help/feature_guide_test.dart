@@ -22,6 +22,7 @@ const _noHelpNeeded = {
   Routes.trash,
   Routes.cardSearch,
   Routes.taskNew,
+  Routes.noteNew,
   Routes.eventNew,
   Routes.help,
 };

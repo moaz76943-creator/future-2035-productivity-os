@@ -28,7 +28,7 @@ class HomeWidgetProvider : AppWidgetProvider() {
     }
 
     companion object {
-        private const val PREFS = "home_widget"
+        const val PREFS = "home_widget"
         const val ACTION_REFRESH = "app.future2035.HOME_WIDGET_REFRESH"
 
         fun bind(context: Context, messenger: BinaryMessenger): MethodChannel {
@@ -37,12 +37,14 @@ class HomeWidgetProvider : AppWidgetProvider() {
                 if (call.method != "update") { result.notImplemented(); return@setMethodCallHandler }
                 val m = call.arguments as? Map<*, *>
                 val prefs = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit()
-                for (k in listOf("title", "idle", "running", "cards", "cardsRoute", "focusRoute")) {
+                for (k in listOf("title", "idle", "running", "cards", "cardsRoute", "focusRoute",
+                    "addTask", "addNote", "addCards", "taskRoute", "noteRoute")) {
                     prefs.putString(k, (m?.get(k) as? String)?.take(80) ?: "")
                 }
                 prefs.putLong("endsAt", (m?.get("endsAt") as? Number)?.toLong() ?: 0L)
                 prefs.apply()
                 render(context)
+                QuickAddWidgetProvider.render(context)
                 result.success(null)
             }
             return channel
@@ -75,7 +77,7 @@ class HomeWidgetProvider : AppWidgetProvider() {
             manager.updateAppWidget(ids, views)
         }
 
-        private fun open(context: Context, code: Int, route: String?): PendingIntent {
+        fun open(context: Context, code: Int, route: String?): PendingIntent {
             val intent = Intent(context, MainActivity::class.java)
                 .setAction(Intent.ACTION_VIEW)
                 .putExtra(ShortcutsBridge.EXTRA_ROUTE, route?.takeIf(ShortcutsBridge::isAppRoute) ?: "/")

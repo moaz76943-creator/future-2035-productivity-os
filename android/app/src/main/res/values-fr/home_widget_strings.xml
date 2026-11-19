@@ -2,4 +2,6 @@
 <resources>
     <string name="home_widget_label">Concentration et cartes</string>
     <string name="home_widget_description">Temps de concentration restant et cartes à revoir</string>
+    <string name="quick_widget_label">Ajout rapide</string>
+    <string name="quick_widget_description">Ajouter une tâche, une note ou réviser des cartes</string>
 </resources>

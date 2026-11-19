@@ -60,7 +60,7 @@ section: `tasks/data/tasks_transfer.dart`, `notes/data/notes_transfer.dart`, `fl
 Note pictures (ADR-023): `notes/data/note_images.dart`.
 
 Phone integrations (ADR-020): `app/routing/deep_links.dart` (notification taps, app icon
-shortcuts), `app/home_widget_link.dart` (home screen widget), `core/platform/` (shortcuts, voice
+shortcuts), `app/home_widget_link.dart` (home screen widgets: focus and quick-add), `core/platform/` (shortcuts, voice
 typing), `shared/widgets/mic_button.dart`.
 
 ## Large screens: library + parts

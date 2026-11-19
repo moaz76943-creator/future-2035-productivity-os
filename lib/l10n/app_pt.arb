@@ -1256,7 +1256,7 @@
   "faqCalendarQ": "O calendário mostra datas hegirianas?",
   "faqCalendarA": "Sim. As datas hegirianas (Umm al-Qura) aparecem sozinhas em árabe e podem ser ativadas em Configurações para qualquer idioma. Eventos, tarefas com data e marcos de projetos aparecem juntos.",
   "faqFlashcardsQ": "Como a revisão decide quais cartões vejo?",
-  "faqFlashcardsA": "Cartões que você sabe bem voltam depois de mais tempo e os que você erra voltam logo (repetição espaçada). Avalie cada resposta: De novo, Difícil, Bom ou Fácil. Defina uma meta diária e mantenha sua sequência no cartão Hoje. Defina a data da prova em um baralho para ver os dias que faltam e quantos cartões novos aprender por dia.",
+  "faqFlashcardsA": "Cartões que você sabe bem voltam depois de mais tempo e os que você erra voltam logo (repetição espaçada). Avalie cada resposta: De novo, Difícil, Bom ou Fácil. Defina uma meta diária e mantenha sua sequência no cartão Hoje. Defina a data da prova em um baralho para ver os dias que faltam e quantos cartões novos aprender por dia. Ordene por «Minha ordem» para arrastar cartões, toque no alto-falante de cada lado para ouvir e ajuste velocidade e repetições no menu de voz.",
   "faqImportQ": "Posso trazer cartões do Anki ou do Excel?",
   "faqImportA": "Sim. Em um baralho, escolha Importar e um arquivo: Anki (.apkg), Excel (.xlsx) ou CSV, e associe as colunas. Use “Modelo de planilha” para escrever cartões no computador. Imagens e sons de arquivos do Anki não são importados.",
   "faqNotesQ": "O que as notas fazem?",
@@ -1395,5 +1395,6 @@
   "autoBackupCheckFixed": "Verificado {date}: um backup danificado foi encontrado e substituído por um novo.",
   "autoBackupCheckFailed": "Verificado {date}: não foi possível abrir o último backup. Salve um arquivo de backup nas Configurações.",
   "smartReviewTimeTitle": "Você costuma estudar por volta das {time}",
-  "smartReviewTimeUse": "Usar"
+  "smartReviewTimeUse": "Usar",
+  "widgetNewNote": "Nova nota"
 }

@@ -4535,7 +4535,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get faqFlashcardsA =>
-      'Cartões que você sabe bem voltam depois de mais tempo e os que você erra voltam logo (repetição espaçada). Avalie cada resposta: De novo, Difícil, Bom ou Fácil. Defina uma meta diária e mantenha sua sequência no cartão Hoje. Defina a data da prova em um baralho para ver os dias que faltam e quantos cartões novos aprender por dia.';
+      'Cartões que você sabe bem voltam depois de mais tempo e os que você erra voltam logo (repetição espaçada). Avalie cada resposta: De novo, Difícil, Bom ou Fácil. Defina uma meta diária e mantenha sua sequência no cartão Hoje. Defina a data da prova em um baralho para ver os dias que faltam e quantos cartões novos aprender por dia. Ordene por «Minha ordem» para arrastar cartões, toque no alto-falante de cada lado para ouvir e ajuste velocidade e repetições no menu de voz.';
 
   @override
   String get faqImportQ => 'Posso trazer cartões do Anki ou do Excel?';
@@ -5035,4 +5035,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get smartReviewTimeUse => 'Usar';
+
+  @override
+  String get widgetNewNote => 'Nova nota';
 }

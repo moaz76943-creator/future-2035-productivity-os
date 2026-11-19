@@ -19,12 +19,18 @@ class HomeWidgetData {
     required this.idle,
     required this.running,
     required this.cards,
+    this.addTask = '',
+    this.addNote = '',
+    this.addCards = '',
     this.endsAt,
   });
   final String title;
   final String idle;
   final String running;
   final String cards;
+
+  /// Labels of the quick-add widget.
+  final String addTask, addNote, addCards;
 
   /// End of the running work phase; null when no countdown is shown.
   final DateTime? endsAt;
@@ -34,6 +40,11 @@ class HomeWidgetData {
     'idle': idle,
     'running': running,
     'cards': cards,
+    'addTask': addTask,
+    'addNote': addNote,
+    'addCards': addCards,
+    'taskRoute': Routes.taskNew,
+    'noteRoute': Routes.noteNew,
     'endsAt': endsAt?.millisecondsSinceEpoch ?? 0,
     'focusRoute': Routes.focus,
     'cardsRoute': Routes.flashcards,
@@ -85,6 +96,9 @@ final homeWidgetLinkProvider = Provider<void>((ref) {
               idle: l10n.widgetStartFocus,
               running: ends == null ? '' : l10n.widgetFocusUntil(fmt.time(ends)),
               cards: due > 0 ? l10n.dashCardsDue(due) : l10n.widgetNoCardsDue,
+              addTask: l10n.shortcutNewTask,
+              addNote: l10n.widgetNewNote,
+              addCards: l10n.shortcutReview,
               endsAt: ends,
             ),
           ),

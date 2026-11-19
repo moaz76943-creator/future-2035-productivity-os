@@ -4533,7 +4533,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get faqFlashcardsA =>
-      'Las tarjetas que dominas vuelven tras intervalos más largos y las que fallas vuelven pronto (repetición espaciada). Valora cada respuesta: Otra vez, Difícil, Bien o Fácil. Fija una meta diaria y mantén tu racha en la tarjeta Hoy. Fija la fecha del examen en un mazo para ver los días que faltan y cuántas tarjetas nuevas aprender cada día.';
+      'Las tarjetas que dominas vuelven tras intervalos más largos y las que fallas vuelven pronto (repetición espaciada). Valora cada respuesta: Otra vez, Difícil, Bien o Fácil. Fija una meta diaria y mantén tu racha en la tarjeta Hoy. Fija la fecha del examen en un mazo para ver los días que faltan y cuántas tarjetas nuevas aprender cada día. Ordena por «Mi orden» para arrastrar tarjetas, toca el altavoz de cada lado para oírlo y ajusta velocidad y repeticiones en el menú de voz.';
 
   @override
   String get faqImportQ => '¿Puedo traer tarjetas de Anki o Excel?';
@@ -5033,4 +5033,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get smartReviewTimeUse => 'Usar';
+
+  @override
+  String get widgetNewNote => 'Nueva nota';
 }

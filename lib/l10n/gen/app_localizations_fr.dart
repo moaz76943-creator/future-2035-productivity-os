@@ -4543,7 +4543,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get faqFlashcardsA =>
-      'Les cartes bien sues reviennent après des intervalles plus longs, celles manquées reviennent vite (répétition espacée). Notez chaque réponse : À revoir, Difficile, Bien ou Facile. Fixez un objectif quotidien et gardez votre série sur la carte Aujourd’hui. Fixez une date d’examen dans un paquet pour voir les jours restants et le nombre de nouvelles cartes par jour.';
+      'Les cartes bien sues reviennent après des intervalles plus longs, celles manquées reviennent vite (répétition espacée). Notez chaque réponse : À revoir, Difficile, Bien ou Facile. Fixez un objectif quotidien et gardez votre série sur la carte Aujourd’hui. Fixez une date d’examen dans un paquet pour voir les jours restants et le nombre de nouvelles cartes par jour. Triez par « Mon ordre » pour faire glisser les cartes, touchez le haut-parleur de chaque face pour l’écouter, et réglez vitesse et répétitions dans le menu Voix.';
 
   @override
   String get faqImportQ => 'Puis-je importer des cartes d’Anki ou d’Excel ?';
@@ -4854,7 +4854,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String reportSessions(int count) {
-    return '$count sessions';
+    return '$count séances';
   }
 
   @override
@@ -5049,4 +5049,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get smartReviewTimeUse => 'Utiliser';
+
+  @override
+  String get widgetNewNote => 'Nouvelle note';
 }

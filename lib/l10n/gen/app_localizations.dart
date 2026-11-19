@@ -7647,7 +7647,7 @@ abstract class AppLocalizations {
   /// FAQ answer
   ///
   /// In en, this message translates to:
-  /// **'Cards you know well come back after longer gaps and cards you miss come back soon (spaced repetition). Rate each answer Again, Hard, Good or Easy. Set a daily goal and keep your streak on the Today card. Set an exam date in a deck to see the days left and how many new cards to learn each day.'**
+  /// **'Cards you know well come back after longer gaps and cards you miss come back soon (spaced repetition). Rate each answer Again, Hard, Good or Easy. Set a daily goal and keep your streak on the Today card. Set an exam date in a deck to see the days left and how many new cards to learn each day. Sort by \"My order\" to drag cards into place, tap the speaker on either side to hear it, and set speed and repeats in the Speech menu.'**
   String get faqFlashcardsA;
 
   /// FAQ question
@@ -8483,6 +8483,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Use it'**
   String get smartReviewTimeUse;
+
+  /// Quick-add widget button: new note
+  ///
+  /// In en, this message translates to:
+  /// **'New note'**
+  String get widgetNewNote;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -4513,7 +4513,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get faqFlashcardsA =>
-      'Cards you know well come back after longer gaps and cards you miss come back soon (spaced repetition). Rate each answer Again, Hard, Good or Easy. Set a daily goal and keep your streak on the Today card. Set an exam date in a deck to see the days left and how many new cards to learn each day.';
+      'Cards you know well come back after longer gaps and cards you miss come back soon (spaced repetition). Rate each answer Again, Hard, Good or Easy. Set a daily goal and keep your streak on the Today card. Set an exam date in a deck to see the days left and how many new cards to learn each day. Sort by \"My order\" to drag cards into place, tap the speaker on either side to hear it, and set speed and repeats in the Speech menu.';
 
   @override
   String get faqImportQ => 'Can I bring cards from Anki or Excel?';
@@ -5014,4 +5014,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get smartReviewTimeUse => 'Use it';
+
+  @override
+  String get widgetNewNote => 'New note';
 }

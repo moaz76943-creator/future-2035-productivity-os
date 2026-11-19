@@ -1256,7 +1256,7 @@
   "faqCalendarQ": "Le calendrier affiche-t-il les dates de l’Hégire ?",
   "faqCalendarA": "Oui. Les dates de l’Hégire (Umm al-Qura) s’affichent d’office en arabe et peuvent être activées dans Réglages pour toute langue. Événements, tâches datées et jalons de projets apparaissent ensemble.",
   "faqFlashcardsQ": "Comment la révision choisit-elle les cartes ?",
-  "faqFlashcardsA": "Les cartes bien sues reviennent après des intervalles plus longs, celles manquées reviennent vite (répétition espacée). Notez chaque réponse : À revoir, Difficile, Bien ou Facile. Fixez un objectif quotidien et gardez votre série sur la carte Aujourd’hui. Fixez une date d’examen dans un paquet pour voir les jours restants et le nombre de nouvelles cartes par jour.",
+  "faqFlashcardsA": "Les cartes bien sues reviennent après des intervalles plus longs, celles manquées reviennent vite (répétition espacée). Notez chaque réponse : À revoir, Difficile, Bien ou Facile. Fixez un objectif quotidien et gardez votre série sur la carte Aujourd’hui. Fixez une date d’examen dans un paquet pour voir les jours restants et le nombre de nouvelles cartes par jour. Triez par « Mon ordre » pour faire glisser les cartes, touchez le haut-parleur de chaque face pour l’écouter, et réglez vitesse et répétitions dans le menu Voix.",
   "faqImportQ": "Puis-je importer des cartes d’Anki ou d’Excel ?",
   "faqImportA": "Oui. Dans un paquet, choisissez Importer puis un fichier : Anki (.apkg), Excel (.xlsx) ou CSV, et associez les colonnes. Utilisez « Modèle de tableur » pour écrire des cartes sur ordinateur. Les images et sons des fichiers Anki ne sont pas importés.",
   "faqNotesQ": "Que permettent les notes ?",
@@ -1342,7 +1342,7 @@
   "reportTitle": "Rapport mensuel",
   "reportSubtitle": "Concentration, cartes, tâches et habitudes du mois, prêt à enregistrer",
   "reportFocus": "Temps de concentration",
-  "reportSessions": "{count} sessions",
+  "reportSessions": "{count} séances",
   "reportBestDay": "Meilleur jour : {day} ({time})",
   "reportActiveDays": "{count} jours actifs",
   "reportCards": "Cartes révisées",
@@ -1395,5 +1395,6 @@
   "autoBackupCheckFixed": "Vérifié {date} : une sauvegarde endommagée a été remplacée par une nouvelle.",
   "autoBackupCheckFailed": "Vérifié {date} : la dernière sauvegarde est illisible. Enregistrez une sauvegarde vous-même depuis les réglages.",
   "smartReviewTimeTitle": "Vous étudiez en général vers {time}",
-  "smartReviewTimeUse": "Utiliser"
+  "smartReviewTimeUse": "Utiliser",
+  "widgetNewNote": "Nouvelle note"
 }

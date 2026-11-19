@@ -6074,7 +6074,7 @@
   "@faqFlashcardsQ": {
     "description": "FAQ question"
   },
-  "faqFlashcardsA": "Cards you know well come back after longer gaps and cards you miss come back soon (spaced repetition). Rate each answer Again, Hard, Good or Easy. Set a daily goal and keep your streak on the Today card. Set an exam date in a deck to see the days left and how many new cards to learn each day.",
+  "faqFlashcardsA": "Cards you know well come back after longer gaps and cards you miss come back soon (spaced repetition). Rate each answer Again, Hard, Good or Easy. Set a daily goal and keep your streak on the Today card. Set an exam date in a deck to see the days left and how many new cards to learn each day. Sort by \"My order\" to drag cards into place, tap the speaker on either side to hear it, and set speed and repeats in the Speech menu.",
   "@faqFlashcardsA": {
     "description": "FAQ answer"
   },
@@ -6709,5 +6709,9 @@
   "smartReviewTimeUse": "Use it",
   "@smartReviewTimeUse": {
     "description": "Button: use the suggested time"
+  },
+  "widgetNewNote": "New note",
+  "@widgetNewNote": {
+    "description": "Quick-add widget button: new note"
   }
 }

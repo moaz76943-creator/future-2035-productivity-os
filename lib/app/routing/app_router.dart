@@ -20,6 +20,7 @@ import '../../features/goals/presentation/goals_screen.dart';
 import '../../features/habits/presentation/habit_detail_screen.dart';
 import '../../features/habits/presentation/habits_screen.dart';
 import '../../features/notes/presentation/note_editor_screen.dart';
+import '../../features/notes/presentation/new_note_screen.dart';
 import '../../features/notes/presentation/notes_screen.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/projects/presentation/project_detail_screen.dart';
@@ -115,6 +116,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       page(Routes.projects, (_) => const ProjectsScreen()),
       page('/projects/:id', (s) => ProjectDetailScreen(projectId: s.pathParameters['id']!)),
       page(Routes.notes, (_) => const NotesScreen()),
+      page(Routes.noteNew, (_) => const NewNoteScreen()),
       page('/notes/:id', (s) => NoteEditorScreen(noteId: s.pathParameters['id']!)),
       page(Routes.flashcards, (_) => const DecksScreen()),
       page(Routes.cardSearch, (_) => const CardSearchScreen()),

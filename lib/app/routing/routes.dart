@@ -13,6 +13,7 @@ abstract final class Routes {
   static const projects = '/projects';
   static String project(String id) => '/projects/$id';
   static const notes = '/notes';
+  static const noteNew = '/note/new';
   static String note(String id) => '/notes/$id';
   static const flashcards = '/flashcards';
   static String deck(String id) => '/flashcards/$id';
