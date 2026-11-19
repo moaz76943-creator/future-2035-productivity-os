@@ -13,17 +13,25 @@ AppLocalizations _l10n(WidgetTester t) => AppLocalizations.of(t.element(find.byT
 
 Future<void> _openTab(WidgetTester tester, String label) async {
   final chip = find.widgetWithText(ChoiceChip, label);
-  await tester.scrollUntilVisible(
-    chip,
-    120,
-    scrollable: find.descendant(
-      of: find.byKey(const Key('tasksTabs')),
-      matching: find.byType(Scrollable),
-    ),
-  );
-  await tester.ensureVisible(chip);
-  await tester.pumpAndSettle();
-  await tester.tap(chip);
+  if (chip.evaluate().isEmpty) {
+    // Less common views sit behind the "more" chip.
+    final more = find.byKey(const Key('tasksMoreViews'));
+    await tester.scrollUntilVisible(
+      more,
+      120,
+      scrollable: find.descendant(
+        of: find.byKey(const Key('tasksTabs')),
+        matching: find.byType(Scrollable),
+      ),
+    );
+    await tester.ensureVisible(more);
+    await tester.pumpAndSettle();
+    await tester.tap(more);
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(label).last);
+  } else {
+    await tester.tap(chip);
+  }
   await settle(tester);
 }
 

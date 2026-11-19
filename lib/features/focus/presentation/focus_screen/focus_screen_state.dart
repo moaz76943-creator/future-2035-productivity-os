@@ -89,13 +89,15 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
       title: l10n.focusTitle,
       hue: ModuleHue.focus,
       actions: [
-        IconButton(
-          key: const Key('focusSounds'),
-          tooltip: l10n.soundsTitle,
-          isSelected: soundsOn,
-          icon: const Icon(Icons.water_drop_outlined),
-          selectedIcon: const Icon(Icons.graphic_eq_rounded),
-          onPressed: () => context.push(Routes.sounds),
+        // A word instead of a bare icon: the label is the app's own translation of "Sounds".
+        Padding(
+          padding: const EdgeInsetsDirectional.only(end: Space.sm),
+          child: TextButton.icon(
+            key: const Key('focusSounds'),
+            icon: Icon(soundsOn ? Icons.graphic_eq_rounded : Icons.water_drop_outlined, size: 20),
+            label: Text(l10n.soundsTitle),
+            onPressed: () => context.push(Routes.sounds),
+          ),
         ),
       ],
       slivers: [

@@ -77,22 +77,19 @@ class _NotesSection extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
     final notes = ref.watch(recentNotesProvider).value;
+    if (notes == null || notes.isEmpty) return const SizedBox.shrink();
     return _Section(
       title: l10n.dashRecentNotes,
       onSeeAll: () => context.push(Routes.notes),
-      child: notes == null
-          ? const SizedBox(height: 48)
-          : notes.isEmpty
-          ? _EmptyLine(l10n.dashNoNotes, Icons.sticky_note_2_outlined)
-          : SizedBox(
-              height: 120,
-              child: ListView.separated(
-                scrollDirection: Axis.horizontal,
-                itemCount: notes.length,
-                separatorBuilder: (_, _) => const SizedBox(width: Space.sm),
-                itemBuilder: (_, i) => _NoteChip(note: notes[i]),
-              ),
-            ),
+      child: SizedBox(
+        height: 120,
+        child: ListView.separated(
+          scrollDirection: Axis.horizontal,
+          itemCount: notes.length,
+          separatorBuilder: (_, _) => const SizedBox(width: Space.sm),
+          itemBuilder: (_, i) => _NoteChip(note: notes[i]),
+        ),
+      ),
     );
   }
 }

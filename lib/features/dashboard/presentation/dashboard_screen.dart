@@ -61,10 +61,12 @@ class DashboardScreen extends ConsumerWidget {
             slivers: [
               const SliverToBoxAdapter(child: _Header()),
               const SliverToBoxAdapter(child: _QuickActions()),
+              // Flashcards are a pillar: always right under the quick actions.
+              if (sections.contains('review')) const SliverToBoxAdapter(child: _ReviewSection()),
               const SliverToBoxAdapter(child: StartMyDayCard()),
               const SliverToBoxAdapter(child: TourLauncher()),
               const SliverToBoxAdapter(child: WhatsNewLauncher()),
-              for (final id in sections)
+              for (final id in sections.where((id) => id != 'review'))
                 SliverToBoxAdapter(
                   child: switch (id) {
                     'focus' => const _FocusSection(),

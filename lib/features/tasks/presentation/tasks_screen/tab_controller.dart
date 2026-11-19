@@ -25,6 +25,13 @@ class _TabsRow extends ConsumerWidget {
       TasksTab.byPriority => l10n.tasksViewByPriority,
       TasksTab.byCategory => l10n.tasksViewByCategory,
     };
+    // Four everyday views as chips; the other six live behind one "more" chip.
+    const main = [TasksTab.today, TasksTab.inbox, TasksTab.upcoming, TasksTab.all];
+    final extra = [
+      for (final t in TasksTab.values)
+        if (!main.contains(t)) t,
+    ];
+    final inExtra = extra.contains(tab);
     return SizedBox(
       height: 52,
       child: ListView(
@@ -32,7 +39,7 @@ class _TabsRow extends ConsumerWidget {
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: Space.page),
         children: [
-          for (final t in TasksTab.values)
+          for (final t in main)
             Padding(
               padding: const EdgeInsetsDirectional.only(end: Space.xs),
               child: ChoiceChip(
@@ -41,6 +48,20 @@ class _TabsRow extends ConsumerWidget {
                 onSelected: (_) => ref.read(tasksTabProvider.notifier).set(t),
               ),
             ),
+          PopupMenuButton<TasksTab>(
+            key: const Key('tasksMoreViews'),
+            tooltip: l10n.actionMore,
+            onSelected: (t) => ref.read(tasksTabProvider.notifier).set(t),
+            itemBuilder: (_) => [
+              for (final t in extra)
+                CheckedPopupMenuItem(value: t, checked: t == tab, child: Text(label(t))),
+            ],
+            child: Chip(
+              avatar: const Icon(Icons.expand_more_rounded, size: 18),
+              label: Text(inExtra ? label(tab) : l10n.actionMore),
+              backgroundColor: inExtra ? context.lux.surface : null,
+            ),
+          ),
         ],
       ),
     );
