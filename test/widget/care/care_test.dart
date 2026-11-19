@@ -101,7 +101,7 @@ void main() {
     });
     await pumpScreen(
       tester,
-      _Opener(showStorageSheet),
+      const _Opener(showStorageSheet),
       env: env,
       overrides: [phoneCareProvider.overrideWithValue(care)],
     );
@@ -126,7 +126,7 @@ void main() {
     );
     final env = await pumpScreen(
       tester,
-      _Opener(showBatteryGuide),
+      const _Opener(showBatteryGuide),
       overrides: [phoneCareProvider.overrideWithValue(care)],
     );
     await tester.tap(find.byKey(const Key('open')));

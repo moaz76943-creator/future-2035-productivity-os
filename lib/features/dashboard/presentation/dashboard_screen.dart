@@ -29,6 +29,7 @@ import '../../tasks/presentation/widgets/task_tile.dart';
 import '../application/dashboard_providers.dart';
 import '../../care/presentation/whats_new_sheet.dart';
 import '../../help/presentation/tour_sheet.dart';
+import 'quick_add_sheet.dart';
 import 'start_my_day.dart';
 
 part 'dashboard_screen/header.dart';
@@ -54,6 +55,10 @@ class DashboardScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final sections = ref.watch(settingsProvider.select((s) => s.dashboardSections));
     return Scaffold(
+      floatingActionButton: const Padding(
+        padding: EdgeInsets.only(bottom: Space.xxl),
+        child: QuickAddButton(),
+      ),
       body: AuroraBackground(
         child: SafeArea(
           bottom: false,
