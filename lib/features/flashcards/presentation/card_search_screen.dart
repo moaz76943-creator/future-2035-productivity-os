@@ -117,38 +117,44 @@ class _CardSearchScreenState extends ConsumerState<CardSearchScreen> {
                   ),
                 ),
                 const SizedBox(height: Space.sm),
-                Wrap(
-                  spacing: Space.sm,
-                  runSpacing: Space.xs,
-                  children: [
-                    DropdownButton<String?>(
-                      key: const Key('searchDeck'),
-                      value: _deck,
-                      hint: Text(l10n.flashcardsAllDecks),
-                      items: [
-                        DropdownMenuItem<String?>(child: Text(l10n.flashcardsAllDecks)),
-                        for (final d in decks)
-                          DropdownMenuItem<String?>(value: d.id, child: Text(d.name)),
-                      ],
-                      onChanged: (v) => setState(() => _deck = v),
-                    ),
-                    if (langs.isNotEmpty)
-                      DropdownButton<String?>(
-                        key: const Key('searchLang'),
-                        value: _lang,
-                        hint: Text(l10n.flashcardsAllLanguages),
-                        items: [
-                          DropdownMenuItem<String?>(child: Text(l10n.flashcardsAllLanguages)),
-                          for (final l in langs)
-                            DropdownMenuItem<String?>(
-                              value: l,
-                              child: Text(languageLabel(context, l)),
-                            ),
-                        ],
-                        onChanged: (v) => setState(() => _lang = v),
+                // Full-width, expanded dropdowns: long names (or large text) ellipsize instead
+                // of overflowing.
+                DropdownButtonFormField<String?>(
+                  key: const Key('searchDeck'),
+                  initialValue: _deck,
+                  isExpanded: true,
+                  decoration: InputDecoration(labelText: l10n.flashcardsAllDecks, isDense: true),
+                  items: [
+                    DropdownMenuItem<String?>(child: Text(l10n.flashcardsAllDecks)),
+                    for (final d in decks)
+                      DropdownMenuItem<String?>(
+                        value: d.id,
+                        child: Text(d.name, overflow: TextOverflow.ellipsis),
                       ),
                   ],
+                  onChanged: (v) => setState(() => _deck = v),
                 ),
+                if (langs.isNotEmpty) ...[
+                  const SizedBox(height: Space.sm),
+                  DropdownButtonFormField<String?>(
+                    key: const Key('searchLang'),
+                    initialValue: _lang,
+                    isExpanded: true,
+                    decoration: InputDecoration(
+                      labelText: l10n.flashcardsAllLanguages,
+                      isDense: true,
+                    ),
+                    items: [
+                      DropdownMenuItem<String?>(child: Text(l10n.flashcardsAllLanguages)),
+                      for (final l in langs)
+                        DropdownMenuItem<String?>(
+                          value: l,
+                          child: Text(languageLabel(context, l), overflow: TextOverflow.ellipsis),
+                        ),
+                    ],
+                    onChanged: (v) => setState(() => _lang = v),
+                  ),
+                ],
                 const SizedBox(height: Space.xs),
                 Wrap(
                   spacing: Space.xs,
