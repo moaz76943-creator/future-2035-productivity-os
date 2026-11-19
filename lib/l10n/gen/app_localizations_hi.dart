@@ -3974,4 +3974,100 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get toneSystem => 'फ़ोन की ध्वनि';
+
+  @override
+  String get speechOnPhone => 'इस फ़ोन पर';
+
+  @override
+  String get speechAllLanguages => 'सभी भाषाएँ';
+
+  @override
+  String get speechSearchLanguage => 'भाषा खोजें';
+
+  @override
+  String get speechGetVoices => 'और आवाज़ें डाउनलोड करें';
+
+  @override
+  String get speechGetVoicesHint =>
+      'जिन भाषाओं की आवाज़ नहीं है, उन्हें फ़ोन की स्पीच सेटिंग में डाउनलोड करें।';
+
+  @override
+  String get speechSettingsFailed => 'इस फ़ोन की स्पीच सेटिंग नहीं खुल सकी।';
+
+  @override
+  String get speechVoiceMissing => 'कोई आवाज़ इंस्टॉल नहीं';
+
+  @override
+  String get speechPause => 'दोहराव के बीच विराम';
+
+  @override
+  String speechSeconds(String seconds) {
+    return '$seconds से.';
+  }
+
+  @override
+  String get speechExample => 'उत्तर के साथ उदाहरण पढ़ें';
+
+  @override
+  String get flashListen => 'सुनें';
+
+  @override
+  String get flashListenNext => 'अगला कार्ड';
+
+  @override
+  String get flashListenEmpty => 'सुनने के लिए कोई कार्ड नहीं।';
+
+  @override
+  String get flashViewTable => 'तालिका';
+
+  @override
+  String get flashViewCards => 'कार्ड';
+
+  @override
+  String get flashSwapSides => 'कॉलम बदलें';
+
+  @override
+  String get flashSort => 'क्रम';
+
+  @override
+  String get flashSortNewest => 'नए पहले';
+
+  @override
+  String get flashSortAlpha => 'वर्णानुक्रम';
+
+  @override
+  String get flashSortDue => 'देय पहले';
+
+  @override
+  String get flashSortHard => 'कठिन पहले';
+
+  @override
+  String get flashPasteCards => 'कार्ड पेस्ट करें';
+
+  @override
+  String get flashClipboardEmpty => 'क्लिपबोर्ड में कोई टेक्स्ट नहीं है।';
+
+  @override
+  String get flashMenuAdd => 'कार्ड जोड़ें';
+
+  @override
+  String get flashMenuDeck => 'डेक';
+
+  @override
+  String get flashToday => 'आज';
+
+  @override
+  String get flashStudyNow => 'पढ़ें';
+
+  @override
+  String flashTodayAnswered(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count कार्ड हल किए',
+      one: '1 कार्ड हल किया',
+      zero: 'कोई कार्ड हल नहीं',
+    );
+    return '$_temp0';
+  }
 }

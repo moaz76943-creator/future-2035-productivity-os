@@ -210,7 +210,10 @@ class _CardTile extends ConsumerWidget {
 /// Paste box for importing cards. Owns its controller so it outlives the
 /// dialog's closing animation.
 class _ImportDialog extends ConsumerStatefulWidget {
-  const _ImportDialog();
+  const _ImportDialog({this.initialText = ''});
+
+  /// Pre-filled text (pasted from the clipboard).
+  final String initialText;
 
   @override
   ConsumerState<_ImportDialog> createState() => _ImportDialogState();

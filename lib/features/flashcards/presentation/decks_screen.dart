@@ -14,6 +14,7 @@ import '../../../shared/widgets/async_value_view.dart';
 import '../../../shared/widgets/dialogs.dart';
 import '../../../shared/widgets/module_scaffold.dart';
 import '../application/flashcards_providers.dart';
+import '../domain/world_languages.dart';
 import 'widgets/deck_form_sheet.dart';
 import '../data/flashcards_repository.dart';
 
@@ -82,17 +83,34 @@ class DecksScreen extends ConsumerWidget {
                 ),
               );
             }
+            // Grouped by the language being learned when there are several.
+            final groups = <String, List<DeckRow>>{};
+            for (final d in list) {
+              groups.putIfAbsent(languageCode(d.frontLang), () => []).add(d);
+            }
+            final grouped = groups.length > 1;
             return SliverMainAxisGroup(
               slivers: [
+                const SliverToBoxAdapter(child: _TodayCard()),
                 const SliverToBoxAdapter(child: _DueBanner()),
-                SliverPadding(
-                  padding: const EdgeInsets.symmetric(horizontal: Space.page),
-                  sliver: SliverList.separated(
-                    itemCount: list.length,
-                    separatorBuilder: (_, _) => const SizedBox(height: Space.sm),
-                    itemBuilder: (_, i) => _DeckTile(deck: list[i]),
+                for (final e in groups.entries) ...[
+                  if (grouped)
+                    SliverToBoxAdapter(
+                      child: SectionHeader(
+                        title: e.key.isEmpty
+                            ? l10n.flashcardsLangUnset
+                            : languageDisplayName(e.key),
+                      ),
+                    ),
+                  SliverPadding(
+                    padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.sm),
+                    sliver: SliverList.separated(
+                      itemCount: e.value.length,
+                      separatorBuilder: (_, _) => const SizedBox(height: Space.sm),
+                      itemBuilder: (_, i) => _DeckTile(deck: e.value[i]),
+                    ),
                   ),
-                ),
+                ],
               ],
             );
           },
@@ -195,6 +213,29 @@ class _DeckTile extends ConsumerWidget {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
+                if (deck.frontLang.isNotEmpty || deck.backLang.isNotEmpty) ...[
+                  const SizedBox(height: 2),
+                  Row(
+                    key: Key('deckLangs_${deck.id}'),
+                    children: [
+                      for (final (i, tag) in [deck.frontLang, deck.backLang].indexed) ...[
+                        if (i == 1)
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: Space.xxs),
+                            child: Icon(Icons.sync_alt_rounded, size: 14, color: context.lux.ink3),
+                          ),
+                        Flexible(
+                          child: Text(
+                            tag.isEmpty ? l10n.flashcardsLangUnset : languageDisplayName(tag),
+                            style: context.text.labelMedium?.copyWith(color: context.lux.ink2),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
+                ],
                 if (deck.description.isNotEmpty) ...[
                   const SizedBox(height: 2),
                   Text(
@@ -225,8 +266,67 @@ class _DeckTile extends ConsumerWidget {
               ],
             ),
           ),
-          const Icon(Icons.chevron_right_rounded),
+          if (stats != null && stats.due + stats.newCount > 0)
+            IconButton.filledTonal(
+              key: Key('studyDeck_${deck.id}'),
+              tooltip: l10n.flashStudyNow,
+              icon: const Icon(Icons.play_arrow_rounded),
+              onPressed: () => context.push(Routes.review(deck.id)),
+            )
+          else
+            const Icon(Icons.chevron_right_rounded),
         ],
+      ),
+    );
+  }
+}
+
+/// Today's study: cards answered and time spent in study sessions.
+class _TodayCard extends ConsumerWidget {
+  const _TodayCard();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = context.l10n;
+    final fmt = context.fmt;
+    final a = ref.watch(todayActivityProvider).value;
+    if (a == null) return const SizedBox.shrink();
+    Widget stat(IconData icon, String value, Key key) => Expanded(
+      child: Row(
+        children: [
+          Icon(icon, size: 20, color: _hue.a),
+          const SizedBox(width: Space.xs),
+          Flexible(
+            child: Text(value, key: key, style: context.text.titleSmall, maxLines: 2),
+          ),
+        ],
+      ),
+    );
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.sm),
+      child: LuxCard(
+        elevated: false,
+        padding: const EdgeInsets.symmetric(horizontal: Space.md, vertical: Space.sm),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              l10n.flashToday,
+              style: context.text.labelLarge?.copyWith(color: context.lux.ink2),
+            ),
+            const SizedBox(height: Space.xxs),
+            Row(
+              children: [
+                stat(Icons.timer_outlined, fmt.duration(a.time), const Key('todayTime')),
+                stat(
+                  Icons.style_outlined,
+                  l10n.flashTodayAnswered(a.reviews),
+                  const Key('todayCards'),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

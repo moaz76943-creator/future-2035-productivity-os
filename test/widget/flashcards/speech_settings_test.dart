@@ -21,10 +21,18 @@ class _Tts implements TtsService {
     double pitch = 1,
     int repeat = 1,
     String? voice,
+    int pauseMs = 700,
+    bool awaitDone = false,
   }) async {
     calls.add((text: text, lang: languageTag, voice: voice, repeat: repeat));
     return TtsResult.ok;
   }
+
+  @override
+  Future<List<String>> languages() async => const ['es-ES', 'en-US', 'de-DE'];
+
+  @override
+  Future<bool> openSettings() async => true;
 
   @override
   Future<void> stop() async {}
@@ -55,9 +63,9 @@ void main() {
     );
     await settle(tester);
     final l10n = AppLocalizations.of(tester.element(find.byType(DeckScreen)));
-    await tester.tap(find.byTooltip(l10n.actionMore).first);
+    await tester.tap(find.byKey(const Key('deckMenu')));
     await settle(tester);
-    await tester.tap(find.text(l10n.speechTitle));
+    await tester.tap(find.byKey(const Key('deckMenu_speech')));
     await settle(tester);
 
     await tester.tap(find.byKey(const Key('voiceFront')));

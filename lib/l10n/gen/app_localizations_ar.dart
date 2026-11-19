@@ -4130,4 +4130,103 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get toneSystem => 'صوت الهاتف';
+
+  @override
+  String get speechOnPhone => 'على هذا الهاتف';
+
+  @override
+  String get speechAllLanguages => 'كل اللغات';
+
+  @override
+  String get speechSearchLanguage => 'ابحث عن لغة';
+
+  @override
+  String get speechGetVoices => 'تنزيل أصوات أخرى';
+
+  @override
+  String get speechGetVoicesHint =>
+      'اللغات التي لا صوت لها يمكن تنزيلها من إعدادات النطق في الهاتف.';
+
+  @override
+  String get speechSettingsFailed => 'تعذّر فتح إعدادات النطق في هذا الهاتف.';
+
+  @override
+  String get speechVoiceMissing => 'لا يوجد صوت مثبت';
+
+  @override
+  String get speechPause => 'الوقفة بين التكرارات';
+
+  @override
+  String speechSeconds(String seconds) {
+    return '$seconds ث';
+  }
+
+  @override
+  String get speechExample => 'نطق المثال مع الإجابة';
+
+  @override
+  String get flashListen => 'استماع';
+
+  @override
+  String get flashListenNext => 'البطاقة التالية';
+
+  @override
+  String get flashListenEmpty => 'لا توجد بطاقات للاستماع إليها.';
+
+  @override
+  String get flashViewTable => 'جدول';
+
+  @override
+  String get flashViewCards => 'بطاقات';
+
+  @override
+  String get flashSwapSides => 'تبديل الأعمدة';
+
+  @override
+  String get flashSort => 'ترتيب';
+
+  @override
+  String get flashSortNewest => 'الأحدث أولاً';
+
+  @override
+  String get flashSortAlpha => 'أبجدياً';
+
+  @override
+  String get flashSortDue => 'المستحقة أولاً';
+
+  @override
+  String get flashSortHard => 'الأصعب أولاً';
+
+  @override
+  String get flashPasteCards => 'لصق بطاقات';
+
+  @override
+  String get flashClipboardEmpty => 'لا يوجد نص في الحافظة.';
+
+  @override
+  String get flashMenuAdd => 'إضافة بطاقات';
+
+  @override
+  String get flashMenuDeck => 'المجموعة';
+
+  @override
+  String get flashToday => 'اليوم';
+
+  @override
+  String get flashStudyNow => 'ادرس';
+
+  @override
+  String flashTodayAnswered(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count بطاقة مُجابة',
+      many: '$count بطاقة مُجابة',
+      few: '$count بطاقات مُجابة',
+      two: 'بطاقتان مُجابتان',
+      one: 'بطاقة واحدة مُجابة',
+      zero: 'لم تُجب عن أي بطاقة',
+    );
+    return '$_temp0';
+  }
 }

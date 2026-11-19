@@ -26,6 +26,8 @@ class AppSettings {
     this.flashSessionSize = 0,
     this.flashOrder = 'due',
     this.flashVoices = const {},
+    this.flashSpeechPauseTenths = 7,
+    this.flashSpeakExample = false,
     this.focusSound = true,
     this.focusEndTone = 'gentle',
     this.dailyFocusTargetMinutes = 120,
@@ -80,6 +82,12 @@ class AppSettings {
 
   /// Preferred speech voice per language code ('es' → voice name).
   final Map<String, String> flashVoices;
+
+  /// Silence between repeated readings, in tenths of a second (0–50).
+  final int flashSpeechPauseTenths;
+
+  /// Also read the example sentence after the answer.
+  final bool flashSpeakExample;
   final bool focusSound;
 
   /// Sound at the end of a timer ([EndTone] name).
@@ -137,6 +145,8 @@ class AppSettings {
     'flashSessionSize': flashSessionSize,
     'flashOrder': flashOrder,
     'flashVoices': flashVoices,
+    'flashSpeechPauseTenths': flashSpeechPauseTenths,
+    'flashSpeakExample': flashSpeakExample,
     'focusSound': focusSound,
     'focusEndTone': focusEndTone,
     'dailyFocusTargetMinutes': dailyFocusTargetMinutes,
@@ -190,6 +200,8 @@ class AppSettings {
         for (final e in ((j['flashVoices'] as Map?) ?? const {}).entries)
           if (e.key is String && e.value is String) e.key as String: e.value as String,
       },
+      flashSpeechPauseTenths: read('flashSpeechPauseTenths', d.flashSpeechPauseTenths).clamp(0, 50),
+      flashSpeakExample: read('flashSpeakExample', d.flashSpeakExample),
       focusSound: read('focusSound', d.focusSound),
       focusEndTone: read('focusEndTone', d.focusEndTone),
       dailyFocusTargetMinutes: read('dailyFocusTargetMinutes', d.dailyFocusTargetMinutes),
@@ -230,6 +242,8 @@ class AppSettings {
     int? flashSessionSize,
     String? flashOrder,
     Map<String, String>? flashVoices,
+    int? flashSpeechPauseTenths,
+    bool? flashSpeakExample,
     bool? focusSound,
     String? focusEndTone,
     int? dailyFocusTargetMinutes,
@@ -266,6 +280,8 @@ class AppSettings {
     'flashSessionSize': ?flashSessionSize,
     'flashOrder': ?flashOrder,
     'flashVoices': ?flashVoices,
+    'flashSpeechPauseTenths': ?flashSpeechPauseTenths,
+    'flashSpeakExample': ?flashSpeakExample,
     'focusSound': ?focusSound,
     'focusEndTone': ?focusEndTone,
     'dailyFocusTargetMinutes': ?dailyFocusTargetMinutes,

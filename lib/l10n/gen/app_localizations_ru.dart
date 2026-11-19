@@ -4088,4 +4088,102 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get toneSystem => 'Звук телефона';
+
+  @override
+  String get speechOnPhone => 'На этом телефоне';
+
+  @override
+  String get speechAllLanguages => 'Все языки';
+
+  @override
+  String get speechSearchLanguage => 'Поиск языка';
+
+  @override
+  String get speechGetVoices => 'Скачать другие голоса';
+
+  @override
+  String get speechGetVoicesHint =>
+      'Языки без голоса можно скачать в настройках синтеза речи телефона.';
+
+  @override
+  String get speechSettingsFailed => 'Не удалось открыть настройки речи на этом телефоне.';
+
+  @override
+  String get speechVoiceMissing => 'Голос не установлен';
+
+  @override
+  String get speechPause => 'Пауза между повторами';
+
+  @override
+  String speechSeconds(String seconds) {
+    return '$seconds с';
+  }
+
+  @override
+  String get speechExample => 'Читать пример вместе с ответом';
+
+  @override
+  String get flashListen => 'Слушать';
+
+  @override
+  String get flashListenNext => 'Следующая карточка';
+
+  @override
+  String get flashListenEmpty => 'Нет карточек для прослушивания.';
+
+  @override
+  String get flashViewTable => 'Таблица';
+
+  @override
+  String get flashViewCards => 'Карточки';
+
+  @override
+  String get flashSwapSides => 'Поменять столбцы';
+
+  @override
+  String get flashSort => 'Сортировка';
+
+  @override
+  String get flashSortNewest => 'Сначала новые';
+
+  @override
+  String get flashSortAlpha => 'По алфавиту';
+
+  @override
+  String get flashSortDue => 'Сначала к повторению';
+
+  @override
+  String get flashSortHard => 'Сначала сложные';
+
+  @override
+  String get flashPasteCards => 'Вставить карточки';
+
+  @override
+  String get flashClipboardEmpty => 'В буфере обмена нет текста.';
+
+  @override
+  String get flashMenuAdd => 'Добавить карточки';
+
+  @override
+  String get flashMenuDeck => 'Колода';
+
+  @override
+  String get flashToday => 'Сегодня';
+
+  @override
+  String get flashStudyNow => 'Учить';
+
+  @override
+  String flashTodayAnswered(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ответа',
+      many: '$count ответов',
+      few: '$count ответа',
+      one: '$count ответ',
+      zero: 'Нет ответов',
+    );
+    return '$_temp0';
+  }
 }

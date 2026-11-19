@@ -3788,4 +3788,98 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get toneSystem => '手机提示音';
+
+  @override
+  String get speechOnPhone => '本机可用';
+
+  @override
+  String get speechAllLanguages => '所有语言';
+
+  @override
+  String get speechSearchLanguage => '搜索语言';
+
+  @override
+  String get speechGetVoices => '下载更多语音';
+
+  @override
+  String get speechGetVoicesHint => '没有语音的语言可在手机的语音设置中下载。';
+
+  @override
+  String get speechSettingsFailed => '无法打开此手机的语音设置。';
+
+  @override
+  String get speechVoiceMissing => '未安装语音';
+
+  @override
+  String get speechPause => '重复间隔';
+
+  @override
+  String speechSeconds(String seconds) {
+    return '$seconds 秒';
+  }
+
+  @override
+  String get speechExample => '朗读答案时一并朗读例句';
+
+  @override
+  String get flashListen => '聆听';
+
+  @override
+  String get flashListenNext => '下一张';
+
+  @override
+  String get flashListenEmpty => '没有可聆听的卡片。';
+
+  @override
+  String get flashViewTable => '表格';
+
+  @override
+  String get flashViewCards => '卡片';
+
+  @override
+  String get flashSwapSides => '交换列';
+
+  @override
+  String get flashSort => '排序';
+
+  @override
+  String get flashSortNewest => '最新优先';
+
+  @override
+  String get flashSortAlpha => '按字母';
+
+  @override
+  String get flashSortDue => '到期优先';
+
+  @override
+  String get flashSortHard => '最难优先';
+
+  @override
+  String get flashPasteCards => '粘贴卡片';
+
+  @override
+  String get flashClipboardEmpty => '剪贴板中没有文本。';
+
+  @override
+  String get flashMenuAdd => '添加卡片';
+
+  @override
+  String get flashMenuDeck => '卡组';
+
+  @override
+  String get flashToday => '今天';
+
+  @override
+  String get flashStudyNow => '学习';
+
+  @override
+  String flashTodayAnswered(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '已答 $count 张卡片',
+      zero: '今天还没有答题',
+    );
+    return '$_temp0';
+  }
 }

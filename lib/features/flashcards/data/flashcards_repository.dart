@@ -15,6 +15,7 @@ import '../domain/srs_scheduler.dart';
 
 part 'flashcards_repository/deck_stats.dart';
 part 'flashcards_repository/media.dart';
+part 'flashcards_repository/activity.dart';
 part 'flashcards_repository/bulk.dart';
 part 'flashcards_repository/insights.dart';
 part 'flashcards_repository/transfer.dart';

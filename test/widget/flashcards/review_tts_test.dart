@@ -22,11 +22,19 @@ class _FakeTts implements TtsService {
     double pitch = 1,
     int repeat = 1,
     String? voice,
+    int pauseMs = 700,
+    bool awaitDone = false,
   }) async {
     spoken.add((text, languageTag));
     repeats.add(repeat);
     return result;
   }
+
+  @override
+  Future<List<String>> languages() async => const ['es-ES', 'en-US', 'de-DE'];
+
+  @override
+  Future<bool> openSettings() async => true;
 
   @override
   Future<void> stop() async => stops++;

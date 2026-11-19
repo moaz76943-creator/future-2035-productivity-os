@@ -12,6 +12,9 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
   /// Multi-select (long-press a card). Empty = normal mode.
   final Set<String> _selected = {};
 
+  /// The cards as currently listed (filters, search, order), for listen mode.
+  List<CardRow> _shown = const [];
+
   FlashcardsRepository get _repo => ref.read(flashcardsRepositoryProvider);
 
   @override
@@ -24,6 +27,7 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final deckValue = ref.watch(deckProvider(widget.deckId));
+    final listening = ref.watch(listenControllerProvider.select((s) => s.active));
     return AsyncValueView<DeckRow?>(
       value: deckValue,
       loading: const Scaffold(body: SizedBox.shrink()),
@@ -48,44 +52,30 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
           hue: _hue,
           actions: [
             IconButton(
-              key: const Key('importButton'),
-              tooltip: l10n.actionImport,
-              onPressed: _import,
-              icon: const Icon(Icons.download_rounded),
+              key: const Key('listenButton'),
+              tooltip: l10n.flashListen,
+              isSelected: listening,
+              icon: const Icon(Icons.headphones_outlined),
+              selectedIcon: const Icon(Icons.headphones_rounded),
+              onPressed: () => _toggleListen(deck),
             ),
             IconButton(
-              key: const Key('exportButton'),
-              tooltip: l10n.actionExport,
-              onPressed: () => _export(deck),
-              icon: const Icon(Icons.upload_rounded),
-            ),
-            PopupMenuButton<_DeckMenu>(
+              key: const Key('deckMenu'),
               tooltip: l10n.actionMore,
-              onSelected: (m) => switch (m) {
-                _DeckMenu.edit => _editDeck(deck),
-                _DeckMenu.stats => context.push(Routes.deckStats(deck.id)),
-                _DeckMenu.layout => showLayoutSheet(context, deck),
-                _DeckMenu.speech => showSpeechSheet(context, deck),
-                _DeckMenu.exportCsv => _exportCsv(deck),
-                _DeckMenu.delete => _deleteDeck(deck),
-              },
-              itemBuilder: (_) => [
-                PopupMenuItem(value: _DeckMenu.edit, child: Text(l10n.deckEdit)),
-                PopupMenuItem(value: _DeckMenu.stats, child: Text(l10n.flashcardsStats)),
-                PopupMenuItem(value: _DeckMenu.layout, child: Text(l10n.flashcardsLayoutTitle)),
-                PopupMenuItem(value: _DeckMenu.speech, child: Text(l10n.speechTitle)),
-                PopupMenuItem(value: _DeckMenu.exportCsv, child: Text(l10n.flashcardsExportCsv)),
-                PopupMenuItem(value: _DeckMenu.delete, child: Text(l10n.flashcardsDeleteDeck)),
-              ],
+              icon: const Icon(Icons.more_vert_rounded),
+              onPressed: () => _openMenu(deck),
             ),
           ],
-          floatingActionButton: FloatingActionButton.extended(
-            heroTag: 'deck-card-fab',
-            key: const Key('addCardFab'),
-            onPressed: () => showCardForm(context, deckId: deck.id),
-            icon: const Icon(Icons.add_rounded),
-            label: Text(l10n.cardNew),
-          ),
+          floatingActionButtonLocation: listening ? FloatingActionButtonLocation.centerFloat : null,
+          floatingActionButton: listening
+              ? const ListenBar()
+              : FloatingActionButton.extended(
+                  heroTag: 'deck-card-fab',
+                  key: const Key('addCardFab'),
+                  onPressed: () => showCardForm(context, deckId: deck.id),
+                  icon: const Icon(Icons.add_rounded),
+                  label: Text(l10n.cardNew),
+                ),
           slivers: [
             SliverToBoxAdapter(child: _DeckHeader(deck: deck)),
             ..._cardSlivers(deck),

@@ -5346,5 +5346,127 @@
   "toneSystem": "Phone's sound",
   "@toneSystem": {
     "description": "End sound: the phone's own notification sound"
+  },
+  "speechOnPhone": "On this phone",
+  "@speechOnPhone": {
+    "description": "Language picker section: languages with voices installed on the phone"
+  },
+  "speechAllLanguages": "All languages",
+  "@speechAllLanguages": {
+    "description": "Language picker section: every language"
+  },
+  "speechSearchLanguage": "Search languages",
+  "@speechSearchLanguage": {
+    "description": "Hint of the language search field"
+  },
+  "speechGetVoices": "Download more voices",
+  "@speechGetVoices": {
+    "description": "Button: open the phone's speech settings to download voices"
+  },
+  "speechGetVoicesHint": "Languages without a voice can be downloaded in the phone's speech settings.",
+  "@speechGetVoicesHint": {
+    "description": "Explains how to get voices for more languages"
+  },
+  "speechSettingsFailed": "Couldn't open the speech settings on this phone.",
+  "@speechSettingsFailed": {
+    "description": "Error when the phone's speech settings cannot be opened"
+  },
+  "speechVoiceMissing": "No voice installed",
+  "@speechVoiceMissing": {
+    "description": "Marks a language with no voice installed on the phone"
+  },
+  "speechPause": "Pause between repeats",
+  "@speechPause": {
+    "description": "Stepper: silence between repeated readings"
+  },
+  "speechSeconds": "{seconds} s",
+  "@speechSeconds": {
+    "description": "A number of seconds, e.g. 1.5 s",
+    "placeholders": {
+      "seconds": {
+        "type": "String"
+      }
+    }
+  },
+  "speechExample": "Read the example with the answer",
+  "@speechExample": {
+    "description": "Switch: also read the example sentence after the answer"
+  },
+  "flashListen": "Listen",
+  "@flashListen": {
+    "description": "Button: hands-free mode that reads every card aloud"
+  },
+  "flashListenNext": "Next card",
+  "@flashListenNext": {
+    "description": "Listen mode: skip to the next card"
+  },
+  "flashListenEmpty": "No cards to listen to.",
+  "@flashListenEmpty": {
+    "description": "Listen mode cannot start: no cards in the list"
+  },
+  "flashViewTable": "Table",
+  "@flashViewTable": {
+    "description": "View option: cards as a two-column table"
+  },
+  "flashViewCards": "Cards",
+  "@flashViewCards": {
+    "description": "View option: cards as tiles"
+  },
+  "flashSwapSides": "Swap columns",
+  "@flashSwapSides": {
+    "description": "Button: swap the two columns (which side comes first)"
+  },
+  "flashSort": "Sort",
+  "@flashSort": {
+    "description": "Menu: order of the card list"
+  },
+  "flashSortNewest": "Newest first",
+  "@flashSortNewest": {
+    "description": "Sort option"
+  },
+  "flashSortAlpha": "A to Z",
+  "@flashSortAlpha": {
+    "description": "Sort option: alphabetical"
+  },
+  "flashSortDue": "Due first",
+  "@flashSortDue": {
+    "description": "Sort option"
+  },
+  "flashSortHard": "Hardest first",
+  "@flashSortHard": {
+    "description": "Sort option"
+  },
+  "flashPasteCards": "Paste cards",
+  "@flashPasteCards": {
+    "description": "Menu: create cards from text in the clipboard"
+  },
+  "flashClipboardEmpty": "The clipboard has no text.",
+  "@flashClipboardEmpty": {
+    "description": "Message: nothing to paste"
+  },
+  "flashMenuAdd": "Add cards",
+  "@flashMenuAdd": {
+    "description": "Deck menu section title"
+  },
+  "flashMenuDeck": "Deck",
+  "@flashMenuDeck": {
+    "description": "Deck menu section title: settings of this deck"
+  },
+  "flashToday": "Today",
+  "@flashToday": {
+    "description": "Title of today's study activity card"
+  },
+  "flashStudyNow": "Study",
+  "@flashStudyNow": {
+    "description": "Button on a deck: start studying it"
+  },
+  "flashTodayAnswered": "{count, plural, =0{No cards answered} =1{1 card answered} other{{count} cards answered}}",
+  "@flashTodayAnswered": {
+    "description": "Cards answered today",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
   }
 }

@@ -3962,4 +3962,100 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get toneSystem => 'Phone\'s sound';
+
+  @override
+  String get speechOnPhone => 'On this phone';
+
+  @override
+  String get speechAllLanguages => 'All languages';
+
+  @override
+  String get speechSearchLanguage => 'Search languages';
+
+  @override
+  String get speechGetVoices => 'Download more voices';
+
+  @override
+  String get speechGetVoicesHint =>
+      'Languages without a voice can be downloaded in the phone\'s speech settings.';
+
+  @override
+  String get speechSettingsFailed => 'Couldn\'t open the speech settings on this phone.';
+
+  @override
+  String get speechVoiceMissing => 'No voice installed';
+
+  @override
+  String get speechPause => 'Pause between repeats';
+
+  @override
+  String speechSeconds(String seconds) {
+    return '$seconds s';
+  }
+
+  @override
+  String get speechExample => 'Read the example with the answer';
+
+  @override
+  String get flashListen => 'Listen';
+
+  @override
+  String get flashListenNext => 'Next card';
+
+  @override
+  String get flashListenEmpty => 'No cards to listen to.';
+
+  @override
+  String get flashViewTable => 'Table';
+
+  @override
+  String get flashViewCards => 'Cards';
+
+  @override
+  String get flashSwapSides => 'Swap columns';
+
+  @override
+  String get flashSort => 'Sort';
+
+  @override
+  String get flashSortNewest => 'Newest first';
+
+  @override
+  String get flashSortAlpha => 'A to Z';
+
+  @override
+  String get flashSortDue => 'Due first';
+
+  @override
+  String get flashSortHard => 'Hardest first';
+
+  @override
+  String get flashPasteCards => 'Paste cards';
+
+  @override
+  String get flashClipboardEmpty => 'The clipboard has no text.';
+
+  @override
+  String get flashMenuAdd => 'Add cards';
+
+  @override
+  String get flashMenuDeck => 'Deck';
+
+  @override
+  String get flashToday => 'Today';
+
+  @override
+  String get flashStudyNow => 'Study';
+
+  @override
+  String flashTodayAnswered(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count cards answered',
+      one: '1 card answered',
+      zero: 'No cards answered',
+    );
+    return '$_temp0';
+  }
 }

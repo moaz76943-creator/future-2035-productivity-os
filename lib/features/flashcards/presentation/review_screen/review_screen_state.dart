@@ -43,10 +43,15 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
   // Read once while the element is alive; `ref` must not be used in dispose().
   late final TtsService _tts = ref.read(ttsServiceProvider);
 
+  /// Time spent in this session, added to today's study time on leaving.
+  final _session = Stopwatch()..start();
+  late final FlashcardsRepository _repoForTime = ref.read(flashcardsRepositoryProvider);
+
   @override
   void initState() {
     super.initState();
     _tts;
+    _repoForTime;
     _load();
   }
 
@@ -54,6 +59,8 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
   void dispose() {
     _typed.dispose();
     _tts.stop();
+    _session.stop();
+    unawaited(_repoForTime.addStudyTime(_session.elapsed).catchError((Object _) {}));
     super.dispose();
   }
 

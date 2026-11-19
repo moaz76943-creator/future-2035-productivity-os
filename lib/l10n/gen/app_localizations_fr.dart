@@ -3988,4 +3988,100 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get toneSystem => 'Son du téléphone';
+
+  @override
+  String get speechOnPhone => 'Sur ce téléphone';
+
+  @override
+  String get speechAllLanguages => 'Toutes les langues';
+
+  @override
+  String get speechSearchLanguage => 'Rechercher une langue';
+
+  @override
+  String get speechGetVoices => 'Télécharger d’autres voix';
+
+  @override
+  String get speechGetVoicesHint =>
+      'Les langues sans voix peuvent être téléchargées dans les réglages de synthèse vocale du téléphone.';
+
+  @override
+  String get speechSettingsFailed => 'Impossible d’ouvrir les réglages vocaux de ce téléphone.';
+
+  @override
+  String get speechVoiceMissing => 'Aucune voix installée';
+
+  @override
+  String get speechPause => 'Pause entre les répétitions';
+
+  @override
+  String speechSeconds(String seconds) {
+    return '$seconds s';
+  }
+
+  @override
+  String get speechExample => 'Lire l’exemple avec la réponse';
+
+  @override
+  String get flashListen => 'Écouter';
+
+  @override
+  String get flashListenNext => 'Carte suivante';
+
+  @override
+  String get flashListenEmpty => 'Aucune carte à écouter.';
+
+  @override
+  String get flashViewTable => 'Tableau';
+
+  @override
+  String get flashViewCards => 'Cartes';
+
+  @override
+  String get flashSwapSides => 'Inverser les colonnes';
+
+  @override
+  String get flashSort => 'Trier';
+
+  @override
+  String get flashSortNewest => 'Plus récentes d’abord';
+
+  @override
+  String get flashSortAlpha => 'De A à Z';
+
+  @override
+  String get flashSortDue => 'À réviser d’abord';
+
+  @override
+  String get flashSortHard => 'Plus difficiles d’abord';
+
+  @override
+  String get flashPasteCards => 'Coller des cartes';
+
+  @override
+  String get flashClipboardEmpty => 'Le presse-papiers ne contient pas de texte.';
+
+  @override
+  String get flashMenuAdd => 'Ajouter des cartes';
+
+  @override
+  String get flashMenuDeck => 'Paquet';
+
+  @override
+  String get flashToday => 'Aujourd’hui';
+
+  @override
+  String get flashStudyNow => 'Étudier';
+
+  @override
+  String flashTodayAnswered(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count cartes répondues',
+      one: '1 carte répondue',
+      zero: 'Aucune carte répondue',
+    );
+    return '$_temp0';
+  }
 }

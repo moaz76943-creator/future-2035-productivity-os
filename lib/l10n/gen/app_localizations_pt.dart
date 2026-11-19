@@ -3984,4 +3984,101 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get toneSystem => 'Som do telefone';
+
+  @override
+  String get speechOnPhone => 'Neste telefone';
+
+  @override
+  String get speechAllLanguages => 'Todos os idiomas';
+
+  @override
+  String get speechSearchLanguage => 'Pesquisar idioma';
+
+  @override
+  String get speechGetVoices => 'Baixar mais vozes';
+
+  @override
+  String get speechGetVoicesHint =>
+      'Idiomas sem voz podem ser baixados nas configurações de fala do telefone.';
+
+  @override
+  String get speechSettingsFailed =>
+      'Não foi possível abrir as configurações de fala deste telefone.';
+
+  @override
+  String get speechVoiceMissing => 'Nenhuma voz instalada';
+
+  @override
+  String get speechPause => 'Pausa entre repetições';
+
+  @override
+  String speechSeconds(String seconds) {
+    return '$seconds s';
+  }
+
+  @override
+  String get speechExample => 'Ler o exemplo com a resposta';
+
+  @override
+  String get flashListen => 'Ouvir';
+
+  @override
+  String get flashListenNext => 'Próximo cartão';
+
+  @override
+  String get flashListenEmpty => 'Nenhum cartão para ouvir.';
+
+  @override
+  String get flashViewTable => 'Tabela';
+
+  @override
+  String get flashViewCards => 'Cartões';
+
+  @override
+  String get flashSwapSides => 'Trocar colunas';
+
+  @override
+  String get flashSort => 'Ordenar';
+
+  @override
+  String get flashSortNewest => 'Mais recentes primeiro';
+
+  @override
+  String get flashSortAlpha => 'De A a Z';
+
+  @override
+  String get flashSortDue => 'Pendentes primeiro';
+
+  @override
+  String get flashSortHard => 'Mais difíceis primeiro';
+
+  @override
+  String get flashPasteCards => 'Colar cartões';
+
+  @override
+  String get flashClipboardEmpty => 'A área de transferência não tem texto.';
+
+  @override
+  String get flashMenuAdd => 'Adicionar cartões';
+
+  @override
+  String get flashMenuDeck => 'Baralho';
+
+  @override
+  String get flashToday => 'Hoje';
+
+  @override
+  String get flashStudyNow => 'Estudar';
+
+  @override
+  String flashTodayAnswered(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count cartões respondidos',
+      one: '1 cartão respondido',
+      zero: 'Nenhum cartão respondido',
+    );
+    return '$_temp0';
+  }
 }

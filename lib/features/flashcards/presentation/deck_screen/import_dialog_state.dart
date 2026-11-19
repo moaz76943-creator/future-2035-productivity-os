@@ -20,7 +20,7 @@ class _ImportDialogState extends ConsumerState<_ImportDialog> {
     }
   }
 
-  final _controller = TextEditingController();
+  late final _controller = TextEditingController(text: widget.initialText);
 
   /// Second step for CSV/TSV text: rows plus the column → field mapping.
   ImportPreview? _preview;

@@ -88,7 +88,10 @@ extension _ReviewViews on _ReviewScreenState {
               // Answer modes flip only by answering.
               onFlip: _mode == StudyMode.typed || _mode == StudyMode.choice
                   ? null
-                  : () => _update(() => _flipped = !_flipped),
+                  : () {
+                      _update(() => _flipped = !_flipped);
+                      if (_flipped) _answerShown(card);
+                    },
             ),
           ),
         ),
@@ -152,7 +155,10 @@ extension _ReviewViews on _ReviewScreenState {
         return FilledButton.icon(
           key: const Key('showAnswerButton'),
           style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(52)),
-          onPressed: () => _update(() => _flipped = true),
+          onPressed: () {
+            _update(() => _flipped = true);
+            _answerShown(card);
+          },
           icon: const Icon(Icons.flip_rounded),
           label: Text(l10n.reviewShowAnswer),
         );

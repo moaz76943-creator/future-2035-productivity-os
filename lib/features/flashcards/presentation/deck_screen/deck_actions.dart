@@ -39,11 +39,24 @@ extension _DeckActions on _DeckScreenState {
       );
   }
 
-  Future<void> _import() async {
+  /// Cards from the clipboard: the same preview and column mapping as a file.
+  Future<void> _paste() async {
+    final l10n = context.l10n;
+    final data = await Clipboard.getData(Clipboard.kTextPlain);
+    if (!mounted) return;
+    final text = data?.text ?? '';
+    if (text.trim().isEmpty) {
+      showMessage(context, l10n.flashClipboardEmpty);
+      return;
+    }
+    await _import(initialText: text);
+  }
+
+  Future<void> _import({String initialText = ''}) async {
     final l10n = context.l10n;
     final choice = await showDialog<Object>(
       context: context,
-      builder: (ctx) => const _ImportDialog(),
+      builder: (ctx) => _ImportDialog(initialText: initialText),
     );
     if (choice == null || !mounted) return;
     try {

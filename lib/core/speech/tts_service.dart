@@ -33,10 +33,18 @@ abstract interface class TtsService {
     double pitch,
     int repeat,
     String? voice,
+    int pauseMs,
+    bool awaitDone,
   });
 
   /// Voices installed on the device (empty when there is no engine).
   Future<List<TtsVoice>> voices();
+
+  /// Language tags the phone's engine can speak (installed data).
+  Future<List<String>> languages();
+
+  /// Opens the phone's speech settings (to download more languages).
+  Future<bool> openSettings();
   Future<void> stop();
 }
 
@@ -54,6 +62,8 @@ class PlatformTtsService implements TtsService {
     double pitch = 1.0,
     int repeat = 1,
     String? voice,
+    int pauseMs = 700,
+    bool awaitDone = false,
   }) async {
     if (text.trim().isEmpty) return TtsResult.empty;
     try {
@@ -64,9 +74,13 @@ class PlatformTtsService implements TtsService {
         'pitch': pitch,
         'repeat': repeat.clamp(1, 9),
         'voice': voice,
+        'pauseMs': pauseMs.clamp(0, 10000),
+        'await': awaitDone,
       });
       return switch (code) {
-        'ok' => TtsResult.ok,
+        // "stopped": interrupted by stop() or a newer request; callers that
+        // wait (listen mode) check their own state afterwards.
+        'ok' || 'stopped' => TtsResult.ok,
         'language_unavailable' => TtsResult.languageUnavailable,
         'empty' => TtsResult.empty,
         _ => TtsResult.unavailable,
@@ -96,6 +110,28 @@ class PlatformTtsService implements TtsService {
       return const [];
     } on PlatformException {
       return const [];
+    }
+  }
+
+  @override
+  Future<List<String>> languages() async {
+    try {
+      return await _channel.invokeListMethod<String>('languages') ?? const [];
+    } on MissingPluginException {
+      return const [];
+    } on PlatformException {
+      return const [];
+    }
+  }
+
+  @override
+  Future<bool> openSettings() async {
+    try {
+      return await _channel.invokeMethod<bool>('openSettings') ?? false;
+    } on MissingPluginException {
+      return false;
+    } on PlatformException {
+      return false;
     }
   }
 

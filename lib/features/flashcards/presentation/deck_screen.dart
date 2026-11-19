@@ -20,7 +20,15 @@ import '../../../shared/widgets/async_value_view.dart';
 import '../../../shared/widgets/dialogs.dart';
 import '../../../shared/widgets/module_scaffold.dart';
 import '../../backup/application/backup_ui.dart';
+import '../../../core/speech/tts_service.dart';
+import '../../settings/application/settings_providers.dart';
+import '../application/deck_view_prefs.dart';
 import '../application/flashcards_providers.dart';
+import '../application/listen_controller.dart';
+import '../domain/world_languages.dart';
+import 'widgets/card_table.dart';
+import 'widgets/language_picker.dart' show languageLabelOf;
+import 'widgets/listen_bar.dart';
 import '../domain/card_import.dart';
 import '../domain/study.dart';
 import 'study_sheets.dart';
@@ -33,10 +41,11 @@ part 'deck_screen/deck_header.dart';
 part 'deck_screen/import_dialog_state.dart';
 part 'deck_screen/deck_actions.dart';
 part 'deck_screen/deck_cards.dart';
+part 'deck_screen/deck_menu.dart';
 
 const _hue = ModuleHue.flashcards;
 
-enum _DeckMenu { edit, stats, layout, speech, exportCsv, delete }
+enum _DeckMenu { paste, importFile, exportJson, exportCsv, edit, stats, layout, speech, delete }
 
 /// Card list filters.
 enum _CardFilter { all, newCards, due, hard, favorites, suspended }

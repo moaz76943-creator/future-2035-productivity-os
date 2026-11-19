@@ -6707,6 +6707,174 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Phone\'s sound'**
   String get toneSystem;
+
+  /// Language picker section: languages with voices installed on the phone
+  ///
+  /// In en, this message translates to:
+  /// **'On this phone'**
+  String get speechOnPhone;
+
+  /// Language picker section: every language
+  ///
+  /// In en, this message translates to:
+  /// **'All languages'**
+  String get speechAllLanguages;
+
+  /// Hint of the language search field
+  ///
+  /// In en, this message translates to:
+  /// **'Search languages'**
+  String get speechSearchLanguage;
+
+  /// Button: open the phone's speech settings to download voices
+  ///
+  /// In en, this message translates to:
+  /// **'Download more voices'**
+  String get speechGetVoices;
+
+  /// Explains how to get voices for more languages
+  ///
+  /// In en, this message translates to:
+  /// **'Languages without a voice can be downloaded in the phone\'s speech settings.'**
+  String get speechGetVoicesHint;
+
+  /// Error when the phone's speech settings cannot be opened
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t open the speech settings on this phone.'**
+  String get speechSettingsFailed;
+
+  /// Marks a language with no voice installed on the phone
+  ///
+  /// In en, this message translates to:
+  /// **'No voice installed'**
+  String get speechVoiceMissing;
+
+  /// Stepper: silence between repeated readings
+  ///
+  /// In en, this message translates to:
+  /// **'Pause between repeats'**
+  String get speechPause;
+
+  /// A number of seconds, e.g. 1.5 s
+  ///
+  /// In en, this message translates to:
+  /// **'{seconds} s'**
+  String speechSeconds(String seconds);
+
+  /// Switch: also read the example sentence after the answer
+  ///
+  /// In en, this message translates to:
+  /// **'Read the example with the answer'**
+  String get speechExample;
+
+  /// Button: hands-free mode that reads every card aloud
+  ///
+  /// In en, this message translates to:
+  /// **'Listen'**
+  String get flashListen;
+
+  /// Listen mode: skip to the next card
+  ///
+  /// In en, this message translates to:
+  /// **'Next card'**
+  String get flashListenNext;
+
+  /// Listen mode cannot start: no cards in the list
+  ///
+  /// In en, this message translates to:
+  /// **'No cards to listen to.'**
+  String get flashListenEmpty;
+
+  /// View option: cards as a two-column table
+  ///
+  /// In en, this message translates to:
+  /// **'Table'**
+  String get flashViewTable;
+
+  /// View option: cards as tiles
+  ///
+  /// In en, this message translates to:
+  /// **'Cards'**
+  String get flashViewCards;
+
+  /// Button: swap the two columns (which side comes first)
+  ///
+  /// In en, this message translates to:
+  /// **'Swap columns'**
+  String get flashSwapSides;
+
+  /// Menu: order of the card list
+  ///
+  /// In en, this message translates to:
+  /// **'Sort'**
+  String get flashSort;
+
+  /// Sort option
+  ///
+  /// In en, this message translates to:
+  /// **'Newest first'**
+  String get flashSortNewest;
+
+  /// Sort option: alphabetical
+  ///
+  /// In en, this message translates to:
+  /// **'A to Z'**
+  String get flashSortAlpha;
+
+  /// Sort option
+  ///
+  /// In en, this message translates to:
+  /// **'Due first'**
+  String get flashSortDue;
+
+  /// Sort option
+  ///
+  /// In en, this message translates to:
+  /// **'Hardest first'**
+  String get flashSortHard;
+
+  /// Menu: create cards from text in the clipboard
+  ///
+  /// In en, this message translates to:
+  /// **'Paste cards'**
+  String get flashPasteCards;
+
+  /// Message: nothing to paste
+  ///
+  /// In en, this message translates to:
+  /// **'The clipboard has no text.'**
+  String get flashClipboardEmpty;
+
+  /// Deck menu section title
+  ///
+  /// In en, this message translates to:
+  /// **'Add cards'**
+  String get flashMenuAdd;
+
+  /// Deck menu section title: settings of this deck
+  ///
+  /// In en, this message translates to:
+  /// **'Deck'**
+  String get flashMenuDeck;
+
+  /// Title of today's study activity card
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get flashToday;
+
+  /// Button on a deck: start studying it
+  ///
+  /// In en, this message translates to:
+  /// **'Study'**
+  String get flashStudyNow;
+
+  /// Cards answered today
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No cards answered} =1{1 card answered} other{{count} cards answered}}'**
+  String flashTodayAnswered(int count);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
