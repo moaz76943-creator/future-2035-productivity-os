@@ -22,36 +22,41 @@ class NoteImageView extends ConsumerWidget {
         borderRadius: BorderRadius.circular(Radii.md),
         child: bytes == null
             ? _placeholder(lux)
-            : GestureDetector(
-                onTap: () => showDialog<void>(
-                  context: context,
-                  builder: (c) => Dialog.fullscreen(
-                    backgroundColor: Colors.black,
-                    child: Stack(
-                      children: [
-                        Positioned.fill(child: InteractiveViewer(child: Image.memory(bytes))),
-                        PositionedDirectional(
-                          top: Space.sm,
-                          end: Space.sm,
-                          child: IconButton.filledTonal(
-                            tooltip: context.l10n.actionClose,
-                            icon: const Icon(Icons.close_rounded),
-                            onPressed: () => Navigator.of(c).pop(),
+            : Semantics(
+                button: true,
+                label: context.l10n.noteImage,
+                excludeSemantics: true,
+                child: GestureDetector(
+                  onTap: () => showDialog<void>(
+                    context: context,
+                    builder: (c) => Dialog.fullscreen(
+                      backgroundColor: Colors.black,
+                      child: Stack(
+                        children: [
+                          Positioned.fill(child: InteractiveViewer(child: Image.memory(bytes))),
+                          PositionedDirectional(
+                            top: Space.sm,
+                            end: Space.sm,
+                            child: IconButton.filledTonal(
+                              tooltip: context.l10n.actionClose,
+                              icon: const Icon(Icons.close_rounded),
+                              onPressed: () => Navigator.of(c).pop(),
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(maxHeight: maxHeight),
-                  child: Image.memory(
-                    bytes,
-                    fit: BoxFit.contain,
-                    semanticLabel: context.l10n.noteImage,
-                    gaplessPlayback: true,
-                    // A damaged picture shows a calm placeholder, never an error.
-                    errorBuilder: (_, _, _) => _placeholder(lux),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(maxHeight: maxHeight),
+                    child: Image.memory(
+                      bytes,
+                      fit: BoxFit.contain,
+                      semanticLabel: context.l10n.noteImage,
+                      gaplessPlayback: true,
+                      // A damaged picture shows a calm placeholder, never an error.
+                      errorBuilder: (_, _, _) => _placeholder(lux),
+                    ),
                   ),
                 ),
               ),

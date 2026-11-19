@@ -17,6 +17,7 @@ import 'package:future_os/features/goals/data/goals_repository.dart';
 import 'package:future_os/features/habits/data/habits_repository.dart';
 import 'package:future_os/features/notes/data/notes_repository.dart';
 import 'package:future_os/features/projects/data/projects_repository.dart';
+import 'package:future_os/core/platform/media_picker.dart';
 import 'package:future_os/features/settings/application/settings_providers.dart';
 import 'package:future_os/features/settings/data/settings_repository.dart';
 import 'package:future_os/features/tasks/data/tasks_repository.dart';
