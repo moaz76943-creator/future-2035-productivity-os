@@ -22,7 +22,7 @@ license page, which also lists the bundled fonts, registered in
 | Library | License | Note |
 |---|---|---|
 | AndroidX, Kotlin standard library, desugar_jdk_libs | Apache-2.0 | |
-| Google Play Integrity (`com.google.android.play:integrity`) | Android Software Development Kit License (proprietary, free to use) | Not open source. Added by the owner; it needs Google Play services and a network connection, and the app works fully offline without it. See docs/ADR.md (ADR-009). |
+| Google Play Integrity (`com.google.android.play:integrity`) | Android Software Development Kit License (proprietary, free to use) | Not open source. Kept by the owner; it needs Google Play services and a network connection, and every feature still works without it. See docs/ADR.md (ADR-009). |
 | SQLite3 Multiple Ciphers (via `sqlite3`) | MIT (SQLite itself: public domain) | |
 
 ## Dart and Flutter packages

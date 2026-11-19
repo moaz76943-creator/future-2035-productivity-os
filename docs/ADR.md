@@ -3,11 +3,12 @@
 Short records of decisions that shape the code. Each says what was decided, why, and what it
 costs. Newest last. Status: Accepted unless noted.
 
-## ADR-001 Offline only, encrypted local database
-All data lives in one SQLite database on the device, opened through Drift with SQLite3 Multiple
+## ADR-001 Offline first, encrypted local database
+Every core feature works without a connection. All data lives in one SQLite database on the device, opened through Drift with SQLite3 Multiple
 Ciphers; the key is generated on first run and kept in the platform keystore (`SecretStore`).
 No account, sync or analytics. **Why:** privacy and a study app that works anywhere.
-Two optional exceptions need the `INTERNET` permission, and neither is used unless the user acts:
+Internet use is allowed (owner decision, 2026-11-19), but only for optional features, never for
+the core features. Today two features use it, and neither runs unless the user acts:
 the cloud assistant, which runs only when the user enters their own HTTPS endpoint and agrees
 before any note text is sent (`features/assistant/data/remote_assistant.dart`), and Play Integrity
 (ADR-009). The built-in assistant runs fully offline.
@@ -52,12 +53,11 @@ Eight locales (ar, en, es, fr, hi, pt, ru, zh) with RTL for Arabic. All numbers,
 use Western digits 0-9 through `AppFormat`. Hebrew (he/iw) is not offered.
 `tool/check_l10n.py` fails the build on a missing key, a non-Western digit or a Hebrew locale.
 
-## ADR-009 Play Integrity (owner decision pending)
-**Status:** Proposed by the owner, not wired in. The owner added `com.google.android.play:integrity`
-and `PlayIntegrityService`. No Dart code calls it, so the app still works fully offline.
-Attestation needs Google Play services, a network connection and, to be meaningful, a server
-that verifies tokens. That conflicts with ADR-001. Until the owner decides, keep it unused.
-Remove the dependency if the app must be 100% offline and open source on the native side.
+## ADR-009 Play Integrity (kept)
+**Status:** Accepted (owner, 2026-11-19: the app may use the internet). The owner added
+`com.google.android.play:integrity` and `PlayIntegrityService`. It needs Google Play services and
+a network connection. A token only means something when a server verifies it, so until a backend
+exists it is not used to block anything; every feature works without it.
 
 ## ADR-010 Calm design: White Luxury light and true AMOLED dark
 Light: white surfaces with module accents. Dark: page background `#000000` (pixels off on OLED)
@@ -79,3 +79,8 @@ Dependencies and assets must be MIT, BSD, Apache-2.0, ISC, Zlib, CC0/public doma
 No GPL, LGPL or AGPL. `tool/third_party_licenses.py --check` enforces this in CI. The only MPL-2.0
 package (`dbus`) is used by Linux desktop plugins and is not in the Android app. The only
 proprietary piece is Play Integrity (ADR-009).
+
+## ADR-014 Working branch `claude`
+The assistant's work goes to the `claude` branch (owner, 2026-11-19). CI builds it and publishes a
+QA pre-release APK (`qa-<sha>`) for each push, the same as for `main`. The owner decides when
+`claude` is merged into `main`.
