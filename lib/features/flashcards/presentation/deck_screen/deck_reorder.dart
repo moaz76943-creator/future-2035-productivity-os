@@ -32,6 +32,7 @@ extension _DeckReorder on _DeckScreenState {
                   onTap: () => showCardForm(context, deckId: deck.id, initial: c),
                   onLongPress: () {},
                   onSpeak: () => _speakRow(deck, c),
+                  onSpeakBack: () => _speakRow(deck, c, back: true),
                 ),
               ),
               ReorderableDragStartListener(

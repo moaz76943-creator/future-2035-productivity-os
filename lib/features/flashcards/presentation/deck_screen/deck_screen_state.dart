@@ -59,6 +59,13 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
               selectedIcon: const Icon(Icons.headphones_rounded),
               onPressed: () => _toggleListen(deck),
             ),
+            // Speed, repeats and the voice for each language: one tap away, not buried in the menu.
+            IconButton(
+              key: const Key('deckSpeech'),
+              tooltip: l10n.speechTitle,
+              icon: const Icon(Icons.record_voice_over_outlined),
+              onPressed: () => showSpeechSheet(context, deck),
+            ),
             IconButton(
               key: const Key('deckMenu'),
               tooltip: l10n.actionMore,

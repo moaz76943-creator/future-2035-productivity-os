@@ -87,6 +87,14 @@ void main() {
     await tester.tap(rowSpeak.first);
     await settle(tester);
     expect(tts.said.last.$2, 'ar', reason: 'swapped: the first column is Arabic');
+    final backSpeak = find.byWidgetPredicate(
+      (w) =>
+          w.key is ValueKey<String> && (w.key! as ValueKey<String>).value.startsWith('speakBack_'),
+    );
+    await tester.tap(backSpeak.first);
+    await settle(tester);
+    expect(tts.said.last.$2, 'es-ES', reason: 'the translation has its own speaker');
+    expect(find.byKey(const Key('deckSpeech')), findsOneWidget);
 
     await tester.tap(find.byKey(const Key('sortMenu')));
     await settle(tester);

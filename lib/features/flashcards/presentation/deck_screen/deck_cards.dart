@@ -234,6 +234,7 @@ extension _DeckCards on _DeckScreenState {
                           : () => showCardForm(context, deckId: deck.id, initial: c),
                       onLongPress: toggle,
                       onSpeak: () => _speakRow(deck, c),
+                      onSpeakBack: () => _speakRow(deck, c, back: true),
                     );
                   },
                 ),

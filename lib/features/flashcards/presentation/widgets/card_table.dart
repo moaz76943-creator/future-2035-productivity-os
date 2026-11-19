@@ -61,6 +61,7 @@ class CardTableRow extends StatelessWidget {
     required this.onTap,
     required this.onLongPress,
     required this.onSpeak,
+    this.onSpeakBack,
     this.selected = false,
     this.current = false,
     this.dimmed = false,
@@ -71,6 +72,9 @@ class CardTableRow extends StatelessWidget {
   final VoidCallback onTap;
   final VoidCallback onLongPress;
   final VoidCallback onSpeak;
+
+  /// Reads the second column (the translation) on its own.
+  final VoidCallback? onSpeakBack;
 
   /// Picked for a bulk action.
   final bool selected;
@@ -138,6 +142,15 @@ class CardTableRow extends StatelessWidget {
                 Expanded(child: _cell(context, a, strong: true)),
                 const SizedBox(width: Space.sm),
                 Expanded(child: _cell(context, b, strong: false)),
+                if (onSpeakBack != null && !selected)
+                  IconButton(
+                    key: Key('speakBack_${card.id}'),
+                    tooltip: context.l10n.speechTest,
+                    visualDensity: VisualDensity.compact,
+                    iconSize: 18,
+                    icon: Icon(Icons.volume_up_outlined, color: lux.ink3),
+                    onPressed: onSpeakBack,
+                  ),
                 if (card.favorite)
                   const Padding(
                     padding: EdgeInsetsDirectional.only(start: Space.xxs),

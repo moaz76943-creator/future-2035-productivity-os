@@ -85,10 +85,10 @@ extension _DeckMenuSheet on _DeckScreenState {
     );
   }
 
-  /// Reads one row's first column (the speak button in the table).
-  Future<void> _speakRow(DeckRow deck, CardRow card) async {
+  /// Reads one row's first column, or with [back] its second column.
+  Future<void> _speakRow(DeckRow deck, CardRow card, {bool back = false}) async {
     final s = ref.read(settingsProvider);
-    final swapped = ref.read(deckViewPrefsProvider).swapped;
+    final swapped = ref.read(deckViewPrefsProvider).swapped != back;
     final tag = swapped ? deck.backLang : deck.frontLang;
     final eff = resolveSpeechTag(
       swapped ? card.back : card.front,
