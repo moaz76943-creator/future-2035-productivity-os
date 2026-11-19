@@ -85,6 +85,8 @@ extension _ReviewViews on _ReviewScreenState {
                 onRevealFront: () => _update(() => _questionShown = true),
                 verdict: _match,
                 onSpeakField: _speakField,
+                onSpeakQuestion: () => _speakSide(card, question: true),
+                onSpeakAnswer: () => _speakSide(card, question: false),
                 layout: layout,
                 items: _answerItems(card, layout),
                 questionItems: _sideItems(card, layout, question: true),

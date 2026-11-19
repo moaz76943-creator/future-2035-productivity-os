@@ -33,7 +33,7 @@ class SoundsScreen extends ConsumerWidget {
       sliver: SliverGrid(
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 190,
-          mainAxisExtent: 140 + MediaQuery.textScalerOf(context).scale(44),
+          mainAxisExtent: 168 + MediaQuery.textScalerOf(context).scale(44),
           crossAxisSpacing: Space.sm,
           mainAxisSpacing: Space.md,
         ),

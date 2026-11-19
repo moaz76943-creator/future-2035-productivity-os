@@ -77,6 +77,30 @@ void main() {
     expect(tts.stops, greaterThanOrEqualTo(1), reason: 'speech stops when the screen closes');
   });
 
+  testWidgets('a speaker button beside the question and the translation plays each', (
+    tester,
+  ) async {
+    final (env, deck) = await seed(tester);
+    final tts = _FakeTts(TtsResult.ok);
+    await pumpScreen(
+      tester,
+      ReviewScreen(deckId: deck),
+      env: env,
+      overrides: [ttsServiceProvider.overrideWithValue(tts)],
+    );
+    await settle(tester);
+    await tester.tap(find.byKey(const Key('speakQuestion')));
+    await settle(tester);
+    await tester.tap(find.byKey(const Key('showAnswerButton')));
+    await settle(tester);
+    await tester.tap(find.byKey(const Key('speakAnswer')));
+    await settle(tester);
+    await tester.tap(find.byKey(const Key('speakQuestion')));
+    await settle(tester);
+    expect(tts.spoken.map((e) => e.$1), ['hola', 'hello', 'hola']);
+    await closeEnv(tester, env);
+  });
+
   for (final (result, message) in [
     (TtsResult.unavailable, 'Text-to-speech isn’t available on this device.'),
     (

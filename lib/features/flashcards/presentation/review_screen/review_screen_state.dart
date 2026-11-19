@@ -96,9 +96,24 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
             PopupMenuButton<String>(
               key: const Key('reviewMenu'),
               tooltip: l10n.actionMore,
-              onSelected: (v) => v == 'edit' ? _edit(card) : _suspend(card),
+              onSelected: (v) {
+                switch (v) {
+                  case 'edit':
+                    _edit(card);
+                  case 'speech':
+                    final deck = ref.read(deckProvider(widget.deckId)).value;
+                    if (deck != null) unawaited(showSpeechSheet(context, deck));
+                  default:
+                    _suspend(card);
+                }
+              },
               itemBuilder: (_) => [
                 PopupMenuItem(value: 'edit', child: Text(l10n.cardEdit)),
+                PopupMenuItem(
+                  key: const Key('reviewSpeechSettings'),
+                  value: 'speech',
+                  child: Text(l10n.speechTitle),
+                ),
                 PopupMenuItem(value: 'suspend', child: Text(l10n.flashcardsSuspend)),
               ],
             ),

@@ -81,6 +81,13 @@ extension _ReviewActions on _ReviewScreenState {
     }
   }
 
+  /// Speaks just one side of the card (the speaker button beside its text),
+  /// without the example that [_speak] adds after the answer.
+  Future<void> _speakSide(CardRow card, {required bool question}) {
+    final frontSide = question != _reversed(card);
+    return _say(frontSide ? card.front : card.back, _langTag(front: frontSide));
+  }
+
   /// Answer revealed: read it aloud when auto-reading is on.
   void _answerShown(CardRow card) {
     if (ref.read(settingsProvider).flashAutoSpeak) unawaited(_speak(card, question: false));
