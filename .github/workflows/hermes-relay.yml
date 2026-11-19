@@ -112,6 +112,11 @@ jobs:
           echo "RELAY_DONE=$DONE" >> "$GITHUB_ENV"
           rm -f /tmp/keys.list
 
+      - name: Enforce Single Branch & Migrate Stray Work
+        run: |
+          chmod +x scripts/enforce_hermes_branch.sh
+          ./scripts/enforce_hermes_branch.sh
+
       - name: Final Push & Trigger Next Relay Hop
         if: always()
         env:
