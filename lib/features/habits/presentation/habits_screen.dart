@@ -62,7 +62,7 @@ class HabitsScreen extends ConsumerWidget {
             if (list.isEmpty) {
               return SliverToBoxAdapter(
                 child: EmptyState(
-                  icon: Icons.spa_rounded,
+                  icon: Icons.event_repeat_rounded,
                   hue: ModuleHue.habits,
                   title: l10n.habitsEmptyTitle,
                   message: l10n.habitsEmptyMessage,

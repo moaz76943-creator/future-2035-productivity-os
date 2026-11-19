@@ -19,6 +19,7 @@ import '../../../shared/widgets/mic_button.dart';
 import '../../../shared/widgets/task_picker.dart';
 import '../../projects/application/projects_providers.dart';
 import '../application/note_text.dart';
+import 'note_editing_controller.dart';
 import '../application/notes_providers.dart';
 import '../data/notes_repository.dart';
 import 'markdown_preview.dart';

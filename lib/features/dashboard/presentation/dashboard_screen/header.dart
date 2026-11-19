@@ -268,7 +268,7 @@ class _HabitsSection extends ConsumerWidget {
       child: habits == null
           ? const SizedBox(height: 48)
           : habits.isEmpty
-          ? _EmptyLine(l10n.dashNoHabits, Icons.self_improvement_rounded)
+          ? _EmptyLine(l10n.dashNoHabits, Icons.event_repeat_rounded)
           : Wrap(
               spacing: Space.sm,
               runSpacing: Space.sm,

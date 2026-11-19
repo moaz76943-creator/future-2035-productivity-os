@@ -309,15 +309,10 @@ void main() {
       });
       await pumpScreen(tester, NoteEditorScreen(noteId: id), env: env);
       await settle(tester);
-      final linkedTasksScroll = find.ancestor(
-        of: find.text('Write spec'),
-        matching: find.byType(Scrollable),
-      ).first;
-      await tester.scrollUntilVisible(
-        find.text('Write spec'),
-        200,
-        scrollable: linkedTasksScroll,
-      );
+      final linkedTasksScroll = find
+          .ancestor(of: find.text('Write spec'), matching: find.byType(Scrollable))
+          .first;
+      await tester.scrollUntilVisible(find.text('Write spec'), 200, scrollable: linkedTasksScroll);
       expect(find.text('Beta'), findsOneWidget);
       await tester.tap(find.byTooltip('Unlink'));
       await settle(tester);

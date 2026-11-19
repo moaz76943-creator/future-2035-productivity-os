@@ -133,7 +133,7 @@ class _MyDaySheet extends ConsumerWidget {
           if (habits.isNotEmpty)
             row(
               'myDay-habits',
-              Icons.repeat_rounded,
+              Icons.event_repeat_rounded,
               ModuleHue.habits,
               l10n.myDayHabits(habitsLeft),
               () => go(Routes.habits),

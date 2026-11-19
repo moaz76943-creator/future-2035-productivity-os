@@ -112,20 +112,33 @@ class _MetaRow extends ConsumerWidget {
 }
 
 class _FormatToolbar extends StatelessWidget {
-  const _FormatToolbar({required this.onApply});
+  const _FormatToolbar({required this.onApply, required this.body});
   final void Function(TextEditingValue Function(TextEditingValue)) onApply;
+
+  /// The note text: the line under the cursor lights up its format button.
+  final TextEditingController body;
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final lux = context.lux;
-    final items = <(IconData, String, TextEditingValue Function(TextEditingValue))>[
-      (Icons.title_rounded, l10n.noteFormatHeading, NoteText.heading),
-      (Icons.format_bold_rounded, l10n.noteFormatBold, NoteText.bold),
-      (Icons.format_italic_rounded, l10n.noteFormatItalic, NoteText.italic),
-      (Icons.format_list_bulleted_rounded, l10n.noteFormatList, NoteText.bulletList),
-      (Icons.checklist_rounded, l10n.noteFormatChecklist, NoteText.checklist),
-      (Icons.data_array_rounded, l10n.noteFormatLink, NoteText.wikiLink),
+    final items = <(IconData, String, TextEditingValue Function(TextEditingValue), NoteLineKind?)>[
+      (Icons.title_rounded, l10n.noteFormatHeading, NoteText.heading, NoteLineKind.heading),
+      (Icons.format_bold_rounded, l10n.noteFormatBold, NoteText.bold, null),
+      (Icons.format_italic_rounded, l10n.noteFormatItalic, NoteText.italic, null),
+      (
+        Icons.format_list_bulleted_rounded,
+        l10n.noteFormatList,
+        NoteText.bulletList,
+        NoteLineKind.bullet,
+      ),
+      (
+        Icons.checklist_rounded,
+        l10n.noteFormatChecklist,
+        NoteText.checklist,
+        NoteLineKind.checklist,
+      ),
+      (Icons.link_rounded, l10n.noteFormatLink, NoteText.wikiLink, null),
     ];
     return Semantics(
       container: true,
@@ -140,16 +153,29 @@ class _FormatToolbar extends StatelessWidget {
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.symmetric(horizontal: Space.xs),
-            child: Row(
-              children: [
-                for (final (icon, label, fn) in items)
-                  IconButton(
-                    tooltip: label,
-                    icon: Icon(icon),
-                    color: lux.ink2,
-                    onPressed: () => onApply(fn),
-                  ),
-              ],
+            child: ValueListenableBuilder(
+              valueListenable: body,
+              builder: (_, v, _) {
+                final kind = NoteText.lineKindAt(v);
+                return Row(
+                  children: [
+                    for (final (icon, label, fn, k) in items)
+                      IconButton(
+                        tooltip: label,
+                        icon: Icon(icon),
+                        isSelected: k != null && k == kind,
+                        color: lux.ink2,
+                        selectedIcon: Icon(icon, color: ModuleHue.notes.b),
+                        style: k != null && k == kind
+                            ? IconButton.styleFrom(
+                                backgroundColor: ModuleHue.notes.b.withValues(alpha: 0.12),
+                              )
+                            : null,
+                        onPressed: () => onApply(fn),
+                      ),
+                  ],
+                );
+              },
             ),
           ),
         ),

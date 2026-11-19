@@ -30,7 +30,7 @@ class SpacesScreen extends ConsumerWidget {
       _Space(Icons.sticky_note_2_outlined, l10n.moduleNotes, ModuleHue.notes, Routes.notes),
       _Space(Icons.flag_outlined, l10n.moduleGoals, ModuleHue.goals, Routes.goals),
       _Space(
-        Icons.self_improvement_rounded,
+        Icons.event_repeat_rounded,
         l10n.moduleHabits,
         ModuleHue.habits,
         Routes.habits,
@@ -48,6 +48,7 @@ class SpacesScreen extends ConsumerWidget {
       ),
       _Space(Icons.settings_outlined, l10n.moduleSettings, ModuleHue.neutral, Routes.settings),
       _Space(Icons.delete_outline_rounded, l10n.moduleTrash, ModuleHue.neutral, Routes.trash),
+      _Space(Icons.help_outline_rounded, l10n.helpTitle, ModuleHue.neutral, Routes.help),
     ];
 
     return Scaffold(

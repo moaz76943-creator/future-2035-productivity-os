@@ -3,7 +3,7 @@ part of '../note_editor_screen.dart';
 class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with WidgetsBindingObserver {
   late final NotesRepository _repo;
   final _title = TextEditingController();
-  final _body = TextEditingController();
+  final _body = NoteEditingController();
   final _bodyFocus = FocusNode();
 
   bool _loaded = false;
@@ -24,6 +24,9 @@ class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with Widget
   void initState() {
     super.initState();
     _repo = ref.read(notesRepositoryProvider);
+    _body
+      ..onToggleCheckbox = _toggleCheckbox
+      ..accent = ModuleHue.notes.b;
     WidgetsBinding.instance.addObserver(this);
     _load();
   }
@@ -46,7 +49,8 @@ class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with Widget
       _savedBody = note.body;
       _savedAt = note.updatedAt;
       _title.text = note.title;
-      _body.text = note.body;
+      // Leftovers of empty formatting are dropped (saved with the next edit).
+      _body.text = NoteText.removeEmptyMarkers(note.body);
     });
     _title.addListener(_onChanged);
     _body.addListener(_onChanged);
@@ -135,10 +139,8 @@ class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with Widget
   void _toggleCheckbox(int line) {
     final next = NoteText.toggleCheckbox(_body.text, line);
     if (next == _body.text) return;
-    _body.value = TextEditingValue(
-      text: next,
-      selection: TextSelection.collapsed(offset: next.length),
-    );
+    // Same length: the cursor stays where it was.
+    _body.value = _body.value.copyWith(text: next);
     _flush();
   }
 
@@ -363,6 +365,7 @@ class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with Widget
                       minLines: 10,
                       maxLines: null,
                       keyboardType: TextInputType.multiline,
+                      inputFormatters: const [NoteListFormatter()],
                       textCapitalization: TextCapitalization.sentences,
                       style: context.text.bodyLarge?.copyWith(height: 1.55, color: lux.ink),
                       decoration: InputDecoration(
@@ -384,7 +387,7 @@ class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with Widget
               ],
             ),
           ),
-          if (!_preview) _FormatToolbar(onApply: _apply),
+          if (!_preview) _FormatToolbar(onApply: _apply, body: _body),
         ],
       ),
     );

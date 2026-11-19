@@ -109,7 +109,7 @@ final featureGuide = <GuideEntry>[
   GuideEntry(
     id: 'habits',
     route: Routes.habits,
-    icon: Icons.repeat_rounded,
+    icon: Icons.event_repeat_rounded,
     hue: ModuleHue.habits,
     question: (l) => l.faqHabitsQ,
     answer: (l) => l.faqHabitsA,

@@ -61,7 +61,7 @@ class HabitDetailScreen extends ConsumerWidget {
             if (row == null || row.archived) {
               return SliverToBoxAdapter(
                 child: EmptyState(
-                  icon: Icons.spa_rounded,
+                  icon: Icons.event_repeat_rounded,
                   hue: ModuleHue.habits,
                   title: l10n.habitsNotFound,
                   message: l10n.habitsEmptyMessage,
