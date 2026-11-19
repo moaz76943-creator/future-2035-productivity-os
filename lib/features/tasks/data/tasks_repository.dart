@@ -5,104 +5,12 @@ import '../../../core/ids.dart';
 import '../../../core/recurrence/recurrence_rule.dart';
 import '../../../core/time/clock.dart';
 
+part 'tasks_repository/task_status.dart';
+part 'tasks_repository/relations.dart';
+
 enum TaskView { today, upcoming, all, completed, overdue, inbox, archived }
 
-/// Workflow status of an open task. Completion stays in `done`; archived
-/// tasks are hidden from every view except [TaskView.archived].
-abstract final class TaskStatus {
-  static const notStarted = 'notStarted';
-  static const inProgress = 'inProgress';
-}
-
 enum TaskSort { smart, dueDate, priority, created, title }
-
-class TaskFilter {
-  const TaskFilter({
-    this.view = TaskView.all,
-    this.projectId,
-    this.minPriority,
-    this.category,
-    this.labelId,
-    this.sort = TaskSort.smart,
-  });
-  final TaskView view;
-  final String? projectId;
-  final int? minPriority;
-  final String? category;
-  final String? labelId;
-  final TaskSort sort;
-
-  TaskFilter copyWith({
-    TaskView? view,
-    String? projectId,
-    bool clearProject = false,
-    int? minPriority,
-    bool clearPriority = false,
-    TaskSort? sort,
-  }) => TaskFilter(
-    view: view ?? this.view,
-    projectId: clearProject ? null : (projectId ?? this.projectId),
-    minPriority: clearPriority ? null : (minPriority ?? this.minPriority),
-    category: category,
-    labelId: labelId,
-    sort: sort ?? this.sort,
-  );
-
-  // Value equality so the filter can key a provider family.
-  @override
-  bool operator ==(Object other) =>
-      other is TaskFilter &&
-      other.view == view &&
-      other.projectId == projectId &&
-      other.minPriority == minPriority &&
-      other.category == category &&
-      other.labelId == labelId &&
-      other.sort == sort;
-
-  @override
-  int get hashCode => Object.hash(view, projectId, minPriority, category, labelId, sort);
-}
-
-class TaskDraft {
-  const TaskDraft({
-    required this.title,
-    this.description = '',
-    this.notes = '',
-    this.projectId,
-    this.parentId,
-    this.category = '',
-    this.priority = 0,
-    this.startAt,
-    this.dueAt,
-    this.dueHasTime = false,
-    this.reminderAt,
-    this.recurrence,
-    this.estimateMinutes,
-  });
-  final String title;
-  final String description;
-  final String notes;
-  final String? projectId;
-  final String? parentId;
-  final String category;
-  final int priority;
-  final DateTime? startAt;
-  final DateTime? dueAt;
-  final bool dueHasTime;
-  final DateTime? reminderAt;
-  final String? recurrence;
-  final int? estimateMinutes;
-}
-
-class TaskValidationException implements Exception {
-  const TaskValidationException(this.code);
-
-  /// `titleRequired`, `titleTooLong`, `startAfterDue`, `invalidRecurrence`,
-  /// `dependencyCycle`.
-  final String code;
-  @override
-  String toString() => 'TaskValidationException($code)';
-}
 
 /// Owns the `tasks`, `checklist_items`, `labels`, `task_labels` and
 /// `task_dependencies` tables.
@@ -355,13 +263,13 @@ class TasksRepository {
       TaskSort.smart when f.view == TaskView.completed => [(t) => OrderingTerm.desc(t.completedAt)],
       TaskSort.smart when f.view == TaskView.archived => [(t) => OrderingTerm.desc(t.archivedAt)],
       TaskSort.smart => [
-        (t) => OrderingTerm(expression: t.dueAt.isNull(), mode: OrderingMode.asc),
+        (t) => OrderingTerm(expression: t.dueAt.isNull()),
         (t) => OrderingTerm.asc(t.dueAt),
         (t) => OrderingTerm.desc(t.priority),
         (t) => OrderingTerm.asc(t.sortOrder),
       ],
       TaskSort.dueDate => [
-        (t) => OrderingTerm(expression: t.dueAt.isNull(), mode: OrderingMode.asc),
+        (t) => OrderingTerm(expression: t.dueAt.isNull()),
         (t) => OrderingTerm.asc(t.dueAt),
       ],
       TaskSort.priority => [(t) => OrderingTerm.desc(t.priority), (t) => OrderingTerm.asc(t.dueAt)],
@@ -405,121 +313,5 @@ class TasksRepository {
       ..addColumns([_db.tasks.category])
       ..where(_db.tasks.category.equals('').not() & _db.tasks.deletedAt.isNull());
     return q.watch().map((rows) => rows.map((r) => r.read(_db.tasks.category)!).toList()..sort());
-  }
-
-  // ---- checklist -----------------------------------------------------------
-
-  Stream<List<ChecklistItemRow>> watchChecklist(String taskId) =>
-      (_db.select(_db.checklistItems)
-            ..where((c) => c.taskId.equals(taskId))
-            ..orderBy([(c) => OrderingTerm.asc(c.position)]))
-          .watch();
-
-  Future<void> addChecklistItem(String taskId, String label) async {
-    if (label.trim().isEmpty) return;
-    final maxPos =
-        await (_db.selectOnly(_db.checklistItems)
-              ..addColumns([_db.checklistItems.position.max()])
-              ..where(_db.checklistItems.taskId.equals(taskId)))
-            .map((r) => r.read(_db.checklistItems.position.max()))
-            .getSingle();
-    await _db
-        .into(_db.checklistItems)
-        .insert(
-          ChecklistItemsCompanion.insert(
-            id: newId(),
-            taskId: taskId,
-            label: label.trim(),
-            position: Value((maxPos ?? -1) + 1),
-          ),
-        );
-  }
-
-  Future<void> toggleChecklistItem(String id, bool done) => (_db.update(
-    _db.checklistItems,
-  )..where((c) => c.id.equals(id))).write(ChecklistItemsCompanion(done: Value(done)));
-
-  Future<void> deleteChecklistItem(String id) =>
-      (_db.delete(_db.checklistItems)..where((c) => c.id.equals(id))).go();
-
-  // ---- labels --------------------------------------------------------------
-
-  Stream<List<LabelRow>> watchLabels() =>
-      (_db.select(_db.labels)..orderBy([(l) => OrderingTerm.asc(l.name)])).watch();
-
-  Future<String> ensureLabel(String name, int color) async {
-    final existing = await (_db.select(
-      _db.labels,
-    )..where((l) => l.name.equals(name.trim()))).getSingleOrNull();
-    if (existing != null) return existing.id;
-    final id = newId();
-    await _db
-        .into(_db.labels)
-        .insert(LabelsCompanion.insert(id: id, name: name.trim(), color: color));
-    return id;
-  }
-
-  Stream<List<LabelRow>> watchLabelsFor(String taskId) {
-    final q = _db.select(_db.labels).join([
-      innerJoin(_db.taskLabels, _db.taskLabels.labelId.equalsExp(_db.labels.id)),
-    ])..where(_db.taskLabels.taskId.equals(taskId));
-    return q.watch().map((rows) => rows.map((r) => r.readTable(_db.labels)).toList());
-  }
-
-  Future<void> setLabel(String taskId, String labelId, bool on) async {
-    if (on) {
-      await _db
-          .into(_db.taskLabels)
-          .insertOnConflictUpdate(TaskLabelsCompanion.insert(taskId: taskId, labelId: labelId));
-    } else {
-      await (_db.delete(
-        _db.taskLabels,
-      )..where((t) => t.taskId.equals(taskId) & t.labelId.equals(labelId))).go();
-    }
-  }
-
-  // ---- dependencies --------------------------------------------------------
-
-  Future<void> addDependency(String taskId, String dependsOnId) async {
-    if (taskId == dependsOnId) {
-      throw const TaskValidationException('dependencyCycle');
-    }
-    // Reject cycles: walk from dependsOnId; if we reach taskId it's a cycle.
-    final seen = <String>{};
-    final stack = [dependsOnId];
-    while (stack.isNotEmpty) {
-      final cur = stack.removeLast();
-      if (cur == taskId) throw const TaskValidationException('dependencyCycle');
-      if (!seen.add(cur)) continue;
-      final next = await (_db.select(
-        _db.taskDependencies,
-      )..where((d) => d.taskId.equals(cur))).get();
-      stack.addAll(next.map((d) => d.dependsOnId));
-    }
-    await _db
-        .into(_db.taskDependencies)
-        .insertOnConflictUpdate(
-          TaskDependenciesCompanion.insert(taskId: taskId, dependsOnId: dependsOnId),
-        );
-  }
-
-  Future<void> removeDependency(String taskId, String dependsOnId) => (_db.delete(
-    _db.taskDependencies,
-  )..where((d) => d.taskId.equals(taskId) & d.dependsOnId.equals(dependsOnId))).go();
-
-  Stream<List<TaskRow>> watchBlockers(String taskId) {
-    final q = _db.select(_db.tasks).join([
-      innerJoin(_db.taskDependencies, _db.taskDependencies.dependsOnId.equalsExp(_db.tasks.id)),
-    ])..where(_db.taskDependencies.taskId.equals(taskId));
-    return q.watch().map((r) => r.map((e) => e.readTable(_db.tasks)).toList());
-  }
-
-  /// Total measured focus seconds logged against a task.
-  Stream<int> watchTrackedSeconds(String taskId) {
-    final sum = _db.focusSessions.activeSeconds.sum();
-    final q = _db.selectOnly(_db.focusSessions)
-      ..addColumns([sum])
-      ..where(_db.focusSessions.taskId.equals(taskId) & _db.focusSessions.phase.equals('work'));
-    return q.watchSingle().map((r) => r.read(sum) ?? 0);
   }
 }

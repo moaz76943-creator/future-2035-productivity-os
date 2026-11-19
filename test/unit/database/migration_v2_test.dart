@@ -23,7 +23,7 @@ void main() {
     await seed.close();
     final raw = sqlite3.open(file.path);
     // Dates are stored as ISO-8601 text (build.yaml: store_date_time_values_as_text).
-    final now = "'${DateTime.utc(2026, 11, 1).toIso8601String()}'";
+    final now = "'${DateTime.utc(2026, 11).toIso8601String()}'";
     raw.execute(
       "INSERT INTO decks (id, name, color, created_at, updated_at) VALUES ('d1', 'Words', 1, $now, $now)",
     );
@@ -70,7 +70,7 @@ void main() {
     await seed.customSelect('SELECT 1').get();
     await seed.close();
     final raw = sqlite3.open(file.path);
-    final now = "'${DateTime.utc(2026, 11, 1).toIso8601String()}'";
+    final now = "'${DateTime.utc(2026, 11).toIso8601String()}'";
     raw.execute(
       "INSERT INTO projects (id, name, color, created_at, updated_at) VALUES ('p1', 'Thesis', 1, $now, $now)",
     );
@@ -117,7 +117,7 @@ void main() {
     await seed.customSelect('SELECT 1').get();
     await seed.close();
     final raw = sqlite3.open(file.path);
-    final now = "'${DateTime.utc(2026, 11, 1).toIso8601String()}'";
+    final now = "'${DateTime.utc(2026, 11).toIso8601String()}'";
     raw.execute(
       "INSERT INTO tasks (id, title, created_at, updated_at) VALUES ('t1', 'Write intro', $now, $now)",
     );
@@ -153,7 +153,7 @@ void main() {
     await seed.customSelect('SELECT 1').get();
     await seed.close();
     final raw = sqlite3.open(file.path);
-    final now = "'${DateTime.utc(2026, 11, 1).toIso8601String()}'";
+    final now = "'${DateTime.utc(2026, 11).toIso8601String()}'";
     raw.execute(
       "INSERT INTO decks (id, name, color, created_at, updated_at) VALUES ('d1', 'Words', 1, $now, $now)",
     );
@@ -192,7 +192,7 @@ void main() {
     await seed.customSelect('SELECT 1').get();
     await seed.close();
     final raw = sqlite3.open(file.path);
-    final now = "'${DateTime.utc(2026, 11, 1).toIso8601String()}'";
+    final now = "'${DateTime.utc(2026, 11).toIso8601String()}'";
     final reviewed = "'${DateTime.utc(2026, 10, 20).toIso8601String()}'";
     raw.execute(
       "INSERT INTO decks (id, name, color, created_at, updated_at) VALUES ('d1', 'Words', 1, $now, $now)",
@@ -236,7 +236,7 @@ void main() {
     await seed.customSelect('SELECT 1').get();
     await seed.close();
     final raw = sqlite3.open(file.path);
-    final now = "'${DateTime.utc(2026, 11, 1).toIso8601String()}'";
+    final now = "'${DateTime.utc(2026, 11).toIso8601String()}'";
     raw.execute(
       "INSERT INTO decks (id, name, color, created_at, updated_at) VALUES ('d1', 'Words', 1, $now, $now)",
     );

@@ -177,7 +177,6 @@ Future<T> runWithProgress<T>(BuildContext context, String label, Future<T> Funct
   showDialog<void>(
     context: context,
     barrierDismissible: false,
-    useRootNavigator: true,
     builder: (ctx) => PopScope(
       canPop: false,
       child: AlertDialog(

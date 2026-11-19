@@ -252,9 +252,7 @@ class SrsScheduler {
         stability: math.max(0.1, Fsrs.forgetStability(d, s, rNow)),
         difficulty: nd,
         intervalDays: c.intervalDays,
-        repetitions: 0,
         lapses: c.lapses + 1,
-        learningStep: 0,
         dueAt: now.add(Duration(minutes: relearningSteps.first)),
         lastReviewAt: now,
       );

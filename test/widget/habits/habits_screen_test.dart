@@ -239,7 +239,7 @@ void main() {
         }
 
         // Toggle a past day (Nov 9, not logged) → done, persisted.
-        final day = find.byKey(ValueKey('day-${20261109}'));
+        final day = find.byKey(const ValueKey('day-${20261109}'));
         await tester.ensureVisible(day);
         await tester.pump();
         await tester.tap(day);
@@ -247,12 +247,12 @@ void main() {
         final counts = await _counts(tester, env, id);
         expect(counts[20261109], 1);
         // Toggle a done day off.
-        await tester.tap(find.byKey(ValueKey('day-${20261115}')));
+        await tester.tap(find.byKey(const ValueKey('day-${20261115}')));
         await settle(tester);
         final after = await _counts(tester, env, id);
         expect(after.containsKey(20261115), isFalse);
         // Future days cannot be toggled.
-        await tester.tap(find.byKey(ValueKey('day-${20261120}')));
+        await tester.tap(find.byKey(const ValueKey('day-${20261120}')));
         await settle(tester);
         expect((await _counts(tester, env, id)).containsKey(20261120), isFalse);
         expect(tester.takeException(), isNull);

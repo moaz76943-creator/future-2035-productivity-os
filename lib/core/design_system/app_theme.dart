@@ -3,137 +3,7 @@ import 'package:material_ui/material_ui.dart';
 
 import 'tokens.dart';
 
-/// Extra semantic colours not covered by [ColorScheme].
-@immutable
-class LuxColors extends ThemeExtension<LuxColors> {
-  const LuxColors({
-    required this.background,
-    required this.surface,
-    required this.surfaceRaised,
-    required this.recessed,
-    required this.hairline,
-    required this.ink,
-    required this.ink2,
-    required this.ink3,
-    required this.glass,
-    required this.glassBorder,
-    required this.shadow,
-    required this.success,
-    required this.warning,
-    required this.danger,
-    required this.isDark,
-  });
-
-  final Color background;
-  final Color surface;
-  final Color surfaceRaised;
-  final Color recessed;
-  final Color hairline;
-  final Color ink;
-  final Color ink2;
-  final Color ink3;
-  final Color glass;
-  final Color glassBorder;
-  final Color shadow;
-  final Color success;
-  final Color warning;
-  final Color danger;
-  final bool isDark;
-
-  static const light = LuxColors(
-    background: Palette.porcelain,
-    surface: Palette.white,
-    surfaceRaised: Palette.white,
-    recessed: Palette.mist,
-    hairline: Palette.pearl,
-    ink: Palette.navy,
-    ink2: Palette.ink2,
-    ink3: Palette.ink3,
-    glass: Color(0xB8FFFFFF),
-    glassBorder: Color(0xCCFFFFFF),
-    shadow: Color(0x1A1B2470),
-    success: Color(0xFF0E9F6E),
-    warning: Color(0xFFB7791F),
-    danger: Color(0xFFDC3545),
-    isDark: false,
-  );
-
-  static const dark = LuxColors(
-    background: Palette.abyss,
-    surface: Palette.midnight,
-    surfaceRaised: Palette.dusk,
-    recessed: Color(0xFF0B0F26),
-    hairline: Palette.twilight,
-    ink: Palette.moon,
-    ink2: Palette.moon2,
-    ink3: Palette.moon3,
-    glass: Color(0x991A2048),
-    glassBorder: Color(0x33FFFFFF),
-    shadow: Color(0x66000000),
-    success: Color(0xFF34D399),
-    warning: Color(0xFFFBBF24),
-    danger: Color(0xFFFF6B7A),
-    isDark: true,
-  );
-
-  @override
-  LuxColors copyWith() => this;
-
-  @override
-  LuxColors lerp(ThemeExtension<LuxColors>? other, double t) {
-    if (other is! LuxColors) return this;
-    Color l(Color a, Color b) => Color.lerp(a, b, t)!;
-    return LuxColors(
-      background: l(background, other.background),
-      surface: l(surface, other.surface),
-      surfaceRaised: l(surfaceRaised, other.surfaceRaised),
-      recessed: l(recessed, other.recessed),
-      hairline: l(hairline, other.hairline),
-      ink: l(ink, other.ink),
-      ink2: l(ink2, other.ink2),
-      ink3: l(ink3, other.ink3),
-      glass: l(glass, other.glass),
-      glassBorder: l(glassBorder, other.glassBorder),
-      shadow: l(shadow, other.shadow),
-      success: l(success, other.success),
-      warning: l(warning, other.warning),
-      danger: l(danger, other.danger),
-      isDark: t < 0.5 ? isDark : other.isDark,
-    );
-  }
-}
-
-extension LuxThemeX on BuildContext {
-  LuxColors get lux => Theme.of(this).extension<LuxColors>()!;
-  TextTheme get text => Theme.of(this).textTheme;
-}
-
-/// Font family per script. Chinese uses the platform CJK font (Noto Sans
-/// CJK on Android) via fallback, keeping the APK small.
-abstract final class AppFonts {
-  static const latin = 'Manrope';
-  static const arabic = 'ReadexPro';
-  static const devanagari = 'NotoSansDevanagari';
-
-  static String primaryFor(String languageCode) => switch (languageCode) {
-        'ar' => arabic,
-        'hi' => devanagari,
-        _ => latin,
-      };
-
-  static List<String> fallbackFor(String languageCode) => switch (languageCode) {
-        'ar' => const [latin, devanagari, 'Noto Sans CJK SC', 'sans-serif'],
-        'hi' => const [latin, arabic, 'Noto Sans CJK SC', 'sans-serif'],
-        'zh' => const ['Noto Sans CJK SC', 'Noto Sans SC', latin, 'sans-serif'],
-        _ => const [arabic, devanagari, 'Noto Sans CJK SC', 'sans-serif'],
-      };
-
-  /// Scripts with tall ascenders/descenders need extra line height.
-  static double lineHeightFactor(String languageCode) => switch (languageCode) {
-        'ar' || 'hi' => 1.12,
-        _ => 1.0,
-      };
-}
+part 'app_theme/lux_colors.dart';
 
 abstract final class AppTheme {
   static ThemeData build({required Brightness brightness, required Locale locale}) {
@@ -143,17 +13,16 @@ abstract final class AppTheme {
     final fallback = AppFonts.fallbackFor(lang);
     final lh = AppFonts.lineHeightFactor(lang);
 
-    TextStyle s(double size, FontWeight w, double height, {double ls = 0, Color? c}) =>
-        TextStyle(
-          fontFamily: family,
-          fontFamilyFallback: fallback,
-          fontSize: size,
-          fontWeight: w,
-          height: height * lh,
-          letterSpacing: lang == 'ar' || lang == 'hi' ? 0 : ls,
-          color: c ?? lux.ink,
-          leadingDistribution: TextLeadingDistribution.even,
-        );
+    TextStyle s(double size, FontWeight w, double height, {double ls = 0, Color? c}) => TextStyle(
+      fontFamily: family,
+      fontFamilyFallback: fallback,
+      fontSize: size,
+      fontWeight: w,
+      height: height * lh,
+      letterSpacing: lang == 'ar' || lang == 'hi' ? 0 : ls,
+      color: c ?? lux.ink,
+      leadingDistribution: TextLeadingDistribution.even,
+    );
 
     final textTheme = TextTheme(
       displayLarge: s(56, FontWeight.w300, 1.08, ls: -1.5),
@@ -180,8 +49,7 @@ abstract final class AppTheme {
       primaryContainer: brightness == Brightness.dark
           ? const Color(0xFF2A2170)
           : const Color(0xFFEDE8FF),
-      onPrimaryContainer:
-          brightness == Brightness.dark ? Palette.moon : const Color(0xFF2A1A8C),
+      onPrimaryContainer: brightness == Brightness.dark ? Palette.moon : const Color(0xFF2A1A8C),
       secondary: Palette.aurora,
       onSecondary: Palette.white,
       tertiary: Palette.turquoise,
@@ -327,23 +195,28 @@ abstract final class AppTheme {
         behavior: SnackBarBehavior.floating,
         backgroundColor: brightness == Brightness.dark ? Palette.moon : Palette.navy,
         contentTextStyle: textTheme.bodyMedium!.copyWith(
-            color: brightness == Brightness.dark ? Palette.navy : Palette.white),
+          color: brightness == Brightness.dark ? Palette.navy : Palette.white,
+        ),
         actionTextColor: brightness == Brightness.dark ? Palette.violet : Palette.lavender,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Radii.md)),
       ),
       switchTheme: SwitchThemeData(
         thumbColor: WidgetStateProperty.resolveWith(
-            (s) => s.contains(WidgetState.selected) ? Palette.white : lux.ink3),
-        trackColor: WidgetStateProperty.resolveWith((s) =>
-            s.contains(WidgetState.selected) ? Palette.violet : lux.recessed),
-        trackOutlineColor: WidgetStateProperty.resolveWith((s) =>
-            s.contains(WidgetState.selected) ? Colors.transparent : lux.hairline),
+          (s) => s.contains(WidgetState.selected) ? Palette.white : lux.ink3,
+        ),
+        trackColor: WidgetStateProperty.resolveWith(
+          (s) => s.contains(WidgetState.selected) ? Palette.violet : lux.recessed,
+        ),
+        trackOutlineColor: WidgetStateProperty.resolveWith(
+          (s) => s.contains(WidgetState.selected) ? Colors.transparent : lux.hairline,
+        ),
       ),
       checkboxTheme: CheckboxThemeData(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
         side: BorderSide(color: lux.ink3, width: 1.6),
         fillColor: WidgetStateProperty.resolveWith(
-            (s) => s.contains(WidgetState.selected) ? Palette.violet : Colors.transparent),
+          (s) => s.contains(WidgetState.selected) ? Palette.violet : Colors.transparent,
+        ),
       ),
       sliderTheme: SliderThemeData(
         activeTrackColor: Palette.violet,
@@ -369,10 +242,12 @@ abstract final class AppTheme {
         style: ButtonStyle(
           minimumSize: const WidgetStatePropertyAll(Size(48, 44)),
           side: WidgetStatePropertyAll(BorderSide(color: lux.hairline)),
-          backgroundColor: WidgetStateProperty.resolveWith((s) =>
-              s.contains(WidgetState.selected) ? scheme.primaryContainer : lux.surface),
-          foregroundColor: WidgetStateProperty.resolveWith((s) =>
-              s.contains(WidgetState.selected) ? scheme.onPrimaryContainer : lux.ink2),
+          backgroundColor: WidgetStateProperty.resolveWith(
+            (s) => s.contains(WidgetState.selected) ? scheme.primaryContainer : lux.surface,
+          ),
+          foregroundColor: WidgetStateProperty.resolveWith(
+            (s) => s.contains(WidgetState.selected) ? scheme.onPrimaryContainer : lux.ink2,
+          ),
           textStyle: WidgetStatePropertyAll(textTheme.labelMedium),
         ),
       ),
@@ -388,7 +263,8 @@ abstract final class AppTheme {
           borderRadius: BorderRadius.circular(Radii.sm),
         ),
         textStyle: textTheme.labelMedium!.copyWith(
-            color: brightness == Brightness.dark ? Palette.navy : Palette.white),
+          color: brightness == Brightness.dark ? Palette.navy : Palette.white,
+        ),
       ),
       pageTransitionsTheme: const PageTransitionsTheme(
         builders: {
@@ -401,8 +277,4 @@ abstract final class AppTheme {
       ),
     );
   }
-}
-
-extension on LuxColors {
-  Color silverOr(Brightness b) => b == Brightness.dark ? Palette.twilight : Palette.silver;
 }

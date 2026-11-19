@@ -16,7 +16,7 @@ class PlatformSecretStore implements SecretStore {
   const PlatformSecretStore();
 
   static const _storage = FlutterSecureStorage(
-    aOptions: AndroidOptions(),
+    
   );
 
   @override

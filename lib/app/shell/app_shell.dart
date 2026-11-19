@@ -38,7 +38,6 @@ class AppShell extends StatelessWidget {
         minimum: const EdgeInsets.fromLTRB(Space.sm, 0, Space.sm, Space.sm),
         child: RepaintBoundary(
           child: GlassPanel(
-            radius: Radii.xl,
             child: NavigationBar(
               height: 68,
               backgroundColor: Colors.transparent,

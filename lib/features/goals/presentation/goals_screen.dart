@@ -192,7 +192,7 @@ class GoalCard extends ConsumerWidget {
                 size: 60,
                 stroke: 6,
                 child: status == GoalStatus.achieved
-                    ? Icon(Icons.emoji_events_rounded, color: Palette.champagne, size: 22)
+                    ? const Icon(Icons.emoji_events_rounded, color: Palette.champagne, size: 22)
                     : Text(fmt.percent(progress.ratio), style: context.text.labelMedium),
               ),
               const SizedBox(width: Space.md),

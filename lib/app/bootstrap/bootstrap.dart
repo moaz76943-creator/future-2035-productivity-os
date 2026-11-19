@@ -18,6 +18,7 @@ import '../../features/notifications/data/notification_service.dart';
 import '../../features/settings/application/settings_providers.dart';
 import '../../features/settings/data/settings_repository.dart';
 import '../app.dart';
+import 'font_licenses.dart';
 import 'startup_error_app.dart';
 
 const databaseFileName = 'future_os.db';
@@ -26,6 +27,7 @@ const databaseFileName = 'future_os.db';
 /// reset data; the user sees an explanation and the file stays untouched.
 Future<void> bootstrap() async {
   WidgetsFlutterBinding.ensureInitialized();
+  registerFontLicenses();
   await initializeDateFormatting();
   // Release builds never print errors that may contain user content.
   FlutterError.onError = (details) {
