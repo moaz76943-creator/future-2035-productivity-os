@@ -13,6 +13,7 @@ on:
         default: "40"
 
 permissions:
+  issues: write
   contents: write
   actions: write
 
@@ -25,14 +26,14 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 330
     steps:
+
+
       - name: Notify Live Monitor #11
         if: always()
         continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh issue comment 11 --body "Run ${{ github.run_id }} (${{ job.status }}) on ${{ github.ref_name }} at $(date -u +%H:%M:%SZ)" || true
-# LIVE_HEARTBEAT_11
-      - name: Update Live Monitor Issue #11
+        run: gh issue comment 11 --body "🚀 Run ${{ github.run_id }} on ${{ github.ref_name }} ($(date -u +%H:%M:%SZ))" || true
         if: always()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
