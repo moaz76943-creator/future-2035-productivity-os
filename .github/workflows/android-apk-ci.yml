@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - claude
+      - claude-dev
       - 'repair/**'
   pull_request:
     branches:
@@ -132,7 +132,7 @@ jobs:
       # Actions artifact storage can hit the account quota; a pre-release asset does
       # not count against it, so every main build stays downloadable for QA.
       - name: Publish QA pre-release (profile APK, debug-signed, not for the store)
-        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/claude') || github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/claude-dev') || github.event_name == 'workflow_dispatch'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |

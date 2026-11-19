@@ -3,7 +3,7 @@
 Deep Focus (`com.deepfocus.study`) is an offline-first study and productivity app built with
 Flutter 3.50 / Dart 3.14. Data stays on the device and every core feature works without a
 connection; the internet is used only by optional features (cloud assistant, Play Integrity).
-Active development happens on the `claude` branch (ADR-014). This file says where things live. Decisions and their reasons are in
+Active development happens on the `claude-dev` branch (ADR-014). This file says where things live. Decisions and their reasons are in
 [ADR.md](ADR.md).
 
 ## Top level

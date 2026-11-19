@@ -80,7 +80,7 @@ No GPL, LGPL or AGPL. `tool/third_party_licenses.py --check` enforces this in CI
 package (`dbus`) is used by Linux desktop plugins and is not in the Android app. The only
 proprietary piece is Play Integrity (ADR-009).
 
-## ADR-014 Working branch `claude`
-The assistant's work goes to the `claude` branch (owner, 2026-11-19). CI builds it and publishes a
+## ADR-014 Working branch `claude-dev`
+The assistant's work goes to the `claude-dev` branch (owner, 2026-11-19; plain `claude` is blocked by the existing `claude/future2035-wip` branch). CI builds it and publishes a
 QA pre-release APK (`qa-<sha>`) for each push, the same as for `main`. The owner decides when
-`claude` is merged into `main`.
+`claude-dev` is merged into `main`.
