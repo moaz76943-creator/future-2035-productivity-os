@@ -76,8 +76,16 @@ class _CardFormSheetState extends ConsumerState<_CardFormSheet> {
     }
   }
 
+  /// Shown inside the sheet: a snackbar would sit under the sheet's barrier.
+  String? _mediaError;
+  String? _mediaErrorSide;
+
   Future<void> _pickMedia(String side, String kind) async {
     final l10n = context.l10n;
+    setState(() {
+      _mediaError = null;
+      _mediaErrorSide = side;
+    });
     try {
       final picked = await ref.read(mediaPickerProvider).pick(image: kind == 'image');
       if (picked == null || !mounted) return;
@@ -85,12 +93,12 @@ class _CardFormSheetState extends ConsumerState<_CardFormSheet> {
           ? FlashcardsRepository.maxImageBytes
           : FlashcardsRepository.maxAudioBytes;
       if (picked.bytes.length > limit) {
-        showMessage(context, l10n.flashcardsMediaTooLarge(limit ~/ (1024 * 1024)));
+        setState(() => _mediaError = l10n.flashcardsMediaTooLarge(limit ~/ (1024 * 1024)));
         return;
       }
       setState(() => _media['$side:$kind'] = picked);
     } catch (_) {
-      if (mounted) showMessage(context, l10n.flashcardsImportFileFailed);
+      if (mounted) setState(() => _mediaError = l10n.flashcardsImportFileFailed);
     }
   }
 
@@ -146,7 +154,16 @@ class _CardFormSheetState extends ConsumerState<_CardFormSheet> {
       child: Wrap(
         spacing: Space.xs,
         runSpacing: Space.xs,
-        children: [slot('image'), slot('audio')],
+        children: [
+          slot('image'),
+          slot('audio'),
+          if (_mediaError != null && _mediaErrorSide == side)
+            Text(
+              _mediaError!,
+              key: Key('mediaError_$side'),
+              style: context.text.bodySmall?.copyWith(color: context.lux.danger),
+            ),
+        ],
       ),
     );
   }
