@@ -1,6 +1,6 @@
 {
   "@@locale": "en",
-  "appName": "Future OS",
+  "appName": "Deep Focus",
   "@appName": {
     "description": "Application name shown in launcher and about screen. Brand name; may stay in Latin script."
   },
@@ -2498,7 +2498,7 @@
   "@backupWrongPassword": {
     "description": "Error"
   },
-  "backupNotABackup": "This file is not a Future OS backup.",
+  "backupNotABackup": "This file is not a Deep Focus backup.",
   "@backupNotABackup": {
     "description": "Error"
   },
@@ -4034,7 +4034,7 @@
   "@backupRestoreFailed": {
     "description": "Generic restore error"
   },
-  "backupShareSubject": "Future OS encrypted backup",
+  "backupShareSubject": "Deep Focus encrypted backup",
   "@backupShareSubject": {
     "description": "Subject used when sharing the backup file"
   },

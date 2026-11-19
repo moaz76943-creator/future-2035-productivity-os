@@ -111,7 +111,7 @@ abstract class AppLocalizations {
   /// Application name shown in launcher and about screen. Brand name; may stay in Latin script.
   ///
   /// In en, this message translates to:
-  /// **'Future OS'**
+  /// **'Deep Focus'**
   String get appName;
 
   /// Bottom navigation: dashboard tab
@@ -3405,7 +3405,7 @@ abstract class AppLocalizations {
   /// Error
   ///
   /// In en, this message translates to:
-  /// **'This file is not a Future OS backup.'**
+  /// **'This file is not a Deep Focus backup.'**
   String get backupNotABackup;
 
   /// Error
@@ -5085,7 +5085,7 @@ abstract class AppLocalizations {
   /// Subject used when sharing the backup file
   ///
   /// In en, this message translates to:
-  /// **'Future OS encrypted backup'**
+  /// **'Deep Focus encrypted backup'**
   String get backupShareSubject;
 
   /// Summary of a custom repeat rule. unit is one of day/week/month/year (do not translate the select keys)

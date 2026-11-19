@@ -32,3 +32,20 @@ implemented and covered by automated tests, but sound or files on a real phone s
 
 Known limits: one image and one recording per side;
 custom fields per deck up to 12.
+
+## Getting cards in
+- Paste text, or pick a file: CSV/TSV, Excel `.xlsx` (first sheet), Anki `.apkg` (note fields as
+  plain text; pictures and sounds are not imported), or a deck exported from this app. Every
+  source goes through the same preview with column mapping (`data/card_file_import.dart`).
+- "Spreadsheet template" in the import dialog saves a CSV with the column names and one example
+  row, to fill on a computer.
+- Starter decks (`domain/starter_decks.dart`): everyday English words with Arabic meanings, world
+  capitals and chemical elements, written for the app.
+
+## Daily study
+- The Today card shows time studied, cards answered against the daily goal (Off/10/20/50/100) and
+  the streak: a day counts with at least one card review or one finished focus session
+  (`domain/study_streak.dart`). Tapping it opens the week: cards per day, focus time, best streak.
+- The review reminder fires once a day at the chosen time, only on days with cards due; it can be
+  switched off in Settings.
+- Flashcard text size (Settings → Appearance) scales the review card only.

@@ -109,3 +109,31 @@ and an "await" mode that answers when speaking ends (needed for the hands-free l
 can use any of about 120 languages; those with voice data on the phone are listed first, and the
 picker opens the phone's speech settings to download others. No cloud voices are required.
 
+
+## ADR-018 Help, FAQ and tour come from one feature guide
+`lib/features/help/domain/feature_guide.dart` lists every feature once: the screen it is about,
+the question and answer, and (for three entries) the first-run tour page. The Help screen and the
+tour read only this list. `test/unit/help/feature_guide_test.dart` walks the router: a new screen
+without a guide entry, or an entry pointing at a removed screen, fails the build, so the help
+cannot silently fall behind the app. When a feature changes, update its answer in the ARB files.
+
+## ADR-019 Prayer times are computed on the phone
+`lib/features/prayer/domain/prayer_calc.dart` uses the standard sun-position formulas (as in
+common prayer-time tables) with the usual methods (Umm al-Qura, Jordan, Egypt, MWL, ISNA, …).
+The user picks a city from a bundled list (no location permission). Reminders go through the
+normal notification planner and ignore quiet hours; a running focus session pauses at prayer
+time while the app is open. Tests compare against published Makkah times (within 2 minutes).
+
+## ADR-020 Phone integrations stay behind small bridges with in-memory twins
+App icon shortcuts (`ShortcutsBridge.kt`), Do Not Disturb (`DndBridge.kt`, restored by an alarm
+if the app sleeps, never touching a mode the user changed), the home screen widget
+(`HomeWidget.kt`, live countdown via Chronometer) and voice typing (the phone's speech screen, so
+the app needs no microphone permission for it) each have a Dart interface with a memory version
+used in tests. Notification taps and shortcuts open their screen through `app/routing/deep_links.dart`,
+which follows only in-app paths.
+
+## ADR-021 Card files: Anki and Excel without new dependencies
+`core/files/zip_reader.dart` reads ZIP entries with the platform's raw deflate. `.xlsx` sheets are
+read from their XML; Anki `.apkg` notes from the bundled SQLite (`collection.anki21` or `.anki2`;
+the newest `.anki21b` format asks the user to export with "Support older Anki versions"). Both
+become rows for the existing preview and column mapping.

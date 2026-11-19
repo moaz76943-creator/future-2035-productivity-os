@@ -10,7 +10,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appName => 'Future OS';
+  String get appName => 'Deep Focus';
 
   @override
   String get navHome => 'Home';
@@ -1913,7 +1913,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get backupWrongPassword => 'Wrong password, or the file was modified.';
 
   @override
-  String get backupNotABackup => 'This file is not a Future OS backup.';
+  String get backupNotABackup => 'This file is not a Deep Focus backup.';
 
   @override
   String get backupCorrupted => 'The backup file is damaged.';
@@ -2989,7 +2989,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get backupRestoreFailed => 'Restore failed. Nothing was changed.';
 
   @override
-  String get backupShareSubject => 'Future OS encrypted backup';
+  String get backupShareSubject => 'Deep Focus encrypted backup';
 
   @override
   String repeatSummaryEveryN(String unit, int count) {

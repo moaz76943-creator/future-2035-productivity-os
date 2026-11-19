@@ -10,7 +10,7 @@ class AppLocalizationsRu extends AppLocalizations {
   AppLocalizationsRu([String locale = 'ru']) : super(locale);
 
   @override
-  String get appName => 'Future OS';
+  String get appName => 'Deep Focus';
 
   @override
   String get navHome => 'Главная';
@@ -1988,7 +1988,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get backupWrongPassword => 'Неверный пароль, или файл был изменён.';
 
   @override
-  String get backupNotABackup => 'Этот файл не является резервной копией Future OS.';
+  String get backupNotABackup => 'Этот файл не является резервной копией Deep Focus.';
 
   @override
   String get backupCorrupted => 'Файл резервной копии повреждён.';
@@ -3096,7 +3096,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get backupRestoreFailed => 'Не удалось восстановить. Ничего не изменилось.';
 
   @override
-  String get backupShareSubject => 'Зашифрованная резервная копия Future OS';
+  String get backupShareSubject => 'Зашифрованная резервная копия Deep Focus';
 
   @override
   String repeatSummaryEveryN(String unit, int count) {

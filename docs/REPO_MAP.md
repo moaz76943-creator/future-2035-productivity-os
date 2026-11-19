@@ -50,8 +50,14 @@ lib/
 ```
 
 Features: `analytics`, `assistant` (offline rules, no model download), `backup`, `calendar`,
-`dashboard`, `flashcards`, `focus`, `goals`, `habits`, `notes`, `notifications`, `onboarding`,
-`projects`, `search`, `settings`, `sounds` (nature sounds, background playback), `tasks`.
+`dashboard` (Start my day), `flashcards`, `focus` (+ Do Not Disturb link), `goals`, `habits`,
+`help` (feature guide → FAQ and tour, ADR-018), `notes`, `notifications`, `onboarding`,
+`prayer` (offline prayer times, ADR-019), `projects`, `search`, `settings`, `sounds` (nature
+sounds, background playback, saved mixes), `tasks`.
+
+Phone integrations (ADR-020): `app/routing/deep_links.dart` (notification taps, app icon
+shortcuts), `app/home_widget_link.dart` (home screen widget), `core/platform/` (shortcuts, voice
+typing), `shared/widgets/mic_button.dart`.
 
 ## Large screens: library + parts
 
@@ -101,7 +107,8 @@ Spec status: [FLASHCARDS.md](FLASHCARDS.md).
 
 ```
 flutter analyze                       # zero issues
-flutter test                          # unit + widget (inventory, responsive, l10n)
+flutter test                          # unit + widget (inventory, responsive, l10n, help coverage)
+flutter test integration_test -d <emulator>   # on-device flow (CI: android-emulator-tests.yml)
 python3 tool/check_l10n.py            # 8 locales complete, Western digits, no he/iw
 python3 tool/third_party_licenses.py --check
 ```

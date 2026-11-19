@@ -92,6 +92,7 @@ documents each recording's source and licence. Each source page is listed so it 
 | file_picker_web | 4.2.1 | MIT | transitive |
 | fixnum | 1.1.1 | BSD-3-Clause | transitive |
 | flutter | 0.0.0 | BSD-3-Clause (Flutter SDK) | app |
+| flutter_driver | 0.0.0 | BSD-3-Clause (Flutter SDK) | transitive |
 | flutter_lints | 6.0.0 | BSD-3-Clause | build/test only |
 | flutter_local_notifications | 23.0.2 | BSD-3-Clause | app |
 | flutter_local_notifications_linux | 9.0.0 | BSD-3-Clause | transitive |
@@ -109,6 +110,7 @@ documents each recording's source and licence. Each source page is listed so it 
 | flutter_test | 0.0.0 | BSD-3-Clause (Flutter SDK) | build/test only |
 | flutter_timezone | 5.1.1 | Apache-2.0 | app |
 | flutter_web_plugins | 0.0.0 | BSD-3-Clause (Flutter SDK) | transitive |
+| fuchsia_remote_debug_protocol | 0.0.0 | BSD-3-Clause (Flutter SDK) | transitive |
 | glob | 2.2.0 | BSD-3-Clause | transitive |
 | go_router | 18.1.4 | BSD-3-Clause | app |
 | graphs | 2.3.2 | BSD-3-Clause | transitive |
@@ -117,6 +119,7 @@ documents each recording's source and licence. Each source page is listed so it 
 | http | 1.6.0 | BSD-3-Clause | app |
 | http_multi_server | 3.2.3 | BSD-3-Clause | transitive |
 | http_parser | 4.1.2 | BSD-3-Clause | transitive |
+| integration_test | 0.0.0 | BSD-3-Clause (Flutter SDK) | build/test only |
 | intl | 0.20.3 | BSD-3-Clause | app |
 | io | 1.1.0 | BSD-3-Clause | transitive |
 | jni | 1.1.2 | BSD-3-Clause | transitive |
@@ -170,6 +173,7 @@ documents each recording's source and licence. Each source page is listed so it 
 | stream_channel | 2.1.4 | BSD-3-Clause | transitive |
 | stream_transform | 2.1.2 | BSD-3-Clause | transitive |
 | string_scanner | 1.4.1 | BSD-3-Clause | transitive |
+| sync_http | 0.3.1 | BSD-3-Clause | transitive |
 | term_glyph | 1.2.2 | BSD-3-Clause | transitive |
 | test_api | 0.7.14 | BSD-3-Clause | transitive |
 | timezone | 0.11.2 | BSD-2-Clause | app |
@@ -185,6 +189,7 @@ documents each recording's source and licence. Each source page is listed so it 
 | web | 1.1.2 | BSD-3-Clause | transitive |
 | web_socket | 1.0.1 | BSD-3-Clause | transitive |
 | web_socket_channel | 3.0.3 | BSD-3-Clause | transitive |
+| webdriver | 3.2.0 | Apache-2.0 | transitive |
 | win32 | 6.4.0 | BSD-3-Clause | transitive |
 | windows_file_picker | 2.0.2 | MIT | transitive |
 | xdg_directories | 1.1.0 | BSD-3-Clause | transitive |

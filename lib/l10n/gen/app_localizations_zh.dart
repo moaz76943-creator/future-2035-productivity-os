@@ -10,7 +10,7 @@ class AppLocalizationsZh extends AppLocalizations {
   AppLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
-  String get appName => 'Future OS';
+  String get appName => 'Deep Focus';
 
   @override
   String get navHome => '首页';
@@ -1831,7 +1831,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get backupWrongPassword => '密码错误，或文件已被修改。';
 
   @override
-  String get backupNotABackup => '此文件不是 Future OS 备份。';
+  String get backupNotABackup => '此文件不是 Deep Focus 备份。';
 
   @override
   String get backupCorrupted => '备份文件已损坏。';
@@ -2852,7 +2852,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get backupRestoreFailed => '恢复失败。没有任何更改。';
 
   @override
-  String get backupShareSubject => 'Future OS 加密备份';
+  String get backupShareSubject => 'Deep Focus 加密备份';
 
   @override
   String repeatSummaryEveryN(String unit, int count) {
