@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/providers/core_providers.dart';
+import '../../notifications/application/notification_providers.dart';
 import '../data/soundscape_platform.dart';
 import '../domain/nature_sound.dart';
 
@@ -72,6 +73,7 @@ class SoundsController extends Notifier<SoundMix> {
       return true;
     }
     if (!await _platform.setVolume(sound, defaultSoundVolume)) return false;
+    await _askNotificationsOnce();
     await _platform.play(labels);
     await _sync();
     await _save();
@@ -86,6 +88,20 @@ class SoundsController extends Notifier<SoundMix> {
   }
 
   Future<void> commit() => _save();
+
+  /// Android 13+: without notification permission the playback controls
+  /// (pause / stop from the shade) are invisible. Asked once, on first play.
+  Future<void> _askNotificationsOnce() async {
+    const key = 'sounds.askedNotifications';
+    final db = ref.read(databaseProvider);
+    if (await db.readValue(key) != null) return;
+    await db.writeValue(key, '1');
+    try {
+      await ref.read(notificationServiceProvider).requestPermission();
+    } on Exception {
+      // Playback works without it; only the shade controls are hidden.
+    }
+  }
 
   Future<void> playPause(Map<String, String> labels) async {
     if (state.playing) {
