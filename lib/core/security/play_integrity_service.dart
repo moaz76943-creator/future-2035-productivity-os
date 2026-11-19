@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:math';
+
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -14,15 +17,12 @@ class PlayIntegrityService {
   /// value obtained from your backend (base64-url, 16-500 bytes).
   Future<String?> requestToken({required String nonce}) async {
     try {
-      final token = await _channel.invokeMethod<String>('requestIntegrityToken', {
-        'nonce': nonce,
-      });
+      final token = await _channel.invokeMethod<String>('requestIntegrityToken', {'nonce': nonce});
       return token;
-    } on PlatformException catch (e) {
-      // Log only the code, never the full exception that might contain sensitive data.
-      // In production, send code to your analytics/crash reporter without PII.
+    } on PlatformException {
+      // No Play services, no network, or attestation refused: treat as unknown.
       return null;
-    } catch (_) {
+    } on MissingPluginException {
       return null;
     }
   }
@@ -30,8 +30,11 @@ class PlayIntegrityService {
   /// Convenience helper that generates a local nonce (for demo / offline detection only).
   /// Prefer a server-generated nonce for real protection.
   Future<String?> requestTokenWithLocalNonce() async {
-    final nonce = DateTime.now().millisecondsSinceEpoch.toRadixString(16) +
-        List.generate(16, (_) => (DateTime.now().microsecond % 16).toRadixString(16)).join();
+    // Cryptographically random 32 bytes, base64url without padding.
+    final r = Random.secure();
+    final nonce = base64Url
+        .encode(List<int>.generate(32, (_) => r.nextInt(256)))
+        .replaceAll('=', '');
     return requestToken(nonce: nonce);
   }
 }

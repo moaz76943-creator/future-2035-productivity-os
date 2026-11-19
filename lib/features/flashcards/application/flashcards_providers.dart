@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/database/app_database.dart';
 import '../../../core/providers/core_providers.dart';
 import '../data/flashcards_repository.dart';
+import '../domain/card_layout.dart';
 
 final flashcardsRepositoryProvider = Provider<FlashcardsRepository>(
   (ref) => FlashcardsRepository(ref.watch(databaseProvider), ref.watch(clockProvider)),
@@ -35,3 +36,11 @@ final studyQueueSizeProvider = FutureProvider.autoDispose.family<int, String>((r
   final queue = await ref.read(flashcardsRepositoryProvider).reviewQueue(id);
   return queue.length;
 });
+
+final cardLayoutProvider = StreamProvider.autoDispose.family<CardLayout, String>(
+  (ref, deckId) => ref.watch(flashcardsRepositoryProvider).watchLayout(deckId),
+);
+
+final cardMediaProvider = StreamProvider.autoDispose.family<List<CardMediaRow>, String>(
+  (ref, cardId) => ref.watch(flashcardsRepositoryProvider).watchMedia(cardId),
+);

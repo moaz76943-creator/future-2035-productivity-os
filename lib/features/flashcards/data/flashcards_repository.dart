@@ -10,6 +10,7 @@ import '../../../core/time/clock.dart';
 import '../domain/card_extras.dart';
 import '../domain/study.dart';
 import '../domain/card_import.dart';
+import '../domain/card_layout.dart';
 import '../domain/srs_scheduler.dart';
 
 class DeckStats {
@@ -72,9 +73,11 @@ class FlashcardsRepository {
     required int color,
     int? dailyNewLimit,
     int? dailyReviewTarget,
+    String? category,
   }) => (_db.update(_db.decks)..where((d) => d.id.equals(id))).write(
     DecksCompanion(
       name: Value(name.trim()),
+      category: category == null ? const Value.absent() : Value(category.trim()),
       description: Value(description),
       color: Value(color),
       dailyNewLimit: dailyNewLimit == null ? const Value.absent() : Value(dailyNewLimit),
@@ -108,6 +111,7 @@ class FlashcardsRepository {
     String back, {
     String tags = '',
     CardExtras extras = const CardExtras(),
+    Map<String, String> custom = const {},
   }) async {
     if (front.trim().isEmpty || back.trim().isEmpty) {
       throw ArgumentError('front/back');
@@ -124,6 +128,7 @@ class FlashcardsRepository {
             back: back.trim(),
             tags: Value(tags.trim()),
             extra: Value(extras.encode()),
+            custom: Value(CardCustom.encode(custom)),
             createdAt: now,
             updatedAt: now,
           ),
@@ -137,12 +142,14 @@ class FlashcardsRepository {
     String back, {
     String? tags,
     CardExtras? extras,
+    Map<String, String>? custom,
   }) => (_db.update(_db.flashcards)..where((c) => c.id.equals(id))).write(
     FlashcardsCompanion(
       front: Value(front.trim()),
       back: Value(back.trim()),
       tags: tags == null ? const Value.absent() : Value(tags),
       extra: extras == null ? const Value.absent() : Value(extras.encode()),
+      custom: custom == null ? const Value.absent() : Value(CardCustom.encode(custom)),
       updatedAt: Value(_clock.nowUtc()),
     ),
   );
@@ -161,7 +168,9 @@ class FlashcardsRepository {
   /// Scheduling state stored on [row].
   static SrsCard srsOf(CardRow row) => SrsCard(
     state: cardStateFromDb(row.state),
-    easePermille: row.ease,
+    stability: row.stability,
+    difficulty: row.difficulty,
+    lastReviewAt: row.lastReviewAt,
     intervalDays: row.intervalDays,
     repetitions: row.repetitions,
     lapses: row.lapses,
@@ -257,7 +266,9 @@ class FlashcardsRepository {
       await (_db.update(_db.flashcards)..where((c) => c.id.equals(cardId))).write(
         FlashcardsCompanion(
           state: Value(cardStateToDb(after.state)),
-          ease: Value(after.easePermille),
+          stability: Value(after.stability),
+          difficulty: Value(after.difficulty),
+          lastReviewAt: Value(after.lastReviewAt?.toUtc()),
           intervalDays: Value(after.intervalDays),
           repetitions: Value(after.repetitions),
           lapses: Value(after.lapses),
@@ -277,8 +288,9 @@ class FlashcardsRepository {
               stateBefore: row.state,
               intervalBefore: row.intervalDays,
               intervalAfter: after.intervalDays,
-              easeBefore: row.ease,
-              easeAfter: after.easePermille,
+              // Review log keeps the memory state: difficulty ×100 in the ease columns.
+              easeBefore: (row.difficulty * 100).round(),
+              easeAfter: (after.difficulty * 100).round(),
             ),
           );
       return after;
@@ -339,6 +351,7 @@ class FlashcardsRepository {
             'tags': c.tags,
             // Optional fields (version 1 readers ignore unknown keys).
             if (c.extra.isNotEmpty) 'fields': jsonDecode(c.extra),
+            if (c.custom.isNotEmpty) 'custom': jsonDecode(c.custom),
           },
       ],
     });
@@ -376,6 +389,7 @@ class FlashcardsRepository {
             back,
             tags: '${c['tags'] ?? ''}',
             extras: fields is Map ? CardExtras.decode(jsonEncode(fields)) : const CardExtras(),
+            custom: c['custom'] is Map ? CardCustom.decode(jsonEncode(c['custom'])) : const {},
           ),
         );
       }
@@ -384,6 +398,15 @@ class FlashcardsRepository {
       cards = parsed.cards;
       invalid = parsed.invalid;
     }
+    return importParsed(deckId, cards, invalid: invalid);
+  }
+
+  /// Adds parsed cards, skipping fronts already in the deck. One transaction.
+  Future<ImportResult> importParsed(
+    String deckId,
+    List<ImportedCard> cards, {
+    int invalid = 0,
+  }) async {
     var added = 0, duplicates = 0;
     await _db.transaction(() async {
       final existing = {
@@ -400,7 +423,7 @@ class FlashcardsRepository {
           duplicates++;
           continue;
         }
-        await addCard(deckId, c.front, c.back, tags: c.tags, extras: c.extras);
+        await addCard(deckId, c.front, c.back, tags: c.tags, extras: c.extras, custom: c.custom);
         added++;
       }
     });
@@ -466,20 +489,27 @@ class FlashcardsRepository {
         ),
       );
 
-  /// Cards for a practice round (no scheduling): every active card, or only
-  /// the ones answered wrong recently. Shuffled with [random].
+  /// Cards for a practice round (no scheduling), shuffled with [random].
   Future<List<CardRow>> practiceCards(
     String deckId, {
-    required bool mistakesOnly,
+    bool mistakesOnly = false,
+    PracticeFilter filter = PracticeFilter.all,
     math.Random? random,
   }) async {
+    final f = mistakesOnly ? PracticeFilter.mistakes : filter;
     final active =
         await (_db.select(_db.flashcards)..where(
               (c) => c.deckId.equals(deckId) & c.deletedAt.isNull() & c.suspended.equals(false),
             ))
             .get();
-    var cards = active;
-    if (mistakesOnly) {
+    var cards = switch (f) {
+      PracticeFilter.all => active,
+      PracticeFilter.newOnly => active.where((c) => c.state == 'new').toList(),
+      PracticeFilter.hard => active.where(isHard).toList(),
+      PracticeFilter.favorites => active.where((c) => c.favorite).toList(),
+      PracticeFilter.mistakes => active,
+    };
+    if (f == PracticeFilter.mistakes) {
       final since = _clock.nowUtc().subtract(const Duration(days: 14));
       final missed =
           await (_db.selectOnly(_db.cardReviews)
@@ -495,6 +525,324 @@ class FlashcardsRepository {
     }
     return cards..shuffle(random ?? math.Random());
   }
+
+  /// A card the user struggles with: high FSRS difficulty or repeated lapses.
+  static bool isHard(CardRow c) => c.difficulty >= 7 || c.lapses >= 3;
+
+  // ---- card layout ---------------------------------------------------------
+
+  static String _layoutKey(String deckId) => 'deck.layout.$deckId';
+
+  Stream<CardLayout> watchLayout(String deckId) =>
+      _db.watchValue(_layoutKey(deckId)).map(CardLayout.decode);
+
+  Future<CardLayout> layout(String deckId) async =>
+      CardLayout.decode(await _db.readValue(_layoutKey(deckId)));
+
+  Future<void> saveLayout(String deckId, CardLayout layout) =>
+      _db.writeValue(_layoutKey(deckId), layout.encode());
+
+  // ---- cross-deck search and overview -------------------------------------
+
+  /// Every card of live decks, with its deck, for search and grouping.
+  Future<List<(CardRow, DeckRow)>> allCards() async {
+    final q = _db.select(_db.flashcards).join([
+      innerJoin(_db.decks, _db.decks.id.equalsExp(_db.flashcards.deckId)),
+    ])..where(_db.flashcards.deletedAt.isNull() & _db.decks.deletedAt.isNull());
+    return [for (final r in await q.get()) (r.readTable(_db.flashcards), r.readTable(_db.decks))];
+  }
+
+  /// Groups for the overview: by speech language of the front side and by
+  /// deck level/topic. Numbers are counts from stored cards and the review
+  /// log of the last [days] days.
+  Future<FlashOverview> overview({int days = 30}) async {
+    final now = _clock.nowUtc();
+    final rows = await allCards();
+    final since = now.subtract(Duration(days: days));
+    final reviews = await (_db.select(
+      _db.cardReviews,
+    )..where((r) => r.reviewedAt.isBiggerOrEqualValue(since))).get();
+    final byCard = <String, List<ReviewRow>>{};
+    for (final r in reviews) {
+      byCard.putIfAbsent(r.cardId, () => []).add(r);
+    }
+    GroupStats build(Iterable<(CardRow, DeckRow)> items) {
+      final cards = items.map((e) => e.$1).toList();
+      final rs = [for (final c in cards) ...?byCard[c.id]];
+      return GroupStats(
+        decks: items.map((e) => e.$2.id).toSet().length,
+        cards: cards.length,
+        mature: cards.where((c) => c.state == 'review' && c.stability >= 21).length,
+        due: cards
+            .where(
+              (c) => !c.suspended && c.state != 'new' && c.dueAt != null && !c.dueAt!.isAfter(now),
+            )
+            .length,
+        reviews: rs.length,
+        correctRate: rs.isEmpty ? null : rs.where((r) => r.rating > 1).length / rs.length,
+      );
+    }
+
+    final byLang = <String, List<(CardRow, DeckRow)>>{};
+    final byLevel = <String, List<(CardRow, DeckRow)>>{};
+    for (final e in rows) {
+      byLang.putIfAbsent(e.$2.frontLang.split(RegExp('[-_]')).first, () => []).add(e);
+      byLevel.putIfAbsent(e.$2.category.trim(), () => []).add(e);
+    }
+    return FlashOverview(
+      byLanguage: {for (final e in byLang.entries) e.key: build(e.value)},
+      byLevel: {for (final e in byLevel.entries) e.key: build(e.value)},
+    );
+  }
+
+  // ---- statistics ----------------------------------------------------------
+
+  /// Measured statistics for one deck. Every number comes from stored cards
+  /// and the review log; nothing is estimated except the recall probability,
+  /// which is the FSRS model's value for each reviewed card.
+  Future<DeckInsights> deckInsights(String deckId, {int days = 14}) async {
+    final now = _clock.now();
+    final cards = await (_db.select(
+      _db.flashcards,
+    )..where((c) => c.deckId.equals(deckId) & c.deletedAt.isNull())).get();
+    final since = Days.addDays(Days.startOfDay(now), -(days - 1)).toUtc();
+    final ids = {for (final c in cards) c.id};
+    final reviews = ids.isEmpty
+        ? <ReviewRow>[]
+        : await (_db.select(_db.cardReviews)
+                ..where((r) => r.cardId.isIn(ids) & r.reviewedAt.isBiggerOrEqualValue(since))
+                ..orderBy([(r) => OrderingTerm.desc(r.reviewedAt)]))
+              .get();
+    final perDay = List<int>.filled(days, 0);
+    final start = Days.startOfDay(now);
+    for (final r in reviews) {
+      final d = Days.startOfDay(r.reviewedAt.toLocal());
+      final i = days - 1 - start.difference(d).inDays;
+      if (i >= 0 && i < days) perDay[i]++;
+    }
+    final matured = reviews.where((r) => r.stateBefore == 'review').toList();
+    final recalls = [
+      for (final c in cards)
+        if (!c.suspended) ?srsOf(c).retrievability(now.toUtc()),
+    ];
+    final today = Days.startOfDay(now).toUtc();
+    return DeckInsights(
+      total: cards.length,
+      newCards: cards.where((c) => c.state == 'new').length,
+      learning: cards.where((c) => c.state == 'learning' || c.state == 'relearning').length,
+      mature: cards.where((c) => c.state == 'review' && c.stability >= 21).length,
+      suspended: cards.where((c) => c.suspended).length,
+      hard: cards.where((c) => !c.suspended && isHard(c)).length,
+      favorites: cards.where((c) => c.favorite).length,
+      dueNow: cards
+          .where(
+            (c) =>
+                !c.suspended &&
+                c.state != 'new' &&
+                c.dueAt != null &&
+                !c.dueAt!.isAfter(now.toUtc()),
+          )
+          .length,
+      reviewsToday: reviews.where((r) => !r.reviewedAt.isBefore(today)).length,
+      reviewsInRange: reviews.length,
+      correctRate: reviews.isEmpty
+          ? null
+          : reviews.where((r) => r.rating > 1).length / reviews.length,
+      forgetRate: matured.isEmpty
+          ? null
+          : matured.where((r) => r.rating == 1).length / matured.length,
+      averageRecall: recalls.isEmpty ? null : recalls.reduce((a, b) => a + b) / recalls.length,
+      perDay: perDay,
+      firstDay: Days.addDays(start, -(days - 1)),
+      recent: reviews.take(30).toList(),
+      fronts: {for (final c in cards) c.id: c.front},
+    );
+  }
+
+  // ---- organisation --------------------------------------------------------
+
+  Future<void> setFavorite(Iterable<String> ids, bool favorite) =>
+      (_db.update(_db.flashcards)..where((c) => c.id.isIn(ids))).write(
+        FlashcardsCompanion(favorite: Value(favorite), updatedAt: Value(_clock.nowUtc())),
+      );
+
+  Future<void> setSuspendedMany(Iterable<String> ids, bool suspended) =>
+      (_db.update(_db.flashcards)..where((c) => c.id.isIn(ids))).write(
+        FlashcardsCompanion(suspended: Value(suspended), updatedAt: Value(_clock.nowUtc())),
+      );
+
+  Future<void> deleteCards(Iterable<String> ids) =>
+      (_db.update(_db.flashcards)..where((c) => c.id.isIn(ids))).write(
+        FlashcardsCompanion(deletedAt: Value(_clock.nowUtc()), updatedAt: Value(_clock.nowUtc())),
+      );
+
+  Future<void> restoreCards(Iterable<String> ids) =>
+      (_db.update(_db.flashcards)..where((c) => c.id.isIn(ids))).write(
+        FlashcardsCompanion(deletedAt: const Value(null), updatedAt: Value(_clock.nowUtc())),
+      );
+
+  /// Moves cards (with their schedule and history) to another deck.
+  Future<void> moveCards(Iterable<String> ids, String toDeckId) =>
+      (_db.update(_db.flashcards)..where((c) => c.id.isIn(ids))).write(
+        FlashcardsCompanion(deckId: Value(toDeckId), updatedAt: Value(_clock.nowUtc())),
+      );
+
+  /// Adds [tag] to each card (no duplicates).
+  Future<void> addTag(Iterable<String> ids, String tag) async {
+    final t = tag.trim().replaceAll(RegExp(r'[,\s]+'), '-');
+    if (t.isEmpty) return;
+    await _db.transaction(() async {
+      final rows = await (_db.select(_db.flashcards)..where((c) => c.id.isIn(ids))).get();
+      for (final r in rows) {
+        final tags = r.tags.split(RegExp(r'[,\s]+')).where((x) => x.isNotEmpty).toList();
+        if (tags.contains(t)) continue;
+        await (_db.update(_db.flashcards)..where((c) => c.id.equals(r.id))).write(
+          FlashcardsCompanion(
+            tags: Value([...tags, t].join(' ')),
+            updatedAt: Value(_clock.nowUtc()),
+          ),
+        );
+      }
+    });
+  }
+
+  /// A new card with the same content (and tags), starting as new.
+  Future<String> duplicateCard(String id) async {
+    final c = (await getCard(id))!;
+    final copy = await addCard(
+      c.deckId,
+      c.front,
+      c.back,
+      tags: c.tags,
+      extras: CardExtras.decode(c.extra),
+      custom: CardCustom.decode(c.custom),
+    );
+    for (final m in await mediaFor(id)) {
+      await addMedia(copy, side: m.side, kind: m.kind, mime: m.mime, name: m.name, bytes: m.bytes);
+    }
+    return copy;
+  }
+
+  // ---- media ---------------------------------------------------------------
+
+  static const maxImageBytes = 4 * 1024 * 1024;
+  static const maxAudioBytes = 8 * 1024 * 1024;
+
+  /// Attaches an image or audio clip to one side of a card (replacing an
+  /// earlier one of the same kind on that side).
+  Future<String> addMedia(
+    String cardId, {
+    required String side,
+    required String kind,
+    required List<int> bytes,
+    String mime = '',
+    String name = '',
+  }) async {
+    if (side != 'front' && side != 'back') throw ArgumentError.value(side, 'side');
+    if (kind != 'image' && kind != 'audio') throw ArgumentError.value(kind, 'kind');
+    final limit = kind == 'image' ? maxImageBytes : maxAudioBytes;
+    if (bytes.isEmpty || bytes.length > limit) throw const MediaTooLarge();
+    final id = newId();
+    await _db.transaction(() async {
+      await (_db.delete(
+        _db.cardMedia,
+      )..where((m) => m.cardId.equals(cardId) & m.side.equals(side) & m.kind.equals(kind))).go();
+      await _db
+          .into(_db.cardMedia)
+          .insert(
+            CardMediaCompanion.insert(
+              id: id,
+              cardId: cardId,
+              side: side,
+              kind: kind,
+              mime: Value(mime),
+              name: Value(name.length > 120 ? name.substring(0, 120) : name),
+              bytes: Uint8List.fromList(bytes),
+              createdAt: _clock.nowUtc(),
+            ),
+          );
+    });
+    return id;
+  }
+
+  Future<void> removeMedia(String mediaId) =>
+      (_db.delete(_db.cardMedia)..where((m) => m.id.equals(mediaId))).go();
+
+  Future<List<CardMediaRow>> mediaFor(String cardId) =>
+      (_db.select(_db.cardMedia)..where((m) => m.cardId.equals(cardId))).get();
+
+  Stream<List<CardMediaRow>> watchMedia(String cardId) =>
+      (_db.select(_db.cardMedia)..where((m) => m.cardId.equals(cardId))).watch();
+}
+
+/// Which active cards a practice round uses.
+enum PracticeFilter { all, mistakes, newOnly, hard, favorites }
+
+class DeckInsights {
+  const DeckInsights({
+    required this.total,
+    required this.newCards,
+    required this.learning,
+    required this.mature,
+    required this.suspended,
+    required this.hard,
+    required this.favorites,
+    required this.dueNow,
+    required this.reviewsToday,
+    required this.reviewsInRange,
+    required this.correctRate,
+    required this.forgetRate,
+    required this.averageRecall,
+    required this.perDay,
+    required this.firstDay,
+    required this.recent,
+    required this.fronts,
+  });
+  final int total, newCards, learning, mature, suspended, hard, favorites, dueNow;
+  final int reviewsToday, reviewsInRange;
+
+  /// Share of answers that were not "Again" (null without reviews).
+  final double? correctRate;
+
+  /// Share of "Again" among reviews of graduated cards (lapses).
+  final double? forgetRate;
+
+  /// Mean FSRS recall probability of reviewed, active cards right now.
+  final double? averageRecall;
+
+  /// Reviews per day, oldest first, starting at [firstDay].
+  final List<int> perDay;
+  final DateTime firstDay;
+  final List<ReviewRow> recent;
+  final Map<String, String> fronts;
+}
+
+/// Image or audio over the size limit.
+class MediaTooLarge implements Exception {
+  const MediaTooLarge();
+}
+
+class GroupStats {
+  const GroupStats({
+    required this.decks,
+    required this.cards,
+    required this.mature,
+    required this.due,
+    required this.reviews,
+    required this.correctRate,
+  });
+  final int decks, cards, mature, due, reviews;
+  final double? correctRate;
+}
+
+class FlashOverview {
+  const FlashOverview({required this.byLanguage, required this.byLevel});
+
+  /// Key: language code of the deck's front side ('' = not set).
+  final Map<String, GroupStats> byLanguage;
+
+  /// Key: deck level/topic ('' = none).
+  final Map<String, GroupStats> byLevel;
 }
 
 class ImportResult {

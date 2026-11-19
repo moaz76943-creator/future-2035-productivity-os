@@ -48,6 +48,11 @@ void main() {
       await tester.tap(find.byKey(const Key('importButton')));
       await settle(tester);
       await tester.enterText(find.byKey(const Key('importField')), 'hola\thello\nadiós;bye\n\nbad');
+      await tester.pump();
+      await tester.tap(find.byKey(const Key('importNextButton')));
+      await settle(tester);
+      // Preview: columns guessed as front / back.
+      expect(find.text(l10n.importPreviewSummary(2, 1)), findsOneWidget);
       await tester.tap(find.byKey(const Key('importConfirmButton')));
       await settle(tester);
 
@@ -71,7 +76,8 @@ void main() {
     await tester.tap(find.byKey(const Key('importButton')));
     await settle(tester);
     await tester.enterText(find.byKey(const Key('importField')), '{"format":"other"}');
-    await tester.tap(find.byKey(const Key('importConfirmButton')));
+    await tester.pump();
+    await tester.tap(find.byKey(const Key('importNextButton')));
     await settle(tester);
     expect(find.text(l10n.importFailed), findsOneWidget);
     expect(await _cardCount(env, tester), 0);
@@ -186,10 +192,14 @@ void main() {
     );
     await scrollPageTo(tester, find.byKey(const Key('cardFilters')));
     await tester.scrollUntilVisible(find.text('#greet'), 100, scrollable: filters);
+    await tester.ensureVisible(find.text('#greet'));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('#greet'));
     await settle(tester);
     expect(find.text(l10n.flashcardsShownOf(1, 2)), findsOneWidget);
-    await tester.tap(find.byTooltip(l10n.flashcardsSuspend).first);
+    await tester.tap(find.byTooltip(l10n.actionMore).last);
+    await settle(tester);
+    await tester.tap(find.text(l10n.flashcardsSuspend).last);
     await settle(tester);
     final hola = (await tester.runAsync(() => env.db.select(env.db.flashcards).get()))!
         .firstWhere((c) => c.front == 'hola');
@@ -201,6 +211,8 @@ void main() {
       -100,
       scrollable: filters,
     );
+    await tester.ensureVisible(find.byKey(const Key('cardFilter_suspended')));
+    await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('cardFilter_suspended')));
     await settle(tester);
     expect(find.text(l10n.flashcardsShownOf(1, 2)), findsOneWidget);
@@ -217,5 +229,100 @@ void main() {
     expect(find.textContaining('mode=typed'), findsOneWidget);
     expect(find.textContaining('scope=practiceAll'), findsOneWidget);
     await closeEnv(tester, env);
+  });
+
+  testWidgets('long-press selects cards; bulk favourite and move to another deck', (tester) async {
+    final env = TestEnv();
+    final repo = FlashcardsRepository(env.db, env.clock);
+    late String deck;
+    late String other;
+    await tester.runAsync(() async {
+      deck = await repo.createDeck('Words', color: 0xFF6C4CFF);
+      other = await repo.createDeck('Archive', color: 0xFF2BB5A0);
+      await repo.addCard(deck, 'uno', 'one');
+      await repo.addCard(deck, 'dos', 'two');
+    });
+    await pumpScreen(tester, DeckScreen(deckId: deck), env: env);
+    await settle(tester);
+    final l10n = _l10n(tester);
+    await scrollPageTo(tester, find.text('uno'));
+    await tester.longPress(find.text('uno'));
+    await settle(tester);
+    expect(find.text(l10n.flashcardsSelected(1)), findsOneWidget);
+    await tester.tap(find.text('dos'));
+    await settle(tester);
+    expect(find.text(l10n.flashcardsSelected(2)), findsOneWidget);
+    await tester.tap(find.byKey(const Key('bulkFavorite')));
+    await settle(tester);
+    var rows = (await tester.runAsync(() => env.db.select(env.db.flashcards).get()))!;
+    expect(rows.every((c) => c.favorite), isTrue);
+
+    await tester.longPress(find.text('uno'));
+    await settle(tester);
+    await tester.tap(find.byKey(const Key('bulkMove')));
+    await settle(tester);
+    await tester.tap(find.text('Archive'));
+    await settle(tester);
+    rows = (await tester.runAsync(() => env.db.select(env.db.flashcards).get()))!;
+    expect(rows.firstWhere((c) => c.front == 'uno').deckId, other);
+    expect(rows.firstWhere((c) => c.front == 'dos').deckId, deck);
+    await closeEnv(tester, env);
+  });
+
+  testWidgets('adding a duplicate front asks before saving', (tester) async {
+    final env = TestEnv();
+    final repo = FlashcardsRepository(env.db, env.clock);
+    late String deck;
+    await tester.runAsync(() async {
+      deck = await repo.createDeck('Words', color: 0xFF6C4CFF);
+      await repo.addCard(deck, 'Café', 'coffee');
+    });
+    await pumpScreen(tester, DeckScreen(deckId: deck), env: env);
+    await settle(tester);
+    final l10n = _l10n(tester);
+    await tester.tap(find.byKey(const Key('addCardFab')));
+    await settle(tester);
+    final fields = find.byType(TextFormField);
+    await tester.enterText(fields.at(0), 'cafe');
+    await tester.enterText(fields.at(1), 'coffee 2');
+    await tester.tap(find.text(l10n.actionSave).last);
+    await settle(tester);
+    expect(find.text(l10n.flashcardsDuplicateTitle), findsOneWidget);
+    await tester.tap(find.text(l10n.actionCancel).last);
+    await settle(tester);
+    expect(await _cardCount(env, tester), 1);
+    await closeEnv(tester, env);
+  });
+
+  testWidgets('import preview: remap columns before importing', (tester) async {
+    final (env, _) = await _setup(tester);
+    final l10n = _l10n(tester);
+    await tester.tap(find.byKey(const Key('importButton')));
+    await settle(tester);
+    // Columns: word, example, meaning (no header) → map 2nd to example, 3rd to back.
+    await tester.enterText(
+      find.byKey(const Key('importField')),
+      'la llave\tTengo la llave\tkey\nel puente\tUn puente largo\tbridge',
+    );
+    await tester.pump();
+    await tester.tap(find.byKey(const Key('importNextButton')));
+    await settle(tester);
+    await tester.tap(find.byKey(const Key('importColumn_1')));
+    await settle(tester);
+    await tester.tap(find.text(l10n.cardFieldExample).last);
+    await settle(tester);
+    expect(find.text(l10n.importNeedFrontBack), findsOneWidget);
+    await tester.tap(find.byKey(const Key('importColumn_2')));
+    await settle(tester);
+    await tester.tap(find.text(l10n.cardBack).last);
+    await settle(tester);
+    expect(find.text(l10n.importPreviewSummary(2, 0)), findsOneWidget);
+    await tester.tap(find.byKey(const Key('importConfirmButton')));
+    await settle(tester);
+    final rows = (await tester.runAsync(() => env.db.select(env.db.flashcards).get()))!;
+    final key = rows.firstWhere((c) => c.front == 'la llave');
+    expect(key.back, 'key');
+    expect(key.extra, contains('Tengo la llave'));
+    await env.dispose();
   });
 }

@@ -5,6 +5,7 @@ import 'dart:typed_data';
 
 import 'package:cryptography/cryptography.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:future_os/features/flashcards/data/flashcards_repository.dart';
 import 'package:future_os/core/backup/backup_service.dart';
 import 'package:future_os/core/database/database_connection.dart';
 import 'package:future_os/features/notes/data/notes_repository.dart';
@@ -50,6 +51,20 @@ Future<Uint8List> _backupWithPayload(Map<String, Object?> payload) async {
 }
 
 void main() {
+  test('card images survive backup and restore byte for byte', () async {
+    final env = TestEnv();
+    final repo = FlashcardsRepository(env.db, env.clock);
+    final d = await repo.createDeck('D', color: 1);
+    final c = await repo.addCard(d, 'a', 'b');
+    await repo.addMedia(c, side: 'front', kind: 'image', bytes: [0, 255, 7, 128]);
+    final bytes = await BackupService(env.db, kdf: _fastKdf).export(password: 'correct horse');
+    final target = openInMemoryDatabase();
+    await BackupService(target, kdf: _fastKdf).restore(bytes, 'correct horse');
+    expect((await target.select(target.cardMedia).getSingle()).bytes, [0, 255, 7, 128]);
+    await target.close();
+    await env.dispose();
+  });
+
   test('key derivation on a background isolate produces the same backup format', () async {
     final env = TestEnv();
     await TasksRepository(env.db, env.clock).create(const TaskDraft(title: 'isolate'));

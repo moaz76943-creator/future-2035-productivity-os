@@ -30,6 +30,7 @@ class DecksScreen extends ConsumerWidget {
           .createDeck(
             result.name,
             description: result.description,
+            category: result.category,
             color: result.color,
             dailyNewLimit: result.dailyNewLimit,
             dailyReviewTarget: result.dailyReviewTarget,
@@ -46,6 +47,14 @@ class DecksScreen extends ConsumerWidget {
     return ModuleScaffold(
       title: l10n.flashTitle,
       hue: _hue,
+      actions: [
+        IconButton(
+          key: const Key('cardSearchButton'),
+          tooltip: l10n.flashcardsSearchAll,
+          onPressed: () => context.push(Routes.cardSearch),
+          icon: const Icon(Icons.manage_search_rounded),
+        ),
+      ],
       floatingActionButton: FloatingActionButton.extended(
         heroTag: 'decks-fab',
         key: const Key('newDeckFab'),

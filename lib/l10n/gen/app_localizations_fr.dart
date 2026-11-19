@@ -3543,4 +3543,329 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get flashcardsImportFileFailed =>
       'Impossible d’ouvrir le fichier. Vous pouvez coller son contenu.';
+
+  @override
+  String get studyNoMatchingCards => 'Aucune carte ne correspond pour l’instant.';
+
+  @override
+  String get studyPracticeNew => 'Nouvelles seulement';
+
+  @override
+  String get studyPracticeHard => 'Cartes difficiles';
+
+  @override
+  String get studyPracticeFavorites => 'Favoris';
+
+  @override
+  String get studySessionSize => 'Cartes par séance';
+
+  @override
+  String get studySessionAll => 'Toutes';
+
+  @override
+  String get studyOrder => 'Ordre';
+
+  @override
+  String get studyOrderDue => 'Plus en retard d’abord';
+
+  @override
+  String get studyOrderRandom => 'Aléatoire';
+
+  @override
+  String get studyOrderHardest => 'Plus difficiles d’abord';
+
+  @override
+  String get flashcardsHard => 'Difficile';
+
+  @override
+  String get flashcardsFavorites => 'Favoris';
+
+  @override
+  String get flashcardsFavorite => 'Ajouter aux favoris';
+
+  @override
+  String get flashcardsUnfavorite => 'Retirer des favoris';
+
+  @override
+  String get flashcardsDuplicate => 'Dupliquer';
+
+  @override
+  String get flashcardsMoveTo => 'Déplacer vers un paquet';
+
+  @override
+  String get flashcardsNoOtherDeck => 'Créez d’abord un autre paquet.';
+
+  @override
+  String flashcardsMoved(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count cartes déplacées',
+      one: 'Carte déplacée',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get flashcardsAddTag => 'Ajouter une étiquette';
+
+  @override
+  String get flashcardsTagHint => 'ex. verbes';
+
+  @override
+  String flashcardsSelected(int count) {
+    return '$count sélectionnées';
+  }
+
+  @override
+  String get flashcardsSelectAll => 'Tout sélectionner';
+
+  @override
+  String flashcardsSelectCard(String front) {
+    return 'Sélectionner $front';
+  }
+
+  @override
+  String flashcardsRecall(String value) {
+    return 'Rappel $value';
+  }
+
+  @override
+  String get flashcardsDuplicateTitle => 'Doublon possible';
+
+  @override
+  String flashcardsDuplicateMessage(String front, String back) {
+    return 'Ce paquet contient déjà « $front » → « $back ». Enregistrer quand même ?';
+  }
+
+  @override
+  String get flashcardsSaveAnyway => 'Enregistrer quand même';
+
+  @override
+  String get flashcardsStats => 'Statistiques';
+
+  @override
+  String get flashcardsStatTotal => 'Cartes';
+
+  @override
+  String get flashcardsStatLearning => 'En apprentissage';
+
+  @override
+  String get flashcardsStatMatureCaption => 'Retenues 21 jours et plus';
+
+  @override
+  String get flashcardsStatReviewsToday => 'Révisions aujourd’hui';
+
+  @override
+  String get flashcardsStatCorrect => 'Bonnes réponses';
+
+  @override
+  String flashcardsStatLastDays(int days) {
+    return '$days derniers jours';
+  }
+
+  @override
+  String get flashcardsStatForget => 'Taux d’oubli';
+
+  @override
+  String get flashcardsStatForgetCaption => '« À revoir » sur cartes acquises';
+
+  @override
+  String get flashcardsStatRecall => 'Rappel actuel';
+
+  @override
+  String get flashcardsStatRecallCaption => 'Estimation FSRS, cartes révisées';
+
+  @override
+  String flashcardsStatActivity(int count) {
+    return 'Révisions par jour · $count au total';
+  }
+
+  @override
+  String get flashcardsStatHistory => 'Dernières réponses';
+
+  @override
+  String get flashcardsStatNoHistory =>
+      'Pas encore de révisions. Étudiez le paquet pour voir vos progrès.';
+
+  @override
+  String flashcardsSpeakField(String field) {
+    return 'Lire $field à voix haute';
+  }
+
+  @override
+  String get speechVoice => 'Voix';
+
+  @override
+  String get speechVoiceDefault => 'Par défaut de l’appareil';
+
+  @override
+  String get speechVoiceOnline => 'nécessite Internet';
+
+  @override
+  String get speechTest => 'Tester la voix';
+
+  @override
+  String get importNext => 'Aperçu';
+
+  @override
+  String get importPreviewTitle => 'Associer les colonnes aux champs';
+
+  @override
+  String get importIgnoreColumn => 'Ignorer';
+
+  @override
+  String importColumn(int n) {
+    return 'Colonne $n';
+  }
+
+  @override
+  String importPreviewSummary(int ready, int invalid) {
+    return '$ready cartes prêtes · $invalid lignes incomplètes ignorées';
+  }
+
+  @override
+  String get importNeedFrontBack => 'Choisissez les colonnes du recto et du verso.';
+
+  @override
+  String get actionMoveUp => 'Monter';
+
+  @override
+  String get actionMoveDown => 'Descendre';
+
+  @override
+  String get flashcardsLayoutTitle => 'Mise en page de la carte';
+
+  @override
+  String get flashcardsLayoutHint =>
+      'Renommez, masquez ou réordonnez les champs de ce paquet. Le contenu n’est jamais modifié.';
+
+  @override
+  String flashcardsLayoutShow(String field) {
+    return 'Afficher $field pendant l’étude';
+  }
+
+  @override
+  String get flashcardsLayoutStepReveal => 'Révéler la réponse étape par étape';
+
+  @override
+  String get flashcardsLayoutStepRevealHint =>
+      'Le verso d’abord ; chaque champ s’ouvre d’un toucher.';
+
+  @override
+  String flashcardsRevealNext(String field) {
+    return 'Afficher $field';
+  }
+
+  @override
+  String flashcardsMediaTooLarge(int mb) {
+    return 'Ce fichier dépasse $mb Mo.';
+  }
+
+  @override
+  String get flashcardsImage => 'Image';
+
+  @override
+  String get flashcardsAudio => 'Audio';
+
+  @override
+  String get flashcardsAddImage => 'Ajouter une image';
+
+  @override
+  String get flashcardsAddAudio => 'Ajouter un audio';
+
+  @override
+  String get flashcardsPlayAudio => 'Lire l’enregistrement';
+
+  @override
+  String get flashcardsAudioUnavailable => 'Impossible de lire cet enregistrement ici.';
+
+  @override
+  String get flashcardsCustomFields => 'Vos champs';
+
+  @override
+  String get flashcardsTemplates => 'Modèles';
+
+  @override
+  String flashcardsNewFieldName(int n) {
+    return 'Champ $n';
+  }
+
+  @override
+  String get flashcardsAddField => 'Ajouter un champ';
+
+  @override
+  String get flashcardsFieldName => 'Nom du champ';
+
+  @override
+  String get flashcardsFieldLangDefault => 'Langue du côté';
+
+  @override
+  String get flashcardsTemplateConfirm =>
+      'Le modèle définit l’affichage et ajoute ses champs. Vos cartes et champs restent intacts.';
+
+  @override
+  String get flashcardsApplyTemplate => 'Appliquer';
+
+  @override
+  String get templateVocabulary => 'Vocabulaire';
+
+  @override
+  String get templateTwoTranslations => 'Mot avec deux traductions';
+
+  @override
+  String get templateQuestionAnswer => 'Question-réponse';
+
+  @override
+  String get templateDefinition => 'Terme et définition';
+
+  @override
+  String get templateGrammar => 'Règle de grammaire';
+
+  @override
+  String get templateFieldPlural => 'Pluriel';
+
+  @override
+  String get templateFieldTranslation2 => 'Deuxième traduction';
+
+  @override
+  String get templateFieldSynonyms => 'Synonymes';
+
+  @override
+  String get templateFieldRule => 'Règle';
+
+  @override
+  String get deckCategory => 'Niveau ou thème';
+
+  @override
+  String get deckCategoryHint => 'ex. A1, Médecine';
+
+  @override
+  String get flashcardsSearchAll => 'Rechercher toutes les cartes';
+
+  @override
+  String get flashcardsSearchAllHint => 'Mot, traduction, exemple, note, étiquette…';
+
+  @override
+  String get flashcardsAllDecks => 'Tous les paquets';
+
+  @override
+  String get flashcardsAllLanguages => 'Toutes les langues';
+
+  @override
+  String get flashcardsLangUnset => 'Langue non définie';
+
+  @override
+  String get flashcardsLevelUnset => 'Sans niveau ni thème';
+
+  @override
+  String get flashcardsByLanguage => 'Progrès par langue';
+
+  @override
+  String get flashcardsByLevel => 'Progrès par niveau ou thème';
+
+  @override
+  String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct) {
+    return '$decks paquets · $cards cartes · $mature acquises · $due à revoir · $correct justes (30 j)';
+  }
 }

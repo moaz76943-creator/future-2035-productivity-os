@@ -34,7 +34,8 @@ void main() {
       expect(after.state, preview.state);
       expect(after.intervalDays, preview.intervalDays);
       expect(after.dueAt, preview.dueAt);
-      expect(after.easePermille, preview.easePermille);
+      expect(after.stability, preview.stability);
+      expect(after.difficulty, preview.difficulty);
     }
   });
 
@@ -46,7 +47,7 @@ void main() {
     expect(p[ReviewRating.again]!.dueAt, now.add(const Duration(minutes: 1)));
     expect(p[ReviewRating.hard]!.dueAt, now.add(const Duration(minutes: 6)));
     expect(p[ReviewRating.good]!.dueAt, now.add(const Duration(minutes: 10)));
-    expect(p[ReviewRating.easy]!.intervalDays, 4);
+    expect(p[ReviewRating.easy]!.intervalDays, 14); // FSRS-4.5: initial Easy stability 13.8 days
     expect(FlashcardsRepository.srsOf(card).state, CardState.newCard);
   });
 

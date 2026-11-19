@@ -3539,4 +3539,329 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get flashcardsImportFileFailed =>
       'Não foi possível abrir o arquivo. Você pode colar o conteúdo.';
+
+  @override
+  String get studyNoMatchingCards => 'Ainda não há cartões para esta opção.';
+
+  @override
+  String get studyPracticeNew => 'Só novos';
+
+  @override
+  String get studyPracticeHard => 'Cartões difíceis';
+
+  @override
+  String get studyPracticeFavorites => 'Favoritos';
+
+  @override
+  String get studySessionSize => 'Cartões por sessão';
+
+  @override
+  String get studySessionAll => 'Todos';
+
+  @override
+  String get studyOrder => 'Ordem';
+
+  @override
+  String get studyOrderDue => 'Mais atrasados primeiro';
+
+  @override
+  String get studyOrderRandom => 'Aleatório';
+
+  @override
+  String get studyOrderHardest => 'Mais difíceis primeiro';
+
+  @override
+  String get flashcardsHard => 'Difícil';
+
+  @override
+  String get flashcardsFavorites => 'Favoritos';
+
+  @override
+  String get flashcardsFavorite => 'Adicionar aos favoritos';
+
+  @override
+  String get flashcardsUnfavorite => 'Remover dos favoritos';
+
+  @override
+  String get flashcardsDuplicate => 'Duplicar';
+
+  @override
+  String get flashcardsMoveTo => 'Mover para baralho';
+
+  @override
+  String get flashcardsNoOtherDeck => 'Crie outro baralho primeiro.';
+
+  @override
+  String flashcardsMoved(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count cartões movidos',
+      one: 'Cartão movido',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get flashcardsAddTag => 'Adicionar etiqueta';
+
+  @override
+  String get flashcardsTagHint => 'ex.: verbos';
+
+  @override
+  String flashcardsSelected(int count) {
+    return '$count selecionados';
+  }
+
+  @override
+  String get flashcardsSelectAll => 'Selecionar todos';
+
+  @override
+  String flashcardsSelectCard(String front) {
+    return 'Selecionar $front';
+  }
+
+  @override
+  String flashcardsRecall(String value) {
+    return 'Lembrança $value';
+  }
+
+  @override
+  String get flashcardsDuplicateTitle => 'Possível duplicado';
+
+  @override
+  String flashcardsDuplicateMessage(String front, String back) {
+    return 'Este baralho já tem “$front” → “$back”. Salvar mesmo assim?';
+  }
+
+  @override
+  String get flashcardsSaveAnyway => 'Salvar mesmo assim';
+
+  @override
+  String get flashcardsStats => 'Estatísticas';
+
+  @override
+  String get flashcardsStatTotal => 'Cartões';
+
+  @override
+  String get flashcardsStatLearning => 'Aprendendo';
+
+  @override
+  String get flashcardsStatMatureCaption => 'Lembrados por 21+ dias';
+
+  @override
+  String get flashcardsStatReviewsToday => 'Revisões hoje';
+
+  @override
+  String get flashcardsStatCorrect => 'Respostas corretas';
+
+  @override
+  String flashcardsStatLastDays(int days) {
+    return 'Últimos $days dias';
+  }
+
+  @override
+  String get flashcardsStatForget => 'Taxa de esquecimento';
+
+  @override
+  String get flashcardsStatForgetCaption => '“De novo” em cartões aprendidos';
+
+  @override
+  String get flashcardsStatRecall => 'Lembrança agora';
+
+  @override
+  String get flashcardsStatRecallCaption => 'Estimativa FSRS, cartões revisados';
+
+  @override
+  String flashcardsStatActivity(int count) {
+    return 'Revisões por dia · $count no total';
+  }
+
+  @override
+  String get flashcardsStatHistory => 'Últimas respostas';
+
+  @override
+  String get flashcardsStatNoHistory =>
+      'Ainda sem revisões. Estude o baralho para ver o progresso.';
+
+  @override
+  String flashcardsSpeakField(String field) {
+    return 'Ler $field em voz alta';
+  }
+
+  @override
+  String get speechVoice => 'Voz';
+
+  @override
+  String get speechVoiceDefault => 'Padrão do aparelho';
+
+  @override
+  String get speechVoiceOnline => 'requer internet';
+
+  @override
+  String get speechTest => 'Testar voz';
+
+  @override
+  String get importNext => 'Pré-visualizar';
+
+  @override
+  String get importPreviewTitle => 'Associe colunas aos campos';
+
+  @override
+  String get importIgnoreColumn => 'Ignorar';
+
+  @override
+  String importColumn(int n) {
+    return 'Coluna $n';
+  }
+
+  @override
+  String importPreviewSummary(int ready, int invalid) {
+    return '$ready cartões prontos · $invalid linhas incompletas serão ignoradas';
+  }
+
+  @override
+  String get importNeedFrontBack => 'Escolha quais colunas são a frente e o verso.';
+
+  @override
+  String get actionMoveUp => 'Mover para cima';
+
+  @override
+  String get actionMoveDown => 'Mover para baixo';
+
+  @override
+  String get flashcardsLayoutTitle => 'Layout do cartão';
+
+  @override
+  String get flashcardsLayoutHint =>
+      'Renomeie, oculte ou reordene os campos extras deste baralho. O conteúdo nunca muda.';
+
+  @override
+  String flashcardsLayoutShow(String field) {
+    return 'Mostrar $field ao estudar';
+  }
+
+  @override
+  String get flashcardsLayoutStepReveal => 'Revelar a resposta passo a passo';
+
+  @override
+  String get flashcardsLayoutStepRevealHint =>
+      'Primeiro o verso; cada campo extra abre com um toque.';
+
+  @override
+  String flashcardsRevealNext(String field) {
+    return 'Mostrar $field';
+  }
+
+  @override
+  String flashcardsMediaTooLarge(int mb) {
+    return 'O arquivo tem mais de $mb MB.';
+  }
+
+  @override
+  String get flashcardsImage => 'Imagem';
+
+  @override
+  String get flashcardsAudio => 'Áudio';
+
+  @override
+  String get flashcardsAddImage => 'Adicionar imagem';
+
+  @override
+  String get flashcardsAddAudio => 'Adicionar áudio';
+
+  @override
+  String get flashcardsPlayAudio => 'Tocar gravação';
+
+  @override
+  String get flashcardsAudioUnavailable => 'Não é possível tocar neste aparelho.';
+
+  @override
+  String get flashcardsCustomFields => 'Seus campos';
+
+  @override
+  String get flashcardsTemplates => 'Modelos';
+
+  @override
+  String flashcardsNewFieldName(int n) {
+    return 'Campo $n';
+  }
+
+  @override
+  String get flashcardsAddField => 'Adicionar campo';
+
+  @override
+  String get flashcardsFieldName => 'Nome do campo';
+
+  @override
+  String get flashcardsFieldLangDefault => 'Idioma do lado';
+
+  @override
+  String get flashcardsTemplateConfirm =>
+      'O modelo define a exibição e adiciona seus campos. Seus cartões e campos continuam iguais.';
+
+  @override
+  String get flashcardsApplyTemplate => 'Aplicar';
+
+  @override
+  String get templateVocabulary => 'Vocabulário';
+
+  @override
+  String get templateTwoTranslations => 'Palavra com duas traduções';
+
+  @override
+  String get templateQuestionAnswer => 'Pergunta e resposta';
+
+  @override
+  String get templateDefinition => 'Termo e definição';
+
+  @override
+  String get templateGrammar => 'Regra gramatical';
+
+  @override
+  String get templateFieldPlural => 'Plural';
+
+  @override
+  String get templateFieldTranslation2 => 'Segunda tradução';
+
+  @override
+  String get templateFieldSynonyms => 'Sinônimos';
+
+  @override
+  String get templateFieldRule => 'Regra';
+
+  @override
+  String get deckCategory => 'Nível ou tema';
+
+  @override
+  String get deckCategoryHint => 'ex.: A1, Medicina';
+
+  @override
+  String get flashcardsSearchAll => 'Buscar em todos';
+
+  @override
+  String get flashcardsSearchAllHint => 'Palavra, tradução, exemplo, nota, etiqueta…';
+
+  @override
+  String get flashcardsAllDecks => 'Todos os baralhos';
+
+  @override
+  String get flashcardsAllLanguages => 'Todos os idiomas';
+
+  @override
+  String get flashcardsLangUnset => 'Idioma não definido';
+
+  @override
+  String get flashcardsLevelUnset => 'Sem nível ou tema';
+
+  @override
+  String get flashcardsByLanguage => 'Progresso por idioma';
+
+  @override
+  String get flashcardsByLevel => 'Progresso por nível ou tema';
+
+  @override
+  String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct) {
+    return '$decks baralhos · $cards cartões · $mature maduros · $due pendentes · $correct corretas (30 dias)';
+  }
 }

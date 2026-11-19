@@ -3520,4 +3520,328 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get flashcardsImportFileFailed =>
       'The file could not be opened. You can paste its content instead.';
+
+  @override
+  String get studyNoMatchingCards => 'No cards match this choice yet.';
+
+  @override
+  String get studyPracticeNew => 'New only';
+
+  @override
+  String get studyPracticeHard => 'Hard cards';
+
+  @override
+  String get studyPracticeFavorites => 'Favorites';
+
+  @override
+  String get studySessionSize => 'Cards per session';
+
+  @override
+  String get studySessionAll => 'All';
+
+  @override
+  String get studyOrder => 'Order';
+
+  @override
+  String get studyOrderDue => 'Most overdue first';
+
+  @override
+  String get studyOrderRandom => 'Random';
+
+  @override
+  String get studyOrderHardest => 'Hardest first';
+
+  @override
+  String get flashcardsHard => 'Hard';
+
+  @override
+  String get flashcardsFavorites => 'Favorites';
+
+  @override
+  String get flashcardsFavorite => 'Add to favorites';
+
+  @override
+  String get flashcardsUnfavorite => 'Remove from favorites';
+
+  @override
+  String get flashcardsDuplicate => 'Duplicate';
+
+  @override
+  String get flashcardsMoveTo => 'Move to deck';
+
+  @override
+  String get flashcardsNoOtherDeck => 'Create another deck first.';
+
+  @override
+  String flashcardsMoved(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count cards moved',
+      one: 'Card moved',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get flashcardsAddTag => 'Add tag';
+
+  @override
+  String get flashcardsTagHint => 'e.g. verbs';
+
+  @override
+  String flashcardsSelected(int count) {
+    return '$count selected';
+  }
+
+  @override
+  String get flashcardsSelectAll => 'Select all shown';
+
+  @override
+  String flashcardsSelectCard(String front) {
+    return 'Select $front';
+  }
+
+  @override
+  String flashcardsRecall(String value) {
+    return 'Recall $value';
+  }
+
+  @override
+  String get flashcardsDuplicateTitle => 'Possible duplicate';
+
+  @override
+  String flashcardsDuplicateMessage(String front, String back) {
+    return 'This deck already has “$front” → “$back”. Save anyway?';
+  }
+
+  @override
+  String get flashcardsSaveAnyway => 'Save anyway';
+
+  @override
+  String get flashcardsStats => 'Statistics';
+
+  @override
+  String get flashcardsStatTotal => 'Cards';
+
+  @override
+  String get flashcardsStatLearning => 'Learning';
+
+  @override
+  String get flashcardsStatMatureCaption => 'Remembered for 21+ days';
+
+  @override
+  String get flashcardsStatReviewsToday => 'Reviews today';
+
+  @override
+  String get flashcardsStatCorrect => 'Correct answers';
+
+  @override
+  String flashcardsStatLastDays(int days) {
+    return 'Last $days days';
+  }
+
+  @override
+  String get flashcardsStatForget => 'Forgetting rate';
+
+  @override
+  String get flashcardsStatForgetCaption => '“Again” on learned cards';
+
+  @override
+  String get flashcardsStatRecall => 'Recall now';
+
+  @override
+  String get flashcardsStatRecallCaption => 'FSRS estimate, reviewed cards';
+
+  @override
+  String flashcardsStatActivity(int count) {
+    return 'Reviews per day · $count in total';
+  }
+
+  @override
+  String get flashcardsStatHistory => 'Latest answers';
+
+  @override
+  String get flashcardsStatNoHistory => 'No reviews yet. Study the deck to see your progress here.';
+
+  @override
+  String flashcardsSpeakField(String field) {
+    return 'Read $field aloud';
+  }
+
+  @override
+  String get speechVoice => 'Voice';
+
+  @override
+  String get speechVoiceDefault => 'Device default';
+
+  @override
+  String get speechVoiceOnline => 'needs internet';
+
+  @override
+  String get speechTest => 'Test voice';
+
+  @override
+  String get importNext => 'Preview';
+
+  @override
+  String get importPreviewTitle => 'Match columns to fields';
+
+  @override
+  String get importIgnoreColumn => 'Ignore';
+
+  @override
+  String importColumn(int n) {
+    return 'Column $n';
+  }
+
+  @override
+  String importPreviewSummary(int ready, int invalid) {
+    return '$ready cards ready · $invalid incomplete rows will be skipped';
+  }
+
+  @override
+  String get importNeedFrontBack => 'Choose which columns are the front and the back.';
+
+  @override
+  String get actionMoveUp => 'Move up';
+
+  @override
+  String get actionMoveDown => 'Move down';
+
+  @override
+  String get flashcardsLayoutTitle => 'Card layout';
+
+  @override
+  String get flashcardsLayoutHint =>
+      'Rename, hide or reorder the extra fields for this deck. Card content is never changed.';
+
+  @override
+  String flashcardsLayoutShow(String field) {
+    return 'Show $field while studying';
+  }
+
+  @override
+  String get flashcardsLayoutStepReveal => 'Reveal the answer step by step';
+
+  @override
+  String get flashcardsLayoutStepRevealHint =>
+      'The back appears first; each extra field opens with a tap.';
+
+  @override
+  String flashcardsRevealNext(String field) {
+    return 'Show $field';
+  }
+
+  @override
+  String flashcardsMediaTooLarge(int mb) {
+    return 'This file is larger than $mb MB.';
+  }
+
+  @override
+  String get flashcardsImage => 'Image';
+
+  @override
+  String get flashcardsAudio => 'Audio';
+
+  @override
+  String get flashcardsAddImage => 'Add image';
+
+  @override
+  String get flashcardsAddAudio => 'Add audio';
+
+  @override
+  String get flashcardsPlayAudio => 'Play recording';
+
+  @override
+  String get flashcardsAudioUnavailable => 'This recording cannot be played on this device.';
+
+  @override
+  String get flashcardsCustomFields => 'Your fields';
+
+  @override
+  String get flashcardsTemplates => 'Templates';
+
+  @override
+  String flashcardsNewFieldName(int n) {
+    return 'Field $n';
+  }
+
+  @override
+  String get flashcardsAddField => 'Add field';
+
+  @override
+  String get flashcardsFieldName => 'Field name';
+
+  @override
+  String get flashcardsFieldLangDefault => 'Side language';
+
+  @override
+  String get flashcardsTemplateConfirm =>
+      'The template sets how fields are shown and adds its fields. Your cards and existing fields stay as they are.';
+
+  @override
+  String get flashcardsApplyTemplate => 'Apply';
+
+  @override
+  String get templateVocabulary => 'Vocabulary';
+
+  @override
+  String get templateTwoTranslations => 'Word with two translations';
+
+  @override
+  String get templateQuestionAnswer => 'Question and answer';
+
+  @override
+  String get templateDefinition => 'Term and definition';
+
+  @override
+  String get templateGrammar => 'Grammar rule';
+
+  @override
+  String get templateFieldPlural => 'Plural';
+
+  @override
+  String get templateFieldTranslation2 => 'Second translation';
+
+  @override
+  String get templateFieldSynonyms => 'Synonyms';
+
+  @override
+  String get templateFieldRule => 'Rule';
+
+  @override
+  String get deckCategory => 'Level or topic';
+
+  @override
+  String get deckCategoryHint => 'e.g. A1, Medicine';
+
+  @override
+  String get flashcardsSearchAll => 'Search all cards';
+
+  @override
+  String get flashcardsSearchAllHint => 'Word, translation, example, note, tag…';
+
+  @override
+  String get flashcardsAllDecks => 'All decks';
+
+  @override
+  String get flashcardsAllLanguages => 'All languages';
+
+  @override
+  String get flashcardsLangUnset => 'Language not set';
+
+  @override
+  String get flashcardsLevelUnset => 'No level or topic';
+
+  @override
+  String get flashcardsByLanguage => 'Progress by language';
+
+  @override
+  String get flashcardsByLevel => 'Progress by level or topic';
+
+  @override
+  String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct) {
+    return '$decks decks · $cards cards · $mature mature · $due due · $correct correct (30 days)';
+  }
 }

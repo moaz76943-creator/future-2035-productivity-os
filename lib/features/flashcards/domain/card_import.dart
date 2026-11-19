@@ -2,11 +2,32 @@ import 'card_extras.dart';
 
 /// One card parsed from pasted or file text.
 class ImportedCard {
-  const ImportedCard(this.front, this.back, {this.tags = '', this.extras = const CardExtras()});
+  const ImportedCard(
+    this.front,
+    this.back, {
+    this.tags = '',
+    this.extras = const CardExtras(),
+    this.custom = const {},
+  });
   final String front;
   final String back;
   final String tags;
   final CardExtras extras;
+
+  /// Custom field values keyed by field id (JSON deck format only).
+  final Map<String, String> custom;
+}
+
+/// Parsed rows before import, with a suggested field for each column.
+class ImportPreview {
+  const ImportPreview({required this.rows, required this.columns, required this.hasHeader});
+  final List<List<String>> rows;
+  final List<String> columns;
+
+  /// The first row holds column names and is not imported.
+  final bool hasHeader;
+
+  List<List<String>> get body => hasHeader ? rows.skip(1).toList() : rows;
 }
 
 /// Result of parsing: the cards plus how many lines were unusable.
@@ -112,30 +133,43 @@ abstract final class CardImportParser {
     return out;
   }
 
-  static ParsedImport parse(String text) {
+  /// Splits the text into rows and suggests a column → field mapping.
+  static ImportPreview preview(String text) {
     final delimiter = detectDelimiter(text);
     final all = rows(text.replaceAll('\uFEFF', ''), delimiter);
-    if (all.isEmpty) return const ParsedImport([], 0);
-    var columns = ['front', 'back', 'tags'];
-    var body = all;
-    final header = [for (final c in all.first) _headers[c.trim().toLowerCase()]];
-    if (header.contains('front') && header.contains('back')) {
-      columns = [for (final h in header) h ?? ''];
-      body = all.skip(1).toList();
+    if (all.isEmpty) return ImportPreview(rows: const [], columns: const [], hasHeader: false);
+    final normalized = [
+      for (var r in all)
+        // Pasted lists often mix separators line by line ("a<TAB>b", "c;d").
+        if (r.length == 1) _splitMixed(r, delimiter) else r,
+    ];
+    final width = normalized.fold<int>(0, (m, r) => r.length > m ? r.length : m);
+    final header = [for (final c in normalized.first) _headers[c.trim().toLowerCase()]];
+    final hasHeader = header.contains('front') && header.contains('back');
+    final columns = hasHeader
+        ? [for (var i = 0; i < width; i++) i < header.length ? (header[i] ?? '') : '']
+        : [
+            for (var i = 0; i < width; i++) i < 3 ? const ['front', 'back', 'tags'][i] : '',
+          ];
+    return ImportPreview(rows: normalized, columns: columns, hasHeader: hasHeader);
+  }
+
+  static List<String> _splitMixed(List<String> r, String delimiter) {
+    for (final alt in const ['\t', ';']) {
+      if (alt != delimiter && r.first.contains(alt)) {
+        final i = r.first.indexOf(alt);
+        return [r.first.substring(0, i), r.first.substring(i + 1)];
+      }
     }
+    return r;
+  }
+
+  /// Cards from [rows] using [columns] (one field name per column, '' to
+  /// ignore). Rows without a front or back are counted as invalid.
+  static ParsedImport build(List<List<String>> rows, List<String> columns) {
     final cards = <ImportedCard>[];
     var invalid = 0;
-    for (var r in body) {
-      // Pasted lists often mix separators line by line ("a<TAB>b", "c;d").
-      if (r.length == 1) {
-        for (final alt in const ['\t', ';']) {
-          if (alt != delimiter && r.first.contains(alt)) {
-            final i = r.first.indexOf(alt);
-            r = [r.first.substring(0, i), r.first.substring(i + 1)];
-            break;
-          }
-        }
-      }
+    for (final r in rows) {
       String cell(String name) {
         final i = columns.indexOf(name);
         if (i < 0 || i >= r.length) return '';
@@ -163,6 +197,23 @@ abstract final class CardImportParser {
     }
     return ParsedImport(cards, invalid);
   }
+
+  static ParsedImport parse(String text) {
+    final p = preview(text);
+    return build(p.hasHeader ? p.rows.skip(1).toList() : p.rows, p.columns);
+  }
+
+  /// Fields a column can map to ('' = ignore).
+  static const fields = [
+    'front',
+    'back',
+    'tags',
+    'example',
+    'explanation',
+    'pronunciation',
+    'notes',
+    '',
+  ];
 
   /// CSV cell for export. Text that a spreadsheet would run as a formula
   /// (leading `= + - @`, tab or carriage return) gets a leading apostrophe.

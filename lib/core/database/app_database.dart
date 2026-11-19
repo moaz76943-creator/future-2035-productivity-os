@@ -35,6 +35,7 @@ const String kNormalizeSqlFunction = 'fos_normalize';
     KeyValues,
     RecentSearches,
     Milestones,
+    CardMedia,
   ],
 )
 class AppDatabase extends _$AppDatabase {
@@ -43,11 +44,11 @@ class AppDatabase extends _$AppDatabase {
   /// Bump when the schema changes and add a step in [migration].
   /// Never drop user tables to resolve a migration problem.
   @override
-  int get schemaVersion => 5;
+  int get schemaVersion => 7;
 
   /// Tables introduced after schema v1, by version. Older backups lack them and
   /// restore them empty instead of being rejected.
-  static const tablesAddedIn = {'milestones': 3};
+  static const tablesAddedIn = {'milestones': 3, 'card_media': 7};
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -79,6 +80,28 @@ class AppDatabase extends _$AppDatabase {
         await m.addColumn(decks, decks.frontLang);
         await m.addColumn(decks, decks.backLang);
       }
+      if (from < 6) {
+        // v6: FSRS-4.5 memory state and favourites. Reviewed cards get a
+        // starting state from their SM-2 data: stability = current interval,
+        // difficulty from the ease factor (2.5 → 5), last review from history.
+        await m.addColumn(flashcards, flashcards.stability);
+        await m.addColumn(flashcards, flashcards.difficulty);
+        await m.addColumn(flashcards, flashcards.lastReviewAt);
+        await m.addColumn(flashcards, flashcards.favorite);
+        await customStatement('''
+          UPDATE flashcards SET
+            stability = MAX(interval_days, 0.5),
+            difficulty = MIN(10.0, MAX(1.0, 5.0 + (2500 - ease) / 200.0)),
+            last_review_at = (SELECT MAX(reviewed_at) FROM card_reviews r WHERE r.card_id = flashcards.id)
+          WHERE state <> 'new'
+        ''');
+      }
+      if (from < 7) {
+        // v7: custom field values and card images / audio.
+        await m.addColumn(flashcards, flashcards.custom);
+        await m.createTable(cardMedia);
+        await customStatement('CREATE INDEX IF NOT EXISTS idx_card_media_card ON card_media (card_id)');
+      }
     },
     beforeOpen: (details) async {
       await customStatement('PRAGMA foreign_keys = ON');
@@ -103,6 +126,7 @@ class AppDatabase extends _$AppDatabase {
       'CREATE INDEX IF NOT EXISTS idx_goal_entries_goal ON goal_entries (goal_id, at)',
       'CREATE INDEX IF NOT EXISTS idx_habit_logs_day ON habit_logs (day)',
       'CREATE INDEX IF NOT EXISTS idx_milestones_project ON milestones (project_id, due_at)',
+      'CREATE INDEX IF NOT EXISTS idx_card_media_card ON card_media (card_id)',
     ];
     for (final s in statements) {
       await customStatement(s);

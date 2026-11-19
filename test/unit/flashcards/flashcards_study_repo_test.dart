@@ -78,4 +78,105 @@ void main() {
     expect(d!.frontLang, 'es-ES');
     expect(d.backLang, 'ar');
   });
+
+  test('organisation: favourites, move, tag, duplicate, bulk delete/restore', () async {
+    final a = await repo.createDeck('A', color: 1);
+    final b = await repo.createDeck('B', color: 1);
+    final x = await repo.addCard(a, 'x', '1', tags: 'one');
+    final y = await repo.addCard(a, 'y', '2');
+    await repo.setFavorite([x], true);
+    expect(await repo.practiceCards(a, filter: PracticeFilter.favorites), hasLength(1));
+    await repo.addTag([x, y], 'verbs');
+    await repo.addTag([x], 'verbs');
+    expect((await repo.getCard(x))!.tags, 'one verbs');
+    final copy = await repo.duplicateCard(y);
+    expect((await repo.getCard(copy))!.front, 'y');
+    expect((await repo.getCard(copy))!.state, 'new');
+    await repo.moveCards([x, y], b);
+    expect((await repo.watchCards(b).first).map((c) => c.front).toSet(), {'x', 'y'});
+    await repo.deleteCards([x, y]);
+    expect(await repo.watchCards(b).first, isEmpty);
+    await repo.restoreCards([x, y]);
+    expect(await repo.watchCards(b).first, hasLength(2));
+  });
+
+  test('hard and new-only practice filters', () async {
+    final d = await repo.createDeck('D', color: 1);
+    final hard = await repo.addCard(d, 'h', '1');
+    await repo.addCard(d, 'n', '2');
+    for (var i = 0; i < 3; i++) {
+      await repo.recordReview(hard, ReviewRating.again);
+    }
+    expect((await repo.practiceCards(d, filter: PracticeFilter.hard)).map((c) => c.front), ['h']);
+    expect((await repo.practiceCards(d, filter: PracticeFilter.newOnly)).map((c) => c.front), [
+      'n',
+    ]);
+  });
+
+  test('deck insights are measured from cards and the review log', () async {
+    final d = await repo.createDeck('D', color: 1);
+    final a = await repo.addCard(d, 'a', '1');
+    final b = await repo.addCard(d, 'b', '2');
+    await repo.addCard(d, 'c', '3');
+    await repo.recordReview(a, ReviewRating.again);
+    await repo.recordReview(a, ReviewRating.good);
+    await repo.recordReview(b, ReviewRating.easy);
+    await repo.setFavorite([b], true);
+    final i = await repo.deckInsights(d);
+    expect(i.total, 3);
+    expect(i.newCards, 1);
+    expect(i.favorites, 1);
+    expect(i.reviewsToday, 3);
+    expect(i.reviewsInRange, 3);
+    expect(i.correctRate, closeTo(2 / 3, 1e-9));
+    expect(i.forgetRate, isNull, reason: 'no graduated card was reviewed yet');
+    expect(i.averageRecall, isNotNull);
+    expect(i.perDay.last, 3);
+    expect(i.recent.map((r) => r.cardId).toSet(), {a, b});
+  });
+
+  test(
+    'media: one image/audio per side, size limits, copied with the card, cascade delete',
+    () async {
+      final d = await repo.createDeck('D', color: 1);
+      final c = await repo.addCard(d, 'perro', 'dog', custom: {'c1': 'perros'});
+      await repo.addMedia(c, side: 'front', kind: 'image', bytes: [1, 2, 3], name: 'a.png');
+      await repo.addMedia(c, side: 'front', kind: 'image', bytes: [4, 5], name: 'b.png');
+      await repo.addMedia(c, side: 'back', kind: 'audio', bytes: [9], name: 'dog.m4a');
+      final m = await repo.mediaFor(c);
+      expect(m, hasLength(2));
+      expect(m.firstWhere((x) => x.kind == 'image').bytes, [4, 5]);
+      expect(
+        () => repo.addMedia(
+          c,
+          side: 'front',
+          kind: 'image',
+          bytes: List.filled(FlashcardsRepository.maxImageBytes + 1, 0),
+        ),
+        throwsA(isA<MediaTooLarge>()),
+      );
+      final copy = await repo.duplicateCard(c);
+      expect(await repo.mediaFor(copy), hasLength(2));
+      expect((await repo.getCard(copy))!.custom, '{"c1":"perros"}');
+      await env.db.customStatement("DELETE FROM flashcards WHERE id = '$c'");
+      expect(await repo.mediaFor(c), isEmpty);
+    },
+  );
+
+  test('overview groups by front language and level with measured numbers', () async {
+    final es = await repo.createDeck('ES', color: 1, category: 'A1');
+    await repo.setDeckLanguages(es, front: 'es-ES', back: 'ar');
+    final es2 = await repo.createDeck('ES 2', color: 1, category: 'A2');
+    await repo.setDeckLanguages(es2, front: 'es-MX', back: 'ar');
+    final a = await repo.addCard(es, 'a', '1');
+    await repo.addCard(es2, 'b', '2');
+    await repo.recordReview(a, ReviewRating.good);
+    await repo.recordReview(a, ReviewRating.again);
+    final o = await repo.overview();
+    expect(o.byLanguage['es']!.cards, 2);
+    expect(o.byLanguage['es']!.decks, 2);
+    expect(o.byLanguage['es']!.correctRate, 0.5);
+    expect(o.byLevel.keys.toSet(), {'A1', 'A2'});
+    expect(o.byLevel['A2']!.reviews, 0);
+  });
 }
