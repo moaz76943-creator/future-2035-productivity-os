@@ -21,6 +21,10 @@ final autoBackupListProvider = FutureProvider.autoDispose<List<AutoBackupFile>>(
   (ref) => ref.watch(autoBackupProvider).list(),
 );
 
+final autoBackupCheckProvider = FutureProvider.autoDispose<AutoBackupCheck?>(
+  (ref) => ref.watch(autoBackupProvider).lastCheck(),
+);
+
 /// Makes the daily backup quietly: shortly after launch and whenever the app
 /// comes back to the foreground (at most once every 20 hours). Android only,
 /// so tests and other platforms never leave timers behind.
@@ -31,8 +35,13 @@ final autoBackupRunnerProvider = Provider<void>((ref) {
     if (running) return;
     running = true;
     try {
-      final made = await ref.read(autoBackupProvider).runIfDue();
-      if (made != null && ref.mounted) ref.invalidate(autoBackupListProvider);
+      final backup = ref.read(autoBackupProvider);
+      final made = await backup.runIfDue();
+      final checked = await backup.checkIfDue();
+      if ((made != null || checked != null) && ref.mounted) {
+        ref.invalidate(autoBackupListProvider);
+        ref.invalidate(autoBackupCheckProvider);
+      }
     } on Object {
       // A failed automatic backup must never disturb the user; next time retries.
     } finally {

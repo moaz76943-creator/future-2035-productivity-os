@@ -4949,4 +4949,209 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get flashDragHandle => 'Перетащите';
+
+  @override
+  String get reportTitle => 'Отчёт за месяц';
+
+  @override
+  String get reportSubtitle => 'Фокус, карточки, задачи и привычки месяца, готово к сохранению';
+
+  @override
+  String get reportFocus => 'Время фокуса';
+
+  @override
+  String reportSessions(int count) {
+    return 'Сессий: $count';
+  }
+
+  @override
+  String reportBestDay(String day, String time) {
+    return 'Лучший день: $day ($time)';
+  }
+
+  @override
+  String reportActiveDays(int count) {
+    return 'Активных дней: $count';
+  }
+
+  @override
+  String get reportCards => 'Повторено карточек';
+
+  @override
+  String reportCardsKnown(String percent) {
+    return 'Запомнено: $percent';
+  }
+
+  @override
+  String get reportTasks => 'Выполнено задач';
+
+  @override
+  String get reportHabits => 'Отметок привычек';
+
+  @override
+  String get reportEmpty => 'В этом месяце пока ничего нет.';
+
+  @override
+  String get reportSave => 'Сохранить в PDF или Word';
+
+  @override
+  String get reportPrevMonth => 'Предыдущий месяц';
+
+  @override
+  String get reportNextMonth => 'Следующий месяц';
+
+  @override
+  String get careTitle => 'Забота о телефоне и данных';
+
+  @override
+  String get storageTitle => 'Хранилище';
+
+  @override
+  String get storageSubtitle => 'Что занимает место и очистка неиспользуемых картинок';
+
+  @override
+  String get storagePictures => 'Картинки в заметках';
+
+  @override
+  String get storageCardMedia => 'Картинки и аудио в карточках';
+
+  @override
+  String get storageText => 'Текст заметок';
+
+  @override
+  String get storageFree => 'Свободно на телефоне';
+
+  @override
+  String get storageLow =>
+      'Память телефона почти заполнена. Освободите место, чтобы резервные копии и напоминания работали.';
+
+  @override
+  String storageUnused(int count, String size) {
+    return 'Неиспользуемых картинок: $count ($size)';
+  }
+
+  @override
+  String get storageNoUnused => 'Неиспользуемых картинок нет. Всё в порядке.';
+
+  @override
+  String get storageClean => 'Удалить неиспользуемые картинки';
+
+  @override
+  String storageCleaned(int count) {
+    return 'Удалено картинок: $count';
+  }
+
+  @override
+  String get storageHint =>
+      'Картинка считается неиспользуемой, только если её не показывает ни одна заметка, включая корзину.';
+
+  @override
+  String get batteryTitle => 'Чтобы напоминания приходили';
+
+  @override
+  String get batterySubtitle =>
+      'Некоторые телефоны останавливают фоновые приложения. Проверьте свой.';
+
+  @override
+  String get batteryStatusOk =>
+      'Экономия заряда не ограничивает приложение. Напоминания и звуки должны приходить вовремя.';
+
+  @override
+  String get batteryStatusLimited =>
+      'Экономия заряда может останавливать приложение в фоне: напоминания и звуки придут с опозданием или не придут.';
+
+  @override
+  String get batteryOpen => 'Открыть настройки батареи';
+
+  @override
+  String get batteryOpenApp => 'Открыть настройки приложения';
+
+  @override
+  String get batteryGeneric =>
+      'В настройках батареи выберите это приложение и поставьте «Без ограничений» (или «Не оптимизировать»).';
+
+  @override
+  String get batteryXiaomi =>
+      'Xiaomi / Redmi / POCO: также включите приложение в Безопасность › Разрешения › Автозапуск и поставьте экономию батареи «Без ограничений».';
+
+  @override
+  String get batteryOppo =>
+      'Oppo / Realme / OnePlus: откройте Батарея › это приложение, разрешите фоновую работу и автозапуск; закрепите приложение в списке недавних.';
+
+  @override
+  String get batterySamsung =>
+      'Samsung: Батарея › Ограничения фоновой работы: уберите приложение из «Спящих» и «Глубокого сна».';
+
+  @override
+  String get batteryHuawei =>
+      'Huawei / Honor: Запуск приложений › это приложение › вручную, разрешите автозапуск, косвенный запуск и работу в фоне.';
+
+  @override
+  String get batteryVivo =>
+      'Vivo / iQOO: Батарея › Фоновое энергопотребление › разрешите приложение и включите автозапуск в разрешениях.';
+
+  @override
+  String get whatsNewTitle => 'Что нового';
+
+  @override
+  String get whatsNewSubtitle => 'Последние изменения в нескольких строках';
+
+  @override
+  String get whatsNewDone => 'Понятно';
+
+  @override
+  String get whatsNewOrderTitle => 'Перетаскивайте карточки в свой порядок';
+
+  @override
+  String get whatsNewOrderBody => 'В колоде выберите Порядок › Мой порядок и перетащите ручку.';
+
+  @override
+  String get whatsNewSpeechTitle => 'Динамик у каждой стороны';
+
+  @override
+  String get whatsNewSpeechBody =>
+      'Нажмите, чтобы услышать слово или перевод. Скорость, повторы и голос — в меню повторения. Язык определяется по тексту.';
+
+  @override
+  String get whatsNewReportTitle => 'Отчёт за месяц';
+
+  @override
+  String get whatsNewReportBody =>
+      'В статистике нажмите значок отчёта, чтобы увидеть месяц и сохранить в PDF или Word.';
+
+  @override
+  String get whatsNewCareTitle => 'Забота о телефоне и данных';
+
+  @override
+  String get whatsNewCareBody =>
+      'В настройках появились страница хранилища с очисткой картинок и руководство по батарее для вашей марки.';
+
+  @override
+  String get whatsNewSoundTitle => 'Более мягкие звуки';
+
+  @override
+  String get whatsNewSoundBody => 'Звуки природы мягче и тише, а карточки красивее.';
+
+  @override
+  String autoBackupCheckOk(String date) {
+    return 'Проверено $date: последняя копия открывается без проблем.';
+  }
+
+  @override
+  String autoBackupCheckFixed(String date) {
+    return 'Проверено $date: найдена повреждённая копия, она заменена новой.';
+  }
+
+  @override
+  String autoBackupCheckFailed(String date) {
+    return 'Проверено $date: последнюю копию открыть не удалось. Сохраните резервную копию вручную в настройках.';
+  }
+
+  @override
+  String smartReviewTimeTitle(String time) {
+    return 'Обычно вы занимаетесь около $time';
+  }
+
+  @override
+  String get smartReviewTimeUse => 'Использовать';
 }

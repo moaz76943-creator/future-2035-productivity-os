@@ -4830,4 +4830,209 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get flashDragHandle => 'Arraste para mover';
+
+  @override
+  String get reportTitle => 'Relatório mensal';
+
+  @override
+  String get reportSubtitle => 'Foco, cartões, tarefas e hábitos do mês, pronto para salvar';
+
+  @override
+  String get reportFocus => 'Tempo de foco';
+
+  @override
+  String reportSessions(int count) {
+    return '$count sessões';
+  }
+
+  @override
+  String reportBestDay(String day, String time) {
+    return 'Melhor dia: $day ($time)';
+  }
+
+  @override
+  String reportActiveDays(int count) {
+    return '$count dias ativos';
+  }
+
+  @override
+  String get reportCards => 'Cartões revisados';
+
+  @override
+  String reportCardsKnown(String percent) {
+    return '$percent lembrados';
+  }
+
+  @override
+  String get reportTasks => 'Tarefas concluídas';
+
+  @override
+  String get reportHabits => 'Registros de hábitos';
+
+  @override
+  String get reportEmpty => 'Nada registrado neste mês ainda.';
+
+  @override
+  String get reportSave => 'Salvar como PDF ou Word';
+
+  @override
+  String get reportPrevMonth => 'Mês anterior';
+
+  @override
+  String get reportNextMonth => 'Mês seguinte';
+
+  @override
+  String get careTitle => 'Cuidado do telefone e dos dados';
+
+  @override
+  String get storageTitle => 'Armazenamento';
+
+  @override
+  String get storageSubtitle => 'O que ocupa espaço e limpeza de imagens sem uso';
+
+  @override
+  String get storagePictures => 'Imagens nas notas';
+
+  @override
+  String get storageCardMedia => 'Imagens e áudio nos cartões';
+
+  @override
+  String get storageText => 'Texto das notas';
+
+  @override
+  String get storageFree => 'Livre no seu telefone';
+
+  @override
+  String get storageLow =>
+      'Seu telefone está quase cheio. Libere espaço para que backups e lembretes continuem funcionando.';
+
+  @override
+  String storageUnused(int count, String size) {
+    return '$count imagens sem uso ($size)';
+  }
+
+  @override
+  String get storageNoUnused => 'Nenhuma imagem sem uso. Tudo em ordem.';
+
+  @override
+  String get storageClean => 'Remover imagens sem uso';
+
+  @override
+  String storageCleaned(int count) {
+    return '$count imagens removidas';
+  }
+
+  @override
+  String get storageHint =>
+      'Uma imagem só é «sem uso» se nenhuma nota a mostra, inclusive as da lixeira.';
+
+  @override
+  String get batteryTitle => 'Mantenha os lembretes funcionando';
+
+  @override
+  String get batterySubtitle => 'Alguns telefones param apps em segundo plano. Verifique o seu.';
+
+  @override
+  String get batteryStatusOk =>
+      'A economia de bateria não limita o app. Lembretes e sons devem chegar no horário.';
+
+  @override
+  String get batteryStatusLimited =>
+      'A economia de bateria pode parar o app em segundo plano; lembretes e sons podem atrasar ou faltar.';
+
+  @override
+  String get batteryOpen => 'Abrir configurações de bateria';
+
+  @override
+  String get batteryOpenApp => 'Abrir configurações do app';
+
+  @override
+  String get batteryGeneric =>
+      'Nas configurações de bateria escolha este app e defina «Sem restrições» (ou «Não otimizar»).';
+
+  @override
+  String get batteryXiaomi =>
+      'Xiaomi / Redmi / POCO: abra também Segurança › Permissões › Inicialização automática e ative o app; economia de bateria em «Sem restrições».';
+
+  @override
+  String get batteryOppo =>
+      'Oppo / Realme / OnePlus: abra Bateria › este app e permita atividade em segundo plano e início automático; bloqueie o app nos recentes.';
+
+  @override
+  String get batterySamsung =>
+      'Samsung: Bateria › Limites de uso em segundo plano: remova o app de Apps em suspensão e Apps em suspensão profunda.';
+
+  @override
+  String get batteryHuawei =>
+      'Huawei / Honor: Início de apps › este app › gerenciar manualmente e permita início automático, secundário e em segundo plano.';
+
+  @override
+  String get batteryVivo =>
+      'Vivo / iQOO: Bateria › Consumo em segundo plano › permita este app e ative início automático nas permissões.';
+
+  @override
+  String get whatsNewTitle => 'Novidades';
+
+  @override
+  String get whatsNewSubtitle => 'As últimas mudanças em poucas linhas';
+
+  @override
+  String get whatsNewDone => 'Entendi';
+
+  @override
+  String get whatsNewOrderTitle => 'Arraste cartões para sua ordem';
+
+  @override
+  String get whatsNewOrderBody => 'No baralho escolha Ordem › Minha ordem e arraste a alça.';
+
+  @override
+  String get whatsNewSpeechTitle => 'Um alto-falante em cada lado';
+
+  @override
+  String get whatsNewSpeechBody =>
+      'Toque para ouvir a palavra ou a tradução. Velocidade, repetições e voz estão no menu de revisão. O idioma é detectado pelo texto.';
+
+  @override
+  String get whatsNewReportTitle => 'Relatório mensal';
+
+  @override
+  String get whatsNewReportBody =>
+      'Em Estatísticas toque no ícone do relatório para ver o mês e salvar em PDF ou Word.';
+
+  @override
+  String get whatsNewCareTitle => 'Cuidado do telefone e dos dados';
+
+  @override
+  String get whatsNewCareBody =>
+      'Configurações agora tem página de armazenamento com limpeza de imagens e guia de bateria para sua marca.';
+
+  @override
+  String get whatsNewSoundTitle => 'Sons mais calmos';
+
+  @override
+  String get whatsNewSoundBody =>
+      'Os sons da natureza estão mais suaves e baixos, e os cartões ficaram mais bonitos.';
+
+  @override
+  String autoBackupCheckOk(String date) {
+    return 'Verificado $date: o último backup abre corretamente.';
+  }
+
+  @override
+  String autoBackupCheckFixed(String date) {
+    return 'Verificado $date: um backup danificado foi encontrado e substituído por um novo.';
+  }
+
+  @override
+  String autoBackupCheckFailed(String date) {
+    return 'Verificado $date: não foi possível abrir o último backup. Salve um arquivo de backup nas Configurações.';
+  }
+
+  @override
+  String smartReviewTimeTitle(String time) {
+    return 'Você costuma estudar por volta das $time';
+  }
+
+  @override
+  String get smartReviewTimeUse => 'Usar';
 }

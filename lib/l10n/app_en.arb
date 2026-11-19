@@ -6425,5 +6425,289 @@
   "flashDragHandle": "Drag to move",
   "@flashDragHandle": {
     "description": "Tooltip of the drag handle"
+  },
+  "reportTitle": "Monthly report",
+  "@reportTitle": {
+    "description": "Monthly report title / menu item"
+  },
+  "reportSubtitle": "Focus, cards, tasks and habits of the month, ready to save",
+  "@reportSubtitle": {
+    "description": "Under report title"
+  },
+  "reportFocus": "Focus time",
+  "@reportFocus": {
+    "description": "Report row"
+  },
+  "reportSessions": "{count} sessions",
+  "@reportSessions": {
+    "description": "Report row",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reportBestDay": "Best day: {day} ({time})",
+  "@reportBestDay": {
+    "description": "Report row",
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "reportActiveDays": "{count} active days",
+  "@reportActiveDays": {
+    "description": "Report row",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reportCards": "Cards reviewed",
+  "@reportCards": {
+    "description": "Report row"
+  },
+  "reportCardsKnown": "{percent} remembered",
+  "@reportCardsKnown": {
+    "description": "Report row",
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "reportTasks": "Tasks completed",
+  "@reportTasks": {
+    "description": "Report row"
+  },
+  "reportHabits": "Habit check-ins",
+  "@reportHabits": {
+    "description": "Report row"
+  },
+  "reportEmpty": "Nothing recorded this month yet.",
+  "@reportEmpty": {
+    "description": "Empty month"
+  },
+  "reportSave": "Save as PDF or Word",
+  "@reportSave": {
+    "description": "Button: save report as file"
+  },
+  "reportPrevMonth": "Previous month",
+  "@reportPrevMonth": {
+    "description": "Tooltip"
+  },
+  "reportNextMonth": "Next month",
+  "@reportNextMonth": {
+    "description": "Tooltip"
+  },
+  "careTitle": "Care of your phone and data",
+  "@careTitle": {
+    "description": "Settings section title"
+  },
+  "storageTitle": "Storage",
+  "@storageTitle": {
+    "description": "Storage sheet title"
+  },
+  "storageSubtitle": "What takes space and a clean-up of unused pictures",
+  "@storageSubtitle": {
+    "description": "Row subtitle"
+  },
+  "storagePictures": "Pictures in notes",
+  "@storagePictures": {
+    "description": "Storage row"
+  },
+  "storageCardMedia": "Images and audio in cards",
+  "@storageCardMedia": {
+    "description": "Storage row"
+  },
+  "storageText": "Notes text",
+  "@storageText": {
+    "description": "Storage row"
+  },
+  "storageFree": "Free on your phone",
+  "@storageFree": {
+    "description": "Storage row: free space on phone"
+  },
+  "storageLow": "Your phone is almost full. Free some space so backups and reminders keep working.",
+  "@storageLow": {
+    "description": "Warning when phone is almost full"
+  },
+  "storageUnused": "{count} unused pictures ({size})",
+  "@storageUnused": {
+    "description": "Unused pictures summary",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "storageNoUnused": "No unused pictures. Everything is tidy.",
+  "@storageNoUnused": {
+    "description": "No unused pictures"
+  },
+  "storageClean": "Remove unused pictures",
+  "@storageClean": {
+    "description": "Button"
+  },
+  "storageCleaned": "{count} pictures removed",
+  "@storageCleaned": {
+    "description": "Snackbar",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "storageHint": "Pictures only count as unused when no note shows them, including notes in the trash.",
+  "@storageHint": {
+    "description": "Hint under storage"
+  },
+  "batteryTitle": "Keep reminders working",
+  "@batteryTitle": {
+    "description": "Battery guide title"
+  },
+  "batterySubtitle": "Some phones stop apps in the background. Check yours.",
+  "@batterySubtitle": {
+    "description": "Row subtitle"
+  },
+  "batteryStatusOk": "Battery saving does not limit this app. Reminders and sounds should arrive on time.",
+  "@batteryStatusOk": {
+    "description": "Status"
+  },
+  "batteryStatusLimited": "Battery saving may stop this app in the background, so reminders and sounds can be late or missing.",
+  "@batteryStatusLimited": {
+    "description": "Status"
+  },
+  "batteryOpen": "Open battery settings",
+  "@batteryOpen": {
+    "description": "Button"
+  },
+  "batteryOpenApp": "Open app settings",
+  "@batteryOpenApp": {
+    "description": "Button"
+  },
+  "batteryGeneric": "In the battery settings choose this app and set it to Unrestricted (or Don't optimize).",
+  "@batteryGeneric": {
+    "description": "Generic steps"
+  },
+  "batteryXiaomi": "Xiaomi / Redmi / POCO: also open Security › Permissions › Autostart and switch this app on, and set Battery saver to No restrictions.",
+  "@batteryXiaomi": {
+    "description": "Brand tip"
+  },
+  "batteryOppo": "Oppo / Realme / OnePlus: open Battery › this app and allow background activity and auto-launch; lock the app in the recent apps list.",
+  "@batteryOppo": {
+    "description": "Brand tip"
+  },
+  "batterySamsung": "Samsung: Battery › Background usage limits: remove this app from Sleeping apps and Deep sleeping apps.",
+  "@batterySamsung": {
+    "description": "Brand tip"
+  },
+  "batteryHuawei": "Huawei / Honor: App launch › this app › manage manually, and allow auto-launch, secondary launch and run in background.",
+  "@batteryHuawei": {
+    "description": "Brand tip"
+  },
+  "batteryVivo": "Vivo / iQOO: Battery › Background power consumption › allow this app, and enable auto-start in the permissions.",
+  "@batteryVivo": {
+    "description": "Brand tip"
+  },
+  "whatsNewTitle": "What's new",
+  "@whatsNewTitle": {
+    "description": "What's new title"
+  },
+  "whatsNewSubtitle": "The latest changes in a few lines",
+  "@whatsNewSubtitle": {
+    "description": "Row subtitle"
+  },
+  "whatsNewDone": "Got it",
+  "@whatsNewDone": {
+    "description": "Button"
+  },
+  "whatsNewOrderTitle": "Drag cards into your own order",
+  "@whatsNewOrderTitle": {
+    "description": "Item title"
+  },
+  "whatsNewOrderBody": "In a deck choose Sort › My order, then hold the handle and drag.",
+  "@whatsNewOrderBody": {
+    "description": "Item body"
+  },
+  "whatsNewSpeechTitle": "A speaker on every card side",
+  "@whatsNewSpeechTitle": {
+    "description": "Item title"
+  },
+  "whatsNewSpeechBody": "Tap it to hear the word or the translation. Speed, repeats and voice are in the review menu. Language is detected from the text.",
+  "@whatsNewSpeechBody": {
+    "description": "Item body"
+  },
+  "whatsNewReportTitle": "Monthly report",
+  "@whatsNewReportTitle": {
+    "description": "Item title"
+  },
+  "whatsNewReportBody": "In Insights tap the report icon to see the month and save it as PDF or Word.",
+  "@whatsNewReportBody": {
+    "description": "Item body"
+  },
+  "whatsNewCareTitle": "Care of your phone and data",
+  "@whatsNewCareTitle": {
+    "description": "Item title"
+  },
+  "whatsNewCareBody": "Settings now has a storage page with picture clean-up and a battery guide for your phone brand.",
+  "@whatsNewCareBody": {
+    "description": "Item body"
+  },
+  "whatsNewSoundTitle": "Calmer sounds",
+  "@whatsNewSoundTitle": {
+    "description": "Item title"
+  },
+  "whatsNewSoundBody": "Nature sounds are softer and quieter, and the picture cards are nicer.",
+  "@whatsNewSoundBody": {
+    "description": "Item body"
+  },
+  "autoBackupCheckOk": "Checked {date}: the latest backup opens correctly.",
+  "@autoBackupCheckOk": {
+    "description": "Weekly check result",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "autoBackupCheckFixed": "Checked {date}: a damaged backup was found and replaced with a new one.",
+  "@autoBackupCheckFixed": {
+    "description": "Weekly check result",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "autoBackupCheckFailed": "Checked {date}: the latest backup could not be opened. Save a backup file yourself from Settings.",
+  "@autoBackupCheckFailed": {
+    "description": "Weekly check result",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "smartReviewTimeTitle": "You usually study around {time}",
+  "@smartReviewTimeTitle": {
+    "description": "Suggestion in settings",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "smartReviewTimeUse": "Use it",
+  "@smartReviewTimeUse": {
+    "description": "Button: use the suggested time"
   }
 }

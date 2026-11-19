@@ -4841,4 +4841,212 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get flashDragHandle => 'Glisser pour déplacer';
+
+  @override
+  String get reportTitle => 'Rapport mensuel';
+
+  @override
+  String get reportSubtitle =>
+      'Concentration, cartes, tâches et habitudes du mois, prêt à enregistrer';
+
+  @override
+  String get reportFocus => 'Temps de concentration';
+
+  @override
+  String reportSessions(int count) {
+    return '$count sessions';
+  }
+
+  @override
+  String reportBestDay(String day, String time) {
+    return 'Meilleur jour : $day ($time)';
+  }
+
+  @override
+  String reportActiveDays(int count) {
+    return '$count jours actifs';
+  }
+
+  @override
+  String get reportCards => 'Cartes révisées';
+
+  @override
+  String reportCardsKnown(String percent) {
+    return '$percent retenues';
+  }
+
+  @override
+  String get reportTasks => 'Tâches terminées';
+
+  @override
+  String get reportHabits => 'Validations d\'habitudes';
+
+  @override
+  String get reportEmpty => 'Rien d\'enregistré ce mois-ci pour l\'instant.';
+
+  @override
+  String get reportSave => 'Enregistrer en PDF ou Word';
+
+  @override
+  String get reportPrevMonth => 'Mois précédent';
+
+  @override
+  String get reportNextMonth => 'Mois suivant';
+
+  @override
+  String get careTitle => 'Entretien du téléphone et des données';
+
+  @override
+  String get storageTitle => 'Stockage';
+
+  @override
+  String get storageSubtitle => 'Ce qui prend de la place et nettoyage des images inutilisées';
+
+  @override
+  String get storagePictures => 'Images dans les notes';
+
+  @override
+  String get storageCardMedia => 'Images et audio dans les cartes';
+
+  @override
+  String get storageText => 'Texte des notes';
+
+  @override
+  String get storageFree => 'Libre sur votre téléphone';
+
+  @override
+  String get storageLow =>
+      'Votre téléphone est presque plein. Libérez de l\'espace pour que les sauvegardes et rappels continuent de fonctionner.';
+
+  @override
+  String storageUnused(int count, String size) {
+    return '$count images inutilisées ($size)';
+  }
+
+  @override
+  String get storageNoUnused => 'Aucune image inutilisée. Tout est en ordre.';
+
+  @override
+  String get storageClean => 'Supprimer les images inutilisées';
+
+  @override
+  String storageCleaned(int count) {
+    return '$count images supprimées';
+  }
+
+  @override
+  String get storageHint =>
+      'Une image n\'est « inutilisée » que si aucune note ne l\'affiche, corbeille comprise.';
+
+  @override
+  String get batteryTitle => 'Garder les rappels actifs';
+
+  @override
+  String get batterySubtitle =>
+      'Certains téléphones arrêtent les applis en arrière-plan. Vérifiez le vôtre.';
+
+  @override
+  String get batteryStatusOk =>
+      'L\'économie de batterie ne limite pas l\'appli. Rappels et sons devraient arriver à l\'heure.';
+
+  @override
+  String get batteryStatusLimited =>
+      'L\'économie de batterie peut arrêter l\'appli en arrière-plan : rappels et sons peuvent être en retard ou absents.';
+
+  @override
+  String get batteryOpen => 'Ouvrir les réglages de batterie';
+
+  @override
+  String get batteryOpenApp => 'Ouvrir les réglages de l\'appli';
+
+  @override
+  String get batteryGeneric =>
+      'Dans les réglages de batterie, choisissez cette appli et réglez-la sur « Sans restriction » (ou « Ne pas optimiser »).';
+
+  @override
+  String get batteryXiaomi =>
+      'Xiaomi / Redmi / POCO : ouvrez aussi Sécurité › Autorisations › Démarrage automatique et activez l\'appli ; économiseur de batterie sur « Sans restrictions ».';
+
+  @override
+  String get batteryOppo =>
+      'Oppo / Realme / OnePlus : ouvrez Batterie › cette appli et autorisez l\'activité en arrière-plan et le lancement auto ; verrouillez l\'appli dans les récents.';
+
+  @override
+  String get batterySamsung =>
+      'Samsung : Batterie › Limites d\'utilisation en arrière-plan : retirez l\'appli des applis en veille et en veille prolongée.';
+
+  @override
+  String get batteryHuawei =>
+      'Huawei / Honor : Lancement des applis › cette appli › gérer manuellement, et autorisez lancement auto, secondaire et arrière-plan.';
+
+  @override
+  String get batteryVivo =>
+      'Vivo / iQOO : Batterie › Consommation en arrière-plan › autorisez l\'appli et activez le démarrage auto dans les autorisations.';
+
+  @override
+  String get whatsNewTitle => 'Nouveautés';
+
+  @override
+  String get whatsNewSubtitle => 'Les dernières nouveautés en quelques lignes';
+
+  @override
+  String get whatsNewDone => 'Compris';
+
+  @override
+  String get whatsNewOrderTitle => 'Glissez les cartes dans votre ordre';
+
+  @override
+  String get whatsNewOrderBody =>
+      'Dans un paquet choisissez Tri › Mon ordre, puis faites glisser la poignée.';
+
+  @override
+  String get whatsNewSpeechTitle => 'Un haut-parleur sur chaque face';
+
+  @override
+  String get whatsNewSpeechBody =>
+      'Touchez pour entendre le mot ou la traduction. Vitesse, répétitions et voix sont dans le menu de révision. La langue est détectée d\'après le texte.';
+
+  @override
+  String get whatsNewReportTitle => 'Rapport mensuel';
+
+  @override
+  String get whatsNewReportBody =>
+      'Dans Statistiques touchez l\'icône du rapport pour voir le mois et l\'enregistrer en PDF ou Word.';
+
+  @override
+  String get whatsNewCareTitle => 'Entretien du téléphone et des données';
+
+  @override
+  String get whatsNewCareBody =>
+      'Les réglages ont une page de stockage avec nettoyage d\'images et un guide batterie selon votre marque.';
+
+  @override
+  String get whatsNewSoundTitle => 'Sons plus doux';
+
+  @override
+  String get whatsNewSoundBody =>
+      'Les sons de la nature sont plus doux et plus bas, et les cartes sont plus belles.';
+
+  @override
+  String autoBackupCheckOk(String date) {
+    return 'Vérifié $date : la dernière sauvegarde s\'ouvre correctement.';
+  }
+
+  @override
+  String autoBackupCheckFixed(String date) {
+    return 'Vérifié $date : une sauvegarde endommagée a été remplacée par une nouvelle.';
+  }
+
+  @override
+  String autoBackupCheckFailed(String date) {
+    return 'Vérifié $date : la dernière sauvegarde est illisible. Enregistrez une sauvegarde vous-même depuis les réglages.';
+  }
+
+  @override
+  String smartReviewTimeTitle(String time) {
+    return 'Vous étudiez en général vers $time';
+  }
+
+  @override
+  String get smartReviewTimeUse => 'Utiliser';
 }

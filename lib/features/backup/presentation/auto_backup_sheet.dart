@@ -77,6 +77,23 @@ class _AutoBackupSheetState extends ConsumerState<_AutoBackupSheet> {
             style: context.text.bodySmall?.copyWith(color: context.lux.ink2),
           ),
           const SizedBox(height: Space.sm),
+          if (ref.watch(autoBackupCheckProvider).value case final check?)
+            Padding(
+              padding: const EdgeInsets.only(bottom: Space.sm),
+              child: Text(
+                (switch (check.result) {
+                  AutoBackupCheckResult.ok => l10n.autoBackupCheckOk,
+                  AutoBackupCheckResult.fixed => l10n.autoBackupCheckFixed,
+                  AutoBackupCheckResult.failed => l10n.autoBackupCheckFailed,
+                })(context.fmt.date(check.at.toLocal())),
+                key: Key('autoBackupCheck_${check.result.name}'),
+                style: context.text.bodySmall?.copyWith(
+                  color: check.result == AutoBackupCheckResult.failed
+                      ? context.lux.danger
+                      : context.lux.ink2,
+                ),
+              ),
+            ),
           if (files.isEmpty) Text(l10n.autoBackupNone, key: const Key('autoBackupNone')),
           for (final (i, f) in files.indexed)
             ListTile(

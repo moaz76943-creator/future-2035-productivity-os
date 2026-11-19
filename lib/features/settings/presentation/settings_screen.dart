@@ -18,13 +18,18 @@ import '../data/settings_repository.dart';
 import '../../backup/presentation/auto_backup_sheet.dart';
 import '../../prayer/domain/prayer_cities.dart';
 import '../../prayer/presentation/prayer_sheet.dart';
+import '../../care/presentation/battery_sheet.dart';
+import '../../care/presentation/storage_sheet.dart';
+import '../../care/presentation/whats_new_sheet.dart';
 import 'appearance_extras.dart';
 import 'dnd_tile.dart';
 import 'end_tone_sheet.dart';
 import 'error_log_sheet.dart';
 import 'language_options.dart';
+import 'smart_review_time.dart';
 
 part 'settings_screen/section.dart';
+part 'settings_screen/care_section.dart';
 
 /// Localized label of a dashboard section id.
 String dashboardSectionLabel(AppLocalizations l10n, String id) => switch (id) {
@@ -315,6 +320,7 @@ class SettingsScreen extends ConsumerWidget {
                 ),
               ],
             ),
+            const _CareSection(),
             // ---------------- Trash
             _Section(
               title: l10n.settingsTrash,

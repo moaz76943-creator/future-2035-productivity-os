@@ -96,4 +96,62 @@ class AutoBackup {
   /// Replaces all data with [f]. Returns the number of rows restored.
   Future<int> restore(AutoBackupFile f) async =>
       service.restore(await f.file.readAsBytes(), await _password());
+
+  static const checkEvery = Duration(days: 7);
+
+  File _checkFile(Directory d) => File('${d.path}${Platform.pathSeparator}last_check.txt');
+
+  /// The last weekly check: when it ran and what it found.
+  Future<AutoBackupCheck?> lastCheck() async {
+    final f = _checkFile(await _dir());
+    if (!f.existsSync()) return null;
+    final parts = (await f.readAsString()).trim().split(' ');
+    if (parts.length != 2) return null;
+    final at = DateTime.tryParse(parts[0]);
+    final result = AutoBackupCheckResult.values.asNameMap()[parts[1]];
+    return at == null || result == null ? null : AutoBackupCheck(at, result);
+  }
+
+  /// Once a week opens the newest backup the way a restore would (password,
+  /// decryption and structure) without changing any data. A backup that
+  /// cannot be read is deleted and a fresh one is made at once, so a backup
+  /// that would fail on the day it is needed never sits there unnoticed.
+  /// Returns null when no check was due.
+  Future<AutoBackupCheck?> checkIfDue() async {
+    final previous = await lastCheck();
+    final now = clock.nowUtc();
+    if (previous != null && now.difference(previous.at) < checkEvery) return null;
+    final files = await list();
+    if (files.isEmpty) return null;
+    var result = AutoBackupCheckResult.ok;
+    if (!await _opens(files.first)) {
+      await files.first.file.delete();
+      // A new backup is made right away (the due-check sees none is recent).
+      await runIfDue();
+      final left = await list();
+      result = left.isNotEmpty && await _opens(left.first)
+          ? AutoBackupCheckResult.fixed
+          : AutoBackupCheckResult.failed;
+    }
+    final check = AutoBackupCheck(now, result);
+    await _checkFile(await _dir()).writeAsString('${now.toIso8601String()} ${result.name}');
+    return check;
+  }
+
+  Future<bool> _opens(AutoBackupFile f) async {
+    try {
+      await service.inspect(await f.file.readAsBytes(), await _password());
+      return true;
+    } on Object {
+      return false;
+    }
+  }
+}
+
+enum AutoBackupCheckResult { ok, fixed, failed }
+
+class AutoBackupCheck {
+  const AutoBackupCheck(this.at, this.result);
+  final DateTime at;
+  final AutoBackupCheckResult result;
 }

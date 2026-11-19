@@ -4820,4 +4820,209 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get flashDragHandle => 'खींचकर हिलाएँ';
+
+  @override
+  String get reportTitle => 'मासिक रिपोर्ट';
+
+  @override
+  String get reportSubtitle => 'महीने का फ़ोकस, कार्ड, कार्य और आदतें, सहेजने के लिए तैयार';
+
+  @override
+  String get reportFocus => 'फ़ोकस समय';
+
+  @override
+  String reportSessions(int count) {
+    return '$count सत्र';
+  }
+
+  @override
+  String reportBestDay(String day, String time) {
+    return 'सबसे अच्छा दिन: $day ($time)';
+  }
+
+  @override
+  String reportActiveDays(int count) {
+    return '$count सक्रिय दिन';
+  }
+
+  @override
+  String get reportCards => 'दोहराए गए कार्ड';
+
+  @override
+  String reportCardsKnown(String percent) {
+    return '$percent याद रहे';
+  }
+
+  @override
+  String get reportTasks => 'पूरे किए गए कार्य';
+
+  @override
+  String get reportHabits => 'आदत दर्ज';
+
+  @override
+  String get reportEmpty => 'इस महीने अभी कुछ दर्ज नहीं है।';
+
+  @override
+  String get reportSave => 'PDF या Word में सहेजें';
+
+  @override
+  String get reportPrevMonth => 'पिछला महीना';
+
+  @override
+  String get reportNextMonth => 'अगला महीना';
+
+  @override
+  String get careTitle => 'फ़ोन और डेटा की देखभाल';
+
+  @override
+  String get storageTitle => 'स्टोरेज';
+
+  @override
+  String get storageSubtitle => 'क्या जगह घेर रहा है और अनुपयोगी चित्रों की सफ़ाई';
+
+  @override
+  String get storagePictures => 'नोट्स में चित्र';
+
+  @override
+  String get storageCardMedia => 'कार्ड में चित्र और ऑडियो';
+
+  @override
+  String get storageText => 'नोट्स का टेक्स्ट';
+
+  @override
+  String get storageFree => 'आपके फ़ोन में खाली';
+
+  @override
+  String get storageLow =>
+      'आपका फ़ोन लगभग भर गया है। जगह खाली करें ताकि बैकअप और रिमाइंडर चलते रहें।';
+
+  @override
+  String storageUnused(int count, String size) {
+    return '$count अनुपयोगी चित्र ($size)';
+  }
+
+  @override
+  String get storageNoUnused => 'कोई अनुपयोगी चित्र नहीं। सब व्यवस्थित है।';
+
+  @override
+  String get storageClean => 'अनुपयोगी चित्र हटाएँ';
+
+  @override
+  String storageCleaned(int count) {
+    return '$count चित्र हटाए गए';
+  }
+
+  @override
+  String get storageHint =>
+      'चित्र तभी अनुपयोगी माना जाता है जब कोई नोट उसे न दिखाए, ट्रैश वाले नोट भी गिने जाते हैं।';
+
+  @override
+  String get batteryTitle => 'रिमाइंडर चालू रखें';
+
+  @override
+  String get batterySubtitle => 'कुछ फ़ोन बैकग्राउंड ऐप्स रोक देते हैं। अपना जाँचें।';
+
+  @override
+  String get batteryStatusOk =>
+      'बैटरी बचत इस ऐप को सीमित नहीं करती। रिमाइंडर और आवाज़ें समय पर आनी चाहिए।';
+
+  @override
+  String get batteryStatusLimited =>
+      'बैटरी बचत ऐप को बैकग्राउंड में रोक सकती है, इसलिए रिमाइंडर और आवाज़ें देर से आ सकती हैं या नहीं आएँगी।';
+
+  @override
+  String get batteryOpen => 'बैटरी सेटिंग खोलें';
+
+  @override
+  String get batteryOpenApp => 'ऐप सेटिंग खोलें';
+
+  @override
+  String get batteryGeneric =>
+      'बैटरी सेटिंग में इस ऐप को चुनें और «अप्रतिबंधित» (या «ऑप्टिमाइज़ न करें») रखें।';
+
+  @override
+  String get batteryXiaomi =>
+      'Xiaomi / Redmi / POCO: सुरक्षा › अनुमतियाँ › ऑटोस्टार्ट में ऐप चालू करें और बैटरी सेवर «कोई प्रतिबंध नहीं» रखें।';
+
+  @override
+  String get batteryOppo =>
+      'Oppo / Realme / OnePlus: बैटरी › यह ऐप खोलें, बैकग्राउंड गतिविधि और ऑटो-लॉन्च की अनुमति दें; हाल के ऐप्स में ऐप को लॉक करें।';
+
+  @override
+  String get batterySamsung =>
+      'Samsung: बैटरी › बैकग्राउंड उपयोग सीमाएँ: ऐप को स्लीपिंग और डीप स्लीपिंग ऐप्स से हटाएँ।';
+
+  @override
+  String get batteryHuawei =>
+      'Huawei / Honor: ऐप लॉन्च › यह ऐप › मैन्युअल प्रबंधन, और ऑटो-लॉन्च, सेकेंडरी लॉन्च व बैकग्राउंड चलने दें।';
+
+  @override
+  String get batteryVivo =>
+      'Vivo / iQOO: बैटरी › बैकग्राउंड बिजली खपत › इस ऐप को अनुमति दें और अनुमतियों में ऑटो-स्टार्ट चालू करें।';
+
+  @override
+  String get whatsNewTitle => 'नया क्या है';
+
+  @override
+  String get whatsNewSubtitle => 'हाल के बदलाव कुछ पंक्तियों में';
+
+  @override
+  String get whatsNewDone => 'समझ गया';
+
+  @override
+  String get whatsNewOrderTitle => 'कार्ड खींचकर अपने क्रम में रखें';
+
+  @override
+  String get whatsNewOrderBody => 'डेक में क्रम › मेरा क्रम चुनें, फिर हैंडल पकड़कर खींचें।';
+
+  @override
+  String get whatsNewSpeechTitle => 'हर पक्ष पर स्पीकर';
+
+  @override
+  String get whatsNewSpeechBody =>
+      'शब्द या अनुवाद सुनने के लिए दबाएँ। गति, दोहराव और आवाज़ रिव्यू मेनू में हैं। भाषा टेक्स्ट से पहचानी जाती है।';
+
+  @override
+  String get whatsNewReportTitle => 'मासिक रिपोर्ट';
+
+  @override
+  String get whatsNewReportBody =>
+      'इनसाइट्स में रिपोर्ट आइकन दबाकर महीना देखें और PDF या Word में सहेजें।';
+
+  @override
+  String get whatsNewCareTitle => 'फ़ोन और डेटा की देखभाल';
+
+  @override
+  String get whatsNewCareBody =>
+      'सेटिंग में अब स्टोरेज पेज (चित्र सफ़ाई के साथ) और आपके फ़ोन ब्रांड के लिए बैटरी गाइड है।';
+
+  @override
+  String get whatsNewSoundTitle => 'शांत आवाज़ें';
+
+  @override
+  String get whatsNewSoundBody =>
+      'प्रकृति की आवाज़ें ज़्यादा नरम और धीमी हैं, और चित्र कार्ड बेहतर हैं।';
+
+  @override
+  String autoBackupCheckOk(String date) {
+    return 'जाँच $date: नवीनतम बैकअप सही खुलता है।';
+  }
+
+  @override
+  String autoBackupCheckFixed(String date) {
+    return 'जाँच $date: खराब बैकअप मिला और नए से बदल दिया गया।';
+  }
+
+  @override
+  String autoBackupCheckFailed(String date) {
+    return 'जाँच $date: नवीनतम बैकअप खुल नहीं सका। सेटिंग से खुद बैकअप फ़ाइल सहेजें।';
+  }
+
+  @override
+  String smartReviewTimeTitle(String time) {
+    return 'आप आमतौर पर $time के आसपास पढ़ते हैं';
+  }
+
+  @override
+  String get smartReviewTimeUse => 'उपयोग करें';
 }

@@ -6,14 +6,17 @@ import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/components/surfaces.dart';
 import '../../../core/design_system/tokens.dart';
 import '../../../core/providers/core_providers.dart';
+import '../../care/presentation/whats_new_sheet.dart';
 import '../domain/feature_guide.dart';
 
 const _pendingKey = 'help.tourPending';
 
 /// Called when the first-run setup finishes: the home screen then shows the
 /// tour once.
-Future<void> markTourPending(WidgetRef ref) =>
-    ref.read(databaseProvider).writeValue(_pendingKey, '1');
+Future<void> markTourPending(WidgetRef ref) async {
+  await markWhatsNewSeen(ref);
+  await ref.read(databaseProvider).writeValue(_pendingKey, '1');
+}
 
 /// On the home screen: shows the tour if the setup just finished.
 class TourLauncher extends ConsumerStatefulWidget {

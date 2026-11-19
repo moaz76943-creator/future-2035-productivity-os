@@ -30,6 +30,13 @@ Future<TestEnv> pumpScreen(
 }) async {
   await initializeDateFormatting();
   final e = env ?? TestEnv();
+  // The "what's new" sheet is not part of other screens' tests (its own test
+  // writes '0' first to see it).
+  await tester.runAsync(() async {
+    if (await e.db.readValue('whatsNew.seen') == null) {
+      await e.db.writeValue('whatsNew.seen', '999');
+    }
+  });
   tester.view.physicalSize = size * 3;
   tester.view.devicePixelRatio = 3;
   addTearDown(tester.view.reset);

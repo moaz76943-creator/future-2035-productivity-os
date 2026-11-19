@@ -4828,4 +4828,209 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get flashDragHandle => 'Arrastrar para mover';
+
+  @override
+  String get reportTitle => 'Informe mensual';
+
+  @override
+  String get reportSubtitle => 'Enfoque, tarjetas, tareas y hábitos del mes, listo para guardar';
+
+  @override
+  String get reportFocus => 'Tiempo de enfoque';
+
+  @override
+  String reportSessions(int count) {
+    return '$count sesiones';
+  }
+
+  @override
+  String reportBestDay(String day, String time) {
+    return 'Mejor día: $day ($time)';
+  }
+
+  @override
+  String reportActiveDays(int count) {
+    return '$count días activos';
+  }
+
+  @override
+  String get reportCards => 'Tarjetas repasadas';
+
+  @override
+  String reportCardsKnown(String percent) {
+    return '$percent recordadas';
+  }
+
+  @override
+  String get reportTasks => 'Tareas completadas';
+
+  @override
+  String get reportHabits => 'Registros de hábitos';
+
+  @override
+  String get reportEmpty => 'Todavía no hay nada registrado este mes.';
+
+  @override
+  String get reportSave => 'Guardar como PDF o Word';
+
+  @override
+  String get reportPrevMonth => 'Mes anterior';
+
+  @override
+  String get reportNextMonth => 'Mes siguiente';
+
+  @override
+  String get careTitle => 'Cuidado del teléfono y los datos';
+
+  @override
+  String get storageTitle => 'Almacenamiento';
+
+  @override
+  String get storageSubtitle => 'Qué ocupa espacio y limpieza de imágenes sin usar';
+
+  @override
+  String get storagePictures => 'Imágenes en notas';
+
+  @override
+  String get storageCardMedia => 'Imágenes y audio en tarjetas';
+
+  @override
+  String get storageText => 'Texto de notas';
+
+  @override
+  String get storageFree => 'Libre en tu teléfono';
+
+  @override
+  String get storageLow =>
+      'Tu teléfono está casi lleno. Libera espacio para que las copias y los recordatorios sigan funcionando.';
+
+  @override
+  String storageUnused(int count, String size) {
+    return '$count imágenes sin usar ($size)';
+  }
+
+  @override
+  String get storageNoUnused => 'No hay imágenes sin usar. Todo en orden.';
+
+  @override
+  String get storageClean => 'Quitar imágenes sin usar';
+
+  @override
+  String storageCleaned(int count) {
+    return '$count imágenes eliminadas';
+  }
+
+  @override
+  String get storageHint =>
+      'Una imagen solo es «sin usar» si ninguna nota la muestra, incluidas las de la papelera.';
+
+  @override
+  String get batteryTitle => 'Mantén los recordatorios activos';
+
+  @override
+  String get batterySubtitle => 'Algunos teléfonos detienen apps en segundo plano. Revisa el tuyo.';
+
+  @override
+  String get batteryStatusOk =>
+      'El ahorro de batería no limita la app. Los recordatorios y sonidos deberían llegar a tiempo.';
+
+  @override
+  String get batteryStatusLimited =>
+      'El ahorro de batería puede detener la app en segundo plano; recordatorios y sonidos pueden llegar tarde o no llegar.';
+
+  @override
+  String get batteryOpen => 'Abrir ajustes de batería';
+
+  @override
+  String get batteryOpenApp => 'Abrir ajustes de la app';
+
+  @override
+  String get batteryGeneric =>
+      'En los ajustes de batería elige esta app y ponla en «Sin restricciones» (o «No optimizar»).';
+
+  @override
+  String get batteryXiaomi =>
+      'Xiaomi / Redmi / POCO: abre también Seguridad › Permisos › Inicio automático y activa la app; ahorro de batería en «Sin restricciones».';
+
+  @override
+  String get batteryOppo =>
+      'Oppo / Realme / OnePlus: abre Batería › esta app y permite actividad en segundo plano e inicio automático; bloquea la app en recientes.';
+
+  @override
+  String get batterySamsung =>
+      'Samsung: Batería › Límites de uso en segundo plano: quita la app de Apps en suspensión y Apps en suspensión profunda.';
+
+  @override
+  String get batteryHuawei =>
+      'Huawei / Honor: Inicio de apps › esta app › gestionar manualmente y permite inicio automático, secundario y en segundo plano.';
+
+  @override
+  String get batteryVivo =>
+      'Vivo / iQOO: Batería › Consumo en segundo plano › permite esta app y activa el inicio automático en permisos.';
+
+  @override
+  String get whatsNewTitle => 'Novedades';
+
+  @override
+  String get whatsNewSubtitle => 'Los últimos cambios en pocas líneas';
+
+  @override
+  String get whatsNewDone => 'Entendido';
+
+  @override
+  String get whatsNewOrderTitle => 'Arrastra tarjetas a tu orden';
+
+  @override
+  String get whatsNewOrderBody => 'En un mazo elige Orden › Mi orden y arrastra el asa.';
+
+  @override
+  String get whatsNewSpeechTitle => 'Un altavoz en cada cara';
+
+  @override
+  String get whatsNewSpeechBody =>
+      'Púlsalo para oír la palabra o la traducción. Velocidad, repeticiones y voz están en el menú de repaso. El idioma se detecta del texto.';
+
+  @override
+  String get whatsNewReportTitle => 'Informe mensual';
+
+  @override
+  String get whatsNewReportBody =>
+      'En Estadísticas toca el icono del informe para ver el mes y guardarlo en PDF o Word.';
+
+  @override
+  String get whatsNewCareTitle => 'Cuidado del teléfono y los datos';
+
+  @override
+  String get whatsNewCareBody =>
+      'Ajustes tiene ahora una página de almacenamiento con limpieza de imágenes y una guía de batería para tu marca.';
+
+  @override
+  String get whatsNewSoundTitle => 'Sonidos más calmados';
+
+  @override
+  String get whatsNewSoundBody =>
+      'Los sonidos de la naturaleza son más suaves y bajos, y las tarjetas lucen mejor.';
+
+  @override
+  String autoBackupCheckOk(String date) {
+    return 'Revisado $date: la última copia se abre correctamente.';
+  }
+
+  @override
+  String autoBackupCheckFixed(String date) {
+    return 'Revisado $date: se encontró una copia dañada y se sustituyó por una nueva.';
+  }
+
+  @override
+  String autoBackupCheckFailed(String date) {
+    return 'Revisado $date: no se pudo abrir la última copia. Guarda una copia tú mismo desde Ajustes.';
+  }
+
+  @override
+  String smartReviewTimeTitle(String time) {
+    return 'Sueles estudiar hacia las $time';
+  }
+
+  @override
+  String get smartReviewTimeUse => 'Usar';
 }

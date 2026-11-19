@@ -41,4 +41,34 @@ void main() {
     await env.dispose();
     await dir.delete(recursive: true);
   });
+
+  test('weekly check opens the newest backup; a damaged one is replaced', () async {
+    final env = TestEnv();
+    final dir = await Directory.systemTemp.createTemp('autobk2');
+    final auto = AutoBackup(
+      service: BackupService(env.db),
+      secrets: MemorySecretStore(),
+      clock: env.clock,
+      root: () async => dir,
+    );
+    expect(await auto.checkIfDue(), isNull, reason: 'nothing to check yet');
+    await auto.runIfDue();
+
+    final ok = await auto.checkIfDue();
+    expect(ok!.result, AutoBackupCheckResult.ok);
+    expect(await auto.checkIfDue(), isNull, reason: 'only once a week');
+    expect((await auto.lastCheck())!.result, AutoBackupCheckResult.ok);
+
+    // Damage the newest file, a week later.
+    env.clock.advance(const Duration(days: 8));
+    final newest = (await auto.list()).first;
+    await newest.file.writeAsBytes([1, 2, 3, 4]);
+    final fixed = await auto.checkIfDue();
+    expect(fixed!.result, AutoBackupCheckResult.fixed);
+    final after = await auto.list();
+    expect(after, isNotEmpty);
+    expect(after.first.file.path, isNot(newest.file.path), reason: 'a new file replaced it');
+    await env.dispose();
+    await dir.delete(recursive: true);
+  });
 }

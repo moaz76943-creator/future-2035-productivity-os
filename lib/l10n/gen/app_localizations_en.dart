@@ -4808,4 +4808,210 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get flashDragHandle => 'Drag to move';
+
+  @override
+  String get reportTitle => 'Monthly report';
+
+  @override
+  String get reportSubtitle => 'Focus, cards, tasks and habits of the month, ready to save';
+
+  @override
+  String get reportFocus => 'Focus time';
+
+  @override
+  String reportSessions(int count) {
+    return '$count sessions';
+  }
+
+  @override
+  String reportBestDay(String day, String time) {
+    return 'Best day: $day ($time)';
+  }
+
+  @override
+  String reportActiveDays(int count) {
+    return '$count active days';
+  }
+
+  @override
+  String get reportCards => 'Cards reviewed';
+
+  @override
+  String reportCardsKnown(String percent) {
+    return '$percent remembered';
+  }
+
+  @override
+  String get reportTasks => 'Tasks completed';
+
+  @override
+  String get reportHabits => 'Habit check-ins';
+
+  @override
+  String get reportEmpty => 'Nothing recorded this month yet.';
+
+  @override
+  String get reportSave => 'Save as PDF or Word';
+
+  @override
+  String get reportPrevMonth => 'Previous month';
+
+  @override
+  String get reportNextMonth => 'Next month';
+
+  @override
+  String get careTitle => 'Care of your phone and data';
+
+  @override
+  String get storageTitle => 'Storage';
+
+  @override
+  String get storageSubtitle => 'What takes space and a clean-up of unused pictures';
+
+  @override
+  String get storagePictures => 'Pictures in notes';
+
+  @override
+  String get storageCardMedia => 'Images and audio in cards';
+
+  @override
+  String get storageText => 'Notes text';
+
+  @override
+  String get storageFree => 'Free on your phone';
+
+  @override
+  String get storageLow =>
+      'Your phone is almost full. Free some space so backups and reminders keep working.';
+
+  @override
+  String storageUnused(int count, String size) {
+    return '$count unused pictures ($size)';
+  }
+
+  @override
+  String get storageNoUnused => 'No unused pictures. Everything is tidy.';
+
+  @override
+  String get storageClean => 'Remove unused pictures';
+
+  @override
+  String storageCleaned(int count) {
+    return '$count pictures removed';
+  }
+
+  @override
+  String get storageHint =>
+      'Pictures only count as unused when no note shows them, including notes in the trash.';
+
+  @override
+  String get batteryTitle => 'Keep reminders working';
+
+  @override
+  String get batterySubtitle => 'Some phones stop apps in the background. Check yours.';
+
+  @override
+  String get batteryStatusOk =>
+      'Battery saving does not limit this app. Reminders and sounds should arrive on time.';
+
+  @override
+  String get batteryStatusLimited =>
+      'Battery saving may stop this app in the background, so reminders and sounds can be late or missing.';
+
+  @override
+  String get batteryOpen => 'Open battery settings';
+
+  @override
+  String get batteryOpenApp => 'Open app settings';
+
+  @override
+  String get batteryGeneric =>
+      'In the battery settings choose this app and set it to Unrestricted (or Don\'t optimize).';
+
+  @override
+  String get batteryXiaomi =>
+      'Xiaomi / Redmi / POCO: also open Security › Permissions › Autostart and switch this app on, and set Battery saver to No restrictions.';
+
+  @override
+  String get batteryOppo =>
+      'Oppo / Realme / OnePlus: open Battery › this app and allow background activity and auto-launch; lock the app in the recent apps list.';
+
+  @override
+  String get batterySamsung =>
+      'Samsung: Battery › Background usage limits: remove this app from Sleeping apps and Deep sleeping apps.';
+
+  @override
+  String get batteryHuawei =>
+      'Huawei / Honor: App launch › this app › manage manually, and allow auto-launch, secondary launch and run in background.';
+
+  @override
+  String get batteryVivo =>
+      'Vivo / iQOO: Battery › Background power consumption › allow this app, and enable auto-start in the permissions.';
+
+  @override
+  String get whatsNewTitle => 'What\'s new';
+
+  @override
+  String get whatsNewSubtitle => 'The latest changes in a few lines';
+
+  @override
+  String get whatsNewDone => 'Got it';
+
+  @override
+  String get whatsNewOrderTitle => 'Drag cards into your own order';
+
+  @override
+  String get whatsNewOrderBody =>
+      'In a deck choose Sort › My order, then hold the handle and drag.';
+
+  @override
+  String get whatsNewSpeechTitle => 'A speaker on every card side';
+
+  @override
+  String get whatsNewSpeechBody =>
+      'Tap it to hear the word or the translation. Speed, repeats and voice are in the review menu. Language is detected from the text.';
+
+  @override
+  String get whatsNewReportTitle => 'Monthly report';
+
+  @override
+  String get whatsNewReportBody =>
+      'In Insights tap the report icon to see the month and save it as PDF or Word.';
+
+  @override
+  String get whatsNewCareTitle => 'Care of your phone and data';
+
+  @override
+  String get whatsNewCareBody =>
+      'Settings now has a storage page with picture clean-up and a battery guide for your phone brand.';
+
+  @override
+  String get whatsNewSoundTitle => 'Calmer sounds';
+
+  @override
+  String get whatsNewSoundBody =>
+      'Nature sounds are softer and quieter, and the picture cards are nicer.';
+
+  @override
+  String autoBackupCheckOk(String date) {
+    return 'Checked $date: the latest backup opens correctly.';
+  }
+
+  @override
+  String autoBackupCheckFixed(String date) {
+    return 'Checked $date: a damaged backup was found and replaced with a new one.';
+  }
+
+  @override
+  String autoBackupCheckFailed(String date) {
+    return 'Checked $date: the latest backup could not be opened. Save a backup file yourself from Settings.';
+  }
+
+  @override
+  String smartReviewTimeTitle(String time) {
+    return 'You usually study around $time';
+  }
+
+  @override
+  String get smartReviewTimeUse => 'Use it';
 }

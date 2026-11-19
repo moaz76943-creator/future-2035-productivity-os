@@ -27,6 +27,7 @@ import '../../tasks/application/tasks_providers.dart';
 import '../../tasks/data/tasks_repository.dart';
 import '../../tasks/presentation/widgets/task_tile.dart';
 import '../application/dashboard_providers.dart';
+import '../../care/presentation/whats_new_sheet.dart';
 import '../../help/presentation/tour_sheet.dart';
 import 'start_my_day.dart';
 
@@ -62,6 +63,7 @@ class DashboardScreen extends ConsumerWidget {
               const SliverToBoxAdapter(child: _QuickActions()),
               const SliverToBoxAdapter(child: StartMyDayCard()),
               const SliverToBoxAdapter(child: TourLauncher()),
+              const SliverToBoxAdapter(child: WhatsNewLauncher()),
               for (final id in sections)
                 SliverToBoxAdapter(
                   child: switch (id) {

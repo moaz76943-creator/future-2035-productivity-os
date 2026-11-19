@@ -4998,4 +4998,208 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get flashDragHandle => 'اسحب للتحريك';
+
+  @override
+  String get reportTitle => 'التقرير الشهري';
+
+  @override
+  String get reportSubtitle => 'التركيز والبطاقات والمهام والعادات للشهر، جاهز للحفظ';
+
+  @override
+  String get reportFocus => 'وقت التركيز';
+
+  @override
+  String reportSessions(int count) {
+    return '$count جلسة';
+  }
+
+  @override
+  String reportBestDay(String day, String time) {
+    return 'أفضل يوم: $day ($time)';
+  }
+
+  @override
+  String reportActiveDays(int count) {
+    return '$count يوم نشط';
+  }
+
+  @override
+  String get reportCards => 'البطاقات المراجعة';
+
+  @override
+  String reportCardsKnown(String percent) {
+    return '$percent تذكّرتها';
+  }
+
+  @override
+  String get reportTasks => 'المهام المنجزة';
+
+  @override
+  String get reportHabits => 'تسجيلات العادات';
+
+  @override
+  String get reportEmpty => 'لا شيء مسجّل بهذا الشهر بعد.';
+
+  @override
+  String get reportSave => 'حفظ كـ PDF أو Word';
+
+  @override
+  String get reportPrevMonth => 'الشهر السابق';
+
+  @override
+  String get reportNextMonth => 'الشهر التالي';
+
+  @override
+  String get careTitle => 'العناية بهاتفك وبياناتك';
+
+  @override
+  String get storageTitle => 'التخزين';
+
+  @override
+  String get storageSubtitle => 'ما الذي يشغل المساحة وتنظيف الصور غير المستخدمة';
+
+  @override
+  String get storagePictures => 'الصور في الملاحظات';
+
+  @override
+  String get storageCardMedia => 'الصور والصوت في البطاقات';
+
+  @override
+  String get storageText => 'نصوص الملاحظات';
+
+  @override
+  String get storageFree => 'المتاح في هاتفك';
+
+  @override
+  String get storageLow =>
+      'هاتفك شبه ممتلئ. حرّر بعض المساحة حتى تستمر النسخ الاحتياطية والتذكيرات.';
+
+  @override
+  String storageUnused(int count, String size) {
+    return '$count صورة غير مستخدمة ($size)';
+  }
+
+  @override
+  String get storageNoUnused => 'لا توجد صور غير مستخدمة. كل شيء مرتّب.';
+
+  @override
+  String get storageClean => 'حذف الصور غير المستخدمة';
+
+  @override
+  String storageCleaned(int count) {
+    return 'تم حذف $count صورة';
+  }
+
+  @override
+  String get storageHint =>
+      'تُعتبر الصورة غير مستخدمة فقط إذا لم تعرضها أي ملاحظة، بما فيها ملاحظات سلة المحذوفات.';
+
+  @override
+  String get batteryTitle => 'اجعل التذكيرات تعمل دائماً';
+
+  @override
+  String get batterySubtitle => 'بعض الهواتف توقف التطبيقات بالخلفية. افحص هاتفك.';
+
+  @override
+  String get batteryStatusOk =>
+      'توفير البطارية لا يقيّد التطبيق. يُفترض أن تصل التذكيرات والأصوات في وقتها.';
+
+  @override
+  String get batteryStatusLimited =>
+      'قد يوقف توفير البطارية التطبيق بالخلفية، فتتأخر التذكيرات والأصوات أو لا تصل.';
+
+  @override
+  String get batteryOpen => 'فتح إعدادات البطارية';
+
+  @override
+  String get batteryOpenApp => 'فتح إعدادات التطبيق';
+
+  @override
+  String get batteryGeneric =>
+      'في إعدادات البطارية اختر هذا التطبيق وفعّل «غير مقيّد» (أو «عدم التحسين»).';
+
+  @override
+  String get batteryXiaomi =>
+      'Xiaomi / Redmi / POCO: افتح أيضاً الأمان › الأذونات › التشغيل التلقائي وفعّل التطبيق، واجعل موفّر البطارية «بدون قيود».';
+
+  @override
+  String get batteryOppo =>
+      'Oppo / Realme / OnePlus: افتح البطارية › هذا التطبيق واسمح بالنشاط بالخلفية والتشغيل التلقائي، وثبّت التطبيق في قائمة التطبيقات الأخيرة.';
+
+  @override
+  String get batterySamsung =>
+      'Samsung: البطارية › حدود الاستخدام بالخلفية: أزل التطبيق من «التطبيقات النائمة» و«النائمة بعمق».';
+
+  @override
+  String get batteryHuawei =>
+      'Huawei / Honor: تشغيل التطبيقات › هذا التطبيق › إدارة يدوية، واسمح بالتشغيل التلقائي والثانوي والعمل بالخلفية.';
+
+  @override
+  String get batteryVivo =>
+      'Vivo / iQOO: البطارية › استهلاك الطاقة بالخلفية › اسمح لهذا التطبيق، وفعّل التشغيل التلقائي من الأذونات.';
+
+  @override
+  String get whatsNewTitle => 'ما الجديد';
+
+  @override
+  String get whatsNewSubtitle => 'آخر التغييرات في أسطر قليلة';
+
+  @override
+  String get whatsNewDone => 'فهمت';
+
+  @override
+  String get whatsNewOrderTitle => 'رتّب البطاقات بالسحب';
+
+  @override
+  String get whatsNewOrderBody => 'في المجموعة اختر الترتيب › ترتيبي، ثم اضغط على المقبض واسحب.';
+
+  @override
+  String get whatsNewSpeechTitle => 'سماعة بجانب كل وجه للبطاقة';
+
+  @override
+  String get whatsNewSpeechBody =>
+      'اضغط عليها لسماع الكلمة أو الترجمة. السرعة والتكرار والصوت في قائمة المراجعة، واللغة تُعرف من النص.';
+
+  @override
+  String get whatsNewReportTitle => 'التقرير الشهري';
+
+  @override
+  String get whatsNewReportBody =>
+      'في الإحصاءات اضغط أيقونة التقرير لترى الشهر وتحفظه PDF أو Word.';
+
+  @override
+  String get whatsNewCareTitle => 'العناية بهاتفك وبياناتك';
+
+  @override
+  String get whatsNewCareBody =>
+      'في الإعدادات صفحة للتخزين مع تنظيف الصور ودليل للبطارية حسب نوع هاتفك.';
+
+  @override
+  String get whatsNewSoundTitle => 'أصوات أهدأ';
+
+  @override
+  String get whatsNewSoundBody => 'أصوات الطبيعة أنعم وأخفض، وبطاقات الصور أجمل.';
+
+  @override
+  String autoBackupCheckOk(String date) {
+    return 'فُحصت $date: آخر نسخة احتياطية تُفتح بشكل سليم.';
+  }
+
+  @override
+  String autoBackupCheckFixed(String date) {
+    return 'فُحصت $date: وُجدت نسخة تالفة واستُبدلت بنسخة جديدة.';
+  }
+
+  @override
+  String autoBackupCheckFailed(String date) {
+    return 'فُحصت $date: تعذّر فتح آخر نسخة. احفظ ملف نسخة احتياطية بنفسك من الإعدادات.';
+  }
+
+  @override
+  String smartReviewTimeTitle(String time) {
+    return 'عادةً تدرس قرابة $time';
+  }
+
+  @override
+  String get smartReviewTimeUse => 'استخدمه';
 }

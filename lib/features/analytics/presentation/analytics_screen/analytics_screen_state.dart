@@ -16,6 +16,12 @@ class _AnalyticsScreenState extends ConsumerState<AnalyticsScreen> {
         hue: ModuleHue.analytics,
         actions: [
           IconButton(
+            key: const Key('monthlyReport'),
+            tooltip: l10n.reportTitle,
+            icon: const Icon(Icons.summarize_outlined),
+            onPressed: () => showMonthlyReport(context),
+          ),
+          IconButton(
             tooltip: l10n.analyticsRefresh,
             icon: const Icon(Icons.refresh_rounded),
             onPressed: () => ref.invalidate(analyticsSnapshotProvider(_range)),

@@ -4578,4 +4578,195 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get flashDragHandle => '拖动移动';
+
+  @override
+  String get reportTitle => '月度报告';
+
+  @override
+  String get reportSubtitle => '本月专注、卡片、任务和习惯，可直接保存';
+
+  @override
+  String get reportFocus => '专注时间';
+
+  @override
+  String reportSessions(int count) {
+    return '$count 次专注';
+  }
+
+  @override
+  String reportBestDay(String day, String time) {
+    return '最佳一天：$day（$time）';
+  }
+
+  @override
+  String reportActiveDays(int count) {
+    return '$count 个活跃日';
+  }
+
+  @override
+  String get reportCards => '复习的卡片';
+
+  @override
+  String reportCardsKnown(String percent) {
+    return '记住 $percent';
+  }
+
+  @override
+  String get reportTasks => '完成的任务';
+
+  @override
+  String get reportHabits => '习惯打卡';
+
+  @override
+  String get reportEmpty => '本月还没有记录。';
+
+  @override
+  String get reportSave => '保存为 PDF 或 Word';
+
+  @override
+  String get reportPrevMonth => '上个月';
+
+  @override
+  String get reportNextMonth => '下个月';
+
+  @override
+  String get careTitle => '手机与数据维护';
+
+  @override
+  String get storageTitle => '存储空间';
+
+  @override
+  String get storageSubtitle => '占用情况与清理未使用的图片';
+
+  @override
+  String get storagePictures => '笔记中的图片';
+
+  @override
+  String get storageCardMedia => '卡片中的图片和音频';
+
+  @override
+  String get storageText => '笔记文字';
+
+  @override
+  String get storageFree => '手机可用空间';
+
+  @override
+  String get storageLow => '手机存储空间快满了。请释放一些空间，以免备份和提醒失效。';
+
+  @override
+  String storageUnused(int count, String size) {
+    return '$count 张未使用的图片（$size）';
+  }
+
+  @override
+  String get storageNoUnused => '没有未使用的图片，一切整洁。';
+
+  @override
+  String get storageClean => '删除未使用的图片';
+
+  @override
+  String storageCleaned(int count) {
+    return '已删除 $count 张图片';
+  }
+
+  @override
+  String get storageHint => '只有在没有任何笔记（包括回收站中的笔记）使用时，图片才算未使用。';
+
+  @override
+  String get batteryTitle => '让提醒始终有效';
+
+  @override
+  String get batterySubtitle => '部分手机会限制后台应用，请检查你的手机。';
+
+  @override
+  String get batteryStatusOk => '省电模式未限制本应用，提醒和声音应能准时到达。';
+
+  @override
+  String get batteryStatusLimited => '省电模式可能在后台停止本应用，提醒和声音可能延迟或丢失。';
+
+  @override
+  String get batteryOpen => '打开电池设置';
+
+  @override
+  String get batteryOpenApp => '打开应用设置';
+
+  @override
+  String get batteryGeneric => '在电池设置中选择本应用，设为“无限制”（或“不优化”）。';
+
+  @override
+  String get batteryXiaomi => '小米 / Redmi / POCO：还需在“安全 › 权限 › 自启动”中开启本应用，并将省电策略设为“无限制”。';
+
+  @override
+  String get batteryOppo => 'Oppo / Realme / OnePlus：进入“电池 › 本应用”，允许后台活动和自启动，并在最近任务中锁定本应用。';
+
+  @override
+  String get batterySamsung => '三星：电池 › 后台使用限制：将本应用从“休眠应用”和“深度休眠应用”中移除。';
+
+  @override
+  String get batteryHuawei => '华为 / 荣耀：“应用启动管理 › 本应用 › 手动管理”，允许自启动、关联启动和后台活动。';
+
+  @override
+  String get batteryVivo => 'vivo / iQOO：“电池 › 后台耗电管理”中允许本应用，并在权限中开启自启动。';
+
+  @override
+  String get whatsNewTitle => '新功能';
+
+  @override
+  String get whatsNewSubtitle => '最近更新一览';
+
+  @override
+  String get whatsNewDone => '知道了';
+
+  @override
+  String get whatsNewOrderTitle => '拖动卡片自定义顺序';
+
+  @override
+  String get whatsNewOrderBody => '在卡组中选择“排序 › 我的顺序”，按住手柄拖动。';
+
+  @override
+  String get whatsNewSpeechTitle => '每面都有朗读按钮';
+
+  @override
+  String get whatsNewSpeechBody => '点按即可听单词或译文。语速、重复和声音在复习菜单中，语言会根据文字自动识别。';
+
+  @override
+  String get whatsNewReportTitle => '月度报告';
+
+  @override
+  String get whatsNewReportBody => '在统计中点按报告图标，查看本月并保存为 PDF 或 Word。';
+
+  @override
+  String get whatsNewCareTitle => '手机与数据维护';
+
+  @override
+  String get whatsNewCareBody => '设置中新增存储页面（可清理图片）和针对手机品牌的电池指南。';
+
+  @override
+  String get whatsNewSoundTitle => '更柔和的声音';
+
+  @override
+  String get whatsNewSoundBody => '自然声音更柔和更轻，图片卡片也更美观。';
+
+  @override
+  String autoBackupCheckOk(String date) {
+    return '$date 已检查：最新备份可正常打开。';
+  }
+
+  @override
+  String autoBackupCheckFixed(String date) {
+    return '$date 已检查：发现损坏的备份，已用新备份替换。';
+  }
+
+  @override
+  String autoBackupCheckFailed(String date) {
+    return '$date 已检查：无法打开最新备份。请在设置中手动保存备份文件。';
+  }
+
+  @override
+  String smartReviewTimeTitle(String time) {
+    return '你通常在 $time 左右学习';
+  }
+
+  @override
+  String get smartReviewTimeUse => '使用';
 }

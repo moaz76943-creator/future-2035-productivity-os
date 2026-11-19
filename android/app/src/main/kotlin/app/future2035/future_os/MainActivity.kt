@@ -29,6 +29,7 @@ class MainActivity : FlutterActivity() {
     private var speech: TtsBridge? = null
     private var shortcuts: ShortcutsBridge? = null
     private var dnd: DndBridge? = null
+    private var care: PhoneCare? = null
     private var homeWidget: MethodChannel? = null
     private var pdf: PdfExport? = null
     private var images: ImageShrink? = null
@@ -51,6 +52,10 @@ class MainActivity : FlutterActivity() {
         // Do Not Disturb during focus sessions.
         dnd?.dispose()
         dnd = DndBridge(applicationContext, flutterEngine.dartExecutor.binaryMessenger)
+
+        // Battery, free space and system screens.
+        care?.dispose()
+        care = PhoneCare(applicationContext, flutterEngine.dartExecutor.binaryMessenger)
 
         // Home screen widget texts.
         homeWidget?.setMethodCallHandler(null)

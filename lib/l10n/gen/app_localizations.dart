@@ -8141,6 +8141,348 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Drag to move'**
   String get flashDragHandle;
+
+  /// Monthly report title / menu item
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly report'**
+  String get reportTitle;
+
+  /// Under report title
+  ///
+  /// In en, this message translates to:
+  /// **'Focus, cards, tasks and habits of the month, ready to save'**
+  String get reportSubtitle;
+
+  /// Report row
+  ///
+  /// In en, this message translates to:
+  /// **'Focus time'**
+  String get reportFocus;
+
+  /// Report row
+  ///
+  /// In en, this message translates to:
+  /// **'{count} sessions'**
+  String reportSessions(int count);
+
+  /// Report row
+  ///
+  /// In en, this message translates to:
+  /// **'Best day: {day} ({time})'**
+  String reportBestDay(String day, String time);
+
+  /// Report row
+  ///
+  /// In en, this message translates to:
+  /// **'{count} active days'**
+  String reportActiveDays(int count);
+
+  /// Report row
+  ///
+  /// In en, this message translates to:
+  /// **'Cards reviewed'**
+  String get reportCards;
+
+  /// Report row
+  ///
+  /// In en, this message translates to:
+  /// **'{percent} remembered'**
+  String reportCardsKnown(String percent);
+
+  /// Report row
+  ///
+  /// In en, this message translates to:
+  /// **'Tasks completed'**
+  String get reportTasks;
+
+  /// Report row
+  ///
+  /// In en, this message translates to:
+  /// **'Habit check-ins'**
+  String get reportHabits;
+
+  /// Empty month
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing recorded this month yet.'**
+  String get reportEmpty;
+
+  /// Button: save report as file
+  ///
+  /// In en, this message translates to:
+  /// **'Save as PDF or Word'**
+  String get reportSave;
+
+  /// Tooltip
+  ///
+  /// In en, this message translates to:
+  /// **'Previous month'**
+  String get reportPrevMonth;
+
+  /// Tooltip
+  ///
+  /// In en, this message translates to:
+  /// **'Next month'**
+  String get reportNextMonth;
+
+  /// Settings section title
+  ///
+  /// In en, this message translates to:
+  /// **'Care of your phone and data'**
+  String get careTitle;
+
+  /// Storage sheet title
+  ///
+  /// In en, this message translates to:
+  /// **'Storage'**
+  String get storageTitle;
+
+  /// Row subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'What takes space and a clean-up of unused pictures'**
+  String get storageSubtitle;
+
+  /// Storage row
+  ///
+  /// In en, this message translates to:
+  /// **'Pictures in notes'**
+  String get storagePictures;
+
+  /// Storage row
+  ///
+  /// In en, this message translates to:
+  /// **'Images and audio in cards'**
+  String get storageCardMedia;
+
+  /// Storage row
+  ///
+  /// In en, this message translates to:
+  /// **'Notes text'**
+  String get storageText;
+
+  /// Storage row: free space on phone
+  ///
+  /// In en, this message translates to:
+  /// **'Free on your phone'**
+  String get storageFree;
+
+  /// Warning when phone is almost full
+  ///
+  /// In en, this message translates to:
+  /// **'Your phone is almost full. Free some space so backups and reminders keep working.'**
+  String get storageLow;
+
+  /// Unused pictures summary
+  ///
+  /// In en, this message translates to:
+  /// **'{count} unused pictures ({size})'**
+  String storageUnused(int count, String size);
+
+  /// No unused pictures
+  ///
+  /// In en, this message translates to:
+  /// **'No unused pictures. Everything is tidy.'**
+  String get storageNoUnused;
+
+  /// Button
+  ///
+  /// In en, this message translates to:
+  /// **'Remove unused pictures'**
+  String get storageClean;
+
+  /// Snackbar
+  ///
+  /// In en, this message translates to:
+  /// **'{count} pictures removed'**
+  String storageCleaned(int count);
+
+  /// Hint under storage
+  ///
+  /// In en, this message translates to:
+  /// **'Pictures only count as unused when no note shows them, including notes in the trash.'**
+  String get storageHint;
+
+  /// Battery guide title
+  ///
+  /// In en, this message translates to:
+  /// **'Keep reminders working'**
+  String get batteryTitle;
+
+  /// Row subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Some phones stop apps in the background. Check yours.'**
+  String get batterySubtitle;
+
+  /// Status
+  ///
+  /// In en, this message translates to:
+  /// **'Battery saving does not limit this app. Reminders and sounds should arrive on time.'**
+  String get batteryStatusOk;
+
+  /// Status
+  ///
+  /// In en, this message translates to:
+  /// **'Battery saving may stop this app in the background, so reminders and sounds can be late or missing.'**
+  String get batteryStatusLimited;
+
+  /// Button
+  ///
+  /// In en, this message translates to:
+  /// **'Open battery settings'**
+  String get batteryOpen;
+
+  /// Button
+  ///
+  /// In en, this message translates to:
+  /// **'Open app settings'**
+  String get batteryOpenApp;
+
+  /// Generic steps
+  ///
+  /// In en, this message translates to:
+  /// **'In the battery settings choose this app and set it to Unrestricted (or Don\'t optimize).'**
+  String get batteryGeneric;
+
+  /// Brand tip
+  ///
+  /// In en, this message translates to:
+  /// **'Xiaomi / Redmi / POCO: also open Security › Permissions › Autostart and switch this app on, and set Battery saver to No restrictions.'**
+  String get batteryXiaomi;
+
+  /// Brand tip
+  ///
+  /// In en, this message translates to:
+  /// **'Oppo / Realme / OnePlus: open Battery › this app and allow background activity and auto-launch; lock the app in the recent apps list.'**
+  String get batteryOppo;
+
+  /// Brand tip
+  ///
+  /// In en, this message translates to:
+  /// **'Samsung: Battery › Background usage limits: remove this app from Sleeping apps and Deep sleeping apps.'**
+  String get batterySamsung;
+
+  /// Brand tip
+  ///
+  /// In en, this message translates to:
+  /// **'Huawei / Honor: App launch › this app › manage manually, and allow auto-launch, secondary launch and run in background.'**
+  String get batteryHuawei;
+
+  /// Brand tip
+  ///
+  /// In en, this message translates to:
+  /// **'Vivo / iQOO: Battery › Background power consumption › allow this app, and enable auto-start in the permissions.'**
+  String get batteryVivo;
+
+  /// What's new title
+  ///
+  /// In en, this message translates to:
+  /// **'What\'s new'**
+  String get whatsNewTitle;
+
+  /// Row subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'The latest changes in a few lines'**
+  String get whatsNewSubtitle;
+
+  /// Button
+  ///
+  /// In en, this message translates to:
+  /// **'Got it'**
+  String get whatsNewDone;
+
+  /// Item title
+  ///
+  /// In en, this message translates to:
+  /// **'Drag cards into your own order'**
+  String get whatsNewOrderTitle;
+
+  /// Item body
+  ///
+  /// In en, this message translates to:
+  /// **'In a deck choose Sort › My order, then hold the handle and drag.'**
+  String get whatsNewOrderBody;
+
+  /// Item title
+  ///
+  /// In en, this message translates to:
+  /// **'A speaker on every card side'**
+  String get whatsNewSpeechTitle;
+
+  /// Item body
+  ///
+  /// In en, this message translates to:
+  /// **'Tap it to hear the word or the translation. Speed, repeats and voice are in the review menu. Language is detected from the text.'**
+  String get whatsNewSpeechBody;
+
+  /// Item title
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly report'**
+  String get whatsNewReportTitle;
+
+  /// Item body
+  ///
+  /// In en, this message translates to:
+  /// **'In Insights tap the report icon to see the month and save it as PDF or Word.'**
+  String get whatsNewReportBody;
+
+  /// Item title
+  ///
+  /// In en, this message translates to:
+  /// **'Care of your phone and data'**
+  String get whatsNewCareTitle;
+
+  /// Item body
+  ///
+  /// In en, this message translates to:
+  /// **'Settings now has a storage page with picture clean-up and a battery guide for your phone brand.'**
+  String get whatsNewCareBody;
+
+  /// Item title
+  ///
+  /// In en, this message translates to:
+  /// **'Calmer sounds'**
+  String get whatsNewSoundTitle;
+
+  /// Item body
+  ///
+  /// In en, this message translates to:
+  /// **'Nature sounds are softer and quieter, and the picture cards are nicer.'**
+  String get whatsNewSoundBody;
+
+  /// Weekly check result
+  ///
+  /// In en, this message translates to:
+  /// **'Checked {date}: the latest backup opens correctly.'**
+  String autoBackupCheckOk(String date);
+
+  /// Weekly check result
+  ///
+  /// In en, this message translates to:
+  /// **'Checked {date}: a damaged backup was found and replaced with a new one.'**
+  String autoBackupCheckFixed(String date);
+
+  /// Weekly check result
+  ///
+  /// In en, this message translates to:
+  /// **'Checked {date}: the latest backup could not be opened. Save a backup file yourself from Settings.'**
+  String autoBackupCheckFailed(String date);
+
+  /// Suggestion in settings
+  ///
+  /// In en, this message translates to:
+  /// **'You usually study around {time}'**
+  String smartReviewTimeTitle(String time);
+
+  /// Button: use the suggested time
+  ///
+  /// In en, this message translates to:
+  /// **'Use it'**
+  String get smartReviewTimeUse;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

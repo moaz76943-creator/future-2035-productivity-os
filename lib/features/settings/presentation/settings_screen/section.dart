@@ -191,6 +191,11 @@ class _NotificationsSection extends ConsumerWidget {
             onTap: () =>
                 pick(s.reviewReminderMinute, (c, m) => c.copyWith(reviewReminderMinute: m)),
           ),
+        if (s.reviewReminderOn && s.notificationsEnabled)
+          SmartReviewTimeTile(
+            currentMinute: s.reviewReminderMinute,
+            onUse: (m) => set((c) => c.copyWith(reviewReminderMinute: m)),
+          ),
       ],
     );
   }
