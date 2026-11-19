@@ -5038,4 +5038,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get widgetNewNote => 'Nova nota';
+
+  @override
+  String get noteConnections => 'Etiquetas, links e tarefas';
 }

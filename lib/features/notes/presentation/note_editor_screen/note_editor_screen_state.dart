@@ -332,8 +332,19 @@ class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with Widget
                   ),
                 const SizedBox(height: Space.lg),
                 _TagsSection(noteId: widget.noteId),
-                _BacklinksSection(noteId: widget.noteId, title: note?.title ?? _savedTitle),
-                _LinkedTasksSection(noteId: widget.noteId, onLink: _linkTask),
+                // Rarely needed parts sit in one folded group so the page stays about the writing.
+                ExpansionTile(
+                  key: const Key('noteConnections'),
+                  tilePadding: EdgeInsets.zero,
+                  shape: const Border(),
+                  collapsedShape: const Border(),
+                  maintainState: true,
+                  title: Text(l10n.noteConnections, style: context.text.titleSmall),
+                  children: [
+                    _BacklinksSection(noteId: widget.noteId, title: note?.title ?? _savedTitle),
+                    _LinkedTasksSection(noteId: widget.noteId, onLink: _linkTask),
+                  ],
+                ),
               ],
             ),
           ),

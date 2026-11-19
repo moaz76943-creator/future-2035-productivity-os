@@ -8489,6 +8489,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'New note'**
   String get widgetNewNote;
+
+  /// Folded section of the note editor holding tags, backlinks and linked tasks
+  ///
+  /// In en, this message translates to:
+  /// **'Tags, links and tasks'**
+  String get noteConnections;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

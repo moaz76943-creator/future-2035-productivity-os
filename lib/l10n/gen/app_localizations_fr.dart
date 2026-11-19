@@ -5052,4 +5052,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get widgetNewNote => 'Nouvelle note';
+
+  @override
+  String get noteConnections => 'Étiquettes, liens et tâches';
 }

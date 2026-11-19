@@ -4772,4 +4772,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get widgetNewNote => '新笔记';
+
+  @override
+  String get noteConnections => '标签、链接和任务';
 }

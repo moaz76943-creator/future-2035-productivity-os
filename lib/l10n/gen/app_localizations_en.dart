@@ -5017,4 +5017,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get widgetNewNote => 'New note';
+
+  @override
+  String get noteConnections => 'Tags, links and tasks';
 }

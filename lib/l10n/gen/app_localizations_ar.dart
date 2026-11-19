@@ -5205,4 +5205,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get widgetNewNote => 'ملاحظة جديدة';
+
+  @override
+  String get noteConnections => 'الوسوم والروابط والمهام';
 }

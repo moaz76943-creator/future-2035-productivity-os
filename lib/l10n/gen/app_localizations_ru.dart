@@ -5157,4 +5157,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get widgetNewNote => 'Новая заметка';
+
+  @override
+  String get noteConnections => 'Теги, ссылки и задачи';
 }

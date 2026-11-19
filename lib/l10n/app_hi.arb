@@ -1396,5 +1396,6 @@
   "autoBackupCheckFailed": "जाँच {date}: नवीनतम बैकअप खुल नहीं सका। सेटिंग से खुद बैकअप फ़ाइल सहेजें।",
   "smartReviewTimeTitle": "आप आमतौर पर {time} के आसपास पढ़ते हैं",
   "smartReviewTimeUse": "उपयोग करें",
-  "widgetNewNote": "नया नोट"
+  "widgetNewNote": "नया नोट",
+  "noteConnections": "टैग, लिंक और कार्य"
 }

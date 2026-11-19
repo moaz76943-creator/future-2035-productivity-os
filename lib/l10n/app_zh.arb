@@ -1396,5 +1396,6 @@
   "autoBackupCheckFailed": "{date} 已检查：无法打开最新备份。请在设置中手动保存备份文件。",
   "smartReviewTimeTitle": "你通常在 {time} 左右学习",
   "smartReviewTimeUse": "使用",
-  "widgetNewNote": "新笔记"
+  "widgetNewNote": "新笔记",
+  "noteConnections": "标签、链接和任务"
 }

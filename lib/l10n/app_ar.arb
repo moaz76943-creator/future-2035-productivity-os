@@ -1396,5 +1396,6 @@
   "autoBackupCheckFailed": "فُحصت {date}: تعذّر فتح آخر نسخة. احفظ ملف نسخة احتياطية بنفسك من الإعدادات.",
   "smartReviewTimeTitle": "عادةً تدرس قرابة {time}",
   "smartReviewTimeUse": "استخدمه",
-  "widgetNewNote": "ملاحظة جديدة"
+  "widgetNewNote": "ملاحظة جديدة",
+  "noteConnections": "الوسوم والروابط والمهام"
 }

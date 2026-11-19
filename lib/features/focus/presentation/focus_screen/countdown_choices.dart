@@ -101,7 +101,11 @@ class _TimerHero extends ConsumerWidget {
         .min(screen.width - Space.page * 2 - Space.xl * 2, screen.height * 0.3)
         .clamp(floor, 300.0);
 
+    // A soft tint of the Focus colour makes the timer the calm centre of the screen.
+    final tint = Color.alphaBlend(ModuleHue.focus.a.withValues(alpha: 0.08), context.lux.surface);
     return LuxCard(
+      color: tint,
+      radius: Radii.xl,
       padding: const EdgeInsets.all(Space.xl),
       child: Column(
         children: [

@@ -1396,5 +1396,6 @@
   "autoBackupCheckFailed": "Vérifié {date} : la dernière sauvegarde est illisible. Enregistrez une sauvegarde vous-même depuis les réglages.",
   "smartReviewTimeTitle": "Vous étudiez en général vers {time}",
   "smartReviewTimeUse": "Utiliser",
-  "widgetNewNote": "Nouvelle note"
+  "widgetNewNote": "Nouvelle note",
+  "noteConnections": "Étiquettes, liens et tâches"
 }

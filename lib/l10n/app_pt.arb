@@ -1396,5 +1396,6 @@
   "autoBackupCheckFailed": "Verificado {date}: não foi possível abrir o último backup. Salve um arquivo de backup nas Configurações.",
   "smartReviewTimeTitle": "Você costuma estudar por volta das {time}",
   "smartReviewTimeUse": "Usar",
-  "widgetNewNote": "Nova nota"
+  "widgetNewNote": "Nova nota",
+  "noteConnections": "Etiquetas, links e tarefas"
 }

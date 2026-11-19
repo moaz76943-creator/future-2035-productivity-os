@@ -1396,5 +1396,6 @@
   "autoBackupCheckFailed": "Проверено {date}: последнюю копию открыть не удалось. Сохраните резервную копию вручную в настройках.",
   "smartReviewTimeTitle": "Обычно вы занимаетесь около {time}",
   "smartReviewTimeUse": "Использовать",
-  "widgetNewNote": "Новая заметка"
+  "widgetNewNote": "Новая заметка",
+  "noteConnections": "Теги, ссылки и задачи"
 }

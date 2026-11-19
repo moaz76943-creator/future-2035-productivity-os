@@ -5028,4 +5028,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get widgetNewNote => 'नया नोट';
+
+  @override
+  String get noteConnections => 'टैग, लिंक और कार्य';
 }

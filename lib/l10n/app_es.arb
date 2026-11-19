@@ -1396,5 +1396,6 @@
   "autoBackupCheckFailed": "Revisado {date}: no se pudo abrir la última copia. Guarda una copia tú mismo desde Ajustes.",
   "smartReviewTimeTitle": "Sueles estudiar hacia las {time}",
   "smartReviewTimeUse": "Usar",
-  "widgetNewNote": "Nueva nota"
+  "widgetNewNote": "Nueva nota",
+  "noteConnections": "Etiquetas, enlaces y tareas"
 }
