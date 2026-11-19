@@ -1256,7 +1256,7 @@
   "faqCalendarQ": "¿El calendario muestra fechas hégira?",
   "faqCalendarA": "Sí. Las fechas hégira (Umm al-Qura) se muestran solas en árabe y puedes activarlas en Ajustes para cualquier idioma. Eventos, tareas con fecha e hitos de proyectos aparecen juntos.",
   "faqFlashcardsQ": "¿Cómo decide el repaso qué tarjetas veo?",
-  "faqFlashcardsA": "Las tarjetas que dominas vuelven tras intervalos más largos y las que fallas vuelven pronto (repetición espaciada). Valora cada respuesta: Otra vez, Difícil, Bien o Fácil. Fija una meta diaria y mantén tu racha en la tarjeta Hoy.",
+  "faqFlashcardsA": "Las tarjetas que dominas vuelven tras intervalos más largos y las que fallas vuelven pronto (repetición espaciada). Valora cada respuesta: Otra vez, Difícil, Bien o Fácil. Fija una meta diaria y mantén tu racha en la tarjeta Hoy. Fija la fecha del examen en un mazo para ver los días que faltan y cuántas tarjetas nuevas aprender cada día.",
   "faqImportQ": "¿Puedo traer tarjetas de Anki o Excel?",
   "faqImportA": "Sí. En un mazo elige Importar y un archivo: Anki (.apkg), Excel (.xlsx) o CSV, y asigna las columnas. Usa «Plantilla de hoja de cálculo» para escribir tarjetas en el ordenador. Las imágenes y sonidos de Anki no se importan.",
   "faqNotesQ": "¿Qué pueden hacer las notas?",
@@ -1325,5 +1325,14 @@
   "noteImage": "Imagen",
   "noteAddImage": "Añadir imagen",
   "noteImageUnreadable": "Este archivo no es una imagen que la app pueda leer.",
-  "noteImageTooLarge": "Esta imagen es demasiado grande."
+  "noteImageTooLarge": "Esta imagen es demasiado grande.",
+  "examSet": "Fijar fecha del examen",
+  "examDate": "Fecha del examen",
+  "examToday": "El examen es hoy. ¡Suerte!",
+  "examInDays": "{count, plural, =1{Examen mañana} other{Examen en {count} días}}",
+  "examNewPerDay": "{count, plural, =1{aprende 1 tarjeta nueva al día} other{aprende {count} tarjetas nuevas al día}}",
+  "examAllLearnt": "todas aprendidas, sigue repasando",
+  "examRaiseLimit": "Mostrar {count} tarjetas nuevas al día",
+  "backupDriveHint": "Para guardar una copia en línea, elige Google Drive (u otra app en la nube) en la pantalla de guardado que se abre después.",
+  "flashShareDeck": "Compartir mazo con un amigo"
 }

@@ -4535,7 +4535,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get faqFlashcardsA =>
-      'Cartões que você sabe bem voltam depois de mais tempo e os que você erra voltam logo (repetição espaçada). Avalie cada resposta: De novo, Difícil, Bom ou Fácil. Defina uma meta diária e mantenha sua sequência no cartão Hoje.';
+      'Cartões que você sabe bem voltam depois de mais tempo e os que você erra voltam logo (repetição espaçada). Avalie cada resposta: De novo, Difícil, Bom ou Fácil. Defina uma meta diária e mantenha sua sequência no cartão Hoje. Defina a data da prova em um baralho para ver os dias que faltam e quantos cartões novos aprender por dia.';
 
   @override
   String get faqImportQ => 'Posso trazer cartões do Anki ou do Excel?';
@@ -4772,4 +4772,50 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get noteImageTooLarge => 'Esta imagem é grande demais.';
+
+  @override
+  String get examSet => 'Definir data da prova';
+
+  @override
+  String get examDate => 'Data da prova';
+
+  @override
+  String get examToday => 'A prova é hoje. Boa sorte!';
+
+  @override
+  String examInDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Prova em $count dias',
+      one: 'Prova amanhã',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String examNewPerDay(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'aprenda $count cartões novos por dia',
+      one: 'aprenda 1 cartão novo por dia',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get examAllLearnt => 'todos aprendidos, continue revisando';
+
+  @override
+  String examRaiseLimit(int count) {
+    return 'Mostrar $count cartões novos por dia';
+  }
+
+  @override
+  String get backupDriveHint =>
+      'Para guardar uma cópia online, escolha o Google Drive (ou outro app de nuvem) na tela de salvar que abre em seguida.';
+
+  @override
+  String get flashShareDeck => 'Compartilhar baralho com um amigo';
 }

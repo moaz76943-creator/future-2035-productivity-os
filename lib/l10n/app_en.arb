@@ -6074,7 +6074,7 @@
   "@faqFlashcardsQ": {
     "description": "FAQ question"
   },
-  "faqFlashcardsA": "Cards you know well come back after longer gaps and cards you miss come back soon (spaced repetition). Rate each answer Again, Hard, Good or Easy. Set a daily goal and keep your streak on the Today card.",
+  "faqFlashcardsA": "Cards you know well come back after longer gaps and cards you miss come back soon (spaced repetition). Rate each answer Again, Hard, Good or Easy. Set a daily goal and keep your streak on the Today card. Set an exam date in a deck to see the days left and how many new cards to learn each day.",
   "@faqFlashcardsA": {
     "description": "FAQ answer"
   },
@@ -6358,5 +6358,56 @@
   "noteImageTooLarge": "This picture is too large.",
   "@noteImageTooLarge": {
     "description": "Picture too large even after shrinking"
+  },
+  "examSet": "Set exam date",
+  "@examSet": {
+    "description": "Deck: button to set the exam date"
+  },
+  "examDate": "Exam date",
+  "@examDate": {
+    "description": "Date picker title"
+  },
+  "examToday": "Exam today. Good luck!",
+  "@examToday": {
+    "description": "Exam is today"
+  },
+  "examInDays": "{count, plural, =1{Exam tomorrow} other{Exam in {count} days}}",
+  "@examInDays": {
+    "description": "Days until the exam",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "examNewPerDay": "{count, plural, =1{learn 1 new card a day} other{learn {count} new cards a day}}",
+  "@examNewPerDay": {
+    "description": "New cards to learn per day before the exam",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "examAllLearnt": "all cards learnt, keep reviewing",
+  "@examAllLearnt": {
+    "description": "All cards learnt before the exam"
+  },
+  "examRaiseLimit": "Show {count} new cards a day",
+  "@examRaiseLimit": {
+    "description": "Button: raise the deck's daily new-card limit to the plan",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "backupDriveHint": "To keep a copy online, choose Google Drive (or another cloud app) on the save screen that opens next.",
+  "@backupDriveHint": {
+    "description": "Backup dialog: how to keep a copy in Google Drive"
+  },
+  "flashShareDeck": "Share deck with a friend",
+  "@flashShareDeck": {
+    "description": "Deck menu: share the whole deck as a file a friend can import"
   }
 }

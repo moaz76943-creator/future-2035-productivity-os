@@ -53,7 +53,8 @@ class _DeckHeader extends ConsumerWidget {
                 canStudy ? l10n.flashcardsReadyCount(queue) : l10n.deckNothingDue,
                 style: context.text.bodyMedium?.copyWith(color: context.lux.ink2),
               ),
-            const SizedBox(height: Space.sm),
+            ExamLine(deck: deck),
+            const SizedBox(height: Space.xs),
             FilledButton.icon(
               key: const Key('studyButton'),
               // Opens mode + scope choice; practice works even when nothing is due.

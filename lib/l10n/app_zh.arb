@@ -1256,7 +1256,7 @@
   "faqCalendarQ": "日历能显示伊斯兰历吗？",
   "faqCalendarA": "可以。阿拉伯语下自动显示伊斯兰历（乌姆库拉历），其他语言可在设置中开启。日程、有截止日期的任务和项目里程碑会一起显示。",
   "faqFlashcardsQ": "复习时如何决定显示哪些卡片？",
-  "faqFlashcardsA": "掌握好的卡片间隔更久再出现，答错的很快再出现（间隔重复）。每次作答选择“重来”“困难”“良好”或“简单”。可设置每日目标，并在“今天”卡片上保持连续天数。",
+  "faqFlashcardsA": "掌握好的卡片间隔更久再出现，答错的很快再出现（间隔重复）。每次作答选择“重来”“困难”“良好”或“简单”。可设置每日目标，并在“今天”卡片上保持连续天数。 在卡组中设置考试日期，即可看到剩余天数和每天要学的新卡片数。",
   "faqImportQ": "可以从 Anki 或 Excel 导入卡片吗？",
   "faqImportA": "可以。在卡组中选择“导入”，再选文件：Anki（.apkg）、Excel（.xlsx）或 CSV，并匹配各列。可用“表格模板”在电脑上编写卡片。Anki 文件中的图片和声音不会导入。",
   "faqNotesQ": "笔记能做什么？",
@@ -1325,5 +1325,14 @@
   "noteImage": "图片",
   "noteAddImage": "添加图片",
   "noteImageUnreadable": "该文件不是应用可读取的图片。",
-  "noteImageTooLarge": "图片过大。"
+  "noteImageTooLarge": "图片过大。",
+  "examSet": "设置考试日期",
+  "examDate": "考试日期",
+  "examToday": "今天考试，祝你好运！",
+  "examInDays": "{count, plural, other{{count} 天后考试}}",
+  "examNewPerDay": "{count, plural, other{每天学习 {count} 张新卡片}}",
+  "examAllLearnt": "已全部学完，继续复习",
+  "examRaiseLimit": "每天显示 {count} 张新卡片",
+  "backupDriveHint": "如需在线保存副本，请在接下来打开的保存界面中选择 Google 云端硬盘（或其他云存储应用）。",
+  "flashShareDeck": "与朋友分享卡组"
 }

@@ -4695,7 +4695,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get faqFlashcardsA =>
-      'البطاقات التي تتقنها تعود بعد فترات أطول، والتي تخطئ فيها تعود قريباً (التكرار المتباعد). قيّم كل إجابة: مجدداً أو صعب أو جيد أو سهل. حدّد هدفاً يومياً وحافظ على أيامك المتتالية من بطاقة «اليوم».';
+      'البطاقات التي تتقنها تعود بعد فترات أطول، والتي تخطئ فيها تعود قريباً (التكرار المتباعد). قيّم كل إجابة: مجدداً أو صعب أو جيد أو سهل. حدّد هدفاً يومياً وحافظ على أيامك المتتالية من بطاقة «اليوم». حدّد موعد الامتحان داخل المجموعة لترى الأيام المتبقية وعدد البطاقات الجديدة المطلوب تعلّمها يومياً.';
 
   @override
   String get faqImportQ => 'هل يمكنني جلب بطاقات من Anki أو Excel؟';
@@ -4934,4 +4934,56 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get noteImageTooLarge => 'هذه الصورة كبيرة جداً.';
+
+  @override
+  String get examSet => 'تحديد موعد الامتحان';
+
+  @override
+  String get examDate => 'موعد الامتحان';
+
+  @override
+  String get examToday => 'الامتحان اليوم. بالتوفيق!';
+
+  @override
+  String examInDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'الامتحان بعد $count يوم',
+      many: 'الامتحان بعد $count يوماً',
+      few: 'الامتحان بعد $count أيام',
+      two: 'الامتحان بعد يومين',
+      one: 'الامتحان غداً',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String examNewPerDay(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'تعلّم $count بطاقة جديدة يومياً',
+      many: 'تعلّم $count بطاقة جديدة يومياً',
+      few: 'تعلّم $count بطاقات جديدة يومياً',
+      two: 'تعلّم بطاقتين جديدتين يومياً',
+      one: 'تعلّم بطاقة جديدة يومياً',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get examAllLearnt => 'تعلّمت كل البطاقات، استمر بالمراجعة';
+
+  @override
+  String examRaiseLimit(int count) {
+    return 'اعرض $count بطاقة جديدة يومياً';
+  }
+
+  @override
+  String get backupDriveHint =>
+      'لحفظ نسخة على الإنترنت، اختر Google Drive (أو أي تطبيق تخزين سحابي) في شاشة الحفظ التي ستفتح بعدها.';
+
+  @override
+  String get flashShareDeck => 'مشاركة المجموعة مع صديق';
 }

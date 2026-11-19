@@ -55,6 +55,10 @@ Features: `analytics`, `assistant` (offline rules, no model download), `backup`,
 `prayer` (offline prayer times, ADR-019), `projects`, `search`, `settings`, `sounds` (nature
 sounds, background playback, saved mixes), `tasks`.
 
+Files in and out (ADR-022): `core/transfer/` (Excel, Word, CSV, PDF, Markdown) with one schema per
+section: `tasks/data/tasks_transfer.dart`, `notes/data/notes_transfer.dart`, `flashcards/data/cards_transfer.dart`.
+Note pictures (ADR-023): `notes/data/note_images.dart`.
+
 Phone integrations (ADR-020): `app/routing/deep_links.dart` (notification taps, app icon
 shortcuts), `app/home_widget_link.dart` (home screen widget), `core/platform/` (shortcuts, voice
 typing), `shared/widgets/mic_button.dart`.
@@ -107,6 +111,7 @@ Spec status: [FLASHCARDS.md](FLASHCARDS.md).
 
 ```
 flutter analyze                       # zero issues
+bash tool/check_all.sh                # every CI check in one command (see AGENTS.md)
 flutter test                          # unit + widget (inventory, responsive, l10n, help coverage)
 flutter test integration_test -d <emulator>   # on-device flow (CI: android-emulator-tests.yml)
 python3 tool/check_l10n.py            # 8 locales complete, Western digits, no he/iw

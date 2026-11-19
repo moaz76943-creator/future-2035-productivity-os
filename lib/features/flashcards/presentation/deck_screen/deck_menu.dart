@@ -25,7 +25,7 @@ extension _DeckMenuSheet on _DeckScreenState {
             item(_DeckMenu.paste, Icons.content_paste_rounded, l10n.flashPasteCards),
             item(_DeckMenu.importFile, Icons.download_rounded, l10n.actionImport),
             SectionHeader(title: l10n.actionExport),
-            item(_DeckMenu.exportJson, Icons.upload_rounded, l10n.actionExport),
+            item(_DeckMenu.exportJson, Icons.share_outlined, l10n.flashShareDeck),
             item(_DeckMenu.exportCsv, Icons.table_view_rounded, l10n.transferDeckFormats),
             SectionHeader(title: l10n.flashMenuDeck),
             item(_DeckMenu.edit, Icons.edit_outlined, l10n.deckEdit),

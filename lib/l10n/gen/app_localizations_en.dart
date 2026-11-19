@@ -4513,7 +4513,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get faqFlashcardsA =>
-      'Cards you know well come back after longer gaps and cards you miss come back soon (spaced repetition). Rate each answer Again, Hard, Good or Easy. Set a daily goal and keep your streak on the Today card.';
+      'Cards you know well come back after longer gaps and cards you miss come back soon (spaced repetition). Rate each answer Again, Hard, Good or Easy. Set a daily goal and keep your streak on the Today card. Set an exam date in a deck to see the days left and how many new cards to learn each day.';
 
   @override
   String get faqImportQ => 'Can I bring cards from Anki or Excel?';
@@ -4750,4 +4750,50 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noteImageTooLarge => 'This picture is too large.';
+
+  @override
+  String get examSet => 'Set exam date';
+
+  @override
+  String get examDate => 'Exam date';
+
+  @override
+  String get examToday => 'Exam today. Good luck!';
+
+  @override
+  String examInDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Exam in $count days',
+      one: 'Exam tomorrow',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String examNewPerDay(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'learn $count new cards a day',
+      one: 'learn 1 new card a day',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get examAllLearnt => 'all cards learnt, keep reviewing';
+
+  @override
+  String examRaiseLimit(int count) {
+    return 'Show $count new cards a day';
+  }
+
+  @override
+  String get backupDriveHint =>
+      'To keep a copy online, choose Google Drive (or another cloud app) on the save screen that opens next.';
+
+  @override
+  String get flashShareDeck => 'Share deck with a friend';
 }

@@ -4543,7 +4543,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get faqFlashcardsA =>
-      'Les cartes bien sues reviennent après des intervalles plus longs, celles manquées reviennent vite (répétition espacée). Notez chaque réponse : À revoir, Difficile, Bien ou Facile. Fixez un objectif quotidien et gardez votre série sur la carte Aujourd’hui.';
+      'Les cartes bien sues reviennent après des intervalles plus longs, celles manquées reviennent vite (répétition espacée). Notez chaque réponse : À revoir, Difficile, Bien ou Facile. Fixez un objectif quotidien et gardez votre série sur la carte Aujourd’hui. Fixez une date d’examen dans un paquet pour voir les jours restants et le nombre de nouvelles cartes par jour.';
 
   @override
   String get faqImportQ => 'Puis-je importer des cartes d’Anki ou d’Excel ?';
@@ -4781,4 +4781,50 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get noteImageTooLarge => 'Cette image est trop grande.';
+
+  @override
+  String get examSet => 'Définir la date d’examen';
+
+  @override
+  String get examDate => 'Date de l’examen';
+
+  @override
+  String get examToday => 'Examen aujourd’hui. Bonne chance !';
+
+  @override
+  String examInDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Examen dans $count jours',
+      one: 'Examen demain',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String examNewPerDay(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'apprenez $count nouvelles cartes par jour',
+      one: 'apprenez 1 nouvelle carte par jour',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get examAllLearnt => 'toutes apprises, continuez à réviser';
+
+  @override
+  String examRaiseLimit(int count) {
+    return 'Afficher $count nouvelles cartes par jour';
+  }
+
+  @override
+  String get backupDriveHint =>
+      'Pour garder une copie en ligne, choisissez Google Drive (ou une autre app cloud) dans l’écran d’enregistrement qui s’ouvre ensuite.';
+
+  @override
+  String get flashShareDeck => 'Partager le paquet avec un ami';
 }

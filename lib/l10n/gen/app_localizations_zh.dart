@@ -4315,7 +4315,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get faqFlashcardsA =>
-      '掌握好的卡片间隔更久再出现，答错的很快再出现（间隔重复）。每次作答选择“重来”“困难”“良好”或“简单”。可设置每日目标，并在“今天”卡片上保持连续天数。';
+      '掌握好的卡片间隔更久再出现，答错的很快再出现（间隔重复）。每次作答选择“重来”“困难”“良好”或“简单”。可设置每日目标，并在“今天”卡片上保持连续天数。 在卡组中设置考试日期，即可看到剩余天数和每天要学的新卡片数。';
 
   @override
   String get faqImportQ => '可以从 Anki 或 Excel 导入卡片吗？';
@@ -4531,4 +4531,39 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get noteImageTooLarge => '图片过大。';
+
+  @override
+  String get examSet => '设置考试日期';
+
+  @override
+  String get examDate => '考试日期';
+
+  @override
+  String get examToday => '今天考试，祝你好运！';
+
+  @override
+  String examInDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count 天后考试');
+    return '$_temp0';
+  }
+
+  @override
+  String examNewPerDay(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '每天学习 $count 张新卡片');
+    return '$_temp0';
+  }
+
+  @override
+  String get examAllLearnt => '已全部学完，继续复习';
+
+  @override
+  String examRaiseLimit(int count) {
+    return '每天显示 $count 张新卡片';
+  }
+
+  @override
+  String get backupDriveHint => '如需在线保存副本，请在接下来打开的保存界面中选择 Google 云端硬盘（或其他云存储应用）。';
+
+  @override
+  String get flashShareDeck => '与朋友分享卡组';
 }

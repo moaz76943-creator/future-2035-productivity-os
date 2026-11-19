@@ -4533,7 +4533,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get faqFlashcardsA =>
-      'Las tarjetas que dominas vuelven tras intervalos más largos y las que fallas vuelven pronto (repetición espaciada). Valora cada respuesta: Otra vez, Difícil, Bien o Fácil. Fija una meta diaria y mantén tu racha en la tarjeta Hoy.';
+      'Las tarjetas que dominas vuelven tras intervalos más largos y las que fallas vuelven pronto (repetición espaciada). Valora cada respuesta: Otra vez, Difícil, Bien o Fácil. Fija una meta diaria y mantén tu racha en la tarjeta Hoy. Fija la fecha del examen en un mazo para ver los días que faltan y cuántas tarjetas nuevas aprender cada día.';
 
   @override
   String get faqImportQ => '¿Puedo traer tarjetas de Anki o Excel?';
@@ -4770,4 +4770,50 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get noteImageTooLarge => 'Esta imagen es demasiado grande.';
+
+  @override
+  String get examSet => 'Fijar fecha del examen';
+
+  @override
+  String get examDate => 'Fecha del examen';
+
+  @override
+  String get examToday => 'El examen es hoy. ¡Suerte!';
+
+  @override
+  String examInDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Examen en $count días',
+      one: 'Examen mañana',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String examNewPerDay(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'aprende $count tarjetas nuevas al día',
+      one: 'aprende 1 tarjeta nueva al día',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get examAllLearnt => 'todas aprendidas, sigue repasando';
+
+  @override
+  String examRaiseLimit(int count) {
+    return 'Mostrar $count tarjetas nuevas al día';
+  }
+
+  @override
+  String get backupDriveHint =>
+      'Para guardar una copia en línea, elige Google Drive (u otra app en la nube) en la pantalla de guardado que se abre después.';
+
+  @override
+  String get flashShareDeck => 'Compartir mazo con un amigo';
 }

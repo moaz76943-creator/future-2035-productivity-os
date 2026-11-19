@@ -4525,7 +4525,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get faqFlashcardsA =>
-      'अच्छी तरह याद कार्ड लंबे अंतराल के बाद लौटते हैं और गलत वाले जल्दी (अंतराल पुनरावृत्ति)। हर उत्तर को फिर से, कठिन, अच्छा या आसान रेट करें। दैनिक लक्ष्य रखें और “आज” कार्ड पर अपनी लगातार गिनती बनाए रखें।';
+      'अच्छी तरह याद कार्ड लंबे अंतराल के बाद लौटते हैं और गलत वाले जल्दी (अंतराल पुनरावृत्ति)। हर उत्तर को फिर से, कठिन, अच्छा या आसान रेट करें। दैनिक लक्ष्य रखें और “आज” कार्ड पर अपनी लगातार गिनती बनाए रखें। डेक में परीक्षा की तारीख़ रखें, ताकि बचे दिन और रोज़ सीखने वाले नए कार्ड दिखें।';
 
   @override
   String get faqImportQ => 'क्या मैं Anki या Excel से कार्ड ला सकता हूँ?';
@@ -4762,4 +4762,50 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get noteImageTooLarge => 'यह चित्र बहुत बड़ा है।';
+
+  @override
+  String get examSet => 'परीक्षा की तारीख़ तय करें';
+
+  @override
+  String get examDate => 'परीक्षा की तारीख़';
+
+  @override
+  String get examToday => 'परीक्षा आज है। शुभकामनाएँ!';
+
+  @override
+  String examInDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'परीक्षा $count दिन में',
+      one: 'परीक्षा कल',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String examNewPerDay(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'रोज़ $count नए कार्ड सीखें',
+      one: 'रोज़ 1 नया कार्ड सीखें',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get examAllLearnt => 'सभी कार्ड सीख लिए, दोहराते रहें';
+
+  @override
+  String examRaiseLimit(int count) {
+    return 'रोज़ $count नए कार्ड दिखाएँ';
+  }
+
+  @override
+  String get backupDriveHint =>
+      'ऑनलाइन कॉपी रखने के लिए, अगली सेव स्क्रीन में Google Drive (या कोई और क्लाउड ऐप) चुनें।';
+
+  @override
+  String get flashShareDeck => 'डेक किसी दोस्त के साथ साझा करें';
 }

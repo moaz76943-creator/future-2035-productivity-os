@@ -1256,7 +1256,7 @@
   "faqCalendarQ": "Le calendrier affiche-t-il les dates de l’Hégire ?",
   "faqCalendarA": "Oui. Les dates de l’Hégire (Umm al-Qura) s’affichent d’office en arabe et peuvent être activées dans Réglages pour toute langue. Événements, tâches datées et jalons de projets apparaissent ensemble.",
   "faqFlashcardsQ": "Comment la révision choisit-elle les cartes ?",
-  "faqFlashcardsA": "Les cartes bien sues reviennent après des intervalles plus longs, celles manquées reviennent vite (répétition espacée). Notez chaque réponse : À revoir, Difficile, Bien ou Facile. Fixez un objectif quotidien et gardez votre série sur la carte Aujourd’hui.",
+  "faqFlashcardsA": "Les cartes bien sues reviennent après des intervalles plus longs, celles manquées reviennent vite (répétition espacée). Notez chaque réponse : À revoir, Difficile, Bien ou Facile. Fixez un objectif quotidien et gardez votre série sur la carte Aujourd’hui. Fixez une date d’examen dans un paquet pour voir les jours restants et le nombre de nouvelles cartes par jour.",
   "faqImportQ": "Puis-je importer des cartes d’Anki ou d’Excel ?",
   "faqImportA": "Oui. Dans un paquet, choisissez Importer puis un fichier : Anki (.apkg), Excel (.xlsx) ou CSV, et associez les colonnes. Utilisez « Modèle de tableur » pour écrire des cartes sur ordinateur. Les images et sons des fichiers Anki ne sont pas importés.",
   "faqNotesQ": "Que permettent les notes ?",
@@ -1325,5 +1325,14 @@
   "noteImage": "Image",
   "noteAddImage": "Ajouter une image",
   "noteImageUnreadable": "Ce fichier n’est pas une image lisible par l’app.",
-  "noteImageTooLarge": "Cette image est trop grande."
+  "noteImageTooLarge": "Cette image est trop grande.",
+  "examSet": "Définir la date d’examen",
+  "examDate": "Date de l’examen",
+  "examToday": "Examen aujourd’hui. Bonne chance !",
+  "examInDays": "{count, plural, =1{Examen demain} other{Examen dans {count} jours}}",
+  "examNewPerDay": "{count, plural, =1{apprenez 1 nouvelle carte par jour} other{apprenez {count} nouvelles cartes par jour}}",
+  "examAllLearnt": "toutes apprises, continuez à réviser",
+  "examRaiseLimit": "Afficher {count} nouvelles cartes par jour",
+  "backupDriveHint": "Pour garder une copie en ligne, choisissez Google Drive (ou une autre app cloud) dans l’écran d’enregistrement qui s’ouvre ensuite.",
+  "flashShareDeck": "Partager le paquet avec un ami"
 }

@@ -7647,7 +7647,7 @@ abstract class AppLocalizations {
   /// FAQ answer
   ///
   /// In en, this message translates to:
-  /// **'Cards you know well come back after longer gaps and cards you miss come back soon (spaced repetition). Rate each answer Again, Hard, Good or Easy. Set a daily goal and keep your streak on the Today card.'**
+  /// **'Cards you know well come back after longer gaps and cards you miss come back soon (spaced repetition). Rate each answer Again, Hard, Good or Easy. Set a daily goal and keep your streak on the Today card. Set an exam date in a deck to see the days left and how many new cards to learn each day.'**
   String get faqFlashcardsA;
 
   /// FAQ question
@@ -8063,6 +8063,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This picture is too large.'**
   String get noteImageTooLarge;
+
+  /// Deck: button to set the exam date
+  ///
+  /// In en, this message translates to:
+  /// **'Set exam date'**
+  String get examSet;
+
+  /// Date picker title
+  ///
+  /// In en, this message translates to:
+  /// **'Exam date'**
+  String get examDate;
+
+  /// Exam is today
+  ///
+  /// In en, this message translates to:
+  /// **'Exam today. Good luck!'**
+  String get examToday;
+
+  /// Days until the exam
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Exam tomorrow} other{Exam in {count} days}}'**
+  String examInDays(int count);
+
+  /// New cards to learn per day before the exam
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{learn 1 new card a day} other{learn {count} new cards a day}}'**
+  String examNewPerDay(int count);
+
+  /// All cards learnt before the exam
+  ///
+  /// In en, this message translates to:
+  /// **'all cards learnt, keep reviewing'**
+  String get examAllLearnt;
+
+  /// Button: raise the deck's daily new-card limit to the plan
+  ///
+  /// In en, this message translates to:
+  /// **'Show {count} new cards a day'**
+  String examRaiseLimit(int count);
+
+  /// Backup dialog: how to keep a copy in Google Drive
+  ///
+  /// In en, this message translates to:
+  /// **'To keep a copy online, choose Google Drive (or another cloud app) on the save screen that opens next.'**
+  String get backupDriveHint;
+
+  /// Deck menu: share the whole deck as a file a friend can import
+  ///
+  /// In en, this message translates to:
+  /// **'Share deck with a friend'**
+  String get flashShareDeck;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

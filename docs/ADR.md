@@ -137,3 +137,23 @@ which follows only in-app paths.
 read from their XML; Anki `.apkg` notes from the bundled SQLite (`collection.anki21` or `.anki2`;
 the newest `.anki21b` format asks the user to export with "Support older Anki versions"). Both
 become rows for the existing preview and column mapping.
+
+## ADR-022 One schema per section for files in and out
+`lib/core/transfer/` writes Excel (.xlsx) and Word (.docx) from scratch (Office Open XML, right-to-left
+aware), CSV with a BOM, Markdown and text; PDF pages are laid out by Android (`PdfExport.kt`) so
+Arabic is shaped correctly. Each section declares one `TransferSchema` (tasks, notes, cards) that
+both export and import read; headers are recognised in all 8 languages and columns can come in any
+order. `test/unit/transfer/transfer_roundtrip_test.dart` exports, imports into an empty app and
+exports again: any field that only goes one way fails the build. PDF files cannot be imported
+(their text has no reliable structure); the app says so.
+
+## ADR-023 Pictures in notes live in the database
+A note refers to a picture with a line `![](img:<id>)`; the bytes are in `note_images` (schema v8),
+so encrypted backups include them with no extra step. Pictures are made upright, at most 1600 px
+and JPEG on the phone (`ImageShrink.kt`). Pictures removed from the text are deleted when the note
+closes, not while editing, so undo can still bring them back.
+
+## ADR-024 Rules for every contributor, human or AI
+`AGENTS.md` (pointed to by `CLAUDE.md`, `GEMINI.md`, `.github/copilot-instructions.md`) lists the
+rules and `tool/check_all.sh` runs every check CI runs. Texts are added only with
+`tool/l10n_add_keys.py`, which refuses a key missing any language.

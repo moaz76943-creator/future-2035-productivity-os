@@ -4647,7 +4647,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get faqFlashcardsA =>
-      'Хорошо выученные карточки возвращаются реже, а ошибочные — скоро (интервальное повторение). Оценивайте ответ: Снова, Трудно, Хорошо или Легко. Задайте цель на день и держите серию на карточке «Сегодня».';
+      'Хорошо выученные карточки возвращаются реже, а ошибочные — скоро (интервальное повторение). Оценивайте ответ: Снова, Трудно, Хорошо или Легко. Задайте цель на день и держите серию на карточке «Сегодня». Укажите дату экзамена в колоде, чтобы видеть, сколько дней осталось и сколько новых карточек учить в день.';
 
   @override
   String get faqImportQ => 'Можно ли перенести карточки из Anki или Excel?';
@@ -4887,4 +4887,54 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get noteImageTooLarge => 'Изображение слишком большое.';
+
+  @override
+  String get examSet => 'Указать дату экзамена';
+
+  @override
+  String get examDate => 'Дата экзамена';
+
+  @override
+  String get examToday => 'Экзамен сегодня. Удачи!';
+
+  @override
+  String examInDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Экзамен через $count дня',
+      many: 'Экзамен через $count дней',
+      few: 'Экзамен через $count дня',
+      one: 'Экзамен через $count день',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String examNewPerDay(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'учите $count новой карточки в день',
+      many: 'учите $count новых карточек в день',
+      few: 'учите $count новые карточки в день',
+      one: 'учите $count новую карточку в день',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get examAllLearnt => 'всё выучено, продолжайте повторять';
+
+  @override
+  String examRaiseLimit(int count) {
+    return 'Показывать $count новых карточек в день';
+  }
+
+  @override
+  String get backupDriveHint =>
+      'Чтобы хранить копию в облаке, выберите Google Диск (или другое облачное приложение) на следующем экране сохранения.';
+
+  @override
+  String get flashShareDeck => 'Поделиться колодой с другом';
 }
