@@ -122,6 +122,11 @@ jobs:
           chmod +x scripts/anti_loop_guard.sh
           ./scripts/anti_loop_guard.sh
 
+      - name: Read-Only Claude Branch Scout
+        run: |
+          chmod +x scripts/claude_readonly_scout.sh
+          ./scripts/claude_readonly_scout.sh
+
       - name: Final Push & Trigger Next Relay Hop
         if: always()
         env:
