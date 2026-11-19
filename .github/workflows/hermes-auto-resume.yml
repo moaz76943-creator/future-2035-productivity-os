@@ -22,5 +22,5 @@ jobs:
           git fetch origin hermes/future-2035-upgrade 2>/dev/null && git checkout origin/hermes/future-2035-upgrade || true
           ALL_DONE=$(python3 -c "import json; d=json.load(open('state/future2035_phases.json')); print('1' if all(p['status']=='COMPLETED' for p in d['phases']) else '0')" 2>/dev/null || echo "0")
           if [ "$ALL_DONE" = "0" ]; then
-            gh workflow run hermes-relay.yml -f hop="1" -f max_hops="40" --ref main
+            gh workflow run hermes-relay.yml -f hop="1" -f max_hops="40" --ref hermes/future-2035-upgrade
           fi

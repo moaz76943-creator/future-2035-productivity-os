@@ -4,7 +4,7 @@
   "current_phase": "PHASE_FC_1_CORE_FSRS",
   "phases": [
     {
-      "id": "PHASE_0_DISCOVERY",
+      "id": "PHASE_1_BUILD_FOUNDATION",
       "title": "Read-only repo, toolchain, DB, UI & test audit",
       "status": "COMPLETED"
     },
