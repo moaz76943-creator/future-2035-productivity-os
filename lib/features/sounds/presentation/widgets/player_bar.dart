@@ -7,6 +7,7 @@ import '../../../../core/design_system/tokens.dart';
 import '../../application/sounds_controller.dart';
 import '../../domain/nature_sound.dart';
 import 'sound_art.dart';
+import 'presets_row.dart';
 import 'sound_tile.dart';
 
 /// Floating controls for the current mix: volumes, play/pause, sleep timer, stop.
@@ -124,6 +125,16 @@ class _MixerSheet extends ConsumerWidget {
             Text(
               l10n.soundsHint,
               style: context.text.bodyMedium?.copyWith(color: context.lux.ink2),
+            ),
+          if (!mix.isEmpty)
+            Align(
+              alignment: AlignmentDirectional.centerStart,
+              child: TextButton.icon(
+                key: const Key('soundsSavePreset'),
+                onPressed: () => saveMixDialog(context, ref),
+                icon: const Icon(Icons.bookmark_add_outlined),
+                label: Text(l10n.soundsSaveMix),
+              ),
             ),
           for (final e in mix.volumes.entries)
             Padding(

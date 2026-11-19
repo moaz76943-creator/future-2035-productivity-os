@@ -21,6 +21,9 @@ abstract final class NotificationIds {
   /// [weekday] is 1 (Monday) … 7 (Sunday), or 0 for an every-day reminder.
   static int habit(String habitId, int weekday) => _hash('habit:$habitId:$weekday');
 
+  /// [prayer] index on the local day [day] (yyyymmdd).
+  static int prayer(int day, int prayer) => _hash('prayer:$day:$prayer');
+
   static int _hash(String key) {
     var h = 0x811c9dc5;
     for (final unit in key.codeUnits) {

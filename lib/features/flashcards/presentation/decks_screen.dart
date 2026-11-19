@@ -15,6 +15,7 @@ import '../../../shared/widgets/dialogs.dart';
 import '../../../shared/widgets/module_scaffold.dart';
 import '../application/flashcards_providers.dart';
 import '../domain/world_languages.dart';
+import 'widgets/study_summary.dart';
 import 'widgets/deck_form_sheet.dart';
 import '../data/flashcards_repository.dart';
 
@@ -91,7 +92,7 @@ class DecksScreen extends ConsumerWidget {
             final grouped = groups.length > 1;
             return SliverMainAxisGroup(
               slivers: [
-                const SliverToBoxAdapter(child: _TodayCard()),
+                const SliverToBoxAdapter(child: TodayStudyCard()),
                 const SliverToBoxAdapter(child: _DueBanner()),
                 for (final e in groups.entries) ...[
                   if (grouped)
@@ -276,57 +277,6 @@ class _DeckTile extends ConsumerWidget {
           else
             const Icon(Icons.chevron_right_rounded),
         ],
-      ),
-    );
-  }
-}
-
-/// Today's study: cards answered and time spent in study sessions.
-class _TodayCard extends ConsumerWidget {
-  const _TodayCard();
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = context.l10n;
-    final fmt = context.fmt;
-    final a = ref.watch(todayActivityProvider).value;
-    if (a == null) return const SizedBox.shrink();
-    Widget stat(IconData icon, String value, Key key) => Expanded(
-      child: Row(
-        children: [
-          Icon(icon, size: 20, color: _hue.a),
-          const SizedBox(width: Space.xs),
-          Flexible(
-            child: Text(value, key: key, style: context.text.titleSmall, maxLines: 2),
-          ),
-        ],
-      ),
-    );
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.sm),
-      child: LuxCard(
-        elevated: false,
-        padding: const EdgeInsets.symmetric(horizontal: Space.md, vertical: Space.sm),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              l10n.flashToday,
-              style: context.text.labelLarge?.copyWith(color: context.lux.ink2),
-            ),
-            const SizedBox(height: Space.xxs),
-            Row(
-              children: [
-                stat(Icons.timer_outlined, fmt.duration(a.time), const Key('todayTime')),
-                stat(
-                  Icons.style_outlined,
-                  l10n.flashTodayAnswered(a.reviews),
-                  const Key('todayCards'),
-                ),
-              ],
-            ),
-          ],
-        ),
       ),
     );
   }

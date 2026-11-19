@@ -112,6 +112,7 @@ documents each recording's source and licence. Each source page is listed so it 
 | glob | 2.2.0 | BSD-3-Clause | transitive |
 | go_router | 18.1.4 | BSD-3-Clause | app |
 | graphs | 2.3.2 | BSD-3-Clause | transitive |
+| hijri | 3.0.1 | BSD-2-Clause | app |
 | hooks | 2.2.0 | BSD-3-Clause | transitive |
 | http | 1.6.0 | BSD-3-Clause | app |
 | http_multi_server | 3.2.3 | BSD-3-Clause | transitive |

@@ -168,6 +168,7 @@ class _CardFormSheetState extends ConsumerState<_CardFormSheet> {
     final l10n = context.l10n;
     final editing = widget.initial != null;
     final layout = ref.watch(cardLayoutProvider(widget.deckId)).value ?? const CardLayout();
+    final deck = ref.watch(deckProvider(widget.deckId)).value;
     return Padding(
       padding: EdgeInsetsDirectional.only(
         start: Space.page,
@@ -208,6 +209,7 @@ class _CardFormSheetState extends ConsumerState<_CardFormSheet> {
                 decoration: InputDecoration(
                   labelText: l10n.cardFront,
                   hintText: l10n.cardFrontHint,
+                  suffixIcon: MicButton(controller: _front, languageTag: deck?.frontLang),
                 ),
                 validator: (v) => (v ?? '').trim().isEmpty ? l10n.validationRequired : null,
               ),
@@ -220,7 +222,11 @@ class _CardFormSheetState extends ConsumerState<_CardFormSheet> {
                 minLines: 2,
                 maxLines: 10,
                 textCapitalization: TextCapitalization.sentences,
-                decoration: InputDecoration(labelText: l10n.cardBack, hintText: l10n.cardBackHint),
+                decoration: InputDecoration(
+                  labelText: l10n.cardBack,
+                  hintText: l10n.cardBackHint,
+                  suffixIcon: MicButton(controller: _back, languageTag: deck?.backLang),
+                ),
                 validator: (v) => (v ?? '').trim().isEmpty ? l10n.validationRequired : null,
               ),
               _customFields(layout, CardSide.back),

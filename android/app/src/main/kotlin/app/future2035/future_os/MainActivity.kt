@@ -14,7 +14,8 @@ import app.future2035.future_os.sound.SoundscapeChannel
 import app.future2035.future_os.speech.TtsBridge
 
 /**
- * Hosts the native bridges: speech (speech/TtsBridge), nature sounds
+ * Hosts the native bridges: speech (speech/TtsBridge), app icon shortcuts
+ * (ShortcutsBridge), nature sounds
  * (sound/SoundscapeChannel), card audio playback and recording, and
  *
  * Play Integrity on channel `future_os/integrity` for device/app attestation.
@@ -26,6 +27,9 @@ class MainActivity : FlutterActivity() {
     private var pendingRecord: MethodChannel.Result? = null
     private var soundscape: SoundscapeChannel? = null
     private var speech: TtsBridge? = null
+    private var shortcuts: ShortcutsBridge? = null
+    private var dnd: DndBridge? = null
+    private var pendingSpeech: MethodChannel.Result? = null
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
@@ -36,6 +40,20 @@ class MainActivity : FlutterActivity() {
         // Phone text-to-speech for flashcards (all installed languages).
         speech?.dispose()
         speech = TtsBridge(this, flutterEngine.dartExecutor.binaryMessenger)
+
+        // Long-press shortcuts on the app icon.
+        shortcuts?.dispose()
+        shortcuts = ShortcutsBridge(this, flutterEngine.dartExecutor.binaryMessenger)
+
+        // Do Not Disturb during focus sessions.
+        dnd?.dispose()
+        dnd = DndBridge(applicationContext, flutterEngine.dartExecutor.binaryMessenger)
+
+        // Voice typing through the phone's speech screen (no microphone permission here).
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "future_os/speech_input").setMethodCallHandler { call, result ->
+            if (call.method == "listen") listenSpeech(call.argument<String>("lang"), call.argument<String>("prompt"), result)
+            else result.notImplemented()
+        }
 
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "future_os/audio").setMethodCallHandler { call, result ->
             when (call.method) {
@@ -77,6 +95,38 @@ class MainActivity : FlutterActivity() {
                 else -> result.notImplemented()
             }
         }
+    }
+
+    private fun listenSpeech(lang: String?, prompt: String?, result: MethodChannel.Result) {
+        if (pendingSpeech != null) { result.success(null); return }
+        val intent = android.content.Intent(android.speech.RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
+            .putExtra(android.speech.RecognizerIntent.EXTRA_LANGUAGE_MODEL, android.speech.RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+            .putExtra(android.speech.RecognizerIntent.EXTRA_MAX_RESULTS, 1)
+        if (!lang.isNullOrBlank() && Regex("^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$").matches(lang)) {
+            intent.putExtra(android.speech.RecognizerIntent.EXTRA_LANGUAGE, lang)
+        }
+        if (!prompt.isNullOrBlank()) intent.putExtra(android.speech.RecognizerIntent.EXTRA_PROMPT, prompt.take(80))
+        try {
+            pendingSpeech = result
+            @Suppress("DEPRECATION")
+            startActivityForResult(intent, SPEECH_REQUEST)
+        } catch (e: android.content.ActivityNotFoundException) {
+            pendingSpeech = null
+            result.success("unavailable")
+        }
+    }
+
+    @Deprecated("Activity results for the speech screen")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: android.content.Intent?) {
+        @Suppress("DEPRECATION")
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode != SPEECH_REQUEST) return
+        val r = pendingSpeech ?: return
+        pendingSpeech = null
+        val text = if (resultCode == RESULT_OK) {
+            data?.getStringArrayListExtra(android.speech.RecognizerIntent.EXTRA_RESULTS)?.firstOrNull()
+        } else null
+        r.success(text)
     }
 
     /** Plays a card's audio clip from the app cache. One clip at a time. */
@@ -185,7 +235,16 @@ class MainActivity : FlutterActivity() {
         return null
     }
 
+    override fun onNewIntent(intent: android.content.Intent) {
+        super.onNewIntent(intent)
+        shortcuts?.onNewIntent(intent)
+    }
+
     override fun cleanUpFlutterEngine(flutterEngine: FlutterEngine) {
+        shortcuts?.dispose()
+        shortcuts = null
+        dnd?.dispose()
+        dnd = null
         // The sounds may keep playing; only the bridge to this engine is dropped.
         soundscape?.detach()
         soundscape = null
@@ -204,5 +263,6 @@ class MainActivity : FlutterActivity() {
 
     private companion object {
         const val RECORD_REQUEST = 4207
+        const val SPEECH_REQUEST = 4208
     }
 }

@@ -180,6 +180,16 @@ void main() {
     expect(review(DateTime(2026, 11, 15))!.title, en.notifReviewTitle);
   });
 
+  test('review reminder can be switched off', () {
+    final out = plan(
+      ReminderInputs(earliestReviewDue: DateTime(2026, 11, 15)),
+      settings: const AppSettings(reviewReminderOn: false),
+    );
+    expect(out.where((n) => n.id == NotificationIds.review), isEmpty);
+    final json = const AppSettings(reviewReminderOn: false).toJson();
+    expect(AppSettings.fromJson(json).reviewReminderOn, isFalse);
+  });
+
   test('text follows the given language', () {
     final out = NotificationPlanner.plan(
       inputs: ReminderInputs(

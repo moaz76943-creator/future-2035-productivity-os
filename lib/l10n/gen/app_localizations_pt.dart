@@ -4114,4 +4114,309 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get errorLogClear => 'Limpar';
+
+  @override
+  String get soundsWithFocus => 'Tocar nas sessões de foco';
+
+  @override
+  String get soundsWithFocusHint => 'Sua mistura começa com a sessão e pausa nos intervalos.';
+
+  @override
+  String get soundsSavedMixes => 'Misturas salvas';
+
+  @override
+  String get soundsSaveMix => 'Salvar esta mistura';
+
+  @override
+  String get soundsMixNameHint => 'Nome, ex.: Biblioteca chuvosa';
+
+  @override
+  String soundsDeleteMix(String name) {
+    return 'Excluir a mistura “$name”?';
+  }
+
+  @override
+  String get settingsReviewReminderHint => 'Uma vez por dia, só quando há cartões pendentes';
+
+  @override
+  String get settingsReviewTime => 'Horário do lembrete';
+
+  @override
+  String get shortcutFocus => 'Foco';
+
+  @override
+  String get shortcutNewTask => 'Nova tarefa';
+
+  @override
+  String get shortcutReview => 'Revisar cartões';
+
+  @override
+  String get shortcutSounds => 'Sons da natureza';
+
+  @override
+  String get myDayTitle => 'Começar meu dia';
+
+  @override
+  String get myDayHint => 'Seu dia num relance e um toque para focar';
+
+  @override
+  String myDayTasks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count tarefas para hoje',
+      one: '1 tarefa para hoje',
+      zero: 'Nenhuma tarefa para hoje',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get myDayNoEvents => 'Sem mais eventos hoje';
+
+  @override
+  String myDayNextEvent(String title, String time) {
+    return 'Próximo: $title às $time';
+  }
+
+  @override
+  String myDayHabits(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Faltam $count hábitos',
+      one: 'Falta 1 hábito',
+      zero: 'Todos os hábitos feitos',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get myDayBeginFocus => 'Começar com uma sessão de foco';
+
+  @override
+  String get hijriMonth1 => 'Muharram';
+
+  @override
+  String get hijriMonth2 => 'Safar';
+
+  @override
+  String get hijriMonth3 => 'Rabi al-Awwal';
+
+  @override
+  String get hijriMonth4 => 'Rabi al-Thani';
+
+  @override
+  String get hijriMonth5 => 'Jumada al-Ula';
+
+  @override
+  String get hijriMonth6 => 'Jumada al-Akhira';
+
+  @override
+  String get hijriMonth7 => 'Rajab';
+
+  @override
+  String get hijriMonth8 => 'Shaban';
+
+  @override
+  String get hijriMonth9 => 'Ramadã';
+
+  @override
+  String get hijriMonth10 => 'Shawwal';
+
+  @override
+  String get hijriMonth11 => 'Dhu al-Qada';
+
+  @override
+  String get hijriMonth12 => 'Dhu al-Hijja';
+
+  @override
+  String hijriDate(int day, String month, int year) {
+    return '$day $month $year H';
+  }
+
+  @override
+  String get settingsHijri => 'Datas hegirianas';
+
+  @override
+  String get settingsHijriHint => 'Mostradas no calendário e no início (Umm al-Qura)';
+
+  @override
+  String studyStreakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count dias',
+      one: '1 dia',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String studyGoalProgress(int done, int goal) {
+    return '$done de $goal cartões hoje';
+  }
+
+  @override
+  String get studyGoalReached => 'Meta diária atingida. Muito bem!';
+
+  @override
+  String get studyWeekTitle => 'Sua semana';
+
+  @override
+  String studyWeekCards(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count cartões em 7 dias',
+      one: '1 cartão em 7 dias',
+      zero: 'Nenhum cartão em 7 dias',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String studyWeekFocus(String duration) {
+    return '$duration de foco em 7 dias';
+  }
+
+  @override
+  String studyStreakLine(int current, int best) {
+    return 'Sequência: $current · Melhor: $best';
+  }
+
+  @override
+  String get studyGoalTitle => 'Meta diária (cartões)';
+
+  @override
+  String get studyGoalOff => 'Sem';
+
+  @override
+  String get focusDndTitle => 'Não perturbe durante o foco';
+
+  @override
+  String get focusDndHint => 'Liga em cada sessão e volta ao normal na pausa';
+
+  @override
+  String get focusDndNeedsAccess => 'Permita o acesso nas configurações do telefone';
+
+  @override
+  String get voiceInput => 'Ditar';
+
+  @override
+  String get voiceInputPrompt => 'Fale agora';
+
+  @override
+  String get voiceInputUnavailable =>
+      'O ditado não está disponível neste telefone. Instale ou ative um serviço de voz (por exemplo, o do Google).';
+
+  @override
+  String get prayerFajr => 'Fajr (alvorada)';
+
+  @override
+  String get prayerSunrise => 'Nascer do sol';
+
+  @override
+  String get prayerDhuhr => 'Dhuhr (meio-dia)';
+
+  @override
+  String get prayerAsr => 'Asr (tarde)';
+
+  @override
+  String get prayerMaghrib => 'Maghrib (pôr do sol)';
+
+  @override
+  String get prayerIsha => 'Isha (noite)';
+
+  @override
+  String get prayerMethodMwl => 'Liga Mundial Muçulmana';
+
+  @override
+  String get prayerMethodUmmAlQura => 'Umm al-Qura (Meca)';
+
+  @override
+  String get prayerMethodEgypt => 'Autoridade Geral do Egito';
+
+  @override
+  String get prayerMethodJordan => 'Jordânia (Awqaf)';
+
+  @override
+  String get prayerMethodKarachi => 'Universidade de Ciências Islâmicas, Karachi';
+
+  @override
+  String get prayerMethodIsna => 'Sociedade Islâmica da América do Norte';
+
+  @override
+  String get prayerMethodGulf => 'Região do Golfo';
+
+  @override
+  String get prayerMethodKuwait => 'Kuwait';
+
+  @override
+  String get prayerMethodQatar => 'Catar';
+
+  @override
+  String get prayerMethodTurkey => 'Turquia (Diyanet)';
+
+  @override
+  String get prayerMethodSingapore => 'Singapura, Malásia, Indonésia';
+
+  @override
+  String get prayerMethodFrance => 'França (12°)';
+
+  @override
+  String get prayerMethodRussia => 'Rússia (Administração Espiritual)';
+
+  @override
+  String prayerNotifTitle(String name) {
+    return 'Hora do $name';
+  }
+
+  @override
+  String prayerNotifBody(String time) {
+    return 'Hora da oração · $time';
+  }
+
+  @override
+  String get prayerTitle => 'Horários de oração';
+
+  @override
+  String get prayerOffHint =>
+      'Escolha sua cidade para ver os horários. São calculados no telefone, sem acesso à localização.';
+
+  @override
+  String get prayerChooseCity => 'Escolher cidade';
+
+  @override
+  String get prayerCity => 'Cidade';
+
+  @override
+  String get prayerCitySearch => 'Buscar cidade';
+
+  @override
+  String get prayerMethod => 'Método de cálculo';
+
+  @override
+  String get prayerHanafiAsr => 'Asr hanafita (mais tarde)';
+
+  @override
+  String get prayerReminders => 'Avisar em cada oração';
+
+  @override
+  String get prayerPauseFocus => 'Pausar o foco na hora da oração';
+
+  @override
+  String get prayerPauseFocusHint => 'A sessão pausa; continue depois';
+
+  @override
+  String get prayerTurnOff => 'Desativar horários';
+
+  @override
+  String get prayerAccuracyNote =>
+      'Os horários calculados podem diferir alguns minutos da sua mesquita.';
+
+  @override
+  String prayerNext(String name, String time) {
+    return '$name às $time';
+  }
 }

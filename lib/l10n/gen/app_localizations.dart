@@ -6935,6 +6935,504 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Clear'**
   String get errorLogClear;
+
+  /// Switch: play sounds during focus sessions
+  ///
+  /// In en, this message translates to:
+  /// **'Play with focus sessions'**
+  String get soundsWithFocus;
+
+  /// Explains the focus link
+  ///
+  /// In en, this message translates to:
+  /// **'Your mix starts with a focus session and pauses at breaks.'**
+  String get soundsWithFocusHint;
+
+  /// Section title: saved sound mixes
+  ///
+  /// In en, this message translates to:
+  /// **'Saved mixes'**
+  String get soundsSavedMixes;
+
+  /// Button/dialog title: save the current mix
+  ///
+  /// In en, this message translates to:
+  /// **'Save this mix'**
+  String get soundsSaveMix;
+
+  /// Hint for the mix name
+  ///
+  /// In en, this message translates to:
+  /// **'Name, e.g. Rainy library'**
+  String get soundsMixNameHint;
+
+  /// Confirm deleting a saved mix
+  ///
+  /// In en, this message translates to:
+  /// **'Delete the mix “{name}”?'**
+  String soundsDeleteMix(String name);
+
+  /// Subtitle of the daily review reminder switch
+  ///
+  /// In en, this message translates to:
+  /// **'Once a day, only when cards are due'**
+  String get settingsReviewReminderHint;
+
+  /// Row: time of the daily review reminder
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder time'**
+  String get settingsReviewTime;
+
+  /// App icon long-press shortcut: open the focus timer. Max ~20 chars
+  ///
+  /// In en, this message translates to:
+  /// **'Focus'**
+  String get shortcutFocus;
+
+  /// App icon shortcut: new task. Max ~20 chars
+  ///
+  /// In en, this message translates to:
+  /// **'New task'**
+  String get shortcutNewTask;
+
+  /// App icon shortcut: open flashcards to review. Max ~20 chars
+  ///
+  /// In en, this message translates to:
+  /// **'Review cards'**
+  String get shortcutReview;
+
+  /// App icon shortcut: nature sounds. Max ~20 chars
+  ///
+  /// In en, this message translates to:
+  /// **'Nature sounds'**
+  String get shortcutSounds;
+
+  /// Dashboard card and sheet: begin the day
+  ///
+  /// In en, this message translates to:
+  /// **'Start my day'**
+  String get myDayTitle;
+
+  /// Subtitle of the Start my day card
+  ///
+  /// In en, this message translates to:
+  /// **'Your day at a glance, then one tap to focus'**
+  String get myDayHint;
+
+  /// Tasks due today
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No tasks for today} =1{1 task for today} other{{count} tasks for today}}'**
+  String myDayTasks(int count);
+
+  /// No more events today
+  ///
+  /// In en, this message translates to:
+  /// **'No more events today'**
+  String get myDayNoEvents;
+
+  /// Next event today
+  ///
+  /// In en, this message translates to:
+  /// **'Next: {title} at {time}'**
+  String myDayNextEvent(String title, String time);
+
+  /// Habits still to do today
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{All habits done} =1{1 habit left} other{{count} habits left}}'**
+  String myDayHabits(int count);
+
+  /// Primary button: start a focus session now
+  ///
+  /// In en, this message translates to:
+  /// **'Begin with a focus session'**
+  String get myDayBeginFocus;
+
+  /// Hijri month 1
+  ///
+  /// In en, this message translates to:
+  /// **'Muharram'**
+  String get hijriMonth1;
+
+  /// Hijri month 2
+  ///
+  /// In en, this message translates to:
+  /// **'Safar'**
+  String get hijriMonth2;
+
+  /// Hijri month 3
+  ///
+  /// In en, this message translates to:
+  /// **'Rabi al-Awwal'**
+  String get hijriMonth3;
+
+  /// Hijri month 4
+  ///
+  /// In en, this message translates to:
+  /// **'Rabi al-Thani'**
+  String get hijriMonth4;
+
+  /// Hijri month 5
+  ///
+  /// In en, this message translates to:
+  /// **'Jumada al-Ula'**
+  String get hijriMonth5;
+
+  /// Hijri month 6
+  ///
+  /// In en, this message translates to:
+  /// **'Jumada al-Akhirah'**
+  String get hijriMonth6;
+
+  /// Hijri month 7
+  ///
+  /// In en, this message translates to:
+  /// **'Rajab'**
+  String get hijriMonth7;
+
+  /// Hijri month 8
+  ///
+  /// In en, this message translates to:
+  /// **'Shaban'**
+  String get hijriMonth8;
+
+  /// Hijri month 9
+  ///
+  /// In en, this message translates to:
+  /// **'Ramadan'**
+  String get hijriMonth9;
+
+  /// Hijri month 10
+  ///
+  /// In en, this message translates to:
+  /// **'Shawwal'**
+  String get hijriMonth10;
+
+  /// Hijri month 11
+  ///
+  /// In en, this message translates to:
+  /// **'Dhu al-Qadah'**
+  String get hijriMonth11;
+
+  /// Hijri month 12
+  ///
+  /// In en, this message translates to:
+  /// **'Dhu al-Hijjah'**
+  String get hijriMonth12;
+
+  /// Hijri date: day, month name, year (AH)
+  ///
+  /// In en, this message translates to:
+  /// **'{day} {month} {year} AH'**
+  String hijriDate(int day, String month, int year);
+
+  /// Settings switch: show Hijri dates in the calendar
+  ///
+  /// In en, this message translates to:
+  /// **'Hijri dates'**
+  String get settingsHijri;
+
+  /// Subtitle of the Hijri switch
+  ///
+  /// In en, this message translates to:
+  /// **'Shown in the calendar and on the home screen (Umm al-Qura)'**
+  String get settingsHijriHint;
+
+  /// Streak chip: consecutive study days
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 day} other{{count} days}}'**
+  String studyStreakDays(int count);
+
+  /// Daily card goal progress
+  ///
+  /// In en, this message translates to:
+  /// **'{done} of {goal} cards today'**
+  String studyGoalProgress(int done, int goal);
+
+  /// Daily card goal reached
+  ///
+  /// In en, this message translates to:
+  /// **'Daily goal reached. Well done!'**
+  String get studyGoalReached;
+
+  /// Sheet title: the last 7 days of study
+  ///
+  /// In en, this message translates to:
+  /// **'Your week'**
+  String get studyWeekTitle;
+
+  /// Cards answered in the last 7 days
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No cards answered in 7 days} =1{1 card answered in 7 days} other{{count} cards answered in 7 days}}'**
+  String studyWeekCards(int count);
+
+  /// Focus time in the last 7 days
+  ///
+  /// In en, this message translates to:
+  /// **'{duration} of focus in 7 days'**
+  String studyWeekFocus(String duration);
+
+  /// Current and best streak
+  ///
+  /// In en, this message translates to:
+  /// **'Streak: {current} · Best: {best}'**
+  String studyStreakLine(int current, int best);
+
+  /// Choose the daily card goal
+  ///
+  /// In en, this message translates to:
+  /// **'Daily goal (cards)'**
+  String get studyGoalTitle;
+
+  /// No daily goal
+  ///
+  /// In en, this message translates to:
+  /// **'Off'**
+  String get studyGoalOff;
+
+  /// Settings switch: Do Not Disturb during focus sessions
+  ///
+  /// In en, this message translates to:
+  /// **'Do Not Disturb while focusing'**
+  String get focusDndTitle;
+
+  /// Subtitle of the DND switch
+  ///
+  /// In en, this message translates to:
+  /// **'Turns on for each focus session and back off at the break'**
+  String get focusDndHint;
+
+  /// DND switch: system access still missing
+  ///
+  /// In en, this message translates to:
+  /// **'Allow access in the phone settings to use this'**
+  String get focusDndNeedsAccess;
+
+  /// Tooltip of the microphone button in text fields
+  ///
+  /// In en, this message translates to:
+  /// **'Speak to type'**
+  String get voiceInput;
+
+  /// Shown on the phone's speech screen
+  ///
+  /// In en, this message translates to:
+  /// **'Speak now'**
+  String get voiceInputPrompt;
+
+  /// No speech recognizer on the phone
+  ///
+  /// In en, this message translates to:
+  /// **'Voice typing isn’t available on this phone. Install or turn on a speech service (for example Speech Recognition & Synthesis by Google).'**
+  String get voiceInputUnavailable;
+
+  /// Prayer name
+  ///
+  /// In en, this message translates to:
+  /// **'Fajr'**
+  String get prayerFajr;
+
+  /// Sunrise (not a prayer)
+  ///
+  /// In en, this message translates to:
+  /// **'Sunrise'**
+  String get prayerSunrise;
+
+  /// Prayer name
+  ///
+  /// In en, this message translates to:
+  /// **'Dhuhr'**
+  String get prayerDhuhr;
+
+  /// Prayer name
+  ///
+  /// In en, this message translates to:
+  /// **'Asr'**
+  String get prayerAsr;
+
+  /// Prayer name
+  ///
+  /// In en, this message translates to:
+  /// **'Maghrib'**
+  String get prayerMaghrib;
+
+  /// Prayer name
+  ///
+  /// In en, this message translates to:
+  /// **'Isha'**
+  String get prayerIsha;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'Muslim World League'**
+  String get prayerMethodMwl;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'Umm al-Qura, Makkah'**
+  String get prayerMethodUmmAlQura;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'Egyptian General Authority'**
+  String get prayerMethodEgypt;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'Jordan, Ministry of Awqaf'**
+  String get prayerMethodJordan;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'University of Islamic Sciences, Karachi'**
+  String get prayerMethodKarachi;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'Islamic Society of North America'**
+  String get prayerMethodIsna;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'Gulf region'**
+  String get prayerMethodGulf;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'Kuwait'**
+  String get prayerMethodKuwait;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'Qatar'**
+  String get prayerMethodQatar;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'Türkiye, Diyanet'**
+  String get prayerMethodTurkey;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'Singapore, Malaysia, Indonesia'**
+  String get prayerMethodSingapore;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'France (12°)'**
+  String get prayerMethodFrance;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'Russia, Spiritual Administration'**
+  String get prayerMethodRussia;
+
+  /// Notification title at prayer time
+  ///
+  /// In en, this message translates to:
+  /// **'Time for {name}'**
+  String prayerNotifTitle(String name);
+
+  /// Notification text at prayer time
+  ///
+  /// In en, this message translates to:
+  /// **'Prayer time · {time}'**
+  String prayerNotifBody(String time);
+
+  /// Prayer times sheet/row title
+  ///
+  /// In en, this message translates to:
+  /// **'Prayer times'**
+  String get prayerTitle;
+
+  /// Prayer times are off
+  ///
+  /// In en, this message translates to:
+  /// **'Choose your city to see prayer times. They are calculated on the phone; no location access is needed.'**
+  String get prayerOffHint;
+
+  /// Button
+  ///
+  /// In en, this message translates to:
+  /// **'Choose city'**
+  String get prayerChooseCity;
+
+  /// Row label
+  ///
+  /// In en, this message translates to:
+  /// **'City'**
+  String get prayerCity;
+
+  /// Search hint
+  ///
+  /// In en, this message translates to:
+  /// **'Search for a city'**
+  String get prayerCitySearch;
+
+  /// Row label
+  ///
+  /// In en, this message translates to:
+  /// **'Calculation method'**
+  String get prayerMethod;
+
+  /// Switch
+  ///
+  /// In en, this message translates to:
+  /// **'Hanafi Asr (later time)'**
+  String get prayerHanafiAsr;
+
+  /// Switch
+  ///
+  /// In en, this message translates to:
+  /// **'Notify at each prayer time'**
+  String get prayerReminders;
+
+  /// Switch
+  ///
+  /// In en, this message translates to:
+  /// **'Pause focus at prayer time'**
+  String get prayerPauseFocus;
+
+  /// Switch subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'A running session pauses; continue after the prayer'**
+  String get prayerPauseFocusHint;
+
+  /// Button
+  ///
+  /// In en, this message translates to:
+  /// **'Turn off prayer times'**
+  String get prayerTurnOff;
+
+  /// Footnote
+  ///
+  /// In en, this message translates to:
+  /// **'Calculated times can differ by a few minutes from your local mosque.'**
+  String get prayerAccuracyNote;
+
+  /// Dashboard line: next prayer
+  ///
+  /// In en, this message translates to:
+  /// **'{name} at {time}'**
+  String prayerNext(String name, String time);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

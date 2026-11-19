@@ -12,6 +12,7 @@ import '../../../core/design_system/components/surfaces.dart';
 import '../../../core/design_system/tokens.dart';
 import '../../../core/providers/core_providers.dart';
 import '../../../core/time/clock.dart';
+import '../../../core/time/hijri.dart';
 import '../../../l10n/gen/app_localizations.dart';
 import '../../flashcards/application/flashcards_providers.dart';
 import '../../focus/application/focus_controller.dart';
@@ -25,6 +26,7 @@ import '../../tasks/application/tasks_providers.dart';
 import '../../tasks/data/tasks_repository.dart';
 import '../../tasks/presentation/widgets/task_tile.dart';
 import '../application/dashboard_providers.dart';
+import 'start_my_day.dart';
 
 part 'dashboard_screen/header.dart';
 part 'dashboard_screen/goal_line.dart';
@@ -56,6 +58,7 @@ class DashboardScreen extends ConsumerWidget {
             slivers: [
               const SliverToBoxAdapter(child: _Header()),
               const SliverToBoxAdapter(child: _QuickActions()),
+              const SliverToBoxAdapter(child: StartMyDayCard()),
               for (final id in sections)
                 SliverToBoxAdapter(
                   child: switch (id) {

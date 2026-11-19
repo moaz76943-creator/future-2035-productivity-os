@@ -26,6 +26,7 @@ class AppSettings {
     this.flashSpeakExample = false,
     this.focusSound = true,
     this.focusEndTone = 'gentle',
+    this.focusSounds = false,
     this.dailyFocusTargetMinutes = 120,
     this.weeklyFocusTargetMinutes = 600,
     this.notificationsEnabled = true,
@@ -33,6 +34,11 @@ class AppSettings {
     this.quietStartMinute = 22 * 60,
     this.quietEndMinute = 7 * 60,
     this.reviewReminderMinute = 19 * 60,
+    this.reviewReminderOn = true,
+    this.hijri = 'auto',
+    this.dailyCardGoal = 20,
+    this.focusDnd = false,
+    this.prayer = const PrayerSettings(),
     this.onboardingDone = false,
     this.assistantEnabled = false,
     this.assistantRemoteConsent = false,
@@ -88,6 +94,9 @@ class AppSettings {
 
   /// Sound at the end of a timer ([EndTone] name).
   final String focusEndTone;
+
+  /// Play the saved sound mix while a focus session runs.
+  final bool focusSounds;
   final int dailyFocusTargetMinutes;
   final int weeklyFocusTargetMinutes;
   final bool notificationsEnabled;
@@ -95,6 +104,21 @@ class AppSettings {
   final int quietStartMinute;
   final int quietEndMinute;
   final int reviewReminderMinute;
+
+  /// Daily flashcard review reminder (only on days with due cards).
+  final bool reviewReminderOn;
+
+  /// Hijri dates: 'auto' (shown when the app is in Arabic), 'on' or 'off'.
+  final String hijri;
+
+  /// Cards to answer per day; 0 turns the goal off.
+  final int dailyCardGoal;
+
+  /// Do Not Disturb while a focus (work) phase runs.
+  final bool focusDnd;
+  final PrayerSettings prayer;
+
+  bool showHijri(String languageTag) => hijri == 'on' || (hijri == 'auto' && languageTag == 'ar');
   final bool onboardingDone;
   final bool assistantEnabled;
   final bool assistantRemoteConsent;
@@ -145,6 +169,7 @@ class AppSettings {
     'flashSpeakExample': flashSpeakExample,
     'focusSound': focusSound,
     'focusEndTone': focusEndTone,
+    'focusSounds': focusSounds,
     'dailyFocusTargetMinutes': dailyFocusTargetMinutes,
     'weeklyFocusTargetMinutes': weeklyFocusTargetMinutes,
     'notificationsEnabled': notificationsEnabled,
@@ -152,6 +177,11 @@ class AppSettings {
     'quietStartMinute': quietStartMinute,
     'quietEndMinute': quietEndMinute,
     'reviewReminderMinute': reviewReminderMinute,
+    'reviewReminderOn': reviewReminderOn,
+    'hijri': hijri,
+    'dailyCardGoal': dailyCardGoal,
+    'focusDnd': focusDnd,
+    'prayer': prayer.toJson(),
     'onboardingDone': onboardingDone,
     'assistantEnabled': assistantEnabled,
     'assistantRemoteConsent': assistantRemoteConsent,
@@ -200,6 +230,7 @@ class AppSettings {
       flashSpeakExample: read('flashSpeakExample', d.flashSpeakExample),
       focusSound: read('focusSound', d.focusSound),
       focusEndTone: read('focusEndTone', d.focusEndTone),
+      focusSounds: read('focusSounds', d.focusSounds),
       dailyFocusTargetMinutes: read('dailyFocusTargetMinutes', d.dailyFocusTargetMinutes),
       weeklyFocusTargetMinutes: read('weeklyFocusTargetMinutes', d.weeklyFocusTargetMinutes),
       notificationsEnabled: read('notificationsEnabled', d.notificationsEnabled),
@@ -207,6 +238,11 @@ class AppSettings {
       quietStartMinute: read('quietStartMinute', d.quietStartMinute),
       quietEndMinute: read('quietEndMinute', d.quietEndMinute),
       reviewReminderMinute: read('reviewReminderMinute', d.reviewReminderMinute),
+      reviewReminderOn: read('reviewReminderOn', d.reviewReminderOn),
+      hijri: read('hijri', d.hijri),
+      dailyCardGoal: read('dailyCardGoal', d.dailyCardGoal).clamp(0, 1000),
+      focusDnd: read('focusDnd', d.focusDnd),
+      prayer: PrayerSettings.fromJson(j['prayer']),
       onboardingDone: read('onboardingDone', d.onboardingDone),
       assistantEnabled: read('assistantEnabled', d.assistantEnabled),
       assistantRemoteConsent: read('assistantRemoteConsent', d.assistantRemoteConsent),
@@ -242,6 +278,7 @@ class AppSettings {
     bool? flashSpeakExample,
     bool? focusSound,
     String? focusEndTone,
+    bool? focusSounds,
     int? dailyFocusTargetMinutes,
     int? weeklyFocusTargetMinutes,
     bool? notificationsEnabled,
@@ -249,6 +286,11 @@ class AppSettings {
     int? quietStartMinute,
     int? quietEndMinute,
     int? reviewReminderMinute,
+    bool? reviewReminderOn,
+    String? hijri,
+    int? dailyCardGoal,
+    bool? focusDnd,
+    PrayerSettings? prayer,
     bool? onboardingDone,
     bool? assistantEnabled,
     bool? assistantRemoteConsent,
@@ -280,6 +322,7 @@ class AppSettings {
     'flashSpeakExample': ?flashSpeakExample,
     'focusSound': ?focusSound,
     'focusEndTone': ?focusEndTone,
+    'focusSounds': ?focusSounds,
     'dailyFocusTargetMinutes': ?dailyFocusTargetMinutes,
     'weeklyFocusTargetMinutes': ?weeklyFocusTargetMinutes,
     'notificationsEnabled': ?notificationsEnabled,
@@ -287,6 +330,11 @@ class AppSettings {
     'quietStartMinute': ?quietStartMinute,
     'quietEndMinute': ?quietEndMinute,
     'reviewReminderMinute': ?reviewReminderMinute,
+    'reviewReminderOn': ?reviewReminderOn,
+    'hijri': ?hijri,
+    'dailyCardGoal': ?dailyCardGoal,
+    'focusDnd': ?focusDnd,
+    if (prayer != null) 'prayer': prayer.toJson(),
     'onboardingDone': ?onboardingDone,
     'assistantEnabled': ?assistantEnabled,
     'assistantRemoteConsent': ?assistantRemoteConsent,

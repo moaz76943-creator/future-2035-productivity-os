@@ -71,10 +71,7 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
             ),
           Padding(
             padding: const EdgeInsetsDirectional.only(end: Space.sm),
-            child: FilledButton(
-              onPressed: _saving ? null : _save,
-              child: Text(l10n.actionSave),
-            ),
+            child: FilledButton(onPressed: _saving ? null : _save, child: Text(l10n.actionSave)),
           ),
         ],
       ),
@@ -92,6 +89,7 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
                 labelText: l10n.taskTitleLabel,
                 hintText: l10n.taskTitleHint,
                 errorText: _titleError,
+                suffixIcon: MicButton(controller: _title),
               ),
             ),
             if (_formError != null)

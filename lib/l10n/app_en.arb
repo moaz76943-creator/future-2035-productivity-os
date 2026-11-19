@@ -5513,5 +5513,420 @@
   "errorLogClear": "Clear",
   "@errorLogClear": {
     "description": "Button: empty the error log"
+  },
+  "soundsWithFocus": "Play with focus sessions",
+  "@soundsWithFocus": {
+    "description": "Switch: play sounds during focus sessions"
+  },
+  "soundsWithFocusHint": "Your mix starts with a focus session and pauses at breaks.",
+  "@soundsWithFocusHint": {
+    "description": "Explains the focus link"
+  },
+  "soundsSavedMixes": "Saved mixes",
+  "@soundsSavedMixes": {
+    "description": "Section title: saved sound mixes"
+  },
+  "soundsSaveMix": "Save this mix",
+  "@soundsSaveMix": {
+    "description": "Button/dialog title: save the current mix"
+  },
+  "soundsMixNameHint": "Name, e.g. Rainy library",
+  "@soundsMixNameHint": {
+    "description": "Hint for the mix name"
+  },
+  "soundsDeleteMix": "Delete the mix “{name}”?",
+  "@soundsDeleteMix": {
+    "description": "Confirm deleting a saved mix",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsReviewReminderHint": "Once a day, only when cards are due",
+  "@settingsReviewReminderHint": {
+    "description": "Subtitle of the daily review reminder switch"
+  },
+  "settingsReviewTime": "Reminder time",
+  "@settingsReviewTime": {
+    "description": "Row: time of the daily review reminder"
+  },
+  "shortcutFocus": "Focus",
+  "@shortcutFocus": {
+    "description": "App icon long-press shortcut: open the focus timer. Max ~20 chars"
+  },
+  "shortcutNewTask": "New task",
+  "@shortcutNewTask": {
+    "description": "App icon shortcut: new task. Max ~20 chars"
+  },
+  "shortcutReview": "Review cards",
+  "@shortcutReview": {
+    "description": "App icon shortcut: open flashcards to review. Max ~20 chars"
+  },
+  "shortcutSounds": "Nature sounds",
+  "@shortcutSounds": {
+    "description": "App icon shortcut: nature sounds. Max ~20 chars"
+  },
+  "myDayTitle": "Start my day",
+  "@myDayTitle": {
+    "description": "Dashboard card and sheet: begin the day"
+  },
+  "myDayHint": "Your day at a glance, then one tap to focus",
+  "@myDayHint": {
+    "description": "Subtitle of the Start my day card"
+  },
+  "myDayTasks": "{count, plural, =0{No tasks for today} =1{1 task for today} other{{count} tasks for today}}",
+  "@myDayTasks": {
+    "description": "Tasks due today",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "myDayNoEvents": "No more events today",
+  "@myDayNoEvents": {
+    "description": "No more events today"
+  },
+  "myDayNextEvent": "Next: {title} at {time}",
+  "@myDayNextEvent": {
+    "description": "Next event today",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "myDayHabits": "{count, plural, =0{All habits done} =1{1 habit left} other{{count} habits left}}",
+  "@myDayHabits": {
+    "description": "Habits still to do today",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "myDayBeginFocus": "Begin with a focus session",
+  "@myDayBeginFocus": {
+    "description": "Primary button: start a focus session now"
+  },
+  "hijriMonth1": "Muharram",
+  "@hijriMonth1": {
+    "description": "Hijri month 1"
+  },
+  "hijriMonth2": "Safar",
+  "@hijriMonth2": {
+    "description": "Hijri month 2"
+  },
+  "hijriMonth3": "Rabi al-Awwal",
+  "@hijriMonth3": {
+    "description": "Hijri month 3"
+  },
+  "hijriMonth4": "Rabi al-Thani",
+  "@hijriMonth4": {
+    "description": "Hijri month 4"
+  },
+  "hijriMonth5": "Jumada al-Ula",
+  "@hijriMonth5": {
+    "description": "Hijri month 5"
+  },
+  "hijriMonth6": "Jumada al-Akhirah",
+  "@hijriMonth6": {
+    "description": "Hijri month 6"
+  },
+  "hijriMonth7": "Rajab",
+  "@hijriMonth7": {
+    "description": "Hijri month 7"
+  },
+  "hijriMonth8": "Shaban",
+  "@hijriMonth8": {
+    "description": "Hijri month 8"
+  },
+  "hijriMonth9": "Ramadan",
+  "@hijriMonth9": {
+    "description": "Hijri month 9"
+  },
+  "hijriMonth10": "Shawwal",
+  "@hijriMonth10": {
+    "description": "Hijri month 10"
+  },
+  "hijriMonth11": "Dhu al-Qadah",
+  "@hijriMonth11": {
+    "description": "Hijri month 11"
+  },
+  "hijriMonth12": "Dhu al-Hijjah",
+  "@hijriMonth12": {
+    "description": "Hijri month 12"
+  },
+  "hijriDate": "{day} {month} {year} AH",
+  "@hijriDate": {
+    "description": "Hijri date: day, month name, year (AH)",
+    "placeholders": {
+      "day": {
+        "type": "int"
+      },
+      "month": {
+        "type": "String"
+      },
+      "year": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsHijri": "Hijri dates",
+  "@settingsHijri": {
+    "description": "Settings switch: show Hijri dates in the calendar"
+  },
+  "settingsHijriHint": "Shown in the calendar and on the home screen (Umm al-Qura)",
+  "@settingsHijriHint": {
+    "description": "Subtitle of the Hijri switch"
+  },
+  "studyStreakDays": "{count, plural, =1{1 day} other{{count} days}}",
+  "@studyStreakDays": {
+    "description": "Streak chip: consecutive study days",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "studyGoalProgress": "{done} of {goal} cards today",
+  "@studyGoalProgress": {
+    "description": "Daily card goal progress",
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "studyGoalReached": "Daily goal reached. Well done!",
+  "@studyGoalReached": {
+    "description": "Daily card goal reached"
+  },
+  "studyWeekTitle": "Your week",
+  "@studyWeekTitle": {
+    "description": "Sheet title: the last 7 days of study"
+  },
+  "studyWeekCards": "{count, plural, =0{No cards answered in 7 days} =1{1 card answered in 7 days} other{{count} cards answered in 7 days}}",
+  "@studyWeekCards": {
+    "description": "Cards answered in the last 7 days",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "studyWeekFocus": "{duration} of focus in 7 days",
+  "@studyWeekFocus": {
+    "description": "Focus time in the last 7 days",
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      }
+    }
+  },
+  "studyStreakLine": "Streak: {current} · Best: {best}",
+  "@studyStreakLine": {
+    "description": "Current and best streak",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "best": {
+        "type": "int"
+      }
+    }
+  },
+  "studyGoalTitle": "Daily goal (cards)",
+  "@studyGoalTitle": {
+    "description": "Choose the daily card goal"
+  },
+  "studyGoalOff": "Off",
+  "@studyGoalOff": {
+    "description": "No daily goal"
+  },
+  "focusDndTitle": "Do Not Disturb while focusing",
+  "@focusDndTitle": {
+    "description": "Settings switch: Do Not Disturb during focus sessions"
+  },
+  "focusDndHint": "Turns on for each focus session and back off at the break",
+  "@focusDndHint": {
+    "description": "Subtitle of the DND switch"
+  },
+  "focusDndNeedsAccess": "Allow access in the phone settings to use this",
+  "@focusDndNeedsAccess": {
+    "description": "DND switch: system access still missing"
+  },
+  "voiceInput": "Speak to type",
+  "@voiceInput": {
+    "description": "Tooltip of the microphone button in text fields"
+  },
+  "voiceInputPrompt": "Speak now",
+  "@voiceInputPrompt": {
+    "description": "Shown on the phone's speech screen"
+  },
+  "voiceInputUnavailable": "Voice typing isn’t available on this phone. Install or turn on a speech service (for example Speech Recognition & Synthesis by Google).",
+  "@voiceInputUnavailable": {
+    "description": "No speech recognizer on the phone"
+  },
+  "prayerFajr": "Fajr",
+  "@prayerFajr": {
+    "description": "Prayer name"
+  },
+  "prayerSunrise": "Sunrise",
+  "@prayerSunrise": {
+    "description": "Sunrise (not a prayer)"
+  },
+  "prayerDhuhr": "Dhuhr",
+  "@prayerDhuhr": {
+    "description": "Prayer name"
+  },
+  "prayerAsr": "Asr",
+  "@prayerAsr": {
+    "description": "Prayer name"
+  },
+  "prayerMaghrib": "Maghrib",
+  "@prayerMaghrib": {
+    "description": "Prayer name"
+  },
+  "prayerIsha": "Isha",
+  "@prayerIsha": {
+    "description": "Prayer name"
+  },
+  "prayerMethodMwl": "Muslim World League",
+  "@prayerMethodMwl": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodUmmAlQura": "Umm al-Qura, Makkah",
+  "@prayerMethodUmmAlQura": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodEgypt": "Egyptian General Authority",
+  "@prayerMethodEgypt": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodJordan": "Jordan, Ministry of Awqaf",
+  "@prayerMethodJordan": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodKarachi": "University of Islamic Sciences, Karachi",
+  "@prayerMethodKarachi": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodIsna": "Islamic Society of North America",
+  "@prayerMethodIsna": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodGulf": "Gulf region",
+  "@prayerMethodGulf": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodKuwait": "Kuwait",
+  "@prayerMethodKuwait": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodQatar": "Qatar",
+  "@prayerMethodQatar": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodTurkey": "Türkiye, Diyanet",
+  "@prayerMethodTurkey": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodSingapore": "Singapore, Malaysia, Indonesia",
+  "@prayerMethodSingapore": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodFrance": "France (12°)",
+  "@prayerMethodFrance": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodRussia": "Russia, Spiritual Administration",
+  "@prayerMethodRussia": {
+    "description": "Prayer calculation method"
+  },
+  "prayerNotifTitle": "Time for {name}",
+  "@prayerNotifTitle": {
+    "description": "Notification title at prayer time",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "prayerNotifBody": "Prayer time · {time}",
+  "@prayerNotifBody": {
+    "description": "Notification text at prayer time",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "prayerTitle": "Prayer times",
+  "@prayerTitle": {
+    "description": "Prayer times sheet/row title"
+  },
+  "prayerOffHint": "Choose your city to see prayer times. They are calculated on the phone; no location access is needed.",
+  "@prayerOffHint": {
+    "description": "Prayer times are off"
+  },
+  "prayerChooseCity": "Choose city",
+  "@prayerChooseCity": {
+    "description": "Button"
+  },
+  "prayerCity": "City",
+  "@prayerCity": {
+    "description": "Row label"
+  },
+  "prayerCitySearch": "Search for a city",
+  "@prayerCitySearch": {
+    "description": "Search hint"
+  },
+  "prayerMethod": "Calculation method",
+  "@prayerMethod": {
+    "description": "Row label"
+  },
+  "prayerHanafiAsr": "Hanafi Asr (later time)",
+  "@prayerHanafiAsr": {
+    "description": "Switch"
+  },
+  "prayerReminders": "Notify at each prayer time",
+  "@prayerReminders": {
+    "description": "Switch"
+  },
+  "prayerPauseFocus": "Pause focus at prayer time",
+  "@prayerPauseFocus": {
+    "description": "Switch"
+  },
+  "prayerPauseFocusHint": "A running session pauses; continue after the prayer",
+  "@prayerPauseFocusHint": {
+    "description": "Switch subtitle"
+  },
+  "prayerTurnOff": "Turn off prayer times",
+  "@prayerTurnOff": {
+    "description": "Button"
+  },
+  "prayerAccuracyNote": "Calculated times can differ by a few minutes from your local mosque.",
+  "@prayerAccuracyNote": {
+    "description": "Footnote"
+  },
+  "prayerNext": "{name} at {time}",
+  "@prayerNext": {
+    "description": "Dashboard line: next prayer",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
   }
 }

@@ -3914,4 +3914,293 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get errorLogClear => '清除';
+
+  @override
+  String get soundsWithFocus => '随专注时段播放';
+
+  @override
+  String get soundsWithFocusHint => '混音随专注时段开始，休息时暂停。';
+
+  @override
+  String get soundsSavedMixes => '已保存的混音';
+
+  @override
+  String get soundsSaveMix => '保存此混音';
+
+  @override
+  String get soundsMixNameHint => '名称，例如：雨天书房';
+
+  @override
+  String soundsDeleteMix(String name) {
+    return '删除混音“$name”？';
+  }
+
+  @override
+  String get settingsReviewReminderHint => '每天一次，仅在有待复习卡片时';
+
+  @override
+  String get settingsReviewTime => '提醒时间';
+
+  @override
+  String get shortcutFocus => '专注';
+
+  @override
+  String get shortcutNewTask => '新建任务';
+
+  @override
+  String get shortcutReview => '复习卡片';
+
+  @override
+  String get shortcutSounds => '自然声音';
+
+  @override
+  String get myDayTitle => '开始我的一天';
+
+  @override
+  String get myDayHint => '一眼看清今天，一键开始专注';
+
+  @override
+  String myDayTasks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '今天 $count 项任务',
+      zero: '今天没有任务',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get myDayNoEvents => '今天没有更多日程';
+
+  @override
+  String myDayNextEvent(String title, String time) {
+    return '下一个：$time $title';
+  }
+
+  @override
+  String myDayHabits(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '还剩 $count 个习惯',
+      zero: '习惯已全部完成',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get myDayBeginFocus => '从一次专注开始';
+
+  @override
+  String get hijriMonth1 => '穆哈兰姆月';
+
+  @override
+  String get hijriMonth2 => '色法尔月';
+
+  @override
+  String get hijriMonth3 => '赖比尔·敖外鲁月';
+
+  @override
+  String get hijriMonth4 => '赖比尔·阿色尼月';
+
+  @override
+  String get hijriMonth5 => '主马达·敖外鲁月';
+
+  @override
+  String get hijriMonth6 => '主马达·阿色尼月';
+
+  @override
+  String get hijriMonth7 => '赖哲卜月';
+
+  @override
+  String get hijriMonth8 => '舍尔邦月';
+
+  @override
+  String get hijriMonth9 => '莱麦丹月';
+
+  @override
+  String get hijriMonth10 => '闪瓦鲁月';
+
+  @override
+  String get hijriMonth11 => '都尔喀尔德月';
+
+  @override
+  String get hijriMonth12 => '都尔黑哲月';
+
+  @override
+  String hijriDate(int day, String month, int year) {
+    return '伊斯兰历 $year年 $month $day日';
+  }
+
+  @override
+  String get settingsHijri => '伊斯兰历日期';
+
+  @override
+  String get settingsHijriHint => '在日历和首页显示（乌姆库拉历）';
+
+  @override
+  String studyStreakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '连续 $count 天');
+    return '$_temp0';
+  }
+
+  @override
+  String studyGoalProgress(int done, int goal) {
+    return '今天 $done/$goal 张卡片';
+  }
+
+  @override
+  String get studyGoalReached => '今日目标已完成，真棒！';
+
+  @override
+  String get studyWeekTitle => '本周回顾';
+
+  @override
+  String studyWeekCards(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '7 天内回答 $count 张卡片');
+    return '$_temp0';
+  }
+
+  @override
+  String studyWeekFocus(String duration) {
+    return '7 天专注 $duration';
+  }
+
+  @override
+  String studyStreakLine(int current, int best) {
+    return '连续：$current · 最佳：$best';
+  }
+
+  @override
+  String get studyGoalTitle => '每日目标（卡片）';
+
+  @override
+  String get studyGoalOff => '关闭';
+
+  @override
+  String get focusDndTitle => '专注时勿扰';
+
+  @override
+  String get focusDndHint => '每次专注时开启，休息时恢复';
+
+  @override
+  String get focusDndNeedsAccess => '请在手机设置中允许访问';
+
+  @override
+  String get voiceInput => '语音输入';
+
+  @override
+  String get voiceInputPrompt => '请说话';
+
+  @override
+  String get voiceInputUnavailable => '此手机不支持语音输入。请安装或开启语音识别服务（例如 Google 语音服务）。';
+
+  @override
+  String get prayerFajr => '晨礼';
+
+  @override
+  String get prayerSunrise => '日出';
+
+  @override
+  String get prayerDhuhr => '晌礼';
+
+  @override
+  String get prayerAsr => '晡礼';
+
+  @override
+  String get prayerMaghrib => '昏礼';
+
+  @override
+  String get prayerIsha => '宵礼';
+
+  @override
+  String get prayerMethodMwl => '世界穆斯林联盟';
+
+  @override
+  String get prayerMethodUmmAlQura => '乌姆库拉（麦加）';
+
+  @override
+  String get prayerMethodEgypt => '埃及测绘总局';
+
+  @override
+  String get prayerMethodJordan => '约旦宗教基金部';
+
+  @override
+  String get prayerMethodKarachi => '卡拉奇伊斯兰科学大学';
+
+  @override
+  String get prayerMethodIsna => '北美伊斯兰协会';
+
+  @override
+  String get prayerMethodGulf => '海湾地区';
+
+  @override
+  String get prayerMethodKuwait => '科威特';
+
+  @override
+  String get prayerMethodQatar => '卡塔尔';
+
+  @override
+  String get prayerMethodTurkey => '土耳其宗教事务局';
+
+  @override
+  String get prayerMethodSingapore => '新加坡、马来西亚、印尼';
+
+  @override
+  String get prayerMethodFrance => '法国（12°）';
+
+  @override
+  String get prayerMethodRussia => '俄罗斯穆斯林宗教管理局';
+
+  @override
+  String prayerNotifTitle(String name) {
+    return '$name时间到了';
+  }
+
+  @override
+  String prayerNotifBody(String time) {
+    return '礼拜时间 · $time';
+  }
+
+  @override
+  String get prayerTitle => '礼拜时间';
+
+  @override
+  String get prayerOffHint => '选择城市即可查看礼拜时间。在手机上计算，无需位置权限。';
+
+  @override
+  String get prayerChooseCity => '选择城市';
+
+  @override
+  String get prayerCity => '城市';
+
+  @override
+  String get prayerCitySearch => '搜索城市';
+
+  @override
+  String get prayerMethod => '计算方法';
+
+  @override
+  String get prayerHanafiAsr => '哈乃斐派晡礼（较晚）';
+
+  @override
+  String get prayerReminders => '每次礼拜时提醒';
+
+  @override
+  String get prayerPauseFocus => '礼拜时暂停专注';
+
+  @override
+  String get prayerPauseFocusHint => '进行中的专注会暂停，礼拜后可继续';
+
+  @override
+  String get prayerTurnOff => '关闭礼拜时间';
+
+  @override
+  String get prayerAccuracyNote => '计算时间可能与当地清真寺相差几分钟。';
+
+  @override
+  String prayerNext(String name, String time) {
+    return '$time $name';
+  }
 }

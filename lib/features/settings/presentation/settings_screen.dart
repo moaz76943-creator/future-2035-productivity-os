@@ -16,6 +16,7 @@ import '../../backup/presentation/backup_flows.dart';
 import '../application/settings_providers.dart';
 import '../data/settings_repository.dart';
 import '../../backup/presentation/auto_backup_sheet.dart';
+import 'dnd_tile.dart';
 import 'end_tone_sheet.dart';
 import 'error_log_sheet.dart';
 import 'language_options.dart';
@@ -71,6 +72,14 @@ class SettingsScreen extends ConsumerWidget {
                   title: l10n.settingsLanguage,
                   subtitle: chosen?.nativeName ?? l10n.settingsLanguageSystem,
                   onTap: () => showLanguagePicker(context),
+                ),
+                SwitchListTile(
+                  key: const ValueKey('settings-hijri'),
+                  secondary: const Icon(Icons.nightlight_outlined),
+                  title: Text(l10n.settingsHijri),
+                  subtitle: Text(l10n.settingsHijriHint),
+                  value: s.showHijri(context.language.tag),
+                  onChanged: (v) => set((c) => c.copyWith(hijri: v ? 'on' : 'off')),
                 ),
               ],
             ),
@@ -180,6 +189,7 @@ class SettingsScreen extends ConsumerWidget {
                   onChanged: (v) => set((c) => c.copyWith(focusSound: v)),
                 ),
                 EndToneTile(enabled: s.focusSound),
+                const DndTile(),
                 _StepperRow(
                   label: l10n.settingsDailyFocusTarget,
                   value: fmt.minutes(s.dailyFocusTargetMinutes),

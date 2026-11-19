@@ -54,8 +54,10 @@ class FakeNotificationService implements NotificationService {
     log.add('cancel $id');
   }
 
+  /// Simulated notification taps.
+  final tapsController = StreamController<String>.broadcast();
   @override
-  Stream<String> get taps => const Stream.empty();
+  Stream<String> get taps => tapsController.stream;
   @override
-  String? get launchPayload => null;
+  String? launchPayload;
 }

@@ -20,10 +20,12 @@ class _Header extends ConsumerWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  context.fmt.dayLong(now),
-                  style: context.text.labelLarge?.copyWith(color: context.lux.ink3),
-                ),
+                Text(switch (ref.watch(settingsProvider).showHijri(context.language.tag)
+                    ? HijriDay.of(now)
+                    : null) {
+                  final h? => '${context.fmt.dayLong(now)} · ${h.long(l10n)}',
+                  null => context.fmt.dayLong(now),
+                }, style: context.text.labelLarge?.copyWith(color: context.lux.ink3)),
                 const SizedBox(height: Space.xxs),
                 Semantics(header: true, child: Text(greeting, style: context.text.headlineMedium)),
               ],

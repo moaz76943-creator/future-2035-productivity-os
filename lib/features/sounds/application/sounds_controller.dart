@@ -112,6 +112,26 @@ class SoundsController extends Notifier<SoundMix> {
     await _sync();
   }
 
+  /// Replaces the mix with [volumes] and plays it (saved mixes, focus link).
+  Future<void> playMix(Map<NatureSound, double> volumes, Map<String, String> labels) async {
+    for (final s in state.volumes.keys.where((s) => !volumes.containsKey(s)).toList()) {
+      await _platform.setVolume(s, 0);
+    }
+    for (final e in volumes.entries) {
+      await _platform.setVolume(e.key, e.value);
+    }
+    await _platform.play(labels);
+    await _sync();
+    await _save();
+  }
+
+  /// Pauses without changing the mix (focus link).
+  Future<void> pause() async {
+    if (!state.playing) return;
+    await _platform.pause();
+    await _sync();
+  }
+
   /// Stops and empties the mix.
   Future<void> stop() async {
     await _platform.stop();

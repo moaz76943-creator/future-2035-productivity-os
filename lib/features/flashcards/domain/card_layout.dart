@@ -206,12 +206,7 @@ enum CardTemplate { vocabulary, twoTranslations, questionAnswer, definition, gra
 CardLayout templateLayout(CardTemplate t, {required String Function(String key) name}) =>
     switch (t) {
       CardTemplate.vocabulary => const CardLayout(
-        order: [
-          CardField.pronunciation,
-          CardField.example,
-          CardField.explanation,
-          CardField.notes,
-        ],
+        order: [CardField.pronunciation, CardField.example, CardField.explanation, CardField.notes],
       ),
       CardTemplate.twoTranslations => CardLayout(
         order: const [

@@ -10,6 +10,7 @@ import '../../../shared/widgets/module_scaffold.dart';
 import '../application/sounds_controller.dart';
 import '../domain/nature_sound.dart';
 import 'widgets/player_bar.dart';
+import 'widgets/presets_row.dart';
 import 'widgets/sound_tile.dart';
 
 /// Nature sounds: tap scenes to build a mix that keeps playing in the
@@ -62,6 +63,7 @@ class SoundsScreen extends ConsumerWidget {
               child: Text(l10n.soundsHint, style: context.text.bodySmall),
             ),
           ),
+        const SliverToBoxAdapter(child: SoundsExtras()),
         SliverToBoxAdapter(child: SectionHeader(title: l10n.soundsNature)),
         grid(SoundGroup.nature),
         SliverToBoxAdapter(child: SectionHeader(title: l10n.soundsNoise)),

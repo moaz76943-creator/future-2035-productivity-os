@@ -7,6 +7,7 @@ import '../../../../core/design_system/app_theme.dart';
 import '../../../../core/design_system/tokens.dart';
 import '../../../../core/speech/audio_recorder.dart';
 import '../../../../shared/widgets/dialogs.dart';
+import '../../../../shared/widgets/mic_button.dart';
 import '../../application/flashcards_providers.dart';
 import '../../application/media_picker.dart';
 import '../../data/flashcards_repository.dart';

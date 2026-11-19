@@ -368,6 +368,7 @@ class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with Widget
                       decoration: InputDecoration(
                         hintText: l10n.noteBodyHint,
                         hintMaxLines: 3,
+                        suffixIcon: MicButton(controller: _body),
                         border: InputBorder.none,
                         enabledBorder: InputBorder.none,
                         focusedBorder: InputBorder.none,

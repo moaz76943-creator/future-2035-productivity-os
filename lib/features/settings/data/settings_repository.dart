@@ -4,6 +4,7 @@ import '../../../core/database/app_database.dart';
 
 part 'settings_repository/app_settings.dart';
 part 'settings_repository/focus_preset.dart';
+part 'settings_repository/prayer_settings.dart';
 
 enum ThemePreference { light, dark, system }
 
