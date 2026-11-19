@@ -49,6 +49,10 @@ public final class SampleVoice extends Voice {
     private final Head left, right;
     private final Dsp.Drift level;
 
+    /** Fades in once the recording is ready (decoding finishes after the voice starts). */
+    private float warm;
+    private static final float WARM_STEP = 1f / Dsp.SR;
+
     SampleVoice(String id, long seed, Source source) {
         super(seed);
         left = new Head(new Dsp.Rng(rng.next()));
@@ -77,7 +81,8 @@ public final class SampleVoice extends Voice {
         if (p == null || p.data.length < p.rate * 6) return; // still loading (or too short)
         float g = p.gain / 32768f;
         for (int i = 0; i < n; i++) {
-            float lv = level.tick() * g;
+            if (warm < 1f) warm = Math.min(1f, warm + WARM_STEP);
+            float lv = level.tick() * g * warm * warm;
             float a = left.next(p), b = right.next(p);
             // Mostly separate ears with some shared sound: wide but natural.
             l[i] += (a * 0.78f + b * 0.22f) * lv;

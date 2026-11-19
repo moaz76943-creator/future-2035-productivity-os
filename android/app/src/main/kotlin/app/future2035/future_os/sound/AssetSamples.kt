@@ -17,6 +17,7 @@ import java.nio.ByteOrder
  */
 class AssetSamples(context: Context) : SampleVoice.Source {
     private val assets = context.applicationContext.assets
+    private val cacheDir = context.applicationContext.cacheDir
     private val cache = HashMap<String, SoftReference<SampleVoice.Pcm>>()
 
     override fun load(id: String): SampleVoice.Pcm? {
@@ -27,11 +28,21 @@ class AssetSamples(context: Context) : SampleVoice.Source {
     }
 
     private fun decode(path: String): SampleVoice.Pcm? {
-        val afd = try { assets.openFd(path) } catch (e: IOException) { return null }
         val extractor = MediaExtractor()
+        // Uncompressed assets (the default for .ogg) are read in place; otherwise
+        // the file is copied to the cache once and read from there.
+        val afd = try { assets.openFd(path) } catch (e: IOException) { null }
         var codec: MediaCodec? = null
         try {
-            extractor.setDataSource(afd.fileDescriptor, afd.startOffset, afd.length)
+            if (afd != null) {
+                extractor.setDataSource(afd.fileDescriptor, afd.startOffset, afd.length)
+            } else {
+                val copy = java.io.File(cacheDir, "sound_" + path.substringAfterLast('/'))
+                if (!copy.exists()) {
+                    assets.open(path).use { input -> copy.outputStream().use { input.copyTo(it) } }
+                }
+                extractor.setDataSource(copy.path)
+            }
             val track = (0 until extractor.trackCount).firstOrNull {
                 extractor.getTrackFormat(it).getString(MediaFormat.KEY_MIME)?.startsWith("audio/") == true
             } ?: return null
@@ -108,7 +119,7 @@ class AssetSamples(context: Context) : SampleVoice.Source {
             try { codec?.stop() } catch (_: Exception) {}
             codec?.release()
             extractor.release()
-            afd.close()
+            afd?.close()
         }
     }
 }
