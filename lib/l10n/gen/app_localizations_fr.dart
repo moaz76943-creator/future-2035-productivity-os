@@ -3756,4 +3756,116 @@ class AppLocalizationsFr extends AppLocalizations {
   String flashcardsRevealNext(String field) {
     return 'Afficher $field';
   }
+
+  @override
+  String flashcardsMediaTooLarge(int mb) {
+    return 'Ce fichier dépasse $mb Mo.';
+  }
+
+  @override
+  String get flashcardsImage => 'Image';
+
+  @override
+  String get flashcardsAudio => 'Audio';
+
+  @override
+  String get flashcardsAddImage => 'Ajouter une image';
+
+  @override
+  String get flashcardsAddAudio => 'Ajouter un audio';
+
+  @override
+  String get flashcardsPlayAudio => 'Lire l’enregistrement';
+
+  @override
+  String get flashcardsAudioUnavailable => 'Impossible de lire cet enregistrement ici.';
+
+  @override
+  String get flashcardsCustomFields => 'Vos champs';
+
+  @override
+  String get flashcardsTemplates => 'Modèles';
+
+  @override
+  String flashcardsNewFieldName(int n) {
+    return 'Champ $n';
+  }
+
+  @override
+  String get flashcardsAddField => 'Ajouter un champ';
+
+  @override
+  String get flashcardsFieldName => 'Nom du champ';
+
+  @override
+  String get flashcardsFieldLangDefault => 'Langue du côté';
+
+  @override
+  String get flashcardsTemplateConfirm =>
+      'Le modèle définit l’affichage et ajoute ses champs. Vos cartes et champs restent intacts.';
+
+  @override
+  String get flashcardsApplyTemplate => 'Appliquer';
+
+  @override
+  String get templateVocabulary => 'Vocabulaire';
+
+  @override
+  String get templateTwoTranslations => 'Mot avec deux traductions';
+
+  @override
+  String get templateQuestionAnswer => 'Question-réponse';
+
+  @override
+  String get templateDefinition => 'Terme et définition';
+
+  @override
+  String get templateGrammar => 'Règle de grammaire';
+
+  @override
+  String get templateFieldPlural => 'Pluriel';
+
+  @override
+  String get templateFieldTranslation2 => 'Deuxième traduction';
+
+  @override
+  String get templateFieldSynonyms => 'Synonymes';
+
+  @override
+  String get templateFieldRule => 'Règle';
+
+  @override
+  String get deckCategory => 'Niveau ou thème';
+
+  @override
+  String get deckCategoryHint => 'ex. A1, Médecine';
+
+  @override
+  String get flashcardsSearchAll => 'Rechercher toutes les cartes';
+
+  @override
+  String get flashcardsSearchAllHint => 'Mot, traduction, exemple, note, étiquette…';
+
+  @override
+  String get flashcardsAllDecks => 'Tous les paquets';
+
+  @override
+  String get flashcardsAllLanguages => 'Toutes les langues';
+
+  @override
+  String get flashcardsLangUnset => 'Langue non définie';
+
+  @override
+  String get flashcardsLevelUnset => 'Sans niveau ni thème';
+
+  @override
+  String get flashcardsByLanguage => 'Progrès par langue';
+
+  @override
+  String get flashcardsByLevel => 'Progrès par niveau ou thème';
+
+  @override
+  String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct) {
+    return '$decks paquets · $cards cartes · $mature acquises · $due à revoir · $correct justes (30 j)';
+  }
 }

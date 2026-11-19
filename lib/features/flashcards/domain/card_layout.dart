@@ -2,6 +2,80 @@ import 'dart:convert';
 
 import 'card_extras.dart';
 
+/// Which side of the card a custom field belongs to.
+enum CardSide { front, back }
+
+/// A field the user added to a deck (e.g. "Translation (FR)", "Plural",
+/// "Level"), with its own speech language. Values live in the card's
+/// `custom` JSON keyed by [id], so renaming never touches content.
+class CustomField {
+  const CustomField({
+    required this.id,
+    required this.name,
+    this.lang = '',
+    this.side = CardSide.back,
+  });
+  final String id;
+  final String name;
+
+  /// BCP-47 speech language ('' = the side's deck language).
+  final String lang;
+  final CardSide side;
+
+  Map<String, Object?> toJson() => {'id': id, 'name': name, 'lang': lang, 'side': side.name};
+
+  static CustomField? tryParse(Object? j) {
+    if (j is! Map) return null;
+    final id = j['id'], name = j['name'];
+    if (id is! String || !RegExp(r'^c\d{1,4}$').hasMatch(id)) return null;
+    if (name is! String || name.trim().isEmpty) return null;
+    return CustomField(
+      id: id,
+      name: name.length > CardLayout.maxLabel ? name.substring(0, CardLayout.maxLabel) : name,
+      lang: j['lang'] is String ? j['lang'] as String : '',
+      side: CardSide.values.asNameMap()[j['side']] ?? CardSide.back,
+    );
+  }
+
+  CustomField copyWith({String? name, String? lang, CardSide? side}) => CustomField(
+    id: id,
+    name: name ?? this.name,
+    lang: lang ?? this.lang,
+    side: side ?? this.side,
+  );
+}
+
+/// Values of custom fields for one card.
+abstract final class CardCustom {
+  static const maxLength = 2000;
+
+  static Map<String, String> decode(String raw) {
+    if (raw.trim().isEmpty) return const {};
+    try {
+      final j = jsonDecode(raw);
+      if (j is! Map) return const {};
+      return {
+        for (final e in j.entries)
+          if (e.key is String && e.value is String && (e.value as String).trim().isNotEmpty)
+            e.key as String: e.value as String,
+      };
+    } on FormatException {
+      return const {};
+    }
+  }
+
+  static String encode(Map<String, String> values) {
+    final out = {
+      for (final e in values.entries)
+        if (e.value.trim().isNotEmpty)
+          e.key: e.value.trim().length > maxLength
+              ? e.value.trim().substring(0, maxLength)
+              : e.value.trim(),
+    };
+    return out.isEmpty ? '' : jsonEncode(out);
+  }
+}
+
 /// Per-deck presentation of the optional card fields: their order, custom
 /// names, which ones show during study, and whether the answer side reveals
 /// them one at a time. Purely presentational: changing the layout never
@@ -13,7 +87,27 @@ class CardLayout {
     this.labels = const {},
     this.hidden = const {},
     this.stepReveal = false,
+    this.customFields = const [],
+    this.fieldLangs = const {},
   });
+
+  static const maxCustomFields = 12;
+
+  /// Fields added by the user, in display order.
+  final List<CustomField> customFields;
+
+  /// Speech language per built-in field ('' or missing = default).
+  final Map<CardField, String> fieldLangs;
+
+  /// Next free custom field id.
+  String nextCustomId() {
+    var n = 1;
+    final used = {for (final f in customFields) f.id};
+    while (used.contains('c$n')) {
+      n++;
+    }
+    return 'c$n';
+  }
 
   static const maxLabel = 40;
 
@@ -40,11 +134,15 @@ class CardLayout {
     Map<CardField, String>? labels,
     Set<CardField>? hidden,
     bool? stepReveal,
+    List<CustomField>? customFields,
+    Map<CardField, String>? fieldLangs,
   }) => CardLayout(
     order: order ?? this.order,
     labels: labels ?? this.labels,
     hidden: hidden ?? this.hidden,
     stepReveal: stepReveal ?? this.stepReveal,
+    customFields: customFields ?? this.customFields,
+    fieldLangs: fieldLangs ?? this.fieldLangs,
   );
 
   String encode() => jsonEncode({
@@ -55,6 +153,11 @@ class CardLayout {
     },
     'hidden': [for (final f in hidden) f.name],
     'stepReveal': stepReveal,
+    'custom': [for (final f in customFields) f.toJson()],
+    'fieldLangs': {
+      for (final e in fieldLangs.entries)
+        if (e.value.isNotEmpty) e.key.name: e.value,
+    },
   });
 
   /// Tolerant: unknown names are ignored and missing fields are appended, so
@@ -82,9 +185,68 @@ class CardLayout {
         labels: labels,
         hidden: hidden,
         stepReveal: j['stepReveal'] == true,
+        customFields: [for (final c in (j['custom'] as List?) ?? const []) ?CustomField.tryParse(c)]
+            .take(maxCustomFields)
+            .toList(),
+        fieldLangs: {
+          for (final e in ((j['fieldLangs'] as Map?) ?? const {}).entries)
+            if (byName[e.key] case final f? when e.value is String) f: e.value as String,
+        },
       );
     } on FormatException {
       return const CardLayout();
     }
   }
 }
+
+/// Ready-made layouts for common kinds of cards. Applying a template only
+/// changes how fields are named and shown; existing card content stays.
+enum CardTemplate { vocabulary, twoTranslations, questionAnswer, definition, grammar }
+
+CardLayout templateLayout(CardTemplate t, {required String Function(String key) name}) =>
+    switch (t) {
+      CardTemplate.vocabulary => CardLayout(
+        order: const [
+          CardField.pronunciation,
+          CardField.example,
+          CardField.explanation,
+          CardField.notes,
+        ],
+        stepReveal: false,
+        customFields: [CustomField(id: 'c1', name: name('plural'), side: CardSide.back)],
+      ),
+      CardTemplate.twoTranslations => CardLayout(
+        order: const [
+          CardField.example,
+          CardField.pronunciation,
+          CardField.explanation,
+          CardField.notes,
+        ],
+        customFields: [CustomField(id: 'c1', name: name('translation2'), side: CardSide.back)],
+      ),
+      CardTemplate.questionAnswer => const CardLayout(
+        order: [CardField.explanation, CardField.example, CardField.notes, CardField.pronunciation],
+        hidden: {CardField.pronunciation},
+        stepReveal: true,
+      ),
+      CardTemplate.definition => CardLayout(
+        order: const [
+          CardField.example,
+          CardField.explanation,
+          CardField.notes,
+          CardField.pronunciation,
+        ],
+        customFields: [CustomField(id: 'c1', name: name('synonyms'), side: CardSide.back)],
+      ),
+      CardTemplate.grammar => CardLayout(
+        order: const [
+          CardField.explanation,
+          CardField.example,
+          CardField.notes,
+          CardField.pronunciation,
+        ],
+        hidden: const {CardField.pronunciation},
+        stepReveal: true,
+        customFields: [CustomField(id: 'c1', name: name('rule'), side: CardSide.front)],
+      ),
+    };

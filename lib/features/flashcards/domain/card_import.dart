@@ -2,11 +2,20 @@ import 'card_extras.dart';
 
 /// One card parsed from pasted or file text.
 class ImportedCard {
-  const ImportedCard(this.front, this.back, {this.tags = '', this.extras = const CardExtras()});
+  const ImportedCard(
+    this.front,
+    this.back, {
+    this.tags = '',
+    this.extras = const CardExtras(),
+    this.custom = const {},
+  });
   final String front;
   final String back;
   final String tags;
   final CardExtras extras;
+
+  /// Custom field values keyed by field id (JSON deck format only).
+  final Map<String, String> custom;
 }
 
 /// Parsed rows before import, with a suggested field for each column.

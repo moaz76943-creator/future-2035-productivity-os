@@ -3900,4 +3900,116 @@ class AppLocalizationsAr extends AppLocalizations {
   String flashcardsRevealNext(String field) {
     return 'إظهار $field';
   }
+
+  @override
+  String flashcardsMediaTooLarge(int mb) {
+    return 'هذا الملف أكبر من $mb ميغابايت.';
+  }
+
+  @override
+  String get flashcardsImage => 'صورة';
+
+  @override
+  String get flashcardsAudio => 'صوت';
+
+  @override
+  String get flashcardsAddImage => 'إضافة صورة';
+
+  @override
+  String get flashcardsAddAudio => 'إضافة صوت';
+
+  @override
+  String get flashcardsPlayAudio => 'تشغيل التسجيل';
+
+  @override
+  String get flashcardsAudioUnavailable => 'لا يمكن تشغيل هذا التسجيل على هذا الجهاز.';
+
+  @override
+  String get flashcardsCustomFields => 'حقولك';
+
+  @override
+  String get flashcardsTemplates => 'قوالب جاهزة';
+
+  @override
+  String flashcardsNewFieldName(int n) {
+    return 'حقل $n';
+  }
+
+  @override
+  String get flashcardsAddField => 'إضافة حقل';
+
+  @override
+  String get flashcardsFieldName => 'اسم الحقل';
+
+  @override
+  String get flashcardsFieldLangDefault => 'لغة الوجه';
+
+  @override
+  String get flashcardsTemplateConfirm =>
+      'القالب يحدد طريقة عرض الحقول ويضيف حقوله. بطاقاتك وحقولك الحالية تبقى كما هي.';
+
+  @override
+  String get flashcardsApplyTemplate => 'تطبيق';
+
+  @override
+  String get templateVocabulary => 'مفردات';
+
+  @override
+  String get templateTwoTranslations => 'كلمة بترجمتين';
+
+  @override
+  String get templateQuestionAnswer => 'سؤال وجواب';
+
+  @override
+  String get templateDefinition => 'مصطلح وتعريف';
+
+  @override
+  String get templateGrammar => 'قاعدة نحوية';
+
+  @override
+  String get templateFieldPlural => 'الجمع';
+
+  @override
+  String get templateFieldTranslation2 => 'الترجمة الثانية';
+
+  @override
+  String get templateFieldSynonyms => 'المرادفات';
+
+  @override
+  String get templateFieldRule => 'القاعدة';
+
+  @override
+  String get deckCategory => 'المستوى أو الموضوع';
+
+  @override
+  String get deckCategoryHint => 'مثال: A1، طب';
+
+  @override
+  String get flashcardsSearchAll => 'البحث في كل البطاقات';
+
+  @override
+  String get flashcardsSearchAllHint => 'كلمة، ترجمة، مثال، ملاحظة، وسم…';
+
+  @override
+  String get flashcardsAllDecks => 'كل المجموعات';
+
+  @override
+  String get flashcardsAllLanguages => 'كل اللغات';
+
+  @override
+  String get flashcardsLangUnset => 'لغة غير محددة';
+
+  @override
+  String get flashcardsLevelUnset => 'بلا مستوى أو موضوع';
+
+  @override
+  String get flashcardsByLanguage => 'التقدّم حسب اللغة';
+
+  @override
+  String get flashcardsByLevel => 'التقدّم حسب المستوى أو الموضوع';
+
+  @override
+  String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct) {
+    return '$decks مجموعات · $cards بطاقة · $mature محفوظة · $due مستحقة · $correct صحيحة (30 يومًا)';
+  }
 }

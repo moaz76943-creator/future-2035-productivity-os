@@ -67,7 +67,15 @@ class BackupService {
     final tables = <String, Object?>{};
     for (final t in _db.allTables) {
       final rows = await _db.customSelect('SELECT * FROM "${t.actualTableName}"').get();
-      tables[t.actualTableName] = rows.map((r) => r.data).toList();
+      // Binary columns (card images/audio) travel as {"\$b64": "..."}.
+      tables[t.actualTableName] = rows
+          .map(
+            (r) => {
+              for (final e in r.data.entries)
+                e.key: e.value is Uint8List ? {r'$b64': base64Encode(e.value as Uint8List)} : e.value,
+            },
+          )
+          .toList();
     }
     return {'app': 'future-os', 'schemaVersion': _db.schemaVersion, 'tables': tables};
   }
@@ -338,6 +346,9 @@ class BackupService {
     final double d => Variable<double>(d),
     final bool b => Variable<int>(b ? 1 : 0),
     final String s => Variable<String>(s),
+    final Map<String, Object?> m when m[r'$b64'] is String => Variable<Uint8List>(
+      base64Decode(m[r'$b64']! as String),
+    ),
     _ => Variable<String>(v.toString()),
   };
 }

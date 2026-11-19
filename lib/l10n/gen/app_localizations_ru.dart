@@ -3856,4 +3856,116 @@ class AppLocalizationsRu extends AppLocalizations {
   String flashcardsRevealNext(String field) {
     return 'Показать: $field';
   }
+
+  @override
+  String flashcardsMediaTooLarge(int mb) {
+    return 'Файл больше $mb МБ.';
+  }
+
+  @override
+  String get flashcardsImage => 'Изображение';
+
+  @override
+  String get flashcardsAudio => 'Аудио';
+
+  @override
+  String get flashcardsAddImage => 'Добавить изображение';
+
+  @override
+  String get flashcardsAddAudio => 'Добавить аудио';
+
+  @override
+  String get flashcardsPlayAudio => 'Воспроизвести запись';
+
+  @override
+  String get flashcardsAudioUnavailable => 'Не удаётся воспроизвести запись на этом устройстве.';
+
+  @override
+  String get flashcardsCustomFields => 'Ваши поля';
+
+  @override
+  String get flashcardsTemplates => 'Шаблоны';
+
+  @override
+  String flashcardsNewFieldName(int n) {
+    return 'Поле $n';
+  }
+
+  @override
+  String get flashcardsAddField => 'Добавить поле';
+
+  @override
+  String get flashcardsFieldName => 'Название поля';
+
+  @override
+  String get flashcardsFieldLangDefault => 'Язык стороны';
+
+  @override
+  String get flashcardsTemplateConfirm =>
+      'Шаблон задаёт показ полей и добавляет свои. Ваши карточки и поля не меняются.';
+
+  @override
+  String get flashcardsApplyTemplate => 'Применить';
+
+  @override
+  String get templateVocabulary => 'Словарь';
+
+  @override
+  String get templateTwoTranslations => 'Слово с двумя переводами';
+
+  @override
+  String get templateQuestionAnswer => 'Вопрос и ответ';
+
+  @override
+  String get templateDefinition => 'Термин и определение';
+
+  @override
+  String get templateGrammar => 'Грамматическое правило';
+
+  @override
+  String get templateFieldPlural => 'Множественное число';
+
+  @override
+  String get templateFieldTranslation2 => 'Второй перевод';
+
+  @override
+  String get templateFieldSynonyms => 'Синонимы';
+
+  @override
+  String get templateFieldRule => 'Правило';
+
+  @override
+  String get deckCategory => 'Уровень или тема';
+
+  @override
+  String get deckCategoryHint => 'например, A1, Медицина';
+
+  @override
+  String get flashcardsSearchAll => 'Поиск по всем карточкам';
+
+  @override
+  String get flashcardsSearchAllHint => 'Слово, перевод, пример, заметка, тег…';
+
+  @override
+  String get flashcardsAllDecks => 'Все колоды';
+
+  @override
+  String get flashcardsAllLanguages => 'Все языки';
+
+  @override
+  String get flashcardsLangUnset => 'Язык не указан';
+
+  @override
+  String get flashcardsLevelUnset => 'Без уровня и темы';
+
+  @override
+  String get flashcardsByLanguage => 'Прогресс по языкам';
+
+  @override
+  String get flashcardsByLevel => 'Прогресс по уровням и темам';
+
+  @override
+  String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct) {
+    return 'Колод: $decks · карточек: $cards · выучено: $mature · к повтору: $due · верно: $correct (30 дн.)';
+  }
 }

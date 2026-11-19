@@ -16,6 +16,7 @@ abstract final class Routes {
   static String note(String id) => '/notes/$id';
   static const flashcards = '/flashcards';
   static String deck(String id) => '/flashcards/$id';
+  static const cardSearch = '/flashcards-search';
   static String deckStats(String deckId) => '/flashcards/$deckId/stats';
   static String review(String deckId, {String? mode, String? scope}) => Uri(
     path: '/flashcards/$deckId/review',

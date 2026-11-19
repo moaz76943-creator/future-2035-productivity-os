@@ -1,5 +1,6 @@
 package app.future2035.future_os
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
@@ -19,6 +20,7 @@ import java.util.Locale
  */
 class MainActivity : FlutterActivity() {
     private var tts: TextToSpeech? = null
+    private var player: MediaPlayer? = null
     private var ready = false
     private var failed = false
     private val waiting = mutableListOf<() -> Unit>()
@@ -86,6 +88,13 @@ class MainActivity : FlutterActivity() {
                 else -> result.notImplemented()
             }
         }
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "future_os/audio").setMethodCallHandler { call, result ->
+            when (call.method) {
+                "play" -> playAudio(call.argument<String>("path"), result)
+                "stop" -> { stopAudio(); result.success(null) }
+                else -> result.notImplemented()
+            }
+        }
 
         // Play Integrity channel
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "future_os/integrity").setMethodCallHandler { call, result ->
@@ -117,6 +126,34 @@ class MainActivity : FlutterActivity() {
         }
     }
 
+    /** Plays a card's audio clip from the app cache. One clip at a time. */
+    private fun playAudio(path: String?, result: MethodChannel.Result) {
+        stopAudio()
+        val file = path?.let { java.io.File(it) }
+        // Only files the app itself wrote to its cache directory are played.
+        if (file == null || !file.exists() || !file.canonicalPath.startsWith(cacheDir.canonicalPath)) {
+            result.success("unavailable"); return
+        }
+        try {
+            val p = MediaPlayer()
+            p.setDataSource(file.path)
+            p.setOnCompletionListener { it.release(); if (player === it) player = null }
+            p.setOnErrorListener { mp, _, _ -> mp.release(); if (player === mp) player = null; true }
+            p.prepare()
+            p.start()
+            player = p
+            result.success("ok")
+        } catch (e: Exception) {
+            stopAudio()
+            result.success("unavailable")
+        }
+    }
+
+    private fun stopAudio() {
+        player?.let { try { it.stop() } catch (_: Exception) {}; it.release() }
+        player = null
+    }
+
     /** Lazily binds the engine once; later calls wait for the first init result. */
     private fun withEngine(block: (TextToSpeech?) -> Unit) {
         if (ready) { block(tts); return }
@@ -142,6 +179,7 @@ class MainActivity : FlutterActivity() {
     }
 
     override fun onDestroy() {
+        stopAudio()
         tts?.stop()
         tts?.shutdown()
         tts = null
