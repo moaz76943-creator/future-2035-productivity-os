@@ -5,7 +5,7 @@ Environment: widget tests on Flutter 3.50.0, 412x915 logical px, English, realis
 (project, task with subtask, event, note, deck with 2 cards, goal, habit). Every page is walked a
 viewport at a time. This is not an on-device test (TalkBack, real touch, OEM behaviour are NOT covered).
 
-**825 controls on 68 screens.** OK: 717, OK_ALREADY_SELECTED: 29, OK_PARTLY_OFFSCREEN: 33, TEXT_INPUT: 46
+**838 controls on 68 screens.** OK: 729, OK_ALREADY_SELECTED: 30, OK_PARTLY_OFFSCREEN: 32, TEXT_INPUT: 47
 
 The test fails on: an exception from a tap, a control that does nothing (pointer and accessibility action),
 an unlabeled control, or a fully visible touch target smaller than 44x44.
@@ -371,7 +371,7 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 
 | Control (accessibility label) | Role | Size | Result |
 |---|---|---|---|
-| Dismiss | tappable | 412x915 | OK_PARTLY_OFFSCREEN |
+| Dismiss | tappable | 412x915 | OK |
 | AM | checkbox | 52x48 | OK_ALREADY_SELECTED |
 | PM | checkbox | 52x48 | OK |
 | Switch to text input mode | button | 48x48 | OK |
@@ -907,16 +907,18 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Control (accessibility label) | Role | Size | Result |
 |---|---|---|---|
 | Mature cards: 0% Spanish 2 cards 2 new | tappable | 372x84 | OK |
+| Search all cards | button | 48x48 | OK |
 | New deck | button | 179x56 | OK |
 
 ## `/flashcards > New deck`
 
 | Control (accessibility label) | Role | Size | Result |
 |---|---|---|---|
-| Scrim | tappable | 412x370 | OK |
+| Scrim | tappable | 412x306 | OK |
 | Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
 | Deck name | textField | 372x52 | TEXT_INPUT |
 | Description | textField | 372x52 | TEXT_INPUT |
+| Level or topic | textField | 372x52 | TEXT_INPUT |
 | Color 1 | button | 48x48 | OK_ALREADY_SELECTED |
 | Color 2 | button | 48x48 | OK |
 | Color 3 | button | 48x48 | OK |
@@ -942,23 +944,27 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | All | button | 76x48 | OK |
 | New | button | 76x48 | OK |
 | Due | button | 76x48 | OK |
-| Suspended | button | 136x48 | OK |
+| Hard | button | 89x48 | OK |
+| Favorites | button | 39x48 | OK |
 | hola hello New | tappable | 372x89 | OK |
-| Suspend card | button | 48x48 | OK |
+| Add to favorites | button | 48x48 | OK |
+| More options | button | 48x48 | OK |
 | Delete | button | 48x48 | OK |
 | Study | button | 332x48 | OK |
 | Import | button | 48x48 | OK |
 | Export | button | 48x48 | OK |
-| More options | button | 48x48 | OK |
 | New card | button | 179x56 | OK |
 
 ## `/flashcards/:id > hola hello New`
 
 | Control (accessibility label) | Role | Size | Result |
 |---|---|---|---|
-| Scrim | tappable | 412x478 | OK |
+| Scrim | tappable | 412x254 | OK |
 | Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
 | Front / hola | textField | 372x52 | TEXT_INPUT |
+| Add image | button | 172x48 | OK |
+| Add audio | button | 172x48 | OK |
+| Record | button | 134x48 | OK |
 | Back / hello | textField | 372x76 | TEXT_INPUT |
 | Tags | textField | 372x52 | TEXT_INPUT |
 | More fields | button | 209x48 | OK |
@@ -969,7 +975,6 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 
 | Control (accessibility label) | Role | Size | Result |
 |---|---|---|---|
-| Scrim | tappable | 412x223 | OK |
 | Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
 | Classic | button | 147x48 | OK_ALREADY_SELECTED |
 | Reverse | button | 147x48 | OK |
@@ -980,6 +985,12 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Review 1 card | button | 372x52 | OK |
 | Practice all cards (schedule unchanged) | button | 372x64 | OK |
 | Practice recent mistakes | button | 372x64 | OK |
+| New only | button | 160x48 | OK |
+| Hard cards | button | 185x48 | OK |
+| Favorites | button | 172x48 | OK |
+| Increase Cards per session | button | 48x48 | OK |
+| Most overdue first | button | 267x48 | OK_ALREADY_SELECTED |
+| Random | button | 114x43 | OK |
 
 ## `/flashcards/:id > Import`
 
@@ -989,7 +1000,6 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 | Cards to import | textField | 284x218 | TEXT_INPUT |
 | From file | button | 181x48 | OK |
 | Cancel | button | 109x48 | OK |
-| Import | button | 129x48 | OK |
 
 ## `/flashcards/:id > Export`
 
@@ -1004,9 +1014,12 @@ an unlabeled control, or a fully visible touch target smaller than 44x44.
 
 | Control (accessibility label) | Role | Size | Result |
 |---|---|---|---|
-| Scrim | tappable | 412x366 | OK |
+| Scrim | tappable | 412x142 | OK |
 | Dismiss | button | 48x48 | OK_PARTLY_OFFSCREEN |
 | Front Question or term | textField | 372x52 | TEXT_INPUT |
+| Add image | button | 172x48 | OK |
+| Add audio | button | 172x48 | OK |
+| Record | button | 134x48 | OK |
 | Back | textField | 372x76 | TEXT_INPUT |
 | Tags | textField | 372x52 | TEXT_INPUT |
 | More fields | button | 209x48 | OK |
