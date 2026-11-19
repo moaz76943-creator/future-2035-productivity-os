@@ -26,4 +26,15 @@ void main() {
     expect(cards.any((c) => c.front == 'الأردن' && c.back == 'عمّان'), isTrue);
     await closeEnv(tester, env);
   });
+
+  testWidgets('the decks menu opens the starter decks and settings (ar)', (tester) async {
+    final env = TestEnv();
+    await pumpScreen(tester, const DecksScreen(), localeTag: 'ar', env: env);
+    await tester.tap(find.byKey(const Key('decksMenu')));
+    await settle(tester);
+    await tester.tap(find.byKey(const Key('starterDecksButton')));
+    await settle(tester);
+    expect(find.text('عواصم العالم'), findsOneWidget);
+    await closeEnv(tester, env);
+  });
 }

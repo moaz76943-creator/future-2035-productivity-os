@@ -53,16 +53,42 @@ class DecksScreen extends ConsumerWidget {
       hue: _hue,
       actions: [
         IconButton(
-          key: const Key('starterDecksButton'),
-          tooltip: l10n.starterTitle,
-          onPressed: () => showStarterDecks(context),
-          icon: const Icon(Icons.library_add_outlined),
-        ),
-        IconButton(
           key: const Key('cardSearchButton'),
           tooltip: l10n.flashcardsSearchAll,
           onPressed: () => context.push(Routes.cardSearch),
           icon: const Icon(Icons.manage_search_rounded),
+        ),
+        // Less frequent actions live in one menu, not as extra icons.
+        PopupMenuButton<String>(
+          key: const Key('decksMenu'),
+          tooltip: l10n.actionMore,
+          onSelected: (v) {
+            if (v == 'starter') showStarterDecks(context);
+            if (v == 'settings') context.push(Routes.settings);
+          },
+          itemBuilder: (_) => [
+            PopupMenuItem(
+              key: const Key('starterDecksButton'),
+              value: 'starter',
+              child: Row(
+                children: [
+                  const Icon(Icons.library_add_outlined, size: 20),
+                  const SizedBox(width: Space.sm),
+                  Text(l10n.starterTitle),
+                ],
+              ),
+            ),
+            PopupMenuItem(
+              value: 'settings',
+              child: Row(
+                children: [
+                  const Icon(Icons.settings_outlined, size: 20),
+                  const SizedBox(width: Space.sm),
+                  Text(l10n.settingsTitle),
+                ],
+              ),
+            ),
+          ],
         ),
       ],
       floatingActionButton: FloatingActionButton.extended(
