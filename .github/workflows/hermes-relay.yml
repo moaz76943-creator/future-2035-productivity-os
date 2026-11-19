@@ -80,7 +80,7 @@ jobs:
           PROMPT="Read docs/FLASHCARDS_MASTER_DIRECTIVE.md, docs/MASTER_DIRECTIVE_V1.md, and state/future2035_phases.json. Work ONLY on branch hermes/future-2035-upgrade. CRITICAL: (1) Complete ONLY the single current IN_PROGRESS phase in state/future2035_phases.json without rewriting existing working code. (2) Enforce Western digits (0-9), zero Hebrew (he/iw), smart progressive-disclosure buttons, and update docs/qa/CONTROL_INVENTORY.md + test/widget/control_inventory_test.dart for any new controls. (3) Before finishing, run with bounded timeouts so nothing hangs: flutter analyze --no-fatal-infos && timeout 180 flutter test && python3 tool/check_l10n.py. (4) Mark the finished phase COMPLETED in state/future2035_phases.json, set the next phase IN_PROGRESS, and commit."
           DONE=0
 
-          for MODEL in "gemini-3.8-flash" "gemini-3.6-flash" "gemini-4-hydrogen" "gemini-3.1-pro-preview"; do
+          for MODEL in "gemini-4-hydrogen" "gemini-3.1-pro-preview" "gemini-3.8-flash" "gemini-3.6-flash"; do
             IDX=0
             while IFS= read -r K; do
               [ -n "$K" ] || continue
