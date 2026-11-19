@@ -4710,5 +4710,311 @@
   "flashcardsImportFileFailed": "The file could not be opened. You can paste its content instead.",
   "@flashcardsImportFileFailed": {
     "description": "flashcardsImportFileFailed"
+  },
+  "studyNoMatchingCards": "No cards match this choice yet.",
+  "@studyNoMatchingCards": {
+    "description": "studyNoMatchingCards"
+  },
+  "studyPracticeNew": "New only",
+  "@studyPracticeNew": {
+    "description": "studyPracticeNew"
+  },
+  "studyPracticeHard": "Hard cards",
+  "@studyPracticeHard": {
+    "description": "studyPracticeHard"
+  },
+  "studyPracticeFavorites": "Favorites",
+  "@studyPracticeFavorites": {
+    "description": "studyPracticeFavorites"
+  },
+  "studySessionSize": "Cards per session",
+  "@studySessionSize": {
+    "description": "studySessionSize"
+  },
+  "studySessionAll": "All",
+  "@studySessionAll": {
+    "description": "studySessionAll"
+  },
+  "studyOrder": "Order",
+  "@studyOrder": {
+    "description": "studyOrder"
+  },
+  "studyOrderDue": "Most overdue first",
+  "@studyOrderDue": {
+    "description": "studyOrderDue"
+  },
+  "studyOrderRandom": "Random",
+  "@studyOrderRandom": {
+    "description": "studyOrderRandom"
+  },
+  "studyOrderHardest": "Hardest first",
+  "@studyOrderHardest": {
+    "description": "studyOrderHardest"
+  },
+  "flashcardsHard": "Hard",
+  "@flashcardsHard": {
+    "description": "flashcardsHard"
+  },
+  "flashcardsFavorites": "Favorites",
+  "@flashcardsFavorites": {
+    "description": "flashcardsFavorites"
+  },
+  "flashcardsFavorite": "Add to favorites",
+  "@flashcardsFavorite": {
+    "description": "flashcardsFavorite"
+  },
+  "flashcardsUnfavorite": "Remove from favorites",
+  "@flashcardsUnfavorite": {
+    "description": "flashcardsUnfavorite"
+  },
+  "flashcardsDuplicate": "Duplicate",
+  "@flashcardsDuplicate": {
+    "description": "flashcardsDuplicate"
+  },
+  "flashcardsMoveTo": "Move to deck",
+  "@flashcardsMoveTo": {
+    "description": "flashcardsMoveTo"
+  },
+  "flashcardsNoOtherDeck": "Create another deck first.",
+  "@flashcardsNoOtherDeck": {
+    "description": "flashcardsNoOtherDeck"
+  },
+  "flashcardsMoved": "{count, plural, =1{Card moved} other{{count} cards moved}}",
+  "@flashcardsMoved": {
+    "description": "Snackbar",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "flashcardsAddTag": "Add tag",
+  "@flashcardsAddTag": {
+    "description": "flashcardsAddTag"
+  },
+  "flashcardsTagHint": "e.g. verbs",
+  "@flashcardsTagHint": {
+    "description": "flashcardsTagHint"
+  },
+  "flashcardsSelected": "{count} selected",
+  "@flashcardsSelected": {
+    "description": "Selection count",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "flashcardsSelectAll": "Select all shown",
+  "@flashcardsSelectAll": {
+    "description": "flashcardsSelectAll"
+  },
+  "flashcardsSelectCard": "Select {front}",
+  "@flashcardsSelectCard": {
+    "description": "Checkbox label",
+    "placeholders": {
+      "front": {
+        "type": "String"
+      }
+    }
+  },
+  "flashcardsRecall": "Recall {value}",
+  "@flashcardsRecall": {
+    "description": "Recall probability pill",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "flashcardsDuplicateTitle": "Possible duplicate",
+  "@flashcardsDuplicateTitle": {
+    "description": "flashcardsDuplicateTitle"
+  },
+  "flashcardsDuplicateMessage": "This deck already has “{front}” → “{back}”. Save anyway?",
+  "@flashcardsDuplicateMessage": {
+    "description": "Duplicate dialog",
+    "placeholders": {
+      "front": {
+        "type": "String"
+      },
+      "back": {
+        "type": "String"
+      }
+    }
+  },
+  "flashcardsSaveAnyway": "Save anyway",
+  "@flashcardsSaveAnyway": {
+    "description": "flashcardsSaveAnyway"
+  },
+  "flashcardsStats": "Statistics",
+  "@flashcardsStats": {
+    "description": "flashcardsStats"
+  },
+  "flashcardsStatTotal": "Cards",
+  "@flashcardsStatTotal": {
+    "description": "flashcardsStatTotal"
+  },
+  "flashcardsStatLearning": "Learning",
+  "@flashcardsStatLearning": {
+    "description": "flashcardsStatLearning"
+  },
+  "flashcardsStatMatureCaption": "Remembered for 21+ days",
+  "@flashcardsStatMatureCaption": {
+    "description": "flashcardsStatMatureCaption"
+  },
+  "flashcardsStatReviewsToday": "Reviews today",
+  "@flashcardsStatReviewsToday": {
+    "description": "flashcardsStatReviewsToday"
+  },
+  "flashcardsStatCorrect": "Correct answers",
+  "@flashcardsStatCorrect": {
+    "description": "flashcardsStatCorrect"
+  },
+  "flashcardsStatLastDays": "Last {days} days",
+  "@flashcardsStatLastDays": {
+    "description": "Caption",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "flashcardsStatForget": "Forgetting rate",
+  "@flashcardsStatForget": {
+    "description": "flashcardsStatForget"
+  },
+  "flashcardsStatForgetCaption": "“Again” on learned cards",
+  "@flashcardsStatForgetCaption": {
+    "description": "flashcardsStatForgetCaption"
+  },
+  "flashcardsStatRecall": "Recall now",
+  "@flashcardsStatRecall": {
+    "description": "flashcardsStatRecall"
+  },
+  "flashcardsStatRecallCaption": "FSRS estimate, reviewed cards",
+  "@flashcardsStatRecallCaption": {
+    "description": "flashcardsStatRecallCaption"
+  },
+  "flashcardsStatActivity": "Reviews per day · {count} in total",
+  "@flashcardsStatActivity": {
+    "description": "Chart header",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "flashcardsStatHistory": "Latest answers",
+  "@flashcardsStatHistory": {
+    "description": "flashcardsStatHistory"
+  },
+  "flashcardsStatNoHistory": "No reviews yet. Study the deck to see your progress here.",
+  "@flashcardsStatNoHistory": {
+    "description": "flashcardsStatNoHistory"
+  },
+  "flashcardsSpeakField": "Read {field} aloud",
+  "@flashcardsSpeakField": {
+    "description": "Speak one field",
+    "placeholders": {
+      "field": {
+        "type": "String"
+      }
+    }
+  },
+  "speechVoice": "Voice",
+  "@speechVoice": {
+    "description": "speechVoice"
+  },
+  "speechVoiceDefault": "Device default",
+  "@speechVoiceDefault": {
+    "description": "speechVoiceDefault"
+  },
+  "speechVoiceOnline": "needs internet",
+  "@speechVoiceOnline": {
+    "description": "speechVoiceOnline"
+  },
+  "speechTest": "Test voice",
+  "@speechTest": {
+    "description": "speechTest"
+  },
+  "importNext": "Preview",
+  "@importNext": {
+    "description": "importNext"
+  },
+  "importPreviewTitle": "Match columns to fields",
+  "@importPreviewTitle": {
+    "description": "importPreviewTitle"
+  },
+  "importIgnoreColumn": "Ignore",
+  "@importIgnoreColumn": {
+    "description": "importIgnoreColumn"
+  },
+  "importColumn": "Column {n}",
+  "@importColumn": {
+    "description": "Column label",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "importPreviewSummary": "{ready} cards ready · {invalid} incomplete rows will be skipped",
+  "@importPreviewSummary": {
+    "description": "Preview counts",
+    "placeholders": {
+      "ready": {
+        "type": "int"
+      },
+      "invalid": {
+        "type": "int"
+      }
+    }
+  },
+  "importNeedFrontBack": "Choose which columns are the front and the back.",
+  "@importNeedFrontBack": {
+    "description": "importNeedFrontBack"
+  },
+  "actionMoveUp": "Move up",
+  "@actionMoveUp": {
+    "description": "actionMoveUp"
+  },
+  "actionMoveDown": "Move down",
+  "@actionMoveDown": {
+    "description": "actionMoveDown"
+  },
+  "flashcardsLayoutTitle": "Card layout",
+  "@flashcardsLayoutTitle": {
+    "description": "flashcardsLayoutTitle"
+  },
+  "flashcardsLayoutHint": "Rename, hide or reorder the extra fields for this deck. Card content is never changed.",
+  "@flashcardsLayoutHint": {
+    "description": "flashcardsLayoutHint"
+  },
+  "flashcardsLayoutShow": "Show {field} while studying",
+  "@flashcardsLayoutShow": {
+    "description": "Checkbox",
+    "placeholders": {
+      "field": {
+        "type": "String"
+      }
+    }
+  },
+  "flashcardsLayoutStepReveal": "Reveal the answer step by step",
+  "@flashcardsLayoutStepReveal": {
+    "description": "flashcardsLayoutStepReveal"
+  },
+  "flashcardsLayoutStepRevealHint": "The back appears first; each extra field opens with a tap.",
+  "@flashcardsLayoutStepRevealHint": {
+    "description": "flashcardsLayoutStepRevealHint"
+  },
+  "flashcardsRevealNext": "Show {field}",
+  "@flashcardsRevealNext": {
+    "description": "Step reveal",
+    "placeholders": {
+      "field": {
+        "type": "String"
+      }
+    }
   }
 }

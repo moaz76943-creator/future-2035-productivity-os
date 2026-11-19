@@ -3,10 +3,12 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../../../app/localization/app_format.dart';
+import '../../../app/routing/routes.dart';
 import '../../../core/database/app_database.dart';
 import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/components/indicators.dart';
@@ -19,6 +21,7 @@ import '../../../shared/widgets/dialogs.dart';
 import '../../../shared/widgets/module_scaffold.dart';
 import '../../backup/application/backup_ui.dart';
 import '../application/flashcards_providers.dart';
+import '../domain/card_import.dart';
 import '../domain/study.dart';
 import 'study_sheets.dart';
 import '../data/flashcards_repository.dart';
@@ -27,10 +30,12 @@ import 'widgets/deck_form_sheet.dart';
 
 const _hue = ModuleHue.flashcards;
 
-enum _DeckMenu { edit, speech, exportCsv, delete }
+enum _DeckMenu { edit, stats, layout, speech, exportCsv, delete }
 
 /// Card list filters.
-enum _CardFilter { all, newCards, due, suspended }
+enum _CardFilter { all, newCards, due, hard, favorites, suspended }
+
+enum _CardAction { favorite, duplicate, move, suspend }
 
 class DeckScreen extends ConsumerStatefulWidget {
   const DeckScreen({super.key, required this.deckId});
@@ -45,6 +50,9 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
   String _query = '';
   _CardFilter _filter = _CardFilter.all;
   String? _tag;
+
+  /// Multi-select (long-press a card). Empty = normal mode.
+  final Set<String> _selected = {};
 
   FlashcardsRepository get _repo => ref.read(flashcardsRepositoryProvider);
 
@@ -93,13 +101,26 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
 
   Future<void> _import() async {
     final l10n = context.l10n;
-    final source = await showDialog<String>(
+    final choice = await showDialog<Object>(
       context: context,
       builder: (ctx) => const _ImportDialog(),
     );
-    if (source == null || source.trim().isEmpty || !mounted) return;
+    if (choice == null || !mounted) return;
     try {
-      final r = await _repo.importCards(widget.deckId, source);
+      final r = switch (choice) {
+        // Mapped CSV/TSV rows from the preview step.
+        final ParsedImport p => await _repo.importParsed(
+          widget.deckId,
+          p.cards,
+          invalid: p.invalid,
+        ),
+        final String source when source.trim().isNotEmpty => await _repo.importCards(
+          widget.deckId,
+          source,
+        ),
+        _ => null,
+      };
+      if (r == null || !mounted) return;
       if (!mounted) return;
       showMessage(
         context,
@@ -200,6 +221,104 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
     );
   }
 
+  Future<String?> _pickDeck(String exceptId) async {
+    final l10n = context.l10n;
+    final decks = (await _repo.watchDecks().first).where((d) => d.id != exceptId).toList();
+    if (!mounted) return null;
+    if (decks.isEmpty) {
+      showMessage(context, l10n.flashcardsNoOtherDeck);
+      return null;
+    }
+    return showModalBottomSheet<String>(
+      context: context,
+      showDragHandle: true,
+      useSafeArea: true,
+      builder: (ctx) => SafeArea(
+        child: ListView(
+          shrinkWrap: true,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: Space.page),
+              child: Text(l10n.flashcardsMoveTo, style: ctx.text.titleLarge),
+            ),
+            for (final d in decks)
+              ListTile(
+                leading: Icon(Icons.style_rounded, color: Color(d.color)),
+                title: Text(d.name),
+                onTap: () => Navigator.pop(ctx, d.id),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Future<void> _cardAction(CardRow card, _CardAction a) async {
+    final l10n = context.l10n;
+    switch (a) {
+      case _CardAction.favorite:
+        await _repo.setFavorite([card.id], !card.favorite);
+      case _CardAction.duplicate:
+        final id = await _repo.duplicateCard(card.id);
+        final copy = await _repo.getCard(id);
+        if (mounted && copy != null) {
+          await showCardForm(context, deckId: card.deckId, initial: copy);
+        }
+      case _CardAction.move:
+        final to = await _pickDeck(card.deckId);
+        if (to == null) return;
+        await _repo.moveCards([card.id], to);
+        if (mounted) {
+          showUndoSnack(
+            context,
+            l10n.flashcardsMoved(1),
+            onUndo: () => _repo.moveCards([card.id], card.deckId),
+          );
+        }
+      case _CardAction.suspend:
+        await _toggleSuspend(card);
+    }
+  }
+
+  Future<void> _bulk(String action, List<CardRow> all) async {
+    final l10n = context.l10n;
+    final ids = _selected.toList();
+    final repo = _repo;
+    switch (action) {
+      case 'favorite':
+        final allFav = all.where((c) => _selected.contains(c.id)).every((c) => c.favorite);
+        await repo.setFavorite(ids, !allFav);
+      case 'suspend':
+        final allSusp = all.where((c) => _selected.contains(c.id)).every((c) => c.suspended);
+        await repo.setSuspendedMany(ids, !allSusp);
+      case 'tag':
+        final tag = await promptText(
+          context,
+          title: l10n.flashcardsAddTag,
+          hint: l10n.flashcardsTagHint,
+        );
+        if (tag == null || tag.trim().isEmpty) return;
+        await repo.addTag(ids, tag);
+      case 'move':
+        final to = await _pickDeck(widget.deckId);
+        if (to == null) return;
+        await repo.moveCards(ids, to);
+        if (mounted) {
+          showUndoSnack(
+            context,
+            l10n.flashcardsMoved(ids.length),
+            onUndo: () => repo.moveCards(ids, widget.deckId),
+          );
+        }
+      case 'delete':
+        await repo.deleteCards(ids);
+        if (mounted) {
+          showUndoSnack(context, l10n.deletedItem, onUndo: () => repo.restoreCards(ids));
+        }
+    }
+    if (mounted) setState(_selected.clear);
+  }
+
   Future<void> _deleteCard(CardRow card) async {
     final repo = _repo;
     await repo.deleteCard(card.id);
@@ -250,12 +369,16 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
               tooltip: l10n.actionMore,
               onSelected: (m) => switch (m) {
                 _DeckMenu.edit => _editDeck(deck),
+                _DeckMenu.stats => context.push(Routes.deckStats(deck.id)),
+                _DeckMenu.layout => showLayoutSheet(context, deck),
                 _DeckMenu.speech => showSpeechSheet(context, deck),
                 _DeckMenu.exportCsv => _exportCsv(deck),
                 _DeckMenu.delete => _deleteDeck(deck),
               },
               itemBuilder: (_) => [
                 PopupMenuItem(value: _DeckMenu.edit, child: Text(l10n.deckEdit)),
+                PopupMenuItem(value: _DeckMenu.stats, child: Text(l10n.flashcardsStats)),
+                PopupMenuItem(value: _DeckMenu.layout, child: Text(l10n.flashcardsLayoutTitle)),
                 PopupMenuItem(value: _DeckMenu.speech, child: Text(l10n.speechTitle)),
                 PopupMenuItem(value: _DeckMenu.exportCsv, child: Text(l10n.flashcardsExportCsv)),
                 PopupMenuItem(value: _DeckMenu.delete, child: Text(l10n.flashcardsDeleteDeck)),
@@ -313,6 +436,8 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
               _CardFilter.newCards => c.state == 'new' && !c.suspended,
               _CardFilter.due =>
                 c.state != 'new' && !c.suspended && c.dueAt != null && !c.dueAt!.isAfter(now),
+              _CardFilter.hard => !c.suspended && FlashcardsRepository.isHard(c),
+              _CardFilter.favorites => c.favorite,
               _CardFilter.suspended => c.suspended,
             };
             if (!ok) return false;
@@ -363,6 +488,8 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
                               _CardFilter.all => l10n.filterAll,
                               _CardFilter.newCards => l10n.deckNewCards,
                               _CardFilter.due => l10n.deckDue,
+                              _CardFilter.hard => l10n.flashcardsHard,
+                              _CardFilter.favorites => l10n.flashcardsFavorites,
                               _CardFilter.suspended => l10n.flashcardsSuspendedFilter,
                             }),
                             selected: _filter == f,
@@ -382,6 +509,70 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
                   ),
                 ),
               ),
+              if (_selected.isNotEmpty)
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(Space.page, Space.sm, Space.page, 0),
+                    child: LuxCard(
+                      key: const Key('bulkBar'),
+                      elevated: false,
+                      padding: const EdgeInsets.symmetric(horizontal: Space.xs, vertical: 2),
+                      child: Wrap(
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: [
+                          IconButton(
+                            tooltip: l10n.actionClose,
+                            onPressed: () => setState(_selected.clear),
+                            icon: const Icon(Icons.close_rounded),
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.only(end: Space.xs),
+                            child: Text(
+                              l10n.flashcardsSelected(_selected.length),
+                              style: context.text.titleSmall,
+                            ),
+                          ),
+                          IconButton(
+                            tooltip: l10n.flashcardsSelectAll,
+                            onPressed: () =>
+                                setState(() => _selected.addAll(shown.map((c) => c.id))),
+                            icon: const Icon(Icons.select_all_rounded),
+                          ),
+                          IconButton(
+                            key: const Key('bulkFavorite'),
+                            tooltip: l10n.flashcardsFavorite,
+                            onPressed: () => _bulk('favorite', all),
+                            icon: const Icon(Icons.star_outline_rounded),
+                          ),
+                          IconButton(
+                            key: const Key('bulkSuspend'),
+                            tooltip: l10n.flashcardsSuspend,
+                            onPressed: () => _bulk('suspend', all),
+                            icon: const Icon(Icons.pause_circle_outline_rounded),
+                          ),
+                          IconButton(
+                            key: const Key('bulkTag'),
+                            tooltip: l10n.flashcardsAddTag,
+                            onPressed: () => _bulk('tag', all),
+                            icon: const Icon(Icons.sell_outlined),
+                          ),
+                          IconButton(
+                            key: const Key('bulkMove'),
+                            tooltip: l10n.flashcardsMoveTo,
+                            onPressed: () => _bulk('move', all),
+                            icon: const Icon(Icons.drive_file_move_outline),
+                          ),
+                          IconButton(
+                            key: const Key('bulkDelete'),
+                            tooltip: l10n.actionDelete,
+                            onPressed: () => _bulk('delete', all),
+                            icon: const Icon(Icons.delete_outline_rounded),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
               SliverToBoxAdapter(
                 child: SectionHeader(
                   title: shown.length == all.length
@@ -405,12 +596,24 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
                   sliver: SliverList.separated(
                     itemCount: shown.length,
                     separatorBuilder: (_, _) => const SizedBox(height: Space.xs),
-                    itemBuilder: (_, i) => _CardTile(
-                      card: shown[i],
-                      onTap: () => showCardForm(context, deckId: deck.id, initial: shown[i]),
-                      onDelete: () => _deleteCard(shown[i]),
-                      onToggleSuspend: () => _toggleSuspend(shown[i]),
-                    ),
+                    itemBuilder: (_, i) {
+                      final c = shown[i];
+                      void toggle() => setState(
+                        () =>
+                            _selected.contains(c.id) ? _selected.remove(c.id) : _selected.add(c.id),
+                      );
+                      return _CardTile(
+                        card: c,
+                        selecting: _selected.isNotEmpty,
+                        selected: _selected.contains(c.id),
+                        onTap: _selected.isNotEmpty
+                            ? toggle
+                            : () => showCardForm(context, deckId: deck.id, initial: c),
+                        onLongPress: toggle,
+                        onDelete: () => _deleteCard(c),
+                        onAction: (a) => _cardAction(c, a),
+                      );
+                    },
                   ),
                 ),
             ],
@@ -517,13 +720,19 @@ class _CardTile extends ConsumerWidget {
   const _CardTile({
     required this.card,
     required this.onTap,
+    required this.onLongPress,
     required this.onDelete,
-    required this.onToggleSuspend,
+    required this.onAction,
+    this.selecting = false,
+    this.selected = false,
   });
   final CardRow card;
   final VoidCallback onTap;
+  final VoidCallback onLongPress;
   final VoidCallback onDelete;
-  final VoidCallback onToggleSuspend;
+  final ValueChanged<_CardAction> onAction;
+  final bool selecting;
+  final bool selected;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -538,56 +747,85 @@ class _CardTile extends ConsumerWidget {
         : card.state == 'new' || card.dueAt == null
         ? l10n.deckNewCards
         : l10n.flashcardsCardDueOn(context.fmt.relativeDay(card.dueAt!, now));
-    return LuxCard(
-      onTap: onTap,
-      elevated: false,
-      padding: const EdgeInsetsDirectional.fromSTEB(Space.md, Space.sm, Space.xxs, Space.sm),
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  card.front,
-                  style: context.text.titleSmall,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                const SizedBox(height: 2),
-                Text(
-                  card.back,
-                  style: context.text.bodySmall?.copyWith(color: context.lux.ink2),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                const SizedBox(height: Space.xxs),
-                Wrap(
-                  spacing: Space.xxs,
-                  runSpacing: Space.xxs,
-                  children: [
-                    LuxPill(label: status, color: _hue.a),
-                    for (final t in tags) LuxPill(label: t),
-                  ],
-                ),
-              ],
+    final recall = FlashcardsRepository.srsOf(card).retrievability(now.toUtc());
+    return GestureDetector(
+      onLongPress: onLongPress,
+      child: LuxCard(
+        onTap: onTap,
+        elevated: false,
+        accent: selected ? _hue.a : null,
+        padding: const EdgeInsetsDirectional.fromSTEB(Space.md, Space.sm, Space.xxs, Space.sm),
+        child: Row(
+          children: [
+            if (selecting)
+              Checkbox(
+                value: selected,
+                onChanged: (_) => onTap(),
+                semanticLabel: l10n.flashcardsSelectCard(card.front),
+              ),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    card.front,
+                    style: context.text.titleSmall,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    card.back,
+                    style: context.text.bodySmall?.copyWith(color: context.lux.ink2),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  const SizedBox(height: Space.xxs),
+                  Wrap(
+                    spacing: Space.xxs,
+                    runSpacing: Space.xxs,
+                    children: [
+                      LuxPill(label: status, color: _hue.a),
+                      if (recall != null && !card.suspended)
+                        LuxPill(label: l10n.flashcardsRecall(context.fmt.percent(recall))),
+                      if (FlashcardsRepository.isHard(card)) LuxPill(label: l10n.flashcardsHard),
+                      for (final t in tags) LuxPill(label: t),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-          IconButton(
-            tooltip: card.suspended ? l10n.flashcardsResume : l10n.flashcardsSuspend,
-            onPressed: onToggleSuspend,
-            icon: Icon(
-              card.suspended
-                  ? Icons.play_circle_outline_rounded
-                  : Icons.pause_circle_outline_rounded,
-            ),
-          ),
-          IconButton(
-            tooltip: l10n.actionDelete,
-            onPressed: onDelete,
-            icon: const Icon(Icons.delete_outline_rounded),
-          ),
-        ],
+            if (!selecting) ...[
+              IconButton(
+                tooltip: card.favorite ? l10n.flashcardsUnfavorite : l10n.flashcardsFavorite,
+                isSelected: card.favorite,
+                onPressed: () => onAction(_CardAction.favorite),
+                icon: const Icon(Icons.star_outline_rounded),
+                selectedIcon: Icon(Icons.star_rounded, color: Palette.aurora),
+              ),
+              PopupMenuButton<_CardAction>(
+                tooltip: l10n.actionMore,
+                onSelected: onAction,
+                itemBuilder: (_) => [
+                  PopupMenuItem(
+                    value: _CardAction.suspend,
+                    child: Text(card.suspended ? l10n.flashcardsResume : l10n.flashcardsSuspend),
+                  ),
+                  PopupMenuItem(
+                    value: _CardAction.duplicate,
+                    child: Text(l10n.flashcardsDuplicate),
+                  ),
+                  PopupMenuItem(value: _CardAction.move, child: Text(l10n.flashcardsMoveTo)),
+                ],
+              ),
+              IconButton(
+                tooltip: l10n.actionDelete,
+                onPressed: onDelete,
+                icon: const Icon(Icons.delete_outline_rounded),
+              ),
+            ],
+          ],
+        ),
       ),
     );
   }
@@ -624,15 +862,129 @@ class _ImportDialogState extends ConsumerState<_ImportDialog> {
 
   final _controller = TextEditingController();
 
+  /// Second step for CSV/TSV text: rows plus the column → field mapping.
+  ImportPreview? _preview;
+  List<String> _columns = const [];
+
   @override
   void dispose() {
     _controller.dispose();
     super.dispose();
   }
 
+  void _next() {
+    final text = _controller.text;
+    if (text.trim().isEmpty) return;
+    // The app's own JSON deck format needs no mapping.
+    if (text.trimLeft().startsWith('{')) {
+      Navigator.pop(context, text);
+      return;
+    }
+    final p = CardImportParser.preview(text);
+    if (p.body.isEmpty) {
+      setState(() => _error = context.l10n.importFailed);
+      return;
+    }
+    setState(() {
+      _preview = p;
+      _columns = [...p.columns];
+    });
+  }
+
+  String _fieldLabel(String f) {
+    final l10n = context.l10n;
+    return switch (f) {
+      'front' => l10n.cardFront,
+      'back' => l10n.cardBack,
+      'tags' => l10n.cardTags,
+      'example' => l10n.cardFieldExample,
+      'explanation' => l10n.cardFieldExplanation,
+      'pronunciation' => l10n.cardFieldPronunciation,
+      'notes' => l10n.cardFieldNotes,
+      _ => l10n.importIgnoreColumn,
+    };
+  }
+
+  Widget _mapping(BuildContext context, ImportPreview p) {
+    final l10n = context.l10n;
+    final built = CardImportParser.build(p.body, _columns);
+    final valid = _columns.contains('front') && _columns.contains('back');
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            valid
+                ? l10n.importPreviewSummary(built.cards.length, built.invalid)
+                : l10n.importNeedFrontBack,
+            key: const Key('importSummary'),
+            style: context.text.bodyMedium?.copyWith(
+              color: valid ? context.lux.ink2 : context.lux.danger,
+            ),
+          ),
+          const SizedBox(height: Space.sm),
+          for (var i = 0; i < _columns.length; i++)
+            Padding(
+              padding: const EdgeInsets.only(bottom: Space.sm),
+              child: DropdownButtonFormField<String>(
+                key: Key('importColumn_$i'),
+                initialValue: _columns[i],
+                isExpanded: true,
+                decoration: InputDecoration(
+                  labelText: p.hasHeader
+                      ? '${l10n.importColumn(i + 1)} · ${p.rows.first.elementAtOrNull(i) ?? ''}'
+                      : l10n.importColumn(i + 1),
+                  helperText: [for (final r in p.body.take(3)) r.elementAtOrNull(i)?.trim() ?? '']
+                      .where((v) => v.isNotEmpty)
+                      .join(' · '),
+                  helperMaxLines: 2,
+                ),
+                items: [
+                  for (final f in CardImportParser.fields)
+                    DropdownMenuItem(value: f, child: Text(_fieldLabel(f))),
+                ],
+                onChanged: (v) => setState(() {
+                  // A field can be used by one column only.
+                  final f = v ?? '';
+                  if (f.isNotEmpty) {
+                    for (var k = 0; k < _columns.length; k++) {
+                      if (_columns[k] == f) _columns[k] = '';
+                    }
+                  }
+                  _columns[i] = f;
+                }),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final p = _preview;
+    if (p != null) {
+      final ok = _columns.contains('front') && _columns.contains('back');
+      return AlertDialog(
+        title: Text(l10n.importPreviewTitle),
+        content: _mapping(context, p),
+        actions: [
+          TextButton(
+            onPressed: () => setState(() => _preview = null),
+            child: Text(l10n.actionBack),
+          ),
+          FilledButton(
+            key: const Key('importConfirmButton'),
+            onPressed: ok
+                ? () => Navigator.pop(context, CardImportParser.build(p.body, _columns))
+                : null,
+            child: Text(l10n.actionImport),
+          ),
+        ],
+      );
+    }
     return AlertDialog(
       title: Text(l10n.importCardsTitle),
       content: SingleChildScrollView(
@@ -662,9 +1014,9 @@ class _ImportDialogState extends ConsumerState<_ImportDialog> {
         ),
         TextButton(onPressed: () => Navigator.pop(context), child: Text(l10n.actionCancel)),
         FilledButton(
-          key: const Key('importConfirmButton'),
-          onPressed: () => Navigator.pop(context, _controller.text),
-          child: Text(l10n.actionImport),
+          key: const Key('importNextButton'),
+          onPressed: _next,
+          child: Text(l10n.importNext),
         ),
       ],
     );

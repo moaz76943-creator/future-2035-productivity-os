@@ -6831,6 +6831,56 @@ class $FlashcardsTable extends Flashcards
     ),
     defaultValue: const Constant(false),
   );
+  static const VerificationMeta _stabilityMeta = const VerificationMeta(
+    'stability',
+  );
+  @override
+  late final GeneratedColumn<double> stability = GeneratedColumn<double>(
+    'stability',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _difficultyMeta = const VerificationMeta(
+    'difficulty',
+  );
+  @override
+  late final GeneratedColumn<double> difficulty = GeneratedColumn<double>(
+    'difficulty',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _lastReviewAtMeta = const VerificationMeta(
+    'lastReviewAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> lastReviewAt = GeneratedColumn<DateTime>(
+    'last_review_at',
+    aliasedName,
+    true,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _favoriteMeta = const VerificationMeta(
+    'favorite',
+  );
+  @override
+  late final GeneratedColumn<bool> favorite = GeneratedColumn<bool>(
+    'favorite',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("favorite" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
   static const VerificationMeta _deletedAtMeta = const VerificationMeta(
     'deletedAt',
   );
@@ -6860,6 +6910,10 @@ class $FlashcardsTable extends Flashcards
     learningStep,
     dueAt,
     suspended,
+    stability,
+    difficulty,
+    lastReviewAt,
+    favorite,
     deletedAt,
   ];
   @override
@@ -6988,6 +7042,33 @@ class $FlashcardsTable extends Flashcards
         suspended.isAcceptableOrUnknown(data['suspended']!, _suspendedMeta),
       );
     }
+    if (data.containsKey('stability')) {
+      context.handle(
+        _stabilityMeta,
+        stability.isAcceptableOrUnknown(data['stability']!, _stabilityMeta),
+      );
+    }
+    if (data.containsKey('difficulty')) {
+      context.handle(
+        _difficultyMeta,
+        difficulty.isAcceptableOrUnknown(data['difficulty']!, _difficultyMeta),
+      );
+    }
+    if (data.containsKey('last_review_at')) {
+      context.handle(
+        _lastReviewAtMeta,
+        lastReviewAt.isAcceptableOrUnknown(
+          data['last_review_at']!,
+          _lastReviewAtMeta,
+        ),
+      );
+    }
+    if (data.containsKey('favorite')) {
+      context.handle(
+        _favoriteMeta,
+        favorite.isAcceptableOrUnknown(data['favorite']!, _favoriteMeta),
+      );
+    }
     if (data.containsKey('deleted_at')) {
       context.handle(
         _deletedAtMeta,
@@ -7067,6 +7148,22 @@ class $FlashcardsTable extends Flashcards
         DriftSqlType.bool,
         data['${effectivePrefix}suspended'],
       )!,
+      stability: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}stability'],
+      )!,
+      difficulty: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}difficulty'],
+      )!,
+      lastReviewAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}last_review_at'],
+      ),
+      favorite: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}favorite'],
+      )!,
       deletedAt: attachedDatabase.typeMapping.read(
         DriftSqlType.dateTime,
         data['${effectivePrefix}deleted_at'],
@@ -7106,6 +7203,15 @@ class CardRow extends DataClass implements Insertable<CardRow> {
 
   /// Suspended cards stay in the deck but are never scheduled. v5.
   final bool suspended;
+
+  /// FSRS-4.5 memory state (v6): stability in days, difficulty 1–10, and the
+  /// moment of the last review (for recall probability). 0 / null = new.
+  final double stability;
+  final double difficulty;
+  final DateTime? lastReviewAt;
+
+  /// Marked as favourite by the user. v6.
+  final bool favorite;
   final DateTime? deletedAt;
   const CardRow({
     required this.createdAt,
@@ -7124,6 +7230,10 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     required this.learningStep,
     this.dueAt,
     required this.suspended,
+    required this.stability,
+    required this.difficulty,
+    this.lastReviewAt,
+    required this.favorite,
     this.deletedAt,
   });
   @override
@@ -7147,6 +7257,12 @@ class CardRow extends DataClass implements Insertable<CardRow> {
       map['due_at'] = Variable<DateTime>(dueAt);
     }
     map['suspended'] = Variable<bool>(suspended);
+    map['stability'] = Variable<double>(stability);
+    map['difficulty'] = Variable<double>(difficulty);
+    if (!nullToAbsent || lastReviewAt != null) {
+      map['last_review_at'] = Variable<DateTime>(lastReviewAt);
+    }
+    map['favorite'] = Variable<bool>(favorite);
     if (!nullToAbsent || deletedAt != null) {
       map['deleted_at'] = Variable<DateTime>(deletedAt);
     }
@@ -7173,6 +7289,12 @@ class CardRow extends DataClass implements Insertable<CardRow> {
           ? const Value.absent()
           : Value(dueAt),
       suspended: Value(suspended),
+      stability: Value(stability),
+      difficulty: Value(difficulty),
+      lastReviewAt: lastReviewAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(lastReviewAt),
+      favorite: Value(favorite),
       deletedAt: deletedAt == null && nullToAbsent
           ? const Value.absent()
           : Value(deletedAt),
@@ -7201,6 +7323,10 @@ class CardRow extends DataClass implements Insertable<CardRow> {
       learningStep: serializer.fromJson<int>(json['learningStep']),
       dueAt: serializer.fromJson<DateTime?>(json['dueAt']),
       suspended: serializer.fromJson<bool>(json['suspended']),
+      stability: serializer.fromJson<double>(json['stability']),
+      difficulty: serializer.fromJson<double>(json['difficulty']),
+      lastReviewAt: serializer.fromJson<DateTime?>(json['lastReviewAt']),
+      favorite: serializer.fromJson<bool>(json['favorite']),
       deletedAt: serializer.fromJson<DateTime?>(json['deletedAt']),
     );
   }
@@ -7224,6 +7350,10 @@ class CardRow extends DataClass implements Insertable<CardRow> {
       'learningStep': serializer.toJson<int>(learningStep),
       'dueAt': serializer.toJson<DateTime?>(dueAt),
       'suspended': serializer.toJson<bool>(suspended),
+      'stability': serializer.toJson<double>(stability),
+      'difficulty': serializer.toJson<double>(difficulty),
+      'lastReviewAt': serializer.toJson<DateTime?>(lastReviewAt),
+      'favorite': serializer.toJson<bool>(favorite),
       'deletedAt': serializer.toJson<DateTime?>(deletedAt),
     };
   }
@@ -7245,6 +7375,10 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     int? learningStep,
     Value<DateTime?> dueAt = const Value.absent(),
     bool? suspended,
+    double? stability,
+    double? difficulty,
+    Value<DateTime?> lastReviewAt = const Value.absent(),
+    bool? favorite,
     Value<DateTime?> deletedAt = const Value.absent(),
   }) => CardRow(
     createdAt: createdAt ?? this.createdAt,
@@ -7263,6 +7397,10 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     learningStep: learningStep ?? this.learningStep,
     dueAt: dueAt.present ? dueAt.value : this.dueAt,
     suspended: suspended ?? this.suspended,
+    stability: stability ?? this.stability,
+    difficulty: difficulty ?? this.difficulty,
+    lastReviewAt: lastReviewAt.present ? lastReviewAt.value : this.lastReviewAt,
+    favorite: favorite ?? this.favorite,
     deletedAt: deletedAt.present ? deletedAt.value : this.deletedAt,
   );
   CardRow copyWithCompanion(FlashcardsCompanion data) {
@@ -7289,6 +7427,14 @@ class CardRow extends DataClass implements Insertable<CardRow> {
           : this.learningStep,
       dueAt: data.dueAt.present ? data.dueAt.value : this.dueAt,
       suspended: data.suspended.present ? data.suspended.value : this.suspended,
+      stability: data.stability.present ? data.stability.value : this.stability,
+      difficulty: data.difficulty.present
+          ? data.difficulty.value
+          : this.difficulty,
+      lastReviewAt: data.lastReviewAt.present
+          ? data.lastReviewAt.value
+          : this.lastReviewAt,
+      favorite: data.favorite.present ? data.favorite.value : this.favorite,
       deletedAt: data.deletedAt.present ? data.deletedAt.value : this.deletedAt,
     );
   }
@@ -7312,13 +7458,17 @@ class CardRow extends DataClass implements Insertable<CardRow> {
           ..write('learningStep: $learningStep, ')
           ..write('dueAt: $dueAt, ')
           ..write('suspended: $suspended, ')
+          ..write('stability: $stability, ')
+          ..write('difficulty: $difficulty, ')
+          ..write('lastReviewAt: $lastReviewAt, ')
+          ..write('favorite: $favorite, ')
           ..write('deletedAt: $deletedAt')
           ..write(')'))
         .toString();
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode => Object.hashAll([
     createdAt,
     updatedAt,
     id,
@@ -7335,8 +7485,12 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     learningStep,
     dueAt,
     suspended,
+    stability,
+    difficulty,
+    lastReviewAt,
+    favorite,
     deletedAt,
-  );
+  ]);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -7357,6 +7511,10 @@ class CardRow extends DataClass implements Insertable<CardRow> {
           other.learningStep == this.learningStep &&
           other.dueAt == this.dueAt &&
           other.suspended == this.suspended &&
+          other.stability == this.stability &&
+          other.difficulty == this.difficulty &&
+          other.lastReviewAt == this.lastReviewAt &&
+          other.favorite == this.favorite &&
           other.deletedAt == this.deletedAt);
 }
 
@@ -7377,6 +7535,10 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
   final Value<int> learningStep;
   final Value<DateTime?> dueAt;
   final Value<bool> suspended;
+  final Value<double> stability;
+  final Value<double> difficulty;
+  final Value<DateTime?> lastReviewAt;
+  final Value<bool> favorite;
   final Value<DateTime?> deletedAt;
   final Value<int> rowid;
   const FlashcardsCompanion({
@@ -7396,6 +7558,10 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     this.learningStep = const Value.absent(),
     this.dueAt = const Value.absent(),
     this.suspended = const Value.absent(),
+    this.stability = const Value.absent(),
+    this.difficulty = const Value.absent(),
+    this.lastReviewAt = const Value.absent(),
+    this.favorite = const Value.absent(),
     this.deletedAt = const Value.absent(),
     this.rowid = const Value.absent(),
   });
@@ -7416,6 +7582,10 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     this.learningStep = const Value.absent(),
     this.dueAt = const Value.absent(),
     this.suspended = const Value.absent(),
+    this.stability = const Value.absent(),
+    this.difficulty = const Value.absent(),
+    this.lastReviewAt = const Value.absent(),
+    this.favorite = const Value.absent(),
     this.deletedAt = const Value.absent(),
     this.rowid = const Value.absent(),
   }) : createdAt = Value(createdAt),
@@ -7441,6 +7611,10 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     Expression<int>? learningStep,
     Expression<DateTime>? dueAt,
     Expression<bool>? suspended,
+    Expression<double>? stability,
+    Expression<double>? difficulty,
+    Expression<DateTime>? lastReviewAt,
+    Expression<bool>? favorite,
     Expression<DateTime>? deletedAt,
     Expression<int>? rowid,
   }) {
@@ -7461,6 +7635,10 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
       if (learningStep != null) 'learning_step': learningStep,
       if (dueAt != null) 'due_at': dueAt,
       if (suspended != null) 'suspended': suspended,
+      if (stability != null) 'stability': stability,
+      if (difficulty != null) 'difficulty': difficulty,
+      if (lastReviewAt != null) 'last_review_at': lastReviewAt,
+      if (favorite != null) 'favorite': favorite,
       if (deletedAt != null) 'deleted_at': deletedAt,
       if (rowid != null) 'rowid': rowid,
     });
@@ -7483,6 +7661,10 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     Value<int>? learningStep,
     Value<DateTime?>? dueAt,
     Value<bool>? suspended,
+    Value<double>? stability,
+    Value<double>? difficulty,
+    Value<DateTime?>? lastReviewAt,
+    Value<bool>? favorite,
     Value<DateTime?>? deletedAt,
     Value<int>? rowid,
   }) {
@@ -7503,6 +7685,10 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
       learningStep: learningStep ?? this.learningStep,
       dueAt: dueAt ?? this.dueAt,
       suspended: suspended ?? this.suspended,
+      stability: stability ?? this.stability,
+      difficulty: difficulty ?? this.difficulty,
+      lastReviewAt: lastReviewAt ?? this.lastReviewAt,
+      favorite: favorite ?? this.favorite,
       deletedAt: deletedAt ?? this.deletedAt,
       rowid: rowid ?? this.rowid,
     );
@@ -7559,6 +7745,18 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     if (suspended.present) {
       map['suspended'] = Variable<bool>(suspended.value);
     }
+    if (stability.present) {
+      map['stability'] = Variable<double>(stability.value);
+    }
+    if (difficulty.present) {
+      map['difficulty'] = Variable<double>(difficulty.value);
+    }
+    if (lastReviewAt.present) {
+      map['last_review_at'] = Variable<DateTime>(lastReviewAt.value);
+    }
+    if (favorite.present) {
+      map['favorite'] = Variable<bool>(favorite.value);
+    }
     if (deletedAt.present) {
       map['deleted_at'] = Variable<DateTime>(deletedAt.value);
     }
@@ -7587,6 +7785,10 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
           ..write('learningStep: $learningStep, ')
           ..write('dueAt: $dueAt, ')
           ..write('suspended: $suspended, ')
+          ..write('stability: $stability, ')
+          ..write('difficulty: $difficulty, ')
+          ..write('lastReviewAt: $lastReviewAt, ')
+          ..write('favorite: $favorite, ')
           ..write('deletedAt: $deletedAt, ')
           ..write('rowid: $rowid')
           ..write(')'))
@@ -18212,6 +18414,10 @@ typedef $$FlashcardsTableCreateCompanionBuilder = FlashcardsCompanion Function({
   Value<int> learningStep,
   Value<DateTime?> dueAt,
   Value<bool> suspended,
+  Value<double> stability,
+  Value<double> difficulty,
+  Value<DateTime?> lastReviewAt,
+  Value<bool> favorite,
   Value<DateTime?> deletedAt,
   Value<int> rowid,
 });
@@ -18232,6 +18438,10 @@ typedef $$FlashcardsTableUpdateCompanionBuilder = FlashcardsCompanion Function({
   Value<int> learningStep,
   Value<DateTime?> dueAt,
   Value<bool> suspended,
+  Value<double> stability,
+  Value<double> difficulty,
+  Value<DateTime?> lastReviewAt,
+  Value<bool> favorite,
   Value<DateTime?> deletedAt,
   Value<int> rowid,
 });
@@ -18357,6 +18567,26 @@ class $$FlashcardsTableFilterComposer
 
   ColumnFilters<bool> get suspended => $composableBuilder(
     column: $table.suspended,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get stability => $composableBuilder(
+    column: $table.stability,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get difficulty => $composableBuilder(
+    column: $table.difficulty,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get lastReviewAt => $composableBuilder(
+    column: $table.lastReviewAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get favorite => $composableBuilder(
+    column: $table.favorite,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -18498,6 +18728,26 @@ class $$FlashcardsTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<double> get stability => $composableBuilder(
+    column: $table.stability,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get difficulty => $composableBuilder(
+    column: $table.difficulty,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get lastReviewAt => $composableBuilder(
+    column: $table.lastReviewAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get favorite => $composableBuilder(
+    column: $table.favorite,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<DateTime> get deletedAt => $composableBuilder(
     column: $table.deletedAt,
     builder: (column) => ColumnOrderings(column),
@@ -18586,6 +18836,22 @@ class $$FlashcardsTableAnnotationComposer
 
   GeneratedColumn<bool> get suspended =>
       $composableBuilder(column: $table.suspended, builder: (column) => column);
+
+  GeneratedColumn<double> get stability =>
+      $composableBuilder(column: $table.stability, builder: (column) => column);
+
+  GeneratedColumn<double> get difficulty => $composableBuilder(
+    column: $table.difficulty,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get lastReviewAt => $composableBuilder(
+    column: $table.lastReviewAt,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<bool> get favorite =>
+      $composableBuilder(column: $table.favorite, builder: (column) => column);
 
   GeneratedColumn<DateTime> get deletedAt =>
       $composableBuilder(column: $table.deletedAt, builder: (column) => column);
@@ -18683,6 +18949,10 @@ class $$FlashcardsTableTableManager
                 Value<int> learningStep = const Value.absent(),
                 Value<DateTime?> dueAt = const Value.absent(),
                 Value<bool> suspended = const Value.absent(),
+                Value<double> stability = const Value.absent(),
+                Value<double> difficulty = const Value.absent(),
+                Value<DateTime?> lastReviewAt = const Value.absent(),
+                Value<bool> favorite = const Value.absent(),
                 Value<DateTime?> deletedAt = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => FlashcardsCompanion(
@@ -18702,6 +18972,10 @@ class $$FlashcardsTableTableManager
                 learningStep: learningStep,
                 dueAt: dueAt,
                 suspended: suspended,
+                stability: stability,
+                difficulty: difficulty,
+                lastReviewAt: lastReviewAt,
+                favorite: favorite,
                 deletedAt: deletedAt,
                 rowid: rowid,
               ),
@@ -18723,6 +18997,10 @@ class $$FlashcardsTableTableManager
                 Value<int> learningStep = const Value.absent(),
                 Value<DateTime?> dueAt = const Value.absent(),
                 Value<bool> suspended = const Value.absent(),
+                Value<double> stability = const Value.absent(),
+                Value<double> difficulty = const Value.absent(),
+                Value<DateTime?> lastReviewAt = const Value.absent(),
+                Value<bool> favorite = const Value.absent(),
                 Value<DateTime?> deletedAt = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => FlashcardsCompanion.insert(
@@ -18742,6 +19020,10 @@ class $$FlashcardsTableTableManager
                 learningStep: learningStep,
                 dueAt: dueAt,
                 suspended: suspended,
+                stability: stability,
+                difficulty: difficulty,
+                lastReviewAt: lastReviewAt,
+                favorite: favorite,
                 deletedAt: deletedAt,
                 rowid: rowid,
               ),

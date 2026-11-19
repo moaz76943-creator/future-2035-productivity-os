@@ -5915,6 +5915,366 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The file could not be opened. You can paste its content instead.'**
   String get flashcardsImportFileFailed;
+
+  /// studyNoMatchingCards
+  ///
+  /// In en, this message translates to:
+  /// **'No cards match this choice yet.'**
+  String get studyNoMatchingCards;
+
+  /// studyPracticeNew
+  ///
+  /// In en, this message translates to:
+  /// **'New only'**
+  String get studyPracticeNew;
+
+  /// studyPracticeHard
+  ///
+  /// In en, this message translates to:
+  /// **'Hard cards'**
+  String get studyPracticeHard;
+
+  /// studyPracticeFavorites
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites'**
+  String get studyPracticeFavorites;
+
+  /// studySessionSize
+  ///
+  /// In en, this message translates to:
+  /// **'Cards per session'**
+  String get studySessionSize;
+
+  /// studySessionAll
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get studySessionAll;
+
+  /// studyOrder
+  ///
+  /// In en, this message translates to:
+  /// **'Order'**
+  String get studyOrder;
+
+  /// studyOrderDue
+  ///
+  /// In en, this message translates to:
+  /// **'Most overdue first'**
+  String get studyOrderDue;
+
+  /// studyOrderRandom
+  ///
+  /// In en, this message translates to:
+  /// **'Random'**
+  String get studyOrderRandom;
+
+  /// studyOrderHardest
+  ///
+  /// In en, this message translates to:
+  /// **'Hardest first'**
+  String get studyOrderHardest;
+
+  /// flashcardsHard
+  ///
+  /// In en, this message translates to:
+  /// **'Hard'**
+  String get flashcardsHard;
+
+  /// flashcardsFavorites
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites'**
+  String get flashcardsFavorites;
+
+  /// flashcardsFavorite
+  ///
+  /// In en, this message translates to:
+  /// **'Add to favorites'**
+  String get flashcardsFavorite;
+
+  /// flashcardsUnfavorite
+  ///
+  /// In en, this message translates to:
+  /// **'Remove from favorites'**
+  String get flashcardsUnfavorite;
+
+  /// flashcardsDuplicate
+  ///
+  /// In en, this message translates to:
+  /// **'Duplicate'**
+  String get flashcardsDuplicate;
+
+  /// flashcardsMoveTo
+  ///
+  /// In en, this message translates to:
+  /// **'Move to deck'**
+  String get flashcardsMoveTo;
+
+  /// flashcardsNoOtherDeck
+  ///
+  /// In en, this message translates to:
+  /// **'Create another deck first.'**
+  String get flashcardsNoOtherDeck;
+
+  /// Snackbar
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Card moved} other{{count} cards moved}}'**
+  String flashcardsMoved(int count);
+
+  /// flashcardsAddTag
+  ///
+  /// In en, this message translates to:
+  /// **'Add tag'**
+  String get flashcardsAddTag;
+
+  /// flashcardsTagHint
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. verbs'**
+  String get flashcardsTagHint;
+
+  /// Selection count
+  ///
+  /// In en, this message translates to:
+  /// **'{count} selected'**
+  String flashcardsSelected(int count);
+
+  /// flashcardsSelectAll
+  ///
+  /// In en, this message translates to:
+  /// **'Select all shown'**
+  String get flashcardsSelectAll;
+
+  /// Checkbox label
+  ///
+  /// In en, this message translates to:
+  /// **'Select {front}'**
+  String flashcardsSelectCard(String front);
+
+  /// Recall probability pill
+  ///
+  /// In en, this message translates to:
+  /// **'Recall {value}'**
+  String flashcardsRecall(String value);
+
+  /// flashcardsDuplicateTitle
+  ///
+  /// In en, this message translates to:
+  /// **'Possible duplicate'**
+  String get flashcardsDuplicateTitle;
+
+  /// Duplicate dialog
+  ///
+  /// In en, this message translates to:
+  /// **'This deck already has “{front}” → “{back}”. Save anyway?'**
+  String flashcardsDuplicateMessage(String front, String back);
+
+  /// flashcardsSaveAnyway
+  ///
+  /// In en, this message translates to:
+  /// **'Save anyway'**
+  String get flashcardsSaveAnyway;
+
+  /// flashcardsStats
+  ///
+  /// In en, this message translates to:
+  /// **'Statistics'**
+  String get flashcardsStats;
+
+  /// flashcardsStatTotal
+  ///
+  /// In en, this message translates to:
+  /// **'Cards'**
+  String get flashcardsStatTotal;
+
+  /// flashcardsStatLearning
+  ///
+  /// In en, this message translates to:
+  /// **'Learning'**
+  String get flashcardsStatLearning;
+
+  /// flashcardsStatMatureCaption
+  ///
+  /// In en, this message translates to:
+  /// **'Remembered for 21+ days'**
+  String get flashcardsStatMatureCaption;
+
+  /// flashcardsStatReviewsToday
+  ///
+  /// In en, this message translates to:
+  /// **'Reviews today'**
+  String get flashcardsStatReviewsToday;
+
+  /// flashcardsStatCorrect
+  ///
+  /// In en, this message translates to:
+  /// **'Correct answers'**
+  String get flashcardsStatCorrect;
+
+  /// Caption
+  ///
+  /// In en, this message translates to:
+  /// **'Last {days} days'**
+  String flashcardsStatLastDays(int days);
+
+  /// flashcardsStatForget
+  ///
+  /// In en, this message translates to:
+  /// **'Forgetting rate'**
+  String get flashcardsStatForget;
+
+  /// flashcardsStatForgetCaption
+  ///
+  /// In en, this message translates to:
+  /// **'“Again” on learned cards'**
+  String get flashcardsStatForgetCaption;
+
+  /// flashcardsStatRecall
+  ///
+  /// In en, this message translates to:
+  /// **'Recall now'**
+  String get flashcardsStatRecall;
+
+  /// flashcardsStatRecallCaption
+  ///
+  /// In en, this message translates to:
+  /// **'FSRS estimate, reviewed cards'**
+  String get flashcardsStatRecallCaption;
+
+  /// Chart header
+  ///
+  /// In en, this message translates to:
+  /// **'Reviews per day · {count} in total'**
+  String flashcardsStatActivity(int count);
+
+  /// flashcardsStatHistory
+  ///
+  /// In en, this message translates to:
+  /// **'Latest answers'**
+  String get flashcardsStatHistory;
+
+  /// flashcardsStatNoHistory
+  ///
+  /// In en, this message translates to:
+  /// **'No reviews yet. Study the deck to see your progress here.'**
+  String get flashcardsStatNoHistory;
+
+  /// Speak one field
+  ///
+  /// In en, this message translates to:
+  /// **'Read {field} aloud'**
+  String flashcardsSpeakField(String field);
+
+  /// speechVoice
+  ///
+  /// In en, this message translates to:
+  /// **'Voice'**
+  String get speechVoice;
+
+  /// speechVoiceDefault
+  ///
+  /// In en, this message translates to:
+  /// **'Device default'**
+  String get speechVoiceDefault;
+
+  /// speechVoiceOnline
+  ///
+  /// In en, this message translates to:
+  /// **'needs internet'**
+  String get speechVoiceOnline;
+
+  /// speechTest
+  ///
+  /// In en, this message translates to:
+  /// **'Test voice'**
+  String get speechTest;
+
+  /// importNext
+  ///
+  /// In en, this message translates to:
+  /// **'Preview'**
+  String get importNext;
+
+  /// importPreviewTitle
+  ///
+  /// In en, this message translates to:
+  /// **'Match columns to fields'**
+  String get importPreviewTitle;
+
+  /// importIgnoreColumn
+  ///
+  /// In en, this message translates to:
+  /// **'Ignore'**
+  String get importIgnoreColumn;
+
+  /// Column label
+  ///
+  /// In en, this message translates to:
+  /// **'Column {n}'**
+  String importColumn(int n);
+
+  /// Preview counts
+  ///
+  /// In en, this message translates to:
+  /// **'{ready} cards ready · {invalid} incomplete rows will be skipped'**
+  String importPreviewSummary(int ready, int invalid);
+
+  /// importNeedFrontBack
+  ///
+  /// In en, this message translates to:
+  /// **'Choose which columns are the front and the back.'**
+  String get importNeedFrontBack;
+
+  /// actionMoveUp
+  ///
+  /// In en, this message translates to:
+  /// **'Move up'**
+  String get actionMoveUp;
+
+  /// actionMoveDown
+  ///
+  /// In en, this message translates to:
+  /// **'Move down'**
+  String get actionMoveDown;
+
+  /// flashcardsLayoutTitle
+  ///
+  /// In en, this message translates to:
+  /// **'Card layout'**
+  String get flashcardsLayoutTitle;
+
+  /// flashcardsLayoutHint
+  ///
+  /// In en, this message translates to:
+  /// **'Rename, hide or reorder the extra fields for this deck. Card content is never changed.'**
+  String get flashcardsLayoutHint;
+
+  /// Checkbox
+  ///
+  /// In en, this message translates to:
+  /// **'Show {field} while studying'**
+  String flashcardsLayoutShow(String field);
+
+  /// flashcardsLayoutStepReveal
+  ///
+  /// In en, this message translates to:
+  /// **'Reveal the answer step by step'**
+  String get flashcardsLayoutStepReveal;
+
+  /// flashcardsLayoutStepRevealHint
+  ///
+  /// In en, this message translates to:
+  /// **'The back appears first; each extra field opens with a tap.'**
+  String get flashcardsLayoutStepRevealHint;
+
+  /// Step reveal
+  ///
+  /// In en, this message translates to:
+  /// **'Show {field}'**
+  String flashcardsRevealNext(String field);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

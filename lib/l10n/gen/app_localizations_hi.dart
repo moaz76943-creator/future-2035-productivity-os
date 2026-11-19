@@ -3530,4 +3530,216 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get flashcardsImportFileFailed => 'फ़ाइल नहीं खुल सकी। आप उसकी सामग्री पेस्ट कर सकते हैं।';
+
+  @override
+  String get studyNoMatchingCards => 'इस विकल्प से मेल खाते कार्ड अभी नहीं हैं।';
+
+  @override
+  String get studyPracticeNew => 'केवल नए';
+
+  @override
+  String get studyPracticeHard => 'कठिन कार्ड';
+
+  @override
+  String get studyPracticeFavorites => 'पसंदीदा';
+
+  @override
+  String get studySessionSize => 'प्रति सत्र कार्ड';
+
+  @override
+  String get studySessionAll => 'सभी';
+
+  @override
+  String get studyOrder => 'क्रम';
+
+  @override
+  String get studyOrderDue => 'सबसे पुराने पहले';
+
+  @override
+  String get studyOrderRandom => 'यादृच्छिक';
+
+  @override
+  String get studyOrderHardest => 'सबसे कठिन पहले';
+
+  @override
+  String get flashcardsHard => 'कठिन';
+
+  @override
+  String get flashcardsFavorites => 'पसंदीदा';
+
+  @override
+  String get flashcardsFavorite => 'पसंदीदा में जोड़ें';
+
+  @override
+  String get flashcardsUnfavorite => 'पसंदीदा से हटाएँ';
+
+  @override
+  String get flashcardsDuplicate => 'प्रतिलिपि बनाएँ';
+
+  @override
+  String get flashcardsMoveTo => 'डेक में ले जाएँ';
+
+  @override
+  String get flashcardsNoOtherDeck => 'पहले दूसरा डेक बनाएँ।';
+
+  @override
+  String flashcardsMoved(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count कार्ड ले जाए गए',
+      one: 'कार्ड ले जाया गया',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get flashcardsAddTag => 'टैग जोड़ें';
+
+  @override
+  String get flashcardsTagHint => 'जैसे क्रियाएँ';
+
+  @override
+  String flashcardsSelected(int count) {
+    return '$count चुने गए';
+  }
+
+  @override
+  String get flashcardsSelectAll => 'दिखाए गए सभी चुनें';
+
+  @override
+  String flashcardsSelectCard(String front) {
+    return '$front चुनें';
+  }
+
+  @override
+  String flashcardsRecall(String value) {
+    return 'याद $value';
+  }
+
+  @override
+  String get flashcardsDuplicateTitle => 'संभावित दोहराव';
+
+  @override
+  String flashcardsDuplicateMessage(String front, String back) {
+    return 'इस डेक में पहले से “$front” → “$back” है। फिर भी सहेजें?';
+  }
+
+  @override
+  String get flashcardsSaveAnyway => 'फिर भी सहेजें';
+
+  @override
+  String get flashcardsStats => 'आँकड़े';
+
+  @override
+  String get flashcardsStatTotal => 'कार्ड';
+
+  @override
+  String get flashcardsStatLearning => 'सीख रहे';
+
+  @override
+  String get flashcardsStatMatureCaption => '21+ दिन याद';
+
+  @override
+  String get flashcardsStatReviewsToday => 'आज की समीक्षाएँ';
+
+  @override
+  String get flashcardsStatCorrect => 'सही उत्तर';
+
+  @override
+  String flashcardsStatLastDays(int days) {
+    return 'पिछले $days दिन';
+  }
+
+  @override
+  String get flashcardsStatForget => 'भूलने की दर';
+
+  @override
+  String get flashcardsStatForgetCaption => 'सीखे कार्ड पर “फिर से”';
+
+  @override
+  String get flashcardsStatRecall => 'अभी याद';
+
+  @override
+  String get flashcardsStatRecallCaption => 'FSRS अनुमान, दोहराए कार्ड';
+
+  @override
+  String flashcardsStatActivity(int count) {
+    return 'प्रतिदिन समीक्षाएँ · कुल $count';
+  }
+
+  @override
+  String get flashcardsStatHistory => 'हाल के उत्तर';
+
+  @override
+  String get flashcardsStatNoHistory => 'अभी कोई समीक्षा नहीं। प्रगति देखने के लिए डेक पढ़ें।';
+
+  @override
+  String flashcardsSpeakField(String field) {
+    return '$field पढ़कर सुनाएँ';
+  }
+
+  @override
+  String get speechVoice => 'आवाज़';
+
+  @override
+  String get speechVoiceDefault => 'डिवाइस डिफ़ॉल्ट';
+
+  @override
+  String get speechVoiceOnline => 'इंटरनेट चाहिए';
+
+  @override
+  String get speechTest => 'आवाज़ जाँचें';
+
+  @override
+  String get importNext => 'पूर्वावलोकन';
+
+  @override
+  String get importPreviewTitle => 'कॉलम को फ़ील्ड से मिलाएँ';
+
+  @override
+  String get importIgnoreColumn => 'अनदेखा करें';
+
+  @override
+  String importColumn(int n) {
+    return 'कॉलम $n';
+  }
+
+  @override
+  String importPreviewSummary(int ready, int invalid) {
+    return '$ready कार्ड तैयार · $invalid अधूरी पंक्तियाँ छोड़ी जाएँगी';
+  }
+
+  @override
+  String get importNeedFrontBack => 'चुनें कि कौन से कॉलम सामने और पीछे हैं।';
+
+  @override
+  String get actionMoveUp => 'ऊपर ले जाएँ';
+
+  @override
+  String get actionMoveDown => 'नीचे ले जाएँ';
+
+  @override
+  String get flashcardsLayoutTitle => 'कार्ड लेआउट';
+
+  @override
+  String get flashcardsLayoutHint =>
+      'इस डेक के अतिरिक्त फ़ील्ड का नाम बदलें, छिपाएँ या क्रम बदलें। सामग्री कभी नहीं बदलती।';
+
+  @override
+  String flashcardsLayoutShow(String field) {
+    return 'पढ़ते समय $field दिखाएँ';
+  }
+
+  @override
+  String get flashcardsLayoutStepReveal => 'उत्तर क्रम से दिखाएँ';
+
+  @override
+  String get flashcardsLayoutStepRevealHint =>
+      'पहले पिछला भाग; हर अतिरिक्त फ़ील्ड टैप से खुलता है।';
+
+  @override
+  String flashcardsRevealNext(String field) {
+    return '$field दिखाएँ';
+  }
 }

@@ -21,6 +21,7 @@ class _FakeTts implements TtsService {
     double rate = 1,
     double pitch = 1,
     int repeat = 1,
+    String? voice,
   }) async {
     spoken.add((text, languageTag));
     repeats.add(repeat);
@@ -29,6 +30,9 @@ class _FakeTts implements TtsService {
 
   @override
   Future<void> stop() async => stops++;
+
+  @override
+  Future<List<TtsVoice>> voices() async => const [];
 }
 
 void main() {

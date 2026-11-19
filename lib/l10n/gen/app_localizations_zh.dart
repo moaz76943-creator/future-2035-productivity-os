@@ -3355,4 +3355,209 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get flashcardsImportFileFailed => '无法打开文件，可以改为粘贴其内容。';
+
+  @override
+  String get studyNoMatchingCards => '暂时没有符合条件的卡片。';
+
+  @override
+  String get studyPracticeNew => '仅新卡';
+
+  @override
+  String get studyPracticeHard => '困难卡片';
+
+  @override
+  String get studyPracticeFavorites => '收藏';
+
+  @override
+  String get studySessionSize => '每次卡片数';
+
+  @override
+  String get studySessionAll => '全部';
+
+  @override
+  String get studyOrder => '顺序';
+
+  @override
+  String get studyOrderDue => '最早到期优先';
+
+  @override
+  String get studyOrderRandom => '随机';
+
+  @override
+  String get studyOrderHardest => '最难优先';
+
+  @override
+  String get flashcardsHard => '困难';
+
+  @override
+  String get flashcardsFavorites => '收藏';
+
+  @override
+  String get flashcardsFavorite => '加入收藏';
+
+  @override
+  String get flashcardsUnfavorite => '取消收藏';
+
+  @override
+  String get flashcardsDuplicate => '复制';
+
+  @override
+  String get flashcardsMoveTo => '移动到卡组';
+
+  @override
+  String get flashcardsNoOtherDeck => '请先创建另一个卡组。';
+
+  @override
+  String flashcardsMoved(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '已移动 $count 张卡片');
+    return '$_temp0';
+  }
+
+  @override
+  String get flashcardsAddTag => '添加标签';
+
+  @override
+  String get flashcardsTagHint => '例如：动词';
+
+  @override
+  String flashcardsSelected(int count) {
+    return '已选 $count';
+  }
+
+  @override
+  String get flashcardsSelectAll => '全选当前';
+
+  @override
+  String flashcardsSelectCard(String front) {
+    return '选择 $front';
+  }
+
+  @override
+  String flashcardsRecall(String value) {
+    return '记忆 $value';
+  }
+
+  @override
+  String get flashcardsDuplicateTitle => '可能重复';
+
+  @override
+  String flashcardsDuplicateMessage(String front, String back) {
+    return '该卡组已有“$front”→“$back”。仍要保存吗？';
+  }
+
+  @override
+  String get flashcardsSaveAnyway => '仍然保存';
+
+  @override
+  String get flashcardsStats => '统计';
+
+  @override
+  String get flashcardsStatTotal => '卡片';
+
+  @override
+  String get flashcardsStatLearning => '学习中';
+
+  @override
+  String get flashcardsStatMatureCaption => '记住 21 天以上';
+
+  @override
+  String get flashcardsStatReviewsToday => '今日复习';
+
+  @override
+  String get flashcardsStatCorrect => '正确率';
+
+  @override
+  String flashcardsStatLastDays(int days) {
+    return '最近 $days 天';
+  }
+
+  @override
+  String get flashcardsStatForget => '遗忘率';
+
+  @override
+  String get flashcardsStatForgetCaption => '已掌握卡片选“重来”';
+
+  @override
+  String get flashcardsStatRecall => '当前记忆';
+
+  @override
+  String get flashcardsStatRecallCaption => 'FSRS 估计（已复习卡片）';
+
+  @override
+  String flashcardsStatActivity(int count) {
+    return '每日复习 · 共 $count 次';
+  }
+
+  @override
+  String get flashcardsStatHistory => '最近作答';
+
+  @override
+  String get flashcardsStatNoHistory => '暂无复习记录，学习后这里会显示进度。';
+
+  @override
+  String flashcardsSpeakField(String field) {
+    return '朗读$field';
+  }
+
+  @override
+  String get speechVoice => '语音';
+
+  @override
+  String get speechVoiceDefault => '设备默认';
+
+  @override
+  String get speechVoiceOnline => '需联网';
+
+  @override
+  String get speechTest => '试听';
+
+  @override
+  String get importNext => '预览';
+
+  @override
+  String get importPreviewTitle => '将列对应到字段';
+
+  @override
+  String get importIgnoreColumn => '忽略';
+
+  @override
+  String importColumn(int n) {
+    return '第 $n 列';
+  }
+
+  @override
+  String importPreviewSummary(int ready, int invalid) {
+    return '$ready 张卡片就绪 · 将跳过 $invalid 行不完整数据';
+  }
+
+  @override
+  String get importNeedFrontBack => '请选择正面和背面对应的列。';
+
+  @override
+  String get actionMoveUp => '上移';
+
+  @override
+  String get actionMoveDown => '下移';
+
+  @override
+  String get flashcardsLayoutTitle => '卡片布局';
+
+  @override
+  String get flashcardsLayoutHint => '重命名、隐藏或调整本卡组附加字段的顺序，卡片内容不会改变。';
+
+  @override
+  String flashcardsLayoutShow(String field) {
+    return '学习时显示$field';
+  }
+
+  @override
+  String get flashcardsLayoutStepReveal => '逐步显示答案';
+
+  @override
+  String get flashcardsLayoutStepRevealHint => '先显示背面，点按逐个展开附加字段。';
+
+  @override
+  String flashcardsRevealNext(String field) {
+    return '显示$field';
+  }
 }

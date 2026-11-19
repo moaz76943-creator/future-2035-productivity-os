@@ -299,6 +299,15 @@ class Flashcards extends Table with Timestamps {
 
   /// Suspended cards stay in the deck but are never scheduled. v5.
   BoolColumn get suspended => boolean().withDefault(const Constant(false))();
+
+  /// FSRS-4.5 memory state (v6): stability in days, difficulty 1–10, and the
+  /// moment of the last review (for recall probability). 0 / null = new.
+  RealColumn get stability => real().withDefault(const Constant(0))();
+  RealColumn get difficulty => real().withDefault(const Constant(0))();
+  DateTimeColumn get lastReviewAt => dateTime().nullable()();
+
+  /// Marked as favourite by the user. v6.
+  BoolColumn get favorite => boolean().withDefault(const Constant(false))();
   DateTimeColumn get deletedAt => dateTime().nullable()();
 
   @override

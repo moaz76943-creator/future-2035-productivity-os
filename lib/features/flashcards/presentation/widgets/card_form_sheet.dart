@@ -5,6 +5,7 @@ import '../../../../app/localization/app_format.dart';
 import '../../../../core/database/app_database.dart';
 import '../../../../core/design_system/app_theme.dart';
 import '../../../../core/design_system/tokens.dart';
+import '../../../../shared/widgets/dialogs.dart';
 import '../../application/flashcards_providers.dart';
 import '../../domain/card_extras.dart';
 import '../../../../l10n/gen/app_localizations.dart';
@@ -62,6 +63,22 @@ class _CardFormSheetState extends ConsumerState<_CardFormSheet> {
     if (_saving || !(_form.currentState?.validate() ?? false)) return;
     setState(() => _saving = true);
     final repo = ref.read(flashcardsRepositoryProvider);
+    // Duplicate front in this deck (ignoring case and diacritics): ask first.
+    final dup = await repo.findDuplicate(widget.deckId, _front.text, exceptId: widget.initial?.id);
+    if (dup != null && mounted) {
+      final l10n = context.l10n;
+      final go = await confirmAction(
+        context,
+        title: l10n.flashcardsDuplicateTitle,
+        message: l10n.flashcardsDuplicateMessage(dup.front, dup.back),
+        confirmLabel: l10n.flashcardsSaveAnyway,
+      );
+      if (!go) {
+        if (mounted) setState(() => _saving = false);
+        return;
+      }
+    }
+    if (!mounted) return;
     try {
       final initial = widget.initial;
       if (initial == null) {

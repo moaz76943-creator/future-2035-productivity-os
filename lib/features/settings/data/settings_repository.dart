@@ -23,6 +23,9 @@ class AppSettings {
     this.flashSpeechRatePercent = 100,
     this.flashAutoSpeak = false,
     this.flashStudyMode = 'classic',
+    this.flashSessionSize = 0,
+    this.flashOrder = 'due',
+    this.flashVoices = const {},
     this.focusSound = true,
     this.dailyFocusTargetMinutes = 120,
     this.weeklyFocusTargetMinutes = 600,
@@ -69,6 +72,13 @@ class AppSettings {
 
   /// Last chosen study mode (StudyMode name).
   final String flashStudyMode;
+
+  /// Cards per session (0 = all available) and their order (StudyOrder name).
+  final int flashSessionSize;
+  final String flashOrder;
+
+  /// Preferred speech voice per language code ('es' → voice name).
+  final Map<String, String> flashVoices;
   final bool focusSound;
   final int dailyFocusTargetMinutes;
   final int weeklyFocusTargetMinutes;
@@ -120,6 +130,9 @@ class AppSettings {
     'flashSpeechRatePercent': flashSpeechRatePercent,
     'flashAutoSpeak': flashAutoSpeak,
     'flashStudyMode': flashStudyMode,
+    'flashSessionSize': flashSessionSize,
+    'flashOrder': flashOrder,
+    'flashVoices': flashVoices,
     'focusSound': focusSound,
     'dailyFocusTargetMinutes': dailyFocusTargetMinutes,
     'weeklyFocusTargetMinutes': weeklyFocusTargetMinutes,
@@ -166,6 +179,12 @@ class AppSettings {
       ).clamp(50, 200),
       flashAutoSpeak: read('flashAutoSpeak', d.flashAutoSpeak),
       flashStudyMode: read('flashStudyMode', d.flashStudyMode),
+      flashSessionSize: read('flashSessionSize', d.flashSessionSize).clamp(0, 500),
+      flashOrder: read('flashOrder', d.flashOrder),
+      flashVoices: {
+        for (final e in ((j['flashVoices'] as Map?) ?? const {}).entries)
+          if (e.key is String && e.value is String) e.key as String: e.value as String,
+      },
       focusSound: read('focusSound', d.focusSound),
       dailyFocusTargetMinutes: read('dailyFocusTargetMinutes', d.dailyFocusTargetMinutes),
       weeklyFocusTargetMinutes: read('weeklyFocusTargetMinutes', d.weeklyFocusTargetMinutes),
@@ -202,6 +221,9 @@ class AppSettings {
     int? flashSpeechRatePercent,
     bool? flashAutoSpeak,
     String? flashStudyMode,
+    int? flashSessionSize,
+    String? flashOrder,
+    Map<String, String>? flashVoices,
     bool? focusSound,
     int? dailyFocusTargetMinutes,
     int? weeklyFocusTargetMinutes,
@@ -234,6 +256,9 @@ class AppSettings {
     'flashSpeechRatePercent': ?flashSpeechRatePercent,
     'flashAutoSpeak': ?flashAutoSpeak,
     'flashStudyMode': ?flashStudyMode,
+    'flashSessionSize': ?flashSessionSize,
+    'flashOrder': ?flashOrder,
+    'flashVoices': ?flashVoices,
     'focusSound': ?focusSound,
     'dailyFocusTargetMinutes': ?dailyFocusTargetMinutes,
     'weeklyFocusTargetMinutes': ?weeklyFocusTargetMinutes,

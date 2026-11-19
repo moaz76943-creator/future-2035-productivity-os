@@ -16,7 +16,9 @@ import '../../../core/speech/tts_service.dart';
 import '../../../l10n/gen/app_localizations.dart';
 import '../../settings/application/settings_providers.dart';
 import '../application/flashcards_providers.dart';
+import '../data/flashcards_repository.dart' show PracticeFilter;
 import '../domain/card_extras.dart';
+import '../domain/card_layout.dart';
 import '../domain/srs_scheduler.dart';
 import '../domain/study.dart';
 import 'widgets/card_form_sheet.dart' show cardFieldLabel, showCardForm;
@@ -72,6 +74,9 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
   bool _flipped = false;
   bool _busy = false;
   bool _questionShown = false;
+
+  /// Optional fields revealed so far when the deck reveals them step by step.
+  int _revealed = 0;
   AnswerMatch? _match;
   String? _picked;
   List<String>? _options;
@@ -117,19 +122,35 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
   Future<void> _load() async {
     final repo = ref.read(flashcardsRepositoryProvider);
     try {
-      final q = widget.cards != null
+      final settings = ref.read(settingsProvider);
+      PracticeFilter? filter(StudyScope s) => switch (s) {
+        StudyScope.scheduled => null,
+        StudyScope.practiceAll => PracticeFilter.all,
+        StudyScope.practiceMistakes => PracticeFilter.mistakes,
+        StudyScope.practiceNew => PracticeFilter.newOnly,
+        StudyScope.practiceHard => PracticeFilter.hard,
+        StudyScope.practiceFavorites => PracticeFilter.favorites,
+      };
+      final f = filter(widget.scope);
+      var q = widget.cards != null
           ? [...widget.cards!]
-          : switch (widget.scope) {
-              StudyScope.scheduled => await repo.reviewQueue(widget.deckId),
-              StudyScope.practiceAll => await repo.practiceCards(
-                widget.deckId,
-                mistakesOnly: false,
-              ),
-              StudyScope.practiceMistakes => await repo.practiceCards(
-                widget.deckId,
-                mistakesOnly: true,
-              ),
-            };
+          : f == null
+          ? await repo.reviewQueue(widget.deckId)
+          : await repo.practiceCards(widget.deckId, filter: f);
+      if (widget.cards == null) {
+        // User-chosen order and session size (0 = everything available).
+        switch (studyOrderFromName(settings.flashOrder)) {
+          case StudyOrder.random:
+            q.shuffle(_random);
+          case StudyOrder.hardest:
+            q.sort((a, b) => b.difficulty.compareTo(a.difficulty));
+          case StudyOrder.due:
+            break;
+        }
+        if (settings.flashSessionSize > 0 && q.length > settings.flashSessionSize) {
+          q = q.take(settings.flashSessionSize).toList();
+        }
+      }
       List<CardRow> all = const [];
       if (_mode == StudyMode.choice) all = await repo.watchCards(widget.deckId).first;
       if (!mounted) return;
@@ -148,6 +169,7 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
     final card = _currentCard;
     if (card == null) return;
     _typed.clear();
+    _revealed = 0;
     _match = null;
     _picked = null;
     _questionShown = _mode != StudyMode.listening;
@@ -162,21 +184,33 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
   /// optional: when the device has no engine or voice the user is told so
   /// and the session goes on.
   Future<void> _speak(CardRow card, {required bool question}) async {
+    final frontSide = question != _reversed(card);
+    await _say(frontSide ? card.front : card.back, _langTag(front: frontSide));
+  }
+
+  /// Speech language of a side: the deck setting, else the app language.
+  String _langTag({required bool front}) {
+    final deck = ref.read(deckProvider(widget.deckId)).value;
+    final lang = front ? deck?.frontLang : deck?.backLang;
+    return (lang == null || lang.isEmpty) ? Localizations.localeOf(context).toLanguageTag() : lang;
+  }
+
+  /// Optional fields are spoken on their own: the example in the front
+  /// language (it usually illustrates the word), the rest in the back language.
+  Future<void> _speakField(CardField f, String text) =>
+      _say(text, _langTag(front: f == CardField.example || f == CardField.pronunciation));
+
+  /// Speaks [text] in [tag] with the user's speed, repetitions and voice.
+  Future<void> _say(String text, String tag) async {
     final messenger = ScaffoldMessenger.of(context);
     final l10n = context.l10n;
     final settings = ref.read(settingsProvider);
-    final deck = ref.read(deckProvider(widget.deckId)).value;
-    final frontSide = question != _reversed(card);
-    final lang = frontSide ? deck?.frontLang : deck?.backLang;
-    final tag = (lang == null || lang.isEmpty)
-        ? Localizations.localeOf(context).toLanguageTag()
-        : lang;
-    final text = frontSide ? card.front : card.back;
     final result = await _tts.speak(
       text,
       languageTag: tag,
       rate: settings.flashSpeechRatePercent / 100,
       repeat: settings.flashSpeechRepeat,
+      voice: settings.flashVoices[tag.split(RegExp('[-_]')).first.toLowerCase()],
     );
     if (!mounted) return;
     final message = switch (result) {
@@ -352,9 +386,11 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
           icon: Icons.check_circle_outline_rounded,
           hue: _hue,
           title: l10n.flashcardsNothingToStudy,
-          message: widget.scope == StudyScope.practiceMistakes
-              ? l10n.studyNoMistakes
-              : l10n.deckNothingDue,
+          message: switch (widget.scope) {
+            StudyScope.practiceMistakes => l10n.studyNoMistakes,
+            StudyScope.scheduled => l10n.deckNothingDue,
+            _ => l10n.studyNoMatchingCards,
+          },
           actionLabel: l10n.actionBack,
           onAction: () => Navigator.of(context).maybePop(),
         ),
@@ -364,6 +400,7 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
 
     final card = queue[_index];
     final question = _question(card);
+    final layout = ref.watch(cardLayoutProvider(widget.deckId)).value ?? const CardLayout();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -400,6 +437,10 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
               hideFront: !_questionShown && !_flipped,
               onRevealFront: () => setState(() => _questionShown = true),
               verdict: _match,
+              onSpeakField: _speakField,
+              layout: layout,
+              revealed: layout.stepReveal ? _revealed : 1 << 30,
+              onRevealMore: layout.stepReveal ? () => setState(() => _revealed++) : null,
               // Answer modes flip only by answering.
               onFlip: _mode == StudyMode.typed || _mode == StudyMode.choice
                   ? null
@@ -679,7 +720,26 @@ class _FlipCard extends StatelessWidget {
     this.hideFront = false,
     this.onRevealFront,
     this.verdict,
+    this.onSpeakField,
+    this.layout = const CardLayout(),
+    this.revealed = 1 << 30,
+    this.onRevealMore,
   });
+
+  /// Deck layout: order, names and visibility of the optional fields.
+  final CardLayout layout;
+
+  /// How many optional fields are shown (step-by-step reveal).
+  final int revealed;
+  final VoidCallback? onRevealMore;
+
+  List<CardField> get _fields => [
+    for (final f in layout.visible)
+      if (extras[f] != null) f,
+  ];
+
+  /// Speaks one optional field (example, explanation…) on its own.
+  final void Function(CardField field, String text)? onSpeakField;
 
   /// Question text (the back of the card in reverse mode).
   final String front;
@@ -726,6 +786,8 @@ class _FlipCard extends StatelessWidget {
   Widget _face(BuildContext context, {required bool showBack}) {
     final lux = context.lux;
     final l10n = context.l10n;
+    String label(CardField f) => layout.labelOf(f) ?? cardFieldLabel(l10n, f);
+    final shownFields = revealed.clamp(0, _fields.length);
     return LuxCard(
       key: ValueKey(showBack),
       radius: Radii.xl,
@@ -747,17 +809,45 @@ class _FlipCard extends StatelessWidget {
                   child: Divider(color: lux.hairline),
                 ),
                 Text(back, textAlign: TextAlign.center, style: context.text.headlineSmall),
-                for (final f in CardField.values)
-                  if (extras[f] case final value?) ...[
+                for (final (i, f) in _fields.indexed)
+                  if (i < shownFields) ...[
                     const SizedBox(height: Space.md),
                     Text(
-                      cardFieldLabel(l10n, f),
+                      label(f),
                       textAlign: TextAlign.center,
                       style: context.text.labelMedium?.copyWith(color: lux.ink3),
                     ),
                     const SizedBox(height: Space.xxs),
-                    Text(value, textAlign: TextAlign.center, style: context.text.bodyLarge),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Flexible(
+                          child: Text(
+                            extras[f]!,
+                            textAlign: TextAlign.center,
+                            style: context.text.bodyLarge,
+                          ),
+                        ),
+                        if (onSpeakField != null)
+                          IconButton(
+                            key: Key('speakField_${f.name}'),
+                            tooltip: l10n.flashcardsSpeakField(label(f)),
+                            onPressed: () => onSpeakField!(f, extras[f]!),
+                            icon: const Icon(Icons.volume_up_outlined, size: 20),
+                          ),
+                      ],
+                    ),
                   ],
+                if (shownFields < _fields.length && onRevealMore != null)
+                  Padding(
+                    padding: const EdgeInsets.only(top: Space.md),
+                    child: TextButton.icon(
+                      key: const Key('revealNextField'),
+                      onPressed: onRevealMore,
+                      icon: const Icon(Icons.expand_more_rounded),
+                      label: Text(l10n.flashcardsRevealNext(label(_fields[shownFields]))),
+                    ),
+                  ),
               ] else if (hideFront) ...[
                 Icon(Icons.hearing_rounded, size: 48, color: _hue.a),
                 const SizedBox(height: Space.md),
@@ -830,7 +920,7 @@ class _FlipCard extends StatelessWidget {
                 },
               l10n.flashcardsAnswerA11y(back),
               for (final f in CardField.values)
-                if (extras[f] case final v?) '${cardFieldLabel(l10n, f)}: $v',
+                if (extras[f] case final v?) '${layout.labelOf(f) ?? cardFieldLabel(l10n, f)}: $v',
             ].join('. ')
           : l10n.flashcardsQuestionA11y(front),
       hint: onFlip == null ? null : (flipped ? l10n.flashcardsShowQuestion : l10n.reviewTapToFlip),

@@ -35,13 +35,27 @@ class MainActivity : FlutterActivity() {
                     val rate = (call.argument<Double>("rate") ?: 1.0).toFloat().coerceIn(0.25f, 3f)
                     val pitch = (call.argument<Double>("pitch") ?: 1.0).toFloat().coerceIn(0.5f, 2f)
                     val repeat = (call.argument<Int>("repeat") ?: 1).coerceIn(1, 9)
+                    val voiceName = call.argument<String>("voice")
                     if (text.isBlank()) { result.success("empty"); return@setMethodCallHandler }
                     withEngine { engine ->
                         if (engine == null) { result.success("unavailable"); return@withEngine }
                         if (tag != null) {
-                            val lang = engine.setLanguage(Locale.forLanguageTag(tag))
+                            val wanted = Locale.forLanguageTag(tag)
+                            var lang = engine.setLanguage(wanted)
+                            // Fallback within the same language only (es-MX -> es); never another language.
+                            if ((lang == TextToSpeech.LANG_MISSING_DATA || lang == TextToSpeech.LANG_NOT_SUPPORTED) &&
+                                wanted.country.isNotEmpty()) {
+                                lang = engine.setLanguage(Locale(wanted.language))
+                            }
                             if (lang == TextToSpeech.LANG_MISSING_DATA || lang == TextToSpeech.LANG_NOT_SUPPORTED) {
                                 result.success("language_unavailable"); return@withEngine
+                            }
+                        }
+                        if (!voiceName.isNullOrEmpty()) {
+                            // A chosen voice is used only if it still exists and speaks this language.
+                            val v = try { engine.voices?.firstOrNull { it.name == voiceName } } catch (e: Exception) { null }
+                            if (v != null && (tag == null || v.locale.language == Locale.forLanguageTag(tag).language)) {
+                                engine.voice = v
                             }
                         }
                         engine.setSpeechRate(rate)
@@ -56,6 +70,19 @@ class MainActivity : FlutterActivity() {
                     }
                 }
                 "stop" -> { tts?.stop(); result.success(null) }
+                "voices" -> withEngine { engine ->
+                    if (engine == null) { result.success(emptyList<Map<String, Any>>()); return@withEngine }
+                    val list = try { engine.voices?.toList() ?: emptyList() } catch (e: Exception) { emptyList() }
+                    result.success(list.sortedBy { it.name }.map { v ->
+                        mapOf(
+                            "name" to v.name,
+                            "locale" to v.locale.toLanguageTag(),
+                            "network" to v.isNetworkConnectionRequired,
+                            "quality" to v.quality,
+                            "notInstalled" to v.features.contains(TextToSpeech.Engine.KEY_FEATURE_NOT_INSTALLED),
+                        )
+                    })
+                }
                 else -> result.notImplemented()
             }
         }

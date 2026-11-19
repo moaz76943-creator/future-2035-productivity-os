@@ -10,10 +10,14 @@ import '../../../core/database/app_database.dart';
 import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/tokens.dart';
 import '../../focus/presentation/session_plan.dart' show PlanStepper;
+import '../../../core/speech/tts_service.dart';
 import '../../settings/application/settings_providers.dart';
 import '../application/flashcards_providers.dart';
 import '../domain/study.dart';
+import '../domain/card_extras.dart';
+import '../domain/card_layout.dart';
 import 'review_screen.dart' show studyModeLabel;
+import 'widgets/card_form_sheet.dart' show cardFieldLabel;
 
 IconData studyModeIcon(StudyMode m) => switch (m) {
   StudyMode.classic => Icons.style_rounded,
@@ -98,6 +102,66 @@ class _StudySheet extends ConsumerWidget {
             icon: const Icon(Icons.replay_rounded),
             label: Text(l10n.studyPracticeMistakes),
           ),
+          const SizedBox(height: Space.xs),
+          Wrap(
+            spacing: Space.xs,
+            runSpacing: Space.xs,
+            children: [
+              ActionChip(
+                key: const Key('practiceNewButton'),
+                avatar: const Icon(Icons.fiber_new_rounded, size: 18),
+                label: Text(l10n.studyPracticeNew),
+                onPressed: () => go(StudyScope.practiceNew),
+              ),
+              ActionChip(
+                key: const Key('practiceHardButton'),
+                avatar: const Icon(Icons.local_fire_department_outlined, size: 18),
+                label: Text(l10n.studyPracticeHard),
+                onPressed: () => go(StudyScope.practiceHard),
+              ),
+              ActionChip(
+                key: const Key('practiceFavoritesButton'),
+                avatar: const Icon(Icons.star_outline_rounded, size: 18),
+                label: Text(l10n.studyPracticeFavorites),
+                onPressed: () => go(StudyScope.practiceFavorites),
+              ),
+            ],
+          ),
+          const Divider(height: Space.xl),
+          PlanStepper(
+            key: const Key('studySessionSize'),
+            label: l10n.studySessionSize,
+            value: settings.flashSessionSize,
+            min: 0,
+            max: 500,
+            display: (v) => v == 0 ? l10n.studySessionAll : context.fmt.number(v),
+            onChanged: (v) => unawaited(
+              ref.read(settingsProvider.notifier).update((s) => s.copyWith(flashSessionSize: v)),
+            ),
+          ),
+          const SizedBox(height: Space.xs),
+          Text(l10n.studyOrder, style: context.text.labelLarge),
+          const SizedBox(height: Space.xs),
+          Wrap(
+            spacing: Space.xs,
+            children: [
+              for (final o in StudyOrder.values)
+                ChoiceChip(
+                  key: Key('studyOrder_${o.name}'),
+                  label: Text(switch (o) {
+                    StudyOrder.due => l10n.studyOrderDue,
+                    StudyOrder.random => l10n.studyOrderRandom,
+                    StudyOrder.hardest => l10n.studyOrderHardest,
+                  }),
+                  selected: studyOrderFromName(settings.flashOrder) == o,
+                  onSelected: (_) => unawaited(
+                    ref
+                        .read(settingsProvider.notifier)
+                        .update((s) => s.copyWith(flashOrder: o.name)),
+                  ),
+                ),
+            ],
+          ),
           const SizedBox(height: Space.sm),
           Text(
             l10n.studyPracticeHint,
@@ -178,6 +242,88 @@ class _SpeechSheet extends ConsumerStatefulWidget {
 class _SpeechSheetState extends ConsumerState<_SpeechSheet> {
   late String _front = widget.deck.frontLang;
   late String _back = widget.deck.backLang;
+  late final Future<List<TtsVoice>> _voices = ref.read(ttsServiceProvider).voices();
+  String? _testError;
+
+  String _effective(String tag) =>
+      tag.isEmpty ? Localizations.localeOf(context).toLanguageTag() : tag;
+
+  String _lang(String tag) => _effective(tag).split(RegExp('[-_]')).first.toLowerCase();
+
+  Future<void> _test(String tag) async {
+    final l10n = context.l10n;
+    final s = ref.read(settingsProvider);
+    final eff = _effective(tag);
+    final sample =
+        speechLanguageNames[eff] ??
+        speechLanguageNames.entries
+            .firstWhere((e) => e.key.startsWith(_lang(tag)), orElse: () => MapEntry(eff, eff))
+            .value;
+    final r = await ref
+        .read(ttsServiceProvider)
+        .speak(
+          sample,
+          languageTag: eff,
+          rate: s.flashSpeechRatePercent / 100,
+          voice: s.flashVoices[_lang(tag)],
+        );
+    if (!mounted) return;
+    setState(
+      () => _testError = switch (r) {
+        TtsResult.ok || TtsResult.empty => null,
+        TtsResult.languageUnavailable => l10n.flashcardsTtsLanguageUnavailable,
+        TtsResult.unavailable => l10n.flashcardsTtsUnavailable,
+      },
+    );
+  }
+
+  /// Voice choice for the language of [tag], with a test button.
+  Widget _voiceRow(String tag, List<TtsVoice> all, Key key) {
+    final l10n = context.l10n;
+    final lang = _lang(tag);
+    final options = all.where((v) => v.language == lang && !v.notInstalled).toList();
+    final current = ref.watch(settingsProvider.select((s) => s.flashVoices[lang]));
+    final value = options.any((v) => v.name == current) ? current : null;
+    return Row(
+      children: [
+        Expanded(
+          child: DropdownButtonFormField<String?>(
+            key: key,
+            initialValue: value,
+            isExpanded: true,
+            decoration: InputDecoration(labelText: l10n.speechVoice),
+            items: [
+              DropdownMenuItem<String?>(child: Text(l10n.speechVoiceDefault)),
+              for (final v in options)
+                DropdownMenuItem<String?>(
+                  value: v.name,
+                  child: Text(
+                    v.network ? '${v.name} · ${l10n.speechVoiceOnline}' : v.name,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+            ],
+            onChanged: (name) => unawaited(
+              ref.read(settingsProvider.notifier).update((s) {
+                final m = {...s.flashVoices};
+                if (name == null) {
+                  m.remove(lang);
+                } else {
+                  m[lang] = name;
+                }
+                return s.copyWith(flashVoices: m);
+              }),
+            ),
+          ),
+        ),
+        IconButton(
+          tooltip: l10n.speechTest,
+          onPressed: () => _test(tag),
+          icon: const Icon(Icons.play_circle_outline_rounded),
+        ),
+      ],
+    );
+  }
 
   String _name(String tag) {
     if (tag.isEmpty) return context.l10n.speechAppLanguage;
@@ -221,6 +367,11 @@ class _SpeechSheetState extends ConsumerState<_SpeechSheet> {
             (v) => setState(() => _front = v),
             const Key('speechFront'),
           ),
+          FutureBuilder<List<TtsVoice>>(
+            future: _voices,
+            builder: (context, snap) =>
+                _voiceRow(_front, snap.data ?? const [], const Key('voiceFront')),
+          ),
           const SizedBox(height: Space.md),
           _picker(
             l10n.speechBackLanguage,
@@ -228,6 +379,20 @@ class _SpeechSheetState extends ConsumerState<_SpeechSheet> {
             (v) => setState(() => _back = v),
             const Key('speechBack'),
           ),
+          FutureBuilder<List<TtsVoice>>(
+            future: _voices,
+            builder: (context, snap) =>
+                _voiceRow(_back, snap.data ?? const [], const Key('voiceBack')),
+          ),
+          if (_testError != null)
+            Padding(
+              padding: const EdgeInsets.only(top: Space.xs),
+              child: Text(
+                _testError!,
+                key: const Key('speechTestError'),
+                style: context.text.bodySmall?.copyWith(color: context.lux.danger),
+              ),
+            ),
           const SizedBox(height: Space.md),
           PlanStepper(
             key: const Key('speechRepeat'),
@@ -256,6 +421,149 @@ class _SpeechSheetState extends ConsumerState<_SpeechSheet> {
             onChanged: (v) => unawaited(ctrl.update((c) => c.copyWith(flashAutoSpeak: v))),
           ),
           Text(l10n.speechHint, style: context.text.bodySmall?.copyWith(color: context.lux.ink2)),
+        ],
+      ),
+    );
+  }
+}
+
+/// Card layout for one deck: rename, hide and reorder the optional fields,
+/// and reveal them one at a time on the answer side. Content is never changed.
+Future<void> showLayoutSheet(BuildContext context, DeckRow deck) => showModalBottomSheet<void>(
+  context: context,
+  isScrollControlled: true,
+  useSafeArea: true,
+  showDragHandle: true,
+  builder: (_) => _LayoutSheet(deck: deck),
+);
+
+class _LayoutSheet extends ConsumerStatefulWidget {
+  const _LayoutSheet({required this.deck});
+  final DeckRow deck;
+
+  @override
+  ConsumerState<_LayoutSheet> createState() => _LayoutSheetState();
+}
+
+class _LayoutSheetState extends ConsumerState<_LayoutSheet> {
+  CardLayout? _layout;
+  final Map<CardField, TextEditingController> _names = {};
+
+  @override
+  void initState() {
+    super.initState();
+    unawaited(
+      ref.read(flashcardsRepositoryProvider).layout(widget.deck.id).then((l) {
+        if (!mounted) return;
+        setState(() {
+          _layout = l;
+          for (final f in CardField.values) {
+            _names[f] = TextEditingController(text: l.labels[f] ?? '');
+          }
+        });
+      }),
+    );
+  }
+
+  @override
+  void dispose() {
+    for (final c in _names.values) {
+      c.dispose();
+    }
+    super.dispose();
+  }
+
+  void _save(CardLayout next) {
+    setState(() => _layout = next);
+    unawaited(ref.read(flashcardsRepositoryProvider).saveLayout(widget.deck.id, next));
+  }
+
+  void _move(CardField f, int delta) {
+    final l = _layout!;
+    final order = [...l.order];
+    final i = order.indexOf(f);
+    final j = i + delta;
+    if (j < 0 || j >= order.length) return;
+    order
+      ..removeAt(i)
+      ..insert(j, f);
+    _save(l.copyWith(order: order));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final l = _layout;
+    if (l == null) return const SizedBox(height: 200);
+    return SingleChildScrollView(
+      padding: EdgeInsets.fromLTRB(
+        Space.page,
+        0,
+        Space.page,
+        Space.lg + MediaQuery.viewInsetsOf(context).bottom,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Semantics(
+            header: true,
+            child: Text(l10n.flashcardsLayoutTitle, style: context.text.titleLarge),
+          ),
+          const SizedBox(height: Space.xs),
+          Text(
+            l10n.flashcardsLayoutHint,
+            style: context.text.bodySmall?.copyWith(color: context.lux.ink2),
+          ),
+          const SizedBox(height: Space.md),
+          for (final (i, f) in l.order.indexed)
+            Padding(
+              padding: const EdgeInsets.only(bottom: Space.sm),
+              child: Row(
+                children: [
+                  Checkbox(
+                    key: Key('layoutShow_${f.name}'),
+                    value: !l.hidden.contains(f),
+                    semanticLabel: l10n.flashcardsLayoutShow(cardFieldLabel(l10n, f)),
+                    onChanged: (v) => _save(
+                      l.copyWith(hidden: v == true ? ({...l.hidden}..remove(f)) : {...l.hidden, f}),
+                    ),
+                  ),
+                  Expanded(
+                    child: TextField(
+                      key: Key('layoutName_${f.name}'),
+                      controller: _names[f],
+                      maxLength: CardLayout.maxLabel,
+                      buildCounter: (_, {required currentLength, required isFocused, maxLength}) =>
+                          null,
+                      decoration: InputDecoration(
+                        labelText: cardFieldLabel(l10n, f),
+                        hintText: cardFieldLabel(l10n, f),
+                        isDense: true,
+                      ),
+                      onChanged: (v) => _save(l.copyWith(labels: {...l.labels, f: v})),
+                    ),
+                  ),
+                  IconButton(
+                    tooltip: l10n.actionMoveUp,
+                    onPressed: i == 0 ? null : () => _move(f, -1),
+                    icon: const Icon(Icons.arrow_upward_rounded),
+                  ),
+                  IconButton(
+                    tooltip: l10n.actionMoveDown,
+                    onPressed: i == l.order.length - 1 ? null : () => _move(f, 1),
+                    icon: const Icon(Icons.arrow_downward_rounded),
+                  ),
+                ],
+              ),
+            ),
+          SwitchListTile(
+            key: const Key('layoutStepReveal'),
+            contentPadding: EdgeInsets.zero,
+            title: Text(l10n.flashcardsLayoutStepReveal),
+            subtitle: Text(l10n.flashcardsLayoutStepRevealHint),
+            value: l.stepReveal,
+            onChanged: (v) => _save(l.copyWith(stepReveal: v)),
+          ),
         ],
       ),
     );

@@ -3643,4 +3643,217 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get flashcardsImportFileFailed =>
       'Не удалось открыть файл. Можно вставить его содержимое.';
+
+  @override
+  String get studyNoMatchingCards => 'Пока нет подходящих карточек.';
+
+  @override
+  String get studyPracticeNew => 'Только новые';
+
+  @override
+  String get studyPracticeHard => 'Сложные карточки';
+
+  @override
+  String get studyPracticeFavorites => 'Избранное';
+
+  @override
+  String get studySessionSize => 'Карточек за сессию';
+
+  @override
+  String get studySessionAll => 'Все';
+
+  @override
+  String get studyOrder => 'Порядок';
+
+  @override
+  String get studyOrderDue => 'Сначала просроченные';
+
+  @override
+  String get studyOrderRandom => 'Случайно';
+
+  @override
+  String get studyOrderHardest => 'Сначала сложные';
+
+  @override
+  String get flashcardsHard => 'Сложная';
+
+  @override
+  String get flashcardsFavorites => 'Избранное';
+
+  @override
+  String get flashcardsFavorite => 'В избранное';
+
+  @override
+  String get flashcardsUnfavorite => 'Убрать из избранного';
+
+  @override
+  String get flashcardsDuplicate => 'Дублировать';
+
+  @override
+  String get flashcardsMoveTo => 'Переместить в колоду';
+
+  @override
+  String get flashcardsNoOtherDeck => 'Сначала создайте другую колоду.';
+
+  @override
+  String flashcardsMoved(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Перемещено $count карточек',
+      few: 'Перемещены $count карточки',
+      one: 'Перемещена $count карточка',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get flashcardsAddTag => 'Добавить тег';
+
+  @override
+  String get flashcardsTagHint => 'например, глаголы';
+
+  @override
+  String flashcardsSelected(int count) {
+    return 'Выбрано: $count';
+  }
+
+  @override
+  String get flashcardsSelectAll => 'Выбрать все показанные';
+
+  @override
+  String flashcardsSelectCard(String front) {
+    return 'Выбрать «$front»';
+  }
+
+  @override
+  String flashcardsRecall(String value) {
+    return 'Память $value';
+  }
+
+  @override
+  String get flashcardsDuplicateTitle => 'Возможный дубликат';
+
+  @override
+  String flashcardsDuplicateMessage(String front, String back) {
+    return 'В колоде уже есть «$front» → «$back». Всё равно сохранить?';
+  }
+
+  @override
+  String get flashcardsSaveAnyway => 'Всё равно сохранить';
+
+  @override
+  String get flashcardsStats => 'Статистика';
+
+  @override
+  String get flashcardsStatTotal => 'Карточки';
+
+  @override
+  String get flashcardsStatLearning => 'Изучаются';
+
+  @override
+  String get flashcardsStatMatureCaption => 'Помнятся 21+ день';
+
+  @override
+  String get flashcardsStatReviewsToday => 'Повторений сегодня';
+
+  @override
+  String get flashcardsStatCorrect => 'Верные ответы';
+
+  @override
+  String flashcardsStatLastDays(int days) {
+    return 'За $days дн.';
+  }
+
+  @override
+  String get flashcardsStatForget => 'Доля забывания';
+
+  @override
+  String get flashcardsStatForgetCaption => '«Снова» по выученным';
+
+  @override
+  String get flashcardsStatRecall => 'Память сейчас';
+
+  @override
+  String get flashcardsStatRecallCaption => 'Оценка FSRS по повторённым';
+
+  @override
+  String flashcardsStatActivity(int count) {
+    return 'Повторений в день · всего $count';
+  }
+
+  @override
+  String get flashcardsStatHistory => 'Последние ответы';
+
+  @override
+  String get flashcardsStatNoHistory =>
+      'Повторений пока нет. Занимайтесь, и здесь появится прогресс.';
+
+  @override
+  String flashcardsSpeakField(String field) {
+    return 'Прочитать: $field';
+  }
+
+  @override
+  String get speechVoice => 'Голос';
+
+  @override
+  String get speechVoiceDefault => 'По умолчанию';
+
+  @override
+  String get speechVoiceOnline => 'нужен интернет';
+
+  @override
+  String get speechTest => 'Проверить голос';
+
+  @override
+  String get importNext => 'Просмотр';
+
+  @override
+  String get importPreviewTitle => 'Сопоставьте столбцы и поля';
+
+  @override
+  String get importIgnoreColumn => 'Пропустить';
+
+  @override
+  String importColumn(int n) {
+    return 'Столбец $n';
+  }
+
+  @override
+  String importPreviewSummary(int ready, int invalid) {
+    return 'Готово карточек: $ready · неполных строк пропустим: $invalid';
+  }
+
+  @override
+  String get importNeedFrontBack => 'Выберите столбцы для лицевой и оборотной стороны.';
+
+  @override
+  String get actionMoveUp => 'Выше';
+
+  @override
+  String get actionMoveDown => 'Ниже';
+
+  @override
+  String get flashcardsLayoutTitle => 'Вид карточки';
+
+  @override
+  String get flashcardsLayoutHint =>
+      'Переименуйте, скройте или упорядочьте поля этой колоды. Содержимое карточек не меняется.';
+
+  @override
+  String flashcardsLayoutShow(String field) {
+    return 'Показывать «$field» при занятиях';
+  }
+
+  @override
+  String get flashcardsLayoutStepReveal => 'Открывать ответ по шагам';
+
+  @override
+  String get flashcardsLayoutStepRevealHint => 'Сначала оборот, затем каждое поле по нажатию.';
+
+  @override
+  String flashcardsRevealNext(String field) {
+    return 'Показать: $field';
+  }
 }

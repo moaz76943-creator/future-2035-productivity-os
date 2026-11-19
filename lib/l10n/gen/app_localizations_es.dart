@@ -3539,4 +3539,216 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get flashcardsImportFileFailed =>
       'No se pudo abrir el archivo. Puedes pegar su contenido.';
+
+  @override
+  String get studyNoMatchingCards => 'Aún no hay tarjetas para esta opción.';
+
+  @override
+  String get studyPracticeNew => 'Solo nuevas';
+
+  @override
+  String get studyPracticeHard => 'Tarjetas difíciles';
+
+  @override
+  String get studyPracticeFavorites => 'Favoritas';
+
+  @override
+  String get studySessionSize => 'Tarjetas por sesión';
+
+  @override
+  String get studySessionAll => 'Todas';
+
+  @override
+  String get studyOrder => 'Orden';
+
+  @override
+  String get studyOrderDue => 'Más atrasadas primero';
+
+  @override
+  String get studyOrderRandom => 'Aleatorio';
+
+  @override
+  String get studyOrderHardest => 'Más difíciles primero';
+
+  @override
+  String get flashcardsHard => 'Difícil';
+
+  @override
+  String get flashcardsFavorites => 'Favoritas';
+
+  @override
+  String get flashcardsFavorite => 'Añadir a favoritas';
+
+  @override
+  String get flashcardsUnfavorite => 'Quitar de favoritas';
+
+  @override
+  String get flashcardsDuplicate => 'Duplicar';
+
+  @override
+  String get flashcardsMoveTo => 'Mover a mazo';
+
+  @override
+  String get flashcardsNoOtherDeck => 'Crea otro mazo primero.';
+
+  @override
+  String flashcardsMoved(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count tarjetas movidas',
+      one: 'Tarjeta movida',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get flashcardsAddTag => 'Añadir etiqueta';
+
+  @override
+  String get flashcardsTagHint => 'p. ej., verbos';
+
+  @override
+  String flashcardsSelected(int count) {
+    return '$count seleccionadas';
+  }
+
+  @override
+  String get flashcardsSelectAll => 'Seleccionar todo lo visible';
+
+  @override
+  String flashcardsSelectCard(String front) {
+    return 'Seleccionar $front';
+  }
+
+  @override
+  String flashcardsRecall(String value) {
+    return 'Recuerdo $value';
+  }
+
+  @override
+  String get flashcardsDuplicateTitle => 'Posible duplicado';
+
+  @override
+  String flashcardsDuplicateMessage(String front, String back) {
+    return 'Este mazo ya tiene «$front» → «$back». ¿Guardar igualmente?';
+  }
+
+  @override
+  String get flashcardsSaveAnyway => 'Guardar igualmente';
+
+  @override
+  String get flashcardsStats => 'Estadísticas';
+
+  @override
+  String get flashcardsStatTotal => 'Tarjetas';
+
+  @override
+  String get flashcardsStatLearning => 'Aprendiendo';
+
+  @override
+  String get flashcardsStatMatureCaption => 'Recordadas 21+ días';
+
+  @override
+  String get flashcardsStatReviewsToday => 'Repasos hoy';
+
+  @override
+  String get flashcardsStatCorrect => 'Respuestas correctas';
+
+  @override
+  String flashcardsStatLastDays(int days) {
+    return 'Últimos $days días';
+  }
+
+  @override
+  String get flashcardsStatForget => 'Tasa de olvido';
+
+  @override
+  String get flashcardsStatForgetCaption => '«Otra vez» en tarjetas aprendidas';
+
+  @override
+  String get flashcardsStatRecall => 'Recuerdo ahora';
+
+  @override
+  String get flashcardsStatRecallCaption => 'Estimación FSRS, tarjetas repasadas';
+
+  @override
+  String flashcardsStatActivity(int count) {
+    return 'Repasos por día · $count en total';
+  }
+
+  @override
+  String get flashcardsStatHistory => 'Últimas respuestas';
+
+  @override
+  String get flashcardsStatNoHistory => 'Aún no hay repasos. Estudia el mazo para ver tu progreso.';
+
+  @override
+  String flashcardsSpeakField(String field) {
+    return 'Leer $field en voz alta';
+  }
+
+  @override
+  String get speechVoice => 'Voz';
+
+  @override
+  String get speechVoiceDefault => 'Predeterminada del dispositivo';
+
+  @override
+  String get speechVoiceOnline => 'requiere internet';
+
+  @override
+  String get speechTest => 'Probar voz';
+
+  @override
+  String get importNext => 'Vista previa';
+
+  @override
+  String get importPreviewTitle => 'Asigna columnas a campos';
+
+  @override
+  String get importIgnoreColumn => 'Ignorar';
+
+  @override
+  String importColumn(int n) {
+    return 'Columna $n';
+  }
+
+  @override
+  String importPreviewSummary(int ready, int invalid) {
+    return '$ready tarjetas listas · se omitirán $invalid filas incompletas';
+  }
+
+  @override
+  String get importNeedFrontBack => 'Elige qué columnas son el anverso y el reverso.';
+
+  @override
+  String get actionMoveUp => 'Subir';
+
+  @override
+  String get actionMoveDown => 'Bajar';
+
+  @override
+  String get flashcardsLayoutTitle => 'Diseño de la tarjeta';
+
+  @override
+  String get flashcardsLayoutHint =>
+      'Renombra, oculta o reordena los campos extra de este mazo. El contenido nunca cambia.';
+
+  @override
+  String flashcardsLayoutShow(String field) {
+    return 'Mostrar $field al estudiar';
+  }
+
+  @override
+  String get flashcardsLayoutStepReveal => 'Mostrar la respuesta paso a paso';
+
+  @override
+  String get flashcardsLayoutStepRevealHint =>
+      'Primero el reverso; cada campo extra se abre con un toque.';
+
+  @override
+  String flashcardsRevealNext(String field) {
+    return 'Mostrar $field';
+  }
 }

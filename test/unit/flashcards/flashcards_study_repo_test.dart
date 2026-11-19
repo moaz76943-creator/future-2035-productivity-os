@@ -78,4 +78,60 @@ void main() {
     expect(d!.frontLang, 'es-ES');
     expect(d.backLang, 'ar');
   });
+
+  test('organisation: favourites, move, tag, duplicate, bulk delete/restore', () async {
+    final a = await repo.createDeck('A', color: 1);
+    final b = await repo.createDeck('B', color: 1);
+    final x = await repo.addCard(a, 'x', '1', tags: 'one');
+    final y = await repo.addCard(a, 'y', '2');
+    await repo.setFavorite([x], true);
+    expect(await repo.practiceCards(a, filter: PracticeFilter.favorites), hasLength(1));
+    await repo.addTag([x, y], 'verbs');
+    await repo.addTag([x], 'verbs');
+    expect((await repo.getCard(x))!.tags, 'one verbs');
+    final copy = await repo.duplicateCard(y);
+    expect((await repo.getCard(copy))!.front, 'y');
+    expect((await repo.getCard(copy))!.state, 'new');
+    await repo.moveCards([x, y], b);
+    expect((await repo.watchCards(b).first).map((c) => c.front).toSet(), {'x', 'y'});
+    await repo.deleteCards([x, y]);
+    expect(await repo.watchCards(b).first, isEmpty);
+    await repo.restoreCards([x, y]);
+    expect(await repo.watchCards(b).first, hasLength(2));
+  });
+
+  test('hard and new-only practice filters', () async {
+    final d = await repo.createDeck('D', color: 1);
+    final hard = await repo.addCard(d, 'h', '1');
+    await repo.addCard(d, 'n', '2');
+    for (var i = 0; i < 3; i++) {
+      await repo.recordReview(hard, ReviewRating.again);
+    }
+    expect((await repo.practiceCards(d, filter: PracticeFilter.hard)).map((c) => c.front), ['h']);
+    expect((await repo.practiceCards(d, filter: PracticeFilter.newOnly)).map((c) => c.front), [
+      'n',
+    ]);
+  });
+
+  test('deck insights are measured from cards and the review log', () async {
+    final d = await repo.createDeck('D', color: 1);
+    final a = await repo.addCard(d, 'a', '1');
+    final b = await repo.addCard(d, 'b', '2');
+    await repo.addCard(d, 'c', '3');
+    await repo.recordReview(a, ReviewRating.again);
+    await repo.recordReview(a, ReviewRating.good);
+    await repo.recordReview(b, ReviewRating.easy);
+    await repo.setFavorite([b], true);
+    final i = await repo.deckInsights(d);
+    expect(i.total, 3);
+    expect(i.newCards, 1);
+    expect(i.favorites, 1);
+    expect(i.reviewsToday, 3);
+    expect(i.reviewsInRange, 3);
+    expect(i.correctRate, closeTo(2 / 3, 1e-9));
+    expect(i.forgetRate, isNull, reason: 'no graduated card was reviewed yet');
+    expect(i.averageRecall, isNotNull);
+    expect(i.perDay.last, 3);
+    expect(i.recent.map((r) => r.cardId).toSet(), {a, b});
+  });
 }

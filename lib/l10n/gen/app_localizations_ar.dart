@@ -3686,4 +3686,218 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get flashcardsImportFileFailed => 'تعذّر فتح الملف. يمكنك لصق محتواه بدلًا من ذلك.';
+
+  @override
+  String get studyNoMatchingCards => 'لا توجد بطاقات مطابقة لهذا الاختيار بعد.';
+
+  @override
+  String get studyPracticeNew => 'الجديدة فقط';
+
+  @override
+  String get studyPracticeHard => 'البطاقات الصعبة';
+
+  @override
+  String get studyPracticeFavorites => 'المفضلة';
+
+  @override
+  String get studySessionSize => 'عدد البطاقات في الجلسة';
+
+  @override
+  String get studySessionAll => 'الكل';
+
+  @override
+  String get studyOrder => 'الترتيب';
+
+  @override
+  String get studyOrderDue => 'الأقدم استحقاقًا أولًا';
+
+  @override
+  String get studyOrderRandom => 'عشوائي';
+
+  @override
+  String get studyOrderHardest => 'الأصعب أولًا';
+
+  @override
+  String get flashcardsHard => 'صعبة';
+
+  @override
+  String get flashcardsFavorites => 'المفضلة';
+
+  @override
+  String get flashcardsFavorite => 'إضافة إلى المفضلة';
+
+  @override
+  String get flashcardsUnfavorite => 'إزالة من المفضلة';
+
+  @override
+  String get flashcardsDuplicate => 'إنشاء نسخة';
+
+  @override
+  String get flashcardsMoveTo => 'نقل إلى مجموعة';
+
+  @override
+  String get flashcardsNoOtherDeck => 'أنشئ مجموعة أخرى أولًا.';
+
+  @override
+  String flashcardsMoved(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'نُقلت $count بطاقة',
+      few: 'نُقلت $count بطاقات',
+      two: 'نُقلت بطاقتان',
+      one: 'نُقلت البطاقة',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get flashcardsAddTag => 'إضافة وسم';
+
+  @override
+  String get flashcardsTagHint => 'مثال: أفعال';
+
+  @override
+  String flashcardsSelected(int count) {
+    return 'المحدد: $count';
+  }
+
+  @override
+  String get flashcardsSelectAll => 'تحديد كل المعروض';
+
+  @override
+  String flashcardsSelectCard(String front) {
+    return 'تحديد $front';
+  }
+
+  @override
+  String flashcardsRecall(String value) {
+    return 'التذكّر $value';
+  }
+
+  @override
+  String get flashcardsDuplicateTitle => 'بطاقة مكرّرة محتملة';
+
+  @override
+  String flashcardsDuplicateMessage(String front, String back) {
+    return 'هذه المجموعة فيها بطاقة «$front» ← «$back». هل تريد الحفظ على أي حال؟';
+  }
+
+  @override
+  String get flashcardsSaveAnyway => 'احفظ على أي حال';
+
+  @override
+  String get flashcardsStats => 'الإحصائيات';
+
+  @override
+  String get flashcardsStatTotal => 'البطاقات';
+
+  @override
+  String get flashcardsStatLearning => 'قيد التعلّم';
+
+  @override
+  String get flashcardsStatMatureCaption => 'محفوظة لأكثر من 21 يومًا';
+
+  @override
+  String get flashcardsStatReviewsToday => 'مراجعات اليوم';
+
+  @override
+  String get flashcardsStatCorrect => 'الإجابات الصحيحة';
+
+  @override
+  String flashcardsStatLastDays(int days) {
+    return 'آخر $days يومًا';
+  }
+
+  @override
+  String get flashcardsStatForget => 'معدّل النسيان';
+
+  @override
+  String get flashcardsStatForgetCaption => '«مرة أخرى» على بطاقات محفوظة';
+
+  @override
+  String get flashcardsStatRecall => 'التذكّر الآن';
+
+  @override
+  String get flashcardsStatRecallCaption => 'تقدير FSRS للبطاقات المراجَعة';
+
+  @override
+  String flashcardsStatActivity(int count) {
+    return 'المراجعات يوميًا · المجموع $count';
+  }
+
+  @override
+  String get flashcardsStatHistory => 'آخر الإجابات';
+
+  @override
+  String get flashcardsStatNoHistory => 'لا مراجعات بعد. ادرس المجموعة لترى تقدّمك هنا.';
+
+  @override
+  String flashcardsSpeakField(String field) {
+    return 'قراءة $field بصوت';
+  }
+
+  @override
+  String get speechVoice => 'الصوت';
+
+  @override
+  String get speechVoiceDefault => 'الافتراضي في الجهاز';
+
+  @override
+  String get speechVoiceOnline => 'يحتاج إنترنت';
+
+  @override
+  String get speechTest => 'تجربة الصوت';
+
+  @override
+  String get importNext => 'معاينة';
+
+  @override
+  String get importPreviewTitle => 'اربط الأعمدة بالحقول';
+
+  @override
+  String get importIgnoreColumn => 'تجاهل';
+
+  @override
+  String importColumn(int n) {
+    return 'العمود $n';
+  }
+
+  @override
+  String importPreviewSummary(int ready, int invalid) {
+    return '$ready بطاقة جاهزة · سيتم تخطّي $invalid صفوف ناقصة';
+  }
+
+  @override
+  String get importNeedFrontBack => 'اختر أي عمود هو الوجه الأمامي وأيها الخلفي.';
+
+  @override
+  String get actionMoveUp => 'تحريك لأعلى';
+
+  @override
+  String get actionMoveDown => 'تحريك لأسفل';
+
+  @override
+  String get flashcardsLayoutTitle => 'تصميم البطاقة';
+
+  @override
+  String get flashcardsLayoutHint =>
+      'أعد تسمية الحقول الإضافية لهذه المجموعة أو أخفِها أو غيّر ترتيبها. محتوى البطاقات لا يتغيّر أبدًا.';
+
+  @override
+  String flashcardsLayoutShow(String field) {
+    return 'إظهار $field أثناء الدراسة';
+  }
+
+  @override
+  String get flashcardsLayoutStepReveal => 'إظهار الإجابة تدريجيًا';
+
+  @override
+  String get flashcardsLayoutStepRevealHint =>
+      'يظهر الوجه الخلفي أولًا، ثم يُفتح كل حقل إضافي بلمسة.';
+
+  @override
+  String flashcardsRevealNext(String field) {
+    return 'إظهار $field';
+  }
 }
