@@ -30,6 +30,7 @@ import '../../features/spaces/presentation/spaces_screen.dart';
 import '../../features/tasks/presentation/task_editor_screen.dart';
 import '../../features/tasks/presentation/tasks_screen.dart';
 import '../../features/trash/presentation/trash_screen.dart';
+import '../../features/sounds/presentation/sounds_screen.dart';
 import '../../core/design_system/components/states.dart';
 import '../localization/app_format.dart';
 import '../shell/app_shell.dart';
@@ -133,6 +134,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       page(Routes.insights, (_) => const AnalyticsScreen()),
       page(Routes.search, (_) => const SearchScreen()),
       page(Routes.assistant, (_) => const AssistantScreen()),
+      page(Routes.sounds, (_) => const SoundsScreen()),
       page(Routes.settings, (_) => const SettingsScreen()),
       page(Routes.trash, (_) => const TrashScreen()),
       page(Routes.onboarding, (_) => const OnboardingScreen()),

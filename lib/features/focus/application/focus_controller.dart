@@ -14,6 +14,7 @@ import '../../settings/data/settings_repository.dart';
 import '../data/focus_repository.dart';
 import '../domain/focus_engine.dart';
 import '../domain/focus_timer_state.dart';
+import '../domain/end_tone.dart';
 import 'focus_providers.dart';
 
 part 'focus_controller/focus_controller_state.dart';
@@ -67,6 +68,7 @@ class FocusController extends Notifier<FocusControllerState> {
     ref.listen<AppSettings>(settingsProvider, (prev, next) {
       if (prev?.notificationsEnabled != next.notificationsEnabled ||
           prev?.focusSound != next.focusSound ||
+          prev?.focusEndTone != next.focusEndTone ||
           prev?.localeTag != next.localeTag) {
         unawaited(_serial(_afterChange));
       }
@@ -342,5 +344,6 @@ PlannedNotification focusEndNotification(FocusTimerState s, DateTime endUtc, App
     body: body,
     at: endUtc,
     payload: Routes.focus,
+    tone: EndTone.byName(settings.focusEndTone).resource,
   );
 }

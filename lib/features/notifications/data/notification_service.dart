@@ -11,6 +11,8 @@ import '../../../app/localization/app_locales.dart';
 import '../../../l10n/gen/app_localizations.dart';
 import '../../settings/data/settings_repository.dart';
 import '../domain/notification_plan.dart';
+import '../../focus/application/end_tone_labels.dart';
+import '../../focus/domain/end_tone.dart';
 
 /// Whether the OS lets the app post notifications.
 enum NotificationAccess { granted, denied, unknown }
@@ -54,6 +56,9 @@ abstract class NotificationService {
 
 const _channelReminders = 'reminders';
 const _channelFocus = 'focus';
+
+/// 'alarm_drops' → 'focus_drops'.
+String _focusChannelFor(String resource) => 'focus_${resource.replaceFirst('alarm_', '')}';
 const _icon = 'ic_stat_notify';
 
 class LocalNotificationService implements NotificationService {
@@ -143,6 +148,20 @@ class LocalNotificationService implements NotificationService {
           importance: Importance.high,
         ),
       );
+      // One channel per end sound: Android fixes a channel's sound at creation.
+      for (final t in EndTone.values) {
+        final res = t.resource;
+        if (res == null) continue;
+        await a?.createNotificationChannel(
+          AndroidNotificationChannel(
+            _focusChannelFor(res),
+            '${l10n.notifChannelFocus} · ${endToneName(l10n, t)}',
+            description: l10n.notifChannelFocusDesc,
+            importance: Importance.high,
+            sound: RawResourceAndroidNotificationSound(res),
+          ),
+        );
+      }
     } on Object {
       // Channels are recreated on the next language change or launch.
     }
@@ -208,10 +227,12 @@ class LocalNotificationService implements NotificationService {
     if (!_ready) return false;
     final l10n = _l10n;
     final isFocus = n.channel == NotificationChannelKind.focus;
+    final tone = isFocus ? n.tone : null;
     final details = NotificationDetails(
       android: AndroidNotificationDetails(
-        isFocus ? _channelFocus : _channelReminders,
+        isFocus ? (tone == null ? _channelFocus : _focusChannelFor(tone)) : _channelReminders,
         isFocus ? (l10n?.notifChannelFocus ?? '') : (l10n?.notifChannelReminders ?? ''),
+        sound: tone == null ? null : RawResourceAndroidNotificationSound(tone),
         channelDescription: isFocus ? l10n?.notifChannelFocusDesc : l10n?.notifChannelRemindersDesc,
         importance: Importance.high,
         priority: Priority.high,

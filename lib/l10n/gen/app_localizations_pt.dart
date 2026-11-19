@@ -3880,4 +3880,108 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get flashcardsRecordFailed => 'A gravação não está disponível neste dispositivo.';
+
+  @override
+  String get soundsTitle => 'Sons';
+
+  @override
+  String get soundsSubtitle =>
+      'Sons da natureza criados ao vivo no seu dispositivo. Nunca se repetem.';
+
+  @override
+  String get soundsNature => 'Natureza';
+
+  @override
+  String get soundsNoise => 'Ruído para foco';
+
+  @override
+  String get soundRain => 'Chuva';
+
+  @override
+  String get soundStorm => 'Tempestade';
+
+  @override
+  String get soundRiver => 'Rio';
+
+  @override
+  String get soundOcean => 'Ondas do mar';
+
+  @override
+  String get soundFire => 'Fogueira';
+
+  @override
+  String get soundWind => 'Vento';
+
+  @override
+  String get soundForest => 'Pássaros da floresta';
+
+  @override
+  String get soundNight => 'Noite de verão';
+
+  @override
+  String get soundWhite => 'Ruído branco';
+
+  @override
+  String get soundPink => 'Ruído rosa';
+
+  @override
+  String get soundBrown => 'Ruído marrom';
+
+  @override
+  String get soundsPlay => 'Reproduzir';
+
+  @override
+  String get soundsSleep => 'Timer de sono';
+
+  @override
+  String get soundsSleepOff => 'Desligado';
+
+  @override
+  String soundsSleepAt(String time) {
+    return 'Para às $time';
+  }
+
+  @override
+  String soundsMixFull(int count) {
+    return 'Até $count sons ao mesmo tempo.';
+  }
+
+  @override
+  String get soundsHint =>
+      'Toque em um som para começar. Misture vários e ajuste o volume de cada um.';
+
+  @override
+  String get soundsMixer => 'Mistura';
+
+  @override
+  String soundsVolumeOf(String name) {
+    return 'Volume de $name';
+  }
+
+  @override
+  String get soundsChannel => 'Sons da natureza';
+
+  @override
+  String get settingsEndTone => 'Som ao terminar';
+
+  @override
+  String get toneGentle => 'Bipes suaves';
+
+  @override
+  String get toneBeeps => 'Bipes';
+
+  @override
+  String get toneDrops => 'Gotas de água';
+
+  @override
+  String get toneWood => 'Batidas na madeira';
+
+  @override
+  String get toneBird => 'Canto de pássaro';
+
+  @override
+  String get toneStream => 'Riacho';
+
+  @override
+  String get toneSystem => 'Som do telefone';
 }

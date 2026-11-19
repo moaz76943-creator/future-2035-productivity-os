@@ -3870,4 +3870,108 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get flashcardsRecordFailed => 'इस डिवाइस पर रिकॉर्डिंग उपलब्ध नहीं है।';
+
+  @override
+  String get soundsTitle => 'ध्वनियाँ';
+
+  @override
+  String get soundsSubtitle =>
+      'प्रकृति की ध्वनियाँ आपके डिवाइस पर सीधे बनती हैं। ये कभी दोहराई नहीं जातीं।';
+
+  @override
+  String get soundsNature => 'प्रकृति';
+
+  @override
+  String get soundsNoise => 'फ़ोकस नॉइज़';
+
+  @override
+  String get soundRain => 'बारिश';
+
+  @override
+  String get soundStorm => 'आंधी-तूफ़ान';
+
+  @override
+  String get soundRiver => 'नदी';
+
+  @override
+  String get soundOcean => 'समुद्र की लहरें';
+
+  @override
+  String get soundFire => 'अलाव';
+
+  @override
+  String get soundWind => 'हवा';
+
+  @override
+  String get soundForest => 'जंगल के पक्षी';
+
+  @override
+  String get soundNight => 'गर्मियों की रात';
+
+  @override
+  String get soundWhite => 'व्हाइट नॉइज़';
+
+  @override
+  String get soundPink => 'पिंक नॉइज़';
+
+  @override
+  String get soundBrown => 'ब्राउन नॉइज़';
+
+  @override
+  String get soundsPlay => 'चलाएँ';
+
+  @override
+  String get soundsSleep => 'स्लीप टाइमर';
+
+  @override
+  String get soundsSleepOff => 'बंद';
+
+  @override
+  String soundsSleepAt(String time) {
+    return '$time पर रुकेगा';
+  }
+
+  @override
+  String soundsMixFull(int count) {
+    return 'एक साथ अधिकतम $count ध्वनियाँ चल सकती हैं।';
+  }
+
+  @override
+  String get soundsHint =>
+      'शुरू करने के लिए किसी ध्वनि पर टैप करें। कई ध्वनियाँ मिलाएँ और हर एक की आवाज़ सेट करें।';
+
+  @override
+  String get soundsMixer => 'मिक्स';
+
+  @override
+  String soundsVolumeOf(String name) {
+    return '$name की आवाज़';
+  }
+
+  @override
+  String get soundsChannel => 'प्रकृति की ध्वनियाँ';
+
+  @override
+  String get settingsEndTone => 'टाइमर खत्म होने की ध्वनि';
+
+  @override
+  String get toneGentle => 'हल्की बीप';
+
+  @override
+  String get toneBeeps => 'बीप';
+
+  @override
+  String get toneDrops => 'पानी की बूँदें';
+
+  @override
+  String get toneWood => 'लकड़ी की खटखट';
+
+  @override
+  String get toneBird => 'चिड़िया की आवाज़';
+
+  @override
+  String get toneStream => 'झरना';
+
+  @override
+  String get toneSystem => 'फ़ोन की ध्वनि';
 }

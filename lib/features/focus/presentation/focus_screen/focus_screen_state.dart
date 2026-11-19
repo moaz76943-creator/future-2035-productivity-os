@@ -84,9 +84,20 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
     final enabled = ref.watch(settingsProvider.select((s) => s.notificationsEnabled));
     if (enabled && access == NotificationAccess.granted) unawaited(_checkBatteryHint());
 
+    final soundsOn = ref.watch(soundsControllerProvider.select((m) => m.playing));
     return ModuleScaffold(
       title: l10n.focusTitle,
       hue: ModuleHue.focus,
+      actions: [
+        IconButton(
+          key: const Key('focusSounds'),
+          tooltip: l10n.soundsTitle,
+          isSelected: soundsOn,
+          icon: const Icon(Icons.water_drop_outlined),
+          selectedIcon: const Icon(Icons.graphic_eq_rounded),
+          onPressed: () => context.push(Routes.sounds),
+        ),
+      ],
       slivers: [
         SliverPadding(
           padding: const EdgeInsetsDirectional.symmetric(horizontal: Space.page),

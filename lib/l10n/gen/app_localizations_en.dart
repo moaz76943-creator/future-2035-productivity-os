@@ -3860,4 +3860,106 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get flashcardsRecordFailed => 'Recording isn\'t available on this device.';
+
+  @override
+  String get soundsTitle => 'Sounds';
+
+  @override
+  String get soundsSubtitle => 'Nature sounds created live on your device. They never repeat.';
+
+  @override
+  String get soundsNature => 'Nature';
+
+  @override
+  String get soundsNoise => 'Focus noise';
+
+  @override
+  String get soundRain => 'Rain';
+
+  @override
+  String get soundStorm => 'Thunderstorm';
+
+  @override
+  String get soundRiver => 'River';
+
+  @override
+  String get soundOcean => 'Ocean waves';
+
+  @override
+  String get soundFire => 'Campfire';
+
+  @override
+  String get soundWind => 'Wind';
+
+  @override
+  String get soundForest => 'Forest birds';
+
+  @override
+  String get soundNight => 'Summer night';
+
+  @override
+  String get soundWhite => 'White noise';
+
+  @override
+  String get soundPink => 'Pink noise';
+
+  @override
+  String get soundBrown => 'Brown noise';
+
+  @override
+  String get soundsPlay => 'Play';
+
+  @override
+  String get soundsSleep => 'Sleep timer';
+
+  @override
+  String get soundsSleepOff => 'Off';
+
+  @override
+  String soundsSleepAt(String time) {
+    return 'Stops at $time';
+  }
+
+  @override
+  String soundsMixFull(int count) {
+    return 'Up to $count sounds can play at once.';
+  }
+
+  @override
+  String get soundsHint => 'Tap a sound to start. Mix several and set each volume.';
+
+  @override
+  String get soundsMixer => 'Mix';
+
+  @override
+  String soundsVolumeOf(String name) {
+    return '$name volume';
+  }
+
+  @override
+  String get soundsChannel => 'Nature sounds';
+
+  @override
+  String get settingsEndTone => 'Timer end sound';
+
+  @override
+  String get toneGentle => 'Gentle beeps';
+
+  @override
+  String get toneBeeps => 'Beeps';
+
+  @override
+  String get toneDrops => 'Water drops';
+
+  @override
+  String get toneWood => 'Wood knock';
+
+  @override
+  String get toneBird => 'Bird call';
+
+  @override
+  String get toneStream => 'Stream';
+
+  @override
+  String get toneSystem => 'Phone\'s sound';
 }

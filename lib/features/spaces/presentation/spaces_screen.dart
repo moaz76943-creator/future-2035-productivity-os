@@ -26,6 +26,7 @@ class SpacesScreen extends ConsumerWidget {
     final habitsDone = habits?.where((h) => h.stats.doneToday).length;
 
     final grid = <_Space>[
+      _Space(Icons.water_drop_outlined, l10n.soundsTitle, ModuleHue.sounds, Routes.sounds),
       _Space(Icons.sticky_note_2_outlined, l10n.moduleNotes, ModuleHue.notes, Routes.notes),
       _Space(Icons.flag_outlined, l10n.moduleGoals, ModuleHue.goals, Routes.goals),
       _Space(

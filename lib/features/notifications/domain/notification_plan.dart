@@ -18,6 +18,7 @@ class PlannedNotification {
     required this.at,
     this.repeat = NotificationRepeat.none,
     this.payload,
+    this.tone,
   });
 
   final int id;
@@ -33,6 +34,9 @@ class PlannedNotification {
   /// In-app route opened when the notification is tapped.
   final String? payload;
 
+  /// Raw sound resource for focus alerts (null = the phone's sound).
+  final String? tone;
+
   /// Changes whenever anything visible or the timing changes, so the sync
   /// only reschedules what actually differs.
   String get signature {
@@ -42,7 +46,7 @@ class PlannedNotification {
       NotificationRepeat.daily => 'd${local.hour * 60 + local.minute}',
       NotificationRepeat.weekly => 'w${local.weekday}:${local.hour * 60 + local.minute}',
     };
-    return [when, channel.name, title, body, payload ?? ''].join('\u0001');
+    return [when, channel.name, title, body, payload ?? '', tone ?? ''].join('\u0001');
   }
 
   @override

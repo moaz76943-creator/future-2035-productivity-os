@@ -15,6 +15,7 @@ import '../../../shared/widgets/pickers.dart';
 import '../../backup/presentation/backup_flows.dart';
 import '../application/settings_providers.dart';
 import '../data/settings_repository.dart';
+import 'end_tone_sheet.dart';
 import 'language_options.dart';
 
 part 'settings_screen/section.dart';
@@ -176,6 +177,7 @@ class SettingsScreen extends ConsumerWidget {
                   value: s.focusSound,
                   onChanged: (v) => set((c) => c.copyWith(focusSound: v)),
                 ),
+                EndToneTile(enabled: s.focusSound),
                 _StepperRow(
                   label: l10n.settingsDailyFocusTarget,
                   value: fmt.minutes(s.dailyFocusTargetMinutes),

@@ -3686,4 +3686,106 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get flashcardsRecordFailed => '此设备无法录音。';
+
+  @override
+  String get soundsTitle => '声音';
+
+  @override
+  String get soundsSubtitle => '自然声音在您的设备上实时生成，永不重复。';
+
+  @override
+  String get soundsNature => '自然';
+
+  @override
+  String get soundsNoise => '专注噪音';
+
+  @override
+  String get soundRain => '雨声';
+
+  @override
+  String get soundStorm => '雷雨';
+
+  @override
+  String get soundRiver => '河流';
+
+  @override
+  String get soundOcean => '海浪';
+
+  @override
+  String get soundFire => '篝火';
+
+  @override
+  String get soundWind => '风声';
+
+  @override
+  String get soundForest => '林中鸟鸣';
+
+  @override
+  String get soundNight => '夏夜';
+
+  @override
+  String get soundWhite => '白噪音';
+
+  @override
+  String get soundPink => '粉红噪音';
+
+  @override
+  String get soundBrown => '棕色噪音';
+
+  @override
+  String get soundsPlay => '播放';
+
+  @override
+  String get soundsSleep => '睡眠定时';
+
+  @override
+  String get soundsSleepOff => '关闭';
+
+  @override
+  String soundsSleepAt(String time) {
+    return '将于 $time 停止';
+  }
+
+  @override
+  String soundsMixFull(int count) {
+    return '最多可同时播放 $count 种声音。';
+  }
+
+  @override
+  String get soundsHint => '点按声音即可开始。可混合多种声音并分别调节音量。';
+
+  @override
+  String get soundsMixer => '混音';
+
+  @override
+  String soundsVolumeOf(String name) {
+    return '$name音量';
+  }
+
+  @override
+  String get soundsChannel => '自然声音';
+
+  @override
+  String get settingsEndTone => '计时结束提示音';
+
+  @override
+  String get toneGentle => '柔和提示音';
+
+  @override
+  String get toneBeeps => '短促提示音';
+
+  @override
+  String get toneDrops => '水滴';
+
+  @override
+  String get toneWood => '木块敲击';
+
+  @override
+  String get toneBird => '鸟鸣';
+
+  @override
+  String get toneStream => '溪流';
+
+  @override
+  String get toneSystem => '手机提示音';
 }

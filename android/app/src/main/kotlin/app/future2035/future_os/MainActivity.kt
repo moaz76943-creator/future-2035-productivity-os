@@ -103,6 +103,7 @@ class MainActivity : FlutterActivity() {
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "future_os/audio").setMethodCallHandler { call, result ->
             when (call.method) {
                 "play" -> playAudio(call.argument<String>("path"), result)
+                "playTone" -> playTone(call.argument<String>("name"), result)
                 "stop" -> { stopAudio(); result.success(null) }
                 "recordStart" -> recordStart(result)
                 "recordStop" -> result.success(recordStop(keep = true))
@@ -162,6 +163,20 @@ class MainActivity : FlutterActivity() {
             stopAudio()
             result.success("unavailable")
         }
+    }
+
+    /** Previews one of the app's own timer-end sounds (res/raw/alarm_*). */
+    private fun playTone(name: String?, result: MethodChannel.Result) {
+        stopAudio()
+        val id = if (name != null && Regex("^alarm_[a-z]{1,20}$").matches(name)) {
+            resources.getIdentifier(name, "raw", packageName)
+        } else 0
+        val p = if (id != 0) MediaPlayer.create(this, id) else null
+        if (p == null) { result.success("unavailable"); return }
+        p.setOnCompletionListener { it.release(); if (player === it) player = null }
+        p.start()
+        player = p
+        result.success("ok")
     }
 
     private fun stopAudio() {

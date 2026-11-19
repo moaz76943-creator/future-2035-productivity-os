@@ -3984,4 +3984,108 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get flashcardsRecordFailed => 'Запись недоступна на этом устройстве.';
+
+  @override
+  String get soundsTitle => 'Звуки';
+
+  @override
+  String get soundsSubtitle =>
+      'Звуки природы создаются прямо на устройстве и никогда не повторяются.';
+
+  @override
+  String get soundsNature => 'Природа';
+
+  @override
+  String get soundsNoise => 'Шум для концентрации';
+
+  @override
+  String get soundRain => 'Дождь';
+
+  @override
+  String get soundStorm => 'Гроза';
+
+  @override
+  String get soundRiver => 'Река';
+
+  @override
+  String get soundOcean => 'Морские волны';
+
+  @override
+  String get soundFire => 'Костёр';
+
+  @override
+  String get soundWind => 'Ветер';
+
+  @override
+  String get soundForest => 'Лесные птицы';
+
+  @override
+  String get soundNight => 'Летняя ночь';
+
+  @override
+  String get soundWhite => 'Белый шум';
+
+  @override
+  String get soundPink => 'Розовый шум';
+
+  @override
+  String get soundBrown => 'Коричневый шум';
+
+  @override
+  String get soundsPlay => 'Воспроизвести';
+
+  @override
+  String get soundsSleep => 'Таймер сна';
+
+  @override
+  String get soundsSleepOff => 'Выкл.';
+
+  @override
+  String soundsSleepAt(String time) {
+    return 'Остановится в $time';
+  }
+
+  @override
+  String soundsMixFull(int count) {
+    return 'Одновременно может звучать не более $count звуков.';
+  }
+
+  @override
+  String get soundsHint =>
+      'Нажмите на звук, чтобы начать. Смешивайте несколько и настраивайте громкость каждого.';
+
+  @override
+  String get soundsMixer => 'Микс';
+
+  @override
+  String soundsVolumeOf(String name) {
+    return 'Громкость: $name';
+  }
+
+  @override
+  String get soundsChannel => 'Звуки природы';
+
+  @override
+  String get settingsEndTone => 'Звук окончания таймера';
+
+  @override
+  String get toneGentle => 'Мягкие сигналы';
+
+  @override
+  String get toneBeeps => 'Короткие сигналы';
+
+  @override
+  String get toneDrops => 'Капли воды';
+
+  @override
+  String get toneWood => 'Стук по дереву';
+
+  @override
+  String get toneBird => 'Пение птицы';
+
+  @override
+  String get toneStream => 'Ручей';
+
+  @override
+  String get toneSystem => 'Звук телефона';
 }

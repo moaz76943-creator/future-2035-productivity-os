@@ -16,6 +16,7 @@ class ModuleScaffold extends StatelessWidget {
     required this.slivers,
     this.actions = const [],
     this.floatingActionButton,
+    this.floatingActionButtonLocation,
     this.subtitle,
     this.bottom,
     this.showBack,
@@ -27,6 +28,7 @@ class ModuleScaffold extends StatelessWidget {
   final List<Widget> slivers;
   final List<Widget> actions;
   final Widget? floatingActionButton;
+  final FloatingActionButtonLocation? floatingActionButtonLocation;
   final PreferredSizeWidget? bottom;
   final bool? showBack;
 
@@ -35,6 +37,7 @@ class ModuleScaffold extends StatelessWidget {
     final canPop = showBack ?? Navigator.of(context).canPop();
     final lux = context.lux;
     return Scaffold(
+      floatingActionButtonLocation: floatingActionButtonLocation,
       floatingActionButton: floatingActionButton == null
           ? null
           : NavClearFab(child: floatingActionButton!),

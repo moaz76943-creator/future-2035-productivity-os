@@ -6515,6 +6515,198 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Recording isn\'t available on this device.'**
   String get flashcardsRecordFailed;
+
+  /// Title of the nature sounds screen
+  ///
+  /// In en, this message translates to:
+  /// **'Sounds'**
+  String get soundsTitle;
+
+  /// Subtitle of the sounds screen
+  ///
+  /// In en, this message translates to:
+  /// **'Nature sounds created live on your device. They never repeat.'**
+  String get soundsSubtitle;
+
+  /// Section header: nature sounds
+  ///
+  /// In en, this message translates to:
+  /// **'Nature'**
+  String get soundsNature;
+
+  /// Section header: steady noise colours for concentration
+  ///
+  /// In en, this message translates to:
+  /// **'Focus noise'**
+  String get soundsNoise;
+
+  /// Sound name
+  ///
+  /// In en, this message translates to:
+  /// **'Rain'**
+  String get soundRain;
+
+  /// Sound name
+  ///
+  /// In en, this message translates to:
+  /// **'Thunderstorm'**
+  String get soundStorm;
+
+  /// Sound name
+  ///
+  /// In en, this message translates to:
+  /// **'River'**
+  String get soundRiver;
+
+  /// Sound name
+  ///
+  /// In en, this message translates to:
+  /// **'Ocean waves'**
+  String get soundOcean;
+
+  /// Sound name
+  ///
+  /// In en, this message translates to:
+  /// **'Campfire'**
+  String get soundFire;
+
+  /// Sound name
+  ///
+  /// In en, this message translates to:
+  /// **'Wind'**
+  String get soundWind;
+
+  /// Sound name
+  ///
+  /// In en, this message translates to:
+  /// **'Forest birds'**
+  String get soundForest;
+
+  /// Sound name: crickets at night
+  ///
+  /// In en, this message translates to:
+  /// **'Summer night'**
+  String get soundNight;
+
+  /// Sound name
+  ///
+  /// In en, this message translates to:
+  /// **'White noise'**
+  String get soundWhite;
+
+  /// Sound name
+  ///
+  /// In en, this message translates to:
+  /// **'Pink noise'**
+  String get soundPink;
+
+  /// Sound name
+  ///
+  /// In en, this message translates to:
+  /// **'Brown noise'**
+  String get soundBrown;
+
+  /// Button: play the sound mix
+  ///
+  /// In en, this message translates to:
+  /// **'Play'**
+  String get soundsPlay;
+
+  /// Button/menu: sleep timer that stops the sounds
+  ///
+  /// In en, this message translates to:
+  /// **'Sleep timer'**
+  String get soundsSleep;
+
+  /// Sleep timer menu: no timer
+  ///
+  /// In en, this message translates to:
+  /// **'Off'**
+  String get soundsSleepOff;
+
+  /// Shown when the sleep timer is on
+  ///
+  /// In en, this message translates to:
+  /// **'Stops at {time}'**
+  String soundsSleepAt(String time);
+
+  /// Message when too many sounds are on
+  ///
+  /// In en, this message translates to:
+  /// **'Up to {count} sounds can play at once.'**
+  String soundsMixFull(int count);
+
+  /// Hint on the sounds screen
+  ///
+  /// In en, this message translates to:
+  /// **'Tap a sound to start. Mix several and set each volume.'**
+  String get soundsHint;
+
+  /// Button/sheet title: volumes of the sounds in the mix
+  ///
+  /// In en, this message translates to:
+  /// **'Mix'**
+  String get soundsMixer;
+
+  /// Accessibility label of a volume slider
+  ///
+  /// In en, this message translates to:
+  /// **'{name} volume'**
+  String soundsVolumeOf(String name);
+
+  /// Notification title and channel name while sounds play
+  ///
+  /// In en, this message translates to:
+  /// **'Nature sounds'**
+  String get soundsChannel;
+
+  /// Settings row: which sound plays when a timer ends
+  ///
+  /// In en, this message translates to:
+  /// **'Timer end sound'**
+  String get settingsEndTone;
+
+  /// End sound: two soft beeps
+  ///
+  /// In en, this message translates to:
+  /// **'Gentle beeps'**
+  String get toneGentle;
+
+  /// End sound: three short beeps
+  ///
+  /// In en, this message translates to:
+  /// **'Beeps'**
+  String get toneBeeps;
+
+  /// End sound: water drops
+  ///
+  /// In en, this message translates to:
+  /// **'Water drops'**
+  String get toneDrops;
+
+  /// End sound: knocks on wood
+  ///
+  /// In en, this message translates to:
+  /// **'Wood knock'**
+  String get toneWood;
+
+  /// End sound: a short bird call
+  ///
+  /// In en, this message translates to:
+  /// **'Bird call'**
+  String get toneBird;
+
+  /// End sound: a short stream of water
+  ///
+  /// In en, this message translates to:
+  /// **'Stream'**
+  String get toneStream;
+
+  /// End sound: the phone's own notification sound
+  ///
+  /// In en, this message translates to:
+  /// **'Phone\'s sound'**
+  String get toneSystem;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

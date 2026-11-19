@@ -27,6 +27,7 @@ class AppSettings {
     this.flashOrder = 'due',
     this.flashVoices = const {},
     this.focusSound = true,
+    this.focusEndTone = 'gentle',
     this.dailyFocusTargetMinutes = 120,
     this.weeklyFocusTargetMinutes = 600,
     this.notificationsEnabled = true,
@@ -80,6 +81,9 @@ class AppSettings {
   /// Preferred speech voice per language code ('es' → voice name).
   final Map<String, String> flashVoices;
   final bool focusSound;
+
+  /// Sound at the end of a timer ([EndTone] name).
+  final String focusEndTone;
   final int dailyFocusTargetMinutes;
   final int weeklyFocusTargetMinutes;
   final bool notificationsEnabled;
@@ -134,6 +138,7 @@ class AppSettings {
     'flashOrder': flashOrder,
     'flashVoices': flashVoices,
     'focusSound': focusSound,
+    'focusEndTone': focusEndTone,
     'dailyFocusTargetMinutes': dailyFocusTargetMinutes,
     'weeklyFocusTargetMinutes': weeklyFocusTargetMinutes,
     'notificationsEnabled': notificationsEnabled,
@@ -186,6 +191,7 @@ class AppSettings {
           if (e.key is String && e.value is String) e.key as String: e.value as String,
       },
       focusSound: read('focusSound', d.focusSound),
+      focusEndTone: read('focusEndTone', d.focusEndTone),
       dailyFocusTargetMinutes: read('dailyFocusTargetMinutes', d.dailyFocusTargetMinutes),
       weeklyFocusTargetMinutes: read('weeklyFocusTargetMinutes', d.weeklyFocusTargetMinutes),
       notificationsEnabled: read('notificationsEnabled', d.notificationsEnabled),
@@ -225,6 +231,7 @@ class AppSettings {
     String? flashOrder,
     Map<String, String>? flashVoices,
     bool? focusSound,
+    String? focusEndTone,
     int? dailyFocusTargetMinutes,
     int? weeklyFocusTargetMinutes,
     bool? notificationsEnabled,
@@ -260,6 +267,7 @@ class AppSettings {
     'flashOrder': ?flashOrder,
     'flashVoices': ?flashVoices,
     'focusSound': ?focusSound,
+    'focusEndTone': ?focusEndTone,
     'dailyFocusTargetMinutes': ?dailyFocusTargetMinutes,
     'weeklyFocusTargetMinutes': ?weeklyFocusTargetMinutes,
     'notificationsEnabled': ?notificationsEnabled,

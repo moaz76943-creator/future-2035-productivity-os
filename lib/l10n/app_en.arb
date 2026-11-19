@@ -5203,5 +5203,148 @@
   "flashcardsRecordFailed": "Recording isn't available on this device.",
   "@flashcardsRecordFailed": {
     "description": "Inline error when recording cannot start on this device"
+  },
+  "soundsTitle": "Sounds",
+  "@soundsTitle": {
+    "description": "Title of the nature sounds screen"
+  },
+  "soundsSubtitle": "Nature sounds created live on your device. They never repeat.",
+  "@soundsSubtitle": {
+    "description": "Subtitle of the sounds screen"
+  },
+  "soundsNature": "Nature",
+  "@soundsNature": {
+    "description": "Section header: nature sounds"
+  },
+  "soundsNoise": "Focus noise",
+  "@soundsNoise": {
+    "description": "Section header: steady noise colours for concentration"
+  },
+  "soundRain": "Rain",
+  "@soundRain": {
+    "description": "Sound name"
+  },
+  "soundStorm": "Thunderstorm",
+  "@soundStorm": {
+    "description": "Sound name"
+  },
+  "soundRiver": "River",
+  "@soundRiver": {
+    "description": "Sound name"
+  },
+  "soundOcean": "Ocean waves",
+  "@soundOcean": {
+    "description": "Sound name"
+  },
+  "soundFire": "Campfire",
+  "@soundFire": {
+    "description": "Sound name"
+  },
+  "soundWind": "Wind",
+  "@soundWind": {
+    "description": "Sound name"
+  },
+  "soundForest": "Forest birds",
+  "@soundForest": {
+    "description": "Sound name"
+  },
+  "soundNight": "Summer night",
+  "@soundNight": {
+    "description": "Sound name: crickets at night"
+  },
+  "soundWhite": "White noise",
+  "@soundWhite": {
+    "description": "Sound name"
+  },
+  "soundPink": "Pink noise",
+  "@soundPink": {
+    "description": "Sound name"
+  },
+  "soundBrown": "Brown noise",
+  "@soundBrown": {
+    "description": "Sound name"
+  },
+  "soundsPlay": "Play",
+  "@soundsPlay": {
+    "description": "Button: play the sound mix"
+  },
+  "soundsSleep": "Sleep timer",
+  "@soundsSleep": {
+    "description": "Button/menu: sleep timer that stops the sounds"
+  },
+  "soundsSleepOff": "Off",
+  "@soundsSleepOff": {
+    "description": "Sleep timer menu: no timer"
+  },
+  "soundsSleepAt": "Stops at {time}",
+  "@soundsSleepAt": {
+    "description": "Shown when the sleep timer is on",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "soundsMixFull": "Up to {count} sounds can play at once.",
+  "@soundsMixFull": {
+    "description": "Message when too many sounds are on",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "soundsHint": "Tap a sound to start. Mix several and set each volume.",
+  "@soundsHint": {
+    "description": "Hint on the sounds screen"
+  },
+  "soundsMixer": "Mix",
+  "@soundsMixer": {
+    "description": "Button/sheet title: volumes of the sounds in the mix"
+  },
+  "soundsVolumeOf": "{name} volume",
+  "@soundsVolumeOf": {
+    "description": "Accessibility label of a volume slider",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "soundsChannel": "Nature sounds",
+  "@soundsChannel": {
+    "description": "Notification title and channel name while sounds play"
+  },
+  "settingsEndTone": "Timer end sound",
+  "@settingsEndTone": {
+    "description": "Settings row: which sound plays when a timer ends"
+  },
+  "toneGentle": "Gentle beeps",
+  "@toneGentle": {
+    "description": "End sound: two soft beeps"
+  },
+  "toneBeeps": "Beeps",
+  "@toneBeeps": {
+    "description": "End sound: three short beeps"
+  },
+  "toneDrops": "Water drops",
+  "@toneDrops": {
+    "description": "End sound: water drops"
+  },
+  "toneWood": "Wood knock",
+  "@toneWood": {
+    "description": "End sound: knocks on wood"
+  },
+  "toneBird": "Bird call",
+  "@toneBird": {
+    "description": "End sound: a short bird call"
+  },
+  "toneStream": "Stream",
+  "@toneStream": {
+    "description": "End sound: a short stream of water"
+  },
+  "toneSystem": "Phone's sound",
+  "@toneSystem": {
+    "description": "End sound: the phone's own notification sound"
   }
 }

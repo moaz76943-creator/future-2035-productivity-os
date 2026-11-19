@@ -57,6 +57,7 @@ enum ModuleHue {
   analytics(Palette.aurora, Palette.violet),
   projects(Palette.rose, Palette.violet),
   assistant(Palette.violet, Palette.turquoise),
+  sounds(Palette.turquoise, Palette.aurora),
   neutral(Palette.ink3, Palette.silver);
 
   const ModuleHue(this.a, this.b);

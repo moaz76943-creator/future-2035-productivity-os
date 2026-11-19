@@ -4028,4 +4028,106 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get flashcardsRecordFailed => 'التسجيل غير متاح على هذا الجهاز.';
+
+  @override
+  String get soundsTitle => 'الأصوات';
+
+  @override
+  String get soundsSubtitle => 'أصوات طبيعية تُولَّد مباشرة على جهازك، ولا تتكرر أبداً.';
+
+  @override
+  String get soundsNature => 'الطبيعة';
+
+  @override
+  String get soundsNoise => 'ضوضاء التركيز';
+
+  @override
+  String get soundRain => 'مطر';
+
+  @override
+  String get soundStorm => 'عاصفة رعدية';
+
+  @override
+  String get soundRiver => 'نهر';
+
+  @override
+  String get soundOcean => 'أمواج البحر';
+
+  @override
+  String get soundFire => 'نار المخيم';
+
+  @override
+  String get soundWind => 'رياح';
+
+  @override
+  String get soundForest => 'طيور الغابة';
+
+  @override
+  String get soundNight => 'ليلة صيفية';
+
+  @override
+  String get soundWhite => 'ضوضاء بيضاء';
+
+  @override
+  String get soundPink => 'ضوضاء وردية';
+
+  @override
+  String get soundBrown => 'ضوضاء بنية';
+
+  @override
+  String get soundsPlay => 'تشغيل';
+
+  @override
+  String get soundsSleep => 'مؤقت النوم';
+
+  @override
+  String get soundsSleepOff => 'إيقاف';
+
+  @override
+  String soundsSleepAt(String time) {
+    return 'يتوقف عند $time';
+  }
+
+  @override
+  String soundsMixFull(int count) {
+    return 'يمكن تشغيل $count أصوات كحد أقصى معاً.';
+  }
+
+  @override
+  String get soundsHint => 'اضغط على صوت لتبدأ. امزج أكثر من صوت واضبط مستوى كل منها.';
+
+  @override
+  String get soundsMixer => 'المزج';
+
+  @override
+  String soundsVolumeOf(String name) {
+    return 'مستوى صوت $name';
+  }
+
+  @override
+  String get soundsChannel => 'أصوات الطبيعة';
+
+  @override
+  String get settingsEndTone => 'صوت انتهاء المؤقت';
+
+  @override
+  String get toneGentle => 'تنبيه هادئ';
+
+  @override
+  String get toneBeeps => 'تنبيهات قصيرة';
+
+  @override
+  String get toneDrops => 'قطرات ماء';
+
+  @override
+  String get toneWood => 'طرقات خشب';
+
+  @override
+  String get toneBird => 'تغريد طائر';
+
+  @override
+  String get toneStream => 'جدول ماء';
+
+  @override
+  String get toneSystem => 'صوت الهاتف';
 }

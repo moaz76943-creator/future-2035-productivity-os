@@ -9,6 +9,9 @@ import 'package:path_provider/path_provider.dart';
 abstract interface class AudioClipPlayer {
   Future<bool> play(List<int> bytes, {String extension = 'm4a'});
   Future<void> stop();
+
+  /// Previews a bundled timer-end sound (`res/raw/<resource>`).
+  Future<bool> playTone(String resource);
 }
 
 class PlatformAudioClipPlayer implements AudioClipPlayer {
@@ -29,6 +32,17 @@ class PlatformAudioClipPlayer implements AudioClipPlayer {
     } on PlatformException {
       return false;
     } on FileSystemException {
+      return false;
+    }
+  }
+
+  @override
+  Future<bool> playTone(String resource) async {
+    try {
+      return await _channel.invokeMethod<String>('playTone', {'name': resource}) == 'ok';
+    } on MissingPluginException {
+      return false;
+    } on PlatformException {
       return false;
     }
   }
