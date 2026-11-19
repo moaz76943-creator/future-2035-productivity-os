@@ -50,6 +50,7 @@ jobs:
         run: |
           python3 tool/check_l10n.py
           python3 tool/third_party_licenses.py --check
+          python3 tool/check_file_size.py
 
       - name: Run unit tests
         run: flutter test test/unit --reporter expanded --concurrency=2 --timeout=2m
@@ -128,6 +129,11 @@ jobs:
       # debug-signed; a debug build runs the JIT and feels slow and janky.
       - name: Build QA APK (profile, AOT)
         run: flutter build apk --profile
+
+      - name: Release shrink check (R8 + resource shrinking, unsigned)
+        # The store build minifies; this catches classes R8 would strip (crashes that
+        # only appear in the release app) on every push, without any signing key.
+        run: cd android && ./gradlew :app:minifyReleaseWithR8 --no-daemon --quiet
 
       # Actions artifact storage can hit the account quota; a pre-release asset does
       # not count against it, so every main build stays downloadable for QA.

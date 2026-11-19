@@ -1,0 +1,20 @@
+# Weekly update PRs (never direct pushes) for Dart packages, Android Gradle
+# dependencies and the GitHub Actions used by CI. Security fixes arrive as soon
+# as GitHub publishes an advisory.
+version: 2
+updates:
+  - package-ecosystem: pub
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+  - package-ecosystem: gradle
+    directory: /android
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 3
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 3
