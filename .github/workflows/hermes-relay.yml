@@ -13,7 +13,6 @@ on:
         default: "40"
 
 permissions:
-  issues: write
   contents: write
   actions: write
 
@@ -26,11 +25,21 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 330
     steps:
-      - name: Notify Live Monitor #11 (Start)
+      - name: Notify Live Monitor #11
+        if: always()
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh issue comment 11 --body "Run ${{ github.run_id }} (${{ job.status }}) on ${{ github.ref_name }} at $(date -u +%H:%M:%SZ)" || true
+# LIVE_HEARTBEAT_11
+      - name: Update Live Monitor Issue #11
         if: always()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh issue comment 11 --body "🚀 Started Run ${{ github.run_id }} on ${{ github.ref_name }} at $(date -u +%H:%M:%SZ)" || true
+          ISSUE_NUM: "11"
+        run: |
+          BODY="Run ID: ${{ github.run_id }} | Status: ${{ job.status }} | Branch: ${{ github.ref_name }} | Time: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          gh issue comment "$ISSUE_NUM" --body "$BODY" || true
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -170,9 +179,3 @@ jobs:
             NEXT_HOP=$((CURRENT_HOP + 1))
             gh workflow run hermes-relay.yml -f hop="$NEXT_HOP" -f max_hops="$MAX_HOPS" --ref hermes/future-2035-upgrade || true
           fi
-
-      - name: Notify Live Monitor #11 (Finish)
-        if: always()
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh issue comment 11 --body "🏁 Finished Run ${{ github.run_id }} | Status: ${{ job.status }} at $(date -u +%H:%M:%SZ)" || true
