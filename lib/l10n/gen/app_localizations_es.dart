@@ -4099,4 +4099,17 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get autoBackupRestored => 'Restaurado.';
+
+  @override
+  String get errorLogTitle => 'Registro de errores';
+
+  @override
+  String get errorLogHint =>
+      'Si algo falla, se anota aquí: solo el tipo de error y dónde ocurrió en el código, nunca tu contenido. Compártelo para ayudar a arreglarlo.';
+
+  @override
+  String get errorLogEmpty => 'No hay errores registrados.';
+
+  @override
+  String get errorLogClear => 'Borrar';
 }

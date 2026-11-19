@@ -1133,5 +1133,9 @@
   "autoBackupNone": "Pas encore de sauvegarde automatique. La première est faite aujourd’hui.",
   "autoBackupRestore": "Restaurer",
   "autoBackupConfirm": "Remplacer toutes les données actuelles par la sauvegarde du {date} ?",
-  "autoBackupRestored": "Restauré."
+  "autoBackupRestored": "Restauré.",
+  "errorLogTitle": "Journal des erreurs",
+  "errorLogHint": "En cas de problème, il est noté ici : seulement le type d’erreur et l’endroit dans le code, jamais votre contenu. Partagez-le pour aider à le corriger.",
+  "errorLogEmpty": "Aucune erreur enregistrée.",
+  "errorLogClear": "Effacer"
 }

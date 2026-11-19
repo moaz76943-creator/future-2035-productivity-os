@@ -3902,4 +3902,16 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get autoBackupRestored => '已恢复。';
+
+  @override
+  String get errorLogTitle => '错误日志';
+
+  @override
+  String get errorLogHint => '出现问题时会记录在此：仅记录错误类型和代码位置，绝不包含您的内容。分享它以帮助修复问题。';
+
+  @override
+  String get errorLogEmpty => '没有记录到错误。';
+
+  @override
+  String get errorLogClear => '清除';
 }

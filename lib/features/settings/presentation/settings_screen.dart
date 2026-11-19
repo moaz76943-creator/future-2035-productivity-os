@@ -17,6 +17,7 @@ import '../application/settings_providers.dart';
 import '../data/settings_repository.dart';
 import '../../backup/presentation/auto_backup_sheet.dart';
 import 'end_tone_sheet.dart';
+import 'error_log_sheet.dart';
 import 'language_options.dart';
 
 part 'settings_screen/section.dart';
@@ -313,6 +314,12 @@ class SettingsScreen extends ConsumerWidget {
                     '${l10n.settingsVersion(_displayVersion)}\n${l10n.settingsAboutTagline}',
                   ),
                   isThreeLine: true,
+                ),
+                _NavRow(
+                  key: const ValueKey('settings-error-log'),
+                  icon: Icons.bug_report_outlined,
+                  title: l10n.errorLogTitle,
+                  onTap: () => showErrorLog(context),
                 ),
                 _NavRow(
                   icon: Icons.description_outlined,

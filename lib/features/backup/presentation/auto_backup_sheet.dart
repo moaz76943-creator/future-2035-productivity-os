@@ -72,7 +72,10 @@ class _AutoBackupSheetState extends ConsumerState<_AutoBackupSheet> {
         children: [
           Text(l10n.autoBackupTitle, style: context.text.titleLarge),
           const SizedBox(height: Space.xs),
-          Text(l10n.autoBackupHint, style: context.text.bodySmall?.copyWith(color: context.lux.ink2)),
+          Text(
+            l10n.autoBackupHint,
+            style: context.text.bodySmall?.copyWith(color: context.lux.ink2),
+          ),
           const SizedBox(height: Space.sm),
           if (files.isEmpty) Text(l10n.autoBackupNone, key: const Key('autoBackupNone')),
           for (final (i, f) in files.indexed)

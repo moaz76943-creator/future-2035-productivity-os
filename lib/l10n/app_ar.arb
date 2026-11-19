@@ -1133,5 +1133,9 @@
   "autoBackupNone": "لا توجد نسخة تلقائية بعد. تُنشأ أول نسخة اليوم.",
   "autoBackupRestore": "استعادة",
   "autoBackupConfirm": "استبدال كل البيانات الحالية بالنسخة المحفوظة في {date}؟",
-  "autoBackupRestored": "تمت الاستعادة."
+  "autoBackupRestored": "تمت الاستعادة.",
+  "errorLogTitle": "سجل الأخطاء",
+  "errorLogHint": "إذا حدث خطأ يُسجَّل هنا: نوع الخطأ ومكانه في الكود فقط، ولا يُسجَّل أي شيء من محتواك. شاركه للمساعدة في إصلاح المشكلة.",
+  "errorLogEmpty": "لا توجد أخطاء مسجّلة.",
+  "errorLogClear": "مسح"
 }

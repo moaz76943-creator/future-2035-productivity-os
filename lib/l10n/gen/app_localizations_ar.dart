@@ -4250,4 +4250,17 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get autoBackupRestored => 'تمت الاستعادة.';
+
+  @override
+  String get errorLogTitle => 'سجل الأخطاء';
+
+  @override
+  String get errorLogHint =>
+      'إذا حدث خطأ يُسجَّل هنا: نوع الخطأ ومكانه في الكود فقط، ولا يُسجَّل أي شيء من محتواك. شاركه للمساعدة في إصلاح المشكلة.';
+
+  @override
+  String get errorLogEmpty => 'لا توجد أخطاء مسجّلة.';
+
+  @override
+  String get errorLogClear => 'مسح';
 }

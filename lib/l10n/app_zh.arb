@@ -1133,5 +1133,9 @@
   "autoBackupNone": "还没有自动备份，今天会生成第一份。",
   "autoBackupRestore": "恢复",
   "autoBackupConfirm": "用 {date} 的备份替换当前所有数据？",
-  "autoBackupRestored": "已恢复。"
+  "autoBackupRestored": "已恢复。",
+  "errorLogTitle": "错误日志",
+  "errorLogHint": "出现问题时会记录在此：仅记录错误类型和代码位置，绝不包含您的内容。分享它以帮助修复问题。",
+  "errorLogEmpty": "没有记录到错误。",
+  "errorLogClear": "清除"
 }

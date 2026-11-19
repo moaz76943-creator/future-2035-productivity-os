@@ -1133,5 +1133,9 @@
   "autoBackupNone": "Aún no hay copias automáticas. La primera se hace hoy.",
   "autoBackupRestore": "Restaurar",
   "autoBackupConfirm": "¿Reemplazar todos los datos actuales por la copia del {date}?",
-  "autoBackupRestored": "Restaurado."
+  "autoBackupRestored": "Restaurado.",
+  "errorLogTitle": "Registro de errores",
+  "errorLogHint": "Si algo falla, se anota aquí: solo el tipo de error y dónde ocurrió en el código, nunca tu contenido. Compártelo para ayudar a arreglarlo.",
+  "errorLogEmpty": "No hay errores registrados.",
+  "errorLogClear": "Borrar"
 }

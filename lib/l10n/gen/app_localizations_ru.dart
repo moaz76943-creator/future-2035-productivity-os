@@ -4206,4 +4206,17 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get autoBackupRestored => 'Восстановлено.';
+
+  @override
+  String get errorLogTitle => 'Журнал ошибок';
+
+  @override
+  String get errorLogHint =>
+      'Если что-то пойдёт не так, это записывается здесь: только тип ошибки и место в коде, без вашего содержимого. Поделитесь журналом, чтобы помочь исправить.';
+
+  @override
+  String get errorLogEmpty => 'Ошибок не записано.';
+
+  @override
+  String get errorLogClear => 'Очистить';
 }

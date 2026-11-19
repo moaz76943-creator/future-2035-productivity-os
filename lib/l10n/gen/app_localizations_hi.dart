@@ -4090,4 +4090,17 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get autoBackupRestored => 'पुनर्स्थापित हो गया।';
+
+  @override
+  String get errorLogTitle => 'त्रुटि लॉग';
+
+  @override
+  String get errorLogHint =>
+      'कोई गड़बड़ी होने पर यहाँ दर्ज होती है: सिर्फ़ त्रुटि का प्रकार और कोड में जगह, आपकी सामग्री कभी नहीं। समस्या ठीक कराने के लिए इसे साझा करें।';
+
+  @override
+  String get errorLogEmpty => 'कोई त्रुटि दर्ज नहीं।';
+
+  @override
+  String get errorLogClear => 'साफ़ करें';
 }

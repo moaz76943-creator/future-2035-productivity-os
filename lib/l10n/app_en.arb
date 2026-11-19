@@ -5497,5 +5497,21 @@
   "autoBackupRestored": "Restored.",
   "@autoBackupRestored": {
     "description": "Message after restoring"
+  },
+  "errorLogTitle": "Error log",
+  "@errorLogTitle": {
+    "description": "Settings row and sheet title: list of app errors"
+  },
+  "errorLogHint": "If something goes wrong, it is noted here: only the kind of error and where in the code, never your content. Share it to help fix the problem.",
+  "@errorLogHint": {
+    "description": "Explains the error log and its privacy"
+  },
+  "errorLogEmpty": "No errors recorded.",
+  "@errorLogEmpty": {
+    "description": "No errors recorded"
+  },
+  "errorLogClear": "Clear",
+  "@errorLogClear": {
+    "description": "Button: empty the error log"
   }
 }

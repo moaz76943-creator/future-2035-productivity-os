@@ -6911,6 +6911,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Restored.'**
   String get autoBackupRestored;
+
+  /// Settings row and sheet title: list of app errors
+  ///
+  /// In en, this message translates to:
+  /// **'Error log'**
+  String get errorLogTitle;
+
+  /// Explains the error log and its privacy
+  ///
+  /// In en, this message translates to:
+  /// **'If something goes wrong, it is noted here: only the kind of error and where in the code, never your content. Share it to help fix the problem.'**
+  String get errorLogHint;
+
+  /// No errors recorded
+  ///
+  /// In en, this message translates to:
+  /// **'No errors recorded.'**
+  String get errorLogEmpty;
+
+  /// Button: empty the error log
+  ///
+  /// In en, this message translates to:
+  /// **'Clear'**
+  String get errorLogClear;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
