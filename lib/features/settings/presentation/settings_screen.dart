@@ -16,6 +16,9 @@ import '../../backup/presentation/backup_flows.dart';
 import '../application/settings_providers.dart';
 import '../data/settings_repository.dart';
 import '../../backup/presentation/auto_backup_sheet.dart';
+import '../../prayer/domain/prayer_cities.dart';
+import '../../prayer/presentation/prayer_sheet.dart';
+import 'appearance_extras.dart';
 import 'dnd_tile.dart';
 import 'end_tone_sheet.dart';
 import 'error_log_sheet.dart';
@@ -81,6 +84,22 @@ class SettingsScreen extends ConsumerWidget {
                   value: s.showHijri(context.language.tag),
                   onChanged: (v) => set((c) => c.copyWith(hijri: v ? 'on' : 'off')),
                 ),
+                _NavRow(
+                  key: const ValueKey('settings-help'),
+                  icon: Icons.help_outline_rounded,
+                  title: l10n.helpTitle,
+                  subtitle: l10n.helpTour,
+                  onTap: () => context.push(Routes.help),
+                ),
+                _NavRow(
+                  key: const ValueKey('settings-prayer'),
+                  icon: Icons.mosque_outlined,
+                  title: l10n.prayerTitle,
+                  subtitle:
+                      prayerCityById(s.prayer.city)?.name(context.language.tag) ??
+                      l10n.prayerChooseCity,
+                  onTap: () => showPrayerSheet(context),
+                ),
               ],
             ),
             // ---------------- Appearance
@@ -131,6 +150,7 @@ class SettingsScreen extends ConsumerWidget {
                     ],
                   ),
                 ),
+                const AppearanceExtras(),
                 SwitchListTile(
                   secondary: const Icon(Icons.motion_photos_off_rounded),
                   title: Text(l10n.settingsReduceMotion),

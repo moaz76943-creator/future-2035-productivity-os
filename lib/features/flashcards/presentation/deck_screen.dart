@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../../../app/localization/app_format.dart';
@@ -32,6 +34,7 @@ import 'widgets/listen_bar.dart';
 import '../domain/card_import.dart';
 import '../domain/study.dart';
 import 'study_sheets.dart';
+import '../data/card_file_import.dart';
 import '../data/flashcards_repository.dart';
 import 'widgets/card_form_sheet.dart';
 import 'widgets/deck_form_sheet.dart';

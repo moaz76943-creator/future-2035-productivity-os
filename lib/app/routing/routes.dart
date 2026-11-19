@@ -31,6 +31,7 @@ abstract final class Routes {
   static const assistant = '/assistant';
   static const sounds = '/sounds';
   static const settings = '/settings';
+  static const help = '/help';
   static const trash = '/trash';
   static const onboarding = '/onboarding';
 }

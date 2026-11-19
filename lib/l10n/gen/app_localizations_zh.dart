@@ -1192,7 +1192,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get importCardsTitle => '导入卡片';
 
   @override
-  String get importCardsHint => '每行粘贴一张卡片，正面和背面用制表符或分号分隔；也可以粘贴导出的卡组文件。';
+  String get importCardsHint =>
+      '每行粘贴一张卡片（正反面用制表符或分号分隔），或选择文件：Excel（.xlsx）、CSV、Anki 卡组（.apkg）或导出的卡组。';
 
   @override
   String importCardsResult(int count) {
@@ -4203,4 +4204,216 @@ class AppLocalizationsZh extends AppLocalizations {
   String prayerNext(String name, String time) {
     return '$time $name';
   }
+
+  @override
+  String get importAnkiNewFormat => '此 Anki 文件为最新格式。请在 Anki 中勾选“支持旧版 Anki”后重新导出，再导入该文件。';
+
+  @override
+  String get importTemplate => '表格模板';
+
+  @override
+  String get importTemplateFront => '苹果';
+
+  @override
+  String get importTemplateBack => '一种圆形水果';
+
+  @override
+  String get importTemplateExample => '我每天吃一个苹果。';
+
+  @override
+  String get importTemplateTag => '食物';
+
+  @override
+  String get starterTitle => '入门卡组';
+
+  @override
+  String get starterHint => '添加一个立即开始学习，之后可编辑或删除。';
+
+  @override
+  String get starterAdd => '添加';
+
+  @override
+  String get starterWords => '日常英语单词（阿拉伯语）';
+
+  @override
+  String get starterCapitals => '世界各国首都';
+
+  @override
+  String get starterElements => '化学元素';
+
+  @override
+  String get settingsAccent => '强调色';
+
+  @override
+  String get accentViolet => '紫色';
+
+  @override
+  String get accentBlue => '蓝色';
+
+  @override
+  String get accentTeal => '青色';
+
+  @override
+  String get accentGreen => '绿色';
+
+  @override
+  String get accentRose => '玫红';
+
+  @override
+  String get accentAmber => '琥珀色';
+
+  @override
+  String get settingsFlashTextSize => '卡片文字大小';
+
+  @override
+  String get settingsFlashTextSample => '示例';
+
+  @override
+  String get widgetStartFocus => '点按开始专注';
+
+  @override
+  String widgetFocusUntil(String time) {
+    return '专注至 $time';
+  }
+
+  @override
+  String get widgetNoCardsDue => '卡片：已全部完成';
+
+  @override
+  String get faqMyDayQ => '“开始我的一天”有什么用？';
+
+  @override
+  String get faqMyDayA =>
+      '首页每天出现一次：查看今日任务、下一个日程、剩余习惯和待复习卡片，然后一键开始专注。长按应用图标可使用快捷操作，也可添加桌面小部件查看专注时间和待复习卡片。';
+
+  @override
+  String get faqTasksQ => '如何添加带提醒的任务？';
+
+  @override
+  String get faqTasksA => '在首页点“新建任务”或在任务中点 +。输入标题或用麦克风说出，然后设置截止日期、时间和提醒。逾期任务排在最前。';
+
+  @override
+  String get faqFocusQ => '专注计时器如何使用？';
+
+  @override
+  String get faqFocusA => '选择番茄钟、倒计时或自由计时并点“开始”，休息可自动开始。在设置中可选择结束提示音、专注时开启勿扰，并在每次专注时播放自然声音。';
+
+  @override
+  String get faqSoundsQ => '可以混合自然声音吗？';
+
+  @override
+  String get faqSoundsA => '最多同时开启六种真实录音，分别调节音量并命名保存。可在后台播放，睡眠定时器可自动停止。不含任何音乐。';
+
+  @override
+  String get faqCalendarQ => '日历能显示伊斯兰历吗？';
+
+  @override
+  String get faqCalendarA => '可以。阿拉伯语下自动显示伊斯兰历（乌姆库拉历），其他语言可在设置中开启。日程、有截止日期的任务和项目里程碑会一起显示。';
+
+  @override
+  String get faqFlashcardsQ => '复习时如何决定显示哪些卡片？';
+
+  @override
+  String get faqFlashcardsA =>
+      '掌握好的卡片间隔更久再出现，答错的很快再出现（间隔重复）。每次作答选择“重来”“困难”“良好”或“简单”。可设置每日目标，并在“今天”卡片上保持连续天数。';
+
+  @override
+  String get faqImportQ => '可以从 Anki 或 Excel 导入卡片吗？';
+
+  @override
+  String get faqImportA =>
+      '可以。在卡组中选择“导入”，再选文件：Anki（.apkg）、Excel（.xlsx）或 CSV，并匹配各列。可用“表格模板”在电脑上编写卡片。Anki 文件中的图片和声音不会导入。';
+
+  @override
+  String get faqNotesQ => '笔记能做什么？';
+
+  @override
+  String get faqNotesA => '可使用清单和格式自由书写，置顶或收藏重要笔记，添加标签并关联到任务。点击麦克风按钮即可语音输入。';
+
+  @override
+  String get faqHabitsQ => '习惯的连续天数如何计算？';
+
+  @override
+  String get faqHabitsA => '在计划的日子达到习惯目标即计为一天。暂停习惯不会中断连续天数。每个习惯都可设置自己的提醒时间。';
+
+  @override
+  String get faqGoalsQ => '目标如何跟踪进度？';
+
+  @override
+  String get faqGoalsA => '为目标设定数量和单位，然后记录进度。目标卡片会显示完成情况以及截止前还剩多少。';
+
+  @override
+  String get faqProjectsQ => '项目有什么用？';
+
+  @override
+  String get faqProjectsA => '将任务归入项目，添加带日期的里程碑并查看整体进度。里程碑也会显示在日历中。';
+
+  @override
+  String get faqInsightsQ => '洞察页显示什么？';
+
+  @override
+  String get faqInsightsA => '按天和周显示专注时间、完成的任务和学习情况，并给出温和建议。全部在手机上计算。';
+
+  @override
+  String get faqSpacesQ => '所有板块在哪里？';
+
+  @override
+  String get faqSpacesA => '“空间”汇集了应用的所有部分（笔记、卡组、习惯、目标、项目、声音等），让主导航栏保持简洁。';
+
+  @override
+  String get faqBackupQ => '我的数据如何备份？';
+
+  @override
+  String get faqBackupA => '应用每天会在本机自动保存一份加密副本，并保留最近 7 份。也可在设置中导出带密码的备份文件，在另一部手机上恢复。';
+
+  @override
+  String get faqPrayerQ => '礼拜时间如何使用？';
+
+  @override
+  String get faqPrayerA => '在“设置 → 礼拜时间”中选择城市。时间在手机上按当地常用方法计算，可更改计算方法和晡礼学派。可在每次礼拜时收到提醒，进行中的专注会暂停。';
+
+  @override
+  String get faqPrivacyQ => '我的数据存储在哪里？';
+
+  @override
+  String get faqPrivacyA => '仅保存在你的手机上，使用加密数据库。无需账号，没有跟踪。只有你主动开启的功能（如可选助手）才会联网。';
+
+  @override
+  String get faqAssistantQ => '助手是什么？';
+
+  @override
+  String get faqAssistantA => '一个可选助手，可在设置中连接你自己的 AI 服务。默认关闭，发送笔记内容前会先征得同意。';
+
+  @override
+  String get tourPlanTitle => '规划你的一天';
+
+  @override
+  String get tourPlanBody => '任务、日历和习惯集中在一个安静的地方。每天早上从“开始我的一天”开始。';
+
+  @override
+  String get tourFocusTitle => '深度专注';
+
+  @override
+  String get tourFocusBody => '带真实自然声音、勿扰模式和柔和提示音的计时专注。';
+
+  @override
+  String get tourLearnTitle => '学而不忘';
+
+  @override
+  String get tourLearnBody => '间隔重复卡片、多语言朗读，并支持从 Anki 或 Excel 导入。';
+
+  @override
+  String get helpTitle => '帮助与常见问题';
+
+  @override
+  String get helpOpen => '打开';
+
+  @override
+  String get helpTour => '查看导览';
+
+  @override
+  String get tourNext => '下一步';
+
+  @override
+  String get tourDone => '开始吧';
 }

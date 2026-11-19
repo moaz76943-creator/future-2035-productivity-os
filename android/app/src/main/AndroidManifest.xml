@@ -62,6 +62,18 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <!-- Home screen widget: focus time left and cards due. -->
+        <receiver
+            android:name=".HomeWidgetProvider"
+            android:exported="false"
+            android:label="@string/home_widget_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/home_widget_info" />
+        </receiver>
         <!-- Restores Do Not Disturb at the end of a focus phase. -->
         <receiver android:name=".DndRestoreReceiver" android:exported="false" />
         <service

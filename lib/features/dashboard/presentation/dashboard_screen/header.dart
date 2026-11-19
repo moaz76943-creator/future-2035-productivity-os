@@ -28,6 +28,7 @@ class _Header extends ConsumerWidget {
                 }, style: context.text.labelLarge?.copyWith(color: context.lux.ink3)),
                 const SizedBox(height: Space.xxs),
                 Semantics(header: true, child: Text(greeting, style: context.text.headlineMedium)),
+                const NextPrayerChip(),
               ],
             ),
           ),

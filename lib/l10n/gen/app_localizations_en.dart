@@ -1240,7 +1240,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get importCardsHint =>
-      'Paste one card per line as front and back separated by a tab or semicolon, or paste an exported deck file.';
+      'Paste one card per line (front and back separated by a tab or semicolon), or choose a file: Excel (.xlsx), CSV, an Anki deck (.apkg) or an exported deck.';
 
   @override
   String importCardsResult(int count) {
@@ -4397,4 +4397,234 @@ class AppLocalizationsEn extends AppLocalizations {
   String prayerNext(String name, String time) {
     return '$name at $time';
   }
+
+  @override
+  String get importAnkiNewFormat =>
+      'This Anki file uses the newest format. In Anki, export again with “Support older Anki versions” turned on, then import that file.';
+
+  @override
+  String get importTemplate => 'Spreadsheet template';
+
+  @override
+  String get importTemplateFront => 'apple';
+
+  @override
+  String get importTemplateBack => 'a round fruit';
+
+  @override
+  String get importTemplateExample => 'I eat an apple every day.';
+
+  @override
+  String get importTemplateTag => 'food';
+
+  @override
+  String get starterTitle => 'Starter decks';
+
+  @override
+  String get starterHint => 'Add one to try studying right away. You can edit or delete it later.';
+
+  @override
+  String get starterAdd => 'Add';
+
+  @override
+  String get starterWords => 'Everyday English words (Arabic)';
+
+  @override
+  String get starterCapitals => 'World capitals';
+
+  @override
+  String get starterElements => 'Chemical elements';
+
+  @override
+  String get settingsAccent => 'Accent colour';
+
+  @override
+  String get accentViolet => 'Violet';
+
+  @override
+  String get accentBlue => 'Blue';
+
+  @override
+  String get accentTeal => 'Teal';
+
+  @override
+  String get accentGreen => 'Green';
+
+  @override
+  String get accentRose => 'Rose';
+
+  @override
+  String get accentAmber => 'Amber';
+
+  @override
+  String get settingsFlashTextSize => 'Flashcard text size';
+
+  @override
+  String get settingsFlashTextSample => 'Example';
+
+  @override
+  String get widgetStartFocus => 'Tap to focus';
+
+  @override
+  String widgetFocusUntil(String time) {
+    return 'Focus until $time';
+  }
+
+  @override
+  String get widgetNoCardsDue => 'Cards: all done';
+
+  @override
+  String get faqMyDayQ => 'What does “Start my day” do?';
+
+  @override
+  String get faqMyDayA =>
+      'Once a day the home screen offers it: see today’s tasks, the next event, habits left and cards due, then begin a focus session with one tap. Long-press the app icon for quick actions, or add the home screen widget to see focus time and cards due.';
+
+  @override
+  String get faqTasksQ => 'How do I add a task with a reminder?';
+
+  @override
+  String get faqTasksA =>
+      'Tap New task on Home or + in Tasks. Type the title or speak it with the microphone, then set a due date, a time and a reminder. Overdue tasks are listed first.';
+
+  @override
+  String get faqFocusQ => 'How does the focus timer work?';
+
+  @override
+  String get faqFocusA =>
+      'Choose Pomodoro, a countdown or open time and press Start; breaks can follow automatically. In Settings you can pick the end sound, turn on Do Not Disturb while focusing, and play your nature sounds with each session.';
+
+  @override
+  String get faqSoundsQ => 'Can I mix nature sounds?';
+
+  @override
+  String get faqSoundsA =>
+      'Turn on up to six real recordings, set each volume and save the mix by name. They keep playing in the background, and a sleep timer can stop them. No music is used.';
+
+  @override
+  String get faqCalendarQ => 'Can the calendar show Hijri dates?';
+
+  @override
+  String get faqCalendarA =>
+      'Yes. Hijri dates (Umm al-Qura) show automatically in Arabic and can be turned on in Settings for any language. Events, tasks with due dates and project milestones appear together.';
+
+  @override
+  String get faqFlashcardsQ => 'How does review decide which cards I see?';
+
+  @override
+  String get faqFlashcardsA =>
+      'Cards you know well come back after longer gaps and cards you miss come back soon (spaced repetition). Rate each answer Again, Hard, Good or Easy. Set a daily goal and keep your streak on the Today card.';
+
+  @override
+  String get faqImportQ => 'Can I bring cards from Anki or Excel?';
+
+  @override
+  String get faqImportA =>
+      'Yes. In a deck choose Import, then pick a file: Anki (.apkg), Excel (.xlsx) or CSV, and match the columns. Use “Spreadsheet template” to write cards on a computer. Pictures and sounds inside Anki files are not imported.';
+
+  @override
+  String get faqNotesQ => 'What can notes do?';
+
+  @override
+  String get faqNotesA =>
+      'Write freely with checklists and formatting, pin or favourite important notes, add tags and link notes to tasks. The microphone button lets you dictate.';
+
+  @override
+  String get faqHabitsQ => 'How are habit streaks counted?';
+
+  @override
+  String get faqHabitsA =>
+      'A day counts when you reach the habit’s target on a scheduled day. Pausing a habit keeps the streak safe. Each habit can have its own reminder time.';
+
+  @override
+  String get faqGoalsQ => 'How do goals track progress?';
+
+  @override
+  String get faqGoalsA =>
+      'Give a goal a target amount and unit, then log progress. Its card shows how far you are and how much is left before the deadline.';
+
+  @override
+  String get faqProjectsQ => 'What are projects for?';
+
+  @override
+  String get faqProjectsA =>
+      'Group tasks under a project, add milestones with dates and follow overall progress. Milestones also appear in the calendar.';
+
+  @override
+  String get faqInsightsQ => 'What does Insights show?';
+
+  @override
+  String get faqInsightsA =>
+      'Your focus time, finished tasks and study over days and weeks, with gentle suggestions. Everything is calculated on your phone.';
+
+  @override
+  String get faqSpacesQ => 'Where are all the sections?';
+
+  @override
+  String get faqSpacesA =>
+      'Spaces lists every part of the app (notes, decks, habits, goals, projects, sounds and more) so the main bar stays simple.';
+
+  @override
+  String get faqBackupQ => 'How are my data backed up?';
+
+  @override
+  String get faqBackupA =>
+      'Every day the app quietly keeps an encrypted copy on this phone and keeps the last 7. In Settings you can also export a password-protected backup file and restore it on another phone.';
+
+  @override
+  String get faqPrayerQ => 'How do prayer times work?';
+
+  @override
+  String get faqPrayerA =>
+      'Choose your city in Settings → Prayer times. Times are calculated on the phone with the method used there, and you can change the method and the Asr school. You can be notified at each prayer, and a running focus session pauses.';
+
+  @override
+  String get faqPrivacyQ => 'Where are my data stored?';
+
+  @override
+  String get faqPrivacyA =>
+      'On your phone only, in an encrypted database. There is no account and no tracking. The internet is used only by features you turn on yourself, such as the optional assistant.';
+
+  @override
+  String get faqAssistantQ => 'What is the assistant?';
+
+  @override
+  String get faqAssistantA =>
+      'An optional helper you connect to your own AI service in Settings. It is off by default and asks before sending any note text.';
+
+  @override
+  String get tourPlanTitle => 'Plan your day';
+
+  @override
+  String get tourPlanBody =>
+      'Tasks, calendar and habits in one calm place. Begin each morning with “Start my day”.';
+
+  @override
+  String get tourFocusTitle => 'Focus deeply';
+
+  @override
+  String get tourFocusBody =>
+      'Timed sessions with real nature sounds, Do Not Disturb and gentle end tones.';
+
+  @override
+  String get tourLearnTitle => 'Learn for good';
+
+  @override
+  String get tourLearnBody =>
+      'Flashcards with spaced repetition, speech in many languages, and imports from Anki or Excel.';
+
+  @override
+  String get helpTitle => 'Help & questions';
+
+  @override
+  String get helpOpen => 'Open';
+
+  @override
+  String get helpTour => 'Take the tour';
+
+  @override
+  String get tourNext => 'Next';
+
+  @override
+  String get tourDone => 'Let’s begin';
 }

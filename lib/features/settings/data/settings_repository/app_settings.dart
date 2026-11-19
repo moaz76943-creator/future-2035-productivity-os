@@ -38,6 +38,8 @@ class AppSettings {
     this.hijri = 'auto',
     this.dailyCardGoal = 20,
     this.focusDnd = false,
+    this.accent = 'violet',
+    this.flashTextPercent = 100,
     this.prayer = const PrayerSettings(),
     this.onboardingDone = false,
     this.assistantEnabled = false,
@@ -118,6 +120,12 @@ class AppSettings {
   final bool focusDnd;
   final PrayerSettings prayer;
 
+  /// Accent colour name (see AppAccents).
+  final String accent;
+
+  /// Flashcard text size during review, percent (80–160).
+  final int flashTextPercent;
+
   bool showHijri(String languageTag) => hijri == 'on' || (hijri == 'auto' && languageTag == 'ar');
   final bool onboardingDone;
   final bool assistantEnabled;
@@ -182,6 +190,8 @@ class AppSettings {
     'dailyCardGoal': dailyCardGoal,
     'focusDnd': focusDnd,
     'prayer': prayer.toJson(),
+    'accent': accent,
+    'flashTextPercent': flashTextPercent,
     'onboardingDone': onboardingDone,
     'assistantEnabled': assistantEnabled,
     'assistantRemoteConsent': assistantRemoteConsent,
@@ -243,6 +253,8 @@ class AppSettings {
       dailyCardGoal: read('dailyCardGoal', d.dailyCardGoal).clamp(0, 1000),
       focusDnd: read('focusDnd', d.focusDnd),
       prayer: PrayerSettings.fromJson(j['prayer']),
+      accent: read('accent', d.accent),
+      flashTextPercent: read('flashTextPercent', d.flashTextPercent).clamp(80, 160),
       onboardingDone: read('onboardingDone', d.onboardingDone),
       assistantEnabled: read('assistantEnabled', d.assistantEnabled),
       assistantRemoteConsent: read('assistantRemoteConsent', d.assistantRemoteConsent),
@@ -291,6 +303,8 @@ class AppSettings {
     int? dailyCardGoal,
     bool? focusDnd,
     PrayerSettings? prayer,
+    String? accent,
+    int? flashTextPercent,
     bool? onboardingDone,
     bool? assistantEnabled,
     bool? assistantRemoteConsent,
@@ -335,6 +349,8 @@ class AppSettings {
     'dailyCardGoal': ?dailyCardGoal,
     'focusDnd': ?focusDnd,
     if (prayer != null) 'prayer': prayer.toJson(),
+    'accent': ?accent,
+    'flashTextPercent': ?flashTextPercent,
     'onboardingDone': ?onboardingDone,
     'assistantEnabled': ?assistantEnabled,
     'assistantRemoteConsent': ?assistantRemoteConsent,

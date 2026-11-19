@@ -103,3 +103,19 @@ abstract final class Motion {
 
 /// Minimum touch target (Material / WCAG 2.5.8).
 const double kMinTouchTarget = 48;
+
+/// Accent colours the user can choose (Settings → Appearance). Deep enough
+/// for white text on buttons (at least 4.5:1).
+abstract final class AppAccents {
+  static const all = <String, Color>{
+    'violet': Palette.violet,
+    'blue': Color(0xFF2F62D6),
+    'teal': Color(0xFF0B7C74),
+    'green': Color(0xFF2E7D4F),
+    'rose': Color(0xFFC03A6E),
+    'amber': Color(0xFFA85B12),
+  };
+
+  /// Null for the default (keeps the original tuned containers).
+  static Color? of(String name) => name == 'violet' ? null : all[name];
+}

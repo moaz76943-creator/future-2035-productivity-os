@@ -1294,7 +1294,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get importCardsHint =>
-      'Вставьте по одной карточке на строку: лицевая и обратная стороны через табуляцию или точку с запятой. Можно также вставить экспортированный файл колоды.';
+      'Вставьте по одной карточке в строке (лицо и оборот через табуляцию или точку с запятой) или выберите файл: Excel (.xlsx), CSV, колоду Anki (.apkg) или экспортированную колоду.';
 
   @override
   String importCardsResult(int count) {
@@ -4531,4 +4531,234 @@ class AppLocalizationsRu extends AppLocalizations {
   String prayerNext(String name, String time) {
     return '$name в $time';
   }
+
+  @override
+  String get importAnkiNewFormat =>
+      'Этот файл Anki в новейшем формате. Экспортируйте снова в Anki с включённым параметром «Поддержка старых версий Anki».';
+
+  @override
+  String get importTemplate => 'Шаблон таблицы';
+
+  @override
+  String get importTemplateFront => 'яблоко';
+
+  @override
+  String get importTemplateBack => 'круглый фрукт';
+
+  @override
+  String get importTemplateExample => 'Я ем яблоко каждый день.';
+
+  @override
+  String get importTemplateTag => 'еда';
+
+  @override
+  String get starterTitle => 'Готовые колоды';
+
+  @override
+  String get starterHint => 'Добавьте колоду и начните сразу. Её можно изменить или удалить.';
+
+  @override
+  String get starterAdd => 'Добавить';
+
+  @override
+  String get starterWords => 'Повседневные английские слова (арабский)';
+
+  @override
+  String get starterCapitals => 'Столицы мира';
+
+  @override
+  String get starterElements => 'Химические элементы';
+
+  @override
+  String get settingsAccent => 'Цвет акцента';
+
+  @override
+  String get accentViolet => 'Фиолетовый';
+
+  @override
+  String get accentBlue => 'Синий';
+
+  @override
+  String get accentTeal => 'Бирюзовый';
+
+  @override
+  String get accentGreen => 'Зелёный';
+
+  @override
+  String get accentRose => 'Розовый';
+
+  @override
+  String get accentAmber => 'Янтарный';
+
+  @override
+  String get settingsFlashTextSize => 'Размер текста карточек';
+
+  @override
+  String get settingsFlashTextSample => 'Пример';
+
+  @override
+  String get widgetStartFocus => 'Нажмите, чтобы начать фокус';
+
+  @override
+  String widgetFocusUntil(String time) {
+    return 'Фокус до $time';
+  }
+
+  @override
+  String get widgetNoCardsDue => 'Карточки: всё повторено';
+
+  @override
+  String get faqMyDayQ => 'Что делает «Начать день»?';
+
+  @override
+  String get faqMyDayA =>
+      'Раз в день на главной: задачи на сегодня, ближайшее событие, оставшиеся привычки и карточки к повторению, а затем сессия фокуса одним касанием. Удерживайте значок приложения для быстрых действий или добавьте виджет на главный экран.';
+
+  @override
+  String get faqTasksQ => 'Как добавить задачу с напоминанием?';
+
+  @override
+  String get faqTasksA =>
+      'Нажмите «Новая задача» на главной или + в Задачах. Введите название или продиктуйте его, затем укажите срок, время и напоминание. Просроченные задачи показываются первыми.';
+
+  @override
+  String get faqFocusQ => 'Как работает таймер фокуса?';
+
+  @override
+  String get faqFocusA =>
+      'Выберите помодоро, обратный отсчёт или свободное время и нажмите «Старт»; перерывы могут начинаться сами. В настройках выберите звук окончания, включите «Не беспокоить» во время фокуса и звуки природы для каждой сессии.';
+
+  @override
+  String get faqSoundsQ => 'Можно ли смешивать звуки природы?';
+
+  @override
+  String get faqSoundsA =>
+      'Включите до шести настоящих записей, настройте громкость каждой и сохраните микс под именем. Они играют в фоне, а таймер сна может их остановить. Музыки нет.';
+
+  @override
+  String get faqCalendarQ => 'Показывает ли календарь даты по хиджре?';
+
+  @override
+  String get faqCalendarA =>
+      'Да. Даты по хиджре (Умм аль-Кура) показываются автоматически на арабском и включаются в настройках для любого языка. События, задачи со сроком и этапы проектов видны вместе.';
+
+  @override
+  String get faqFlashcardsQ => 'Как выбираются карточки для повторения?';
+
+  @override
+  String get faqFlashcardsA =>
+      'Хорошо выученные карточки возвращаются реже, а ошибочные — скоро (интервальное повторение). Оценивайте ответ: Снова, Трудно, Хорошо или Легко. Задайте цель на день и держите серию на карточке «Сегодня».';
+
+  @override
+  String get faqImportQ => 'Можно ли перенести карточки из Anki или Excel?';
+
+  @override
+  String get faqImportA =>
+      'Да. В колоде выберите «Импорт» и файл: Anki (.apkg), Excel (.xlsx) или CSV, затем сопоставьте столбцы. «Шаблон таблицы» поможет писать карточки на компьютере. Картинки и звуки из файлов Anki не переносятся.';
+
+  @override
+  String get faqNotesQ => 'Что умеют заметки?';
+
+  @override
+  String get faqNotesA =>
+      'Пишите со списками и форматированием, закрепляйте важные заметки или добавляйте в избранное, ставьте теги и связывайте заметки с задачами. Кнопка микрофона позволяет диктовать.';
+
+  @override
+  String get faqHabitsQ => 'Как считаются серии привычек?';
+
+  @override
+  String get faqHabitsA =>
+      'День засчитывается, если в запланированный день достигнута цель привычки. Пауза сохраняет серию. У каждой привычки может быть своё время напоминания.';
+
+  @override
+  String get faqGoalsQ => 'Как цели отслеживают прогресс?';
+
+  @override
+  String get faqGoalsA =>
+      'Задайте цели количество и единицу и отмечайте прогресс. Карточка покажет, сколько сделано и сколько осталось до срока.';
+
+  @override
+  String get faqProjectsQ => 'Зачем нужны проекты?';
+
+  @override
+  String get faqProjectsA =>
+      'Объединяйте задачи в проект, добавляйте этапы с датами и следите за прогрессом. Этапы видны и в календаре.';
+
+  @override
+  String get faqInsightsQ => 'Что показывает аналитика?';
+
+  @override
+  String get faqInsightsA =>
+      'Время фокуса, выполненные задачи и учёба по дням и неделям, с мягкими советами. Всё считается на телефоне.';
+
+  @override
+  String get faqSpacesQ => 'Где все разделы?';
+
+  @override
+  String get faqSpacesA =>
+      'В «Пространствах» собраны все разделы (заметки, колоды, привычки, цели, проекты, звуки и другое), чтобы нижняя панель оставалась простой.';
+
+  @override
+  String get faqBackupQ => 'Как создаются резервные копии?';
+
+  @override
+  String get faqBackupA =>
+      'Каждый день приложение тихо сохраняет зашифрованную копию на телефоне и хранит последние 7. В настройках можно также экспортировать копию с паролем и восстановить её на другом телефоне.';
+
+  @override
+  String get faqPrayerQ => 'Как работает время намаза?';
+
+  @override
+  String get faqPrayerA =>
+      'Выберите город в «Настройки → Время намаза». Время рассчитывается на телефоне по местному методу; метод и мазхаб для асра можно изменить. Можно получать уведомление о каждом намазе, а идущая сессия фокуса ставится на паузу.';
+
+  @override
+  String get faqPrivacyQ => 'Где хранятся мои данные?';
+
+  @override
+  String get faqPrivacyA =>
+      'Только на телефоне, в зашифрованной базе. Нет аккаунта и слежки. Интернет нужен лишь функциям, которые вы включаете сами, например помощнику.';
+
+  @override
+  String get faqAssistantQ => 'Что такое помощник?';
+
+  @override
+  String get faqAssistantA =>
+      'Необязательный помощник, который вы подключаете к своему ИИ-сервису в настройках. По умолчанию выключен и спрашивает перед отправкой текста заметок.';
+
+  @override
+  String get tourPlanTitle => 'Планируйте день';
+
+  @override
+  String get tourPlanBody =>
+      'Задачи, календарь и привычки в одном спокойном месте. Начинайте утро с «Начать день».';
+
+  @override
+  String get tourFocusTitle => 'Глубокий фокус';
+
+  @override
+  String get tourFocusBody =>
+      'Сессии с таймером, настоящими звуками природы, режимом «Не беспокоить» и мягкими сигналами.';
+
+  @override
+  String get tourLearnTitle => 'Учитесь надолго';
+
+  @override
+  String get tourLearnBody =>
+      'Карточки с интервальным повторением, озвучка на многих языках и импорт из Anki или Excel.';
+
+  @override
+  String get helpTitle => 'Помощь и вопросы';
+
+  @override
+  String get helpOpen => 'Открыть';
+
+  @override
+  String get helpTour => 'Пройти тур';
+
+  @override
+  String get tourNext => 'Далее';
+
+  @override
+  String get tourDone => 'Начнём';
 }

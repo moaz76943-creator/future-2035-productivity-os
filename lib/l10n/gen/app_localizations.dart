@@ -2283,7 +2283,7 @@ abstract class AppLocalizations {
   /// Help text
   ///
   /// In en, this message translates to:
-  /// **'Paste one card per line as front and back separated by a tab or semicolon, or paste an exported deck file.'**
+  /// **'Paste one card per line (front and back separated by a tab or semicolon), or choose a file: Excel (.xlsx), CSV, an Anki deck (.apkg) or an exported deck.'**
   String get importCardsHint;
 
   /// Snackbar
@@ -7433,6 +7433,420 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{name} at {time}'**
   String prayerNext(String name, String time);
+
+  /// Anki file in the newest format only
+  ///
+  /// In en, this message translates to:
+  /// **'This Anki file uses the newest format. In Anki, export again with “Support older Anki versions” turned on, then import that file.'**
+  String get importAnkiNewFormat;
+
+  /// Button: get a spreadsheet template to fill on a computer
+  ///
+  /// In en, this message translates to:
+  /// **'Spreadsheet template'**
+  String get importTemplate;
+
+  /// Sample front in the template
+  ///
+  /// In en, this message translates to:
+  /// **'apple'**
+  String get importTemplateFront;
+
+  /// Sample back in the template
+  ///
+  /// In en, this message translates to:
+  /// **'a round fruit'**
+  String get importTemplateBack;
+
+  /// Sample example sentence in the template
+  ///
+  /// In en, this message translates to:
+  /// **'I eat an apple every day.'**
+  String get importTemplateExample;
+
+  /// Sample tag in the template
+  ///
+  /// In en, this message translates to:
+  /// **'food'**
+  String get importTemplateTag;
+
+  /// Sheet: ready-made decks
+  ///
+  /// In en, this message translates to:
+  /// **'Starter decks'**
+  String get starterTitle;
+
+  /// Sheet subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Add one to try studying right away. You can edit or delete it later.'**
+  String get starterHint;
+
+  /// Button: add this starter deck
+  ///
+  /// In en, this message translates to:
+  /// **'Add'**
+  String get starterAdd;
+
+  /// Starter deck name: everyday English words with Arabic meanings
+  ///
+  /// In en, this message translates to:
+  /// **'Everyday English words (Arabic)'**
+  String get starterWords;
+
+  /// Starter deck name
+  ///
+  /// In en, this message translates to:
+  /// **'World capitals'**
+  String get starterCapitals;
+
+  /// Starter deck name: chemical element symbols
+  ///
+  /// In en, this message translates to:
+  /// **'Chemical elements'**
+  String get starterElements;
+
+  /// Settings: accent colour
+  ///
+  /// In en, this message translates to:
+  /// **'Accent colour'**
+  String get settingsAccent;
+
+  /// Accent colour name
+  ///
+  /// In en, this message translates to:
+  /// **'Violet'**
+  String get accentViolet;
+
+  /// Accent colour name
+  ///
+  /// In en, this message translates to:
+  /// **'Blue'**
+  String get accentBlue;
+
+  /// Accent colour name
+  ///
+  /// In en, this message translates to:
+  /// **'Teal'**
+  String get accentTeal;
+
+  /// Accent colour name
+  ///
+  /// In en, this message translates to:
+  /// **'Green'**
+  String get accentGreen;
+
+  /// Accent colour name
+  ///
+  /// In en, this message translates to:
+  /// **'Rose'**
+  String get accentRose;
+
+  /// Accent colour name
+  ///
+  /// In en, this message translates to:
+  /// **'Amber'**
+  String get accentAmber;
+
+  /// Settings: text size on flashcards during review
+  ///
+  /// In en, this message translates to:
+  /// **'Flashcard text size'**
+  String get settingsFlashTextSize;
+
+  /// Sample word to preview the flashcard text size
+  ///
+  /// In en, this message translates to:
+  /// **'Example'**
+  String get settingsFlashTextSample;
+
+  /// Home screen widget: no session running
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to focus'**
+  String get widgetStartFocus;
+
+  /// Home screen widget: focus running until a time
+  ///
+  /// In en, this message translates to:
+  /// **'Focus until {time}'**
+  String widgetFocusUntil(String time);
+
+  /// Home screen widget: no flashcards due
+  ///
+  /// In en, this message translates to:
+  /// **'Cards: all done'**
+  String get widgetNoCardsDue;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'What does “Start my day” do?'**
+  String get faqMyDayQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Once a day the home screen offers it: see today’s tasks, the next event, habits left and cards due, then begin a focus session with one tap. Long-press the app icon for quick actions, or add the home screen widget to see focus time and cards due.'**
+  String get faqMyDayA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'How do I add a task with a reminder?'**
+  String get faqTasksQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Tap New task on Home or + in Tasks. Type the title or speak it with the microphone, then set a due date, a time and a reminder. Overdue tasks are listed first.'**
+  String get faqTasksA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'How does the focus timer work?'**
+  String get faqFocusQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Choose Pomodoro, a countdown or open time and press Start; breaks can follow automatically. In Settings you can pick the end sound, turn on Do Not Disturb while focusing, and play your nature sounds with each session.'**
+  String get faqFocusA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'Can I mix nature sounds?'**
+  String get faqSoundsQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Turn on up to six real recordings, set each volume and save the mix by name. They keep playing in the background, and a sleep timer can stop them. No music is used.'**
+  String get faqSoundsA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'Can the calendar show Hijri dates?'**
+  String get faqCalendarQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Yes. Hijri dates (Umm al-Qura) show automatically in Arabic and can be turned on in Settings for any language. Events, tasks with due dates and project milestones appear together.'**
+  String get faqCalendarA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'How does review decide which cards I see?'**
+  String get faqFlashcardsQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Cards you know well come back after longer gaps and cards you miss come back soon (spaced repetition). Rate each answer Again, Hard, Good or Easy. Set a daily goal and keep your streak on the Today card.'**
+  String get faqFlashcardsA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'Can I bring cards from Anki or Excel?'**
+  String get faqImportQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Yes. In a deck choose Import, then pick a file: Anki (.apkg), Excel (.xlsx) or CSV, and match the columns. Use “Spreadsheet template” to write cards on a computer. Pictures and sounds inside Anki files are not imported.'**
+  String get faqImportA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'What can notes do?'**
+  String get faqNotesQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Write freely with checklists and formatting, pin or favourite important notes, add tags and link notes to tasks. The microphone button lets you dictate.'**
+  String get faqNotesA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'How are habit streaks counted?'**
+  String get faqHabitsQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'A day counts when you reach the habit’s target on a scheduled day. Pausing a habit keeps the streak safe. Each habit can have its own reminder time.'**
+  String get faqHabitsA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'How do goals track progress?'**
+  String get faqGoalsQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Give a goal a target amount and unit, then log progress. Its card shows how far you are and how much is left before the deadline.'**
+  String get faqGoalsA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'What are projects for?'**
+  String get faqProjectsQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Group tasks under a project, add milestones with dates and follow overall progress. Milestones also appear in the calendar.'**
+  String get faqProjectsA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'What does Insights show?'**
+  String get faqInsightsQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Your focus time, finished tasks and study over days and weeks, with gentle suggestions. Everything is calculated on your phone.'**
+  String get faqInsightsA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'Where are all the sections?'**
+  String get faqSpacesQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Spaces lists every part of the app (notes, decks, habits, goals, projects, sounds and more) so the main bar stays simple.'**
+  String get faqSpacesA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'How are my data backed up?'**
+  String get faqBackupQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Every day the app quietly keeps an encrypted copy on this phone and keeps the last 7. In Settings you can also export a password-protected backup file and restore it on another phone.'**
+  String get faqBackupA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'How do prayer times work?'**
+  String get faqPrayerQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Choose your city in Settings → Prayer times. Times are calculated on the phone with the method used there, and you can change the method and the Asr school. You can be notified at each prayer, and a running focus session pauses.'**
+  String get faqPrayerA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'Where are my data stored?'**
+  String get faqPrivacyQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'On your phone only, in an encrypted database. There is no account and no tracking. The internet is used only by features you turn on yourself, such as the optional assistant.'**
+  String get faqPrivacyA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'What is the assistant?'**
+  String get faqAssistantQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'An optional helper you connect to your own AI service in Settings. It is off by default and asks before sending any note text.'**
+  String get faqAssistantA;
+
+  /// Tour page 1 title
+  ///
+  /// In en, this message translates to:
+  /// **'Plan your day'**
+  String get tourPlanTitle;
+
+  /// Tour page 1
+  ///
+  /// In en, this message translates to:
+  /// **'Tasks, calendar and habits in one calm place. Begin each morning with “Start my day”.'**
+  String get tourPlanBody;
+
+  /// Tour page 2 title
+  ///
+  /// In en, this message translates to:
+  /// **'Focus deeply'**
+  String get tourFocusTitle;
+
+  /// Tour page 2
+  ///
+  /// In en, this message translates to:
+  /// **'Timed sessions with real nature sounds, Do Not Disturb and gentle end tones.'**
+  String get tourFocusBody;
+
+  /// Tour page 3 title
+  ///
+  /// In en, this message translates to:
+  /// **'Learn for good'**
+  String get tourLearnTitle;
+
+  /// Tour page 3
+  ///
+  /// In en, this message translates to:
+  /// **'Flashcards with spaced repetition, speech in many languages, and imports from Anki or Excel.'**
+  String get tourLearnBody;
+
+  /// Help screen title / settings row
+  ///
+  /// In en, this message translates to:
+  /// **'Help & questions'**
+  String get helpTitle;
+
+  /// Button: open the screen an answer is about
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get helpOpen;
+
+  /// Button: show the 3-page tour again
+  ///
+  /// In en, this message translates to:
+  /// **'Take the tour'**
+  String get helpTour;
+
+  /// Tour: next page
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get tourNext;
+
+  /// Tour: finish
+  ///
+  /// In en, this message translates to:
+  /// **'Let’s begin'**
+  String get tourDone;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

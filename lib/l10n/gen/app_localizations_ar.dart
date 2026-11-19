@@ -1307,7 +1307,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get importCardsHint =>
-      'الصق بطاقة واحدة في كل سطر، يفصل بين وجهها وظهرها مسافة جدولة (Tab) أو فاصلة منقوطة، أو الصق ملف مجموعة مُصدَّرًا.';
+      'الصق بطاقة في كل سطر (يفصل بين الوجه والظهر Tab أو فاصلة منقوطة)، أو اختر ملفاً: Excel ‏(.xlsx) أو CSV أو مجموعة Anki ‏(.apkg) أو مجموعة مُصدَّرة.';
 
   @override
   String importCardsResult(int count) {
@@ -4579,4 +4579,233 @@ class AppLocalizationsAr extends AppLocalizations {
   String prayerNext(String name, String time) {
     return '$name الساعة $time';
   }
+
+  @override
+  String get importAnkiNewFormat =>
+      'ملف Anki هذا بأحدث صيغة. صدّره من Anki مرة أخرى مع تفعيل خيار «دعم إصدارات Anki الأقدم» ثم استورد الملف الجديد.';
+
+  @override
+  String get importTemplate => 'قالب جدول بيانات';
+
+  @override
+  String get importTemplateFront => 'تفاحة';
+
+  @override
+  String get importTemplateBack => 'فاكهة مستديرة';
+
+  @override
+  String get importTemplateExample => 'آكل تفاحة كل يوم.';
+
+  @override
+  String get importTemplateTag => 'طعام';
+
+  @override
+  String get starterTitle => 'مجموعات جاهزة';
+
+  @override
+  String get starterHint => 'أضف واحدة لتجرّب المراجعة فوراً، ويمكنك تعديلها أو حذفها لاحقاً.';
+
+  @override
+  String get starterAdd => 'إضافة';
+
+  @override
+  String get starterWords => 'كلمات إنجليزية يومية';
+
+  @override
+  String get starterCapitals => 'عواصم العالم';
+
+  @override
+  String get starterElements => 'العناصر الكيميائية';
+
+  @override
+  String get settingsAccent => 'لون التمييز';
+
+  @override
+  String get accentViolet => 'بنفسجي';
+
+  @override
+  String get accentBlue => 'أزرق';
+
+  @override
+  String get accentTeal => 'فيروزي';
+
+  @override
+  String get accentGreen => 'أخضر';
+
+  @override
+  String get accentRose => 'وردي';
+
+  @override
+  String get accentAmber => 'كهرماني';
+
+  @override
+  String get settingsFlashTextSize => 'حجم نص البطاقات';
+
+  @override
+  String get settingsFlashTextSample => 'مثال';
+
+  @override
+  String get widgetStartFocus => 'اضغط للتركيز';
+
+  @override
+  String widgetFocusUntil(String time) {
+    return 'تركيز حتى $time';
+  }
+
+  @override
+  String get widgetNoCardsDue => 'البطاقات: لا شيء مستحق';
+
+  @override
+  String get faqMyDayQ => 'ما فائدة «ابدأ يومي»؟';
+
+  @override
+  String get faqMyDayA =>
+      'تظهر مرة يومياً في الرئيسية: ترى مهام اليوم والموعد التالي والعادات المتبقية والبطاقات المستحقة، ثم تبدأ جلسة تركيز بلمسة. اضغط مطولاً على أيقونة التطبيق للاختصارات، أو أضف أداة الشاشة الرئيسية لترى وقت التركيز والبطاقات المستحقة.';
+
+  @override
+  String get faqTasksQ => 'كيف أضيف مهمة مع تذكير؟';
+
+  @override
+  String get faqTasksA =>
+      'اضغط «مهمة جديدة» في الرئيسية أو + في المهام. اكتب العنوان أو قله بالميكروفون، ثم حدّد تاريخ الاستحقاق والوقت والتذكير. تظهر المهام المتأخرة أولاً.';
+
+  @override
+  String get faqFocusQ => 'كيف يعمل مؤقت التركيز؟';
+
+  @override
+  String get faqFocusA =>
+      'اختر بومودورو أو العد التنازلي أو وقتاً مفتوحاً واضغط «ابدأ»، ويمكن أن تبدأ الاستراحات تلقائياً. من الإعدادات تختار صوت الانتهاء، وتفعّل عدم الإزعاج أثناء التركيز، وتشغّل أصوات الطبيعة مع كل جلسة.';
+
+  @override
+  String get faqSoundsQ => 'هل يمكنني مزج أصوات الطبيعة؟';
+
+  @override
+  String get faqSoundsA =>
+      'شغّل حتى ستة تسجيلات حقيقية، واضبط مستوى كل منها، واحفظ المزيج باسم. تستمر في الخلفية، ويمكن لمؤقت النوم إيقافها. لا تُستخدم أي موسيقى.';
+
+  @override
+  String get faqCalendarQ => 'هل يعرض التقويم التاريخ الهجري؟';
+
+  @override
+  String get faqCalendarA =>
+      'نعم. يظهر التاريخ الهجري (أم القرى) تلقائياً بالعربية، ويمكن تفعيله من الإعدادات لأي لغة. تظهر المواعيد والمهام ذات التواريخ ومراحل المشاريع معاً.';
+
+  @override
+  String get faqFlashcardsQ => 'كيف تُحدَّد البطاقات التي أراجعها؟';
+
+  @override
+  String get faqFlashcardsA =>
+      'البطاقات التي تتقنها تعود بعد فترات أطول، والتي تخطئ فيها تعود قريباً (التكرار المتباعد). قيّم كل إجابة: مجدداً أو صعب أو جيد أو سهل. حدّد هدفاً يومياً وحافظ على أيامك المتتالية من بطاقة «اليوم».';
+
+  @override
+  String get faqImportQ => 'هل يمكنني جلب بطاقات من Anki أو Excel؟';
+
+  @override
+  String get faqImportA =>
+      'نعم. داخل المجموعة اختر «استيراد» ثم اختر ملفاً: Anki ‏(.apkg) أو Excel ‏(.xlsx) أو CSV، وطابق الأعمدة. استخدم «قالب جدول بيانات» لكتابة البطاقات على الحاسوب. لا تُستورد الصور والأصوات الموجودة داخل ملفات Anki.';
+
+  @override
+  String get faqNotesQ => 'ماذا تقدّم الملاحظات؟';
+
+  @override
+  String get faqNotesA =>
+      'اكتب بحرية مع قوائم التحقق والتنسيق، وثبّت الملاحظات المهمة أو أضفها للمفضلة، وأضف وسوماً واربطها بالمهام. زر الميكروفون يتيح لك الإملاء.';
+
+  @override
+  String get faqHabitsQ => 'كيف تُحسب أيام العادة المتتالية؟';
+
+  @override
+  String get faqHabitsA =>
+      'يُحسب اليوم عندما تبلغ هدف العادة في يوم مجدول. إيقاف العادة مؤقتاً يحفظ أيامك المتتالية. ولكل عادة وقت تذكير خاص بها.';
+
+  @override
+  String get faqGoalsQ => 'كيف تتابع الأهداف التقدّم؟';
+
+  @override
+  String get faqGoalsA =>
+      'حدّد للهدف كمية ووحدة، ثم سجّل تقدّمك. تُظهر بطاقته أين وصلت وكم تبقّى قبل الموعد.';
+
+  @override
+  String get faqProjectsQ => 'ما فائدة المشاريع؟';
+
+  @override
+  String get faqProjectsA =>
+      'اجمع المهام تحت مشروع، وأضف مراحل بتواريخ، وتابع التقدّم العام. تظهر المراحل في التقويم أيضاً.';
+
+  @override
+  String get faqInsightsQ => 'ماذا تعرض الإحصاءات؟';
+
+  @override
+  String get faqInsightsA =>
+      'وقت تركيزك ومهامك المنجزة ودراستك عبر الأيام والأسابيع، مع اقتراحات لطيفة. كل شيء يُحسب على هاتفك.';
+
+  @override
+  String get faqSpacesQ => 'أين أجد كل الأقسام؟';
+
+  @override
+  String get faqSpacesA =>
+      '«المساحات» تعرض كل أقسام التطبيق (الملاحظات والبطاقات والعادات والأهداف والمشاريع والأصوات وغيرها) ليبقى الشريط الرئيسي بسيطاً.';
+
+  @override
+  String get faqBackupQ => 'كيف تُحفظ نسخة احتياطية من بياناتي؟';
+
+  @override
+  String get faqBackupA =>
+      'يحفظ التطبيق يومياً وبهدوء نسخة مشفّرة على هذا الهاتف ويُبقي آخر 7 نسخ. ومن الإعدادات يمكنك أيضاً تصدير ملف نسخة احتياطية محمي بكلمة مرور واستعادته على هاتف آخر.';
+
+  @override
+  String get faqPrayerQ => 'كيف تعمل مواقيت الصلاة؟';
+
+  @override
+  String get faqPrayerA =>
+      'اختر مدينتك من الإعدادات ← مواقيت الصلاة. تُحسب الأوقات على الهاتف بالطريقة المعتمدة هناك، ويمكنك تغيير الطريقة ومذهب العصر. ويمكن أن يصلك تنبيه عند كل صلاة، وتتوقف جلسة التركيز الجارية مؤقتاً.';
+
+  @override
+  String get faqPrivacyQ => 'أين تُحفظ بياناتي؟';
+
+  @override
+  String get faqPrivacyA =>
+      'على هاتفك فقط، في قاعدة بيانات مشفّرة. لا يوجد حساب ولا تتبّع. يُستخدم الإنترنت فقط للميزات التي تفعّلها بنفسك مثل المساعد الاختياري.';
+
+  @override
+  String get faqAssistantQ => 'ما هو المساعد؟';
+
+  @override
+  String get faqAssistantA =>
+      'مساعد اختياري تربطه بخدمة ذكاء اصطناعي خاصة بك من الإعدادات. يكون مغلقاً افتراضياً، ويستأذنك قبل إرسال أي نص من ملاحظاتك.';
+
+  @override
+  String get tourPlanTitle => 'خطّط ليومك';
+
+  @override
+  String get tourPlanBody =>
+      'المهام والتقويم والعادات في مكان هادئ واحد. ابدأ كل صباح بـ«ابدأ يومي».';
+
+  @override
+  String get tourFocusTitle => 'ركّز بعمق';
+
+  @override
+  String get tourFocusBody => 'جلسات مؤقتة مع أصوات طبيعة حقيقية وعدم إزعاج ونغمات انتهاء هادئة.';
+
+  @override
+  String get tourLearnTitle => 'تعلّم ليبقى';
+
+  @override
+  String get tourLearnBody =>
+      'بطاقات بالتكرار المتباعد، ونطق بلغات كثيرة، واستيراد من Anki أو Excel.';
+
+  @override
+  String get helpTitle => 'المساعدة والأسئلة';
+
+  @override
+  String get helpOpen => 'فتح';
+
+  @override
+  String get helpTour => 'جولة تعريفية';
+
+  @override
+  String get tourNext => 'التالي';
+
+  @override
+  String get tourDone => 'لنبدأ';
 }

@@ -1619,7 +1619,7 @@
   "@importCardsTitle": {
     "description": "Dialog title"
   },
-  "importCardsHint": "Paste one card per line as front and back separated by a tab or semicolon, or paste an exported deck file.",
+  "importCardsHint": "Paste one card per line (front and back separated by a tab or semicolon), or choose a file: Excel (.xlsx), CSV, an Anki deck (.apkg) or an exported deck.",
   "@importCardsHint": {
     "description": "Help text"
   },
@@ -5928,5 +5928,286 @@
         "type": "String"
       }
     }
+  },
+  "importAnkiNewFormat": "This Anki file uses the newest format. In Anki, export again with “Support older Anki versions” turned on, then import that file.",
+  "@importAnkiNewFormat": {
+    "description": "Anki file in the newest format only"
+  },
+  "importTemplate": "Spreadsheet template",
+  "@importTemplate": {
+    "description": "Button: get a spreadsheet template to fill on a computer"
+  },
+  "importTemplateFront": "apple",
+  "@importTemplateFront": {
+    "description": "Sample front in the template"
+  },
+  "importTemplateBack": "a round fruit",
+  "@importTemplateBack": {
+    "description": "Sample back in the template"
+  },
+  "importTemplateExample": "I eat an apple every day.",
+  "@importTemplateExample": {
+    "description": "Sample example sentence in the template"
+  },
+  "importTemplateTag": "food",
+  "@importTemplateTag": {
+    "description": "Sample tag in the template"
+  },
+  "starterTitle": "Starter decks",
+  "@starterTitle": {
+    "description": "Sheet: ready-made decks"
+  },
+  "starterHint": "Add one to try studying right away. You can edit or delete it later.",
+  "@starterHint": {
+    "description": "Sheet subtitle"
+  },
+  "starterAdd": "Add",
+  "@starterAdd": {
+    "description": "Button: add this starter deck"
+  },
+  "starterWords": "Everyday English words (Arabic)",
+  "@starterWords": {
+    "description": "Starter deck name: everyday English words with Arabic meanings"
+  },
+  "starterCapitals": "World capitals",
+  "@starterCapitals": {
+    "description": "Starter deck name"
+  },
+  "starterElements": "Chemical elements",
+  "@starterElements": {
+    "description": "Starter deck name: chemical element symbols"
+  },
+  "settingsAccent": "Accent colour",
+  "@settingsAccent": {
+    "description": "Settings: accent colour"
+  },
+  "accentViolet": "Violet",
+  "@accentViolet": {
+    "description": "Accent colour name"
+  },
+  "accentBlue": "Blue",
+  "@accentBlue": {
+    "description": "Accent colour name"
+  },
+  "accentTeal": "Teal",
+  "@accentTeal": {
+    "description": "Accent colour name"
+  },
+  "accentGreen": "Green",
+  "@accentGreen": {
+    "description": "Accent colour name"
+  },
+  "accentRose": "Rose",
+  "@accentRose": {
+    "description": "Accent colour name"
+  },
+  "accentAmber": "Amber",
+  "@accentAmber": {
+    "description": "Accent colour name"
+  },
+  "settingsFlashTextSize": "Flashcard text size",
+  "@settingsFlashTextSize": {
+    "description": "Settings: text size on flashcards during review"
+  },
+  "settingsFlashTextSample": "Example",
+  "@settingsFlashTextSample": {
+    "description": "Sample word to preview the flashcard text size"
+  },
+  "widgetStartFocus": "Tap to focus",
+  "@widgetStartFocus": {
+    "description": "Home screen widget: no session running"
+  },
+  "widgetFocusUntil": "Focus until {time}",
+  "@widgetFocusUntil": {
+    "description": "Home screen widget: focus running until a time",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "widgetNoCardsDue": "Cards: all done",
+  "@widgetNoCardsDue": {
+    "description": "Home screen widget: no flashcards due"
+  },
+  "faqMyDayQ": "What does “Start my day” do?",
+  "@faqMyDayQ": {
+    "description": "FAQ question"
+  },
+  "faqMyDayA": "Once a day the home screen offers it: see today’s tasks, the next event, habits left and cards due, then begin a focus session with one tap. Long-press the app icon for quick actions, or add the home screen widget to see focus time and cards due.",
+  "@faqMyDayA": {
+    "description": "FAQ answer"
+  },
+  "faqTasksQ": "How do I add a task with a reminder?",
+  "@faqTasksQ": {
+    "description": "FAQ question"
+  },
+  "faqTasksA": "Tap New task on Home or + in Tasks. Type the title or speak it with the microphone, then set a due date, a time and a reminder. Overdue tasks are listed first.",
+  "@faqTasksA": {
+    "description": "FAQ answer"
+  },
+  "faqFocusQ": "How does the focus timer work?",
+  "@faqFocusQ": {
+    "description": "FAQ question"
+  },
+  "faqFocusA": "Choose Pomodoro, a countdown or open time and press Start; breaks can follow automatically. In Settings you can pick the end sound, turn on Do Not Disturb while focusing, and play your nature sounds with each session.",
+  "@faqFocusA": {
+    "description": "FAQ answer"
+  },
+  "faqSoundsQ": "Can I mix nature sounds?",
+  "@faqSoundsQ": {
+    "description": "FAQ question"
+  },
+  "faqSoundsA": "Turn on up to six real recordings, set each volume and save the mix by name. They keep playing in the background, and a sleep timer can stop them. No music is used.",
+  "@faqSoundsA": {
+    "description": "FAQ answer"
+  },
+  "faqCalendarQ": "Can the calendar show Hijri dates?",
+  "@faqCalendarQ": {
+    "description": "FAQ question"
+  },
+  "faqCalendarA": "Yes. Hijri dates (Umm al-Qura) show automatically in Arabic and can be turned on in Settings for any language. Events, tasks with due dates and project milestones appear together.",
+  "@faqCalendarA": {
+    "description": "FAQ answer"
+  },
+  "faqFlashcardsQ": "How does review decide which cards I see?",
+  "@faqFlashcardsQ": {
+    "description": "FAQ question"
+  },
+  "faqFlashcardsA": "Cards you know well come back after longer gaps and cards you miss come back soon (spaced repetition). Rate each answer Again, Hard, Good or Easy. Set a daily goal and keep your streak on the Today card.",
+  "@faqFlashcardsA": {
+    "description": "FAQ answer"
+  },
+  "faqImportQ": "Can I bring cards from Anki or Excel?",
+  "@faqImportQ": {
+    "description": "FAQ question"
+  },
+  "faqImportA": "Yes. In a deck choose Import, then pick a file: Anki (.apkg), Excel (.xlsx) or CSV, and match the columns. Use “Spreadsheet template” to write cards on a computer. Pictures and sounds inside Anki files are not imported.",
+  "@faqImportA": {
+    "description": "FAQ answer"
+  },
+  "faqNotesQ": "What can notes do?",
+  "@faqNotesQ": {
+    "description": "FAQ question"
+  },
+  "faqNotesA": "Write freely with checklists and formatting, pin or favourite important notes, add tags and link notes to tasks. The microphone button lets you dictate.",
+  "@faqNotesA": {
+    "description": "FAQ answer"
+  },
+  "faqHabitsQ": "How are habit streaks counted?",
+  "@faqHabitsQ": {
+    "description": "FAQ question"
+  },
+  "faqHabitsA": "A day counts when you reach the habit’s target on a scheduled day. Pausing a habit keeps the streak safe. Each habit can have its own reminder time.",
+  "@faqHabitsA": {
+    "description": "FAQ answer"
+  },
+  "faqGoalsQ": "How do goals track progress?",
+  "@faqGoalsQ": {
+    "description": "FAQ question"
+  },
+  "faqGoalsA": "Give a goal a target amount and unit, then log progress. Its card shows how far you are and how much is left before the deadline.",
+  "@faqGoalsA": {
+    "description": "FAQ answer"
+  },
+  "faqProjectsQ": "What are projects for?",
+  "@faqProjectsQ": {
+    "description": "FAQ question"
+  },
+  "faqProjectsA": "Group tasks under a project, add milestones with dates and follow overall progress. Milestones also appear in the calendar.",
+  "@faqProjectsA": {
+    "description": "FAQ answer"
+  },
+  "faqInsightsQ": "What does Insights show?",
+  "@faqInsightsQ": {
+    "description": "FAQ question"
+  },
+  "faqInsightsA": "Your focus time, finished tasks and study over days and weeks, with gentle suggestions. Everything is calculated on your phone.",
+  "@faqInsightsA": {
+    "description": "FAQ answer"
+  },
+  "faqSpacesQ": "Where are all the sections?",
+  "@faqSpacesQ": {
+    "description": "FAQ question"
+  },
+  "faqSpacesA": "Spaces lists every part of the app (notes, decks, habits, goals, projects, sounds and more) so the main bar stays simple.",
+  "@faqSpacesA": {
+    "description": "FAQ answer"
+  },
+  "faqBackupQ": "How are my data backed up?",
+  "@faqBackupQ": {
+    "description": "FAQ question"
+  },
+  "faqBackupA": "Every day the app quietly keeps an encrypted copy on this phone and keeps the last 7. In Settings you can also export a password-protected backup file and restore it on another phone.",
+  "@faqBackupA": {
+    "description": "FAQ answer"
+  },
+  "faqPrayerQ": "How do prayer times work?",
+  "@faqPrayerQ": {
+    "description": "FAQ question"
+  },
+  "faqPrayerA": "Choose your city in Settings → Prayer times. Times are calculated on the phone with the method used there, and you can change the method and the Asr school. You can be notified at each prayer, and a running focus session pauses.",
+  "@faqPrayerA": {
+    "description": "FAQ answer"
+  },
+  "faqPrivacyQ": "Where are my data stored?",
+  "@faqPrivacyQ": {
+    "description": "FAQ question"
+  },
+  "faqPrivacyA": "On your phone only, in an encrypted database. There is no account and no tracking. The internet is used only by features you turn on yourself, such as the optional assistant.",
+  "@faqPrivacyA": {
+    "description": "FAQ answer"
+  },
+  "faqAssistantQ": "What is the assistant?",
+  "@faqAssistantQ": {
+    "description": "FAQ question"
+  },
+  "faqAssistantA": "An optional helper you connect to your own AI service in Settings. It is off by default and asks before sending any note text.",
+  "@faqAssistantA": {
+    "description": "FAQ answer"
+  },
+  "tourPlanTitle": "Plan your day",
+  "@tourPlanTitle": {
+    "description": "Tour page 1 title"
+  },
+  "tourPlanBody": "Tasks, calendar and habits in one calm place. Begin each morning with “Start my day”.",
+  "@tourPlanBody": {
+    "description": "Tour page 1"
+  },
+  "tourFocusTitle": "Focus deeply",
+  "@tourFocusTitle": {
+    "description": "Tour page 2 title"
+  },
+  "tourFocusBody": "Timed sessions with real nature sounds, Do Not Disturb and gentle end tones.",
+  "@tourFocusBody": {
+    "description": "Tour page 2"
+  },
+  "tourLearnTitle": "Learn for good",
+  "@tourLearnTitle": {
+    "description": "Tour page 3 title"
+  },
+  "tourLearnBody": "Flashcards with spaced repetition, speech in many languages, and imports from Anki or Excel.",
+  "@tourLearnBody": {
+    "description": "Tour page 3"
+  },
+  "helpTitle": "Help & questions",
+  "@helpTitle": {
+    "description": "Help screen title / settings row"
+  },
+  "helpOpen": "Open",
+  "@helpOpen": {
+    "description": "Button: open the screen an answer is about"
+  },
+  "helpTour": "Take the tour",
+  "@helpTour": {
+    "description": "Button: show the 3-page tour again"
+  },
+  "tourNext": "Next",
+  "@tourNext": {
+    "description": "Tour: next page"
+  },
+  "tourDone": "Let’s begin",
+  "@tourDone": {
+    "description": "Tour: finish"
   }
 }

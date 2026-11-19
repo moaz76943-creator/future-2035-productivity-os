@@ -29,6 +29,7 @@ class MainActivity : FlutterActivity() {
     private var speech: TtsBridge? = null
     private var shortcuts: ShortcutsBridge? = null
     private var dnd: DndBridge? = null
+    private var homeWidget: MethodChannel? = null
     private var pendingSpeech: MethodChannel.Result? = null
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
@@ -48,6 +49,10 @@ class MainActivity : FlutterActivity() {
         // Do Not Disturb during focus sessions.
         dnd?.dispose()
         dnd = DndBridge(applicationContext, flutterEngine.dartExecutor.binaryMessenger)
+
+        // Home screen widget texts.
+        homeWidget?.setMethodCallHandler(null)
+        homeWidget = HomeWidgetProvider.bind(applicationContext, flutterEngine.dartExecutor.binaryMessenger)
 
         // Voice typing through the phone's speech screen (no microphone permission here).
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "future_os/speech_input").setMethodCallHandler { call, result ->
@@ -245,6 +250,8 @@ class MainActivity : FlutterActivity() {
         shortcuts = null
         dnd?.dispose()
         dnd = null
+        homeWidget?.setMethodCallHandler(null)
+        homeWidget = null
         // The sounds may keep playing; only the bridge to this engine is dropped.
         soundscape?.detach()
         soundscape = null

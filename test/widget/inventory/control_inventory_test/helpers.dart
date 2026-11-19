@@ -59,6 +59,7 @@ List<String> _routes(_Seed s) => [
   Routes.assistant,
   Routes.sounds,
   Routes.settings,
+  Routes.help,
   Routes.trash,
 ];
 

@@ -14,9 +14,53 @@ class _ImportDialogState extends ConsumerState<_ImportDialog> {
         setState(() => _error = l10n.importFailed);
         return;
       }
-      setState(() => _controller.text = utf8.decode(bytes, allowMalformed: true));
+      // Excel (.xlsx) and Anki (.apkg) files become rows for the same preview.
+      final text = await CardFileImport.toText(bytes, temp: await _tempDir());
+      if (mounted) setState(() => _controller.text = text);
+    } on CardFileException catch (e) {
+      if (mounted) {
+        setState(
+          () => _error = e.error == CardFileError.ankiNewFormat
+              ? l10n.importAnkiNewFormat
+              : l10n.flashcardsImportFileFailed,
+        );
+      }
     } catch (_) {
       if (mounted) setState(() => _error = l10n.flashcardsImportFileFailed);
+    }
+  }
+
+  /// A spreadsheet template to fill on a computer (Excel, Google Sheets,
+  /// LibreOffice), then import here as .xlsx or .csv.
+  Future<void> _shareTemplate() async {
+    final l10n = context.l10n;
+    final csv = [
+      'front,back,example,tags',
+      [
+        l10n.importTemplateFront,
+        l10n.importTemplateBack,
+        l10n.importTemplateExample,
+        l10n.importTemplateTag,
+      ].map(CardImportParser.csvCell).join(','),
+    ].join('\n');
+    try {
+      await ref
+          .read(backupFilesProvider)
+          .save(
+            'cards_template.csv',
+            Uint8List.fromList([0xEF, 0xBB, 0xBF, ...utf8.encode(csv)]),
+            subject: l10n.importTemplate,
+          );
+    } catch (_) {
+      if (mounted) setState(() => _error = l10n.errorGenericMessage);
+    }
+  }
+
+  Future<Directory> _tempDir() async {
+    try {
+      return await getTemporaryDirectory();
+    } on Object {
+      return Directory.systemTemp;
     }
   }
 
@@ -148,21 +192,34 @@ class _ImportDialogState extends ConsumerState<_ImportDialog> {
     return AlertDialog(
       title: Text(l10n.importCardsTitle),
       content: SingleChildScrollView(
-        child: TextField(
-          key: const Key('importField'),
-          controller: _controller,
-          autofocus: true,
-          minLines: 4,
-          maxLines: 10,
-          keyboardType: TextInputType.multiline,
-          decoration: InputDecoration(
-            labelText: l10n.flashcardsImportField,
-            helperText: l10n.importCardsHint,
-            errorText: _error,
-            errorMaxLines: 3,
-            helperMaxLines: 5,
-            alignLabelWithHint: true,
-          ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextField(
+              key: const Key('importField'),
+              controller: _controller,
+              autofocus: true,
+              minLines: 4,
+              maxLines: 10,
+              keyboardType: TextInputType.multiline,
+              decoration: InputDecoration(
+                labelText: l10n.flashcardsImportField,
+                helperText: l10n.importCardsHint,
+                errorText: _error,
+                errorMaxLines: 3,
+                helperMaxLines: 5,
+                alignLabelWithHint: true,
+              ),
+            ),
+            const SizedBox(height: Space.xs),
+            TextButton.icon(
+              key: const Key('importTemplateButton'),
+              onPressed: _shareTemplate,
+              icon: const Icon(Icons.table_view_rounded),
+              label: Text(l10n.importTemplate),
+            ),
+          ],
         ),
       ),
       actions: [

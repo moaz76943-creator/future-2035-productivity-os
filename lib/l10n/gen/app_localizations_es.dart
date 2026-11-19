@@ -1247,7 +1247,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get importCardsHint =>
-      'Pega una tarjeta por línea, con anverso y reverso separados por un tabulador o un punto y coma, o pega un archivo de mazo exportado.';
+      'Pega una tarjeta por línea (anverso y reverso separados por tabulador o punto y coma) o elige un archivo: Excel (.xlsx), CSV, un mazo de Anki (.apkg) o un mazo exportado.';
 
   @override
   String importCardsResult(int count) {
@@ -4417,4 +4417,234 @@ class AppLocalizationsEs extends AppLocalizations {
   String prayerNext(String name, String time) {
     return '$name a las $time';
   }
+
+  @override
+  String get importAnkiNewFormat =>
+      'Este archivo de Anki usa el formato más nuevo. En Anki, exporta de nuevo con «Compatible con versiones anteriores de Anki» activado.';
+
+  @override
+  String get importTemplate => 'Plantilla de hoja de cálculo';
+
+  @override
+  String get importTemplateFront => 'manzana';
+
+  @override
+  String get importTemplateBack => 'una fruta redonda';
+
+  @override
+  String get importTemplateExample => 'Como una manzana cada día.';
+
+  @override
+  String get importTemplateTag => 'comida';
+
+  @override
+  String get starterTitle => 'Mazos de inicio';
+
+  @override
+  String get starterHint => 'Añade uno para estudiar ya. Puedes editarlo o borrarlo después.';
+
+  @override
+  String get starterAdd => 'Añadir';
+
+  @override
+  String get starterWords => 'Palabras cotidianas en inglés (árabe)';
+
+  @override
+  String get starterCapitals => 'Capitales del mundo';
+
+  @override
+  String get starterElements => 'Elementos químicos';
+
+  @override
+  String get settingsAccent => 'Color de acento';
+
+  @override
+  String get accentViolet => 'Violeta';
+
+  @override
+  String get accentBlue => 'Azul';
+
+  @override
+  String get accentTeal => 'Verde azulado';
+
+  @override
+  String get accentGreen => 'Verde';
+
+  @override
+  String get accentRose => 'Rosa';
+
+  @override
+  String get accentAmber => 'Ámbar';
+
+  @override
+  String get settingsFlashTextSize => 'Tamaño del texto de las tarjetas';
+
+  @override
+  String get settingsFlashTextSample => 'Ejemplo';
+
+  @override
+  String get widgetStartFocus => 'Toca para concentrarte';
+
+  @override
+  String widgetFocusUntil(String time) {
+    return 'Enfoque hasta las $time';
+  }
+
+  @override
+  String get widgetNoCardsDue => 'Tarjetas: al día';
+
+  @override
+  String get faqMyDayQ => '¿Qué hace «Empezar mi día»?';
+
+  @override
+  String get faqMyDayA =>
+      'Aparece una vez al día en Inicio: ves las tareas de hoy, el próximo evento, los hábitos pendientes y las tarjetas por repasar, y empiezas una sesión de enfoque con un toque. Mantén pulsado el icono de la app para accesos rápidos o añade el widget a tu pantalla.';
+
+  @override
+  String get faqTasksQ => '¿Cómo añado una tarea con recordatorio?';
+
+  @override
+  String get faqTasksA =>
+      'Toca Nueva tarea en Inicio o + en Tareas. Escribe el título o díctalo con el micrófono y elige fecha, hora y recordatorio. Las tareas atrasadas aparecen primero.';
+
+  @override
+  String get faqFocusQ => '¿Cómo funciona el temporizador de enfoque?';
+
+  @override
+  String get faqFocusA =>
+      'Elige Pomodoro, cuenta atrás o tiempo libre y pulsa Empezar; los descansos pueden seguir solos. En Ajustes eliges el sonido final, activas No molestar durante el enfoque y reproduces tus sonidos naturales en cada sesión.';
+
+  @override
+  String get faqSoundsQ => '¿Puedo mezclar sonidos naturales?';
+
+  @override
+  String get faqSoundsA =>
+      'Activa hasta seis grabaciones reales, ajusta cada volumen y guarda la mezcla con un nombre. Siguen sonando en segundo plano y un temporizador puede detenerlas. No se usa música.';
+
+  @override
+  String get faqCalendarQ => '¿El calendario muestra fechas hégira?';
+
+  @override
+  String get faqCalendarA =>
+      'Sí. Las fechas hégira (Umm al-Qura) se muestran solas en árabe y puedes activarlas en Ajustes para cualquier idioma. Eventos, tareas con fecha e hitos de proyectos aparecen juntos.';
+
+  @override
+  String get faqFlashcardsQ => '¿Cómo decide el repaso qué tarjetas veo?';
+
+  @override
+  String get faqFlashcardsA =>
+      'Las tarjetas que dominas vuelven tras intervalos más largos y las que fallas vuelven pronto (repetición espaciada). Valora cada respuesta: Otra vez, Difícil, Bien o Fácil. Fija una meta diaria y mantén tu racha en la tarjeta Hoy.';
+
+  @override
+  String get faqImportQ => '¿Puedo traer tarjetas de Anki o Excel?';
+
+  @override
+  String get faqImportA =>
+      'Sí. En un mazo elige Importar y un archivo: Anki (.apkg), Excel (.xlsx) o CSV, y asigna las columnas. Usa «Plantilla de hoja de cálculo» para escribir tarjetas en el ordenador. Las imágenes y sonidos de Anki no se importan.';
+
+  @override
+  String get faqNotesQ => '¿Qué pueden hacer las notas?';
+
+  @override
+  String get faqNotesA =>
+      'Escribe con listas y formato, fija o marca como favoritas las notas importantes, añade etiquetas y enlaza notas con tareas. El botón del micrófono te deja dictar.';
+
+  @override
+  String get faqHabitsQ => '¿Cómo se cuentan las rachas de hábitos?';
+
+  @override
+  String get faqHabitsA =>
+      'Un día cuenta cuando alcanzas la meta del hábito en un día programado. Pausar un hábito protege la racha. Cada hábito puede tener su propio recordatorio.';
+
+  @override
+  String get faqGoalsQ => '¿Cómo siguen el progreso las metas?';
+
+  @override
+  String get faqGoalsA =>
+      'Dale a la meta una cantidad y una unidad y registra tu avance. Su tarjeta muestra cuánto llevas y cuánto falta antes de la fecha límite.';
+
+  @override
+  String get faqProjectsQ => '¿Para qué sirven los proyectos?';
+
+  @override
+  String get faqProjectsA =>
+      'Agrupa tareas en un proyecto, añade hitos con fecha y sigue el progreso general. Los hitos también aparecen en el calendario.';
+
+  @override
+  String get faqInsightsQ => '¿Qué muestra Estadísticas?';
+
+  @override
+  String get faqInsightsA =>
+      'Tu tiempo de enfoque, tareas terminadas y estudio por días y semanas, con sugerencias amables. Todo se calcula en tu teléfono.';
+
+  @override
+  String get faqSpacesQ => '¿Dónde están todas las secciones?';
+
+  @override
+  String get faqSpacesA =>
+      'Espacios reúne todas las partes de la app (notas, mazos, hábitos, metas, proyectos, sonidos y más) para que la barra principal sea sencilla.';
+
+  @override
+  String get faqBackupQ => '¿Cómo se respaldan mis datos?';
+
+  @override
+  String get faqBackupA =>
+      'Cada día la app guarda en silencio una copia cifrada en este teléfono y conserva las 7 últimas. En Ajustes también puedes exportar una copia con contraseña y restaurarla en otro teléfono.';
+
+  @override
+  String get faqPrayerQ => '¿Cómo funcionan los horarios de oración?';
+
+  @override
+  String get faqPrayerA =>
+      'Elige tu ciudad en Ajustes → Horarios de oración. Se calculan en el teléfono con el método de ese lugar, y puedes cambiar el método y la escuela del Asr. Puedes recibir un aviso en cada oración y la sesión de enfoque se pausa.';
+
+  @override
+  String get faqPrivacyQ => '¿Dónde se guardan mis datos?';
+
+  @override
+  String get faqPrivacyA =>
+      'Solo en tu teléfono, en una base de datos cifrada. No hay cuenta ni seguimiento. Internet solo lo usan las funciones que tú activas, como el asistente opcional.';
+
+  @override
+  String get faqAssistantQ => '¿Qué es el asistente?';
+
+  @override
+  String get faqAssistantA =>
+      'Un ayudante opcional que conectas a tu propio servicio de IA en Ajustes. Está apagado por defecto y pregunta antes de enviar texto de tus notas.';
+
+  @override
+  String get tourPlanTitle => 'Planifica tu día';
+
+  @override
+  String get tourPlanBody =>
+      'Tareas, calendario y hábitos en un lugar tranquilo. Empieza cada mañana con «Empezar mi día».';
+
+  @override
+  String get tourFocusTitle => 'Concéntrate a fondo';
+
+  @override
+  String get tourFocusBody =>
+      'Sesiones con temporizador, sonidos naturales reales, No molestar y tonos finales suaves.';
+
+  @override
+  String get tourLearnTitle => 'Aprende para siempre';
+
+  @override
+  String get tourLearnBody =>
+      'Tarjetas con repetición espaciada, voz en muchos idiomas e importación desde Anki o Excel.';
+
+  @override
+  String get helpTitle => 'Ayuda y preguntas';
+
+  @override
+  String get helpOpen => 'Abrir';
+
+  @override
+  String get helpTour => 'Ver el recorrido';
+
+  @override
+  String get tourNext => 'Siguiente';
+
+  @override
+  String get tourDone => 'Empecemos';
 }

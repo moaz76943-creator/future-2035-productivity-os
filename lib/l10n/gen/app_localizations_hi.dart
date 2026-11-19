@@ -1246,7 +1246,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get importCardsHint =>
-      'हर पंक्ति में एक कार्ड पेस्ट करें, जिसमें आगे और पीछे का हिस्सा टैब या सेमीकोलन से अलग हो, या एक्सपोर्ट की गई डेक फ़ाइल पेस्ट करें।';
+      'हर पंक्ति में एक कार्ड चिपकाएँ (आगे और पीछे के बीच टैब या अर्धविराम), या फ़ाइल चुनें: Excel (.xlsx), CSV, Anki डेक (.apkg) या निर्यात किया गया डेक।';
 
   @override
   String importCardsResult(int count) {
@@ -4409,4 +4409,234 @@ class AppLocalizationsHi extends AppLocalizations {
   String prayerNext(String name, String time) {
     return '$name, $time बजे';
   }
+
+  @override
+  String get importAnkiNewFormat =>
+      'यह Anki फ़ाइल नवीनतम प्रारूप में है। Anki में “पुराने Anki संस्करणों का समर्थन” चालू करके फिर से निर्यात करें।';
+
+  @override
+  String get importTemplate => 'स्प्रेडशीट टेम्पलेट';
+
+  @override
+  String get importTemplateFront => 'सेब';
+
+  @override
+  String get importTemplateBack => 'एक गोल फल';
+
+  @override
+  String get importTemplateExample => 'मैं हर दिन एक सेब खाता हूँ।';
+
+  @override
+  String get importTemplateTag => 'भोजन';
+
+  @override
+  String get starterTitle => 'शुरुआती डेक';
+
+  @override
+  String get starterHint => 'तुरंत पढ़ाई आज़माने के लिए एक जोड़ें। बाद में बदल या हटा सकते हैं।';
+
+  @override
+  String get starterAdd => 'जोड़ें';
+
+  @override
+  String get starterWords => 'रोज़मर्रा के अंग्रेज़ी शब्द (अरबी)';
+
+  @override
+  String get starterCapitals => 'विश्व की राजधानियाँ';
+
+  @override
+  String get starterElements => 'रासायनिक तत्व';
+
+  @override
+  String get settingsAccent => 'मुख्य रंग';
+
+  @override
+  String get accentViolet => 'बैंगनी';
+
+  @override
+  String get accentBlue => 'नीला';
+
+  @override
+  String get accentTeal => 'हरा-नीला';
+
+  @override
+  String get accentGreen => 'हरा';
+
+  @override
+  String get accentRose => 'गुलाबी';
+
+  @override
+  String get accentAmber => 'कहरुवा';
+
+  @override
+  String get settingsFlashTextSize => 'कार्ड के अक्षरों का आकार';
+
+  @override
+  String get settingsFlashTextSample => 'उदाहरण';
+
+  @override
+  String get widgetStartFocus => 'फ़ोकस के लिए टैप करें';
+
+  @override
+  String widgetFocusUntil(String time) {
+    return '$time तक फ़ोकस';
+  }
+
+  @override
+  String get widgetNoCardsDue => 'कार्ड: सब पूरा';
+
+  @override
+  String get faqMyDayQ => '“मेरा दिन शुरू करें” क्या करता है?';
+
+  @override
+  String get faqMyDayA =>
+      'होम पर दिन में एक बार दिखता है: आज के कार्य, अगला कार्यक्रम, बाकी आदतें और बाकी कार्ड देखें, फिर एक टैप में फ़ोकस सत्र शुरू करें। शॉर्टकट के लिए ऐप आइकन दबाकर रखें, या होम स्क्रीन विजेट जोड़ें।';
+
+  @override
+  String get faqTasksQ => 'रिमाइंडर के साथ कार्य कैसे जोड़ूँ?';
+
+  @override
+  String get faqTasksA =>
+      'होम पर “नया कार्य” या कार्य में + दबाएँ। शीर्षक लिखें या माइक्रोफ़ोन से बोलें, फिर तारीख, समय और रिमाइंडर चुनें। देर वाले कार्य सबसे ऊपर दिखते हैं।';
+
+  @override
+  String get faqFocusQ => 'फ़ोकस टाइमर कैसे काम करता है?';
+
+  @override
+  String get faqFocusA =>
+      'पोमोडोरो, उलटी गिनती या खुला समय चुनें और शुरू दबाएँ; ब्रेक अपने आप शुरू हो सकते हैं। सेटिंग में समाप्ति ध्वनि चुनें, फ़ोकस के दौरान परेशान न करें चालू करें और हर सत्र में प्रकृति की ध्वनियाँ चलाएँ।';
+
+  @override
+  String get faqSoundsQ => 'क्या मैं प्रकृति की ध्वनियाँ मिला सकता हूँ?';
+
+  @override
+  String get faqSoundsA =>
+      'छह तक असली रिकॉर्डिंग चालू करें, हर एक की आवाज़ सेट करें और मिश्रण को नाम से सहेजें। ये पृष्ठभूमि में चलती रहती हैं और स्लीप टाइमर इन्हें रोक सकता है। कोई संगीत नहीं है।';
+
+  @override
+  String get faqCalendarQ => 'क्या कैलेंडर हिजरी तिथियाँ दिखाता है?';
+
+  @override
+  String get faqCalendarA =>
+      'हाँ। अरबी में हिजरी तिथियाँ (उम्म अल-क़ुरा) अपने आप दिखती हैं, और किसी भी भाषा के लिए सेटिंग में चालू की जा सकती हैं। कार्यक्रम, तारीख वाले कार्य और प्रोजेक्ट पड़ाव साथ दिखते हैं।';
+
+  @override
+  String get faqFlashcardsQ => 'दोहराने में कौन-से कार्ड दिखें, यह कैसे तय होता है?';
+
+  @override
+  String get faqFlashcardsA =>
+      'अच्छी तरह याद कार्ड लंबे अंतराल के बाद लौटते हैं और गलत वाले जल्दी (अंतराल पुनरावृत्ति)। हर उत्तर को फिर से, कठिन, अच्छा या आसान रेट करें। दैनिक लक्ष्य रखें और “आज” कार्ड पर अपनी लगातार गिनती बनाए रखें।';
+
+  @override
+  String get faqImportQ => 'क्या मैं Anki या Excel से कार्ड ला सकता हूँ?';
+
+  @override
+  String get faqImportA =>
+      'हाँ। डेक में आयात चुनें, फिर फ़ाइल चुनें: Anki (.apkg), Excel (.xlsx) या CSV, और कॉलम मिलाएँ। कंप्यूटर पर कार्ड लिखने के लिए “स्प्रेडशीट टेम्पलेट” इस्तेमाल करें। Anki फ़ाइलों की तस्वीरें और ध्वनियाँ आयात नहीं होतीं।';
+
+  @override
+  String get faqNotesQ => 'नोट्स में क्या कर सकते हैं?';
+
+  @override
+  String get faqNotesA =>
+      'चेकलिस्ट और फ़ॉर्मैटिंग के साथ लिखें, ज़रूरी नोट्स पिन या पसंदीदा करें, टैग जोड़ें और नोट्स को कार्यों से जोड़ें। माइक्रोफ़ोन बटन से बोलकर लिखें।';
+
+  @override
+  String get faqHabitsQ => 'आदतों की लगातार गिनती कैसे होती है?';
+
+  @override
+  String get faqHabitsA =>
+      'निर्धारित दिन आदत का लक्ष्य पूरा होने पर वह दिन गिना जाता है। आदत रोकने से गिनती सुरक्षित रहती है। हर आदत का अपना रिमाइंडर समय हो सकता है।';
+
+  @override
+  String get faqGoalsQ => 'लक्ष्य प्रगति कैसे दिखाते हैं?';
+
+  @override
+  String get faqGoalsA =>
+      'लक्ष्य को मात्रा और इकाई दें, फिर प्रगति दर्ज करें। उसका कार्ड बताता है कि आप कहाँ हैं और समय सीमा से पहले कितना बाकी है।';
+
+  @override
+  String get faqProjectsQ => 'प्रोजेक्ट किसलिए हैं?';
+
+  @override
+  String get faqProjectsA =>
+      'कार्यों को प्रोजेक्ट में समूहित करें, तारीख वाले पड़ाव जोड़ें और कुल प्रगति देखें। पड़ाव कैलेंडर में भी दिखते हैं।';
+
+  @override
+  String get faqInsightsQ => 'इनसाइट्स में क्या दिखता है?';
+
+  @override
+  String get faqInsightsA =>
+      'दिनों और हफ़्तों में आपका फ़ोकस समय, पूरे कार्य और पढ़ाई, हल्के सुझावों के साथ। सब कुछ आपके फ़ोन पर ही निकाला जाता है।';
+
+  @override
+  String get faqSpacesQ => 'सभी अनुभाग कहाँ हैं?';
+
+  @override
+  String get faqSpacesA =>
+      'स्पेसेज़ में ऐप के सभी हिस्से हैं (नोट्स, डेक, आदतें, लक्ष्य, प्रोजेक्ट, ध्वनियाँ आदि), ताकि मुख्य पट्टी सरल रहे।';
+
+  @override
+  String get faqBackupQ => 'मेरे डेटा का बैकअप कैसे होता है?';
+
+  @override
+  String get faqBackupA =>
+      'ऐप हर दिन चुपचाप इस फ़ोन पर एन्क्रिप्टेड कॉपी रखता है और आख़िरी 7 बचाता है। सेटिंग में आप पासवर्ड वाली बैकअप फ़ाइल भी निर्यात कर सकते हैं और दूसरे फ़ोन पर बहाल कर सकते हैं।';
+
+  @override
+  String get faqPrayerQ => 'नमाज़ के समय कैसे काम करते हैं?';
+
+  @override
+  String get faqPrayerA =>
+      'सेटिंग → नमाज़ के समय में अपना शहर चुनें। समय फ़ोन पर वहाँ की विधि से निकलते हैं, और आप विधि व अस्र का मसलक बदल सकते हैं। हर नमाज़ पर सूचना मिल सकती है और चालू फ़ोकस सत्र रुक जाता है।';
+
+  @override
+  String get faqPrivacyQ => 'मेरा डेटा कहाँ रहता है?';
+
+  @override
+  String get faqPrivacyA =>
+      'सिर्फ़ आपके फ़ोन पर, एन्क्रिप्टेड डेटाबेस में। कोई खाता नहीं, कोई ट्रैकिंग नहीं। इंटरनेट केवल उन सुविधाओं के लिए है जिन्हें आप ख़ुद चालू करें, जैसे वैकल्पिक सहायक।';
+
+  @override
+  String get faqAssistantQ => 'सहायक क्या है?';
+
+  @override
+  String get faqAssistantA =>
+      'एक वैकल्पिक सहायक जिसे आप सेटिंग में अपनी AI सेवा से जोड़ते हैं। यह शुरू में बंद रहता है और नोट का कोई भी पाठ भेजने से पहले पूछता है।';
+
+  @override
+  String get tourPlanTitle => 'अपना दिन योजनाबद्ध करें';
+
+  @override
+  String get tourPlanBody =>
+      'कार्य, कैलेंडर और आदतें एक शांत जगह पर। हर सुबह “मेरा दिन शुरू करें” से शुरुआत करें।';
+
+  @override
+  String get tourFocusTitle => 'गहराई से फ़ोकस करें';
+
+  @override
+  String get tourFocusBody =>
+      'असली प्रकृति ध्वनियों, परेशान न करें और हल्की समाप्ति ध्वनियों के साथ समयबद्ध सत्र।';
+
+  @override
+  String get tourLearnTitle => 'हमेशा के लिए सीखें';
+
+  @override
+  String get tourLearnBody =>
+      'अंतराल पुनरावृत्ति वाले कार्ड, कई भाषाओं में उच्चारण, और Anki या Excel से आयात।';
+
+  @override
+  String get helpTitle => 'सहायता और प्रश्न';
+
+  @override
+  String get helpOpen => 'खोलें';
+
+  @override
+  String get helpTour => 'परिचय देखें';
+
+  @override
+  String get tourNext => 'आगे';
+
+  @override
+  String get tourDone => 'शुरू करें';
 }

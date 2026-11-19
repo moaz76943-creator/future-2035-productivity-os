@@ -26,6 +26,9 @@ List<AppShortcut> appShortcuts(AppLocalizations l10n) => [
 /// Tabs are switched to; every other screen opens on top of the current one.
 const _tabs = {Routes.home, Routes.tasks, Routes.focus, Routes.calendar, Routes.spaces};
 
+/// Tab screens are switched to (go); others open on top (push).
+bool isTabRoute(String path) => _tabs.contains(path);
+
 /// Only in-app paths are followed (never a scheme or another host).
 bool isAppRoute(String r) =>
     r.length < 300 && r.startsWith('/') && !r.startsWith('//') && !r.contains('://');

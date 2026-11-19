@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../help/presentation/tour_sheet.dart';
 import '../../../app/localization/app_format.dart';
 import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/components/indicators.dart';
@@ -51,6 +52,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   Future<void> _finish() async {
     if (_finishing) return;
     setState(() => _finishing = true);
+    await markTourPending(ref);
     await ref.read(settingsProvider.notifier).update((c) => c.copyWith(onboardingDone: true));
   }
 

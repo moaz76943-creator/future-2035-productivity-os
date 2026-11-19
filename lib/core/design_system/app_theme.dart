@@ -6,7 +6,9 @@ import 'tokens.dart';
 part 'app_theme/lux_colors.dart';
 
 abstract final class AppTheme {
-  static ThemeData build({required Brightness brightness, required Locale locale}) {
+  static ThemeData build({required Brightness brightness, required Locale locale, Color? accent}) {
+    final primary = accent ?? Palette.violet;
+    final dark = brightness == Brightness.dark;
     final lux = brightness == Brightness.dark ? LuxColors.dark : LuxColors.light;
     final lang = locale.languageCode;
     final family = lang == 'zh' ? null : AppFonts.primaryFor(lang);
@@ -44,12 +46,17 @@ abstract final class AppTheme {
 
     final scheme = ColorScheme(
       brightness: brightness,
-      primary: Palette.violet,
+      primary: primary,
       onPrimary: Palette.white,
-      primaryContainer: brightness == Brightness.dark
-          ? const Color(0xFF2A2170)
-          : const Color(0xFFEDE8FF),
-      onPrimaryContainer: brightness == Brightness.dark ? Palette.moon : const Color(0xFF2A1A8C),
+      primaryContainer: accent == null
+          ? (dark ? const Color(0xFF2A2170) : const Color(0xFFEDE8FF))
+          : Color.alphaBlend(
+              primary.withValues(alpha: dark ? 0.32 : 0.12),
+              dark ? Palette.dusk : Palette.white,
+            ),
+      onPrimaryContainer: dark
+          ? Palette.moon
+          : (accent == null ? const Color(0xFF2A1A8C) : Color.lerp(primary, Palette.navy, 0.5)!),
       secondary: Palette.aurora,
       onSecondary: Palette.white,
       tertiary: Palette.turquoise,

@@ -18,6 +18,7 @@ import '../../flashcards/application/flashcards_providers.dart';
 import '../../focus/application/focus_controller.dart';
 import '../../goals/application/goals_providers.dart';
 import '../../notes/application/notes_providers.dart';
+import '../../prayer/presentation/next_prayer_chip.dart';
 import '../../goals/data/goals_repository.dart';
 import '../../habits/application/habits_providers.dart';
 import '../../settings/application/settings_providers.dart';
@@ -26,6 +27,7 @@ import '../../tasks/application/tasks_providers.dart';
 import '../../tasks/data/tasks_repository.dart';
 import '../../tasks/presentation/widgets/task_tile.dart';
 import '../application/dashboard_providers.dart';
+import '../../help/presentation/tour_sheet.dart';
 import 'start_my_day.dart';
 
 part 'dashboard_screen/header.dart';
@@ -59,6 +61,7 @@ class DashboardScreen extends ConsumerWidget {
               const SliverToBoxAdapter(child: _Header()),
               const SliverToBoxAdapter(child: _QuickActions()),
               const SliverToBoxAdapter(child: StartMyDayCard()),
+              const SliverToBoxAdapter(child: TourLauncher()),
               for (final id in sections)
                 SliverToBoxAdapter(
                   child: switch (id) {

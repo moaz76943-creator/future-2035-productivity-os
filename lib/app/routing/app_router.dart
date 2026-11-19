@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../features/help/presentation/help_screen.dart';
 import '../../features/analytics/presentation/analytics_screen.dart';
 import '../../features/assistant/presentation/assistant_screen.dart';
 import '../../features/calendar/presentation/calendar_screen.dart';
@@ -136,6 +137,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       page(Routes.assistant, (_) => const AssistantScreen()),
       page(Routes.sounds, (_) => const SoundsScreen()),
       page(Routes.settings, (_) => const SettingsScreen()),
+      page(Routes.help, (_) => const HelpScreen()),
       page(Routes.trash, (_) => const TrashScreen()),
       page(Routes.onboarding, (_) => const OnboardingScreen()),
     ],

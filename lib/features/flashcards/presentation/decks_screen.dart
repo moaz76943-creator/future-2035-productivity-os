@@ -15,6 +15,7 @@ import '../../../shared/widgets/dialogs.dart';
 import '../../../shared/widgets/module_scaffold.dart';
 import '../application/flashcards_providers.dart';
 import '../domain/world_languages.dart';
+import 'widgets/starter_sheet.dart';
 import 'widgets/study_summary.dart';
 import 'widgets/deck_form_sheet.dart';
 import '../data/flashcards_repository.dart';
@@ -52,6 +53,12 @@ class DecksScreen extends ConsumerWidget {
       hue: _hue,
       actions: [
         IconButton(
+          key: const Key('starterDecksButton'),
+          tooltip: l10n.starterTitle,
+          onPressed: () => showStarterDecks(context),
+          icon: const Icon(Icons.library_add_outlined),
+        ),
+        IconButton(
           key: const Key('cardSearchButton'),
           tooltip: l10n.flashcardsSearchAll,
           onPressed: () => context.push(Routes.cardSearch),
@@ -73,13 +80,23 @@ class DecksScreen extends ConsumerWidget {
               return SliverToBoxAdapter(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: Space.page),
-                  child: EmptyState(
-                    icon: Icons.style_rounded,
-                    hue: _hue,
-                    title: l10n.flashEmptyTitle,
-                    message: l10n.flashEmptyMessage,
-                    actionLabel: l10n.deckNew,
-                    onAction: () => _createDeck(context, ref),
+                  child: Column(
+                    children: [
+                      EmptyState(
+                        icon: Icons.style_rounded,
+                        hue: _hue,
+                        title: l10n.flashEmptyTitle,
+                        message: l10n.flashEmptyMessage,
+                        actionLabel: l10n.deckNew,
+                        onAction: () => _createDeck(context, ref),
+                      ),
+                      TextButton.icon(
+                        key: const Key('starterDecksEmpty'),
+                        onPressed: () => showStarterDecks(context),
+                        icon: const Icon(Icons.library_add_outlined),
+                        label: Text(l10n.starterTitle),
+                      ),
+                    ],
                   ),
                 ),
               );

@@ -37,8 +37,16 @@ class MicButton extends ConsumerWidget {
               selection: TextSelection.collapsed(offset: value.length),
             );
           case SpeechUnavailable():
-            ScaffoldMessenger.maybeOf(context)
-                ?.showSnackBar(SnackBar(content: Text(l10n.voiceInputUnavailable)));
+            // A dialog, not a snackbar: it must also show above bottom sheets.
+            await showDialog<void>(
+              context: context,
+              builder: (c) => AlertDialog(
+                content: Text(l10n.voiceInputUnavailable),
+                actions: [
+                  TextButton(onPressed: () => Navigator.of(c).pop(), child: Text(l10n.actionClose)),
+                ],
+              ),
+            );
           case SpeechCancelled():
             break;
         }
