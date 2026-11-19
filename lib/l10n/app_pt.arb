@@ -1334,5 +1334,9 @@
   "examAllLearnt": "todos aprendidos, continue revisando",
   "examRaiseLimit": "Mostrar {count} cartões novos por dia",
   "backupDriveHint": "Para guardar uma cópia online, escolha o Google Drive (ou outro app de nuvem) na tela de salvar que abre em seguida.",
-  "flashShareDeck": "Compartilhar baralho com um amigo"
+  "flashShareDeck": "Compartilhar baralho com um amigo",
+  "flashSortManual": "Minha ordem (arrastar)",
+  "flashReorderHint": "Segure a alça e arraste um cartão para movê-lo.",
+  "flashReorderNeedsAll": "Limpe a busca e os filtros para arrastrar cartões.",
+  "flashDragHandle": "Arraste para mover"
 }

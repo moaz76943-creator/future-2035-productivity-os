@@ -90,7 +90,11 @@ extension _DeckMenuSheet on _DeckScreenState {
     final s = ref.read(settingsProvider);
     final swapped = ref.read(deckViewPrefsProvider).swapped;
     final tag = swapped ? deck.backLang : deck.frontLang;
-    final eff = tag.isEmpty ? Localizations.localeOf(context).toLanguageTag() : tag;
+    final eff = resolveSpeechTag(
+      swapped ? card.back : card.front,
+      tag,
+      Localizations.localeOf(context).toLanguageTag(),
+    );
     final l10n = context.l10n;
     final r = await ref
         .read(ttsServiceProvider)

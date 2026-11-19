@@ -4796,4 +4796,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get flashShareDeck => 'Share deck with a friend';
+
+  @override
+  String get flashSortManual => 'My order (drag)';
+
+  @override
+  String get flashReorderHint => 'Hold the handle and drag a card to move it.';
+
+  @override
+  String get flashReorderNeedsAll => 'Clear the search and filters to drag cards.';
+
+  @override
+  String get flashDragHandle => 'Drag to move';
 }

@@ -4566,4 +4566,16 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get flashShareDeck => '与朋友分享卡组';
+
+  @override
+  String get flashSortManual => '我的顺序（拖动）';
+
+  @override
+  String get flashReorderHint => '按住手柄并拖动卡片即可移动。';
+
+  @override
+  String get flashReorderNeedsAll => '清除搜索和筛选后才能拖动卡片。';
+
+  @override
+  String get flashDragHandle => '拖动移动';
 }

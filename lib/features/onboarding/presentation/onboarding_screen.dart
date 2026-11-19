@@ -8,6 +8,7 @@ import '../../../core/design_system/components/indicators.dart';
 import '../../../core/design_system/components/surfaces.dart';
 import '../../../core/design_system/tokens.dart';
 import '../../settings/application/settings_providers.dart';
+import '../../settings/presentation/language_chips.dart';
 import '../../settings/presentation/language_options.dart';
 
 /// First-run introduction: welcome, privacy, language and reminders.
@@ -102,6 +103,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                       hue: _hues[0],
                       title: l10n.onboardWelcomeTitle,
                       body: l10n.onboardWelcomeBody,
+                      extra: const LanguageChips(),
                     ),
                     _StepPage(
                       index: 1,

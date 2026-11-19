@@ -1334,5 +1334,9 @@
   "examAllLearnt": "تعلّمت كل البطاقات، استمر بالمراجعة",
   "examRaiseLimit": "اعرض {count} بطاقة جديدة يومياً",
   "backupDriveHint": "لحفظ نسخة على الإنترنت، اختر Google Drive (أو أي تطبيق تخزين سحابي) في شاشة الحفظ التي ستفتح بعدها.",
-  "flashShareDeck": "مشاركة المجموعة مع صديق"
+  "flashShareDeck": "مشاركة المجموعة مع صديق",
+  "flashSortManual": "ترتيبي (بالسحب)",
+  "flashReorderHint": "اضغط على المقبض واسحب البطاقة لتغيير مكانها.",
+  "flashReorderNeedsAll": "امسح البحث والفلاتر لتتمكن من سحب البطاقات.",
+  "flashDragHandle": "اسحب للتحريك"
 }

@@ -4937,4 +4937,16 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get flashShareDeck => 'Поделиться колодой с другом';
+
+  @override
+  String get flashSortManual => 'Мой порядок (перетаскивание)';
+
+  @override
+  String get flashReorderHint => 'Удерживайте ручку и перетащите карточку.';
+
+  @override
+  String get flashReorderNeedsAll => 'Сбросьте поиск и фильтры, чтобы перетаскивать карточки.';
+
+  @override
+  String get flashDragHandle => 'Перетащите';
 }

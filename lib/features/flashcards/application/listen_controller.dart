@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/database/app_database.dart';
 import '../../../core/speech/tts_service.dart';
 import '../../settings/application/settings_providers.dart';
+import '../domain/speech_language.dart';
 import '../domain/world_languages.dart';
 
 /// Hands-free listening: reads every card of a list aloud, first column then
@@ -53,6 +54,7 @@ class ListenController extends Notifier<ListenState> {
   List<CardRow> _cards = const [];
   String _first = '', _second = '';
   bool _swapped = false;
+  String _appTag = 'en';
 
   /// Bumped on every change; a running loop stops when it no longer matches.
   int _run = 0;
@@ -90,10 +92,9 @@ class ListenController extends Notifier<ListenState> {
     if (cards.isEmpty) return;
     _cards = List.unmodifiable(cards);
     _swapped = swapped;
-    final f = frontTag.isEmpty ? appTag : frontTag;
-    final b = backTag.isEmpty ? appTag : backTag;
-    _first = swapped ? b : f;
-    _second = swapped ? f : b;
+    _appTag = appTag;
+    _first = swapped ? backTag : frontTag;
+    _second = swapped ? frontTag : backTag;
     state = ListenState(active: true, playing: true, total: cards.length, cardId: cards.first.id);
     _loop();
   }
@@ -134,13 +135,18 @@ class ListenController extends Notifier<ListenState> {
 
   Future<void> _read(int run) async {
     final s = ref.read(settingsProvider);
-    Future<TtsResult> say(String text, String tag) => _tts.speak(
-      text,
-      languageTag: tag,
-      rate: s.flashSpeechRatePercent / 100,
-      voice: s.flashVoices[languageCode(tag)],
-      awaitDone: true,
-    );
+    Future<TtsResult> say(String text, String deckTag) {
+      final tag = resolveSpeechTag(text, deckTag, _appTag);
+      return _tts.speak(
+        text,
+        languageTag: tag,
+        rate: s.flashSpeechRatePercent / 100,
+        repeat: s.flashSpeechRepeat,
+        voice: s.flashVoices[languageCode(tag)],
+        awaitDone: true,
+      );
+    }
+
     bool stale() => run != _run || !ref.mounted;
 
     while (!stale() && state.index < _cards.length) {

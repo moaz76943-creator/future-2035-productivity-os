@@ -8117,6 +8117,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Share deck with a friend'**
   String get flashShareDeck;
+
+  /// Sort option: my own order (drag)
+  ///
+  /// In en, this message translates to:
+  /// **'My order (drag)'**
+  String get flashSortManual;
+
+  /// Hint above the draggable card list
+  ///
+  /// In en, this message translates to:
+  /// **'Hold the handle and drag a card to move it.'**
+  String get flashReorderHint;
+
+  /// Shown when my-order sort is on but a filter/search hides cards
+  ///
+  /// In en, this message translates to:
+  /// **'Clear the search and filters to drag cards.'**
+  String get flashReorderNeedsAll;
+
+  /// Tooltip of the drag handle
+  ///
+  /// In en, this message translates to:
+  /// **'Drag to move'**
+  String get flashDragHandle;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

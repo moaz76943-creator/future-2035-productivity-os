@@ -27,6 +27,11 @@ void main() {
       );
       expect(find.text(l10n.onboardWelcomeTitle), findsOneWidget);
       expect(find.bySemanticsLabel(l10n.onboardStep(1, 4)), findsOneWidget);
+      // Every app language is visible on the first screen, no scrolling.
+      for (final name in ['العربية', 'English', '中文', 'Español', 'Русский', 'Français', 'हिन्दी']) {
+        expect(find.text(name), findsOneWidget, reason: name);
+      }
+      expect(find.byKey(const ValueKey('chip-lang-pt-BR')), findsOneWidget);
 
       await tester.tap(find.byKey(const ValueKey('onboard-next')));
       await settle(tester);

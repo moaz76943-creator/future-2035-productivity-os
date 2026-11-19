@@ -4808,4 +4808,16 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get flashShareDeck => 'डेक किसी दोस्त के साथ साझा करें';
+
+  @override
+  String get flashSortManual => 'मेरा क्रम (खींचें)';
+
+  @override
+  String get flashReorderHint => 'हैंडल को दबाकर कार्ड खींचें और जगह बदलें।';
+
+  @override
+  String get flashReorderNeedsAll => 'कार्ड खींचने के लिए खोज और फ़िल्टर हटाएँ।';
+
+  @override
+  String get flashDragHandle => 'खींचकर हिलाएँ';
 }

@@ -6409,5 +6409,21 @@
   "flashShareDeck": "Share deck with a friend",
   "@flashShareDeck": {
     "description": "Deck menu: share the whole deck as a file a friend can import"
+  },
+  "flashSortManual": "My order (drag)",
+  "@flashSortManual": {
+    "description": "Sort option: my own order (drag)"
+  },
+  "flashReorderHint": "Hold the handle and drag a card to move it.",
+  "@flashReorderHint": {
+    "description": "Hint above the draggable card list"
+  },
+  "flashReorderNeedsAll": "Clear the search and filters to drag cards.",
+  "@flashReorderNeedsAll": {
+    "description": "Shown when my-order sort is on but a filter/search hides cards"
+  },
+  "flashDragHandle": "Drag to move",
+  "@flashDragHandle": {
+    "description": "Tooltip of the drag handle"
   }
 }

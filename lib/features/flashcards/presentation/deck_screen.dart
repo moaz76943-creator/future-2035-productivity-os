@@ -30,6 +30,7 @@ import '../../settings/application/settings_providers.dart';
 import '../application/deck_view_prefs.dart';
 import '../application/flashcards_providers.dart';
 import '../application/listen_controller.dart';
+import '../domain/speech_language.dart';
 import '../domain/world_languages.dart';
 import 'widgets/card_table.dart';
 import 'widgets/exam_line.dart';
@@ -48,6 +49,7 @@ part 'deck_screen/deck_screen_state.dart';
 part 'deck_screen/deck_header.dart';
 part 'deck_screen/import_dialog_state.dart';
 part 'deck_screen/deck_actions.dart';
+part 'deck_screen/deck_reorder.dart';
 part 'deck_screen/deck_cards.dart';
 part 'deck_screen/deck_menu.dart';
 

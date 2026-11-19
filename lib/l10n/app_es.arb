@@ -1334,5 +1334,9 @@
   "examAllLearnt": "todas aprendidas, sigue repasando",
   "examRaiseLimit": "Mostrar {count} tarjetas nuevas al día",
   "backupDriveHint": "Para guardar una copia en línea, elige Google Drive (u otra app en la nube) en la pantalla de guardado que se abre después.",
-  "flashShareDeck": "Compartir mazo con un amigo"
+  "flashShareDeck": "Compartir mazo con un amigo",
+  "flashSortManual": "Mi orden (arrastrar)",
+  "flashReorderHint": "Mantén pulsado el asa y arrastra una tarjeta para moverla.",
+  "flashReorderNeedsAll": "Borra la búsqueda y los filtros para arrastrar tarjetas.",
+  "flashDragHandle": "Arrastrar para mover"
 }

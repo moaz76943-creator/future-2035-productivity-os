@@ -178,6 +178,13 @@ extension _DeckCards on _DeckScreenState {
                     ),
                   ),
                 ),
+              if (prefs.sort == DeckSort.manual && shown.length != all.length)
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(Space.page, Space.sm, Space.page, 0),
+                    child: Text(l10n.flashReorderNeedsAll, style: context.text.bodySmall),
+                  ),
+                ),
               SliverToBoxAdapter(
                 child: SectionHeader(
                   title: shown.length == all.length
@@ -195,6 +202,8 @@ extension _DeckCards on _DeckScreenState {
                     ),
                   ),
                 )
+              else if (prefs.sort == DeckSort.manual && shown.length == all.length)
+                ..._reorderSlivers(deck, shown, prefs)
               else if (prefs.table) ...[
                 SliverToBoxAdapter(
                   child: CardTableHeader(
@@ -312,6 +321,7 @@ extension _DeckCards on _DeckScreenState {
                     DeckSort.alpha => l10n.flashSortAlpha,
                     DeckSort.due => l10n.flashSortDue,
                     DeckSort.hard => l10n.flashSortHard,
+                    DeckSort.manual => l10n.flashSortManual,
                   }),
                 ),
             ],

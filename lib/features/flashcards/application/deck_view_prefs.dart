@@ -7,8 +7,11 @@ import '../../../core/database/app_database.dart';
 import '../../../core/providers/core_providers.dart';
 import '../data/flashcards_repository.dart';
 
+/// Position of a card in the hand-made order (see Flashcards.position).
+int manualKey(CardRow c) => c.position != 0 ? c.position : c.createdAt.millisecondsSinceEpoch;
+
 /// Order of the card list.
-enum DeckSort { newest, alpha, due, hard }
+enum DeckSort { newest, alpha, due, hard, manual }
 
 /// How a deck's cards are shown: a two-column table (default) or tiles,
 /// which column comes first, and the order. Shared by all decks.
@@ -46,6 +49,8 @@ class DeckViewPrefs {
     final out = [...cards];
     int newest(CardRow a, CardRow b) => b.createdAt.compareTo(a.createdAt);
     switch (sort) {
+      case DeckSort.manual:
+        out.sort((a, b) => manualKey(a).compareTo(manualKey(b)));
       case DeckSort.newest:
         out.sort(newest);
       case DeckSort.alpha:

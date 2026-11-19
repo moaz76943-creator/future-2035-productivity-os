@@ -90,7 +90,7 @@ extension _ReviewActions on _ReviewScreenState {
   String _langTag({required bool front}) {
     final deck = ref.read(deckProvider(widget.deckId)).value;
     final lang = front ? deck?.frontLang : deck?.backLang;
-    return (lang == null || lang.isEmpty) ? Localizations.localeOf(context).toLanguageTag() : lang;
+    return lang ?? '';
   }
 
   CardSide _questionSide(CardRow card) => _reversed(card) ? CardSide.back : CardSide.front;
@@ -184,6 +184,7 @@ extension _ReviewActions on _ReviewScreenState {
     final messenger = ScaffoldMessenger.of(context);
     final l10n = context.l10n;
     final settings = ref.read(settingsProvider);
+    tag = resolveSpeechTag(text, tag, Localizations.localeOf(context).toLanguageTag());
     final result = await _tts.speak(
       text,
       languageTag: tag,

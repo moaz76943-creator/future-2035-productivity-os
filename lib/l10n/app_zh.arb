@@ -1334,5 +1334,9 @@
   "examAllLearnt": "已全部学完，继续复习",
   "examRaiseLimit": "每天显示 {count} 张新卡片",
   "backupDriveHint": "如需在线保存副本，请在接下来打开的保存界面中选择 Google 云端硬盘（或其他云存储应用）。",
-  "flashShareDeck": "与朋友分享卡组"
+  "flashShareDeck": "与朋友分享卡组",
+  "flashSortManual": "我的顺序（拖动）",
+  "flashReorderHint": "按住手柄并拖动卡片即可移动。",
+  "flashReorderNeedsAll": "清除搜索和筛选后才能拖动卡片。",
+  "flashDragHandle": "拖动移动"
 }

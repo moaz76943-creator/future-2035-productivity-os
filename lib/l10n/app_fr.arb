@@ -1334,5 +1334,9 @@
   "examAllLearnt": "toutes apprises, continuez à réviser",
   "examRaiseLimit": "Afficher {count} nouvelles cartes par jour",
   "backupDriveHint": "Pour garder une copie en ligne, choisissez Google Drive (ou une autre app cloud) dans l’écran d’enregistrement qui s’ouvre ensuite.",
-  "flashShareDeck": "Partager le paquet avec un ami"
+  "flashShareDeck": "Partager le paquet avec un ami",
+  "flashSortManual": "Mon ordre (glisser)",
+  "flashReorderHint": "Maintenez la poignée et faites glisser une carte pour la déplacer.",
+  "flashReorderNeedsAll": "Effacez la recherche et les filtres pour déplacer les cartes.",
+  "flashDragHandle": "Glisser pour déplacer"
 }

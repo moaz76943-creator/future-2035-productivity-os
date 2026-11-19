@@ -4986,4 +4986,16 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get flashShareDeck => 'مشاركة المجموعة مع صديق';
+
+  @override
+  String get flashSortManual => 'ترتيبي (بالسحب)';
+
+  @override
+  String get flashReorderHint => 'اضغط على المقبض واسحب البطاقة لتغيير مكانها.';
+
+  @override
+  String get flashReorderNeedsAll => 'امسح البحث والفلاتر لتتمكن من سحب البطاقات.';
+
+  @override
+  String get flashDragHandle => 'اسحب للتحريك';
 }

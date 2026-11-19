@@ -45,7 +45,7 @@ class AppDatabase extends _$AppDatabase {
   /// Bump when the schema changes and add a step in [migration].
   /// Never drop user tables to resolve a migration problem.
   @override
-  int get schemaVersion => 8;
+  int get schemaVersion => 9;
 
   /// Tables introduced after schema v1, by version. Older backups lack them and
   /// restore them empty instead of being rejected.
@@ -107,6 +107,10 @@ class AppDatabase extends _$AppDatabase {
         // v8: pictures in notes.
         await m.createTable(noteImages);
         await customStatement('CREATE INDEX IF NOT EXISTS idx_note_images_note ON note_images (note_id)');
+      }
+      if (from < 9) {
+        // v9: hand-made card order.
+        await m.addColumn(flashcards, flashcards.position);
       }
     },
     beforeOpen: (details) async {

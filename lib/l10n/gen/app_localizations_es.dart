@@ -4816,4 +4816,16 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get flashShareDeck => 'Compartir mazo con un amigo';
+
+  @override
+  String get flashSortManual => 'Mi orden (arrastrar)';
+
+  @override
+  String get flashReorderHint => 'Mantén pulsado el asa y arrastra una tarjeta para moverla.';
+
+  @override
+  String get flashReorderNeedsAll => 'Borra la búsqueda y los filtros para arrastrar tarjetas.';
+
+  @override
+  String get flashDragHandle => 'Arrastrar para mover';
 }

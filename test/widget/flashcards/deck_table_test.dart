@@ -1,12 +1,15 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:future_os/core/speech/tts_service.dart';
+import 'package:future_os/features/flashcards/application/deck_view_prefs.dart';
 import 'package:future_os/features/flashcards/data/flashcards_repository.dart';
 import 'package:future_os/features/flashcards/presentation/deck_screen.dart';
+import 'package:future_os/features/flashcards/presentation/widgets/card_table.dart';
 import 'package:future_os/l10n/gen/app_localizations.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../helpers.dart';
+import '../settings/settings_test_utils.dart';
 import '../widget_helpers.dart';
 
 class _Tts implements TtsService {
@@ -188,6 +191,37 @@ void main() {
       () => (env.db.select(env.db.decks)..where((d) => d.id.equals(deck))).getSingle(),
     );
     expect(row!.frontLang, 'sw');
+    await closeEnv(tester, env);
+  });
+
+  testWidgets('my order: dragging a card saves the order and keeps it', (tester) async {
+    final (env, deck, _) = await _open(tester);
+    final c = containerOf(tester, DeckScreen);
+    await c
+        .read(deckViewPrefsProvider.notifier)
+        .set(c.read(deckViewPrefsProvider).copyWith(sort: DeckSort.manual));
+    await settle(tester);
+    expect(find.byKey(const Key('cardReorderList')), findsOneWidget);
+    List<String> fronts() => tester
+        .widgetList<CardTableRow>(find.byType(CardTableRow))
+        .map((r) => r.card.front)
+        .toList();
+    final before = fronts();
+    expect(before.length, 2);
+    final id = tester.widget<CardTableRow>(find.byType(CardTableRow).first).card.id;
+    final g = await tester.startGesture(tester.getCenter(find.byKey(ValueKey('dragHandle_$id'))));
+    await tester.pump(const Duration(milliseconds: 100));
+    await g.moveBy(const Offset(0, 120));
+    await tester.pump();
+    await g.up();
+    await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 300)));
+    await settle(tester);
+    expect(fronts(), before.reversed.toList());
+    // Saved: it is still there after the screen reloads the cards.
+    final saved = await tester.runAsync(
+      () => FlashcardsRepository(env.db, env.clock).watchCards(deck).first,
+    );
+    expect(saved!.map((c) => c.position).every((p) => p > 0), isTrue);
     await closeEnv(tester, env);
   });
 }

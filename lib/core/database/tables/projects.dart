@@ -261,6 +261,10 @@ class Flashcards extends Table with Timestamps {
   /// CardExtras. Added in schema v2.
   TextColumn get extra => text().withDefault(const Constant(''))();
 
+  /// Hand-made order (drag to reorder). 0 = not moved yet: the card sorts by
+  /// its creation time, so new cards land at the end. v9.
+  IntColumn get position => integer().withDefault(const Constant(0))();
+
   /// new | learning | review | relearning
   TextColumn get state => text().withDefault(const Constant('new'))();
 

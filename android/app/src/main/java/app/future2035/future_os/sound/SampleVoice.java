@@ -26,7 +26,7 @@ public final class SampleVoice extends Voice {
             this.gain = loudnessGain(data);
         }
 
-        /** Brings every recording to about the same loudness (-20 dBFS RMS). */
+        /** Brings every recording to about the same loudness (about -21 dBFS RMS, a little quieter so nothing is loud). */
         private static float loudnessGain(short[] d) {
             double sum = 0;
             int peak = 1;
@@ -38,7 +38,7 @@ public final class SampleVoice extends Voice {
             if (rms < 1e-5) return 1f;
             // Loudness target; a rare loud drop or crackle may exceed full scale a little
             // (the mixer's soft clipper rounds it), but never by much.
-            double g = Math.min(0.12 / rms, 1.5 * 32768.0 / peak);
+            double g = Math.min(0.085 / rms, 1.5 * 32768.0 / peak);
             return (float) Math.max(0.3, Math.min(4.0, g));
         }
     }
@@ -49,12 +49,35 @@ public final class SampleVoice extends Voice {
     private final Head left, right;
     private final Dsp.Drift level;
 
+    /**
+     * Calm tone: recordings are rounded off above a cut-off chosen per sound
+     * (hiss of rain, sparks of fire, chirps of crickets are the harsh parts).
+     */
+    private final float soften;
+    private float softL, softR;
+
+    /** Cut-off frequency in Hz that suits each recording. */
+    static float cutoffFor(String id) {
+        switch (id) {
+            case "night": return 2400f;
+            case "fire": return 2800f;
+            case "storm": return 2800f;
+            case "rain": return 3200f;
+            case "forestrain": return 3200f;
+            case "ocean": return 3400f;
+            case "river": return 3800f;
+            case "forest": return 4200f;
+            default: return 4000f;
+        }
+    }
+
     /** Fades in once the recording is ready (decoding finishes after the voice starts). */
     private float warm;
     private static final float WARM_STEP = 1f / Dsp.SR;
 
     SampleVoice(String id, long seed, Source source) {
         super(seed);
+        soften = 1f - (float) Math.exp(-2.0 * Math.PI * cutoffFor(id) / Dsp.SR);
         left = new Head(new Dsp.Rng(rng.next()));
         right = new Head(new Dsp.Rng(rng.next()));
         level = new Dsp.Drift(rng, 0.85f, 1f, 6f, 15f);
@@ -83,7 +106,9 @@ public final class SampleVoice extends Voice {
         for (int i = 0; i < n; i++) {
             if (warm < 1f) warm = Math.min(1f, warm + WARM_STEP);
             float lv = level.tick() * g * warm * warm;
-            float a = left.next(p), b = right.next(p);
+            softL += soften * (left.next(p) - softL);
+            softR += soften * (right.next(p) - softR);
+            float a = softL, b = softR;
             // Mostly separate ears with some shared sound: wide but natural.
             l[i] += (a * 0.78f + b * 0.22f) * lv;
             r[i] += (b * 0.78f + a * 0.22f) * lv;

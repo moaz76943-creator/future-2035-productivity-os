@@ -4827,4 +4827,18 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get flashShareDeck => 'Partager le paquet avec un ami';
+
+  @override
+  String get flashSortManual => 'Mon ordre (glisser)';
+
+  @override
+  String get flashReorderHint =>
+      'Maintenez la poignée et faites glisser une carte pour la déplacer.';
+
+  @override
+  String get flashReorderNeedsAll =>
+      'Effacez la recherche et les filtres pour déplacer les cartes.';
+
+  @override
+  String get flashDragHandle => 'Glisser pour déplacer';
 }

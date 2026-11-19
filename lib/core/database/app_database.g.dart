@@ -6741,6 +6741,18 @@ class $FlashcardsTable extends Flashcards
     requiredDuringInsert: false,
     defaultValue: const Constant(''),
   );
+  static const VerificationMeta _positionMeta = const VerificationMeta(
+    'position',
+  );
+  @override
+  late final GeneratedColumn<int> position = GeneratedColumn<int>(
+    'position',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
   static const VerificationMeta _stateMeta = const VerificationMeta('state');
   @override
   late final GeneratedColumn<String> state = GeneratedColumn<String>(
@@ -6912,6 +6924,7 @@ class $FlashcardsTable extends Flashcards
     back,
     tags,
     extra,
+    position,
     state,
     ease,
     intervalDays,
@@ -6994,6 +7007,12 @@ class $FlashcardsTable extends Flashcards
       context.handle(
         _extraMeta,
         extra.isAcceptableOrUnknown(data['extra']!, _extraMeta),
+      );
+    }
+    if (data.containsKey('position')) {
+      context.handle(
+        _positionMeta,
+        position.isAcceptableOrUnknown(data['position']!, _positionMeta),
       );
     }
     if (data.containsKey('state')) {
@@ -7133,6 +7152,10 @@ class $FlashcardsTable extends Flashcards
         DriftSqlType.string,
         data['${effectivePrefix}extra'],
       )!,
+      position: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}position'],
+      )!,
       state: attachedDatabase.typeMapping.read(
         DriftSqlType.string,
         data['${effectivePrefix}state'],
@@ -7211,6 +7234,10 @@ class CardRow extends DataClass implements Insertable<CardRow> {
   /// CardExtras. Added in schema v2.
   final String extra;
 
+  /// Hand-made order (drag to reorder). 0 = not moved yet: the card sorts by
+  /// its creation time, so new cards land at the end. v9.
+  final int position;
+
   /// new | learning | review | relearning
   final String state;
 
@@ -7246,6 +7273,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     required this.back,
     required this.tags,
     required this.extra,
+    required this.position,
     required this.state,
     required this.ease,
     required this.intervalDays,
@@ -7272,6 +7300,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     map['back'] = Variable<String>(back);
     map['tags'] = Variable<String>(tags);
     map['extra'] = Variable<String>(extra);
+    map['position'] = Variable<int>(position);
     map['state'] = Variable<String>(state);
     map['ease'] = Variable<int>(ease);
     map['interval_days'] = Variable<int>(intervalDays);
@@ -7305,6 +7334,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
       back: Value(back),
       tags: Value(tags),
       extra: Value(extra),
+      position: Value(position),
       state: Value(state),
       ease: Value(ease),
       intervalDays: Value(intervalDays),
@@ -7342,6 +7372,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
       back: serializer.fromJson<String>(json['back']),
       tags: serializer.fromJson<String>(json['tags']),
       extra: serializer.fromJson<String>(json['extra']),
+      position: serializer.fromJson<int>(json['position']),
       state: serializer.fromJson<String>(json['state']),
       ease: serializer.fromJson<int>(json['ease']),
       intervalDays: serializer.fromJson<int>(json['intervalDays']),
@@ -7370,6 +7401,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
       'back': serializer.toJson<String>(back),
       'tags': serializer.toJson<String>(tags),
       'extra': serializer.toJson<String>(extra),
+      'position': serializer.toJson<int>(position),
       'state': serializer.toJson<String>(state),
       'ease': serializer.toJson<int>(ease),
       'intervalDays': serializer.toJson<int>(intervalDays),
@@ -7396,6 +7428,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     String? back,
     String? tags,
     String? extra,
+    int? position,
     String? state,
     int? ease,
     int? intervalDays,
@@ -7419,6 +7452,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     back: back ?? this.back,
     tags: tags ?? this.tags,
     extra: extra ?? this.extra,
+    position: position ?? this.position,
     state: state ?? this.state,
     ease: ease ?? this.ease,
     intervalDays: intervalDays ?? this.intervalDays,
@@ -7444,6 +7478,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
       back: data.back.present ? data.back.value : this.back,
       tags: data.tags.present ? data.tags.value : this.tags,
       extra: data.extra.present ? data.extra.value : this.extra,
+      position: data.position.present ? data.position.value : this.position,
       state: data.state.present ? data.state.value : this.state,
       ease: data.ease.present ? data.ease.value : this.ease,
       intervalDays: data.intervalDays.present
@@ -7482,6 +7517,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
           ..write('back: $back, ')
           ..write('tags: $tags, ')
           ..write('extra: $extra, ')
+          ..write('position: $position, ')
           ..write('state: $state, ')
           ..write('ease: $ease, ')
           ..write('intervalDays: $intervalDays, ')
@@ -7510,6 +7546,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     back,
     tags,
     extra,
+    position,
     state,
     ease,
     intervalDays,
@@ -7537,6 +7574,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
           other.back == this.back &&
           other.tags == this.tags &&
           other.extra == this.extra &&
+          other.position == this.position &&
           other.state == this.state &&
           other.ease == this.ease &&
           other.intervalDays == this.intervalDays &&
@@ -7562,6 +7600,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
   final Value<String> back;
   final Value<String> tags;
   final Value<String> extra;
+  final Value<int> position;
   final Value<String> state;
   final Value<int> ease;
   final Value<int> intervalDays;
@@ -7586,6 +7625,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     this.back = const Value.absent(),
     this.tags = const Value.absent(),
     this.extra = const Value.absent(),
+    this.position = const Value.absent(),
     this.state = const Value.absent(),
     this.ease = const Value.absent(),
     this.intervalDays = const Value.absent(),
@@ -7611,6 +7651,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     required String back,
     this.tags = const Value.absent(),
     this.extra = const Value.absent(),
+    this.position = const Value.absent(),
     this.state = const Value.absent(),
     this.ease = const Value.absent(),
     this.intervalDays = const Value.absent(),
@@ -7641,6 +7682,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     Expression<String>? back,
     Expression<String>? tags,
     Expression<String>? extra,
+    Expression<int>? position,
     Expression<String>? state,
     Expression<int>? ease,
     Expression<int>? intervalDays,
@@ -7666,6 +7708,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
       if (back != null) 'back': back,
       if (tags != null) 'tags': tags,
       if (extra != null) 'extra': extra,
+      if (position != null) 'position': position,
       if (state != null) 'state': state,
       if (ease != null) 'ease': ease,
       if (intervalDays != null) 'interval_days': intervalDays,
@@ -7693,6 +7736,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     Value<String>? back,
     Value<String>? tags,
     Value<String>? extra,
+    Value<int>? position,
     Value<String>? state,
     Value<int>? ease,
     Value<int>? intervalDays,
@@ -7718,6 +7762,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
       back: back ?? this.back,
       tags: tags ?? this.tags,
       extra: extra ?? this.extra,
+      position: position ?? this.position,
       state: state ?? this.state,
       ease: ease ?? this.ease,
       intervalDays: intervalDays ?? this.intervalDays,
@@ -7762,6 +7807,9 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     }
     if (extra.present) {
       map['extra'] = Variable<String>(extra.value);
+    }
+    if (position.present) {
+      map['position'] = Variable<int>(position.value);
     }
     if (state.present) {
       map['state'] = Variable<String>(state.value);
@@ -7822,6 +7870,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
           ..write('back: $back, ')
           ..write('tags: $tags, ')
           ..write('extra: $extra, ')
+          ..write('position: $position, ')
           ..write('state: $state, ')
           ..write('ease: $ease, ')
           ..write('intervalDays: $intervalDays, ')
@@ -19417,6 +19466,7 @@ typedef $$FlashcardsTableCreateCompanionBuilder = FlashcardsCompanion Function({
   required String back,
   Value<String> tags,
   Value<String> extra,
+  Value<int> position,
   Value<String> state,
   Value<int> ease,
   Value<int> intervalDays,
@@ -19442,6 +19492,7 @@ typedef $$FlashcardsTableUpdateCompanionBuilder = FlashcardsCompanion Function({
   Value<String> back,
   Value<String> tags,
   Value<String> extra,
+  Value<int> position,
   Value<String> state,
   Value<int> ease,
   Value<int> intervalDays,
@@ -19558,6 +19609,11 @@ class $$FlashcardsTableFilterComposer
 
   ColumnFilters<String> get extra => $composableBuilder(
     column: $table.extra,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get position => $composableBuilder(
+    column: $table.position,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -19749,6 +19805,11 @@ class $$FlashcardsTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<int> get position => $composableBuilder(
+    column: $table.position,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<String> get state => $composableBuilder(
     column: $table.state,
     builder: (column) => ColumnOrderings(column),
@@ -19872,6 +19933,9 @@ class $$FlashcardsTableAnnotationComposer
 
   GeneratedColumn<String> get extra =>
       $composableBuilder(column: $table.extra, builder: (column) => column);
+
+  GeneratedColumn<int> get position =>
+      $composableBuilder(column: $table.position, builder: (column) => column);
 
   GeneratedColumn<String> get state =>
       $composableBuilder(column: $table.state, builder: (column) => column);
@@ -20039,6 +20103,7 @@ class $$FlashcardsTableTableManager
                 Value<String> back = const Value.absent(),
                 Value<String> tags = const Value.absent(),
                 Value<String> extra = const Value.absent(),
+                Value<int> position = const Value.absent(),
                 Value<String> state = const Value.absent(),
                 Value<int> ease = const Value.absent(),
                 Value<int> intervalDays = const Value.absent(),
@@ -20063,6 +20128,7 @@ class $$FlashcardsTableTableManager
                 back: back,
                 tags: tags,
                 extra: extra,
+                position: position,
                 state: state,
                 ease: ease,
                 intervalDays: intervalDays,
@@ -20089,6 +20155,7 @@ class $$FlashcardsTableTableManager
                 required String back,
                 Value<String> tags = const Value.absent(),
                 Value<String> extra = const Value.absent(),
+                Value<int> position = const Value.absent(),
                 Value<String> state = const Value.absent(),
                 Value<int> ease = const Value.absent(),
                 Value<int> intervalDays = const Value.absent(),
@@ -20113,6 +20180,7 @@ class $$FlashcardsTableTableManager
                 back: back,
                 tags: tags,
                 extra: extra,
+                position: position,
                 state: state,
                 ease: ease,
                 intervalDays: intervalDays,

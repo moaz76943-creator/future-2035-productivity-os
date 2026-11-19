@@ -4818,4 +4818,16 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get flashShareDeck => 'Compartilhar baralho com um amigo';
+
+  @override
+  String get flashSortManual => 'Minha ordem (arrastar)';
+
+  @override
+  String get flashReorderHint => 'Segure a alça e arraste um cartão para movê-lo.';
+
+  @override
+  String get flashReorderNeedsAll => 'Limpe a busca e os filtros para arrastrar cartões.';
+
+  @override
+  String get flashDragHandle => 'Arraste para mover';
 }

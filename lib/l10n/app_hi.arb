@@ -1334,5 +1334,9 @@
   "examAllLearnt": "सभी कार्ड सीख लिए, दोहराते रहें",
   "examRaiseLimit": "रोज़ {count} नए कार्ड दिखाएँ",
   "backupDriveHint": "ऑनलाइन कॉपी रखने के लिए, अगली सेव स्क्रीन में Google Drive (या कोई और क्लाउड ऐप) चुनें।",
-  "flashShareDeck": "डेक किसी दोस्त के साथ साझा करें"
+  "flashShareDeck": "डेक किसी दोस्त के साथ साझा करें",
+  "flashSortManual": "मेरा क्रम (खींचें)",
+  "flashReorderHint": "हैंडल को दबाकर कार्ड खींचें और जगह बदलें।",
+  "flashReorderNeedsAll": "कार्ड खींचने के लिए खोज और फ़िल्टर हटाएँ।",
+  "flashDragHandle": "खींचकर हिलाएँ"
 }
