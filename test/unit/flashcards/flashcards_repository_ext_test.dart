@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:future_os/features/flashcards/data/flashcards_repository.dart';
+import 'package:future_os/features/flashcards/domain/card_layout.dart';
 import 'package:future_os/features/flashcards/domain/srs_scheduler.dart';
 
 import '../../helpers.dart';
@@ -66,5 +67,45 @@ void main() {
     expect(await repo.deckWithMostDue(), b);
     await repo.deleteDeck(b);
     expect(await repo.deckWithMostDue(), a);
+  });
+
+  test('saved templates and non-destructive template application preserve card data', () async {
+    final deck = await repo.createDeck('Langs', color: 1);
+    final initial = const CardLayout().addCustomField(name: 'Literal', isTranslation: true);
+    await repo.saveLayout(deck, initial);
+    final cardId = await repo.addCard(deck, 'كتاب', 'book', custom: const {'c1': 'a writing'});
+
+    final tpl = SavedCardTemplate(
+      id: 't1',
+      name: 'Grammar',
+      layout: templateLayout(CardTemplate.grammar, name: (k) => k),
+    );
+    await repo.saveTemplate(tpl);
+    expect((await repo.savedTemplates()).single.name, 'Grammar');
+
+    final updated = await repo.applyTemplateNonDestructive(deck, tpl.layout);
+    expect(updated.customFields.length, 2);
+    expect(updated.customFields[0].id, 'c1');
+    expect(updated.customFields[1].id, 'c2');
+
+    // Existing card custom field data is 100% preserved.
+    final card = (await repo.getCard(cardId))!;
+    expect(CardCustom.decode(card.custom)['c1'], 'a writing');
+
+    await repo.deleteTemplate('t1');
+    expect(await repo.savedTemplates(), isEmpty);
+  });
+
+  test('cardReviewHistory records persistent review log newest first', () async {
+    final deck = await repo.createDeck('D', color: 1);
+    final id = await repo.addCard(deck, 'q', 'a');
+    await repo.recordReview(id, ReviewRating.good);
+    env.clock.advance(const Duration(minutes: 15));
+    await repo.recordReview(id, ReviewRating.easy);
+
+    final history = await repo.cardReviewHistory(id);
+    expect(history.length, 2);
+    expect(history.first.rating, ReviewRating.easy.value);
+    expect(history.last.rating, ReviewRating.good.value);
   });
 }

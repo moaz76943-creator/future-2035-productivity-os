@@ -114,6 +114,14 @@ extension FlashcardsStudy on FlashcardsRepository {
     });
   }
 
+  /// Persistent review log for a single card, newest first.
+  Future<List<ReviewRow>> cardReviewHistory(String cardId, {int limit = 50}) =>
+      (_db.select(_db.cardReviews)
+            ..where((r) => r.cardId.equals(cardId))
+            ..orderBy([(r) => OrderingTerm.desc(r.reviewedAt)])
+            ..limit(limit))
+          .get();
+
   Stream<DeckStats> watchDeckStats(String deckId) {
     final now = _clock.nowUtc();
     final c = _db.flashcards;

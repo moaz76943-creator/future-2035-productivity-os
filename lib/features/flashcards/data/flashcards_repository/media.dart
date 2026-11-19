@@ -10,6 +10,42 @@ extension FlashcardsMedia on FlashcardsRepository {
   Future<void> saveLayout(String deckId, CardLayout layout) =>
       _db.writeValue(FlashcardsRepository._layoutKey(deckId), layout.encode());
 
+  static const _savedTemplatesKey = 'flashcards.saved_templates';
+
+  Stream<List<SavedCardTemplate>> watchSavedTemplates() =>
+      _db.watchValue(_savedTemplatesKey).map(SavedCardTemplate.decodeList);
+
+  Future<List<SavedCardTemplate>> savedTemplates() async =>
+      SavedCardTemplate.decodeList(await _db.readValue(_savedTemplatesKey));
+
+  Future<void> saveTemplate(SavedCardTemplate template) async {
+    final existing = await savedTemplates();
+    final next = [
+      for (final t in existing)
+        if (t.id != template.id) t,
+      template,
+    ];
+    await _db.writeValue(_savedTemplatesKey, SavedCardTemplate.encodeList(next));
+  }
+
+  Future<void> deleteTemplate(String id) async {
+    final existing = await savedTemplates();
+    final next = [
+      for (final t in existing)
+        if (t.id != id) t,
+    ];
+    await _db.writeValue(_savedTemplatesKey, SavedCardTemplate.encodeList(next));
+  }
+
+  /// Non-destructively applies [template] to [deckId]'s layout without
+  /// touching any existing card content or custom field values.
+  Future<CardLayout> applyTemplateNonDestructive(String deckId, CardLayout template) async {
+    final current = await layout(deckId);
+    final merged = current.applyTemplateNonDestructive(template);
+    await saveLayout(deckId, merged);
+    return merged;
+  }
+
   /// Attaches an image or audio clip to one side of a card (replacing an
   /// earlier one of the same kind on that side).
   Future<String> addMedia(

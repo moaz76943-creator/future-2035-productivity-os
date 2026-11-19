@@ -66,6 +66,34 @@ class SrsCard {
     final days = now.difference(last).inMinutes / (60 * 24);
     return Fsrs.retrievability(days < 0 ? 0 : days, stability);
   }
+
+  /// Probability of forgetting the card at [now] (`1 - R`, null before first review).
+  double? forgettingProbability(DateTime now) {
+    final r = retrievability(now);
+    return r == null ? null : (1.0 - r).clamp(0.0, 1.0);
+  }
+
+  SrsCard copyWith({
+    CardState? state,
+    double? stability,
+    double? difficulty,
+    int? intervalDays,
+    int? repetitions,
+    int? lapses,
+    int? learningStep,
+    DateTime? dueAt,
+    DateTime? lastReviewAt,
+  }) => SrsCard(
+    state: state ?? this.state,
+    stability: stability ?? this.stability,
+    difficulty: difficulty ?? this.difficulty,
+    intervalDays: intervalDays ?? this.intervalDays,
+    repetitions: repetitions ?? this.repetitions,
+    lapses: lapses ?? this.lapses,
+    learningStep: learningStep ?? this.learningStep,
+    dueAt: dueAt ?? this.dueAt,
+    lastReviewAt: lastReviewAt ?? this.lastReviewAt,
+  );
 }
 
 /// FSRS-4.5 formulas with the published default parameters.
@@ -77,12 +105,17 @@ abstract final class Fsrs {
   static const decay = -0.5;
   static const factor = 19 / 81;
 
-  static double retrievability(double elapsedDays, double stability) =>
-      math.pow(1 + factor * elapsedDays / stability, decay).toDouble();
+  static double retrievability(double elapsedDays, double stability) {
+    if (stability <= 0) return 0;
+    final days = elapsedDays < 0 ? 0.0 : elapsedDays;
+    return math.pow(1 + factor * days / stability, decay).toDouble();
+  }
 
   /// Days until recall probability drops to [retention].
-  static double interval(double stability, double retention) =>
-      stability / factor * (math.pow(retention, 1 / decay) - 1);
+  static double interval(double stability, double retention) {
+    if (stability <= 0) return 0;
+    return stability / factor * (math.pow(retention, 1 / decay) - 1);
+  }
 
   static double initStability(ReviewRating g) => w[g.value - 1];
 
@@ -141,15 +174,32 @@ class SrsScheduler {
   final double desiredRetention;
   final int maximumIntervalDays;
 
+  List<int> get _safeLearningSteps => learningSteps.isEmpty ? const [1] : learningSteps;
+  List<int> get _safeRelearningSteps => relearningSteps.isEmpty ? const [10] : relearningSteps;
+
   DateTime _dueInDays(DateTime now, int days) => Days.addDays(Days.startOfDay(now), days);
 
   int _days(double stability) =>
       Fsrs.interval(stability, desiredRetention).round().clamp(1, maximumIntervalDays);
 
+  /// Previews the resulting [SrsCard] for each of the four FSRS ratings.
+  Map<ReviewRating, SrsCard> preview(SrsCard card, DateTime now) => {
+    for (final r in ReviewRating.values) r: review(card, r, now),
+  };
+
+  /// Predicted wait duration until the next review for [rating].
+  Duration predictedWait(SrsCard card, ReviewRating rating, DateTime now) {
+    final next = review(card, rating, now);
+    final due = next.dueAt;
+    if (due == null) return Duration(days: next.intervalDays);
+    final diff = due.difference(now);
+    return diff.isNegative ? Duration.zero : diff;
+  }
+
   SrsCard review(SrsCard card, ReviewRating rating, DateTime now) => switch (card.state) {
     CardState.newCard => _first(card, rating, now),
-    CardState.learning => _learn(card, rating, now, learningSteps, relearn: false),
-    CardState.relearning => _learn(card, rating, now, relearningSteps, relearn: true),
+    CardState.learning => _learn(card, rating, now, _safeLearningSteps, relearn: false),
+    CardState.relearning => _learn(card, rating, now, _safeRelearningSteps, relearn: true),
     CardState.review => _review(card, rating, now),
   };
 
@@ -161,7 +211,7 @@ class SrsScheduler {
       repetitions: c.repetitions,
       lapses: c.lapses,
     );
-    return _steps(seeded, r, now, learningSteps, relearn: false, step: 0, first: true);
+    return _steps(seeded, r, now, _safeLearningSteps, relearn: false, step: 0, first: true);
   }
 
   SrsCard _learn(
@@ -253,7 +303,7 @@ class SrsScheduler {
         difficulty: nd,
         intervalDays: c.intervalDays,
         lapses: c.lapses + 1,
-        dueAt: now.add(Duration(minutes: relearningSteps.first)),
+        dueAt: now.add(Duration(minutes: _safeRelearningSteps.first)),
         lastReviewAt: now,
       );
     }

@@ -116,4 +116,22 @@ void main() {
     expect(a.intervalDays, b.intervalDays);
     expect(a.stability, b.stability);
   });
+
+  test('forgettingProbability, preview, predictedWait and edge-case guards', () {
+    final c = reviewCard(daysAgo: 10);
+    expect(c.forgettingProbability(now), closeTo(0.1, 1e-6));
+    expect(const SrsCard().forgettingProbability(now), isNull);
+
+    final prev = s.preview(c, now);
+    expect(prev.keys.toSet(), ReviewRating.values.toSet());
+    expect(s.predictedWait(c, ReviewRating.easy, now), greaterThan(const Duration(days: 10)));
+
+    expect(Fsrs.retrievability(5, 0), 0);
+    expect(Fsrs.interval(0, 0.9), 0);
+
+    const emptySteps = SrsScheduler(learningSteps: [], relearningSteps: []);
+    final first = emptySteps.review(const SrsCard(), ReviewRating.again, now);
+    expect(first.state, CardState.learning);
+    expect(first.dueAt, now.add(const Duration(minutes: 1)));
+  });
 }
