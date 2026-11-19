@@ -28,6 +28,11 @@ final class Mixer {
     private float master, masterTarget, masterStep;
     private float[] l = new float[0], r = new float[0], tl = new float[0], tr = new float[0];
     private long seed = 1;
+    private final SampleVoice.Source source;
+
+    Mixer(SampleVoice.Source source) {
+        this.source = source;
+    }
 
     /**
      * Sets a sound's volume (0..1). 0 removes it after a short fade.
@@ -43,7 +48,7 @@ final class Mixer {
         }
         if (e == null) {
             if (volumes.size() >= MAX_VOICES) return false;
-            Voice voice = Voice.create(id, seed++ * 7919L);
+            Voice voice = Voice.create(id, seed++ * 7919L, source);
             if (voice == null) return false;
             e = new Entry(voice);
             entries.put(id, e);
@@ -111,8 +116,8 @@ final class Mixer {
             if (master < masterTarget) master = Math.min(masterTarget, master + masterStep);
             else if (master > masterTarget) master = Math.max(masterTarget, master - masterStep);
             // Several loud sounds together are tamed by the soft clipper.
-            float a = Dsp.softClip(l[i] * master * 1.6f) * 0.92f;
-            float b = Dsp.softClip(r[i] * master * 1.6f) * 0.92f;
+            float a = Dsp.softClip(l[i] * master * 1.15f) * 0.95f;
+            float b = Dsp.softClip(r[i] * master * 1.15f) * 0.95f;
             out[2 * i] = (short) (a * 32767f);
             out[2 * i + 1] = (short) (b * 32767f);
         }

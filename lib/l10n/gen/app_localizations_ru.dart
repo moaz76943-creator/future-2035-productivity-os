@@ -3989,8 +3989,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get soundsTitle => 'Звуки';
 
   @override
-  String get soundsSubtitle =>
-      'Звуки природы создаются прямо на устройстве и никогда не повторяются.';
+  String get soundsSubtitle => 'Настоящие записи природы, в которых не слышно повторов.';
 
   @override
   String get soundsNature => 'Природа';
@@ -4012,9 +4011,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get soundFire => 'Костёр';
-
-  @override
-  String get soundWind => 'Ветер';
 
   @override
   String get soundForest => 'Лесные птицы';
@@ -4073,9 +4069,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get toneBeeps => 'Короткие сигналы';
-
-  @override
-  String get toneDrops => 'Капли воды';
 
   @override
   String get toneWood => 'Стук по дереву';
@@ -4186,4 +4179,7 @@ class AppLocalizationsRu extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get soundForestRain => 'Дождь в лесу';
 }

@@ -4033,7 +4033,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get soundsTitle => 'الأصوات';
 
   @override
-  String get soundsSubtitle => 'أصوات طبيعية تُولَّد مباشرة على جهازك، ولا تتكرر أبداً.';
+  String get soundsSubtitle => 'تسجيلات حقيقية من الطبيعة، تُشغَّل بطريقة لا تشعر معها بأي تكرار.';
 
   @override
   String get soundsNature => 'الطبيعة';
@@ -4055,9 +4055,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get soundFire => 'نار المخيم';
-
-  @override
-  String get soundWind => 'رياح';
 
   @override
   String get soundForest => 'طيور الغابة';
@@ -4115,9 +4112,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get toneBeeps => 'تنبيهات قصيرة';
-
-  @override
-  String get toneDrops => 'قطرات ماء';
 
   @override
   String get toneWood => 'طرقات خشب';
@@ -4229,4 +4223,7 @@ class AppLocalizationsAr extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get soundForestRain => 'مطر في الغابة';
 }

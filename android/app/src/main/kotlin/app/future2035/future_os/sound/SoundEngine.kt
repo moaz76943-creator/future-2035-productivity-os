@@ -13,7 +13,7 @@ import android.os.Process
 import java.util.concurrent.CopyOnWriteArrayList
 
 /**
- * Plays the procedural nature sounds (see [Mixer]) through one AudioTrack on a
+ * Plays the nature sounds (real recordings and noise colours, see [Mixer]) through one AudioTrack on a
  * dedicated audio thread. The thread exists only while sound is audible: after
  * a pause fades out, the track is released and the thread ends, so nothing
  * keeps running or holds memory when idle.
@@ -25,7 +25,8 @@ object SoundEngine {
     private const val FRAMES = 1024
     private const val SLEEP_FADE_MS = 12_000L
 
-    private val mixer = Mixer()
+    @Volatile private var samples: AssetSamples? = null
+    private val mixer = Mixer(SampleVoice.Source { id -> samples?.load(id) })
     private val lock = Object()
     private val main = Handler(Looper.getMainLooper())
     private val listeners = CopyOnWriteArrayList<() -> Unit>()
@@ -46,6 +47,7 @@ object SoundEngine {
 
     fun init(context: Context) {
         if (app == null) app = context.applicationContext
+        if (samples == null) samples = AssetSamples(context)
     }
 
     fun addListener(l: () -> Unit) = listeners.add(l)

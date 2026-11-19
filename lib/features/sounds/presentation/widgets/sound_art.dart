@@ -37,12 +37,12 @@ class _ScenePainter extends CustomPainter {
         _ocean(canvas, size);
       case NatureSound.fire:
         _fire(canvas, size);
-      case NatureSound.wind:
-        _wind(canvas, size);
       case NatureSound.forest:
         _forest(canvas, size);
       case NatureSound.night:
         _night(canvas, size);
+      case NatureSound.forestrain:
+        _forest(canvas, size, raining: true);
       case NatureSound.white:
         _noise(canvas, size, const Color(0xFFEFF1F8), const Color(0xFFC9D0E6), 0.9);
       case NatureSound.pink:

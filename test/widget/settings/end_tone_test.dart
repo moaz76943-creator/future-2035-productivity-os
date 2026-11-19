@@ -37,13 +37,13 @@ void main() {
     await scrollTo(tester, find.byKey(const Key('focusEndTone')));
     await tester.tap(find.byKey(const Key('focusEndTone')));
     await settle(tester);
-    await tester.tap(find.byKey(const Key('endTone_drops')));
+    await tester.tap(find.byKey(const Key('endTone_bird')));
     await settle(tester);
-    expect(player.tones, ['alarm_drops']);
-    expect(containerOf(tester, SettingsScreen).read(settingsProvider).focusEndTone, 'drops');
+    expect(player.tones, ['alarm_bird']);
+    expect(containerOf(tester, SettingsScreen).read(settingsProvider).focusEndTone, 'bird');
     await tester.tap(find.byKey(const Key('endTone_system')));
     await settle(tester);
-    expect(player.tones, ['alarm_drops']); // the phone's sound has no preview
+    expect(player.tones, ['alarm_bird']); // the phone's sound has no preview
     await tester.tap(find.byKey(const Key('endToneDone')));
     await settle(tester);
     expect((await SettingsRepository(env.db).load()).focusEndTone, 'system');
@@ -66,7 +66,7 @@ void main() {
     expect(focusEndNotification(s, end, const AppSettings(focusEndTone: 'system')).tone, isNull);
     expect(EndTone.byName('music'), EndTone.gentle);
     final a = focusEndNotification(s, end, const AppSettings(focusEndTone: 'bird'));
-    final b = focusEndNotification(s, end, const AppSettings(focusEndTone: 'drops'));
+    final b = focusEndNotification(s, end, const AppSettings(focusEndTone: 'stream'));
     expect(a.signature == b.signature, isFalse, reason: 'a new sound reschedules the alert');
   });
 }

@@ -1,14 +1,13 @@
 /// The sound that plays when a focus or break timer ends.
 ///
-/// [system] uses the phone's notification sound; the others are short sounds
-/// made by the app's own generator (`tool/sounds/render_alarm_sounds.py`):
-/// original work, free for commercial use, and none of them is music or a
-/// bell. Each lives in `res/raw/alarm_<name>.ogg` and gets its own Android
+/// [system] uses the phone's notification sound; the others come from
+/// `tool/sounds/render_alarm_sounds.py`: generated beeps and knock, and short
+/// excerpts of the app's CC0 nature recordings (bird, stream). All free for
+/// commercial use; none of them is music or a bell. Each lives in `res/raw/alarm_<name>.ogg` and gets its own Android
 /// notification channel, because a channel's sound cannot change later.
 enum EndTone {
   gentle,
   beeps,
-  drops,
   wood,
   bird,
   stream,

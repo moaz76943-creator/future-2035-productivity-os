@@ -23,6 +23,12 @@ implemented and covered by automated tests, but sound or files on a real phone s
 | Export CSV (formula-safe, UTF-8 with BOM) and JSON | Done |
 | Statistics per deck and per language/level | Done — counts, due, hard, reviews per day, correct rate, forgetting rate, FSRS recall estimate, history |
 | Smart review: due first, daily new limit, relearning same session, new/hard/favourites/mistakes only, session size and order | Done |
+| Table view (two columns, speak button per row, swap columns, sort A–Z / newest / due / hardest) and card view | Done |
+| Hands-free listen mode: reads the list front then back with pauses; pause, next, stop | Done (device check) |
+| Paste cards from the clipboard (same preview and column mapping as import) | Done |
+| Any world language for a side; the phone's installed voices first; shortcut to download voices | Done (device check) |
+| Pause between repeats, read the example with the answer | Done |
+| Today's activity (study time and cards answered), language pair and quick study on each deck, decks grouped by language | Done |
 
 Known limits: one image and one recording per side;
 custom fields per deck up to 12.

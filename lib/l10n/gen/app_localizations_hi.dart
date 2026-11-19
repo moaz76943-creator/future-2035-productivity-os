@@ -3875,8 +3875,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get soundsTitle => 'ध्वनियाँ';
 
   @override
-  String get soundsSubtitle =>
-      'प्रकृति की ध्वनियाँ आपके डिवाइस पर सीधे बनती हैं। ये कभी दोहराई नहीं जातीं।';
+  String get soundsSubtitle => 'प्रकृति की असली रिकॉर्डिंग, जो कभी दोहराती हुई नहीं लगतीं।';
 
   @override
   String get soundsNature => 'प्रकृति';
@@ -3898,9 +3897,6 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get soundFire => 'अलाव';
-
-  @override
-  String get soundWind => 'हवा';
 
   @override
   String get soundForest => 'जंगल के पक्षी';
@@ -3959,9 +3955,6 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get toneBeeps => 'बीप';
-
-  @override
-  String get toneDrops => 'पानी की बूँदें';
 
   @override
   String get toneWood => 'लकड़ी की खटखट';
@@ -4070,4 +4063,7 @@ class AppLocalizationsHi extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get soundForestRain => 'जंगल में बारिश';
 }

@@ -1069,7 +1069,7 @@
   "flashcardsMicDenied": "الوصول إلى الميكروفون متوقف. اسمح به من إعدادات النظام لتتمكن من التسجيل.",
   "flashcardsRecordFailed": "التسجيل غير متاح على هذا الجهاز.",
   "soundsTitle": "الأصوات",
-  "soundsSubtitle": "أصوات طبيعية تُولَّد مباشرة على جهازك، ولا تتكرر أبداً.",
+  "soundsSubtitle": "تسجيلات حقيقية من الطبيعة، تُشغَّل بطريقة لا تشعر معها بأي تكرار.",
   "soundsNature": "الطبيعة",
   "soundsNoise": "ضوضاء التركيز",
   "soundRain": "مطر",
@@ -1077,7 +1077,6 @@
   "soundRiver": "نهر",
   "soundOcean": "أمواج البحر",
   "soundFire": "نار المخيم",
-  "soundWind": "رياح",
   "soundForest": "طيور الغابة",
   "soundNight": "ليلة صيفية",
   "soundWhite": "ضوضاء بيضاء",
@@ -1095,7 +1094,6 @@
   "settingsEndTone": "صوت انتهاء المؤقت",
   "toneGentle": "تنبيه هادئ",
   "toneBeeps": "تنبيهات قصيرة",
-  "toneDrops": "قطرات ماء",
   "toneWood": "طرقات خشب",
   "toneBird": "تغريد طائر",
   "toneStream": "جدول ماء",
@@ -1127,5 +1125,6 @@
   "flashMenuDeck": "المجموعة",
   "flashToday": "اليوم",
   "flashStudyNow": "ادرس",
-  "flashTodayAnswered": "{count, plural, zero{لم تُجب عن أي بطاقة} one{بطاقة واحدة مُجابة} two{بطاقتان مُجابتان} few{{count} بطاقات مُجابة} many{{count} بطاقة مُجابة} other{{count} بطاقة مُجابة}}"
+  "flashTodayAnswered": "{count, plural, zero{لم تُجب عن أي بطاقة} one{بطاقة واحدة مُجابة} two{بطاقتان مُجابتان} few{{count} بطاقات مُجابة} many{{count} بطاقة مُجابة} other{{count} بطاقة مُجابة}}",
+  "soundForestRain": "مطر في الغابة"
 }

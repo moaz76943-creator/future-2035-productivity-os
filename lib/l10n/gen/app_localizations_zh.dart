@@ -3691,7 +3691,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get soundsTitle => '声音';
 
   @override
-  String get soundsSubtitle => '自然声音在您的设备上实时生成，永不重复。';
+  String get soundsSubtitle => '真实的自然录音，听不出任何循环。';
 
   @override
   String get soundsNature => '自然';
@@ -3713,9 +3713,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get soundFire => '篝火';
-
-  @override
-  String get soundWind => '风声';
 
   @override
   String get soundForest => '林中鸟鸣';
@@ -3773,9 +3770,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get toneBeeps => '短促提示音';
-
-  @override
-  String get toneDrops => '水滴';
 
   @override
   String get toneWood => '木块敲击';
@@ -3882,4 +3876,7 @@ class AppLocalizationsZh extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get soundForestRain => '林中雨';
 }

@@ -1,17 +1,18 @@
 import 'dart:convert';
 
-/// The procedural sounds the native engine can play (ids match `Voice.IDS`).
-/// Nature sounds only, no music. Every sound is generated live on the device
-/// by the app's own code, so there are no recordings and no third-party rights.
+/// The sounds the native engine can play (ids match `Voice.IDS`). Nature
+/// sounds only, no music: real recordings released as CC0 / public domain
+/// (see THIRD_PARTY_LICENSES.md), played so that they never audibly loop,
+/// plus white, pink and brown noise generated on the device.
 enum NatureSound {
   rain(SoundGroup.nature),
   storm(SoundGroup.nature),
   river(SoundGroup.nature),
   ocean(SoundGroup.nature),
   fire(SoundGroup.nature),
-  wind(SoundGroup.nature),
   forest(SoundGroup.nature),
   night(SoundGroup.nature),
+  forestrain(SoundGroup.nature),
   white(SoundGroup.noise),
   pink(SoundGroup.noise),
   brown(SoundGroup.noise);

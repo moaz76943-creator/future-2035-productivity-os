@@ -6525,7 +6525,7 @@ abstract class AppLocalizations {
   /// Subtitle of the sounds screen
   ///
   /// In en, this message translates to:
-  /// **'Nature sounds created live on your device. They never repeat.'**
+  /// **'Real nature recordings, played so they never sound like a loop.'**
   String get soundsSubtitle;
 
   /// Section header: nature sounds
@@ -6569,12 +6569,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Campfire'**
   String get soundFire;
-
-  /// Sound name
-  ///
-  /// In en, this message translates to:
-  /// **'Wind'**
-  String get soundWind;
 
   /// Sound name
   ///
@@ -6677,12 +6671,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Beeps'**
   String get toneBeeps;
-
-  /// End sound: water drops
-  ///
-  /// In en, this message translates to:
-  /// **'Water drops'**
-  String get toneDrops;
 
   /// End sound: knocks on wood
   ///
@@ -6875,6 +6863,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{count, plural, =0{No cards answered} =1{1 card answered} other{{count} cards answered}}'**
   String flashTodayAnswered(int count);
+
+  /// Sound name: rain falling in a forest
+  ///
+  /// In en, this message translates to:
+  /// **'Rain in the forest'**
+  String get soundForestRain;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

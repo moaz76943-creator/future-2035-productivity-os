@@ -1069,7 +1069,7 @@
   "flashcardsMicDenied": "El acceso al micrófono está desactivado. Permítelo en los ajustes del sistema para grabar.",
   "flashcardsRecordFailed": "La grabación no está disponible en este dispositivo.",
   "soundsTitle": "Sonidos",
-  "soundsSubtitle": "Sonidos de la naturaleza creados en vivo en tu dispositivo. Nunca se repiten.",
+  "soundsSubtitle": "Grabaciones reales de la naturaleza que nunca suenan repetidas.",
   "soundsNature": "Naturaleza",
   "soundsNoise": "Ruido para concentrarse",
   "soundRain": "Lluvia",
@@ -1077,7 +1077,6 @@
   "soundRiver": "Río",
   "soundOcean": "Olas del mar",
   "soundFire": "Fogata",
-  "soundWind": "Viento",
   "soundForest": "Pájaros del bosque",
   "soundNight": "Noche de verano",
   "soundWhite": "Ruido blanco",
@@ -1095,7 +1094,6 @@
   "settingsEndTone": "Sonido al terminar",
   "toneGentle": "Pitidos suaves",
   "toneBeeps": "Pitidos",
-  "toneDrops": "Gotas de agua",
   "toneWood": "Golpes de madera",
   "toneBird": "Canto de pájaro",
   "toneStream": "Arroyo",
@@ -1127,5 +1125,6 @@
   "flashMenuDeck": "Mazo",
   "flashToday": "Hoy",
   "flashStudyNow": "Estudiar",
-  "flashTodayAnswered": "{count, plural, =0{Ninguna tarjeta respondida} =1{1 tarjeta respondida} other{{count} tarjetas respondidas}}"
+  "flashTodayAnswered": "{count, plural, =0{Ninguna tarjeta respondida} =1{1 tarjeta respondida} other{{count} tarjetas respondidas}}",
+  "soundForestRain": "Lluvia en el bosque"
 }

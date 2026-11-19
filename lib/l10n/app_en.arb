@@ -5208,7 +5208,7 @@
   "@soundsTitle": {
     "description": "Title of the nature sounds screen"
   },
-  "soundsSubtitle": "Nature sounds created live on your device. They never repeat.",
+  "soundsSubtitle": "Real nature recordings, played so they never sound like a loop.",
   "@soundsSubtitle": {
     "description": "Subtitle of the sounds screen"
   },
@@ -5238,10 +5238,6 @@
   },
   "soundFire": "Campfire",
   "@soundFire": {
-    "description": "Sound name"
-  },
-  "soundWind": "Wind",
-  "@soundWind": {
     "description": "Sound name"
   },
   "soundForest": "Forest birds",
@@ -5326,10 +5322,6 @@
   "toneBeeps": "Beeps",
   "@toneBeeps": {
     "description": "End sound: three short beeps"
-  },
-  "toneDrops": "Water drops",
-  "@toneDrops": {
-    "description": "End sound: water drops"
   },
   "toneWood": "Wood knock",
   "@toneWood": {
@@ -5468,5 +5460,9 @@
         "type": "int"
       }
     }
+  },
+  "soundForestRain": "Rain in the forest",
+  "@soundForestRain": {
+    "description": "Sound name: rain falling in a forest"
   }
 }

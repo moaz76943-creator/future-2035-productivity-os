@@ -3890,7 +3890,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get soundsSubtitle =>
-      'Des sons de la nature créés en direct sur votre appareil. Ils ne se répètent jamais.';
+      'De vrais enregistrements de la nature, joués sans jamais sembler se répéter.';
 
   @override
   String get soundsNature => 'Nature';
@@ -3912,9 +3912,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get soundFire => 'Feu de camp';
-
-  @override
-  String get soundWind => 'Vent';
 
   @override
   String get soundForest => 'Oiseaux de la forêt';
@@ -3973,9 +3970,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get toneBeeps => 'Bips';
-
-  @override
-  String get toneDrops => 'Gouttes d’eau';
 
   @override
   String get toneWood => 'Coups sur bois';
@@ -4084,4 +4078,7 @@ class AppLocalizationsFr extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get soundForestRain => 'Pluie en forêt';
 }

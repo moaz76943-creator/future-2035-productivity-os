@@ -1069,7 +1069,7 @@
   "flashcardsMicDenied": "麦克风权限已关闭。请在系统设置中允许后再录音。",
   "flashcardsRecordFailed": "此设备无法录音。",
   "soundsTitle": "声音",
-  "soundsSubtitle": "自然声音在您的设备上实时生成，永不重复。",
+  "soundsSubtitle": "真实的自然录音，听不出任何循环。",
   "soundsNature": "自然",
   "soundsNoise": "专注噪音",
   "soundRain": "雨声",
@@ -1077,7 +1077,6 @@
   "soundRiver": "河流",
   "soundOcean": "海浪",
   "soundFire": "篝火",
-  "soundWind": "风声",
   "soundForest": "林中鸟鸣",
   "soundNight": "夏夜",
   "soundWhite": "白噪音",
@@ -1095,7 +1094,6 @@
   "settingsEndTone": "计时结束提示音",
   "toneGentle": "柔和提示音",
   "toneBeeps": "短促提示音",
-  "toneDrops": "水滴",
   "toneWood": "木块敲击",
   "toneBird": "鸟鸣",
   "toneStream": "溪流",
@@ -1127,5 +1125,6 @@
   "flashMenuDeck": "卡组",
   "flashToday": "今天",
   "flashStudyNow": "学习",
-  "flashTodayAnswered": "{count, plural, =0{今天还没有答题} other{已答 {count} 张卡片}}"
+  "flashTodayAnswered": "{count, plural, =0{今天还没有答题} other{已答 {count} 张卡片}}",
+  "soundForestRain": "林中雨"
 }

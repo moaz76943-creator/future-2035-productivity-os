@@ -195,51 +195,18 @@ void _fire(Canvas c, Size s) {
   }
 }
 
-void _wind(Canvas c, Size s) {
-  _sky(c, s, const Color(0xFFDDEFFB), const Color(0xFFF4F9FD));
-  final p = Paint()
-    ..color = const Color(0xFF8DB6D8)
-    ..style = PaintingStyle.stroke
-    ..strokeWidth = math.max(1.6, s.width * 0.016)
-    ..strokeCap = StrokeCap.round;
-  for (final (y, len, curl) in [(0.3, 0.7, 0.07), (0.5, 0.82, 0.09), (0.7, 0.6, 0.06)]) {
-    final yy = s.height * y;
-    final end = s.width * (0.1 + len);
-    final path = Path()
-      ..moveTo(s.width * 0.08, yy)
-      ..lineTo(end - s.width * curl, yy)
-      ..arcToPoint(
-        Offset(end - s.width * curl, yy - s.width * curl * 2),
-        radius: Radius.circular(s.width * curl),
-        clockwise: false,
-      )
-      ..arcToPoint(
-        Offset(end - s.width * curl * 2, yy - s.width * curl),
-        radius: Radius.circular(s.width * curl * 0.6),
-        clockwise: false,
-      );
-    c.drawPath(path, p);
-  }
-  final leaf = Paint()..color = const Color(0xFF7FB98A);
-  for (final (x, y, a) in [(0.25, 0.18, 0.6), (0.62, 0.84, -0.4), (0.82, 0.42, 1.1)]) {
-    c.save();
-    c.translate(s.width * x, s.height * y);
-    c.rotate(a);
-    c.drawOval(
-      Rect.fromCenter(center: Offset.zero, width: s.width * 0.09, height: s.width * 0.04),
-      leaf,
+void _forest(Canvas c, Size s, {bool raining = false}) {
+  if (raining) {
+    _sky(c, s, const Color(0xFF9DB8B0), const Color(0xFF5E8277));
+    _cloud(c, Offset(s.width * 0.6, s.height * 0.16), s.width * 0.55, const Color(0xFFDDE7E4));
+  } else {
+    _sky(c, s, const Color(0xFFE5F4DF), const Color(0xFFB7DDB2));
+    c.drawCircle(
+      Offset(s.width * 0.78, s.height * 0.2),
+      s.width * 0.1,
+      Paint()..color = const Color(0xFFFFF1C9),
     );
-    c.restore();
   }
-}
-
-void _forest(Canvas c, Size s) {
-  _sky(c, s, const Color(0xFFE5F4DF), const Color(0xFFB7DDB2));
-  c.drawCircle(
-    Offset(s.width * 0.78, s.height * 0.2),
-    s.width * 0.1,
-    Paint()..color = const Color(0xFFFFF1C9),
-  );
   void pine(double x, double base, double h, Color color) {
     final w = h * 0.55;
     final paint = Paint()..color = color;
@@ -261,6 +228,10 @@ void _forest(Canvas c, Size s) {
   pine(s.width * 0.82, s.height * 0.98, s.height * 0.58, const Color(0xFF6FA87C));
   pine(s.width * 0.45, s.height * 1.02, s.height * 0.8, const Color(0xFF3F7D5C));
   pine(s.width * 0.66, s.height * 1.05, s.height * 0.66, const Color(0xFF2F6248));
+  if (raining) {
+    _drops(c, s, count: 30, top: s.height * 0.3, color: const Color(0x99FFFFFF), seed: 9);
+    return;
+  }
   final bird = Paint()
     ..color = const Color(0xFF4A5A55)
     ..style = PaintingStyle.stroke

@@ -84,3 +84,28 @@ proprietary piece is Play Integrity (ADR-009).
 The assistant's work goes to the `claude-dev` branch (owner, 2026-11-19; plain `claude` is blocked by the existing `claude/future2035-wip` branch). CI builds it and publishes a
 QA pre-release APK (`qa-<sha>`) for each push, the same as for `main`. The owner decides when
 `claude-dev` is merged into `main`.
+
+## ADR-015 Nature sounds: CC0 recordings that never audibly loop
+**Superseded design:** sounds synthesised in code were tried first; on the owner's phone they
+sounded like static, so real recordings replaced them. Rain, thunderstorm, stream, ocean, fire,
+forest birds, summer night and rain in the forest are CC0 field recordings (sources in
+THIRD_PARTY_LICENSES.md; free for commercial use, no credit needed; CC-BY and GPL-hosted files were
+deliberately left out). 3.8 MB as mono Vorbis. **No loop:** `SampleVoice` gives each ear its own
+read head; every 9-20 s a head jumps to a random place with a 2.5 s equal-power cross-fade and the
+level drifts slightly, so a one-minute file plays as an endless, never-repeating sequence.
+Decoded PCM is cached with soft references (freed under memory pressure). White/pink/brown noise
+is still generated. No music (owner's rule). Playback: media foreground service with a
+notification; audio focus and unplugged headphones pause; sleep timer fades out.
+
+## ADR-016 Timer-end sounds: small files, one notification channel each
+Five short sounds are rendered by `tool/sounds/render_alarm_sounds.py` into `res/raw/alarm_*.ogg`
+(75 KB): generated beeps and a wood knock, and excerpts of the CC0 bird and stream recordings. No
+music, no bells. Android fixes a channel's sound when it is created, so each sound has its
+own focus channel; the phone's own sound stays available.
+
+## ADR-017 Speech uses the phone's engine, any language
+`speech/TtsBridge.kt` wraps Android TextToSpeech: voice per language, rate, repeats with a pause,
+and an "await" mode that answers when speaking ends (needed for the hands-free listen mode). Decks
+can use any of about 120 languages; those with voice data on the phone are listed first, and the
+picker opens the phone's speech settings to download others. No cloud voices are required.
+
