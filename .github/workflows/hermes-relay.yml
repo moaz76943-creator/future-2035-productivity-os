@@ -117,6 +117,11 @@ jobs:
           chmod +x scripts/enforce_hermes_branch.sh
           ./scripts/enforce_hermes_branch.sh
 
+      - name: Anti-Loop Circuit Breaker
+        run: |
+          chmod +x scripts/anti_loop_guard.sh
+          ./scripts/anti_loop_guard.sh
+
       - name: Final Push & Trigger Next Relay Hop
         if: always()
         env:
