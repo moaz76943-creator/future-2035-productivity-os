@@ -86,10 +86,10 @@ jobs:
             fi
           }
 
-          PROMPT="Read docs/FLASHCARDS_MASTER_DIRECTIVE.md, docs/MASTER_DIRECTIVE_V1.md, and state/future2035_phases.json. Work ONLY on branch hermes/future-2035-upgrade. CRITICAL: (1) Complete ONLY the single current IN_PROGRESS phase in state/future2035_phases.json without rewriting existing working code. (2) Enforce Western digits (0-9), zero Hebrew (he/iw), smart progressive-disclosure buttons, and update docs/qa/CONTROL_INVENTORY.md + test/widget/control_inventory_test.dart for any new controls. (3) Before finishing, run with bounded timeouts so nothing hangs: flutter analyze --no-fatal-infos && timeout 180 flutter test && python3 tool/check_l10n.py. (4) Mark the finished phase COMPLETED in state/future2035_phases.json, set the next phase IN_PROGRESS, and commit."
+          PROMPT="Read AGENTS.md, docs/FLASHCARDS_MASTER_DIRECTIVE.md, docs/MASTER_DIRECTIVE_V1.md, and state/future2035_phases.json. Work ONLY on branch hermes/future-2035-upgrade. CRITICAL: (1) Complete ONLY the single current IN_PROGRESS phase in state/future2035_phases.json without rewriting existing working code. (2) Enforce Western digits (0-9), zero Hebrew (he/iw), smart progressive-disclosure buttons, and update docs/qa/CONTROL_INVENTORY.md + test/widget/control_inventory_test.dart for any new controls. (3) Before finishing, run with bounded timeouts so nothing hangs: flutter analyze --no-fatal-infos && timeout 180 flutter test && python3 tool/check_l10n.py. (4) Mark the finished phase COMPLETED in state/future2035_phases.json, set the next phase IN_PROGRESS, and commit."
           DONE=0
 
-          for MODEL in "gemini-4-hydrogen" "gemini-3.1-pro-preview" "gemini-3.8-flash" "gemini-3.6-flash" "gemini-3.5-flash-lite"; do
+          for MODEL in "gemini-4-hydrogen" "gemini-3.8-flash" "gemini-3.6-flash" "gemini-3-flash-preview"; do
             IDX=0
             gh issue comment 11 --repo "${{ github.repository }}" --body "🔄 Trying model: $MODEL ($(date -u +%H:%M:%SZ))" || true
             while IFS= read -r K; do
@@ -97,7 +97,7 @@ jobs:
               NOW=$(date +%s)
               [ $((NOW - JOB_START)) -ge $MAX_WALL ] && break 2
               IDX=$((IDX + 1))
-              [ $IDX -gt 3 ] && break
+              [ $IDX -gt 9 ] && break
               echo "Trying Gemini key #$IDX with $MODEL (timeout 5m)..."
               if GEMINI_API_KEY="$K" GOOGLE_API_KEY="$K" timeout -k 15s 5m hermes chat --cli --yolo --oneshot --provider gemini -m "$MODEL" -q "$PROMPT"; then
                 DONE=1
