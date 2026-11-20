@@ -1,6 +1,6 @@
 # Claude Branch Intelligence Report (Read-Only for Hermes)
-- Generated (UTC): 2026-11-20 08:31:01
-- Hermes Branch Commit: `26d5c28`
+- Generated (UTC): 2026-11-20 17:59:29
+- Hermes Branch Commit: `9caaf8e`
 - Claude Reference Commit (READ-ONLY): `d79de87`
 - Scope Policy: See `docs/MERGE_PRIORITIES.md` (Full feature adoption + style/test study + <=400 lines + zero dead buttons).
 
