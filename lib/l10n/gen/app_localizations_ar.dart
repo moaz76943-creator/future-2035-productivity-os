@@ -5211,4 +5211,54 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get navCards => 'البطاقات';
+
+  @override
+  String get studyAnswerWay => 'طريقة الإجابة';
+
+  @override
+  String get studyMorePractice => 'تدريب إضافي';
+
+  @override
+  String get studySessionSettings => 'إعدادات الجلسة';
+
+  @override
+  String get focusAdjustTitle => 'جلستك';
+
+  @override
+  String get focusPresetsTitle => 'جاهزة';
+
+  @override
+  String get focusPresetStudy => 'مذاكرة';
+
+  @override
+  String get focusPresetDeep => 'عمل عميق';
+
+  @override
+  String get focusPresetQuick => 'جولة سريعة';
+
+  @override
+  String get focusPresetReading => 'قراءة';
+
+  @override
+  String get focusPresetWorkout => 'جولات رياضة';
+
+  @override
+  String get focusAdjustMinutes => 'مدة التركيز';
+
+  @override
+  String get focusAdjustBreak => 'مدة الاستراحة';
+
+  @override
+  String get focusAdjustRounds => 'عدد الجولات';
+
+  @override
+  String get focusRoundsOpen => 'بلا حد';
+
+  @override
+  String focusMinutesShort(String n) {
+    return '$n د';
+  }
+
+  @override
+  String get focusTapToAdjust => 'اضغط لتغيير الوقت';
 }

@@ -4778,4 +4778,54 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get navCards => '卡片';
+
+  @override
+  String get studyAnswerWay => '答题方式';
+
+  @override
+  String get studyMorePractice => '额外练习';
+
+  @override
+  String get studySessionSettings => '本轮设置';
+
+  @override
+  String get focusAdjustTitle => '你的专注';
+
+  @override
+  String get focusPresetsTitle => '预设';
+
+  @override
+  String get focusPresetStudy => '学习';
+
+  @override
+  String get focusPresetDeep => '深度工作';
+
+  @override
+  String get focusPresetQuick => '快速冲刺';
+
+  @override
+  String get focusPresetReading => '阅读';
+
+  @override
+  String get focusPresetWorkout => '运动回合';
+
+  @override
+  String get focusAdjustMinutes => '专注时长';
+
+  @override
+  String get focusAdjustBreak => '休息时长';
+
+  @override
+  String get focusAdjustRounds => '回合数';
+
+  @override
+  String get focusRoundsOpen => '不限';
+
+  @override
+  String focusMinutesShort(String n) {
+    return '$n 分钟';
+  }
+
+  @override
+  String get focusTapToAdjust => '点按以修改时间';
 }

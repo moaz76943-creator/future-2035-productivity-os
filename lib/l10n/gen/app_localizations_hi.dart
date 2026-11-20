@@ -5034,4 +5034,54 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get navCards => 'कार्ड';
+
+  @override
+  String get studyAnswerWay => 'उत्तर देने का तरीका';
+
+  @override
+  String get studyMorePractice => 'अतिरिक्त अभ्यास';
+
+  @override
+  String get studySessionSettings => 'सत्र सेटिंग';
+
+  @override
+  String get focusAdjustTitle => 'आपका सत्र';
+
+  @override
+  String get focusPresetsTitle => 'तैयार';
+
+  @override
+  String get focusPresetStudy => 'पढ़ाई';
+
+  @override
+  String get focusPresetDeep => 'गहन काम';
+
+  @override
+  String get focusPresetQuick => 'छोटा सत्र';
+
+  @override
+  String get focusPresetReading => 'पढ़ना';
+
+  @override
+  String get focusPresetWorkout => 'व्यायाम राउंड';
+
+  @override
+  String get focusAdjustMinutes => 'फ़ोकस की अवधि';
+
+  @override
+  String get focusAdjustBreak => 'विराम की अवधि';
+
+  @override
+  String get focusAdjustRounds => 'राउंड';
+
+  @override
+  String get focusRoundsOpen => 'कोई सीमा नहीं';
+
+  @override
+  String focusMinutesShort(String n) {
+    return '$n मिनट';
+  }
+
+  @override
+  String get focusTapToAdjust => 'समय बदलने के लिए टैप करें';
 }

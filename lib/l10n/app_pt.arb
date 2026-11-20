@@ -1398,5 +1398,21 @@
   "smartReviewTimeUse": "Usar",
   "widgetNewNote": "Nova nota",
   "noteConnections": "Etiquetas, links e tarefas",
-  "navCards": "Cartões"
+  "navCards": "Cartões",
+  "studyAnswerWay": "Como responder",
+  "studyMorePractice": "Prática extra",
+  "studySessionSettings": "Ajustes da sessão",
+  "focusAdjustTitle": "Sua sessão",
+  "focusPresetsTitle": "Prontas",
+  "focusPresetStudy": "Estudo",
+  "focusPresetDeep": "Trabalho profundo",
+  "focusPresetQuick": "Sprint curto",
+  "focusPresetReading": "Leitura",
+  "focusPresetWorkout": "Rodadas de treino",
+  "focusAdjustMinutes": "Duração do foco",
+  "focusAdjustBreak": "Duração da pausa",
+  "focusAdjustRounds": "Rodadas",
+  "focusRoundsOpen": "Sem limite",
+  "focusMinutesShort": "{n} minutos",
+  "focusTapToAdjust": "Toque para mudar o tempo"
 }

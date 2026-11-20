@@ -35,7 +35,7 @@ import '../domain/speech_language.dart';
 import '../domain/world_languages.dart';
 import 'widgets/card_table.dart';
 import 'widgets/exam_line.dart';
-import 'widgets/language_picker.dart' show languageLabelOf;
+import 'widgets/language_picker.dart' show languageLabelOf, pickLanguage;
 import 'widgets/listen_bar.dart';
 import '../domain/card_import.dart';
 import '../domain/study.dart';

@@ -233,3 +233,13 @@ abstract final class CardImportParser {
     return s;
   }
 }
+
+/// True when most non-empty lines split into a front and a back (tab, `;`,
+/// `,`, ` - ` or `=`), so pasting it as cards makes sense.
+bool looksLikeCards(String text) {
+  final lines = text.split('\n').map((l) => l.trim()).where((l) => l.isNotEmpty).toList();
+  if (lines.isEmpty || lines.length > 5000) return false;
+  final sep = RegExp(r'\t|;|,| - | – |=');
+  final ok = lines.where(sep.hasMatch).length;
+  return ok >= (lines.length * 0.6).ceil() && !text.contains(RegExp(r'\|\s*(tail|grep|head)\b|&&|\$\('));
+}

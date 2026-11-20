@@ -1398,5 +1398,21 @@
   "smartReviewTimeUse": "使用",
   "widgetNewNote": "新笔记",
   "noteConnections": "标签、链接和任务",
-  "navCards": "卡片"
+  "navCards": "卡片",
+  "studyAnswerWay": "答题方式",
+  "studyMorePractice": "额外练习",
+  "studySessionSettings": "本轮设置",
+  "focusAdjustTitle": "你的专注",
+  "focusPresetsTitle": "预设",
+  "focusPresetStudy": "学习",
+  "focusPresetDeep": "深度工作",
+  "focusPresetQuick": "快速冲刺",
+  "focusPresetReading": "阅读",
+  "focusPresetWorkout": "运动回合",
+  "focusAdjustMinutes": "专注时长",
+  "focusAdjustBreak": "休息时长",
+  "focusAdjustRounds": "回合数",
+  "focusRoundsOpen": "不限",
+  "focusMinutesShort": "{n} 分钟",
+  "focusTapToAdjust": "点按以修改时间"
 }

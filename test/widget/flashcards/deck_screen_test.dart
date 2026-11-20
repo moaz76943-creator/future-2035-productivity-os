@@ -123,7 +123,12 @@ void main() {
     await tester.enterText(find.byKey(const Key('cardSearchField')), '');
     await settle(tester);
 
-    await tester.tap(find.byTooltip(l10n.actionDelete).first);
+    // Delete lives in the card's menu now.
+    await tester.ensureVisible(find.byTooltip(l10n.actionMore).last);
+    await settle(tester);
+    await tester.tap(find.byTooltip(l10n.actionMore).last);
+    await settle(tester);
+    await tester.tap(find.text(l10n.actionDelete).last);
     await settle(tester);
     expect(await _cardCount(env, tester), 1);
     await tester.tap(find.text(l10n.actionUndo));
@@ -236,6 +241,8 @@ void main() {
     await tester.tap(find.byKey(const Key('studyButton')));
     await settle(tester);
     await tester.tap(find.byKey(const Key('studyMode_typed')));
+    await settle(tester);
+    await tester.tap(find.byKey(const Key('studyPracticeGroup')));
     await settle(tester);
     await tester.tap(find.byKey(const Key('practiceAllButton')));
     await settle(tester);

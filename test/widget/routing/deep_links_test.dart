@@ -101,9 +101,28 @@ void main() {
     await settle(tester);
     expect(where(), Routes.flashcards);
 
+    // Many taps in a row, tabs and pages mixed, the way people really move around.
+    for (final r in [
+      Routes.notes,
+      Routes.calendar,
+      Routes.taskNew,
+      Routes.focus,
+      Routes.sounds,
+      Routes.flashcards,
+      Routes.notes,
+      Routes.tasks,
+      Routes.sounds,
+      Routes.calendar,
+    ]) {
+      notifications.tapsController.add(r);
+      await tester.pump(const Duration(seconds: 1));
+      await settle(tester);
+      expect(where(), r);
+    }
+
     notifications.tapsController.add('https://example.com');
     await tester.pump(const Duration(seconds: 1));
-    expect(where(), Routes.flashcards);
+    expect(where(), Routes.calendar, reason: 'a foreign link changes nothing');
 
     await closeEnv(tester, env);
   });

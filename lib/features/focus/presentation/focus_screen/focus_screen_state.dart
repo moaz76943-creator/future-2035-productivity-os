@@ -113,9 +113,19 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
               ),
               const SizedBox(height: Space.md),
               _TimerHero(
+                key: const Key('focusTimerHero'),
                 state: fs,
                 mode: fs.active?.mode ?? _mode,
                 countdownMinutes: _countdownMinutes,
+                onAdjust: fs.ready && fs.active == null
+                    ? () => showFocusTimeSheet(
+                        context,
+                        mode: _mode,
+                        countdownMinutes: _countdownMinutes,
+                        onMode: (m) => setState(() => _mode = m),
+                        onCountdown: (m) => setState(() => _countdownMinutes = m),
+                      )
+                    : null,
               ),
               const SizedBox(height: Space.md),
               _Controls(

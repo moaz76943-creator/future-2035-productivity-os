@@ -1398,5 +1398,21 @@
   "smartReviewTimeUse": "استخدمه",
   "widgetNewNote": "ملاحظة جديدة",
   "noteConnections": "الوسوم والروابط والمهام",
-  "navCards": "البطاقات"
+  "navCards": "البطاقات",
+  "studyAnswerWay": "طريقة الإجابة",
+  "studyMorePractice": "تدريب إضافي",
+  "studySessionSettings": "إعدادات الجلسة",
+  "focusAdjustTitle": "جلستك",
+  "focusPresetsTitle": "جاهزة",
+  "focusPresetStudy": "مذاكرة",
+  "focusPresetDeep": "عمل عميق",
+  "focusPresetQuick": "جولة سريعة",
+  "focusPresetReading": "قراءة",
+  "focusPresetWorkout": "جولات رياضة",
+  "focusAdjustMinutes": "مدة التركيز",
+  "focusAdjustBreak": "مدة الاستراحة",
+  "focusAdjustRounds": "عدد الجولات",
+  "focusRoundsOpen": "بلا حد",
+  "focusMinutesShort": "{n} د",
+  "focusTapToAdjust": "اضغط لتغيير الوقت"
 }

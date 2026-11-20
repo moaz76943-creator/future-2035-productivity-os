@@ -6721,5 +6721,74 @@
   "navCards": "Cards",
   "@navCards": {
     "description": "Bottom navigation tab: flashcards (keep very short)"
+  },
+  "studyAnswerWay": "How to answer",
+  "@studyAnswerWay": {
+    "description": "Study sheet: label above the answer modes"
+  },
+  "studyMorePractice": "Extra practice",
+  "@studyMorePractice": {
+    "description": "Study sheet: folded group of practice rounds that do not change the schedule"
+  },
+  "studySessionSettings": "Session settings",
+  "@studySessionSettings": {
+    "description": "Study sheet: folded group with session size and order"
+  },
+  "focusAdjustTitle": "Your session",
+  "@focusAdjustTitle": {
+    "description": "Sheet title: adjust the focus session"
+  },
+  "focusPresetsTitle": "Ready-made",
+  "@focusPresetsTitle": {
+    "description": "Label above ready-made session kinds"
+  },
+  "focusPresetStudy": "Study",
+  "@focusPresetStudy": {
+    "description": "Preset: study"
+  },
+  "focusPresetDeep": "Deep work",
+  "@focusPresetDeep": {
+    "description": "Preset: deep work"
+  },
+  "focusPresetQuick": "Quick sprint",
+  "@focusPresetQuick": {
+    "description": "Preset: short sprint"
+  },
+  "focusPresetReading": "Reading",
+  "@focusPresetReading": {
+    "description": "Preset: reading"
+  },
+  "focusPresetWorkout": "Workout rounds",
+  "@focusPresetWorkout": {
+    "description": "Preset: exercise rounds"
+  },
+  "focusAdjustMinutes": "Focus length",
+  "@focusAdjustMinutes": {
+    "description": "Slider: focus length"
+  },
+  "focusAdjustBreak": "Break length",
+  "@focusAdjustBreak": {
+    "description": "Slider: break length"
+  },
+  "focusAdjustRounds": "Rounds",
+  "@focusAdjustRounds": {
+    "description": "Slider: number of rounds"
+  },
+  "focusRoundsOpen": "No limit",
+  "@focusRoundsOpen": {
+    "description": "Rounds value 0: no limit"
+  },
+  "focusMinutesShort": "{n} min",
+  "@focusMinutesShort": {
+    "description": "Minutes value, e.g. 25 min",
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "focusTapToAdjust": "Tap to change the time",
+  "@focusTapToAdjust": {
+    "description": "Hint under the idle timer"
   }
 }

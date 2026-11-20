@@ -5058,4 +5058,54 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get navCards => 'Cartes';
+
+  @override
+  String get studyAnswerWay => 'Façon de répondre';
+
+  @override
+  String get studyMorePractice => 'Entraînement en plus';
+
+  @override
+  String get studySessionSettings => 'Réglages de la séance';
+
+  @override
+  String get focusAdjustTitle => 'Votre séance';
+
+  @override
+  String get focusPresetsTitle => 'Prêtes';
+
+  @override
+  String get focusPresetStudy => 'Étude';
+
+  @override
+  String get focusPresetDeep => 'Travail profond';
+
+  @override
+  String get focusPresetQuick => 'Sprint court';
+
+  @override
+  String get focusPresetReading => 'Lecture';
+
+  @override
+  String get focusPresetWorkout => 'Séries de sport';
+
+  @override
+  String get focusAdjustMinutes => 'Durée de concentration';
+
+  @override
+  String get focusAdjustBreak => 'Durée de la pause';
+
+  @override
+  String get focusAdjustRounds => 'Séries';
+
+  @override
+  String get focusRoundsOpen => 'Sans limite';
+
+  @override
+  String focusMinutesShort(String n) {
+    return '$n minutes';
+  }
+
+  @override
+  String get focusTapToAdjust => 'Touchez pour changer la durée';
 }

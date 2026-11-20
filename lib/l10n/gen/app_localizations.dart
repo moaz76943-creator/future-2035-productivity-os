@@ -8501,6 +8501,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cards'**
   String get navCards;
+
+  /// Study sheet: label above the answer modes
+  ///
+  /// In en, this message translates to:
+  /// **'How to answer'**
+  String get studyAnswerWay;
+
+  /// Study sheet: folded group of practice rounds that do not change the schedule
+  ///
+  /// In en, this message translates to:
+  /// **'Extra practice'**
+  String get studyMorePractice;
+
+  /// Study sheet: folded group with session size and order
+  ///
+  /// In en, this message translates to:
+  /// **'Session settings'**
+  String get studySessionSettings;
+
+  /// Sheet title: adjust the focus session
+  ///
+  /// In en, this message translates to:
+  /// **'Your session'**
+  String get focusAdjustTitle;
+
+  /// Label above ready-made session kinds
+  ///
+  /// In en, this message translates to:
+  /// **'Ready-made'**
+  String get focusPresetsTitle;
+
+  /// Preset: study
+  ///
+  /// In en, this message translates to:
+  /// **'Study'**
+  String get focusPresetStudy;
+
+  /// Preset: deep work
+  ///
+  /// In en, this message translates to:
+  /// **'Deep work'**
+  String get focusPresetDeep;
+
+  /// Preset: short sprint
+  ///
+  /// In en, this message translates to:
+  /// **'Quick sprint'**
+  String get focusPresetQuick;
+
+  /// Preset: reading
+  ///
+  /// In en, this message translates to:
+  /// **'Reading'**
+  String get focusPresetReading;
+
+  /// Preset: exercise rounds
+  ///
+  /// In en, this message translates to:
+  /// **'Workout rounds'**
+  String get focusPresetWorkout;
+
+  /// Slider: focus length
+  ///
+  /// In en, this message translates to:
+  /// **'Focus length'**
+  String get focusAdjustMinutes;
+
+  /// Slider: break length
+  ///
+  /// In en, this message translates to:
+  /// **'Break length'**
+  String get focusAdjustBreak;
+
+  /// Slider: number of rounds
+  ///
+  /// In en, this message translates to:
+  /// **'Rounds'**
+  String get focusAdjustRounds;
+
+  /// Rounds value 0: no limit
+  ///
+  /// In en, this message translates to:
+  /// **'No limit'**
+  String get focusRoundsOpen;
+
+  /// Minutes value, e.g. 25 min
+  ///
+  /// In en, this message translates to:
+  /// **'{n} min'**
+  String focusMinutesShort(String n);
+
+  /// Hint under the idle timer
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to change the time'**
+  String get focusTapToAdjust;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

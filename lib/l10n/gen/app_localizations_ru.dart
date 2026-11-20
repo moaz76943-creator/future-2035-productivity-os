@@ -5163,4 +5163,54 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get navCards => 'Карточки';
+
+  @override
+  String get studyAnswerWay => 'Как отвечать';
+
+  @override
+  String get studyMorePractice => 'Дополнительная практика';
+
+  @override
+  String get studySessionSettings => 'Настройки сессии';
+
+  @override
+  String get focusAdjustTitle => 'Ваша сессия';
+
+  @override
+  String get focusPresetsTitle => 'Готовые';
+
+  @override
+  String get focusPresetStudy => 'Учёба';
+
+  @override
+  String get focusPresetDeep => 'Глубокая работа';
+
+  @override
+  String get focusPresetQuick => 'Короткий рывок';
+
+  @override
+  String get focusPresetReading => 'Чтение';
+
+  @override
+  String get focusPresetWorkout => 'Тренировочные раунды';
+
+  @override
+  String get focusAdjustMinutes => 'Длительность фокуса';
+
+  @override
+  String get focusAdjustBreak => 'Длительность перерыва';
+
+  @override
+  String get focusAdjustRounds => 'Раунды';
+
+  @override
+  String get focusRoundsOpen => 'Без ограничения';
+
+  @override
+  String focusMinutesShort(String n) {
+    return '$n мин';
+  }
+
+  @override
+  String get focusTapToAdjust => 'Нажмите, чтобы изменить время';
 }

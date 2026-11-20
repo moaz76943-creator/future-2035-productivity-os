@@ -76,41 +76,56 @@ extension _DeckCards on _DeckScreenState {
                 ),
               ),
               SliverToBoxAdapter(child: _viewControls(prefs)),
+              // Quiet filters: small, borderless, only the chosen one is tinted.
               SliverToBoxAdapter(
                 child: SizedBox(
-                  height: 56,
-                  child: ListView(
-                    key: const Key('cardFilters'),
-                    scrollDirection: Axis.horizontal,
-                    padding: const EdgeInsets.fromLTRB(Space.page, Space.xs, Space.page, 0),
-                    children: [
-                      for (final f in _CardFilter.values)
-                        Padding(
-                          padding: const EdgeInsetsDirectional.only(end: Space.xs),
-                          child: ChoiceChip(
-                            key: Key('cardFilter_${f.name}'),
-                            label: Text(switch (f) {
-                              _CardFilter.all => l10n.filterAll,
-                              _CardFilter.newCards => l10n.deckNewCards,
-                              _CardFilter.due => l10n.deckDue,
-                              _CardFilter.hard => l10n.flashcardsHard,
-                              _CardFilter.favorites => l10n.flashcardsFavorites,
-                              _CardFilter.suspended => l10n.flashcardsSuspendedFilter,
-                            }),
-                            selected: _filter == f,
-                            onSelected: (_) => _update(() => _filter = f),
+                  height: 46,
+                  child: ChipTheme(
+                    data: ChipTheme.of(context).copyWith(
+                      side: BorderSide.none,
+                      backgroundColor: Colors.transparent,
+                      selectedColor: ModuleHue.flashcards.a.withValues(alpha: 0.12),
+                      showCheckmark: false,
+                      labelStyle: context.text.labelMedium?.copyWith(color: context.lux.ink2),
+                      secondaryLabelStyle: context.text.labelMedium?.copyWith(
+                        color: ModuleHue.flashcards.a,
+                        fontWeight: FontWeight.w700,
+                      ),
+                      padding: const EdgeInsets.symmetric(horizontal: Space.xxs),
+                    ),
+                    child: ListView(
+                      key: const Key('cardFilters'),
+                      scrollDirection: Axis.horizontal,
+                      padding: const EdgeInsets.fromLTRB(Space.page, Space.xs, Space.page, 0),
+                      children: [
+                        for (final f in _CardFilter.values)
+                          Padding(
+                            padding: const EdgeInsetsDirectional.only(end: Space.xs),
+                            child: ChoiceChip(
+                              key: Key('cardFilter_${f.name}'),
+                              label: Text(switch (f) {
+                                _CardFilter.all => l10n.filterAll,
+                                _CardFilter.newCards => l10n.deckNewCards,
+                                _CardFilter.due => l10n.deckDue,
+                                _CardFilter.hard => l10n.flashcardsHard,
+                                _CardFilter.favorites => l10n.flashcardsFavorites,
+                                _CardFilter.suspended => l10n.flashcardsSuspendedFilter,
+                              }),
+                              selected: _filter == f,
+                              onSelected: (_) => _update(() => _filter = f),
+                            ),
                           ),
-                        ),
-                      for (final t in tags)
-                        Padding(
-                          padding: const EdgeInsetsDirectional.only(end: Space.xs),
-                          child: FilterChip(
-                            label: Text('#$t'),
-                            selected: _tag == t,
-                            onSelected: (on) => _update(() => _tag = on ? t : null),
+                        for (final t in tags)
+                          Padding(
+                            padding: const EdgeInsetsDirectional.only(end: Space.xs),
+                            child: FilterChip(
+                              label: Text('#$t'),
+                              selected: _tag == t,
+                              onSelected: (on) => _update(() => _tag = on ? t : null),
+                            ),
                           ),
-                        ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -205,15 +220,7 @@ extension _DeckCards on _DeckScreenState {
               else if (prefs.sort == DeckSort.manual && shown.length == all.length)
                 ..._reorderSlivers(deck, shown, prefs)
               else if (prefs.table) ...[
-                SliverToBoxAdapter(
-                  child: CardTableHeader(
-                    first: _columnName(deck, front: !prefs.swapped),
-                    second: _columnName(deck, front: prefs.swapped),
-                    onSwap: () => ref
-                        .read(deckViewPrefsProvider.notifier)
-                        .set(prefs.copyWith(swapped: !prefs.swapped)),
-                  ),
-                ),
+                SliverToBoxAdapter(child: _langHeader(deck, prefs)),
                 SliverList.builder(
                   key: const Key('cardTable'),
                   itemCount: shown.length,
@@ -238,7 +245,8 @@ extension _DeckCards on _DeckScreenState {
                     );
                   },
                 ),
-              ] else
+              ] else ...[
+                SliverToBoxAdapter(child: _langHeader(deck, prefs)),
                 SliverPadding(
                   padding: const EdgeInsets.symmetric(horizontal: Space.page),
                   sliver: SliverList.separated(
@@ -259,16 +267,47 @@ extension _DeckCards on _DeckScreenState {
                             : () => showCardForm(context, deckId: deck.id, initial: c),
                         onLongPress: toggle,
                         onDelete: () => _deleteCard(c),
+                        onSpeakFront: () =>
+                            _speakRow(deck, c, back: ref.read(deckViewPrefsProvider).swapped),
+                        onSpeakBack: () =>
+                            _speakRow(deck, c, back: !ref.read(deckViewPrefsProvider).swapped),
                         onAction: (a) => _cardAction(c, a),
                       );
                     },
                   ),
                 ),
+              ],
             ],
           );
         },
       ),
     ];
+  }
+
+  /// Both languages above the list: tap one to switch it, or swap the columns.
+  Widget _langHeader(DeckRow deck, DeckViewPrefs prefs) => CardTableHeader(
+    first: _columnName(deck, front: !prefs.swapped),
+    second: _columnName(deck, front: prefs.swapped),
+    onSwap: () =>
+        ref.read(deckViewPrefsProvider.notifier).set(prefs.copyWith(swapped: !prefs.swapped)),
+    onFirst: () => _pickSide(deck, front: !prefs.swapped),
+    onSecond: () => _pickSide(deck, front: prefs.swapped),
+  );
+
+  Future<void> _pickSide(DeckRow deck, {required bool front}) async {
+    final picked = await pickLanguage(
+      context,
+      current: front ? deck.frontLang : deck.backLang,
+      appLanguage: context.l10n.speechAppLanguage,
+    );
+    if (picked == null || !mounted) return;
+    await ref
+        .read(flashcardsRepositoryProvider)
+        .setDeckLanguages(
+          deck.id,
+          front: front ? picked : deck.frontLang,
+          back: front ? deck.backLang : picked,
+        );
   }
 
   /// Column title: the side's language, or "Front"/"Back" when none is set.

@@ -244,7 +244,6 @@ class _SliderRow extends StatelessWidget {
             children: [
               IconButton(
                 tooltip: context.l10n.focusPlanDecrease(label),
-                visualDensity: VisualDensity.compact,
                 icon: const Icon(Icons.remove_rounded),
                 onPressed: v > min ? () => onChanged(v - 1) : null,
               ),
@@ -264,7 +263,6 @@ class _SliderRow extends StatelessWidget {
               ),
               IconButton(
                 tooltip: context.l10n.focusPlanIncrease(label),
-                visualDensity: VisualDensity.compact,
                 icon: const Icon(Icons.add_rounded),
                 onPressed: v < max ? () => onChanged(v + 1) : null,
               ),

@@ -49,7 +49,9 @@ extension _DeckActions on _DeckScreenState {
       showMessage(context, l10n.flashClipboardEmpty);
       return;
     }
-    await _import(initialText: text);
+    // Only text that reads as cards is filled in; anything else on the clipboard
+    // (a password, a link, a command) is never shown here.
+    await _import(initialText: looksLikeCards(text) ? text : '');
   }
 
   Future<void> _import({String initialText = ''}) async {

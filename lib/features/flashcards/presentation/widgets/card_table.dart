@@ -13,11 +13,43 @@ class CardTableHeader extends StatelessWidget {
     required this.first,
     required this.second,
     required this.onSwap,
+    this.onFirst,
+    this.onSecond,
   });
 
   final String first;
   final String second;
   final VoidCallback onSwap;
+
+  /// Tap a column's language to switch it to any other language.
+  final VoidCallback? onFirst, onSecond;
+
+  static Widget _lang(
+    BuildContext context,
+    String text,
+    VoidCallback? onTap,
+    Key key,
+    TextStyle? style,
+  ) => InkWell(
+    key: key,
+    borderRadius: BorderRadius.circular(Radii.pill),
+    onTap: onTap,
+    child: Container(
+      constraints: const BoxConstraints(minHeight: 48),
+      padding: const EdgeInsets.symmetric(horizontal: Space.xs),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.translate_rounded, size: 16, color: ModuleHue.flashcards.a),
+          const SizedBox(width: Space.xxs),
+          Flexible(
+            child: Text(text, style: style, maxLines: 1, overflow: TextOverflow.ellipsis),
+          ),
+          if (onTap != null) Icon(Icons.arrow_drop_down_rounded, color: context.lux.ink3),
+        ],
+      ),
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +60,10 @@ class CardTableHeader extends StatelessWidget {
         children: [
           const SizedBox(width: 44),
           Expanded(
-            child: Text(first, style: style, maxLines: 1, overflow: TextOverflow.ellipsis),
+            child: Align(
+              alignment: AlignmentDirectional.centerStart,
+              child: _lang(context, first, onFirst, const Key('langFirst'), style),
+            ),
           ),
           IconButton(
             key: const Key('swapColumns'),
@@ -37,12 +72,9 @@ class CardTableHeader extends StatelessWidget {
             onPressed: onSwap,
           ),
           Expanded(
-            child: Text(
-              second,
-              style: style,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.end,
+            child: Align(
+              alignment: AlignmentDirectional.centerEnd,
+              child: _lang(context, second, onSecond, const Key('langSecond'), style),
             ),
           ),
         ],
@@ -146,7 +178,6 @@ class CardTableRow extends StatelessWidget {
                   IconButton(
                     key: Key('speakBack_${card.id}'),
                     tooltip: context.l10n.speechTest,
-                    visualDensity: VisualDensity.compact,
                     iconSize: 18,
                     icon: Icon(Icons.volume_up_outlined, color: lux.ink3),
                     onPressed: onSpeakBack,

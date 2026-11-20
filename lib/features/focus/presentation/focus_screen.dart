@@ -29,6 +29,7 @@ import '../application/focus_controller.dart';
 import '../application/focus_providers.dart';
 import '../domain/focus_engine.dart';
 import '../domain/focus_timer_state.dart';
+import 'focus_time_sheet.dart';
 import 'session_plan.dart';
 
 part 'focus_screen/focus_screen_state.dart';

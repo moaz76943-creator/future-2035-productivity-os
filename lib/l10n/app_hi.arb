@@ -1398,5 +1398,21 @@
   "smartReviewTimeUse": "उपयोग करें",
   "widgetNewNote": "नया नोट",
   "noteConnections": "टैग, लिंक और कार्य",
-  "navCards": "कार्ड"
+  "navCards": "कार्ड",
+  "studyAnswerWay": "उत्तर देने का तरीका",
+  "studyMorePractice": "अतिरिक्त अभ्यास",
+  "studySessionSettings": "सत्र सेटिंग",
+  "focusAdjustTitle": "आपका सत्र",
+  "focusPresetsTitle": "तैयार",
+  "focusPresetStudy": "पढ़ाई",
+  "focusPresetDeep": "गहन काम",
+  "focusPresetQuick": "छोटा सत्र",
+  "focusPresetReading": "पढ़ना",
+  "focusPresetWorkout": "व्यायाम राउंड",
+  "focusAdjustMinutes": "फ़ोकस की अवधि",
+  "focusAdjustBreak": "विराम की अवधि",
+  "focusAdjustRounds": "राउंड",
+  "focusRoundsOpen": "कोई सीमा नहीं",
+  "focusMinutesShort": "{n} मिनट",
+  "focusTapToAdjust": "समय बदलने के लिए टैप करें"
 }

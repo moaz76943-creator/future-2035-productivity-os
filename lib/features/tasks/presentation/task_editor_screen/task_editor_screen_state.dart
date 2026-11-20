@@ -92,6 +92,15 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
                 suffixIcon: MicButton(controller: _title),
               ),
             ),
+            // Title, then description: the two things every task needs, before anything else.
+            const SizedBox(height: Space.sm),
+            TextField(
+              key: const Key('taskDescription'),
+              controller: _description,
+              maxLines: null,
+              minLines: 2,
+              decoration: InputDecoration(labelText: l10n.taskDescriptionLabel),
+            ),
             if (_formError != null)
               Padding(
                 padding: const EdgeInsets.only(top: Space.sm),
@@ -121,6 +130,7 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
             _PrioritySelector(value: _priority, onChanged: (p) => setState(() => _priority = p)),
             _Section(
               title: l10n.taskPlanning,
+              collapsed: _isNew,
               children: [
                 _row(
                   icon: Icons.event_rounded,
@@ -220,13 +230,6 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
               title: l10n.taskMoreDetails,
               collapsed: _isNew,
               children: [
-                TextField(
-                  controller: _description,
-                  maxLines: null,
-                  minLines: 2,
-                  decoration: InputDecoration(labelText: l10n.taskDescriptionLabel),
-                ),
-                const SizedBox(height: Space.sm),
                 TextField(
                   controller: _notes,
                   maxLines: null,

@@ -126,6 +126,25 @@ void main() {
     }
   });
 
+  test('notes: Markdown and plain text files come back as notes (ar)', () async {
+    final a = TestEnv();
+    final notes = NotesRepository(a.db, a.clock);
+    await notes.create(title: 'خطة', body: '# أهداف\n- بند أول\n- بند ثانٍ');
+    final note = await a.db.select(a.db.notes).getSingle();
+    for (final f in [TransferFormat.md, TransferFormat.txt]) {
+      final bytes = await encoder.doc(NotesTransfer.noteDoc(note, ar.untitled, rtl: true), f);
+      final b = TestEnv();
+      final repoB = NotesRepository(b.db, b.clock);
+      await NotesTransfer(b.db, repoB).import((name: 'خطة.${f.extension}', bytes: bytes));
+      final back = await b.db.select(b.db.notes).getSingle();
+      expect(back.title, 'خطة', reason: f.name);
+      expect(back.body, contains('بند أول'), reason: f.name);
+      expect(back.body, contains('بند ثانٍ'), reason: f.name);
+      await b.dispose();
+    }
+    await a.dispose();
+  });
+
   test('cards: every field (and any field added later) comes back from Excel and CSV', () async {
     for (final f in [TransferFormat.xlsx, TransferFormat.csv, TransferFormat.docx]) {
       final env = TestEnv();

@@ -1398,5 +1398,21 @@
   "smartReviewTimeUse": "Использовать",
   "widgetNewNote": "Новая заметка",
   "noteConnections": "Теги, ссылки и задачи",
-  "navCards": "Карточки"
+  "navCards": "Карточки",
+  "studyAnswerWay": "Как отвечать",
+  "studyMorePractice": "Дополнительная практика",
+  "studySessionSettings": "Настройки сессии",
+  "focusAdjustTitle": "Ваша сессия",
+  "focusPresetsTitle": "Готовые",
+  "focusPresetStudy": "Учёба",
+  "focusPresetDeep": "Глубокая работа",
+  "focusPresetQuick": "Короткий рывок",
+  "focusPresetReading": "Чтение",
+  "focusPresetWorkout": "Тренировочные раунды",
+  "focusAdjustMinutes": "Длительность фокуса",
+  "focusAdjustBreak": "Длительность перерыва",
+  "focusAdjustRounds": "Раунды",
+  "focusRoundsOpen": "Без ограничения",
+  "focusMinutesShort": "{n} мин",
+  "focusTapToAdjust": "Нажмите, чтобы изменить время"
 }

@@ -106,7 +106,7 @@ void main() {
     await tester.tap(find.byKey(const Key('viewCards')));
     await settle(tester);
     expect(find.byKey(const Key('cardTable')), findsNothing);
-    expect(find.byTooltip(l10n.actionDelete), findsWidgets);
+    expect(find.byTooltip(l10n.speechTest), findsWidgets, reason: 'cards have speakers too');
     expect(
       await tester.runAsync(() => env.db.readValue('flash.deckView')),
       contains('"table":false'),
