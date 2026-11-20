@@ -136,6 +136,8 @@ jobs:
             hermes chat --cli --yolo --oneshot --provider groq -m "llama-3.3-70b-versatile" -q "$PROMPT"
 
           run_fallback "NVIDIA (nemotron-3-ultra-550b-a55b)" "${NVIDIA_API_KEY:-}"             hermes chat --cli --yolo --oneshot --provider nvidia -m "nvidia/nemotron-3-ultra-550b-a55b" -q "$PROMPT"
+          FIRST_GKEY="${GOOGLE_KEYS_LIST%%[,[:space:]]*}"
+          run_fallback "Last-Resort Gemini (3.5-flash-lite)" "${FIRST_GKEY:-}" env GEMINI_API_KEY="$FIRST_GKEY" GOOGLE_API_KEY="$FIRST_GKEY" hermes chat --cli --yolo --oneshot --provider gemini -m "gemini-3.5-flash-lite" -q "$PROMPT"
           echo "RELAY_DONE=$DONE" >> "$GITHUB_ENV"
           rm -f /tmp/keys.list
 
