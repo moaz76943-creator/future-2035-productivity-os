@@ -19,6 +19,7 @@ part 'flashcards_repository/bulk.dart';
 part 'flashcards_repository/insights.dart';
 part 'flashcards_repository/transfer.dart';
 part 'flashcards_repository/study.dart';
+part 'flashcards_repository/duplicates.dart';
 
 /// Owns `decks`, `flashcards` and `card_reviews`.
 class FlashcardsRepository {

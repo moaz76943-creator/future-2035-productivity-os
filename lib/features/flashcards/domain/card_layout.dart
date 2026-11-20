@@ -18,9 +18,18 @@ class CardLayout {
     this.stepReveal = false,
     this.customFields = const [],
     this.fieldLangs = const {},
+    this.fieldVoices = const {},
+    this.fieldRates = const {},
+    this.fieldRepeats = const {},
     this.faces = const [],
     this.frontLang = '',
     this.backLang = '',
+    this.frontVoice = '',
+    this.backVoice = '',
+    this.frontRate = 1.0,
+    this.backRate = 1.0,
+    this.frontRepeat = 1,
+    this.backRepeat = 1,
   });
 
   static const maxCustomFields = 12;
@@ -32,12 +41,33 @@ class CardLayout {
   /// Speech language per built-in field ('' or missing = default).
   final Map<CardField, String> fieldLangs;
 
+  /// Speech voice per built-in field.
+  final Map<CardField, String> fieldVoices;
+
+  /// Speech rate per built-in field.
+  final Map<CardField, double> fieldRates;
+
+  /// Repeat count per built-in field.
+  final Map<CardField, int> fieldRepeats;
+
   /// Optional multi-face definitions (0 = front, 1 = back, 2+ = extra faces).
   final List<CardFace> faces;
 
   /// Optional layout-level language overrides for front/back.
   final String frontLang;
   final String backLang;
+
+  /// Optional layout-level voice overrides for front/back.
+  final String frontVoice;
+  final String backVoice;
+
+  /// Optional layout-level rate overrides for front/back.
+  final double frontRate;
+  final double backRate;
+
+  /// Optional layout-level repeat overrides for front/back.
+  final int frontRepeat;
+  final int backRepeat;
 
   /// Always returns at least 2 faces (front=0, back=1) plus any configured 2+ faces.
   List<CardFace> get effectiveFaces {
@@ -53,6 +83,9 @@ class CardLayout {
             CardFace(
               index: i,
               lang: i == 0 ? frontLang : (i == 1 ? backLang : ''),
+              voice: i == 0 ? frontVoice : (i == 1 ? backVoice : ''),
+              rate: i == 0 ? frontRate : (i == 1 ? backRate : 1.0),
+              repeat: i == 0 ? frontRepeat : (i == 1 ? backRepeat : 1),
             ),
     ];
   }
@@ -192,17 +225,23 @@ class CardLayout {
   }
 
   /// Renames or sets the speech language for face [index].
-  CardLayout updateFace(int index, {String? label, String? lang}) {
+  CardLayout updateFace(int index, {String? label, String? lang, String? voice, double? rate, int? repeat}) {
     if (index < 0 || index >= maxFaces) return this;
     final current = effectiveFaces;
     final updated = [
       for (final f in current)
-        f.index == index ? f.copyWith(label: label, lang: lang) : f,
+        f.index == index ? f.copyWith(label: label, lang: lang, voice: voice, rate: rate, repeat: repeat) : f,
     ];
     return copyWith(
       faces: updated,
       frontLang: index == 0 && lang != null ? lang.trim() : frontLang,
       backLang: index == 1 && lang != null ? lang.trim() : backLang,
+      frontVoice: index == 0 && voice != null ? voice.trim() : frontVoice,
+      backVoice: index == 1 && voice != null ? voice.trim() : backVoice,
+      frontRate: index == 0 && rate != null ? rate : frontRate,
+      backRate: index == 1 && rate != null ? rate : backRate,
+      frontRepeat: index == 0 && repeat != null ? repeat : frontRepeat,
+      backRepeat: index == 1 && repeat != null ? repeat : backRepeat,
     );
   }
 
@@ -218,6 +257,9 @@ class CardLayout {
         id: merged.nextCustomId(),
         name: f.name,
         lang: f.lang,
+        voice: f.voice,
+        rate: f.rate,
+        repeat: f.repeat,
         side: f.side,
         face: f.face,
         hidden: f.hidden,
@@ -229,9 +271,18 @@ class CardLayout {
     return template.copyWith(
       labels: labels,
       fieldLangs: fieldLangs,
+      fieldVoices: fieldVoices,
+      fieldRates: fieldRates,
+      fieldRepeats: fieldRepeats,
       faces: faces.isNotEmpty ? faces : template.faces,
       frontLang: frontLang.isNotEmpty ? frontLang : template.frontLang,
       backLang: backLang.isNotEmpty ? backLang : template.backLang,
+      frontVoice: frontVoice.isNotEmpty ? frontVoice : template.frontVoice,
+      backVoice: backVoice.isNotEmpty ? backVoice : template.backVoice,
+      frontRate: frontRate != 1.0 ? frontRate : template.frontRate,
+      backRate: backRate != 1.0 ? backRate : template.backRate,
+      frontRepeat: frontRepeat != 1 ? frontRepeat : template.frontRepeat,
+      backRepeat: backRepeat != 1 ? backRepeat : template.backRepeat,
       customFields: [...customFields, ...added].take(maxCustomFields).toList(),
     );
   }
@@ -243,9 +294,18 @@ class CardLayout {
     bool? stepReveal,
     List<CustomField>? customFields,
     Map<CardField, String>? fieldLangs,
+    Map<CardField, String>? fieldVoices,
+    Map<CardField, double>? fieldRates,
+    Map<CardField, int>? fieldRepeats,
     List<CardFace>? faces,
     String? frontLang,
     String? backLang,
+    String? frontVoice,
+    String? backVoice,
+    double? frontRate,
+    double? backRate,
+    int? frontRepeat,
+    int? backRepeat,
   }) => CardLayout(
     order: order ?? this.order,
     labels: labels ?? this.labels,
@@ -253,9 +313,18 @@ class CardLayout {
     stepReveal: stepReveal ?? this.stepReveal,
     customFields: customFields ?? this.customFields,
     fieldLangs: fieldLangs ?? this.fieldLangs,
+    fieldVoices: fieldVoices ?? this.fieldVoices,
+    fieldRates: fieldRates ?? this.fieldRates,
+    fieldRepeats: fieldRepeats ?? this.fieldRepeats,
     faces: faces ?? this.faces,
     frontLang: frontLang ?? this.frontLang,
     backLang: backLang ?? this.backLang,
+    frontVoice: frontVoice ?? this.frontVoice,
+    backVoice: backVoice ?? this.backVoice,
+    frontRate: frontRate ?? this.frontRate,
+    backRate: backRate ?? this.backRate,
+    frontRepeat: frontRepeat ?? this.frontRepeat,
+    backRepeat: backRepeat ?? this.backRepeat,
   );
 
   String encode() => jsonEncode({
@@ -271,9 +340,27 @@ class CardLayout {
       for (final e in fieldLangs.entries)
         if (e.value.isNotEmpty) e.key.name: e.value,
     },
+    'fieldVoices': {
+      for (final e in fieldVoices.entries)
+        if (e.value.isNotEmpty) e.key.name: e.value,
+    },
+    'fieldRates': {
+      for (final e in fieldRates.entries)
+        if (e.value != 1.0) e.key.name: e.value,
+    },
+    'fieldRepeats': {
+      for (final e in fieldRepeats.entries)
+        if (e.value != 1) e.key.name: e.value,
+    },
     if (faces.isNotEmpty) 'faces': [for (final f in faces) f.toJson()],
     if (frontLang.isNotEmpty) 'frontLang': frontLang,
     if (backLang.isNotEmpty) 'backLang': backLang,
+    if (frontVoice.isNotEmpty) 'frontVoice': frontVoice,
+    if (backVoice.isNotEmpty) 'backVoice': backVoice,
+    if (frontRate != 1.0) 'frontRate': frontRate,
+    if (backRate != 1.0) 'backRate': backRate,
+    if (frontRepeat != 1) 'frontRepeat': frontRepeat,
+    if (backRepeat != 1) 'backRepeat': backRepeat,
   });
 
   /// Tolerant: unknown names are ignored and missing fields are appended, so
@@ -308,11 +395,29 @@ class CardLayout {
           for (final e in ((j['fieldLangs'] as Map?) ?? const {}).entries)
             if (byName[e.key] case final f? when e.value is String) f: e.value as String,
         },
+        fieldVoices: {
+          for (final e in ((j['fieldVoices'] as Map?) ?? const {}).entries)
+            if (byName[e.key] case final f? when e.value is String) f: e.value as String,
+        },
+        fieldRates: {
+          for (final e in ((j['fieldRates'] as Map?) ?? const {}).entries)
+            if (byName[e.key] case final f? when e.value is num) f: (e.value as num).toDouble(),
+        },
+        fieldRepeats: {
+          for (final e in ((j['fieldRepeats'] as Map?) ?? const {}).entries)
+            if (byName[e.key] case final f? when e.value is int) f: e.value as int,
+        },
         faces: [for (final f in (j['faces'] as List?) ?? const []) ?CardFace.tryParse(f)]
             .take(maxFaces)
             .toList(),
         frontLang: j['frontLang'] is String ? j['frontLang'] as String : '',
         backLang: j['backLang'] is String ? j['backLang'] as String : '',
+        frontVoice: j['frontVoice'] is String ? j['frontVoice'] as String : '',
+        backVoice: j['backVoice'] is String ? j['backVoice'] as String : '',
+        frontRate: j['frontRate'] is num ? (j['frontRate'] as num).toDouble() : 1.0,
+        backRate: j['backRate'] is num ? (j['backRate'] as num).toDouble() : 1.0,
+        frontRepeat: j['frontRepeat'] is int ? j['frontRepeat'] as int : 1,
+        backRepeat: j['backRepeat'] is int ? j['backRepeat'] as int : 1,
       );
     } on FormatException {
       return const CardLayout();

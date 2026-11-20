@@ -129,6 +129,7 @@ jobs:
             fi
           }
 
+          run_fallback "OpenRouter (gemini-3-flash-preview)" "${OPENROUTER_API_KEY:-}" hermes chat --cli --yolo --oneshot --provider openrouter -m "google/gemini-3-flash-preview" -q "$PROMPT"
           run_fallback "OpenRouter (openrouter/free)" "${OPENROUTER_API_KEY:-}"             hermes chat --cli --yolo --oneshot -m "openrouter/free" -q "$PROMPT"
 
           run_fallback "Groq (llama-3.3-70b-versatile)" "${GROQ_API_KEY:-}" \

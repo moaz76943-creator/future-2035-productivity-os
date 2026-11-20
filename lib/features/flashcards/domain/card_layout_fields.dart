@@ -6,7 +6,14 @@ enum CardSide { front, back }
 /// One face of a multi-sided card (0 = front/source, 1 = back/primary,
 /// 2+ = extra faces). Each face can carry its own label and speech language.
 class CardFace {
-  const CardFace({required this.index, this.label = '', this.lang = ''});
+  const CardFace({
+    required this.index,
+    this.label = '',
+    this.lang = '',
+    this.voice = '',
+    this.rate = 1.0,
+    this.repeat = 1,
+  });
 
   final int index;
   final String label;
@@ -14,10 +21,22 @@ class CardFace {
   /// BCP-47 speech language for this face ('' = deck default).
   final String lang;
 
+  /// Preferred voice name for this face.
+  final String voice;
+
+  /// Speech rate (0.5 to 2.0, default 1.0).
+  final double rate;
+
+  /// How many times to repeat playback (1 to 9, default 1).
+  final int repeat;
+
   Map<String, Object?> toJson() => {
     'index': index,
     if (label.trim().isNotEmpty) 'label': label.trim(),
     if (lang.trim().isNotEmpty) 'lang': lang.trim(),
+    if (voice.trim().isNotEmpty) 'voice': voice.trim(),
+    if (rate != 1.0) 'rate': rate,
+    if (repeat != 1) 'repeat': repeat,
   };
 
   static CardFace? tryParse(Object? j) {
@@ -29,11 +48,28 @@ class CardFace {
         ? rawLabel.substring(0, CardLayout.maxLabel)
         : rawLabel;
     final lang = j['lang'] is String ? (j['lang'] as String).trim() : '';
-    return CardFace(index: idx, label: label, lang: lang);
+    final voice = j['voice'] is String ? (j['voice'] as String).trim() : '';
+    final rate = j['rate'] is num ? (j['rate'] as num).toDouble().clamp(0.5, 2.0) : 1.0;
+    final repeat = j['repeat'] is int ? (j['repeat'] as int).clamp(1, 9) : 1;
+    return CardFace(
+      index: idx,
+      label: label,
+      lang: lang,
+      voice: voice,
+      rate: rate,
+      repeat: repeat,
+    );
   }
 
-  CardFace copyWith({String? label, String? lang}) =>
-      CardFace(index: index, label: label ?? this.label, lang: lang ?? this.lang);
+  CardFace copyWith({String? label, String? lang, String? voice, double? rate, int? repeat}) =>
+      CardFace(
+        index: index,
+        label: label ?? this.label,
+        lang: lang ?? this.lang,
+        voice: voice ?? this.voice,
+        rate: rate ?? this.rate,
+        repeat: repeat ?? this.repeat,
+      );
 }
 
 /// A field the user added to a deck (e.g. "Translation (FR)", "Plural",
@@ -44,6 +80,9 @@ class CustomField {
     required this.id,
     required this.name,
     this.lang = '',
+    this.voice = '',
+    this.rate = 1.0,
+    this.repeat = 1,
     this.side = CardSide.back,
     this.face,
     this.hidden = false,
@@ -54,6 +93,16 @@ class CustomField {
 
   /// BCP-47 speech language ('' = the side/face's deck language).
   final String lang;
+
+  /// Preferred voice name.
+  final String voice;
+
+  /// Speech rate (0.5 to 2.0).
+  final double rate;
+
+  /// How many times to repeat.
+  final int repeat;
+
   final CardSide side;
 
   /// Optional 0-based face index for multi-sided cards (2+ faces).
@@ -72,6 +121,9 @@ class CustomField {
     'id': id,
     'name': name,
     'lang': lang,
+    if (voice.trim().isNotEmpty) 'voice': voice.trim(),
+    if (rate != 1.0) 'rate': rate,
+    if (repeat != 1) 'repeat': repeat,
     'side': side.name,
     if (face != null && face! >= 2) 'face': face,
     if (hidden) 'hidden': true,
@@ -92,6 +144,9 @@ class CustomField {
       id: id,
       name: name.length > CardLayout.maxLabel ? name.substring(0, CardLayout.maxLabel) : name,
       lang: j['lang'] is String ? j['lang'] as String : '',
+      voice: j['voice'] is String ? j['voice'] as String : '',
+      rate: j['rate'] is num ? (j['rate'] as num).toDouble().clamp(0.5, 2.0) : 1.0,
+      repeat: j['repeat'] is int ? (j['repeat'] as int).clamp(1, 9) : 1,
       side: side,
       face: face,
       hidden: j['hidden'] == true,
@@ -102,6 +157,9 @@ class CustomField {
   CustomField copyWith({
     String? name,
     String? lang,
+    String? voice,
+    double? rate,
+    int? repeat,
     CardSide? side,
     int? face,
     bool clearFace = false,
@@ -111,6 +169,9 @@ class CustomField {
     id: id,
     name: name ?? this.name,
     lang: lang ?? this.lang,
+    voice: voice ?? this.voice,
+    rate: rate ?? this.rate,
+    repeat: repeat ?? this.repeat,
     side: side ?? this.side,
     face: clearFace ? null : (face ?? this.face),
     hidden: hidden ?? this.hidden,
