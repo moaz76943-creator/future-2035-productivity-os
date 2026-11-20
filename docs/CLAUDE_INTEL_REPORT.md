@@ -1,10 +1,15 @@
 # Claude Branch Intelligence Report (Read-Only for Hermes)
-- Generated (UTC): 2026-11-20 01:19:00
-- Hermes Branch Commit: `9c05291`
-- Claude Reference Commit (READ-ONLY): `ff605c3`
+- Generated (UTC): 2026-11-20 08:31:01
+- Hermes Branch Commit: `26d5c28`
+- Claude Reference Commit (READ-ONLY): `d79de87`
 - Scope Policy: See `docs/MERGE_PRIORITIES.md` (Full feature adoption + style/test study + <=400 lines + zero dead buttons).
 
 ## Recent Commits on origin/claude-dev (Reference Only)
+d79de87 Fix: the review page route was an absolute path under the flashcards tab, so Study opened the error page
+86b02cf Claude settings: deny reading build output, generated code and binary assets
+a4144d5 Token efficiency: .claudeignore for build output, generated code and binaries; CLAUDE.md with validation gates and efficiency rules
+afe3640 Regression test: many jumps between tabs and full-screen pages keep one shell
+91cd60e Flashcards: speakers on card tiles, tap a column language to change it, quiet filters, calmer study sheet; focus session sheet with presets and end sound; title and description first in tasks and goals; clipboard guard for pasted cards
 ff605c3 Flashcards tab beside Focus; speech sliders; 'Automatic' voice; deck menu as side panel
 d6853b6 Flashcards: speaker for the translation column; speech settings button on the deck bar
 9e4458c Decks screen: search icon plus one menu for starter decks and settings
@@ -20,13 +25,10 @@ acc5d14 Speaker button beside the question and the translation, speech settings 
 1839d4e Exam date per deck with a daily plan; share-deck and Google Drive hints; AGENTS.md with rules for every contributor, tool/check_all.sh and tool/l10n_add_keys.py in the repo; ADR-022..024
 696eb40 Import and export for tasks, notes and decks (Excel, CSV, Word, PDF, Markdown, text) from one schema per section with round-trip tests; note templates; pictures in notes (schema v8, kept in backups); note editor split
 c23dcae Notes show formatting instead of symbols: hidden markers, real check boxes and bullets, lists continue on Enter, buttons toggle and light up; habit icon without a person; Help in Spaces
-babc9e9 Emulator integration tests in CI, brand name Deep Focus in all texts, Russian plural fixes, docs for the new features
-6788365 Prayer times, Anki and Excel import with template, starter decks, accent colour and card text size, home screen widget, help and first-run tour from one feature guide with coverage test; mic message visible above sheets
-725455f Focus sounds and saved mixes, review reminder switch, app icon shortcuts, notification deep links, Start my day, Hijri dates, study streak and weekly summary, Do Not Disturb during focus, voice typing, prayer times engine
-7d066ba diagnostics: private local error log (type and code location only), view/share/clear in settings
-582a80c backup: quiet daily automatic backups (no setup, last 7 kept, restore from settings)
 
 ## Files & Diff Summary vs origin/claude-dev
+ .claude/settings.json                              |   24 +
+ .claudeignore                                      |   31 +
  .github/copilot-instructions.md                    |    3 +
  .github/workflows/android-apk-ci.yml               |    1 +
  .github/workflows/android-emulator-tests.yml       |   68 +
@@ -34,7 +36,7 @@ babc9e9 Emulator integration tests in CI, brand name Deep Focus in all texts, Ru
  .github/workflows/hermes-parallel-boost.yml        |   42 -
  .github/workflows/hermes-relay.yml                 |   77 +-
  AGENTS.md                                          |   63 +
- CLAUDE.md                                          |    3 +
+ CLAUDE.md                                          |   21 +
  GEMINI.md                                          |    3 +
  THIRD_PARTY_LICENSES.md                            |   27 +
  android/app/src/main/AndroidManifest.xml           |   37 +
@@ -115,8 +117,6 @@ babc9e9 Emulator integration tests in CI, brand name Deep Focus in all texts, Ru
  lib/app/routing/routes.dart                        |    3 +
  lib/app/shell/app_shell.dart                       |    1 +
  lib/core/database/app_database.dart                |   15 +-
- lib/core/database/app_database.g.dart              | 2118 ++++++++++++++------
- lib/core/database/tables/projects.dart             |   17 +
 
 ## Candidate Feature & Test Areas in origin/claude-dev
 .github/workflows/android-emulator-tests.yml
@@ -190,6 +190,7 @@ lib/features/flashcards/presentation/widgets/language_picker.dart
 lib/features/flashcards/presentation/widgets/listen_bar.dart
 lib/features/flashcards/presentation/widgets/starter_sheet.dart
 lib/features/flashcards/presentation/widgets/study_summary.dart
+lib/features/goals/presentation/widgets/goal_editor_sheet.dart
 lib/features/help/presentation/tour_sheet.dart
 lib/features/notes/application/note_text.dart
 lib/features/notes/data/note_images.dart
@@ -198,7 +199,6 @@ lib/features/notes/presentation/markdown_preview.dart
 lib/features/notes/presentation/new_note_screen.dart
 lib/features/notes/presentation/note_editing_controller.dart
 lib/features/notes/presentation/note_editor_screen.dart
-lib/features/notes/presentation/note_editor_screen/directional_field.dart
 
 ## Strict Rules
 1. NEVER modify or push to origin/claude-dev.
