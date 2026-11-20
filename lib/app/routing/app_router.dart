@@ -95,12 +95,15 @@ final routerProvider = Provider<GoRouter>((ref) {
                   page(':id/stats', (s) => DeckStatsScreen(deckId: s.pathParameters['id']!)),
                   page(
                     ':id/review',
-                    (s) => ReviewScreen(
-                      deckId: s.pathParameters['id']!,
-                      mode: studyModeFromName(s.uri.queryParameters['mode']),
-                      scope:
-                          studyScopeFromName(s.uri.queryParameters['scope']) ??
-                          StudyScope.scheduled,
+                    (s) => HeroMode(
+                      enabled: false,
+                      child: ReviewScreen(
+                        deckId: s.pathParameters['id']!,
+                        mode: studyModeFromName(s.uri.queryParameters['mode']),
+                        scope:
+                            studyScopeFromName(s.uri.queryParameters['scope']) ??
+                            StudyScope.scheduled,
+                      ),
                     ),
                   ),
                 ],
