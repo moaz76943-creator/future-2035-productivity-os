@@ -6177,7 +6177,7 @@ abstract class AppLocalizations {
   /// speechVoiceDefault
   ///
   /// In en, this message translates to:
-  /// **'Device default'**
+  /// **'Automatic'**
   String get speechVoiceDefault;
 
   /// speechVoiceOnline
@@ -8495,6 +8495,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Tags, links and tasks'**
   String get noteConnections;
+
+  /// Bottom navigation tab: flashcards (keep very short)
+  ///
+  /// In en, this message translates to:
+  /// **'Cards'**
+  String get navCards;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

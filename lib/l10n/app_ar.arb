@@ -1011,7 +1011,7 @@
   "flashcardsStatNoHistory": "لا مراجعات بعد. ادرس المجموعة لترى تقدّمك هنا.",
   "flashcardsSpeakField": "قراءة {field} بصوت",
   "speechVoice": "الصوت",
-  "speechVoiceDefault": "الافتراضي في الجهاز",
+  "speechVoiceDefault": "تلقائي",
   "speechVoiceOnline": "يحتاج إنترنت",
   "speechTest": "تجربة الصوت",
   "importNext": "معاينة",
@@ -1397,5 +1397,6 @@
   "smartReviewTimeTitle": "عادةً تدرس قرابة {time}",
   "smartReviewTimeUse": "استخدمه",
   "widgetNewNote": "ملاحظة جديدة",
-  "noteConnections": "الوسوم والروابط والمهام"
+  "noteConnections": "الوسوم والروابط والمهام",
+  "navCards": "البطاقات"
 }

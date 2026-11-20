@@ -83,6 +83,30 @@ final routerProvider = Provider<GoRouter>((ref) {
           StatefulShellBranch(
             routes: [GoRoute(path: Routes.tasks, builder: (_, _) => const TasksScreen())],
           ),
+          // Flashcards are a pillar of the app: a tab of their own, beside Focus.
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: Routes.flashcards,
+                builder: (_, _) => const DecksScreen(),
+                // Deck pages open full screen above the tabs (root navigator).
+                routes: [
+                  page(':id', (s) => DeckScreen(deckId: s.pathParameters['id']!)),
+                  page(':id/stats', (s) => DeckStatsScreen(deckId: s.pathParameters['id']!)),
+                  page(
+                    '/flashcards/:id/review',
+                    (s) => ReviewScreen(
+                      deckId: s.pathParameters['id']!,
+                      mode: studyModeFromName(s.uri.queryParameters['mode']),
+                      scope:
+                          studyScopeFromName(s.uri.queryParameters['scope']) ??
+                          StudyScope.scheduled,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
           StatefulShellBranch(
             routes: [
               GoRoute(
@@ -118,18 +142,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       page(Routes.notes, (_) => const NotesScreen()),
       page(Routes.noteNew, (_) => const NewNoteScreen()),
       page('/notes/:id', (s) => NoteEditorScreen(noteId: s.pathParameters['id']!)),
-      page(Routes.flashcards, (_) => const DecksScreen()),
       page(Routes.cardSearch, (_) => const CardSearchScreen()),
-      page('/flashcards/:id', (s) => DeckScreen(deckId: s.pathParameters['id']!)),
-      page('/flashcards/:id/stats', (s) => DeckStatsScreen(deckId: s.pathParameters['id']!)),
-      page(
-        '/flashcards/:id/review',
-        (s) => ReviewScreen(
-          deckId: s.pathParameters['id']!,
-          mode: studyModeFromName(s.uri.queryParameters['mode']),
-          scope: studyScopeFromName(s.uri.queryParameters['scope']) ?? StudyScope.scheduled,
-        ),
-      ),
       page(Routes.goals, (_) => const GoalsScreen()),
       page('/goals/:id', (s) => GoalDetailScreen(goalId: s.pathParameters['id']!)),
       page(Routes.habits, (_) => const HabitsScreen()),

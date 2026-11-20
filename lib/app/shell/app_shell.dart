@@ -22,6 +22,7 @@ class AppShell extends StatelessWidget {
         l10n.navTasks,
         ModuleHue.tasks,
       ),
+      (Icons.style_outlined, Icons.style_rounded, l10n.navCards, ModuleHue.flashcards),
       (Icons.timer_outlined, Icons.timer_rounded, l10n.navFocus, ModuleHue.focus),
       (
         Icons.calendar_month_outlined,

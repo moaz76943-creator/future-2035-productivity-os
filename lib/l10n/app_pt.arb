@@ -1011,7 +1011,7 @@
   "flashcardsStatNoHistory": "Ainda sem revisões. Estude o baralho para ver o progresso.",
   "flashcardsSpeakField": "Ler {field} em voz alta",
   "speechVoice": "Voz",
-  "speechVoiceDefault": "Padrão do aparelho",
+  "speechVoiceDefault": "Automática",
   "speechVoiceOnline": "requer internet",
   "speechTest": "Testar voz",
   "importNext": "Pré-visualizar",
@@ -1397,5 +1397,6 @@
   "smartReviewTimeTitle": "Você costuma estudar por volta das {time}",
   "smartReviewTimeUse": "Usar",
   "widgetNewNote": "Nova nota",
-  "noteConnections": "Etiquetas, links e tarefas"
+  "noteConnections": "Etiquetas, links e tarefas",
+  "navCards": "Cartões"
 }

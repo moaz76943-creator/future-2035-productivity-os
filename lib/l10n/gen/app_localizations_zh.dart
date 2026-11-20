@@ -3504,7 +3504,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get speechVoice => '语音';
 
   @override
-  String get speechVoiceDefault => '设备默认';
+  String get speechVoiceDefault => '自动';
 
   @override
   String get speechVoiceOnline => '需联网';
@@ -4775,4 +4775,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get noteConnections => '标签、链接和任务';
+
+  @override
+  String get navCards => '卡片';
 }

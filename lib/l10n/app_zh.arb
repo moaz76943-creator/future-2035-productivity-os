@@ -1011,7 +1011,7 @@
   "flashcardsStatNoHistory": "暂无复习记录，学习后这里会显示进度。",
   "flashcardsSpeakField": "朗读{field}",
   "speechVoice": "语音",
-  "speechVoiceDefault": "设备默认",
+  "speechVoiceDefault": "自动",
   "speechVoiceOnline": "需联网",
   "speechTest": "试听",
   "importNext": "预览",
@@ -1397,5 +1397,6 @@
   "smartReviewTimeTitle": "你通常在 {time} 左右学习",
   "smartReviewTimeUse": "使用",
   "widgetNewNote": "新笔记",
-  "noteConnections": "标签、链接和任务"
+  "noteConnections": "标签、链接和任务",
+  "navCards": "卡片"
 }

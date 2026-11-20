@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:future_os/app/localization/app_locales.dart';
@@ -73,7 +75,20 @@ void main() {
     expect(where(), Routes.sounds, reason: 'the shortcut that launched the app');
     expect(shortcuts.current.map((s) => s.label), contains('مهمة جديدة'));
     for (final s in shortcuts.current) {
-      router.go(s.route);
+      // Like the app: tabs are switched to, other screens open on top.
+      const tabs = {
+        Routes.home,
+        Routes.tasks,
+        Routes.flashcards,
+        Routes.focus,
+        Routes.calendar,
+        Routes.spaces,
+      };
+      if (tabs.contains(s.route)) {
+        router.go(s.route);
+      } else {
+        unawaited(router.push(s.route));
+      }
       await tester.pump(const Duration(seconds: 1));
       await settle(tester);
       expect(find.byKey(const ValueKey('route-not-found')), findsNothing, reason: s.route);

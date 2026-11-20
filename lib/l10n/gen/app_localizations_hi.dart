@@ -3683,7 +3683,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get speechVoice => 'आवाज़';
 
   @override
-  String get speechVoiceDefault => 'डिवाइस डिफ़ॉल्ट';
+  String get speechVoiceDefault => 'स्वचालित';
 
   @override
   String get speechVoiceOnline => 'इंटरनेट चाहिए';
@@ -5031,4 +5031,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get noteConnections => 'टैग, लिंक और कार्य';
+
+  @override
+  String get navCards => 'कार्ड';
 }

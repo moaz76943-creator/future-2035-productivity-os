@@ -3798,7 +3798,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get speechVoice => 'Голос';
 
   @override
-  String get speechVoiceDefault => 'По умолчанию';
+  String get speechVoiceDefault => 'Автоматически';
 
   @override
   String get speechVoiceOnline => 'нужен интернет';
@@ -5160,4 +5160,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get noteConnections => 'Теги, ссылки и задачи';
+
+  @override
+  String get navCards => 'Карточки';
 }

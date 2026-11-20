@@ -1011,7 +1011,7 @@
   "flashcardsStatNoHistory": "अभी कोई समीक्षा नहीं। प्रगति देखने के लिए डेक पढ़ें।",
   "flashcardsSpeakField": "{field} पढ़कर सुनाएँ",
   "speechVoice": "आवाज़",
-  "speechVoiceDefault": "डिवाइस डिफ़ॉल्ट",
+  "speechVoiceDefault": "स्वचालित",
   "speechVoiceOnline": "इंटरनेट चाहिए",
   "speechTest": "आवाज़ जाँचें",
   "importNext": "पूर्वावलोकन",
@@ -1397,5 +1397,6 @@
   "smartReviewTimeTitle": "आप आमतौर पर {time} के आसपास पढ़ते हैं",
   "smartReviewTimeUse": "उपयोग करें",
   "widgetNewNote": "नया नोट",
-  "noteConnections": "टैग, लिंक और कार्य"
+  "noteConnections": "टैग, लिंक और कार्य",
+  "navCards": "कार्ड"
 }

@@ -157,7 +157,7 @@ class _SpeechSheetState extends ConsumerState<_SpeechSheet> {
               ),
             ),
           const SizedBox(height: Space.md),
-          PlanStepper(
+          _SliderRow(
             key: const Key('speechRate'),
             label: l10n.speechRate,
             value: s.flashSpeechRatePercent ~/ 10,
@@ -167,7 +167,7 @@ class _SpeechSheetState extends ConsumerState<_SpeechSheet> {
             onChanged: (v) =>
                 unawaited(ctrl.update((c) => c.copyWith(flashSpeechRatePercent: v * 10))),
           ),
-          PlanStepper(
+          _SliderRow(
             key: const Key('speechRepeat'),
             label: l10n.speechRepeat,
             value: s.flashSpeechRepeat,
@@ -176,7 +176,7 @@ class _SpeechSheetState extends ConsumerState<_SpeechSheet> {
             display: (v) => '×${fmt.number(v)}',
             onChanged: (v) => unawaited(ctrl.update((c) => c.copyWith(flashSpeechRepeat: v))),
           ),
-          PlanStepper(
+          _SliderRow(
             key: const Key('speechPause'),
             label: l10n.speechPause,
             value: s.flashSpeechPauseTenths,
@@ -200,6 +200,76 @@ class _SpeechSheetState extends ConsumerState<_SpeechSheet> {
             onChanged: (v) => unawaited(ctrl.update((c) => c.copyWith(flashSpeakExample: v))),
           ),
           Text(l10n.speechHint, style: context.text.bodySmall?.copyWith(color: context.lux.ink2)),
+        ],
+      ),
+    );
+  }
+}
+
+/// A setting you drag (or nudge with − and +): the value is shown large beside its name.
+class _SliderRow extends StatelessWidget {
+  const _SliderRow({
+    super.key,
+    required this.label,
+    required this.value,
+    required this.min,
+    required this.max,
+    required this.display,
+    required this.onChanged,
+  });
+  final String label;
+  final int value, min, max;
+  final String Function(int) display;
+  final ValueChanged<int> onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    final v = value.clamp(min, max);
+    final hue = ModuleHue.flashcards.a;
+    return Padding(
+      padding: const EdgeInsets.only(bottom: Space.xs),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Expanded(child: Text(label, style: context.text.titleSmall)),
+              Text(
+                display(v),
+                style: context.text.titleMedium?.copyWith(color: hue, fontWeight: FontWeight.w700),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              IconButton(
+                tooltip: context.l10n.focusPlanDecrease(label),
+                visualDensity: VisualDensity.compact,
+                icon: const Icon(Icons.remove_rounded),
+                onPressed: v > min ? () => onChanged(v - 1) : null,
+              ),
+              Expanded(
+                child: Slider(
+                  value: v.toDouble(),
+                  min: min.toDouble(),
+                  max: max.toDouble(),
+                  divisions: max - min,
+                  label: display(v),
+                  activeColor: hue,
+                  semanticFormatterCallback: (d) => '$label ${display(d.round())}',
+                  onChanged: (d) {
+                    if (d.round() != v) onChanged(d.round());
+                  },
+                ),
+              ),
+              IconButton(
+                tooltip: context.l10n.focusPlanIncrease(label),
+                visualDensity: VisualDensity.compact,
+                icon: const Icon(Icons.add_rounded),
+                onPressed: v < max ? () => onChanged(v + 1) : null,
+              ),
+            ],
+          ),
         ],
       ),
     );

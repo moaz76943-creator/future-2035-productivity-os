@@ -1011,7 +1011,7 @@
   "flashcardsStatNoHistory": "Повторений пока нет. Занимайтесь, и здесь появится прогресс.",
   "flashcardsSpeakField": "Прочитать: {field}",
   "speechVoice": "Голос",
-  "speechVoiceDefault": "По умолчанию",
+  "speechVoiceDefault": "Автоматически",
   "speechVoiceOnline": "нужен интернет",
   "speechTest": "Проверить голос",
   "importNext": "Просмотр",
@@ -1397,5 +1397,6 @@
   "smartReviewTimeTitle": "Обычно вы занимаетесь около {time}",
   "smartReviewTimeUse": "Использовать",
   "widgetNewNote": "Новая заметка",
-  "noteConnections": "Теги, ссылки и задачи"
+  "noteConnections": "Теги, ссылки и задачи",
+  "navCards": "Карточки"
 }

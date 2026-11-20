@@ -3841,7 +3841,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get speechVoice => 'الصوت';
 
   @override
-  String get speechVoiceDefault => 'الافتراضي في الجهاز';
+  String get speechVoiceDefault => 'تلقائي';
 
   @override
   String get speechVoiceOnline => 'يحتاج إنترنت';
@@ -5208,4 +5208,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get noteConnections => 'الوسوم والروابط والمهام';
+
+  @override
+  String get navCards => 'البطاقات';
 }

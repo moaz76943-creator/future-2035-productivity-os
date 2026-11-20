@@ -3692,7 +3692,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get speechVoice => 'Voz';
 
   @override
-  String get speechVoiceDefault => 'Predeterminada del dispositivo';
+  String get speechVoiceDefault => 'Automática';
 
   @override
   String get speechVoiceOnline => 'requiere internet';
@@ -5039,4 +5039,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get noteConnections => 'Etiquetas, enlaces y tareas';
+
+  @override
+  String get navCards => 'Tarjetas';
 }

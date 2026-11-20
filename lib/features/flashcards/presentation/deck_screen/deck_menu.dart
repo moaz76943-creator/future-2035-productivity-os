@@ -10,35 +10,70 @@ extension _DeckMenuSheet on _DeckScreenState {
       title: Text(label, style: danger ? TextStyle(color: context.lux.danger) : null),
       onTap: () => Navigator.of(context).pop(m),
     );
-    final choice = await showModalBottomSheet<_DeckMenu>(
+    // A side panel slides in from the menu's edge: every extra feature in one calm list.
+    final choice = await showGeneralDialog<_DeckMenu>(
       context: context,
-      useSafeArea: true,
-      isScrollControlled: true,
-      showDragHandle: true,
-      builder: (ctx) => SingleChildScrollView(
-        padding: const EdgeInsets.only(bottom: Space.md),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            SectionHeader(title: l10n.flashMenuAdd),
-            item(_DeckMenu.paste, Icons.content_paste_rounded, l10n.flashPasteCards),
-            item(_DeckMenu.importFile, Icons.download_rounded, l10n.actionImport),
-            SectionHeader(title: l10n.actionExport),
-            item(_DeckMenu.exportJson, Icons.share_outlined, l10n.flashShareDeck),
-            item(_DeckMenu.exportCsv, Icons.table_view_rounded, l10n.transferDeckFormats),
-            SectionHeader(title: l10n.flashMenuDeck),
-            item(_DeckMenu.edit, Icons.edit_outlined, l10n.deckEdit),
-            item(_DeckMenu.stats, Icons.insights_rounded, l10n.flashcardsStats),
-            item(_DeckMenu.layout, Icons.view_agenda_outlined, l10n.flashcardsLayoutTitle),
-            item(_DeckMenu.speech, Icons.record_voice_over_outlined, l10n.speechTitle),
-            item(
-              _DeckMenu.delete,
-              Icons.delete_outline_rounded,
-              l10n.flashcardsDeleteDeck,
-              danger: true,
+      barrierDismissible: true,
+      barrierLabel: l10n.actionClose,
+      transitionDuration: const Duration(milliseconds: 220),
+      transitionBuilder: (ctx, anim, _, child) {
+        final rtl = Directionality.of(ctx) == TextDirection.rtl;
+        return SlideTransition(
+          position: Tween(
+            begin: Offset(rtl ? -1 : 1, 0),
+            end: Offset.zero,
+          ).animate(CurvedAnimation(parent: anim, curve: Curves.easeOutCubic)),
+          child: child,
+        );
+      },
+      pageBuilder: (ctx, _, _) => Align(
+        alignment: AlignmentDirectional.centerEnd,
+        child: Material(
+          key: const Key('deckSidePanel'),
+          color: ctx.lux.surface,
+          elevation: 8,
+          borderRadius: const BorderRadiusDirectional.horizontal(start: Radius.circular(Radii.xl)),
+          child: SizedBox(
+            width: math.min(320, MediaQuery.sizeOf(ctx).width * 0.85),
+            height: double.infinity,
+            child: SafeArea(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.only(bottom: Space.md),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(Space.page, Space.lg, Space.page, 0),
+                      child: Text(
+                        deck.name,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: ctx.text.titleLarge?.copyWith(fontWeight: FontWeight.w700),
+                      ),
+                    ),
+                    SectionHeader(title: l10n.flashMenuAdd),
+                    item(_DeckMenu.paste, Icons.content_paste_rounded, l10n.flashPasteCards),
+                    item(_DeckMenu.importFile, Icons.download_rounded, l10n.actionImport),
+                    SectionHeader(title: l10n.actionExport),
+                    item(_DeckMenu.exportJson, Icons.share_outlined, l10n.flashShareDeck),
+                    item(_DeckMenu.exportCsv, Icons.table_view_rounded, l10n.transferDeckFormats),
+                    SectionHeader(title: l10n.flashMenuDeck),
+                    item(_DeckMenu.edit, Icons.edit_outlined, l10n.deckEdit),
+                    item(_DeckMenu.stats, Icons.insights_rounded, l10n.flashcardsStats),
+                    item(_DeckMenu.layout, Icons.view_agenda_outlined, l10n.flashcardsLayoutTitle),
+                    item(_DeckMenu.speech, Icons.record_voice_over_outlined, l10n.speechTitle),
+                    item(
+                      _DeckMenu.delete,
+                      Icons.delete_outline_rounded,
+                      l10n.flashcardsDeleteDeck,
+                      danger: true,
+                    ),
+                  ],
+                ),
+              ),
             ),
-          ],
+          ),
         ),
       ),
     );

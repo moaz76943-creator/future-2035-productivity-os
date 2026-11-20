@@ -1011,7 +1011,7 @@
   "flashcardsStatNoHistory": "Aún no hay repasos. Estudia el mazo para ver tu progreso.",
   "flashcardsSpeakField": "Leer {field} en voz alta",
   "speechVoice": "Voz",
-  "speechVoiceDefault": "Predeterminada del dispositivo",
+  "speechVoiceDefault": "Automática",
   "speechVoiceOnline": "requiere internet",
   "speechTest": "Probar voz",
   "importNext": "Vista previa",
@@ -1397,5 +1397,6 @@
   "smartReviewTimeTitle": "Sueles estudiar hacia las {time}",
   "smartReviewTimeUse": "Usar",
   "widgetNewNote": "Nueva nota",
-  "noteConnections": "Etiquetas, enlaces y tareas"
+  "noteConnections": "Etiquetas, enlaces y tareas",
+  "navCards": "Tarjetas"
 }

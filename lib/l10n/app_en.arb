@@ -4926,7 +4926,7 @@
   "@speechVoice": {
     "description": "speechVoice"
   },
-  "speechVoiceDefault": "Device default",
+  "speechVoiceDefault": "Automatic",
   "@speechVoiceDefault": {
     "description": "speechVoiceDefault"
   },
@@ -6717,5 +6717,9 @@
   "noteConnections": "Tags, links and tasks",
   "@noteConnections": {
     "description": "Folded section of the note editor holding tags, backlinks and linked tasks"
+  },
+  "navCards": "Cards",
+  "@navCards": {
+    "description": "Bottom navigation tab: flashcards (keep very short)"
   }
 }

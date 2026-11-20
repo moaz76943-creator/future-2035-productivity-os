@@ -1011,7 +1011,7 @@
   "flashcardsStatNoHistory": "Pas encore de révisions. Étudiez le paquet pour voir vos progrès.",
   "flashcardsSpeakField": "Lire {field} à voix haute",
   "speechVoice": "Voix",
-  "speechVoiceDefault": "Par défaut de l’appareil",
+  "speechVoiceDefault": "Automatique",
   "speechVoiceOnline": "nécessite Internet",
   "speechTest": "Tester la voix",
   "importNext": "Aperçu",
@@ -1397,5 +1397,6 @@
   "smartReviewTimeTitle": "Vous étudiez en général vers {time}",
   "smartReviewTimeUse": "Utiliser",
   "widgetNewNote": "Nouvelle note",
-  "noteConnections": "Étiquettes, liens et tâches"
+  "noteConnections": "Étiquettes, liens et tâches",
+  "navCards": "Cartes"
 }
