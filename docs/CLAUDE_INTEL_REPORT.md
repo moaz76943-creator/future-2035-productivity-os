@@ -1,10 +1,16 @@
 # Claude Branch Intelligence Report (Read-Only for Hermes)
-- Generated (UTC): 2026-11-19 14:32:46
-- Hermes Branch Commit: `76bd009`
-- Claude Reference Commit (READ-ONLY): `da8ff2a`
+- Generated (UTC): 2026-11-20 01:19:00
+- Hermes Branch Commit: `9c05291`
+- Claude Reference Commit (READ-ONLY): `ff605c3`
 - Scope Policy: See `docs/MERGE_PRIORITIES.md` (Full feature adoption + style/test study + <=400 lines + zero dead buttons).
 
 ## Recent Commits on origin/claude-dev (Reference Only)
+ff605c3 Flashcards tab beside Focus; speech sliders; 'Automatic' voice; deck menu as side panel
+d6853b6 Flashcards: speaker for the translation column; speech settings button on the deck bar
+9e4458c Decks screen: search icon plus one menu for starter decks and settings
+cd19adc Notes: backlinks and linked tasks in a folded group; focus timer card tinted
+a886a0d Home: one plus button for task, note, event, card
+69c1d0a Screen-reader names for note body and pictures; control crawl uses a fake picker and passes
 da8ff2a New task form folds rare sections; fix deck-name overflow in card search
 feed0a4 Calmer home: flashcards first, empty sections hidden, apps menu; tasks: 4 views + more; focus: Sounds label
 e5c6796 Quick-add widget, new-note route, help text for reorder and speaker buttons, ADR
@@ -19,12 +25,6 @@ babc9e9 Emulator integration tests in CI, brand name Deep Focus in all texts, Ru
 725455f Focus sounds and saved mixes, review reminder switch, app icon shortcuts, notification deep links, Start my day, Hijri dates, study streak and weekly summary, Do Not Disturb during focus, voice typing, prayer times engine
 7d066ba diagnostics: private local error log (type and code location only), view/share/clear in settings
 582a80c backup: quiet daily automatic backups (no setup, last 7 kept, restore from settings)
-64a9807 revert app lock, relay hardening, Dependabot and the per-push R8 check at the owner's request (keep it simple); settings model split into parts
-99a73d5 hardening: hermes relay cannot push outside its branch; predictive back; Dependabot; CI gates for file size and R8 release shrinking; inventory test split under 400 lines
-b76a974 sounds: ask for notification permission on first play (Android 13+ hides playback controls without it); refresh store screenshots
-e61b9ed sounds: fade in once a recording finishes decoding; decode from a cache copy if an asset is ever compressed
-c12af75 sounds: real CC0 nature recordings instead of synthesis, played with random cross-faded read heads so they never audibly loop; real bird and stream end tones; rain in the forest replaces wind
-0c7e341 flashcards: table view with per-row speech, swap columns, sort, cards/table views; hands-free listen mode; paste cards from clipboard; every world language with the phone's voices first and a link to download more; pause between repeats and example after the answer; today's activity, language pairs and quick study on decks; categorized deck menu
 
 ## Files & Diff Summary vs origin/claude-dev
  .github/copilot-instructions.md                    |    3 +
@@ -32,7 +32,7 @@ c12af75 sounds: real CC0 nature recordings instead of synthesis, played with ran
  .github/workflows/android-emulator-tests.yml       |   68 +
  .github/workflows/hermes-auto-resume.yml           |    2 +-
  .github/workflows/hermes-parallel-boost.yml        |   42 -
- .github/workflows/hermes-relay.yml                 |   15 -
+ .github/workflows/hermes-relay.yml                 |   77 +-
  AGENTS.md                                          |   63 +
  CLAUDE.md                                          |    3 +
  GEMINI.md                                          |    3 +
@@ -110,13 +110,13 @@ c12af75 sounds: real CC0 nature recordings instead of synthesis, played with ran
  lib/app/app.dart                                   |   31 +-
  lib/app/bootstrap/bootstrap.dart                   |   20 +-
  lib/app/home_widget_link.dart                      |  115 ++
- lib/app/routing/app_router.dart                    |    6 +
+ lib/app/routing/app_router.dart                    |   41 +-
  lib/app/routing/deep_links.dart                    |   72 +
  lib/app/routing/routes.dart                        |    3 +
+ lib/app/shell/app_shell.dart                       |    1 +
  lib/core/database/app_database.dart                |   15 +-
  lib/core/database/app_database.g.dart              | 2118 ++++++++++++++------
  lib/core/database/tables/projects.dart             |   17 +
- lib/core/design_system/app_theme.dart              |   19 +-
 
 ## Candidate Feature & Test Areas in origin/claude-dev
 .github/workflows/android-emulator-tests.yml
@@ -154,6 +154,8 @@ lib/features/flashcards/data/flashcards_repository/study.dart
 lib/features/flashcards/domain/card_field_labels.dart
 lib/features/flashcards/domain/card_import.dart
 lib/features/flashcards/domain/card_layout.dart
+lib/features/flashcards/domain/card_layout_fields.dart
+lib/features/flashcards/domain/card_layout_templates.dart
 lib/features/flashcards/domain/exam_plan.dart
 lib/features/flashcards/domain/speech_language.dart
 lib/features/flashcards/domain/srs_scheduler.dart
@@ -197,8 +199,6 @@ lib/features/notes/presentation/new_note_screen.dart
 lib/features/notes/presentation/note_editing_controller.dart
 lib/features/notes/presentation/note_editor_screen.dart
 lib/features/notes/presentation/note_editor_screen/directional_field.dart
-lib/features/notes/presentation/note_editor_screen/note_editor_actions.dart
-lib/features/notes/presentation/note_editor_screen/note_editor_screen_state.dart
 
 ## Strict Rules
 1. NEVER modify or push to origin/claude-dev.
