@@ -94,7 +94,7 @@ final routerProvider = Provider<GoRouter>((ref) {
                   page(':id', (s) => DeckScreen(deckId: s.pathParameters['id']!)),
                   page(':id/stats', (s) => DeckStatsScreen(deckId: s.pathParameters['id']!)),
                   page(
-                    '/flashcards/:id/review',
+                    ':id/review',
                     (s) => ReviewScreen(
                       deckId: s.pathParameters['id']!,
                       mode: studyModeFromName(s.uri.queryParameters['mode']),

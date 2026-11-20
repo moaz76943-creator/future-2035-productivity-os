@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:future_os/app/localization/app_locales.dart';
@@ -70,6 +72,25 @@ void main() {
       await tester.pump(const Duration(seconds: 1));
       await settle(tester);
       expect(tester.takeException(), isNull, reason: r);
+    }
+    // Deck pages live under the flashcards tab: open them from another tab and come back.
+    for (final from in [Routes.home, Routes.flashcards, Routes.focus]) {
+      router.go(from);
+      await tester.pump(const Duration(seconds: 1));
+      await settle(tester);
+      for (final page in [Routes.deck('d1'), Routes.deckStats('d1'), Routes.review('d1')]) {
+        unawaited(router.push(page));
+        await tester.pump(const Duration(seconds: 1));
+        await settle(tester);
+        router.pop();
+        await tester.pump(const Duration(seconds: 1));
+        await settle(tester);
+        expect(
+          find.byKey(const ValueKey('route-not-found')),
+          findsNothing,
+          reason: '$from > $page',
+        );
+      }
     }
     await closeEnv(tester, env);
   });
