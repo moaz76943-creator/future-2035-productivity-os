@@ -1,6 +1,6 @@
 # Claude Branch Intelligence Report (Read-Only for Hermes)
-- Generated (UTC): 2026-11-20 19:02:27
-- Hermes Branch Commit: `c760eb3`
+- Generated (UTC): 2026-11-21 00:52:30
+- Hermes Branch Commit: `615ee35`
 - Claude Reference Commit (READ-ONLY): `d79de87`
 - Scope Policy: See `docs/MERGE_PRIORITIES.md` (Full feature adoption + style/test study + <=400 lines + zero dead buttons).
 
@@ -34,7 +34,7 @@ c23dcae Notes show formatting instead of symbols: hidden markers, real check box
  .github/workflows/android-emulator-tests.yml       |   68 +
  .github/workflows/hermes-auto-resume.yml           |    2 +-
  .github/workflows/hermes-parallel-boost.yml        |   42 -
- .github/workflows/hermes-relay.yml                 |   77 +-
+ .github/workflows/hermes-relay.yml                 |   78 +-
  AGENTS.md                                          |   63 +
  CLAUDE.md                                          |   21 +
  GEMINI.md                                          |    3 +
@@ -149,6 +149,7 @@ lib/features/flashcards/data/cards_transfer.dart
 lib/features/flashcards/data/flashcards_repository.dart
 lib/features/flashcards/data/flashcards_repository/activity.dart
 lib/features/flashcards/data/flashcards_repository/bulk.dart
+lib/features/flashcards/data/flashcards_repository/duplicates.dart
 lib/features/flashcards/data/flashcards_repository/media.dart
 lib/features/flashcards/data/flashcards_repository/study.dart
 lib/features/flashcards/domain/card_field_labels.dart
@@ -182,6 +183,7 @@ lib/features/flashcards/presentation/study_sheets.dart
 lib/features/flashcards/presentation/study_sheets/layout_sheet_state.dart
 lib/features/flashcards/presentation/study_sheets/speech_sheet.dart
 lib/features/flashcards/presentation/study_sheets/study_sheet.dart
+lib/features/flashcards/presentation/tts_tester_screen.dart
 lib/features/flashcards/presentation/widgets/card_form_sheet.dart
 lib/features/flashcards/presentation/widgets/card_form_sheet/card_form_sheet_state.dart
 lib/features/flashcards/presentation/widgets/card_table.dart
@@ -197,8 +199,6 @@ lib/features/notes/data/note_images.dart
 lib/features/notes/data/notes_transfer.dart
 lib/features/notes/presentation/markdown_preview.dart
 lib/features/notes/presentation/new_note_screen.dart
-lib/features/notes/presentation/note_editing_controller.dart
-lib/features/notes/presentation/note_editor_screen.dart
 
 ## Strict Rules
 1. NEVER modify or push to origin/claude-dev.
