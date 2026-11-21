@@ -1,0 +1,41 @@
+name: Periodic Claude Learning Reminder (Every 3 Days)
+
+on:
+  schedule:
+    - cron: '0 3 */3 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-claude-updates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: hermes/future-2035-upgrade
+          fetch-depth: 20
+
+      - name: Check if origin/claude-dev has new commits
+        id: check
+        run: |
+          git fetch origin claude-dev
+          LATEST_CLAUDE=$(git rev-parse origin/claude-dev)
+          LAST_AUDITED=""
+          if [ -f state/claude_sync_state.json ]; then
+            LAST_AUDITED=$(python3 -c "import json; print(json.load(open('state/claude_sync_state.json')).get('last_audited_commit',''))" 2>/dev/null || true)
+          fi
+          echo "Latest Claude: $LATEST_CLAUDE | Last Audited: ${LAST_AUDITED:-none}"
+          if [ "$LATEST_CLAUDE" != "$LAST_AUDITED" ]; then
+            echo "has_updates=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_updates=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Trigger Hermes relay only when new Claude updates exist
+        if: steps.check.outputs.has_updates == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh workflow run hermes-relay.yml --ref hermes/future-2035-upgrade

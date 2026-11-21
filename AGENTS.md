@@ -68,7 +68,7 @@ Never push with a failing check. Never weaken or delete a test to make it pass: 
 - Always preserve public APIs/imports, keep init/dispose lifecycle centralized to prevent leaks, and run `bash tool/check_all.sh` (plus control inventory tests on UI changes) after each refactor.
 
 ## Periodic Claude Branch Learning & Selective Porting (Permanent Rule)
-- **Frequency:** Run a selective audit of `origin/claude-dev` (read-only; NEVER modify or push to `origin/claude-dev`) every **3 completed phases** in `state/future2035_phases.json` (or whenever `origin/claude-dev` advances beyond the last audited commit recorded in `state/claude_sync_state.json`).
+- **Frequency:** Run a selective audit of `origin/claude-dev` (read-only; NEVER modify, merge into, or push to `main`, `origin/main`, or `origin/claude-dev`) every **3 completed phases** in `state/future2035_phases.json` (or whenever `origin/claude-dev` advances beyond the last audited commit recorded in `state/claude_sync_state.json`).
 - **Best-of-Both Selection:** Compare `origin/claude-dev` against `hermes/future-2035-upgrade`. Port ONLY high-value features, UX improvements, or bug fixes that are missing or demonstrably superior. If Hermes already has a cleaner or stronger implementation, keep Hermes's version.
 - **UX, Visual & Structural Discipline:** Never dump features chaotically. Preserve maximum screen simplicity, smart button placement, and progressive disclosure (no toolbar clutter or dead buttons), strictly apply `lib/core/design_system`, and enforce <= 400 lines per manual code file with safe modular splits.
 - **State Tracking:** Update `state/claude_sync_state.json` with the latest audited `origin/claude-dev` commit hash and summary of ported vs. skipped items.
