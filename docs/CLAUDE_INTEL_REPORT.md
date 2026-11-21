@@ -1,6 +1,6 @@
 # Claude Branch Intelligence Report (Read-Only for Hermes)
-- Generated (UTC): 2026-11-21 02:44:59
-- Hermes Branch Commit: `06959fe`
+- Generated (UTC): 2026-11-21 08:07:58
+- Hermes Branch Commit: `114a155`
 - Claude Reference Commit (READ-ONLY): `d79de87`
 - Scope Policy: See `docs/MERGE_PRIORITIES.md` (Full feature adoption + style/test study + <=400 lines + zero dead buttons).
 
@@ -36,7 +36,7 @@ c23dcae Notes show formatting instead of symbols: hidden markers, real check box
  .github/workflows/hermes-auto-resume.yml           |    2 +-
  .github/workflows/hermes-daily-evolution.yml       |   43 -
  .github/workflows/hermes-parallel-boost.yml        |   42 -
- .github/workflows/hermes-relay.yml                 |   82 +-
+ .github/workflows/hermes-relay.yml                 |  103 +-
  AGENTS.md                                          |   28 -
  CLAUDE.md                                          |   21 +
  GEMINI.md                                          |    3 +
