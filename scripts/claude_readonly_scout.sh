@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefailuo pipefail
+set -euo pipefail
 
 timeout 60s git fetch origin --tags >/dev/null 2>&1 || true
 mkdir -p docs

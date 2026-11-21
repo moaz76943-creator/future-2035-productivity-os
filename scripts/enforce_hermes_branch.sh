@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefailuo pipefail
+set -euo pipefail
 
 TARGET_BRANCH="hermes/future-2035-upgrade"
 CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
