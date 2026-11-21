@@ -5,11 +5,6 @@
   "phases": [
     {
       "id": "PHASE_1_BUILD_FOUNDATION",
-      "title": "Read-only repo, toolchain, DB, UI & test audit",
-      "status": "COMPLETED"
-    },
-    {
-      "id": "PHASE_1_BUILD_FOUNDATION",
       "title": "Toolchain matrix, Gradle wrapper, pubspec.lock & CI debug APK",
       "status": "COMPLETED"
     },

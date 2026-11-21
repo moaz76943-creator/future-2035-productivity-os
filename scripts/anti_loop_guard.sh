@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -euo pipefailuo pipefail
 
 NOW=$(date +%s)
 LAST_CODE_COMMIT=$(git log -1 --format=%ct -- lib/ test/ android/ scripts/ .github/ 2>/dev/null || echo 0)

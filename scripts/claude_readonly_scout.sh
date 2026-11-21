@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -euo pipefailuo pipefail
 
-git fetch origin --tags >/dev/null 2>&1 || true
+timeout 60s git fetch origin --tags >/dev/null 2>&1 || true
 mkdir -p docs
 
 if ! git rev-parse --verify origin/claude-dev >/dev/null 2>&1; then

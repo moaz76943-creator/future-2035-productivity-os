@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -euo pipefailuo pipefail
 
 TARGET_BRANCH="hermes/future-2035-upgrade"
 CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
@@ -19,7 +19,7 @@ if [ "$CURRENT_BRANCH" != "$TARGET_BRANCH" ]; then
     git checkout "$TARGET_BRANCH"
   else
     echo ">>> [MIGRATE] Moving commits from $CURRENT_BRANCH -> $TARGET_BRANCH"
-    git fetch origin "$TARGET_BRANCH" || true
+    timeout 60s git fetch origin "$TARGET_BRANCH" || true
     git checkout "$TARGET_BRANCH"
     git merge --no-edit "$CURRENT_BRANCH"
     git branch -D "$CURRENT_BRANCH"
