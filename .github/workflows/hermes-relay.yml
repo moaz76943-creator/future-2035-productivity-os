@@ -74,7 +74,23 @@ jobs:
           fi
           printf '%s\n' "$GOOGLE_KEYS_LIST" > /tmp/keys.list
           JOB_START=$(date +%s)
-          MAX_WALL=3600
+          MAX_WALL=1500
+            NO_PROG=0
+            work_sig() {
+              { git status --porcelain 2>/dev/null || true; git rev-parse HEAD 2>/dev/null || true; sha256sum state/future2035_phases.json 2>/dev/null || true; } | sha256sum | awk '{print $1}'
+            }
+            check_progress() {
+              local before="$1"
+              local after
+              after=$(work_sig)
+              if [ "$before" = "$after" ]; then
+                NO_PROG=$((NO_PROG + 1))
+                echo "No-progress count: $NO_PROG/2"
+              else
+                NO_PROG=0
+                echo "Progress detected (signature changed)."
+              fi
+            }
 
           save_progress() {
             git add -A
@@ -86,7 +102,7 @@ jobs:
             fi
           }
 
-          PROMPT="Read AGENTS.md, docs/FLASHCARDS_MASTER_DIRECTIVE.md, docs/MASTER_DIRECTIVE_V1.md, and state/future2035_phases.json. Work ONLY on branch hermes/future-2035-upgrade. CRITICAL: (1) Complete ONLY the single current IN_PROGRESS phase in state/future2035_phases.json without rewriting existing working code. (2) Enforce Western digits (0-9), zero Hebrew (he/iw), smart progressive-disclosure buttons, and update docs/qa/CONTROL_INVENTORY.md + test/widget/control_inventory_test.dart for any new controls. (3) Before finishing, run with bounded timeouts so nothing hangs: flutter analyze --no-fatal-infos && timeout 180 flutter test && python3 tool/check_l10n.py. (4) Mark the finished phase COMPLETED in state/future2035_phases.json, set the next phase IN_PROGRESS, and commit. (5) Smartly inspect origin/claude-dev (read-only) and port only high-value features/fixes/UX improvements not already better in hermes/future-2035-upgrade; keep whichever implementation is better, preserve clean screen simplicity with smart button placement and progressive disclosure (no cluttered UI or dead controls), respect lib/core/design_system, and keep manual code files <= 400 lines. (5) Follow the Periodic Claude Branch Learning rule in AGENTS.md (audit origin/claude-dev read-only every 3 completed phases via state/claude_sync_state.json, port only superior/missing features while keeping UI simple, smart button placement, lib/core/design_system, and <=400 lines/file). (6) If all phases in state/future2035_phases.json are COMPLETED, follow the Continuous Deep-Audit & Self-Evolution Loop in AGENTS.md: deeply audit the app, append 2-3 new PHASE_EVO_* tasks, and execute the first one safely. (7) Follow Engineering Hardening, Smart UX & Evolution Log in AGENTS.md: keep manual files <=400 lines with safe splits, zero dead buttons, proper disposal/states, lib/core/design_system consistency, smart button placement, regression tests, and concise updates in docs/HERMES_EVOLUTION_LOG.md."
+          PROMPT="Read AGENTS.md, docs/FLASHCARDS_MASTER_DIRECTIVE.md, docs/MASTER_DIRECTIVE_V1.md, and state/future2035_phases.json. Work ONLY on branch hermes/future-2035-upgrade. CRITICAL: (1) Complete ONLY the single current IN_PROGRESS phase in state/future2035_phases.json without rewriting existing working code. (2) Enforce Western digits (0-9), zero Hebrew (he/iw), smart progressive-disclosure buttons, and update docs/qa/CONTROL_INVENTORY.md + test/widget/control_inventory_test.dart for any new controls. (3) Before finishing, run with bounded timeouts so nothing hangs: flutter analyze --no-fatal-infos && timeout 180 flutter test && python3 tool/check_l10n.py. (4) Mark the finished phase COMPLETED in state/future2035_phases.json, set the next phase IN_PROGRESS, and commit. (5) Smartly inspect origin/claude-dev (read-only) and port only high-value features/fixes/UX improvements not already better in hermes/future-2035-upgrade; keep whichever implementation is better, preserve clean screen simplicity with smart button placement and progressive disclosure (no cluttered UI or dead controls), respect lib/core/design_system, and keep manual code files <= 400 lines. (5b) Follow the Periodic Claude Branch Learning rule in AGENTS.md (audit origin/claude-dev read-only every 3 completed phases via state/claude_sync_state.json, port only superior/missing features while keeping UI simple, smart button placement, lib/core/design_system, and <=400 lines/file). (6) If all phases in state/future2035_phases.json are COMPLETED, follow the Continuous Deep-Audit & Self-Evolution Loop in AGENTS.md: deeply audit the app, append 2-3 new PHASE_EVO_* tasks, and execute the first one safely. (7) Follow Engineering Hardening, Smart UX & Evolution Log in AGENTS.md: keep manual files <=400 lines with safe splits, zero dead buttons, proper disposal/states, lib/core/design_system consistency, smart button placement, regression tests, and concise updates in docs/HERMES_EVOLUTION_LOG.md."
           DONE=0
 
           for MODEL in "gemini-4-hydrogen" "gemini-3.8-flash" "gemini-3.6-flash" "gemini-3-flash-preview"; do
@@ -99,7 +115,8 @@ jobs:
               IDX=$((IDX + 1))
               [ $IDX -gt 9 ] && break
               echo "Trying Gemini key #$IDX with $MODEL (timeout 5m)..."
-              if GEMINI_API_KEY="$K" GOOGLE_API_KEY="$K" timeout -k 15s 5m hermes chat --cli --yolo --oneshot --provider gemini -m "$MODEL" -q "$PROMPT"; then
+              SIG_BEFORE=$(work_sig)
+                if GEMINI_API_KEY="$K" GOOGLE_API_KEY="$K" timeout -k 15s 4m hermes chat --cli --yolo --oneshot --provider gemini -m "$MODEL" -q "$PROMPT"; then
                 DONE=1
                 save_progress
                 break 2
@@ -118,9 +135,11 @@ jobs:
             shift 2
             local now_ts
             now_ts=$(date +%s)
-            if [ "$DONE" -eq 0 ] && [ $((now_ts - JOB_START)) -lt $MAX_WALL ] && [ -n "$key_val" ]; then
+            if [ "$DONE" -eq 0 ] && [ "$NO_PROG" -lt 2 ] && [ $((now_ts - JOB_START)) -lt $MAX_WALL ] && [ -n "$key_val" ]; then
+                local sig_b
+                sig_b=$(work_sig)
               echo "[Fallback] Trying $label (timeout 5m)..."
-              if timeout -k 15s 5m "$@"; then
+              if timeout -k 15s 4m "$@"; then
                 DONE=1
               else
                 echo "[Fallback] $label failed or timed out (rc=$?)"
