@@ -69,7 +69,9 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
     final l10n = context.l10n;
     final deck = ref.watch(deckProvider(widget.deckId)).value;
     final card = _currentCard;
-    return Scaffold(
+    return HeroMode(
+      enabled: false,
+      child: Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         surfaceTintColor: Colors.transparent,
@@ -125,6 +127,7 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
         intensity: 0.5,
         child: SafeArea(child: _body(context)),
       ),
+    );
     );
   }
 }
