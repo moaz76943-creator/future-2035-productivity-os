@@ -74,7 +74,7 @@ jobs:
           fi
           printf '%s\n' "$GOOGLE_KEYS_LIST" > /tmp/keys.list
           JOB_START=$(date +%s)
-          MAX_WALL=1500
+          MAX_WALL=2400
             NO_PROG=0
             work_sig() {
               { git status --porcelain 2>/dev/null || true; git rev-parse HEAD 2>/dev/null || true; sha256sum state/future2035_phases.json 2>/dev/null || true; } | sha256sum | awk '{print $1}'
@@ -85,7 +85,7 @@ jobs:
               after=$(work_sig)
               if [ "$before" = "$after" ]; then
                 NO_PROG=$((NO_PROG + 1))
-                echo "No-progress count: $NO_PROG/2"
+                echo "No-progress count: $NO_PROG/3"
               else
                 NO_PROG=0
                 echo "Progress detected (signature changed)."
@@ -116,7 +116,7 @@ jobs:
               [ $IDX -gt 9 ] && break
               echo "Trying Gemini key #$IDX with $MODEL (timeout 5m)..."
               SIG_BEFORE=$(work_sig)
-                if GEMINI_API_KEY="$K" GOOGLE_API_KEY="$K" timeout -k 15s 4m hermes chat --cli --yolo --oneshot --provider gemini -m "$MODEL" -q "$PROMPT"; then
+                if GEMINI_API_KEY="$K" GOOGLE_API_KEY="$K" timeout -k 15s 6m hermes chat --cli --yolo --oneshot --provider gemini -m "$MODEL" -q "$PROMPT"; then
                 DONE=1
                 save_progress
                 break 2
@@ -135,11 +135,11 @@ jobs:
             shift 2
             local now_ts
             now_ts=$(date +%s)
-            if [ "$DONE" -eq 0 ] && [ "$NO_PROG" -lt 2 ] && [ $((now_ts - JOB_START)) -lt $MAX_WALL ] && [ -n "$key_val" ]; then
+            if [ "$DONE" -eq 0 ] && [ "$NO_PROG" -lt 3 ] && [ $((now_ts - JOB_START)) -lt $MAX_WALL ] && [ -n "$key_val" ]; then
                 local sig_b
                 sig_b=$(work_sig)
               echo "[Fallback] Trying $label (timeout 5m)..."
-              if timeout -k 15s 4m "$@"; then
+              if timeout -k 15s 6m "$@"; then
                 DONE=1
               else
                 echo "[Fallback] $label failed or timed out (rc=$?)"
