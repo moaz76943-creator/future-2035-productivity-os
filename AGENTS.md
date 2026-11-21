@@ -72,3 +72,12 @@ Never push with a failing check. Never weaken or delete a test to make it pass: 
 - **Best-of-Both Selection:** Compare `origin/claude-dev` against `hermes/future-2035-upgrade`. Port ONLY high-value features, UX improvements, or bug fixes that are missing or demonstrably superior. If Hermes already has a cleaner or stronger implementation, keep Hermes's version.
 - **UX, Visual & Structural Discipline:** Never dump features chaotically. Preserve maximum screen simplicity, smart button placement, and progressive disclosure (no toolbar clutter or dead buttons), strictly apply `lib/core/design_system`, and enforce <= 400 lines per manual code file with safe modular splits.
 - **State Tracking:** Update `state/claude_sync_state.json` with the latest audited `origin/claude-dev` commit hash and summary of ported vs. skipped items.
+
+## Continuous Deep-Audit & Self-Evolution Loop (Never Stop Rule)
+- **Branch Isolation (Absolute):** Work ONLY on `hermes/future-2035-upgrade`. NEVER modify, merge into, or push to `main`, `origin/main`, `origin/claude-dev`, or `release/play-store`.
+- **When Base Roadmap Completes:** Once all phases in `state/future2035_phases.json` reach `COMPLETED`, DO NOT halt permanently. Perform a deep architectural, UX, performance, security/bug, and test audit across the entire app (`lib/`, `test/`, `docs/`, `l10n/`).
+- **Generate Next Evolution Wave:** Append 2–3 focused, high-impact phases (named `PHASE_EVO_<N>_<TOPIC>` with status `PENDING`) to `state/future2035_phases.json` covering:
+  1. Bug fixes, edge-case hardening, memory/stream leaks, and error resilience.
+  2. High-value feature upgrades or smart refinements to existing screens without UI clutter.
+  3. Visual/UX polish using `lib/core/design_system`, smart button placement, progressive disclosure, and regression tests.
+- **Safety & Quality Gates:** Keep manual code files <= 400 lines (safe modular splits), ensure zero dead buttons/handlers, run `flutter analyze` and relevant `flutter test` before committing, and leave a clean working tree on `hermes/future-2035-upgrade`.

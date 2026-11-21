@@ -1,0 +1,43 @@
+name: Hermes Twice-Daily Continuous Evolution Pulse
+
+on:
+  schedule:
+    - cron: '0 4 * * *'
+    - cron: '0 16 * * *'
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: hermes-evolution-pulse
+  cancel-in-progress: false
+
+jobs:
+  wake-hermes-safely:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if any Hermes workflow is currently active
+        id: guard
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ACTIVE=0
+          for wf in hermes-relay.yml hermes-parallel-boost.yml hermes-auto-resume.yml; do
+            COUNT=$(gh run list --repo "${{ github.repository }}" --workflow="$wf" --limit 5 --json status --jq '[.[] | select(.status == "in_progress" or .status == "queued" or .status == "waiting")] | length' 2>/dev/null || echo "0")
+            ACTIVE=$((ACTIVE + COUNT))
+          done
+          echo "Active Hermes runs: $ACTIVE"
+          if [ "$ACTIVE" -gt 0 ]; then
+            echo "busy=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "busy=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Trigger Hermes relay only when idle
+        if: steps.guard.outputs.busy == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh workflow run hermes-relay.yml --repo "${{ github.repository }}" --ref hermes/future-2035-upgrade
