@@ -62,46 +62,49 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
     final l10n = context.l10n;
     final deck = ref.watch(deckProvider(widget.deckId)).value;
     final card = _currentCard;
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        surfaceTintColor: Colors.transparent,
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(deck?.name ?? l10n.flashTitle, maxLines: 1, overflow: TextOverflow.ellipsis),
-            Text(
-              _practice
-                  ? '${studyModeLabel(l10n, _mode)} · ${l10n.studyPractice}'
-                  : studyModeLabel(l10n, _mode),
-              style: context.text.labelMedium?.copyWith(color: context.lux.ink2),
-            ),
+    return HeroMode(
+      enabled: false,
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          surfaceTintColor: Colors.transparent,
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(deck?.name ?? l10n.flashTitle, maxLines: 1, overflow: TextOverflow.ellipsis),
+              Text(
+                _practice
+                    ? '${studyModeLabel(l10n, _mode)} · ${l10n.studyPractice}'
+                    : studyModeLabel(l10n, _mode),
+                style: context.text.labelMedium?.copyWith(color: context.lux.ink2),
+              ),
+            ],
+          ),
+          actions: [
+            if (card != null) ...[
+              IconButton(
+                key: const Key('reviewSpeakButton'),
+                tooltip: l10n.flashcardsReadAloud,
+                icon: const Icon(Icons.volume_up_rounded),
+                onPressed: () => _speak(card, question: !_flipped),
+              ),
+              PopupMenuButton<String>(
+                key: const Key('reviewMenu'),
+                tooltip: l10n.actionMore,
+                onSelected: (v) => v == 'edit' ? _edit(card) : _suspend(card),
+                itemBuilder: (_) => [
+                  PopupMenuItem(value: 'edit', child: Text(l10n.cardEdit)),
+                  PopupMenuItem(value: 'suspend', child: Text(l10n.flashcardsSuspend)),
+                ],
+              ),
+            ],
           ],
         ),
-        actions: [
-          if (card != null) ...[
-            IconButton(
-              key: const Key('reviewSpeakButton'),
-              tooltip: l10n.flashcardsReadAloud,
-              icon: const Icon(Icons.volume_up_rounded),
-              onPressed: () => _speak(card, question: !_flipped),
-            ),
-            PopupMenuButton<String>(
-              key: const Key('reviewMenu'),
-              tooltip: l10n.actionMore,
-              onSelected: (v) => v == 'edit' ? _edit(card) : _suspend(card),
-              itemBuilder: (_) => [
-                PopupMenuItem(value: 'edit', child: Text(l10n.cardEdit)),
-                PopupMenuItem(value: 'suspend', child: Text(l10n.flashcardsSuspend)),
-              ],
-            ),
-          ],
-        ],
-      ),
-      body: AuroraBackground(
-        hue: _hue,
-        intensity: 0.5,
-        child: SafeArea(child: _body(context)),
+        body: AuroraBackground(
+          hue: _hue,
+          intensity: 0.5,
+          child: SafeArea(child: _body(context)),
+        ),
       ),
     );
   }
