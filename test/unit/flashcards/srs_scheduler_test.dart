@@ -118,7 +118,7 @@ void main() {
   });
 
   test('forgettingProbability, preview, predictedWait and edge-case guards', () {
-    final c = reviewCard(daysAgo: 10);
+    final c = reviewCard();
     expect(c.forgettingProbability(now), closeTo(0.1, 1e-6));
     expect(const SrsCard().forgettingProbability(now), isNull);
 

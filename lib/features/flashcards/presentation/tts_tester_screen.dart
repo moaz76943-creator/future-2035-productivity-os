@@ -1,12 +1,11 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../app/localization/app_format.dart';
 import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/tokens.dart';
 import '../../../core/speech/tts_service.dart';
 import '../../../shared/widgets/module_scaffold.dart';
-import '../application/flashcards_providers.dart';
-import 'study_sheets.dart' show speechLanguageNames;
 
 class TtsTesterScreen extends ConsumerStatefulWidget {
   const TtsTesterScreen({super.key});
@@ -85,10 +84,10 @@ class _TtsTesterScreenState extends ConsumerState<TtsTesterScreen> {
                 if (_loading)
                   const Center(child: CircularProgressIndicator())
                 else if (_voices.isEmpty)
-                  Text(l10n.flashcardsNoVoices, style: TextStyle(color: context.lux.error))
+                  Text(l10n.flashcardsNoVoices, style: TextStyle(color: context.lux.danger))
                 else ...[
                   DropdownButtonFormField<String>(
-                    value: _selectedVoice,
+                    initialValue: _selectedVoice,
                     isExpanded: true,
                     decoration: InputDecoration(labelText: l10n.flashcardsVoice),
                     items: [

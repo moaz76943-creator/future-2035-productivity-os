@@ -16,9 +16,13 @@ extension FlashcardsDuplicateDetection on FlashcardsRepository {
       ..where((c) {
         var cond = c.deletedAt.isNull();
         if (deckId != null) cond &= c.deckId.equals(deckId);
-        if (excludeId != null) cond &= c.id.isNotEqualTo(excludeId);
+        if (excludeId != null) cond &= c.id.isNotValue(excludeId);
         // We use the SQL function mapped to TextNormalizer.normalize
-        return cond & customExpr<bool>('$kNormalizeSqlFunction(${c.front.name}) = ?', [Variable(normalized)]);
+        return cond &
+            CustomExpression<bool>(
+              '$kNormalizeSqlFunction(${c.front.name}) = ?',
+              [Variable(normalized)],
+            );
       });
 
     return query.get();
