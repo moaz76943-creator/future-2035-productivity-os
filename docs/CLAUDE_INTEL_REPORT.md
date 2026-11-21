@@ -1,6 +1,6 @@
 # Claude Branch Intelligence Report (Read-Only for Hermes)
-- Generated (UTC): 2026-11-21 00:52:30
-- Hermes Branch Commit: `615ee35`
+- Generated (UTC): 2026-11-21 02:44:59
+- Hermes Branch Commit: `06959fe`
 - Claude Reference Commit (READ-ONLY): `d79de87`
 - Scope Policy: See `docs/MERGE_PRIORITIES.md` (Full feature adoption + style/test study + <=400 lines + zero dead buttons).
 
@@ -32,10 +32,12 @@ c23dcae Notes show formatting instead of symbols: hidden markers, real check box
  .github/copilot-instructions.md                    |    3 +
  .github/workflows/android-apk-ci.yml               |    1 +
  .github/workflows/android-emulator-tests.yml       |   68 +
+ .github/workflows/claude-periodic-sync.yml         |   41 -
  .github/workflows/hermes-auto-resume.yml           |    2 +-
+ .github/workflows/hermes-daily-evolution.yml       |   43 -
  .github/workflows/hermes-parallel-boost.yml        |   42 -
- .github/workflows/hermes-relay.yml                 |   78 +-
- AGENTS.md                                          |   63 +
+ .github/workflows/hermes-relay.yml                 |   82 +-
+ AGENTS.md                                          |   28 -
  CLAUDE.md                                          |   21 +
  GEMINI.md                                          |    3 +
  THIRD_PARTY_LICENSES.md                            |   27 +
@@ -96,6 +98,7 @@ c23dcae Notes show formatting instead of symbols: hidden markers, real check box
  docs/CLAUDE_INTEL_REPORT.md                        |  206 --
  docs/FLASHCARDS.md                                 |   23 +
  docs/FLASHCARDS_MASTER_DIRECTIVE.md                |   64 -
+ docs/HERMES_EVOLUTION_LOG.md                       |    3 -
  docs/L10N_50_LANGUAGES_DIRECTIVE.md                |   21 -
  docs/LESSONS_LEARNED.md                            |    6 -
  docs/MASTER_DIRECTIVE_V1.md                        |    3 -
@@ -114,9 +117,6 @@ c23dcae Notes show formatting instead of symbols: hidden markers, real check box
  lib/app/home_widget_link.dart                      |  115 ++
  lib/app/routing/app_router.dart                    |   41 +-
  lib/app/routing/deep_links.dart                    |   72 +
- lib/app/routing/routes.dart                        |    3 +
- lib/app/shell/app_shell.dart                       |    1 +
- lib/core/database/app_database.dart                |   15 +-
 
 ## Candidate Feature & Test Areas in origin/claude-dev
 .github/workflows/android-emulator-tests.yml
