@@ -127,7 +127,7 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
         intensity: 0.5,
         child: SafeArea(child: _body(context)),
       ),
-    );
+    ),
     );
   }
 }
