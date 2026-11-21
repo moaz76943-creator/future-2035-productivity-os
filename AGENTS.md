@@ -81,3 +81,11 @@ Never push with a failing check. Never weaken or delete a test to make it pass: 
   2. High-value feature upgrades or smart refinements to existing screens without UI clutter.
   3. Visual/UX polish using `lib/core/design_system`, smart button placement, progressive disclosure, and regression tests.
 - **Safety & Quality Gates:** Keep manual code files <= 400 lines (safe modular splits), ensure zero dead buttons/handlers, run `flutter analyze` and relevant `flutter test` before committing, and leave a clean working tree on `hermes/future-2035-upgrade`.
+
+## Engineering Hardening, Smart UX & Evolution Log (Permanent Rule)
+- **Strict Branch Isolation:** Work ONLY on `hermes/future-2035-upgrade`. NEVER modify, merge into, or push to `main`, `origin/main`, `origin/claude-dev`, or `release/play-store`.
+- **File Size & Modularity Guard:** Keep every manually written code file `<= 400` lines (target `150–350` lines; exempt generated files like `*.g.dart`, `*.freezed.dart`, `*/gen/*`). Split large files safely into cohesive `part` files or clean helper modules without breaking public APIs or exports.
+- **Zero Dead Controls & Resilient States:** Every interactive button/control must have a real handler; every data/async screen must handle loading, empty, and error states gracefully and dispose streams, timers, controllers, and audio/TTS sessions cleanly.
+- **Design System & Smart UX:** Strictly follow `lib/core/design_system` (`app_theme.dart`, `tokens.dart`, components, and theme colors). Keep primary screens calm and focused using smart button placement and progressive disclosure instead of crowding toolbars.
+- **Regression & Layout Safety:** Add or maintain focused tests for critical flows (`FSRS` review, search, import, sound/TTS, locale/`RTL`/`LTR`) and edge cases (long text, empty collections, service errors) while preventing text/layout overflow.
+- **Evolution Log:** Maintain a concise record in `docs/HERMES_EVOLUTION_LOG.md` documenting key improvements, why specific `claude-dev` patterns or Hermes implementations were chosen or skipped for UX/architectural cleanliness, and quality check outcomes.
