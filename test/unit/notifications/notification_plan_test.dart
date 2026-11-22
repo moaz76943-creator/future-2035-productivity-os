@@ -180,6 +180,33 @@ void main() {
     expect(review(DateTime(2026, 11, 15))!.title, en.notifReviewTitle);
   });
 
+  test('prayer reminders are exact, also inside quiet hours', () {
+    final at = now.add(const Duration(hours: 3));
+    final out = plan(
+      ReminderInputs(
+        prayers: [PrayerReminderInput(index: 0, name: 'Fajr', at: at)],
+      ),
+      settings: const AppSettings(
+        quietHoursEnabled: true,
+        quietStartMinute: 0,
+        quietEndMinute: 24 * 60 - 1,
+      ),
+    );
+    final n = out.single;
+    expect(n.at, at.toLocal());
+    expect(n.title, en.prayerNotifTitle('Fajr'));
+  });
+
+  test('review reminder can be switched off', () {
+    final out = plan(
+      ReminderInputs(earliestReviewDue: DateTime(2026, 11, 15)),
+      settings: const AppSettings(reviewReminderOn: false),
+    );
+    expect(out.where((n) => n.id == NotificationIds.review), isEmpty);
+    final json = const AppSettings(reviewReminderOn: false).toJson();
+    expect(AppSettings.fromJson(json).reviewReminderOn, isFalse);
+  });
+
   test('text follows the given language', () {
     final out = NotificationPlanner.plan(
       inputs: ReminderInputs(

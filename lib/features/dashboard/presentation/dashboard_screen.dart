@@ -12,11 +12,13 @@ import '../../../core/design_system/components/surfaces.dart';
 import '../../../core/design_system/tokens.dart';
 import '../../../core/providers/core_providers.dart';
 import '../../../core/time/clock.dart';
+import '../../../core/time/hijri.dart';
 import '../../../l10n/gen/app_localizations.dart';
 import '../../flashcards/application/flashcards_providers.dart';
 import '../../focus/application/focus_controller.dart';
 import '../../goals/application/goals_providers.dart';
 import '../../notes/application/notes_providers.dart';
+import '../../prayer/presentation/next_prayer_chip.dart';
 import '../../goals/data/goals_repository.dart';
 import '../../habits/application/habits_providers.dart';
 import '../../settings/application/settings_providers.dart';
@@ -25,6 +27,10 @@ import '../../tasks/application/tasks_providers.dart';
 import '../../tasks/data/tasks_repository.dart';
 import '../../tasks/presentation/widgets/task_tile.dart';
 import '../application/dashboard_providers.dart';
+import '../../care/presentation/whats_new_sheet.dart';
+import '../../help/presentation/tour_sheet.dart';
+import 'quick_add_sheet.dart';
+import 'start_my_day.dart';
 
 part 'dashboard_screen/header.dart';
 part 'dashboard_screen/goal_line.dart';
@@ -49,6 +55,10 @@ class DashboardScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final sections = ref.watch(settingsProvider.select((s) => s.dashboardSections));
     return Scaffold(
+      floatingActionButton: const Padding(
+        padding: EdgeInsets.only(bottom: Space.xxl),
+        child: QuickAddButton(),
+      ),
       body: AuroraBackground(
         child: SafeArea(
           bottom: false,
@@ -56,7 +66,12 @@ class DashboardScreen extends ConsumerWidget {
             slivers: [
               const SliverToBoxAdapter(child: _Header()),
               const SliverToBoxAdapter(child: _QuickActions()),
-              for (final id in sections)
+              // Flashcards are a pillar: always right under the quick actions.
+              if (sections.contains('review')) const SliverToBoxAdapter(child: _ReviewSection()),
+              const SliverToBoxAdapter(child: StartMyDayCard()),
+              const SliverToBoxAdapter(child: TourLauncher()),
+              const SliverToBoxAdapter(child: WhatsNewLauncher()),
+              for (final id in sections.where((id) => id != 'review'))
                 SliverToBoxAdapter(
                   child: switch (id) {
                     'focus' => const _FocusSection(),

@@ -67,14 +67,37 @@ extension _ReviewActions on _ReviewScreenState {
   /// and the session goes on.
   Future<void> _speak(CardRow card, {required bool question}) async {
     final frontSide = question != _reversed(card);
-    await _say(frontSide ? card.front : card.back, _langTag(front: frontSide));
+    final example = question || !ref.read(settingsProvider).flashSpeakExample
+        ? ''
+        : (CardExtras.decode(card.extra)[CardField.example] ?? '').trim();
+    await _say(
+      frontSide ? card.front : card.back,
+      _langTag(front: frontSide),
+      awaitDone: example.isNotEmpty,
+    );
+    // The example (in the front language) follows the answer when asked for.
+    if (example.isNotEmpty && mounted && _currentCard?.id == card.id) {
+      await _say(example, _langTag(front: true));
+    }
+  }
+
+  /// Speaks just one side of the card (the speaker button beside its text),
+  /// without the example that [_speak] adds after the answer.
+  Future<void> _speakSide(CardRow card, {required bool question}) {
+    final frontSide = question != _reversed(card);
+    return _say(frontSide ? card.front : card.back, _langTag(front: frontSide));
+  }
+
+  /// Answer revealed: read it aloud when auto-reading is on.
+  void _answerShown(CardRow card) {
+    if (ref.read(settingsProvider).flashAutoSpeak) unawaited(_speak(card, question: false));
   }
 
   /// Speech language of a side: the deck setting, else the app language.
   String _langTag({required bool front}) {
     final deck = ref.read(deckProvider(widget.deckId)).value;
     final lang = front ? deck?.frontLang : deck?.backLang;
-    return (lang == null || lang.isEmpty) ? Localizations.localeOf(context).toLanguageTag() : lang;
+    return lang ?? '';
   }
 
   CardSide _questionSide(CardRow card) => _reversed(card) ? CardSide.back : CardSide.front;
@@ -164,16 +187,19 @@ extension _ReviewActions on _ReviewScreenState {
       _say(text, _langTag(front: f == CardField.example || f == CardField.pronunciation));
 
   /// Speaks [text] in [tag] with the user's speed, repetitions and voice.
-  Future<void> _say(String text, String tag) async {
+  Future<void> _say(String text, String tag, {bool awaitDone = false}) async {
     final messenger = ScaffoldMessenger.of(context);
     final l10n = context.l10n;
     final settings = ref.read(settingsProvider);
+    tag = resolveSpeechTag(text, tag, Localizations.localeOf(context).toLanguageTag());
     final result = await _tts.speak(
       text,
       languageTag: tag,
       rate: settings.flashSpeechRatePercent / 100,
       repeat: settings.flashSpeechRepeat,
       voice: settings.flashVoices[tag.split(RegExp('[-_]')).first.toLowerCase()],
+      pauseMs: settings.flashSpeechPauseTenths * 100,
+      awaitDone: awaitDone,
     );
     if (!mounted) return;
     final message = switch (result) {
@@ -210,6 +236,7 @@ extension _ReviewActions on _ReviewScreenState {
       _match = StudyRules.check(_typed.text, _answer(card));
       _flipped = true;
     });
+    _answerShown(card);
   }
 
   void _pick(CardRow card, String option) {
@@ -219,6 +246,7 @@ extension _ReviewActions on _ReviewScreenState {
       _match = option == _answer(card) ? AnswerMatch.exact : AnswerMatch.wrong;
       _flipped = true;
     });
+    _answerShown(card);
   }
 
   /// Practice: no scheduling, only right / wrong.

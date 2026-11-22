@@ -14,7 +14,11 @@ Future<(TestEnv, String)> _setup(WidgetTester tester, {String tag = 'en'}) async
   final env = TestEnv();
   final repo = FlashcardsRepository(env.db, env.clock);
   late String deck;
-  await tester.runAsync(() async => deck = await repo.createDeck('Words', color: 0xFF6C4CFF));
+  await tester.runAsync(() async {
+    deck = await repo.createDeck('Words', color: 0xFF6C4CFF);
+    // These tests use the tile view (per-card buttons); the table has its own tests.
+    await env.db.writeValue('flash.deckView', '{"table":false}');
+  });
   await pumpScreen(
     tester,
     DeckScreen(deckId: deck),
@@ -23,6 +27,14 @@ Future<(TestEnv, String)> _setup(WidgetTester tester, {String tag = 'en'}) async
   );
   await settle(tester);
   return (env, deck);
+}
+
+/// Opens the deck's menu sheet and taps [item] (a `_DeckMenu` name).
+Future<void> openDeckMenu(WidgetTester tester, String item) async {
+  await tester.tap(find.byKey(const Key('deckMenu')));
+  await settle(tester);
+  await tester.tap(find.byKey(Key('deckMenu_$item')));
+  await settle(tester);
 }
 
 Future<int> _cardCount(TestEnv env, WidgetTester tester) async => (await tester.runAsync(
@@ -45,7 +57,7 @@ void main() {
       );
       expect(study.onPressed, isNull);
 
-      await tester.tap(find.byKey(const Key('importButton')));
+      await openDeckMenu(tester, 'importFile');
       await settle(tester);
       await tester.enterText(find.byKey(const Key('importField')), 'hola\thello\nadiós;bye\n\nbad');
       await tester.pump();
@@ -73,7 +85,7 @@ void main() {
   testWidgets('import of unsupported deck JSON shows failure', (tester) async {
     final (env, _) = await _setup(tester);
     final l10n = _l10n(tester);
-    await tester.tap(find.byKey(const Key('importButton')));
+    await openDeckMenu(tester, 'importFile');
     await settle(tester);
     await tester.enterText(find.byKey(const Key('importField')), '{"format":"other"}');
     await tester.pump();
@@ -111,7 +123,12 @@ void main() {
     await tester.enterText(find.byKey(const Key('cardSearchField')), '');
     await settle(tester);
 
-    await tester.tap(find.byTooltip(l10n.actionDelete).first);
+    // Delete lives in the card's menu now.
+    await tester.ensureVisible(find.byTooltip(l10n.actionMore).last);
+    await settle(tester);
+    await tester.tap(find.byTooltip(l10n.actionMore).last);
+    await settle(tester);
+    await tester.tap(find.text(l10n.actionDelete).last);
     await settle(tester);
     expect(await _cardCount(env, tester), 1);
     await tester.tap(find.text(l10n.actionUndo));
@@ -136,7 +153,7 @@ void main() {
       () => FlashcardsRepository(env.db, env.clock).addCard(deck, 'front', 'back'),
     );
     await settle(tester);
-    await tester.tap(find.byKey(const Key('exportButton')));
+    await openDeckMenu(tester, 'exportJson');
     await settle(tester);
     await tester.tap(find.byKey(const Key('exportCopyTile')));
     await settle(tester);
@@ -180,6 +197,7 @@ void main() {
       deck = await repo.createDeck('Words', color: 0xFF6C4CFF);
       await repo.addCard(deck, 'hola', 'hello', tags: 'greet');
       await repo.addCard(deck, 'mesa', 'table');
+      await env.db.writeValue('flash.deckView', '{"table":false}');
     });
     await pumpScreen(tester, DeckScreen(deckId: deck), env: env, withRouter: true);
     await settle(tester);
@@ -223,6 +241,8 @@ void main() {
     await tester.tap(find.byKey(const Key('studyButton')));
     await settle(tester);
     await tester.tap(find.byKey(const Key('studyMode_typed')));
+    await settle(tester);
+    await tester.tap(find.byKey(const Key('studyPracticeGroup')));
     await settle(tester);
     await tester.tap(find.byKey(const Key('practiceAllButton')));
     await settle(tester);
@@ -297,7 +317,7 @@ void main() {
   testWidgets('import preview: remap columns before importing', (tester) async {
     final (env, _) = await _setup(tester);
     final l10n = _l10n(tester);
-    await tester.tap(find.byKey(const Key('importButton')));
+    await openDeckMenu(tester, 'importFile');
     await settle(tester);
     // Columns: word, example, meaning (no header) → map 2nd to example, 3rd to back.
     await tester.enterText(

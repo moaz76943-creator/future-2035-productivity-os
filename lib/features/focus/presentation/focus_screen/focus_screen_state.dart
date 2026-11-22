@@ -84,9 +84,22 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
     final enabled = ref.watch(settingsProvider.select((s) => s.notificationsEnabled));
     if (enabled && access == NotificationAccess.granted) unawaited(_checkBatteryHint());
 
+    final soundsOn = ref.watch(soundsControllerProvider.select((m) => m.playing));
     return ModuleScaffold(
       title: l10n.focusTitle,
       hue: ModuleHue.focus,
+      actions: [
+        // A word instead of a bare icon: the label is the app's own translation of "Sounds".
+        Padding(
+          padding: const EdgeInsetsDirectional.only(end: Space.sm),
+          child: TextButton.icon(
+            key: const Key('focusSounds'),
+            icon: Icon(soundsOn ? Icons.graphic_eq_rounded : Icons.water_drop_outlined, size: 20),
+            label: Text(l10n.soundsTitle),
+            onPressed: () => context.push(Routes.sounds),
+          ),
+        ),
+      ],
       slivers: [
         SliverPadding(
           padding: const EdgeInsetsDirectional.symmetric(horizontal: Space.page),
@@ -100,9 +113,19 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
               ),
               const SizedBox(height: Space.md),
               _TimerHero(
+                key: const Key('focusTimerHero'),
                 state: fs,
                 mode: fs.active?.mode ?? _mode,
                 countdownMinutes: _countdownMinutes,
+                onAdjust: fs.ready && fs.active == null
+                    ? () => showFocusTimeSheet(
+                        context,
+                        mode: _mode,
+                        countdownMinutes: _countdownMinutes,
+                        onMode: (m) => setState(() => _mode = m),
+                        onCountdown: (m) => setState(() => _countdownMinutes = m),
+                      )
+                    : null,
               ),
               const SizedBox(height: Space.md),
               _Controls(

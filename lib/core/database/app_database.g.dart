@@ -6741,6 +6741,18 @@ class $FlashcardsTable extends Flashcards
     requiredDuringInsert: false,
     defaultValue: const Constant(''),
   );
+  static const VerificationMeta _positionMeta = const VerificationMeta(
+    'position',
+  );
+  @override
+  late final GeneratedColumn<int> position = GeneratedColumn<int>(
+    'position',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
   static const VerificationMeta _stateMeta = const VerificationMeta('state');
   @override
   late final GeneratedColumn<String> state = GeneratedColumn<String>(
@@ -6912,6 +6924,7 @@ class $FlashcardsTable extends Flashcards
     back,
     tags,
     extra,
+    position,
     state,
     ease,
     intervalDays,
@@ -6994,6 +7007,12 @@ class $FlashcardsTable extends Flashcards
       context.handle(
         _extraMeta,
         extra.isAcceptableOrUnknown(data['extra']!, _extraMeta),
+      );
+    }
+    if (data.containsKey('position')) {
+      context.handle(
+        _positionMeta,
+        position.isAcceptableOrUnknown(data['position']!, _positionMeta),
       );
     }
     if (data.containsKey('state')) {
@@ -7133,6 +7152,10 @@ class $FlashcardsTable extends Flashcards
         DriftSqlType.string,
         data['${effectivePrefix}extra'],
       )!,
+      position: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}position'],
+      )!,
       state: attachedDatabase.typeMapping.read(
         DriftSqlType.string,
         data['${effectivePrefix}state'],
@@ -7211,6 +7234,10 @@ class CardRow extends DataClass implements Insertable<CardRow> {
   /// CardExtras. Added in schema v2.
   final String extra;
 
+  /// Hand-made order (drag to reorder). 0 = not moved yet: the card sorts by
+  /// its creation time, so new cards land at the end. v9.
+  final int position;
+
   /// new | learning | review | relearning
   final String state;
 
@@ -7246,6 +7273,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     required this.back,
     required this.tags,
     required this.extra,
+    required this.position,
     required this.state,
     required this.ease,
     required this.intervalDays,
@@ -7272,6 +7300,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     map['back'] = Variable<String>(back);
     map['tags'] = Variable<String>(tags);
     map['extra'] = Variable<String>(extra);
+    map['position'] = Variable<int>(position);
     map['state'] = Variable<String>(state);
     map['ease'] = Variable<int>(ease);
     map['interval_days'] = Variable<int>(intervalDays);
@@ -7305,6 +7334,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
       back: Value(back),
       tags: Value(tags),
       extra: Value(extra),
+      position: Value(position),
       state: Value(state),
       ease: Value(ease),
       intervalDays: Value(intervalDays),
@@ -7342,6 +7372,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
       back: serializer.fromJson<String>(json['back']),
       tags: serializer.fromJson<String>(json['tags']),
       extra: serializer.fromJson<String>(json['extra']),
+      position: serializer.fromJson<int>(json['position']),
       state: serializer.fromJson<String>(json['state']),
       ease: serializer.fromJson<int>(json['ease']),
       intervalDays: serializer.fromJson<int>(json['intervalDays']),
@@ -7370,6 +7401,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
       'back': serializer.toJson<String>(back),
       'tags': serializer.toJson<String>(tags),
       'extra': serializer.toJson<String>(extra),
+      'position': serializer.toJson<int>(position),
       'state': serializer.toJson<String>(state),
       'ease': serializer.toJson<int>(ease),
       'intervalDays': serializer.toJson<int>(intervalDays),
@@ -7396,6 +7428,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     String? back,
     String? tags,
     String? extra,
+    int? position,
     String? state,
     int? ease,
     int? intervalDays,
@@ -7419,6 +7452,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     back: back ?? this.back,
     tags: tags ?? this.tags,
     extra: extra ?? this.extra,
+    position: position ?? this.position,
     state: state ?? this.state,
     ease: ease ?? this.ease,
     intervalDays: intervalDays ?? this.intervalDays,
@@ -7444,6 +7478,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
       back: data.back.present ? data.back.value : this.back,
       tags: data.tags.present ? data.tags.value : this.tags,
       extra: data.extra.present ? data.extra.value : this.extra,
+      position: data.position.present ? data.position.value : this.position,
       state: data.state.present ? data.state.value : this.state,
       ease: data.ease.present ? data.ease.value : this.ease,
       intervalDays: data.intervalDays.present
@@ -7482,6 +7517,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
           ..write('back: $back, ')
           ..write('tags: $tags, ')
           ..write('extra: $extra, ')
+          ..write('position: $position, ')
           ..write('state: $state, ')
           ..write('ease: $ease, ')
           ..write('intervalDays: $intervalDays, ')
@@ -7510,6 +7546,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
     back,
     tags,
     extra,
+    position,
     state,
     ease,
     intervalDays,
@@ -7537,6 +7574,7 @@ class CardRow extends DataClass implements Insertable<CardRow> {
           other.back == this.back &&
           other.tags == this.tags &&
           other.extra == this.extra &&
+          other.position == this.position &&
           other.state == this.state &&
           other.ease == this.ease &&
           other.intervalDays == this.intervalDays &&
@@ -7562,6 +7600,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
   final Value<String> back;
   final Value<String> tags;
   final Value<String> extra;
+  final Value<int> position;
   final Value<String> state;
   final Value<int> ease;
   final Value<int> intervalDays;
@@ -7586,6 +7625,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     this.back = const Value.absent(),
     this.tags = const Value.absent(),
     this.extra = const Value.absent(),
+    this.position = const Value.absent(),
     this.state = const Value.absent(),
     this.ease = const Value.absent(),
     this.intervalDays = const Value.absent(),
@@ -7611,6 +7651,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     required String back,
     this.tags = const Value.absent(),
     this.extra = const Value.absent(),
+    this.position = const Value.absent(),
     this.state = const Value.absent(),
     this.ease = const Value.absent(),
     this.intervalDays = const Value.absent(),
@@ -7641,6 +7682,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     Expression<String>? back,
     Expression<String>? tags,
     Expression<String>? extra,
+    Expression<int>? position,
     Expression<String>? state,
     Expression<int>? ease,
     Expression<int>? intervalDays,
@@ -7666,6 +7708,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
       if (back != null) 'back': back,
       if (tags != null) 'tags': tags,
       if (extra != null) 'extra': extra,
+      if (position != null) 'position': position,
       if (state != null) 'state': state,
       if (ease != null) 'ease': ease,
       if (intervalDays != null) 'interval_days': intervalDays,
@@ -7693,6 +7736,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     Value<String>? back,
     Value<String>? tags,
     Value<String>? extra,
+    Value<int>? position,
     Value<String>? state,
     Value<int>? ease,
     Value<int>? intervalDays,
@@ -7718,6 +7762,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
       back: back ?? this.back,
       tags: tags ?? this.tags,
       extra: extra ?? this.extra,
+      position: position ?? this.position,
       state: state ?? this.state,
       ease: ease ?? this.ease,
       intervalDays: intervalDays ?? this.intervalDays,
@@ -7762,6 +7807,9 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
     }
     if (extra.present) {
       map['extra'] = Variable<String>(extra.value);
+    }
+    if (position.present) {
+      map['position'] = Variable<int>(position.value);
     }
     if (state.present) {
       map['state'] = Variable<String>(state.value);
@@ -7822,6 +7870,7 @@ class FlashcardsCompanion extends UpdateCompanion<CardRow> {
           ..write('back: $back, ')
           ..write('tags: $tags, ')
           ..write('extra: $extra, ')
+          ..write('position: $position, ')
           ..write('state: $state, ')
           ..write('ease: $ease, ')
           ..write('intervalDays: $intervalDays, ')
@@ -12094,6 +12143,358 @@ class CardMediaCompanion extends UpdateCompanion<CardMediaRow> {
   }
 }
 
+class $NoteImagesTable extends NoteImages
+    with TableInfo<$NoteImagesTable, NoteImage> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $NoteImagesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _noteIdMeta = const VerificationMeta('noteId');
+  @override
+  late final GeneratedColumn<String> noteId = GeneratedColumn<String>(
+    'note_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES notes (id) ON DELETE CASCADE',
+    ),
+  );
+  static const VerificationMeta _mimeMeta = const VerificationMeta('mime');
+  @override
+  late final GeneratedColumn<String> mime = GeneratedColumn<String>(
+    'mime',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant('image/jpeg'),
+  );
+  static const VerificationMeta _bytesMeta = const VerificationMeta('bytes');
+  @override
+  late final GeneratedColumn<Uint8List> bytes = GeneratedColumn<Uint8List>(
+    'bytes',
+    aliasedName,
+    false,
+    type: DriftSqlType.blob,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [id, noteId, mime, bytes, createdAt];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'note_images';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<NoteImage> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('note_id')) {
+      context.handle(
+        _noteIdMeta,
+        noteId.isAcceptableOrUnknown(data['note_id']!, _noteIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_noteIdMeta);
+    }
+    if (data.containsKey('mime')) {
+      context.handle(
+        _mimeMeta,
+        mime.isAcceptableOrUnknown(data['mime']!, _mimeMeta),
+      );
+    }
+    if (data.containsKey('bytes')) {
+      context.handle(
+        _bytesMeta,
+        bytes.isAcceptableOrUnknown(data['bytes']!, _bytesMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_bytesMeta);
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  NoteImage map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return NoteImage(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      noteId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}note_id'],
+      )!,
+      mime: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}mime'],
+      )!,
+      bytes: attachedDatabase.typeMapping.read(
+        DriftSqlType.blob,
+        data['${effectivePrefix}bytes'],
+      )!,
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+    );
+  }
+
+  @override
+  $NoteImagesTable createAlias(String alias) {
+    return $NoteImagesTable(attachedDatabase, alias);
+  }
+}
+
+class NoteImage extends DataClass implements Insertable<NoteImage> {
+  final String id;
+  final String noteId;
+  final String mime;
+  final Uint8List bytes;
+  final DateTime createdAt;
+  const NoteImage({
+    required this.id,
+    required this.noteId,
+    required this.mime,
+    required this.bytes,
+    required this.createdAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['note_id'] = Variable<String>(noteId);
+    map['mime'] = Variable<String>(mime);
+    map['bytes'] = Variable<Uint8List>(bytes);
+    map['created_at'] = Variable<DateTime>(createdAt);
+    return map;
+  }
+
+  NoteImagesCompanion toCompanion(bool nullToAbsent) {
+    return NoteImagesCompanion(
+      id: Value(id),
+      noteId: Value(noteId),
+      mime: Value(mime),
+      bytes: Value(bytes),
+      createdAt: Value(createdAt),
+    );
+  }
+
+  factory NoteImage.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return NoteImage(
+      id: serializer.fromJson<String>(json['id']),
+      noteId: serializer.fromJson<String>(json['noteId']),
+      mime: serializer.fromJson<String>(json['mime']),
+      bytes: serializer.fromJson<Uint8List>(json['bytes']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'noteId': serializer.toJson<String>(noteId),
+      'mime': serializer.toJson<String>(mime),
+      'bytes': serializer.toJson<Uint8List>(bytes),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+    };
+  }
+
+  NoteImage copyWith({
+    String? id,
+    String? noteId,
+    String? mime,
+    Uint8List? bytes,
+    DateTime? createdAt,
+  }) => NoteImage(
+    id: id ?? this.id,
+    noteId: noteId ?? this.noteId,
+    mime: mime ?? this.mime,
+    bytes: bytes ?? this.bytes,
+    createdAt: createdAt ?? this.createdAt,
+  );
+  NoteImage copyWithCompanion(NoteImagesCompanion data) {
+    return NoteImage(
+      id: data.id.present ? data.id.value : this.id,
+      noteId: data.noteId.present ? data.noteId.value : this.noteId,
+      mime: data.mime.present ? data.mime.value : this.mime,
+      bytes: data.bytes.present ? data.bytes.value : this.bytes,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('NoteImage(')
+          ..write('id: $id, ')
+          ..write('noteId: $noteId, ')
+          ..write('mime: $mime, ')
+          ..write('bytes: $bytes, ')
+          ..write('createdAt: $createdAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(id, noteId, mime, $driftBlobEquality.hash(bytes), createdAt);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is NoteImage &&
+          other.id == this.id &&
+          other.noteId == this.noteId &&
+          other.mime == this.mime &&
+          $driftBlobEquality.equals(other.bytes, this.bytes) &&
+          other.createdAt == this.createdAt);
+}
+
+class NoteImagesCompanion extends UpdateCompanion<NoteImage> {
+  final Value<String> id;
+  final Value<String> noteId;
+  final Value<String> mime;
+  final Value<Uint8List> bytes;
+  final Value<DateTime> createdAt;
+  final Value<int> rowid;
+  const NoteImagesCompanion({
+    this.id = const Value.absent(),
+    this.noteId = const Value.absent(),
+    this.mime = const Value.absent(),
+    this.bytes = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  NoteImagesCompanion.insert({
+    required String id,
+    required String noteId,
+    this.mime = const Value.absent(),
+    required Uint8List bytes,
+    required DateTime createdAt,
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       noteId = Value(noteId),
+       bytes = Value(bytes),
+       createdAt = Value(createdAt);
+  static Insertable<NoteImage> custom({
+    Expression<String>? id,
+    Expression<String>? noteId,
+    Expression<String>? mime,
+    Expression<Uint8List>? bytes,
+    Expression<DateTime>? createdAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (noteId != null) 'note_id': noteId,
+      if (mime != null) 'mime': mime,
+      if (bytes != null) 'bytes': bytes,
+      if (createdAt != null) 'created_at': createdAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  NoteImagesCompanion copyWith({
+    Value<String>? id,
+    Value<String>? noteId,
+    Value<String>? mime,
+    Value<Uint8List>? bytes,
+    Value<DateTime>? createdAt,
+    Value<int>? rowid,
+  }) {
+    return NoteImagesCompanion(
+      id: id ?? this.id,
+      noteId: noteId ?? this.noteId,
+      mime: mime ?? this.mime,
+      bytes: bytes ?? this.bytes,
+      createdAt: createdAt ?? this.createdAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (noteId.present) {
+      map['note_id'] = Variable<String>(noteId.value);
+    }
+    if (mime.present) {
+      map['mime'] = Variable<String>(mime.value);
+    }
+    if (bytes.present) {
+      map['bytes'] = Variable<Uint8List>(bytes.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('NoteImagesCompanion(')
+          ..write('id: $id, ')
+          ..write('noteId: $noteId, ')
+          ..write('mime: $mime, ')
+          ..write('bytes: $bytes, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   $AppDatabaseManager get managers => $AppDatabaseManager(this);
@@ -12123,6 +12524,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final $RecentSearchesTable recentSearches = $RecentSearchesTable(this);
   late final $MilestonesTable milestones = $MilestonesTable(this);
   late final $CardMediaTable cardMedia = $CardMediaTable(this);
+  late final $NoteImagesTable noteImages = $NoteImagesTable(this);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
@@ -12152,6 +12554,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     recentSearches,
     milestones,
     cardMedia,
+    noteImages,
   ];
   @override
   StreamQueryUpdateRules get streamUpdateRules => const StreamQueryUpdateRules([
@@ -12322,6 +12725,13 @@ abstract class _$AppDatabase extends GeneratedDatabase {
         limitUpdateKind: UpdateKind.delete,
       ),
       result: [TableUpdate('card_media', kind: UpdateKind.delete)],
+    ),
+    WritePropagation(
+      on: TableUpdateQuery.onTableName(
+        'notes',
+        limitUpdateKind: UpdateKind.delete,
+      ),
+      result: [TableUpdate('note_images', kind: UpdateKind.delete)],
     ),
   ]);
   @override
@@ -17302,6 +17712,24 @@ final class $$NotesTableReferences
       manager.$state.copyWith(prefetchedData: cache),
     );
   }
+
+  static MultiTypedResultKey<$NoteImagesTable, List<NoteImage>>
+  _noteImagesRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
+    db.noteImages,
+    aliasName: 'notes__id__note_images__note_id',
+  );
+
+  $$NoteImagesTableProcessedTableManager get noteImagesRefs {
+    final manager = $$NoteImagesTableTableManager(
+      $_db,
+      $_db.noteImages,
+    ).filter((f) => f.noteId.id.sqlEquals($_itemColumn<String>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(_noteImagesRefsTable($_db));
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
 }
 
 class $$NotesTableFilterComposer extends Composer<_$AppDatabase, $NotesTable> {
@@ -17449,6 +17877,31 @@ class $$NotesTableFilterComposer extends Composer<_$AppDatabase, $NotesTable> {
           }) => $$NoteTaskLinksTableFilterComposer(
             $db: $db,
             $table: $db.noteTaskLinks,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+
+  Expression<bool> noteImagesRefs(
+    Expression<bool> Function($$NoteImagesTableFilterComposer f) f,
+  ) {
+    final $$NoteImagesTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.noteImages,
+      getReferencedColumn: (t) => t.noteId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$NoteImagesTableFilterComposer(
+            $db: $db,
+            $table: $db.noteImages,
             $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
             joinBuilder: joinBuilder,
             $removeJoinBuilderFromRootComposer:
@@ -17699,6 +18152,31 @@ class $$NotesTableAnnotationComposer
     );
     return f(composer);
   }
+
+  Expression<T> noteImagesRefs<T extends Object>(
+    Expression<T> Function($$NoteImagesTableAnnotationComposer a) f,
+  ) {
+    final $$NoteImagesTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.noteImages,
+      getReferencedColumn: (t) => t.noteId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$NoteImagesTableAnnotationComposer(
+            $db: $db,
+            $table: $db.noteImages,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
 }
 
 class $$NotesTableTableManager
@@ -17719,6 +18197,7 @@ class $$NotesTableTableManager
             bool projectId,
             bool noteTagsRefs,
             bool noteTaskLinksRefs,
+            bool noteImagesRefs,
           })
         > {
   $$NotesTableTableManager(_$AppDatabase db, $NotesTable table)
@@ -17806,12 +18285,14 @@ class $$NotesTableTableManager
                 projectId = false,
                 noteTagsRefs = false,
                 noteTaskLinksRefs = false,
+                noteImagesRefs = false,
               }) {
                 return PrefetchHooks(
                   db: db,
                   explicitlyWatchedTables: [
                     if (noteTagsRefs) db.noteTags,
                     if (noteTaskLinksRefs) db.noteTaskLinks,
+                    if (noteImagesRefs) db.noteImages,
                   ],
                   addJoins:
                       <
@@ -17896,6 +18377,26 @@ class $$NotesTableTableManager
                           referencedColumn: 'note_id',
                           typedResults: items,
                         ),
+                      if (noteImagesRefs)
+                        await $_getPrefetchedDataByColumns<
+                          NoteRow,
+                          $NotesTable,
+                          NoteImage,
+                          $NoteImagesTable
+                        >(
+                          currentTable: table,
+                          referencedTable: $$NotesTableReferences
+                              ._noteImagesRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$NotesTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).noteImagesRefs,
+                          currentColumn: 'id',
+                          referencedColumn: 'note_id',
+                          typedResults: items,
+                        ),
                     ];
                   },
                 );
@@ -17921,6 +18422,7 @@ typedef $$NotesTableProcessedTableManager =
         bool projectId,
         bool noteTagsRefs,
         bool noteTaskLinksRefs,
+        bool noteImagesRefs,
       })
     >;
 typedef $$NoteTagsTableCreateCompanionBuilder = NoteTagsCompanion Function({
@@ -18964,6 +19466,7 @@ typedef $$FlashcardsTableCreateCompanionBuilder = FlashcardsCompanion Function({
   required String back,
   Value<String> tags,
   Value<String> extra,
+  Value<int> position,
   Value<String> state,
   Value<int> ease,
   Value<int> intervalDays,
@@ -18989,6 +19492,7 @@ typedef $$FlashcardsTableUpdateCompanionBuilder = FlashcardsCompanion Function({
   Value<String> back,
   Value<String> tags,
   Value<String> extra,
+  Value<int> position,
   Value<String> state,
   Value<int> ease,
   Value<int> intervalDays,
@@ -19105,6 +19609,11 @@ class $$FlashcardsTableFilterComposer
 
   ColumnFilters<String> get extra => $composableBuilder(
     column: $table.extra,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get position => $composableBuilder(
+    column: $table.position,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -19296,6 +19805,11 @@ class $$FlashcardsTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<int> get position => $composableBuilder(
+    column: $table.position,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<String> get state => $composableBuilder(
     column: $table.state,
     builder: (column) => ColumnOrderings(column),
@@ -19419,6 +19933,9 @@ class $$FlashcardsTableAnnotationComposer
 
   GeneratedColumn<String> get extra =>
       $composableBuilder(column: $table.extra, builder: (column) => column);
+
+  GeneratedColumn<int> get position =>
+      $composableBuilder(column: $table.position, builder: (column) => column);
 
   GeneratedColumn<String> get state =>
       $composableBuilder(column: $table.state, builder: (column) => column);
@@ -19586,6 +20103,7 @@ class $$FlashcardsTableTableManager
                 Value<String> back = const Value.absent(),
                 Value<String> tags = const Value.absent(),
                 Value<String> extra = const Value.absent(),
+                Value<int> position = const Value.absent(),
                 Value<String> state = const Value.absent(),
                 Value<int> ease = const Value.absent(),
                 Value<int> intervalDays = const Value.absent(),
@@ -19610,6 +20128,7 @@ class $$FlashcardsTableTableManager
                 back: back,
                 tags: tags,
                 extra: extra,
+                position: position,
                 state: state,
                 ease: ease,
                 intervalDays: intervalDays,
@@ -19636,6 +20155,7 @@ class $$FlashcardsTableTableManager
                 required String back,
                 Value<String> tags = const Value.absent(),
                 Value<String> extra = const Value.absent(),
+                Value<int> position = const Value.absent(),
                 Value<String> state = const Value.absent(),
                 Value<int> ease = const Value.absent(),
                 Value<int> intervalDays = const Value.absent(),
@@ -19660,6 +20180,7 @@ class $$FlashcardsTableTableManager
                 back: back,
                 tags: tags,
                 extra: extra,
+                position: position,
                 state: state,
                 ease: ease,
                 intervalDays: intervalDays,
@@ -23231,6 +23752,319 @@ typedef $$CardMediaTableProcessedTableManager =
       CardMediaRow,
       PrefetchHooks Function({bool cardId})
     >;
+typedef $$NoteImagesTableCreateCompanionBuilder = NoteImagesCompanion Function({
+  required String id,
+  required String noteId,
+  Value<String> mime,
+  required Uint8List bytes,
+  required DateTime createdAt,
+  Value<int> rowid,
+});
+typedef $$NoteImagesTableUpdateCompanionBuilder = NoteImagesCompanion Function({
+  Value<String> id,
+  Value<String> noteId,
+  Value<String> mime,
+  Value<Uint8List> bytes,
+  Value<DateTime> createdAt,
+  Value<int> rowid,
+});
+
+final class $$NoteImagesTableReferences
+    extends BaseReferences<_$AppDatabase, $NoteImagesTable, NoteImage> {
+  $$NoteImagesTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static $NotesTable _noteIdTable(_$AppDatabase db) =>
+      db.notes.createAlias('note_images__note_id__notes__id');
+
+  $$NotesTableProcessedTableManager get noteId {
+    final $_column = $_itemColumn<String>('note_id')!;
+
+    final manager = $$NotesTableTableManager(
+      $_db,
+      $_db.notes,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_noteIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+}
+
+class $$NoteImagesTableFilterComposer
+    extends Composer<_$AppDatabase, $NoteImagesTable> {
+  $$NoteImagesTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get mime => $composableBuilder(
+    column: $table.mime,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<Uint8List> get bytes => $composableBuilder(
+    column: $table.bytes,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  $$NotesTableFilterComposer get noteId {
+    final $$NotesTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.noteId,
+      referencedTable: $db.notes,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$NotesTableFilterComposer(
+            $db: $db,
+            $table: $db.notes,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$NoteImagesTableOrderingComposer
+    extends Composer<_$AppDatabase, $NoteImagesTable> {
+  $$NoteImagesTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get mime => $composableBuilder(
+    column: $table.mime,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<Uint8List> get bytes => $composableBuilder(
+    column: $table.bytes,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  $$NotesTableOrderingComposer get noteId {
+    final $$NotesTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.noteId,
+      referencedTable: $db.notes,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$NotesTableOrderingComposer(
+            $db: $db,
+            $table: $db.notes,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$NoteImagesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $NoteImagesTable> {
+  $$NoteImagesTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get mime =>
+      $composableBuilder(column: $table.mime, builder: (column) => column);
+
+  GeneratedColumn<Uint8List> get bytes =>
+      $composableBuilder(column: $table.bytes, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  $$NotesTableAnnotationComposer get noteId {
+    final $$NotesTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.noteId,
+      referencedTable: $db.notes,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$NotesTableAnnotationComposer(
+            $db: $db,
+            $table: $db.notes,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$NoteImagesTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $NoteImagesTable,
+          NoteImage,
+          $$NoteImagesTableFilterComposer,
+          $$NoteImagesTableOrderingComposer,
+          $$NoteImagesTableAnnotationComposer,
+          $$NoteImagesTableCreateCompanionBuilder,
+          $$NoteImagesTableUpdateCompanionBuilder,
+          (NoteImage, $$NoteImagesTableReferences),
+          NoteImage,
+          PrefetchHooks Function({bool noteId})
+        > {
+  $$NoteImagesTableTableManager(_$AppDatabase db, $NoteImagesTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$NoteImagesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$NoteImagesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$NoteImagesTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<String> noteId = const Value.absent(),
+                Value<String> mime = const Value.absent(),
+                Value<Uint8List> bytes = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => NoteImagesCompanion(
+                id: id,
+                noteId: noteId,
+                mime: mime,
+                bytes: bytes,
+                createdAt: createdAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required String noteId,
+                Value<String> mime = const Value.absent(),
+                required Uint8List bytes,
+                required DateTime createdAt,
+                Value<int> rowid = const Value.absent(),
+              }) => NoteImagesCompanion.insert(
+                id: id,
+                noteId: noteId,
+                mime: mime,
+                bytes: bytes,
+                createdAt: createdAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$NoteImagesTable, NoteImage>(table),
+                  $$NoteImagesTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: ({noteId = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [],
+              addJoins:
+                  <
+                    T extends TableManagerState<
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic
+                    >
+                  >(state) {
+                    if (noteId) {
+                      state = state.withJoin(
+                        currentTable: table,
+                        currentColumn: table.noteId,
+                        referencedTable: $$NoteImagesTableReferences
+                            ._noteIdTable(db),
+                        referencedColumn: $$NoteImagesTableReferences
+                            ._noteIdTable(db)
+                            .id,
+                      ) as T;
+                    }
+
+                    return state;
+                  },
+              getPrefetchedDataCallback: (items) async {
+                return [];
+              },
+            );
+          },
+        ),
+      );
+}
+
+typedef $$NoteImagesTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $NoteImagesTable,
+      NoteImage,
+      $$NoteImagesTableFilterComposer,
+      $$NoteImagesTableOrderingComposer,
+      $$NoteImagesTableAnnotationComposer,
+      $$NoteImagesTableCreateCompanionBuilder,
+      $$NoteImagesTableUpdateCompanionBuilder,
+      (NoteImage, $$NoteImagesTableReferences),
+      NoteImage,
+      PrefetchHooks Function({bool noteId})
+    >;
 
 class $AppDatabaseManager {
   final _$AppDatabase _db;
@@ -23283,4 +24117,6 @@ class $AppDatabaseManager {
       $$MilestonesTableTableManager(_db, _db.milestones);
   $$CardMediaTableTableManager get cardMedia =>
       $$CardMediaTableTableManager(_db, _db.cardMedia);
+  $$NoteImagesTableTableManager get noteImages =>
+      $$NoteImagesTableTableManager(_db, _db.noteImages);
 }

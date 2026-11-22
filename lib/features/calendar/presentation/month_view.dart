@@ -5,6 +5,7 @@ import '../../../core/database/app_database.dart';
 import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/components/indicators.dart';
 import '../../../core/design_system/tokens.dart';
+import '../../../core/time/hijri.dart';
 import '../application/calendar_layout.dart';
 import '../data/events_repository.dart';
 import 'event_style.dart';
@@ -19,6 +20,7 @@ class MonthGrid extends StatelessWidget {
     required this.occurrences,
     required this.tasks,
     required this.onSelect,
+    this.hijri = false,
   });
 
   final DateTime month;
@@ -27,6 +29,9 @@ class MonthGrid extends StatelessWidget {
   final List<EventOccurrence> occurrences;
   final List<TaskRow> tasks;
   final ValueChanged<DateTime> onSelect;
+
+  /// Shows the Hijri day under each day number.
+  final bool hijri;
 
   @override
   Widget build(BuildContext context) {
@@ -70,6 +75,7 @@ class MonthGrid extends StatelessWidget {
                   for (final d in days.skip(w * 7).take(7))
                     Expanded(
                       child: _DayCell(
+                        hijriDay: hijri ? HijriDay.of(d)?.day : null,
                         day: d,
                         inMonth: d.month == month.month,
                         selected: CalendarMath.sameDay(d, selected),
@@ -102,6 +108,7 @@ class _DayCell extends StatelessWidget {
     required this.events,
     required this.tasksDue,
     required this.onTap,
+    this.hijriDay,
   });
 
   final DateTime day;
@@ -111,6 +118,7 @@ class _DayCell extends StatelessWidget {
   final List<EventOccurrence> events;
   final int tasksDue;
   final VoidCallback onTap;
+  final int? hijriDay;
 
   @override
   Widget build(BuildContext context) {
@@ -160,6 +168,11 @@ class _DayCell extends StatelessWidget {
                       ),
                     ),
                   ),
+                  if (hijriDay != null)
+                    Text(
+                      '$hijriDay',
+                      style: context.text.labelSmall?.copyWith(color: lux.ink3, height: 1.1),
+                    ),
                   const SizedBox(height: 4),
                   Wrap(
                     alignment: WrapAlignment.center,

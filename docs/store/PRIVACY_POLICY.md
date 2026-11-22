@@ -26,6 +26,7 @@ Backups are files you export yourself. They are encrypted with a password you ch
 - **Run at startup**: restores scheduled reminders after a restart.
 - **Vibration**: focus and reminder alerts.
 - **Internet**: used only by the optional cloud assistant described above.
+- **Microphone** (asked only when you tap Record on a flashcard): voice recordings for your cards. Recordings are stored only in the app's encrypted database on your device and in backups you create; they are never uploaded.
 - **Text-to-speech**: flashcards can be read aloud by the speech engine already installed on your device.
 
 ## Deleting your data

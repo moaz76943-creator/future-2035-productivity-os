@@ -36,6 +36,7 @@ const String kNormalizeSqlFunction = 'fos_normalize';
     RecentSearches,
     Milestones,
     CardMedia,
+    NoteImages,
   ],
 )
 class AppDatabase extends _$AppDatabase {
@@ -44,11 +45,11 @@ class AppDatabase extends _$AppDatabase {
   /// Bump when the schema changes and add a step in [migration].
   /// Never drop user tables to resolve a migration problem.
   @override
-  int get schemaVersion => 7;
+  int get schemaVersion => 9;
 
   /// Tables introduced after schema v1, by version. Older backups lack them and
   /// restore them empty instead of being rejected.
-  static const tablesAddedIn = {'milestones': 3, 'card_media': 7};
+  static const tablesAddedIn = {'milestones': 3, 'card_media': 7, 'note_images': 8};
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -102,6 +103,15 @@ class AppDatabase extends _$AppDatabase {
         await m.createTable(cardMedia);
         await customStatement('CREATE INDEX IF NOT EXISTS idx_card_media_card ON card_media (card_id)');
       }
+      if (from < 8) {
+        // v8: pictures in notes.
+        await m.createTable(noteImages);
+        await customStatement('CREATE INDEX IF NOT EXISTS idx_note_images_note ON note_images (note_id)');
+      }
+      if (from < 9) {
+        // v9: hand-made card order.
+        await m.addColumn(flashcards, flashcards.position);
+      }
     },
     beforeOpen: (details) async {
       await customStatement('PRAGMA foreign_keys = ON');
@@ -127,6 +137,7 @@ class AppDatabase extends _$AppDatabase {
       'CREATE INDEX IF NOT EXISTS idx_habit_logs_day ON habit_logs (day)',
       'CREATE INDEX IF NOT EXISTS idx_milestones_project ON milestones (project_id, due_at)',
       'CREATE INDEX IF NOT EXISTS idx_card_media_card ON card_media (card_id)',
+      'CREATE INDEX IF NOT EXISTS idx_note_images_note ON note_images (note_id)',
     ];
     for (final s in statements) {
       await customStatement(s);

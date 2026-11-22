@@ -44,3 +44,9 @@ final cardLayoutProvider = StreamProvider.autoDispose.family<CardLayout, String>
 final cardMediaProvider = StreamProvider.autoDispose.family<List<CardMediaRow>, String>(
   (ref, cardId) => ref.watch(flashcardsRepositoryProvider).watchMedia(cardId),
 );
+
+/// Today's study activity; refreshed whenever cards change (answers update them).
+final todayActivityProvider = FutureProvider.autoDispose<TodayActivity>((ref) async {
+  await ref.watch(totalDueProvider.future);
+  return ref.read(flashcardsRepositoryProvider).todayActivity();
+});

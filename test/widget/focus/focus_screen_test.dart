@@ -174,6 +174,27 @@ void main() {
     });
   }
 
+  testWidgets('tapping the timer opens the session sheet; a preset sets the length (ar)', (
+    tester,
+  ) async {
+    final env = TestEnv();
+    await pumpScreen(tester, const FocusScreen(), env: env, localeTag: 'ar');
+    await settle(tester);
+    await tester.tap(find.byKey(const Key('focusTimerHero')));
+    await settle(tester);
+    await tester.tap(find.byKey(const Key('focusPreset_deep')));
+    await settle(tester);
+    expect(
+      find.byKey(const Key('focusEndTone')),
+      findsOneWidget,
+      reason: 'end sound is right there',
+    );
+    await tester.tapAt(const Offset(10, 10));
+    await settle(tester);
+    expect(find.text('50:00'), findsOneWidget);
+    await closeEnv(tester, env);
+  });
+
   testWidgets('battery hint shows once when notifications are allowed', (tester) async {
     final env = TestEnv();
     final fake = FakeNotificationService();

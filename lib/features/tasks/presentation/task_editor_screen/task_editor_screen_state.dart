@@ -71,10 +71,7 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
             ),
           Padding(
             padding: const EdgeInsetsDirectional.only(end: Space.sm),
-            child: FilledButton(
-              onPressed: _saving ? null : _save,
-              child: Text(l10n.actionSave),
-            ),
+            child: FilledButton(onPressed: _saving ? null : _save, child: Text(l10n.actionSave)),
           ),
         ],
       ),
@@ -92,7 +89,17 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
                 labelText: l10n.taskTitleLabel,
                 hintText: l10n.taskTitleHint,
                 errorText: _titleError,
+                suffixIcon: MicButton(controller: _title),
               ),
+            ),
+            // Title, then description: the two things every task needs, before anything else.
+            const SizedBox(height: Space.sm),
+            TextField(
+              key: const Key('taskDescription'),
+              controller: _description,
+              maxLines: null,
+              minLines: 2,
+              decoration: InputDecoration(labelText: l10n.taskDescriptionLabel),
             ),
             if (_formError != null)
               Padding(
@@ -123,6 +130,7 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
             _PrioritySelector(value: _priority, onChanged: (p) => setState(() => _priority = p)),
             _Section(
               title: l10n.taskPlanning,
+              collapsed: _isNew,
               children: [
                 _row(
                   icon: Icons.event_rounded,
@@ -207,6 +215,7 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
             ),
             _Section(
               title: l10n.taskOrganize,
+              collapsed: _isNew,
               children: [
                 _ProjectSelector(
                   value: _projectId,
@@ -219,14 +228,8 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
             ),
             _Section(
               title: l10n.taskMoreDetails,
+              collapsed: _isNew,
               children: [
-                TextField(
-                  controller: _description,
-                  maxLines: null,
-                  minLines: 2,
-                  decoration: InputDecoration(labelText: l10n.taskDescriptionLabel),
-                ),
-                const SizedBox(height: Space.sm),
                 TextField(
                   controller: _notes,
                   maxLines: null,
@@ -237,6 +240,7 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
             ),
             _Section(
               title: l10n.taskBreakdown,
+              collapsed: _isNew,
               children: [
                 if (_isNew)
                   Text(

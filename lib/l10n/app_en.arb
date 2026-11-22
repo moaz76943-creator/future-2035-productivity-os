@@ -1,6 +1,6 @@
 {
   "@@locale": "en",
-  "appName": "Future OS",
+  "appName": "Deep Focus",
   "@appName": {
     "description": "Application name shown in launcher and about screen. Brand name; may stay in Latin script."
   },
@@ -1619,7 +1619,7 @@
   "@importCardsTitle": {
     "description": "Dialog title"
   },
-  "importCardsHint": "Paste one card per line as front and back separated by a tab or semicolon, or paste an exported deck file.",
+  "importCardsHint": "Paste one card per line (front and back separated by a tab or semicolon), or choose a file: Excel (.xlsx), CSV, an Anki deck (.apkg) or an exported deck.",
   "@importCardsHint": {
     "description": "Help text"
   },
@@ -2498,7 +2498,7 @@
   "@backupWrongPassword": {
     "description": "Error"
   },
-  "backupNotABackup": "This file is not a Future OS backup.",
+  "backupNotABackup": "This file is not a Deep Focus backup.",
   "@backupNotABackup": {
     "description": "Error"
   },
@@ -4034,7 +4034,7 @@
   "@backupRestoreFailed": {
     "description": "Generic restore error"
   },
-  "backupShareSubject": "Future OS encrypted backup",
+  "backupShareSubject": "Deep Focus encrypted backup",
   "@backupShareSubject": {
     "description": "Subject used when sharing the backup file"
   },
@@ -4926,7 +4926,7 @@
   "@speechVoice": {
     "description": "speechVoice"
   },
-  "speechVoiceDefault": "Device default",
+  "speechVoiceDefault": "Automatic",
   "@speechVoiceDefault": {
     "description": "speechVoiceDefault"
   },
@@ -5183,5 +5183,1612 @@
         "type": "String"
       }
     }
+  },
+  "flashcardsRecord": "Record",
+  "@flashcardsRecord": {
+    "description": "Chip in the card form: record a voice clip with the microphone"
+  },
+  "flashcardsRecording": "Recording…",
+  "@flashcardsRecording": {
+    "description": "Title of the sheet while the microphone is recording"
+  },
+  "flashcardsRecordStop": "Stop and keep",
+  "@flashcardsRecordStop": {
+    "description": "Button: stop recording and keep the clip on the card"
+  },
+  "flashcardsMicDenied": "Microphone access is off. Allow it in the system settings to record.",
+  "@flashcardsMicDenied": {
+    "description": "Inline error when microphone permission is refused"
+  },
+  "flashcardsRecordFailed": "Recording isn't available on this device.",
+  "@flashcardsRecordFailed": {
+    "description": "Inline error when recording cannot start on this device"
+  },
+  "soundsTitle": "Sounds",
+  "@soundsTitle": {
+    "description": "Title of the nature sounds screen"
+  },
+  "soundsSubtitle": "Real nature recordings, played so they never sound like a loop.",
+  "@soundsSubtitle": {
+    "description": "Subtitle of the sounds screen"
+  },
+  "soundsNature": "Nature",
+  "@soundsNature": {
+    "description": "Section header: nature sounds"
+  },
+  "soundsNoise": "Focus noise",
+  "@soundsNoise": {
+    "description": "Section header: steady noise colours for concentration"
+  },
+  "soundRain": "Rain",
+  "@soundRain": {
+    "description": "Sound name"
+  },
+  "soundStorm": "Thunderstorm",
+  "@soundStorm": {
+    "description": "Sound name"
+  },
+  "soundRiver": "River",
+  "@soundRiver": {
+    "description": "Sound name"
+  },
+  "soundOcean": "Ocean waves",
+  "@soundOcean": {
+    "description": "Sound name"
+  },
+  "soundFire": "Campfire",
+  "@soundFire": {
+    "description": "Sound name"
+  },
+  "soundForest": "Forest birds",
+  "@soundForest": {
+    "description": "Sound name"
+  },
+  "soundNight": "Summer night",
+  "@soundNight": {
+    "description": "Sound name: crickets at night"
+  },
+  "soundWhite": "White noise",
+  "@soundWhite": {
+    "description": "Sound name"
+  },
+  "soundPink": "Pink noise",
+  "@soundPink": {
+    "description": "Sound name"
+  },
+  "soundBrown": "Brown noise",
+  "@soundBrown": {
+    "description": "Sound name"
+  },
+  "soundsPlay": "Play",
+  "@soundsPlay": {
+    "description": "Button: play the sound mix"
+  },
+  "soundsSleep": "Sleep timer",
+  "@soundsSleep": {
+    "description": "Button/menu: sleep timer that stops the sounds"
+  },
+  "soundsSleepOff": "Off",
+  "@soundsSleepOff": {
+    "description": "Sleep timer menu: no timer"
+  },
+  "soundsSleepAt": "Stops at {time}",
+  "@soundsSleepAt": {
+    "description": "Shown when the sleep timer is on",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "soundsMixFull": "Up to {count} sounds can play at once.",
+  "@soundsMixFull": {
+    "description": "Message when too many sounds are on",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "soundsHint": "Tap a sound to start. Mix several and set each volume.",
+  "@soundsHint": {
+    "description": "Hint on the sounds screen"
+  },
+  "soundsMixer": "Mix",
+  "@soundsMixer": {
+    "description": "Button/sheet title: volumes of the sounds in the mix"
+  },
+  "soundsVolumeOf": "{name} volume",
+  "@soundsVolumeOf": {
+    "description": "Accessibility label of a volume slider",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "soundsChannel": "Nature sounds",
+  "@soundsChannel": {
+    "description": "Notification title and channel name while sounds play"
+  },
+  "settingsEndTone": "Timer end sound",
+  "@settingsEndTone": {
+    "description": "Settings row: which sound plays when a timer ends"
+  },
+  "toneGentle": "Gentle beeps",
+  "@toneGentle": {
+    "description": "End sound: two soft beeps"
+  },
+  "toneBeeps": "Beeps",
+  "@toneBeeps": {
+    "description": "End sound: three short beeps"
+  },
+  "toneWood": "Wood knock",
+  "@toneWood": {
+    "description": "End sound: knocks on wood"
+  },
+  "toneBird": "Bird call",
+  "@toneBird": {
+    "description": "End sound: a short bird call"
+  },
+  "toneStream": "Stream",
+  "@toneStream": {
+    "description": "End sound: a short stream of water"
+  },
+  "toneSystem": "Phone's sound",
+  "@toneSystem": {
+    "description": "End sound: the phone's own notification sound"
+  },
+  "speechOnPhone": "On this phone",
+  "@speechOnPhone": {
+    "description": "Language picker section: languages with voices installed on the phone"
+  },
+  "speechAllLanguages": "All languages",
+  "@speechAllLanguages": {
+    "description": "Language picker section: every language"
+  },
+  "speechSearchLanguage": "Search languages",
+  "@speechSearchLanguage": {
+    "description": "Hint of the language search field"
+  },
+  "speechGetVoices": "Download more voices",
+  "@speechGetVoices": {
+    "description": "Button: open the phone's speech settings to download voices"
+  },
+  "speechGetVoicesHint": "Languages without a voice can be downloaded in the phone's speech settings.",
+  "@speechGetVoicesHint": {
+    "description": "Explains how to get voices for more languages"
+  },
+  "speechSettingsFailed": "Couldn't open the speech settings on this phone.",
+  "@speechSettingsFailed": {
+    "description": "Error when the phone's speech settings cannot be opened"
+  },
+  "speechVoiceMissing": "No voice installed",
+  "@speechVoiceMissing": {
+    "description": "Marks a language with no voice installed on the phone"
+  },
+  "speechPause": "Pause between repeats",
+  "@speechPause": {
+    "description": "Stepper: silence between repeated readings"
+  },
+  "speechSeconds": "{seconds} s",
+  "@speechSeconds": {
+    "description": "A number of seconds, e.g. 1.5 s",
+    "placeholders": {
+      "seconds": {
+        "type": "String"
+      }
+    }
+  },
+  "speechExample": "Read the example with the answer",
+  "@speechExample": {
+    "description": "Switch: also read the example sentence after the answer"
+  },
+  "flashListen": "Listen",
+  "@flashListen": {
+    "description": "Button: hands-free mode that reads every card aloud"
+  },
+  "flashListenNext": "Next card",
+  "@flashListenNext": {
+    "description": "Listen mode: skip to the next card"
+  },
+  "flashListenEmpty": "No cards to listen to.",
+  "@flashListenEmpty": {
+    "description": "Listen mode cannot start: no cards in the list"
+  },
+  "flashViewTable": "Table",
+  "@flashViewTable": {
+    "description": "View option: cards as a two-column table"
+  },
+  "flashViewCards": "Cards",
+  "@flashViewCards": {
+    "description": "View option: cards as tiles"
+  },
+  "flashSwapSides": "Swap columns",
+  "@flashSwapSides": {
+    "description": "Button: swap the two columns (which side comes first)"
+  },
+  "flashSort": "Sort",
+  "@flashSort": {
+    "description": "Menu: order of the card list"
+  },
+  "flashSortNewest": "Newest first",
+  "@flashSortNewest": {
+    "description": "Sort option"
+  },
+  "flashSortAlpha": "A to Z",
+  "@flashSortAlpha": {
+    "description": "Sort option: alphabetical"
+  },
+  "flashSortDue": "Due first",
+  "@flashSortDue": {
+    "description": "Sort option"
+  },
+  "flashSortHard": "Hardest first",
+  "@flashSortHard": {
+    "description": "Sort option"
+  },
+  "flashPasteCards": "Paste cards",
+  "@flashPasteCards": {
+    "description": "Menu: create cards from text in the clipboard"
+  },
+  "flashClipboardEmpty": "The clipboard has no text.",
+  "@flashClipboardEmpty": {
+    "description": "Message: nothing to paste"
+  },
+  "flashMenuAdd": "Add cards",
+  "@flashMenuAdd": {
+    "description": "Deck menu section title"
+  },
+  "flashMenuDeck": "Deck",
+  "@flashMenuDeck": {
+    "description": "Deck menu section title: settings of this deck"
+  },
+  "flashToday": "Today",
+  "@flashToday": {
+    "description": "Title of today's study activity card"
+  },
+  "flashStudyNow": "Study",
+  "@flashStudyNow": {
+    "description": "Button on a deck: start studying it"
+  },
+  "flashTodayAnswered": "{count, plural, =0{No cards answered} =1{1 card answered} other{{count} cards answered}}",
+  "@flashTodayAnswered": {
+    "description": "Cards answered today",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "soundForestRain": "Rain in the forest",
+  "@soundForestRain": {
+    "description": "Sound name: rain falling in a forest"
+  },
+  "autoBackupTitle": "Automatic backups",
+  "@autoBackupTitle": {
+    "description": "Settings row and sheet title"
+  },
+  "autoBackupDesc": "Every day on this phone; the last 7 are kept",
+  "@autoBackupDesc": {
+    "description": "Settings row subtitle"
+  },
+  "autoBackupHint": "These copies stay on this phone and are removed if the app is uninstalled. To move to a new phone, use “Back up” to save a file.",
+  "@autoBackupHint": {
+    "description": "Explains where automatic backups live"
+  },
+  "autoBackupNone": "No automatic backup yet. The first one is made today.",
+  "@autoBackupNone": {
+    "description": "No automatic backup exists yet"
+  },
+  "autoBackupRestore": "Restore",
+  "@autoBackupRestore": {
+    "description": "Button: restore this automatic backup"
+  },
+  "autoBackupConfirm": "Replace all current data with the backup from {date}?",
+  "@autoBackupConfirm": {
+    "description": "Confirm restoring an automatic backup",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "autoBackupRestored": "Restored.",
+  "@autoBackupRestored": {
+    "description": "Message after restoring"
+  },
+  "errorLogTitle": "Error log",
+  "@errorLogTitle": {
+    "description": "Settings row and sheet title: list of app errors"
+  },
+  "errorLogHint": "If something goes wrong, it is noted here: only the kind of error and where in the code, never your content. Share it to help fix the problem.",
+  "@errorLogHint": {
+    "description": "Explains the error log and its privacy"
+  },
+  "errorLogEmpty": "No errors recorded.",
+  "@errorLogEmpty": {
+    "description": "No errors recorded"
+  },
+  "errorLogClear": "Clear",
+  "@errorLogClear": {
+    "description": "Button: empty the error log"
+  },
+  "soundsWithFocus": "Play with focus sessions",
+  "@soundsWithFocus": {
+    "description": "Switch: play sounds during focus sessions"
+  },
+  "soundsWithFocusHint": "Your mix starts with a focus session and pauses at breaks.",
+  "@soundsWithFocusHint": {
+    "description": "Explains the focus link"
+  },
+  "soundsSavedMixes": "Saved mixes",
+  "@soundsSavedMixes": {
+    "description": "Section title: saved sound mixes"
+  },
+  "soundsSaveMix": "Save this mix",
+  "@soundsSaveMix": {
+    "description": "Button/dialog title: save the current mix"
+  },
+  "soundsMixNameHint": "Name, e.g. Rainy library",
+  "@soundsMixNameHint": {
+    "description": "Hint for the mix name"
+  },
+  "soundsDeleteMix": "Delete the mix “{name}”?",
+  "@soundsDeleteMix": {
+    "description": "Confirm deleting a saved mix",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsReviewReminderHint": "Once a day, only when cards are due",
+  "@settingsReviewReminderHint": {
+    "description": "Subtitle of the daily review reminder switch"
+  },
+  "settingsReviewTime": "Reminder time",
+  "@settingsReviewTime": {
+    "description": "Row: time of the daily review reminder"
+  },
+  "shortcutFocus": "Focus",
+  "@shortcutFocus": {
+    "description": "App icon long-press shortcut: open the focus timer. Max ~20 chars"
+  },
+  "shortcutNewTask": "New task",
+  "@shortcutNewTask": {
+    "description": "App icon shortcut: new task. Max ~20 chars"
+  },
+  "shortcutReview": "Review cards",
+  "@shortcutReview": {
+    "description": "App icon shortcut: open flashcards to review. Max ~20 chars"
+  },
+  "shortcutSounds": "Nature sounds",
+  "@shortcutSounds": {
+    "description": "App icon shortcut: nature sounds. Max ~20 chars"
+  },
+  "myDayTitle": "Start my day",
+  "@myDayTitle": {
+    "description": "Dashboard card and sheet: begin the day"
+  },
+  "myDayHint": "Your day at a glance, then one tap to focus",
+  "@myDayHint": {
+    "description": "Subtitle of the Start my day card"
+  },
+  "myDayTasks": "{count, plural, =0{No tasks for today} =1{1 task for today} other{{count} tasks for today}}",
+  "@myDayTasks": {
+    "description": "Tasks due today",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "myDayNoEvents": "No more events today",
+  "@myDayNoEvents": {
+    "description": "No more events today"
+  },
+  "myDayNextEvent": "Next: {title} at {time}",
+  "@myDayNextEvent": {
+    "description": "Next event today",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "myDayHabits": "{count, plural, =0{All habits done} =1{1 habit left} other{{count} habits left}}",
+  "@myDayHabits": {
+    "description": "Habits still to do today",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "myDayBeginFocus": "Begin with a focus session",
+  "@myDayBeginFocus": {
+    "description": "Primary button: start a focus session now"
+  },
+  "hijriMonth1": "Muharram",
+  "@hijriMonth1": {
+    "description": "Hijri month 1"
+  },
+  "hijriMonth2": "Safar",
+  "@hijriMonth2": {
+    "description": "Hijri month 2"
+  },
+  "hijriMonth3": "Rabi al-Awwal",
+  "@hijriMonth3": {
+    "description": "Hijri month 3"
+  },
+  "hijriMonth4": "Rabi al-Thani",
+  "@hijriMonth4": {
+    "description": "Hijri month 4"
+  },
+  "hijriMonth5": "Jumada al-Ula",
+  "@hijriMonth5": {
+    "description": "Hijri month 5"
+  },
+  "hijriMonth6": "Jumada al-Akhirah",
+  "@hijriMonth6": {
+    "description": "Hijri month 6"
+  },
+  "hijriMonth7": "Rajab",
+  "@hijriMonth7": {
+    "description": "Hijri month 7"
+  },
+  "hijriMonth8": "Shaban",
+  "@hijriMonth8": {
+    "description": "Hijri month 8"
+  },
+  "hijriMonth9": "Ramadan",
+  "@hijriMonth9": {
+    "description": "Hijri month 9"
+  },
+  "hijriMonth10": "Shawwal",
+  "@hijriMonth10": {
+    "description": "Hijri month 10"
+  },
+  "hijriMonth11": "Dhu al-Qadah",
+  "@hijriMonth11": {
+    "description": "Hijri month 11"
+  },
+  "hijriMonth12": "Dhu al-Hijjah",
+  "@hijriMonth12": {
+    "description": "Hijri month 12"
+  },
+  "hijriDate": "{day} {month} {year} AH",
+  "@hijriDate": {
+    "description": "Hijri date: day, month name, year (AH)",
+    "placeholders": {
+      "day": {
+        "type": "int"
+      },
+      "month": {
+        "type": "String"
+      },
+      "year": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsHijri": "Hijri dates",
+  "@settingsHijri": {
+    "description": "Settings switch: show Hijri dates in the calendar"
+  },
+  "settingsHijriHint": "Shown in the calendar and on the home screen (Umm al-Qura)",
+  "@settingsHijriHint": {
+    "description": "Subtitle of the Hijri switch"
+  },
+  "studyStreakDays": "{count, plural, =1{1 day} other{{count} days}}",
+  "@studyStreakDays": {
+    "description": "Streak chip: consecutive study days",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "studyGoalProgress": "{done} of {goal} cards today",
+  "@studyGoalProgress": {
+    "description": "Daily card goal progress",
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "studyGoalReached": "Daily goal reached. Well done!",
+  "@studyGoalReached": {
+    "description": "Daily card goal reached"
+  },
+  "studyWeekTitle": "Your week",
+  "@studyWeekTitle": {
+    "description": "Sheet title: the last 7 days of study"
+  },
+  "studyWeekCards": "{count, plural, =0{No cards answered in 7 days} =1{1 card answered in 7 days} other{{count} cards answered in 7 days}}",
+  "@studyWeekCards": {
+    "description": "Cards answered in the last 7 days",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "studyWeekFocus": "{duration} of focus in 7 days",
+  "@studyWeekFocus": {
+    "description": "Focus time in the last 7 days",
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      }
+    }
+  },
+  "studyStreakLine": "Streak: {current} · Best: {best}",
+  "@studyStreakLine": {
+    "description": "Current and best streak",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "best": {
+        "type": "int"
+      }
+    }
+  },
+  "studyGoalTitle": "Daily goal (cards)",
+  "@studyGoalTitle": {
+    "description": "Choose the daily card goal"
+  },
+  "studyGoalOff": "Off",
+  "@studyGoalOff": {
+    "description": "No daily goal"
+  },
+  "focusDndTitle": "Do Not Disturb while focusing",
+  "@focusDndTitle": {
+    "description": "Settings switch: Do Not Disturb during focus sessions"
+  },
+  "focusDndHint": "Turns on for each focus session and back off at the break",
+  "@focusDndHint": {
+    "description": "Subtitle of the DND switch"
+  },
+  "focusDndNeedsAccess": "Allow access in the phone settings to use this",
+  "@focusDndNeedsAccess": {
+    "description": "DND switch: system access still missing"
+  },
+  "voiceInput": "Speak to type",
+  "@voiceInput": {
+    "description": "Tooltip of the microphone button in text fields"
+  },
+  "voiceInputPrompt": "Speak now",
+  "@voiceInputPrompt": {
+    "description": "Shown on the phone's speech screen"
+  },
+  "voiceInputUnavailable": "Voice typing isn’t available on this phone. Install or turn on a speech service (for example Speech Recognition & Synthesis by Google).",
+  "@voiceInputUnavailable": {
+    "description": "No speech recognizer on the phone"
+  },
+  "prayerFajr": "Fajr",
+  "@prayerFajr": {
+    "description": "Prayer name"
+  },
+  "prayerSunrise": "Sunrise",
+  "@prayerSunrise": {
+    "description": "Sunrise (not a prayer)"
+  },
+  "prayerDhuhr": "Dhuhr",
+  "@prayerDhuhr": {
+    "description": "Prayer name"
+  },
+  "prayerAsr": "Asr",
+  "@prayerAsr": {
+    "description": "Prayer name"
+  },
+  "prayerMaghrib": "Maghrib",
+  "@prayerMaghrib": {
+    "description": "Prayer name"
+  },
+  "prayerIsha": "Isha",
+  "@prayerIsha": {
+    "description": "Prayer name"
+  },
+  "prayerMethodMwl": "Muslim World League",
+  "@prayerMethodMwl": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodUmmAlQura": "Umm al-Qura, Makkah",
+  "@prayerMethodUmmAlQura": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodEgypt": "Egyptian General Authority",
+  "@prayerMethodEgypt": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodJordan": "Jordan, Ministry of Awqaf",
+  "@prayerMethodJordan": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodKarachi": "University of Islamic Sciences, Karachi",
+  "@prayerMethodKarachi": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodIsna": "Islamic Society of North America",
+  "@prayerMethodIsna": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodGulf": "Gulf region",
+  "@prayerMethodGulf": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodKuwait": "Kuwait",
+  "@prayerMethodKuwait": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodQatar": "Qatar",
+  "@prayerMethodQatar": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodTurkey": "Türkiye, Diyanet",
+  "@prayerMethodTurkey": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodSingapore": "Singapore, Malaysia, Indonesia",
+  "@prayerMethodSingapore": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodFrance": "France (12°)",
+  "@prayerMethodFrance": {
+    "description": "Prayer calculation method"
+  },
+  "prayerMethodRussia": "Russia, Spiritual Administration",
+  "@prayerMethodRussia": {
+    "description": "Prayer calculation method"
+  },
+  "prayerNotifTitle": "Time for {name}",
+  "@prayerNotifTitle": {
+    "description": "Notification title at prayer time",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "prayerNotifBody": "Prayer time · {time}",
+  "@prayerNotifBody": {
+    "description": "Notification text at prayer time",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "prayerTitle": "Prayer times",
+  "@prayerTitle": {
+    "description": "Prayer times sheet/row title"
+  },
+  "prayerOffHint": "Choose your city to see prayer times. They are calculated on the phone; no location access is needed.",
+  "@prayerOffHint": {
+    "description": "Prayer times are off"
+  },
+  "prayerChooseCity": "Choose city",
+  "@prayerChooseCity": {
+    "description": "Button"
+  },
+  "prayerCity": "City",
+  "@prayerCity": {
+    "description": "Row label"
+  },
+  "prayerCitySearch": "Search for a city",
+  "@prayerCitySearch": {
+    "description": "Search hint"
+  },
+  "prayerMethod": "Calculation method",
+  "@prayerMethod": {
+    "description": "Row label"
+  },
+  "prayerHanafiAsr": "Hanafi Asr (later time)",
+  "@prayerHanafiAsr": {
+    "description": "Switch"
+  },
+  "prayerReminders": "Notify at each prayer time",
+  "@prayerReminders": {
+    "description": "Switch"
+  },
+  "prayerPauseFocus": "Pause focus at prayer time",
+  "@prayerPauseFocus": {
+    "description": "Switch"
+  },
+  "prayerPauseFocusHint": "A running session pauses; continue after the prayer",
+  "@prayerPauseFocusHint": {
+    "description": "Switch subtitle"
+  },
+  "prayerTurnOff": "Turn off prayer times",
+  "@prayerTurnOff": {
+    "description": "Button"
+  },
+  "prayerAccuracyNote": "Calculated times can differ by a few minutes from your local mosque.",
+  "@prayerAccuracyNote": {
+    "description": "Footnote"
+  },
+  "prayerNext": "{name} at {time}",
+  "@prayerNext": {
+    "description": "Dashboard line: next prayer",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "importAnkiNewFormat": "This Anki file uses the newest format. In Anki, export again with “Support older Anki versions” turned on, then import that file.",
+  "@importAnkiNewFormat": {
+    "description": "Anki file in the newest format only"
+  },
+  "importTemplate": "Spreadsheet template",
+  "@importTemplate": {
+    "description": "Button: get a spreadsheet template to fill on a computer"
+  },
+  "importTemplateFront": "apple",
+  "@importTemplateFront": {
+    "description": "Sample front in the template"
+  },
+  "importTemplateBack": "a round fruit",
+  "@importTemplateBack": {
+    "description": "Sample back in the template"
+  },
+  "importTemplateExample": "I eat an apple every day.",
+  "@importTemplateExample": {
+    "description": "Sample example sentence in the template"
+  },
+  "importTemplateTag": "food",
+  "@importTemplateTag": {
+    "description": "Sample tag in the template"
+  },
+  "starterTitle": "Starter decks",
+  "@starterTitle": {
+    "description": "Sheet: ready-made decks"
+  },
+  "starterHint": "Add one to try studying right away. You can edit or delete it later.",
+  "@starterHint": {
+    "description": "Sheet subtitle"
+  },
+  "starterAdd": "Add",
+  "@starterAdd": {
+    "description": "Button: add this starter deck"
+  },
+  "starterWords": "Everyday English words (Arabic)",
+  "@starterWords": {
+    "description": "Starter deck name: everyday English words with Arabic meanings"
+  },
+  "starterCapitals": "World capitals",
+  "@starterCapitals": {
+    "description": "Starter deck name"
+  },
+  "starterElements": "Chemical elements",
+  "@starterElements": {
+    "description": "Starter deck name: chemical element symbols"
+  },
+  "settingsAccent": "Accent colour",
+  "@settingsAccent": {
+    "description": "Settings: accent colour"
+  },
+  "accentViolet": "Violet",
+  "@accentViolet": {
+    "description": "Accent colour name"
+  },
+  "accentBlue": "Blue",
+  "@accentBlue": {
+    "description": "Accent colour name"
+  },
+  "accentTeal": "Teal",
+  "@accentTeal": {
+    "description": "Accent colour name"
+  },
+  "accentGreen": "Green",
+  "@accentGreen": {
+    "description": "Accent colour name"
+  },
+  "accentRose": "Rose",
+  "@accentRose": {
+    "description": "Accent colour name"
+  },
+  "accentAmber": "Amber",
+  "@accentAmber": {
+    "description": "Accent colour name"
+  },
+  "settingsFlashTextSize": "Flashcard text size",
+  "@settingsFlashTextSize": {
+    "description": "Settings: text size on flashcards during review"
+  },
+  "settingsFlashTextSample": "Example",
+  "@settingsFlashTextSample": {
+    "description": "Sample word to preview the flashcard text size"
+  },
+  "widgetStartFocus": "Tap to focus",
+  "@widgetStartFocus": {
+    "description": "Home screen widget: no session running"
+  },
+  "widgetFocusUntil": "Focus until {time}",
+  "@widgetFocusUntil": {
+    "description": "Home screen widget: focus running until a time",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "widgetNoCardsDue": "Cards: all done",
+  "@widgetNoCardsDue": {
+    "description": "Home screen widget: no flashcards due"
+  },
+  "faqMyDayQ": "What does “Start my day” do?",
+  "@faqMyDayQ": {
+    "description": "FAQ question"
+  },
+  "faqMyDayA": "Once a day the home screen offers it: see today’s tasks, the next event, habits left and cards due, then begin a focus session with one tap. Long-press the app icon for quick actions, or add the home screen widget to see focus time and cards due.",
+  "@faqMyDayA": {
+    "description": "FAQ answer"
+  },
+  "faqTasksQ": "How do I add a task with a reminder?",
+  "@faqTasksQ": {
+    "description": "FAQ question"
+  },
+  "faqTasksA": "Tap New task on Home or + in Tasks. Type the title or speak it with the microphone, then set a due date, a time and a reminder. Overdue tasks are listed first.",
+  "@faqTasksA": {
+    "description": "FAQ answer"
+  },
+  "faqFocusQ": "How does the focus timer work?",
+  "@faqFocusQ": {
+    "description": "FAQ question"
+  },
+  "faqFocusA": "Choose Pomodoro, a countdown or open time and press Start; breaks can follow automatically. In Settings you can pick the end sound, turn on Do Not Disturb while focusing, and play your nature sounds with each session.",
+  "@faqFocusA": {
+    "description": "FAQ answer"
+  },
+  "faqSoundsQ": "Can I mix nature sounds?",
+  "@faqSoundsQ": {
+    "description": "FAQ question"
+  },
+  "faqSoundsA": "Turn on up to six real recordings, set each volume and save the mix by name. They keep playing in the background, and a sleep timer can stop them. No music is used.",
+  "@faqSoundsA": {
+    "description": "FAQ answer"
+  },
+  "faqCalendarQ": "Can the calendar show Hijri dates?",
+  "@faqCalendarQ": {
+    "description": "FAQ question"
+  },
+  "faqCalendarA": "Yes. Hijri dates (Umm al-Qura) show automatically in Arabic and can be turned on in Settings for any language. Events, tasks with due dates and project milestones appear together.",
+  "@faqCalendarA": {
+    "description": "FAQ answer"
+  },
+  "faqFlashcardsQ": "How does review decide which cards I see?",
+  "@faqFlashcardsQ": {
+    "description": "FAQ question"
+  },
+  "faqFlashcardsA": "Cards you know well come back after longer gaps and cards you miss come back soon (spaced repetition). Rate each answer Again, Hard, Good or Easy. Set a daily goal and keep your streak on the Today card. Set an exam date in a deck to see the days left and how many new cards to learn each day. Sort by \"My order\" to drag cards into place, tap the speaker on either side to hear it, and set speed and repeats in the Speech menu.",
+  "@faqFlashcardsA": {
+    "description": "FAQ answer"
+  },
+  "faqImportQ": "Can I bring cards from Anki or Excel?",
+  "@faqImportQ": {
+    "description": "FAQ question"
+  },
+  "faqImportA": "Yes. In a deck choose Import, then pick a file: Anki (.apkg), Excel (.xlsx) or CSV, and match the columns. Use “Spreadsheet template” to write cards on a computer. Pictures and sounds inside Anki files are not imported.",
+  "@faqImportA": {
+    "description": "FAQ answer"
+  },
+  "faqNotesQ": "What can notes do?",
+  "@faqNotesQ": {
+    "description": "FAQ question"
+  },
+  "faqNotesA": "Write freely with checklists and formatting, pin or favourite important notes, add tags and link notes to tasks. The microphone button lets you dictate. A new note can start from a template (lecture, book summary, journal, weekly plan), and the picture button adds photos.",
+  "@faqNotesA": {
+    "description": "FAQ answer"
+  },
+  "faqHabitsQ": "How are habit streaks counted?",
+  "@faqHabitsQ": {
+    "description": "FAQ question"
+  },
+  "faqHabitsA": "A day counts when you reach the habit’s target on a scheduled day. Pausing a habit keeps the streak safe. Each habit can have its own reminder time.",
+  "@faqHabitsA": {
+    "description": "FAQ answer"
+  },
+  "faqGoalsQ": "How do goals track progress?",
+  "@faqGoalsQ": {
+    "description": "FAQ question"
+  },
+  "faqGoalsA": "Give a goal a target amount and unit, then log progress. Its card shows how far you are and how much is left before the deadline.",
+  "@faqGoalsA": {
+    "description": "FAQ answer"
+  },
+  "faqProjectsQ": "What are projects for?",
+  "@faqProjectsQ": {
+    "description": "FAQ question"
+  },
+  "faqProjectsA": "Group tasks under a project, add milestones with dates and follow overall progress. Milestones also appear in the calendar.",
+  "@faqProjectsA": {
+    "description": "FAQ answer"
+  },
+  "faqInsightsQ": "What does Insights show?",
+  "@faqInsightsQ": {
+    "description": "FAQ question"
+  },
+  "faqInsightsA": "Your focus time, finished tasks and study over days and weeks, with gentle suggestions. Everything is calculated on your phone.",
+  "@faqInsightsA": {
+    "description": "FAQ answer"
+  },
+  "faqSpacesQ": "Where are all the sections?",
+  "@faqSpacesQ": {
+    "description": "FAQ question"
+  },
+  "faqSpacesA": "Spaces lists every part of the app (notes, decks, habits, goals, projects, sounds and more) so the main bar stays simple.",
+  "@faqSpacesA": {
+    "description": "FAQ answer"
+  },
+  "faqBackupQ": "How are my data backed up?",
+  "@faqBackupQ": {
+    "description": "FAQ question"
+  },
+  "faqBackupA": "Every day the app quietly keeps an encrypted copy on this phone and keeps the last 7. In Settings you can also export a password-protected backup file and restore it on another phone.",
+  "@faqBackupA": {
+    "description": "FAQ answer"
+  },
+  "faqPrayerQ": "How do prayer times work?",
+  "@faqPrayerQ": {
+    "description": "FAQ question"
+  },
+  "faqPrayerA": "Choose your city in Settings → Prayer times. Times are calculated on the phone with the method used there, and you can change the method and the Asr school. You can be notified at each prayer, and a running focus session pauses.",
+  "@faqPrayerA": {
+    "description": "FAQ answer"
+  },
+  "faqPrivacyQ": "Where are my data stored?",
+  "@faqPrivacyQ": {
+    "description": "FAQ question"
+  },
+  "faqPrivacyA": "On your phone only, in an encrypted database. There is no account and no tracking. The internet is used only by features you turn on yourself, such as the optional assistant.",
+  "@faqPrivacyA": {
+    "description": "FAQ answer"
+  },
+  "faqAssistantQ": "What is the assistant?",
+  "@faqAssistantQ": {
+    "description": "FAQ question"
+  },
+  "faqAssistantA": "An optional helper you connect to your own AI service in Settings. It is off by default and asks before sending any note text.",
+  "@faqAssistantA": {
+    "description": "FAQ answer"
+  },
+  "tourPlanTitle": "Plan your day",
+  "@tourPlanTitle": {
+    "description": "Tour page 1 title"
+  },
+  "tourPlanBody": "Tasks, calendar and habits in one calm place. Begin each morning with “Start my day”.",
+  "@tourPlanBody": {
+    "description": "Tour page 1"
+  },
+  "tourFocusTitle": "Focus deeply",
+  "@tourFocusTitle": {
+    "description": "Tour page 2 title"
+  },
+  "tourFocusBody": "Timed sessions with real nature sounds, Do Not Disturb and gentle end tones.",
+  "@tourFocusBody": {
+    "description": "Tour page 2"
+  },
+  "tourLearnTitle": "Learn for good",
+  "@tourLearnTitle": {
+    "description": "Tour page 3 title"
+  },
+  "tourLearnBody": "Flashcards with spaced repetition, speech in many languages, and imports from Anki or Excel.",
+  "@tourLearnBody": {
+    "description": "Tour page 3"
+  },
+  "helpTitle": "Help & questions",
+  "@helpTitle": {
+    "description": "Help screen title / settings row"
+  },
+  "helpOpen": "Open",
+  "@helpOpen": {
+    "description": "Button: open the screen an answer is about"
+  },
+  "helpTour": "Take the tour",
+  "@helpTour": {
+    "description": "Button: show the 3-page tour again"
+  },
+  "tourNext": "Next",
+  "@tourNext": {
+    "description": "Tour: next page"
+  },
+  "tourDone": "Let’s begin",
+  "@tourDone": {
+    "description": "Tour: finish"
+  },
+  "transferColTitle": "Title",
+  "@transferColTitle": {
+    "description": "File column header"
+  },
+  "transferColNotes": "Notes",
+  "@transferColNotes": {
+    "description": "File column header: task notes"
+  },
+  "transferColBody": "Text",
+  "@transferColBody": {
+    "description": "File column header: note text"
+  },
+  "transferColDue": "Due date",
+  "@transferColDue": {
+    "description": "File column header: due date (YYYY-MM-DD)"
+  },
+  "transferColPriority": "Priority (0-3)",
+  "@transferColPriority": {
+    "description": "File column header: 0–3"
+  },
+  "transferColDone": "Done",
+  "@transferColDone": {
+    "description": "File column header"
+  },
+  "transferColProject": "Project",
+  "@transferColProject": {
+    "description": "File column header"
+  },
+  "transferColCategory": "Category",
+  "@transferColCategory": {
+    "description": "File column header"
+  },
+  "transferTitle": "Import and export",
+  "@transferTitle": {
+    "description": "Sheet title / menu item"
+  },
+  "transferSaveAs": "Save as",
+  "@transferSaveAs": {
+    "description": "Section: export formats"
+  },
+  "transferImport": "Import from a file",
+  "@transferImport": {
+    "description": "Button: import a file"
+  },
+  "transferImportTasksHint": "Excel, CSV or a table in Word. Columns: title, due date (2026-12-31), priority 0-3, done, project, notes. Tasks already in the app are skipped.",
+  "@transferImportTasksHint": {
+    "description": "Hint under import"
+  },
+  "transferImportNotesHint": "Word, Markdown or text files become a note. Excel or CSV: one note per row (title, text).",
+  "@transferImportNotesHint": {
+    "description": "Hint under import"
+  },
+  "transferSaved": "File saved",
+  "@transferSaved": {
+    "description": "Snackbar"
+  },
+  "transferFailed": "The file could not be made. Nothing was changed.",
+  "@transferFailed": {
+    "description": "Snackbar"
+  },
+  "transferUnsupported": "This file can’t be read here. Use Excel, CSV, Word, Markdown or text.",
+  "@transferUnsupported": {
+    "description": "Snackbar"
+  },
+  "transferImported": "{added, plural, =0{Nothing new to add} =1{1 added} other{{added} added}}",
+  "@transferImported": {
+    "description": "Snackbar after import",
+    "placeholders": {
+      "added": {
+        "type": "int"
+      }
+    }
+  },
+  "transferFormatText": "Text",
+  "@transferFormatText": {
+    "description": "Format name: plain text"
+  },
+  "transferAllNotes": "All notes",
+  "@transferAllNotes": {
+    "description": "Section: export every note"
+  },
+  "transferThisNote": "This note",
+  "@transferThisNote": {
+    "description": "Section: export the open note"
+  },
+  "transferDeckFormats": "Save as Excel, Word or PDF",
+  "@transferDeckFormats": {
+    "description": "Deck menu: save the deck as Excel, Word or PDF"
+  },
+  "faqFilesQ": "Can I use Excel, Word or PDF files?",
+  "@faqFilesQ": {
+    "description": "FAQ question"
+  },
+  "faqFilesA": "Yes. Tasks and Notes have an import and export button (two arrows) at the top, and every deck has it in its menu. Save as Excel, CSV, Word or PDF, or bring in Excel, CSV, Word, Markdown or text files. Column names can be in any of the app’s languages, and files you saved can always be imported again.",
+  "@faqFilesA": {
+    "description": "FAQ answer"
+  },
+  "tplLecture": "Lecture",
+  "@tplLecture": {
+    "description": "Note template name"
+  },
+  "tplBook": "Book summary",
+  "@tplBook": {
+    "description": "Note template name"
+  },
+  "tplJournal": "Journal",
+  "@tplJournal": {
+    "description": "Note template name"
+  },
+  "tplWeek": "Weekly plan",
+  "@tplWeek": {
+    "description": "Note template name"
+  },
+  "tplLectureBody": "## Key points\n- \n\n## Questions\n- [ ] \n\n## Summary\n",
+  "@tplLectureBody": {
+    "description": "Template body: markdown headings (#) and checklist (- [ ]); keep the symbols"
+  },
+  "tplBookBody": "## Main idea\n\n## What I learned\n- \n\n## Quotes\n> \n\n## To apply\n- [ ] \n",
+  "@tplBookBody": {
+    "description": "Template body: markdown; keep the symbols"
+  },
+  "tplJournalBody": "## Grateful for\n- \n\n## Today’s focus\n- [ ] \n\n## Notes\n",
+  "@tplJournalBody": {
+    "description": "Template body: markdown; keep the symbols"
+  },
+  "tplWeekBody": "## Goals this week\n- [ ] \n\n### Saturday\n- [ ] \n\n### Sunday\n- [ ] \n\n### Monday\n- [ ] \n\n### Tuesday\n- [ ] \n\n### Wednesday\n- [ ] \n\n### Thursday\n- [ ] \n\n### Friday\n- [ ] \n",
+  "@tplWeekBody": {
+    "description": "Template body: markdown; keep the symbols"
+  },
+  "tplHint": "Start from a template",
+  "@tplHint": {
+    "description": "Shown above template chips"
+  },
+  "noteImage": "Picture",
+  "@noteImage": {
+    "description": "Accessibility label of a picture in a note"
+  },
+  "noteAddImage": "Add picture",
+  "@noteAddImage": {
+    "description": "Toolbar: add a picture to the note"
+  },
+  "noteImageUnreadable": "This file isn’t a picture the app can read.",
+  "@noteImageUnreadable": {
+    "description": "Picked file is not a picture"
+  },
+  "noteImageTooLarge": "This picture is too large.",
+  "@noteImageTooLarge": {
+    "description": "Picture too large even after shrinking"
+  },
+  "examSet": "Set exam date",
+  "@examSet": {
+    "description": "Deck: button to set the exam date"
+  },
+  "examDate": "Exam date",
+  "@examDate": {
+    "description": "Date picker title"
+  },
+  "examToday": "Exam today. Good luck!",
+  "@examToday": {
+    "description": "Exam is today"
+  },
+  "examInDays": "{count, plural, =1{Exam tomorrow} other{Exam in {count} days}}",
+  "@examInDays": {
+    "description": "Days until the exam",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "examNewPerDay": "{count, plural, =1{learn 1 new card a day} other{learn {count} new cards a day}}",
+  "@examNewPerDay": {
+    "description": "New cards to learn per day before the exam",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "examAllLearnt": "all cards learnt, keep reviewing",
+  "@examAllLearnt": {
+    "description": "All cards learnt before the exam"
+  },
+  "examRaiseLimit": "Show {count} new cards a day",
+  "@examRaiseLimit": {
+    "description": "Button: raise the deck's daily new-card limit to the plan",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "backupDriveHint": "To keep a copy online, choose Google Drive (or another cloud app) on the save screen that opens next.",
+  "@backupDriveHint": {
+    "description": "Backup dialog: how to keep a copy in Google Drive"
+  },
+  "flashShareDeck": "Share deck with a friend",
+  "@flashShareDeck": {
+    "description": "Deck menu: share the whole deck as a file a friend can import"
+  },
+  "flashSortManual": "My order (drag)",
+  "@flashSortManual": {
+    "description": "Sort option: my own order (drag)"
+  },
+  "flashReorderHint": "Hold the handle and drag a card to move it.",
+  "@flashReorderHint": {
+    "description": "Hint above the draggable card list"
+  },
+  "flashReorderNeedsAll": "Clear the search and filters to drag cards.",
+  "@flashReorderNeedsAll": {
+    "description": "Shown when my-order sort is on but a filter/search hides cards"
+  },
+  "flashDragHandle": "Drag to move",
+  "@flashDragHandle": {
+    "description": "Tooltip of the drag handle"
+  },
+  "reportTitle": "Monthly report",
+  "@reportTitle": {
+    "description": "Monthly report title / menu item"
+  },
+  "reportSubtitle": "Focus, cards, tasks and habits of the month, ready to save",
+  "@reportSubtitle": {
+    "description": "Under report title"
+  },
+  "reportFocus": "Focus time",
+  "@reportFocus": {
+    "description": "Report row"
+  },
+  "reportSessions": "{count} sessions",
+  "@reportSessions": {
+    "description": "Report row",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reportBestDay": "Best day: {day} ({time})",
+  "@reportBestDay": {
+    "description": "Report row",
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "reportActiveDays": "{count} active days",
+  "@reportActiveDays": {
+    "description": "Report row",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reportCards": "Cards reviewed",
+  "@reportCards": {
+    "description": "Report row"
+  },
+  "reportCardsKnown": "{percent} remembered",
+  "@reportCardsKnown": {
+    "description": "Report row",
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "reportTasks": "Tasks completed",
+  "@reportTasks": {
+    "description": "Report row"
+  },
+  "reportHabits": "Habit check-ins",
+  "@reportHabits": {
+    "description": "Report row"
+  },
+  "reportEmpty": "Nothing recorded this month yet.",
+  "@reportEmpty": {
+    "description": "Empty month"
+  },
+  "reportSave": "Save as PDF or Word",
+  "@reportSave": {
+    "description": "Button: save report as file"
+  },
+  "reportPrevMonth": "Previous month",
+  "@reportPrevMonth": {
+    "description": "Tooltip"
+  },
+  "reportNextMonth": "Next month",
+  "@reportNextMonth": {
+    "description": "Tooltip"
+  },
+  "careTitle": "Care of your phone and data",
+  "@careTitle": {
+    "description": "Settings section title"
+  },
+  "storageTitle": "Storage",
+  "@storageTitle": {
+    "description": "Storage sheet title"
+  },
+  "storageSubtitle": "What takes space and a clean-up of unused pictures",
+  "@storageSubtitle": {
+    "description": "Row subtitle"
+  },
+  "storagePictures": "Pictures in notes",
+  "@storagePictures": {
+    "description": "Storage row"
+  },
+  "storageCardMedia": "Images and audio in cards",
+  "@storageCardMedia": {
+    "description": "Storage row"
+  },
+  "storageText": "Notes text",
+  "@storageText": {
+    "description": "Storage row"
+  },
+  "storageFree": "Free on your phone",
+  "@storageFree": {
+    "description": "Storage row: free space on phone"
+  },
+  "storageLow": "Your phone is almost full. Free some space so backups and reminders keep working.",
+  "@storageLow": {
+    "description": "Warning when phone is almost full"
+  },
+  "storageUnused": "{count} unused pictures ({size})",
+  "@storageUnused": {
+    "description": "Unused pictures summary",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "storageNoUnused": "No unused pictures. Everything is tidy.",
+  "@storageNoUnused": {
+    "description": "No unused pictures"
+  },
+  "storageClean": "Remove unused pictures",
+  "@storageClean": {
+    "description": "Button"
+  },
+  "storageCleaned": "{count} pictures removed",
+  "@storageCleaned": {
+    "description": "Snackbar",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "storageHint": "Pictures only count as unused when no note shows them, including notes in the trash.",
+  "@storageHint": {
+    "description": "Hint under storage"
+  },
+  "batteryTitle": "Keep reminders working",
+  "@batteryTitle": {
+    "description": "Battery guide title"
+  },
+  "batterySubtitle": "Some phones stop apps in the background. Check yours.",
+  "@batterySubtitle": {
+    "description": "Row subtitle"
+  },
+  "batteryStatusOk": "Battery saving does not limit this app. Reminders and sounds should arrive on time.",
+  "@batteryStatusOk": {
+    "description": "Status"
+  },
+  "batteryStatusLimited": "Battery saving may stop this app in the background, so reminders and sounds can be late or missing.",
+  "@batteryStatusLimited": {
+    "description": "Status"
+  },
+  "batteryOpen": "Open battery settings",
+  "@batteryOpen": {
+    "description": "Button"
+  },
+  "batteryOpenApp": "Open app settings",
+  "@batteryOpenApp": {
+    "description": "Button"
+  },
+  "batteryGeneric": "In the battery settings choose this app and set it to Unrestricted (or Don't optimize).",
+  "@batteryGeneric": {
+    "description": "Generic steps"
+  },
+  "batteryXiaomi": "Xiaomi / Redmi / POCO: also open Security › Permissions › Autostart and switch this app on, and set Battery saver to No restrictions.",
+  "@batteryXiaomi": {
+    "description": "Brand tip"
+  },
+  "batteryOppo": "Oppo / Realme / OnePlus: open Battery › this app and allow background activity and auto-launch; lock the app in the recent apps list.",
+  "@batteryOppo": {
+    "description": "Brand tip"
+  },
+  "batterySamsung": "Samsung: Battery › Background usage limits: remove this app from Sleeping apps and Deep sleeping apps.",
+  "@batterySamsung": {
+    "description": "Brand tip"
+  },
+  "batteryHuawei": "Huawei / Honor: App launch › this app › manage manually, and allow auto-launch, secondary launch and run in background.",
+  "@batteryHuawei": {
+    "description": "Brand tip"
+  },
+  "batteryVivo": "Vivo / iQOO: Battery › Background power consumption › allow this app, and enable auto-start in the permissions.",
+  "@batteryVivo": {
+    "description": "Brand tip"
+  },
+  "whatsNewTitle": "What's new",
+  "@whatsNewTitle": {
+    "description": "What's new title"
+  },
+  "whatsNewSubtitle": "The latest changes in a few lines",
+  "@whatsNewSubtitle": {
+    "description": "Row subtitle"
+  },
+  "whatsNewDone": "Got it",
+  "@whatsNewDone": {
+    "description": "Button"
+  },
+  "whatsNewOrderTitle": "Drag cards into your own order",
+  "@whatsNewOrderTitle": {
+    "description": "Item title"
+  },
+  "whatsNewOrderBody": "In a deck choose Sort › My order, then hold the handle and drag.",
+  "@whatsNewOrderBody": {
+    "description": "Item body"
+  },
+  "whatsNewSpeechTitle": "A speaker on every card side",
+  "@whatsNewSpeechTitle": {
+    "description": "Item title"
+  },
+  "whatsNewSpeechBody": "Tap it to hear the word or the translation. Speed, repeats and voice are in the review menu. Language is detected from the text.",
+  "@whatsNewSpeechBody": {
+    "description": "Item body"
+  },
+  "whatsNewReportTitle": "Monthly report",
+  "@whatsNewReportTitle": {
+    "description": "Item title"
+  },
+  "whatsNewReportBody": "In Insights tap the report icon to see the month and save it as PDF or Word.",
+  "@whatsNewReportBody": {
+    "description": "Item body"
+  },
+  "whatsNewCareTitle": "Care of your phone and data",
+  "@whatsNewCareTitle": {
+    "description": "Item title"
+  },
+  "whatsNewCareBody": "Settings now has a storage page with picture clean-up and a battery guide for your phone brand.",
+  "@whatsNewCareBody": {
+    "description": "Item body"
+  },
+  "whatsNewSoundTitle": "Calmer sounds",
+  "@whatsNewSoundTitle": {
+    "description": "Item title"
+  },
+  "whatsNewSoundBody": "Nature sounds are softer and quieter, and the picture cards are nicer.",
+  "@whatsNewSoundBody": {
+    "description": "Item body"
+  },
+  "autoBackupCheckOk": "Checked {date}: the latest backup opens correctly.",
+  "@autoBackupCheckOk": {
+    "description": "Weekly check result",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "autoBackupCheckFixed": "Checked {date}: a damaged backup was found and replaced with a new one.",
+  "@autoBackupCheckFixed": {
+    "description": "Weekly check result",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "autoBackupCheckFailed": "Checked {date}: the latest backup could not be opened. Save a backup file yourself from Settings.",
+  "@autoBackupCheckFailed": {
+    "description": "Weekly check result",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "smartReviewTimeTitle": "You usually study around {time}",
+  "@smartReviewTimeTitle": {
+    "description": "Suggestion in settings",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "smartReviewTimeUse": "Use it",
+  "@smartReviewTimeUse": {
+    "description": "Button: use the suggested time"
+  },
+  "widgetNewNote": "New note",
+  "@widgetNewNote": {
+    "description": "Quick-add widget button: new note"
+  },
+  "noteConnections": "Tags, links and tasks",
+  "@noteConnections": {
+    "description": "Folded section of the note editor holding tags, backlinks and linked tasks"
+  },
+  "navCards": "Cards",
+  "@navCards": {
+    "description": "Bottom navigation tab: flashcards (keep very short)"
+  },
+  "studyAnswerWay": "How to answer",
+  "@studyAnswerWay": {
+    "description": "Study sheet: label above the answer modes"
+  },
+  "studyMorePractice": "Extra practice",
+  "@studyMorePractice": {
+    "description": "Study sheet: folded group of practice rounds that do not change the schedule"
+  },
+  "studySessionSettings": "Session settings",
+  "@studySessionSettings": {
+    "description": "Study sheet: folded group with session size and order"
+  },
+  "focusAdjustTitle": "Your session",
+  "@focusAdjustTitle": {
+    "description": "Sheet title: adjust the focus session"
+  },
+  "focusPresetsTitle": "Ready-made",
+  "@focusPresetsTitle": {
+    "description": "Label above ready-made session kinds"
+  },
+  "focusPresetStudy": "Study",
+  "@focusPresetStudy": {
+    "description": "Preset: study"
+  },
+  "focusPresetDeep": "Deep work",
+  "@focusPresetDeep": {
+    "description": "Preset: deep work"
+  },
+  "focusPresetQuick": "Quick sprint",
+  "@focusPresetQuick": {
+    "description": "Preset: short sprint"
+  },
+  "focusPresetReading": "Reading",
+  "@focusPresetReading": {
+    "description": "Preset: reading"
+  },
+  "focusPresetWorkout": "Workout rounds",
+  "@focusPresetWorkout": {
+    "description": "Preset: exercise rounds"
+  },
+  "focusAdjustMinutes": "Focus length",
+  "@focusAdjustMinutes": {
+    "description": "Slider: focus length"
+  },
+  "focusAdjustBreak": "Break length",
+  "@focusAdjustBreak": {
+    "description": "Slider: break length"
+  },
+  "focusAdjustRounds": "Rounds",
+  "@focusAdjustRounds": {
+    "description": "Slider: number of rounds"
+  },
+  "focusRoundsOpen": "No limit",
+  "@focusRoundsOpen": {
+    "description": "Rounds value 0: no limit"
+  },
+  "focusMinutesShort": "{n} min",
+  "@focusMinutesShort": {
+    "description": "Minutes value, e.g. 25 min",
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "focusTapToAdjust": "Tap to change the time",
+  "@focusTapToAdjust": {
+    "description": "Hint under the idle timer"
   }
 }

@@ -66,29 +66,44 @@ extension _ReviewViews on _ReviewScreenState {
         Expanded(
           child: Padding(
             padding: const EdgeInsets.all(Space.page),
-            child: _FlipCard(
-              key: ValueKey('card-$_index'),
-              front: question,
-              back: _answer(card),
-              extras: CardExtras.decode(card.extra),
-              flipped: _flipped,
-              hideFront: !_questionShown && !_flipped,
-              onRevealFront: () => _update(() => _questionShown = true),
-              verdict: _match,
-              onSpeakField: _speakField,
-              layout: layout,
-              items: _answerItems(card, layout),
-              questionItems: _sideItems(card, layout, question: true),
-              questionImage: _image(media, question: true, card: card),
-              answerImage: _image(media, question: false, card: card),
-              onPlayQuestionAudio: _audioOf(media, question: true, card: card),
-              onPlayAnswerAudio: _audioOf(media, question: false, card: card),
-              revealed: layout.stepReveal ? _revealed : 1 << 30,
-              onRevealMore: layout.stepReveal ? () => _update(() => _revealed++) : null,
-              // Answer modes flip only by answering.
-              onFlip: _mode == StudyMode.typed || _mode == StudyMode.choice
-                  ? null
-                  : () => _update(() => _flipped = !_flipped),
+            // The user's flashcard text size (Settings → Appearance).
+            child: MediaQuery(
+              data: MediaQuery.of(context).copyWith(
+                textScaler: TextScaler.linear(
+                  MediaQuery.textScalerOf(context).scale(1) *
+                      ref.watch(settingsProvider.select((s) => s.flashTextPercent)) /
+                      100,
+                ),
+              ),
+              child: _FlipCard(
+                key: ValueKey('card-$_index'),
+                front: question,
+                back: _answer(card),
+                extras: CardExtras.decode(card.extra),
+                flipped: _flipped,
+                hideFront: !_questionShown && !_flipped,
+                onRevealFront: () => _update(() => _questionShown = true),
+                verdict: _match,
+                onSpeakField: _speakField,
+                onSpeakQuestion: () => _speakSide(card, question: true),
+                onSpeakAnswer: () => _speakSide(card, question: false),
+                layout: layout,
+                items: _answerItems(card, layout),
+                questionItems: _sideItems(card, layout, question: true),
+                questionImage: _image(media, question: true, card: card),
+                answerImage: _image(media, question: false, card: card),
+                onPlayQuestionAudio: _audioOf(media, question: true, card: card),
+                onPlayAnswerAudio: _audioOf(media, question: false, card: card),
+                revealed: layout.stepReveal ? _revealed : 1 << 30,
+                onRevealMore: layout.stepReveal ? () => _update(() => _revealed++) : null,
+                // Answer modes flip only by answering.
+                onFlip: _mode == StudyMode.typed || _mode == StudyMode.choice
+                    ? null
+                    : () {
+                        _update(() => _flipped = !_flipped);
+                        if (_flipped) _answerShown(card);
+                      },
+              ),
             ),
           ),
         ),
@@ -152,7 +167,10 @@ extension _ReviewViews on _ReviewScreenState {
         return FilledButton.icon(
           key: const Key('showAnswerButton'),
           style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(52)),
-          onPressed: () => _update(() => _flipped = true),
+          onPressed: () {
+            _update(() => _flipped = true);
+            _answerShown(card);
+          },
           icon: const Icon(Icons.flip_rounded),
           label: Text(l10n.reviewShowAnswer),
         );

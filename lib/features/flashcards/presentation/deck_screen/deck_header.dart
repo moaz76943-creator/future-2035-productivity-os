@@ -53,7 +53,8 @@ class _DeckHeader extends ConsumerWidget {
                 canStudy ? l10n.flashcardsReadyCount(queue) : l10n.deckNothingDue,
                 style: context.text.bodyMedium?.copyWith(color: context.lux.ink2),
               ),
-            const SizedBox(height: Space.sm),
+            ExamLine(deck: deck),
+            const SizedBox(height: Space.xs),
             FilledButton.icon(
               key: const Key('studyButton'),
               // Opens mode + scope choice; practice works even when nothing is due.
@@ -98,6 +99,8 @@ class _CardTile extends ConsumerWidget {
     required this.onTap,
     required this.onLongPress,
     required this.onDelete,
+    required this.onSpeakFront,
+    required this.onSpeakBack,
     required this.onAction,
     this.selecting = false,
     this.selected = false,
@@ -106,6 +109,8 @@ class _CardTile extends ConsumerWidget {
   final VoidCallback onTap;
   final VoidCallback onLongPress;
   final VoidCallback onDelete;
+  final VoidCallback onSpeakFront;
+  final VoidCallback onSpeakBack;
   final ValueChanged<_CardAction> onAction;
   final bool selecting;
   final bool selected;
@@ -143,18 +148,28 @@ class _CardTile extends ConsumerWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    card.front,
-                    style: context.text.titleSmall,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
+                  // Each side with its own speaker: hear the word or its translation alone.
+                  _spoken(
+                    context,
+                    Text(
+                      card.front,
+                      style: context.text.titleSmall,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    onSpeakFront,
+                    Key('speakFront_${card.id}'),
                   ),
-                  const SizedBox(height: 2),
-                  Text(
-                    card.back,
-                    style: context.text.bodySmall?.copyWith(color: context.lux.ink2),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
+                  _spoken(
+                    context,
+                    Text(
+                      card.back,
+                      style: context.text.bodyMedium?.copyWith(color: context.lux.ink2),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    onSpeakBack,
+                    Key('speakBackCard_${card.id}'),
                   ),
                   const SizedBox(height: Space.xxs),
                   Wrap(
@@ -192,12 +207,12 @@ class _CardTile extends ConsumerWidget {
                     child: Text(l10n.flashcardsDuplicate),
                   ),
                   PopupMenuItem(value: _CardAction.move, child: Text(l10n.flashcardsMoveTo)),
+                  PopupMenuItem(
+                    key: Key('deleteCard_${card.id}'),
+                    onTap: onDelete,
+                    child: Text(l10n.actionDelete, style: TextStyle(color: context.lux.danger)),
+                  ),
                 ],
-              ),
-              IconButton(
-                tooltip: l10n.actionDelete,
-                onPressed: onDelete,
-                icon: const Icon(Icons.delete_outline_rounded),
               ),
             ],
           ],
@@ -207,10 +222,26 @@ class _CardTile extends ConsumerWidget {
   }
 }
 
+Widget _spoken(BuildContext context, Widget text, VoidCallback onSpeak, Key key) => Row(
+  children: [
+    Flexible(child: text),
+    IconButton(
+      key: key,
+      tooltip: context.l10n.speechTest,
+      iconSize: 18,
+      icon: Icon(Icons.volume_up_outlined, color: context.lux.ink3),
+      onPressed: onSpeak,
+    ),
+  ],
+);
+
 /// Paste box for importing cards. Owns its controller so it outlives the
 /// dialog's closing animation.
 class _ImportDialog extends ConsumerStatefulWidget {
-  const _ImportDialog();
+  const _ImportDialog({this.initialText = ''});
+
+  /// Pre-filled text (pasted from the clipboard).
+  final String initialText;
 
   @override
   ConsumerState<_ImportDialog> createState() => _ImportDialogState();

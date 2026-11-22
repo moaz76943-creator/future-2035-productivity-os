@@ -43,10 +43,15 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
   // Read once while the element is alive; `ref` must not be used in dispose().
   late final TtsService _tts = ref.read(ttsServiceProvider);
 
+  /// Time spent in this session, added to today's study time on leaving.
+  final _session = Stopwatch()..start();
+  late final FlashcardsRepository _repoForTime = ref.read(flashcardsRepositoryProvider);
+
   @override
   void initState() {
     super.initState();
     _tts;
+    _repoForTime;
     _load();
   }
 
@@ -54,6 +59,8 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
   void dispose() {
     _typed.dispose();
     _tts.stop();
+    _session.stop();
+    unawaited(_repoForTime.addStudyTime(_session.elapsed).catchError((Object _) {}));
     super.dispose();
   }
 
@@ -62,7 +69,9 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
     final l10n = context.l10n;
     final deck = ref.watch(deckProvider(widget.deckId)).value;
     final card = _currentCard;
-    return Scaffold(
+    return HeroMode(
+      enabled: false,
+      child: Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         surfaceTintColor: Colors.transparent,
@@ -89,9 +98,24 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
             PopupMenuButton<String>(
               key: const Key('reviewMenu'),
               tooltip: l10n.actionMore,
-              onSelected: (v) => v == 'edit' ? _edit(card) : _suspend(card),
+              onSelected: (v) {
+                switch (v) {
+                  case 'edit':
+                    _edit(card);
+                  case 'speech':
+                    final deck = ref.read(deckProvider(widget.deckId)).value;
+                    if (deck != null) unawaited(showSpeechSheet(context, deck));
+                  default:
+                    _suspend(card);
+                }
+              },
               itemBuilder: (_) => [
                 PopupMenuItem(value: 'edit', child: Text(l10n.cardEdit)),
+                PopupMenuItem(
+                  key: const Key('reviewSpeechSettings'),
+                  value: 'speech',
+                  child: Text(l10n.speechTitle),
+                ),
                 PopupMenuItem(value: 'suspend', child: Text(l10n.flashcardsSuspend)),
               ],
             ),
@@ -103,6 +127,7 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
         intensity: 0.5,
         child: SafeArea(child: _body(context)),
       ),
+    ),
     );
   }
 }

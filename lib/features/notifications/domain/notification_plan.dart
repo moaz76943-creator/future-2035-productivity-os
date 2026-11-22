@@ -18,6 +18,7 @@ class PlannedNotification {
     required this.at,
     this.repeat = NotificationRepeat.none,
     this.payload,
+    this.tone,
   });
 
   final int id;
@@ -33,6 +34,9 @@ class PlannedNotification {
   /// In-app route opened when the notification is tapped.
   final String? payload;
 
+  /// Raw sound resource for focus alerts (null = the phone's sound).
+  final String? tone;
+
   /// Changes whenever anything visible or the timing changes, so the sync
   /// only reschedules what actually differs.
   String get signature {
@@ -42,7 +46,7 @@ class PlannedNotification {
       NotificationRepeat.daily => 'd${local.hour * 60 + local.minute}',
       NotificationRepeat.weekly => 'w${local.weekday}:${local.hour * 60 + local.minute}',
     };
-    return [when, channel.name, title, body, payload ?? ''].join('\u0001');
+    return [when, channel.name, title, body, payload ?? '', tone ?? ''].join('\u0001');
   }
 
   @override
@@ -90,13 +94,23 @@ class HabitReminderInput {
   final bool paused;
 }
 
+/// One prayer time; [name] is already in the notification language.
+class PrayerReminderInput {
+  const PrayerReminderInput({required this.index, required this.name, required this.at});
+  final int index;
+  final String name;
+  final DateTime at;
+}
+
 class ReminderInputs {
   const ReminderInputs({
     this.tasks = const [],
     this.events = const [],
     this.habits = const [],
     this.earliestReviewDue,
+    this.prayers = const [],
   });
+  final List<PrayerReminderInput> prayers;
   final List<TaskReminderInput> tasks;
   final List<EventReminderInput> events;
   final List<HabitReminderInput> habits;
@@ -197,7 +211,7 @@ abstract final class NotificationPlanner {
     // Flashcards: one reminder at the review minute on the first day on
     // which cards are actually due by then. Skipped inside quiet hours.
     final due = inputs.earliestReviewDue;
-    if (due != null) {
+    if (due != null && settings.reviewReminderOn) {
       final minute = settings.reviewReminderMinute.clamp(0, 24 * 60 - 1);
       var at = _nextAt(localNow, minute);
       while (!at.isAfter(horizonEnd) && at.isBefore(due.toLocal())) {
@@ -215,6 +229,22 @@ abstract final class NotificationPlanner {
           ),
         );
       }
+    }
+
+    // Prayer times: exact, also inside quiet hours (Fajr usually is).
+    for (final p in inputs.prayers) {
+      final at = p.at.toLocal();
+      if (!at.isAfter(localNow) || at.isAfter(horizonEnd)) continue;
+      once.add(
+        PlannedNotification(
+          id: NotificationIds.prayer(at.year * 10000 + at.month * 100 + at.day, p.index),
+          channel: NotificationChannelKind.reminders,
+          title: l10n.prayerNotifTitle(p.name),
+          body: l10n.prayerNotifBody(formatTime(at)),
+          at: at,
+          payload: Routes.home,
+        ),
+      );
     }
 
     once.sort((a, b) => a.at.compareTo(b.at));

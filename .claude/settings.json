@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./build/**)",
+      "Read(./.dart_tool/**)",
+      "Read(./.gradle/**)",
+      "Read(./android/.gradle/**)",
+      "Read(./ios/Pods/**)",
+      "Read(./pubspec.lock)",
+      "Read(./**/*.g.dart)",
+      "Read(./**/*.freezed.dart)",
+      "Read(./**/*.png)",
+      "Read(./**/*.jpg)",
+      "Read(./**/*.jpeg)",
+      "Read(./**/*.webp)",
+      "Read(./**/*.mp4)",
+      "Read(./**/*.ttf)",
+      "Read(./**/*.otf)",
+      "Read(./**/*.ogg)",
+      "Read(./**/*.wav)",
+      "Read(./**/*.mp3)"
+    ]
+  }
+}

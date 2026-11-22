@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">التركيز والبطاقات</string>
+    <string name="home_widget_description">الوقت المتبقي للتركيز والبطاقات المستحقة</string>
+    <string name="quick_widget_label">إضافة سريعة</string>
+    <string name="quick_widget_description">أضف مهمة أو ملاحظة أو راجع البطاقات</string>
+</resources>

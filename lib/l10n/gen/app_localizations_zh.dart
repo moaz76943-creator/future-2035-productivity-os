@@ -10,7 +10,7 @@ class AppLocalizationsZh extends AppLocalizations {
   AppLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
-  String get appName => 'Future OS';
+  String get appName => 'Deep Focus';
 
   @override
   String get navHome => '首页';
@@ -1192,7 +1192,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get importCardsTitle => '导入卡片';
 
   @override
-  String get importCardsHint => '每行粘贴一张卡片，正面和背面用制表符或分号分隔；也可以粘贴导出的卡组文件。';
+  String get importCardsHint =>
+      '每行粘贴一张卡片（正反面用制表符或分号分隔），或选择文件：Excel（.xlsx）、CSV、Anki 卡组（.apkg）或导出的卡组。';
 
   @override
   String importCardsResult(int count) {
@@ -1830,7 +1831,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get backupWrongPassword => '密码错误，或文件已被修改。';
 
   @override
-  String get backupNotABackup => '此文件不是 Future OS 备份。';
+  String get backupNotABackup => '此文件不是 Deep Focus 备份。';
 
   @override
   String get backupCorrupted => '备份文件已损坏。';
@@ -2851,7 +2852,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get backupRestoreFailed => '恢复失败。没有任何更改。';
 
   @override
-  String get backupShareSubject => 'Future OS 加密备份';
+  String get backupShareSubject => 'Deep Focus 加密备份';
 
   @override
   String repeatSummaryEveryN(String unit, int count) {
@@ -3503,7 +3504,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get speechVoice => '语音';
 
   @override
-  String get speechVoiceDefault => '设备默认';
+  String get speechVoiceDefault => '自动';
 
   @override
   String get speechVoiceOnline => '需联网';
@@ -3671,4 +3672,1160 @@ class AppLocalizationsZh extends AppLocalizations {
   String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct) {
     return '$decks 个卡组 · $cards 张卡 · $mature 已掌握 · $due 待复习 · 正确率 $correct（30 天）';
   }
+
+  @override
+  String get flashcardsRecord => '录音';
+
+  @override
+  String get flashcardsRecording => '正在录音…';
+
+  @override
+  String get flashcardsRecordStop => '停止并保留';
+
+  @override
+  String get flashcardsMicDenied => '麦克风权限已关闭。请在系统设置中允许后再录音。';
+
+  @override
+  String get flashcardsRecordFailed => '此设备无法录音。';
+
+  @override
+  String get soundsTitle => '声音';
+
+  @override
+  String get soundsSubtitle => '真实的自然录音，听不出任何循环。';
+
+  @override
+  String get soundsNature => '自然';
+
+  @override
+  String get soundsNoise => '专注噪音';
+
+  @override
+  String get soundRain => '雨声';
+
+  @override
+  String get soundStorm => '雷雨';
+
+  @override
+  String get soundRiver => '河流';
+
+  @override
+  String get soundOcean => '海浪';
+
+  @override
+  String get soundFire => '篝火';
+
+  @override
+  String get soundForest => '林中鸟鸣';
+
+  @override
+  String get soundNight => '夏夜';
+
+  @override
+  String get soundWhite => '白噪音';
+
+  @override
+  String get soundPink => '粉红噪音';
+
+  @override
+  String get soundBrown => '棕色噪音';
+
+  @override
+  String get soundsPlay => '播放';
+
+  @override
+  String get soundsSleep => '睡眠定时';
+
+  @override
+  String get soundsSleepOff => '关闭';
+
+  @override
+  String soundsSleepAt(String time) {
+    return '将于 $time 停止';
+  }
+
+  @override
+  String soundsMixFull(int count) {
+    return '最多可同时播放 $count 种声音。';
+  }
+
+  @override
+  String get soundsHint => '点按声音即可开始。可混合多种声音并分别调节音量。';
+
+  @override
+  String get soundsMixer => '混音';
+
+  @override
+  String soundsVolumeOf(String name) {
+    return '$name音量';
+  }
+
+  @override
+  String get soundsChannel => '自然声音';
+
+  @override
+  String get settingsEndTone => '计时结束提示音';
+
+  @override
+  String get toneGentle => '柔和提示音';
+
+  @override
+  String get toneBeeps => '短促提示音';
+
+  @override
+  String get toneWood => '木块敲击';
+
+  @override
+  String get toneBird => '鸟鸣';
+
+  @override
+  String get toneStream => '溪流';
+
+  @override
+  String get toneSystem => '手机提示音';
+
+  @override
+  String get speechOnPhone => '本机可用';
+
+  @override
+  String get speechAllLanguages => '所有语言';
+
+  @override
+  String get speechSearchLanguage => '搜索语言';
+
+  @override
+  String get speechGetVoices => '下载更多语音';
+
+  @override
+  String get speechGetVoicesHint => '没有语音的语言可在手机的语音设置中下载。';
+
+  @override
+  String get speechSettingsFailed => '无法打开此手机的语音设置。';
+
+  @override
+  String get speechVoiceMissing => '未安装语音';
+
+  @override
+  String get speechPause => '重复间隔';
+
+  @override
+  String speechSeconds(String seconds) {
+    return '$seconds 秒';
+  }
+
+  @override
+  String get speechExample => '朗读答案时一并朗读例句';
+
+  @override
+  String get flashListen => '聆听';
+
+  @override
+  String get flashListenNext => '下一张';
+
+  @override
+  String get flashListenEmpty => '没有可聆听的卡片。';
+
+  @override
+  String get flashViewTable => '表格';
+
+  @override
+  String get flashViewCards => '卡片';
+
+  @override
+  String get flashSwapSides => '交换列';
+
+  @override
+  String get flashSort => '排序';
+
+  @override
+  String get flashSortNewest => '最新优先';
+
+  @override
+  String get flashSortAlpha => '按字母';
+
+  @override
+  String get flashSortDue => '到期优先';
+
+  @override
+  String get flashSortHard => '最难优先';
+
+  @override
+  String get flashPasteCards => '粘贴卡片';
+
+  @override
+  String get flashClipboardEmpty => '剪贴板中没有文本。';
+
+  @override
+  String get flashMenuAdd => '添加卡片';
+
+  @override
+  String get flashMenuDeck => '卡组';
+
+  @override
+  String get flashToday => '今天';
+
+  @override
+  String get flashStudyNow => '学习';
+
+  @override
+  String flashTodayAnswered(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '已答 $count 张卡片',
+      zero: '今天还没有答题',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get soundForestRain => '林中雨';
+
+  @override
+  String get autoBackupTitle => '自动备份';
+
+  @override
+  String get autoBackupDesc => '每天保存在本机，保留最近 7 份';
+
+  @override
+  String get autoBackupHint => '这些副本保存在本机，卸载应用时会被删除。换手机时请用“备份”保存文件。';
+
+  @override
+  String get autoBackupNone => '还没有自动备份，今天会生成第一份。';
+
+  @override
+  String get autoBackupRestore => '恢复';
+
+  @override
+  String autoBackupConfirm(String date) {
+    return '用 $date 的备份替换当前所有数据？';
+  }
+
+  @override
+  String get autoBackupRestored => '已恢复。';
+
+  @override
+  String get errorLogTitle => '错误日志';
+
+  @override
+  String get errorLogHint => '出现问题时会记录在此：仅记录错误类型和代码位置，绝不包含您的内容。分享它以帮助修复问题。';
+
+  @override
+  String get errorLogEmpty => '没有记录到错误。';
+
+  @override
+  String get errorLogClear => '清除';
+
+  @override
+  String get soundsWithFocus => '随专注时段播放';
+
+  @override
+  String get soundsWithFocusHint => '混音随专注时段开始，休息时暂停。';
+
+  @override
+  String get soundsSavedMixes => '已保存的混音';
+
+  @override
+  String get soundsSaveMix => '保存此混音';
+
+  @override
+  String get soundsMixNameHint => '名称，例如：雨天书房';
+
+  @override
+  String soundsDeleteMix(String name) {
+    return '删除混音“$name”？';
+  }
+
+  @override
+  String get settingsReviewReminderHint => '每天一次，仅在有待复习卡片时';
+
+  @override
+  String get settingsReviewTime => '提醒时间';
+
+  @override
+  String get shortcutFocus => '专注';
+
+  @override
+  String get shortcutNewTask => '新建任务';
+
+  @override
+  String get shortcutReview => '复习卡片';
+
+  @override
+  String get shortcutSounds => '自然声音';
+
+  @override
+  String get myDayTitle => '开始我的一天';
+
+  @override
+  String get myDayHint => '一眼看清今天，一键开始专注';
+
+  @override
+  String myDayTasks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '今天 $count 项任务',
+      zero: '今天没有任务',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get myDayNoEvents => '今天没有更多日程';
+
+  @override
+  String myDayNextEvent(String title, String time) {
+    return '下一个：$time $title';
+  }
+
+  @override
+  String myDayHabits(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '还剩 $count 个习惯',
+      zero: '习惯已全部完成',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get myDayBeginFocus => '从一次专注开始';
+
+  @override
+  String get hijriMonth1 => '穆哈兰姆月';
+
+  @override
+  String get hijriMonth2 => '色法尔月';
+
+  @override
+  String get hijriMonth3 => '赖比尔·敖外鲁月';
+
+  @override
+  String get hijriMonth4 => '赖比尔·阿色尼月';
+
+  @override
+  String get hijriMonth5 => '主马达·敖外鲁月';
+
+  @override
+  String get hijriMonth6 => '主马达·阿色尼月';
+
+  @override
+  String get hijriMonth7 => '赖哲卜月';
+
+  @override
+  String get hijriMonth8 => '舍尔邦月';
+
+  @override
+  String get hijriMonth9 => '莱麦丹月';
+
+  @override
+  String get hijriMonth10 => '闪瓦鲁月';
+
+  @override
+  String get hijriMonth11 => '都尔喀尔德月';
+
+  @override
+  String get hijriMonth12 => '都尔黑哲月';
+
+  @override
+  String hijriDate(int day, String month, int year) {
+    return '伊斯兰历 $year年 $month $day日';
+  }
+
+  @override
+  String get settingsHijri => '伊斯兰历日期';
+
+  @override
+  String get settingsHijriHint => '在日历和首页显示（乌姆库拉历）';
+
+  @override
+  String studyStreakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '连续 $count 天');
+    return '$_temp0';
+  }
+
+  @override
+  String studyGoalProgress(int done, int goal) {
+    return '今天 $done/$goal 张卡片';
+  }
+
+  @override
+  String get studyGoalReached => '今日目标已完成，真棒！';
+
+  @override
+  String get studyWeekTitle => '本周回顾';
+
+  @override
+  String studyWeekCards(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '7 天内回答 $count 张卡片');
+    return '$_temp0';
+  }
+
+  @override
+  String studyWeekFocus(String duration) {
+    return '7 天专注 $duration';
+  }
+
+  @override
+  String studyStreakLine(int current, int best) {
+    return '连续：$current · 最佳：$best';
+  }
+
+  @override
+  String get studyGoalTitle => '每日目标（卡片）';
+
+  @override
+  String get studyGoalOff => '关闭';
+
+  @override
+  String get focusDndTitle => '专注时勿扰';
+
+  @override
+  String get focusDndHint => '每次专注时开启，休息时恢复';
+
+  @override
+  String get focusDndNeedsAccess => '请在手机设置中允许访问';
+
+  @override
+  String get voiceInput => '语音输入';
+
+  @override
+  String get voiceInputPrompt => '请说话';
+
+  @override
+  String get voiceInputUnavailable => '此手机不支持语音输入。请安装或开启语音识别服务（例如 Google 语音服务）。';
+
+  @override
+  String get prayerFajr => '晨礼';
+
+  @override
+  String get prayerSunrise => '日出';
+
+  @override
+  String get prayerDhuhr => '晌礼';
+
+  @override
+  String get prayerAsr => '晡礼';
+
+  @override
+  String get prayerMaghrib => '昏礼';
+
+  @override
+  String get prayerIsha => '宵礼';
+
+  @override
+  String get prayerMethodMwl => '世界穆斯林联盟';
+
+  @override
+  String get prayerMethodUmmAlQura => '乌姆库拉（麦加）';
+
+  @override
+  String get prayerMethodEgypt => '埃及测绘总局';
+
+  @override
+  String get prayerMethodJordan => '约旦宗教基金部';
+
+  @override
+  String get prayerMethodKarachi => '卡拉奇伊斯兰科学大学';
+
+  @override
+  String get prayerMethodIsna => '北美伊斯兰协会';
+
+  @override
+  String get prayerMethodGulf => '海湾地区';
+
+  @override
+  String get prayerMethodKuwait => '科威特';
+
+  @override
+  String get prayerMethodQatar => '卡塔尔';
+
+  @override
+  String get prayerMethodTurkey => '土耳其宗教事务局';
+
+  @override
+  String get prayerMethodSingapore => '新加坡、马来西亚、印尼';
+
+  @override
+  String get prayerMethodFrance => '法国（12°）';
+
+  @override
+  String get prayerMethodRussia => '俄罗斯穆斯林宗教管理局';
+
+  @override
+  String prayerNotifTitle(String name) {
+    return '$name时间到了';
+  }
+
+  @override
+  String prayerNotifBody(String time) {
+    return '礼拜时间 · $time';
+  }
+
+  @override
+  String get prayerTitle => '礼拜时间';
+
+  @override
+  String get prayerOffHint => '选择城市即可查看礼拜时间。在手机上计算，无需位置权限。';
+
+  @override
+  String get prayerChooseCity => '选择城市';
+
+  @override
+  String get prayerCity => '城市';
+
+  @override
+  String get prayerCitySearch => '搜索城市';
+
+  @override
+  String get prayerMethod => '计算方法';
+
+  @override
+  String get prayerHanafiAsr => '哈乃斐派晡礼（较晚）';
+
+  @override
+  String get prayerReminders => '每次礼拜时提醒';
+
+  @override
+  String get prayerPauseFocus => '礼拜时暂停专注';
+
+  @override
+  String get prayerPauseFocusHint => '进行中的专注会暂停，礼拜后可继续';
+
+  @override
+  String get prayerTurnOff => '关闭礼拜时间';
+
+  @override
+  String get prayerAccuracyNote => '计算时间可能与当地清真寺相差几分钟。';
+
+  @override
+  String prayerNext(String name, String time) {
+    return '$time $name';
+  }
+
+  @override
+  String get importAnkiNewFormat => '此 Anki 文件为最新格式。请在 Anki 中勾选“支持旧版 Anki”后重新导出，再导入该文件。';
+
+  @override
+  String get importTemplate => '表格模板';
+
+  @override
+  String get importTemplateFront => '苹果';
+
+  @override
+  String get importTemplateBack => '一种圆形水果';
+
+  @override
+  String get importTemplateExample => '我每天吃一个苹果。';
+
+  @override
+  String get importTemplateTag => '食物';
+
+  @override
+  String get starterTitle => '入门卡组';
+
+  @override
+  String get starterHint => '添加一个立即开始学习，之后可编辑或删除。';
+
+  @override
+  String get starterAdd => '添加';
+
+  @override
+  String get starterWords => '日常英语单词（阿拉伯语）';
+
+  @override
+  String get starterCapitals => '世界各国首都';
+
+  @override
+  String get starterElements => '化学元素';
+
+  @override
+  String get settingsAccent => '强调色';
+
+  @override
+  String get accentViolet => '紫色';
+
+  @override
+  String get accentBlue => '蓝色';
+
+  @override
+  String get accentTeal => '青色';
+
+  @override
+  String get accentGreen => '绿色';
+
+  @override
+  String get accentRose => '玫红';
+
+  @override
+  String get accentAmber => '琥珀色';
+
+  @override
+  String get settingsFlashTextSize => '卡片文字大小';
+
+  @override
+  String get settingsFlashTextSample => '示例';
+
+  @override
+  String get widgetStartFocus => '点按开始专注';
+
+  @override
+  String widgetFocusUntil(String time) {
+    return '专注至 $time';
+  }
+
+  @override
+  String get widgetNoCardsDue => '卡片：已全部完成';
+
+  @override
+  String get faqMyDayQ => '“开始我的一天”有什么用？';
+
+  @override
+  String get faqMyDayA =>
+      '首页每天出现一次：查看今日任务、下一个日程、剩余习惯和待复习卡片，然后一键开始专注。长按应用图标可使用快捷操作，也可添加桌面小部件查看专注时间和待复习卡片。';
+
+  @override
+  String get faqTasksQ => '如何添加带提醒的任务？';
+
+  @override
+  String get faqTasksA => '在首页点“新建任务”或在任务中点 +。输入标题或用麦克风说出，然后设置截止日期、时间和提醒。逾期任务排在最前。';
+
+  @override
+  String get faqFocusQ => '专注计时器如何使用？';
+
+  @override
+  String get faqFocusA => '选择番茄钟、倒计时或自由计时并点“开始”，休息可自动开始。在设置中可选择结束提示音、专注时开启勿扰，并在每次专注时播放自然声音。';
+
+  @override
+  String get faqSoundsQ => '可以混合自然声音吗？';
+
+  @override
+  String get faqSoundsA => '最多同时开启六种真实录音，分别调节音量并命名保存。可在后台播放，睡眠定时器可自动停止。不含任何音乐。';
+
+  @override
+  String get faqCalendarQ => '日历能显示伊斯兰历吗？';
+
+  @override
+  String get faqCalendarA => '可以。阿拉伯语下自动显示伊斯兰历（乌姆库拉历），其他语言可在设置中开启。日程、有截止日期的任务和项目里程碑会一起显示。';
+
+  @override
+  String get faqFlashcardsQ => '复习时如何决定显示哪些卡片？';
+
+  @override
+  String get faqFlashcardsA =>
+      '掌握好的卡片间隔更久再出现，答错的很快再出现（间隔重复）。每次作答选择“重来”“困难”“良好”或“简单”。可设置每日目标，并在“今天”卡片上保持连续天数。 在卡组中设置考试日期，即可看到剩余天数和每天要学的新卡片数。 选择“我的顺序”即可拖动卡片排序，点按任一面的喇叭收听，并在朗读菜单中设置语速和重复次数。';
+
+  @override
+  String get faqImportQ => '可以从 Anki 或 Excel 导入卡片吗？';
+
+  @override
+  String get faqImportA =>
+      '可以。在卡组中选择“导入”，再选文件：Anki（.apkg）、Excel（.xlsx）或 CSV，并匹配各列。可用“表格模板”在电脑上编写卡片。Anki 文件中的图片和声音不会导入。';
+
+  @override
+  String get faqNotesQ => '笔记能做什么？';
+
+  @override
+  String get faqNotesA =>
+      '可使用清单和格式自由书写，置顶或收藏重要笔记，添加标签并关联到任务。点击麦克风按钮即可语音输入。 新笔记可从模板开始（课堂笔记、读书笔记、日记、周计划），图片按钮可添加照片。';
+
+  @override
+  String get faqHabitsQ => '习惯的连续天数如何计算？';
+
+  @override
+  String get faqHabitsA => '在计划的日子达到习惯目标即计为一天。暂停习惯不会中断连续天数。每个习惯都可设置自己的提醒时间。';
+
+  @override
+  String get faqGoalsQ => '目标如何跟踪进度？';
+
+  @override
+  String get faqGoalsA => '为目标设定数量和单位，然后记录进度。目标卡片会显示完成情况以及截止前还剩多少。';
+
+  @override
+  String get faqProjectsQ => '项目有什么用？';
+
+  @override
+  String get faqProjectsA => '将任务归入项目，添加带日期的里程碑并查看整体进度。里程碑也会显示在日历中。';
+
+  @override
+  String get faqInsightsQ => '洞察页显示什么？';
+
+  @override
+  String get faqInsightsA => '按天和周显示专注时间、完成的任务和学习情况，并给出温和建议。全部在手机上计算。';
+
+  @override
+  String get faqSpacesQ => '所有板块在哪里？';
+
+  @override
+  String get faqSpacesA => '“空间”汇集了应用的所有部分（笔记、卡组、习惯、目标、项目、声音等），让主导航栏保持简洁。';
+
+  @override
+  String get faqBackupQ => '我的数据如何备份？';
+
+  @override
+  String get faqBackupA => '应用每天会在本机自动保存一份加密副本，并保留最近 7 份。也可在设置中导出带密码的备份文件，在另一部手机上恢复。';
+
+  @override
+  String get faqPrayerQ => '礼拜时间如何使用？';
+
+  @override
+  String get faqPrayerA => '在“设置 → 礼拜时间”中选择城市。时间在手机上按当地常用方法计算，可更改计算方法和晡礼学派。可在每次礼拜时收到提醒，进行中的专注会暂停。';
+
+  @override
+  String get faqPrivacyQ => '我的数据存储在哪里？';
+
+  @override
+  String get faqPrivacyA => '仅保存在你的手机上，使用加密数据库。无需账号，没有跟踪。只有你主动开启的功能（如可选助手）才会联网。';
+
+  @override
+  String get faqAssistantQ => '助手是什么？';
+
+  @override
+  String get faqAssistantA => '一个可选助手，可在设置中连接你自己的 AI 服务。默认关闭，发送笔记内容前会先征得同意。';
+
+  @override
+  String get tourPlanTitle => '规划你的一天';
+
+  @override
+  String get tourPlanBody => '任务、日历和习惯集中在一个安静的地方。每天早上从“开始我的一天”开始。';
+
+  @override
+  String get tourFocusTitle => '深度专注';
+
+  @override
+  String get tourFocusBody => '带真实自然声音、勿扰模式和柔和提示音的计时专注。';
+
+  @override
+  String get tourLearnTitle => '学而不忘';
+
+  @override
+  String get tourLearnBody => '间隔重复卡片、多语言朗读，并支持从 Anki 或 Excel 导入。';
+
+  @override
+  String get helpTitle => '帮助与常见问题';
+
+  @override
+  String get helpOpen => '打开';
+
+  @override
+  String get helpTour => '查看导览';
+
+  @override
+  String get tourNext => '下一步';
+
+  @override
+  String get tourDone => '开始吧';
+
+  @override
+  String get transferColTitle => '标题';
+
+  @override
+  String get transferColNotes => '备注';
+
+  @override
+  String get transferColBody => '正文';
+
+  @override
+  String get transferColDue => '截止日期';
+
+  @override
+  String get transferColPriority => '优先级 (0-3)';
+
+  @override
+  String get transferColDone => '已完成';
+
+  @override
+  String get transferColProject => '项目';
+
+  @override
+  String get transferColCategory => '类别';
+
+  @override
+  String get transferTitle => '导入和导出';
+
+  @override
+  String get transferSaveAs => '另存为';
+
+  @override
+  String get transferImport => '从文件导入';
+
+  @override
+  String get transferImportTasksHint =>
+      'Excel、CSV 或 Word 表格。列：标题、截止日期（2026-12-31）、优先级 0-3、已完成、项目、备注。已有任务会被跳过。';
+
+  @override
+  String get transferImportNotesHint => 'Word、Markdown 或文本文件会成为一条笔记。Excel 或 CSV：每行一条笔记（标题、正文）。';
+
+  @override
+  String get transferSaved => '文件已保存';
+
+  @override
+  String get transferFailed => '无法生成文件，未做任何更改。';
+
+  @override
+  String get transferUnsupported => '此处无法读取该文件。请使用 Excel、CSV、Word、Markdown 或文本。';
+
+  @override
+  String transferImported(int added) {
+    String _temp0 = intl.Intl.pluralLogic(added, locale: localeName, other: '已添加 $added 项');
+    return '$_temp0';
+  }
+
+  @override
+  String get transferFormatText => '文本';
+
+  @override
+  String get transferAllNotes => '全部笔记';
+
+  @override
+  String get transferThisNote => '这条笔记';
+
+  @override
+  String get transferDeckFormats => '保存为 Excel、Word 或 PDF';
+
+  @override
+  String get faqFilesQ => '可以使用 Excel、Word 或 PDF 文件吗？';
+
+  @override
+  String get faqFilesA =>
+      '可以。任务和笔记顶部有导入导出按钮（两个箭头），每个卡组的菜单里也有。可保存为 Excel、CSV、Word 或 PDF，也可导入 Excel、CSV、Word、Markdown 或文本文件。列名可用应用支持的任意语言，保存的文件随时可再次导入。';
+
+  @override
+  String get tplLecture => '课堂笔记';
+
+  @override
+  String get tplBook => '读书笔记';
+
+  @override
+  String get tplJournal => '日记';
+
+  @override
+  String get tplWeek => '周计划';
+
+  @override
+  String get tplLectureBody => '## 要点\n- \n\n## 问题\n- [ ] \n\n## 总结\n';
+
+  @override
+  String get tplBookBody => '## 核心观点\n\n## 我的收获\n- \n\n## 摘录\n> \n\n## 行动\n- [ ] \n';
+
+  @override
+  String get tplJournalBody => '## 感恩\n- \n\n## 今日重点\n- [ ] \n\n## 随记\n';
+
+  @override
+  String get tplWeekBody =>
+      '## 本周目标\n- [ ] \n\n### 周六\n- [ ] \n\n### 周日\n- [ ] \n\n### 周一\n- [ ] \n\n### 周二\n- [ ] \n\n### 周三\n- [ ] \n\n### 周四\n- [ ] \n\n### 周五\n- [ ] \n';
+
+  @override
+  String get tplHint => '从模板开始';
+
+  @override
+  String get noteImage => '图片';
+
+  @override
+  String get noteAddImage => '添加图片';
+
+  @override
+  String get noteImageUnreadable => '该文件不是应用可读取的图片。';
+
+  @override
+  String get noteImageTooLarge => '图片过大。';
+
+  @override
+  String get examSet => '设置考试日期';
+
+  @override
+  String get examDate => '考试日期';
+
+  @override
+  String get examToday => '今天考试，祝你好运！';
+
+  @override
+  String examInDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count 天后考试');
+    return '$_temp0';
+  }
+
+  @override
+  String examNewPerDay(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '每天学习 $count 张新卡片');
+    return '$_temp0';
+  }
+
+  @override
+  String get examAllLearnt => '已全部学完，继续复习';
+
+  @override
+  String examRaiseLimit(int count) {
+    return '每天显示 $count 张新卡片';
+  }
+
+  @override
+  String get backupDriveHint => '如需在线保存副本，请在接下来打开的保存界面中选择 Google 云端硬盘（或其他云存储应用）。';
+
+  @override
+  String get flashShareDeck => '与朋友分享卡组';
+
+  @override
+  String get flashSortManual => '我的顺序（拖动）';
+
+  @override
+  String get flashReorderHint => '按住手柄并拖动卡片即可移动。';
+
+  @override
+  String get flashReorderNeedsAll => '清除搜索和筛选后才能拖动卡片。';
+
+  @override
+  String get flashDragHandle => '拖动移动';
+
+  @override
+  String get reportTitle => '月度报告';
+
+  @override
+  String get reportSubtitle => '本月专注、卡片、任务和习惯，可直接保存';
+
+  @override
+  String get reportFocus => '专注时间';
+
+  @override
+  String reportSessions(int count) {
+    return '$count 次专注';
+  }
+
+  @override
+  String reportBestDay(String day, String time) {
+    return '最佳一天：$day（$time）';
+  }
+
+  @override
+  String reportActiveDays(int count) {
+    return '$count 个活跃日';
+  }
+
+  @override
+  String get reportCards => '复习的卡片';
+
+  @override
+  String reportCardsKnown(String percent) {
+    return '记住 $percent';
+  }
+
+  @override
+  String get reportTasks => '完成的任务';
+
+  @override
+  String get reportHabits => '习惯打卡';
+
+  @override
+  String get reportEmpty => '本月还没有记录。';
+
+  @override
+  String get reportSave => '保存为 PDF 或 Word';
+
+  @override
+  String get reportPrevMonth => '上个月';
+
+  @override
+  String get reportNextMonth => '下个月';
+
+  @override
+  String get careTitle => '手机与数据维护';
+
+  @override
+  String get storageTitle => '存储空间';
+
+  @override
+  String get storageSubtitle => '占用情况与清理未使用的图片';
+
+  @override
+  String get storagePictures => '笔记中的图片';
+
+  @override
+  String get storageCardMedia => '卡片中的图片和音频';
+
+  @override
+  String get storageText => '笔记文字';
+
+  @override
+  String get storageFree => '手机可用空间';
+
+  @override
+  String get storageLow => '手机存储空间快满了。请释放一些空间，以免备份和提醒失效。';
+
+  @override
+  String storageUnused(int count, String size) {
+    return '$count 张未使用的图片（$size）';
+  }
+
+  @override
+  String get storageNoUnused => '没有未使用的图片，一切整洁。';
+
+  @override
+  String get storageClean => '删除未使用的图片';
+
+  @override
+  String storageCleaned(int count) {
+    return '已删除 $count 张图片';
+  }
+
+  @override
+  String get storageHint => '只有在没有任何笔记（包括回收站中的笔记）使用时，图片才算未使用。';
+
+  @override
+  String get batteryTitle => '让提醒始终有效';
+
+  @override
+  String get batterySubtitle => '部分手机会限制后台应用，请检查你的手机。';
+
+  @override
+  String get batteryStatusOk => '省电模式未限制本应用，提醒和声音应能准时到达。';
+
+  @override
+  String get batteryStatusLimited => '省电模式可能在后台停止本应用，提醒和声音可能延迟或丢失。';
+
+  @override
+  String get batteryOpen => '打开电池设置';
+
+  @override
+  String get batteryOpenApp => '打开应用设置';
+
+  @override
+  String get batteryGeneric => '在电池设置中选择本应用，设为“无限制”（或“不优化”）。';
+
+  @override
+  String get batteryXiaomi => '小米 / Redmi / POCO：还需在“安全 › 权限 › 自启动”中开启本应用，并将省电策略设为“无限制”。';
+
+  @override
+  String get batteryOppo => 'Oppo / Realme / OnePlus：进入“电池 › 本应用”，允许后台活动和自启动，并在最近任务中锁定本应用。';
+
+  @override
+  String get batterySamsung => '三星：电池 › 后台使用限制：将本应用从“休眠应用”和“深度休眠应用”中移除。';
+
+  @override
+  String get batteryHuawei => '华为 / 荣耀：“应用启动管理 › 本应用 › 手动管理”，允许自启动、关联启动和后台活动。';
+
+  @override
+  String get batteryVivo => 'vivo / iQOO：“电池 › 后台耗电管理”中允许本应用，并在权限中开启自启动。';
+
+  @override
+  String get whatsNewTitle => '新功能';
+
+  @override
+  String get whatsNewSubtitle => '最近更新一览';
+
+  @override
+  String get whatsNewDone => '知道了';
+
+  @override
+  String get whatsNewOrderTitle => '拖动卡片自定义顺序';
+
+  @override
+  String get whatsNewOrderBody => '在卡组中选择“排序 › 我的顺序”，按住手柄拖动。';
+
+  @override
+  String get whatsNewSpeechTitle => '每面都有朗读按钮';
+
+  @override
+  String get whatsNewSpeechBody => '点按即可听单词或译文。语速、重复和声音在复习菜单中，语言会根据文字自动识别。';
+
+  @override
+  String get whatsNewReportTitle => '月度报告';
+
+  @override
+  String get whatsNewReportBody => '在统计中点按报告图标，查看本月并保存为 PDF 或 Word。';
+
+  @override
+  String get whatsNewCareTitle => '手机与数据维护';
+
+  @override
+  String get whatsNewCareBody => '设置中新增存储页面（可清理图片）和针对手机品牌的电池指南。';
+
+  @override
+  String get whatsNewSoundTitle => '更柔和的声音';
+
+  @override
+  String get whatsNewSoundBody => '自然声音更柔和更轻，图片卡片也更美观。';
+
+  @override
+  String autoBackupCheckOk(String date) {
+    return '$date 已检查：最新备份可正常打开。';
+  }
+
+  @override
+  String autoBackupCheckFixed(String date) {
+    return '$date 已检查：发现损坏的备份，已用新备份替换。';
+  }
+
+  @override
+  String autoBackupCheckFailed(String date) {
+    return '$date 已检查：无法打开最新备份。请在设置中手动保存备份文件。';
+  }
+
+  @override
+  String smartReviewTimeTitle(String time) {
+    return '你通常在 $time 左右学习';
+  }
+
+  @override
+  String get smartReviewTimeUse => '使用';
+
+  @override
+  String get widgetNewNote => '新笔记';
+
+  @override
+  String get noteConnections => '标签、链接和任务';
+
+  @override
+  String get navCards => '卡片';
+
+  @override
+  String get studyAnswerWay => '答题方式';
+
+  @override
+  String get studyMorePractice => '额外练习';
+
+  @override
+  String get studySessionSettings => '本轮设置';
+
+  @override
+  String get focusAdjustTitle => '你的专注';
+
+  @override
+  String get focusPresetsTitle => '预设';
+
+  @override
+  String get focusPresetStudy => '学习';
+
+  @override
+  String get focusPresetDeep => '深度工作';
+
+  @override
+  String get focusPresetQuick => '快速冲刺';
+
+  @override
+  String get focusPresetReading => '阅读';
+
+  @override
+  String get focusPresetWorkout => '运动回合';
+
+  @override
+  String get focusAdjustMinutes => '专注时长';
+
+  @override
+  String get focusAdjustBreak => '休息时长';
+
+  @override
+  String get focusAdjustRounds => '回合数';
+
+  @override
+  String get focusRoundsOpen => '不限';
+
+  @override
+  String focusMinutesShort(String n) {
+    return '$n 分钟';
+  }
+
+  @override
+  String get focusTapToAdjust => '点按以修改时间';
 }

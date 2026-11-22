@@ -141,6 +141,15 @@ class _GoalEditorSheetState extends ConsumerState<GoalEditorSheet> {
                 validator: (v) =>
                     (v == null || v.trim().isEmpty) ? l10n.validationTitleRequired : null,
               ),
+              // Title and description first; the numbers follow.
+              const SizedBox(height: Space.sm),
+              TextFormField(
+                controller: _description,
+                minLines: 1,
+                maxLines: 4,
+                textCapitalization: TextCapitalization.sentences,
+                decoration: InputDecoration(labelText: l10n.goalsDescription),
+              ),
               const SizedBox(height: Space.md),
               Text(l10n.goalPeriod, style: context.text.labelLarge),
               const SizedBox(height: Space.xs),
@@ -186,14 +195,6 @@ class _GoalEditorSheetState extends ConsumerState<GoalEditorSheet> {
                     ),
                   ),
                 ],
-              ),
-              const SizedBox(height: Space.md),
-              TextFormField(
-                controller: _description,
-                minLines: 1,
-                maxLines: 4,
-                textCapitalization: TextCapitalization.sentences,
-                decoration: InputDecoration(labelText: l10n.goalsDescription),
               ),
               const SizedBox(height: Space.sm),
               ListTile(

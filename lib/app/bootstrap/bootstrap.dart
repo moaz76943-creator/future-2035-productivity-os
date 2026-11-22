@@ -1,8 +1,8 @@
 import 'dart:async';
+import 'dart:io';
+import 'dart:ui' show PlatformDispatcher;
 
 import 'package:flutter/foundation.dart' show kDebugMode;
-
-import 'dart:io';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -12,6 +12,7 @@ import 'package:path_provider/path_provider.dart';
 
 import '../../core/database/app_database.dart';
 import '../../core/database/database_connection.dart';
+import '../../core/diagnostics/error_log.dart';
 import '../../core/providers/core_providers.dart';
 import '../../core/security/secret_store.dart';
 import '../../features/notifications/data/notification_service.dart';
@@ -29,9 +30,21 @@ Future<void> bootstrap() async {
   WidgetsFlutterBinding.ensureInitialized();
   registerFontLicenses();
   await initializeDateFormatting();
-  // Release builds never print errors that may contain user content.
+  // Release builds never print errors that may contain user content; the
+  // local error log keeps only types and code locations (see ErrorLog).
+  ErrorLog errorLog;
+  try {
+    errorLog = ErrorLog(File(p.join((await getApplicationSupportDirectory()).path, 'errors.log')));
+  } on Object {
+    errorLog = ErrorLog(null);
+  }
   FlutterError.onError = (details) {
     if (kDebugMode) FlutterError.presentError(details);
+    errorLog.record(details.exception, details.stack, source: details.library ?? 'flutter');
+  };
+  PlatformDispatcher.instance.onError = (error, stack) {
+    errorLog.record(error, stack, source: 'async');
+    return true;
   };
 
   const secrets = PlatformSecretStore();
@@ -51,6 +64,7 @@ Future<void> bootstrap() async {
           databaseProvider.overrideWithValue(db),
           secretStoreProvider.overrideWithValue(secrets),
           initialSettingsProvider.overrideWithValue(settings),
+          errorLogProvider.overrideWithValue(errorLog),
         ],
         child: const FutureOsApp(),
       ),

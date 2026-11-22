@@ -18,11 +18,14 @@ import '../application/flashcards_providers.dart';
 import '../domain/study.dart';
 import '../domain/card_extras.dart';
 import '../domain/card_layout.dart';
+import '../domain/world_languages.dart';
+import 'widgets/language_picker.dart';
 import 'review_screen.dart' show studyModeLabel;
 import 'widgets/card_form_sheet.dart' show cardFieldLabel;
 import '../data/flashcards_repository.dart';
 
 part 'study_sheets/study_sheet.dart';
+part 'study_sheets/speech_sheet.dart';
 part 'study_sheets/layout_sheet_state.dart';
 
 IconData studyModeIcon(StudyMode m) => switch (m) {
@@ -42,55 +45,6 @@ Future<void> showStudySheet(BuildContext context, DeckRow deck) => showModalBott
   showDragHandle: true,
   builder: (_) => _StudySheet(deck: deck),
 );
-
-/// Languages offered for speech, as BCP-47 tags ('' = app language).
-const speechLanguages = [
-  '',
-  'ar',
-  'en-US',
-  'en-GB',
-  'de-DE',
-  'fr-FR',
-  'es-ES',
-  'it-IT',
-  'pt-BR',
-  'ru-RU',
-  'tr-TR',
-  'zh-CN',
-  'ja-JP',
-  'ko-KR',
-  'hi-IN',
-  'ur-PK',
-  'fa-IR',
-  'id-ID',
-  'nl-NL',
-  'sv-SE',
-  'pl-PL',
-];
-
-/// Each language in its own name (endonym), so it reads right in any UI language.
-const speechLanguageNames = {
-  'ar': 'العربية',
-  'en-US': 'English (US)',
-  'en-GB': 'English (UK)',
-  'de-DE': 'Deutsch',
-  'fr-FR': 'Français',
-  'es-ES': 'Español',
-  'it-IT': 'Italiano',
-  'pt-BR': 'Português (Brasil)',
-  'ru-RU': 'Русский',
-  'tr-TR': 'Türkçe',
-  'zh-CN': '中文（简体）',
-  'ja-JP': '日本語',
-  'ko-KR': '한국어',
-  'hi-IN': 'हिन्दी',
-  'ur-PK': 'اردو',
-  'fa-IR': 'فارسی',
-  'id-ID': 'Bahasa Indonesia',
-  'nl-NL': 'Nederlands',
-  'sv-SE': 'Svenska',
-  'pl-PL': 'Polski',
-};
 
 /// Speech languages of a deck plus shared speech preferences.
 Future<void> showSpeechSheet(BuildContext context, DeckRow deck) => showModalBottomSheet<void>(

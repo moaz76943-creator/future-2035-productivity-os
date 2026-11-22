@@ -14,6 +14,9 @@ import '../../../shared/widgets/async_value_view.dart';
 import '../../../shared/widgets/dialogs.dart';
 import '../../../shared/widgets/module_scaffold.dart';
 import '../application/flashcards_providers.dart';
+import '../domain/world_languages.dart';
+import 'widgets/starter_sheet.dart';
+import 'widgets/study_summary.dart';
 import 'widgets/deck_form_sheet.dart';
 import '../data/flashcards_repository.dart';
 
@@ -55,6 +58,38 @@ class DecksScreen extends ConsumerWidget {
           onPressed: () => context.push(Routes.cardSearch),
           icon: const Icon(Icons.manage_search_rounded),
         ),
+        // Less frequent actions live in one menu, not as extra icons.
+        PopupMenuButton<String>(
+          key: const Key('decksMenu'),
+          tooltip: l10n.actionMore,
+          onSelected: (v) {
+            if (v == 'starter') showStarterDecks(context);
+            if (v == 'settings') context.push(Routes.settings);
+          },
+          itemBuilder: (_) => [
+            PopupMenuItem(
+              key: const Key('starterDecksButton'),
+              value: 'starter',
+              child: Row(
+                children: [
+                  const Icon(Icons.library_add_outlined, size: 20),
+                  const SizedBox(width: Space.sm),
+                  Text(l10n.starterTitle),
+                ],
+              ),
+            ),
+            PopupMenuItem(
+              value: 'settings',
+              child: Row(
+                children: [
+                  const Icon(Icons.settings_outlined, size: 20),
+                  const SizedBox(width: Space.sm),
+                  Text(l10n.settingsTitle),
+                ],
+              ),
+            ),
+          ],
+        ),
       ],
       floatingActionButton: FloatingActionButton.extended(
         heroTag: 'decks-fab',
@@ -71,28 +106,55 @@ class DecksScreen extends ConsumerWidget {
               return SliverToBoxAdapter(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: Space.page),
-                  child: EmptyState(
-                    icon: Icons.style_rounded,
-                    hue: _hue,
-                    title: l10n.flashEmptyTitle,
-                    message: l10n.flashEmptyMessage,
-                    actionLabel: l10n.deckNew,
-                    onAction: () => _createDeck(context, ref),
+                  child: Column(
+                    children: [
+                      EmptyState(
+                        icon: Icons.style_rounded,
+                        hue: _hue,
+                        title: l10n.flashEmptyTitle,
+                        message: l10n.flashEmptyMessage,
+                        actionLabel: l10n.deckNew,
+                        onAction: () => _createDeck(context, ref),
+                      ),
+                      TextButton.icon(
+                        key: const Key('starterDecksEmpty'),
+                        onPressed: () => showStarterDecks(context),
+                        icon: const Icon(Icons.library_add_outlined),
+                        label: Text(l10n.starterTitle),
+                      ),
+                    ],
                   ),
                 ),
               );
             }
+            // Grouped by the language being learned when there are several.
+            final groups = <String, List<DeckRow>>{};
+            for (final d in list) {
+              groups.putIfAbsent(languageCode(d.frontLang), () => []).add(d);
+            }
+            final grouped = groups.length > 1;
             return SliverMainAxisGroup(
               slivers: [
+                const SliverToBoxAdapter(child: TodayStudyCard()),
                 const SliverToBoxAdapter(child: _DueBanner()),
-                SliverPadding(
-                  padding: const EdgeInsets.symmetric(horizontal: Space.page),
-                  sliver: SliverList.separated(
-                    itemCount: list.length,
-                    separatorBuilder: (_, _) => const SizedBox(height: Space.sm),
-                    itemBuilder: (_, i) => _DeckTile(deck: list[i]),
+                for (final e in groups.entries) ...[
+                  if (grouped)
+                    SliverToBoxAdapter(
+                      child: SectionHeader(
+                        title: e.key.isEmpty
+                            ? l10n.flashcardsLangUnset
+                            : languageDisplayName(e.key),
+                      ),
+                    ),
+                  SliverPadding(
+                    padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.sm),
+                    sliver: SliverList.separated(
+                      itemCount: e.value.length,
+                      separatorBuilder: (_, _) => const SizedBox(height: Space.sm),
+                      itemBuilder: (_, i) => _DeckTile(deck: e.value[i]),
+                    ),
                   ),
-                ),
+                ],
               ],
             );
           },
@@ -195,6 +257,29 @@ class _DeckTile extends ConsumerWidget {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
+                if (deck.frontLang.isNotEmpty || deck.backLang.isNotEmpty) ...[
+                  const SizedBox(height: 2),
+                  Row(
+                    key: Key('deckLangs_${deck.id}'),
+                    children: [
+                      for (final (i, tag) in [deck.frontLang, deck.backLang].indexed) ...[
+                        if (i == 1)
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: Space.xxs),
+                            child: Icon(Icons.sync_alt_rounded, size: 14, color: context.lux.ink3),
+                          ),
+                        Flexible(
+                          child: Text(
+                            tag.isEmpty ? l10n.flashcardsLangUnset : languageDisplayName(tag),
+                            style: context.text.labelMedium?.copyWith(color: context.lux.ink2),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
+                ],
                 if (deck.description.isNotEmpty) ...[
                   const SizedBox(height: 2),
                   Text(
@@ -225,7 +310,15 @@ class _DeckTile extends ConsumerWidget {
               ],
             ),
           ),
-          const Icon(Icons.chevron_right_rounded),
+          if (stats != null && stats.due + stats.newCount > 0)
+            IconButton.filledTonal(
+              key: Key('studyDeck_${deck.id}'),
+              tooltip: l10n.flashStudyNow,
+              icon: const Icon(Icons.play_arrow_rounded),
+              onPressed: () => context.push(Routes.review(deck.id)),
+            )
+          else
+            const Icon(Icons.chevron_right_rounded),
         ],
       ),
     );

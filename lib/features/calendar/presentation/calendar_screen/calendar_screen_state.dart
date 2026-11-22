@@ -1,6 +1,16 @@
 part of '../calendar_screen.dart';
 
 class _CalendarScreenState extends ConsumerState<CalendarScreen> {
+  bool get _hijri => ref.watch(settingsProvider).showHijri(context.language.tag);
+
+  /// The day's long date, followed by its Hijri date when turned on.
+  String _dayTitle(DateTime d) {
+    final h = _hijri ? HijriDay.of(d) : null;
+    return h == null
+        ? context.fmt.dayLong(d)
+        : '${context.fmt.dayLong(d)} · ${h.long(context.l10n)}';
+  }
+
   CalendarView _view = CalendarView.month;
   late DateTime _anchor;
   late DateTime _selected;
@@ -246,8 +256,9 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
               occurrences: events,
               tasks: tasks,
               onSelect: (d) => setState(() => _selected = d),
+              hijri: _hijri,
             ),
-            SectionHeader(title: context.fmt.dayLong(_selected)),
+            SectionHeader(title: _dayTitle(_selected)),
             DayAgenda(
               events: dayEvents,
               tasks: dayTasks,
@@ -330,7 +341,6 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
     Set<EventOccurrence> conflicts,
     List<(MilestoneRow, ProjectRow)> milestones,
   ) {
-    final fmt = context.fmt;
     final sections = <Widget>[];
     for (var i = 0; i < kAgendaDays; i++) {
       final d = CalendarMath.addDays(_anchor, i);
@@ -342,7 +352,7 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
       final dayMilestones = _milestonesOn(milestones, d);
       if (dayEvents.isEmpty && dayTasks.isEmpty && dayMilestones.isEmpty) continue;
       sections
-        ..add(SectionHeader(title: fmt.dayLong(d)))
+        ..add(SectionHeader(title: _dayTitle(d)))
         ..add(
           DayAgenda(
             events: dayEvents,

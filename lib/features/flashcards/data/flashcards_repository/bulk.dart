@@ -15,6 +15,19 @@ extension FlashcardsBulk on FlashcardsRepository {
         ),
       );
 
+  /// Saves a new hand-made order. [ordered] is the whole deck in its new order;
+  /// the old position values are reused in sorted order so cards added later
+  /// (which sort by creation time) still land at the end.
+  Future<void> setCardOrder(List<CardRow> ordered, List<int> keys) => _db.batch((b) {
+    for (var i = 0; i < ordered.length; i++) {
+      b.update(
+        _db.flashcards,
+        FlashcardsCompanion(position: Value(keys[i])),
+        where: (c) => c.id.equals(ordered[i].id),
+      );
+    }
+  });
+
   // ---- organisation --------------------------------------------------------
 
   Future<void> setFavorite(Iterable<String> ids, bool favorite) =>

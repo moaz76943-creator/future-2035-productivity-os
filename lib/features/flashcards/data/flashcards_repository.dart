@@ -12,9 +12,11 @@ import '../domain/study.dart';
 import '../domain/card_import.dart';
 import '../domain/card_layout.dart';
 import '../domain/srs_scheduler.dart';
+import '../domain/study_streak.dart';
 
 part 'flashcards_repository/deck_stats.dart';
 part 'flashcards_repository/media.dart';
+part 'flashcards_repository/activity.dart';
 part 'flashcards_repository/bulk.dart';
 part 'flashcards_repository/insights.dart';
 part 'flashcards_repository/transfer.dart';

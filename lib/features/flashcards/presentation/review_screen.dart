@@ -22,7 +22,9 @@ import '../data/flashcards_repository.dart';
 import '../domain/card_extras.dart';
 import '../domain/card_layout.dart';
 import '../domain/srs_scheduler.dart';
+import '../domain/speech_language.dart';
 import '../domain/study.dart';
+import 'study_sheets.dart' show showSpeechSheet;
 import 'widgets/card_form_sheet.dart' show cardFieldLabel, showCardForm;
 
 part 'review_screen/review_screen_state.dart';

@@ -57,7 +57,9 @@ void main() {
     final r = await repo.importCards(other, csv);
     expect(r.added, 2);
     final fronts = (await repo.watchCards(other).first).map((c) => c.front).toSet();
-    expect(fronts, {'a, "quoted"', "'=1+1"});
+    // The export protects formula-like text; the import restores it exactly.
+    expect(csv, contains("'=1+1"));
+    expect(fronts, {'a, "quoted"', '=1+1'});
   });
 
   test('practice mistakes returns cards answered Again recently', () async {

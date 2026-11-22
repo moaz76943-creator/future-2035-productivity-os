@@ -1,4 +1,5 @@
 import 'card_extras.dart';
+import 'card_field_labels.dart';
 
 /// One card parsed from pasted or file text.
 class ImportedCard {
@@ -144,7 +145,11 @@ abstract final class CardImportParser {
         if (r.length == 1) _splitMixed(r, delimiter) else r,
     ];
     final width = normalized.fold<int>(0, (m, r) => r.length > m ? r.length : m);
-    final header = [for (final c in normalized.first) _headers[c.trim().toLowerCase()]];
+    // Built-in names, then the column names the app writes in any language.
+    final header = [
+      for (final c in normalized.first)
+        _headers[c.trim().toLowerCase()] ?? cardHeaderAliases()[c.trim().toLowerCase()],
+    ];
     final hasHeader = header.contains('front') && header.contains('back');
     final columns = hasHeader
         ? [for (var i = 0; i < width; i++) i < header.length ? (header[i] ?? '') : '']
@@ -173,7 +178,9 @@ abstract final class CardImportParser {
       String cell(String name) {
         final i = columns.indexOf(name);
         if (i < 0 || i >= r.length) return '';
-        final v = r[i].trim();
+        var v = r[i].trim();
+        // Our own exports protect formula-like text with an apostrophe.
+        if (RegExp(r"^'[=+\-@]").hasMatch(v)) v = v.substring(1);
         return v.length > maxFieldChars ? v.substring(0, maxFieldChars) : v;
       }
 
@@ -225,4 +232,14 @@ abstract final class CardImportParser {
     if (s.contains(RegExp(r'[",\n\r]'))) s = '"${s.replaceAll('"', '""')}"';
     return s;
   }
+}
+
+/// True when most non-empty lines split into a front and a back (tab, `;`,
+/// `,`, ` - ` or `=`), so pasting it as cards makes sense.
+bool looksLikeCards(String text) {
+  final lines = text.split('\n').map((l) => l.trim()).where((l) => l.isNotEmpty).toList();
+  if (lines.isEmpty || lines.length > 5000) return false;
+  final sep = RegExp(r'\t|;|,| - | – |=');
+  final ok = lines.where(sep.hasMatch).length;
+  return ok >= (lines.length * 0.6).ceil() && !text.contains(RegExp(r'\|\s*(tail|grep|head)\b|&&|\$\('));
 }

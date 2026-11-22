@@ -10,7 +10,7 @@ class AppLocalizationsRu extends AppLocalizations {
   AppLocalizationsRu([String locale = 'ru']) : super(locale);
 
   @override
-  String get appName => 'Future OS';
+  String get appName => 'Deep Focus';
 
   @override
   String get navHome => 'Главная';
@@ -1294,7 +1294,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get importCardsHint =>
-      'Вставьте по одной карточке на строку: лицевая и обратная стороны через табуляцию или точку с запятой. Можно также вставить экспортированный файл колоды.';
+      'Вставьте по одной карточке в строке (лицо и оборот через табуляцию или точку с запятой) или выберите файл: Excel (.xlsx), CSV, колоду Anki (.apkg) или экспортированную колоду.';
 
   @override
   String importCardsResult(int count) {
@@ -1988,7 +1988,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get backupWrongPassword => 'Неверный пароль, или файл был изменён.';
 
   @override
-  String get backupNotABackup => 'Этот файл не является резервной копией Future OS.';
+  String get backupNotABackup => 'Этот файл не является резервной копией Deep Focus.';
 
   @override
   String get backupCorrupted => 'Файл резервной копии повреждён.';
@@ -3096,7 +3096,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get backupRestoreFailed => 'Не удалось восстановить. Ничего не изменилось.';
 
   @override
-  String get backupShareSubject => 'Зашифрованная резервная копия Future OS';
+  String get backupShareSubject => 'Зашифрованная резервная копия Deep Focus';
 
   @override
   String repeatSummaryEveryN(String unit, int count) {
@@ -3798,7 +3798,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get speechVoice => 'Голос';
 
   @override
-  String get speechVoiceDefault => 'По умолчанию';
+  String get speechVoiceDefault => 'Автоматически';
 
   @override
   String get speechVoiceOnline => 'нужен интернет';
@@ -3968,4 +3968,1249 @@ class AppLocalizationsRu extends AppLocalizations {
   String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct) {
     return 'Колод: $decks · карточек: $cards · выучено: $mature · к повтору: $due · верно: $correct (30 дн.)';
   }
+
+  @override
+  String get flashcardsRecord => 'Записать';
+
+  @override
+  String get flashcardsRecording => 'Идёт запись…';
+
+  @override
+  String get flashcardsRecordStop => 'Остановить и сохранить';
+
+  @override
+  String get flashcardsMicDenied =>
+      'Доступ к микрофону выключен. Разрешите его в настройках системы, чтобы записывать.';
+
+  @override
+  String get flashcardsRecordFailed => 'Запись недоступна на этом устройстве.';
+
+  @override
+  String get soundsTitle => 'Звуки';
+
+  @override
+  String get soundsSubtitle => 'Настоящие записи природы, в которых не слышно повторов.';
+
+  @override
+  String get soundsNature => 'Природа';
+
+  @override
+  String get soundsNoise => 'Шум для концентрации';
+
+  @override
+  String get soundRain => 'Дождь';
+
+  @override
+  String get soundStorm => 'Гроза';
+
+  @override
+  String get soundRiver => 'Река';
+
+  @override
+  String get soundOcean => 'Морские волны';
+
+  @override
+  String get soundFire => 'Костёр';
+
+  @override
+  String get soundForest => 'Лесные птицы';
+
+  @override
+  String get soundNight => 'Летняя ночь';
+
+  @override
+  String get soundWhite => 'Белый шум';
+
+  @override
+  String get soundPink => 'Розовый шум';
+
+  @override
+  String get soundBrown => 'Коричневый шум';
+
+  @override
+  String get soundsPlay => 'Воспроизвести';
+
+  @override
+  String get soundsSleep => 'Таймер сна';
+
+  @override
+  String get soundsSleepOff => 'Выкл.';
+
+  @override
+  String soundsSleepAt(String time) {
+    return 'Остановится в $time';
+  }
+
+  @override
+  String soundsMixFull(int count) {
+    return 'Одновременно может звучать не более $count звуков.';
+  }
+
+  @override
+  String get soundsHint =>
+      'Нажмите на звук, чтобы начать. Смешивайте несколько и настраивайте громкость каждого.';
+
+  @override
+  String get soundsMixer => 'Микс';
+
+  @override
+  String soundsVolumeOf(String name) {
+    return 'Громкость: $name';
+  }
+
+  @override
+  String get soundsChannel => 'Звуки природы';
+
+  @override
+  String get settingsEndTone => 'Звук окончания таймера';
+
+  @override
+  String get toneGentle => 'Мягкие сигналы';
+
+  @override
+  String get toneBeeps => 'Короткие сигналы';
+
+  @override
+  String get toneWood => 'Стук по дереву';
+
+  @override
+  String get toneBird => 'Пение птицы';
+
+  @override
+  String get toneStream => 'Ручей';
+
+  @override
+  String get toneSystem => 'Звук телефона';
+
+  @override
+  String get speechOnPhone => 'На этом телефоне';
+
+  @override
+  String get speechAllLanguages => 'Все языки';
+
+  @override
+  String get speechSearchLanguage => 'Поиск языка';
+
+  @override
+  String get speechGetVoices => 'Скачать другие голоса';
+
+  @override
+  String get speechGetVoicesHint =>
+      'Языки без голоса можно скачать в настройках синтеза речи телефона.';
+
+  @override
+  String get speechSettingsFailed => 'Не удалось открыть настройки речи на этом телефоне.';
+
+  @override
+  String get speechVoiceMissing => 'Голос не установлен';
+
+  @override
+  String get speechPause => 'Пауза между повторами';
+
+  @override
+  String speechSeconds(String seconds) {
+    return '$seconds с';
+  }
+
+  @override
+  String get speechExample => 'Читать пример вместе с ответом';
+
+  @override
+  String get flashListen => 'Слушать';
+
+  @override
+  String get flashListenNext => 'Следующая карточка';
+
+  @override
+  String get flashListenEmpty => 'Нет карточек для прослушивания.';
+
+  @override
+  String get flashViewTable => 'Таблица';
+
+  @override
+  String get flashViewCards => 'Карточки';
+
+  @override
+  String get flashSwapSides => 'Поменять столбцы';
+
+  @override
+  String get flashSort => 'Сортировка';
+
+  @override
+  String get flashSortNewest => 'Сначала новые';
+
+  @override
+  String get flashSortAlpha => 'По алфавиту';
+
+  @override
+  String get flashSortDue => 'Сначала к повторению';
+
+  @override
+  String get flashSortHard => 'Сначала сложные';
+
+  @override
+  String get flashPasteCards => 'Вставить карточки';
+
+  @override
+  String get flashClipboardEmpty => 'В буфере обмена нет текста.';
+
+  @override
+  String get flashMenuAdd => 'Добавить карточки';
+
+  @override
+  String get flashMenuDeck => 'Колода';
+
+  @override
+  String get flashToday => 'Сегодня';
+
+  @override
+  String get flashStudyNow => 'Учить';
+
+  @override
+  String flashTodayAnswered(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ответа',
+      many: '$count ответов',
+      few: '$count ответа',
+      one: '$count ответ',
+      zero: 'Нет ответов',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get soundForestRain => 'Дождь в лесу';
+
+  @override
+  String get autoBackupTitle => 'Автоматические копии';
+
+  @override
+  String get autoBackupDesc => 'Каждый день на этом телефоне; хранятся последние 7';
+
+  @override
+  String get autoBackupHint =>
+      'Эти копии хранятся на телефоне и удаляются вместе с приложением. Для переноса на новый телефон сохраните файл через «Резервная копия».';
+
+  @override
+  String get autoBackupNone => 'Автоматических копий пока нет. Первая будет создана сегодня.';
+
+  @override
+  String get autoBackupRestore => 'Восстановить';
+
+  @override
+  String autoBackupConfirm(String date) {
+    return 'Заменить все текущие данные копией от $date?';
+  }
+
+  @override
+  String get autoBackupRestored => 'Восстановлено.';
+
+  @override
+  String get errorLogTitle => 'Журнал ошибок';
+
+  @override
+  String get errorLogHint =>
+      'Если что-то пойдёт не так, это записывается здесь: только тип ошибки и место в коде, без вашего содержимого. Поделитесь журналом, чтобы помочь исправить.';
+
+  @override
+  String get errorLogEmpty => 'Ошибок не записано.';
+
+  @override
+  String get errorLogClear => 'Очистить';
+
+  @override
+  String get soundsWithFocus => 'Включать во время фокус-сессий';
+
+  @override
+  String get soundsWithFocusHint => 'Микс запускается с сессией и замолкает на перерывах.';
+
+  @override
+  String get soundsSavedMixes => 'Сохранённые миксы';
+
+  @override
+  String get soundsSaveMix => 'Сохранить микс';
+
+  @override
+  String get soundsMixNameHint => 'Название, например «Дождливая библиотека»';
+
+  @override
+  String soundsDeleteMix(String name) {
+    return 'Удалить микс «$name»?';
+  }
+
+  @override
+  String get settingsReviewReminderHint => 'Раз в день, только если есть карточки к повторению';
+
+  @override
+  String get settingsReviewTime => 'Время напоминания';
+
+  @override
+  String get shortcutFocus => 'Фокус';
+
+  @override
+  String get shortcutNewTask => 'Новая задача';
+
+  @override
+  String get shortcutReview => 'Повторить карточки';
+
+  @override
+  String get shortcutSounds => 'Звуки природы';
+
+  @override
+  String get myDayTitle => 'Начать день';
+
+  @override
+  String get myDayHint => 'Ваш день одним взглядом и одно касание до фокуса';
+
+  @override
+  String myDayTasks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count задачи на сегодня',
+      many: '$count задач на сегодня',
+      few: '$count задачи на сегодня',
+      one: '$count задача на сегодня',
+      zero: 'На сегодня задач нет',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get myDayNoEvents => 'Сегодня больше нет событий';
+
+  @override
+  String myDayNextEvent(String title, String time) {
+    return 'Далее: $title в $time';
+  }
+
+  @override
+  String myDayHabits(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Осталось $count привычки',
+      many: 'Осталось $count привычек',
+      few: 'Осталось $count привычки',
+      one: 'Осталась $count привычка',
+      zero: 'Все привычки выполнены',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get myDayBeginFocus => 'Начать с сессии фокуса';
+
+  @override
+  String get hijriMonth1 => 'Мухаррам';
+
+  @override
+  String get hijriMonth2 => 'Сафар';
+
+  @override
+  String get hijriMonth3 => 'Раби аль-авваль';
+
+  @override
+  String get hijriMonth4 => 'Раби ас-сани';
+
+  @override
+  String get hijriMonth5 => 'Джумада аль-уля';
+
+  @override
+  String get hijriMonth6 => 'Джумада ас-сани';
+
+  @override
+  String get hijriMonth7 => 'Раджаб';
+
+  @override
+  String get hijriMonth8 => 'Шабан';
+
+  @override
+  String get hijriMonth9 => 'Рамадан';
+
+  @override
+  String get hijriMonth10 => 'Шавваль';
+
+  @override
+  String get hijriMonth11 => 'Зуль-када';
+
+  @override
+  String get hijriMonth12 => 'Зуль-хиджа';
+
+  @override
+  String hijriDate(int day, String month, int year) {
+    return '$day $month $year г. х.';
+  }
+
+  @override
+  String get settingsHijri => 'Даты по хиджре';
+
+  @override
+  String get settingsHijriHint => 'Показываются в календаре и на главной (Умм аль-Кура)';
+
+  @override
+  String studyStreakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count дня',
+      many: '$count дней',
+      few: '$count дня',
+      one: '$count день',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String studyGoalProgress(int done, int goal) {
+    return '$done из $goal карточек сегодня';
+  }
+
+  @override
+  String get studyGoalReached => 'Цель дня выполнена. Отлично!';
+
+  @override
+  String get studyWeekTitle => 'Ваша неделя';
+
+  @override
+  String studyWeekCards(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count карточки за 7 дней',
+      many: '$count карточек за 7 дней',
+      few: '$count карточки за 7 дней',
+      one: '$count карточка за 7 дней',
+      zero: 'За 7 дней нет карточек',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String studyWeekFocus(String duration) {
+    return '$duration фокуса за 7 дней';
+  }
+
+  @override
+  String studyStreakLine(int current, int best) {
+    return 'Серия: $current · Рекорд: $best';
+  }
+
+  @override
+  String get studyGoalTitle => 'Цель на день (карточки)';
+
+  @override
+  String get studyGoalOff => 'Нет';
+
+  @override
+  String get focusDndTitle => 'Не беспокоить во время фокуса';
+
+  @override
+  String get focusDndHint => 'Включается на время сессии и выключается на перерыве';
+
+  @override
+  String get focusDndNeedsAccess => 'Разрешите доступ в настройках телефона';
+
+  @override
+  String get voiceInput => 'Голосовой ввод';
+
+  @override
+  String get voiceInputPrompt => 'Говорите';
+
+  @override
+  String get voiceInputUnavailable =>
+      'Голосовой ввод недоступен на этом телефоне. Установите или включите службу распознавания речи (например, от Google).';
+
+  @override
+  String get prayerFajr => 'Фаджр';
+
+  @override
+  String get prayerSunrise => 'Восход';
+
+  @override
+  String get prayerDhuhr => 'Зухр';
+
+  @override
+  String get prayerAsr => 'Аср';
+
+  @override
+  String get prayerMaghrib => 'Магриб';
+
+  @override
+  String get prayerIsha => 'Иша';
+
+  @override
+  String get prayerMethodMwl => 'Всемирная исламская лига';
+
+  @override
+  String get prayerMethodUmmAlQura => 'Умм аль-Кура (Мекка)';
+
+  @override
+  String get prayerMethodEgypt => 'Египетское управление';
+
+  @override
+  String get prayerMethodJordan => 'Иордания (Министерство вакфов)';
+
+  @override
+  String get prayerMethodKarachi => 'Университет исламских наук, Карачи';
+
+  @override
+  String get prayerMethodIsna => 'Исламское общество Северной Америки';
+
+  @override
+  String get prayerMethodGulf => 'Страны Залива';
+
+  @override
+  String get prayerMethodKuwait => 'Кувейт';
+
+  @override
+  String get prayerMethodQatar => 'Катар';
+
+  @override
+  String get prayerMethodTurkey => 'Турция (Диянет)';
+
+  @override
+  String get prayerMethodSingapore => 'Сингапур, Малайзия, Индонезия';
+
+  @override
+  String get prayerMethodFrance => 'Франция (12°)';
+
+  @override
+  String get prayerMethodRussia => 'Россия (ДУМ)';
+
+  @override
+  String prayerNotifTitle(String name) {
+    return 'Время намаза $name';
+  }
+
+  @override
+  String prayerNotifBody(String time) {
+    return 'Время намаза · $time';
+  }
+
+  @override
+  String get prayerTitle => 'Время намаза';
+
+  @override
+  String get prayerOffHint =>
+      'Выберите город, чтобы видеть время намаза. Оно рассчитывается на телефоне, без доступа к геолокации.';
+
+  @override
+  String get prayerChooseCity => 'Выбрать город';
+
+  @override
+  String get prayerCity => 'Город';
+
+  @override
+  String get prayerCitySearch => 'Найти город';
+
+  @override
+  String get prayerMethod => 'Метод расчёта';
+
+  @override
+  String get prayerHanafiAsr => 'Аср по-ханафитски (позже)';
+
+  @override
+  String get prayerReminders => 'Уведомлять о каждом намазе';
+
+  @override
+  String get prayerPauseFocus => 'Пауза фокуса во время намаза';
+
+  @override
+  String get prayerPauseFocusHint => 'Сессия ставится на паузу; продолжите после';
+
+  @override
+  String get prayerTurnOff => 'Отключить время намаза';
+
+  @override
+  String get prayerAccuracyNote => 'Расчётное время может отличаться от мечети на несколько минут.';
+
+  @override
+  String prayerNext(String name, String time) {
+    return '$name в $time';
+  }
+
+  @override
+  String get importAnkiNewFormat =>
+      'Этот файл Anki в новейшем формате. Экспортируйте снова в Anki с включённым параметром «Поддержка старых версий Anki».';
+
+  @override
+  String get importTemplate => 'Шаблон таблицы';
+
+  @override
+  String get importTemplateFront => 'яблоко';
+
+  @override
+  String get importTemplateBack => 'круглый фрукт';
+
+  @override
+  String get importTemplateExample => 'Я ем яблоко каждый день.';
+
+  @override
+  String get importTemplateTag => 'еда';
+
+  @override
+  String get starterTitle => 'Готовые колоды';
+
+  @override
+  String get starterHint => 'Добавьте колоду и начните сразу. Её можно изменить или удалить.';
+
+  @override
+  String get starterAdd => 'Добавить';
+
+  @override
+  String get starterWords => 'Повседневные английские слова (арабский)';
+
+  @override
+  String get starterCapitals => 'Столицы мира';
+
+  @override
+  String get starterElements => 'Химические элементы';
+
+  @override
+  String get settingsAccent => 'Цвет акцента';
+
+  @override
+  String get accentViolet => 'Фиолетовый';
+
+  @override
+  String get accentBlue => 'Синий';
+
+  @override
+  String get accentTeal => 'Бирюзовый';
+
+  @override
+  String get accentGreen => 'Зелёный';
+
+  @override
+  String get accentRose => 'Розовый';
+
+  @override
+  String get accentAmber => 'Янтарный';
+
+  @override
+  String get settingsFlashTextSize => 'Размер текста карточек';
+
+  @override
+  String get settingsFlashTextSample => 'Пример';
+
+  @override
+  String get widgetStartFocus => 'Нажмите, чтобы начать фокус';
+
+  @override
+  String widgetFocusUntil(String time) {
+    return 'Фокус до $time';
+  }
+
+  @override
+  String get widgetNoCardsDue => 'Карточки: всё повторено';
+
+  @override
+  String get faqMyDayQ => 'Что делает «Начать день»?';
+
+  @override
+  String get faqMyDayA =>
+      'Раз в день на главной: задачи на сегодня, ближайшее событие, оставшиеся привычки и карточки к повторению, а затем сессия фокуса одним касанием. Удерживайте значок приложения для быстрых действий или добавьте виджет на главный экран.';
+
+  @override
+  String get faqTasksQ => 'Как добавить задачу с напоминанием?';
+
+  @override
+  String get faqTasksA =>
+      'Нажмите «Новая задача» на главной или + в Задачах. Введите название или продиктуйте его, затем укажите срок, время и напоминание. Просроченные задачи показываются первыми.';
+
+  @override
+  String get faqFocusQ => 'Как работает таймер фокуса?';
+
+  @override
+  String get faqFocusA =>
+      'Выберите помодоро, обратный отсчёт или свободное время и нажмите «Старт»; перерывы могут начинаться сами. В настройках выберите звук окончания, включите «Не беспокоить» во время фокуса и звуки природы для каждой сессии.';
+
+  @override
+  String get faqSoundsQ => 'Можно ли смешивать звуки природы?';
+
+  @override
+  String get faqSoundsA =>
+      'Включите до шести настоящих записей, настройте громкость каждой и сохраните микс под именем. Они играют в фоне, а таймер сна может их остановить. Музыки нет.';
+
+  @override
+  String get faqCalendarQ => 'Показывает ли календарь даты по хиджре?';
+
+  @override
+  String get faqCalendarA =>
+      'Да. Даты по хиджре (Умм аль-Кура) показываются автоматически на арабском и включаются в настройках для любого языка. События, задачи со сроком и этапы проектов видны вместе.';
+
+  @override
+  String get faqFlashcardsQ => 'Как выбираются карточки для повторения?';
+
+  @override
+  String get faqFlashcardsA =>
+      'Хорошо выученные карточки возвращаются реже, а ошибочные — скоро (интервальное повторение). Оценивайте ответ: Снова, Трудно, Хорошо или Легко. Задайте цель на день и держите серию на карточке «Сегодня». Укажите дату экзамена в колоде, чтобы видеть, сколько дней осталось и сколько новых карточек учить в день. Выберите сортировку «Мой порядок», чтобы перетаскивать карточки, нажмите динамик на любой стороне, чтобы послушать, а скорость и повторы настройте в меню озвучки.';
+
+  @override
+  String get faqImportQ => 'Можно ли перенести карточки из Anki или Excel?';
+
+  @override
+  String get faqImportA =>
+      'Да. В колоде выберите «Импорт» и файл: Anki (.apkg), Excel (.xlsx) или CSV, затем сопоставьте столбцы. «Шаблон таблицы» поможет писать карточки на компьютере. Картинки и звуки из файлов Anki не переносятся.';
+
+  @override
+  String get faqNotesQ => 'Что умеют заметки?';
+
+  @override
+  String get faqNotesA =>
+      'Пишите со списками и форматированием, закрепляйте важные заметки или добавляйте в избранное, ставьте теги и связывайте заметки с задачами. Кнопка микрофона позволяет диктовать. Новую заметку можно начать с шаблона (лекция, конспект книги, дневник, план на неделю), а кнопка изображения добавляет фото.';
+
+  @override
+  String get faqHabitsQ => 'Как считаются серии привычек?';
+
+  @override
+  String get faqHabitsA =>
+      'День засчитывается, если в запланированный день достигнута цель привычки. Пауза сохраняет серию. У каждой привычки может быть своё время напоминания.';
+
+  @override
+  String get faqGoalsQ => 'Как цели отслеживают прогресс?';
+
+  @override
+  String get faqGoalsA =>
+      'Задайте цели количество и единицу и отмечайте прогресс. Карточка покажет, сколько сделано и сколько осталось до срока.';
+
+  @override
+  String get faqProjectsQ => 'Зачем нужны проекты?';
+
+  @override
+  String get faqProjectsA =>
+      'Объединяйте задачи в проект, добавляйте этапы с датами и следите за прогрессом. Этапы видны и в календаре.';
+
+  @override
+  String get faqInsightsQ => 'Что показывает аналитика?';
+
+  @override
+  String get faqInsightsA =>
+      'Время фокуса, выполненные задачи и учёба по дням и неделям, с мягкими советами. Всё считается на телефоне.';
+
+  @override
+  String get faqSpacesQ => 'Где все разделы?';
+
+  @override
+  String get faqSpacesA =>
+      'В «Пространствах» собраны все разделы (заметки, колоды, привычки, цели, проекты, звуки и другое), чтобы нижняя панель оставалась простой.';
+
+  @override
+  String get faqBackupQ => 'Как создаются резервные копии?';
+
+  @override
+  String get faqBackupA =>
+      'Каждый день приложение тихо сохраняет зашифрованную копию на телефоне и хранит последние 7. В настройках можно также экспортировать копию с паролем и восстановить её на другом телефоне.';
+
+  @override
+  String get faqPrayerQ => 'Как работает время намаза?';
+
+  @override
+  String get faqPrayerA =>
+      'Выберите город в «Настройки → Время намаза». Время рассчитывается на телефоне по местному методу; метод и мазхаб для асра можно изменить. Можно получать уведомление о каждом намазе, а идущая сессия фокуса ставится на паузу.';
+
+  @override
+  String get faqPrivacyQ => 'Где хранятся мои данные?';
+
+  @override
+  String get faqPrivacyA =>
+      'Только на телефоне, в зашифрованной базе. Нет аккаунта и слежки. Интернет нужен лишь функциям, которые вы включаете сами, например помощнику.';
+
+  @override
+  String get faqAssistantQ => 'Что такое помощник?';
+
+  @override
+  String get faqAssistantA =>
+      'Необязательный помощник, который вы подключаете к своему ИИ-сервису в настройках. По умолчанию выключен и спрашивает перед отправкой текста заметок.';
+
+  @override
+  String get tourPlanTitle => 'Планируйте день';
+
+  @override
+  String get tourPlanBody =>
+      'Задачи, календарь и привычки в одном спокойном месте. Начинайте утро с «Начать день».';
+
+  @override
+  String get tourFocusTitle => 'Глубокий фокус';
+
+  @override
+  String get tourFocusBody =>
+      'Сессии с таймером, настоящими звуками природы, режимом «Не беспокоить» и мягкими сигналами.';
+
+  @override
+  String get tourLearnTitle => 'Учитесь надолго';
+
+  @override
+  String get tourLearnBody =>
+      'Карточки с интервальным повторением, озвучка на многих языках и импорт из Anki или Excel.';
+
+  @override
+  String get helpTitle => 'Помощь и вопросы';
+
+  @override
+  String get helpOpen => 'Открыть';
+
+  @override
+  String get helpTour => 'Пройти тур';
+
+  @override
+  String get tourNext => 'Далее';
+
+  @override
+  String get tourDone => 'Начнём';
+
+  @override
+  String get transferColTitle => 'Название';
+
+  @override
+  String get transferColNotes => 'Заметки';
+
+  @override
+  String get transferColBody => 'Текст';
+
+  @override
+  String get transferColDue => 'Срок';
+
+  @override
+  String get transferColPriority => 'Приоритет (0-3)';
+
+  @override
+  String get transferColDone => 'Выполнена';
+
+  @override
+  String get transferColProject => 'Проект';
+
+  @override
+  String get transferColCategory => 'Категория';
+
+  @override
+  String get transferTitle => 'Импорт и экспорт';
+
+  @override
+  String get transferSaveAs => 'Сохранить как';
+
+  @override
+  String get transferImport => 'Импорт из файла';
+
+  @override
+  String get transferImportTasksHint =>
+      'Excel, CSV или таблица Word. Столбцы: название, срок (2026-12-31), приоритет 0-3, выполнена, проект, заметки. Уже существующие задачи пропускаются.';
+
+  @override
+  String get transferImportNotesHint =>
+      'Файлы Word, Markdown или текст становятся заметкой. Excel или CSV: заметка на строку (название, текст).';
+
+  @override
+  String get transferSaved => 'Файл сохранён';
+
+  @override
+  String get transferFailed => 'Не удалось создать файл. Ничего не изменено.';
+
+  @override
+  String get transferUnsupported =>
+      'Этот файл нельзя прочитать здесь. Используйте Excel, CSV, Word, Markdown или текст.';
+
+  @override
+  String transferImported(int added) {
+    String _temp0 = intl.Intl.pluralLogic(
+      added,
+      locale: localeName,
+      other: 'Добавлено $added',
+      many: 'Добавлено $added',
+      few: 'Добавлено $added',
+      one: 'Добавлен $added',
+      zero: 'Нечего добавить',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get transferFormatText => 'Текст';
+
+  @override
+  String get transferAllNotes => 'Все заметки';
+
+  @override
+  String get transferThisNote => 'Эта заметка';
+
+  @override
+  String get transferDeckFormats => 'Сохранить как Excel, Word или PDF';
+
+  @override
+  String get faqFilesQ => 'Можно ли работать с файлами Excel, Word и PDF?';
+
+  @override
+  String get faqFilesA =>
+      'Да. В «Задачах» и «Заметках» вверху есть кнопка импорта и экспорта (две стрелки), а у каждой колоды — в меню. Сохраняйте в Excel, CSV, Word или PDF или загружайте файлы Excel, CSV, Word, Markdown и текст. Столбцы могут называться на любом языке приложения, а сохранённые файлы всегда можно импортировать снова.';
+
+  @override
+  String get tplLecture => 'Лекция';
+
+  @override
+  String get tplBook => 'Конспект книги';
+
+  @override
+  String get tplJournal => 'Дневник';
+
+  @override
+  String get tplWeek => 'План на неделю';
+
+  @override
+  String get tplLectureBody => '## Главное\n- \n\n## Вопросы\n- [ ] \n\n## Итог\n';
+
+  @override
+  String get tplBookBody =>
+      '## Главная мысль\n\n## Что я узнал\n- \n\n## Цитаты\n> \n\n## Применить\n- [ ] \n';
+
+  @override
+  String get tplJournalBody => '## Благодарен за\n- \n\n## Фокус дня\n- [ ] \n\n## Заметки\n';
+
+  @override
+  String get tplWeekBody =>
+      '## Цели недели\n- [ ] \n\n### Суббота\n- [ ] \n\n### Воскресенье\n- [ ] \n\n### Понедельник\n- [ ] \n\n### Вторник\n- [ ] \n\n### Среда\n- [ ] \n\n### Четверг\n- [ ] \n\n### Пятница\n- [ ] \n';
+
+  @override
+  String get tplHint => 'Начать с шаблона';
+
+  @override
+  String get noteImage => 'Изображение';
+
+  @override
+  String get noteAddImage => 'Добавить изображение';
+
+  @override
+  String get noteImageUnreadable =>
+      'Этот файл не является изображением, которое может прочитать приложение.';
+
+  @override
+  String get noteImageTooLarge => 'Изображение слишком большое.';
+
+  @override
+  String get examSet => 'Указать дату экзамена';
+
+  @override
+  String get examDate => 'Дата экзамена';
+
+  @override
+  String get examToday => 'Экзамен сегодня. Удачи!';
+
+  @override
+  String examInDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Экзамен через $count дня',
+      many: 'Экзамен через $count дней',
+      few: 'Экзамен через $count дня',
+      one: 'Экзамен через $count день',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String examNewPerDay(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'учите $count новой карточки в день',
+      many: 'учите $count новых карточек в день',
+      few: 'учите $count новые карточки в день',
+      one: 'учите $count новую карточку в день',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get examAllLearnt => 'всё выучено, продолжайте повторять';
+
+  @override
+  String examRaiseLimit(int count) {
+    return 'Показывать $count новых карточек в день';
+  }
+
+  @override
+  String get backupDriveHint =>
+      'Чтобы хранить копию в облаке, выберите Google Диск (или другое облачное приложение) на следующем экране сохранения.';
+
+  @override
+  String get flashShareDeck => 'Поделиться колодой с другом';
+
+  @override
+  String get flashSortManual => 'Мой порядок (перетаскивание)';
+
+  @override
+  String get flashReorderHint => 'Удерживайте ручку и перетащите карточку.';
+
+  @override
+  String get flashReorderNeedsAll => 'Сбросьте поиск и фильтры, чтобы перетаскивать карточки.';
+
+  @override
+  String get flashDragHandle => 'Перетащите';
+
+  @override
+  String get reportTitle => 'Отчёт за месяц';
+
+  @override
+  String get reportSubtitle => 'Фокус, карточки, задачи и привычки месяца, готово к сохранению';
+
+  @override
+  String get reportFocus => 'Время фокуса';
+
+  @override
+  String reportSessions(int count) {
+    return 'Сессий: $count';
+  }
+
+  @override
+  String reportBestDay(String day, String time) {
+    return 'Лучший день: $day ($time)';
+  }
+
+  @override
+  String reportActiveDays(int count) {
+    return 'Активных дней: $count';
+  }
+
+  @override
+  String get reportCards => 'Повторено карточек';
+
+  @override
+  String reportCardsKnown(String percent) {
+    return 'Запомнено: $percent';
+  }
+
+  @override
+  String get reportTasks => 'Выполнено задач';
+
+  @override
+  String get reportHabits => 'Отметок привычек';
+
+  @override
+  String get reportEmpty => 'В этом месяце пока ничего нет.';
+
+  @override
+  String get reportSave => 'Сохранить в PDF или Word';
+
+  @override
+  String get reportPrevMonth => 'Предыдущий месяц';
+
+  @override
+  String get reportNextMonth => 'Следующий месяц';
+
+  @override
+  String get careTitle => 'Забота о телефоне и данных';
+
+  @override
+  String get storageTitle => 'Хранилище';
+
+  @override
+  String get storageSubtitle => 'Что занимает место и очистка неиспользуемых картинок';
+
+  @override
+  String get storagePictures => 'Картинки в заметках';
+
+  @override
+  String get storageCardMedia => 'Картинки и аудио в карточках';
+
+  @override
+  String get storageText => 'Текст заметок';
+
+  @override
+  String get storageFree => 'Свободно на телефоне';
+
+  @override
+  String get storageLow =>
+      'Память телефона почти заполнена. Освободите место, чтобы резервные копии и напоминания работали.';
+
+  @override
+  String storageUnused(int count, String size) {
+    return 'Неиспользуемых картинок: $count ($size)';
+  }
+
+  @override
+  String get storageNoUnused => 'Неиспользуемых картинок нет. Всё в порядке.';
+
+  @override
+  String get storageClean => 'Удалить неиспользуемые картинки';
+
+  @override
+  String storageCleaned(int count) {
+    return 'Удалено картинок: $count';
+  }
+
+  @override
+  String get storageHint =>
+      'Картинка считается неиспользуемой, только если её не показывает ни одна заметка, включая корзину.';
+
+  @override
+  String get batteryTitle => 'Чтобы напоминания приходили';
+
+  @override
+  String get batterySubtitle =>
+      'Некоторые телефоны останавливают фоновые приложения. Проверьте свой.';
+
+  @override
+  String get batteryStatusOk =>
+      'Экономия заряда не ограничивает приложение. Напоминания и звуки должны приходить вовремя.';
+
+  @override
+  String get batteryStatusLimited =>
+      'Экономия заряда может останавливать приложение в фоне: напоминания и звуки придут с опозданием или не придут.';
+
+  @override
+  String get batteryOpen => 'Открыть настройки батареи';
+
+  @override
+  String get batteryOpenApp => 'Открыть настройки приложения';
+
+  @override
+  String get batteryGeneric =>
+      'В настройках батареи выберите это приложение и поставьте «Без ограничений» (или «Не оптимизировать»).';
+
+  @override
+  String get batteryXiaomi =>
+      'Xiaomi / Redmi / POCO: также включите приложение в Безопасность › Разрешения › Автозапуск и поставьте экономию батареи «Без ограничений».';
+
+  @override
+  String get batteryOppo =>
+      'Oppo / Realme / OnePlus: откройте Батарея › это приложение, разрешите фоновую работу и автозапуск; закрепите приложение в списке недавних.';
+
+  @override
+  String get batterySamsung =>
+      'Samsung: Батарея › Ограничения фоновой работы: уберите приложение из «Спящих» и «Глубокого сна».';
+
+  @override
+  String get batteryHuawei =>
+      'Huawei / Honor: Запуск приложений › это приложение › вручную, разрешите автозапуск, косвенный запуск и работу в фоне.';
+
+  @override
+  String get batteryVivo =>
+      'Vivo / iQOO: Батарея › Фоновое энергопотребление › разрешите приложение и включите автозапуск в разрешениях.';
+
+  @override
+  String get whatsNewTitle => 'Что нового';
+
+  @override
+  String get whatsNewSubtitle => 'Последние изменения в нескольких строках';
+
+  @override
+  String get whatsNewDone => 'Понятно';
+
+  @override
+  String get whatsNewOrderTitle => 'Перетаскивайте карточки в свой порядок';
+
+  @override
+  String get whatsNewOrderBody => 'В колоде выберите Порядок › Мой порядок и перетащите ручку.';
+
+  @override
+  String get whatsNewSpeechTitle => 'Динамик у каждой стороны';
+
+  @override
+  String get whatsNewSpeechBody =>
+      'Нажмите, чтобы услышать слово или перевод. Скорость, повторы и голос — в меню повторения. Язык определяется по тексту.';
+
+  @override
+  String get whatsNewReportTitle => 'Отчёт за месяц';
+
+  @override
+  String get whatsNewReportBody =>
+      'В статистике нажмите значок отчёта, чтобы увидеть месяц и сохранить в PDF или Word.';
+
+  @override
+  String get whatsNewCareTitle => 'Забота о телефоне и данных';
+
+  @override
+  String get whatsNewCareBody =>
+      'В настройках появились страница хранилища с очисткой картинок и руководство по батарее для вашей марки.';
+
+  @override
+  String get whatsNewSoundTitle => 'Более мягкие звуки';
+
+  @override
+  String get whatsNewSoundBody => 'Звуки природы мягче и тише, а карточки красивее.';
+
+  @override
+  String autoBackupCheckOk(String date) {
+    return 'Проверено $date: последняя копия открывается без проблем.';
+  }
+
+  @override
+  String autoBackupCheckFixed(String date) {
+    return 'Проверено $date: найдена повреждённая копия, она заменена новой.';
+  }
+
+  @override
+  String autoBackupCheckFailed(String date) {
+    return 'Проверено $date: последнюю копию открыть не удалось. Сохраните резервную копию вручную в настройках.';
+  }
+
+  @override
+  String smartReviewTimeTitle(String time) {
+    return 'Обычно вы занимаетесь около $time';
+  }
+
+  @override
+  String get smartReviewTimeUse => 'Использовать';
+
+  @override
+  String get widgetNewNote => 'Новая заметка';
+
+  @override
+  String get noteConnections => 'Теги, ссылки и задачи';
+
+  @override
+  String get navCards => 'Карточки';
+
+  @override
+  String get studyAnswerWay => 'Как отвечать';
+
+  @override
+  String get studyMorePractice => 'Дополнительная практика';
+
+  @override
+  String get studySessionSettings => 'Настройки сессии';
+
+  @override
+  String get focusAdjustTitle => 'Ваша сессия';
+
+  @override
+  String get focusPresetsTitle => 'Готовые';
+
+  @override
+  String get focusPresetStudy => 'Учёба';
+
+  @override
+  String get focusPresetDeep => 'Глубокая работа';
+
+  @override
+  String get focusPresetQuick => 'Короткий рывок';
+
+  @override
+  String get focusPresetReading => 'Чтение';
+
+  @override
+  String get focusPresetWorkout => 'Тренировочные раунды';
+
+  @override
+  String get focusAdjustMinutes => 'Длительность фокуса';
+
+  @override
+  String get focusAdjustBreak => 'Длительность перерыва';
+
+  @override
+  String get focusAdjustRounds => 'Раунды';
+
+  @override
+  String get focusRoundsOpen => 'Без ограничения';
+
+  @override
+  String focusMinutesShort(String n) {
+    return '$n мин';
+  }
+
+  @override
+  String get focusTapToAdjust => 'Нажмите, чтобы изменить время';
 }

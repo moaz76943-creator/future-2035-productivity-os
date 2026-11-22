@@ -9,6 +9,8 @@ import '../../calendar/application/calendar_providers.dart';
 import '../../calendar/data/events_repository.dart';
 import '../../focus/application/focus_controller.dart';
 import '../../habits/application/habits_providers.dart';
+import '../../prayer/application/prayer_providers.dart';
+import '../../prayer/presentation/prayer_labels.dart';
 import '../../settings/application/settings_providers.dart';
 import '../../settings/data/settings_repository.dart';
 import '../data/notification_service.dart';
@@ -155,6 +157,12 @@ class ReminderSync {
         events: _events!,
         habits: _habits!,
         earliestReviewDue: _reviewDue,
+        prayers: settings.prayer.reminders
+            ? [
+                for (final (p, at) in upcomingPrayers(settings.prayer, now))
+                  PrayerReminderInput(index: p.index, name: prayerName(l10n, p), at: at),
+              ]
+            : const [],
       ),
       settings: settings,
       now: now,

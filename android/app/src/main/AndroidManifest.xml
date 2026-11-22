@@ -2,11 +2,20 @@
     <!-- Network is used only by the optional, user-configured HTTPS assistant.
          The app remains local-first and asks for consent before sending note text. -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Optional "Do Not Disturb while focusing"; the user grants access in system settings. -->
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
     <!-- Notifications (task/event/habit/review reminders, focus timer alerts).
          POST_NOTIFICATIONS is requested at runtime on Android 13+ only after a
          user action (starting a focus session or enabling reminders). -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- Flashcard voice recordings. Asked only when the user taps Record; audio stays
+         on the device (encrypted database), nothing is uploaded. -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- Nature sounds keep playing with the screen off: a media-playback foreground
+         service with a notification (pause / play / stop). -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
     <!-- Lets flutter_local_notifications restore scheduled alarms after reboot. -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <!-- Exact alarms. Declared only up to API 32 (Android 12/12L), where
@@ -29,6 +38,7 @@
         android:allowBackup="false"
         android:fullBackupContent="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
+        android:enableOnBackInvokedCallback="true"
         android:networkSecurityConfig="@xml/network_security_config">
         <activity
             android:name=".MainActivity"
@@ -52,6 +62,36 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <!-- Home screen widget: focus time left and cards due. -->
+        <receiver
+            android:name=".HomeWidgetProvider"
+            android:exported="false"
+            android:label="@string/home_widget_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/home_widget_info" />
+        </receiver>
+        <!-- Quick-add widget: new task, new note, review cards. -->
+        <receiver
+            android:name=".QuickAddWidgetProvider"
+            android:exported="false"
+            android:label="@string/quick_widget_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/quick_add_widget_info" />
+        </receiver>
+        <!-- Restores Do Not Disturb at the end of a focus phase. -->
+        <receiver android:name=".DndRestoreReceiver" android:exported="false" />
+        <service
+            android:name=".sound.SoundscapeService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
         <!-- flutter_local_notifications: deliver scheduled notifications and
              reschedule them after reboot or app update. -->
         <receiver
@@ -72,6 +112,9 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-1427592517924252~6873282990" />
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and

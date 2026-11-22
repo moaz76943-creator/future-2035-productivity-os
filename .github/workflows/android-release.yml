@@ -24,7 +24,7 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: "21"
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.50.0'
@@ -56,7 +56,8 @@ jobs:
 
       - name: Resolve and generate
         run: |
-          flutter pub get --enforce-lockfile
+          flutter pub get
+          python3 tool/third_party_licenses.py
           dart run build_runner build --delete-conflicting-outputs
           flutter gen-l10n
           bash tool/bootstrap_android_wrapper.sh
@@ -64,7 +65,7 @@ jobs:
       - name: Test before release
         run: |
           flutter analyze
-          flutter test --timeout=25m
+          flutter test --timeout=25m --dart-define=ENABLE_ADS=false
 
       - name: Build signed APK and AAB
         env:

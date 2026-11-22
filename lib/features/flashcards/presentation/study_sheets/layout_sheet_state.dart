@@ -223,19 +223,18 @@ class _LayoutSheetState extends ConsumerState<_LayoutSheet> {
                 selected: {f.side},
                 onSelectionChanged: (v) => update(f.copyWith(side: v.first)),
               ),
-              DropdownButton<String>(
+              TextButton.icon(
                 key: Key('customLang_${f.id}'),
-                value: speechLanguages.contains(f.lang) ? f.lang : '',
-                items: [
-                  for (final t in speechLanguages)
-                    DropdownMenuItem(
-                      value: t,
-                      child: Text(
-                        t.isEmpty ? l10n.flashcardsFieldLangDefault : (speechLanguageNames[t] ?? t),
-                      ),
-                    ),
-                ],
-                onChanged: (v) => update(f.copyWith(lang: v ?? '')),
+                icon: const Icon(Icons.translate_rounded, size: 18),
+                label: Text(languageLabelOf(f.lang, l10n.flashcardsFieldLangDefault)),
+                onPressed: () async {
+                  final t = await pickLanguage(
+                    context,
+                    current: f.lang,
+                    appLanguage: l10n.flashcardsFieldLangDefault,
+                  );
+                  if (t != null) update(f.copyWith(lang: t));
+                },
               ),
             ],
           ),

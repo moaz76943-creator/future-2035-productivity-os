@@ -1,8 +1,9 @@
 # Repository map — Deep Focus
 
-Deep Focus (`com.deepfocus.study`) is an offline study and productivity app built with Flutter
-3.50 / Dart 3.14. Everything runs on the device: no account, no server, and no network is needed
-for any feature. This file says where things live. Decisions and their reasons are in
+Deep Focus (`com.deepfocus.study`) is an offline-first study and productivity app built with
+Flutter 3.50 / Dart 3.14. Data stays on the device and every core feature works without a
+connection; the internet is used only by optional features (cloud assistant, Play Integrity).
+Active development happens on the `claude-dev` branch (ADR-014). This file says where things live. Decisions and their reasons are in
 [ADR.md](ADR.md).
 
 ## Top level
@@ -13,8 +14,8 @@ for any feature. This file says where things live. Decisions and their reasons a
 | `test/unit/` | Logic, repository and database tests, one folder per feature |
 | `test/widget/` | Screen tests, including `inventory/` (zero dead buttons), `responsive/` (every route at phone/tablet widths, 200% text, RTL) and per-feature flows |
 | `test/store/` | Generates the Play Store screenshots |
-| `tool/` | `check_l10n.py` (translation completeness, digits, no Hebrew), `en_strings.py` + `strings/` (string sources), `third_party_licenses.py` (license audit), `control_inventory_report.py` |
-| `android/` | Android host: `MainActivity.kt` (TTS, audio playback, notifications, integrity channels), Gradle and signing config (secrets only via CI) |
+| `tool/` | `sounds/render_alarm_sounds.py` (generates the timer-end sounds), `check_l10n.py` (translation completeness, digits, no Hebrew), `en_strings.py` + `strings/` (string sources), `third_party_licenses.py` (license audit), `control_inventory_report.py` |
+| `android/` | Android host: `MainActivity.kt` (card audio, recorder, integrity), `speech/TtsBridge.kt` (phone text-to-speech), `sound/` (nature sounds: Java `SampleVoice`, `Air`, `Dsp`, `Mixer`; Kotlin `AssetSamples`, `SoundEngine`, `SoundscapeService`, `SoundscapeChannel`), `assets/sounds/` (CC0 recordings), `res/raw/alarm_*.ogg` (timer-end sounds), Gradle and signing config (secrets only via CI) |
 | `assets/fonts/` | Manrope, Readex Pro, Noto Sans Devanagari and their OFL texts |
 | `docs/` | This map, ADRs, flashcards status, QA (audit, control inventory), store listing, localization brief |
 | `.github/workflows/` | `android-apk-ci.yml` (analyze, l10n + license checks, tests, QA APK), `android-release.yml` (signed release), visual regression gate, and the owner's `hermes-*` automation |
@@ -49,8 +50,18 @@ lib/
 ```
 
 Features: `analytics`, `assistant` (offline rules, no model download), `backup`, `calendar`,
-`dashboard`, `flashcards`, `focus`, `goals`, `habits`, `notes`, `notifications`, `onboarding`,
-`projects`, `search`, `settings`, `tasks`.
+`dashboard` (Start my day), `flashcards`, `focus` (+ Do Not Disturb link), `goals`, `habits`,
+`help` (feature guide → FAQ and tour, ADR-018), `notes`, `notifications`, `onboarding`,
+`prayer` (offline prayer times, ADR-019), `projects`, `search`, `settings`, `sounds` (nature
+sounds, background playback, saved mixes), `tasks`.
+
+Files in and out (ADR-022): `core/transfer/` (Excel, Word, CSV, PDF, Markdown) with one schema per
+section: `tasks/data/tasks_transfer.dart`, `notes/data/notes_transfer.dart`, `flashcards/data/cards_transfer.dart`.
+Note pictures (ADR-023): `notes/data/note_images.dart`.
+
+Phone integrations (ADR-020): `app/routing/deep_links.dart` (notification taps, app icon
+shortcuts), `app/home_widget_link.dart` (home screen widgets: focus and quick-add), `core/platform/` (shortcuts, voice
+typing), `shared/widgets/mic_button.dart`.
 
 ## Large screens: library + parts
 
@@ -81,13 +92,28 @@ extensions. Extensions are public, so importing the repository brings every meth
 | Images and recordings (encrypted BLOBs) | `data/flashcards_repository/media.dart`, `application/media_picker.dart` |
 | Screens | `presentation/decks_screen.dart`, `deck_screen.dart`, `review_screen.dart`, `deck_stats_screen.dart`, `card_search_screen.dart`, `study_sheets.dart`, `widgets/card_form_sheet.dart` |
 
+| Table view, listen mode, view/sort prefs | `presentation/widgets/card_table.dart`, `widgets/listen_bar.dart`, `application/listen_controller.dart`, `application/deck_view_prefs.dart` |
+| Every world language, phone voices first | `domain/world_languages.dart`, `presentation/widgets/language_picker.dart` |
+
 Spec status: [FLASHCARDS.md](FLASHCARDS.md).
+
+## Sounds at a glance
+
+| Piece | File |
+|---|---|
+| CC0 recordings + never-loop playback | `android/app/src/main/assets/sounds/*.ogg`, `android/.../sound/SampleVoice.java`, `AssetSamples.kt` (decoding); noise colours in `Air.java` |
+| Mixing, fades, playback thread, focus, sleep timer | `Mixer.java`, `SoundEngine.kt` |
+| Background playback + notification | `SoundscapeService.kt` |
+| App side | `lib/features/sounds/` (domain, data bridge, controller, screen with painted scenes) |
+| Timer-end sounds | `tool/sounds/render_alarm_sounds.py` → `res/raw/alarm_*.ogg`; `lib/features/focus/domain/end_tone.dart` |
 
 ## Checks that must stay at 100%
 
 ```
 flutter analyze                       # zero issues
-flutter test                          # unit + widget (inventory, responsive, l10n)
+bash tool/check_all.sh                # every CI check in one command (see AGENTS.md)
+flutter test                          # unit + widget (inventory, responsive, l10n, help coverage)
+flutter test integration_test -d <emulator>   # on-device flow (CI: android-emulator-tests.yml)
 python3 tool/check_l10n.py            # 8 locales complete, Western digits, no he/iw
 python3 tool/third_party_licenses.py --check
 ```

@@ -15,9 +15,21 @@ import '../../../shared/widgets/pickers.dart';
 import '../../backup/presentation/backup_flows.dart';
 import '../application/settings_providers.dart';
 import '../data/settings_repository.dart';
+import '../../backup/presentation/auto_backup_sheet.dart';
+import '../../prayer/domain/prayer_cities.dart';
+import '../../prayer/presentation/prayer_sheet.dart';
+import '../../care/presentation/battery_sheet.dart';
+import '../../care/presentation/storage_sheet.dart';
+import '../../care/presentation/whats_new_sheet.dart';
+import 'appearance_extras.dart';
+import 'dnd_tile.dart';
+import 'end_tone_sheet.dart';
+import 'error_log_sheet.dart';
 import 'language_options.dart';
+import 'smart_review_time.dart';
 
 part 'settings_screen/section.dart';
+part 'settings_screen/care_section.dart';
 
 /// Localized label of a dashboard section id.
 String dashboardSectionLabel(AppLocalizations l10n, String id) => switch (id) {
@@ -69,6 +81,30 @@ class SettingsScreen extends ConsumerWidget {
                   subtitle: chosen?.nativeName ?? l10n.settingsLanguageSystem,
                   onTap: () => showLanguagePicker(context),
                 ),
+                SwitchListTile(
+                  key: const ValueKey('settings-hijri'),
+                  secondary: const Icon(Icons.nightlight_outlined),
+                  title: Text(l10n.settingsHijri),
+                  subtitle: Text(l10n.settingsHijriHint),
+                  value: s.showHijri(context.language.tag),
+                  onChanged: (v) => set((c) => c.copyWith(hijri: v ? 'on' : 'off')),
+                ),
+                _NavRow(
+                  key: const ValueKey('settings-help'),
+                  icon: Icons.help_outline_rounded,
+                  title: l10n.helpTitle,
+                  subtitle: l10n.helpTour,
+                  onTap: () => context.push(Routes.help),
+                ),
+                _NavRow(
+                  key: const ValueKey('settings-prayer'),
+                  icon: Icons.mosque_outlined,
+                  title: l10n.prayerTitle,
+                  subtitle:
+                      prayerCityById(s.prayer.city)?.name(context.language.tag) ??
+                      l10n.prayerChooseCity,
+                  onTap: () => showPrayerSheet(context),
+                ),
               ],
             ),
             // ---------------- Appearance
@@ -119,6 +155,7 @@ class SettingsScreen extends ConsumerWidget {
                     ],
                   ),
                 ),
+                const AppearanceExtras(),
                 SwitchListTile(
                   secondary: const Icon(Icons.motion_photos_off_rounded),
                   title: Text(l10n.settingsReduceMotion),
@@ -176,6 +213,8 @@ class SettingsScreen extends ConsumerWidget {
                   value: s.focusSound,
                   onChanged: (v) => set((c) => c.copyWith(focusSound: v)),
                 ),
+                EndToneTile(enabled: s.focusSound),
+                const DndTile(),
                 _StepperRow(
                   label: l10n.settingsDailyFocusTarget,
                   value: fmt.minutes(s.dailyFocusTargetMinutes),
@@ -265,6 +304,13 @@ class SettingsScreen extends ConsumerWidget {
                   onTap: () => restoreBackupFlow(context, ref),
                 ),
                 _NavRow(
+                  key: const ValueKey('settings-auto-backup'),
+                  icon: Icons.history_rounded,
+                  title: l10n.autoBackupTitle,
+                  subtitle: l10n.autoBackupDesc,
+                  onTap: () => showAutoBackups(context),
+                ),
+                _NavRow(
                   key: const ValueKey('settings-erase'),
                   icon: Icons.delete_forever_rounded,
                   title: l10n.settingsErase,
@@ -274,6 +320,7 @@ class SettingsScreen extends ConsumerWidget {
                 ),
               ],
             ),
+            const _CareSection(),
             // ---------------- Trash
             _Section(
               title: l10n.settingsTrash,
@@ -303,6 +350,12 @@ class SettingsScreen extends ConsumerWidget {
                     '${l10n.settingsVersion(_displayVersion)}\n${l10n.settingsAboutTagline}',
                   ),
                   isThreeLine: true,
+                ),
+                _NavRow(
+                  key: const ValueKey('settings-error-log'),
+                  icon: Icons.bug_report_outlined,
+                  title: l10n.errorLogTitle,
+                  onTap: () => showErrorLog(context),
                 ),
                 _NavRow(
                   icon: Icons.description_outlined,

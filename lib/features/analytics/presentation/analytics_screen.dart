@@ -15,6 +15,7 @@ import '../../../core/time/clock.dart';
 import '../../../shared/widgets/async_value_view.dart';
 import '../../../shared/widgets/module_scaffold.dart';
 import '../application/analytics_providers.dart';
+import '../../reports/presentation/monthly_report_sheet.dart';
 import '../data/analytics_service.dart';
 
 part 'analytics_screen/analytics_screen_state.dart';

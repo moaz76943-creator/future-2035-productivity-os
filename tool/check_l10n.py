@@ -25,8 +25,12 @@ PLURAL_CATS = {
 SAME_OK = {'appName', 'percentValue', 'taskSubtaskProgress', 'durationHours', 'durationMinutes',
            'durationHoursMinutes', 'settingsMinutesValue', 'focusModePomodoro', 'statSessionsDetail',
            'dashFocusOfTarget', 'reviewProgress', 'goalProgressOf', 'intervalMinutes', 'habitCountToday',
-           'notifEventBody', 'weekdaysShort', 'focusPlanTotal', 'flashcardsAudio', 'flashcardsImage',
+           'notifEventBody', 'weekdaysShort', 'focusPlanTotal', 'flashcardsAudio', 'soundsNature', 'speechSeconds', 'flashcardsImage',
            'templateFieldPlural',
+           # Hijri month names are proper nouns (same spelling in several languages).
+           *(f'hijriMonth{i}' for i in range(1, 13)),
+           # Country names used as prayer-method names.
+           'prayerMethodKuwait', 'prayerMethodQatar', 'prayerMethodFrance',
            # Pure placeholder/format strings: nothing to translate.
            'analyticsBarValue', 'assistantTimeRange', 'calendarTimeRange', 'calendarWeekRange',
            'goalsAmountWithUnit', 'notesTagFilter', 'notesUpdatedAt', 'calendarDaySemantics',

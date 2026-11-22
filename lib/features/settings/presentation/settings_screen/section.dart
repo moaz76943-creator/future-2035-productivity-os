@@ -172,13 +172,30 @@ class _NotificationsSection extends ConsumerWidget {
             onTap: () => pick(s.quietEndMinute, (c, m) => c.copyWith(quietEndMinute: m)),
           ),
         ],
-        ListTile(
-          leading: const Icon(Icons.style_rounded),
+        SwitchListTile(
+          key: const Key('settings-review-reminder'),
+          secondary: const Icon(Icons.style_rounded),
           title: Text(l10n.settingsReviewReminder),
-          trailing: Text(at(s.reviewReminderMinute), style: context.text.titleSmall),
-          enabled: s.notificationsEnabled,
-          onTap: () => pick(s.reviewReminderMinute, (c, m) => c.copyWith(reviewReminderMinute: m)),
+          subtitle: Text(l10n.settingsReviewReminderHint),
+          value: s.reviewReminderOn,
+          onChanged: s.notificationsEnabled
+              ? (v) => set((c) => c.copyWith(reviewReminderOn: v))
+              : null,
         ),
+        if (s.reviewReminderOn)
+          ListTile(
+            key: const Key('settings-review-time'),
+            title: Text(l10n.settingsReviewTime),
+            trailing: Text(at(s.reviewReminderMinute), style: context.text.titleSmall),
+            enabled: s.notificationsEnabled,
+            onTap: () =>
+                pick(s.reviewReminderMinute, (c, m) => c.copyWith(reviewReminderMinute: m)),
+          ),
+        if (s.reviewReminderOn && s.notificationsEnabled)
+          SmartReviewTimeTile(
+            currentMinute: s.reviewReminderMinute,
+            onUse: (m) => set((c) => c.copyWith(reviewReminderMinute: m)),
+          ),
       ],
     );
   }

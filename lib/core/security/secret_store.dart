@@ -43,6 +43,9 @@ class MemorySecretStore implements SecretStore {
 abstract final class SecretKeys {
   static const databaseKey = 'fos.db.key.v1';
   static const assistantApiKey = 'fos.assistant.apikey.v1';
+
+  /// Random password of the automatic daily backups (never shown to anyone).
+  static const autoBackupPassword = 'fos.backup.auto.v1';
 }
 
 /// Raised rather than rotating a missing or malformed key when an encrypted

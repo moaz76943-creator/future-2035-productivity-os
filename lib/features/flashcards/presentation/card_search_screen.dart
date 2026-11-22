@@ -15,7 +15,7 @@ import '../data/flashcards_repository.dart';
 import '../domain/card_extras.dart';
 import '../domain/card_layout.dart';
 import '../domain/study.dart';
-import 'study_sheets.dart' show speechLanguageNames;
+import '../domain/world_languages.dart';
 import 'widgets/card_form_sheet.dart';
 
 const _hue = ModuleHue.flashcards;
@@ -35,11 +35,7 @@ final _overviewProvider = FutureProvider.autoDispose<FlashOverview>((ref) async 
 
 String languageLabel(BuildContext context, String code) {
   if (code.isEmpty) return context.l10n.flashcardsLangUnset;
-  final name = speechLanguageNames.entries
-      .where((e) => e.key.split('-').first == code)
-      .map((e) => e.value)
-      .firstOrNull;
-  return name ?? code;
+  return languageDisplayName(code);
 }
 
 /// Search every deck at once: text in any field (front, back, tags, extra and
@@ -231,7 +227,11 @@ class _CardSearchScreenState extends ConsumerState<CardSearchScreen> {
                               ),
                             ),
                             const SizedBox(width: Space.xs),
-                            LuxPill(label: d.name, color: Color(d.color)),
+                            // A long deck name shortens instead of overflowing the row.
+                            ConstrainedBox(
+                              constraints: const BoxConstraints(maxWidth: 120),
+                              child: LuxPill(label: d.name, color: Color(d.color)),
+                            ),
                           ],
                         ),
                       );

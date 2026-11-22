@@ -11,6 +11,8 @@ import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/components/states.dart';
 import '../../../core/design_system/tokens.dart';
 import '../../../core/providers/core_providers.dart';
+import '../../../core/time/hijri.dart';
+import '../../settings/application/settings_providers.dart';
 import '../../../shared/widgets/async_value_view.dart';
 import '../../../shared/widgets/dialogs.dart';
 import '../../../shared/widgets/module_scaffold.dart';

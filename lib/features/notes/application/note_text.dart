@@ -3,6 +3,9 @@ import 'package:flutter/services.dart';
 /// Pure text helpers for notes: markdown toolbar transforms, word counting,
 /// plain-text previews and content-based text direction. No Flutter widgets,
 /// so everything here is unit-testable.
+/// Line formats the toolbar can show as active.
+enum NoteLineKind { heading, bullet, checklist }
+
 abstract final class NoteText {
   static final _cjk = RegExp(
     r'[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]',
@@ -30,6 +33,7 @@ abstract final class NoteText {
   static final _bullet = RegExp(r'^(\s*)[-*+]\s+');
   static final _ordered = RegExp(r'^(\s*)\d{1,9}[.)]\s+');
   static final _quote = RegExp(r'^\s{0,3}>\s?');
+  static final _headingIndent = RegExp(r'^(\s{0,3})#{1,6}\s+');
 
   /// Removes markdown syntax, keeping readable text. Line breaks are kept.
   static String stripMarkdown(String text) {
@@ -44,6 +48,7 @@ abstract final class NoteText {
     });
     return lines
         .join('\n')
+        .replaceAll(RegExp(r'!\[[^\]]*\]\(img:[A-Za-z0-9_-]{1,64}\)'), '')
         .replaceAllMapped(RegExp(r'\[\[([^\[\]]{1,200})\]\]'), (m) => m.group(1)!)
         .replaceAllMapped(RegExp(r'\[([^\]]*)\]\([^)]*\)'), (m) => m.group(1)!)
         .replaceAll(RegExp(r'\*\*|__|`'), '')
@@ -118,7 +123,35 @@ abstract final class NoteText {
     return null;
   }
 
+  static final _emptyPairs = RegExp(r'(\*\*|__)(\*\*|__|_)?\1');
+
+  /// Removes formatting pairs with nothing inside (`****`, `**__**`, `____`),
+  /// left by pressing toolbar buttons without typing. Text is never touched.
+  static String removeEmptyMarkers(String body) {
+    var s = body;
+    for (var i = 0; i < 3; i++) {
+      final next = s.replaceAll(_emptyPairs, '');
+      if (next == s) break;
+      s = next;
+    }
+    return s;
+  }
+
   // ---------------------------------------------------------- toolbar edits
+
+  /// The kind of the line under the cursor (for highlighting its button).
+  static NoteLineKind? lineKindAt(TextEditingValue v) {
+    final text = v.text;
+    final at = v.selection.isValid ? v.selection.start.clamp(0, text.length) : text.length;
+    final start = at == 0 ? 0 : text.lastIndexOf('\n', at - 1) + 1;
+    var end = text.indexOf('\n', at);
+    if (end < 0) end = text.length;
+    final line = text.substring(start, end);
+    if (_checkbox.hasMatch(line)) return NoteLineKind.checklist;
+    if (_heading.hasMatch(line)) return NoteLineKind.heading;
+    if (_bullet.hasMatch(line)) return NoteLineKind.bullet;
+    return null;
+  }
 
   /// Wraps the selection with [open]/[close], or removes them when the
   /// selection is already wrapped. A collapsed cursor inserts the pair and
@@ -131,6 +164,17 @@ abstract final class NoteText {
     final end = sel.end;
     final selected = text.substring(start, end);
 
+    // A cursor between an empty pair (the button pressed twice): remove it.
+    if (start == end &&
+        start >= open.length &&
+        end + c.length <= text.length &&
+        text.substring(start - open.length, start) == open &&
+        text.substring(end, end + c.length) == c) {
+      return TextEditingValue(
+        text: text.replaceRange(start - open.length, end + c.length, ''),
+        selection: TextSelection.collapsed(offset: start - open.length),
+      );
+    }
     // Markers directly around a non-empty selection: unwrap.
     final before = start >= open.length ? text.substring(start - open.length, start) : '';
     final after = end + c.length <= text.length ? text.substring(end, end + c.length) : '';
@@ -166,19 +210,36 @@ abstract final class NoteText {
   static TextEditingValue italic(TextEditingValue v) => wrap(v, '_');
   static TextEditingValue wikiLink(TextEditingValue v) => wrap(v, '[[', ']]');
 
-  static TextEditingValue heading(TextEditingValue v) =>
-      _linePrefix(v, '# ', (l) => _heading.firstMatch(l)?.group(0));
+  /// A heading replaces a list marker on the line (and the other way round),
+  /// so markers never pile up.
+  static TextEditingValue heading(TextEditingValue v) => _linePrefix(
+    v,
+    '# ',
+    (l) => _heading.firstMatch(l)?.group(0),
+    replace: (l) => _checkbox.firstMatch(l) ?? _bullet.firstMatch(l) ?? _ordered.firstMatch(l),
+  );
 
-  static TextEditingValue bulletList(TextEditingValue v) => _linePrefix(v, '- ', (l) {
-    if (_checkbox.hasMatch(l)) return null; // converted below
-    final m = _bullet.firstMatch(l);
-    return m == null ? null : l.substring(m.group(1)!.length, m.end);
-  }, replace: (l) => _checkbox.firstMatch(l) ?? _ordered.firstMatch(l));
+  static TextEditingValue bulletList(TextEditingValue v) => _linePrefix(
+    v,
+    '- ',
+    (l) {
+      if (_checkbox.hasMatch(l)) return null; // converted below
+      final m = _bullet.firstMatch(l);
+      return m == null ? null : l.substring(m.group(1)!.length, m.end);
+    },
+    replace: (l) =>
+        _checkbox.firstMatch(l) ?? _ordered.firstMatch(l) ?? _headingIndent.firstMatch(l),
+  );
 
-  static TextEditingValue checklist(TextEditingValue v) => _linePrefix(v, '- [ ] ', (l) {
-    final m = _checkbox.firstMatch(l);
-    return m == null ? null : l.substring(m.group(1)!.length, m.end);
-  }, replace: (l) => _bullet.firstMatch(l) ?? _ordered.firstMatch(l));
+  static TextEditingValue checklist(TextEditingValue v) => _linePrefix(
+    v,
+    '- [ ] ',
+    (l) {
+      final m = _checkbox.firstMatch(l);
+      return m == null ? null : l.substring(m.group(1)!.length, m.end);
+    },
+    replace: (l) => _bullet.firstMatch(l) ?? _ordered.firstMatch(l) ?? _headingIndent.firstMatch(l),
+  );
 
   /// Toggles [prefix] on every line touched by the selection. [existing]
   /// returns the prefix text a line already has (to remove when every line
@@ -240,5 +301,49 @@ abstract final class NoteText {
     final a = s.start.clamp(0, v.text.length);
     final b = s.end.clamp(0, v.text.length);
     return TextSelection(baseOffset: a, extentOffset: b);
+  }
+}
+
+/// Enter in a list continues it (`- [ ] `, `- `, `2. `); Enter on an empty
+/// item ends the list, like common note apps.
+class NoteListFormatter extends TextInputFormatter {
+  const NoteListFormatter();
+
+  static final _item = RegExp(r'^(\s*)(?:([-*+])\s+\[(?: |x|X)\]|([-*+])|(\d{1,9})([.)]))\s+');
+
+  @override
+  TextEditingValue formatEditUpdate(TextEditingValue oldValue, TextEditingValue newValue) {
+    final sel = newValue.selection;
+    if (!sel.isCollapsed ||
+        newValue.text.length != oldValue.text.length + 1 ||
+        sel.start < 1 ||
+        newValue.text[sel.start - 1] != '\n') {
+      return newValue;
+    }
+    final text = newValue.text;
+    final lineEnd = sel.start - 1;
+    final lineStart = text.lastIndexOf('\n', lineEnd - 1) + 1;
+    final line = text.substring(lineStart, lineEnd);
+    final m = _item.firstMatch(line);
+    if (m == null) return newValue;
+    if (line.trim().length == m.group(0)!.trim().length) {
+      // Empty item: drop the marker and end the list.
+      final t = text.replaceRange(lineStart, sel.start, '');
+      return TextEditingValue(
+        text: t,
+        selection: TextSelection.collapsed(offset: lineStart),
+      );
+    }
+    final indent = m.group(1)!;
+    final next = m.group(2) != null
+        ? '${m.group(2)} [ ] '
+        : m.group(3) != null
+        ? '${m.group(3)} '
+        : '${int.parse(m.group(4)!) + 1}${m.group(5)} ';
+    final t = text.replaceRange(sel.start, sel.start, '$indent$next');
+    return TextEditingValue(
+      text: t,
+      selection: TextSelection.collapsed(offset: sel.start + indent.length + next.length),
+    );
   }
 }

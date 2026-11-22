@@ -111,7 +111,7 @@ abstract class AppLocalizations {
   /// Application name shown in launcher and about screen. Brand name; may stay in Latin script.
   ///
   /// In en, this message translates to:
-  /// **'Future OS'**
+  /// **'Deep Focus'**
   String get appName;
 
   /// Bottom navigation: dashboard tab
@@ -2283,7 +2283,7 @@ abstract class AppLocalizations {
   /// Help text
   ///
   /// In en, this message translates to:
-  /// **'Paste one card per line as front and back separated by a tab or semicolon, or paste an exported deck file.'**
+  /// **'Paste one card per line (front and back separated by a tab or semicolon), or choose a file: Excel (.xlsx), CSV, an Anki deck (.apkg) or an exported deck.'**
   String get importCardsHint;
 
   /// Snackbar
@@ -3405,7 +3405,7 @@ abstract class AppLocalizations {
   /// Error
   ///
   /// In en, this message translates to:
-  /// **'This file is not a Future OS backup.'**
+  /// **'This file is not a Deep Focus backup.'**
   String get backupNotABackup;
 
   /// Error
@@ -5085,7 +5085,7 @@ abstract class AppLocalizations {
   /// Subject used when sharing the backup file
   ///
   /// In en, this message translates to:
-  /// **'Future OS encrypted backup'**
+  /// **'Deep Focus encrypted backup'**
   String get backupShareSubject;
 
   /// Summary of a custom repeat rule. unit is one of day/week/month/year (do not translate the select keys)
@@ -6177,7 +6177,7 @@ abstract class AppLocalizations {
   /// speechVoiceDefault
   ///
   /// In en, this message translates to:
-  /// **'Device default'**
+  /// **'Automatic'**
   String get speechVoiceDefault;
 
   /// speechVoiceOnline
@@ -6485,6 +6485,2118 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{decks} decks · {cards} cards · {mature} mature · {due} due · {correct} correct (30 days)'**
   String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct);
+
+  /// Chip in the card form: record a voice clip with the microphone
+  ///
+  /// In en, this message translates to:
+  /// **'Record'**
+  String get flashcardsRecord;
+
+  /// Title of the sheet while the microphone is recording
+  ///
+  /// In en, this message translates to:
+  /// **'Recording…'**
+  String get flashcardsRecording;
+
+  /// Button: stop recording and keep the clip on the card
+  ///
+  /// In en, this message translates to:
+  /// **'Stop and keep'**
+  String get flashcardsRecordStop;
+
+  /// Inline error when microphone permission is refused
+  ///
+  /// In en, this message translates to:
+  /// **'Microphone access is off. Allow it in the system settings to record.'**
+  String get flashcardsMicDenied;
+
+  /// Inline error when recording cannot start on this device
+  ///
+  /// In en, this message translates to:
+  /// **'Recording isn\'t available on this device.'**
+  String get flashcardsRecordFailed;
+
+  /// Title of the nature sounds screen
+  ///
+  /// In en, this message translates to:
+  /// **'Sounds'**
+  String get soundsTitle;
+
+  /// Subtitle of the sounds screen
+  ///
+  /// In en, this message translates to:
+  /// **'Real nature recordings, played so they never sound like a loop.'**
+  String get soundsSubtitle;
+
+  /// Section header: nature sounds
+  ///
+  /// In en, this message translates to:
+  /// **'Nature'**
+  String get soundsNature;
+
+  /// Section header: steady noise colours for concentration
+  ///
+  /// In en, this message translates to:
+  /// **'Focus noise'**
+  String get soundsNoise;
+
+  /// Sound name
+  ///
+  /// In en, this message translates to:
+  /// **'Rain'**
+  String get soundRain;
+
+  /// Sound name
+  ///
+  /// In en, this message translates to:
+  /// **'Thunderstorm'**
+  String get soundStorm;
+
+  /// Sound name
+  ///
+  /// In en, this message translates to:
+  /// **'River'**
+  String get soundRiver;
+
+  /// Sound name
+  ///
+  /// In en, this message translates to:
+  /// **'Ocean waves'**
+  String get soundOcean;
+
+  /// Sound name
+  ///
+  /// In en, this message translates to:
+  /// **'Campfire'**
+  String get soundFire;
+
+  /// Sound name
+  ///
+  /// In en, this message translates to:
+  /// **'Forest birds'**
+  String get soundForest;
+
+  /// Sound name: crickets at night
+  ///
+  /// In en, this message translates to:
+  /// **'Summer night'**
+  String get soundNight;
+
+  /// Sound name
+  ///
+  /// In en, this message translates to:
+  /// **'White noise'**
+  String get soundWhite;
+
+  /// Sound name
+  ///
+  /// In en, this message translates to:
+  /// **'Pink noise'**
+  String get soundPink;
+
+  /// Sound name
+  ///
+  /// In en, this message translates to:
+  /// **'Brown noise'**
+  String get soundBrown;
+
+  /// Button: play the sound mix
+  ///
+  /// In en, this message translates to:
+  /// **'Play'**
+  String get soundsPlay;
+
+  /// Button/menu: sleep timer that stops the sounds
+  ///
+  /// In en, this message translates to:
+  /// **'Sleep timer'**
+  String get soundsSleep;
+
+  /// Sleep timer menu: no timer
+  ///
+  /// In en, this message translates to:
+  /// **'Off'**
+  String get soundsSleepOff;
+
+  /// Shown when the sleep timer is on
+  ///
+  /// In en, this message translates to:
+  /// **'Stops at {time}'**
+  String soundsSleepAt(String time);
+
+  /// Message when too many sounds are on
+  ///
+  /// In en, this message translates to:
+  /// **'Up to {count} sounds can play at once.'**
+  String soundsMixFull(int count);
+
+  /// Hint on the sounds screen
+  ///
+  /// In en, this message translates to:
+  /// **'Tap a sound to start. Mix several and set each volume.'**
+  String get soundsHint;
+
+  /// Button/sheet title: volumes of the sounds in the mix
+  ///
+  /// In en, this message translates to:
+  /// **'Mix'**
+  String get soundsMixer;
+
+  /// Accessibility label of a volume slider
+  ///
+  /// In en, this message translates to:
+  /// **'{name} volume'**
+  String soundsVolumeOf(String name);
+
+  /// Notification title and channel name while sounds play
+  ///
+  /// In en, this message translates to:
+  /// **'Nature sounds'**
+  String get soundsChannel;
+
+  /// Settings row: which sound plays when a timer ends
+  ///
+  /// In en, this message translates to:
+  /// **'Timer end sound'**
+  String get settingsEndTone;
+
+  /// End sound: two soft beeps
+  ///
+  /// In en, this message translates to:
+  /// **'Gentle beeps'**
+  String get toneGentle;
+
+  /// End sound: three short beeps
+  ///
+  /// In en, this message translates to:
+  /// **'Beeps'**
+  String get toneBeeps;
+
+  /// End sound: knocks on wood
+  ///
+  /// In en, this message translates to:
+  /// **'Wood knock'**
+  String get toneWood;
+
+  /// End sound: a short bird call
+  ///
+  /// In en, this message translates to:
+  /// **'Bird call'**
+  String get toneBird;
+
+  /// End sound: a short stream of water
+  ///
+  /// In en, this message translates to:
+  /// **'Stream'**
+  String get toneStream;
+
+  /// End sound: the phone's own notification sound
+  ///
+  /// In en, this message translates to:
+  /// **'Phone\'s sound'**
+  String get toneSystem;
+
+  /// Language picker section: languages with voices installed on the phone
+  ///
+  /// In en, this message translates to:
+  /// **'On this phone'**
+  String get speechOnPhone;
+
+  /// Language picker section: every language
+  ///
+  /// In en, this message translates to:
+  /// **'All languages'**
+  String get speechAllLanguages;
+
+  /// Hint of the language search field
+  ///
+  /// In en, this message translates to:
+  /// **'Search languages'**
+  String get speechSearchLanguage;
+
+  /// Button: open the phone's speech settings to download voices
+  ///
+  /// In en, this message translates to:
+  /// **'Download more voices'**
+  String get speechGetVoices;
+
+  /// Explains how to get voices for more languages
+  ///
+  /// In en, this message translates to:
+  /// **'Languages without a voice can be downloaded in the phone\'s speech settings.'**
+  String get speechGetVoicesHint;
+
+  /// Error when the phone's speech settings cannot be opened
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t open the speech settings on this phone.'**
+  String get speechSettingsFailed;
+
+  /// Marks a language with no voice installed on the phone
+  ///
+  /// In en, this message translates to:
+  /// **'No voice installed'**
+  String get speechVoiceMissing;
+
+  /// Stepper: silence between repeated readings
+  ///
+  /// In en, this message translates to:
+  /// **'Pause between repeats'**
+  String get speechPause;
+
+  /// A number of seconds, e.g. 1.5 s
+  ///
+  /// In en, this message translates to:
+  /// **'{seconds} s'**
+  String speechSeconds(String seconds);
+
+  /// Switch: also read the example sentence after the answer
+  ///
+  /// In en, this message translates to:
+  /// **'Read the example with the answer'**
+  String get speechExample;
+
+  /// Button: hands-free mode that reads every card aloud
+  ///
+  /// In en, this message translates to:
+  /// **'Listen'**
+  String get flashListen;
+
+  /// Listen mode: skip to the next card
+  ///
+  /// In en, this message translates to:
+  /// **'Next card'**
+  String get flashListenNext;
+
+  /// Listen mode cannot start: no cards in the list
+  ///
+  /// In en, this message translates to:
+  /// **'No cards to listen to.'**
+  String get flashListenEmpty;
+
+  /// View option: cards as a two-column table
+  ///
+  /// In en, this message translates to:
+  /// **'Table'**
+  String get flashViewTable;
+
+  /// View option: cards as tiles
+  ///
+  /// In en, this message translates to:
+  /// **'Cards'**
+  String get flashViewCards;
+
+  /// Button: swap the two columns (which side comes first)
+  ///
+  /// In en, this message translates to:
+  /// **'Swap columns'**
+  String get flashSwapSides;
+
+  /// Menu: order of the card list
+  ///
+  /// In en, this message translates to:
+  /// **'Sort'**
+  String get flashSort;
+
+  /// Sort option
+  ///
+  /// In en, this message translates to:
+  /// **'Newest first'**
+  String get flashSortNewest;
+
+  /// Sort option: alphabetical
+  ///
+  /// In en, this message translates to:
+  /// **'A to Z'**
+  String get flashSortAlpha;
+
+  /// Sort option
+  ///
+  /// In en, this message translates to:
+  /// **'Due first'**
+  String get flashSortDue;
+
+  /// Sort option
+  ///
+  /// In en, this message translates to:
+  /// **'Hardest first'**
+  String get flashSortHard;
+
+  /// Menu: create cards from text in the clipboard
+  ///
+  /// In en, this message translates to:
+  /// **'Paste cards'**
+  String get flashPasteCards;
+
+  /// Message: nothing to paste
+  ///
+  /// In en, this message translates to:
+  /// **'The clipboard has no text.'**
+  String get flashClipboardEmpty;
+
+  /// Deck menu section title
+  ///
+  /// In en, this message translates to:
+  /// **'Add cards'**
+  String get flashMenuAdd;
+
+  /// Deck menu section title: settings of this deck
+  ///
+  /// In en, this message translates to:
+  /// **'Deck'**
+  String get flashMenuDeck;
+
+  /// Title of today's study activity card
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get flashToday;
+
+  /// Button on a deck: start studying it
+  ///
+  /// In en, this message translates to:
+  /// **'Study'**
+  String get flashStudyNow;
+
+  /// Cards answered today
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No cards answered} =1{1 card answered} other{{count} cards answered}}'**
+  String flashTodayAnswered(int count);
+
+  /// Sound name: rain falling in a forest
+  ///
+  /// In en, this message translates to:
+  /// **'Rain in the forest'**
+  String get soundForestRain;
+
+  /// Settings row and sheet title
+  ///
+  /// In en, this message translates to:
+  /// **'Automatic backups'**
+  String get autoBackupTitle;
+
+  /// Settings row subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Every day on this phone; the last 7 are kept'**
+  String get autoBackupDesc;
+
+  /// Explains where automatic backups live
+  ///
+  /// In en, this message translates to:
+  /// **'These copies stay on this phone and are removed if the app is uninstalled. To move to a new phone, use “Back up” to save a file.'**
+  String get autoBackupHint;
+
+  /// No automatic backup exists yet
+  ///
+  /// In en, this message translates to:
+  /// **'No automatic backup yet. The first one is made today.'**
+  String get autoBackupNone;
+
+  /// Button: restore this automatic backup
+  ///
+  /// In en, this message translates to:
+  /// **'Restore'**
+  String get autoBackupRestore;
+
+  /// Confirm restoring an automatic backup
+  ///
+  /// In en, this message translates to:
+  /// **'Replace all current data with the backup from {date}?'**
+  String autoBackupConfirm(String date);
+
+  /// Message after restoring
+  ///
+  /// In en, this message translates to:
+  /// **'Restored.'**
+  String get autoBackupRestored;
+
+  /// Settings row and sheet title: list of app errors
+  ///
+  /// In en, this message translates to:
+  /// **'Error log'**
+  String get errorLogTitle;
+
+  /// Explains the error log and its privacy
+  ///
+  /// In en, this message translates to:
+  /// **'If something goes wrong, it is noted here: only the kind of error and where in the code, never your content. Share it to help fix the problem.'**
+  String get errorLogHint;
+
+  /// No errors recorded
+  ///
+  /// In en, this message translates to:
+  /// **'No errors recorded.'**
+  String get errorLogEmpty;
+
+  /// Button: empty the error log
+  ///
+  /// In en, this message translates to:
+  /// **'Clear'**
+  String get errorLogClear;
+
+  /// Switch: play sounds during focus sessions
+  ///
+  /// In en, this message translates to:
+  /// **'Play with focus sessions'**
+  String get soundsWithFocus;
+
+  /// Explains the focus link
+  ///
+  /// In en, this message translates to:
+  /// **'Your mix starts with a focus session and pauses at breaks.'**
+  String get soundsWithFocusHint;
+
+  /// Section title: saved sound mixes
+  ///
+  /// In en, this message translates to:
+  /// **'Saved mixes'**
+  String get soundsSavedMixes;
+
+  /// Button/dialog title: save the current mix
+  ///
+  /// In en, this message translates to:
+  /// **'Save this mix'**
+  String get soundsSaveMix;
+
+  /// Hint for the mix name
+  ///
+  /// In en, this message translates to:
+  /// **'Name, e.g. Rainy library'**
+  String get soundsMixNameHint;
+
+  /// Confirm deleting a saved mix
+  ///
+  /// In en, this message translates to:
+  /// **'Delete the mix “{name}”?'**
+  String soundsDeleteMix(String name);
+
+  /// Subtitle of the daily review reminder switch
+  ///
+  /// In en, this message translates to:
+  /// **'Once a day, only when cards are due'**
+  String get settingsReviewReminderHint;
+
+  /// Row: time of the daily review reminder
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder time'**
+  String get settingsReviewTime;
+
+  /// App icon long-press shortcut: open the focus timer. Max ~20 chars
+  ///
+  /// In en, this message translates to:
+  /// **'Focus'**
+  String get shortcutFocus;
+
+  /// App icon shortcut: new task. Max ~20 chars
+  ///
+  /// In en, this message translates to:
+  /// **'New task'**
+  String get shortcutNewTask;
+
+  /// App icon shortcut: open flashcards to review. Max ~20 chars
+  ///
+  /// In en, this message translates to:
+  /// **'Review cards'**
+  String get shortcutReview;
+
+  /// App icon shortcut: nature sounds. Max ~20 chars
+  ///
+  /// In en, this message translates to:
+  /// **'Nature sounds'**
+  String get shortcutSounds;
+
+  /// Dashboard card and sheet: begin the day
+  ///
+  /// In en, this message translates to:
+  /// **'Start my day'**
+  String get myDayTitle;
+
+  /// Subtitle of the Start my day card
+  ///
+  /// In en, this message translates to:
+  /// **'Your day at a glance, then one tap to focus'**
+  String get myDayHint;
+
+  /// Tasks due today
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No tasks for today} =1{1 task for today} other{{count} tasks for today}}'**
+  String myDayTasks(int count);
+
+  /// No more events today
+  ///
+  /// In en, this message translates to:
+  /// **'No more events today'**
+  String get myDayNoEvents;
+
+  /// Next event today
+  ///
+  /// In en, this message translates to:
+  /// **'Next: {title} at {time}'**
+  String myDayNextEvent(String title, String time);
+
+  /// Habits still to do today
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{All habits done} =1{1 habit left} other{{count} habits left}}'**
+  String myDayHabits(int count);
+
+  /// Primary button: start a focus session now
+  ///
+  /// In en, this message translates to:
+  /// **'Begin with a focus session'**
+  String get myDayBeginFocus;
+
+  /// Hijri month 1
+  ///
+  /// In en, this message translates to:
+  /// **'Muharram'**
+  String get hijriMonth1;
+
+  /// Hijri month 2
+  ///
+  /// In en, this message translates to:
+  /// **'Safar'**
+  String get hijriMonth2;
+
+  /// Hijri month 3
+  ///
+  /// In en, this message translates to:
+  /// **'Rabi al-Awwal'**
+  String get hijriMonth3;
+
+  /// Hijri month 4
+  ///
+  /// In en, this message translates to:
+  /// **'Rabi al-Thani'**
+  String get hijriMonth4;
+
+  /// Hijri month 5
+  ///
+  /// In en, this message translates to:
+  /// **'Jumada al-Ula'**
+  String get hijriMonth5;
+
+  /// Hijri month 6
+  ///
+  /// In en, this message translates to:
+  /// **'Jumada al-Akhirah'**
+  String get hijriMonth6;
+
+  /// Hijri month 7
+  ///
+  /// In en, this message translates to:
+  /// **'Rajab'**
+  String get hijriMonth7;
+
+  /// Hijri month 8
+  ///
+  /// In en, this message translates to:
+  /// **'Shaban'**
+  String get hijriMonth8;
+
+  /// Hijri month 9
+  ///
+  /// In en, this message translates to:
+  /// **'Ramadan'**
+  String get hijriMonth9;
+
+  /// Hijri month 10
+  ///
+  /// In en, this message translates to:
+  /// **'Shawwal'**
+  String get hijriMonth10;
+
+  /// Hijri month 11
+  ///
+  /// In en, this message translates to:
+  /// **'Dhu al-Qadah'**
+  String get hijriMonth11;
+
+  /// Hijri month 12
+  ///
+  /// In en, this message translates to:
+  /// **'Dhu al-Hijjah'**
+  String get hijriMonth12;
+
+  /// Hijri date: day, month name, year (AH)
+  ///
+  /// In en, this message translates to:
+  /// **'{day} {month} {year} AH'**
+  String hijriDate(int day, String month, int year);
+
+  /// Settings switch: show Hijri dates in the calendar
+  ///
+  /// In en, this message translates to:
+  /// **'Hijri dates'**
+  String get settingsHijri;
+
+  /// Subtitle of the Hijri switch
+  ///
+  /// In en, this message translates to:
+  /// **'Shown in the calendar and on the home screen (Umm al-Qura)'**
+  String get settingsHijriHint;
+
+  /// Streak chip: consecutive study days
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 day} other{{count} days}}'**
+  String studyStreakDays(int count);
+
+  /// Daily card goal progress
+  ///
+  /// In en, this message translates to:
+  /// **'{done} of {goal} cards today'**
+  String studyGoalProgress(int done, int goal);
+
+  /// Daily card goal reached
+  ///
+  /// In en, this message translates to:
+  /// **'Daily goal reached. Well done!'**
+  String get studyGoalReached;
+
+  /// Sheet title: the last 7 days of study
+  ///
+  /// In en, this message translates to:
+  /// **'Your week'**
+  String get studyWeekTitle;
+
+  /// Cards answered in the last 7 days
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No cards answered in 7 days} =1{1 card answered in 7 days} other{{count} cards answered in 7 days}}'**
+  String studyWeekCards(int count);
+
+  /// Focus time in the last 7 days
+  ///
+  /// In en, this message translates to:
+  /// **'{duration} of focus in 7 days'**
+  String studyWeekFocus(String duration);
+
+  /// Current and best streak
+  ///
+  /// In en, this message translates to:
+  /// **'Streak: {current} · Best: {best}'**
+  String studyStreakLine(int current, int best);
+
+  /// Choose the daily card goal
+  ///
+  /// In en, this message translates to:
+  /// **'Daily goal (cards)'**
+  String get studyGoalTitle;
+
+  /// No daily goal
+  ///
+  /// In en, this message translates to:
+  /// **'Off'**
+  String get studyGoalOff;
+
+  /// Settings switch: Do Not Disturb during focus sessions
+  ///
+  /// In en, this message translates to:
+  /// **'Do Not Disturb while focusing'**
+  String get focusDndTitle;
+
+  /// Subtitle of the DND switch
+  ///
+  /// In en, this message translates to:
+  /// **'Turns on for each focus session and back off at the break'**
+  String get focusDndHint;
+
+  /// DND switch: system access still missing
+  ///
+  /// In en, this message translates to:
+  /// **'Allow access in the phone settings to use this'**
+  String get focusDndNeedsAccess;
+
+  /// Tooltip of the microphone button in text fields
+  ///
+  /// In en, this message translates to:
+  /// **'Speak to type'**
+  String get voiceInput;
+
+  /// Shown on the phone's speech screen
+  ///
+  /// In en, this message translates to:
+  /// **'Speak now'**
+  String get voiceInputPrompt;
+
+  /// No speech recognizer on the phone
+  ///
+  /// In en, this message translates to:
+  /// **'Voice typing isn’t available on this phone. Install or turn on a speech service (for example Speech Recognition & Synthesis by Google).'**
+  String get voiceInputUnavailable;
+
+  /// Prayer name
+  ///
+  /// In en, this message translates to:
+  /// **'Fajr'**
+  String get prayerFajr;
+
+  /// Sunrise (not a prayer)
+  ///
+  /// In en, this message translates to:
+  /// **'Sunrise'**
+  String get prayerSunrise;
+
+  /// Prayer name
+  ///
+  /// In en, this message translates to:
+  /// **'Dhuhr'**
+  String get prayerDhuhr;
+
+  /// Prayer name
+  ///
+  /// In en, this message translates to:
+  /// **'Asr'**
+  String get prayerAsr;
+
+  /// Prayer name
+  ///
+  /// In en, this message translates to:
+  /// **'Maghrib'**
+  String get prayerMaghrib;
+
+  /// Prayer name
+  ///
+  /// In en, this message translates to:
+  /// **'Isha'**
+  String get prayerIsha;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'Muslim World League'**
+  String get prayerMethodMwl;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'Umm al-Qura, Makkah'**
+  String get prayerMethodUmmAlQura;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'Egyptian General Authority'**
+  String get prayerMethodEgypt;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'Jordan, Ministry of Awqaf'**
+  String get prayerMethodJordan;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'University of Islamic Sciences, Karachi'**
+  String get prayerMethodKarachi;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'Islamic Society of North America'**
+  String get prayerMethodIsna;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'Gulf region'**
+  String get prayerMethodGulf;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'Kuwait'**
+  String get prayerMethodKuwait;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'Qatar'**
+  String get prayerMethodQatar;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'Türkiye, Diyanet'**
+  String get prayerMethodTurkey;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'Singapore, Malaysia, Indonesia'**
+  String get prayerMethodSingapore;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'France (12°)'**
+  String get prayerMethodFrance;
+
+  /// Prayer calculation method
+  ///
+  /// In en, this message translates to:
+  /// **'Russia, Spiritual Administration'**
+  String get prayerMethodRussia;
+
+  /// Notification title at prayer time
+  ///
+  /// In en, this message translates to:
+  /// **'Time for {name}'**
+  String prayerNotifTitle(String name);
+
+  /// Notification text at prayer time
+  ///
+  /// In en, this message translates to:
+  /// **'Prayer time · {time}'**
+  String prayerNotifBody(String time);
+
+  /// Prayer times sheet/row title
+  ///
+  /// In en, this message translates to:
+  /// **'Prayer times'**
+  String get prayerTitle;
+
+  /// Prayer times are off
+  ///
+  /// In en, this message translates to:
+  /// **'Choose your city to see prayer times. They are calculated on the phone; no location access is needed.'**
+  String get prayerOffHint;
+
+  /// Button
+  ///
+  /// In en, this message translates to:
+  /// **'Choose city'**
+  String get prayerChooseCity;
+
+  /// Row label
+  ///
+  /// In en, this message translates to:
+  /// **'City'**
+  String get prayerCity;
+
+  /// Search hint
+  ///
+  /// In en, this message translates to:
+  /// **'Search for a city'**
+  String get prayerCitySearch;
+
+  /// Row label
+  ///
+  /// In en, this message translates to:
+  /// **'Calculation method'**
+  String get prayerMethod;
+
+  /// Switch
+  ///
+  /// In en, this message translates to:
+  /// **'Hanafi Asr (later time)'**
+  String get prayerHanafiAsr;
+
+  /// Switch
+  ///
+  /// In en, this message translates to:
+  /// **'Notify at each prayer time'**
+  String get prayerReminders;
+
+  /// Switch
+  ///
+  /// In en, this message translates to:
+  /// **'Pause focus at prayer time'**
+  String get prayerPauseFocus;
+
+  /// Switch subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'A running session pauses; continue after the prayer'**
+  String get prayerPauseFocusHint;
+
+  /// Button
+  ///
+  /// In en, this message translates to:
+  /// **'Turn off prayer times'**
+  String get prayerTurnOff;
+
+  /// Footnote
+  ///
+  /// In en, this message translates to:
+  /// **'Calculated times can differ by a few minutes from your local mosque.'**
+  String get prayerAccuracyNote;
+
+  /// Dashboard line: next prayer
+  ///
+  /// In en, this message translates to:
+  /// **'{name} at {time}'**
+  String prayerNext(String name, String time);
+
+  /// Anki file in the newest format only
+  ///
+  /// In en, this message translates to:
+  /// **'This Anki file uses the newest format. In Anki, export again with “Support older Anki versions” turned on, then import that file.'**
+  String get importAnkiNewFormat;
+
+  /// Button: get a spreadsheet template to fill on a computer
+  ///
+  /// In en, this message translates to:
+  /// **'Spreadsheet template'**
+  String get importTemplate;
+
+  /// Sample front in the template
+  ///
+  /// In en, this message translates to:
+  /// **'apple'**
+  String get importTemplateFront;
+
+  /// Sample back in the template
+  ///
+  /// In en, this message translates to:
+  /// **'a round fruit'**
+  String get importTemplateBack;
+
+  /// Sample example sentence in the template
+  ///
+  /// In en, this message translates to:
+  /// **'I eat an apple every day.'**
+  String get importTemplateExample;
+
+  /// Sample tag in the template
+  ///
+  /// In en, this message translates to:
+  /// **'food'**
+  String get importTemplateTag;
+
+  /// Sheet: ready-made decks
+  ///
+  /// In en, this message translates to:
+  /// **'Starter decks'**
+  String get starterTitle;
+
+  /// Sheet subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Add one to try studying right away. You can edit or delete it later.'**
+  String get starterHint;
+
+  /// Button: add this starter deck
+  ///
+  /// In en, this message translates to:
+  /// **'Add'**
+  String get starterAdd;
+
+  /// Starter deck name: everyday English words with Arabic meanings
+  ///
+  /// In en, this message translates to:
+  /// **'Everyday English words (Arabic)'**
+  String get starterWords;
+
+  /// Starter deck name
+  ///
+  /// In en, this message translates to:
+  /// **'World capitals'**
+  String get starterCapitals;
+
+  /// Starter deck name: chemical element symbols
+  ///
+  /// In en, this message translates to:
+  /// **'Chemical elements'**
+  String get starterElements;
+
+  /// Settings: accent colour
+  ///
+  /// In en, this message translates to:
+  /// **'Accent colour'**
+  String get settingsAccent;
+
+  /// Accent colour name
+  ///
+  /// In en, this message translates to:
+  /// **'Violet'**
+  String get accentViolet;
+
+  /// Accent colour name
+  ///
+  /// In en, this message translates to:
+  /// **'Blue'**
+  String get accentBlue;
+
+  /// Accent colour name
+  ///
+  /// In en, this message translates to:
+  /// **'Teal'**
+  String get accentTeal;
+
+  /// Accent colour name
+  ///
+  /// In en, this message translates to:
+  /// **'Green'**
+  String get accentGreen;
+
+  /// Accent colour name
+  ///
+  /// In en, this message translates to:
+  /// **'Rose'**
+  String get accentRose;
+
+  /// Accent colour name
+  ///
+  /// In en, this message translates to:
+  /// **'Amber'**
+  String get accentAmber;
+
+  /// Settings: text size on flashcards during review
+  ///
+  /// In en, this message translates to:
+  /// **'Flashcard text size'**
+  String get settingsFlashTextSize;
+
+  /// Sample word to preview the flashcard text size
+  ///
+  /// In en, this message translates to:
+  /// **'Example'**
+  String get settingsFlashTextSample;
+
+  /// Home screen widget: no session running
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to focus'**
+  String get widgetStartFocus;
+
+  /// Home screen widget: focus running until a time
+  ///
+  /// In en, this message translates to:
+  /// **'Focus until {time}'**
+  String widgetFocusUntil(String time);
+
+  /// Home screen widget: no flashcards due
+  ///
+  /// In en, this message translates to:
+  /// **'Cards: all done'**
+  String get widgetNoCardsDue;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'What does “Start my day” do?'**
+  String get faqMyDayQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Once a day the home screen offers it: see today’s tasks, the next event, habits left and cards due, then begin a focus session with one tap. Long-press the app icon for quick actions, or add the home screen widget to see focus time and cards due.'**
+  String get faqMyDayA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'How do I add a task with a reminder?'**
+  String get faqTasksQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Tap New task on Home or + in Tasks. Type the title or speak it with the microphone, then set a due date, a time and a reminder. Overdue tasks are listed first.'**
+  String get faqTasksA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'How does the focus timer work?'**
+  String get faqFocusQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Choose Pomodoro, a countdown or open time and press Start; breaks can follow automatically. In Settings you can pick the end sound, turn on Do Not Disturb while focusing, and play your nature sounds with each session.'**
+  String get faqFocusA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'Can I mix nature sounds?'**
+  String get faqSoundsQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Turn on up to six real recordings, set each volume and save the mix by name. They keep playing in the background, and a sleep timer can stop them. No music is used.'**
+  String get faqSoundsA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'Can the calendar show Hijri dates?'**
+  String get faqCalendarQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Yes. Hijri dates (Umm al-Qura) show automatically in Arabic and can be turned on in Settings for any language. Events, tasks with due dates and project milestones appear together.'**
+  String get faqCalendarA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'How does review decide which cards I see?'**
+  String get faqFlashcardsQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Cards you know well come back after longer gaps and cards you miss come back soon (spaced repetition). Rate each answer Again, Hard, Good or Easy. Set a daily goal and keep your streak on the Today card. Set an exam date in a deck to see the days left and how many new cards to learn each day. Sort by \"My order\" to drag cards into place, tap the speaker on either side to hear it, and set speed and repeats in the Speech menu.'**
+  String get faqFlashcardsA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'Can I bring cards from Anki or Excel?'**
+  String get faqImportQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Yes. In a deck choose Import, then pick a file: Anki (.apkg), Excel (.xlsx) or CSV, and match the columns. Use “Spreadsheet template” to write cards on a computer. Pictures and sounds inside Anki files are not imported.'**
+  String get faqImportA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'What can notes do?'**
+  String get faqNotesQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Write freely with checklists and formatting, pin or favourite important notes, add tags and link notes to tasks. The microphone button lets you dictate. A new note can start from a template (lecture, book summary, journal, weekly plan), and the picture button adds photos.'**
+  String get faqNotesA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'How are habit streaks counted?'**
+  String get faqHabitsQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'A day counts when you reach the habit’s target on a scheduled day. Pausing a habit keeps the streak safe. Each habit can have its own reminder time.'**
+  String get faqHabitsA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'How do goals track progress?'**
+  String get faqGoalsQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Give a goal a target amount and unit, then log progress. Its card shows how far you are and how much is left before the deadline.'**
+  String get faqGoalsA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'What are projects for?'**
+  String get faqProjectsQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Group tasks under a project, add milestones with dates and follow overall progress. Milestones also appear in the calendar.'**
+  String get faqProjectsA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'What does Insights show?'**
+  String get faqInsightsQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Your focus time, finished tasks and study over days and weeks, with gentle suggestions. Everything is calculated on your phone.'**
+  String get faqInsightsA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'Where are all the sections?'**
+  String get faqSpacesQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Spaces lists every part of the app (notes, decks, habits, goals, projects, sounds and more) so the main bar stays simple.'**
+  String get faqSpacesA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'How are my data backed up?'**
+  String get faqBackupQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Every day the app quietly keeps an encrypted copy on this phone and keeps the last 7. In Settings you can also export a password-protected backup file and restore it on another phone.'**
+  String get faqBackupA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'How do prayer times work?'**
+  String get faqPrayerQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Choose your city in Settings → Prayer times. Times are calculated on the phone with the method used there, and you can change the method and the Asr school. You can be notified at each prayer, and a running focus session pauses.'**
+  String get faqPrayerA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'Where are my data stored?'**
+  String get faqPrivacyQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'On your phone only, in an encrypted database. There is no account and no tracking. The internet is used only by features you turn on yourself, such as the optional assistant.'**
+  String get faqPrivacyA;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'What is the assistant?'**
+  String get faqAssistantQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'An optional helper you connect to your own AI service in Settings. It is off by default and asks before sending any note text.'**
+  String get faqAssistantA;
+
+  /// Tour page 1 title
+  ///
+  /// In en, this message translates to:
+  /// **'Plan your day'**
+  String get tourPlanTitle;
+
+  /// Tour page 1
+  ///
+  /// In en, this message translates to:
+  /// **'Tasks, calendar and habits in one calm place. Begin each morning with “Start my day”.'**
+  String get tourPlanBody;
+
+  /// Tour page 2 title
+  ///
+  /// In en, this message translates to:
+  /// **'Focus deeply'**
+  String get tourFocusTitle;
+
+  /// Tour page 2
+  ///
+  /// In en, this message translates to:
+  /// **'Timed sessions with real nature sounds, Do Not Disturb and gentle end tones.'**
+  String get tourFocusBody;
+
+  /// Tour page 3 title
+  ///
+  /// In en, this message translates to:
+  /// **'Learn for good'**
+  String get tourLearnTitle;
+
+  /// Tour page 3
+  ///
+  /// In en, this message translates to:
+  /// **'Flashcards with spaced repetition, speech in many languages, and imports from Anki or Excel.'**
+  String get tourLearnBody;
+
+  /// Help screen title / settings row
+  ///
+  /// In en, this message translates to:
+  /// **'Help & questions'**
+  String get helpTitle;
+
+  /// Button: open the screen an answer is about
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get helpOpen;
+
+  /// Button: show the 3-page tour again
+  ///
+  /// In en, this message translates to:
+  /// **'Take the tour'**
+  String get helpTour;
+
+  /// Tour: next page
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get tourNext;
+
+  /// Tour: finish
+  ///
+  /// In en, this message translates to:
+  /// **'Let’s begin'**
+  String get tourDone;
+
+  /// File column header
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get transferColTitle;
+
+  /// File column header: task notes
+  ///
+  /// In en, this message translates to:
+  /// **'Notes'**
+  String get transferColNotes;
+
+  /// File column header: note text
+  ///
+  /// In en, this message translates to:
+  /// **'Text'**
+  String get transferColBody;
+
+  /// File column header: due date (YYYY-MM-DD)
+  ///
+  /// In en, this message translates to:
+  /// **'Due date'**
+  String get transferColDue;
+
+  /// File column header: 0–3
+  ///
+  /// In en, this message translates to:
+  /// **'Priority (0-3)'**
+  String get transferColPriority;
+
+  /// File column header
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get transferColDone;
+
+  /// File column header
+  ///
+  /// In en, this message translates to:
+  /// **'Project'**
+  String get transferColProject;
+
+  /// File column header
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get transferColCategory;
+
+  /// Sheet title / menu item
+  ///
+  /// In en, this message translates to:
+  /// **'Import and export'**
+  String get transferTitle;
+
+  /// Section: export formats
+  ///
+  /// In en, this message translates to:
+  /// **'Save as'**
+  String get transferSaveAs;
+
+  /// Button: import a file
+  ///
+  /// In en, this message translates to:
+  /// **'Import from a file'**
+  String get transferImport;
+
+  /// Hint under import
+  ///
+  /// In en, this message translates to:
+  /// **'Excel, CSV or a table in Word. Columns: title, due date (2026-12-31), priority 0-3, done, project, notes. Tasks already in the app are skipped.'**
+  String get transferImportTasksHint;
+
+  /// Hint under import
+  ///
+  /// In en, this message translates to:
+  /// **'Word, Markdown or text files become a note. Excel or CSV: one note per row (title, text).'**
+  String get transferImportNotesHint;
+
+  /// Snackbar
+  ///
+  /// In en, this message translates to:
+  /// **'File saved'**
+  String get transferSaved;
+
+  /// Snackbar
+  ///
+  /// In en, this message translates to:
+  /// **'The file could not be made. Nothing was changed.'**
+  String get transferFailed;
+
+  /// Snackbar
+  ///
+  /// In en, this message translates to:
+  /// **'This file can’t be read here. Use Excel, CSV, Word, Markdown or text.'**
+  String get transferUnsupported;
+
+  /// Snackbar after import
+  ///
+  /// In en, this message translates to:
+  /// **'{added, plural, =0{Nothing new to add} =1{1 added} other{{added} added}}'**
+  String transferImported(int added);
+
+  /// Format name: plain text
+  ///
+  /// In en, this message translates to:
+  /// **'Text'**
+  String get transferFormatText;
+
+  /// Section: export every note
+  ///
+  /// In en, this message translates to:
+  /// **'All notes'**
+  String get transferAllNotes;
+
+  /// Section: export the open note
+  ///
+  /// In en, this message translates to:
+  /// **'This note'**
+  String get transferThisNote;
+
+  /// Deck menu: save the deck as Excel, Word or PDF
+  ///
+  /// In en, this message translates to:
+  /// **'Save as Excel, Word or PDF'**
+  String get transferDeckFormats;
+
+  /// FAQ question
+  ///
+  /// In en, this message translates to:
+  /// **'Can I use Excel, Word or PDF files?'**
+  String get faqFilesQ;
+
+  /// FAQ answer
+  ///
+  /// In en, this message translates to:
+  /// **'Yes. Tasks and Notes have an import and export button (two arrows) at the top, and every deck has it in its menu. Save as Excel, CSV, Word or PDF, or bring in Excel, CSV, Word, Markdown or text files. Column names can be in any of the app’s languages, and files you saved can always be imported again.'**
+  String get faqFilesA;
+
+  /// Note template name
+  ///
+  /// In en, this message translates to:
+  /// **'Lecture'**
+  String get tplLecture;
+
+  /// Note template name
+  ///
+  /// In en, this message translates to:
+  /// **'Book summary'**
+  String get tplBook;
+
+  /// Note template name
+  ///
+  /// In en, this message translates to:
+  /// **'Journal'**
+  String get tplJournal;
+
+  /// Note template name
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly plan'**
+  String get tplWeek;
+
+  /// Template body: markdown headings (#) and checklist (- [ ]); keep the symbols
+  ///
+  /// In en, this message translates to:
+  /// **'## Key points\n- \n\n## Questions\n- [ ] \n\n## Summary\n'**
+  String get tplLectureBody;
+
+  /// Template body: markdown; keep the symbols
+  ///
+  /// In en, this message translates to:
+  /// **'## Main idea\n\n## What I learned\n- \n\n## Quotes\n> \n\n## To apply\n- [ ] \n'**
+  String get tplBookBody;
+
+  /// Template body: markdown; keep the symbols
+  ///
+  /// In en, this message translates to:
+  /// **'## Grateful for\n- \n\n## Today’s focus\n- [ ] \n\n## Notes\n'**
+  String get tplJournalBody;
+
+  /// Template body: markdown; keep the symbols
+  ///
+  /// In en, this message translates to:
+  /// **'## Goals this week\n- [ ] \n\n### Saturday\n- [ ] \n\n### Sunday\n- [ ] \n\n### Monday\n- [ ] \n\n### Tuesday\n- [ ] \n\n### Wednesday\n- [ ] \n\n### Thursday\n- [ ] \n\n### Friday\n- [ ] \n'**
+  String get tplWeekBody;
+
+  /// Shown above template chips
+  ///
+  /// In en, this message translates to:
+  /// **'Start from a template'**
+  String get tplHint;
+
+  /// Accessibility label of a picture in a note
+  ///
+  /// In en, this message translates to:
+  /// **'Picture'**
+  String get noteImage;
+
+  /// Toolbar: add a picture to the note
+  ///
+  /// In en, this message translates to:
+  /// **'Add picture'**
+  String get noteAddImage;
+
+  /// Picked file is not a picture
+  ///
+  /// In en, this message translates to:
+  /// **'This file isn’t a picture the app can read.'**
+  String get noteImageUnreadable;
+
+  /// Picture too large even after shrinking
+  ///
+  /// In en, this message translates to:
+  /// **'This picture is too large.'**
+  String get noteImageTooLarge;
+
+  /// Deck: button to set the exam date
+  ///
+  /// In en, this message translates to:
+  /// **'Set exam date'**
+  String get examSet;
+
+  /// Date picker title
+  ///
+  /// In en, this message translates to:
+  /// **'Exam date'**
+  String get examDate;
+
+  /// Exam is today
+  ///
+  /// In en, this message translates to:
+  /// **'Exam today. Good luck!'**
+  String get examToday;
+
+  /// Days until the exam
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Exam tomorrow} other{Exam in {count} days}}'**
+  String examInDays(int count);
+
+  /// New cards to learn per day before the exam
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{learn 1 new card a day} other{learn {count} new cards a day}}'**
+  String examNewPerDay(int count);
+
+  /// All cards learnt before the exam
+  ///
+  /// In en, this message translates to:
+  /// **'all cards learnt, keep reviewing'**
+  String get examAllLearnt;
+
+  /// Button: raise the deck's daily new-card limit to the plan
+  ///
+  /// In en, this message translates to:
+  /// **'Show {count} new cards a day'**
+  String examRaiseLimit(int count);
+
+  /// Backup dialog: how to keep a copy in Google Drive
+  ///
+  /// In en, this message translates to:
+  /// **'To keep a copy online, choose Google Drive (or another cloud app) on the save screen that opens next.'**
+  String get backupDriveHint;
+
+  /// Deck menu: share the whole deck as a file a friend can import
+  ///
+  /// In en, this message translates to:
+  /// **'Share deck with a friend'**
+  String get flashShareDeck;
+
+  /// Sort option: my own order (drag)
+  ///
+  /// In en, this message translates to:
+  /// **'My order (drag)'**
+  String get flashSortManual;
+
+  /// Hint above the draggable card list
+  ///
+  /// In en, this message translates to:
+  /// **'Hold the handle and drag a card to move it.'**
+  String get flashReorderHint;
+
+  /// Shown when my-order sort is on but a filter/search hides cards
+  ///
+  /// In en, this message translates to:
+  /// **'Clear the search and filters to drag cards.'**
+  String get flashReorderNeedsAll;
+
+  /// Tooltip of the drag handle
+  ///
+  /// In en, this message translates to:
+  /// **'Drag to move'**
+  String get flashDragHandle;
+
+  /// Monthly report title / menu item
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly report'**
+  String get reportTitle;
+
+  /// Under report title
+  ///
+  /// In en, this message translates to:
+  /// **'Focus, cards, tasks and habits of the month, ready to save'**
+  String get reportSubtitle;
+
+  /// Report row
+  ///
+  /// In en, this message translates to:
+  /// **'Focus time'**
+  String get reportFocus;
+
+  /// Report row
+  ///
+  /// In en, this message translates to:
+  /// **'{count} sessions'**
+  String reportSessions(int count);
+
+  /// Report row
+  ///
+  /// In en, this message translates to:
+  /// **'Best day: {day} ({time})'**
+  String reportBestDay(String day, String time);
+
+  /// Report row
+  ///
+  /// In en, this message translates to:
+  /// **'{count} active days'**
+  String reportActiveDays(int count);
+
+  /// Report row
+  ///
+  /// In en, this message translates to:
+  /// **'Cards reviewed'**
+  String get reportCards;
+
+  /// Report row
+  ///
+  /// In en, this message translates to:
+  /// **'{percent} remembered'**
+  String reportCardsKnown(String percent);
+
+  /// Report row
+  ///
+  /// In en, this message translates to:
+  /// **'Tasks completed'**
+  String get reportTasks;
+
+  /// Report row
+  ///
+  /// In en, this message translates to:
+  /// **'Habit check-ins'**
+  String get reportHabits;
+
+  /// Empty month
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing recorded this month yet.'**
+  String get reportEmpty;
+
+  /// Button: save report as file
+  ///
+  /// In en, this message translates to:
+  /// **'Save as PDF or Word'**
+  String get reportSave;
+
+  /// Tooltip
+  ///
+  /// In en, this message translates to:
+  /// **'Previous month'**
+  String get reportPrevMonth;
+
+  /// Tooltip
+  ///
+  /// In en, this message translates to:
+  /// **'Next month'**
+  String get reportNextMonth;
+
+  /// Settings section title
+  ///
+  /// In en, this message translates to:
+  /// **'Care of your phone and data'**
+  String get careTitle;
+
+  /// Storage sheet title
+  ///
+  /// In en, this message translates to:
+  /// **'Storage'**
+  String get storageTitle;
+
+  /// Row subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'What takes space and a clean-up of unused pictures'**
+  String get storageSubtitle;
+
+  /// Storage row
+  ///
+  /// In en, this message translates to:
+  /// **'Pictures in notes'**
+  String get storagePictures;
+
+  /// Storage row
+  ///
+  /// In en, this message translates to:
+  /// **'Images and audio in cards'**
+  String get storageCardMedia;
+
+  /// Storage row
+  ///
+  /// In en, this message translates to:
+  /// **'Notes text'**
+  String get storageText;
+
+  /// Storage row: free space on phone
+  ///
+  /// In en, this message translates to:
+  /// **'Free on your phone'**
+  String get storageFree;
+
+  /// Warning when phone is almost full
+  ///
+  /// In en, this message translates to:
+  /// **'Your phone is almost full. Free some space so backups and reminders keep working.'**
+  String get storageLow;
+
+  /// Unused pictures summary
+  ///
+  /// In en, this message translates to:
+  /// **'{count} unused pictures ({size})'**
+  String storageUnused(int count, String size);
+
+  /// No unused pictures
+  ///
+  /// In en, this message translates to:
+  /// **'No unused pictures. Everything is tidy.'**
+  String get storageNoUnused;
+
+  /// Button
+  ///
+  /// In en, this message translates to:
+  /// **'Remove unused pictures'**
+  String get storageClean;
+
+  /// Snackbar
+  ///
+  /// In en, this message translates to:
+  /// **'{count} pictures removed'**
+  String storageCleaned(int count);
+
+  /// Hint under storage
+  ///
+  /// In en, this message translates to:
+  /// **'Pictures only count as unused when no note shows them, including notes in the trash.'**
+  String get storageHint;
+
+  /// Battery guide title
+  ///
+  /// In en, this message translates to:
+  /// **'Keep reminders working'**
+  String get batteryTitle;
+
+  /// Row subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Some phones stop apps in the background. Check yours.'**
+  String get batterySubtitle;
+
+  /// Status
+  ///
+  /// In en, this message translates to:
+  /// **'Battery saving does not limit this app. Reminders and sounds should arrive on time.'**
+  String get batteryStatusOk;
+
+  /// Status
+  ///
+  /// In en, this message translates to:
+  /// **'Battery saving may stop this app in the background, so reminders and sounds can be late or missing.'**
+  String get batteryStatusLimited;
+
+  /// Button
+  ///
+  /// In en, this message translates to:
+  /// **'Open battery settings'**
+  String get batteryOpen;
+
+  /// Button
+  ///
+  /// In en, this message translates to:
+  /// **'Open app settings'**
+  String get batteryOpenApp;
+
+  /// Generic steps
+  ///
+  /// In en, this message translates to:
+  /// **'In the battery settings choose this app and set it to Unrestricted (or Don\'t optimize).'**
+  String get batteryGeneric;
+
+  /// Brand tip
+  ///
+  /// In en, this message translates to:
+  /// **'Xiaomi / Redmi / POCO: also open Security › Permissions › Autostart and switch this app on, and set Battery saver to No restrictions.'**
+  String get batteryXiaomi;
+
+  /// Brand tip
+  ///
+  /// In en, this message translates to:
+  /// **'Oppo / Realme / OnePlus: open Battery › this app and allow background activity and auto-launch; lock the app in the recent apps list.'**
+  String get batteryOppo;
+
+  /// Brand tip
+  ///
+  /// In en, this message translates to:
+  /// **'Samsung: Battery › Background usage limits: remove this app from Sleeping apps and Deep sleeping apps.'**
+  String get batterySamsung;
+
+  /// Brand tip
+  ///
+  /// In en, this message translates to:
+  /// **'Huawei / Honor: App launch › this app › manage manually, and allow auto-launch, secondary launch and run in background.'**
+  String get batteryHuawei;
+
+  /// Brand tip
+  ///
+  /// In en, this message translates to:
+  /// **'Vivo / iQOO: Battery › Background power consumption › allow this app, and enable auto-start in the permissions.'**
+  String get batteryVivo;
+
+  /// What's new title
+  ///
+  /// In en, this message translates to:
+  /// **'What\'s new'**
+  String get whatsNewTitle;
+
+  /// Row subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'The latest changes in a few lines'**
+  String get whatsNewSubtitle;
+
+  /// Button
+  ///
+  /// In en, this message translates to:
+  /// **'Got it'**
+  String get whatsNewDone;
+
+  /// Item title
+  ///
+  /// In en, this message translates to:
+  /// **'Drag cards into your own order'**
+  String get whatsNewOrderTitle;
+
+  /// Item body
+  ///
+  /// In en, this message translates to:
+  /// **'In a deck choose Sort › My order, then hold the handle and drag.'**
+  String get whatsNewOrderBody;
+
+  /// Item title
+  ///
+  /// In en, this message translates to:
+  /// **'A speaker on every card side'**
+  String get whatsNewSpeechTitle;
+
+  /// Item body
+  ///
+  /// In en, this message translates to:
+  /// **'Tap it to hear the word or the translation. Speed, repeats and voice are in the review menu. Language is detected from the text.'**
+  String get whatsNewSpeechBody;
+
+  /// Item title
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly report'**
+  String get whatsNewReportTitle;
+
+  /// Item body
+  ///
+  /// In en, this message translates to:
+  /// **'In Insights tap the report icon to see the month and save it as PDF or Word.'**
+  String get whatsNewReportBody;
+
+  /// Item title
+  ///
+  /// In en, this message translates to:
+  /// **'Care of your phone and data'**
+  String get whatsNewCareTitle;
+
+  /// Item body
+  ///
+  /// In en, this message translates to:
+  /// **'Settings now has a storage page with picture clean-up and a battery guide for your phone brand.'**
+  String get whatsNewCareBody;
+
+  /// Item title
+  ///
+  /// In en, this message translates to:
+  /// **'Calmer sounds'**
+  String get whatsNewSoundTitle;
+
+  /// Item body
+  ///
+  /// In en, this message translates to:
+  /// **'Nature sounds are softer and quieter, and the picture cards are nicer.'**
+  String get whatsNewSoundBody;
+
+  /// Weekly check result
+  ///
+  /// In en, this message translates to:
+  /// **'Checked {date}: the latest backup opens correctly.'**
+  String autoBackupCheckOk(String date);
+
+  /// Weekly check result
+  ///
+  /// In en, this message translates to:
+  /// **'Checked {date}: a damaged backup was found and replaced with a new one.'**
+  String autoBackupCheckFixed(String date);
+
+  /// Weekly check result
+  ///
+  /// In en, this message translates to:
+  /// **'Checked {date}: the latest backup could not be opened. Save a backup file yourself from Settings.'**
+  String autoBackupCheckFailed(String date);
+
+  /// Suggestion in settings
+  ///
+  /// In en, this message translates to:
+  /// **'You usually study around {time}'**
+  String smartReviewTimeTitle(String time);
+
+  /// Button: use the suggested time
+  ///
+  /// In en, this message translates to:
+  /// **'Use it'**
+  String get smartReviewTimeUse;
+
+  /// Quick-add widget button: new note
+  ///
+  /// In en, this message translates to:
+  /// **'New note'**
+  String get widgetNewNote;
+
+  /// Folded section of the note editor holding tags, backlinks and linked tasks
+  ///
+  /// In en, this message translates to:
+  /// **'Tags, links and tasks'**
+  String get noteConnections;
+
+  /// Bottom navigation tab: flashcards (keep very short)
+  ///
+  /// In en, this message translates to:
+  /// **'Cards'**
+  String get navCards;
+
+  /// Study sheet: label above the answer modes
+  ///
+  /// In en, this message translates to:
+  /// **'How to answer'**
+  String get studyAnswerWay;
+
+  /// Study sheet: folded group of practice rounds that do not change the schedule
+  ///
+  /// In en, this message translates to:
+  /// **'Extra practice'**
+  String get studyMorePractice;
+
+  /// Study sheet: folded group with session size and order
+  ///
+  /// In en, this message translates to:
+  /// **'Session settings'**
+  String get studySessionSettings;
+
+  /// Sheet title: adjust the focus session
+  ///
+  /// In en, this message translates to:
+  /// **'Your session'**
+  String get focusAdjustTitle;
+
+  /// Label above ready-made session kinds
+  ///
+  /// In en, this message translates to:
+  /// **'Ready-made'**
+  String get focusPresetsTitle;
+
+  /// Preset: study
+  ///
+  /// In en, this message translates to:
+  /// **'Study'**
+  String get focusPresetStudy;
+
+  /// Preset: deep work
+  ///
+  /// In en, this message translates to:
+  /// **'Deep work'**
+  String get focusPresetDeep;
+
+  /// Preset: short sprint
+  ///
+  /// In en, this message translates to:
+  /// **'Quick sprint'**
+  String get focusPresetQuick;
+
+  /// Preset: reading
+  ///
+  /// In en, this message translates to:
+  /// **'Reading'**
+  String get focusPresetReading;
+
+  /// Preset: exercise rounds
+  ///
+  /// In en, this message translates to:
+  /// **'Workout rounds'**
+  String get focusPresetWorkout;
+
+  /// Slider: focus length
+  ///
+  /// In en, this message translates to:
+  /// **'Focus length'**
+  String get focusAdjustMinutes;
+
+  /// Slider: break length
+  ///
+  /// In en, this message translates to:
+  /// **'Break length'**
+  String get focusAdjustBreak;
+
+  /// Slider: number of rounds
+  ///
+  /// In en, this message translates to:
+  /// **'Rounds'**
+  String get focusAdjustRounds;
+
+  /// Rounds value 0: no limit
+  ///
+  /// In en, this message translates to:
+  /// **'No limit'**
+  String get focusRoundsOpen;
+
+  /// Minutes value, e.g. 25 min
+  ///
+  /// In en, this message translates to:
+  /// **'{n} min'**
+  String focusMinutesShort(String n);
+
+  /// Hint under the idle timer
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to change the time'**
+  String get focusTapToAdjust;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -10,7 +10,7 @@ class AppLocalizationsEs extends AppLocalizations {
   AppLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
-  String get appName => 'Future OS';
+  String get appName => 'Deep Focus';
 
   @override
   String get navHome => 'Inicio';
@@ -1247,7 +1247,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get importCardsHint =>
-      'Pega una tarjeta por línea, con anverso y reverso separados por un tabulador o un punto y coma, o pega un archivo de mazo exportado.';
+      'Pega una tarjeta por línea (anverso y reverso separados por tabulador o punto y coma) o elige un archivo: Excel (.xlsx), CSV, un mazo de Anki (.apkg) o un mazo exportado.';
 
   @override
   String importCardsResult(int count) {
@@ -1924,7 +1924,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get backupWrongPassword => 'Contraseña incorrecta, o el archivo se modificó.';
 
   @override
-  String get backupNotABackup => 'Este archivo no es una copia de seguridad de Future OS.';
+  String get backupNotABackup => 'Este archivo no es una copia de seguridad de Deep Focus.';
 
   @override
   String get backupCorrupted => 'El archivo de copia de seguridad está dañado.';
@@ -3005,7 +3005,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get backupRestoreFailed => 'Error al restaurar. No se cambió nada.';
 
   @override
-  String get backupShareSubject => 'Copia de seguridad cifrada de Future OS';
+  String get backupShareSubject => 'Copia de seguridad cifrada de Deep Focus';
 
   @override
   String repeatSummaryEveryN(String unit, int count) {
@@ -3692,7 +3692,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get speechVoice => 'Voz';
 
   @override
-  String get speechVoiceDefault => 'Predeterminada del dispositivo';
+  String get speechVoiceDefault => 'Automática';
 
   @override
   String get speechVoiceOnline => 'requiere internet';
@@ -3863,4 +3863,1233 @@ class AppLocalizationsEs extends AppLocalizations {
   String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct) {
     return '$decks mazos · $cards tarjetas · $mature maduras · $due pendientes · $correct correctas (30 días)';
   }
+
+  @override
+  String get flashcardsRecord => 'Grabar';
+
+  @override
+  String get flashcardsRecording => 'Grabando…';
+
+  @override
+  String get flashcardsRecordStop => 'Detener y guardar';
+
+  @override
+  String get flashcardsMicDenied =>
+      'El acceso al micrófono está desactivado. Permítelo en los ajustes del sistema para grabar.';
+
+  @override
+  String get flashcardsRecordFailed => 'La grabación no está disponible en este dispositivo.';
+
+  @override
+  String get soundsTitle => 'Sonidos';
+
+  @override
+  String get soundsSubtitle => 'Grabaciones reales de la naturaleza que nunca suenan repetidas.';
+
+  @override
+  String get soundsNature => 'Naturaleza';
+
+  @override
+  String get soundsNoise => 'Ruido para concentrarse';
+
+  @override
+  String get soundRain => 'Lluvia';
+
+  @override
+  String get soundStorm => 'Tormenta';
+
+  @override
+  String get soundRiver => 'Río';
+
+  @override
+  String get soundOcean => 'Olas del mar';
+
+  @override
+  String get soundFire => 'Fogata';
+
+  @override
+  String get soundForest => 'Pájaros del bosque';
+
+  @override
+  String get soundNight => 'Noche de verano';
+
+  @override
+  String get soundWhite => 'Ruido blanco';
+
+  @override
+  String get soundPink => 'Ruido rosa';
+
+  @override
+  String get soundBrown => 'Ruido marrón';
+
+  @override
+  String get soundsPlay => 'Reproducir';
+
+  @override
+  String get soundsSleep => 'Temporizador';
+
+  @override
+  String get soundsSleepOff => 'Desactivado';
+
+  @override
+  String soundsSleepAt(String time) {
+    return 'Se detiene a las $time';
+  }
+
+  @override
+  String soundsMixFull(int count) {
+    return 'Hasta $count sonidos a la vez.';
+  }
+
+  @override
+  String get soundsHint =>
+      'Toca un sonido para empezar. Mezcla varios y ajusta el volumen de cada uno.';
+
+  @override
+  String get soundsMixer => 'Mezcla';
+
+  @override
+  String soundsVolumeOf(String name) {
+    return 'Volumen de $name';
+  }
+
+  @override
+  String get soundsChannel => 'Sonidos de la naturaleza';
+
+  @override
+  String get settingsEndTone => 'Sonido al terminar';
+
+  @override
+  String get toneGentle => 'Pitidos suaves';
+
+  @override
+  String get toneBeeps => 'Pitidos';
+
+  @override
+  String get toneWood => 'Golpes de madera';
+
+  @override
+  String get toneBird => 'Canto de pájaro';
+
+  @override
+  String get toneStream => 'Arroyo';
+
+  @override
+  String get toneSystem => 'Sonido del teléfono';
+
+  @override
+  String get speechOnPhone => 'En este teléfono';
+
+  @override
+  String get speechAllLanguages => 'Todos los idiomas';
+
+  @override
+  String get speechSearchLanguage => 'Buscar idioma';
+
+  @override
+  String get speechGetVoices => 'Descargar más voces';
+
+  @override
+  String get speechGetVoicesHint =>
+      'Los idiomas sin voz se pueden descargar en los ajustes de voz del teléfono.';
+
+  @override
+  String get speechSettingsFailed => 'No se pudieron abrir los ajustes de voz de este teléfono.';
+
+  @override
+  String get speechVoiceMissing => 'Sin voz instalada';
+
+  @override
+  String get speechPause => 'Pausa entre repeticiones';
+
+  @override
+  String speechSeconds(String seconds) {
+    return '$seconds s';
+  }
+
+  @override
+  String get speechExample => 'Leer el ejemplo con la respuesta';
+
+  @override
+  String get flashListen => 'Escuchar';
+
+  @override
+  String get flashListenNext => 'Siguiente tarjeta';
+
+  @override
+  String get flashListenEmpty => 'No hay tarjetas para escuchar.';
+
+  @override
+  String get flashViewTable => 'Tabla';
+
+  @override
+  String get flashViewCards => 'Tarjetas';
+
+  @override
+  String get flashSwapSides => 'Intercambiar columnas';
+
+  @override
+  String get flashSort => 'Ordenar';
+
+  @override
+  String get flashSortNewest => 'Más recientes primero';
+
+  @override
+  String get flashSortAlpha => 'De la A a la Z';
+
+  @override
+  String get flashSortDue => 'Pendientes primero';
+
+  @override
+  String get flashSortHard => 'Más difíciles primero';
+
+  @override
+  String get flashPasteCards => 'Pegar tarjetas';
+
+  @override
+  String get flashClipboardEmpty => 'El portapapeles no tiene texto.';
+
+  @override
+  String get flashMenuAdd => 'Añadir tarjetas';
+
+  @override
+  String get flashMenuDeck => 'Mazo';
+
+  @override
+  String get flashToday => 'Hoy';
+
+  @override
+  String get flashStudyNow => 'Estudiar';
+
+  @override
+  String flashTodayAnswered(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count tarjetas respondidas',
+      one: '1 tarjeta respondida',
+      zero: 'Ninguna tarjeta respondida',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get soundForestRain => 'Lluvia en el bosque';
+
+  @override
+  String get autoBackupTitle => 'Copias automáticas';
+
+  @override
+  String get autoBackupDesc => 'Cada día en este teléfono; se guardan las 7 últimas';
+
+  @override
+  String get autoBackupHint =>
+      'Estas copias se quedan en el teléfono y se borran si se desinstala la app. Para cambiar de teléfono, usa «Copia de seguridad» y guarda un archivo.';
+
+  @override
+  String get autoBackupNone => 'Aún no hay copias automáticas. La primera se hace hoy.';
+
+  @override
+  String get autoBackupRestore => 'Restaurar';
+
+  @override
+  String autoBackupConfirm(String date) {
+    return '¿Reemplazar todos los datos actuales por la copia del $date?';
+  }
+
+  @override
+  String get autoBackupRestored => 'Restaurado.';
+
+  @override
+  String get errorLogTitle => 'Registro de errores';
+
+  @override
+  String get errorLogHint =>
+      'Si algo falla, se anota aquí: solo el tipo de error y dónde ocurrió en el código, nunca tu contenido. Compártelo para ayudar a arreglarlo.';
+
+  @override
+  String get errorLogEmpty => 'No hay errores registrados.';
+
+  @override
+  String get errorLogClear => 'Borrar';
+
+  @override
+  String get soundsWithFocus => 'Sonar con las sesiones de enfoque';
+
+  @override
+  String get soundsWithFocusHint => 'Tu mezcla empieza con la sesión y se pausa en los descansos.';
+
+  @override
+  String get soundsSavedMixes => 'Mezclas guardadas';
+
+  @override
+  String get soundsSaveMix => 'Guardar esta mezcla';
+
+  @override
+  String get soundsMixNameHint => 'Nombre, p. ej. Biblioteca lluviosa';
+
+  @override
+  String soundsDeleteMix(String name) {
+    return '¿Eliminar la mezcla «$name»?';
+  }
+
+  @override
+  String get settingsReviewReminderHint => 'Una vez al día, solo si hay tarjetas pendientes';
+
+  @override
+  String get settingsReviewTime => 'Hora del recordatorio';
+
+  @override
+  String get shortcutFocus => 'Enfoque';
+
+  @override
+  String get shortcutNewTask => 'Nueva tarea';
+
+  @override
+  String get shortcutReview => 'Repasar tarjetas';
+
+  @override
+  String get shortcutSounds => 'Sonidos naturales';
+
+  @override
+  String get myDayTitle => 'Empezar mi día';
+
+  @override
+  String get myDayHint => 'Tu día de un vistazo y un toque para concentrarte';
+
+  @override
+  String myDayTasks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count tareas para hoy',
+      one: '1 tarea para hoy',
+      zero: 'Sin tareas para hoy',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get myDayNoEvents => 'No hay más eventos hoy';
+
+  @override
+  String myDayNextEvent(String title, String time) {
+    return 'Siguiente: $title a las $time';
+  }
+
+  @override
+  String myDayHabits(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Quedan $count hábitos',
+      one: 'Queda 1 hábito',
+      zero: 'Hábitos completados',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get myDayBeginFocus => 'Empezar con una sesión de enfoque';
+
+  @override
+  String get hijriMonth1 => 'Muharram';
+
+  @override
+  String get hijriMonth2 => 'Safar';
+
+  @override
+  String get hijriMonth3 => 'Rabi al-Awwal';
+
+  @override
+  String get hijriMonth4 => 'Rabi al-Thani';
+
+  @override
+  String get hijriMonth5 => 'Yumada al-Ula';
+
+  @override
+  String get hijriMonth6 => 'Yumada al-Ajira';
+
+  @override
+  String get hijriMonth7 => 'Rayab';
+
+  @override
+  String get hijriMonth8 => 'Shabán';
+
+  @override
+  String get hijriMonth9 => 'Ramadán';
+
+  @override
+  String get hijriMonth10 => 'Shawwal';
+
+  @override
+  String get hijriMonth11 => 'Dhu al-Qada';
+
+  @override
+  String get hijriMonth12 => 'Dhu al-Hiyya';
+
+  @override
+  String hijriDate(int day, String month, int year) {
+    return '$day $month $year H';
+  }
+
+  @override
+  String get settingsHijri => 'Fechas hégira';
+
+  @override
+  String get settingsHijriHint => 'Se muestran en el calendario y en el inicio (Umm al-Qura)';
+
+  @override
+  String studyStreakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count días',
+      one: '1 día',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String studyGoalProgress(int done, int goal) {
+    return '$done de $goal tarjetas hoy';
+  }
+
+  @override
+  String get studyGoalReached => 'Meta diaria cumplida. ¡Bien hecho!';
+
+  @override
+  String get studyWeekTitle => 'Tu semana';
+
+  @override
+  String studyWeekCards(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count tarjetas en 7 días',
+      one: '1 tarjeta en 7 días',
+      zero: 'Ninguna tarjeta en 7 días',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String studyWeekFocus(String duration) {
+    return '$duration de enfoque en 7 días';
+  }
+
+  @override
+  String studyStreakLine(int current, int best) {
+    return 'Racha: $current · Mejor: $best';
+  }
+
+  @override
+  String get studyGoalTitle => 'Meta diaria (tarjetas)';
+
+  @override
+  String get studyGoalOff => 'No';
+
+  @override
+  String get focusDndTitle => 'No molestar durante el enfoque';
+
+  @override
+  String get focusDndHint => 'Se activa en cada sesión y se desactiva en el descanso';
+
+  @override
+  String get focusDndNeedsAccess => 'Permite el acceso en los ajustes del teléfono para usarlo';
+
+  @override
+  String get voiceInput => 'Dictar';
+
+  @override
+  String get voiceInputPrompt => 'Habla ahora';
+
+  @override
+  String get voiceInputUnavailable =>
+      'El dictado no está disponible en este teléfono. Instala o activa un servicio de voz (por ejemplo, el de Google).';
+
+  @override
+  String get prayerFajr => 'Fajr (alba)';
+
+  @override
+  String get prayerSunrise => 'Amanecer';
+
+  @override
+  String get prayerDhuhr => 'Dhuhr (mediodía)';
+
+  @override
+  String get prayerAsr => 'Asr (tarde)';
+
+  @override
+  String get prayerMaghrib => 'Maghrib (ocaso)';
+
+  @override
+  String get prayerIsha => 'Isha (noche)';
+
+  @override
+  String get prayerMethodMwl => 'Liga Mundial Musulmana';
+
+  @override
+  String get prayerMethodUmmAlQura => 'Umm al-Qura (La Meca)';
+
+  @override
+  String get prayerMethodEgypt => 'Autoridad General de Egipto';
+
+  @override
+  String get prayerMethodJordan => 'Jordania (Awqaf)';
+
+  @override
+  String get prayerMethodKarachi => 'Universidad de Ciencias Islámicas, Karachi';
+
+  @override
+  String get prayerMethodIsna => 'Sociedad Islámica de Norteamérica';
+
+  @override
+  String get prayerMethodGulf => 'Región del Golfo';
+
+  @override
+  String get prayerMethodKuwait => 'Kuwait';
+
+  @override
+  String get prayerMethodQatar => 'Catar';
+
+  @override
+  String get prayerMethodTurkey => 'Turquía (Diyanet)';
+
+  @override
+  String get prayerMethodSingapore => 'Singapur, Malasia, Indonesia';
+
+  @override
+  String get prayerMethodFrance => 'Francia (12°)';
+
+  @override
+  String get prayerMethodRussia => 'Rusia (Administración Espiritual)';
+
+  @override
+  String prayerNotifTitle(String name) {
+    return 'Hora de $name';
+  }
+
+  @override
+  String prayerNotifBody(String time) {
+    return 'Hora de la oración · $time';
+  }
+
+  @override
+  String get prayerTitle => 'Horarios de oración';
+
+  @override
+  String get prayerOffHint =>
+      'Elige tu ciudad para ver los horarios. Se calculan en el teléfono, sin acceso a la ubicación.';
+
+  @override
+  String get prayerChooseCity => 'Elegir ciudad';
+
+  @override
+  String get prayerCity => 'Ciudad';
+
+  @override
+  String get prayerCitySearch => 'Buscar ciudad';
+
+  @override
+  String get prayerMethod => 'Método de cálculo';
+
+  @override
+  String get prayerHanafiAsr => 'Asr hanafí (más tarde)';
+
+  @override
+  String get prayerReminders => 'Avisar en cada oración';
+
+  @override
+  String get prayerPauseFocus => 'Pausar el enfoque al orar';
+
+  @override
+  String get prayerPauseFocusHint => 'La sesión se pausa; continúa después';
+
+  @override
+  String get prayerTurnOff => 'Desactivar horarios';
+
+  @override
+  String get prayerAccuracyNote =>
+      'Los horarios calculados pueden diferir unos minutos de tu mezquita.';
+
+  @override
+  String prayerNext(String name, String time) {
+    return '$name a las $time';
+  }
+
+  @override
+  String get importAnkiNewFormat =>
+      'Este archivo de Anki usa el formato más nuevo. En Anki, exporta de nuevo con «Compatible con versiones anteriores de Anki» activado.';
+
+  @override
+  String get importTemplate => 'Plantilla de hoja de cálculo';
+
+  @override
+  String get importTemplateFront => 'manzana';
+
+  @override
+  String get importTemplateBack => 'una fruta redonda';
+
+  @override
+  String get importTemplateExample => 'Como una manzana cada día.';
+
+  @override
+  String get importTemplateTag => 'comida';
+
+  @override
+  String get starterTitle => 'Mazos de inicio';
+
+  @override
+  String get starterHint => 'Añade uno para estudiar ya. Puedes editarlo o borrarlo después.';
+
+  @override
+  String get starterAdd => 'Añadir';
+
+  @override
+  String get starterWords => 'Palabras cotidianas en inglés (árabe)';
+
+  @override
+  String get starterCapitals => 'Capitales del mundo';
+
+  @override
+  String get starterElements => 'Elementos químicos';
+
+  @override
+  String get settingsAccent => 'Color de acento';
+
+  @override
+  String get accentViolet => 'Violeta';
+
+  @override
+  String get accentBlue => 'Azul';
+
+  @override
+  String get accentTeal => 'Verde azulado';
+
+  @override
+  String get accentGreen => 'Verde';
+
+  @override
+  String get accentRose => 'Rosa';
+
+  @override
+  String get accentAmber => 'Ámbar';
+
+  @override
+  String get settingsFlashTextSize => 'Tamaño del texto de las tarjetas';
+
+  @override
+  String get settingsFlashTextSample => 'Ejemplo';
+
+  @override
+  String get widgetStartFocus => 'Toca para concentrarte';
+
+  @override
+  String widgetFocusUntil(String time) {
+    return 'Enfoque hasta las $time';
+  }
+
+  @override
+  String get widgetNoCardsDue => 'Tarjetas: al día';
+
+  @override
+  String get faqMyDayQ => '¿Qué hace «Empezar mi día»?';
+
+  @override
+  String get faqMyDayA =>
+      'Aparece una vez al día en Inicio: ves las tareas de hoy, el próximo evento, los hábitos pendientes y las tarjetas por repasar, y empiezas una sesión de enfoque con un toque. Mantén pulsado el icono de la app para accesos rápidos o añade el widget a tu pantalla.';
+
+  @override
+  String get faqTasksQ => '¿Cómo añado una tarea con recordatorio?';
+
+  @override
+  String get faqTasksA =>
+      'Toca Nueva tarea en Inicio o + en Tareas. Escribe el título o díctalo con el micrófono y elige fecha, hora y recordatorio. Las tareas atrasadas aparecen primero.';
+
+  @override
+  String get faqFocusQ => '¿Cómo funciona el temporizador de enfoque?';
+
+  @override
+  String get faqFocusA =>
+      'Elige Pomodoro, cuenta atrás o tiempo libre y pulsa Empezar; los descansos pueden seguir solos. En Ajustes eliges el sonido final, activas No molestar durante el enfoque y reproduces tus sonidos naturales en cada sesión.';
+
+  @override
+  String get faqSoundsQ => '¿Puedo mezclar sonidos naturales?';
+
+  @override
+  String get faqSoundsA =>
+      'Activa hasta seis grabaciones reales, ajusta cada volumen y guarda la mezcla con un nombre. Siguen sonando en segundo plano y un temporizador puede detenerlas. No se usa música.';
+
+  @override
+  String get faqCalendarQ => '¿El calendario muestra fechas hégira?';
+
+  @override
+  String get faqCalendarA =>
+      'Sí. Las fechas hégira (Umm al-Qura) se muestran solas en árabe y puedes activarlas en Ajustes para cualquier idioma. Eventos, tareas con fecha e hitos de proyectos aparecen juntos.';
+
+  @override
+  String get faqFlashcardsQ => '¿Cómo decide el repaso qué tarjetas veo?';
+
+  @override
+  String get faqFlashcardsA =>
+      'Las tarjetas que dominas vuelven tras intervalos más largos y las que fallas vuelven pronto (repetición espaciada). Valora cada respuesta: Otra vez, Difícil, Bien o Fácil. Fija una meta diaria y mantén tu racha en la tarjeta Hoy. Fija la fecha del examen en un mazo para ver los días que faltan y cuántas tarjetas nuevas aprender cada día. Ordena por «Mi orden» para arrastrar tarjetas, toca el altavoz de cada lado para oírlo y ajusta velocidad y repeticiones en el menú de voz.';
+
+  @override
+  String get faqImportQ => '¿Puedo traer tarjetas de Anki o Excel?';
+
+  @override
+  String get faqImportA =>
+      'Sí. En un mazo elige Importar y un archivo: Anki (.apkg), Excel (.xlsx) o CSV, y asigna las columnas. Usa «Plantilla de hoja de cálculo» para escribir tarjetas en el ordenador. Las imágenes y sonidos de Anki no se importan.';
+
+  @override
+  String get faqNotesQ => '¿Qué pueden hacer las notas?';
+
+  @override
+  String get faqNotesA =>
+      'Escribe con listas y formato, fija o marca como favoritas las notas importantes, añade etiquetas y enlaza notas con tareas. El botón del micrófono te deja dictar. Una nota nueva puede empezar con una plantilla (clase, resumen de libro, diario, plan semanal) y el botón de imagen añade fotos.';
+
+  @override
+  String get faqHabitsQ => '¿Cómo se cuentan las rachas de hábitos?';
+
+  @override
+  String get faqHabitsA =>
+      'Un día cuenta cuando alcanzas la meta del hábito en un día programado. Pausar un hábito protege la racha. Cada hábito puede tener su propio recordatorio.';
+
+  @override
+  String get faqGoalsQ => '¿Cómo siguen el progreso las metas?';
+
+  @override
+  String get faqGoalsA =>
+      'Dale a la meta una cantidad y una unidad y registra tu avance. Su tarjeta muestra cuánto llevas y cuánto falta antes de la fecha límite.';
+
+  @override
+  String get faqProjectsQ => '¿Para qué sirven los proyectos?';
+
+  @override
+  String get faqProjectsA =>
+      'Agrupa tareas en un proyecto, añade hitos con fecha y sigue el progreso general. Los hitos también aparecen en el calendario.';
+
+  @override
+  String get faqInsightsQ => '¿Qué muestra Estadísticas?';
+
+  @override
+  String get faqInsightsA =>
+      'Tu tiempo de enfoque, tareas terminadas y estudio por días y semanas, con sugerencias amables. Todo se calcula en tu teléfono.';
+
+  @override
+  String get faqSpacesQ => '¿Dónde están todas las secciones?';
+
+  @override
+  String get faqSpacesA =>
+      'Espacios reúne todas las partes de la app (notas, mazos, hábitos, metas, proyectos, sonidos y más) para que la barra principal sea sencilla.';
+
+  @override
+  String get faqBackupQ => '¿Cómo se respaldan mis datos?';
+
+  @override
+  String get faqBackupA =>
+      'Cada día la app guarda en silencio una copia cifrada en este teléfono y conserva las 7 últimas. En Ajustes también puedes exportar una copia con contraseña y restaurarla en otro teléfono.';
+
+  @override
+  String get faqPrayerQ => '¿Cómo funcionan los horarios de oración?';
+
+  @override
+  String get faqPrayerA =>
+      'Elige tu ciudad en Ajustes → Horarios de oración. Se calculan en el teléfono con el método de ese lugar, y puedes cambiar el método y la escuela del Asr. Puedes recibir un aviso en cada oración y la sesión de enfoque se pausa.';
+
+  @override
+  String get faqPrivacyQ => '¿Dónde se guardan mis datos?';
+
+  @override
+  String get faqPrivacyA =>
+      'Solo en tu teléfono, en una base de datos cifrada. No hay cuenta ni seguimiento. Internet solo lo usan las funciones que tú activas, como el asistente opcional.';
+
+  @override
+  String get faqAssistantQ => '¿Qué es el asistente?';
+
+  @override
+  String get faqAssistantA =>
+      'Un ayudante opcional que conectas a tu propio servicio de IA en Ajustes. Está apagado por defecto y pregunta antes de enviar texto de tus notas.';
+
+  @override
+  String get tourPlanTitle => 'Planifica tu día';
+
+  @override
+  String get tourPlanBody =>
+      'Tareas, calendario y hábitos en un lugar tranquilo. Empieza cada mañana con «Empezar mi día».';
+
+  @override
+  String get tourFocusTitle => 'Concéntrate a fondo';
+
+  @override
+  String get tourFocusBody =>
+      'Sesiones con temporizador, sonidos naturales reales, No molestar y tonos finales suaves.';
+
+  @override
+  String get tourLearnTitle => 'Aprende para siempre';
+
+  @override
+  String get tourLearnBody =>
+      'Tarjetas con repetición espaciada, voz en muchos idiomas e importación desde Anki o Excel.';
+
+  @override
+  String get helpTitle => 'Ayuda y preguntas';
+
+  @override
+  String get helpOpen => 'Abrir';
+
+  @override
+  String get helpTour => 'Ver el recorrido';
+
+  @override
+  String get tourNext => 'Siguiente';
+
+  @override
+  String get tourDone => 'Empecemos';
+
+  @override
+  String get transferColTitle => 'Título';
+
+  @override
+  String get transferColNotes => 'Notas';
+
+  @override
+  String get transferColBody => 'Texto';
+
+  @override
+  String get transferColDue => 'Fecha límite';
+
+  @override
+  String get transferColPriority => 'Prioridad (0-3)';
+
+  @override
+  String get transferColDone => 'Hecha';
+
+  @override
+  String get transferColProject => 'Proyecto';
+
+  @override
+  String get transferColCategory => 'Categoría';
+
+  @override
+  String get transferTitle => 'Importar y exportar';
+
+  @override
+  String get transferSaveAs => 'Guardar como';
+
+  @override
+  String get transferImport => 'Importar desde un archivo';
+
+  @override
+  String get transferImportTasksHint =>
+      'Excel, CSV o una tabla de Word. Columnas: título, fecha límite (2026-12-31), prioridad 0-3, hecha, proyecto, notas. Las tareas que ya existen se omiten.';
+
+  @override
+  String get transferImportNotesHint =>
+      'Los archivos Word, Markdown o de texto se convierten en una nota. Excel o CSV: una nota por fila (título, texto).';
+
+  @override
+  String get transferSaved => 'Archivo guardado';
+
+  @override
+  String get transferFailed => 'No se pudo crear el archivo. No se cambió nada.';
+
+  @override
+  String get transferUnsupported =>
+      'Este archivo no se puede leer aquí. Usa Excel, CSV, Word, Markdown o texto.';
+
+  @override
+  String transferImported(int added) {
+    String _temp0 = intl.Intl.pluralLogic(
+      added,
+      locale: localeName,
+      other: '$added añadidos',
+      one: '1 añadido',
+      zero: 'Nada nuevo que añadir',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get transferFormatText => 'Texto';
+
+  @override
+  String get transferAllNotes => 'Todas las notas';
+
+  @override
+  String get transferThisNote => 'Esta nota';
+
+  @override
+  String get transferDeckFormats => 'Guardar como Excel, Word o PDF';
+
+  @override
+  String get faqFilesQ => '¿Puedo usar archivos de Excel, Word o PDF?';
+
+  @override
+  String get faqFilesA =>
+      'Sí. Tareas y Notas tienen arriba un botón de importar y exportar (dos flechas), y cada mazo lo tiene en su menú. Guarda como Excel, CSV, Word o PDF, o importa archivos de Excel, CSV, Word, Markdown o texto. Las columnas pueden estar en cualquier idioma de la app y lo que guardes siempre se puede volver a importar.';
+
+  @override
+  String get tplLecture => 'Clase';
+
+  @override
+  String get tplBook => 'Resumen de libro';
+
+  @override
+  String get tplJournal => 'Diario';
+
+  @override
+  String get tplWeek => 'Plan semanal';
+
+  @override
+  String get tplLectureBody => '## Ideas clave\n- \n\n## Preguntas\n- [ ] \n\n## Resumen\n';
+
+  @override
+  String get tplBookBody =>
+      '## Idea principal\n\n## Qué aprendí\n- \n\n## Citas\n> \n\n## Para aplicar\n- [ ] \n';
+
+  @override
+  String get tplJournalBody => '## Agradezco\n- \n\n## Enfoque de hoy\n- [ ] \n\n## Notas\n';
+
+  @override
+  String get tplWeekBody =>
+      '## Metas de la semana\n- [ ] \n\n### Sábado\n- [ ] \n\n### Domingo\n- [ ] \n\n### Lunes\n- [ ] \n\n### Martes\n- [ ] \n\n### Miércoles\n- [ ] \n\n### Jueves\n- [ ] \n\n### Viernes\n- [ ] \n';
+
+  @override
+  String get tplHint => 'Empieza con una plantilla';
+
+  @override
+  String get noteImage => 'Imagen';
+
+  @override
+  String get noteAddImage => 'Añadir imagen';
+
+  @override
+  String get noteImageUnreadable => 'Este archivo no es una imagen que la app pueda leer.';
+
+  @override
+  String get noteImageTooLarge => 'Esta imagen es demasiado grande.';
+
+  @override
+  String get examSet => 'Fijar fecha del examen';
+
+  @override
+  String get examDate => 'Fecha del examen';
+
+  @override
+  String get examToday => 'El examen es hoy. ¡Suerte!';
+
+  @override
+  String examInDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Examen en $count días',
+      one: 'Examen mañana',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String examNewPerDay(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'aprende $count tarjetas nuevas al día',
+      one: 'aprende 1 tarjeta nueva al día',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get examAllLearnt => 'todas aprendidas, sigue repasando';
+
+  @override
+  String examRaiseLimit(int count) {
+    return 'Mostrar $count tarjetas nuevas al día';
+  }
+
+  @override
+  String get backupDriveHint =>
+      'Para guardar una copia en línea, elige Google Drive (u otra app en la nube) en la pantalla de guardado que se abre después.';
+
+  @override
+  String get flashShareDeck => 'Compartir mazo con un amigo';
+
+  @override
+  String get flashSortManual => 'Mi orden (arrastrar)';
+
+  @override
+  String get flashReorderHint => 'Mantén pulsado el asa y arrastra una tarjeta para moverla.';
+
+  @override
+  String get flashReorderNeedsAll => 'Borra la búsqueda y los filtros para arrastrar tarjetas.';
+
+  @override
+  String get flashDragHandle => 'Arrastrar para mover';
+
+  @override
+  String get reportTitle => 'Informe mensual';
+
+  @override
+  String get reportSubtitle => 'Enfoque, tarjetas, tareas y hábitos del mes, listo para guardar';
+
+  @override
+  String get reportFocus => 'Tiempo de enfoque';
+
+  @override
+  String reportSessions(int count) {
+    return '$count sesiones';
+  }
+
+  @override
+  String reportBestDay(String day, String time) {
+    return 'Mejor día: $day ($time)';
+  }
+
+  @override
+  String reportActiveDays(int count) {
+    return '$count días activos';
+  }
+
+  @override
+  String get reportCards => 'Tarjetas repasadas';
+
+  @override
+  String reportCardsKnown(String percent) {
+    return '$percent recordadas';
+  }
+
+  @override
+  String get reportTasks => 'Tareas completadas';
+
+  @override
+  String get reportHabits => 'Registros de hábitos';
+
+  @override
+  String get reportEmpty => 'Todavía no hay nada registrado este mes.';
+
+  @override
+  String get reportSave => 'Guardar como PDF o Word';
+
+  @override
+  String get reportPrevMonth => 'Mes anterior';
+
+  @override
+  String get reportNextMonth => 'Mes siguiente';
+
+  @override
+  String get careTitle => 'Cuidado del teléfono y los datos';
+
+  @override
+  String get storageTitle => 'Almacenamiento';
+
+  @override
+  String get storageSubtitle => 'Qué ocupa espacio y limpieza de imágenes sin usar';
+
+  @override
+  String get storagePictures => 'Imágenes en notas';
+
+  @override
+  String get storageCardMedia => 'Imágenes y audio en tarjetas';
+
+  @override
+  String get storageText => 'Texto de notas';
+
+  @override
+  String get storageFree => 'Libre en tu teléfono';
+
+  @override
+  String get storageLow =>
+      'Tu teléfono está casi lleno. Libera espacio para que las copias y los recordatorios sigan funcionando.';
+
+  @override
+  String storageUnused(int count, String size) {
+    return '$count imágenes sin usar ($size)';
+  }
+
+  @override
+  String get storageNoUnused => 'No hay imágenes sin usar. Todo en orden.';
+
+  @override
+  String get storageClean => 'Quitar imágenes sin usar';
+
+  @override
+  String storageCleaned(int count) {
+    return '$count imágenes eliminadas';
+  }
+
+  @override
+  String get storageHint =>
+      'Una imagen solo es «sin usar» si ninguna nota la muestra, incluidas las de la papelera.';
+
+  @override
+  String get batteryTitle => 'Mantén los recordatorios activos';
+
+  @override
+  String get batterySubtitle => 'Algunos teléfonos detienen apps en segundo plano. Revisa el tuyo.';
+
+  @override
+  String get batteryStatusOk =>
+      'El ahorro de batería no limita la app. Los recordatorios y sonidos deberían llegar a tiempo.';
+
+  @override
+  String get batteryStatusLimited =>
+      'El ahorro de batería puede detener la app en segundo plano; recordatorios y sonidos pueden llegar tarde o no llegar.';
+
+  @override
+  String get batteryOpen => 'Abrir ajustes de batería';
+
+  @override
+  String get batteryOpenApp => 'Abrir ajustes de la app';
+
+  @override
+  String get batteryGeneric =>
+      'En los ajustes de batería elige esta app y ponla en «Sin restricciones» (o «No optimizar»).';
+
+  @override
+  String get batteryXiaomi =>
+      'Xiaomi / Redmi / POCO: abre también Seguridad › Permisos › Inicio automático y activa la app; ahorro de batería en «Sin restricciones».';
+
+  @override
+  String get batteryOppo =>
+      'Oppo / Realme / OnePlus: abre Batería › esta app y permite actividad en segundo plano e inicio automático; bloquea la app en recientes.';
+
+  @override
+  String get batterySamsung =>
+      'Samsung: Batería › Límites de uso en segundo plano: quita la app de Apps en suspensión y Apps en suspensión profunda.';
+
+  @override
+  String get batteryHuawei =>
+      'Huawei / Honor: Inicio de apps › esta app › gestionar manualmente y permite inicio automático, secundario y en segundo plano.';
+
+  @override
+  String get batteryVivo =>
+      'Vivo / iQOO: Batería › Consumo en segundo plano › permite esta app y activa el inicio automático en permisos.';
+
+  @override
+  String get whatsNewTitle => 'Novedades';
+
+  @override
+  String get whatsNewSubtitle => 'Los últimos cambios en pocas líneas';
+
+  @override
+  String get whatsNewDone => 'Entendido';
+
+  @override
+  String get whatsNewOrderTitle => 'Arrastra tarjetas a tu orden';
+
+  @override
+  String get whatsNewOrderBody => 'En un mazo elige Orden › Mi orden y arrastra el asa.';
+
+  @override
+  String get whatsNewSpeechTitle => 'Un altavoz en cada cara';
+
+  @override
+  String get whatsNewSpeechBody =>
+      'Púlsalo para oír la palabra o la traducción. Velocidad, repeticiones y voz están en el menú de repaso. El idioma se detecta del texto.';
+
+  @override
+  String get whatsNewReportTitle => 'Informe mensual';
+
+  @override
+  String get whatsNewReportBody =>
+      'En Estadísticas toca el icono del informe para ver el mes y guardarlo en PDF o Word.';
+
+  @override
+  String get whatsNewCareTitle => 'Cuidado del teléfono y los datos';
+
+  @override
+  String get whatsNewCareBody =>
+      'Ajustes tiene ahora una página de almacenamiento con limpieza de imágenes y una guía de batería para tu marca.';
+
+  @override
+  String get whatsNewSoundTitle => 'Sonidos más calmados';
+
+  @override
+  String get whatsNewSoundBody =>
+      'Los sonidos de la naturaleza son más suaves y bajos, y las tarjetas lucen mejor.';
+
+  @override
+  String autoBackupCheckOk(String date) {
+    return 'Revisado $date: la última copia se abre correctamente.';
+  }
+
+  @override
+  String autoBackupCheckFixed(String date) {
+    return 'Revisado $date: se encontró una copia dañada y se sustituyó por una nueva.';
+  }
+
+  @override
+  String autoBackupCheckFailed(String date) {
+    return 'Revisado $date: no se pudo abrir la última copia. Guarda una copia tú mismo desde Ajustes.';
+  }
+
+  @override
+  String smartReviewTimeTitle(String time) {
+    return 'Sueles estudiar hacia las $time';
+  }
+
+  @override
+  String get smartReviewTimeUse => 'Usar';
+
+  @override
+  String get widgetNewNote => 'Nueva nota';
+
+  @override
+  String get noteConnections => 'Etiquetas, enlaces y tareas';
+
+  @override
+  String get navCards => 'Tarjetas';
+
+  @override
+  String get studyAnswerWay => 'Cómo responder';
+
+  @override
+  String get studyMorePractice => 'Práctica extra';
+
+  @override
+  String get studySessionSettings => 'Ajustes de la sesión';
+
+  @override
+  String get focusAdjustTitle => 'Tu sesión';
+
+  @override
+  String get focusPresetsTitle => 'Listas';
+
+  @override
+  String get focusPresetStudy => 'Estudio';
+
+  @override
+  String get focusPresetDeep => 'Trabajo profundo';
+
+  @override
+  String get focusPresetQuick => 'Sprint corto';
+
+  @override
+  String get focusPresetReading => 'Lectura';
+
+  @override
+  String get focusPresetWorkout => 'Rondas de ejercicio';
+
+  @override
+  String get focusAdjustMinutes => 'Duración del foco';
+
+  @override
+  String get focusAdjustBreak => 'Duración del descanso';
+
+  @override
+  String get focusAdjustRounds => 'Rondas';
+
+  @override
+  String get focusRoundsOpen => 'Sin límite';
+
+  @override
+  String focusMinutesShort(String n) {
+    return '$n minutos';
+  }
+
+  @override
+  String get focusTapToAdjust => 'Toca para cambiar el tiempo';
 }

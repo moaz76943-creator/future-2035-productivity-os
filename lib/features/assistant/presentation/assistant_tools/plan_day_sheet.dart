@@ -79,7 +79,7 @@ class _PlanDaySheetState extends ConsumerState<PlanDaySheet> {
         if (p.isEmpty && tp.alreadyBlocked.isEmpty) {
           children.add(
             EmptyState(
-              icon: Icons.self_improvement_rounded,
+              icon: Icons.event_repeat_rounded,
               hue: ModuleHue.calendar,
               title: l10n.assistantPlanDay,
               message: l10n.assistantPlanEmpty,

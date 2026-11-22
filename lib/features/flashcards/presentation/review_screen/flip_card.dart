@@ -12,6 +12,8 @@ class _FlipCard extends StatelessWidget {
     this.onRevealFront,
     this.verdict,
     this.onSpeakField,
+    this.onSpeakQuestion,
+    this.onSpeakAnswer,
     this.layout = const CardLayout(),
     this.revealed = 1 << 30,
     this.onRevealMore,
@@ -42,6 +44,10 @@ class _FlipCard extends StatelessWidget {
 
   /// Speaks one optional field (kept for callers that speak built-in fields).
   final void Function(CardField field, String text)? onSpeakField;
+
+  /// Plays the question / the answer text (a speaker button beside each).
+  final VoidCallback? onSpeakQuestion;
+  final VoidCallback? onSpeakAnswer;
 
   /// Question text (the back of the card in reverse mode).
   final String front;
@@ -114,6 +120,20 @@ class _FlipCard extends StatelessWidget {
         label: Text(l10n.flashcardsPlayAudio),
       ),
     );
+    Widget spoken(Widget text, VoidCallback? play, String key, String tip) => play == null
+        ? text
+        : Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Flexible(child: text),
+              IconButton(
+                key: Key(key),
+                tooltip: tip,
+                onPressed: play,
+                icon: Icon(Icons.volume_up_rounded, color: _hue.a),
+              ),
+            ],
+          );
     Widget item(FieldItem f) => Column(
       children: [
         const SizedBox(height: Space.md),
@@ -151,16 +171,26 @@ class _FlipCard extends StatelessWidget {
             children: [
               if (showBack) ...[
                 if (verdict != null) _verdict(context),
-                Text(
-                  front,
-                  textAlign: TextAlign.center,
-                  style: context.text.titleMedium?.copyWith(color: lux.ink2),
+                spoken(
+                  Text(
+                    front,
+                    textAlign: TextAlign.center,
+                    style: context.text.titleMedium?.copyWith(color: lux.ink2),
+                  ),
+                  onSpeakQuestion,
+                  'speakQuestion',
+                  l10n.flashcardsReadAloud,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: Space.md),
                   child: Divider(color: lux.hairline),
                 ),
-                Text(back, textAlign: TextAlign.center, style: context.text.headlineSmall),
+                spoken(
+                  Text(back, textAlign: TextAlign.center, style: context.text.headlineSmall),
+                  onSpeakAnswer,
+                  'speakAnswer',
+                  l10n.flashcardsReadAloud,
+                ),
                 if (answerImage != null) ...[
                   const SizedBox(height: Space.md),
                   image(answerImage!, 'answerImage'),
@@ -188,7 +218,12 @@ class _FlipCard extends StatelessWidget {
                 ),
               ] else ...[
                 if (questionImage != null) image(questionImage!, 'questionImage'),
-                Text(front, textAlign: TextAlign.center, style: context.text.headlineSmall),
+                spoken(
+                  Text(front, textAlign: TextAlign.center, style: context.text.headlineSmall),
+                  onSpeakQuestion,
+                  'speakQuestion',
+                  l10n.flashcardsReadAloud,
+                ),
                 for (final f in questionItems) item(f),
                 if (onPlayQuestionAudio != null) audio(onPlayQuestionAudio!, 'questionAudio'),
                 if (onFlip != null) ...[

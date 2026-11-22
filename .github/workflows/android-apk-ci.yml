@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - claude-dev
       - 'repair/**'
   pull_request:
     branches:
@@ -49,6 +50,7 @@ jobs:
         run: |
           python3 tool/check_l10n.py
           python3 tool/third_party_licenses.py --check
+          python3 tool/check_file_size.py
 
       - name: Run unit tests
         run: flutter test test/unit --reporter expanded --concurrency=2 --timeout=2m
@@ -71,7 +73,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: "21"
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
@@ -131,7 +133,7 @@ jobs:
       # Actions artifact storage can hit the account quota; a pre-release asset does
       # not count against it, so every main build stays downloadable for QA.
       - name: Publish QA pre-release (profile APK, debug-signed, not for the store)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/claude-dev') || github.event_name == 'workflow_dispatch'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |

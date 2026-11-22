@@ -19,3 +19,6 @@
 
 # Existing secure storage / cryptography if needed
 -keep class androidx.security.crypto.** { *; }
+
+# Flutter deferred components (not used; prevents R8 missing play.core classes)
+-dontwarn com.google.android.play.core.**

@@ -13,6 +13,7 @@ abstract final class Routes {
   static const projects = '/projects';
   static String project(String id) => '/projects/$id';
   static const notes = '/notes';
+  static const noteNew = '/note/new';
   static String note(String id) => '/notes/$id';
   static const flashcards = '/flashcards';
   static String deck(String id) => '/flashcards/$id';
@@ -29,7 +30,9 @@ abstract final class Routes {
   static const insights = '/insights';
   static const search = '/search';
   static const assistant = '/assistant';
+  static const sounds = '/sounds';
   static const settings = '/settings';
+  static const help = '/help';
   static const trash = '/trash';
   static const onboarding = '/onboarding';
 }

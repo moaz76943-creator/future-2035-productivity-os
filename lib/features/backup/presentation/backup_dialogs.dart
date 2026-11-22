@@ -94,6 +94,21 @@ class _PasswordDialogState extends State<_PasswordDialog> {
                   decoration: InputDecoration(labelText: l10n.backupPasswordConfirm),
                   validator: (v) => v != _pw.text ? l10n.backupPasswordMismatch : null,
                 ),
+                const SizedBox(height: Space.sm),
+                // Keeping a copy online needs no account in the app.
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Icon(Icons.cloud_upload_outlined, size: 18, color: context.lux.ink2),
+                    const SizedBox(width: Space.xs),
+                    Expanded(
+                      child: Text(
+                        l10n.backupDriveHint,
+                        style: context.text.bodySmall?.copyWith(color: context.lux.ink2),
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ],
           ),

@@ -43,7 +43,16 @@ class _CountdownChoices extends StatelessWidget {
 }
 
 class _TimerHero extends ConsumerWidget {
-  const _TimerHero({required this.state, required this.mode, required this.countdownMinutes});
+  const _TimerHero({
+    super.key,
+    required this.state,
+    required this.mode,
+    required this.countdownMinutes,
+    this.onAdjust,
+  });
+
+  /// Tapping the idle timer opens the length, kind and end-sound sheet.
+  final VoidCallback? onAdjust;
   final FocusControllerState state;
   final FocusMode mode;
   final int countdownMinutes;
@@ -87,7 +96,7 @@ class _TimerHero extends ConsumerWidget {
     final status = a == null
         ? (state.pending != null && mode == FocusMode.pomodoro
               ? l10n.focusUpNext(focusPhaseLabel(l10n, phase))
-              : l10n.focusReady)
+              : (onAdjust != null ? l10n.focusTapToAdjust : l10n.focusReady))
         : (a.isRunning ? l10n.focusRunning : l10n.focusPaused);
     final clock = AppFormat.clock(shown);
     final phaseLabel = focusPhaseLabel(l10n, phase);
@@ -101,7 +110,13 @@ class _TimerHero extends ConsumerWidget {
         .min(screen.width - Space.page * 2 - Space.xl * 2, screen.height * 0.3)
         .clamp(floor, 300.0);
 
+    // A soft tint of the Focus colour makes the timer the calm centre of the screen.
+    final tint = Color.alphaBlend(ModuleHue.focus.a.withValues(alpha: 0.08), context.lux.surface);
     return LuxCard(
+      onTap: a == null ? onAdjust : null,
+      semanticLabel: a == null && onAdjust != null ? l10n.focusTapToAdjust : null,
+      color: tint,
+      radius: Radii.xl,
       padding: const EdgeInsets.all(Space.xl),
       child: Column(
         children: [

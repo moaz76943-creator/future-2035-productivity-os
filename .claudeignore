@@ -1,0 +1,31 @@
+# Heavy or generated files Claude does not need to read.
+# lib/, test/, tool/, pubspec.yaml, l10n files and .github/workflows stay readable.
+
+# Build output and tool caches
+build/
+.dart_tool/
+.gradle/
+android/.gradle/
+ios/Pods/
+ios/.symlinks/
+macos/Pods/
+.fvm/
+coverage/
+
+# Lock file and generated code (regenerate with `dart run build_runner build`;
+# read the table sources in lib/core/database/tables/ instead of app_database.g.dart)
+pubspec.lock
+*.g.dart
+*.freezed.dart
+
+# Binary assets
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.mp4
+*.ttf
+*.otf
+*.ogg
+*.wav
+*.mp3

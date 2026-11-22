@@ -29,16 +29,14 @@ abstract final class Days {
     return DateTime(l.year, l.month, l.day);
   }
 
-  static DateTime addDays(DateTime day, int n) =>
-      DateTime(day.year, day.month, day.day + n);
+  static DateTime addDays(DateTime day, int n) => DateTime(day.year, day.month, day.day + n);
 
   static int key(DateTime t) {
     final l = t.toLocal();
     return l.year * 10000 + l.month * 100 + l.day;
   }
 
-  static DateTime fromKey(int k) =>
-      DateTime(k ~/ 10000, (k ~/ 100) % 100, k % 100);
+  static DateTime fromKey(int k) => DateTime(k ~/ 10000, (k ~/ 100) % 100, k % 100);
 
   static bool sameDay(DateTime a, DateTime b) => key(a) == key(b);
 
@@ -53,6 +51,5 @@ abstract final class Days {
     return DateTime(l.year, l.month);
   }
 
-  static int daysInMonth(int year, int month) =>
-      DateTime(year, month + 1, 0).day;
+  static int daysInMonth(int year, int month) => DateTime(year, month + 1, 0).day;
 }

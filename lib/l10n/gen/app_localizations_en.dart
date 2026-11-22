@@ -10,7 +10,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appName => 'Future OS';
+  String get appName => 'Deep Focus';
 
   @override
   String get navHome => 'Home';
@@ -1240,7 +1240,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get importCardsHint =>
-      'Paste one card per line as front and back separated by a tab or semicolon, or paste an exported deck file.';
+      'Paste one card per line (front and back separated by a tab or semicolon), or choose a file: Excel (.xlsx), CSV, an Anki deck (.apkg) or an exported deck.';
 
   @override
   String importCardsResult(int count) {
@@ -1913,7 +1913,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get backupWrongPassword => 'Wrong password, or the file was modified.';
 
   @override
-  String get backupNotABackup => 'This file is not a Future OS backup.';
+  String get backupNotABackup => 'This file is not a Deep Focus backup.';
 
   @override
   String get backupCorrupted => 'The backup file is damaged.';
@@ -2989,7 +2989,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get backupRestoreFailed => 'Restore failed. Nothing was changed.';
 
   @override
-  String get backupShareSubject => 'Future OS encrypted backup';
+  String get backupShareSubject => 'Deep Focus encrypted backup';
 
   @override
   String repeatSummaryEveryN(String unit, int count) {
@@ -3673,7 +3673,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get speechVoice => 'Voice';
 
   @override
-  String get speechVoiceDefault => 'Device default';
+  String get speechVoiceDefault => 'Automatic';
 
   @override
   String get speechVoiceOnline => 'needs internet';
@@ -3844,4 +3844,1233 @@ class AppLocalizationsEn extends AppLocalizations {
   String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct) {
     return '$decks decks · $cards cards · $mature mature · $due due · $correct correct (30 days)';
   }
+
+  @override
+  String get flashcardsRecord => 'Record';
+
+  @override
+  String get flashcardsRecording => 'Recording…';
+
+  @override
+  String get flashcardsRecordStop => 'Stop and keep';
+
+  @override
+  String get flashcardsMicDenied =>
+      'Microphone access is off. Allow it in the system settings to record.';
+
+  @override
+  String get flashcardsRecordFailed => 'Recording isn\'t available on this device.';
+
+  @override
+  String get soundsTitle => 'Sounds';
+
+  @override
+  String get soundsSubtitle => 'Real nature recordings, played so they never sound like a loop.';
+
+  @override
+  String get soundsNature => 'Nature';
+
+  @override
+  String get soundsNoise => 'Focus noise';
+
+  @override
+  String get soundRain => 'Rain';
+
+  @override
+  String get soundStorm => 'Thunderstorm';
+
+  @override
+  String get soundRiver => 'River';
+
+  @override
+  String get soundOcean => 'Ocean waves';
+
+  @override
+  String get soundFire => 'Campfire';
+
+  @override
+  String get soundForest => 'Forest birds';
+
+  @override
+  String get soundNight => 'Summer night';
+
+  @override
+  String get soundWhite => 'White noise';
+
+  @override
+  String get soundPink => 'Pink noise';
+
+  @override
+  String get soundBrown => 'Brown noise';
+
+  @override
+  String get soundsPlay => 'Play';
+
+  @override
+  String get soundsSleep => 'Sleep timer';
+
+  @override
+  String get soundsSleepOff => 'Off';
+
+  @override
+  String soundsSleepAt(String time) {
+    return 'Stops at $time';
+  }
+
+  @override
+  String soundsMixFull(int count) {
+    return 'Up to $count sounds can play at once.';
+  }
+
+  @override
+  String get soundsHint => 'Tap a sound to start. Mix several and set each volume.';
+
+  @override
+  String get soundsMixer => 'Mix';
+
+  @override
+  String soundsVolumeOf(String name) {
+    return '$name volume';
+  }
+
+  @override
+  String get soundsChannel => 'Nature sounds';
+
+  @override
+  String get settingsEndTone => 'Timer end sound';
+
+  @override
+  String get toneGentle => 'Gentle beeps';
+
+  @override
+  String get toneBeeps => 'Beeps';
+
+  @override
+  String get toneWood => 'Wood knock';
+
+  @override
+  String get toneBird => 'Bird call';
+
+  @override
+  String get toneStream => 'Stream';
+
+  @override
+  String get toneSystem => 'Phone\'s sound';
+
+  @override
+  String get speechOnPhone => 'On this phone';
+
+  @override
+  String get speechAllLanguages => 'All languages';
+
+  @override
+  String get speechSearchLanguage => 'Search languages';
+
+  @override
+  String get speechGetVoices => 'Download more voices';
+
+  @override
+  String get speechGetVoicesHint =>
+      'Languages without a voice can be downloaded in the phone\'s speech settings.';
+
+  @override
+  String get speechSettingsFailed => 'Couldn\'t open the speech settings on this phone.';
+
+  @override
+  String get speechVoiceMissing => 'No voice installed';
+
+  @override
+  String get speechPause => 'Pause between repeats';
+
+  @override
+  String speechSeconds(String seconds) {
+    return '$seconds s';
+  }
+
+  @override
+  String get speechExample => 'Read the example with the answer';
+
+  @override
+  String get flashListen => 'Listen';
+
+  @override
+  String get flashListenNext => 'Next card';
+
+  @override
+  String get flashListenEmpty => 'No cards to listen to.';
+
+  @override
+  String get flashViewTable => 'Table';
+
+  @override
+  String get flashViewCards => 'Cards';
+
+  @override
+  String get flashSwapSides => 'Swap columns';
+
+  @override
+  String get flashSort => 'Sort';
+
+  @override
+  String get flashSortNewest => 'Newest first';
+
+  @override
+  String get flashSortAlpha => 'A to Z';
+
+  @override
+  String get flashSortDue => 'Due first';
+
+  @override
+  String get flashSortHard => 'Hardest first';
+
+  @override
+  String get flashPasteCards => 'Paste cards';
+
+  @override
+  String get flashClipboardEmpty => 'The clipboard has no text.';
+
+  @override
+  String get flashMenuAdd => 'Add cards';
+
+  @override
+  String get flashMenuDeck => 'Deck';
+
+  @override
+  String get flashToday => 'Today';
+
+  @override
+  String get flashStudyNow => 'Study';
+
+  @override
+  String flashTodayAnswered(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count cards answered',
+      one: '1 card answered',
+      zero: 'No cards answered',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get soundForestRain => 'Rain in the forest';
+
+  @override
+  String get autoBackupTitle => 'Automatic backups';
+
+  @override
+  String get autoBackupDesc => 'Every day on this phone; the last 7 are kept';
+
+  @override
+  String get autoBackupHint =>
+      'These copies stay on this phone and are removed if the app is uninstalled. To move to a new phone, use “Back up” to save a file.';
+
+  @override
+  String get autoBackupNone => 'No automatic backup yet. The first one is made today.';
+
+  @override
+  String get autoBackupRestore => 'Restore';
+
+  @override
+  String autoBackupConfirm(String date) {
+    return 'Replace all current data with the backup from $date?';
+  }
+
+  @override
+  String get autoBackupRestored => 'Restored.';
+
+  @override
+  String get errorLogTitle => 'Error log';
+
+  @override
+  String get errorLogHint =>
+      'If something goes wrong, it is noted here: only the kind of error and where in the code, never your content. Share it to help fix the problem.';
+
+  @override
+  String get errorLogEmpty => 'No errors recorded.';
+
+  @override
+  String get errorLogClear => 'Clear';
+
+  @override
+  String get soundsWithFocus => 'Play with focus sessions';
+
+  @override
+  String get soundsWithFocusHint => 'Your mix starts with a focus session and pauses at breaks.';
+
+  @override
+  String get soundsSavedMixes => 'Saved mixes';
+
+  @override
+  String get soundsSaveMix => 'Save this mix';
+
+  @override
+  String get soundsMixNameHint => 'Name, e.g. Rainy library';
+
+  @override
+  String soundsDeleteMix(String name) {
+    return 'Delete the mix “$name”?';
+  }
+
+  @override
+  String get settingsReviewReminderHint => 'Once a day, only when cards are due';
+
+  @override
+  String get settingsReviewTime => 'Reminder time';
+
+  @override
+  String get shortcutFocus => 'Focus';
+
+  @override
+  String get shortcutNewTask => 'New task';
+
+  @override
+  String get shortcutReview => 'Review cards';
+
+  @override
+  String get shortcutSounds => 'Nature sounds';
+
+  @override
+  String get myDayTitle => 'Start my day';
+
+  @override
+  String get myDayHint => 'Your day at a glance, then one tap to focus';
+
+  @override
+  String myDayTasks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count tasks for today',
+      one: '1 task for today',
+      zero: 'No tasks for today',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get myDayNoEvents => 'No more events today';
+
+  @override
+  String myDayNextEvent(String title, String time) {
+    return 'Next: $title at $time';
+  }
+
+  @override
+  String myDayHabits(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count habits left',
+      one: '1 habit left',
+      zero: 'All habits done',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get myDayBeginFocus => 'Begin with a focus session';
+
+  @override
+  String get hijriMonth1 => 'Muharram';
+
+  @override
+  String get hijriMonth2 => 'Safar';
+
+  @override
+  String get hijriMonth3 => 'Rabi al-Awwal';
+
+  @override
+  String get hijriMonth4 => 'Rabi al-Thani';
+
+  @override
+  String get hijriMonth5 => 'Jumada al-Ula';
+
+  @override
+  String get hijriMonth6 => 'Jumada al-Akhirah';
+
+  @override
+  String get hijriMonth7 => 'Rajab';
+
+  @override
+  String get hijriMonth8 => 'Shaban';
+
+  @override
+  String get hijriMonth9 => 'Ramadan';
+
+  @override
+  String get hijriMonth10 => 'Shawwal';
+
+  @override
+  String get hijriMonth11 => 'Dhu al-Qadah';
+
+  @override
+  String get hijriMonth12 => 'Dhu al-Hijjah';
+
+  @override
+  String hijriDate(int day, String month, int year) {
+    return '$day $month $year AH';
+  }
+
+  @override
+  String get settingsHijri => 'Hijri dates';
+
+  @override
+  String get settingsHijriHint => 'Shown in the calendar and on the home screen (Umm al-Qura)';
+
+  @override
+  String studyStreakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count days',
+      one: '1 day',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String studyGoalProgress(int done, int goal) {
+    return '$done of $goal cards today';
+  }
+
+  @override
+  String get studyGoalReached => 'Daily goal reached. Well done!';
+
+  @override
+  String get studyWeekTitle => 'Your week';
+
+  @override
+  String studyWeekCards(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count cards answered in 7 days',
+      one: '1 card answered in 7 days',
+      zero: 'No cards answered in 7 days',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String studyWeekFocus(String duration) {
+    return '$duration of focus in 7 days';
+  }
+
+  @override
+  String studyStreakLine(int current, int best) {
+    return 'Streak: $current · Best: $best';
+  }
+
+  @override
+  String get studyGoalTitle => 'Daily goal (cards)';
+
+  @override
+  String get studyGoalOff => 'Off';
+
+  @override
+  String get focusDndTitle => 'Do Not Disturb while focusing';
+
+  @override
+  String get focusDndHint => 'Turns on for each focus session and back off at the break';
+
+  @override
+  String get focusDndNeedsAccess => 'Allow access in the phone settings to use this';
+
+  @override
+  String get voiceInput => 'Speak to type';
+
+  @override
+  String get voiceInputPrompt => 'Speak now';
+
+  @override
+  String get voiceInputUnavailable =>
+      'Voice typing isn’t available on this phone. Install or turn on a speech service (for example Speech Recognition & Synthesis by Google).';
+
+  @override
+  String get prayerFajr => 'Fajr';
+
+  @override
+  String get prayerSunrise => 'Sunrise';
+
+  @override
+  String get prayerDhuhr => 'Dhuhr';
+
+  @override
+  String get prayerAsr => 'Asr';
+
+  @override
+  String get prayerMaghrib => 'Maghrib';
+
+  @override
+  String get prayerIsha => 'Isha';
+
+  @override
+  String get prayerMethodMwl => 'Muslim World League';
+
+  @override
+  String get prayerMethodUmmAlQura => 'Umm al-Qura, Makkah';
+
+  @override
+  String get prayerMethodEgypt => 'Egyptian General Authority';
+
+  @override
+  String get prayerMethodJordan => 'Jordan, Ministry of Awqaf';
+
+  @override
+  String get prayerMethodKarachi => 'University of Islamic Sciences, Karachi';
+
+  @override
+  String get prayerMethodIsna => 'Islamic Society of North America';
+
+  @override
+  String get prayerMethodGulf => 'Gulf region';
+
+  @override
+  String get prayerMethodKuwait => 'Kuwait';
+
+  @override
+  String get prayerMethodQatar => 'Qatar';
+
+  @override
+  String get prayerMethodTurkey => 'Türkiye, Diyanet';
+
+  @override
+  String get prayerMethodSingapore => 'Singapore, Malaysia, Indonesia';
+
+  @override
+  String get prayerMethodFrance => 'France (12°)';
+
+  @override
+  String get prayerMethodRussia => 'Russia, Spiritual Administration';
+
+  @override
+  String prayerNotifTitle(String name) {
+    return 'Time for $name';
+  }
+
+  @override
+  String prayerNotifBody(String time) {
+    return 'Prayer time · $time';
+  }
+
+  @override
+  String get prayerTitle => 'Prayer times';
+
+  @override
+  String get prayerOffHint =>
+      'Choose your city to see prayer times. They are calculated on the phone; no location access is needed.';
+
+  @override
+  String get prayerChooseCity => 'Choose city';
+
+  @override
+  String get prayerCity => 'City';
+
+  @override
+  String get prayerCitySearch => 'Search for a city';
+
+  @override
+  String get prayerMethod => 'Calculation method';
+
+  @override
+  String get prayerHanafiAsr => 'Hanafi Asr (later time)';
+
+  @override
+  String get prayerReminders => 'Notify at each prayer time';
+
+  @override
+  String get prayerPauseFocus => 'Pause focus at prayer time';
+
+  @override
+  String get prayerPauseFocusHint => 'A running session pauses; continue after the prayer';
+
+  @override
+  String get prayerTurnOff => 'Turn off prayer times';
+
+  @override
+  String get prayerAccuracyNote =>
+      'Calculated times can differ by a few minutes from your local mosque.';
+
+  @override
+  String prayerNext(String name, String time) {
+    return '$name at $time';
+  }
+
+  @override
+  String get importAnkiNewFormat =>
+      'This Anki file uses the newest format. In Anki, export again with “Support older Anki versions” turned on, then import that file.';
+
+  @override
+  String get importTemplate => 'Spreadsheet template';
+
+  @override
+  String get importTemplateFront => 'apple';
+
+  @override
+  String get importTemplateBack => 'a round fruit';
+
+  @override
+  String get importTemplateExample => 'I eat an apple every day.';
+
+  @override
+  String get importTemplateTag => 'food';
+
+  @override
+  String get starterTitle => 'Starter decks';
+
+  @override
+  String get starterHint => 'Add one to try studying right away. You can edit or delete it later.';
+
+  @override
+  String get starterAdd => 'Add';
+
+  @override
+  String get starterWords => 'Everyday English words (Arabic)';
+
+  @override
+  String get starterCapitals => 'World capitals';
+
+  @override
+  String get starterElements => 'Chemical elements';
+
+  @override
+  String get settingsAccent => 'Accent colour';
+
+  @override
+  String get accentViolet => 'Violet';
+
+  @override
+  String get accentBlue => 'Blue';
+
+  @override
+  String get accentTeal => 'Teal';
+
+  @override
+  String get accentGreen => 'Green';
+
+  @override
+  String get accentRose => 'Rose';
+
+  @override
+  String get accentAmber => 'Amber';
+
+  @override
+  String get settingsFlashTextSize => 'Flashcard text size';
+
+  @override
+  String get settingsFlashTextSample => 'Example';
+
+  @override
+  String get widgetStartFocus => 'Tap to focus';
+
+  @override
+  String widgetFocusUntil(String time) {
+    return 'Focus until $time';
+  }
+
+  @override
+  String get widgetNoCardsDue => 'Cards: all done';
+
+  @override
+  String get faqMyDayQ => 'What does “Start my day” do?';
+
+  @override
+  String get faqMyDayA =>
+      'Once a day the home screen offers it: see today’s tasks, the next event, habits left and cards due, then begin a focus session with one tap. Long-press the app icon for quick actions, or add the home screen widget to see focus time and cards due.';
+
+  @override
+  String get faqTasksQ => 'How do I add a task with a reminder?';
+
+  @override
+  String get faqTasksA =>
+      'Tap New task on Home or + in Tasks. Type the title or speak it with the microphone, then set a due date, a time and a reminder. Overdue tasks are listed first.';
+
+  @override
+  String get faqFocusQ => 'How does the focus timer work?';
+
+  @override
+  String get faqFocusA =>
+      'Choose Pomodoro, a countdown or open time and press Start; breaks can follow automatically. In Settings you can pick the end sound, turn on Do Not Disturb while focusing, and play your nature sounds with each session.';
+
+  @override
+  String get faqSoundsQ => 'Can I mix nature sounds?';
+
+  @override
+  String get faqSoundsA =>
+      'Turn on up to six real recordings, set each volume and save the mix by name. They keep playing in the background, and a sleep timer can stop them. No music is used.';
+
+  @override
+  String get faqCalendarQ => 'Can the calendar show Hijri dates?';
+
+  @override
+  String get faqCalendarA =>
+      'Yes. Hijri dates (Umm al-Qura) show automatically in Arabic and can be turned on in Settings for any language. Events, tasks with due dates and project milestones appear together.';
+
+  @override
+  String get faqFlashcardsQ => 'How does review decide which cards I see?';
+
+  @override
+  String get faqFlashcardsA =>
+      'Cards you know well come back after longer gaps and cards you miss come back soon (spaced repetition). Rate each answer Again, Hard, Good or Easy. Set a daily goal and keep your streak on the Today card. Set an exam date in a deck to see the days left and how many new cards to learn each day. Sort by \"My order\" to drag cards into place, tap the speaker on either side to hear it, and set speed and repeats in the Speech menu.';
+
+  @override
+  String get faqImportQ => 'Can I bring cards from Anki or Excel?';
+
+  @override
+  String get faqImportA =>
+      'Yes. In a deck choose Import, then pick a file: Anki (.apkg), Excel (.xlsx) or CSV, and match the columns. Use “Spreadsheet template” to write cards on a computer. Pictures and sounds inside Anki files are not imported.';
+
+  @override
+  String get faqNotesQ => 'What can notes do?';
+
+  @override
+  String get faqNotesA =>
+      'Write freely with checklists and formatting, pin or favourite important notes, add tags and link notes to tasks. The microphone button lets you dictate. A new note can start from a template (lecture, book summary, journal, weekly plan), and the picture button adds photos.';
+
+  @override
+  String get faqHabitsQ => 'How are habit streaks counted?';
+
+  @override
+  String get faqHabitsA =>
+      'A day counts when you reach the habit’s target on a scheduled day. Pausing a habit keeps the streak safe. Each habit can have its own reminder time.';
+
+  @override
+  String get faqGoalsQ => 'How do goals track progress?';
+
+  @override
+  String get faqGoalsA =>
+      'Give a goal a target amount and unit, then log progress. Its card shows how far you are and how much is left before the deadline.';
+
+  @override
+  String get faqProjectsQ => 'What are projects for?';
+
+  @override
+  String get faqProjectsA =>
+      'Group tasks under a project, add milestones with dates and follow overall progress. Milestones also appear in the calendar.';
+
+  @override
+  String get faqInsightsQ => 'What does Insights show?';
+
+  @override
+  String get faqInsightsA =>
+      'Your focus time, finished tasks and study over days and weeks, with gentle suggestions. Everything is calculated on your phone.';
+
+  @override
+  String get faqSpacesQ => 'Where are all the sections?';
+
+  @override
+  String get faqSpacesA =>
+      'Spaces lists every part of the app (notes, decks, habits, goals, projects, sounds and more) so the main bar stays simple.';
+
+  @override
+  String get faqBackupQ => 'How are my data backed up?';
+
+  @override
+  String get faqBackupA =>
+      'Every day the app quietly keeps an encrypted copy on this phone and keeps the last 7. In Settings you can also export a password-protected backup file and restore it on another phone.';
+
+  @override
+  String get faqPrayerQ => 'How do prayer times work?';
+
+  @override
+  String get faqPrayerA =>
+      'Choose your city in Settings → Prayer times. Times are calculated on the phone with the method used there, and you can change the method and the Asr school. You can be notified at each prayer, and a running focus session pauses.';
+
+  @override
+  String get faqPrivacyQ => 'Where are my data stored?';
+
+  @override
+  String get faqPrivacyA =>
+      'On your phone only, in an encrypted database. There is no account and no tracking. The internet is used only by features you turn on yourself, such as the optional assistant.';
+
+  @override
+  String get faqAssistantQ => 'What is the assistant?';
+
+  @override
+  String get faqAssistantA =>
+      'An optional helper you connect to your own AI service in Settings. It is off by default and asks before sending any note text.';
+
+  @override
+  String get tourPlanTitle => 'Plan your day';
+
+  @override
+  String get tourPlanBody =>
+      'Tasks, calendar and habits in one calm place. Begin each morning with “Start my day”.';
+
+  @override
+  String get tourFocusTitle => 'Focus deeply';
+
+  @override
+  String get tourFocusBody =>
+      'Timed sessions with real nature sounds, Do Not Disturb and gentle end tones.';
+
+  @override
+  String get tourLearnTitle => 'Learn for good';
+
+  @override
+  String get tourLearnBody =>
+      'Flashcards with spaced repetition, speech in many languages, and imports from Anki or Excel.';
+
+  @override
+  String get helpTitle => 'Help & questions';
+
+  @override
+  String get helpOpen => 'Open';
+
+  @override
+  String get helpTour => 'Take the tour';
+
+  @override
+  String get tourNext => 'Next';
+
+  @override
+  String get tourDone => 'Let’s begin';
+
+  @override
+  String get transferColTitle => 'Title';
+
+  @override
+  String get transferColNotes => 'Notes';
+
+  @override
+  String get transferColBody => 'Text';
+
+  @override
+  String get transferColDue => 'Due date';
+
+  @override
+  String get transferColPriority => 'Priority (0-3)';
+
+  @override
+  String get transferColDone => 'Done';
+
+  @override
+  String get transferColProject => 'Project';
+
+  @override
+  String get transferColCategory => 'Category';
+
+  @override
+  String get transferTitle => 'Import and export';
+
+  @override
+  String get transferSaveAs => 'Save as';
+
+  @override
+  String get transferImport => 'Import from a file';
+
+  @override
+  String get transferImportTasksHint =>
+      'Excel, CSV or a table in Word. Columns: title, due date (2026-12-31), priority 0-3, done, project, notes. Tasks already in the app are skipped.';
+
+  @override
+  String get transferImportNotesHint =>
+      'Word, Markdown or text files become a note. Excel or CSV: one note per row (title, text).';
+
+  @override
+  String get transferSaved => 'File saved';
+
+  @override
+  String get transferFailed => 'The file could not be made. Nothing was changed.';
+
+  @override
+  String get transferUnsupported =>
+      'This file can’t be read here. Use Excel, CSV, Word, Markdown or text.';
+
+  @override
+  String transferImported(int added) {
+    String _temp0 = intl.Intl.pluralLogic(
+      added,
+      locale: localeName,
+      other: '$added added',
+      one: '1 added',
+      zero: 'Nothing new to add',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get transferFormatText => 'Text';
+
+  @override
+  String get transferAllNotes => 'All notes';
+
+  @override
+  String get transferThisNote => 'This note';
+
+  @override
+  String get transferDeckFormats => 'Save as Excel, Word or PDF';
+
+  @override
+  String get faqFilesQ => 'Can I use Excel, Word or PDF files?';
+
+  @override
+  String get faqFilesA =>
+      'Yes. Tasks and Notes have an import and export button (two arrows) at the top, and every deck has it in its menu. Save as Excel, CSV, Word or PDF, or bring in Excel, CSV, Word, Markdown or text files. Column names can be in any of the app’s languages, and files you saved can always be imported again.';
+
+  @override
+  String get tplLecture => 'Lecture';
+
+  @override
+  String get tplBook => 'Book summary';
+
+  @override
+  String get tplJournal => 'Journal';
+
+  @override
+  String get tplWeek => 'Weekly plan';
+
+  @override
+  String get tplLectureBody => '## Key points\n- \n\n## Questions\n- [ ] \n\n## Summary\n';
+
+  @override
+  String get tplBookBody =>
+      '## Main idea\n\n## What I learned\n- \n\n## Quotes\n> \n\n## To apply\n- [ ] \n';
+
+  @override
+  String get tplJournalBody => '## Grateful for\n- \n\n## Today’s focus\n- [ ] \n\n## Notes\n';
+
+  @override
+  String get tplWeekBody =>
+      '## Goals this week\n- [ ] \n\n### Saturday\n- [ ] \n\n### Sunday\n- [ ] \n\n### Monday\n- [ ] \n\n### Tuesday\n- [ ] \n\n### Wednesday\n- [ ] \n\n### Thursday\n- [ ] \n\n### Friday\n- [ ] \n';
+
+  @override
+  String get tplHint => 'Start from a template';
+
+  @override
+  String get noteImage => 'Picture';
+
+  @override
+  String get noteAddImage => 'Add picture';
+
+  @override
+  String get noteImageUnreadable => 'This file isn’t a picture the app can read.';
+
+  @override
+  String get noteImageTooLarge => 'This picture is too large.';
+
+  @override
+  String get examSet => 'Set exam date';
+
+  @override
+  String get examDate => 'Exam date';
+
+  @override
+  String get examToday => 'Exam today. Good luck!';
+
+  @override
+  String examInDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Exam in $count days',
+      one: 'Exam tomorrow',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String examNewPerDay(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'learn $count new cards a day',
+      one: 'learn 1 new card a day',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get examAllLearnt => 'all cards learnt, keep reviewing';
+
+  @override
+  String examRaiseLimit(int count) {
+    return 'Show $count new cards a day';
+  }
+
+  @override
+  String get backupDriveHint =>
+      'To keep a copy online, choose Google Drive (or another cloud app) on the save screen that opens next.';
+
+  @override
+  String get flashShareDeck => 'Share deck with a friend';
+
+  @override
+  String get flashSortManual => 'My order (drag)';
+
+  @override
+  String get flashReorderHint => 'Hold the handle and drag a card to move it.';
+
+  @override
+  String get flashReorderNeedsAll => 'Clear the search and filters to drag cards.';
+
+  @override
+  String get flashDragHandle => 'Drag to move';
+
+  @override
+  String get reportTitle => 'Monthly report';
+
+  @override
+  String get reportSubtitle => 'Focus, cards, tasks and habits of the month, ready to save';
+
+  @override
+  String get reportFocus => 'Focus time';
+
+  @override
+  String reportSessions(int count) {
+    return '$count sessions';
+  }
+
+  @override
+  String reportBestDay(String day, String time) {
+    return 'Best day: $day ($time)';
+  }
+
+  @override
+  String reportActiveDays(int count) {
+    return '$count active days';
+  }
+
+  @override
+  String get reportCards => 'Cards reviewed';
+
+  @override
+  String reportCardsKnown(String percent) {
+    return '$percent remembered';
+  }
+
+  @override
+  String get reportTasks => 'Tasks completed';
+
+  @override
+  String get reportHabits => 'Habit check-ins';
+
+  @override
+  String get reportEmpty => 'Nothing recorded this month yet.';
+
+  @override
+  String get reportSave => 'Save as PDF or Word';
+
+  @override
+  String get reportPrevMonth => 'Previous month';
+
+  @override
+  String get reportNextMonth => 'Next month';
+
+  @override
+  String get careTitle => 'Care of your phone and data';
+
+  @override
+  String get storageTitle => 'Storage';
+
+  @override
+  String get storageSubtitle => 'What takes space and a clean-up of unused pictures';
+
+  @override
+  String get storagePictures => 'Pictures in notes';
+
+  @override
+  String get storageCardMedia => 'Images and audio in cards';
+
+  @override
+  String get storageText => 'Notes text';
+
+  @override
+  String get storageFree => 'Free on your phone';
+
+  @override
+  String get storageLow =>
+      'Your phone is almost full. Free some space so backups and reminders keep working.';
+
+  @override
+  String storageUnused(int count, String size) {
+    return '$count unused pictures ($size)';
+  }
+
+  @override
+  String get storageNoUnused => 'No unused pictures. Everything is tidy.';
+
+  @override
+  String get storageClean => 'Remove unused pictures';
+
+  @override
+  String storageCleaned(int count) {
+    return '$count pictures removed';
+  }
+
+  @override
+  String get storageHint =>
+      'Pictures only count as unused when no note shows them, including notes in the trash.';
+
+  @override
+  String get batteryTitle => 'Keep reminders working';
+
+  @override
+  String get batterySubtitle => 'Some phones stop apps in the background. Check yours.';
+
+  @override
+  String get batteryStatusOk =>
+      'Battery saving does not limit this app. Reminders and sounds should arrive on time.';
+
+  @override
+  String get batteryStatusLimited =>
+      'Battery saving may stop this app in the background, so reminders and sounds can be late or missing.';
+
+  @override
+  String get batteryOpen => 'Open battery settings';
+
+  @override
+  String get batteryOpenApp => 'Open app settings';
+
+  @override
+  String get batteryGeneric =>
+      'In the battery settings choose this app and set it to Unrestricted (or Don\'t optimize).';
+
+  @override
+  String get batteryXiaomi =>
+      'Xiaomi / Redmi / POCO: also open Security › Permissions › Autostart and switch this app on, and set Battery saver to No restrictions.';
+
+  @override
+  String get batteryOppo =>
+      'Oppo / Realme / OnePlus: open Battery › this app and allow background activity and auto-launch; lock the app in the recent apps list.';
+
+  @override
+  String get batterySamsung =>
+      'Samsung: Battery › Background usage limits: remove this app from Sleeping apps and Deep sleeping apps.';
+
+  @override
+  String get batteryHuawei =>
+      'Huawei / Honor: App launch › this app › manage manually, and allow auto-launch, secondary launch and run in background.';
+
+  @override
+  String get batteryVivo =>
+      'Vivo / iQOO: Battery › Background power consumption › allow this app, and enable auto-start in the permissions.';
+
+  @override
+  String get whatsNewTitle => 'What\'s new';
+
+  @override
+  String get whatsNewSubtitle => 'The latest changes in a few lines';
+
+  @override
+  String get whatsNewDone => 'Got it';
+
+  @override
+  String get whatsNewOrderTitle => 'Drag cards into your own order';
+
+  @override
+  String get whatsNewOrderBody =>
+      'In a deck choose Sort › My order, then hold the handle and drag.';
+
+  @override
+  String get whatsNewSpeechTitle => 'A speaker on every card side';
+
+  @override
+  String get whatsNewSpeechBody =>
+      'Tap it to hear the word or the translation. Speed, repeats and voice are in the review menu. Language is detected from the text.';
+
+  @override
+  String get whatsNewReportTitle => 'Monthly report';
+
+  @override
+  String get whatsNewReportBody =>
+      'In Insights tap the report icon to see the month and save it as PDF or Word.';
+
+  @override
+  String get whatsNewCareTitle => 'Care of your phone and data';
+
+  @override
+  String get whatsNewCareBody =>
+      'Settings now has a storage page with picture clean-up and a battery guide for your phone brand.';
+
+  @override
+  String get whatsNewSoundTitle => 'Calmer sounds';
+
+  @override
+  String get whatsNewSoundBody =>
+      'Nature sounds are softer and quieter, and the picture cards are nicer.';
+
+  @override
+  String autoBackupCheckOk(String date) {
+    return 'Checked $date: the latest backup opens correctly.';
+  }
+
+  @override
+  String autoBackupCheckFixed(String date) {
+    return 'Checked $date: a damaged backup was found and replaced with a new one.';
+  }
+
+  @override
+  String autoBackupCheckFailed(String date) {
+    return 'Checked $date: the latest backup could not be opened. Save a backup file yourself from Settings.';
+  }
+
+  @override
+  String smartReviewTimeTitle(String time) {
+    return 'You usually study around $time';
+  }
+
+  @override
+  String get smartReviewTimeUse => 'Use it';
+
+  @override
+  String get widgetNewNote => 'New note';
+
+  @override
+  String get noteConnections => 'Tags, links and tasks';
+
+  @override
+  String get navCards => 'Cards';
+
+  @override
+  String get studyAnswerWay => 'How to answer';
+
+  @override
+  String get studyMorePractice => 'Extra practice';
+
+  @override
+  String get studySessionSettings => 'Session settings';
+
+  @override
+  String get focusAdjustTitle => 'Your session';
+
+  @override
+  String get focusPresetsTitle => 'Ready-made';
+
+  @override
+  String get focusPresetStudy => 'Study';
+
+  @override
+  String get focusPresetDeep => 'Deep work';
+
+  @override
+  String get focusPresetQuick => 'Quick sprint';
+
+  @override
+  String get focusPresetReading => 'Reading';
+
+  @override
+  String get focusPresetWorkout => 'Workout rounds';
+
+  @override
+  String get focusAdjustMinutes => 'Focus length';
+
+  @override
+  String get focusAdjustBreak => 'Break length';
+
+  @override
+  String get focusAdjustRounds => 'Rounds';
+
+  @override
+  String get focusRoundsOpen => 'No limit';
+
+  @override
+  String focusMinutesShort(String n) {
+    return '$n min';
+  }
+
+  @override
+  String get focusTapToAdjust => 'Tap to change the time';
 }

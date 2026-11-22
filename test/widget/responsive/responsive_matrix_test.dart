@@ -31,6 +31,7 @@ const _screens = <String>[
   Routes.notes,
   Routes.flashcards,
   Routes.cardSearch,
+  Routes.sounds,
   Routes.goals,
   Routes.habits,
   Routes.insights,
