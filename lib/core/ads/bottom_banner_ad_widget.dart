@@ -1,5 +1,4 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -7,9 +6,11 @@ class BottomBannerAdWidget extends StatefulWidget {
   const BottomBannerAdWidget({
     super.key,
     this.useProductionUnit = false,
+    this.enableAds = const bool.fromEnvironment('ENABLE_ADS', defaultValue: true),
   });
 
   final bool useProductionUnit;
+  final bool enableAds;
 
   static const String _testBannerUnitId = 'ca-app-pub-3940256099942544/6300978111';
   static const String _prodBannerUnitId = 'ca-app-pub-1427592517924252/7991944943';
@@ -22,7 +23,8 @@ class _BottomBannerAdWidgetState extends State<BottomBannerAdWidget> {
   BannerAd? _bannerAd;
   bool _isLoaded = false;
 
-  bool get _isWidgetTest => BindingBase.binding is TestWidgetsFlutterBinding;
+  bool get _canShowAds =>
+      widget.enableAds && defaultTargetPlatform == TargetPlatform.android;
 
   String get _adUnitId => widget.useProductionUnit
       ? BottomBannerAdWidget._prodBannerUnitId
@@ -31,7 +33,7 @@ class _BottomBannerAdWidgetState extends State<BottomBannerAdWidget> {
   @override
   void initState() {
     super.initState();
-    if (!_isWidgetTest && defaultTargetPlatform == TargetPlatform.android) {
+    if (_canShowAds) {
       _loadAd();
     }
   }
@@ -63,13 +65,7 @@ class _BottomBannerAdWidgetState extends State<BottomBannerAdWidget> {
         },
       ),
     );
-    try {
-      ad.load();
-    } on MissingPluginException catch (_) {
-      ad.dispose();
-    } catch (_) {
-      ad.dispose();
-    }
+    ad.load();
   }
 
   @override
@@ -80,7 +76,7 @@ class _BottomBannerAdWidgetState extends State<BottomBannerAdWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (_isWidgetTest || !_isLoaded || _bannerAd == null) {
+    if (!_canShowAds || !_isLoaded || _bannerAd == null) {
       return const SizedBox.shrink();
     }
     return SizedBox(
