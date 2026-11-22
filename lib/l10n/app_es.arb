@@ -1068,11 +1068,11 @@
   "flashcardsRecordStop": "Detener y guardar",
   "flashcardsMicDenied": "El acceso al micrófono está desactivado. Permítelo en los ajustes del sistema para grabar.",
   "flashcardsRecordFailed": "La grabación no está disponible en este dispositivo.",
-  "flashcardsTtsTester": "TTS Voice Tester",
-  "flashcardsTtsTestText": "Sample text to test",
-  "flashcardsNoVoices": "No TTS voices available on this device",
-  "flashcardsVoice": "Voice",
-  "flashcardsSpeed": "Speed",
-  "flashcardsRepeatCount": "Repeat count",
-  "flashcardsTestVoice": "Test Voice"
+  "flashcardsTtsTester": "Probador de voz TTS",
+  "flashcardsTtsTestText": "Texto de prueba",
+  "flashcardsNoVoices": "No hay voces TTS disponibles en este dispositivo",
+  "flashcardsVoice": "Voz",
+  "flashcardsSpeed": "Velocidad",
+  "flashcardsRepeatCount": "Repeticiones",
+  "flashcardsTestVoice": "Probar voz"
 }

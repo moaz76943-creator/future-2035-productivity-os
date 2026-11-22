@@ -5210,5 +5210,26 @@
   "flashcardsVoice": "Voice",
   "flashcardsSpeed": "Speed",
   "flashcardsRepeatCount": "Repeat count",
-  "flashcardsTestVoice": "Test Voice"
+  "flashcardsTestVoice": "Test Voice",
+  "@flashcardsTtsTester": {
+    "description": "Title of the TTS voice tester screen for flashcards"
+  },
+  "@flashcardsTtsTestText": {
+    "description": "Input label for sample text in the TTS voice tester"
+  },
+  "@flashcardsNoVoices": {
+    "description": "Message shown when no TTS voices are available on the device"
+  },
+  "@flashcardsVoice": {
+    "description": "Dropdown label for selecting a TTS voice"
+  },
+  "@flashcardsSpeed": {
+    "description": "Label for TTS playback speed"
+  },
+  "@flashcardsRepeatCount": {
+    "description": "Label for TTS playback repeat count"
+  },
+  "@flashcardsTestVoice": {
+    "description": "Button label to test the selected TTS voice"
+  }
 }

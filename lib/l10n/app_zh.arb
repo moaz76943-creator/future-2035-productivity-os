@@ -1068,11 +1068,11 @@
   "flashcardsRecordStop": "停止并保留",
   "flashcardsMicDenied": "麦克风权限已关闭。请在系统设置中允许后再录音。",
   "flashcardsRecordFailed": "此设备无法录音。",
-  "flashcardsTtsTester": "TTS Voice Tester",
-  "flashcardsTtsTestText": "Sample text to test",
-  "flashcardsNoVoices": "No TTS voices available on this device",
-  "flashcardsVoice": "Voice",
-  "flashcardsSpeed": "Speed",
-  "flashcardsRepeatCount": "Repeat count",
-  "flashcardsTestVoice": "Test Voice"
+  "flashcardsTtsTester": "语音朗读测试",
+  "flashcardsTtsTestText": "测试文本",
+  "flashcardsNoVoices": "此设备上没有可用的语音引擎声音",
+  "flashcardsVoice": "语音",
+  "flashcardsSpeed": "语速",
+  "flashcardsRepeatCount": "重复次数",
+  "flashcardsTestVoice": "测试语音"
 }
