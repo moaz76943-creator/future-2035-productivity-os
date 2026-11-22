@@ -4,6 +4,7 @@ import 'package:material_ui/material_ui.dart';
 import '../../core/design_system/components/surfaces.dart';
 import '../../core/design_system/tokens.dart';
 import '../localization/app_format.dart';
+import '../../core/ads/bottom_banner_ad_widget.dart';
 
 /// Root frame with the five primary destinations. The navigation bar is the
 /// one persistent glass surface in the app.
@@ -37,29 +38,36 @@ class AppShell extends StatelessWidget {
       body: ShellScope(child: shell),
       bottomNavigationBar: SafeArea(
         minimum: const EdgeInsets.fromLTRB(Space.sm, 0, Space.sm, Space.sm),
-        child: RepaintBoundary(
-          child: GlassPanel(
-            child: NavigationBar(
-              height: 68,
-              backgroundColor: Colors.transparent,
-              surfaceTintColor: Colors.transparent,
-              elevation: 0,
-              indicatorColor: Theme.of(context).colorScheme.primary.withValues(alpha: 0.14),
-              labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
-              selectedIndex: shell.currentIndex,
-              onDestinationSelected: (i) =>
-                  shell.goBranch(i, initialLocation: i == shell.currentIndex),
-              destinations: [
-                for (final d in destinations)
-                  NavigationDestination(
-                    icon: Icon(d.$1),
-                    selectedIcon: Icon(d.$2, color: d.$4.a),
-                    label: d.$3,
-                    tooltip: d.$3,
-                  ),
-              ],
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            RepaintBoundary(
+              child: GlassPanel(
+                child: NavigationBar(
+                  height: 68,
+                  backgroundColor: Colors.transparent,
+                  surfaceTintColor: Colors.transparent,
+                  elevation: 0,
+                  indicatorColor: Theme.of(context).colorScheme.primary.withValues(alpha: 0.14),
+                  labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+                  selectedIndex: shell.currentIndex,
+                  onDestinationSelected: (i) =>
+                      shell.goBranch(i, initialLocation: i == shell.currentIndex),
+                  destinations: [
+                    for (final d in destinations)
+                      NavigationDestination(
+                        icon: Icon(d.$1),
+                        selectedIcon: Icon(d.$2, color: d.$4.a),
+                        label: d.$3,
+                        tooltip: d.$3,
+                      ),
+                  ],
+                ),
+              ),
             ),
-          ),
+            const SizedBox(height: 4),
+            const BottomBannerAdWidget(useProductionUnit: true),
+          ],
         ),
       ),
     );
