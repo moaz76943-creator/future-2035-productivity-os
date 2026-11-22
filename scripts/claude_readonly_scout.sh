@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-timeout 60s git fetch origin --tags >/dev/null 2>&1 || true
+timeout 60s git fetch origin claude-dev >/dev/null 2>&1 || true
 mkdir -p docs
 
 if ! git rev-parse --verify origin/claude-dev >/dev/null 2>&1; then
@@ -11,6 +11,11 @@ fi
 
 CLAUDE_HEAD=$(git rev-parse --short origin/claude-dev)
 HERMES_HEAD=$(git rev-parse --short HEAD)
+
+if [ -f docs/CLAUDE_INTEL_REPORT.md ] && grep -q "Claude Reference Commit (READ-ONLY): \`$CLAUDE_HEAD\`" docs/CLAUDE_INTEL_REPORT.md; then
+  echo ">>> [Claude Scout] origin/claude-dev unchanged ($CLAUDE_HEAD); skipping rewrite to avoid empty commits."
+  exit 0
+fi
 
 {
   echo "# Claude Branch Intelligence Report (Read-Only for Hermes)"
@@ -34,4 +39,4 @@ HERMES_HEAD=$(git rev-parse --short HEAD)
   echo "3. Enforce <= 400 lines per file and zero dead buttons/handlers before completing phases."
 } > docs/CLAUDE_INTEL_REPORT.md
 
-echo ">>> [Claude Scout] Full intel updated from origin/claude-dev ($CLAUDE_HEAD) -> docs/CLAUDE_INTEL_REPORT.md"
+echo ">>> [Claude Scout] Intel updated for new origin/claude-dev ($CLAUDE_HEAD) -> docs/CLAUDE_INTEL_REPORT.md"

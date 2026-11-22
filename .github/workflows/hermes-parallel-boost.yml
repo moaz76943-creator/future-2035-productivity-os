@@ -16,10 +16,10 @@ jobs:
         lane:
           - name: qa_verification
             scope: "test/ and docs/LESSONS_LEARNED.md"
-            cmd: "chmod +x scripts/verify_gate.sh && ./scripts/verify_gate.sh || true"
+            cmd: "flutter pub get --enforce-lockfile && dart run build_runner build --delete-conflicting-outputs && flutter gen-l10n && WRITE_LESSONS=1 bash scripts/verify_gate.sh || true"
           - name: l10n_audit
             scope: "localization/ and docs/L10N_50_LANGUAGES_DIRECTIVE.md"
-            cmd: "echo 'L10n lane ready' && ls -la docs/localization/ 2>/dev/null || true"
+            cmd: "python3 tool/check_l10n.py || true"
     steps:
       - uses: actions/checkout@v4
         with:
@@ -27,14 +27,16 @@ jobs:
           fetch-depth: 0
       - uses: subosito/flutter-action@v2
         with:
+          flutter-version: '3.50.0'
           channel: stable
+          cache: true
       - name: Run Isolated Lane (${{ matrix.lane.name }})
         run: ${{ matrix.lane.cmd }}
       - name: Safe Rebase & Push (Zero Conflict)
         run: |
           git config user.name "hermes-parallel-bot"
           git config user.email "bot@future2035.local"
-          if [ -n "$(git status --porcelain)" ]; then
+          if [ -n "$(git status --porcelain docs/LESSONS_LEARNED.md)" ]; then
             git add docs/LESSONS_LEARNED.md 2>/dev/null || true
             git commit -m "chore(parallel-${{ matrix.lane.name }}): sync verification memory" || true
             git pull --rebase origin hermes/future-2035-upgrade || true
