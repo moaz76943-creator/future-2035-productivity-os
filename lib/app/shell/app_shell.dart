@@ -65,7 +65,6 @@ class AppShell extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 4),
             const BottomBannerAdWidget(useProductionUnit: true),
           ],
         ),
