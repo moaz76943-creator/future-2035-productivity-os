@@ -5203,5 +5203,12 @@
   "flashcardsRecordFailed": "Recording isn't available on this device.",
   "@flashcardsRecordFailed": {
     "description": "Inline error when recording cannot start on this device"
-  }
+  },
+  "flashcardsTtsTester": "TTS Voice Tester",
+  "flashcardsTtsTestText": "Sample text to test",
+  "flashcardsNoVoices": "No TTS voices available on this device",
+  "flashcardsVoice": "Voice",
+  "flashcardsSpeed": "Speed",
+  "flashcardsRepeatCount": "Repeat count",
+  "flashcardsTestVoice": "Test Voice"
 }

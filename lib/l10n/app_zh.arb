@@ -1067,5 +1067,12 @@
   "flashcardsRecording": "正在录音…",
   "flashcardsRecordStop": "停止并保留",
   "flashcardsMicDenied": "麦克风权限已关闭。请在系统设置中允许后再录音。",
-  "flashcardsRecordFailed": "此设备无法录音。"
+  "flashcardsRecordFailed": "此设备无法录音。",
+  "flashcardsTtsTester": "TTS Voice Tester",
+  "flashcardsTtsTestText": "Sample text to test",
+  "flashcardsNoVoices": "No TTS voices available on this device",
+  "flashcardsVoice": "Voice",
+  "flashcardsSpeed": "Speed",
+  "flashcardsRepeatCount": "Repeat count",
+  "flashcardsTestVoice": "Test Voice"
 }

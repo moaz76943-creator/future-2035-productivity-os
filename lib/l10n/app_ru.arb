@@ -1067,5 +1067,12 @@
   "flashcardsRecording": "Идёт запись…",
   "flashcardsRecordStop": "Остановить и сохранить",
   "flashcardsMicDenied": "Доступ к микрофону выключен. Разрешите его в настройках системы, чтобы записывать.",
-  "flashcardsRecordFailed": "Запись недоступна на этом устройстве."
+  "flashcardsRecordFailed": "Запись недоступна на этом устройстве.",
+  "flashcardsTtsTester": "TTS Voice Tester",
+  "flashcardsTtsTestText": "Sample text to test",
+  "flashcardsNoVoices": "No TTS voices available on this device",
+  "flashcardsVoice": "Voice",
+  "flashcardsSpeed": "Speed",
+  "flashcardsRepeatCount": "Repeat count",
+  "flashcardsTestVoice": "Test Voice"
 }

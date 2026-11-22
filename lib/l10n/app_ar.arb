@@ -1067,5 +1067,12 @@
   "flashcardsRecording": "جارٍ التسجيل…",
   "flashcardsRecordStop": "إيقاف وحفظ",
   "flashcardsMicDenied": "الوصول إلى الميكروفون متوقف. اسمح به من إعدادات النظام لتتمكن من التسجيل.",
-  "flashcardsRecordFailed": "التسجيل غير متاح على هذا الجهاز."
+  "flashcardsRecordFailed": "التسجيل غير متاح على هذا الجهاز.",
+  "flashcardsTtsTester": "اختبار نطق الصوت (TTS)",
+  "flashcardsTtsTestText": "نص تجريبي للنطق",
+  "flashcardsNoVoices": "لا توجد أصوات نطق متاحة على هذا الجهاز",
+  "flashcardsVoice": "الصوت",
+  "flashcardsSpeed": "السرعة",
+  "flashcardsRepeatCount": "عدد التكرار",
+  "flashcardsTestVoice": "اختبار الصوت"
 }

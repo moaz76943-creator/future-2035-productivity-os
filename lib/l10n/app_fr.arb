@@ -1067,5 +1067,12 @@
   "flashcardsRecording": "Enregistrement…",
   "flashcardsRecordStop": "Arrêter et garder",
   "flashcardsMicDenied": "L’accès au micro est désactivé. Autorisez-le dans les réglages du système pour enregistrer.",
-  "flashcardsRecordFailed": "L’enregistrement n’est pas disponible sur cet appareil."
+  "flashcardsRecordFailed": "L’enregistrement n’est pas disponible sur cet appareil.",
+  "flashcardsTtsTester": "TTS Voice Tester",
+  "flashcardsTtsTestText": "Sample text to test",
+  "flashcardsNoVoices": "No TTS voices available on this device",
+  "flashcardsVoice": "Voice",
+  "flashcardsSpeed": "Speed",
+  "flashcardsRepeatCount": "Repeat count",
+  "flashcardsTestVoice": "Test Voice"
 }

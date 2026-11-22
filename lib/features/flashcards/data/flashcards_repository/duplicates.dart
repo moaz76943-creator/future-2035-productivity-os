@@ -19,10 +19,7 @@ extension FlashcardsDuplicateDetection on FlashcardsRepository {
         if (excludeId != null) cond &= c.id.isNotValue(excludeId);
         // We use the SQL function mapped to TextNormalizer.normalize
         return cond &
-            CustomExpression<bool>(
-              '$kNormalizeSqlFunction(${c.front.name}) = ?',
-              [Variable(normalized)],
-            );
+            FunctionCallExpression<String>(kNormalizeSqlFunction, [c.front]).equals(normalized);
       });
 
     return query.get();

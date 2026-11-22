@@ -1067,5 +1067,12 @@
   "flashcardsRecording": "रिकॉर्डिंग हो रही है…",
   "flashcardsRecordStop": "रोकें और रखें",
   "flashcardsMicDenied": "माइक्रोफ़ोन की अनुमति बंद है। रिकॉर्ड करने के लिए सिस्टम सेटिंग में इसकी अनुमति दें।",
-  "flashcardsRecordFailed": "इस डिवाइस पर रिकॉर्डिंग उपलब्ध नहीं है।"
+  "flashcardsRecordFailed": "इस डिवाइस पर रिकॉर्डिंग उपलब्ध नहीं है।",
+  "flashcardsTtsTester": "TTS Voice Tester",
+  "flashcardsTtsTestText": "Sample text to test",
+  "flashcardsNoVoices": "No TTS voices available on this device",
+  "flashcardsVoice": "Voice",
+  "flashcardsSpeed": "Speed",
+  "flashcardsRepeatCount": "Repeat count",
+  "flashcardsTestVoice": "Test Voice"
 }
