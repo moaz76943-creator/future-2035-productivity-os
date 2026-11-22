@@ -56,7 +56,13 @@ class _BottomBannerAdWidgetState extends State<BottomBannerAdWidget> {
         },
       ),
     );
-    ad.load();
+    try {
+      ad.load();
+    } on MissingPluginException catch (_) {
+      ad.dispose();
+    } catch (_) {
+      ad.dispose();
+    }
   }
 
   @override
