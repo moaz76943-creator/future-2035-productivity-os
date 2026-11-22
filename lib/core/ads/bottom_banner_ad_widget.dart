@@ -1,5 +1,7 @@
-import "package:material_ui/material_ui.dart";
-import "package:google_mobile_ads/google_mobile_ads.dart";
+import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:material_ui/material_ui.dart';
 
 class BottomBannerAdWidget extends StatefulWidget {
   const BottomBannerAdWidget({
@@ -9,8 +11,8 @@ class BottomBannerAdWidget extends StatefulWidget {
 
   final bool useProductionUnit;
 
-  static const String _testBannerUnitId = "ca-app-pub-3940256099942544/6300978111";
-  static const String _prodBannerUnitId = "ca-app-pub-1427592517924252/7991944943";
+  static const String _testBannerUnitId = 'ca-app-pub-3940256099942544/6300978111';
+  static const String _prodBannerUnitId = 'ca-app-pub-1427592517924252/7991944943';
 
   @override
   State<BottomBannerAdWidget> createState() => _BottomBannerAdWidgetState();
@@ -20,13 +22,18 @@ class _BottomBannerAdWidgetState extends State<BottomBannerAdWidget> {
   BannerAd? _bannerAd;
   bool _isLoaded = false;
 
-  String get _adUnitId =>
-      widget.useProductionUnit ? BottomBannerAdWidget._prodBannerUnitId : BottomBannerAdWidget._testBannerUnitId;
+  bool get _isWidgetTest => BindingBase.binding is TestWidgetsFlutterBinding;
+
+  String get _adUnitId => widget.useProductionUnit
+      ? BottomBannerAdWidget._prodBannerUnitId
+      : BottomBannerAdWidget._testBannerUnitId;
 
   @override
   void initState() {
     super.initState();
-    _loadAd();
+    if (!_isWidgetTest && defaultTargetPlatform == TargetPlatform.android) {
+      _loadAd();
+    }
   }
 
   void _loadAd() {
@@ -73,7 +80,7 @@ class _BottomBannerAdWidgetState extends State<BottomBannerAdWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (!_isLoaded || _bannerAd == null) {
+    if (_isWidgetTest || !_isLoaded || _bannerAd == null) {
       return const SizedBox.shrink();
     }
     return SizedBox(
