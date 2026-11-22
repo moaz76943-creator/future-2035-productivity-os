@@ -35,7 +35,10 @@ android {
     defaultConfig {
         applicationId = "com.deepfocus.study"
         minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
+        // Google Play (as of 2026-08-31, extension closed 2026-11-01) requires
+        // new apps and updates to target Android 16 (API 36) or higher.
+        // Force the floor while still allowing Flutter to raise it further.
+        targetSdk = maxOf(36, flutter.targetSdkVersion)
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
