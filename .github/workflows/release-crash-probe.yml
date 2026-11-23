@@ -1,6 +1,11 @@
 name: Release APK crash probe
 
 on:
+  push:
+    branches:
+      - release/claude-dev-build
+    paths:
+      - '.github/workflows/release-crash-probe.yml'
   workflow_dispatch:
     inputs:
       run_id:
@@ -21,8 +26,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          RUN_ID="${{ inputs.run_id || '45088591272' }}"
           mkdir -p /tmp/release_art
-          gh run download "${{ inputs.run_id }}" -R "${{ github.repository }}" -D /tmp/release_art
+          gh run download "$RUN_ID" -R "${{ github.repository }}" -D /tmp/release_art
           APK=$(find /tmp/release_art -name "*.apk" | head -n 1)
           echo "APK_PATH=$APK" >> "$GITHUB_ENV"
           ls -lh "$APK"
@@ -47,5 +53,7 @@ jobs:
             adb logcat -c
             adb shell monkey -p com.deepfocus.study -c android.intent.category.LAUNCHER 1 || true
             sleep 8
-            echo "========== CRASH LOGCAT =========="
-            adb logcat -d | grep -E "FATAL EXCEPTION|AndroidRuntime|deepfocus|future_os|flutter|MobileAds|UnsatisfiedLinkError|NoClassDefFoundError|ClassNotFoundException|IllegalStateException" -A 25 | tail -n 150 || true
+            echo "========== CRASH BUFFER (-b crash) =========="
+            adb logcat -d -b crash || true
+            echo "========== MAIN LOGCAT =========="
+            adb logcat -d | grep -E "FATAL EXCEPTION|AndroidRuntime|deepfocus|future_os|flutter|MobileAds|UnsatisfiedLinkError|NoClassDefFoundError|ClassNotFoundException|IllegalStateException|VerifyError|NoSuchMethodError|SIGABRT|SIGSEGV" -A 25 | tail -n 180 || true
