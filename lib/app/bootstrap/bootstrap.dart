@@ -32,7 +32,9 @@ Future<void> bootstrap() async {
   if (const bool.fromEnvironment('ENABLE_ADS', defaultValue: true) && Platform.isAndroid) {
     try {
       unawaited(MobileAds.instance.initialize());
-    } on Object {}
+    } on Object {
+      // Ignore ad SDK init errors during startup.
+    }
   }
   registerFontLicenses();
   await initializeDateFormatting();
