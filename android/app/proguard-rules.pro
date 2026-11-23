@@ -22,3 +22,7 @@
 
 # Flutter deferred components (not used; prevents R8 missing play.core classes)
 -dontwarn com.google.android.play.core.**
+
+# Google Mobile Ads
+-keep class com.google.android.gms.ads.** { *; }
+-keep class io.flutter.plugins.googlemobileads.** { *; }

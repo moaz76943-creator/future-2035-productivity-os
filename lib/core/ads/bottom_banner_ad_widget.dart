@@ -65,7 +65,11 @@ class _BottomBannerAdWidgetState extends State<BottomBannerAdWidget> {
         },
       ),
     );
-    ad.load();
+    try {
+      ad.load();
+    } on Object {
+      ad.dispose();
+    }
   }
 
   @override

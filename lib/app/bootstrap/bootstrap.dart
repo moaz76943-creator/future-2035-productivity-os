@@ -5,6 +5,7 @@ import 'dart:ui' show PlatformDispatcher;
 import 'package:flutter/foundation.dart' show kDebugMode;
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:path/path.dart' as p;
@@ -28,6 +29,11 @@ const databaseFileName = 'future_os.db';
 /// reset data; the user sees an explanation and the file stays untouched.
 Future<void> bootstrap() async {
   WidgetsFlutterBinding.ensureInitialized();
+  if (const bool.fromEnvironment('ENABLE_ADS', defaultValue: true) && Platform.isAndroid) {
+    try {
+      unawaited(MobileAds.instance.initialize());
+    } on Object {}
+  }
   registerFontLicenses();
   await initializeDateFormatting();
   // Release builds never print errors that may contain user content; the
