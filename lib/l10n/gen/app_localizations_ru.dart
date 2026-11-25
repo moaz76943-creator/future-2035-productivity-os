@@ -58,9 +58,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get moduleTrash => 'Корзина';
 
   @override
-  String get spacesSubtitle => 'Всё, что вы организуете, — в одном месте';
-
-  @override
   String get actionSave => 'Сохранить';
 
   @override
@@ -124,9 +121,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get actionSearch => 'Поиск';
 
   @override
-  String get actionFilter => 'Фильтр';
-
-  @override
   String get actionSort => 'Сортировка';
 
   @override
@@ -154,46 +148,16 @@ class AppLocalizationsRu extends AppLocalizations {
   String get actionComplete => 'Завершить';
 
   @override
-  String get actionReopen => 'Вернуть';
-
-  @override
   String get actionDeleteForever => 'Удалить навсегда';
 
   @override
   String get actionEmptyTrash => 'Очистить корзину';
 
   @override
-  String get actionSelect => 'Выбрать';
-
-  @override
-  String get actionNone => 'Нет';
-
-  @override
-  String get actionLink => 'Связать';
-
-  @override
   String get actionUnlink => 'Отвязать';
 
   @override
   String get actionCustomize => 'Настроить';
-
-  @override
-  String get actionReset => 'Сбросить';
-
-  @override
-  String get actionOpen => 'Открыть';
-
-  @override
-  String get actionEnable => 'Включить';
-
-  @override
-  String get actionDisable => 'Выключить';
-
-  @override
-  String get actionAllow => 'Разрешить';
-
-  @override
-  String get actionNotNow => 'Не сейчас';
 
   @override
   String get actionPreview => 'Просмотр';
@@ -256,19 +220,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get deletedItem => 'Перемещено в корзину';
 
   @override
-  String get restoredItem => 'Восстановлено';
-
-  @override
   String get untitled => 'Без названия';
 
   @override
   String get noProject => 'Без проекта';
-
-  @override
-  String get confirmDeleteTitle => 'Удалить навсегда?';
-
-  @override
-  String get confirmDeleteMessage => 'Это действие нельзя отменить.';
 
   @override
   String get greetingMorning => 'Доброе утро';
@@ -278,9 +233,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get greetingEvening => 'Добрый вечер';
-
-  @override
-  String get dashboardTitle => 'Сегодня';
 
   @override
   String get dashFocusToday => 'Фокус сегодня';
@@ -319,21 +271,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get dashSeeAll => 'Все';
-
-  @override
-  String get dashNoTasksToday => 'На сегодня ничего. Путь свободен.';
-
-  @override
-  String get dashNoEvents => 'На сегодня событий больше нет';
-
-  @override
-  String get dashNoHabits => 'Создайте привычку, чтобы отслеживать её здесь';
-
-  @override
-  String get dashNoGoals => 'Поставьте цель, чтобы видеть прогресс';
-
-  @override
-  String get dashNoNotes => 'Здесь появятся ваши последние заметки';
 
   @override
   String dashCardsDue(int count) {
@@ -456,12 +393,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get focusRunning => 'В фокусе';
-
-  @override
-  String get focusElapsed => 'Прошло';
-
-  @override
-  String get focusRemaining => 'Осталось';
 
   @override
   String get focusDuration => 'Длительность';
@@ -665,9 +596,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get taskCategoryHint => 'Например: Работа, Дом, Учёба';
 
   @override
-  String get taskEstimate => 'Оценка';
-
-  @override
   String get taskEstimateMinutes => 'Оценка (мин)';
 
   @override
@@ -715,11 +643,6 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String taskSubtaskProgress(int done, int total) {
     return '$done/$total';
-  }
-
-  @override
-  String taskDueOn(String date) {
-    return 'Срок: $date';
   }
 
   @override
@@ -777,9 +700,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get dateYesterday => 'Вчера';
-
-  @override
-  String get dateNextWeek => 'След. неделя';
 
   @override
   String get repeatNever => 'Не повторять';
@@ -942,9 +862,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get projectIcon => 'Значок';
 
   @override
-  String get projectNotes => 'Заметки проекта';
-
-  @override
   String get projectProgress => 'Прогресс';
 
   @override
@@ -1067,9 +984,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get calendarScheduleTask => 'Запланировать блок времени';
 
   @override
-  String get calendarLegend => 'Обозначения';
-
-  @override
   String get notesTitle => 'Заметки';
 
   @override
@@ -1083,9 +997,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get notesViewArchived => 'Архив';
-
-  @override
-  String get notesNotebooks => 'Блокноты';
 
   @override
   String get notesTags => 'Теги';
@@ -1723,13 +1634,7 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get assistantCreateAll => 'Создать все';
-
-  @override
   String get assistantChooseDeck => 'Выберите колоду';
-
-  @override
-  String get assistantCreated => 'Создано';
 
   @override
   String assistantWorkloadResult(String estimated, String free) {
@@ -2144,9 +2049,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get weekdaysShort => 'Пн,Вт,Ср,Чт,Пт,Сб,Вс';
 
   @override
-  String get a11yOpenMenu => 'Открыть меню';
-
-  @override
   String a11yProgress(int value) {
     return 'Прогресс: $value%';
   }
@@ -2160,9 +2062,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String a11yColor(int index) {
     return 'Цвет $index';
   }
-
-  @override
-  String get a11ySelected => 'Выбрано';
 
   @override
   String get analyticsRangeLabel => 'Период';
@@ -2719,11 +2618,6 @@ class AppLocalizationsRu extends AppLocalizations {
       'Записи за прошлые периоды сохраняются здесь, но учитываются только в своём периоде.';
 
   @override
-  String goalsPercentOfTarget(String percent) {
-    return '$percent от цели';
-  }
-
-  @override
   String habitsTodaySummary(int done, int total) {
     return 'Сегодня выполнено: $done из $total';
   }
@@ -3233,9 +3127,6 @@ class AppLocalizationsRu extends AppLocalizations {
       'Эта задача заблокирована незавершёнными задачами. Всё равно завершить?';
 
   @override
-  String get taskDeleteConfirm => 'Переместить эту задачу в корзину?';
-
-  @override
   String get taskStartFocus => 'Сфокусироваться на задаче';
 
   @override
@@ -3254,21 +3145,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get taskReminderNeedsDue => 'Задайте срок, чтобы использовать относительные напоминания';
 
   @override
-  String taskEstimateValue(String value) {
-    return 'Оценка: $value';
-  }
-
-  @override
-  String taskTrackedValue(String value) {
-    return 'Затрачено: $value';
-  }
-
-  @override
   String get taskSubtaskDetailsHint =>
       'Сначала сохраните задачу, чтобы добавить подзадачи, пункты списка, метки и зависимости.';
-
-  @override
-  String get taskNoLabels => 'Меток пока нет';
 
   @override
   String get taskLabelName => 'Название метки';
@@ -3498,9 +3376,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get focusSeriesComplete => 'Серия завершена. Отлично!';
 
   @override
-  String get exportDone => 'Экспорт готов';
-
-  @override
   String get filterAll => 'Все';
 
   @override
@@ -3522,9 +3397,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get flashcardsSuspendedFilter => 'Приостановленные';
-
-  @override
-  String get flashcardsExportCsv => 'Экспорт в CSV';
 
   @override
   String flashcardsShownOf(int shown, int total) {
@@ -3987,9 +3859,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get soundsTitle => 'Звуки';
-
-  @override
-  String get soundsSubtitle => 'Настоящие записи природы, в которых не слышно повторов.';
 
   @override
   String get soundsNature => 'Природа';
@@ -4954,9 +4823,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get reportTitle => 'Отчёт за месяц';
 
   @override
-  String get reportSubtitle => 'Фокус, карточки, задачи и привычки месяца, готово к сохранению';
-
-  @override
   String get reportFocus => 'Время фокуса';
 
   @override
@@ -5442,4 +5308,37 @@ class AppLocalizationsRu extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get wordsTitle => 'Переименовать слова';
+
+  @override
+  String get wordsSubtitle => 'Свои слова для любого текста в приложении';
+
+  @override
+  String get wordsHint =>
+      'Нажмите на текст, чтобы изменить его. Ваши слова действуют только для этого языка и сохраняются в резервных копиях.';
+
+  @override
+  String get wordsSearch => 'Поиск текста';
+
+  @override
+  String get wordsChangedOnly => 'Только изменённые';
+
+  @override
+  String wordsOriginal(String text) {
+    return 'Исходно: $text';
+  }
+
+  @override
+  String get wordsReset => 'Вернуть исходное';
+
+  @override
+  String get wordsResetAll => 'Сбросить все слова';
+
+  @override
+  String get wordsResetAllConfirm => 'Все тексты этого языка вернутся к исходным.';
+
+  @override
+  String get wordsNone => 'Текст не найден';
 }

@@ -58,9 +58,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String get moduleTrash => 'ट्रैश';
 
   @override
-  String get spacesSubtitle => 'आपका सब कुछ व्यवस्थित, एक ही जगह';
-
-  @override
   String get actionSave => 'सहेजें';
 
   @override
@@ -124,9 +121,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String get actionSearch => 'खोजें';
 
   @override
-  String get actionFilter => 'फ़िल्टर';
-
-  @override
   String get actionSort => 'क्रम';
 
   @override
@@ -154,46 +148,16 @@ class AppLocalizationsHi extends AppLocalizations {
   String get actionComplete => 'पूरा करें';
 
   @override
-  String get actionReopen => 'फिर से खोलें';
-
-  @override
   String get actionDeleteForever => 'हमेशा के लिए हटाएँ';
 
   @override
   String get actionEmptyTrash => 'ट्रैश खाली करें';
 
   @override
-  String get actionSelect => 'चुनें';
-
-  @override
-  String get actionNone => 'कोई नहीं';
-
-  @override
-  String get actionLink => 'लिंक करें';
-
-  @override
   String get actionUnlink => 'अनलिंक करें';
 
   @override
   String get actionCustomize => 'कस्टमाइज़ करें';
-
-  @override
-  String get actionReset => 'रीसेट करें';
-
-  @override
-  String get actionOpen => 'खोलें';
-
-  @override
-  String get actionEnable => 'चालू करें';
-
-  @override
-  String get actionDisable => 'बंद करें';
-
-  @override
-  String get actionAllow => 'अनुमति दें';
-
-  @override
-  String get actionNotNow => 'अभी नहीं';
 
   @override
   String get actionPreview => 'प्रीव्यू';
@@ -256,19 +220,10 @@ class AppLocalizationsHi extends AppLocalizations {
   String get deletedItem => 'ट्रैश में भेजा गया';
 
   @override
-  String get restoredItem => 'पुनर्स्थापित किया गया';
-
-  @override
   String get untitled => 'बिना शीर्षक';
 
   @override
   String get noProject => 'कोई प्रोजेक्ट नहीं';
-
-  @override
-  String get confirmDeleteTitle => 'हमेशा के लिए हटाएँ?';
-
-  @override
-  String get confirmDeleteMessage => 'इसे पूर्ववत नहीं किया जा सकता।';
 
   @override
   String get greetingMorning => 'सुप्रभात';
@@ -278,9 +233,6 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get greetingEvening => 'शुभ संध्या';
-
-  @override
-  String get dashboardTitle => 'आज';
 
   @override
   String get dashFocusToday => 'आज का फ़ोकस';
@@ -319,21 +271,6 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get dashSeeAll => 'सभी देखें';
-
-  @override
-  String get dashNoTasksToday => 'आज कुछ भी नियत नहीं। रास्ता साफ़ है।';
-
-  @override
-  String get dashNoEvents => 'आज और कोई इवेंट नहीं';
-
-  @override
-  String get dashNoHabits => 'यहाँ ट्रैक करने के लिए एक आदत बनाएँ';
-
-  @override
-  String get dashNoGoals => 'अपनी प्रगति देखने के लिए एक लक्ष्य तय करें';
-
-  @override
-  String get dashNoNotes => 'आपके नवीनतम नोट्स यहाँ दिखेंगे';
 
   @override
   String dashCardsDue(int count) {
@@ -451,12 +388,6 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get focusRunning => 'फ़ोकस में';
-
-  @override
-  String get focusElapsed => 'बीता समय';
-
-  @override
-  String get focusRemaining => 'शेष समय';
 
   @override
   String get focusDuration => 'अवधि';
@@ -658,9 +589,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String get taskCategoryHint => 'जैसे काम, घर, पढ़ाई';
 
   @override
-  String get taskEstimate => 'अनुमान';
-
-  @override
   String get taskEstimateMinutes => 'अनुमान (मिनट)';
 
   @override
@@ -708,11 +636,6 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String taskSubtaskProgress(int done, int total) {
     return '$done/$total';
-  }
-
-  @override
-  String taskDueOn(String date) {
-    return 'नियत: $date';
   }
 
   @override
@@ -768,9 +691,6 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get dateYesterday => 'बीता कल';
-
-  @override
-  String get dateNextWeek => 'अगले हफ़्ते';
 
   @override
   String get repeatNever => 'दोहराव नहीं';
@@ -904,9 +824,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String get projectIcon => 'आइकन';
 
   @override
-  String get projectNotes => 'प्रोजेक्ट नोट्स';
-
-  @override
   String get projectProgress => 'प्रगति';
 
   @override
@@ -1025,9 +942,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String get calendarScheduleTask => 'टाइम ब्लॉक के रूप में शेड्यूल करें';
 
   @override
-  String get calendarLegend => 'संकेत सूची';
-
-  @override
   String get notesTitle => 'नोट्स';
 
   @override
@@ -1041,9 +955,6 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get notesViewArchived => 'आर्काइव किए गए';
-
-  @override
-  String get notesNotebooks => 'नोटबुक';
 
   @override
   String get notesTags => 'टैग';
@@ -1662,13 +1573,7 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
-  String get assistantCreateAll => 'सभी बनाएँ';
-
-  @override
   String get assistantChooseDeck => 'एक डेक चुनें';
-
-  @override
-  String get assistantCreated => 'बनाया गया';
 
   @override
   String assistantWorkloadResult(String estimated, String free) {
@@ -2076,9 +1981,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String get weekdaysShort => 'सो,मं,बु,गु,शु,श,र';
 
   @override
-  String get a11yOpenMenu => 'मेनू खोलें';
-
-  @override
   String a11yProgress(int value) {
     return 'प्रगति $value प्रतिशत';
   }
@@ -2092,9 +1994,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String a11yColor(int index) {
     return 'रंग $index';
   }
-
-  @override
-  String get a11ySelected => 'चुना गया';
 
   @override
   String get analyticsRangeLabel => 'समय अवधि';
@@ -2631,11 +2530,6 @@ class AppLocalizationsHi extends AppLocalizations {
       'पिछली अवधियों की प्रविष्टियाँ यहाँ रखी जाती हैं, लेकिन केवल अपनी ही अवधि में गिनी जाती हैं।';
 
   @override
-  String goalsPercentOfTarget(String percent) {
-    return 'लक्ष्य का $percent';
-  }
-
-  @override
   String habitsTodaySummary(int done, int total) {
     return 'आज $total में से $done पूरे';
   }
@@ -3125,9 +3019,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String get taskBlockedWarning => 'यह कार्य अधूरे कार्यों के कारण रुका हुआ है। फिर भी पूरा करें?';
 
   @override
-  String get taskDeleteConfirm => 'इस कार्य को ट्रैश में भेजें?';
-
-  @override
   String get taskStartFocus => 'इस कार्य पर फ़ोकस करें';
 
   @override
@@ -3146,21 +3037,8 @@ class AppLocalizationsHi extends AppLocalizations {
   String get taskReminderNeedsDue => 'सापेक्ष रिमाइंडर के लिए नियत तिथि तय करें';
 
   @override
-  String taskEstimateValue(String value) {
-    return 'अनुमान: $value';
-  }
-
-  @override
-  String taskTrackedValue(String value) {
-    return 'दर्ज समय: $value';
-  }
-
-  @override
   String get taskSubtaskDetailsHint =>
       'उप-कार्य, चेकलिस्ट आइटम, लेबल और निर्भरताएँ जोड़ने के लिए पहले कार्य सहेजें।';
-
-  @override
-  String get taskNoLabels => 'अभी कोई लेबल नहीं';
 
   @override
   String get taskLabelName => 'लेबल का नाम';
@@ -3387,9 +3265,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String get focusSeriesComplete => 'श्रृंखला पूरी हुई। शाबाश!';
 
   @override
-  String get exportDone => 'निर्यात तैयार';
-
-  @override
   String get filterAll => 'सभी';
 
   @override
@@ -3411,9 +3286,6 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get flashcardsSuspendedFilter => 'रुके हुए';
-
-  @override
-  String get flashcardsExportCsv => 'CSV के रूप में निर्यात';
 
   @override
   String flashcardsShownOf(int shown, int total) {
@@ -3873,9 +3745,6 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get soundsTitle => 'ध्वनियाँ';
-
-  @override
-  String get soundsSubtitle => 'प्रकृति की असली रिकॉर्डिंग, जो कभी दोहराती हुई नहीं लगतीं।';
 
   @override
   String get soundsNature => 'प्रकृति';
@@ -4825,9 +4694,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String get reportTitle => 'मासिक रिपोर्ट';
 
   @override
-  String get reportSubtitle => 'महीने का फ़ोकस, कार्ड, कार्य और आदतें, सहेजने के लिए तैयार';
-
-  @override
   String get reportFocus => 'फ़ोकस समय';
 
   @override
@@ -5307,4 +5173,37 @@ class AppLocalizationsHi extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get wordsTitle => 'शब्द बदलें';
+
+  @override
+  String get wordsSubtitle => 'ऐप के किसी भी टेक्स्ट के लिए अपना शब्द रखें';
+
+  @override
+  String get wordsHint =>
+      'किसी टेक्स्ट को बदलने के लिए टैप करें। आपके शब्द सिर्फ़ इसी भाषा में लागू होते हैं और बैकअप में रहते हैं।';
+
+  @override
+  String get wordsSearch => 'टेक्स्ट खोजें';
+
+  @override
+  String get wordsChangedOnly => 'सिर्फ़ बदले हुए';
+
+  @override
+  String wordsOriginal(String text) {
+    return 'मूल: $text';
+  }
+
+  @override
+  String get wordsReset => 'मूल इस्तेमाल करें';
+
+  @override
+  String get wordsResetAll => 'सभी शब्द रीसेट करें';
+
+  @override
+  String get wordsResetAllConfirm => 'इस भाषा का हर टेक्स्ट मूल पर लौट जाएगा।';
+
+  @override
+  String get wordsNone => 'कोई टेक्स्ट नहीं मिला';
 }

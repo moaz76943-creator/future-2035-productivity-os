@@ -18,10 +18,13 @@ Never push with a failing check. Never weaken or delete a test to make it pass: 
    screen into `part` files in a folder named after it (example:
    `lib/features/notes/presentation/note_editor_screen/`). Code in a part that changes state
    lives in an `extension` on the State class (see `note_editor_actions.dart`).
-2. **Every text in 8 languages** (en, ar, es, fr, hi, pt, ru, zh). Add texts only with
-   `python3 tool/l10n_add_keys.py spec.json`, then `flutter gen-l10n`. Never type a text
-   directly in a widget. No Hebrew. Western digits (0-9) only. `tool/check_l10n.py` fails on
-   missing or untranslated texts.
+2. **Every text in every app language** (today en, ar, es, fr, hi, pt, ru, zh: one
+   `lib/l10n/app_<code>.arb` each). Add texts only with `python3 tool/l10n_add_keys.py spec.json`,
+   then `flutter gen-l10n && python3 tool/gen_l10n_custom.py`. Never type a text directly in a
+   widget. No Hebrew. Western digits (0-9) only. `tool/check_l10n.py` fails on missing,
+   untranslated or unused texts and on a language missing anywhere else (AppLocales, plural
+   rules, Android strings). New language, editing, removing: see
+   `docs/localization/localization_guide.md`.
 3. **Help stays true** (`test/unit/help/feature_guide_test.dart`): every screen in the router
    needs an entry in `lib/features/help/domain/feature_guide.dart` (question, answer, route).
    When a feature changes, update its answer texts too.

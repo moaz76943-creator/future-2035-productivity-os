@@ -204,12 +204,6 @@ abstract class AppLocalizations {
   /// **'Trash'**
   String get moduleTrash;
 
-  /// Subtitle on the Spaces hub
-  ///
-  /// In en, this message translates to:
-  /// **'Everything you organize, in one place'**
-  String get spacesSubtitle;
-
   /// Button
   ///
   /// In en, this message translates to:
@@ -336,12 +330,6 @@ abstract class AppLocalizations {
   /// **'Search'**
   String get actionSearch;
 
-  /// Tooltip
-  ///
-  /// In en, this message translates to:
-  /// **'Filter'**
-  String get actionFilter;
-
   /// Label
   ///
   /// In en, this message translates to:
@@ -396,12 +384,6 @@ abstract class AppLocalizations {
   /// **'Complete'**
   String get actionComplete;
 
-  /// Button: mark a completed task as not done
-  ///
-  /// In en, this message translates to:
-  /// **'Reopen'**
-  String get actionReopen;
-
   /// Button: permanent deletion
   ///
   /// In en, this message translates to:
@@ -417,24 +399,6 @@ abstract class AppLocalizations {
   /// Button
   ///
   /// In en, this message translates to:
-  /// **'Select'**
-  String get actionSelect;
-
-  /// Option meaning no selection
-  ///
-  /// In en, this message translates to:
-  /// **'None'**
-  String get actionNone;
-
-  /// Button: link items
-  ///
-  /// In en, this message translates to:
-  /// **'Link'**
-  String get actionLink;
-
-  /// Button
-  ///
-  /// In en, this message translates to:
   /// **'Unlink'**
   String get actionUnlink;
 
@@ -443,42 +407,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Customize'**
   String get actionCustomize;
-
-  /// Button
-  ///
-  /// In en, this message translates to:
-  /// **'Reset'**
-  String get actionReset;
-
-  /// Button
-  ///
-  /// In en, this message translates to:
-  /// **'Open'**
-  String get actionOpen;
-
-  /// Button
-  ///
-  /// In en, this message translates to:
-  /// **'Enable'**
-  String get actionEnable;
-
-  /// Button
-  ///
-  /// In en, this message translates to:
-  /// **'Disable'**
-  String get actionDisable;
-
-  /// Button for permission
-  ///
-  /// In en, this message translates to:
-  /// **'Allow'**
-  String get actionAllow;
-
-  /// Button to decline
-  ///
-  /// In en, this message translates to:
-  /// **'Not now'**
-  String get actionNotNow;
 
   /// Toggle to preview formatted note
   ///
@@ -600,12 +528,6 @@ abstract class AppLocalizations {
   /// **'Moved to trash'**
   String get deletedItem;
 
-  /// Snackbar after restoring
-  ///
-  /// In en, this message translates to:
-  /// **'Restored'**
-  String get restoredItem;
-
   /// Placeholder title for notes without a title
   ///
   /// In en, this message translates to:
@@ -617,18 +539,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No project'**
   String get noProject;
-
-  /// Dialog title
-  ///
-  /// In en, this message translates to:
-  /// **'Delete permanently?'**
-  String get confirmDeleteTitle;
-
-  /// Dialog message
-  ///
-  /// In en, this message translates to:
-  /// **'This cannot be undone.'**
-  String get confirmDeleteMessage;
 
   /// Dashboard greeting before noon
   ///
@@ -647,12 +557,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Good evening'**
   String get greetingEvening;
-
-  /// Dashboard heading
-  ///
-  /// In en, this message translates to:
-  /// **'Today'**
-  String get dashboardTitle;
 
   /// Dashboard focus card title
   ///
@@ -725,36 +629,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'See all'**
   String get dashSeeAll;
-
-  /// Empty text on dashboard
-  ///
-  /// In en, this message translates to:
-  /// **'Nothing due today. A clear runway.'**
-  String get dashNoTasksToday;
-
-  /// Empty text on dashboard
-  ///
-  /// In en, this message translates to:
-  /// **'No more events today'**
-  String get dashNoEvents;
-
-  /// Empty text on dashboard
-  ///
-  /// In en, this message translates to:
-  /// **'Create a habit to track it here'**
-  String get dashNoHabits;
-
-  /// Empty text on dashboard
-  ///
-  /// In en, this message translates to:
-  /// **'Set a goal to see your progress'**
-  String get dashNoGoals;
-
-  /// Empty text on dashboard
-  ///
-  /// In en, this message translates to:
-  /// **'Your latest notes will appear here'**
-  String get dashNoNotes;
 
   /// Flashcards due count
   ///
@@ -947,18 +821,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'In focus'**
   String get focusRunning;
-
-  /// Label for elapsed time
-  ///
-  /// In en, this message translates to:
-  /// **'Elapsed'**
-  String get focusElapsed;
-
-  /// Label for remaining time
-  ///
-  /// In en, this message translates to:
-  /// **'Remaining'**
-  String get focusRemaining;
 
   /// Label for planned duration
   ///
@@ -1320,12 +1182,6 @@ abstract class AppLocalizations {
   /// **'e.g. Work, Home, Study'**
   String get taskCategoryHint;
 
-  /// Field label for time estimate
-  ///
-  /// In en, this message translates to:
-  /// **'Estimate'**
-  String get taskEstimate;
-
   /// Field label
   ///
   /// In en, this message translates to:
@@ -1422,12 +1278,6 @@ abstract class AppLocalizations {
   /// **'{done}/{total}'**
   String taskSubtaskProgress(int done, int total);
 
-  /// Due date label
-  ///
-  /// In en, this message translates to:
-  /// **'Due {date}'**
-  String taskDueOn(String date);
-
   /// Overdue label
   ///
   /// In en, this message translates to:
@@ -1511,12 +1361,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Yesterday'**
   String get dateYesterday;
-
-  /// Quick date option
-  ///
-  /// In en, this message translates to:
-  /// **'Next week'**
-  String get dateNextWeek;
 
   /// Recurrence option
   ///
@@ -1697,12 +1541,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Icon'**
   String get projectIcon;
-
-  /// Field label
-  ///
-  /// In en, this message translates to:
-  /// **'Project notes'**
-  String get projectNotes;
 
   /// Label
   ///
@@ -1902,12 +1740,6 @@ abstract class AppLocalizations {
   /// **'Schedule as time block'**
   String get calendarScheduleTask;
 
-  /// Title for color legend
-  ///
-  /// In en, this message translates to:
-  /// **'Legend'**
-  String get calendarLegend;
-
   /// Screen title
   ///
   /// In en, this message translates to:
@@ -1937,12 +1769,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Archived'**
   String get notesViewArchived;
-
-  /// Section title
-  ///
-  /// In en, this message translates to:
-  /// **'Notebooks'**
-  String get notesNotebooks;
 
   /// Section title
   ///
@@ -2964,23 +2790,11 @@ abstract class AppLocalizations {
   /// **'{count, plural, =0{No cards found in this note} =1{1 card found} other{{count} cards found}}'**
   String assistantFoundCards(int count);
 
-  /// Button
-  ///
-  /// In en, this message translates to:
-  /// **'Create all'**
-  String get assistantCreateAll;
-
   /// Picker title
   ///
   /// In en, this message translates to:
   /// **'Choose a deck'**
   String get assistantChooseDeck;
-
-  /// Snackbar
-  ///
-  /// In en, this message translates to:
-  /// **'Created'**
-  String get assistantCreated;
 
   /// Result
   ///
@@ -3675,12 +3489,6 @@ abstract class AppLocalizations {
   /// Screen reader label
   ///
   /// In en, this message translates to:
-  /// **'Open menu'**
-  String get a11yOpenMenu;
-
-  /// Screen reader label
-  ///
-  /// In en, this message translates to:
   /// **'Progress {value} percent'**
   String a11yProgress(int value);
 
@@ -3695,12 +3503,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Color {index}'**
   String a11yColor(int index);
-
-  /// Screen reader state
-  ///
-  /// In en, this message translates to:
-  /// **'Selected'**
-  String get a11ySelected;
 
   /// Accessibility label for the Insights time range selector
   ///
@@ -4482,12 +4284,6 @@ abstract class AppLocalizations {
   /// **'Entries from earlier periods are kept here but count only toward their own period.'**
   String get goalsHistoryAllTime;
 
-  /// Under the progress ring, e.g. '40% of target'
-  ///
-  /// In en, this message translates to:
-  /// **'{percent} of target'**
-  String goalsPercentOfTarget(String percent);
-
   /// Summary at the top of the habits screen: habits completed today out of habits scheduled today
   ///
   /// In en, this message translates to:
@@ -5250,12 +5046,6 @@ abstract class AppLocalizations {
   /// **'This task is blocked by unfinished tasks. Complete it anyway?'**
   String get taskBlockedWarning;
 
-  /// Confirmation title
-  ///
-  /// In en, this message translates to:
-  /// **'Move this task to trash?'**
-  String get taskDeleteConfirm;
-
   /// Button in task editor that opens the focus timer linked to this task
   ///
   /// In en, this message translates to:
@@ -5292,29 +5082,11 @@ abstract class AppLocalizations {
   /// **'Set a due date to use relative reminders'**
   String get taskReminderNeedsDue;
 
-  /// Estimated duration shown on a task
-  ///
-  /// In en, this message translates to:
-  /// **'Estimate: {value}'**
-  String taskEstimateValue(String value);
-
-  /// Measured focus time on a task
-  ///
-  /// In en, this message translates to:
-  /// **'Tracked: {value}'**
-  String taskTrackedValue(String value);
-
   /// Hint shown in the new task editor
   ///
   /// In en, this message translates to:
   /// **'Save the task first to add subtasks, checklist items, labels and dependencies.'**
   String get taskSubtaskDetailsHint;
-
-  /// Empty label list
-  ///
-  /// In en, this message translates to:
-  /// **'No labels yet'**
-  String get taskNoLabels;
 
   /// Field label
   ///
@@ -5658,12 +5430,6 @@ abstract class AppLocalizations {
   /// **'Series complete. Well done!'**
   String get focusSeriesComplete;
 
-  /// exportDone
-  ///
-  /// In en, this message translates to:
-  /// **'Export ready'**
-  String get exportDone;
-
   /// filterAll
   ///
   /// In en, this message translates to:
@@ -5705,12 +5471,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Suspended'**
   String get flashcardsSuspendedFilter;
-
-  /// flashcardsExportCsv
-  ///
-  /// In en, this message translates to:
-  /// **'Export as CSV'**
-  String get flashcardsExportCsv;
 
   /// Filtered card count
   ///
@@ -6521,12 +6281,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sounds'**
   String get soundsTitle;
-
-  /// Subtitle of the sounds screen
-  ///
-  /// In en, this message translates to:
-  /// **'Real nature recordings, played so they never sound like a loop.'**
-  String get soundsSubtitle;
 
   /// Section header: nature sounds
   ///
@@ -8148,12 +7902,6 @@ abstract class AppLocalizations {
   /// **'Monthly report'**
   String get reportTitle;
 
-  /// Under report title
-  ///
-  /// In en, this message translates to:
-  /// **'Focus, cards, tasks and habits of the month, ready to save'**
-  String get reportSubtitle;
-
   /// Report row
   ///
   /// In en, this message translates to:
@@ -8951,6 +8699,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{count, plural, =1{back to focus once} other{back to focus {count} times}}'**
   String guardWeekReturned(int count);
+
+  /// Screen: rename any app text
+  ///
+  /// In en, this message translates to:
+  /// **'Rename words'**
+  String get wordsTitle;
+
+  /// Settings row subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Use your own word for any text in the app'**
+  String get wordsSubtitle;
+
+  /// Intro on the rename screen
+  ///
+  /// In en, this message translates to:
+  /// **'Tap a text to change it. Your words apply to this language only and are kept in backups.'**
+  String get wordsHint;
+
+  /// Search field
+  ///
+  /// In en, this message translates to:
+  /// **'Search texts'**
+  String get wordsSearch;
+
+  /// Filter chip
+  ///
+  /// In en, this message translates to:
+  /// **'Changed only'**
+  String get wordsChangedOnly;
+
+  /// Subtitle under a renamed text
+  ///
+  /// In en, this message translates to:
+  /// **'Original: {text}'**
+  String wordsOriginal(String text);
+
+  /// Button: back to the original text
+  ///
+  /// In en, this message translates to:
+  /// **'Use original'**
+  String get wordsReset;
+
+  /// Menu: reset all renamed texts
+  ///
+  /// In en, this message translates to:
+  /// **'Reset all words'**
+  String get wordsResetAll;
+
+  /// Confirm reset all
+  ///
+  /// In en, this message translates to:
+  /// **'Every text in this language goes back to the original.'**
+  String get wordsResetAllConfirm;
+
+  /// No search result
+  ///
+  /// In en, this message translates to:
+  /// **'No text found'**
+  String get wordsNone;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

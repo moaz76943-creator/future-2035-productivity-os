@@ -10,6 +10,7 @@ import '../features/focus/application/focus_dnd_link.dart';
 import '../features/guard/application/guard_controller.dart';
 import '../features/notifications/application/reminder_sync.dart';
 import '../features/prayer/application/prayer_providers.dart';
+import '../features/settings/application/custom_words_provider.dart';
 import '../features/settings/application/settings_providers.dart';
 import '../features/sounds/application/focus_sounds_link.dart';
 import '../features/settings/data/settings_repository.dart';
@@ -48,6 +49,8 @@ class FutureOsApp extends ConsumerWidget {
       WidgetsBinding.instance.platformDispatcher.locales,
     );
     final locale = language.locale;
+    // The user's own wording on top of the translations.
+    final words = ref.watch(customWordsProvider).value ?? const <String, Map<String, String>>{};
     // Language names in the app language for flashcard deck languages.
     ref.watch(languageNamesProvider(locale.toLanguageTag()));
     return MaterialApp.router(
@@ -56,7 +59,7 @@ class FutureOsApp extends ConsumerWidget {
       routerConfig: router,
       locale: locale,
       supportedLocales: AppLocales.locales,
-      localizationsDelegates: AppLocales.delegates,
+      localizationsDelegates: AppLocales.delegatesWith(words),
       theme: AppTheme.build(
         brightness: Brightness.light,
         locale: locale,

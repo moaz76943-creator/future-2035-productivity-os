@@ -10,17 +10,20 @@ Checks every lib/l10n/app_*.arb against the English template:
   * no non-Western digits (Arabic-Indic, Persian, Devanagari)
   * no empty values; values not identical to English unless allow-listed
   * language list uses no flag emoji (regional indicator symbols)
+  * every ARB language is registered in AppLocales (and the other way round),
+    has plural rules below, the same right-to-left setting in Dart, and its own
+    Android res/values-<code>/ copy of every *_strings.xml with the same names
+  * no unused keys: every message is referenced from lib/ (a dead string is
+    work for every translator and every future language)
 """
 import json, re, sys, pathlib
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from l10n_common import PLURAL_CATS, RTL, android_strings, languages, registered_languages  # noqa: E402
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 L10N = ROOT / 'lib' / 'l10n'
-REQUIRED = ['ar', 'en', 'zh', 'es', 'ru', 'fr', 'pt', 'hi']
-PLURAL_CATS = {
-    'en': {'one', 'other'}, 'es': {'one', 'many', 'other'}, 'fr': {'one', 'many', 'other'},
-    'pt': {'one', 'many', 'other'}, 'ru': {'one', 'few', 'many', 'other'},
-    'ar': {'zero', 'one', 'two', 'few', 'many', 'other'}, 'zh': {'other'}, 'hi': {'one', 'other'},
-}
+REQUIRED = languages()
 # Keys that may legitimately equal English in some locales.
 SAME_OK = {'appName', 'percentValue', 'taskSubtaskProgress', 'durationHours', 'durationMinutes',
            'durationHoursMinutes', 'settingsMinutesValue', 'focusModePomodoro', 'statSessionsDetail',
@@ -37,7 +40,7 @@ SAME_OK = {'appName', 'percentValue', 'taskSubtaskProgress', 'durationHours', 'd
            'calendarEventSemantics', 'focusHistoryItem', 'goalsCardSemantics',
            # Words that are spelled the same in some target languages (es "Color", fr "Notes").
            'calendarEventColor', 'habitsColor', 'notesNotebookColor', 'projectLinkedNotes',
-           'repeatCountLabel', 'calendarAgenda', 'guardWeekPaused'}
+           'repeatCountLabel', 'calendarAgenda', 'guardWeekPaused', 'wordsOriginal'}
 BAD_DIGITS = re.compile('[\u0660-\u0669\u06F0-\u06F9\u0966-\u096F]')
 FLAG = re.compile('[\U0001F1E6-\U0001F1FF]')
 
@@ -86,6 +89,39 @@ def plural_cats(text):
             i += 1
     return cats
 
+def project_checks(keys):
+    """Everything outside the ARB files that a language needs."""
+    errors = []
+    langs = set(REQUIRED)
+    reg = registered_languages()
+    for c in sorted(langs - reg):
+        errors.append(f'app_{c}.arb exists but {c} is not in AppLocales.all (app_locales.dart)')
+    for c in sorted(reg - langs):
+        errors.append(f'AppLocales.all lists {c} but lib/l10n/app_{c}.arb is missing')
+    for c in sorted(langs - set(PLURAL_CATS)):
+        errors.append(f'{c}: add its CLDR plural categories to PLURAL_CATS in tool/l10n_common.py')
+    dart = (ROOT / 'lib' / 'app' / 'localization' / 'app_locales.dart').read_text(encoding='utf-8')
+    m = re.search(r'rtlLanguages = \{([^}]*)\}', dart)
+    dart_rtl = set(re.findall(r"'([a-z]+)'", m.group(1))) if m else set()
+    if dart_rtl != RTL:
+        errors.append(f'AppLocales.rtlLanguages {sorted(dart_rtl)} != RTL in l10n_common.py {sorted(RTL)}')
+    base = android_strings('values')
+    for c in sorted(langs - {'en'}):
+        got = android_strings(f'values-{c}')
+        for f, names in base.items():
+            if f not in got:
+                errors.append(f'android res/values-{c}/{f} missing (copy values/{f} and translate)')
+            elif set(got[f]) != set(names):
+                errors.append(f'android res/values-{c}/{f}: names differ from values/{f}')
+    src = '\n'.join(
+        p.read_text(encoding='utf-8') for p in (ROOT / 'lib').rglob('*.dart')
+        if '/l10n/gen/' not in p.as_posix() and not p.name.endswith('.g.dart'))
+    used = set(re.findall(r'\b[a-z][A-Za-z0-9]*\b', src))
+    for k in keys:
+        if k not in used:
+            errors.append(f'unused key {k}: remove it with python3 tool/l10n_remove_keys.py {k}')
+    return errors
+
 def main():
     errors = []
     en = json.loads((L10N / 'app_en.arb').read_text(encoding='utf-8'))
@@ -131,6 +167,7 @@ def main():
         for k in vals:
             if k not in en:
                 errors.append(f'{path.name}: unknown key {k}')
+    errors += project_checks(keys)
     if errors:
         print('\n'.join(errors)); print(f'\n{len(errors)} localization error(s)'); sys.exit(1)
     print(f'Localization OK: {len(present)} locales x {len(keys)} keys')

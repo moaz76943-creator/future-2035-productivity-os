@@ -24,6 +24,7 @@ const _noHelpNeeded = {
   Routes.taskNew,
   Routes.noteNew,
   Routes.focusImmersive,
+  Routes.customWords,
   Routes.eventNew,
   Routes.help,
 };

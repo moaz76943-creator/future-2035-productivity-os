@@ -1,4 +1,7 @@
 import 'dart:async';
+
+import '../../../l10n/custom/custom_words.dart';
+
 import 'dart:ui' show PlatformDispatcher;
 
 import 'package:flutter/foundation.dart' show defaultTargetPlatform, TargetPlatform, kIsWeb;
@@ -19,8 +22,10 @@ enum NotificationAccess { granted, denied, unknown }
 
 /// The language notifications are written in: the user's chosen app
 /// language, else the first supported device language, else English.
-AppLocalizations notificationL10n(AppSettings settings) => lookupAppLocalizations(
-  AppLocales.resolve(settings.localeTag, PlatformDispatcher.instance.locales).locale,
+AppLocalizations notificationL10n(AppSettings settings) => withCustomWords(
+  lookupAppLocalizations(
+    AppLocales.resolve(settings.localeTag, PlatformDispatcher.instance.locales).locale,
+  ),
 );
 
 SupportedLanguage notificationLanguage(AppSettings settings) =>

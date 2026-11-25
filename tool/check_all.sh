@@ -6,6 +6,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 flutter gen-l10n
+python3 tool/gen_l10n_custom.py >/dev/null
 dart run build_runner build --delete-conflicting-outputs >/dev/null
 dart analyze lib test integration_test
 python3 tool/check_file_size.py

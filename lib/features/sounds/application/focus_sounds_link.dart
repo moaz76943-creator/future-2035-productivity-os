@@ -1,4 +1,7 @@
 import 'dart:async';
+
+import '../../../l10n/custom/custom_words.dart';
+
 import 'dart:ui' show PlatformDispatcher;
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -36,7 +39,12 @@ final focusSoundsLinkProvider = Provider<void>((ref) {
       if (volumes.isEmpty) return;
       final language = AppLocales.resolve(settings.localeTag, PlatformDispatcher.instance.locales);
       startedByUs = true;
-      unawaited(sounds.playMix(volumes, soundLabels(lookupAppLocalizations(language.locale))));
+      unawaited(
+        sounds.playMix(
+          volumes,
+          soundLabels(withCustomWords(lookupAppLocalizations(language.locale))),
+        ),
+      );
     } else if (!now && was == true && startedByUs) {
       startedByUs = false;
       unawaited(sounds.pause());

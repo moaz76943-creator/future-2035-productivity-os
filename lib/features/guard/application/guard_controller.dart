@@ -10,6 +10,7 @@ import '../../flashcards/application/flashcards_providers.dart';
 import '../../focus/application/focus_controller.dart';
 import '../../focus/domain/focus_timer_state.dart';
 import '../../notifications/data/notification_service.dart';
+import '../../settings/application/custom_words_provider.dart';
 import '../../settings/application/settings_providers.dart';
 import '../domain/guard_config.dart';
 
@@ -68,6 +69,7 @@ final guardLinkProvider = Provider<void>((ref) {
   ref.listen(guardProvider, (_, _) => push(), fireImmediately: true);
   ref.listen(settingsProvider.select((s) => s.localeTag), (_, _) => push());
   ref.listen(totalDueProvider, (_, _) => push());
+  ref.listen(customWordsProvider, (_, _) => push());
   ref.listen(
     focusControllerProvider.select((s) {
       final t = s.active;

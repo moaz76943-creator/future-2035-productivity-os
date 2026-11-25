@@ -81,6 +81,13 @@ class SettingsScreen extends ConsumerWidget {
                   subtitle: chosen?.nativeName ?? l10n.settingsLanguageSystem,
                   onTap: () => showLanguagePicker(context),
                 ),
+                _NavRow(
+                  key: const ValueKey('settings-words'),
+                  icon: Icons.edit_note_rounded,
+                  title: l10n.wordsTitle,
+                  subtitle: l10n.wordsSubtitle,
+                  onTap: () => context.push(Routes.customWords),
+                ),
                 SwitchListTile(
                   key: const ValueKey('settings-hijri'),
                   secondary: const Icon(Icons.nightlight_outlined),

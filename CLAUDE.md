@@ -9,8 +9,9 @@ Read and follow [AGENTS.md](AGENTS.md): rules, product constraints and architect
   file-size check and the license check.
 - After changing buttons or screens, also run the control crawl it skips:
   `flutter test test/widget/inventory/control_inventory_test.dart` (about 15 minutes).
-- Every user-facing text in all 8 languages (en, ar, es, fr, hi, pt, ru, zh), added only with
-  `python3 tool/l10n_add_keys.py spec.json` then `flutter gen-l10n`. No Hebrew; Western digits only.
+- Every user-facing text in every app language (one `lib/l10n/app_<code>.arb` each), added only
+  with `python3 tool/l10n_add_keys.py spec.json` then `flutter gen-l10n && python3 tool/gen_l10n_custom.py`.
+  No Hebrew; Western digits only. Guide: `docs/localization/localization_guide.md`.
 - Never weaken or delete a test to make it pass: fix the code.
 
 ## Efficiency Rules

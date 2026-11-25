@@ -8,6 +8,7 @@ import '../../features/focus/application/focus_controller.dart';
 import '../../features/focus/application/focus_draft.dart';
 import '../../features/notifications/application/notification_providers.dart';
 import '../../features/notifications/data/notification_service.dart';
+import '../../features/settings/application/custom_words_provider.dart';
 import '../../features/settings/application/settings_providers.dart';
 import '../../l10n/gen/app_localizations.dart';
 import 'app_router.dart';
@@ -87,5 +88,6 @@ final deepLinksProvider = Provider<void>((ref) {
   }
 
   ref.listen(settingsProvider.select((s) => s.localeTag), (_, _) => label());
+  ref.listen(customWordsProvider, (_, _) => label());
   label();
 });

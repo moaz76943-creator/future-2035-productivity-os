@@ -58,9 +58,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get moduleTrash => '回收站';
 
   @override
-  String get spacesSubtitle => '你整理的一切，尽在一处';
-
-  @override
   String get actionSave => '保存';
 
   @override
@@ -124,9 +121,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get actionSearch => '搜索';
 
   @override
-  String get actionFilter => '筛选';
-
-  @override
   String get actionSort => '排序';
 
   @override
@@ -154,46 +148,16 @@ class AppLocalizationsZh extends AppLocalizations {
   String get actionComplete => '完成';
 
   @override
-  String get actionReopen => '重新打开';
-
-  @override
   String get actionDeleteForever => '永久删除';
 
   @override
   String get actionEmptyTrash => '清空回收站';
 
   @override
-  String get actionSelect => '选择';
-
-  @override
-  String get actionNone => '无';
-
-  @override
-  String get actionLink => '关联';
-
-  @override
   String get actionUnlink => '取消关联';
 
   @override
   String get actionCustomize => '自定义';
-
-  @override
-  String get actionReset => '重置';
-
-  @override
-  String get actionOpen => '打开';
-
-  @override
-  String get actionEnable => '启用';
-
-  @override
-  String get actionDisable => '停用';
-
-  @override
-  String get actionAllow => '允许';
-
-  @override
-  String get actionNotNow => '以后再说';
 
   @override
   String get actionPreview => '预览';
@@ -256,19 +220,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get deletedItem => '已移至回收站';
 
   @override
-  String get restoredItem => '已恢复';
-
-  @override
   String get untitled => '无标题';
 
   @override
   String get noProject => '无项目';
-
-  @override
-  String get confirmDeleteTitle => '永久删除？';
-
-  @override
-  String get confirmDeleteMessage => '此操作无法撤销。';
 
   @override
   String get greetingMorning => '早上好';
@@ -278,9 +233,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get greetingEvening => '晚上好';
-
-  @override
-  String get dashboardTitle => '今天';
 
   @override
   String get dashFocusToday => '今日专注';
@@ -319,21 +271,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get dashSeeAll => '查看全部';
-
-  @override
-  String get dashNoTasksToday => '今天没有到期任务，一路畅通。';
-
-  @override
-  String get dashNoEvents => '今天没有更多日程了';
-
-  @override
-  String get dashNoHabits => '创建一个习惯，在这里追踪';
-
-  @override
-  String get dashNoGoals => '设定一个目标，查看你的进度';
-
-  @override
-  String get dashNoNotes => '你最近的笔记会显示在这里';
 
   @override
   String dashCardsDue(int count) {
@@ -450,12 +387,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get focusRunning => '专注中';
-
-  @override
-  String get focusElapsed => '已用时间';
-
-  @override
-  String get focusRemaining => '剩余时间';
 
   @override
   String get focusDuration => '时长';
@@ -649,9 +580,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get taskCategoryHint => '例如：工作、家庭、学习';
 
   @override
-  String get taskEstimate => '预估时长';
-
-  @override
   String get taskEstimateMinutes => '预估时长（分钟）';
 
   @override
@@ -702,11 +630,6 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String taskDueOn(String date) {
-    return '$date 截止';
-  }
-
-  @override
   String taskOverdueBy(int days) {
     String _temp0 = intl.Intl.pluralLogic(days, locale: localeName, other: '已逾期 $days 天');
     return '$_temp0';
@@ -754,9 +677,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get dateYesterday => '昨天';
-
-  @override
-  String get dateNextWeek => '下周';
 
   @override
   String get repeatNever => '不重复';
@@ -868,9 +788,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get projectIcon => '图标';
-
-  @override
-  String get projectNotes => '项目笔记';
 
   @override
   String get projectProgress => '进度';
@@ -985,9 +902,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get calendarScheduleTask => '安排为时间块';
 
   @override
-  String get calendarLegend => '图例';
-
-  @override
   String get notesTitle => '笔记';
 
   @override
@@ -1001,9 +915,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get notesViewArchived => '已归档';
-
-  @override
-  String get notesNotebooks => '笔记本';
 
   @override
   String get notesTags => '标签';
@@ -1587,13 +1498,7 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get assistantCreateAll => '全部创建';
-
-  @override
   String get assistantChooseDeck => '选择卡组';
-
-  @override
-  String get assistantCreated => '已创建';
 
   @override
   String assistantWorkloadResult(String estimated, String free) {
@@ -1982,9 +1887,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get weekdaysShort => '一,二,三,四,五,六,日';
 
   @override
-  String get a11yOpenMenu => '打开菜单';
-
-  @override
   String a11yProgress(int value) {
     return '进度百分之 $value';
   }
@@ -1998,9 +1900,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String a11yColor(int index) {
     return '颜色 $index';
   }
-
-  @override
-  String get a11ySelected => '已选择';
 
   @override
   String get analyticsRangeLabel => '时间范围';
@@ -2502,11 +2401,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get goalsHistoryAllTime => '更早周期的记录会保留在这里，但只计入其所属的周期。';
 
   @override
-  String goalsPercentOfTarget(String percent) {
-    return '目标的 $percent';
-  }
-
-  @override
   String habitsTodaySummary(int done, int total) {
     return '今天已完成 $done / $total';
   }
@@ -2973,9 +2867,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get taskBlockedWarning => '此任务被未完成的任务阻塞。仍要完成它吗？';
 
   @override
-  String get taskDeleteConfirm => '将此任务移至回收站？';
-
-  @override
   String get taskStartFocus => '专注于此任务';
 
   @override
@@ -2994,20 +2885,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get taskReminderNeedsDue => '设置截止日期后才能使用相对提醒';
 
   @override
-  String taskEstimateValue(String value) {
-    return '预估：$value';
-  }
-
-  @override
-  String taskTrackedValue(String value) {
-    return '已记录：$value';
-  }
-
-  @override
   String get taskSubtaskDetailsHint => '请先保存任务，再添加子任务、清单项、标签和依赖关系。';
-
-  @override
-  String get taskNoLabels => '还没有标签';
 
   @override
   String get taskLabelName => '标签名称';
@@ -3220,9 +3098,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get focusSeriesComplete => '计划完成，做得好！';
 
   @override
-  String get exportDone => '导出完成';
-
-  @override
   String get filterAll => '全部';
 
   @override
@@ -3244,9 +3119,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get flashcardsSuspendedFilter => '已暂停';
-
-  @override
-  String get flashcardsExportCsv => '导出为 CSV';
 
   @override
   String flashcardsShownOf(int shown, int total) {
@@ -3690,9 +3562,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get soundsTitle => '声音';
-
-  @override
-  String get soundsSubtitle => '真实的自然录音，听不出任何循环。';
 
   @override
   String get soundsNature => '自然';
@@ -4583,9 +4452,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get reportTitle => '月度报告';
 
   @override
-  String get reportSubtitle => '本月专注、卡片、任务和习惯，可直接保存';
-
-  @override
   String get reportFocus => '专注时间';
 
   @override
@@ -5034,4 +4900,36 @@ class AppLocalizationsZh extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '回到专注 $count 次');
     return '$_temp0';
   }
+
+  @override
+  String get wordsTitle => '自定义用词';
+
+  @override
+  String get wordsSubtitle => '为应用中的任意文字使用你自己的说法';
+
+  @override
+  String get wordsHint => '点按文字即可修改。你的用词只用于此语言，并会保存在备份中。';
+
+  @override
+  String get wordsSearch => '搜索文字';
+
+  @override
+  String get wordsChangedOnly => '仅显示已修改';
+
+  @override
+  String wordsOriginal(String text) {
+    return '原文：$text';
+  }
+
+  @override
+  String get wordsReset => '恢复原文';
+
+  @override
+  String get wordsResetAll => '全部恢复';
+
+  @override
+  String get wordsResetAllConfirm => '此语言的所有文字都将恢复为原文。';
+
+  @override
+  String get wordsNone => '未找到文字';
 }

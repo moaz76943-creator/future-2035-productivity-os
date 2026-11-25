@@ -64,10 +64,6 @@
   "@moduleTrash": {
     "description": "Recently deleted items"
   },
-  "spacesSubtitle": "Everything you organize, in one place",
-  "@spacesSubtitle": {
-    "description": "Subtitle on the Spaces hub"
-  },
   "actionSave": "Save",
   "@actionSave": {
     "description": "Button"
@@ -152,10 +148,6 @@
   "@actionSearch": {
     "description": "Tooltip"
   },
-  "actionFilter": "Filter",
-  "@actionFilter": {
-    "description": "Tooltip"
-  },
   "actionSort": "Sort",
   "@actionSort": {
     "description": "Label"
@@ -192,10 +184,6 @@
   "@actionComplete": {
     "description": "Button"
   },
-  "actionReopen": "Reopen",
-  "@actionReopen": {
-    "description": "Button: mark a completed task as not done"
-  },
   "actionDeleteForever": "Delete forever",
   "@actionDeleteForever": {
     "description": "Button: permanent deletion"
@@ -204,18 +192,6 @@
   "@actionEmptyTrash": {
     "description": "Button"
   },
-  "actionSelect": "Select",
-  "@actionSelect": {
-    "description": "Button"
-  },
-  "actionNone": "None",
-  "@actionNone": {
-    "description": "Option meaning no selection"
-  },
-  "actionLink": "Link",
-  "@actionLink": {
-    "description": "Button: link items"
-  },
   "actionUnlink": "Unlink",
   "@actionUnlink": {
     "description": "Button"
@@ -223,30 +199,6 @@
   "actionCustomize": "Customize",
   "@actionCustomize": {
     "description": "Button"
-  },
-  "actionReset": "Reset",
-  "@actionReset": {
-    "description": "Button"
-  },
-  "actionOpen": "Open",
-  "@actionOpen": {
-    "description": "Button"
-  },
-  "actionEnable": "Enable",
-  "@actionEnable": {
-    "description": "Button"
-  },
-  "actionDisable": "Disable",
-  "@actionDisable": {
-    "description": "Button"
-  },
-  "actionAllow": "Allow",
-  "@actionAllow": {
-    "description": "Button for permission"
-  },
-  "actionNotNow": "Not now",
-  "@actionNotNow": {
-    "description": "Button to decline"
   },
   "actionPreview": "Preview",
   "@actionPreview": {
@@ -328,10 +280,6 @@
   "@deletedItem": {
     "description": "Snackbar after deleting an item"
   },
-  "restoredItem": "Restored",
-  "@restoredItem": {
-    "description": "Snackbar after restoring"
-  },
   "untitled": "Untitled",
   "@untitled": {
     "description": "Placeholder title for notes without a title"
@@ -339,14 +287,6 @@
   "noProject": "No project",
   "@noProject": {
     "description": "Option / label when a task has no project"
-  },
-  "confirmDeleteTitle": "Delete permanently?",
-  "@confirmDeleteTitle": {
-    "description": "Dialog title"
-  },
-  "confirmDeleteMessage": "This cannot be undone.",
-  "@confirmDeleteMessage": {
-    "description": "Dialog message"
   },
   "greetingMorning": "Good morning",
   "@greetingMorning": {
@@ -359,10 +299,6 @@
   "greetingEvening": "Good evening",
   "@greetingEvening": {
     "description": "Dashboard greeting 18:00 onwards"
-  },
-  "dashboardTitle": "Today",
-  "@dashboardTitle": {
-    "description": "Dashboard heading"
   },
   "dashFocusToday": "Today's focus",
   "@dashFocusToday": {
@@ -419,26 +355,6 @@
   "dashSeeAll": "See all",
   "@dashSeeAll": {
     "description": "Dashboard section action"
-  },
-  "dashNoTasksToday": "Nothing due today. A clear runway.",
-  "@dashNoTasksToday": {
-    "description": "Empty text on dashboard"
-  },
-  "dashNoEvents": "No more events today",
-  "@dashNoEvents": {
-    "description": "Empty text on dashboard"
-  },
-  "dashNoHabits": "Create a habit to track it here",
-  "@dashNoHabits": {
-    "description": "Empty text on dashboard"
-  },
-  "dashNoGoals": "Set a goal to see your progress",
-  "@dashNoGoals": {
-    "description": "Empty text on dashboard"
-  },
-  "dashNoNotes": "Your latest notes will appear here",
-  "@dashNoNotes": {
-    "description": "Empty text on dashboard"
   },
   "dashCardsDue": "{count, plural, =0{No cards due} =1{1 card due} other{{count} cards due}}",
   "@dashCardsDue": {
@@ -587,14 +503,6 @@
   "focusRunning": "In focus",
   "@focusRunning": {
     "description": "Label when timer running"
-  },
-  "focusElapsed": "Elapsed",
-  "@focusElapsed": {
-    "description": "Label for elapsed time"
-  },
-  "focusRemaining": "Remaining",
-  "@focusRemaining": {
-    "description": "Label for remaining time"
   },
   "focusDuration": "Duration",
   "@focusDuration": {
@@ -870,10 +778,6 @@
   "@taskCategoryHint": {
     "description": "Field hint"
   },
-  "taskEstimate": "Estimate",
-  "@taskEstimate": {
-    "description": "Field label for time estimate"
-  },
   "taskEstimateMinutes": "Estimate (minutes)",
   "@taskEstimateMinutes": {
     "description": "Field label"
@@ -943,15 +847,6 @@
       },
       "total": {
         "type": "int"
-      }
-    }
-  },
-  "taskDueOn": "Due {date}",
-  "@taskDueOn": {
-    "description": "Due date label",
-    "placeholders": {
-      "date": {
-        "type": "String"
       }
     }
   },
@@ -1025,10 +920,6 @@
   "dateYesterday": "Yesterday",
   "@dateYesterday": {
     "description": "Relative date"
-  },
-  "dateNextWeek": "Next week",
-  "@dateNextWeek": {
-    "description": "Quick date option"
   },
   "repeatNever": "Does not repeat",
   "@repeatNever": {
@@ -1185,10 +1076,6 @@
   "@projectIcon": {
     "description": "Field label"
   },
-  "projectNotes": "Project notes",
-  "@projectNotes": {
-    "description": "Field label"
-  },
   "projectProgress": "Progress",
   "@projectProgress": {
     "description": "Label"
@@ -1339,10 +1226,6 @@
   "@calendarScheduleTask": {
     "description": "Action to create a time block from a task"
   },
-  "calendarLegend": "Legend",
-  "@calendarLegend": {
-    "description": "Title for color legend"
-  },
   "notesTitle": "Notes",
   "@notesTitle": {
     "description": "Screen title"
@@ -1362,10 +1245,6 @@
   "notesViewArchived": "Archived",
   "@notesViewArchived": {
     "description": "Notes view"
-  },
-  "notesNotebooks": "Notebooks",
-  "@notesNotebooks": {
-    "description": "Section title"
   },
   "notesTags": "Tags",
   "@notesTags": {
@@ -2155,17 +2034,9 @@
       }
     }
   },
-  "assistantCreateAll": "Create all",
-  "@assistantCreateAll": {
-    "description": "Button"
-  },
   "assistantChooseDeck": "Choose a deck",
   "@assistantChooseDeck": {
     "description": "Picker title"
-  },
-  "assistantCreated": "Created",
-  "@assistantCreated": {
-    "description": "Snackbar"
   },
   "assistantWorkloadResult": "Estimated work: {estimated}. Free time: {free}.",
   "@assistantWorkloadResult": {
@@ -2727,10 +2598,6 @@
   "@weekdaysShort": {
     "description": "Comma separated single-letter weekday initials starting Monday, used in habit schedule chips. Must contain exactly 7 comma-separated items."
   },
-  "a11yOpenMenu": "Open menu",
-  "@a11yOpenMenu": {
-    "description": "Screen reader label"
-  },
   "a11yProgress": "Progress {value} percent",
   "@a11yProgress": {
     "description": "Screen reader label",
@@ -2757,10 +2624,6 @@
         "type": "int"
       }
     }
-  },
-  "a11ySelected": "Selected",
-  "@a11ySelected": {
-    "description": "Screen reader state"
   },
   "analyticsRangeLabel": "Time range",
   "@analyticsRangeLabel": {
@@ -3511,15 +3374,6 @@
   "@goalsHistoryAllTime": {
     "description": "Explanation under the goal history header for non-long-term goals"
   },
-  "goalsPercentOfTarget": "{percent} of target",
-  "@goalsPercentOfTarget": {
-    "description": "Under the progress ring, e.g. '40% of target'",
-    "placeholders": {
-      "percent": {
-        "type": "String"
-      }
-    }
-  },
   "habitsTodaySummary": "{done} of {total} done today",
   "@habitsTodaySummary": {
     "description": "Summary at the top of the habits screen: habits completed today out of habits scheduled today",
@@ -4164,10 +4018,6 @@
   "@taskBlockedWarning": {
     "description": "Confirmation when completing a task with open blockers"
   },
-  "taskDeleteConfirm": "Move this task to trash?",
-  "@taskDeleteConfirm": {
-    "description": "Confirmation title"
-  },
   "taskStartFocus": "Focus on this task",
   "@taskStartFocus": {
     "description": "Button in task editor that opens the focus timer linked to this task"
@@ -4192,31 +4042,9 @@
   "@taskReminderNeedsDue": {
     "description": "Hint in reminder picker"
   },
-  "taskEstimateValue": "Estimate: {value}",
-  "@taskEstimateValue": {
-    "description": "Estimated duration shown on a task",
-    "placeholders": {
-      "value": {
-        "type": "String"
-      }
-    }
-  },
-  "taskTrackedValue": "Tracked: {value}",
-  "@taskTrackedValue": {
-    "description": "Measured focus time on a task",
-    "placeholders": {
-      "value": {
-        "type": "String"
-      }
-    }
-  },
   "taskSubtaskDetailsHint": "Save the task first to add subtasks, checklist items, labels and dependencies.",
   "@taskSubtaskDetailsHint": {
     "description": "Hint shown in the new task editor"
-  },
-  "taskNoLabels": "No labels yet",
-  "@taskNoLabels": {
-    "description": "Empty label list"
   },
   "taskLabelName": "Label name",
   "@taskLabelName": {
@@ -4510,10 +4338,6 @@
   "@focusSeriesComplete": {
     "description": "focusSeriesComplete"
   },
-  "exportDone": "Export ready",
-  "@exportDone": {
-    "description": "exportDone"
-  },
   "filterAll": "All",
   "@filterAll": {
     "description": "filterAll"
@@ -4552,10 +4376,6 @@
   "flashcardsSuspendedFilter": "Suspended",
   "@flashcardsSuspendedFilter": {
     "description": "flashcardsSuspendedFilter"
-  },
-  "flashcardsExportCsv": "Export as CSV",
-  "@flashcardsExportCsv": {
-    "description": "flashcardsExportCsv"
   },
   "flashcardsShownOf": "{shown} of {total} cards",
   "@flashcardsShownOf": {
@@ -5207,10 +5027,6 @@
   "soundsTitle": "Sounds",
   "@soundsTitle": {
     "description": "Title of the nature sounds screen"
-  },
-  "soundsSubtitle": "Real nature recordings, played so they never sound like a loop.",
-  "@soundsSubtitle": {
-    "description": "Subtitle of the sounds screen"
   },
   "soundsNature": "Nature",
   "@soundsNature": {
@@ -6430,10 +6246,6 @@
   "@reportTitle": {
     "description": "Monthly report title / menu item"
   },
-  "reportSubtitle": "Focus, cards, tasks and habits of the month, ready to save",
-  "@reportSubtitle": {
-    "description": "Under report title"
-  },
   "reportFocus": "Focus time",
   "@reportFocus": {
     "description": "Report row"
@@ -7066,5 +6878,50 @@
         "type": "int"
       }
     }
+  },
+  "wordsTitle": "Rename words",
+  "@wordsTitle": {
+    "description": "Screen: rename any app text"
+  },
+  "wordsSubtitle": "Use your own word for any text in the app",
+  "@wordsSubtitle": {
+    "description": "Settings row subtitle"
+  },
+  "wordsHint": "Tap a text to change it. Your words apply to this language only and are kept in backups.",
+  "@wordsHint": {
+    "description": "Intro on the rename screen"
+  },
+  "wordsSearch": "Search texts",
+  "@wordsSearch": {
+    "description": "Search field"
+  },
+  "wordsChangedOnly": "Changed only",
+  "@wordsChangedOnly": {
+    "description": "Filter chip"
+  },
+  "wordsOriginal": "Original: {text}",
+  "@wordsOriginal": {
+    "description": "Subtitle under a renamed text",
+    "placeholders": {
+      "text": {
+        "type": "String"
+      }
+    }
+  },
+  "wordsReset": "Use original",
+  "@wordsReset": {
+    "description": "Button: back to the original text"
+  },
+  "wordsResetAll": "Reset all words",
+  "@wordsResetAll": {
+    "description": "Menu: reset all renamed texts"
+  },
+  "wordsResetAllConfirm": "Every text in this language goes back to the original.",
+  "@wordsResetAllConfirm": {
+    "description": "Confirm reset all"
+  },
+  "wordsNone": "No text found",
+  "@wordsNone": {
+    "description": "No search result"
   }
 }

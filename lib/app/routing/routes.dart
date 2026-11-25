@@ -5,6 +5,7 @@ abstract final class Routes {
   static const focus = '/focus';
   static const focusImmersive = '/focus-immersive';
   static const guard = '/guard';
+  static const customWords = '/settings/words';
   static const calendar = '/calendar';
   static const spaces = '/spaces';
 

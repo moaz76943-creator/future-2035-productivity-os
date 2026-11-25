@@ -58,9 +58,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get moduleTrash => 'Corbeille';
 
   @override
-  String get spacesSubtitle => 'Tout ce que vous organisez, au même endroit';
-
-  @override
   String get actionSave => 'Enregistrer';
 
   @override
@@ -124,9 +121,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get actionSearch => 'Rechercher';
 
   @override
-  String get actionFilter => 'Filtrer';
-
-  @override
   String get actionSort => 'Trier';
 
   @override
@@ -154,46 +148,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String get actionComplete => 'Terminer';
 
   @override
-  String get actionReopen => 'Rouvrir';
-
-  @override
   String get actionDeleteForever => 'Supprimer définitivement';
 
   @override
   String get actionEmptyTrash => 'Vider la corbeille';
 
   @override
-  String get actionSelect => 'Sélectionner';
-
-  @override
-  String get actionNone => 'Aucun';
-
-  @override
-  String get actionLink => 'Lier';
-
-  @override
   String get actionUnlink => 'Délier';
 
   @override
   String get actionCustomize => 'Personnaliser';
-
-  @override
-  String get actionReset => 'Réinitialiser';
-
-  @override
-  String get actionOpen => 'Ouvrir';
-
-  @override
-  String get actionEnable => 'Activer';
-
-  @override
-  String get actionDisable => 'Désactiver';
-
-  @override
-  String get actionAllow => 'Autoriser';
-
-  @override
-  String get actionNotNow => 'Plus tard';
 
   @override
   String get actionPreview => 'Aperçu';
@@ -256,19 +220,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get deletedItem => 'Placé dans la corbeille';
 
   @override
-  String get restoredItem => 'Restauré';
-
-  @override
   String get untitled => 'Sans titre';
 
   @override
   String get noProject => 'Aucun projet';
-
-  @override
-  String get confirmDeleteTitle => 'Supprimer définitivement ?';
-
-  @override
-  String get confirmDeleteMessage => 'Cette action est irréversible.';
 
   @override
   String get greetingMorning => 'Bonjour';
@@ -278,9 +233,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get greetingEvening => 'Bonsoir';
-
-  @override
-  String get dashboardTitle => 'Aujourd’hui';
 
   @override
   String get dashFocusToday => 'Concentration du jour';
@@ -319,21 +271,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get dashSeeAll => 'Tout voir';
-
-  @override
-  String get dashNoTasksToday => 'Rien à rendre aujourd’hui. Champ libre.';
-
-  @override
-  String get dashNoEvents => 'Plus d’événement aujourd’hui';
-
-  @override
-  String get dashNoHabits => 'Créez une habitude pour la suivre ici';
-
-  @override
-  String get dashNoGoals => 'Fixez un objectif pour suivre vos progrès';
-
-  @override
-  String get dashNoNotes => 'Vos dernières notes apparaîtront ici';
 
   @override
   String dashCardsDue(int count) {
@@ -452,12 +389,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get focusRunning => 'Concentré';
-
-  @override
-  String get focusElapsed => 'Écoulé';
-
-  @override
-  String get focusRemaining => 'Restant';
 
   @override
   String get focusDuration => 'Durée';
@@ -659,9 +590,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get taskCategoryHint => 'ex. : Travail, Maison, Études';
 
   @override
-  String get taskEstimate => 'Estimation';
-
-  @override
   String get taskEstimateMinutes => 'Estimation (minutes)';
 
   @override
@@ -709,11 +637,6 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String taskSubtaskProgress(int done, int total) {
     return '$done/$total';
-  }
-
-  @override
-  String taskDueOn(String date) {
-    return 'Échéance : $date';
   }
 
   @override
@@ -769,9 +692,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get dateYesterday => 'Hier';
-
-  @override
-  String get dateNextWeek => 'Semaine prochaine';
 
   @override
   String get repeatNever => 'Aucune répétition';
@@ -905,9 +825,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get projectIcon => 'Icône';
 
   @override
-  String get projectNotes => 'Notes du projet';
-
-  @override
   String get projectProgress => 'Avancement';
 
   @override
@@ -1027,9 +944,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get calendarScheduleTask => 'Planifier comme plage horaire';
 
   @override
-  String get calendarLegend => 'Légende';
-
-  @override
   String get notesTitle => 'Mes notes';
 
   @override
@@ -1043,9 +957,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get notesViewArchived => 'Archivées';
-
-  @override
-  String get notesNotebooks => 'Carnets';
 
   @override
   String get notesTags => 'Étiquettes';
@@ -1664,13 +1575,7 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get assistantCreateAll => 'Tout créer';
-
-  @override
   String get assistantChooseDeck => 'Choisir un paquet';
-
-  @override
-  String get assistantCreated => 'Créé';
 
   @override
   String assistantWorkloadResult(String estimated, String free) {
@@ -2083,9 +1988,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get weekdaysShort => 'L,M,M,J,V,S,D';
 
   @override
-  String get a11yOpenMenu => 'Ouvrir le menu';
-
-  @override
   String a11yProgress(int value) {
     return 'Progression : $value pour cent';
   }
@@ -2099,9 +2001,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String a11yColor(int index) {
     return 'Couleur $index';
   }
-
-  @override
-  String get a11ySelected => 'Sélectionné';
 
   @override
   String get analyticsRangeLabel => 'Période';
@@ -2640,11 +2539,6 @@ class AppLocalizationsFr extends AppLocalizations {
       'Les entrées des périodes précédentes sont conservées ici, mais ne comptent que pour leur propre période.';
 
   @override
-  String goalsPercentOfTarget(String percent) {
-    return '$percent de l’objectif';
-  }
-
-  @override
   String habitsTodaySummary(int done, int total) {
     return '$done sur $total faites aujourd’hui';
   }
@@ -3136,9 +3030,6 @@ class AppLocalizationsFr extends AppLocalizations {
       'Cette tâche est bloquée par des tâches non terminées. La terminer quand même ?';
 
   @override
-  String get taskDeleteConfirm => 'Placer cette tâche dans la corbeille ?';
-
-  @override
   String get taskStartFocus => 'Se concentrer sur cette tâche';
 
   @override
@@ -3157,21 +3048,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get taskReminderNeedsDue => 'Définissez une échéance pour utiliser les rappels relatifs';
 
   @override
-  String taskEstimateValue(String value) {
-    return 'Estimation : $value';
-  }
-
-  @override
-  String taskTrackedValue(String value) {
-    return 'Suivi : $value';
-  }
-
-  @override
   String get taskSubtaskDetailsHint =>
       'Enregistrez d’abord la tâche pour ajouter des sous-tâches, éléments de liste, étiquettes et dépendances.';
-
-  @override
-  String get taskNoLabels => 'Aucune étiquette pour l’instant';
 
   @override
   String get taskLabelName => 'Nom de l’étiquette';
@@ -3399,9 +3277,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get focusSeriesComplete => 'Série terminée. Bravo !';
 
   @override
-  String get exportDone => 'Export prêt';
-
-  @override
   String get filterAll => 'Toutes';
 
   @override
@@ -3423,9 +3298,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get flashcardsSuspendedFilter => 'Suspendues';
-
-  @override
-  String get flashcardsExportCsv => 'Exporter en CSV';
 
   @override
   String flashcardsShownOf(int shown, int total) {
@@ -3887,10 +3759,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get soundsTitle => 'Sons';
-
-  @override
-  String get soundsSubtitle =>
-      'De vrais enregistrements de la nature, joués sans jamais sembler se répéter.';
 
   @override
   String get soundsNature => 'Nature';
@@ -4846,10 +4714,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get reportTitle => 'Rapport mensuel';
 
   @override
-  String get reportSubtitle =>
-      'Concentration, cartes, tâches et habitudes du mois, prêt à enregistrer';
-
-  @override
   String get reportFocus => 'Temps de concentration';
 
   @override
@@ -5334,4 +5198,37 @@ class AppLocalizationsFr extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get wordsTitle => 'Renommer les mots';
+
+  @override
+  String get wordsSubtitle => 'Utilisez vos propres mots pour n\'importe quel texte';
+
+  @override
+  String get wordsHint =>
+      'Touchez un texte pour le modifier. Vos mots ne valent que pour cette langue et sont inclus dans les sauvegardes.';
+
+  @override
+  String get wordsSearch => 'Rechercher un texte';
+
+  @override
+  String get wordsChangedOnly => 'Modifiés seulement';
+
+  @override
+  String wordsOriginal(String text) {
+    return 'Original : $text';
+  }
+
+  @override
+  String get wordsReset => 'Texte d\'origine';
+
+  @override
+  String get wordsResetAll => 'Tout réinitialiser';
+
+  @override
+  String get wordsResetAllConfirm => 'Tous les textes de cette langue reviennent à l\'original.';
+
+  @override
+  String get wordsNone => 'Aucun texte trouvé';
 }

@@ -2,14 +2,15 @@ import 'package:cupertino_ui/cupertino_ui.dart' show GlobalCupertinoLocalization
 import 'package:flutter_localizations/flutter_localizations.dart' show GlobalWidgetsLocalizations;
 import 'package:material_ui/material_ui.dart';
 
+import '../../l10n/custom/custom_words.dart';
 import '../../l10n/gen/app_localizations.dart';
 
 /// A language the product officially supports.
 ///
-/// Adding a language requires exactly two steps (see
-/// docs/localization/localization_guide.md):
-///   1. add `lib/l10n/app_<code>.arb` with every key translated;
-///   2. register one [SupportedLanguage] entry below.
+/// Add a language with `python3 tool/l10n_add_language.py <code> "<native name>"`: it
+/// creates the ARB file, the Android strings and the entry below, and
+/// tool/check_l10n.py fails until it is fully translated
+/// (docs/localization/localization_guide.md).
 @immutable
 class SupportedLanguage {
   const SupportedLanguage({
@@ -31,10 +32,14 @@ class SupportedLanguage {
   /// Locale name used for `intl` date/number formatting.
   final String intlLocale;
 
-  bool get isRtl => locale.languageCode == 'ar';
+  bool get isRtl => AppLocales.rtlLanguages.contains(locale.languageCode);
 }
 
 abstract final class AppLocales {
+  /// Languages written right to left. tool/check_l10n.py keeps this in step
+  /// with tool/l10n_common.py. (No Hebrew in this app.)
+  static const rtlLanguages = {'ar', 'fa', 'ur', 'ps', 'sd', 'ug', 'ckb', 'dv', 'yi'};
+
   /// Delegates for app strings plus framework widgets (Material/Cupertino
   /// from the decoupled design libraries).
   static const delegates = <LocalizationsDelegate<dynamic>>[
@@ -42,6 +47,12 @@ abstract final class AppLocales {
     GlobalMaterialLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
     GlobalWidgetsLocalizations.delegate,
+  ];
+
+  /// [delegates] with the user's own wording (Settings → Language → Rename words).
+  static List<LocalizationsDelegate<dynamic>> delegatesWith(CustomWords words) => [
+    CustomWordsDelegate(words),
+    ...delegates.skip(1),
   ];
 
   static const english = SupportedLanguage(

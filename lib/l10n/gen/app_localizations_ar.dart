@@ -58,9 +58,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get moduleTrash => 'المهملات';
 
   @override
-  String get spacesSubtitle => 'كل ما تنظّمه في مكان واحد';
-
-  @override
   String get actionSave => 'حفظ';
 
   @override
@@ -124,9 +121,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get actionSearch => 'بحث';
 
   @override
-  String get actionFilter => 'تصفية';
-
-  @override
   String get actionSort => 'ترتيب';
 
   @override
@@ -154,46 +148,16 @@ class AppLocalizationsAr extends AppLocalizations {
   String get actionComplete => 'إكمال';
 
   @override
-  String get actionReopen => 'إعادة فتح';
-
-  @override
   String get actionDeleteForever => 'حذف نهائي';
 
   @override
   String get actionEmptyTrash => 'إفراغ المهملات';
 
   @override
-  String get actionSelect => 'تحديد';
-
-  @override
-  String get actionNone => 'لا شيء';
-
-  @override
-  String get actionLink => 'ربط';
-
-  @override
   String get actionUnlink => 'إلغاء الربط';
 
   @override
   String get actionCustomize => 'تخصيص';
-
-  @override
-  String get actionReset => 'إعادة تعيين';
-
-  @override
-  String get actionOpen => 'فتح';
-
-  @override
-  String get actionEnable => 'تفعيل';
-
-  @override
-  String get actionDisable => 'تعطيل';
-
-  @override
-  String get actionAllow => 'سماح';
-
-  @override
-  String get actionNotNow => 'ليس الآن';
 
   @override
   String get actionPreview => 'معاينة';
@@ -256,19 +220,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get deletedItem => 'نُقل إلى المهملات';
 
   @override
-  String get restoredItem => 'تمت الاستعادة';
-
-  @override
   String get untitled => 'بلا عنوان';
 
   @override
   String get noProject => 'بلا مشروع';
-
-  @override
-  String get confirmDeleteTitle => 'حذف نهائيًا؟';
-
-  @override
-  String get confirmDeleteMessage => 'لا يمكن التراجع عن هذا الإجراء.';
 
   @override
   String get greetingMorning => 'صباح الخير';
@@ -278,9 +233,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get greetingEvening => 'مساء الخير';
-
-  @override
-  String get dashboardTitle => 'اليوم';
 
   @override
   String get dashFocusToday => 'تركيز اليوم';
@@ -319,21 +271,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get dashSeeAll => 'عرض الكل';
-
-  @override
-  String get dashNoTasksToday => 'لا شيء مستحق اليوم. الطريق أمامك مفتوح.';
-
-  @override
-  String get dashNoEvents => 'لا مزيد من الأحداث اليوم';
-
-  @override
-  String get dashNoHabits => 'أنشئ عادة لتتابعها هنا';
-
-  @override
-  String get dashNoGoals => 'حدّد هدفًا لترى تقدّمك';
-
-  @override
-  String get dashNoNotes => 'ستظهر أحدث ملاحظاتك هنا';
 
   @override
   String dashCardsDue(int count) {
@@ -457,12 +394,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get focusRunning => 'في التركيز';
-
-  @override
-  String get focusElapsed => 'المنقضي';
-
-  @override
-  String get focusRemaining => 'المتبقي';
 
   @override
   String get focusDuration => 'المدة';
@@ -665,9 +596,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get taskCategoryHint => 'مثل: العمل، المنزل، الدراسة';
 
   @override
-  String get taskEstimate => 'التقدير';
-
-  @override
   String get taskEstimateMinutes => 'التقدير (بالدقائق)';
 
   @override
@@ -715,11 +643,6 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String taskSubtaskProgress(int done, int total) {
     return '$done/$total';
-  }
-
-  @override
-  String taskDueOn(String date) {
-    return 'مستحقة في $date';
   }
 
   @override
@@ -778,9 +701,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get dateYesterday => 'أمس';
-
-  @override
-  String get dateNextWeek => 'الأسبوع القادم';
 
   @override
   String get repeatNever => 'بلا تكرار';
@@ -950,9 +870,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get projectIcon => 'الأيقونة';
 
   @override
-  String get projectNotes => 'ملاحظات المشروع';
-
-  @override
   String get projectProgress => 'التقدّم';
 
   @override
@@ -1077,9 +994,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get calendarScheduleTask => 'جدولة كفترة زمنية';
 
   @override
-  String get calendarLegend => 'دليل الألوان';
-
-  @override
   String get notesTitle => 'الملاحظات';
 
   @override
@@ -1093,9 +1007,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get notesViewArchived => 'المؤرشفة';
-
-  @override
-  String get notesNotebooks => 'الدفاتر';
 
   @override
   String get notesTags => 'الوسوم';
@@ -1739,13 +1650,7 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get assistantCreateAll => 'إنشاء الكل';
-
-  @override
   String get assistantChooseDeck => 'اختر مجموعة';
-
-  @override
-  String get assistantCreated => 'تم الإنشاء';
 
   @override
   String assistantWorkloadResult(String estimated, String free) {
@@ -2163,9 +2068,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get weekdaysShort => 'ن,ث,ر,خ,ج,س,ح';
 
   @override
-  String get a11yOpenMenu => 'فتح القائمة';
-
-  @override
   String a11yProgress(int value) {
     return 'التقدّم $value بالمئة';
   }
@@ -2179,9 +2081,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String a11yColor(int index) {
     return 'اللون $index';
   }
-
-  @override
-  String get a11ySelected => 'محدد';
 
   @override
   String get analyticsRangeLabel => 'النطاق الزمني';
@@ -2752,11 +2651,6 @@ class AppLocalizationsAr extends AppLocalizations {
       'تُحفظ الإدخالات من الفترات السابقة هنا، لكنها تُحتسب فقط ضمن فترتها.';
 
   @override
-  String goalsPercentOfTarget(String percent) {
-    return '$percent من الهدف';
-  }
-
-  @override
   String habitsTodaySummary(int done, int total) {
     return 'تم إنجاز $done من $total اليوم';
   }
@@ -3273,9 +3167,6 @@ class AppLocalizationsAr extends AppLocalizations {
       'هذه المهمة معلّقة بمهام غير مكتملة. هل تريد إكمالها على أي حال؟';
 
   @override
-  String get taskDeleteConfirm => 'نقل هذه المهمة إلى المهملات؟';
-
-  @override
   String get taskStartFocus => 'التركيز على هذه المهمة';
 
   @override
@@ -3294,21 +3185,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get taskReminderNeedsDue => 'حدّد تاريخ استحقاق لاستخدام التذكيرات النسبية';
 
   @override
-  String taskEstimateValue(String value) {
-    return 'التقدير: $value';
-  }
-
-  @override
-  String taskTrackedValue(String value) {
-    return 'المسجَّل: $value';
-  }
-
-  @override
   String get taskSubtaskDetailsHint =>
       'احفظ المهمة أولًا لإضافة المهام الفرعية وعناصر قائمة التحقق والوسوم والتبعيات.';
-
-  @override
-  String get taskNoLabels => 'لا توجد وسوم بعد';
 
   @override
   String get taskLabelName => 'اسم الوسم';
@@ -3541,9 +3419,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get focusSeriesComplete => 'اكتملت خطة الجلسات. أحسنت!';
 
   @override
-  String get exportDone => 'التصدير جاهز';
-
-  @override
   String get filterAll => 'الكل';
 
   @override
@@ -3565,9 +3440,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get flashcardsSuspendedFilter => 'موقوفة';
-
-  @override
-  String get flashcardsExportCsv => 'تصدير بصيغة CSV';
 
   @override
   String flashcardsShownOf(int shown, int total) {
@@ -4031,9 +3903,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get soundsTitle => 'الأصوات';
-
-  @override
-  String get soundsSubtitle => 'تسجيلات حقيقية من الطبيعة، تُشغَّل بطريقة لا تشعر معها بأي تكرار.';
 
   @override
   String get soundsNature => 'الطبيعة';
@@ -5003,9 +4872,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get reportTitle => 'التقرير الشهري';
 
   @override
-  String get reportSubtitle => 'التركيز والبطاقات والمهام والعادات للشهر، جاهز للحفظ';
-
-  @override
   String get reportFocus => 'وقت التركيز';
 
   @override
@@ -5496,4 +5362,37 @@ class AppLocalizationsAr extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get wordsTitle => 'تسمية الكلمات';
+
+  @override
+  String get wordsSubtitle => 'استخدم كلمتك الخاصة لأي نص في التطبيق';
+
+  @override
+  String get wordsHint =>
+      'اضغط على أي نص لتغييره. كلماتك تخص هذه اللغة فقط وتُحفظ في النسخ الاحتياطية.';
+
+  @override
+  String get wordsSearch => 'ابحث في النصوص';
+
+  @override
+  String get wordsChangedOnly => 'المعدّلة فقط';
+
+  @override
+  String wordsOriginal(String text) {
+    return 'الأصل: $text';
+  }
+
+  @override
+  String get wordsReset => 'استخدم الأصل';
+
+  @override
+  String get wordsResetAll => 'إعادة كل الكلمات';
+
+  @override
+  String get wordsResetAllConfirm => 'سترجع كل نصوص هذه اللغة إلى الأصل.';
+
+  @override
+  String get wordsNone => 'لا يوجد نص';
 }
