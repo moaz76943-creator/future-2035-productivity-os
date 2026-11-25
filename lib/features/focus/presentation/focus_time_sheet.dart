@@ -8,6 +8,7 @@ import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/tokens.dart';
 import '../../settings/application/settings_providers.dart';
 import '../../settings/presentation/end_tone_sheet.dart';
+import '../application/focus_prefs.dart';
 import '../domain/focus_timer_state.dart';
 
 /// Ready-made sessions for different kinds of work: (focus, break, rounds).
@@ -93,6 +94,7 @@ class _FocusTimeSheetState extends ConsumerState<_FocusTimeSheet> {
     final fmt = context.fmt;
     final s = ref.watch(settingsProvider);
     final ctrl = ref.read(settingsProvider.notifier);
+    final prefs = ref.watch(focusPrefsProvider).value ?? const FocusPrefs();
     final pomodoro = _mode == FocusMode.pomodoro;
     final countdown = _mode == FocusMode.countdown;
     return SingleChildScrollView(
@@ -158,6 +160,17 @@ class _FocusTimeSheetState extends ConsumerState<_FocusTimeSheet> {
             ),
           ],
           const Divider(height: Space.lg),
+          SwitchListTile(
+            key: const Key('focusCalmPacing'),
+            contentPadding: EdgeInsets.zero,
+            secondary: const Icon(Icons.spa_outlined),
+            title: Text(l10n.focusCalmPacing),
+            subtitle: Text(l10n.focusCalmPacingHint),
+            value: prefs.calmPacing,
+            onChanged: (v) => unawaited(
+              ref.read(focusPrefsProvider.notifier).change((p) => p.copyWith(calmPacing: v)),
+            ),
+          ),
           const EndToneTile(enabled: true),
         ],
       ),

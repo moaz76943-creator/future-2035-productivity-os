@@ -155,3 +155,6 @@ abstract final class FocusEngine {
     return (phase: FocusPhase.work, cycles: cycles);
   }
 }
+
+/// Flow timer rest: a fifth of the focus time, at least 1 and at most 30 minutes.
+int flowBreakMinutes(int focusSeconds) => (focusSeconds / 60 / 5).round().clamp(1, 30);

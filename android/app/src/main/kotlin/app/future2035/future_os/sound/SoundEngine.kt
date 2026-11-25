@@ -23,7 +23,7 @@ import java.util.concurrent.CopyOnWriteArrayList
  */
 object SoundEngine {
     private const val FRAMES = 1024
-    private const val SLEEP_FADE_MS = 12_000L
+    private const val SLEEP_FADE_MS = 45_000L // long, gentle fade before sleep
 
     @Volatile private var samples: AssetSamples? = null
     private val mixer = Mixer(SampleVoice.Source { id -> samples?.load(id) })
@@ -93,7 +93,7 @@ object SoundEngine {
         main.postDelayed({ if (!playing) mixer.clear(); changed() }, 900)
     }
 
-    /** Sleep timer in minutes (0 turns it off). Fades out for the last 12 seconds. */
+    /** Sleep timer in minutes (0 turns it off). Fades out gently over the last 45 seconds. */
     fun sleep(minutes: Int) {
         cancelSleep(notify = false)
         if (minutes > 0) {

@@ -1420,5 +1420,10 @@
   "starterBrowse": "مجموعات جاهزة",
   "starterBrowseHint": "أضف واحدة بلمسة وابدأ التعلّم",
   "dashOpenDecks": "افتح بطاقاتك",
-  "speechVoiceNumber": "الصوت {n}"
+  "speechVoiceNumber": "الصوت {n}",
+  "focusFlowBreakOffer": "تركيز رائع. استراحة {m} د؟",
+  "focusFlowBreakStart": "ابدأ الاستراحة",
+  "tasksFinishAt": "إن بدأت الآن تنهي كل مهامك الساعة {time}",
+  "focusCalmPacing": "وتيرة هادئة",
+  "focusCalmPacingHint": "دقائق كاملة والحلقة فقط، دون ثوانٍ متسارعة"
 }

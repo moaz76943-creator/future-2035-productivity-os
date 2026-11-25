@@ -228,6 +228,33 @@ class _TaskList extends ConsumerWidget {
     }
 
     final children = <Widget>[];
+    // Today: when everything would be done if you started now (estimates, or
+    // 25 minutes for a task without one). Seeing the end time beats "later".
+    if (tab == TasksTab.today) {
+      final open = tasks.where((t) => t.completedAt == null).toList();
+      if (open.isNotEmpty) {
+        final minutes = finishMinutes(open.map((t) => t.estimateMinutes));
+        final end = now.add(Duration(minutes: minutes));
+        children.add(
+          Padding(
+            key: const Key('finishEstimate'),
+            padding: const EdgeInsets.fromLTRB(Space.page, Space.sm, Space.page, 0),
+            child: Row(
+              children: [
+                Icon(Icons.flag_circle_outlined, size: 20, color: ModuleHue.tasks.a),
+                const SizedBox(width: Space.xs),
+                Expanded(
+                  child: Text(
+                    l10n.tasksFinishAt(context.fmt.time(end)),
+                    style: context.text.bodyMedium?.copyWith(color: context.lux.ink2),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      }
+    }
     for (final (gi, (title, list)) in groups.indexed) {
       final drop = gi < drops.length ? drops[gi] : null;
       final groupChildren = <Widget>[];

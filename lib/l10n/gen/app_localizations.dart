@@ -8633,6 +8633,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Voice {n}'**
   String speechVoiceNumber(String n);
+
+  /// After a flow (count-up) session: suggested break
+  ///
+  /// In en, this message translates to:
+  /// **'Good flow. Rest {m} min?'**
+  String focusFlowBreakOffer(String m);
+
+  /// Action: start the suggested flow break
+  ///
+  /// In en, this message translates to:
+  /// **'Start break'**
+  String get focusFlowBreakStart;
+
+  /// Tasks today: when all of today's open tasks would be finished if started now
+  ///
+  /// In en, this message translates to:
+  /// **'Start now and you finish everything by {time}'**
+  String tasksFinishAt(String time);
+
+  /// Switch: calm pacing, hide seconds
+  ///
+  /// In en, this message translates to:
+  /// **'Calm pacing'**
+  String get focusCalmPacing;
+
+  /// Calm pacing explanation
+  ///
+  /// In en, this message translates to:
+  /// **'Whole minutes and the ring only, no ticking seconds'**
+  String get focusCalmPacingHint;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

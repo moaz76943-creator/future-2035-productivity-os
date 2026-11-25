@@ -6819,5 +6819,35 @@
         "type": "String"
       }
     }
+  },
+  "focusFlowBreakOffer": "Good flow. Rest {m} min?",
+  "@focusFlowBreakOffer": {
+    "description": "After a flow (count-up) session: suggested break",
+    "placeholders": {
+      "m": {
+        "type": "String"
+      }
+    }
+  },
+  "focusFlowBreakStart": "Start break",
+  "@focusFlowBreakStart": {
+    "description": "Action: start the suggested flow break"
+  },
+  "tasksFinishAt": "Start now and you finish everything by {time}",
+  "@tasksFinishAt": {
+    "description": "Tasks today: when all of today's open tasks would be finished if started now",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "focusCalmPacing": "Calm pacing",
+  "@focusCalmPacing": {
+    "description": "Switch: calm pacing, hide seconds"
+  },
+  "focusCalmPacingHint": "Whole minutes and the ring only, no ticking seconds",
+  "@focusCalmPacingHint": {
+    "description": "Calm pacing explanation"
   }
 }

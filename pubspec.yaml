@@ -87,6 +87,7 @@ flutter:
   generate: true
 
   assets:
+    - assets/sound_art/
     - assets/fonts/OFL-Manrope.txt
     - assets/fonts/OFL-ReadexPro.txt
     - assets/fonts/OFL-NotoSansDevanagari.txt

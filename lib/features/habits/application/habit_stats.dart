@@ -36,6 +36,7 @@ class HabitStats {
         countsByDay: counts,
         today: today,
         pauses: pauses,
+        shield: true,
       ),
       bestStreak: HabitMath.longestStreak(
         weekdayMask: habit.weekdays,

@@ -2,12 +2,24 @@
 abstract final class StudyStreak {
   /// Consecutive study days ending today, or ending yesterday when today has
   /// no study yet (the streak is still alive until the day is over).
-  static int current(Set<DateTime> days, DateTime today) {
+  ///
+  /// With [shield] one missed day per 7 is forgiven (streak shield), as long
+  /// as the day before it was a study day: a busy day doesn't wipe out weeks.
+  static int current(Set<DateTime> days, DateTime today, {bool shield = false}) {
     final d0 = _day(today);
     var d = days.contains(d0) ? d0 : _add(d0, -1);
     var n = 0;
-    while (days.contains(d)) {
-      n++;
+    DateTime? shielded;
+    while (true) {
+      if (days.contains(d)) {
+        n++;
+      } else if (shield &&
+          days.contains(_add(d, -1)) &&
+          (shielded == null || shielded.difference(d).inDays >= 7)) {
+        shielded = d;
+      } else {
+        break;
+      }
       d = _add(d, -1);
     }
     return n;

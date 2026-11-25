@@ -99,6 +99,10 @@ class _TimerHero extends ConsumerWidget {
               : (onAdjust != null ? l10n.focusTapToAdjust : l10n.focusReady))
         : (a.isRunning ? l10n.focusRunning : l10n.focusPaused);
     final clock = AppFormat.clock(shown);
+    // Calm pacing: whole minutes only, no ticking seconds (the ring shows the flow).
+    final calm = ref.watch(focusPrefsProvider).value?.calmPacing ?? false;
+    final minutes = countsDown ? (shown.inSeconds / 60).ceil() : shown.inMinutes;
+    final shownText = calm ? l10n.focusMinutesShort(context.fmt.number(minutes)) : clock;
     final phaseLabel = focusPhaseLabel(l10n, phase);
     final semantics = countsDown
         ? l10n.focusTimerSemantics(phaseLabel, clock)
@@ -147,7 +151,7 @@ class _TimerHero extends ConsumerWidget {
                         child: Directionality(
                           textDirection: TextDirection.ltr,
                           child: Text(
-                            clock,
+                            shownText,
                             key: const ValueKey('focus-clock'),
                             style: context.text.displayMedium?.copyWith(
                               fontFeatures: const [FontFeature.tabularFigures()],

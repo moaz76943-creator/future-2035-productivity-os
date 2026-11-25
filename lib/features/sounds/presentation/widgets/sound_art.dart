@@ -6,16 +6,46 @@ import '../../domain/nature_sound.dart';
 
 part 'sound_art_scenes.dart';
 
-/// A small painted scene for each sound (drawn in code: original artwork,
-/// no image files, crisp at any size).
+/// The nature sounds with a photo in `assets/sound_art/` (small WebP files
+/// supplied by the app owner). Noise colours keep their painted scene.
+const _photoSounds = {
+  NatureSound.rain,
+  NatureSound.storm,
+  NatureSound.river,
+  NatureSound.ocean,
+  NatureSound.fire,
+  NatureSound.forest,
+  NatureSound.night,
+  NatureSound.forestrain,
+};
+
+String? soundPhotoAsset(NatureSound s) =>
+    _photoSounds.contains(s) ? 'assets/sound_art/${s.name}.webp' : null;
+
+/// A photo for each nature sound; a painted scene (drawn in code) for the
+/// noise colours and as a fallback if a photo cannot be decoded.
 class SoundArt extends StatelessWidget {
   const SoundArt({super.key, required this.sound});
   final NatureSound sound;
 
   @override
-  Widget build(BuildContext context) => RepaintBoundary(
-    child: CustomPaint(painter: _ScenePainter(sound), size: Size.infinite),
-  );
+  Widget build(BuildContext context) {
+    final painted = RepaintBoundary(
+      child: CustomPaint(painter: _ScenePainter(sound), size: Size.infinite),
+    );
+    final asset = soundPhotoAsset(sound);
+    if (asset == null) return painted;
+    // Decoded at tile size only, so the grid stays light on memory.
+    final px = (MediaQuery.devicePixelRatioOf(context) * 200).round();
+    return Image.asset(
+      asset,
+      fit: BoxFit.cover,
+      cacheWidth: px,
+      gaplessPlayback: true,
+      excludeFromSemantics: true,
+      errorBuilder: (_, _, _) => painted,
+    );
+  }
 }
 
 class _ScenePainter extends CustomPainter {

@@ -5233,4 +5233,23 @@ class AppLocalizationsRu extends AppLocalizations {
   String speechVoiceNumber(String n) {
     return 'Голос $n';
   }
+
+  @override
+  String focusFlowBreakOffer(String m) {
+    return 'Хороший поток. Отдых $m мин?';
+  }
+
+  @override
+  String get focusFlowBreakStart => 'Начать отдых';
+
+  @override
+  String tasksFinishAt(String time) {
+    return 'Если начать сейчас, всё будет готово к $time';
+  }
+
+  @override
+  String get focusCalmPacing => 'Спокойный темп';
+
+  @override
+  String get focusCalmPacingHint => 'Только целые минуты и кольцо, без секунд';
 }

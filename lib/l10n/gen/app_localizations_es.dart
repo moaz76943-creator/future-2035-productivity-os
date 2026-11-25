@@ -5112,4 +5112,23 @@ class AppLocalizationsEs extends AppLocalizations {
   String speechVoiceNumber(String n) {
     return 'Voz $n';
   }
+
+  @override
+  String focusFlowBreakOffer(String m) {
+    return 'Buen ritmo. ¿Descansas $m min?';
+  }
+
+  @override
+  String get focusFlowBreakStart => 'Empezar descanso';
+
+  @override
+  String tasksFinishAt(String time) {
+    return 'Si empiezas ahora, terminas todo a las $time';
+  }
+
+  @override
+  String get focusCalmPacing => 'Ritmo tranquilo';
+
+  @override
+  String get focusCalmPacingHint => 'Solo minutos enteros y el anillo, sin segundos';
 }

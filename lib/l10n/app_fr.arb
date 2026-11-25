@@ -1420,5 +1420,10 @@
   "starterBrowse": "Paquets prêts",
   "starterBrowseHint": "Ajoutez-en un d'un geste et commencez",
   "dashOpenDecks": "Ouvrez vos cartes",
-  "speechVoiceNumber": "Voix {n}"
+  "speechVoiceNumber": "Voix {n}",
+  "focusFlowBreakOffer": "Belle concentration. Pause de {m} min ?",
+  "focusFlowBreakStart": "Commencer la pause",
+  "tasksFinishAt": "En commençant maintenant, vous finissez tout à {time}",
+  "focusCalmPacing": "Rythme apaisé",
+  "focusCalmPacingHint": "Minutes entières et l'anneau, sans secondes qui défilent"
 }

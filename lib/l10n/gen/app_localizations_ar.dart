@@ -5281,4 +5281,23 @@ class AppLocalizationsAr extends AppLocalizations {
   String speechVoiceNumber(String n) {
     return 'الصوت $n';
   }
+
+  @override
+  String focusFlowBreakOffer(String m) {
+    return 'تركيز رائع. استراحة $m د؟';
+  }
+
+  @override
+  String get focusFlowBreakStart => 'ابدأ الاستراحة';
+
+  @override
+  String tasksFinishAt(String time) {
+    return 'إن بدأت الآن تنهي كل مهامك الساعة $time';
+  }
+
+  @override
+  String get focusCalmPacing => 'وتيرة هادئة';
+
+  @override
+  String get focusCalmPacingHint => 'دقائق كاملة والحلقة فقط، دون ثوانٍ متسارعة';
 }

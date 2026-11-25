@@ -222,6 +222,22 @@ class FocusController extends Notifier<FocusControllerState> {
     return f;
   });
 
+  /// Flow mode: after an open-ended session, a break in proportion to it
+  /// ([minutes], usually a fifth of the focus time) counted down as a break.
+  Future<void> startFlowBreak(int minutes) => _serial(() async {
+    if (state.active != null) return;
+    final s = FocusEngine.start(
+      sessionId: newId(),
+      mode: FocusMode.countdown,
+      nowUtc: _nowUtc,
+      phase: FocusPhase.shortBreak,
+      plannedSeconds: minutes.clamp(1, 60) * 60,
+    );
+    await _repo.saveActive(s);
+    _set(state.copyWith(active: s, clearPending: true, clearNotice: true, clearFinished: true));
+    await _afterChange();
+  });
+
   /// Skips the current or upcoming break and starts the next focus phase.
   Future<void> skipBreak() => _serial(() async {
     final s = state.active;

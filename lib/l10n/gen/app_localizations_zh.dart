@@ -4848,4 +4848,23 @@ class AppLocalizationsZh extends AppLocalizations {
   String speechVoiceNumber(String n) {
     return '语音 $n';
   }
+
+  @override
+  String focusFlowBreakOffer(String m) {
+    return '专注得很好。休息 $m 分钟？';
+  }
+
+  @override
+  String get focusFlowBreakStart => '开始休息';
+
+  @override
+  String tasksFinishAt(String time) {
+    return '现在开始，$time 前全部完成';
+  }
+
+  @override
+  String get focusCalmPacing => '平静节奏';
+
+  @override
+  String get focusCalmPacingHint => '只显示整分钟和圆环，不显示秒';
 }

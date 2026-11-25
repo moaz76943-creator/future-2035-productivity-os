@@ -231,6 +231,28 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
       builder: (ctx) => _SessionNoteDialog(session: f),
     );
     if (note != null && note.isNotEmpty) await _ctrl.saveNote(f.id, note);
+    _offerFlowBreak(f);
+  }
+
+  /// Flow timer: no bell cut the session short, so the break follows the
+  /// focus that was done: a fifth of it (25 min of flow → 5 min of rest).
+  void _offerFlowBreak(FinishedSession f) {
+    if (!mounted || (f.mode != FocusMode.countUp && f.mode != FocusMode.open)) return;
+    if (f.activeSeconds < 5 * 60) return;
+    final minutes = flowBreakMinutes(f.activeSeconds);
+    final messenger = ScaffoldMessenger.of(context);
+    messenger.showSnackBar(
+      SnackBar(
+        key: const Key('flowBreakOffer'),
+        behavior: SnackBarBehavior.floating,
+        duration: const Duration(seconds: 12),
+        content: Text(context.l10n.focusFlowBreakOffer(context.fmt.number(minutes))),
+        action: SnackBarAction(
+          label: context.l10n.focusFlowBreakStart,
+          onPressed: () => unawaited(_ctrl.startFlowBreak(minutes)),
+        ),
+      ),
+    );
   }
 
   Future<void> _deleteSession(FocusSessionRow row) async {

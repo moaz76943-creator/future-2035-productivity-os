@@ -122,3 +122,7 @@ class TasksScreen extends ConsumerWidget {
 }
 
 const _keep = Object();
+
+/// Minutes to finish [estimates]; a task without an estimate counts 25 minutes.
+int finishMinutes(Iterable<int?> estimates) =>
+    estimates.fold(0, (sum, e) => sum + ((e ?? 0) > 0 ? e! : 25));

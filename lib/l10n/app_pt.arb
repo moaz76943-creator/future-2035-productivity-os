@@ -1420,5 +1420,10 @@
   "starterBrowse": "Baralhos prontos",
   "starterBrowseHint": "Adicione com um toque e comece",
   "dashOpenDecks": "Abra seus cartões",
-  "speechVoiceNumber": "Voz {n}"
+  "speechVoiceNumber": "Voz {n}",
+  "focusFlowBreakOffer": "Bom ritmo. Descansar {m} min?",
+  "focusFlowBreakStart": "Iniciar pausa",
+  "tasksFinishAt": "Começando agora, você termina tudo às {time}",
+  "focusCalmPacing": "Ritmo calmo",
+  "focusCalmPacingHint": "Só minutos inteiros e o anel, sem segundos"
 }

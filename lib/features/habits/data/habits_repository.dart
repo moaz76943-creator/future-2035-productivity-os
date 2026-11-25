@@ -67,18 +67,25 @@ abstract final class HabitMath {
     required DateTime today,
     List<PauseSpan> pauses = const [],
     int maxLookbackDays = 3660,
+    bool shield = false,
   }) {
     if (weekdayMask == 0) return 0;
     var streak = 0;
     var day = Days.startOfDay(today);
     var first = true;
+    // Streak shield: one missed scheduled day per 7 days is forgiven.
+    DateTime? shielded;
     for (var i = 0; i < maxLookbackDays; i++) {
       final (counts, done) = _evaluate(weekdayMask, targetPerDay, countsByDay, pauses, day);
       if (counts) {
         if (done) {
           streak++;
         } else if (!first) {
-          break;
+          if (shield && streak > 0 && (shielded == null || shielded.difference(day).inDays >= 7)) {
+            shielded = day;
+          } else {
+            break;
+          }
         }
         first = false;
       }

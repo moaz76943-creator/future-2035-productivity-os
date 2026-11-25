@@ -86,7 +86,7 @@ extension FlashcardsActivity on FlashcardsRepository {
     return TodayActivity(
       reviews: week[6],
       time: Duration(seconds: seconds),
-      streak: StudyStreak.current(days, today),
+      streak: StudyStreak.current(days, today, shield: true),
       bestStreak: StudyStreak.best(days),
       week: week,
       weekFocusMinutes: focusSeconds ~/ 60,

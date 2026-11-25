@@ -1420,5 +1420,10 @@
   "starterBrowse": "तैयार समूह",
   "starterBrowseHint": "एक टैप में जोड़ें और सीखना शुरू करें",
   "dashOpenDecks": "अपने कार्ड खोलें",
-  "speechVoiceNumber": "आवाज़ {n}"
+  "speechVoiceNumber": "आवाज़ {n}",
+  "focusFlowBreakOffer": "बढ़िया फ़ोकस। {m} मिनट आराम?",
+  "focusFlowBreakStart": "विराम शुरू करें",
+  "tasksFinishAt": "अभी शुरू करें तो सब {time} तक पूरा",
+  "focusCalmPacing": "शांत गति",
+  "focusCalmPacingHint": "केवल पूरे मिनट और घेरा, टिकते सेकंड नहीं"
 }

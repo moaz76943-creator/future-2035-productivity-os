@@ -1420,5 +1420,10 @@
   "starterBrowse": "现成卡组",
   "starterBrowseHint": "轻点添加，马上开始学习",
   "dashOpenDecks": "打开你的卡片",
-  "speechVoiceNumber": "语音 {n}"
+  "speechVoiceNumber": "语音 {n}",
+  "focusFlowBreakOffer": "专注得很好。休息 {m} 分钟？",
+  "focusFlowBreakStart": "开始休息",
+  "tasksFinishAt": "现在开始，{time} 前全部完成",
+  "focusCalmPacing": "平静节奏",
+  "focusCalmPacingHint": "只显示整分钟和圆环，不显示秒"
 }

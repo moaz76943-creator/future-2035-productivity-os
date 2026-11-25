@@ -1420,5 +1420,10 @@
   "starterBrowse": "Готовые колоды",
   "starterBrowseHint": "Добавьте одним касанием и начните",
   "dashOpenDecks": "Открыть карточки",
-  "speechVoiceNumber": "Голос {n}"
+  "speechVoiceNumber": "Голос {n}",
+  "focusFlowBreakOffer": "Хороший поток. Отдых {m} мин?",
+  "focusFlowBreakStart": "Начать отдых",
+  "tasksFinishAt": "Если начать сейчас, всё будет готово к {time}",
+  "focusCalmPacing": "Спокойный темп",
+  "focusCalmPacingHint": "Только целые минуты и кольцо, без секунд"
 }
