@@ -5112,4 +5112,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get focusCalmPacingHint => 'Whole minutes and the ring only, no ticking seconds';
+
+  @override
+  String get focusFlipHint => 'Turn the phone face down to start';
+
+  @override
+  String get focusImmersive => 'Immersive mode';
+
+  @override
+  String get focusImmersiveBlack => 'Pure black (saves battery)';
+
+  @override
+  String get focusFlipToFocus => 'Flip to focus';
+
+  @override
+  String get focusFlipToFocusHint => 'In immersive mode: face down starts, picking it up pauses';
 }

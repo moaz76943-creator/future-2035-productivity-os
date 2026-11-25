@@ -15,6 +15,7 @@ import '../../features/flashcards/presentation/card_search_screen.dart';
 import '../../features/flashcards/presentation/deck_stats_screen.dart';
 import '../../features/flashcards/presentation/review_screen.dart';
 import '../../features/focus/presentation/focus_screen.dart';
+import '../../features/focus/presentation/immersive_focus_screen.dart';
 import '../../features/goals/presentation/goal_detail_screen.dart';
 import '../../features/goals/presentation/goals_screen.dart';
 import '../../features/habits/presentation/habit_detail_screen.dart';
@@ -121,6 +122,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       page('/projects/:id', (s) => ProjectDetailScreen(projectId: s.pathParameters['id']!)),
       page(Routes.notes, (_) => const NotesScreen()),
       page(Routes.noteNew, (_) => const NewNoteScreen()),
+      page(Routes.focusImmersive, (_) => const ImmersiveFocusScreen()),
       page('/notes/:id', (s) => NoteEditorScreen(noteId: s.pathParameters['id']!)),
       page(Routes.cardSearch, (_) => const CardSearchScreen()),
       // Deck pages open full screen above the tabs.

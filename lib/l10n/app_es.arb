@@ -1425,5 +1425,10 @@
   "focusFlowBreakStart": "Empezar descanso",
   "tasksFinishAt": "Si empiezas ahora, terminas todo a las {time}",
   "focusCalmPacing": "Ritmo tranquilo",
-  "focusCalmPacingHint": "Solo minutos enteros y el anillo, sin segundos"
+  "focusCalmPacingHint": "Solo minutos enteros y el anillo, sin segundos",
+  "focusFlipHint": "Pon el teléfono boca abajo para empezar",
+  "focusImmersive": "Modo inmersivo",
+  "focusImmersiveBlack": "Negro puro (ahorra batería)",
+  "focusFlipToFocus": "Voltear para enfocarte",
+  "focusFlipToFocusHint": "En modo inmersivo: boca abajo empieza, al levantarlo se pausa"
 }

@@ -23,6 +23,7 @@ const _noHelpNeeded = {
   Routes.cardSearch,
   Routes.taskNew,
   Routes.noteNew,
+  Routes.focusImmersive,
   Routes.eventNew,
   Routes.help,
 };

@@ -171,6 +171,83 @@ class _FocusTimeSheetState extends ConsumerState<_FocusTimeSheet> {
               ref.read(focusPrefsProvider.notifier).change((p) => p.copyWith(calmPacing: v)),
             ),
           ),
+          SwitchListTile(
+            key: const Key('focusFlipSwitch'),
+            contentPadding: EdgeInsets.zero,
+            secondary: const Icon(Icons.screen_rotation_alt_rounded),
+            title: Text(l10n.focusFlipToFocus),
+            subtitle: Text(l10n.focusFlipToFocusHint),
+            value: prefs.flipToFocus,
+            onChanged: (v) => unawaited(
+              ref.read(focusPrefsProvider.notifier).change((p) => p.copyWith(flipToFocus: v)),
+            ),
+          ),
+          SwitchListTile(
+            key: const Key('focusBlackSwitch'),
+            contentPadding: EdgeInsets.zero,
+            secondary: const Icon(Icons.dark_mode_outlined),
+            title: Text(l10n.focusImmersiveBlack),
+            value: prefs.immersiveBlack,
+            onChanged: (v) => unawaited(
+              ref.read(focusPrefsProvider.notifier).change((p) => p.copyWith(immersiveBlack: v)),
+            ),
+          ),
+          if (!prefs.immersiveBlack)
+            SizedBox(
+              height: 64,
+              child: ListView(
+                key: const Key('immersiveScenes'),
+                scrollDirection: Axis.horizontal,
+                children: [
+                  for (final n in const [
+                    'night',
+                    'rain',
+                    'forest',
+                    'ocean',
+                    'river',
+                    'fire',
+                    'storm',
+                    'forestrain',
+                  ])
+                    Padding(
+                      padding: const EdgeInsetsDirectional.only(end: Space.xs),
+                      child: Semantics(
+                        button: true,
+                        selected: prefs.immersiveScene == n,
+                        label: l10n.focusImmersive,
+                        child: InkWell(
+                          key: Key('scene_$n'),
+                          borderRadius: BorderRadius.circular(Radii.md),
+                          onTap: () => unawaited(
+                            ref
+                                .read(focusPrefsProvider.notifier)
+                                .change((p) => p.copyWith(immersiveScene: n)),
+                          ),
+                          child: Container(
+                            width: 64,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(Radii.md),
+                              border: Border.all(
+                                width: 2,
+                                color: prefs.immersiveScene == n
+                                    ? ModuleHue.focus.a
+                                    : Colors.transparent,
+                              ),
+                            ),
+                            clipBehavior: Clip.antiAlias,
+                            child: Image.asset(
+                              'assets/sound_art/$n.webp',
+                              fit: BoxFit.cover,
+                              cacheWidth: 160,
+                              excludeFromSemantics: true,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+            ),
           const EndToneTile(enabled: true),
         ],
       ),

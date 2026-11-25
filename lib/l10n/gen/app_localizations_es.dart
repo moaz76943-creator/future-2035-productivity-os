@@ -5131,4 +5131,20 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get focusCalmPacingHint => 'Solo minutos enteros y el anillo, sin segundos';
+
+  @override
+  String get focusFlipHint => 'Pon el teléfono boca abajo para empezar';
+
+  @override
+  String get focusImmersive => 'Modo inmersivo';
+
+  @override
+  String get focusImmersiveBlack => 'Negro puro (ahorra batería)';
+
+  @override
+  String get focusFlipToFocus => 'Voltear para enfocarte';
+
+  @override
+  String get focusFlipToFocusHint =>
+      'En modo inmersivo: boca abajo empieza, al levantarlo se pausa';
 }

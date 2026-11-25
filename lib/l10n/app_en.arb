@@ -6849,5 +6849,25 @@
   "focusCalmPacingHint": "Whole minutes and the ring only, no ticking seconds",
   "@focusCalmPacingHint": {
     "description": "Calm pacing explanation"
+  },
+  "focusFlipHint": "Turn the phone face down to start",
+  "@focusFlipHint": {
+    "description": "Immersive focus: hint to put the phone face down to start"
+  },
+  "focusImmersive": "Immersive mode",
+  "@focusImmersive": {
+    "description": "Button/title: immersive full-screen focus mode"
+  },
+  "focusImmersiveBlack": "Pure black (saves battery)",
+  "@focusImmersiveBlack": {
+    "description": "Switch: immersive mode on pure black (saves battery on AMOLED)"
+  },
+  "focusFlipToFocus": "Flip to focus",
+  "@focusFlipToFocus": {
+    "description": "Switch: start by turning the phone face down"
+  },
+  "focusFlipToFocusHint": "In immersive mode: face down starts, picking it up pauses",
+  "@focusFlipToFocusHint": {
+    "description": "Flip to focus explanation"
   }
 }

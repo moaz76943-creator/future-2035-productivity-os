@@ -1425,5 +1425,10 @@
   "focusFlowBreakStart": "विराम शुरू करें",
   "tasksFinishAt": "अभी शुरू करें तो सब {time} तक पूरा",
   "focusCalmPacing": "शांत गति",
-  "focusCalmPacingHint": "केवल पूरे मिनट और घेरा, टिकते सेकंड नहीं"
+  "focusCalmPacingHint": "केवल पूरे मिनट और घेरा, टिकते सेकंड नहीं",
+  "focusFlipHint": "शुरू करने के लिए फ़ोन उल्टा रखें",
+  "focusImmersive": "इमर्सिव मोड",
+  "focusImmersiveBlack": "शुद्ध काला (बैटरी बचाए)",
+  "focusFlipToFocus": "पलटें और फ़ोकस करें",
+  "focusFlipToFocusHint": "इमर्सिव मोड में: उल्टा रखने पर शुरू, उठाने पर रुकता है"
 }

@@ -3,6 +3,7 @@ abstract final class Routes {
   static const home = '/';
   static const tasks = '/tasks';
   static const focus = '/focus';
+  static const focusImmersive = '/focus-immersive';
   static const calendar = '/calendar';
   static const spaces = '/spaces';
 

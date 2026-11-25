@@ -30,6 +30,7 @@ class MainActivity : FlutterActivity() {
     private var shortcuts: ShortcutsBridge? = null
     private var dnd: DndBridge? = null
     private var care: PhoneCare? = null
+    private var focusTools: FocusTools? = null
     private var homeWidget: MethodChannel? = null
     private var pdf: PdfExport? = null
     private var images: ImageShrink? = null
@@ -56,6 +57,10 @@ class MainActivity : FlutterActivity() {
         // Battery, free space and system screens.
         care?.dispose()
         care = PhoneCare(applicationContext, flutterEngine.dartExecutor.binaryMessenger)
+
+        // Immersive focus: keep the screen on, face-down detection.
+        focusTools?.dispose()
+        focusTools = FocusTools(this, flutterEngine.dartExecutor.binaryMessenger)
 
         // Home screen widget texts.
         homeWidget?.setMethodCallHandler(null)
@@ -284,6 +289,8 @@ class MainActivity : FlutterActivity() {
         stopAudio()
         speech?.dispose()
         speech = null
+        focusTools?.dispose()
+        focusTools = null
         super.onDestroy()
     }
 

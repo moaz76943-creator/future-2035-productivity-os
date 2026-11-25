@@ -89,6 +89,12 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
       title: l10n.focusTitle,
       hue: ModuleHue.focus,
       actions: [
+        IconButton(
+          key: const Key('focusImmersiveButton'),
+          tooltip: l10n.focusImmersive,
+          icon: const Icon(Icons.fullscreen_rounded),
+          onPressed: () => context.push(Routes.focusImmersive),
+        ),
         // A word instead of a bare icon: the label is the app's own translation of "Sounds".
         Padding(
           padding: const EdgeInsetsDirectional.only(end: Space.sm),

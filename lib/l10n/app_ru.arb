@@ -1425,5 +1425,10 @@
   "focusFlowBreakStart": "Начать отдых",
   "tasksFinishAt": "Если начать сейчас, всё будет готово к {time}",
   "focusCalmPacing": "Спокойный темп",
-  "focusCalmPacingHint": "Только целые минуты и кольцо, без секунд"
+  "focusCalmPacingHint": "Только целые минуты и кольцо, без секунд",
+  "focusFlipHint": "Положите телефон экраном вниз, чтобы начать",
+  "focusImmersive": "Режим погружения",
+  "focusImmersiveBlack": "Чисто чёрный (экономит батарею)",
+  "focusFlipToFocus": "Перевернуть для фокуса",
+  "focusFlipToFocusHint": "В режиме погружения: экраном вниз — старт, поднять — пауза"
 }

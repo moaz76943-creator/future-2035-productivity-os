@@ -5123,4 +5123,19 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get focusCalmPacingHint => 'केवल पूरे मिनट और घेरा, टिकते सेकंड नहीं';
+
+  @override
+  String get focusFlipHint => 'शुरू करने के लिए फ़ोन उल्टा रखें';
+
+  @override
+  String get focusImmersive => 'इमर्सिव मोड';
+
+  @override
+  String get focusImmersiveBlack => 'शुद्ध काला (बैटरी बचाए)';
+
+  @override
+  String get focusFlipToFocus => 'पलटें और फ़ोकस करें';
+
+  @override
+  String get focusFlipToFocusHint => 'इमर्सिव मोड में: उल्टा रखने पर शुरू, उठाने पर रुकता है';
 }

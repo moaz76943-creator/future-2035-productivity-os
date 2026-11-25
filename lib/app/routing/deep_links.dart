@@ -24,7 +24,14 @@ List<AppShortcut> appShortcuts(AppLocalizations l10n) => [
 ];
 
 /// Tabs are switched to; every other screen opens on top of the current one.
-const _tabs = {Routes.home, Routes.tasks, Routes.flashcards, Routes.focus, Routes.calendar, Routes.spaces};
+const _tabs = {
+  Routes.home,
+  Routes.tasks,
+  Routes.flashcards,
+  Routes.focus,
+  Routes.calendar,
+  Routes.spaces,
+};
 
 /// Tab screens are switched to (go); others open on top (push).
 bool isTabRoute(String path) => _tabs.contains(path);

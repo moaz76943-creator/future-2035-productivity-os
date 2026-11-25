@@ -4867,4 +4867,19 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get focusCalmPacingHint => '只显示整分钟和圆环，不显示秒';
+
+  @override
+  String get focusFlipHint => '将手机屏幕朝下即可开始';
+
+  @override
+  String get focusImmersive => '沉浸模式';
+
+  @override
+  String get focusImmersiveBlack => '纯黑（省电）';
+
+  @override
+  String get focusFlipToFocus => '翻转开始专注';
+
+  @override
+  String get focusFlipToFocusHint => '沉浸模式下：屏幕朝下开始，拿起暂停';
 }

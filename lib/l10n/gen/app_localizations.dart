@@ -8663,6 +8663,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Whole minutes and the ring only, no ticking seconds'**
   String get focusCalmPacingHint;
+
+  /// Immersive focus: hint to put the phone face down to start
+  ///
+  /// In en, this message translates to:
+  /// **'Turn the phone face down to start'**
+  String get focusFlipHint;
+
+  /// Button/title: immersive full-screen focus mode
+  ///
+  /// In en, this message translates to:
+  /// **'Immersive mode'**
+  String get focusImmersive;
+
+  /// Switch: immersive mode on pure black (saves battery on AMOLED)
+  ///
+  /// In en, this message translates to:
+  /// **'Pure black (saves battery)'**
+  String get focusImmersiveBlack;
+
+  /// Switch: start by turning the phone face down
+  ///
+  /// In en, this message translates to:
+  /// **'Flip to focus'**
+  String get focusFlipToFocus;
+
+  /// Flip to focus explanation
+  ///
+  /// In en, this message translates to:
+  /// **'In immersive mode: face down starts, picking it up pauses'**
+  String get focusFlipToFocusHint;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

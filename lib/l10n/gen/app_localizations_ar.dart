@@ -5300,4 +5300,19 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get focusCalmPacingHint => 'دقائق كاملة والحلقة فقط، دون ثوانٍ متسارعة';
+
+  @override
+  String get focusFlipHint => 'اقلب الهاتف على وجهه لتبدأ';
+
+  @override
+  String get focusImmersive => 'الوضع الغامر';
+
+  @override
+  String get focusImmersiveBlack => 'أسود خالص (يوفّر البطارية)';
+
+  @override
+  String get focusFlipToFocus => 'اقلب الهاتف للبدء';
+
+  @override
+  String get focusFlipToFocusHint => 'في الوضع الغامر: وضعه على وجهه يبدأ، ورفعه يوقف مؤقتاً';
 }

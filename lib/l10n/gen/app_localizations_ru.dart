@@ -5252,4 +5252,19 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get focusCalmPacingHint => 'Только целые минуты и кольцо, без секунд';
+
+  @override
+  String get focusFlipHint => 'Положите телефон экраном вниз, чтобы начать';
+
+  @override
+  String get focusImmersive => 'Режим погружения';
+
+  @override
+  String get focusImmersiveBlack => 'Чисто чёрный (экономит батарею)';
+
+  @override
+  String get focusFlipToFocus => 'Перевернуть для фокуса';
+
+  @override
+  String get focusFlipToFocusHint => 'В режиме погружения: экраном вниз — старт, поднять — пауза';
 }

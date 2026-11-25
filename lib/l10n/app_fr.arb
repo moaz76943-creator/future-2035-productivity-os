@@ -1425,5 +1425,10 @@
   "focusFlowBreakStart": "Commencer la pause",
   "tasksFinishAt": "En commençant maintenant, vous finissez tout à {time}",
   "focusCalmPacing": "Rythme apaisé",
-  "focusCalmPacingHint": "Minutes entières et l'anneau, sans secondes qui défilent"
+  "focusCalmPacingHint": "Minutes entières et l'anneau, sans secondes qui défilent",
+  "focusFlipHint": "Retournez le téléphone pour commencer",
+  "focusImmersive": "Mode immersif",
+  "focusImmersiveBlack": "Noir pur (économise la batterie)",
+  "focusFlipToFocus": "Retourner pour se concentrer",
+  "focusFlipToFocusHint": "En mode immersif : face cachée démarre, le relever met en pause"
 }

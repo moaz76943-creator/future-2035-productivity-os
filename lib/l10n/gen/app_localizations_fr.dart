@@ -5147,4 +5147,20 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get focusCalmPacingHint => 'Minutes entières et l\'anneau, sans secondes qui défilent';
+
+  @override
+  String get focusFlipHint => 'Retournez le téléphone pour commencer';
+
+  @override
+  String get focusImmersive => 'Mode immersif';
+
+  @override
+  String get focusImmersiveBlack => 'Noir pur (économise la batterie)';
+
+  @override
+  String get focusFlipToFocus => 'Retourner pour se concentrer';
+
+  @override
+  String get focusFlipToFocusHint =>
+      'En mode immersif : face cachée démarre, le relever met en pause';
 }

@@ -1425,5 +1425,10 @@
   "focusFlowBreakStart": "ابدأ الاستراحة",
   "tasksFinishAt": "إن بدأت الآن تنهي كل مهامك الساعة {time}",
   "focusCalmPacing": "وتيرة هادئة",
-  "focusCalmPacingHint": "دقائق كاملة والحلقة فقط، دون ثوانٍ متسارعة"
+  "focusCalmPacingHint": "دقائق كاملة والحلقة فقط، دون ثوانٍ متسارعة",
+  "focusFlipHint": "اقلب الهاتف على وجهه لتبدأ",
+  "focusImmersive": "الوضع الغامر",
+  "focusImmersiveBlack": "أسود خالص (يوفّر البطارية)",
+  "focusFlipToFocus": "اقلب الهاتف للبدء",
+  "focusFlipToFocusHint": "في الوضع الغامر: وضعه على وجهه يبدأ، ورفعه يوقف مؤقتاً"
 }
