@@ -24,5 +24,10 @@
   {"code": "sv", "tag": "sv", "native": "Svenska", "english": "Swedish", "script": "Latn", "intl": "sv", "reviewed": false},
   {"code": "nb", "tag": "nb", "native": "Norsk bokmål", "english": "Norwegian Bokmål", "script": "Latn", "intl": "nb", "reviewed": false},
   {"code": "da", "tag": "da", "native": "Dansk", "english": "Danish", "script": "Latn", "intl": "da", "reviewed": false},
-  {"code": "fi", "tag": "fi", "native": "Suomi", "english": "Finnish", "script": "Latn", "intl": "fi", "reviewed": false}
+  {"code": "fi", "tag": "fi", "native": "Suomi", "english": "Finnish", "script": "Latn", "intl": "fi", "reviewed": false},
+  {"code": "cs", "tag": "cs", "native": "Čeština", "english": "Czech", "script": "Latn", "intl": "cs", "reviewed": false},
+  {"code": "sk", "tag": "sk", "native": "Slovenčina", "english": "Slovak", "script": "Latn", "intl": "sk", "reviewed": false},
+  {"code": "ro", "tag": "ro", "native": "Română", "english": "Romanian", "script": "Latn", "intl": "ro", "reviewed": false},
+  {"code": "hu", "tag": "hu", "native": "Magyar", "english": "Hungarian", "script": "Latn", "intl": "hu", "reviewed": false},
+  {"code": "hr", "tag": "hr", "native": "Hrvatski", "english": "Croatian", "script": "Latn", "intl": "hr", "reviewed": false}
 ]

@@ -7,6 +7,7 @@ import 'package:intl/intl.dart' as intl;
 
 import 'app_localizations_ar.dart';
 import 'app_localizations_bn.dart';
+import 'app_localizations_cs.dart';
 import 'app_localizations_da.dart';
 import 'app_localizations_de.dart';
 import 'app_localizations_en.dart';
@@ -15,6 +16,8 @@ import 'app_localizations_fa.dart';
 import 'app_localizations_fi.dart';
 import 'app_localizations_fr.dart';
 import 'app_localizations_hi.dart';
+import 'app_localizations_hr.dart';
+import 'app_localizations_hu.dart';
 import 'app_localizations_id.dart';
 import 'app_localizations_it.dart';
 import 'app_localizations_ja.dart';
@@ -23,7 +26,9 @@ import 'app_localizations_nb.dart';
 import 'app_localizations_nl.dart';
 import 'app_localizations_pl.dart';
 import 'app_localizations_pt.dart';
+import 'app_localizations_ro.dart';
 import 'app_localizations_ru.dart';
+import 'app_localizations_sk.dart';
 import 'app_localizations_sv.dart';
 import 'app_localizations_th.dart';
 import 'app_localizations_tr.dart';
@@ -117,6 +122,7 @@ abstract class AppLocalizations {
   static const List<Locale> supportedLocales = <Locale>[
     Locale('ar'),
     Locale('bn'),
+    Locale('cs'),
     Locale('da'),
     Locale('de'),
     Locale('en'),
@@ -126,6 +132,8 @@ abstract class AppLocalizations {
     Locale('fi'),
     Locale('fr'),
     Locale('hi'),
+    Locale('hr'),
+    Locale('hu'),
     Locale('id'),
     Locale('it'),
     Locale('ja'),
@@ -134,7 +142,9 @@ abstract class AppLocalizations {
     Locale('nl'),
     Locale('pl'),
     Locale('pt'),
+    Locale('ro'),
     Locale('ru'),
+    Locale('sk'),
     Locale('sv'),
     Locale('th'),
     Locale('tr'),
@@ -8820,6 +8830,7 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
   bool isSupported(Locale locale) => <String>[
     'ar',
     'bn',
+    'cs',
     'da',
     'de',
     'en',
@@ -8828,6 +8839,8 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
     'fi',
     'fr',
     'hi',
+    'hr',
+    'hu',
     'id',
     'it',
     'ja',
@@ -8836,7 +8849,9 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
     'nl',
     'pl',
     'pt',
+    'ro',
     'ru',
+    'sk',
     'sv',
     'th',
     'tr',
@@ -8868,6 +8883,8 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsAr();
     case 'bn':
       return AppLocalizationsBn();
+    case 'cs':
+      return AppLocalizationsCs();
     case 'da':
       return AppLocalizationsDa();
     case 'de':
@@ -8884,6 +8901,10 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsFr();
     case 'hi':
       return AppLocalizationsHi();
+    case 'hr':
+      return AppLocalizationsHr();
+    case 'hu':
+      return AppLocalizationsHu();
     case 'id':
       return AppLocalizationsId();
     case 'it':
@@ -8900,8 +8921,12 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsPl();
     case 'pt':
       return AppLocalizationsPt();
+    case 'ro':
+      return AppLocalizationsRo();
     case 'ru':
       return AppLocalizationsRu();
+    case 'sk':
+      return AppLocalizationsSk();
     case 'sv':
       return AppLocalizationsSv();
     case 'th':

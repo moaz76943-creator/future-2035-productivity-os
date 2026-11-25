@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Ochrana pred rozptýlením Deep Focus</string>
+    <string name="guard_service_summary">Pozastaví vybrané aplikácie, keď sa sústredíte</string>
+    <string name="guard_service_description">Deep Focus túto funkciu používa len na zistenie, ktorá aplikácia je otvorená, aby mohol počas sústredenia alebo podľa vášho plánu pozastaviť vybrané aplikácie a zatvárať Shorts a Reels, ak ste to zapli. Nečíta žiadny text, nič neukladá a nič nikam neodosiela. Kedykoľvek ju tu môžete vypnúť.</string>
+</resources>

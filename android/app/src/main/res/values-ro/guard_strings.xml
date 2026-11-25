@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Paznicul anti-distragere Deep Focus</string>
+    <string name="guard_service_summary">Pune pe pauză aplicațiile alese cât te concentrezi</string>
+    <string name="guard_service_description">Deep Focus folosește această funcție doar ca să vadă ce aplicație este deschisă, ca să poată pune pe pauză aplicațiile alese în timpul concentrării sau după programul tău și să închidă Shorts și Reels, dacă ai activat asta. Nu citește niciun text, nu stochează nimic și nu trimite nimic nicăieri. O poți opri de aici oricând.</string>
+</resources>

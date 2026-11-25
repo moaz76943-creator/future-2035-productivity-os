@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Sústredenie a kartičky</string>
+    <string name="home_widget_description">Zostávajúci čas sústredenia a kartičky na opakovanie</string>
+    <string name="quick_widget_label">Rýchle pridanie</string>
+    <string name="quick_widget_description">Pridajte úlohu alebo poznámku, alebo opakujte kartičky</string>
+</resources>

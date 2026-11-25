@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Soustředění a kartičky</string>
+    <string name="home_widget_description">Zbývající čas soustředění a kartičky k opakování</string>
+    <string name="quick_widget_label">Rychlé přidání</string>
+    <string name="quick_widget_description">Přidejte úkol nebo poznámku, nebo opakujte kartičky</string>
+</resources>

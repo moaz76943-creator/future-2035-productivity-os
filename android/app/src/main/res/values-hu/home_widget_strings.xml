@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Fókusz és kártyák</string>
+    <string name="home_widget_description">Hátralévő fókuszidő és esedékes kártyák</string>
+    <string name="quick_widget_label">Gyors hozzáadás</string>
+    <string name="quick_widget_description">Feladat vagy jegyzet hozzáadása, illetve kártyák ismétlése</string>
+</resources>

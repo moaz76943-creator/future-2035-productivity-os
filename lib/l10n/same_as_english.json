@@ -1,4 +1,12 @@
 {
+  "cs": [
+    "assistantModel",
+    "focusMinutesShort",
+    "prayerMaghrib",
+    "prayerMethodIsna",
+    "transferColBody",
+    "transferFormatText"
+  ],
   "da": [
     "accentViolet",
     "actionPause",
@@ -49,6 +57,14 @@
     "prayerFajr",
     "prayerIsha",
     "prayerMaghrib",
+    "prayerMethodIsna"
+  ],
+  "hr": [
+    "assistantModel",
+    "focusMinutesShort",
+    "prayerMethodIsna"
+  ],
+  "hu": [
     "prayerMethodIsna"
   ],
   "id": [
@@ -146,6 +162,32 @@
     "noteFormatLink",
     "prayerMaghrib",
     "prayerMethodIsna"
+  ],
+  "ro": [
+    "accentViolet",
+    "assistantModel",
+    "calendarTitle",
+    "focusMinutesShort",
+    "guardModeStrict",
+    "navCalendar",
+    "noteFormatLink",
+    "prayerDhuhr",
+    "prayerFajr",
+    "prayerIsha",
+    "prayerMaghrib",
+    "prayerMethodIsna",
+    "projectsActive",
+    "tasksViewInbox",
+    "transferColBody",
+    "transferFormatText"
+  ],
+  "sk": [
+    "assistantModel",
+    "focusMinutesShort",
+    "prayerMaghrib",
+    "prayerMethodIsna",
+    "transferColBody",
+    "transferFormatText"
   ],
   "sv": [
     "dashAgenda",

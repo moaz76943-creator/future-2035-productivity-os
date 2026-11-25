@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focus figyelemelterelés-védő</string>
+    <string name="guard_service_summary">Szünetelteti a kiválasztott alkalmazásokat, amíg fókuszálsz</string>
+    <string name="guard_service_description">A Deep Focus ezt csak arra használja, hogy lássa, melyik alkalmazás van megnyitva, így fókuszidőben vagy az ütemezésed szerint szüneteltetheti a kiválasztott alkalmazásokat, és bezárhatja a Shorts és Reels videókat, ha ezt bekapcsoltad. Nem olvas szöveget, nem tárol semmit, és semmit sem küld sehová. Itt bármikor kikapcsolhatod.</string>
+</resources>

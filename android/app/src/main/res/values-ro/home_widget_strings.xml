@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Concentrare și cartonașe</string>
+    <string name="home_widget_description">Timpul de concentrare rămas și cartonașele de recapitulat</string>
+    <string name="quick_widget_label">Adăugare rapidă</string>
+    <string name="quick_widget_description">Adaugă o sarcină sau o notiță ori recapitulează cartonașe</string>
+</resources>
