@@ -21,6 +21,7 @@ import 'widgets/language_picker.dart';
 Future<void> showDeckActions(BuildContext context, WidgetRef ref, DeckRow deck) async {
   final l10n = context.l10n;
   final choice = await showModalBottomSheet<String>(
+    useRootNavigator: true,
     context: context,
     showDragHandle: true,
     useSafeArea: true,
@@ -119,6 +120,7 @@ Future<void> showArrangeDecks(BuildContext context, WidgetRef ref, List<DeckRow>
   final order = ref.read(deckOrderProvider).value ?? const <String>[];
   final list = orderDecks(decks, order);
   return showModalBottomSheet<void>(
+    useRootNavigator: true,
     context: context,
     showDragHandle: true,
     useSafeArea: true,

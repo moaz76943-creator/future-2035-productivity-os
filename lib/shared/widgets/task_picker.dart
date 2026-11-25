@@ -13,6 +13,7 @@ import 'async_value_view.dart';
 /// task or null. [exclude] hides tasks by id (e.g. the task itself).
 Future<TaskRow?> pickTask(BuildContext context, {Set<String> exclude = const {}}) {
   return showModalBottomSheet<TaskRow>(
+    useRootNavigator: true,
     context: context,
     isScrollControlled: true,
     showDragHandle: true,

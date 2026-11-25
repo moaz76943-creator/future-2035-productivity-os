@@ -209,6 +209,7 @@ class _Section extends StatelessWidget {
       // Long-press a section title to rearrange the home page by dragging.
       GestureDetector(
         onLongPress: () => showModalBottomSheet<void>(
+          useRootNavigator: true,
           context: context,
           showDragHandle: true,
           isScrollControlled: true,

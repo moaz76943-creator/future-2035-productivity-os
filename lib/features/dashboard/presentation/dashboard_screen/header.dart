@@ -69,6 +69,7 @@ class _Header extends ConsumerWidget {
             tooltip: l10n.actionCustomize,
             icon: const Icon(Icons.tune_rounded),
             onPressed: () => showModalBottomSheet<void>(
+              useRootNavigator: true,
               context: context,
               showDragHandle: true,
               isScrollControlled: true,

@@ -16,6 +16,7 @@ import 'goal_visuals.dart';
 /// edits it. Returns the goal id on save.
 Future<String?> showGoalEditor(BuildContext context, {GoalRow? goal}) =>
     showModalBottomSheet<String>(
+      useRootNavigator: true,
       context: context,
       isScrollControlled: true,
       showDragHandle: true,
@@ -243,6 +244,7 @@ class _GoalEditorSheetState extends ConsumerState<GoalEditorSheet> {
 /// Log-progress sheet: amount and optional note. Returns true when saved.
 Future<bool> showLogProgressSheet(BuildContext context, GoalRow goal) async {
   final r = await showModalBottomSheet<bool>(
+    useRootNavigator: true,
     context: context,
     isScrollControlled: true,
     showDragHandle: true,

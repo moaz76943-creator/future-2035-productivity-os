@@ -14,6 +14,7 @@ final installedAppsProvider = FutureProvider.autoDispose<List<InstalledApp>>(
 
 /// The phone's apps with a check each: paused apps, or allowed ones in allowlist mode.
 Future<void> showGuardApps(BuildContext context) => showModalBottomSheet<void>(
+  useRootNavigator: true,
   context: context,
   isScrollControlled: true,
   showDragHandle: true,

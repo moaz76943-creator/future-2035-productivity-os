@@ -13,6 +13,7 @@ import '../../../../core/speech/audio_recorder.dart';
 /// Stops by itself at [maxDuration], as the native recorder does.
 Future<Uint8List?> showRecordSheet(BuildContext context, AudioRecorder recorder) =>
     showModalBottomSheet<Uint8List>(
+      useRootNavigator: true,
       context: context,
       isDismissible: false,
       enableDrag: false,

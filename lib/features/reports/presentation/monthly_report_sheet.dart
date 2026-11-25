@@ -54,6 +54,7 @@ TransferDoc reportDocument(
 
 /// One month at a glance with month arrows and a button to save it as a file.
 Future<void> showMonthlyReport(BuildContext context) => showModalBottomSheet<void>(
+  useRootNavigator: true,
   context: context,
   showDragHandle: true,
   useSafeArea: true,

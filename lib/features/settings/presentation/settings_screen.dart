@@ -46,6 +46,7 @@ String dashboardSectionLabel(AppLocalizations l10n, String id) => switch (id) {
 
 /// Shows the language sheet. Returns after the selection was applied.
 Future<void> showLanguagePicker(BuildContext context) => showModalBottomSheet<void>(
+  useRootNavigator: true,
   context: context,
   isScrollControlled: true,
   showDragHandle: true,

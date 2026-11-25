@@ -13,6 +13,7 @@ import '../domain/prayer_cities.dart';
 import 'prayer_labels.dart';
 
 Future<void> showPrayerSheet(BuildContext context) => showModalBottomSheet<void>(
+  useRootNavigator: true,
   context: context,
   showDragHandle: true,
   isScrollControlled: true,
@@ -156,6 +157,7 @@ class _PrayerSheet extends ConsumerWidget {
 
 Future<PrayerCity?> _pickCity(BuildContext context, String lang) =>
     showModalBottomSheet<PrayerCity>(
+      useRootNavigator: true,
       context: context,
       showDragHandle: true,
       isScrollControlled: true,

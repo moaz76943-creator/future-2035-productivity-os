@@ -13,6 +13,9 @@ accessibility and the design language stay consistent.
   `AsyncValueView` (`lib/shared/widgets/async_value_view.dart`).
 - Navigation: `go_router`, paths only via `Routes` (`lib/app/routing/routes.dart`):
   `context.push(Routes.note(id))`.
+- Bottom sheets: always `useRootNavigator: true`. Tab pages run under the floating
+  navigation bar, which would otherwise hide the sheet's bottom buttons
+  (enforced by `test/unit/app/sheets_above_nav_bar_test.dart`).
 
 ## Text
 - No user-visible string literals. Use `context.l10n.<key>`.

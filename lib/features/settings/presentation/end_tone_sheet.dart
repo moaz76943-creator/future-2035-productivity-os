@@ -26,6 +26,7 @@ class EndToneTile extends ConsumerWidget {
       subtitle: Text(endToneName(l10n, tone)),
       trailing: const Icon(Icons.chevron_right_rounded),
       onTap: () => showModalBottomSheet<void>(
+        useRootNavigator: true,
         context: context,
         useSafeArea: true,
         isScrollControlled: true,

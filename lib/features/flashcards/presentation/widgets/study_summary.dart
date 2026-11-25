@@ -103,6 +103,7 @@ class TodayStudyCard extends ConsumerWidget {
 }
 
 Future<void> showStudyWeek(BuildContext context) => showModalBottomSheet<void>(
+  useRootNavigator: true,
   context: context,
   showDragHandle: true,
   useSafeArea: true,

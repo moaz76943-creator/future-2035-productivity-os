@@ -16,6 +16,7 @@ final storageServiceProvider = Provider<StorageService>(
 const lowFreeBytes = 300 * 1024 * 1024;
 
 Future<void> showStorageSheet(BuildContext context) => showModalBottomSheet<void>(
+  useRootNavigator: true,
   context: context,
   showDragHandle: true,
   useSafeArea: true,

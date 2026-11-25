@@ -33,6 +33,7 @@ part 'assistant_tools/summarize_sheet_state.dart';
 
 /// Opens a tool in a tall bottom sheet.
 Future<void> showToolSheet(BuildContext context, Widget child) => showModalBottomSheet<void>(
+  useRootNavigator: true,
   context: context,
   isScrollControlled: true,
   showDragHandle: true,

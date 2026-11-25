@@ -9,6 +9,7 @@ import '../../../core/diagnostics/error_log.dart';
 
 /// Shows the local error log; the user decides whether to share it.
 Future<void> showErrorLog(BuildContext context) => showModalBottomSheet<void>(
+  useRootNavigator: true,
   context: context,
   useSafeArea: true,
   isScrollControlled: true,

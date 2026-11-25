@@ -18,6 +18,7 @@ String batteryTip(AppLocalizations l10n, BatteryBrand b) => switch (b) {
 };
 
 Future<void> showBatteryGuide(BuildContext context) => showModalBottomSheet<void>(
+  useRootNavigator: true,
   context: context,
   showDragHandle: true,
   useSafeArea: true,

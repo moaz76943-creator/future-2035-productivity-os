@@ -12,6 +12,7 @@ import 'project_visuals.dart';
 /// Create (existing == null) or edit a project. Returns the project id.
 Future<String?> showProjectEditor(BuildContext context, {ProjectRow? existing}) =>
     showModalBottomSheet<String>(
+      useRootNavigator: true,
       context: context,
       isScrollControlled: true,
       showDragHandle: true,

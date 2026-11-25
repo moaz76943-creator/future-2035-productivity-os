@@ -39,6 +39,7 @@ IconData studyModeIcon(StudyMode m) => switch (m) {
 
 /// Choose how to study a deck: mode, then due review or a practice round.
 Future<void> showStudySheet(BuildContext context, DeckRow deck) => showModalBottomSheet<void>(
+  useRootNavigator: true,
   context: context,
   isScrollControlled: true,
   useSafeArea: true,
@@ -48,6 +49,7 @@ Future<void> showStudySheet(BuildContext context, DeckRow deck) => showModalBott
 
 /// Speech languages of a deck plus shared speech preferences.
 Future<void> showSpeechSheet(BuildContext context, DeckRow deck) => showModalBottomSheet<void>(
+  useRootNavigator: true,
   context: context,
   isScrollControlled: true,
   useSafeArea: true,
@@ -58,6 +60,7 @@ Future<void> showSpeechSheet(BuildContext context, DeckRow deck) => showModalBot
 /// Card layout for one deck: rename, hide and reorder the optional fields,
 /// and reveal them one at a time on the answer side. Content is never changed.
 Future<void> showLayoutSheet(BuildContext context, DeckRow deck) => showModalBottomSheet<void>(
+  useRootNavigator: true,
   context: context,
   isScrollControlled: true,
   useSafeArea: true,

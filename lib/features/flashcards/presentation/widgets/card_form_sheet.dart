@@ -27,6 +27,7 @@ part 'card_form_sheet/media.dart';
 /// directly through the repository.
 Future<void> showCardForm(BuildContext context, {required String deckId, CardRow? initial}) {
   return showModalBottomSheet<void>(
+    useRootNavigator: true,
     context: context,
     isScrollControlled: true,
     useSafeArea: true,

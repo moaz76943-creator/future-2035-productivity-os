@@ -45,6 +45,7 @@ Future<void> showFocusTimeSheet(
   required ValueChanged<FocusMode> onMode,
   required ValueChanged<int> onCountdown,
 }) => showModalBottomSheet<void>(
+  useRootNavigator: true,
   context: context,
   showDragHandle: true,
   useSafeArea: true,

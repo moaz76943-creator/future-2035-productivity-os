@@ -47,6 +47,7 @@ List<(String, RecurrenceRule)> _presets(AppLocalizations l10n) => [
 /// - an RRULE string otherwise.
 Future<String?> pickRecurrence(BuildContext context, {String? current}) {
   return showModalBottomSheet<String>(
+    useRootNavigator: true,
     context: context,
     isScrollControlled: true,
     showDragHandle: true,

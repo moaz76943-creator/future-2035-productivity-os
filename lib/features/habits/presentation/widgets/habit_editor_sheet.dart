@@ -14,6 +14,7 @@ import 'habit_visuals.dart';
 /// Opens the habit editor; creates when [habit] is null. Returns the id.
 Future<String?> showHabitEditor(BuildContext context, {HabitRow? habit}) =>
     showModalBottomSheet<String>(
+      useRootNavigator: true,
       context: context,
       isScrollControlled: true,
       showDragHandle: true,

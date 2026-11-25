@@ -56,6 +56,7 @@ class _WhatsNewLauncherState extends ConsumerState<WhatsNewLauncher> {
 }
 
 Future<void> showWhatsNew(BuildContext context) => showModalBottomSheet<void>(
+  useRootNavigator: true,
   context: context,
   showDragHandle: true,
   useSafeArea: true,

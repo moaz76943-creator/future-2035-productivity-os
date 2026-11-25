@@ -156,6 +156,7 @@ extension _TaskEditorActions on _TaskEditorScreenState {
     final l10n = context.l10n;
     final due = _due;
     final choice = await showModalBottomSheet<Object>(
+      useRootNavigator: true,
       context: context,
       showDragHandle: true,
       builder: (ctx) => SafeArea(

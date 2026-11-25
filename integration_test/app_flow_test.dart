@@ -41,6 +41,8 @@ Future<void> tapTab(WidgetTester tester, int index) async {
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+  // A tap on a hidden control is a real bug (it happened with the nav bar).
+  WidgetController.hitTestWarningShouldBeFatal = true;
 
   testWidgets('first run, focus, starter deck review, help', (tester) async {
     await bootstrap();

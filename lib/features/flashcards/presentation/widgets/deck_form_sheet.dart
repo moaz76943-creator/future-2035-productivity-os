@@ -30,6 +30,7 @@ class DeckFormResult {
 /// Bottom sheet to create or edit a deck. Returns null when cancelled.
 Future<DeckFormResult?> showDeckForm(BuildContext context, {DeckRow? initial}) {
   return showModalBottomSheet<DeckFormResult>(
+    useRootNavigator: true,
     context: context,
     isScrollControlled: true,
     useSafeArea: true,

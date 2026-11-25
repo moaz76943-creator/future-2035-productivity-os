@@ -90,6 +90,7 @@ class _NewNotebookDialogState extends State<_NewNotebookDialog> {
 /// Lets the user choose a notebook (or none). Offers creating a new one.
 Future<Picked<String>?> pickNotebook(BuildContext context, WidgetRef ref, {String? current}) {
   return showModalBottomSheet<Picked<String>>(
+    useRootNavigator: true,
     context: context,
     showDragHandle: true,
     isScrollControlled: true,
@@ -147,6 +148,7 @@ Future<Picked<String>?> pickNotebook(BuildContext context, WidgetRef ref, {Strin
 /// Lets the user choose a project (or none).
 Future<Picked<String>?> pickProject(BuildContext context, {String? current}) {
   return showModalBottomSheet<Picked<String>>(
+    useRootNavigator: true,
     context: context,
     showDragHandle: true,
     isScrollControlled: true,
@@ -215,6 +217,7 @@ Future<void> showNoteActions(BuildContext context, WidgetRef ref, NoteRow note) 
   final l10n = context.l10n;
   final repo = ref.read(notesRepositoryProvider);
   final action = await showModalBottomSheet<_NoteAction>(
+    useRootNavigator: true,
     context: context,
     showDragHandle: true,
     builder: (ctx) => SafeArea(

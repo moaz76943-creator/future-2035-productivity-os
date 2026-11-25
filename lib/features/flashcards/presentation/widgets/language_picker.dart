@@ -60,6 +60,7 @@ Future<String?> pickLanguage(
   required String current,
   required String appLanguage,
 }) => showModalBottomSheet<String>(
+  useRootNavigator: true,
   context: context,
   isScrollControlled: true,
   useSafeArea: true,

@@ -13,6 +13,7 @@ import '../../domain/starter_decks.dart';
 
 /// Ready-made decks to try the app with, written for it (free to use).
 Future<void> showStarterDecks(BuildContext context) => showModalBottomSheet<void>(
+  useRootNavigator: true,
   context: context,
   showDragHandle: true,
   useSafeArea: true,

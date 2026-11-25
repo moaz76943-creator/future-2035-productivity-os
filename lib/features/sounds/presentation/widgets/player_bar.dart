@@ -99,6 +99,7 @@ class SoundPlayerBar extends ConsumerWidget {
 
 /// Volume of every sound in the mix, with a remove button for each.
 Future<void> showSoundMixer(BuildContext context) => showModalBottomSheet<void>(
+  useRootNavigator: true,
   context: context,
   useSafeArea: true,
   isScrollControlled: true,

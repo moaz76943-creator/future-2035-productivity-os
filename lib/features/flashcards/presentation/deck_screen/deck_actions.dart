@@ -99,6 +99,7 @@ extension _DeckActions on _DeckScreenState {
     }
     if (!mounted) return;
     final action = await showModalBottomSheet<String>(
+      useRootNavigator: true,
       context: context,
       showDragHandle: true,
       useSafeArea: true,
@@ -194,6 +195,7 @@ extension _DeckActions on _DeckScreenState {
       return null;
     }
     return showModalBottomSheet<String>(
+      useRootNavigator: true,
       context: context,
       showDragHandle: true,
       useSafeArea: true,

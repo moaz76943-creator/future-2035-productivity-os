@@ -43,6 +43,7 @@ class _TourLauncherState extends ConsumerState<TourLauncher> {
 }
 
 Future<void> showTour(BuildContext context) => showModalBottomSheet<void>(
+  useRootNavigator: true,
   context: context,
   isScrollControlled: true,
   useSafeArea: true,

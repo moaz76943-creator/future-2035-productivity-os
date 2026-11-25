@@ -9,6 +9,7 @@ import '../data/auto_backup.dart';
 
 /// The automatic backups on this phone, newest first, each restorable.
 Future<void> showAutoBackups(BuildContext context) => showModalBottomSheet<void>(
+  useRootNavigator: true,
   context: context,
   useSafeArea: true,
   isScrollControlled: true,

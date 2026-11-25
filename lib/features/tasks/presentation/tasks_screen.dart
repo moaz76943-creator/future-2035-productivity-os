@@ -88,6 +88,7 @@ class TasksScreen extends ConsumerWidget {
           icon: const Icon(Icons.tune_rounded),
           selectedIcon: const Icon(Icons.tune_rounded),
           onPressed: () => showModalBottomSheet<void>(
+            useRootNavigator: true,
             context: context,
             isScrollControlled: true,
             showDragHandle: true,

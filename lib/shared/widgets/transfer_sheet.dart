@@ -46,6 +46,7 @@ Future<void> showTransferSheet(
 }) {
   final messenger = ScaffoldMessenger.maybeOf(context);
   return showModalBottomSheet<void>(
+    useRootNavigator: true,
     context: context,
     showDragHandle: true,
     useSafeArea: true,

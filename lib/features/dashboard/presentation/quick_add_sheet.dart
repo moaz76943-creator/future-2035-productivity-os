@@ -21,6 +21,7 @@ class QuickAddButton extends StatelessWidget {
 }
 
 Future<void> showQuickAdd(BuildContext context) => showModalBottomSheet<void>(
+  useRootNavigator: true,
   context: context,
   showDragHandle: true,
   useSafeArea: true,

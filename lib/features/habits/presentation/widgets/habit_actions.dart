@@ -31,6 +31,7 @@ Future<void> showCheckInAdjustSheet(
   final repo = ref.read(habitsRepositoryProvider);
   final l10n = context.l10n;
   await showModalBottomSheet<void>(
+    useRootNavigator: true,
     context: context,
     showDragHandle: true,
     builder: (ctx) => SafeArea(
