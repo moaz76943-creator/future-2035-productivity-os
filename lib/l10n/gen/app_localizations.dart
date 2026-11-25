@@ -8,12 +8,14 @@ import 'package:intl/intl.dart' as intl;
 import 'app_localizations_ar.dart';
 import 'app_localizations_bg.dart';
 import 'app_localizations_bn.dart';
+import 'app_localizations_ca.dart';
 import 'app_localizations_cs.dart';
 import 'app_localizations_da.dart';
 import 'app_localizations_de.dart';
 import 'app_localizations_el.dart';
 import 'app_localizations_en.dart';
 import 'app_localizations_es.dart';
+import 'app_localizations_et.dart';
 import 'app_localizations_fa.dart';
 import 'app_localizations_fi.dart';
 import 'app_localizations_fr.dart';
@@ -24,6 +26,9 @@ import 'app_localizations_id.dart';
 import 'app_localizations_it.dart';
 import 'app_localizations_ja.dart';
 import 'app_localizations_ko.dart';
+import 'app_localizations_lt.dart';
+import 'app_localizations_lv.dart';
+import 'app_localizations_ms.dart';
 import 'app_localizations_nb.dart';
 import 'app_localizations_nl.dart';
 import 'app_localizations_pl.dart';
@@ -128,6 +133,7 @@ abstract class AppLocalizations {
     Locale('ar'),
     Locale('bg'),
     Locale('bn'),
+    Locale('ca'),
     Locale('cs'),
     Locale('da'),
     Locale('de'),
@@ -135,6 +141,7 @@ abstract class AppLocalizations {
     Locale('en'),
     Locale('en', 'GB'),
     Locale('es'),
+    Locale('et'),
     Locale('fa'),
     Locale('fi'),
     Locale('fr'),
@@ -145,6 +152,9 @@ abstract class AppLocalizations {
     Locale('it'),
     Locale('ja'),
     Locale('ko'),
+    Locale('lt'),
+    Locale('lv'),
+    Locale('ms'),
     Locale('nb'),
     Locale('nl'),
     Locale('pl'),
@@ -8841,12 +8851,14 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
     'ar',
     'bg',
     'bn',
+    'ca',
     'cs',
     'da',
     'de',
     'el',
     'en',
     'es',
+    'et',
     'fa',
     'fi',
     'fr',
@@ -8857,6 +8869,9 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
     'it',
     'ja',
     'ko',
+    'lt',
+    'lv',
+    'ms',
     'nb',
     'nl',
     'pl',
@@ -8900,6 +8915,8 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsBg();
     case 'bn':
       return AppLocalizationsBn();
+    case 'ca':
+      return AppLocalizationsCa();
     case 'cs':
       return AppLocalizationsCs();
     case 'da':
@@ -8912,6 +8929,8 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsEn();
     case 'es':
       return AppLocalizationsEs();
+    case 'et':
+      return AppLocalizationsEt();
     case 'fa':
       return AppLocalizationsFa();
     case 'fi':
@@ -8932,6 +8951,12 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsJa();
     case 'ko':
       return AppLocalizationsKo();
+    case 'lt':
+      return AppLocalizationsLt();
+    case 'lv':
+      return AppLocalizationsLv();
+    case 'ms':
+      return AppLocalizationsMs();
     case 'nb':
       return AppLocalizationsNb();
     case 'nl':

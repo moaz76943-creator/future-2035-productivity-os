@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Fookus ja kaardid</string>
+    <string name="home_widget_description">Fookuse järelejäänud aeg ja korratavad kaardid</string>
+    <string name="quick_widget_label">Kiirlisamine</string>
+    <string name="quick_widget_description">Lisage ülesanne või märge või korrake kaarte</string>
+</resources>

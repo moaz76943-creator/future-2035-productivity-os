@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Fokusas ir kortelės</string>
+    <string name="home_widget_description">Likęs fokuso laikas ir kortelės kartoti</string>
+    <string name="quick_widget_label">Greitas pridėjimas</string>
+    <string name="quick_widget_description">Pridėkite užduotį ar užrašą arba pakartokite korteles</string>
+</resources>

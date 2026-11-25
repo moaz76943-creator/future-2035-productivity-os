@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Fokus dan kad</string>
+    <string name="home_widget_description">Baki masa fokus dan kad untuk diulang kaji</string>
+    <string name="quick_widget_label">Tambah pantas</string>
+    <string name="quick_widget_description">Tambah tugasan atau nota, atau ulang kaji kad</string>
+</resources>

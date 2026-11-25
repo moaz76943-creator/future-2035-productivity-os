@@ -2,6 +2,32 @@
   "bg": [
     "prayerMethodIsna"
   ],
+  "ca": [
+    "a11yColor",
+    "assistantModel",
+    "dashAgenda",
+    "dashSectionAgenda",
+    "focusMinutesShort",
+    "hijriDate",
+    "moduleNotes",
+    "notesTitle",
+    "prayerDhuhr",
+    "prayerFajr",
+    "prayerIsha",
+    "prayerMethodIsna",
+    "priorityUrgent",
+    "projectColor",
+    "reportSessions",
+    "searchCatNote",
+    "searchCatSession",
+    "settingsGeneral",
+    "statSessions",
+    "taskNotesLabel",
+    "transferColBody",
+    "transferColNotes",
+    "transferFormatText",
+    "trashNotes"
+  ],
   "cs": [
     "assistantModel",
     "focusMinutesShort",
@@ -56,6 +82,11 @@
   "el": [
     "prayerMethodIsna"
   ],
+  "et": [
+    "focusMinutesShort",
+    "noteFormatLink",
+    "prayerMethodIsna"
+  ],
   "fi": [
     "focusMinutesShort",
     "hijriDate",
@@ -102,6 +133,28 @@
     "quickStartFocus",
     "shortcutFocus",
     "taskChecklist"
+  ],
+  "lt": [
+    "prayerMethodIsna"
+  ],
+  "lv": [
+    "focusMinutesShort",
+    "prayerMethodIsna",
+    "projectProgress"
+  ],
+  "ms": [
+    "actionEdit",
+    "actionImport",
+    "assistantModel",
+    "dashAgenda",
+    "dashSectionAgenda",
+    "focusMinutesShort",
+    "goalUnit",
+    "prayerMaghrib",
+    "prayerMethodIsna",
+    "prayerMethodTurkey",
+    "prayerMethodUmmAlQura",
+    "tasksFilterLabel"
   ],
   "nb": [
     "actionPause",

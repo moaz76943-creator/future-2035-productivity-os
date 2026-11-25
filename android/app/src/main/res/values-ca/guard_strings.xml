@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Protecció contra distraccions de Deep Focus</string>
+    <string name="guard_service_summary">Posa en pausa les aplicacions triades mentre et concentres</string>
+    <string name="guard_service_description">Deep Focus fa servir aquesta funció només per veure quina aplicació està oberta, per poder posar en pausa les aplicacions triades durant la concentració o segons la teva programació, i tancar Shorts i Reels si ho has activat. No llegeix cap text, no desa res i no envia res enlloc. La pots desactivar aquí quan vulguis.</string>
+</resources>

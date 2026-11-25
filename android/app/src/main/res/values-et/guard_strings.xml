@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focuse segajate kaitse</string>
+    <string name="guard_service_summary">Peatab valitud rakendused, kui keskendute</string>
+    <string name="guard_service_description">Deep Focus kasutab seda funktsiooni ainult selleks, et näha, milline rakendus on avatud, et peatada valitud rakendused fookuse ajal või teie ajakava järgi ja sulgeda Shorts ja Reels, kui olete selle sisse lülitanud. See ei loe teksti, ei salvesta midagi ega saada midagi kuhugi. Saate selle siin igal ajal välja lülitada.</string>
+</resources>

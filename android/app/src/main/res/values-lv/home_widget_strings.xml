@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Fokuss un kartītes</string>
+    <string name="home_widget_description">Atlikušais fokusa laiks un jāatkārtojamās kartītes</string>
+    <string name="quick_widget_label">Ātra pievienošana</string>
+    <string name="quick_widget_description">Pievienojiet uzdevumu vai piezīmi vai atkārtojiet kartītes</string>
+</resources>

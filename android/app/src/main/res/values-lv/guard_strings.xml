@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focus aizsardzība pret traucēkļiem</string>
+    <string name="guard_service_summary">Pauzē izvēlētās lietotnes, kamēr fokusējaties</string>
+    <string name="guard_service_description">Deep Focus izmanto šo funkciju tikai, lai redzētu, kura lietotne ir atvērta, un varētu fokusa laikā vai pēc jūsu grafika pauzēt izvēlētās lietotnes un aizvērt Shorts un Reels, ja to ieslēdzāt. Tā nelasa tekstu, neko nesaglabā un neko nekur nesūta. Jebkurā laikā varat to šeit izslēgt.</string>
+</resources>

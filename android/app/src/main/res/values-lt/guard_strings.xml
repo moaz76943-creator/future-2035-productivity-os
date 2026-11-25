@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focus apsauga nuo blaškymosi</string>
+    <string name="guard_service_summary">Pristabdo pasirinktas programas, kol fokusuojatės</string>
+    <string name="guard_service_description">Deep Focus šią funkciją naudoja tik tam, kad matytų, kuri programa atidaryta, ir galėtų fokuso metu arba pagal jūsų tvarkaraštį pristabdyti pasirinktas programas bei uždaryti Shorts ir Reels, jei tai įjungėte. Ji neskaito teksto, nieko neišsaugo ir niekur nieko nesiunčia. Ją čia galite bet kada išjungti.</string>
+</resources>

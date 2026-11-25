@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Concentració i targetes</string>
+    <string name="home_widget_description">Temps de concentració restant i targetes per repassar</string>
+    <string name="quick_widget_label">Afegiment ràpid</string>
+    <string name="quick_widget_description">Afegeix una tasca o una nota, o repassa targetes</string>
+</resources>

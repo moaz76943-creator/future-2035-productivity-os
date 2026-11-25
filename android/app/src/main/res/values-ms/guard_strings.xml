@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Pengawal gangguan Deep Focus</string>
+    <string name="guard_service_summary">Menjeda apl yang dipilih semasa anda fokus</string>
+    <string name="guard_service_description">Deep Focus menggunakan ciri ini hanya untuk melihat apl mana yang dibuka, supaya ia boleh menjeda apl yang dipilih semasa fokus atau mengikut jadual anda dan menutup Shorts dan Reels jika anda menghidupkannya. Ia tidak membaca teks, tidak menyimpan apa-apa dan tidak menghantar apa-apa ke mana-mana. Anda boleh mematikannya di sini bila-bila masa.</string>
+</resources>
