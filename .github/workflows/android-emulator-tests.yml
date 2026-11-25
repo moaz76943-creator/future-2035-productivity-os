@@ -65,4 +65,7 @@ jobs:
           profile: pixel_6
           disable-animations: true
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
-          script: flutter test integration_test --timeout 20m -d emulator-5554
+          # A hard 25-minute limit, and on failure the device log (crash or hang
+          # reason) instead of a silent 60-minute cancel. One line: the runner
+          # executes each script line on its own.
+          script: timeout 1500 flutter test integration_test --timeout 20m -d emulator-5554 || (adb logcat -d -t 2000 | grep -iE "flutter|AndroidRuntime|FATAL|future_os|deepfocus|ANR" | tail -300; exit 1)
