@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="home_widget_label">Focus and cards</string>
-    <string name="home_widget_description">Focus time left and flashcards due</string>
-    <string name="quick_widget_label">Quick add</string>
-    <string name="quick_widget_description">Add a task, a note or review cards</string>
+    <string name="home_widget_label">Skupienie i fiszki</string>
+    <string name="home_widget_description">Pozostały czas skupienia i fiszki do powtórki</string>
+    <string name="quick_widget_label">Szybkie dodawanie</string>
+    <string name="quick_widget_description">Dodaj zadanie lub notatkę albo powtórz fiszki</string>
 </resources>

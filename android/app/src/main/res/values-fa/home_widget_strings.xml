@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="home_widget_label">Focus and cards</string>
-    <string name="home_widget_description">Focus time left and flashcards due</string>
-    <string name="quick_widget_label">Quick add</string>
-    <string name="quick_widget_description">Add a task, a note or review cards</string>
+    <string name="home_widget_label">تمرکز و کارت‌ها</string>
+    <string name="home_widget_description">زمان باقی‌ماندهٔ تمرکز و کارت‌های آمادهٔ مرور</string>
+    <string name="quick_widget_label">افزودن سریع</string>
+    <string name="quick_widget_description">افزودن کار یا یادداشت، یا مرور کارت‌ها</string>
 </resources>

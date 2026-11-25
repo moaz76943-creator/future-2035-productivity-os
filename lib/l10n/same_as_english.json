@@ -1,0 +1,69 @@
+{
+  "de": [
+    "cardTags",
+    "eventDescription",
+    "focusModeCountdown",
+    "habitsName",
+    "noteFormatLink",
+    "notesTags",
+    "prayerDhuhr",
+    "prayerMaghrib",
+    "prayerMethodIsna",
+    "projectName",
+    "settingsVersion",
+    "taskLabels",
+    "taskMoreDetails",
+    "tasksFilterLabel",
+    "themeSystem",
+    "transferColBody",
+    "transferFormatText"
+  ],
+  "id": [
+    "assistantModel",
+    "dashAgenda",
+    "dashSectionAgenda",
+    "focusModeCountUp",
+    "focusModeCountdown",
+    "prayerMethodIsna",
+    "tasksFilterLabel"
+  ],
+  "it": [
+    "dashAgenda",
+    "dashSectionAgenda",
+    "dashSectionFocus",
+    "focusMinutesShort",
+    "focusModeCountdown",
+    "focusPhaseWork",
+    "focusTitle",
+    "navFocus",
+    "navHome",
+    "noteFormatChecklist",
+    "noteFormatLink",
+    "prayerDhuhr",
+    "prayerFajr",
+    "prayerIsha",
+    "prayerMaghrib",
+    "prayerMethodIsna",
+    "quickStartFocus",
+    "shortcutFocus",
+    "taskChecklist"
+  ],
+  "pl": [
+    "assistantModel",
+    "focusMinutesShort",
+    "noteFormatLink",
+    "prayerMaghrib",
+    "prayerMethodIsna"
+  ],
+  "tr": [
+    "assistantModel",
+    "prayerMethodTurkey"
+  ],
+  "vi": [
+    "prayerDhuhr",
+    "prayerFajr",
+    "prayerIsha",
+    "prayerMaghrib",
+    "prayerMethodSingapore"
+  ]
+}

@@ -49,7 +49,8 @@ Backups are one file encrypted with a password-derived key; Argon2id runs in `Is
 UI does not freeze. Blobs travel base64-encoded inside the JSON payload.
 
 ## ADR-008 Languages and digits
-Eight locales (ar, en, es, fr, hi, pt, ru, zh) with RTL for Arabic. All numbers, dates and timers
+Twenty locales (ar, bn, de, en, es, fa, fr, hi, id, it, ja, ko, pl, pt, ru, th, tr, ur, vi, zh)
+with RTL for Arabic, Persian and Urdu. All numbers, dates and timers
 use Western digits 0-9 through `AppFormat`. Hebrew (he/iw) is not offered.
 `tool/check_l10n.py` fails the build on a missing key, a non-Western digit or a Hebrew locale.
 
@@ -142,7 +143,7 @@ become rows for the existing preview and column mapping.
 `lib/core/transfer/` writes Excel (.xlsx) and Word (.docx) from scratch (Office Open XML, right-to-left
 aware), CSV with a BOM, Markdown and text; PDF pages are laid out by Android (`PdfExport.kt`) so
 Arabic is shaped correctly. Each section declares one `TransferSchema` (tasks, notes, cards) that
-both export and import read; headers are recognised in all 8 languages and columns can come in any
+both export and import read; headers are recognised in all 20 languages and columns can come in any
 order. `test/unit/transfer/transfer_roundtrip_test.dart` exports, imports into an empty app and
 exports again: any field that only goes one way fails the build. PDF files cannot be imported
 (their text has no reliable structure); the app says so.

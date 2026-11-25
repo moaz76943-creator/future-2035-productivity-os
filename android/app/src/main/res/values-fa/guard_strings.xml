@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="guard_service_label">Deep Focus distraction guard</string>
-    <string name="guard_service_summary">Pauses the apps you chose while you focus</string>
-    <string name="guard_service_description">Deep Focus uses this only to see which app is open, so it can pause the apps you chose during focus time or your schedule, and to close Shorts and Reels if you turned that on. It reads no text, stores nothing and sends nothing anywhere. You can turn it off here at any time.</string>
+    <string name="guard_service_label">محافظ حواس‌پرتی Deep Focus</string>
+    <string name="guard_service_summary">هنگام تمرکز، برنامه‌هایی را که انتخاب کرده‌اید متوقف می‌کند</string>
+    <string name="guard_service_description">Deep Focus از این قابلیت فقط برای دیدن اینکه کدام برنامه باز است استفاده می‌کند تا بتواند در زمان تمرکز یا طبق برنامهٔ زمانی شما، برنامه‌های انتخابی را متوقف کند و اگر روشن کرده باشید، Shorts و Reels را ببندد. هیچ متنی را نمی‌خواند، چیزی ذخیره نمی‌کند و چیزی به جایی نمی‌فرستد. هر زمان بخواهید می‌توانید از همین‌جا خاموشش کنید.</string>
 </resources>

@@ -1,6 +1,6 @@
 # UI conventions
 
-These rules apply to every screen. They exist so that 8 languages, RTL,
+These rules apply to every screen. They exist so that 20 languages, RTL,
 accessibility and the design language stay consistent.
 
 ## Imports

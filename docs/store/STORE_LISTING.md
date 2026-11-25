@@ -20,7 +20,7 @@ Deep Focus brings your planning, focus and learning together — on your device,
 • Goals and habits with streaks
 • Insights built only from your own records
 • Global search across everything
-• 8 languages including Arabic with full right-to-left layout
+• 20 languages including Arabic with full right-to-left layout
 • Private by design: encrypted on-device storage, no account; password-encrypted backups. One banner ad (Google AdMob, with Google's consent form where required)
 • Optional AI summaries with your own provider, only after you consent
 
