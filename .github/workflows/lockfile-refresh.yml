@@ -1,0 +1,25 @@
+name: Lockfile refresh (temporary)
+
+on:
+  push:
+    branches:
+      - 'tmp/lockfile-*'
+
+permissions:
+  contents: read
+
+jobs:
+  lock:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.50.0'
+          channel: stable
+      - run: flutter pub get
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pubspec-lock
+          path: pubspec.lock
