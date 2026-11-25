@@ -125,17 +125,17 @@ class _BarPainter extends CustomPainter {
       if (p.value <= 0) {
         canvas.drawRRect(rect, Paint()..color = muted);
       } else {
-        final shader = ui.Gradient.linear(
-          rect.outerRect.bottomCenter,
-          rect.outerRect.topCenter,
-          [hue.b, hue.a],
-        );
+        final shader = ui.Gradient.linear(rect.outerRect.bottomCenter, rect.outerRect.topCenter, [
+          hue.b,
+          hue.a,
+        ]);
         if (p.highlight) {
           canvas.drawRRect(
-              rect.inflate(2),
-              Paint()
-                ..color = hue.a.withValues(alpha: 0.35)
-                ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8));
+            rect.inflate(2),
+            Paint()
+              ..color = hue.a.withValues(alpha: 0.35)
+              ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8),
+          );
         }
         canvas.drawRRect(rect, Paint()..shader = shader);
       }
@@ -182,8 +182,13 @@ class GlowAreaChart extends StatelessWidget {
           curve: Motion.decelerate,
           builder: (context, t, _) => CustomPaint(
             size: Size(double.infinity, height),
-            painter: _AreaPainter(values, hue, t,
-                Directionality.of(context) == TextDirection.rtl, context.lux.hairline),
+            painter: _AreaPainter(
+              values,
+              hue,
+              t,
+              Directionality.of(context) == TextDirection.rtl,
+              context.lux.hairline,
+            ),
           ),
         ),
       ),
@@ -221,20 +226,21 @@ class _AreaPainter extends CustomPainter {
       ..lineTo(pts.first.dx, size.height)
       ..close();
     canvas.drawPath(
-        fill,
-        Paint()
-          ..shader = ui.Gradient.linear(Offset.zero, Offset(0, size.height), [
-            hue.a.withValues(alpha: 0.28),
-            hue.b.withValues(alpha: 0.0),
-          ]));
+      fill,
+      Paint()
+        ..shader = ui.Gradient.linear(Offset.zero, Offset(0, size.height), [
+          hue.a.withValues(alpha: 0.28),
+          hue.b.withValues(alpha: 0.0),
+        ]),
+    );
     canvas.drawPath(
-        path,
-        Paint()
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = 2.5
-          ..strokeCap = StrokeCap.round
-          ..shader = ui.Gradient.linear(
-              Offset.zero, Offset(size.width, 0), [hue.a, hue.b]));
+      path,
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 2.5
+        ..strokeCap = StrokeCap.round
+        ..shader = ui.Gradient.linear(Offset.zero, Offset(size.width, 0), [hue.a, hue.b]),
+    );
   }
 
   @override
@@ -272,23 +278,26 @@ class ConsistencyHeatmap extends StatelessWidget {
           runSpacing: gap,
           children: [
             for (final week in levels)
-              Column(mainAxisSize: MainAxisSize.min, children: [
-                for (final v in week)
-                  Container(
-                    width: cell,
-                    height: cell,
-                    margin: EdgeInsets.only(bottom: gap),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(3.5),
-                      color: v == null
-                          ? Colors.transparent
-                          : v <= 0
-                              ? lux.recessed
-                              : Color.lerp(hue.b.withValues(alpha: 0.35), hue.a, v),
-                      border: v == null ? Border.all(color: lux.hairline) : null,
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  for (final v in week)
+                    Container(
+                      width: cell,
+                      height: cell,
+                      margin: EdgeInsets.only(bottom: gap),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(3.5),
+                        color: v == null
+                            ? Colors.transparent
+                            : v <= 0
+                            ? lux.recessed
+                            : Color.lerp(hue.b.withValues(alpha: 0.35), hue.a, v),
+                        border: v == null ? Border.all(color: lux.hairline) : null,
+                      ),
                     ),
-                  ),
-              ]),
+                ],
+              ),
           ],
         ),
       ),

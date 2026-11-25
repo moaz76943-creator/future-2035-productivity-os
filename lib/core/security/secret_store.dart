@@ -15,9 +15,7 @@ abstract class SecretStore {
 class PlatformSecretStore implements SecretStore {
   const PlatformSecretStore();
 
-  static const _storage = FlutterSecureStorage(
-    
-  );
+  static const _storage = FlutterSecureStorage();
 
   @override
   Future<String?> read(String key) => _storage.read(key: key);
@@ -59,10 +57,7 @@ class DatabaseKeyUnavailableException implements Exception {
 
 /// Returns the 256-bit database key. A new key is created only for a fresh
 /// install; an existing encrypted database is never paired with a new key.
-Future<String> obtainDatabaseKey(
-  SecretStore store, {
-  required bool databaseExists,
-}) async {
+Future<String> obtainDatabaseKey(SecretStore store, {required bool databaseExists}) async {
   final existing = await store.read(SecretKeys.databaseKey);
   if (existing != null) {
     if (RegExp(r'^[0-9a-f]{64}$').hasMatch(existing)) return existing;
@@ -71,10 +66,7 @@ Future<String> obtainDatabaseKey(
   if (databaseExists) throw const DatabaseKeyUnavailableException();
 
   final rnd = Random.secure();
-  final hex = List.generate(
-    32,
-    (_) => rnd.nextInt(256).toRadixString(16).padLeft(2, '0'),
-  ).join();
+  final hex = List.generate(32, (_) => rnd.nextInt(256).toRadixString(16).padLeft(2, '0')).join();
   await store.write(SecretKeys.databaseKey, hex);
   // Read back to make sure it was persisted before any data is written.
   final check = await store.read(SecretKeys.databaseKey);

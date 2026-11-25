@@ -72,7 +72,9 @@ class BackupService {
           .map(
             (r) => {
               for (final e in r.data.entries)
-                e.key: e.value is Uint8List ? {r'$b64': base64Encode(e.value as Uint8List)} : e.value,
+                e.key: e.value is Uint8List
+                    ? {r'$b64': base64Encode(e.value as Uint8List)}
+                    : e.value,
             },
           )
           .toList();

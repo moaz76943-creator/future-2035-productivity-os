@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Guardián de distracciones de Deep Focus</string>
+    <string name="guard_service_summary">Pausa las apps que elegiste mientras te concentras</string>
+    <string name="guard_service_description">Deep Focus usa esto solo para saber qué app está abierta, para pausar las apps que elegiste durante el tiempo de concentración o tu horario, y para cerrar Shorts y Reels si lo activaste. No lee texto, no guarda nada y no envía nada. Puedes desactivarlo aquí cuando quieras.</string>
+</resources>

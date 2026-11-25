@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focus ध्यान-भटकाव रक्षक</string>
+    <string name="guard_service_summary">फ़ोकस के समय आपकी चुनी ऐप्स को रोकता है</string>
+    <string name="guard_service_description">Deep Focus इसका उपयोग केवल यह जानने के लिए करता है कि कौन सा ऐप खुला है, ताकि फ़ोकस समय या आपके शेड्यूल में आपकी चुनी ऐप्स को रोक सके, और चालू होने पर Shorts और Reels बंद कर सके। यह कोई टेक्स्ट नहीं पढ़ता, कुछ सहेजता नहीं और कहीं कुछ नहीं भेजता। आप इसे यहाँ कभी भी बंद कर सकते हैं।</string>
+</resources>

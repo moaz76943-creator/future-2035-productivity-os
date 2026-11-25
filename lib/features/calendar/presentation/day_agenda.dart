@@ -114,7 +114,12 @@ class DayAgenda extends StatelessWidget {
                 key: ValueKey('cal-milestone-${m.id}'),
                 elevated: false,
                 onTap: onOpenProject == null ? null : () => onOpenProject!(p.id),
-                padding: const EdgeInsetsDirectional.fromSTEB(Space.md, Space.sm, Space.md, Space.sm),
+                padding: const EdgeInsetsDirectional.fromSTEB(
+                  Space.md,
+                  Space.sm,
+                  Space.md,
+                  Space.sm,
+                ),
                 child: Row(
                   children: [
                     Icon(

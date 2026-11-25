@@ -5127,4 +5127,127 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get focusFlipToFocusHint => 'In immersive mode: face down starts, picking it up pauses';
+
+  @override
+  String get guardTitle => 'Distraction guard';
+
+  @override
+  String get guardSubtitle => 'Pause distracting apps while you focus';
+
+  @override
+  String get guardSwitch => 'Pause distracting apps';
+
+  @override
+  String get guardSwitchHint => 'During focus sessions and your Time Guard hours';
+
+  @override
+  String get guardNeedsAccess => 'Needs the accessibility switch: tap to turn it on';
+
+  @override
+  String get guardDisclosureTitle => 'How the guard works';
+
+  @override
+  String get guardDisclosureBody =>
+      'To pause the apps you choose, Deep Focus uses Android\'s accessibility service to see which app is open. With \"Close Shorts and Reels\" on, it also checks whether a short-video player is on screen.\n\nIt reads no text, stores nothing it sees and sends nothing anywhere: everything stays on your phone. You can turn it off at any time in Accessibility settings.';
+
+  @override
+  String get guardAgree => 'Agree and open settings';
+
+  @override
+  String get guardModeGentle => 'Gentle';
+
+  @override
+  String get guardModeStrict => 'Strict';
+
+  @override
+  String get guardGentleHint => 'A 5-second breathing pause, then you choose';
+
+  @override
+  String get guardStrictHint => 'Chosen apps stay closed until focus time ends';
+
+  @override
+  String get guardApps => 'Apps to pause';
+
+  @override
+  String get guardAppsAllowed => 'Allowed apps';
+
+  @override
+  String guardAppsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count apps',
+      one: '1 app',
+      zero: 'None chosen yet',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get guardAllowlist => 'Allow only chosen apps';
+
+  @override
+  String get guardAllowlistHint =>
+      'Every other app is paused; calls, settings and the keyboard always work';
+
+  @override
+  String get guardShorts => 'Close Shorts and Reels';
+
+  @override
+  String get guardShortsHint => 'Any time the guard is on. Best effort: these apps change often';
+
+  @override
+  String get guardSchedule => 'Time Guard';
+
+  @override
+  String get guardScheduleHint => 'Also guard on set days and hours, like school or work';
+
+  @override
+  String get guardFrom => 'From';
+
+  @override
+  String get guardTo => 'To';
+
+  @override
+  String get guardSearchApps => 'Search apps';
+
+  @override
+  String get guardNoApps => 'No apps found';
+
+  @override
+  String get guardPrivacy =>
+      'Works on your phone only: the guard sees which app is open, never what is in it, and sends nothing.';
+
+  @override
+  String get guardBreathe => 'Breathe in… and out';
+
+  @override
+  String get guardQuestion => 'Do you need this app now?';
+
+  @override
+  String get guardBackToFocus => 'Back to focus';
+
+  @override
+  String get guardOpenFive => 'Open for 5 minutes';
+
+  @override
+  String get guardStrictBody => 'This app is paused until your focus time ends.';
+
+  @override
+  String get guardShortsClosed => 'Short videos are closed while the guard is on';
+
+  @override
+  String get faqGuardQ => 'How do I stop distracting apps while I focus?';
+
+  @override
+  String get faqGuardA =>
+      'Open Focus → the timer settings → Distraction guard. Choose the apps, then Gentle (a 5-second breath and the question \"Do you need this app now?\") or Strict (they stay closed). It works during focus sessions and, with Time Guard, on the days and hours you set. \"Allow only chosen apps\" pauses everything else; calls, settings and the keyboard always work. Android asks you once to turn the guard on in Accessibility settings. It only sees which app is open and sends nothing.';
+
+  @override
+  String notesMovedToNotebook(String name) {
+    return 'Moved to $name';
+  }
+
+  @override
+  String get notesDragHint => 'Hold a note and drag it onto a notebook';
 }

@@ -61,6 +61,7 @@ List<String> _routes(_Seed s) => [
   Routes.settings,
   Routes.help,
   Routes.trash,
+  Routes.guard,
 ];
 
 const double _dpr = 2;

@@ -15,21 +15,24 @@ Future<DateTime?> pickDate(BuildContext context, {DateTime? initial, DateTime? f
 }
 
 Future<TimeOfDay?> pickTime(BuildContext context, {TimeOfDay? initial}) => showTimePicker(
-      context: context,
-      initialTime: initial ?? TimeOfDay.now(),
-      // Keep Western digits in every locale.
-      builder: (ctx, child) => MediaQuery(
-        data: MediaQuery.of(ctx).copyWith(alwaysUse24HourFormat: MediaQuery.of(ctx).alwaysUse24HourFormat),
-        child: child!,
-      ),
-    );
+  context: context,
+  initialTime: initial ?? TimeOfDay.now(),
+  // Keep Western digits in every locale.
+  builder: (ctx, child) => MediaQuery(
+    data: MediaQuery.of(ctx)
+        .copyWith(alwaysUse24HourFormat: MediaQuery.of(ctx).alwaysUse24HourFormat),
+    child: child!,
+  ),
+);
 
 /// Picks a date and then a time; returns a local DateTime.
 Future<DateTime?> pickDateTime(BuildContext context, {DateTime? initial}) async {
   final d = await pickDate(context, initial: initial);
   if (d == null || !context.mounted) return null;
-  final t = await pickTime(context,
-      initial: initial == null ? null : TimeOfDay.fromDateTime(initial));
+  final t = await pickTime(
+    context,
+    initial: initial == null ? null : TimeOfDay.fromDateTime(initial),
+  );
   if (t == null) return null;
   return DateTime(d.year, d.month, d.day, t.hour, t.minute);
 }

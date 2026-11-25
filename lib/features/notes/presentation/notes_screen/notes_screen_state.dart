@@ -96,14 +96,17 @@ class _NotesScreenState extends ConsumerState<NotesScreen> {
                 onSelected: (_) => setState(() => _notebookId = null),
               ),
               for (final nb in notebooks)
-                GestureDetector(
-                  onLongPress: () => _deleteNotebook(nb),
-                  child: ChoiceChip(
-                    avatar: GlowDot(color: Color(nb.color)),
-                    label: Text(nb.name),
-                    selected: _notebookId == nb.id,
-                    selectedColor: Color(nb.color).withValues(alpha: 0.18),
-                    onSelected: (s) => setState(() => _notebookId = s ? nb.id : null),
+                _NotebookDrop(
+                  notebook: nb,
+                  child: GestureDetector(
+                    onLongPress: () => _deleteNotebook(nb),
+                    child: ChoiceChip(
+                      avatar: GlowDot(color: Color(nb.color)),
+                      label: Text(nb.name),
+                      selected: _notebookId == nb.id,
+                      selectedColor: Color(nb.color).withValues(alpha: 0.18),
+                      onSelected: (s) => setState(() => _notebookId = s ? nb.id : null),
+                    ),
                   ),
                 ),
               ActionChip(
@@ -262,7 +265,7 @@ class _Masonry extends StatelessWidget {
                       for (final n in col)
                         Padding(
                           padding: const EdgeInsets.all(Space.xxs + 1),
-                          child: NoteCard(note: n, notebook: notebooks[n.notebookId]),
+                          child: _DraggableNote(note: n, notebook: notebooks[n.notebookId]),
                         ),
                     ],
                   ),

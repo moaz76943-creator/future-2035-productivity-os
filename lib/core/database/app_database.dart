@@ -101,12 +101,16 @@ class AppDatabase extends _$AppDatabase {
         // v7: custom field values and card images / audio.
         await m.addColumn(flashcards, flashcards.custom);
         await m.createTable(cardMedia);
-        await customStatement('CREATE INDEX IF NOT EXISTS idx_card_media_card ON card_media (card_id)');
+        await customStatement(
+          'CREATE INDEX IF NOT EXISTS idx_card_media_card ON card_media (card_id)',
+        );
       }
       if (from < 8) {
         // v8: pictures in notes.
         await m.createTable(noteImages);
-        await customStatement('CREATE INDEX IF NOT EXISTS idx_note_images_note ON note_images (note_id)');
+        await customStatement(
+          'CREATE INDEX IF NOT EXISTS idx_note_images_note ON note_images (note_id)',
+        );
       }
       if (from < 9) {
         // v9: hand-made card order.
@@ -149,22 +153,19 @@ class AppDatabase extends _$AppDatabase {
   // ---------------------------------------------------------------------------
 
   Future<String?> readValue(String key) async {
-    final row = await (select(
-      keyValues,
-    )..where((t) => t.key.equals(key))).getSingleOrNull();
+    final row = await (select(keyValues)..where((t) => t.key.equals(key))).getSingleOrNull();
     return row?.value;
   }
 
   Stream<String?> watchValue(String key) {
-    return (select(keyValues)..where((t) => t.key.equals(key)))
-        .watchSingleOrNull()
-        .map((r) => r?.value);
+    return (select(
+      keyValues,
+    )..where((t) => t.key.equals(key))).watchSingleOrNull().map((r) => r?.value);
   }
 
   Future<void> writeValue(String key, String value) {
-    return into(
-      keyValues,
-    ).insertOnConflictUpdate(KeyValuesCompanion.insert(key: key, value: value));
+    return into(keyValues)
+        .insertOnConflictUpdate(KeyValuesCompanion.insert(key: key, value: value));
   }
 
   Future<void> deleteValue(String key) {

@@ -5267,4 +5267,129 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get focusFlipToFocusHint => 'В режиме погружения: экраном вниз — старт, поднять — пауза';
+
+  @override
+  String get guardTitle => 'Защита от отвлечений';
+
+  @override
+  String get guardSubtitle => 'Приостанавливайте отвлекающие приложения во время фокуса';
+
+  @override
+  String get guardSwitch => 'Приостанавливать отвлекающие приложения';
+
+  @override
+  String get guardSwitchHint => 'Во время сессий фокуса и по расписанию';
+
+  @override
+  String get guardNeedsAccess => 'Нужно включить спец. возможности: нажмите, чтобы включить';
+
+  @override
+  String get guardDisclosureTitle => 'Как работает защита';
+
+  @override
+  String get guardDisclosureBody =>
+      'Чтобы приостанавливать выбранные приложения, Deep Focus использует службу специальных возможностей Android и видит, какое приложение открыто. С опцией «Закрывать Shorts и Reels» он также проверяет, открыт ли плеер коротких видео.\n\nОн не читает текст, ничего не сохраняет и никуда не отправляет: всё остаётся на телефоне. Отключить можно в любое время в настройках спец. возможностей.';
+
+  @override
+  String get guardAgree => 'Согласен, открыть настройки';
+
+  @override
+  String get guardModeGentle => 'Мягкий';
+
+  @override
+  String get guardModeStrict => 'Строгий';
+
+  @override
+  String get guardGentleHint => '5 секунд дыхания, затем вы решаете';
+
+  @override
+  String get guardStrictHint => 'Выбранные приложения закрыты до конца фокуса';
+
+  @override
+  String get guardApps => 'Приложения для паузы';
+
+  @override
+  String get guardAppsAllowed => 'Разрешённые приложения';
+
+  @override
+  String guardAppsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count приложений',
+      few: '$count приложения',
+      one: '$count приложение',
+      zero: 'Пока не выбраны',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get guardAllowlist => 'Разрешить только выбранные';
+
+  @override
+  String get guardAllowlistHint =>
+      'Остальные на паузе; звонки, настройки и клавиатура работают всегда';
+
+  @override
+  String get guardShorts => 'Закрывать Shorts и Reels';
+
+  @override
+  String get guardShortsHint =>
+      'Всегда, когда защита включена. Без гарантий: эти приложения часто меняются';
+
+  @override
+  String get guardSchedule => 'Расписание';
+
+  @override
+  String get guardScheduleHint => 'Также в заданные дни и часы, например учёба или работа';
+
+  @override
+  String get guardFrom => 'С';
+
+  @override
+  String get guardTo => 'До';
+
+  @override
+  String get guardSearchApps => 'Поиск приложений';
+
+  @override
+  String get guardNoApps => 'Приложения не найдены';
+
+  @override
+  String get guardPrivacy =>
+      'Работает только на телефоне: видит, какое приложение открыто, но не его содержимое, и ничего не отправляет.';
+
+  @override
+  String get guardBreathe => 'Вдох… и выдох';
+
+  @override
+  String get guardQuestion => 'Вам сейчас нужно это приложение?';
+
+  @override
+  String get guardBackToFocus => 'Вернуться к фокусу';
+
+  @override
+  String get guardOpenFive => 'Открыть на 5 минут';
+
+  @override
+  String get guardStrictBody => 'Приложение на паузе до конца фокуса.';
+
+  @override
+  String get guardShortsClosed => 'Короткие видео закрыты, пока включена защита';
+
+  @override
+  String get faqGuardQ => 'Как остановить отвлекающие приложения во время фокуса?';
+
+  @override
+  String get faqGuardA =>
+      'Откройте Фокус → настройки таймера → Защита от отвлечений. Выберите приложения и режим: Мягкий (5 секунд дыхания и вопрос «Вам сейчас нужно это приложение?») или Строгий (они закрыты). Защита работает во время сессий, а с Расписанием — в выбранные дни и часы. «Разрешить только выбранные» ставит на паузу всё остальное; звонки, настройки и клавиатура работают всегда. Android один раз попросит включить её в спец. возможностях. Она видит только, какое приложение открыто, и ничего не отправляет.';
+
+  @override
+  String notesMovedToNotebook(String name) {
+    return 'Перемещено в «$name»';
+  }
+
+  @override
+  String get notesDragHint => 'Удерживайте заметку и перетащите в блокнот';
 }

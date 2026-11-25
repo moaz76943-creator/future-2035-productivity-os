@@ -92,6 +92,26 @@
             android:name=".sound.SoundscapeService"
             android:exported="false"
             android:foregroundServiceType="mediaPlayback" />
+        <!-- Distraction guard (off until the user turns it on in Accessibility settings). -->
+        <service
+            android:name=".guard.GuardService"
+            android:exported="false"
+            android:label="@string/guard_service_label"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/guard_service" />
+        </service>
+        <activity
+            android:name=".guard.PauseActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:taskAffinity="app.future2035.future_os.guard"
+            android:theme="@android:style/Theme.Material.NoActionBar" />
         <!-- flutter_local_notifications: deliver scheduled notifications and
              reschedule them after reboot or app update. -->
         <receiver
@@ -125,6 +145,11 @@
         <!-- Android 11+ package visibility: lets TextToSpeech bind the installed speech engine. -->
         <intent>
             <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+        <!-- Distraction guard: the list of apps on the home screen to choose from. -->
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
         </intent>
         <intent>
             <action android:name="android.intent.action.PROCESS_TEXT"/>

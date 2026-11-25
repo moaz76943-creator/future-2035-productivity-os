@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">حارس التشتت في Deep Focus</string>
+    <string name="guard_service_summary">يوقف التطبيقات التي اخترتها أثناء التركيز</string>
+    <string name="guard_service_description">يستخدم Deep Focus هذا فقط لمعرفة التطبيق المفتوح، كي يوقف التطبيقات التي اخترتها أثناء وقت التركيز أو جدولك، ويغلق Shorts وReels إن فعّلت ذلك. لا يقرأ أي نص ولا يحفظ شيئًا ولا يرسل شيئًا إلى أي مكان. يمكنك إيقافه من هنا في أي وقت.</string>
+</resources>

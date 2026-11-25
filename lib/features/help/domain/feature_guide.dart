@@ -65,6 +65,14 @@ final featureGuide = <GuideEntry>[
     tourBody: (l) => l.tourFocusBody,
   ),
   GuideEntry(
+    id: 'guard',
+    route: Routes.guard,
+    icon: Icons.shield_moon_outlined,
+    hue: ModuleHue.focus,
+    question: (l) => l.faqGuardQ,
+    answer: (l) => l.faqGuardA,
+  ),
+  GuideEntry(
     id: 'sounds',
     route: Routes.sounds,
     icon: Icons.water_drop_outlined,

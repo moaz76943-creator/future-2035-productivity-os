@@ -1,9 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../app/localization/app_format.dart';
+import '../../../app/routing/routes.dart';
 import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/tokens.dart';
 import '../../settings/application/settings_providers.dart';
@@ -248,6 +250,19 @@ class _FocusTimeSheetState extends ConsumerState<_FocusTimeSheet> {
                 ],
               ),
             ),
+          ListTile(
+            key: const Key('focusGuardTile'),
+            contentPadding: EdgeInsets.zero,
+            leading: const Icon(Icons.shield_moon_outlined),
+            title: Text(l10n.guardTitle),
+            subtitle: Text(l10n.guardSubtitle),
+            trailing: const Icon(Icons.chevron_right_rounded),
+            onTap: () {
+              final router = GoRouter.of(context);
+              Navigator.of(context).pop();
+              unawaited(router.push(Routes.guard));
+            },
+          ),
           const EndToneTile(enabled: true),
         ],
       ),

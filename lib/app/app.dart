@@ -7,6 +7,7 @@ import '../core/design_system/tokens.dart';
 import '../features/backup/application/auto_backup_providers.dart';
 import '../features/flashcards/application/language_names.dart';
 import '../features/focus/application/focus_dnd_link.dart';
+import '../features/guard/application/guard_controller.dart';
 import '../features/notifications/application/reminder_sync.dart';
 import '../features/prayer/application/prayer_providers.dart';
 import '../features/settings/application/settings_providers.dart';
@@ -40,6 +41,8 @@ class FutureOsApp extends ConsumerWidget {
     ref.watch(prayerFocusLinkProvider);
     // Home screen widget (focus time left, cards due).
     ref.watch(homeWidgetLinkProvider);
+    // Distraction guard rules and focus time for the Android service.
+    ref.watch(guardLinkProvider);
     final language = AppLocales.resolve(
       settings.localeTag,
       WidgetsBinding.instance.platformDispatcher.locales,

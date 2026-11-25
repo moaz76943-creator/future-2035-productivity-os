@@ -5148,4 +5148,128 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get focusFlipToFocusHint => 'No modo imersivo: para baixo inicia, ao levantar pausa';
+
+  @override
+  String get guardTitle => 'Guarda de distrações';
+
+  @override
+  String get guardSubtitle => 'Pause apps que distraem enquanto foca';
+
+  @override
+  String get guardSwitch => 'Pausar apps que distraem';
+
+  @override
+  String get guardSwitchHint => 'Durante as sessões de foco e o seu horário';
+
+  @override
+  String get guardNeedsAccess => 'Precisa do acesso de acessibilidade: toque para ativar';
+
+  @override
+  String get guardDisclosureTitle => 'Como a guarda funciona';
+
+  @override
+  String get guardDisclosureBody =>
+      'Para pausar os apps que você escolher, o Deep Focus usa o serviço de acessibilidade do Android para saber qual app está aberto. Com \"Fechar Shorts e Reels\" ativado, também verifica se há um player de vídeos curtos na tela.\n\nNão lê texto, não guarda nada do que vê e não envia nada: tudo fica no seu telefone. Você pode desativar a qualquer momento em Acessibilidade.';
+
+  @override
+  String get guardAgree => 'Aceitar e abrir ajustes';
+
+  @override
+  String get guardModeGentle => 'Suave';
+
+  @override
+  String get guardModeStrict => 'Rígido';
+
+  @override
+  String get guardGentleHint => 'Uma pausa de 5 segundos para respirar, depois você escolhe';
+
+  @override
+  String get guardStrictHint => 'Os apps escolhidos ficam fechados até o fim do foco';
+
+  @override
+  String get guardApps => 'Apps para pausar';
+
+  @override
+  String get guardAppsAllowed => 'Apps permitidos';
+
+  @override
+  String guardAppsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count apps',
+      one: '1 app',
+      zero: 'Nenhum escolhido',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get guardAllowlist => 'Permitir só os apps escolhidos';
+
+  @override
+  String get guardAllowlistHint =>
+      'Todos os outros são pausados; chamadas, ajustes e teclado sempre funcionam';
+
+  @override
+  String get guardShorts => 'Fechar Shorts e Reels';
+
+  @override
+  String get guardShortsHint =>
+      'Sempre que a guarda estiver ativa. Melhor esforço: esses apps mudam muito';
+
+  @override
+  String get guardSchedule => 'Horário protegido';
+
+  @override
+  String get guardScheduleHint => 'Também em dias e horas fixos, como aulas ou trabalho';
+
+  @override
+  String get guardFrom => 'De';
+
+  @override
+  String get guardTo => 'Até';
+
+  @override
+  String get guardSearchApps => 'Buscar apps';
+
+  @override
+  String get guardNoApps => 'Nenhum app encontrado';
+
+  @override
+  String get guardPrivacy =>
+      'Funciona só no seu telefone: vê qual app está aberto, nunca o conteúdo, e não envia nada.';
+
+  @override
+  String get guardBreathe => 'Inspire… e expire';
+
+  @override
+  String get guardQuestion => 'Você precisa deste app agora?';
+
+  @override
+  String get guardBackToFocus => 'Voltar ao foco';
+
+  @override
+  String get guardOpenFive => 'Abrir por 5 minutos';
+
+  @override
+  String get guardStrictBody => 'Este app está pausado até o fim do seu foco.';
+
+  @override
+  String get guardShortsClosed => 'Vídeos curtos ficam fechados com a guarda ativa';
+
+  @override
+  String get faqGuardQ => 'Como paro os apps que distraem enquanto foco?';
+
+  @override
+  String get faqGuardA =>
+      'Abra Foco → ajustes do timer → Guarda de distrações. Escolha os apps e depois Suave (5 segundos de respiração e a pergunta \"Você precisa deste app agora?\") ou Rígido (ficam fechados). Funciona nas sessões de foco e, com Horário protegido, nos dias e horas que você definir. \"Permitir só os apps escolhidos\" pausa todo o resto; chamadas, ajustes e teclado sempre funcionam. O Android pede uma vez para ativar em Acessibilidade. Só vê qual app está aberto e não envia nada.';
+
+  @override
+  String notesMovedToNotebook(String name) {
+    return 'Movida para $name';
+  }
+
+  @override
+  String get notesDragHint => 'Segure uma nota e arraste para um caderno';
 }

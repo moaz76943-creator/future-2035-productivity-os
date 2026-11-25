@@ -72,8 +72,7 @@ class _Detail extends ConsumerWidget {
     final progress = ref.watch(projectProgressProvider(project.id)).value;
     final focus = ref.watch(_projectFocusProvider(project.id)).value ?? 0;
     final open =
-        ref.watch(tasksProvider(TaskFilter(projectId: project.id))).value ??
-        const <TaskRow>[];
+        ref.watch(tasksProvider(TaskFilter(projectId: project.id))).value ?? const <TaskRow>[];
     final done =
         ref
             .watch(tasksProvider(TaskFilter(view: TaskView.completed, projectId: project.id)))

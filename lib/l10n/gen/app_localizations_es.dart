@@ -5147,4 +5147,129 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get focusFlipToFocusHint =>
       'En modo inmersivo: boca abajo empieza, al levantarlo se pausa';
+
+  @override
+  String get guardTitle => 'Guardián de distracciones';
+
+  @override
+  String get guardSubtitle => 'Pausa las apps que distraen mientras te concentras';
+
+  @override
+  String get guardSwitch => 'Pausar apps que distraen';
+
+  @override
+  String get guardSwitchHint => 'Durante las sesiones de concentración y tu horario';
+
+  @override
+  String get guardNeedsAccess => 'Necesita el permiso de accesibilidad: toca para activarlo';
+
+  @override
+  String get guardDisclosureTitle => 'Cómo funciona el guardián';
+
+  @override
+  String get guardDisclosureBody =>
+      'Para pausar las apps que elijas, Deep Focus usa el servicio de accesibilidad de Android para saber qué app está abierta. Con \"Cerrar Shorts y Reels\" activado, también comprueba si hay un reproductor de videos cortos en pantalla.\n\nNo lee texto, no guarda nada de lo que ve y no envía nada: todo queda en tu teléfono. Puedes desactivarlo cuando quieras en Accesibilidad.';
+
+  @override
+  String get guardAgree => 'Aceptar y abrir ajustes';
+
+  @override
+  String get guardModeGentle => 'Suave';
+
+  @override
+  String get guardModeStrict => 'Estricto';
+
+  @override
+  String get guardGentleHint => 'Una pausa de 5 segundos para respirar y luego eliges';
+
+  @override
+  String get guardStrictHint =>
+      'Las apps elegidas quedan cerradas hasta que termine la concentración';
+
+  @override
+  String get guardApps => 'Apps para pausar';
+
+  @override
+  String get guardAppsAllowed => 'Apps permitidas';
+
+  @override
+  String guardAppsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count apps',
+      one: '1 app',
+      zero: 'Ninguna elegida',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get guardAllowlist => 'Permitir solo las apps elegidas';
+
+  @override
+  String get guardAllowlistHint =>
+      'Todas las demás se pausan; llamadas, ajustes y teclado siempre funcionan';
+
+  @override
+  String get guardShorts => 'Cerrar Shorts y Reels';
+
+  @override
+  String get guardShortsHint =>
+      'Siempre que el guardián esté activo. Lo mejor posible: estas apps cambian a menudo';
+
+  @override
+  String get guardSchedule => 'Horario protegido';
+
+  @override
+  String get guardScheduleHint => 'También en días y horas fijos, como clase o trabajo';
+
+  @override
+  String get guardFrom => 'Desde';
+
+  @override
+  String get guardTo => 'Hasta';
+
+  @override
+  String get guardSearchApps => 'Buscar apps';
+
+  @override
+  String get guardNoApps => 'No se encontraron apps';
+
+  @override
+  String get guardPrivacy =>
+      'Funciona solo en tu teléfono: ve qué app está abierta, nunca su contenido, y no envía nada.';
+
+  @override
+  String get guardBreathe => 'Inhala… y exhala';
+
+  @override
+  String get guardQuestion => '¿Necesitas esta app ahora?';
+
+  @override
+  String get guardBackToFocus => 'Volver a concentrarme';
+
+  @override
+  String get guardOpenFive => 'Abrir 5 minutos';
+
+  @override
+  String get guardStrictBody => 'Esta app está en pausa hasta que termine tu concentración.';
+
+  @override
+  String get guardShortsClosed => 'Los videos cortos están cerrados con el guardián activo';
+
+  @override
+  String get faqGuardQ => '¿Cómo freno las apps que distraen mientras me concentro?';
+
+  @override
+  String get faqGuardA =>
+      'Abre Concentración → ajustes del temporizador → Guardián de distracciones. Elige las apps y luego Suave (5 segundos de respiración y la pregunta \"¿Necesitas esta app ahora?\") o Estricto (quedan cerradas). Funciona en las sesiones y, con Horario protegido, en los días y horas que elijas. \"Permitir solo las apps elegidas\" pausa todo lo demás; llamadas, ajustes y teclado siempre funcionan. Android te pide una vez activarlo en Accesibilidad. Solo ve qué app está abierta y no envía nada.';
+
+  @override
+  String notesMovedToNotebook(String name) {
+    return 'Movida a $name';
+  }
+
+  @override
+  String get notesDragHint => 'Mantén una nota y arrástrala a un cuaderno';
 }

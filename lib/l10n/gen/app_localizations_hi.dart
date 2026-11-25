@@ -5138,4 +5138,126 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get focusFlipToFocusHint => 'इमर्सिव मोड में: उल्टा रखने पर शुरू, उठाने पर रुकता है';
+
+  @override
+  String get guardTitle => 'ध्यान-भटकाव रक्षक';
+
+  @override
+  String get guardSubtitle => 'फ़ोकस के समय ध्यान भटकाने वाली ऐप्स रोकें';
+
+  @override
+  String get guardSwitch => 'ध्यान भटकाने वाली ऐप्स रोकें';
+
+  @override
+  String get guardSwitchHint => 'फ़ोकस सत्रों और आपके तय समय के दौरान';
+
+  @override
+  String get guardNeedsAccess => 'सुलभता स्विच चाहिए: चालू करने के लिए टैप करें';
+
+  @override
+  String get guardDisclosureTitle => 'रक्षक कैसे काम करता है';
+
+  @override
+  String get guardDisclosureBody =>
+      'आपकी चुनी ऐप्स रोकने के लिए Deep Focus Android की सुलभता सेवा से देखता है कि कौन सा ऐप खुला है। \"Shorts और Reels बंद करें\" चालू होने पर यह यह भी देखता है कि स्क्रीन पर छोटा वीडियो प्लेयर है या नहीं।\n\nयह कोई टेक्स्ट नहीं पढ़ता, जो देखता है उसे सहेजता नहीं और कहीं कुछ नहीं भेजता: सब कुछ आपके फ़ोन पर रहता है। आप इसे सुलभता सेटिंग में कभी भी बंद कर सकते हैं।';
+
+  @override
+  String get guardAgree => 'सहमत हूँ, सेटिंग खोलें';
+
+  @override
+  String get guardModeGentle => 'सौम्य';
+
+  @override
+  String get guardModeStrict => 'सख़्त';
+
+  @override
+  String get guardGentleHint => '5 सेकंड का साँस विराम, फिर आप चुनें';
+
+  @override
+  String get guardStrictHint => 'चुनी ऐप्स फ़ोकस समय ख़त्म होने तक बंद रहती हैं';
+
+  @override
+  String get guardApps => 'रोकी जाने वाली ऐप्स';
+
+  @override
+  String get guardAppsAllowed => 'अनुमत ऐप्स';
+
+  @override
+  String guardAppsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ऐप्स',
+      one: '1 ऐप',
+      zero: 'अभी कोई नहीं चुनी',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get guardAllowlist => 'केवल चुनी ऐप्स की अनुमति';
+
+  @override
+  String get guardAllowlistHint => 'बाक़ी सभी ऐप्स रुकेंगी; कॉल, सेटिंग और कीबोर्ड हमेशा चलेंगे';
+
+  @override
+  String get guardShorts => 'Shorts और Reels बंद करें';
+
+  @override
+  String get guardShortsHint => 'जब भी रक्षक चालू हो। पूरी कोशिश: ये ऐप्स अक्सर बदलती हैं';
+
+  @override
+  String get guardSchedule => 'समय रक्षक';
+
+  @override
+  String get guardScheduleHint => 'तय दिनों और घंटों में भी, जैसे स्कूल या काम';
+
+  @override
+  String get guardFrom => 'से';
+
+  @override
+  String get guardTo => 'तक';
+
+  @override
+  String get guardSearchApps => 'ऐप्स खोजें';
+
+  @override
+  String get guardNoApps => 'कोई ऐप नहीं मिली';
+
+  @override
+  String get guardPrivacy =>
+      'सिर्फ़ आपके फ़ोन पर: रक्षक देखता है कि कौन सा ऐप खुला है, उसके अंदर क्या है कभी नहीं, और कुछ नहीं भेजता।';
+
+  @override
+  String get guardBreathe => 'साँस लें… और छोड़ें';
+
+  @override
+  String get guardQuestion => 'क्या आपको अभी यह ऐप चाहिए?';
+
+  @override
+  String get guardBackToFocus => 'फ़ोकस पर लौटें';
+
+  @override
+  String get guardOpenFive => '5 मिनट के लिए खोलें';
+
+  @override
+  String get guardStrictBody => 'यह ऐप आपके फ़ोकस समय के ख़त्म होने तक रुका है।';
+
+  @override
+  String get guardShortsClosed => 'रक्षक चालू रहने तक छोटे वीडियो बंद हैं';
+
+  @override
+  String get faqGuardQ => 'फ़ोकस करते समय ध्यान भटकाने वाली ऐप्स कैसे रोकूँ?';
+
+  @override
+  String get faqGuardA =>
+      'फ़ोकस → टाइमर सेटिंग → ध्यान-भटकाव रक्षक खोलें। ऐप्स चुनें, फिर सौम्य (5 सेकंड साँस और सवाल \"क्या आपको अभी यह ऐप चाहिए?\") या सख़्त (वे बंद रहती हैं)। यह फ़ोकस सत्रों में और समय रक्षक के साथ आपके तय दिनों और घंटों में काम करता है। \"केवल चुनी ऐप्स की अनुमति\" बाक़ी सब रोकता है; कॉल, सेटिंग और कीबोर्ड हमेशा चलते हैं। Android एक बार सुलभता सेटिंग में इसे चालू करने को कहता है। यह सिर्फ़ देखता है कि कौन सा ऐप खुला है और कुछ नहीं भेजता।';
+
+  @override
+  String notesMovedToNotebook(String name) {
+    return '$name में ले जाया गया';
+  }
+
+  @override
+  String get notesDragHint => 'किसी नोट को दबाए रखें और नोटबुक पर खींचें';
 }

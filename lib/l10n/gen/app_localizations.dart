@@ -8693,6 +8693,222 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'In immersive mode: face down starts, picking it up pauses'**
   String get focusFlipToFocusHint;
+
+  /// Distraction guard title
+  ///
+  /// In en, this message translates to:
+  /// **'Distraction guard'**
+  String get guardTitle;
+
+  /// Entry subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Pause distracting apps while you focus'**
+  String get guardSubtitle;
+
+  /// Main switch
+  ///
+  /// In en, this message translates to:
+  /// **'Pause distracting apps'**
+  String get guardSwitch;
+
+  /// Main switch hint
+  ///
+  /// In en, this message translates to:
+  /// **'During focus sessions and your Time Guard hours'**
+  String get guardSwitchHint;
+
+  /// Service not on yet
+  ///
+  /// In en, this message translates to:
+  /// **'Needs the accessibility switch: tap to turn it on'**
+  String get guardNeedsAccess;
+
+  /// Disclosure dialog title
+  ///
+  /// In en, this message translates to:
+  /// **'How the guard works'**
+  String get guardDisclosureTitle;
+
+  /// Prominent disclosure before opening accessibility settings
+  ///
+  /// In en, this message translates to:
+  /// **'To pause the apps you choose, Deep Focus uses Android\'s accessibility service to see which app is open. With \"Close Shorts and Reels\" on, it also checks whether a short-video player is on screen.\n\nIt reads no text, stores nothing it sees and sends nothing anywhere: everything stays on your phone. You can turn it off at any time in Accessibility settings.'**
+  String get guardDisclosureBody;
+
+  /// Disclosure accept button
+  ///
+  /// In en, this message translates to:
+  /// **'Agree and open settings'**
+  String get guardAgree;
+
+  /// Mode: gentle
+  ///
+  /// In en, this message translates to:
+  /// **'Gentle'**
+  String get guardModeGentle;
+
+  /// Mode: strict
+  ///
+  /// In en, this message translates to:
+  /// **'Strict'**
+  String get guardModeStrict;
+
+  /// Gentle mode hint
+  ///
+  /// In en, this message translates to:
+  /// **'A 5-second breathing pause, then you choose'**
+  String get guardGentleHint;
+
+  /// Strict mode hint
+  ///
+  /// In en, this message translates to:
+  /// **'Chosen apps stay closed until focus time ends'**
+  String get guardStrictHint;
+
+  /// Apps list tile
+  ///
+  /// In en, this message translates to:
+  /// **'Apps to pause'**
+  String get guardApps;
+
+  /// Apps list tile in allowlist mode
+  ///
+  /// In en, this message translates to:
+  /// **'Allowed apps'**
+  String get guardAppsAllowed;
+
+  /// Number of apps chosen
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{None chosen yet} =1{1 app} other{{count} apps}}'**
+  String guardAppsCount(int count);
+
+  /// Allowlist switch
+  ///
+  /// In en, this message translates to:
+  /// **'Allow only chosen apps'**
+  String get guardAllowlist;
+
+  /// Allowlist hint
+  ///
+  /// In en, this message translates to:
+  /// **'Every other app is paused; calls, settings and the keyboard always work'**
+  String get guardAllowlistHint;
+
+  /// Shorts switch
+  ///
+  /// In en, this message translates to:
+  /// **'Close Shorts and Reels'**
+  String get guardShorts;
+
+  /// Shorts hint
+  ///
+  /// In en, this message translates to:
+  /// **'Any time the guard is on. Best effort: these apps change often'**
+  String get guardShortsHint;
+
+  /// Time Guard switch
+  ///
+  /// In en, this message translates to:
+  /// **'Time Guard'**
+  String get guardSchedule;
+
+  /// Time Guard hint
+  ///
+  /// In en, this message translates to:
+  /// **'Also guard on set days and hours, like school or work'**
+  String get guardScheduleHint;
+
+  /// Schedule start
+  ///
+  /// In en, this message translates to:
+  /// **'From'**
+  String get guardFrom;
+
+  /// Schedule end
+  ///
+  /// In en, this message translates to:
+  /// **'To'**
+  String get guardTo;
+
+  /// Search apps field
+  ///
+  /// In en, this message translates to:
+  /// **'Search apps'**
+  String get guardSearchApps;
+
+  /// No apps found
+  ///
+  /// In en, this message translates to:
+  /// **'No apps found'**
+  String get guardNoApps;
+
+  /// Privacy footnote
+  ///
+  /// In en, this message translates to:
+  /// **'Works on your phone only: the guard sees which app is open, never what is in it, and sends nothing.'**
+  String get guardPrivacy;
+
+  /// Pause screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Breathe in… and out'**
+  String get guardBreathe;
+
+  /// Pause screen question
+  ///
+  /// In en, this message translates to:
+  /// **'Do you need this app now?'**
+  String get guardQuestion;
+
+  /// Pause screen: return
+  ///
+  /// In en, this message translates to:
+  /// **'Back to focus'**
+  String get guardBackToFocus;
+
+  /// Pause screen: open anyway
+  ///
+  /// In en, this message translates to:
+  /// **'Open for 5 minutes'**
+  String get guardOpenFive;
+
+  /// Strict pause body
+  ///
+  /// In en, this message translates to:
+  /// **'This app is paused until your focus time ends.'**
+  String get guardStrictBody;
+
+  /// Toast after closing a short video
+  ///
+  /// In en, this message translates to:
+  /// **'Short videos are closed while the guard is on'**
+  String get guardShortsClosed;
+
+  /// FAQ question: distraction guard
+  ///
+  /// In en, this message translates to:
+  /// **'How do I stop distracting apps while I focus?'**
+  String get faqGuardQ;
+
+  /// FAQ answer: distraction guard
+  ///
+  /// In en, this message translates to:
+  /// **'Open Focus → the timer settings → Distraction guard. Choose the apps, then Gentle (a 5-second breath and the question \"Do you need this app now?\") or Strict (they stay closed). It works during focus sessions and, with Time Guard, on the days and hours you set. \"Allow only chosen apps\" pauses everything else; calls, settings and the keyboard always work. Android asks you once to turn the guard on in Accessibility settings. It only sees which app is open and sends nothing.'**
+  String get faqGuardA;
+
+  /// Snack after dragging a note onto a notebook
+  ///
+  /// In en, this message translates to:
+  /// **'Moved to {name}'**
+  String notesMovedToNotebook(String name);
+
+  /// Shown on notebook chips while dragging a note
+  ///
+  /// In en, this message translates to:
+  /// **'Hold a note and drag it onto a notebook'**
+  String get notesDragHint;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

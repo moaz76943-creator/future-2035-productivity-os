@@ -44,7 +44,10 @@ class GlowRing extends StatelessWidget {
         builder: (context, v, child) => CustomPaint(
           size: Size.square(size),
           painter: _RingPainter(v, hue, stroke, track),
-          child: SizedBox.square(dimension: size, child: Center(child: child)),
+          child: SizedBox.square(
+            dimension: size,
+            child: Center(child: child),
+          ),
         ),
         child: child,
       ),
@@ -65,12 +68,13 @@ class _RingPainter extends CustomPainter {
     final r = (size.shortestSide - stroke) / 2;
     final rect = Rect.fromCircle(center: c, radius: r);
     canvas.drawCircle(
-        c,
-        r,
-        Paint()
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = stroke
-          ..color = track);
+      c,
+      r,
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = stroke
+        ..color = track,
+    );
     if (v <= 0) return;
     final sweep = 2 * math.pi * v;
     final shader = ui.Gradient.sweep(
@@ -87,21 +91,23 @@ class _RingPainter extends CustomPainter {
       ..strokeCap = StrokeCap.round
       ..shader = shader
       ..maskFilter = MaskFilter.blur(BlurStyle.normal, stroke * 0.8);
-    canvas.drawArc(rect, -math.pi / 2, sweep, false,
-        glow..color = hue.a.withValues(alpha: 0.5));
+    canvas.drawArc(rect, -math.pi / 2, sweep, false, glow..color = hue.a.withValues(alpha: 0.5));
     canvas.drawArc(
-        rect,
-        -math.pi / 2,
-        sweep,
-        false,
-        Paint()
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = stroke
-          ..strokeCap = StrokeCap.round
-          ..shader = shader);
+      rect,
+      -math.pi / 2,
+      sweep,
+      false,
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = stroke
+        ..strokeCap = StrokeCap.round
+        ..shader = shader,
+    );
     // Bright tip.
-    final tip = Offset(c.dx + r * math.cos(-math.pi / 2 + sweep),
-        c.dy + r * math.sin(-math.pi / 2 + sweep));
+    final tip = Offset(
+      c.dx + r * math.cos(-math.pi / 2 + sweep),
+      c.dy + r * math.sin(-math.pi / 2 + sweep),
+    );
     canvas.drawCircle(tip, stroke * 0.32, Paint()..color = Colors.white);
   }
 
@@ -147,9 +153,7 @@ class GlowBar extends StatelessWidget {
               decoration: BoxDecoration(
                 gradient: hue.gradient,
                 borderRadius: BorderRadius.circular(height),
-                boxShadow: [
-                  BoxShadow(color: hue.a.withValues(alpha: 0.4), blurRadius: 6),
-                ],
+                boxShadow: [BoxShadow(color: hue.a.withValues(alpha: 0.4), blurRadius: 6)],
               ),
             ),
           ),
@@ -161,13 +165,7 @@ class GlowBar extends StatelessWidget {
 
 /// Small rounded tag.
 class LuxPill extends StatelessWidget {
-  const LuxPill({
-    super.key,
-    required this.label,
-    this.color,
-    this.icon,
-    this.filled = false,
-  });
+  const LuxPill({super.key, required this.label, this.color, this.icon, this.filled = false});
   final String label;
   final Color? color;
   final IconData? icon;
@@ -182,21 +180,26 @@ class LuxPill extends StatelessWidget {
         color: filled ? c : c.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(Radii.pill),
       ),
-      child: Row(mainAxisSize: MainAxisSize.min, children: [
-        if (icon != null) ...[
-          Icon(icon, size: 13, color: filled ? Colors.white : c),
-          const SizedBox(width: 4),
-        ],
-        Flexible(
-          child: Text(
-            label,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: context.text.labelSmall!.copyWith(
-                color: filled ? Colors.white : c, letterSpacing: 0.2),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (icon != null) ...[
+            Icon(icon, size: 13, color: filled ? Colors.white : c),
+            const SizedBox(width: 4),
+          ],
+          Flexible(
+            child: Text(
+              label,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: context.text.labelSmall!.copyWith(
+                color: filled ? Colors.white : c,
+                letterSpacing: 0.2,
+              ),
+            ),
           ),
-        ),
-      ]),
+        ],
+      ),
     );
   }
 }
@@ -208,14 +211,14 @@ class GlowDot extends StatelessWidget {
   final double size;
   @override
   Widget build(BuildContext context) => Container(
-        width: size,
-        height: size,
-        decoration: BoxDecoration(
-          color: color,
-          shape: BoxShape.circle,
-          boxShadow: [BoxShadow(color: color.withValues(alpha: 0.6), blurRadius: size)],
-        ),
-      );
+    width: size,
+    height: size,
+    decoration: BoxDecoration(
+      color: color,
+      shape: BoxShape.circle,
+      boxShadow: [BoxShadow(color: color.withValues(alpha: 0.6), blurRadius: size)],
+    ),
+  );
 }
 
 /// Compact metric: value over label, with optional icon orb.
@@ -242,28 +245,37 @@ class StatTile extends StatelessWidget {
       onTap: onTap,
       semanticLabel: '$label: $value${caption == null ? '' : ', $caption'}',
       child: ExcludeSemantics(
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          if (icon != null) ...[
-            IconOrb(icon: icon!, hue: hue, size: 34),
-            const SizedBox(height: Space.sm),
-          ],
-          FittedBox(
-            fit: BoxFit.scaleDown,
-            alignment: AlignmentDirectional.centerStart,
-            child: Text(value, style: context.text.headlineMedium),
-          ),
-          const SizedBox(height: 2),
-          Text(label,
-              style: context.text.labelMedium, maxLines: 2, overflow: TextOverflow.ellipsis),
-          if (caption != null)
-            Padding(
-              padding: const EdgeInsets.only(top: 2),
-              child: Text(caption!,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            if (icon != null) ...[
+              IconOrb(icon: icon!, hue: hue, size: 34),
+              const SizedBox(height: Space.sm),
+            ],
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              alignment: AlignmentDirectional.centerStart,
+              child: Text(value, style: context.text.headlineMedium),
+            ),
+            const SizedBox(height: 2),
+            Text(
+              label,
+              style: context.text.labelMedium,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+            if (caption != null)
+              Padding(
+                padding: const EdgeInsets.only(top: 2),
+                child: Text(
+                  caption!,
                   style: context.text.bodySmall,
                   maxLines: 2,
-                  overflow: TextOverflow.ellipsis),
-            ),
-        ]),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }

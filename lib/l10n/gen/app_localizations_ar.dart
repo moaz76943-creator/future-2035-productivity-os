@@ -5315,4 +5315,130 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get focusFlipToFocusHint => 'في الوضع الغامر: وضعه على وجهه يبدأ، ورفعه يوقف مؤقتاً';
+
+  @override
+  String get guardTitle => 'حارس التشتت';
+
+  @override
+  String get guardSubtitle => 'أوقف التطبيقات المشتتة أثناء التركيز';
+
+  @override
+  String get guardSwitch => 'إيقاف التطبيقات المشتتة';
+
+  @override
+  String get guardSwitchHint => 'أثناء جلسات التركيز وساعات حارس الوقت';
+
+  @override
+  String get guardNeedsAccess => 'يحتاج إلى تفعيل إمكانية الوصول: اضغط لتفعيله';
+
+  @override
+  String get guardDisclosureTitle => 'كيف يعمل الحارس';
+
+  @override
+  String get guardDisclosureBody =>
+      'لإيقاف التطبيقات التي تختارها، يستخدم Deep Focus خدمة إمكانية الوصول في أندرويد لمعرفة التطبيق المفتوح. وعند تفعيل \"إغلاق Shorts وReels\" يتحقق أيضًا من ظهور مشغّل المقاطع القصيرة.\n\nلا يقرأ أي نص، ولا يحفظ شيئًا مما يراه، ولا يرسل شيئًا إلى أي مكان: كل شيء يبقى على هاتفك. يمكنك إيقافه في أي وقت من إعدادات إمكانية الوصول.';
+
+  @override
+  String get guardAgree => 'موافق وافتح الإعدادات';
+
+  @override
+  String get guardModeGentle => 'لطيف';
+
+  @override
+  String get guardModeStrict => 'صارم';
+
+  @override
+  String get guardGentleHint => 'وقفة تنفّس لخمس ثوانٍ، ثم تختار أنت';
+
+  @override
+  String get guardStrictHint => 'تبقى التطبيقات المختارة مغلقة حتى ينتهي وقت التركيز';
+
+  @override
+  String get guardApps => 'التطبيقات المراد إيقافها';
+
+  @override
+  String get guardAppsAllowed => 'التطبيقات المسموح بها';
+
+  @override
+  String guardAppsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count تطبيق',
+      few: '$count تطبيقات',
+      two: 'تطبيقان',
+      one: 'تطبيق واحد',
+      zero: 'لم تختر بعد',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get guardAllowlist => 'السماح بالتطبيقات المختارة فقط';
+
+  @override
+  String get guardAllowlistHint =>
+      'يُوقف كل تطبيق آخر؛ المكالمات والإعدادات ولوحة المفاتيح تعمل دائمًا';
+
+  @override
+  String get guardShorts => 'إغلاق Shorts وReels';
+
+  @override
+  String get guardShortsHint =>
+      'في كل وقت يكون فيه الحارس مفعّلًا. أفضل محاولة: هذه التطبيقات تتغير كثيرًا';
+
+  @override
+  String get guardSchedule => 'حارس الوقت';
+
+  @override
+  String get guardScheduleHint => 'احرس أيضًا في أيام وساعات محددة، كالدراسة أو العمل';
+
+  @override
+  String get guardFrom => 'من';
+
+  @override
+  String get guardTo => 'إلى';
+
+  @override
+  String get guardSearchApps => 'ابحث في التطبيقات';
+
+  @override
+  String get guardNoApps => 'لا توجد تطبيقات';
+
+  @override
+  String get guardPrivacy =>
+      'يعمل على هاتفك فقط: يرى الحارس التطبيق المفتوح فقط، لا ما بداخله، ولا يرسل شيئًا.';
+
+  @override
+  String get guardBreathe => 'خذ نفسًا… وأخرجه';
+
+  @override
+  String get guardQuestion => 'هل تحتاج هذا التطبيق الآن؟';
+
+  @override
+  String get guardBackToFocus => 'العودة إلى التركيز';
+
+  @override
+  String get guardOpenFive => 'افتحه لخمس دقائق';
+
+  @override
+  String get guardStrictBody => 'هذا التطبيق متوقف حتى ينتهي وقت تركيزك.';
+
+  @override
+  String get guardShortsClosed => 'المقاطع القصيرة مغلقة ما دام الحارس مفعّلًا';
+
+  @override
+  String get faqGuardQ => 'كيف أوقف التطبيقات المشتتة أثناء التركيز؟';
+
+  @override
+  String get faqGuardA =>
+      'افتح التركيز ← إعدادات المؤقت ← حارس التشتت. اختر التطبيقات، ثم لطيف (تنفّس خمس ثوانٍ وسؤال \"هل تحتاج هذا التطبيق الآن؟\") أو صارم (تبقى مغلقة). يعمل أثناء جلسات التركيز، ومع حارس الوقت في الأيام والساعات التي تحددها. \"السماح بالتطبيقات المختارة فقط\" يوقف كل ما عداها؛ المكالمات والإعدادات ولوحة المفاتيح تعمل دائمًا. يطلب أندرويد منك مرة واحدة تفعيل الحارس من إعدادات إمكانية الوصول. هو يرى فقط التطبيق المفتوح ولا يرسل شيئًا.';
+
+  @override
+  String notesMovedToNotebook(String name) {
+    return 'نُقلت إلى $name';
+  }
+
+  @override
+  String get notesDragHint => 'اضغط مطولًا على ملاحظة واسحبها إلى دفتر';
 }

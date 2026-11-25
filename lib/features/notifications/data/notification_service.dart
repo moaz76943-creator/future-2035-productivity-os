@@ -268,9 +268,7 @@ class LocalNotificationService implements NotificationService {
     try {
       exact = await canScheduleExact();
       await go(
-        exact
-            ? AndroidScheduleMode.exactAllowWhileIdle
-            : AndroidScheduleMode.inexactAllowWhileIdle,
+        exact ? AndroidScheduleMode.exactAllowWhileIdle : AndroidScheduleMode.inexactAllowWhileIdle,
       );
       return true;
     } on Object {

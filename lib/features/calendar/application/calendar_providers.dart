@@ -22,8 +22,8 @@ final tasksDueProvider = StreamProvider.autoDispose.family<List<TaskRow>, DateRa
 );
 
 /// Project milestones due inside a [DateRange], with their project.
-final milestonesDueProvider =
-    StreamProvider.autoDispose.family<List<(MilestoneRow, ProjectRow)>, DateRange>(
+final milestonesDueProvider = StreamProvider.autoDispose
+    .family<List<(MilestoneRow, ProjectRow)>, DateRange>(
       (ref, r) => ref.watch(milestonesRepositoryProvider).watchDueBetween(r.from, r.to),
     );
 

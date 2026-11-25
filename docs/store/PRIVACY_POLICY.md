@@ -33,6 +33,8 @@ Backups are files you export yourself. They are encrypted with a password you ch
 - **Internet**: used by the banner ads (Google AdMob) and by the optional cloud assistant described above.
 - **Advertising ID** (added by the Google Mobile Ads SDK): used by Google for ads, measurement and fraud prevention.
 - **Microphone** (asked only when you tap Record on a flashcard): voice recordings for your cards. Recordings are stored only in the app's encrypted database on your device and in backups you create; they are never uploaded.
+- **Accessibility service** (optional, off until you turn it on in Accessibility settings): the distraction guard uses it only to see which app is open, so it can pause the apps you chose during focus time or your Time Guard hours, and, if you turn it on, to close Shorts and Reels. It reads no text, stores nothing it sees and sends nothing anywhere.
+- **List of installed apps**: shown only inside the guard so you can choose apps; it never leaves your device.
 - **Text-to-speech**: flashcards can be read aloud by the speech engine already installed on your device.
 
 ## Deleting your data

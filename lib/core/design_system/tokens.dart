@@ -40,8 +40,18 @@ abstract final class Palette {
 
   /// Selectable colours for projects, notebooks, decks, habits.
   static const swatches = <Color>[
-    violet, aurora, turquoise, emerald, champagne, coral, rose, lavender,
-    Color(0xFF3B4CCA), Color(0xFF0EA5A0), Color(0xFF7C3AED), Color(0xFFE76F51),
+    violet,
+    aurora,
+    turquoise,
+    emerald,
+    champagne,
+    coral,
+    rose,
+    lavender,
+    Color(0xFF3B4CCA),
+    Color(0xFF0EA5A0),
+    Color(0xFF7C3AED),
+    Color(0xFFE76F51),
   ];
 }
 
@@ -65,10 +75,10 @@ enum ModuleHue {
   final Color b;
 
   LinearGradient get gradient => LinearGradient(
-        colors: [a, b],
-        begin: AlignmentDirectional.topStart,
-        end: AlignmentDirectional.bottomEnd,
-      );
+    colors: [a, b],
+    begin: AlignmentDirectional.topStart,
+    end: AlignmentDirectional.bottomEnd,
+  );
 }
 
 abstract final class Space {

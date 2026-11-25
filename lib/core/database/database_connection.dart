@@ -43,10 +43,7 @@ class CipherUnavailableException implements Exception {
 /// [hexKey] is a 256-bit random key (64 hex characters) held in the
 /// Android Keystore-backed secure storage. It is passed as a raw key so no
 /// key derivation is needed and it never appears in logs.
-QueryExecutor openEncryptedDatabase({
-  required File file,
-  required String hexKey,
-}) {
+QueryExecutor openEncryptedDatabase({required File file, required String hexKey}) {
   assert(RegExp(r'^[0-9a-f]{64}$').hasMatch(hexKey));
   return NativeDatabase.createInBackground(
     file,

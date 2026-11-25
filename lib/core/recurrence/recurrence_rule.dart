@@ -120,13 +120,8 @@ class RecurrenceRule {
       other.until == until;
 
   @override
-  int get hashCode => Object.hash(
-    frequency,
-    interval,
-    Object.hashAllUnordered(weekdays),
-    count,
-    until,
-  );
+  int get hashCode =>
+      Object.hash(frequency, interval, Object.hashAllUnordered(weekdays), count, until);
 
   DateTime _withTime(int y, int m, int d, DateTime t) =>
       DateTime(y, m, d, t.hour, t.minute, t.second);
@@ -162,23 +157,14 @@ class RecurrenceRule {
     switch (frequency) {
       case Frequency.daily:
         for (var i = 0; ; i++) {
-          final t = _withTime(
-            anchor.year,
-            anchor.month,
-            anchor.day + i * interval,
-            anchor,
-          );
+          final t = _withTime(anchor.year, anchor.month, anchor.day + i * interval, anchor);
           if (!emit(t)) return;
           yield t;
         }
       case Frequency.weekly:
         final days = weekdays.isEmpty ? {anchor.weekday} : weekdays;
         final sortedDays = days.toList()..sort();
-        final weekStart = DateTime(
-          anchor.year,
-          anchor.month,
-          anchor.day - (anchor.weekday - 1),
-        );
+        final weekStart = DateTime(anchor.year, anchor.month, anchor.day - (anchor.weekday - 1));
         for (var w = 0; ; w++) {
           for (final wd in sortedDays) {
             final t = _withTime(

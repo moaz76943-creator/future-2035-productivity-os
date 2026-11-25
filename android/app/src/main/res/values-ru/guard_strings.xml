@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Защита от отвлечений Deep Focus</string>
+    <string name="guard_service_summary">Приостанавливает выбранные приложения во время фокуса</string>
+    <string name="guard_service_description">Deep Focus использует это только чтобы видеть, какое приложение открыто: приостанавливать выбранные приложения во время фокуса или по расписанию и закрывать Shorts и Reels, если вы это включили. Текст не читается, ничего не сохраняется и никуда не отправляется. Отключить можно здесь в любое время.</string>
+</resources>

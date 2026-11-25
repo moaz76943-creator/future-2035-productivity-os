@@ -31,6 +31,7 @@ class MainActivity : FlutterActivity() {
     private var dnd: DndBridge? = null
     private var care: PhoneCare? = null
     private var focusTools: FocusTools? = null
+    private var guard: app.future2035.future_os.guard.GuardBridge? = null
     private var homeWidget: MethodChannel? = null
     private var pdf: PdfExport? = null
     private var images: ImageShrink? = null
@@ -61,6 +62,8 @@ class MainActivity : FlutterActivity() {
         // Immersive focus: keep the screen on, face-down detection.
         focusTools?.dispose()
         focusTools = FocusTools(this, flutterEngine.dartExecutor.binaryMessenger)
+        guard?.dispose()
+        guard = app.future2035.future_os.guard.GuardBridge(applicationContext, flutterEngine.dartExecutor.binaryMessenger)
 
         // Home screen widget texts.
         homeWidget?.setMethodCallHandler(null)
@@ -291,6 +294,8 @@ class MainActivity : FlutterActivity() {
         speech = null
         focusTools?.dispose()
         focusTools = null
+        guard?.dispose()
+        guard = null
         super.onDestroy()
     }
 

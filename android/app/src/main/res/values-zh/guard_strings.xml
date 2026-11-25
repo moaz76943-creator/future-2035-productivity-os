@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focus 防分心守护</string>
+    <string name="guard_service_summary">专注时暂停你选择的应用</string>
+    <string name="guard_service_description">Deep Focus 仅用此功能查看当前打开的应用，以便在专注时间或你的日程内暂停你选择的应用，并在你开启时关闭 Shorts 和 Reels。它不读取任何文字、不保存任何内容，也不发送任何数据。你可以随时在这里关闭它。</string>
+</resources>

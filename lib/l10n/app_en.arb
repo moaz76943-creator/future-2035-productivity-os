@@ -6869,5 +6869,159 @@
   "focusFlipToFocusHint": "In immersive mode: face down starts, picking it up pauses",
   "@focusFlipToFocusHint": {
     "description": "Flip to focus explanation"
+  },
+  "guardTitle": "Distraction guard",
+  "@guardTitle": {
+    "description": "Distraction guard title"
+  },
+  "guardSubtitle": "Pause distracting apps while you focus",
+  "@guardSubtitle": {
+    "description": "Entry subtitle"
+  },
+  "guardSwitch": "Pause distracting apps",
+  "@guardSwitch": {
+    "description": "Main switch"
+  },
+  "guardSwitchHint": "During focus sessions and your Time Guard hours",
+  "@guardSwitchHint": {
+    "description": "Main switch hint"
+  },
+  "guardNeedsAccess": "Needs the accessibility switch: tap to turn it on",
+  "@guardNeedsAccess": {
+    "description": "Service not on yet"
+  },
+  "guardDisclosureTitle": "How the guard works",
+  "@guardDisclosureTitle": {
+    "description": "Disclosure dialog title"
+  },
+  "guardDisclosureBody": "To pause the apps you choose, Deep Focus uses Android's accessibility service to see which app is open. With \"Close Shorts and Reels\" on, it also checks whether a short-video player is on screen.\n\nIt reads no text, stores nothing it sees and sends nothing anywhere: everything stays on your phone. You can turn it off at any time in Accessibility settings.",
+  "@guardDisclosureBody": {
+    "description": "Prominent disclosure before opening accessibility settings"
+  },
+  "guardAgree": "Agree and open settings",
+  "@guardAgree": {
+    "description": "Disclosure accept button"
+  },
+  "guardModeGentle": "Gentle",
+  "@guardModeGentle": {
+    "description": "Mode: gentle"
+  },
+  "guardModeStrict": "Strict",
+  "@guardModeStrict": {
+    "description": "Mode: strict"
+  },
+  "guardGentleHint": "A 5-second breathing pause, then you choose",
+  "@guardGentleHint": {
+    "description": "Gentle mode hint"
+  },
+  "guardStrictHint": "Chosen apps stay closed until focus time ends",
+  "@guardStrictHint": {
+    "description": "Strict mode hint"
+  },
+  "guardApps": "Apps to pause",
+  "@guardApps": {
+    "description": "Apps list tile"
+  },
+  "guardAppsAllowed": "Allowed apps",
+  "@guardAppsAllowed": {
+    "description": "Apps list tile in allowlist mode"
+  },
+  "guardAppsCount": "{count, plural, =0{None chosen yet} =1{1 app} other{{count} apps}}",
+  "@guardAppsCount": {
+    "description": "Number of apps chosen",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "guardAllowlist": "Allow only chosen apps",
+  "@guardAllowlist": {
+    "description": "Allowlist switch"
+  },
+  "guardAllowlistHint": "Every other app is paused; calls, settings and the keyboard always work",
+  "@guardAllowlistHint": {
+    "description": "Allowlist hint"
+  },
+  "guardShorts": "Close Shorts and Reels",
+  "@guardShorts": {
+    "description": "Shorts switch"
+  },
+  "guardShortsHint": "Any time the guard is on. Best effort: these apps change often",
+  "@guardShortsHint": {
+    "description": "Shorts hint"
+  },
+  "guardSchedule": "Time Guard",
+  "@guardSchedule": {
+    "description": "Time Guard switch"
+  },
+  "guardScheduleHint": "Also guard on set days and hours, like school or work",
+  "@guardScheduleHint": {
+    "description": "Time Guard hint"
+  },
+  "guardFrom": "From",
+  "@guardFrom": {
+    "description": "Schedule start"
+  },
+  "guardTo": "To",
+  "@guardTo": {
+    "description": "Schedule end"
+  },
+  "guardSearchApps": "Search apps",
+  "@guardSearchApps": {
+    "description": "Search apps field"
+  },
+  "guardNoApps": "No apps found",
+  "@guardNoApps": {
+    "description": "No apps found"
+  },
+  "guardPrivacy": "Works on your phone only: the guard sees which app is open, never what is in it, and sends nothing.",
+  "@guardPrivacy": {
+    "description": "Privacy footnote"
+  },
+  "guardBreathe": "Breathe in… and out",
+  "@guardBreathe": {
+    "description": "Pause screen title"
+  },
+  "guardQuestion": "Do you need this app now?",
+  "@guardQuestion": {
+    "description": "Pause screen question"
+  },
+  "guardBackToFocus": "Back to focus",
+  "@guardBackToFocus": {
+    "description": "Pause screen: return"
+  },
+  "guardOpenFive": "Open for 5 minutes",
+  "@guardOpenFive": {
+    "description": "Pause screen: open anyway"
+  },
+  "guardStrictBody": "This app is paused until your focus time ends.",
+  "@guardStrictBody": {
+    "description": "Strict pause body"
+  },
+  "guardShortsClosed": "Short videos are closed while the guard is on",
+  "@guardShortsClosed": {
+    "description": "Toast after closing a short video"
+  },
+  "faqGuardQ": "How do I stop distracting apps while I focus?",
+  "@faqGuardQ": {
+    "description": "FAQ question: distraction guard"
+  },
+  "faqGuardA": "Open Focus → the timer settings → Distraction guard. Choose the apps, then Gentle (a 5-second breath and the question \"Do you need this app now?\") or Strict (they stay closed). It works during focus sessions and, with Time Guard, on the days and hours you set. \"Allow only chosen apps\" pauses everything else; calls, settings and the keyboard always work. Android asks you once to turn the guard on in Accessibility settings. It only sees which app is open and sends nothing.",
+  "@faqGuardA": {
+    "description": "FAQ answer: distraction guard"
+  },
+  "notesMovedToNotebook": "Moved to {name}",
+  "@notesMovedToNotebook": {
+    "description": "Snack after dragging a note onto a notebook",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "notesDragHint": "Hold a note and drag it onto a notebook",
+  "@notesDragHint": {
+    "description": "Shown on notebook chips while dragging a note"
   }
 }

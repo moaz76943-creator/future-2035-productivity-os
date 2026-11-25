@@ -37,13 +37,15 @@ void showUndoSnack(BuildContext context, String message, {VoidCallback? onUndo})
   if (messenger == null) return;
   messenger
     ..hideCurrentSnackBar()
-    ..showSnackBar(SnackBar(
-      content: Text(message),
-      behavior: SnackBarBehavior.floating,
-      action: onUndo == null
-          ? null
-          : SnackBarAction(label: context.l10n.actionUndo, onPressed: onUndo),
-    ));
+    ..showSnackBar(
+      SnackBar(
+        content: Text(message),
+        behavior: SnackBarBehavior.floating,
+        action: onUndo == null
+            ? null
+            : SnackBarAction(label: context.l10n.actionUndo, onPressed: onUndo),
+      ),
+    );
 }
 
 void showMessage(BuildContext context, String message) => showUndoSnack(context, message);
@@ -55,12 +57,11 @@ Future<String?> promptText(
   String initial = '',
   String? hint,
   String? confirmLabel,
-}) =>
-    showDialog<String>(
-      context: context,
-      builder: (_) =>
-          _PromptDialog(title: title, initial: initial, hint: hint, confirmLabel: confirmLabel),
-    );
+}) => showDialog<String>(
+  context: context,
+  builder: (_) =>
+      _PromptDialog(title: title, initial: initial, hint: hint, confirmLabel: confirmLabel),
+);
 
 /// Stateful so the controller lives exactly as long as the dialog route,
 /// including its exit animation.

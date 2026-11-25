@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Garde anti-distraction de Deep Focus</string>
+    <string name="guard_service_summary">Met en pause les apps choisies pendant la concentration</string>
+    <string name="guard_service_description">Deep Focus s\'en sert uniquement pour savoir quelle app est ouverte, afin de mettre en pause les apps choisies pendant la concentration ou votre horaire, et de fermer Shorts et Reels si vous l\'avez activé. Aucun texte lu, rien d\'enregistré, rien d\'envoyé. Vous pouvez le désactiver ici à tout moment.</string>
+</resources>

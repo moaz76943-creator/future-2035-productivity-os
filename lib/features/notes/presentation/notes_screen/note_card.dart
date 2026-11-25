@@ -3,9 +3,12 @@ part of '../notes_screen.dart';
 /// A note in the masonry. Shape varies with content: title-less notes show
 /// larger text, checklists show real progress, long notes show more lines.
 class NoteCard extends ConsumerWidget {
-  const NoteCard({super.key, required this.note, this.notebook});
+  const NoteCard({super.key, required this.note, this.notebook, this.longPressActions = true});
   final NoteRow note;
   final NotebookRow? notebook;
+
+  /// False when the card sits in a drag wrapper that opens the actions itself.
+  final bool longPressActions;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -34,7 +37,7 @@ class NoteCard extends ConsumerWidget {
       semanticLabel: title ?? preview,
       color: note.pinned ? Color.alphaBlend(hue.a.withValues(alpha: 0.05), lux.surface) : null,
       onTap: () => context.push(Routes.note(note.id)),
-      onLongPress: () => showNoteActions(context, ref, note),
+      onLongPress: longPressActions ? () => showNoteActions(context, ref, note) : null,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [

@@ -54,7 +54,9 @@ class SliverAsyncValueView<T> extends StatelessWidget {
       loading: () => SliverToBoxAdapter(child: LoadingState(label: context.l10n.stateLoading)),
       error: (_, _) => SliverToBoxAdapter(
         child: ErrorState(
-            title: context.l10n.errorGenericTitle, message: context.l10n.errorLoadFailed),
+          title: context.l10n.errorGenericTitle,
+          message: context.l10n.errorLoadFailed,
+        ),
       ),
     );
   }

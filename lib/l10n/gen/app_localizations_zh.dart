@@ -4882,4 +4882,124 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get focusFlipToFocusHint => '沉浸模式下：屏幕朝下开始，拿起暂停';
+
+  @override
+  String get guardTitle => '防分心守护';
+
+  @override
+  String get guardSubtitle => '专注时暂停分心应用';
+
+  @override
+  String get guardSwitch => '暂停分心应用';
+
+  @override
+  String get guardSwitchHint => '在专注时段和定时守护时间内';
+
+  @override
+  String get guardNeedsAccess => '需要开启无障碍权限：点按开启';
+
+  @override
+  String get guardDisclosureTitle => '守护如何工作';
+
+  @override
+  String get guardDisclosureBody =>
+      '为了暂停你选择的应用，Deep Focus 使用 Android 无障碍服务来查看当前打开的应用。开启“关闭 Shorts 和 Reels”后，还会检查屏幕上是否有短视频播放器。\n\n它不读取任何文字，不保存看到的内容，也不发送任何数据：一切都留在你的手机上。你可以随时在无障碍设置中关闭它。';
+
+  @override
+  String get guardAgree => '同意并打开设置';
+
+  @override
+  String get guardModeGentle => '温和';
+
+  @override
+  String get guardModeStrict => '严格';
+
+  @override
+  String get guardGentleHint => '先呼吸 5 秒，再由你决定';
+
+  @override
+  String get guardStrictHint => '所选应用在专注结束前保持关闭';
+
+  @override
+  String get guardApps => '要暂停的应用';
+
+  @override
+  String get guardAppsAllowed => '允许的应用';
+
+  @override
+  String guardAppsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 个应用',
+      zero: '尚未选择',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get guardAllowlist => '仅允许所选应用';
+
+  @override
+  String get guardAllowlistHint => '其他应用都会暂停；通话、设置和键盘始终可用';
+
+  @override
+  String get guardShorts => '关闭 Shorts 和 Reels';
+
+  @override
+  String get guardShortsHint => '守护开启时随时生效。尽力而为：这些应用经常更新';
+
+  @override
+  String get guardSchedule => '定时守护';
+
+  @override
+  String get guardScheduleHint => '也在固定日期和时段守护，如上课或工作';
+
+  @override
+  String get guardFrom => '开始';
+
+  @override
+  String get guardTo => '结束';
+
+  @override
+  String get guardSearchApps => '搜索应用';
+
+  @override
+  String get guardNoApps => '未找到应用';
+
+  @override
+  String get guardPrivacy => '仅在你的手机上运行：只看当前打开的是哪个应用，从不看其中内容，也不发送任何数据。';
+
+  @override
+  String get guardBreathe => '吸气……呼气';
+
+  @override
+  String get guardQuestion => '你现在需要这个应用吗？';
+
+  @override
+  String get guardBackToFocus => '回到专注';
+
+  @override
+  String get guardOpenFive => '打开 5 分钟';
+
+  @override
+  String get guardStrictBody => '此应用在专注结束前已暂停。';
+
+  @override
+  String get guardShortsClosed => '守护开启期间短视频已关闭';
+
+  @override
+  String get faqGuardQ => '专注时如何阻止分心应用？';
+
+  @override
+  String get faqGuardA =>
+      '打开 专注 → 计时器设置 → 防分心守护。选择应用，然后选温和（呼吸 5 秒并询问“你现在需要这个应用吗？”）或严格（保持关闭）。它在专注时段生效；开启定时守护后，也会在你设定的日期和时段生效。“仅允许所选应用”会暂停其他所有应用；通话、设置和键盘始终可用。Android 会请你在无障碍设置中开启一次。它只看当前打开的是哪个应用，不发送任何数据。';
+
+  @override
+  String notesMovedToNotebook(String name) {
+    return '已移至 $name';
+  }
+
+  @override
+  String get notesDragHint => '长按笔记并拖到笔记本上';
 }

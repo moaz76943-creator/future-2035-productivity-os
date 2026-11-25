@@ -5163,4 +5163,128 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get focusFlipToFocusHint =>
       'En mode immersif : face cachée démarre, le relever met en pause';
+
+  @override
+  String get guardTitle => 'Garde anti-distraction';
+
+  @override
+  String get guardSubtitle => 'Mettez en pause les apps distrayantes pendant la concentration';
+
+  @override
+  String get guardSwitch => 'Mettre en pause les apps distrayantes';
+
+  @override
+  String get guardSwitchHint => 'Pendant les sessions et vos heures de garde';
+
+  @override
+  String get guardNeedsAccess => 'Nécessite l\'accessibilité : touchez pour l\'activer';
+
+  @override
+  String get guardDisclosureTitle => 'Comment fonctionne la garde';
+
+  @override
+  String get guardDisclosureBody =>
+      'Pour mettre en pause les apps choisies, Deep Focus utilise le service d\'accessibilité d\'Android afin de savoir quelle app est ouverte. Avec « Fermer Shorts et Reels », il vérifie aussi si un lecteur de vidéos courtes est à l\'écran.\n\nIl ne lit aucun texte, n\'enregistre rien et n\'envoie rien : tout reste sur votre téléphone. Vous pouvez le désactiver à tout moment dans Accessibilité.';
+
+  @override
+  String get guardAgree => 'Accepter et ouvrir les réglages';
+
+  @override
+  String get guardModeGentle => 'Doux';
+
+  @override
+  String get guardModeStrict => 'Rigoureux';
+
+  @override
+  String get guardGentleHint => 'Une pause respiration de 5 secondes, puis vous choisissez';
+
+  @override
+  String get guardStrictHint =>
+      'Les apps choisies restent fermées jusqu\'à la fin de la concentration';
+
+  @override
+  String get guardApps => 'Apps à mettre en pause';
+
+  @override
+  String get guardAppsAllowed => 'Apps autorisées';
+
+  @override
+  String guardAppsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count apps',
+      one: '1 app',
+      zero: 'Aucune choisie',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get guardAllowlist => 'N\'autoriser que les apps choisies';
+
+  @override
+  String get guardAllowlistHint =>
+      'Toutes les autres sont en pause ; appels, réglages et clavier fonctionnent toujours';
+
+  @override
+  String get guardShorts => 'Fermer Shorts et Reels';
+
+  @override
+  String get guardShortsHint => 'Dès que la garde est active. Au mieux : ces apps changent souvent';
+
+  @override
+  String get guardSchedule => 'Plages horaires';
+
+  @override
+  String get guardScheduleHint => 'Aussi certains jours et heures, comme les cours ou le travail';
+
+  @override
+  String get guardFrom => 'De';
+
+  @override
+  String get guardTo => 'À';
+
+  @override
+  String get guardSearchApps => 'Rechercher des apps';
+
+  @override
+  String get guardNoApps => 'Aucune app trouvée';
+
+  @override
+  String get guardPrivacy =>
+      'Fonctionne uniquement sur votre téléphone : la garde voit quelle app est ouverte, jamais son contenu, et n\'envoie rien.';
+
+  @override
+  String get guardBreathe => 'Inspirez… et expirez';
+
+  @override
+  String get guardQuestion => 'Avez-vous besoin de cette app maintenant ?';
+
+  @override
+  String get guardBackToFocus => 'Retour à la concentration';
+
+  @override
+  String get guardOpenFive => 'Ouvrir 5 minutes';
+
+  @override
+  String get guardStrictBody => 'Cette app est en pause jusqu\'à la fin de votre concentration.';
+
+  @override
+  String get guardShortsClosed => 'Les vidéos courtes sont fermées tant que la garde est active';
+
+  @override
+  String get faqGuardQ => 'Comment bloquer les apps distrayantes pendant la concentration ?';
+
+  @override
+  String get faqGuardA =>
+      'Ouvrez Concentration → réglages du minuteur → Garde anti-distraction. Choisissez les apps, puis Doux (5 secondes de respiration et la question « Avez-vous besoin de cette app maintenant ? ») ou Strict (elles restent fermées). Elle agit pendant les sessions et, avec les Plages horaires, aux jours et heures choisis. « N\'autoriser que les apps choisies » met tout le reste en pause ; appels, réglages et clavier fonctionnent toujours. Android vous demande une fois de l\'activer dans Accessibilité. Elle voit seulement quelle app est ouverte et n\'envoie rien.';
+
+  @override
+  String notesMovedToNotebook(String name) {
+    return 'Déplacée vers $name';
+  }
+
+  @override
+  String get notesDragHint => 'Maintenez une note et glissez-la sur un carnet';
 }

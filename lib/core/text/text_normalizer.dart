@@ -88,13 +88,7 @@ abstract final class TextNormalizer {
     var lastWasSpace = false;
     for (final r in lower.runes) {
       if (_isRemovable(r)) continue;
-      final isSpace =
-          r == 0x20 ||
-          r == 0x09 ||
-          r == 0x0A ||
-          r == 0x0D ||
-          r == 0xA0 ||
-          r == 0x3000;
+      final isSpace = r == 0x20 || r == 0x09 || r == 0x0A || r == 0x0D || r == 0xA0 || r == 0x3000;
       if (isSpace) {
         if (!lastWasSpace && out.isNotEmpty) out.write(' ');
         lastWasSpace = true;
