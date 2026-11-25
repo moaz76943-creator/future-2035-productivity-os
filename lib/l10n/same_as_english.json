@@ -1,4 +1,7 @@
 {
+  "bg": [
+    "prayerMethodIsna"
+  ],
   "cs": [
     "assistantModel",
     "focusMinutesShort",
@@ -49,6 +52,9 @@
     "themeSystem",
     "transferColBody",
     "transferFormatText"
+  ],
+  "el": [
+    "prayerMethodIsna"
   ],
   "fi": [
     "focusMinutesShort",
@@ -189,6 +195,14 @@
     "transferColBody",
     "transferFormatText"
   ],
+  "sl": [
+    "assistantModel",
+    "focusMinutesShort",
+    "prayerMethodIsna"
+  ],
+  "sr": [
+    "prayerMethodIsna"
+  ],
   "sv": [
     "dashAgenda",
     "dashSectionAgenda",
@@ -211,6 +225,9 @@
   "tr": [
     "assistantModel",
     "prayerMethodTurkey"
+  ],
+  "uk": [
+    "prayerMethodIsna"
   ],
   "vi": [
     "prayerDhuhr",

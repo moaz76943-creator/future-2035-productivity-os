@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Zbranost in kartice</string>
+    <string name="home_widget_description">Preostali čas zbranosti in kartice za ponavljanje</string>
+    <string name="quick_widget_label">Hitro dodajanje</string>
+    <string name="quick_widget_description">Dodajte opravilo ali zapisek ali ponovite kartice</string>
+</resources>

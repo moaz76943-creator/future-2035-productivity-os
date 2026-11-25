@@ -16,6 +16,7 @@
   {"code": "it", "tag": "it", "native": "Italiano", "english": "Italian", "script": "Latn", "intl": "it", "reviewed": false},
   {"code": "nl", "tag": "nl", "native": "Nederlands", "english": "Dutch", "script": "Latn", "intl": "nl", "reviewed": false},
   {"code": "pl", "tag": "pl", "native": "Polski", "english": "Polish", "script": "Latn", "intl": "pl", "reviewed": false},
+  {"code": "uk", "tag": "uk", "native": "Українська", "english": "Ukrainian", "script": "Cyrl", "intl": "uk", "reviewed": false},
   {"code": "vi", "tag": "vi", "native": "Tiếng Việt", "english": "Vietnamese", "script": "Latn", "intl": "vi", "reviewed": false},
   {"code": "th", "tag": "th", "native": "ไทย", "english": "Thai", "script": "Thai", "intl": "th", "reviewed": false},
   {"code": "fa", "tag": "fa", "native": "فارسی", "english": "Persian", "script": "Arab", "intl": "fa", "reviewed": false},
@@ -29,5 +30,9 @@
   {"code": "sk", "tag": "sk", "native": "Slovenčina", "english": "Slovak", "script": "Latn", "intl": "sk", "reviewed": false},
   {"code": "ro", "tag": "ro", "native": "Română", "english": "Romanian", "script": "Latn", "intl": "ro", "reviewed": false},
   {"code": "hu", "tag": "hu", "native": "Magyar", "english": "Hungarian", "script": "Latn", "intl": "hu", "reviewed": false},
-  {"code": "hr", "tag": "hr", "native": "Hrvatski", "english": "Croatian", "script": "Latn", "intl": "hr", "reviewed": false}
+  {"code": "el", "tag": "el", "native": "Ελληνικά", "english": "Greek", "script": "Grek", "intl": "el", "reviewed": false},
+  {"code": "bg", "tag": "bg", "native": "Български", "english": "Bulgarian", "script": "Cyrl", "intl": "bg", "reviewed": false},
+  {"code": "hr", "tag": "hr", "native": "Hrvatski", "english": "Croatian", "script": "Latn", "intl": "hr", "reviewed": false},
+  {"code": "sr", "tag": "sr", "native": "Српски", "english": "Serbian", "script": "Cyrl", "intl": "sr", "reviewed": false},
+  {"code": "sl", "tag": "sl", "native": "Slovenščina", "english": "Slovenian", "script": "Latn", "intl": "sl", "reviewed": false}
 ]

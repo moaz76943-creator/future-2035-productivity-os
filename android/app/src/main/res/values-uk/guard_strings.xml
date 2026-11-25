@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Захист від відволікань Deep Focus</string>
+    <string name="guard_service_summary">Призупиняє вибрані застосунки, поки ви зосереджені</string>
+    <string name="guard_service_description">Deep Focus використовує цю функцію лише для того, щоб бачити, який застосунок відкрито, і призупиняти вибрані застосунки під час фокусу або за вашим розкладом, а також закривати Shorts і Reels, якщо ви це ввімкнули. Вона не читає тексту, нічого не зберігає й нічого нікуди не надсилає. Вимкнути її можна тут будь-коли.</string>
+</resources>

@@ -278,7 +278,7 @@ class AppLocalizationsBn extends AppLocalizations {
       count,
       locale: localeName,
       other: '$countটি কার্ড রিভিউ বাকি',
-      one: '1টি কার্ড রিভিউ বাকি',
+      one: '$countটি কার্ড রিভিউ বাকি',
       zero: 'রিভিউ করার কার্ড নেই',
     );
     return '$_temp0';
@@ -335,7 +335,7 @@ class AppLocalizationsBn extends AppLocalizations {
       count,
       locale: localeName,
       other: 'আপনার $countটি কাজের সময় পেরিয়ে গেছে। সবচেয়ে জরুরিটি দিয়ে শুরু করুন।',
-      one: 'আপনার 1টি কাজের সময় পেরিয়ে গেছে। আগে সেটি নতুন সময়ে রাখুন বা শেষ করুন।',
+      one: 'আপনার $countটি কাজের সময় পেরিয়ে গেছে। আগে সেটি নতুন সময়ে রাখুন বা শেষ করুন।',
     );
     return '$_temp0';
   }
@@ -2549,6 +2549,7 @@ class AppLocalizationsBn extends AppLocalizations {
       locale: localeName,
       other: 'দিনে $count বার',
       one: 'দিনে একবার',
+      zero: 'দিনে $count বার',
     );
     return '$_temp0';
   }
@@ -2817,24 +2818,28 @@ class AppLocalizationsBn extends AppLocalizations {
       locale: localeName,
       other: 'প্রতি $count দিনে',
       one: 'প্রতিদিন',
+      zero: 'প্রতি $count দিনে',
     );
     String _temp1 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
       other: 'প্রতি $count সপ্তাহে',
       one: 'প্রতি সপ্তাহে',
+      zero: 'প্রতি $count সপ্তাহে',
     );
     String _temp2 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
       other: 'প্রতি $count মাসে',
       one: 'প্রতি মাসে',
+      zero: 'প্রতি $count মাসে',
     );
     String _temp3 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
       other: 'প্রতি $count বছরে',
       one: 'প্রতি বছর',
+      zero: 'প্রতি $count বছরে',
     );
     String _temp4 = intl.Intl.selectLogic(unit, {
       'day': '$_temp0',
@@ -3364,6 +3369,7 @@ class AppLocalizationsBn extends AppLocalizations {
       locale: localeName,
       other: '$countটি কার্ড সরানো হয়েছে',
       one: 'কার্ড সরানো হয়েছে',
+      zero: '$countটি কার্ড সরানো হয়েছে',
     );
     return '$_temp0';
   }
@@ -4540,6 +4546,7 @@ class AppLocalizationsBn extends AppLocalizations {
       locale: localeName,
       other: 'পরীক্ষা $count দিন পর',
       one: 'আগামীকাল পরীক্ষা',
+      zero: 'পরীক্ষা $count দিন পর',
     );
     return '$_temp0';
   }

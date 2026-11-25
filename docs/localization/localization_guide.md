@@ -60,6 +60,8 @@ What each language gets automatically, and what the checks enforce:
 - **Plurals**: CLDR categories per language in `tool/l10n_common.py` (`PLURAL_CATS`; add the
   language there first if the tool asks). Where the `intl` package has no plural rules for a
   language it always picks `other`, so `check_l10n.py` then requires an `=1` branch.
+  Flutter merges `=1` with `one` (and `=0`/`zero`, `=2`/`two`) and keeps only the later one,
+  so a language with a `one` branch (Croatian, Ukrainian, ...) never also carries `=1`.
 - **Dates and numbers**: the `intl` locale must have date data (`gen_languages.py` refuses
   one that has none); all digits are shown as Western digits anyway.
 - **Direction**: right to left follows the writing system (`RTL_SCRIPTS`, `RTL` in

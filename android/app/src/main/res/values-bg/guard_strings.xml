@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Защита от разсейване Deep Focus</string>
+    <string name="guard_service_summary">Спира избраните приложения, докато се фокусирате</string>
+    <string name="guard_service_description">Deep Focus използва тази функция само за да вижда кое приложение е отворено, за да спира избраните приложения по време на фокус или по вашия график и да затваря Shorts и Reels, ако сте го включили. Не чете текст, не запазва нищо и не изпраща нищо никъде. Можете да я изключите тук по всяко време.</string>
+</resources>

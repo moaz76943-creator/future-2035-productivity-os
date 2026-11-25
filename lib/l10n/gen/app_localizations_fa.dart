@@ -278,7 +278,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count کارت برای مرور',
-      one: '1 کارت برای مرور',
+      one: '$count کارت برای مرور',
       zero: 'کارتی برای مرور نیست',
     );
     return '$_temp0';
@@ -335,7 +335,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count کار عقب‌افتاده دارید. از مهم‌ترین شروع کنید.',
-      one: '1 کار عقب‌افتاده دارید. اول زمانش را عوض کنید یا تمامش کنید.',
+      one: '$count کار عقب‌افتاده دارید. اول زمانش را عوض کنید یا تمامش کنید.',
     );
     return '$_temp0';
   }
@@ -482,7 +482,7 @@ class AppLocalizationsFa extends AppLocalizations {
       minutes,
       locale: localeName,
       other: '$minutes دقیقه',
-      one: '1 دقیقه',
+      one: '$minutes دقیقه',
     );
     return '$_temp0';
   }
@@ -643,7 +643,7 @@ class AppLocalizationsFa extends AppLocalizations {
       days,
       locale: localeName,
       other: '$days روز تأخیر',
-      one: '1 روز تأخیر',
+      one: '$days روز تأخیر',
     );
     return '$_temp0';
   }
@@ -720,25 +720,49 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String repeatUnitDays(int count) {
-    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: 'روز', one: 'روز');
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'روز',
+      one: 'روز',
+      zero: 'روز',
+    );
     return '$_temp0';
   }
 
   @override
   String repeatUnitWeeks(int count) {
-    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: 'هفته', one: 'هفته');
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'هفته',
+      one: 'هفته',
+      zero: 'هفته',
+    );
     return '$_temp0';
   }
 
   @override
   String repeatUnitMonths(int count) {
-    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: 'ماه', one: 'ماه');
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'ماه',
+      one: 'ماه',
+      zero: 'ماه',
+    );
     return '$_temp0';
   }
 
   @override
   String repeatUnitYears(int count) {
-    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: 'سال', one: 'سال');
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'سال',
+      one: 'سال',
+      zero: 'سال',
+    );
     return '$_temp0';
   }
 
@@ -748,7 +772,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count بار',
-      one: '1 بار',
+      one: '$count بار',
     );
     return 'پایان پس از $_temp0';
   }
@@ -765,7 +789,7 @@ class AppLocalizationsFa extends AppLocalizations {
       minutes,
       locale: localeName,
       other: '$minutes دقیقه قبل',
-      one: '1 دقیقه قبل',
+      one: '$minutes دقیقه قبل',
     );
     return '$_temp0';
   }
@@ -776,7 +800,7 @@ class AppLocalizationsFa extends AppLocalizations {
       hours,
       locale: localeName,
       other: '$hours ساعت قبل',
-      one: '1 ساعت قبل',
+      one: '$hours ساعت قبل',
     );
     return '$_temp0';
   }
@@ -840,7 +864,7 @@ class AppLocalizationsFa extends AppLocalizations {
       days,
       locale: localeName,
       other: '$days روز مانده',
-      one: '1 روز مانده',
+      one: '$days روز مانده',
       zero: 'سررسید امروز',
     );
     return '$_temp0';
@@ -915,7 +939,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: 'با $count رویداد هم‌پوشانی دارد',
-      one: 'با 1 رویداد هم‌پوشانی دارد',
+      one: 'با $count رویداد هم‌پوشانی دارد',
     );
     return '$_temp0';
   }
@@ -1022,7 +1046,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count واژه',
-      one: '1 واژه',
+      one: '$count واژه',
     );
     return '$_temp0';
   }
@@ -1060,7 +1084,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count کارت',
-      one: '1 کارت',
+      one: '$count کارت',
       zero: 'بدون کارت',
     );
     return '$_temp0';
@@ -1137,7 +1161,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count کارت مرور کردید.',
-      one: '1 کارت مرور کردید.',
+      one: '$count کارت مرور کردید.',
     );
     return '$_temp0';
   }
@@ -1158,7 +1182,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count کارت وارد شد',
-      one: '1 کارت وارد شد',
+      one: '$count کارت وارد شد',
       zero: 'کارتی وارد نشد',
     );
     return '$_temp0';
@@ -1176,7 +1200,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count دقیقه',
-      one: '1 دقیقه',
+      one: '$count دقیقه',
     );
     return '$_temp0';
   }
@@ -1187,7 +1211,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count روز',
-      one: '1 روز',
+      one: '$count روز',
     );
     return '$_temp0';
   }
@@ -1316,7 +1340,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: 'زنجیره $count روزه',
-      one: 'زنجیره 1 روزه',
+      one: 'زنجیره $count روزه',
       zero: 'بدون زنجیره',
     );
     return '$_temp0';
@@ -1546,7 +1570,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count کار پیدا شد',
-      one: '1 کار پیدا شد',
+      one: '$count کار پیدا شد',
       zero: 'کاری در این یادداشت پیدا نشد',
     );
     return '$_temp0';
@@ -1558,7 +1582,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count کارت پیدا شد',
-      one: '1 کارت پیدا شد',
+      one: '$count کارت پیدا شد',
       zero: 'کارتی در این یادداشت پیدا نشد',
     );
     return '$_temp0';
@@ -1585,7 +1609,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count کار باز برآورد ندارند.',
-      one: '1 کار باز برآورد ندارد.',
+      one: '$count کار باز برآورد ندارد.',
     );
     return '$_temp0';
   }
@@ -1702,7 +1726,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count جلسه',
-      one: '1 جلسه',
+      one: '$count جلسه',
     );
     return '$_temp0';
   }
@@ -1810,7 +1834,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count مورد بازیابی شد',
-      one: '1 مورد بازیابی شد',
+      one: '$count مورد بازیابی شد',
     );
     return '$_temp0';
   }
@@ -2063,7 +2087,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count بلوک زمانی به تقویم امروز اضافه می‌شود.',
-      one: '1 بلوک زمانی به تقویم امروز اضافه می‌شود.',
+      one: '$count بلوک زمانی به تقویم امروز اضافه می‌شود.',
     );
     return '$_temp0';
   }
@@ -2074,7 +2098,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count بلوک زمانی اضافه شد',
-      one: '1 بلوک زمانی اضافه شد',
+      one: '$count بلوک زمانی اضافه شد',
     );
     return '$_temp0';
   }
@@ -2100,7 +2124,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count کار ساخته شد',
-      one: '1 کار ساخته شد',
+      one: '$count کار ساخته شد',
     );
     return '$_temp0';
   }
@@ -2111,7 +2135,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count کارت ساخته شد',
-      one: '1 کارت ساخته شد',
+      one: '$count کارت ساخته شد',
     );
     return '$_temp0';
   }
@@ -2215,7 +2239,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count رویداد',
-      one: '1 رویداد',
+      one: '$count رویداد',
       zero: 'بدون رویداد',
     );
     return '$_temp0';
@@ -2227,7 +2251,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count کار سررسیددار',
-      one: '1 کار سررسیددار',
+      one: '$count کار سررسیددار',
       zero: 'کار سررسیدداری نیست',
     );
     return '$_temp0';
@@ -2295,7 +2319,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count کارت آماده مرور است',
-      one: '1 کارت آماده مرور است',
+      one: '$count کارت آماده مرور است',
     );
     return '$_temp0';
   }
@@ -2371,7 +2395,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count کارت آماده مطالعه',
-      one: '1 کارت آماده مطالعه',
+      one: '$count کارت آماده مطالعه',
       zero: 'کارت آماده‌ای نیست',
     );
     return '$_temp0';
@@ -2512,7 +2536,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count کار پیوندشده انجام‌شده',
-      one: '1 کار پیوندشده انجام‌شده',
+      one: '$count کار پیوندشده انجام‌شده',
     );
     return 'شامل $_temp0 در این دوره';
   }
@@ -2599,7 +2623,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count روز',
-      one: '1 روز',
+      one: '$count روز',
     );
     return '$_temp0';
   }
@@ -2620,6 +2644,7 @@ class AppLocalizationsFa extends AppLocalizations {
       locale: localeName,
       other: 'روزی $count بار',
       one: 'روزی یک بار',
+      zero: 'روزی $count بار',
     );
     return '$_temp0';
   }
@@ -2789,7 +2814,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count نتیجه',
-      one: '1 نتیجه',
+      one: '$count نتیجه',
     );
     return '$_temp0';
   }
@@ -2894,24 +2919,28 @@ class AppLocalizationsFa extends AppLocalizations {
       locale: localeName,
       other: 'هر $count روز',
       one: 'هر روز',
+      zero: 'هر $count روز',
     );
     String _temp1 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
       other: 'هر $count هفته',
       one: 'هر هفته',
+      zero: 'هر $count هفته',
     );
     String _temp2 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
       other: 'هر $count ماه',
       one: 'هر ماه',
+      zero: 'هر $count ماه',
     );
     String _temp3 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
       other: 'هر $count سال',
       one: 'هر سال',
+      zero: 'هر $count سال',
     );
     String _temp4 = intl.Intl.selectLogic(unit, {
       'day': '$_temp0',
@@ -3002,7 +3031,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count کار',
-      one: '1 کار',
+      one: '$count کار',
     );
     return 'وابسته به $_temp0';
   }
@@ -3065,7 +3094,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count مورد برای همیشه حذف می‌شود.',
-      one: '1 مورد برای همیشه حذف می‌شود.',
+      one: '$count مورد برای همیشه حذف می‌شود.',
     );
     return '$_temp0';
   }
@@ -3087,7 +3116,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count مورد',
-      one: '1 مورد',
+      one: '$count مورد',
     );
     return '$_temp0';
   }
@@ -3321,7 +3350,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: 'مرور $count کارت',
-      one: 'مرور 1 کارت',
+      one: 'مرور $count کارت',
     );
     return '$_temp0';
   }
@@ -3453,6 +3482,7 @@ class AppLocalizationsFa extends AppLocalizations {
       locale: localeName,
       other: '$count کارت منتقل شد',
       one: 'کارت منتقل شد',
+      zero: '$count کارت منتقل شد',
     );
     return '$_temp0';
   }
@@ -3920,7 +3950,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: 'به $count کارت پاسخ داده شد',
-      one: 'به 1 کارت پاسخ داده شد',
+      one: 'به $count کارت پاسخ داده شد',
       zero: 'به هیچ کارتی پاسخ داده نشد',
     );
     return '$_temp0';
@@ -4017,7 +4047,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count کار برای امروز',
-      one: '1 کار برای امروز',
+      one: '$count کار برای امروز',
       zero: 'امروز کاری نیست',
     );
     return '$_temp0';
@@ -4037,7 +4067,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count عادت مانده',
-      one: '1 عادت مانده',
+      one: '$count عادت مانده',
       zero: 'همه عادت‌ها انجام شد',
     );
     return '$_temp0';
@@ -4099,7 +4129,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count روز',
-      one: '1 روز',
+      one: '$count روز',
     );
     return '$_temp0';
   }
@@ -4121,7 +4151,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: 'در 7 روز به $count کارت پاسخ داده شد',
-      one: 'در 7 روز به 1 کارت پاسخ داده شد',
+      one: 'در 7 روز به $count کارت پاسخ داده شد',
       zero: 'در 7 روز به کارتی پاسخ داده نشد',
     );
     return '$_temp0';
@@ -4560,7 +4590,7 @@ class AppLocalizationsFa extends AppLocalizations {
       added,
       locale: localeName,
       other: '$added مورد اضافه شد',
-      one: '1 مورد اضافه شد',
+      one: '$added مورد اضافه شد',
       zero: 'چیز تازه‌ای برای افزودن نیست',
     );
     return '$_temp0';
@@ -4642,6 +4672,7 @@ class AppLocalizationsFa extends AppLocalizations {
       locale: localeName,
       other: '$count روز تا امتحان',
       one: 'امتحان فردا',
+      zero: '$count روز تا امتحان',
     );
     return '$_temp0';
   }
@@ -4652,7 +4683,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: 'روزی $count کارت جدید یاد بگیرید',
-      one: 'روزی 1 کارت جدید یاد بگیرید',
+      one: 'روزی $count کارت جدید یاد بگیرید',
     );
     return '$_temp0';
   }
@@ -5050,7 +5081,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count برنامه',
-      one: '1 برنامه',
+      one: '$count برنامه',
       zero: 'هنوز انتخاب نشده',
     );
     return '$_temp0';
@@ -5134,7 +5165,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count کارت منتظر شماست',
-      one: '1 کارت منتظر شماست',
+      one: '$count کارت منتظر شماست',
     );
     return '$_temp0';
   }
@@ -5156,7 +5187,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count مکث',
-      one: '1 مکث',
+      one: '$count مکث',
     );
     return '$_temp0';
   }
@@ -5167,7 +5198,7 @@ class AppLocalizationsFa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count بار بازگشت به تمرکز',
-      one: '1 بار بازگشت به تمرکز',
+      one: '$count بار بازگشت به تمرکز',
     );
     return '$_temp0';
   }

@@ -16,6 +16,7 @@ Checks every lib/l10n/app_*.arb against the English template:
     res/values-<code>/ copy of every *_strings.xml with the same names
   * a language intl has no plural rules for always takes 'other', so its
     plurals must spell out =1 wherever the language has a 'one' form
+  * =0/=1/=2 never sit next to zero/one/two: Flutter merges them and drops the first
   * no unused keys: every message is referenced from lib/ (a dead string is
     work for every translator and every future language)
 """
@@ -166,6 +167,9 @@ def main():
                         errors.append(f"{path.name}:{k}: plural category '{c}' invalid for {loc}")
                 if base_code(loc) not in INTL_PLURALS and 'one' in allowed and '=1' not in cats:
                     errors.append(f"{path.name}:{k}: intl has no plural rules for {loc}: add an =1 branch")
+                for exact, cat in (('=0', 'zero'), ('=1', 'one'), ('=2', 'two')):
+                    if exact in cats and cat in cats:
+                        errors.append(f"{path.name}:{k}: Flutter treats {exact} and {cat} as one branch and drops {exact}: keep only {cat}")
             if BAD_DIGITS.search(v):
                 errors.append(f'{path.name}:{k}: non-Western digits')
             if FLAG.search(v):

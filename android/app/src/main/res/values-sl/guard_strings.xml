@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Zaščita pred motnjami Deep Focus</string>
+    <string name="guard_service_summary">Začasno ustavi izbrane aplikacije, ko ste zbrani</string>
+    <string name="guard_service_description">Deep Focus to funkcijo uporablja samo zato, da vidi, katera aplikacija je odprta, da lahko med zbranostjo ali po vašem urniku začasno ustavi izbrane aplikacije in zapre Shorts in Reels, če ste to vklopili. Ne bere besedila, ničesar ne shrani in ničesar ne pošilja. Tukaj jo lahko kadar koli izklopite.</string>
+</resources>

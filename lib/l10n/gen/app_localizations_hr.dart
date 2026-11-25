@@ -1215,7 +1215,7 @@ class AppLocalizationsHr extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count min',
-      one: '1 min',
+      one: '$count min',
     );
     return '$_temp0';
   }
@@ -2171,7 +2171,7 @@ class AppLocalizationsHr extends AppLocalizations {
       count,
       locale: localeName,
       other: 'Izradi $count',
-      one: 'Izradi 1',
+      one: 'Izradi $count',
       zero: 'Ništa nije odabrano',
     );
     return '$_temp0';

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Фокус и карти</string>
+    <string name="home_widget_description">Оставащо време за фокус и карти за преговор</string>
+    <string name="quick_widget_label">Бързо добавяне</string>
+    <string name="quick_widget_description">Добавете задача или бележка или преговорете карти</string>
+</resources>

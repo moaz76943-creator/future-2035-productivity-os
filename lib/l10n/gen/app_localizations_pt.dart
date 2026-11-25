@@ -278,7 +278,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count cartões para revisar',
-      one: '1 cartão para revisar',
+      one: '$count cartão para revisar',
       zero: 'Nenhum cartão para revisar',
     );
     return '$_temp0';
@@ -335,7 +335,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: 'Você tem $count tarefas atrasadas. Comece pela mais importante.',
-      one: 'Você tem 1 tarefa atrasada. Remarque ou conclua primeiro.',
+      one: 'Você tem $count tarefa atrasada. Remarque ou conclua primeiro.',
     );
     return '$_temp0';
   }
@@ -484,7 +484,7 @@ class AppLocalizationsPt extends AppLocalizations {
       minutes,
       locale: localeName,
       other: '$minutes minutos',
-      one: '1 minuto',
+      one: '$minutes minuto',
     );
     return '$_temp0';
   }
@@ -645,7 +645,7 @@ class AppLocalizationsPt extends AppLocalizations {
       days,
       locale: localeName,
       other: '$days dias de atraso',
-      one: '1 dia de atraso',
+      one: '$days dia de atraso',
     );
     return '$_temp0';
   }
@@ -722,7 +722,13 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String repeatUnitDays(int count) {
-    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: 'dias', one: 'dia');
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'dias',
+      one: 'dia',
+      zero: 'dias',
+    );
     return '$_temp0';
   }
 
@@ -733,19 +739,32 @@ class AppLocalizationsPt extends AppLocalizations {
       locale: localeName,
       other: 'semanas',
       one: 'semana',
+      zero: 'semanas',
     );
     return '$_temp0';
   }
 
   @override
   String repeatUnitMonths(int count) {
-    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: 'meses', one: 'mês');
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'meses',
+      one: 'mês',
+      zero: 'meses',
+    );
     return '$_temp0';
   }
 
   @override
   String repeatUnitYears(int count) {
-    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: 'anos', one: 'ano');
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'anos',
+      one: 'ano',
+      zero: 'anos',
+    );
     return '$_temp0';
   }
 
@@ -755,7 +774,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count vezes',
-      one: '1 vez',
+      one: '$count vez',
     );
     return 'Termina após $_temp0';
   }
@@ -772,7 +791,7 @@ class AppLocalizationsPt extends AppLocalizations {
       minutes,
       locale: localeName,
       other: '$minutes minutos antes',
-      one: '1 minuto antes',
+      one: '$minutes minuto antes',
     );
     return '$_temp0';
   }
@@ -783,7 +802,7 @@ class AppLocalizationsPt extends AppLocalizations {
       hours,
       locale: localeName,
       other: '$hours horas antes',
-      one: '1 hora antes',
+      one: '$hours hora antes',
     );
     return '$_temp0';
   }
@@ -847,7 +866,7 @@ class AppLocalizationsPt extends AppLocalizations {
       days,
       locale: localeName,
       other: 'Faltam $days dias',
-      one: 'Falta 1 dia',
+      one: 'Falta $days dia',
       zero: 'Vence hoje',
     );
     return '$_temp0';
@@ -922,7 +941,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: 'Conflita com $count eventos',
-      one: 'Conflita com 1 evento',
+      one: 'Conflita com $count evento',
     );
     return '$_temp0';
   }
@@ -1029,7 +1048,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count palavras',
-      one: '1 palavra',
+      one: '$count palavra',
     );
     return '$_temp0';
   }
@@ -1068,7 +1087,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count cartões',
-      one: '1 cartão',
+      one: '$count cartão',
       zero: 'Nenhum cartão',
     );
     return '$_temp0';
@@ -1145,7 +1164,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: 'Você revisou $count cartões.',
-      one: 'Você revisou 1 cartão.',
+      one: 'Você revisou $count cartão.',
     );
     return '$_temp0';
   }
@@ -1166,7 +1185,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count cartões importados',
-      one: '1 cartão importado',
+      one: '$count cartão importado',
       zero: 'Nenhum cartão importado',
     );
     return '$_temp0';
@@ -1184,7 +1203,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count min',
-      one: '1 min',
+      one: '$count min',
     );
     return '$_temp0';
   }
@@ -1195,7 +1214,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count dias',
-      one: '1 dia',
+      one: '$count dia',
     );
     return '$_temp0';
   }
@@ -1323,7 +1342,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: 'Sequência de $count dias',
-      one: 'Sequência de 1 dia',
+      one: 'Sequência de $count dia',
       zero: 'Sem sequência',
     );
     return '$_temp0';
@@ -1555,7 +1574,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count tarefas encontradas',
-      one: '1 tarefa encontrada',
+      one: '$count tarefa encontrada',
       zero: 'Nenhuma tarefa encontrada nesta nota',
     );
     return '$_temp0';
@@ -1567,7 +1586,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count cartões encontrados',
-      one: '1 cartão encontrado',
+      one: '$count cartão encontrado',
       zero: 'Nenhum cartão encontrado nesta nota',
     );
     return '$_temp0';
@@ -1594,7 +1613,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count tarefas abertas não têm estimativa.',
-      one: '1 tarefa aberta não tem estimativa.',
+      one: '$count tarefa aberta não tem estimativa.',
     );
     return '$_temp0';
   }
@@ -1710,7 +1729,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count sessões',
-      one: '1 sessão',
+      one: '$count sessão',
     );
     return '$_temp0';
   }
@@ -1819,7 +1838,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count itens restaurados',
-      one: '1 item restaurado',
+      one: '$count item restaurado',
     );
     return '$_temp0';
   }
@@ -2072,7 +2091,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count blocos de tempo serão adicionados ao calendário de hoje.',
-      one: '1 bloco de tempo será adicionado ao calendário de hoje.',
+      one: '$count bloco de tempo será adicionado ao calendário de hoje.',
     );
     return '$_temp0';
   }
@@ -2083,7 +2102,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count blocos de tempo adicionados',
-      one: '1 bloco de tempo adicionado',
+      one: '$count bloco de tempo adicionado',
     );
     return '$_temp0';
   }
@@ -2109,7 +2128,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count tarefas criadas',
-      one: '1 tarefa criada',
+      one: '$count tarefa criada',
     );
     return '$_temp0';
   }
@@ -2120,7 +2139,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count cartões criados',
-      one: '1 cartão criado',
+      one: '$count cartão criado',
     );
     return '$_temp0';
   }
@@ -2131,7 +2150,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: 'Criar $count',
-      one: 'Criar 1',
+      one: 'Criar $count',
       zero: 'Nada selecionado',
     );
     return '$_temp0';
@@ -2225,7 +2244,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count eventos',
-      one: '1 evento',
+      one: '$count evento',
       zero: 'Nenhum evento',
     );
     return '$_temp0';
@@ -2237,7 +2256,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count tarefas com prazo',
-      one: '1 tarefa com prazo',
+      one: '$count tarefa com prazo',
       zero: 'nenhuma tarefa com prazo',
     );
     return '$_temp0';
@@ -2307,7 +2326,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count cartões para revisar',
-      one: '1 cartão para revisar',
+      one: '$count cartão para revisar',
     );
     return '$_temp0';
   }
@@ -2383,7 +2402,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count cartões prontos para estudar',
-      one: '1 cartão pronto para estudar',
+      one: '$count cartão pronto para estudar',
       zero: 'Nenhum cartão pronto',
     );
     return '$_temp0';
@@ -2524,7 +2543,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count tarefas vinculadas concluídas',
-      one: '1 tarefa vinculada concluída',
+      one: '$count tarefa vinculada concluída',
     );
     return 'Inclui $_temp0 neste período';
   }
@@ -2612,7 +2631,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count dias',
-      one: '1 dia',
+      one: '$count dia',
     );
     return '$_temp0';
   }
@@ -2633,6 +2652,7 @@ class AppLocalizationsPt extends AppLocalizations {
       locale: localeName,
       other: '$count vezes por dia',
       one: 'Uma vez por dia',
+      zero: '$count vezes por dia',
     );
     return '$_temp0';
   }
@@ -2802,7 +2822,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count resultados',
-      one: '1 resultado',
+      one: '$count resultado',
     );
     return '$_temp0';
   }
@@ -2908,24 +2928,28 @@ class AppLocalizationsPt extends AppLocalizations {
       locale: localeName,
       other: 'A cada $count dias',
       one: 'Todos os dias',
+      zero: 'A cada $count dias',
     );
     String _temp1 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
       other: 'A cada $count semanas',
       one: 'Todas as semanas',
+      zero: 'A cada $count semanas',
     );
     String _temp2 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
       other: 'A cada $count meses',
       one: 'Todos os meses',
+      zero: 'A cada $count meses',
     );
     String _temp3 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
       other: 'A cada $count anos',
       one: 'Todos os anos',
+      zero: 'A cada $count anos',
     );
     String _temp4 = intl.Intl.selectLogic(unit, {
       'day': '$_temp0',
@@ -3016,7 +3040,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count tarefas',
-      one: '1 tarefa',
+      one: '$count tarefa',
     );
     return 'Bloqueada por $_temp0';
   }
@@ -3080,7 +3104,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count itens serão excluídos permanentemente.',
-      one: '1 item será excluído permanentemente.',
+      one: '$count item será excluído permanentemente.',
     );
     return '$_temp0';
   }
@@ -3102,7 +3126,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count itens',
-      one: '1 item',
+      one: '$count item',
     );
     return '$_temp0';
   }
@@ -3337,7 +3361,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: 'Revisar $count cartões',
-      one: 'Revisar 1 cartão',
+      one: 'Revisar $count cartão',
     );
     return '$_temp0';
   }
@@ -3470,6 +3494,7 @@ class AppLocalizationsPt extends AppLocalizations {
       locale: localeName,
       other: '$count cartões movidos',
       one: 'Cartão movido',
+      zero: '$count cartões movidos',
     );
     return '$_temp0';
   }
@@ -3938,7 +3963,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count cartões respondidos',
-      one: '1 cartão respondido',
+      one: '$count cartão respondido',
       zero: 'Nenhum cartão respondido',
     );
     return '$_temp0';
@@ -4034,7 +4059,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count tarefas para hoje',
-      one: '1 tarefa para hoje',
+      one: '$count tarefa para hoje',
       zero: 'Nenhuma tarefa para hoje',
     );
     return '$_temp0';
@@ -4054,7 +4079,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: 'Faltam $count hábitos',
-      one: 'Falta 1 hábito',
+      one: 'Falta $count hábito',
       zero: 'Todos os hábitos feitos',
     );
     return '$_temp0';
@@ -4116,7 +4141,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count dias',
-      one: '1 dia',
+      one: '$count dia',
     );
     return '$_temp0';
   }
@@ -4138,7 +4163,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count cartões em 7 dias',
-      one: '1 cartão em 7 dias',
+      one: '$count cartão em 7 dias',
       zero: 'Nenhum cartão em 7 dias',
     );
     return '$_temp0';
@@ -4576,7 +4601,7 @@ class AppLocalizationsPt extends AppLocalizations {
       added,
       locale: localeName,
       other: '$added adicionados',
-      one: '1 adicionado',
+      one: '$added adicionado',
       zero: 'Nada novo para adicionar',
     );
     return '$_temp0';
@@ -4658,6 +4683,7 @@ class AppLocalizationsPt extends AppLocalizations {
       locale: localeName,
       other: 'Prova em $count dias',
       one: 'Prova amanhã',
+      zero: 'Prova em $count dias',
     );
     return '$_temp0';
   }
@@ -4668,7 +4694,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: 'aprenda $count cartões novos por dia',
-      one: 'aprenda 1 cartão novo por dia',
+      one: 'aprenda $count cartão novo por dia',
     );
     return '$_temp0';
   }
@@ -5064,7 +5090,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count apps',
-      one: '1 app',
+      one: '$count app',
       zero: 'Nenhum escolhido',
     );
     return '$_temp0';
@@ -5148,7 +5174,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count cartões estão esperando por você',
-      one: '1 cartão está esperando por você',
+      one: '$count cartão está esperando por você',
     );
     return '$_temp0';
   }
@@ -5170,7 +5196,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count pausas',
-      one: '1 pausa',
+      one: '$count pausa',
     );
     return '$_temp0';
   }
@@ -5181,7 +5207,7 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other: 'voltou ao foco $count vezes',
-      one: 'voltou ao foco 1 vez',
+      one: 'voltou ao foco $count vez',
     );
     return '$_temp0';
   }

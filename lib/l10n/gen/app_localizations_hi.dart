@@ -2069,7 +2069,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: 'आज के कैलेंडर में $count टाइम ब्लॉक जोड़े जाएँगे।',
-      one: 'आज के कैलेंडर में 1 टाइम ब्लॉक जोड़ा जाएगा।',
+      one: 'आज के कैलेंडर में $count टाइम ब्लॉक जोड़ा जाएगा।',
     );
     return '$_temp0';
   }
@@ -2080,7 +2080,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count टाइम ब्लॉक जोड़े गए',
-      one: '1 टाइम ब्लॉक जोड़ा गया',
+      one: '$count टाइम ब्लॉक जोड़ा गया',
     );
     return '$_temp0';
   }
@@ -2106,7 +2106,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count कार्य बनाए गए',
-      one: '1 कार्य बनाया गया',
+      one: '$count कार्य बनाया गया',
     );
     return '$_temp0';
   }
@@ -2117,7 +2117,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count कार्ड बनाए गए',
-      one: '1 कार्ड बनाया गया',
+      one: '$count कार्ड बनाया गया',
     );
     return '$_temp0';
   }
@@ -2128,7 +2128,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count बनाएँ',
-      one: '1 बनाएँ',
+      one: '$count बनाएँ',
       zero: 'कुछ भी चुना नहीं गया',
     );
     return '$_temp0';
@@ -2222,7 +2222,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count इवेंट',
-      one: '1 इवेंट',
+      one: '$count इवेंट',
       zero: 'कोई इवेंट नहीं',
     );
     return '$_temp0';
@@ -2234,7 +2234,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count कार्य देय',
-      one: '1 कार्य देय',
+      one: '$count कार्य देय',
       zero: 'कोई कार्य देय नहीं',
     );
     return '$_temp0';
@@ -2303,7 +2303,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count कार्ड की समीक्षा बाकी है',
-      one: '1 कार्ड की समीक्षा बाकी है',
+      one: '$count कार्ड की समीक्षा बाकी है',
     );
     return '$_temp0';
   }
@@ -2379,7 +2379,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count कार्ड पढ़ने के लिए तैयार',
-      one: '1 कार्ड पढ़ने के लिए तैयार',
+      one: '$count कार्ड पढ़ने के लिए तैयार',
       zero: 'कोई कार्ड तैयार नहीं',
     );
     return '$_temp0';
@@ -2520,7 +2520,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count पूरे हुए लिंक किए गए कार्य',
-      one: '1 पूरे हुए लिंक किए गए कार्य',
+      one: '$count पूरे हुए लिंक किए गए कार्य',
     );
     return 'इस अवधि के $_temp0 शामिल हैं';
   }
@@ -2607,7 +2607,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count दिन',
-      one: '1 दिन',
+      one: '$count दिन',
     );
     return '$_temp0';
   }
@@ -2628,6 +2628,7 @@ class AppLocalizationsHi extends AppLocalizations {
       locale: localeName,
       other: 'दिन में $count बार',
       one: 'दिन में एक बार',
+      zero: 'दिन में $count बार',
     );
     return '$_temp0';
   }
@@ -2797,7 +2798,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count परिणाम',
-      one: '1 परिणाम',
+      one: '$count परिणाम',
     );
     return '$_temp0';
   }
@@ -2902,24 +2903,28 @@ class AppLocalizationsHi extends AppLocalizations {
       locale: localeName,
       other: 'हर $count दिन',
       one: 'हर दिन',
+      zero: 'हर $count दिन',
     );
     String _temp1 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
       other: 'हर $count सप्ताह',
       one: 'हर सप्ताह',
+      zero: 'हर $count सप्ताह',
     );
     String _temp2 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
       other: 'हर $count महीने',
       one: 'हर महीने',
+      zero: 'हर $count महीने',
     );
     String _temp3 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
       other: 'हर $count साल',
       one: 'हर साल',
+      zero: 'हर $count साल',
     );
     String _temp4 = intl.Intl.selectLogic(unit, {
       'day': '$_temp0',
@@ -3010,7 +3015,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count कार्य',
-      one: '1 कार्य',
+      one: '$count कार्य',
     );
     return '$_temp0 द्वारा रुका हुआ';
   }
@@ -3073,7 +3078,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count आइटम हमेशा के लिए हटा दिए जाएँगे।',
-      one: '1 आइटम हमेशा के लिए हटा दिया जाएगा।',
+      one: '$count आइटम हमेशा के लिए हटा दिया जाएगा।',
     );
     return '$_temp0';
   }
@@ -3095,7 +3100,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count आइटम',
-      one: '1 आइटम',
+      one: '$count आइटम',
     );
     return '$_temp0';
   }
@@ -3329,7 +3334,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count कार्ड दोहराएँ',
-      one: '1 कार्ड दोहराएँ',
+      one: '$count कार्ड दोहराएँ',
     );
     return '$_temp0';
   }
@@ -3461,6 +3466,7 @@ class AppLocalizationsHi extends AppLocalizations {
       locale: localeName,
       other: '$count कार्ड ले जाए गए',
       one: 'कार्ड ले जाया गया',
+      zero: '$count कार्ड ले जाए गए',
     );
     return '$_temp0';
   }
@@ -3927,7 +3933,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count कार्ड हल किए',
-      one: '1 कार्ड हल किया',
+      one: '$count कार्ड हल किया',
       zero: 'कोई कार्ड हल नहीं',
     );
     return '$_temp0';
@@ -4024,7 +4030,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: 'आज $count कार्य',
-      one: 'आज 1 कार्य',
+      one: 'आज $count कार्य',
       zero: 'आज कोई कार्य नहीं',
     );
     return '$_temp0';
@@ -4044,7 +4050,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count आदतें बाकी',
-      one: '1 आदत बाकी',
+      one: '$count आदत बाकी',
       zero: 'सभी आदतें पूरी',
     );
     return '$_temp0';
@@ -4106,7 +4112,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count दिन',
-      one: '1 दिन',
+      one: '$count दिन',
     );
     return '$_temp0';
   }
@@ -4128,7 +4134,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '7 दिनों में $count कार्ड',
-      one: '7 दिनों में 1 कार्ड',
+      one: '7 दिनों में $count कार्ड',
       zero: '7 दिनों में कोई कार्ड नहीं',
     );
     return '$_temp0';
@@ -4566,7 +4572,7 @@ class AppLocalizationsHi extends AppLocalizations {
       added,
       locale: localeName,
       other: '$added जोड़े गए',
-      one: '1 जोड़ा गया',
+      one: '$added जोड़ा गया',
       zero: 'जोड़ने को कुछ नया नहीं',
     );
     return '$_temp0';
@@ -4648,6 +4654,7 @@ class AppLocalizationsHi extends AppLocalizations {
       locale: localeName,
       other: 'परीक्षा $count दिन में',
       one: 'परीक्षा कल',
+      zero: 'परीक्षा $count दिन में',
     );
     return '$_temp0';
   }
@@ -4658,7 +4665,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: 'रोज़ $count नए कार्ड सीखें',
-      one: 'रोज़ 1 नया कार्ड सीखें',
+      one: 'रोज़ $count नया कार्ड सीखें',
     );
     return '$_temp0';
   }
@@ -5054,7 +5061,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count ऐप्स',
-      one: '1 ऐप',
+      one: '$count ऐप',
       zero: 'अभी कोई नहीं चुनी',
     );
     return '$_temp0';
@@ -5136,7 +5143,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count कार्ड आपका इंतज़ार कर रहे हैं',
-      one: '1 कार्ड आपका इंतज़ार कर रहा है',
+      one: '$count कार्ड आपका इंतज़ार कर रहा है',
     );
     return '$_temp0';
   }
@@ -5158,7 +5165,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count विराम',
-      one: '1 विराम',
+      one: '$count विराम',
     );
     return '$_temp0';
   }
@@ -5169,7 +5176,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count बार फ़ोकस पर लौटे',
-      one: '1 बार फ़ोकस पर लौटे',
+      one: '$count बार फ़ोकस पर लौटे',
     );
     return '$_temp0';
   }
