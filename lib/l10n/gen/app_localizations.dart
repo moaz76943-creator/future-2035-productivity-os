@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
+import 'app_localizations_af.dart';
 import 'app_localizations_ar.dart';
 import 'app_localizations_bg.dart';
 import 'app_localizations_bn.dart';
@@ -16,13 +17,16 @@ import 'app_localizations_el.dart';
 import 'app_localizations_en.dart';
 import 'app_localizations_es.dart';
 import 'app_localizations_et.dart';
+import 'app_localizations_eu.dart';
 import 'app_localizations_fa.dart';
 import 'app_localizations_fi.dart';
 import 'app_localizations_fr.dart';
+import 'app_localizations_gl.dart';
 import 'app_localizations_hi.dart';
 import 'app_localizations_hr.dart';
 import 'app_localizations_hu.dart';
 import 'app_localizations_id.dart';
+import 'app_localizations_is.dart';
 import 'app_localizations_it.dart';
 import 'app_localizations_ja.dart';
 import 'app_localizations_ko.dart';
@@ -39,6 +43,7 @@ import 'app_localizations_sk.dart';
 import 'app_localizations_sl.dart';
 import 'app_localizations_sr.dart';
 import 'app_localizations_sv.dart';
+import 'app_localizations_sw.dart';
 import 'app_localizations_th.dart';
 import 'app_localizations_tr.dart';
 import 'app_localizations_uk.dart';
@@ -130,6 +135,7 @@ abstract class AppLocalizations {
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
+    Locale('af'),
     Locale('ar'),
     Locale('bg'),
     Locale('bn'),
@@ -142,13 +148,16 @@ abstract class AppLocalizations {
     Locale('en', 'GB'),
     Locale('es'),
     Locale('et'),
+    Locale('eu'),
     Locale('fa'),
     Locale('fi'),
     Locale('fr'),
+    Locale('gl'),
     Locale('hi'),
     Locale('hr'),
     Locale('hu'),
     Locale('id'),
+    Locale('is'),
     Locale('it'),
     Locale('ja'),
     Locale('ko'),
@@ -165,6 +174,7 @@ abstract class AppLocalizations {
     Locale('sl'),
     Locale('sr'),
     Locale('sv'),
+    Locale('sw'),
     Locale('th'),
     Locale('tr'),
     Locale('uk'),
@@ -8848,6 +8858,7 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
 
   @override
   bool isSupported(Locale locale) => <String>[
+    'af',
     'ar',
     'bg',
     'bn',
@@ -8859,13 +8870,16 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
     'en',
     'es',
     'et',
+    'eu',
     'fa',
     'fi',
     'fr',
+    'gl',
     'hi',
     'hr',
     'hu',
     'id',
+    'is',
     'it',
     'ja',
     'ko',
@@ -8882,6 +8896,7 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
     'sl',
     'sr',
     'sv',
+    'sw',
     'th',
     'tr',
     'uk',
@@ -8909,6 +8924,8 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
 
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
+    case 'af':
+      return AppLocalizationsAf();
     case 'ar':
       return AppLocalizationsAr();
     case 'bg':
@@ -8931,12 +8948,16 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsEs();
     case 'et':
       return AppLocalizationsEt();
+    case 'eu':
+      return AppLocalizationsEu();
     case 'fa':
       return AppLocalizationsFa();
     case 'fi':
       return AppLocalizationsFi();
     case 'fr':
       return AppLocalizationsFr();
+    case 'gl':
+      return AppLocalizationsGl();
     case 'hi':
       return AppLocalizationsHi();
     case 'hr':
@@ -8945,6 +8966,8 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsHu();
     case 'id':
       return AppLocalizationsId();
+    case 'is':
+      return AppLocalizationsIs();
     case 'it':
       return AppLocalizationsIt();
     case 'ja':
@@ -8977,6 +9000,8 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsSr();
     case 'sv':
       return AppLocalizationsSv();
+    case 'sw':
+      return AppLocalizationsSw();
     case 'th':
       return AppLocalizationsTh();
     case 'tr':

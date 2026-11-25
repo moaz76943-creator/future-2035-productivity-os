@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Einbeiting og spjöld</string>
+    <string name="home_widget_description">Eftirstandandi einbeitingartími og spjöld til upprifjunar</string>
+    <string name="quick_widget_label">Bæta hratt við</string>
+    <string name="quick_widget_description">Bættu við verkefni eða glósu, eða rifjaðu upp spjöld</string>
+</resources>

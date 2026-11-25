@@ -1,4 +1,20 @@
 {
+  "af": [
+    "accentAmber",
+    "accentViolet",
+    "actionStop",
+    "assistantModel",
+    "calendarWeek",
+    "dashAgenda",
+    "dashSectionAgenda",
+    "focusMinutesShort",
+    "hijriDate",
+    "prayerMaghrib",
+    "prayerMethodIsna",
+    "prayerMethodTurkey",
+    "priorityMedium",
+    "trashCount"
+  ],
   "bg": [
     "prayerMethodIsna"
   ],
@@ -87,7 +103,25 @@
     "noteFormatLink",
     "prayerMethodIsna"
   ],
+  "eu": [
+    "dashAgenda",
+    "dashSectionAgenda",
+    "focusMinutesShort",
+    "prayerDhuhr",
+    "prayerFajr",
+    "prayerIsha",
+    "prayerMethodIsna"
+  ],
   "fi": [
+    "focusMinutesShort",
+    "hijriDate",
+    "prayerDhuhr",
+    "prayerFajr",
+    "prayerIsha",
+    "prayerMaghrib",
+    "prayerMethodIsna"
+  ],
+  "gl": [
     "focusMinutesShort",
     "hijriDate",
     "prayerDhuhr",
@@ -112,6 +146,13 @@
     "focusModeCountdown",
     "prayerMethodIsna",
     "tasksFilterLabel"
+  ],
+  "is": [
+    "prayerDhuhr",
+    "prayerFajr",
+    "prayerIsha",
+    "prayerMaghrib",
+    "prayerMethodIsna"
   ],
   "it": [
     "dashAgenda",
@@ -274,6 +315,11 @@
     "themeSystem",
     "transferColBody",
     "transferFormatText"
+  ],
+  "sw": [
+    "prayerIsha",
+    "prayerMethodIsna",
+    "prayerMethodSingapore"
   ],
   "tr": [
     "assistantModel",

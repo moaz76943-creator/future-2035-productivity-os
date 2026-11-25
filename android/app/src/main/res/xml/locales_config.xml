@@ -42,4 +42,9 @@
     <locale android:name="lv" />
     <locale android:name="et" />
     <locale android:name="ca" />
+    <locale android:name="is" />
+    <locale android:name="eu" />
+    <locale android:name="gl" />
+    <locale android:name="sw" />
+    <locale android:name="af" />
 </locale-config>

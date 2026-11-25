@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Kontzentrazioa eta txartelak</string>
+    <string name="home_widget_description">Geratzen den kontzentrazio-denbora eta errepasatzeko txartelak</string>
+    <string name="quick_widget_label">Gehitze azkarra</string>
+    <string name="quick_widget_description">Gehitu zeregin edo ohar bat, edo errepasatu txartelak</string>
+</resources>

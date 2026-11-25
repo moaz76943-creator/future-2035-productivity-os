@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focus-afleidingswag</string>
+    <string name="guard_service_summary">Onderbreek gekose apps terwyl jy fokus</string>
+    <string name="guard_service_description">Deep Focus gebruik hierdie funksie net om te sien watter app oop is, sodat dit gekose apps tydens fokus of volgens jou skedule kan onderbreek en Shorts en Reels kan toemaak as jy dit aangeskakel het. Dit lees geen teks nie, stoor niks nie en stuur niks êrens heen nie. Jy kan dit enige tyd hier afskakel.</string>
+</resources>

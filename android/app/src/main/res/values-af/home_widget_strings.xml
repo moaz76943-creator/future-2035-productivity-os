@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Fokus en kaarte</string>
+    <string name="home_widget_description">Oorblywende fokustyd en kaarte om te hersien</string>
+    <string name="quick_widget_label">Vinnig byvoeg</string>
+    <string name="quick_widget_description">Voeg ’n taak of nota by, of hersien kaarte</string>
+</resources>

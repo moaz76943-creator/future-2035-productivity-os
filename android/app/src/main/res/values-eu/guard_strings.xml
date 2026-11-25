@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focus distrakzioen babesa</string>
+    <string name="guard_service_summary">Aukeratutako aplikazioak pausatzen ditu kontzentratzen zaren bitartean</string>
+    <string name="guard_service_description">Deep Focus-ek funtzio hau zein aplikazio dagoen irekita ikusteko bakarrik erabiltzen du, kontzentrazioan edo zure ordutegiaren arabera aukeratutako aplikazioak pausatu eta, aktibatu baduzu, Shorts eta Reels ixteko. Ez du testurik irakurtzen, ez du ezer gordetzen eta ez du ezer inora bidaltzen. Hemen desaktiba dezakezu edonoiz.</string>
+</resources>

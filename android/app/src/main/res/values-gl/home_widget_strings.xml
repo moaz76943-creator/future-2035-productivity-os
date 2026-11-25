@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Concentración e tarxetas</string>
+    <string name="home_widget_description">Tempo de concentración restante e tarxetas para repasar</string>
+    <string name="quick_widget_label">Engadir rápido</string>
+    <string name="quick_widget_description">Engade unha tarefa ou unha nota, ou repasa tarxetas</string>
+</resources>

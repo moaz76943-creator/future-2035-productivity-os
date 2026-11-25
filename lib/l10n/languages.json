@@ -39,5 +39,10 @@
   {"code": "lt", "tag": "lt", "native": "Lietuvių", "english": "Lithuanian", "script": "Latn", "intl": "lt", "reviewed": false},
   {"code": "lv", "tag": "lv", "native": "Latviešu", "english": "Latvian", "script": "Latn", "intl": "lv", "reviewed": false},
   {"code": "et", "tag": "et", "native": "Eesti", "english": "Estonian", "script": "Latn", "intl": "et", "reviewed": false},
-  {"code": "ca", "tag": "ca", "native": "Català", "english": "Catalan", "script": "Latn", "intl": "ca", "reviewed": false}
+  {"code": "ca", "tag": "ca", "native": "Català", "english": "Catalan", "script": "Latn", "intl": "ca", "reviewed": false},
+  {"code": "is", "tag": "is", "native": "Íslenska", "english": "Icelandic", "script": "Latn", "intl": "is", "reviewed": false},
+  {"code": "eu", "tag": "eu", "native": "Euskara", "english": "Basque", "script": "Latn", "intl": "eu", "reviewed": false},
+  {"code": "gl", "tag": "gl", "native": "Galego", "english": "Galician", "script": "Latn", "intl": "gl", "reviewed": false},
+  {"code": "sw", "tag": "sw", "native": "Kiswahili", "english": "Swahili", "script": "Latn", "intl": "sw", "reviewed": false},
+  {"code": "af", "tag": "af", "native": "Afrikaans", "english": "Afrikaans", "script": "Latn", "intl": "af", "reviewed": false}
 ]

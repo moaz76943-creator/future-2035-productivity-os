@@ -44,6 +44,11 @@ const _languageScripts = <String, String>{
   'lv': 'Latn',
   'et': 'Latn',
   'ca': 'Latn',
+  'is': 'Latn',
+  'eu': 'Latn',
+  'gl': 'Latn',
+  'sw': 'Latn',
+  'af': 'Latn',
 };
 
 /// Bundled font that has every letter of the language; absent: the phone's font.
@@ -81,4 +86,9 @@ const _languageFonts = <String, String>{
   'lv': 'Manrope',
   'et': 'Manrope',
   'ca': 'Manrope',
+  'is': 'Manrope',
+  'eu': 'Manrope',
+  'gl': 'Manrope',
+  'sw': 'Manrope',
+  'af': 'Manrope',
 };

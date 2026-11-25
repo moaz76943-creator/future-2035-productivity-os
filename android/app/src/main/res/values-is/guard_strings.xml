@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Truflanavörn Deep Focus</string>
+    <string name="guard_service_summary">Gerir hlé á völdum forritum meðan þú einbeitir þér</string>
+    <string name="guard_service_description">Deep Focus notar þennan eiginleika aðeins til að sjá hvaða forrit er opið, svo það geti gert hlé á völdum forritum meðan á einbeitingu stendur eða samkvæmt áætlun þinni og lokað Shorts og Reels ef þú kveiktir á því. Það les engan texta, vistar ekkert og sendir ekkert neitt. Þú getur slökkt á því hér hvenær sem er.</string>
+</resources>
