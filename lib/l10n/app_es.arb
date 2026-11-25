@@ -1466,5 +1466,12 @@
   "faqGuardQ": "¿Cómo freno las apps que distraen mientras me concentro?",
   "faqGuardA": "Abre Concentración → ajustes del temporizador → Guardián de distracciones. Elige las apps y luego Suave (5 segundos de respiración y la pregunta \"¿Necesitas esta app ahora?\") o Estricto (quedan cerradas). Funciona en las sesiones y, con Horario protegido, en los días y horas que elijas. \"Permitir solo las apps elegidas\" pausa todo lo demás; llamadas, ajustes y teclado siempre funcionan. Android te pide una vez activarlo en Accesibilidad. Solo ve qué app está abierta y no envía nada.",
   "notesMovedToNotebook": "Movida a {name}",
-  "notesDragHint": "Mantén una nota y arrástrala a un cuaderno"
+  "notesDragHint": "Mantén una nota y arrástrala a un cuaderno",
+  "guardReviewCards": "Repasar tarjetas",
+  "guardDueNudge": "{count, plural, =1{Te espera 1 tarjeta} other{Te esperan {count} tarjetas}}",
+  "guardEmergencyHold": "Emergencia: mantén 10 segundos",
+  "guardEmergencyHolding": "Sigue manteniendo… {n}",
+  "guardWeekTitle": "Esta semana",
+  "guardWeekPaused": "{count, plural, =1{1 pausa} other{{count} pausas}}",
+  "guardWeekReturned": "{count, plural, =1{volviste a concentrarte 1 vez} other{volviste a concentrarte {count} veces}}"
 }

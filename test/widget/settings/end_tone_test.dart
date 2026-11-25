@@ -62,7 +62,10 @@ void main() {
       plannedSeconds: 1500,
     );
     final end = DateTime.utc(2026, 1, 1, 0, 25);
-    expect(focusEndNotification(s, end, const AppSettings(focusEndTone: 'wood')).tone, 'alarm_wood');
+    expect(
+      focusEndNotification(s, end, const AppSettings(focusEndTone: 'wood')).tone,
+      'alarm_wood',
+    );
     expect(focusEndNotification(s, end, const AppSettings(focusEndTone: 'system')).tone, isNull);
     expect(EndTone.byName('music'), EndTone.gentle);
     final a = focusEndNotification(s, end, const AppSettings(focusEndTone: 'bird'));

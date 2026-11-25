@@ -12,7 +12,12 @@ void main() {
   ) async {
     final env = TestEnv();
     final id = (await tester.runAsync(() => repoOf(env).create()))!;
-    await pumpScreen(tester, NoteEditorScreen(noteId: id), env: env, localeTag: 'ar');
+    await pumpScreen(
+      tester,
+      NoteEditorScreen(noteId: id),
+      env: env,
+      localeTag: 'ar',
+    );
     await tester.pump(const Duration(milliseconds: 300));
     await settle(tester);
     await tester.tap(find.byKey(const Key('template_lecture')));

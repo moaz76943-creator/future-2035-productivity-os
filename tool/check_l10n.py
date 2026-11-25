@@ -37,7 +37,7 @@ SAME_OK = {'appName', 'percentValue', 'taskSubtaskProgress', 'durationHours', 'd
            'calendarEventSemantics', 'focusHistoryItem', 'goalsCardSemantics',
            # Words that are spelled the same in some target languages (es "Color", fr "Notes").
            'calendarEventColor', 'habitsColor', 'notesNotebookColor', 'projectLinkedNotes',
-           'repeatCountLabel', 'calendarAgenda'}
+           'repeatCountLabel', 'calendarAgenda', 'guardWeekPaused'}
 BAD_DIGITS = re.compile('[\u0660-\u0669\u06F0-\u06F9\u0966-\u096F]')
 FLAG = re.compile('[\U0001F1E6-\U0001F1FF]')
 

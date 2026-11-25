@@ -17,6 +17,10 @@ final _serviceOnProvider = FutureProvider.autoDispose<bool>(
   (ref) => ref.read(distractionGuardProvider).isEnabled(),
 );
 
+final _weekProvider = FutureProvider.autoDispose<GuardWeek>(
+  (ref) => ref.read(distractionGuardProvider).week(),
+);
+
 /// Distraction guard settings: on/off, gentle or strict, which apps, Shorts and
 /// Reels, and the Time Guard schedule.
 class GuardScreen extends ConsumerStatefulWidget {
@@ -33,7 +37,11 @@ class _GuardScreenState extends ConsumerState<GuardScreen> {
   void initState() {
     super.initState();
     // Back from Accessibility settings: show whether the switch is now on.
-    _life = AppLifecycleListener(onResume: () => ref.invalidate(_serviceOnProvider));
+    _life = AppLifecycleListener(
+      onResume: () => ref
+        ..invalidate(_serviceOnProvider)
+        ..invalidate(_weekProvider),
+    );
   }
 
   @override
@@ -132,6 +140,30 @@ class _GuardScreenState extends ConsumerState<GuardScreen> {
                   ],
                 ),
               ),
+              if (ref.watch(_weekProvider).value case final w? when w.paused > 0) ...[
+                const SizedBox(height: Space.md),
+                LuxCard(
+                  key: const Key('guardWeek'),
+                  child: Row(
+                    children: [
+                      const IconOrb(icon: Icons.insights_rounded, hue: ModuleHue.habits, size: 40),
+                      const SizedBox(width: Space.sm),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(l10n.guardWeekTitle, style: context.text.labelMedium),
+                            Text(
+                              '${l10n.guardWeekPaused(w.paused)} · ${l10n.guardWeekReturned(w.returned)}',
+                              style: context.text.titleSmall,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
               const SizedBox(height: Space.md),
               LuxCard(
                 child: Column(

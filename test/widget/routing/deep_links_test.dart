@@ -10,6 +10,7 @@ import 'package:future_os/core/design_system/app_theme.dart';
 import 'package:future_os/core/platform/app_shortcuts.dart';
 import 'package:future_os/core/providers/core_providers.dart';
 import 'package:future_os/core/security/secret_store.dart';
+import 'package:future_os/features/focus/application/focus_controller.dart';
 import 'package:future_os/features/notifications/application/notification_providers.dart';
 import 'package:future_os/features/settings/application/settings_providers.dart';
 import 'package:future_os/features/settings/data/settings_repository.dart';
@@ -123,6 +124,14 @@ void main() {
     notifications.tapsController.add('https://example.com');
     await tester.pump(const Duration(seconds: 1));
     expect(where(), Routes.calendar, reason: 'a foreign link changes nothing');
+
+    // The Quick Settings tile opens Focus and starts the session set up there.
+    final container = ProviderScope.containerOf(tester.element(find.byType(MaterialApp)));
+    shortcuts.open('/focus?start=1');
+    await tester.pump(const Duration(seconds: 1));
+    await settle(tester);
+    expect(where(), Routes.focus);
+    expect(container.read(focusControllerProvider).active, isNotNull);
 
     await closeEnv(tester, env);
   });

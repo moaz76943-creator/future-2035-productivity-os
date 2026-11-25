@@ -5441,4 +5441,59 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get notesDragHint => 'اضغط مطولًا على ملاحظة واسحبها إلى دفتر';
+
+  @override
+  String get guardReviewCards => 'راجع البطاقات بدلًا من ذلك';
+
+  @override
+  String guardDueNudge(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count بطاقة بانتظارك',
+      few: '$count بطاقات بانتظارك',
+      two: 'بطاقتان بانتظارك',
+      one: 'بطاقة واحدة بانتظارك',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get guardEmergencyHold => 'للطوارئ: اضغط مطولًا 10 ثوانٍ';
+
+  @override
+  String guardEmergencyHolding(Object n) {
+    return 'استمر بالضغط… $n';
+  }
+
+  @override
+  String get guardWeekTitle => 'هذا الأسبوع';
+
+  @override
+  String guardWeekPaused(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count وقفة',
+      few: '$count وقفات',
+      two: 'وقفتان',
+      one: 'وقفة واحدة',
+      zero: 'لا وقفات',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String guardWeekReturned(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'عدت إلى التركيز $count مرة',
+      few: 'عدت إلى التركيز $count مرات',
+      two: 'عدت إلى التركيز مرتين',
+      one: 'عدت إلى التركيز مرة',
+      zero: 'لم تعد إلى التركيز بعد',
+    );
+    return '$_temp0';
+  }
 }

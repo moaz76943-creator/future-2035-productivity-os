@@ -5260,4 +5260,51 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get notesDragHint => 'किसी नोट को दबाए रखें और नोटबुक पर खींचें';
+
+  @override
+  String get guardReviewCards => 'इसके बजाय कार्ड दोहराएँ';
+
+  @override
+  String guardDueNudge(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count कार्ड आपका इंतज़ार कर रहे हैं',
+      one: '1 कार्ड आपका इंतज़ार कर रहा है',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get guardEmergencyHold => 'आपात स्थिति: 10 सेकंड दबाए रखें';
+
+  @override
+  String guardEmergencyHolding(Object n) {
+    return 'दबाए रखें… $n';
+  }
+
+  @override
+  String get guardWeekTitle => 'इस सप्ताह';
+
+  @override
+  String guardWeekPaused(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count विराम',
+      one: '1 विराम',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String guardWeekReturned(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count बार फ़ोकस पर लौटे',
+      one: '1 बार फ़ोकस पर लौटे',
+    );
+    return '$_temp0';
+  }
 }

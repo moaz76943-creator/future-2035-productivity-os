@@ -24,6 +24,8 @@ class GuardRules(json: String?) {
     val apps: Set<String> = j.optJSONArray("apps")?.let { a ->
         (0 until a.length()).map { a.optString(it) }.toSet()
     } ?: emptySet()
+    /** Flashcards due now, for the gentle pause's "review instead?" offer. */
+    val dueCards = j.optInt("due", 0)
     private val strings = j.optJSONObject("strings") ?: JSONObject()
 
     fun text(key: String, fallback: String): String = strings.optString(key, fallback).ifEmpty { fallback }
@@ -61,5 +63,34 @@ class GuardRules(json: String?) {
             prefs(c).edit().putLong(PASS + pkg, System.currentTimeMillis() + 5 * 60_000L).apply()
 
         fun hasPass(c: Context, pkg: String) = prefs(c).getLong(PASS + pkg, 0L) > System.currentTimeMillis()
+
+        /** Daily counts kept on the phone only: "paused", "returned", "unlocked". */
+        fun count(c: Context, what: String) {
+            val key = "s_${day(0)}_$what"
+            val p = prefs(c)
+            p.edit().putInt(key, p.getInt(key, 0) + 1).apply()
+        }
+
+        /** Totals of the last 7 days, and drops older days. */
+        fun week(c: Context): Map<String, Int> {
+            val p = prefs(c)
+            val days = (0 until 7).map { day(it) }.toSet()
+            val out = mutableMapOf("paused" to 0, "returned" to 0, "unlocked" to 0)
+            val stale = mutableListOf<String>()
+            for ((k, v) in p.all) {
+                if (!k.startsWith("s_")) continue
+                val parts = k.split('_')
+                if (parts.size != 3) continue
+                if (parts[1] !in days) { stale += k; continue }
+                out[parts[2]] = (out[parts[2]] ?: 0) + ((v as? Int) ?: 0)
+            }
+            if (stale.isNotEmpty()) p.edit().apply { stale.forEach { remove(it) } }.apply()
+            return out
+        }
+
+        private fun day(back: Int): String {
+            val cal = Calendar.getInstance().apply { add(Calendar.DAY_OF_YEAR, -back) }
+            return "%04d%02d%02d".format(java.util.Locale.ROOT, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) + 1, cal.get(Calendar.DAY_OF_MONTH))
+        }
     }
 }

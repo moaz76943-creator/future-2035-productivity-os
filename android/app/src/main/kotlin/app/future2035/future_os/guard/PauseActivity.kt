@@ -12,12 +12,14 @@ import android.os.Looper
 import android.util.TypedValue
 import android.view.Gravity
 import android.view.KeyEvent
+import android.view.MotionEvent
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import app.future2035.future_os.MainActivity
+import app.future2035.future_os.ShortcutsBridge
 
 /**
  * The intentional pause shown over a guarded app. Gentle: five seconds of slow
@@ -34,6 +36,7 @@ class PauseActivity : Activity() {
         super.onCreate(savedInstanceState)
         target = intent.getStringExtra(EXTRA_PACKAGE) ?: ""
         val rules = GuardRules.load(this)
+        if (savedInstanceState == null) GuardRules.count(this, "paused")
         val night = Color.rgb(10, 12, 16)
         window.statusBarColor = night
         window.navigationBarColor = night
@@ -70,8 +73,23 @@ class PauseActivity : Activity() {
         }
         open.visibility = View.GONE
         back.visibility = if (rules.strict) View.VISIBLE else View.INVISIBLE
+        // Gentle: due flashcards are offered as a better use of the moment.
+        val due = if (!rules.strict && rules.dueCards > 0) {
+            button(rules.text("review", "Review cards"), filled = false) {
+                openApp(ShortcutsBridge.EXTRA_ROUTE to "/flashcards")
+            }.also { it.visibility = View.GONE }
+        } else null
+        val dueText = if (due != null) {
+            text(rules.text("due", ""), 15f, 0.75f).also { it.visibility = View.GONE }
+        } else null
         root.addView(back, wide().apply { topMargin = dp(40) })
+        if (dueText != null && due != null) {
+            root.addView(dueText, wrap().apply { topMargin = dp(18) })
+            root.addView(due, wide().apply { topMargin = dp(8) })
+        }
         root.addView(open, wide().apply { topMargin = dp(10) })
+        // Strict: an emergency way out that takes a deliberate 10-second hold.
+        if (rules.strict) root.addView(emergency(rules), wide().apply { topMargin = dp(24) })
         setContentView(root)
 
         breath = ValueAnimator.ofFloat(0.72f, 1f).apply {
@@ -91,13 +109,54 @@ class PauseActivity : Activity() {
                 question.visibility = View.VISIBLE
                 back.visibility = View.VISIBLE
                 open.visibility = View.VISIBLE
+                dueText?.visibility = View.VISIBLE
+                due?.visibility = View.VISIBLE
             }, 5000)
         }
     }
 
-    private fun backToFocus() {
-        startActivity(Intent(this, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_REORDER_TO_FRONT))
+    private fun backToFocus() = openApp(null)
+
+    private fun openApp(extra: Pair<String, String>?) {
+        GuardRules.count(this, "returned")
+        val i = Intent(this, MainActivity::class.java)
+            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+        extra?.let { i.putExtra(it.first, it.second) }
+        startActivity(i)
         finish()
+    }
+
+    /** Hold for 10 seconds to open the app once for 5 minutes; letting go cancels. */
+    private fun emergency(rules: GuardRules): Button {
+        val label = rules.text("hold", "Emergency: hold 10 seconds")
+        val b = button(label, filled = false) {}
+        var left = 0
+        val tick = object : Runnable {
+            override fun run() {
+                if (left <= 0) {
+                    GuardRules.count(this@PauseActivity, "unlocked")
+                    GuardRules.grantPass(this@PauseActivity, target)
+                    packageManager.getLaunchIntentForPackage(target)?.let { startActivity(it) }
+                    finish()
+                    return
+                }
+                b.text = rules.text("holding", "Keep holding… {n}").replace("{n}", left.toString())
+                left--
+                main.postDelayed(this, 1000)
+            }
+        }
+        b.setOnTouchListener { v, e ->
+            when (e.actionMasked) {
+                MotionEvent.ACTION_DOWN -> { left = 10; main.post(tick) }
+                MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
+                    main.removeCallbacks(tick)
+                    b.text = label
+                    if (e.actionMasked == MotionEvent.ACTION_UP) v.performClick()
+                }
+            }
+            true
+        }
+        return b
     }
 
     /** Android 12 and older: Back leads to focus, never into the paused app. */

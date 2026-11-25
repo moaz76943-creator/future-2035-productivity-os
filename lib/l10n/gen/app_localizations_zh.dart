@@ -5002,4 +5002,36 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get notesDragHint => '长按笔记并拖到笔记本上';
+
+  @override
+  String get guardReviewCards => '改为复习卡片';
+
+  @override
+  String guardDueNudge(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '有 $count 张卡片在等你');
+    return '$_temp0';
+  }
+
+  @override
+  String get guardEmergencyHold => '紧急：按住 10 秒';
+
+  @override
+  String guardEmergencyHolding(Object n) {
+    return '继续按住… $n';
+  }
+
+  @override
+  String get guardWeekTitle => '本周';
+
+  @override
+  String guardWeekPaused(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '暂停 $count 次');
+    return '$_temp0';
+  }
+
+  @override
+  String guardWeekReturned(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '回到专注 $count 次');
+    return '$_temp0';
+  }
 }

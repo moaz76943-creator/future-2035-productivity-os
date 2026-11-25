@@ -36,6 +36,7 @@ class GuardBridge(private val context: Context, messenger: BinaryMessenger) {
                     GuardRules.prefs(context).edit().putLong(GuardRules.KEY_UNTIL, until).apply()
                     result.success(true)
                 }
+                "stats" -> result.success(GuardRules.week(context))
                 "apps" -> io.execute {
                     val list = try { launcherApps() } catch (e: Exception) { emptyList() }
                     main.post { result.success(list) }

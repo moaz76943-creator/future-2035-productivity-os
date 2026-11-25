@@ -90,10 +90,18 @@ void main() {
     await seed(tester, env);
     await db(tester, () async {
       await eventsOf(env).create(
-        EventDraft(title: 'Seminar', start: DateTime(2026, 11, 20, 9), end: DateTime(2026, 11, 20, 10)),
+        EventDraft(
+          title: 'Seminar',
+          start: DateTime(2026, 11, 20, 9),
+          end: DateTime(2026, 11, 20, 10),
+        ),
       );
       await eventsOf(env).create(
-        EventDraft(title: 'Far away', start: DateTime(2026, 12, 30, 9), end: DateTime(2026, 12, 30, 10)),
+        EventDraft(
+          title: 'Far away',
+          start: DateTime(2026, 12, 30, 9),
+          end: DateTime(2026, 12, 30, 10),
+        ),
       );
     });
     await pumpScreen(tester, routed(), env: env);

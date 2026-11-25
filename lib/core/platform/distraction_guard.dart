@@ -24,6 +24,16 @@ abstract interface class DistractionGuard {
 
   /// While a focus session runs: guard until [until] (null ends it).
   Future<void> session(DateTime? until);
+
+  /// Last 7 days, counted on the phone: paused, returned (to focus), unlocked.
+  Future<GuardWeek> week();
+}
+
+class GuardWeek {
+  const GuardWeek({this.paused = 0, this.returned = 0, this.unlocked = 0});
+  final int paused;
+  final int returned;
+  final int unlocked;
 }
 
 class ChannelDistractionGuard implements DistractionGuard {
@@ -58,6 +68,13 @@ class ChannelDistractionGuard implements DistractionGuard {
   @override
   Future<void> session(DateTime? until) =>
       _call<bool>('session', {'until': until?.millisecondsSinceEpoch ?? 0});
+
+  @override
+  Future<GuardWeek> week() async {
+    final m = await _call<Map<Object?, Object?>>('stats') ?? const {};
+    int n(String k) => m[k] is int ? m[k]! as int : 0;
+    return GuardWeek(paused: n('paused'), returned: n('returned'), unlocked: n('unlocked'));
+  }
 }
 
 /// For tests and platforms without the service.
@@ -83,6 +100,11 @@ class MemoryDistractionGuard implements DistractionGuard {
 
   @override
   Future<void> session(DateTime? until) async => this.until = until;
+
+  GuardWeek stats = const GuardWeek();
+
+  @override
+  Future<GuardWeek> week() async => stats;
 }
 
 final distractionGuardProvider = Provider<DistractionGuard>(

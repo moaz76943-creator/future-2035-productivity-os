@@ -20,7 +20,12 @@ void main() {
       await repo.importParsed(deck, [for (var i = 0; i < 90; i++) ImportedCard('س$i', 'ج$i')]);
       await env.db.writeValue(ExamPlan.key(deck), '2026-11-26'); // 10 days → 9 learning days
     });
-    await pumpScreen(tester, DeckScreen(deckId: deck), localeTag: 'ar', env: env);
+    await pumpScreen(
+      tester,
+      DeckScreen(deckId: deck),
+      localeTag: 'ar',
+      env: env,
+    );
     await settle(tester);
     expect(find.textContaining('الامتحان بعد 10 أيام'), findsOneWidget);
     expect(find.textContaining('تعلّم 10 بطاقات جديدة يومياً'), findsOneWidget);

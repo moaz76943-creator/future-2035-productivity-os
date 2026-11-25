@@ -5392,4 +5392,54 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get notesDragHint => 'Удерживайте заметку и перетащите в блокнот';
+
+  @override
+  String get guardReviewCards => 'Повторить карточки';
+
+  @override
+  String guardDueNudge(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Вас ждут $count карточек',
+      few: 'Вас ждут $count карточки',
+      one: 'Вас ждёт $count карточка',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get guardEmergencyHold => 'Срочно: удерживайте 10 секунд';
+
+  @override
+  String guardEmergencyHolding(Object n) {
+    return 'Держите… $n';
+  }
+
+  @override
+  String get guardWeekTitle => 'На этой неделе';
+
+  @override
+  String guardWeekPaused(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count пауз',
+      few: '$count паузы',
+      one: '$count пауза',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String guardWeekReturned(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count раз вернулись к фокусу',
+      few: '$count раза вернулись к фокусу',
+      one: '$count раз вернулись к фокусу',
+    );
+    return '$_temp0';
+  }
 }

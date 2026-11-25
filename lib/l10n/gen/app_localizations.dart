@@ -8909,6 +8909,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Hold a note and drag it onto a notebook'**
   String get notesDragHint;
+
+  /// Pause screen: review flashcards instead
+  ///
+  /// In en, this message translates to:
+  /// **'Review cards instead'**
+  String get guardReviewCards;
+
+  /// Pause screen: cards due
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 card is waiting for you} other{{count} cards are waiting for you}}'**
+  String guardDueNudge(int count);
+
+  /// Strict pause: emergency unlock button
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency: hold 10 seconds'**
+  String get guardEmergencyHold;
+
+  /// Strict pause: countdown while holding; keep {n} literally
+  ///
+  /// In en, this message translates to:
+  /// **'Keep holding… {n}'**
+  String guardEmergencyHolding(Object n);
+
+  /// Guard stats card title
+  ///
+  /// In en, this message translates to:
+  /// **'This week'**
+  String get guardWeekTitle;
+
+  /// Stat: times the guard paused an app
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 pause} other{{count} pauses}}'**
+  String guardWeekPaused(int count);
+
+  /// Stat: times the user went back to focus
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{back to focus once} other{back to focus {count} times}}'**
+  String guardWeekReturned(int count);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

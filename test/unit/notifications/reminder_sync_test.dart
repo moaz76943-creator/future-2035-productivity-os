@@ -27,9 +27,7 @@ void main() {
         databaseProvider.overrideWithValue(env.db),
         clockProvider.overrideWithValue(env.clock),
         notificationServiceProvider.overrideWithValue(service),
-        initialSettingsProvider.overrideWithValue(
-          const AppSettings(onboardingDone: true),
-        ),
+        initialSettingsProvider.overrideWithValue(const AppSettings(onboardingDone: true)),
       ],
     );
     addTearDown(() async {

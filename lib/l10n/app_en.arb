@@ -7023,5 +7023,48 @@
   "notesDragHint": "Hold a note and drag it onto a notebook",
   "@notesDragHint": {
     "description": "Shown on notebook chips while dragging a note"
+  },
+  "guardReviewCards": "Review cards instead",
+  "@guardReviewCards": {
+    "description": "Pause screen: review flashcards instead"
+  },
+  "guardDueNudge": "{count, plural, =1{1 card is waiting for you} other{{count} cards are waiting for you}}",
+  "@guardDueNudge": {
+    "description": "Pause screen: cards due",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "guardEmergencyHold": "Emergency: hold 10 seconds",
+  "@guardEmergencyHold": {
+    "description": "Strict pause: emergency unlock button"
+  },
+  "guardEmergencyHolding": "Keep holding… {n}",
+  "@guardEmergencyHolding": {
+    "description": "Strict pause: countdown while holding; keep {n} literally"
+  },
+  "guardWeekTitle": "This week",
+  "@guardWeekTitle": {
+    "description": "Guard stats card title"
+  },
+  "guardWeekPaused": "{count, plural, =1{1 pause} other{{count} pauses}}",
+  "@guardWeekPaused": {
+    "description": "Stat: times the guard paused an app",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "guardWeekReturned": "{count, plural, =1{back to focus once} other{back to focus {count} times}}",
+  "@guardWeekReturned": {
+    "description": "Stat: times the user went back to focus",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
   }
 }

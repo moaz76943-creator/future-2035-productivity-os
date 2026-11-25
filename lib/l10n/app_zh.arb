@@ -1466,5 +1466,12 @@
   "faqGuardQ": "专注时如何阻止分心应用？",
   "faqGuardA": "打开 专注 → 计时器设置 → 防分心守护。选择应用，然后选温和（呼吸 5 秒并询问“你现在需要这个应用吗？”）或严格（保持关闭）。它在专注时段生效；开启定时守护后，也会在你设定的日期和时段生效。“仅允许所选应用”会暂停其他所有应用；通话、设置和键盘始终可用。Android 会请你在无障碍设置中开启一次。它只看当前打开的是哪个应用，不发送任何数据。",
   "notesMovedToNotebook": "已移至 {name}",
-  "notesDragHint": "长按笔记并拖到笔记本上"
+  "notesDragHint": "长按笔记并拖到笔记本上",
+  "guardReviewCards": "改为复习卡片",
+  "guardDueNudge": "{count, plural, other{有 {count} 张卡片在等你}}",
+  "guardEmergencyHold": "紧急：按住 10 秒",
+  "guardEmergencyHolding": "继续按住… {n}",
+  "guardWeekTitle": "本周",
+  "guardWeekPaused": "{count, plural, other{暂停 {count} 次}}",
+  "guardWeekReturned": "{count, plural, other{回到专注 {count} 次}}"
 }

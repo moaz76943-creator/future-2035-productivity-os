@@ -1466,5 +1466,12 @@
   "faqGuardQ": "Comment bloquer les apps distrayantes pendant la concentration ?",
   "faqGuardA": "Ouvrez Concentration → réglages du minuteur → Garde anti-distraction. Choisissez les apps, puis Doux (5 secondes de respiration et la question « Avez-vous besoin de cette app maintenant ? ») ou Strict (elles restent fermées). Elle agit pendant les sessions et, avec les Plages horaires, aux jours et heures choisis. « N'autoriser que les apps choisies » met tout le reste en pause ; appels, réglages et clavier fonctionnent toujours. Android vous demande une fois de l'activer dans Accessibilité. Elle voit seulement quelle app est ouverte et n'envoie rien.",
   "notesMovedToNotebook": "Déplacée vers {name}",
-  "notesDragHint": "Maintenez une note et glissez-la sur un carnet"
+  "notesDragHint": "Maintenez une note et glissez-la sur un carnet",
+  "guardReviewCards": "Réviser des cartes",
+  "guardDueNudge": "{count, plural, =1{1 carte vous attend} other{{count} cartes vous attendent}}",
+  "guardEmergencyHold": "Urgence : maintenez 10 secondes",
+  "guardEmergencyHolding": "Continuez… {n}",
+  "guardWeekTitle": "Cette semaine",
+  "guardWeekPaused": "{count, plural, =1{1 pause} other{{count} pauses}}",
+  "guardWeekReturned": "{count, plural, =1{retour à la concentration 1 fois} other{retour à la concentration {count} fois}}"
 }

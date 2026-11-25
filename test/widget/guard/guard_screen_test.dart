@@ -80,6 +80,7 @@ void main() {
     // Saved for the next launch too.
     final stored = await tester.runAsync(() => env.db.readValue(GuardNotifier.key));
     expect(stored, contains('com.video'));
+    await closeEnv(tester, env);
   });
 
   testWidgets('a running work phase is focus time for the guard; a pause ends it', (tester) async {
@@ -103,5 +104,29 @@ void main() {
     await tester.runAsync(() => container.read(focusControllerProvider.notifier).pause());
     await settle(tester);
     expect(guard.until, isNull);
+    await closeEnv(tester, env);
+  });
+
+  testWidgets('weekly guard numbers, and due cards reach the pause screen', (tester) async {
+    final guard = MemoryDistractionGuard(enabled: true)
+      ..stats = const GuardWeek(paused: 12, returned: 9);
+    final env = await pumpScreen(
+      tester,
+      const _WithLink(),
+      overrides: [
+        distractionGuardProvider.overrideWithValue(guard),
+        notificationServiceProvider.overrideWithValue(FakeNotificationService()),
+      ],
+    );
+    await settle(tester);
+    final l10n = tester.element(find.byType(GuardScreen)).l10n;
+    expect(find.byKey(const Key('guardWeek')), findsOneWidget);
+    expect(find.text('${l10n.guardWeekPaused(12)} · ${l10n.guardWeekReturned(9)}'), findsOneWidget);
+    final sent = jsonDecode(guard.config!) as Map<String, Object?>;
+    final strings = sent['strings']! as Map;
+    expect(strings['holding'], contains('{n}'));
+    expect(strings['hold'], l10n.guardEmergencyHold);
+    expect(sent['due'], 0);
+    await closeEnv(tester, env);
   });
 }

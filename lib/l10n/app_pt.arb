@@ -1466,5 +1466,12 @@
   "faqGuardQ": "Como paro os apps que distraem enquanto foco?",
   "faqGuardA": "Abra Foco → ajustes do timer → Guarda de distrações. Escolha os apps e depois Suave (5 segundos de respiração e a pergunta \"Você precisa deste app agora?\") ou Rígido (ficam fechados). Funciona nas sessões de foco e, com Horário protegido, nos dias e horas que você definir. \"Permitir só os apps escolhidos\" pausa todo o resto; chamadas, ajustes e teclado sempre funcionam. O Android pede uma vez para ativar em Acessibilidade. Só vê qual app está aberto e não envia nada.",
   "notesMovedToNotebook": "Movida para {name}",
-  "notesDragHint": "Segure uma nota e arraste para um caderno"
+  "notesDragHint": "Segure uma nota e arraste para um caderno",
+  "guardReviewCards": "Revisar cartões",
+  "guardDueNudge": "{count, plural, =1{1 cartão está esperando por você} other{{count} cartões estão esperando por você}}",
+  "guardEmergencyHold": "Emergência: segure 10 segundos",
+  "guardEmergencyHolding": "Continue segurando… {n}",
+  "guardWeekTitle": "Esta semana",
+  "guardWeekPaused": "{count, plural, =1{1 pausa} other{{count} pausas}}",
+  "guardWeekReturned": "{count, plural, =1{voltou ao foco 1 vez} other{voltou ao foco {count} vezes}}"
 }

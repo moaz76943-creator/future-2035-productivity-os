@@ -5272,4 +5272,51 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get notesDragHint => 'Segure uma nota e arraste para um caderno';
+
+  @override
+  String get guardReviewCards => 'Revisar cartões';
+
+  @override
+  String guardDueNudge(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count cartões estão esperando por você',
+      one: '1 cartão está esperando por você',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get guardEmergencyHold => 'Emergência: segure 10 segundos';
+
+  @override
+  String guardEmergencyHolding(Object n) {
+    return 'Continue segurando… $n';
+  }
+
+  @override
+  String get guardWeekTitle => 'Esta semana';
+
+  @override
+  String guardWeekPaused(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pausas',
+      one: '1 pausa',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String guardWeekReturned(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'voltou ao foco $count vezes',
+      one: 'voltou ao foco 1 vez',
+    );
+    return '$_temp0';
+  }
 }

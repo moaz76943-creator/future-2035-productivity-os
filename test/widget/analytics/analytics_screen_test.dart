@@ -38,12 +38,7 @@ Future<TestEnv> seeded() async {
       );
   final tasks = TasksRepository(env.db, env.clock);
   final id = await tasks.create(
-    TaskDraft(
-      title: 'Ship',
-      projectId: 'p1',
-      estimateMinutes: 40,
-      dueAt: DateTime(2026, 11, 15),
-    ),
+    TaskDraft(title: 'Ship', projectId: 'p1', estimateMinutes: 40, dueAt: DateTime(2026, 11, 15)),
   );
   env.clock.current = DateTime(2026, 11, 15, 9);
   await tasks.complete(id);
@@ -103,10 +98,7 @@ void main() {
     );
     await settle(tester);
     expect(tester.takeException(), isNull);
-    expect(
-      Directionality.of(tester.element(find.byType(AnalyticsScreen))),
-      TextDirection.rtl,
-    );
+    expect(Directionality.of(tester.element(find.byType(AnalyticsScreen))), TextDirection.rtl);
     // Western digits in Arabic.
     expect(find.textContaining('25'), findsWidgets);
     await tester.scrollUntilVisible(find.text('Launch').last, 300);

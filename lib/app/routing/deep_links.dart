@@ -4,6 +4,8 @@ import 'package:flutter/widgets.dart' show WidgetsBinding;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/platform/app_shortcuts.dart';
+import '../../features/focus/application/focus_controller.dart';
+import '../../features/focus/application/focus_draft.dart';
 import '../../features/notifications/application/notification_providers.dart';
 import '../../features/notifications/data/notification_service.dart';
 import '../../features/settings/application/settings_providers.dart';
@@ -49,7 +51,17 @@ final deepLinksProvider = Provider<void>((ref) {
   void open(String? route) {
     if (route == null || !isAppRoute(route)) return;
     final router = ref.read(routerProvider);
-    final path = Uri.parse(route).path;
+    final uri = Uri.parse(route);
+    final path = uri.path;
+    // The Quick Settings tile: open Focus and start the session set up there.
+    if (path == Routes.focus && uri.queryParameters['start'] == '1') {
+      final ctrl = ref.read(focusControllerProvider.notifier);
+      final d = ref.read(focusDraftProvider);
+      unawaited(
+        ctrl.restored.then((_) => ctrl.start(mode: d.mode, countdownMinutes: d.countdownMinutes)),
+      );
+      route = Routes.focus;
+    }
     if (_tabs.contains(path)) {
       router.go(route);
     } else {
