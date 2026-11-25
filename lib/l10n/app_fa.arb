@@ -1441,5 +1441,7 @@
   "wordsReset": "استفاده از اصلی",
   "wordsResetAll": "بازنشانی همه واژه‌ها",
   "wordsResetAllConfirm": "همه متن‌های این زبان به حالت اصلی برمی‌گردند.",
-  "wordsNone": "متنی پیدا نشد"
+  "wordsNone": "متنی پیدا نشد",
+  "settingsLanguageSearch": "جستجوی زبان",
+  "settingsLanguageNoMatch": "زبانی پیدا نشد"
 }

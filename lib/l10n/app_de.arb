@@ -1441,5 +1441,7 @@
   "wordsReset": "Original verwenden",
   "wordsResetAll": "Alle Wörter zurücksetzen",
   "wordsResetAllConfirm": "Jeder Text in dieser Sprache kehrt zum Original zurück.",
-  "wordsNone": "Kein Text gefunden"
+  "wordsNone": "Kein Text gefunden",
+  "settingsLanguageSearch": "Sprache suchen",
+  "settingsLanguageNoMatch": "Keine passende Sprache"
 }

@@ -5314,4 +5314,10 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get wordsNone => 'Nie znaleziono tekstu';
+
+  @override
+  String get settingsLanguageSearch => 'Szukaj języka';
+
+  @override
+  String get settingsLanguageNoMatch => 'Brak pasującego języka';
 }

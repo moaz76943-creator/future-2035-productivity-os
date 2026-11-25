@@ -5053,4 +5053,10 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get wordsNone => 'ไม่พบข้อความ';
+
+  @override
+  String get settingsLanguageSearch => 'ค้นหาภาษา';
+
+  @override
+  String get settingsLanguageNoMatch => 'ไม่พบภาษาที่ตรงกัน';
 }

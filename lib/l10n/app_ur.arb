@@ -1441,5 +1441,7 @@
   "wordsReset": "اصل استعمال کریں",
   "wordsResetAll": "تمام الفاظ ری سیٹ کریں",
   "wordsResetAllConfirm": "اس زبان کا ہر متن اصل پر واپس آ جائے گا۔",
-  "wordsNone": "کوئی متن نہیں ملا"
+  "wordsNone": "کوئی متن نہیں ملا",
+  "settingsLanguageSearch": "زبان تلاش کریں",
+  "settingsLanguageNoMatch": "کوئی مماثل زبان نہیں"
 }

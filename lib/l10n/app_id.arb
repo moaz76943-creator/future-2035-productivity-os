@@ -1441,5 +1441,7 @@
   "wordsReset": "Pakai yang asli",
   "wordsResetAll": "Atur ulang semua kata",
   "wordsResetAllConfirm": "Semua teks dalam bahasa ini kembali ke aslinya.",
-  "wordsNone": "Teks tidak ditemukan"
+  "wordsNone": "Teks tidak ditemukan",
+  "settingsLanguageSearch": "Cari bahasa",
+  "settingsLanguageNoMatch": "Tidak ada bahasa yang cocok"
 }

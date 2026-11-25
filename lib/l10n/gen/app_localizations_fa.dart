@@ -5204,4 +5204,10 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get wordsNone => 'متنی پیدا نشد';
+
+  @override
+  String get settingsLanguageSearch => 'جستجوی زبان';
+
+  @override
+  String get settingsLanguageNoMatch => 'زبانی پیدا نشد';
 }

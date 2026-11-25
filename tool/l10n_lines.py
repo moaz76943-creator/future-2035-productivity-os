@@ -3,7 +3,13 @@
 
     python3 tool/l10n_lines.py source            # build/l10n/source.txt: N<TAB>English<TAB>note
     python3 tool/l10n_lines.py import de file.txt  # file lines: N<TAB>translation
+    python3 tool/l10n_lines.py missing           # build/l10n/missing.txt: what any language lacks
+    python3 tool/l10n_lines.py import-all files  # "## de" then N<TAB>translation lines, per language
     flutter gen-l10n && python3 tool/gen_l10n_custom.py && python3 tool/check_l10n.py
+
+`missing` lists every English text once, then for each language the numbers it
+still needs (absent, or still English and not allowed to be). That is the whole
+job for new texts in all languages at once, with no text repeated.
 
 Numbers follow the English file, so no key names have to be written. A line
 break inside a text is written as \\n. Lines may come in any order and in several
@@ -12,7 +18,7 @@ files; only the numbers given are changed, the rest stays as it is. Keep
 """
 import sys
 
-from l10n_common import ROOT, languages, load_arb, message_keys, save_arb
+from l10n_common import ROOT, full_languages, languages, load_arb, message_keys, save_arb
 
 
 # The app shows Western digits only: native digits in a translation are converted.
@@ -40,6 +46,54 @@ def source():
         rows.append(f'{i}\t{en[k]!s}'.replace('\n', '\\n') + (f'\t{note}' if note else ''))
     out.write_text('\n'.join(rows) + '\n', encoding='utf-8')
     return out
+
+
+def todo(code, en, ks):
+    """Line numbers [code] still needs: absent or still English (not allow-listed)."""
+    from check_l10n import SAME_OK, same_ok
+    data, ok = load_arb(code), SAME_OK | same_ok(code)
+    return [i for i, k in enumerate(ks, 1)
+            if k not in data or (data[k] == en[k] and k not in ok and len(en[k]) > 3)]
+
+
+def missing():
+    en, ks = load_arb('en'), keys()
+    need = {c: todo(c, en, ks) for c in full_languages() if c != 'en'}
+    need = {c: n for c, n in need.items() if n}
+    out = ROOT / 'build' / 'l10n' / 'missing.txt'
+    out.parent.mkdir(parents=True, exist_ok=True)
+    nums = sorted({i for n in need.values() for i in n})
+    rows = ['# English texts (N<TAB>text<TAB>note). Keep {placeholders}, plural/select structure,',
+            '# Western digits and \\n. Answer per language: a "## <code>" line, then N<TAB>translation.']
+    for i in nums:
+        k = ks[i - 1]
+        note = (en.get('@' + k) or {}).get('description', '')
+        rows.append(f'{i}\t{en[k]!s}'.replace('\n', '\\n') + (f'\t{note}' if note and note != k else ''))
+    rows.append('# Needed per language')
+    for c, n in need.items():
+        rows.append(f'{c}: ' + ('all' if len(n) == len(nums) else ' '.join(map(str, n))))
+    out.write_text('\n'.join(rows) + '\n', encoding='utf-8')
+    total = sum(len(n) for n in need.values())
+    return out, len(nums), len(need), total
+
+
+def import_all(paths):
+    """Files of "## <code>" sections with N<TAB>translation lines."""
+    chunks, code = {}, None
+    for p in paths:
+        for line in open(p, encoding='utf-8'):
+            if line.startswith('## '):
+                code = line[3:].strip()
+                chunks.setdefault(code, [])
+            elif line.strip() and not line.startswith('#'):
+                if code is None:
+                    sys.exit(f'{p}: a "## <code>" line must come first')
+                chunks[code].append(line)
+    tmp = ROOT / 'build' / 'l10n' / '_import.txt'
+    for c, lines in chunks.items():
+        tmp.write_text(''.join(lines), encoding='utf-8')
+        import_lines(c, [tmp])
+    tmp.unlink(missing_ok=True)
 
 
 def import_lines(code, paths):
@@ -72,5 +126,10 @@ if __name__ == '__main__':
         print('wrote', source())
     elif sys.argv[1:2] == ['import'] and len(sys.argv) >= 4:
         import_lines(sys.argv[2], sys.argv[3:])
+    elif sys.argv[1:2] == ['missing']:
+        path, texts, langs, total = missing()
+        print(f'wrote {path}: {texts} texts, {langs} languages, {total} translations to write')
+    elif sys.argv[1:2] == ['import-all'] and len(sys.argv) >= 3:
+        import_all(sys.argv[2:])
     else:
         sys.exit(__doc__)

@@ -76,34 +76,46 @@ Future<GoRouter> _pumpApp(WidgetTester tester, TestEnv env, String tag, double t
   return router;
 }
 
+Future<void> _checkAll(WidgetTester tester, String tag, double width, double scale) async {
+  await initializeDateFormatting();
+  final env = TestEnv();
+  final height = width >= 600 ? width * 0.75 : 780.0;
+  tester.view.physicalSize = Size(width, height) * 2;
+  tester.view.devicePixelRatio = 2;
+  addTearDown(tester.view.reset);
+  final router = await _pumpApp(tester, env, tag, scale);
+  for (final path in _screens) {
+    router.go(path);
+    await tester.pump(const Duration(seconds: 1));
+    await settle(tester);
+    expect(
+      router.routerDelegate.currentConfiguration.isError,
+      isFalse,
+      reason: '$path is not a registered route',
+    );
+    expect(tester.takeException(), isNull, reason: '$path at ${width}px $tag x$scale');
+  }
+  await closeEnv(tester, env);
+}
+
 void main() {
   for (final tag in ['en', 'ar']) {
     for (final width in _widths) {
       for (final scale in width == 360 || width == 412 ? [1.0, 1.5, 2.0] : [1.0]) {
-        testWidgets('all screens lay out at ${width.toInt()}px, $tag, text x$scale', (
-          tester,
-        ) async {
-          await initializeDateFormatting();
-          final env = TestEnv();
-          final height = width >= 600 ? width * 0.75 : 780.0;
-          tester.view.physicalSize = Size(width, height) * 2;
-          tester.view.devicePixelRatio = 2;
-          addTearDown(tester.view.reset);
-          final router = await _pumpApp(tester, env, tag, scale);
-          for (final path in _screens) {
-            router.go(path);
-            await tester.pump(const Duration(seconds: 1));
-            await settle(tester);
-            expect(
-              router.routerDelegate.currentConfiguration.isError,
-              isFalse,
-              reason: '$path is not a registered route',
-            );
-            expect(tester.takeException(), isNull, reason: '$path at ${width}px $tag x$scale');
-          }
-          await closeEnv(tester, env);
-        });
+        testWidgets(
+          'all screens lay out at ${width.toInt()}px, $tag, text x$scale',
+          (tester) => _checkAll(tester, tag, width, scale),
+        );
       }
     }
+  }
+  // Every other language on a small phone with larger text: long words
+  // (German, Polish) and tall scripts (Thai, Bengali, Urdu) must fit too.
+  for (final lang in AppLocales.all) {
+    if (lang.tag == 'en' || lang.tag == 'ar') continue;
+    testWidgets(
+      'all screens lay out at 360px, ${lang.tag}, text x1.3',
+      (tester) => _checkAll(tester, lang.tag, 360, 1.3),
+    );
   }
 }

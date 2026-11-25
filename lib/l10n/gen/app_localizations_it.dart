@@ -5230,4 +5230,10 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get wordsNone => 'Nessun testo trovato';
+
+  @override
+  String get settingsLanguageSearch => 'Cerca una lingua';
+
+  @override
+  String get settingsLanguageNoMatch => 'Nessuna lingua corrisponde';
 }

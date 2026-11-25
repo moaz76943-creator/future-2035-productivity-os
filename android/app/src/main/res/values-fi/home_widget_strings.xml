@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Keskitys ja kortit</string>
+    <string name="home_widget_description">Jäljellä oleva keskitysaika ja kerrattavat kortit</string>
+    <string name="quick_widget_label">Pikalisäys</string>
+    <string name="quick_widget_description">Lisää tehtävä tai muistiinpano tai kertaa kortteja</string>
+</resources>

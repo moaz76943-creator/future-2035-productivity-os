@@ -1,0 +1,5 @@
+# Picker order of the app languages (most used and highest-income first).
+# tool/l10n_add_language.py puts a new language at its place in this list.
+en en_GB ar es es_419 pt pt_PT zh zh_Hant fr fr_CA de ru ja ko hi id tr it nl pl uk vi th ms fil
+fa ur bn sv nb da fi cs sk ro hu el bg hr sr sl lt lv et ca ta te mr gu kn ml pa ne si
+az kk uz ka hy mn ky sq bs mk be is eu gl sw af

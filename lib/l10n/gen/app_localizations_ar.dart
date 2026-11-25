@@ -5395,4 +5395,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get wordsNone => 'لا يوجد نص';
+
+  @override
+  String get settingsLanguageSearch => 'ابحث عن لغة';
+
+  @override
+  String get settingsLanguageNoMatch => 'لا توجد لغة مطابقة';
 }

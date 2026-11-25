@@ -1,7 +1,8 @@
 """Shared helpers for the localization tools (tool/l10n_*.py, tool/check_l10n.py).
 
-The languages are whatever `lib/l10n/app_<code>.arb` files exist: adding a file
-(with `python3 tool/l10n_add_language.py`) is all the tools need to know.
+lib/l10n/languages.json is the one list of app languages (name, tag, writing
+system, date locale); each has a `lib/l10n/app_<code>.arb`. Add one with
+`python3 tool/l10n_add_language.py`; tool/gen_languages.py generates the rest.
 """
 import collections
 import json
@@ -11,7 +12,8 @@ import re
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 L10N = ROOT / 'lib' / 'l10n'
 RES = ROOT / 'android' / 'app' / 'src' / 'main' / 'res'
-LOCALES_DART = ROOT / 'lib' / 'app' / 'localization' / 'app_locales.dart'
+MANIFEST = L10N / 'languages.json'
+SUPPORT = ROOT / 'tool' / 'data' / 'l10n_support.json'
 TEMPLATE = 'en'
 
 # CLDR plural categories (cardinal) for the languages most likely to be added.
@@ -41,10 +43,41 @@ PLURAL_CATS = {
     'zh': {'other'}, 'ja': {'other'}, 'ko': {'other'}, 'id': {'other'}, 'ms': {'other'},
     'th': {'other'}, 'vi': {'other'}, 'my': {'other'}, 'km': {'other'}, 'lo': {'other'},
     'yo': {'other'}, 'ig': {'other'},
+    'fil': {'one', 'other'}, 'is': {'one', 'other'}, 'mn': {'one', 'other'},
+    'eu': {'one', 'other'}, 'gl': {'one', 'other'},
 }
 
-# Written right to left (mirrors AppLocales.rtlLanguages in Dart). No Hebrew in this app.
+# Written right to left (generated into AppLocales.rtlLanguages). No Hebrew in this app.
 RTL = {'ar', 'fa', 'ur', 'ps', 'sd', 'ug', 'ckb', 'dv', 'yi'}
+# Writing systems (ISO 15924) that run right to left.
+RTL_SCRIPTS = {'Arab', 'Hebr', 'Thaa', 'Syrc', 'Nkoo', 'Adlm', 'Rohg'}
+
+
+def base_code(code):
+    """Language of an ARB code: 'zh_Hant' -> 'zh'."""
+    return code.split('_')[0]
+
+
+def load_manifest():
+    return json.loads(MANIFEST.read_text(encoding='utf-8'))
+
+
+def language_order():
+    """Codes in picker order (tool/data/language_order.txt)."""
+    text = (ROOT / 'tool' / 'data' / 'language_order.txt').read_text(encoding='utf-8')
+    return [c for line in text.splitlines() if not line.startswith('#') for c in line.split()]
+
+
+def save_manifest(rows):
+    order = {c: i for i, c in enumerate(language_order())}
+    rows = sorted(rows, key=lambda r: order.get(r['code'], len(order)))
+    MANIFEST.write_text('[\n' + ',\n'.join('  ' + json.dumps(r, ensure_ascii=False) for r in rows)
+                        + '\n]\n', encoding='utf-8')
+
+
+def support_data():
+    """What the bundled fonts and the libraries support (tool/gen_l10n_support_data.py)."""
+    return json.loads(SUPPORT.read_text(encoding='utf-8'))
 
 
 # Android resource folders use the old codes for a few languages.
@@ -52,8 +85,10 @@ _ANDROID_CODE = {'id': 'in', 'yi': 'ji'}
 
 
 def android_folder(code):
-    """res/values-<x> folder name of a language (Indonesian is values-in)."""
-    return f'values-{_ANDROID_CODE.get(code, code)}'
+    """res/values-<x> folder of an ARB code (Indonesian is values-in, zh_Hant values-b+zh+Hant)."""
+    parts = code.split('_')
+    parts[0] = _ANDROID_CODE.get(parts[0], parts[0])
+    return f'values-{parts[0]}' if len(parts) == 1 else 'values-b+' + '+'.join(parts)
 
 
 def load_arb(code):
@@ -76,16 +111,22 @@ def message_keys(data):
     return [k for k in data if not k.startswith('@')]
 
 
+def overlays():
+    """{variant code: base code} for regional variants (en_GB over en) in languages.json.
+
+    A variant's ARB holds only the texts that differ; the rest comes from its base."""
+    return {l['code']: l['base'] for l in load_manifest() if l.get('base')}
+
+
+def full_languages():
+    """Languages whose ARB must hold every text (all but the regional variants)."""
+    ov = overlays()
+    return [c for c in languages() if c not in ov]
+
+
 def registered_languages():
-    """Language codes registered in AppLocales.all (lib/app/localization/app_locales.dart)."""
-    text = LOCALES_DART.read_text(encoding='utf-8')
-    body = text[text.index('static const all'):]
-    body = body[:body.index('];')]
-    codes = set(re.findall(r"languageCode: '([a-z]{2,3})'", body))
-    codes |= set(re.findall(r"locale: Locale\('([a-z]{2,3})'", body))
-    if 'english' in body:
-        codes.add('en')
-    return codes
+    """ARB codes listed in lib/l10n/languages.json."""
+    return {l['code'] for l in load_manifest()}
 
 
 def android_strings(folder):

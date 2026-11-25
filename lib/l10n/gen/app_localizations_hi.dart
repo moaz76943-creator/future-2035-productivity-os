@@ -5206,4 +5206,10 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get wordsNone => 'कोई टेक्स्ट नहीं मिला';
+
+  @override
+  String get settingsLanguageSearch => 'भाषा खोजें';
+
+  @override
+  String get settingsLanguageNoMatch => 'कोई मेल खाती भाषा नहीं';
 }

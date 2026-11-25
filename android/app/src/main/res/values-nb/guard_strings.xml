@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Distraksjonsvakt i Deep Focus</string>
+    <string name="guard_service_summary">Setter appene du har valgt på pause mens du fokuserer</string>
+    <string name="guard_service_description">Deep Focus bruker dette bare til å se hvilken app som er åpen, slik at den kan sette appene du har valgt på pause i fokustiden eller etter planen din, og lukke Shorts og Reels hvis du har slått det på. Den leser ingen tekst, lagrer ingenting og sender ingenting noe sted. Du kan slå den av her når som helst.</string>
+</resources>

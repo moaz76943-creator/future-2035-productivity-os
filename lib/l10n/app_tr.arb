@@ -1441,5 +1441,7 @@
   "wordsReset": "Orijinali kullan",
   "wordsResetAll": "Tüm kelimeleri sıfırla",
   "wordsResetAllConfirm": "Bu dildeki her metin orijinaline döner.",
-  "wordsNone": "Metin bulunamadı"
+  "wordsNone": "Metin bulunamadı",
+  "settingsLanguageSearch": "Dil ara",
+  "settingsLanguageNoMatch": "Eşleşen dil yok"
 }

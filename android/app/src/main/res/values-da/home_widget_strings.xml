@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Fokus og kort</string>
+    <string name="home_widget_description">Resterende fokustid og kort til repetition</string>
+    <string name="quick_widget_label">Hurtig tilføjelse</string>
+    <string name="quick_widget_description">Tilføj en opgave eller en note, eller repetér kort</string>
+</resources>

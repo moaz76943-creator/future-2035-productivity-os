@@ -1441,5 +1441,7 @@
   "wordsReset": "ใช้ต้นฉบับ",
   "wordsResetAll": "รีเซ็ตคำทั้งหมด",
   "wordsResetAllConfirm": "ทุกข้อความในภาษานี้จะกลับเป็นต้นฉบับ",
-  "wordsNone": "ไม่พบข้อความ"
+  "wordsNone": "ไม่พบข้อความ",
+  "settingsLanguageSearch": "ค้นหาภาษา",
+  "settingsLanguageNoMatch": "ไม่พบภาษาที่ตรงกัน"
 }

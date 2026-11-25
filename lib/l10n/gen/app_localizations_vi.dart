@@ -5081,4 +5081,10 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get wordsNone => 'Không tìm thấy văn bản';
+
+  @override
+  String get settingsLanguageSearch => 'Tìm ngôn ngữ';
+
+  @override
+  String get settingsLanguageNoMatch => 'Không có ngôn ngữ phù hợp';
 }

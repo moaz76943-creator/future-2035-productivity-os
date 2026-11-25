@@ -1441,5 +1441,7 @@
   "wordsReset": "Вернуть исходное",
   "wordsResetAll": "Сбросить все слова",
   "wordsResetAllConfirm": "Все тексты этого языка вернутся к исходным.",
-  "wordsNone": "Текст не найден"
+  "wordsNone": "Текст не найден",
+  "settingsLanguageSearch": "Поиск языка",
+  "settingsLanguageNoMatch": "Язык не найден"
 }

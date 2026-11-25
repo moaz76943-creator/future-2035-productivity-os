@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focusin häiriösuoja</string>
+    <string name="guard_service_summary">Keskeyttää valitsemasi sovellukset, kun keskityt</string>
+    <string name="guard_service_description">Deep Focus käyttää tätä vain nähdäkseen, mikä sovellus on auki, jotta se voi keskeyttää valitsemasi sovellukset keskitysaikana tai aikataulusi mukaan ja sulkea Shorts- ja Reels-videot, jos olet ottanut sen käyttöön. Se ei lue tekstiä, ei tallenna mitään eikä lähetä mitään minnekään. Voit poistaa sen käytöstä täältä milloin tahansa.</string>
+</resources>

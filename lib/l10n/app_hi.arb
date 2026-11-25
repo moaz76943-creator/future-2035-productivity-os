@@ -1441,5 +1441,7 @@
   "wordsReset": "मूल इस्तेमाल करें",
   "wordsResetAll": "सभी शब्द रीसेट करें",
   "wordsResetAllConfirm": "इस भाषा का हर टेक्स्ट मूल पर लौट जाएगा।",
-  "wordsNone": "कोई टेक्स्ट नहीं मिला"
+  "wordsNone": "कोई टेक्स्ट नहीं मिला",
+  "settingsLanguageSearch": "भाषा खोजें",
+  "settingsLanguageNoMatch": "कोई मेल खाती भाषा नहीं"
 }

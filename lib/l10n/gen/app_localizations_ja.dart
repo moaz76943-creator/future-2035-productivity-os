@@ -4963,4 +4963,10 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get wordsNone => '文言が見つかりません';
+
+  @override
+  String get settingsLanguageSearch => '言語を検索';
+
+  @override
+  String get settingsLanguageNoMatch => '一致する言語がありません';
 }

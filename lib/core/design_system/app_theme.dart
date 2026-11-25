@@ -3,6 +3,7 @@ import 'package:material_ui/material_ui.dart';
 
 import 'tokens.dart';
 
+part 'app_theme/language_fonts.g.dart';
 part 'app_theme/lux_colors.dart';
 
 abstract final class AppTheme {
@@ -10,10 +11,10 @@ abstract final class AppTheme {
     final primary = accent ?? Palette.violet;
     final dark = brightness == Brightness.dark;
     final lux = brightness == Brightness.dark ? LuxColors.dark : LuxColors.light;
-    final lang = locale.languageCode;
-    final family = lang == 'zh' ? null : AppFonts.primaryFor(lang);
-    final fallback = AppFonts.fallbackFor(lang);
-    final lh = AppFonts.lineHeightFactor(lang);
+    final family = AppFonts.primaryFor(locale);
+    final fallback = AppFonts.fallbackFor(locale);
+    final lh = AppFonts.lineHeightFactor(locale);
+    final tracking = AppFonts.allowsTracking(locale);
 
     TextStyle s(double size, FontWeight w, double height, {double ls = 0, Color? c}) => TextStyle(
       fontFamily: family,
@@ -21,7 +22,7 @@ abstract final class AppTheme {
       fontSize: size,
       fontWeight: w,
       height: height * lh,
-      letterSpacing: lang == 'ar' || lang == 'hi' ? 0 : ls,
+      letterSpacing: tracking ? ls : 0,
       color: c ?? lux.ink,
       leadingDistribution: TextLeadingDistribution.even,
     );

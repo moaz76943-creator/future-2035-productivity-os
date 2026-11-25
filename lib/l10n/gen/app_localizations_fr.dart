@@ -5231,4 +5231,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get wordsNone => 'Aucun texte trouvé';
+
+  @override
+  String get settingsLanguageSearch => 'Rechercher une langue';
+
+  @override
+  String get settingsLanguageNoMatch => 'Aucune langue ne correspond';
 }

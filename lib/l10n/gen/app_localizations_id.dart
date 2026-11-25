@@ -5121,4 +5121,10 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get wordsNone => 'Teks tidak ditemukan';
+
+  @override
+  String get settingsLanguageSearch => 'Cari bahasa';
+
+  @override
+  String get settingsLanguageNoMatch => 'Tidak ada bahasa yang cocok';
 }

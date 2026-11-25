@@ -1441,5 +1441,7 @@
   "wordsReset": "استخدم الأصل",
   "wordsResetAll": "إعادة كل الكلمات",
   "wordsResetAllConfirm": "سترجع كل نصوص هذه اللغة إلى الأصل.",
-  "wordsNone": "لا يوجد نص"
+  "wordsNone": "لا يوجد نص",
+  "settingsLanguageSearch": "ابحث عن لغة",
+  "settingsLanguageNoMatch": "لا توجد لغة مطابقة"
 }

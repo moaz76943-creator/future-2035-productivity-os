@@ -5341,4 +5341,10 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get wordsNone => 'Текст не найден';
+
+  @override
+  String get settingsLanguageSearch => 'Поиск языка';
+
+  @override
+  String get settingsLanguageNoMatch => 'Язык не найден';
 }

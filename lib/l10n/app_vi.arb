@@ -1441,5 +1441,7 @@
   "wordsReset": "Dùng bản gốc",
   "wordsResetAll": "Đặt lại mọi từ",
   "wordsResetAllConfirm": "Mọi văn bản trong ngôn ngữ này sẽ trở về bản gốc.",
-  "wordsNone": "Không tìm thấy văn bản"
+  "wordsNone": "Không tìm thấy văn bản",
+  "settingsLanguageSearch": "Tìm ngôn ngữ",
+  "settingsLanguageNoMatch": "Không có ngôn ngữ phù hợp"
 }

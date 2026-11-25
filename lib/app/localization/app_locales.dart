@@ -1,16 +1,20 @@
-import 'package:cupertino_ui/cupertino_ui.dart' show GlobalCupertinoLocalizations;
+import 'package:cupertino_ui/cupertino_ui.dart'
+    show CupertinoLocalizations, GlobalCupertinoLocalizations;
 import 'package:flutter_localizations/flutter_localizations.dart' show GlobalWidgetsLocalizations;
 import 'package:material_ui/material_ui.dart';
 
 import '../../l10n/custom/custom_words.dart';
 import '../../l10n/gen/app_localizations.dart';
+import 'fallback_localizations.dart';
+
+part 'app_languages.g.dart';
 
 /// A language the product officially supports.
 ///
-/// Add a language with `python3 tool/l10n_add_language.py <code> "<native name>"`: it
-/// creates the ARB file, the Android strings and the entry below, and
-/// tool/check_l10n.py fails until it is fully translated
-/// (docs/localization/localization_guide.md).
+/// The list lives in lib/l10n/languages.json and is generated into
+/// app_languages.g.dart by `python3 tool/gen_languages.py`. Add a language with
+/// `python3 tool/l10n_add_language.py`; tool/check_l10n.py fails until it is
+/// fully translated (docs/localization/localization_guide.md).
 @immutable
 class SupportedLanguage {
   const SupportedLanguage({
@@ -18,6 +22,9 @@ class SupportedLanguage {
     required this.locale,
     required this.nativeName,
     required this.intlLocale,
+    required this.englishName,
+    required this.script,
+    this.regions = const [],
   });
 
   /// BCP-47 tag persisted in settings, e.g. `zh-CN`.
@@ -32,21 +39,30 @@ class SupportedLanguage {
   /// Locale name used for `intl` date/number formatting.
   final String intlLocale;
 
+  /// Name in English, so the picker can be searched either way.
+  final String englishName;
+
+  /// Writing system (ISO 15924), e.g. `Latn`, `Arab`, `Jpan`.
+  final String script;
+
+  /// Countries whose phones get this language variant (en-GB: GB, AU, ...).
+  final List<String> regions;
+
   bool get isRtl => AppLocales.rtlLanguages.contains(locale.languageCode);
 }
 
 abstract final class AppLocales {
-  /// Languages written right to left. tool/check_l10n.py keeps this in step
-  /// with tool/l10n_common.py. (No Hebrew in this app.)
-  static const rtlLanguages = {'ar', 'fa', 'ur', 'ps', 'sd', 'ug', 'ckb', 'dv', 'yi'};
+  /// Languages written right to left (generated). No Hebrew in this app.
+  static const rtlLanguages = _rtlLanguages;
 
   /// Delegates for app strings plus framework widgets (Material/Cupertino
-  /// from the decoupled design libraries).
+  /// from the decoupled design libraries). A language the framework has no
+  /// translations for gets its English texts and still the right direction.
   static const delegates = <LocalizationsDelegate<dynamic>>[
     AppLocalizations.delegate,
-    GlobalMaterialLocalizations.delegate,
-    GlobalCupertinoLocalizations.delegate,
-    GlobalWidgetsLocalizations.delegate,
+    FallbackLocalizationsDelegate<MaterialLocalizations>(GlobalMaterialLocalizations.delegate),
+    FallbackLocalizationsDelegate<CupertinoLocalizations>(GlobalCupertinoLocalizations.delegate),
+    FallbackWidgetsLocalizationsDelegate(GlobalWidgetsLocalizations.delegate, _rtlLanguages),
   ];
 
   /// [delegates] with the user's own wording (Settings → Language → Rename words).
@@ -55,51 +71,10 @@ abstract final class AppLocales {
     ...delegates.skip(1),
   ];
 
-  static const english = SupportedLanguage(
-    tag: 'en',
-    locale: Locale('en'),
-    nativeName: 'English',
-    intlLocale: 'en',
-  );
+  static final english = byTag('en')!;
 
-  /// Display order in the language picker.
-  static const all = <SupportedLanguage>[
-    SupportedLanguage(tag: 'ar', locale: Locale('ar'), nativeName: 'العربية', intlLocale: 'ar'),
-    english,
-    SupportedLanguage(
-      tag: 'zh-CN',
-      locale: Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans', countryCode: 'CN'),
-      nativeName: '中文',
-      intlLocale: 'zh_CN',
-    ),
-    SupportedLanguage(tag: 'es', locale: Locale('es'), nativeName: 'Español', intlLocale: 'es'),
-    SupportedLanguage(tag: 'ru', locale: Locale('ru'), nativeName: 'Русский', intlLocale: 'ru'),
-    SupportedLanguage(tag: 'fr', locale: Locale('fr'), nativeName: 'Français', intlLocale: 'fr'),
-    SupportedLanguage(
-      tag: 'pt-BR',
-      locale: Locale('pt', 'BR'),
-      nativeName: 'Português (Brasil)',
-      intlLocale: 'pt_BR',
-    ),
-    SupportedLanguage(
-      tag: 'hi-IN',
-      locale: Locale('hi', 'IN'),
-      nativeName: 'हिन्दी',
-      intlLocale: 'hi',
-    ),
-    SupportedLanguage(tag: 'de', locale: Locale('de'), nativeName: 'Deutsch', intlLocale: 'de'),
-    SupportedLanguage(tag: 'it', locale: Locale('it'), nativeName: 'Italiano', intlLocale: 'it'),
-    SupportedLanguage(tag: 'tr', locale: Locale('tr'), nativeName: 'Türkçe', intlLocale: 'tr'),
-    SupportedLanguage(tag: 'pl', locale: Locale('pl'), nativeName: 'Polski', intlLocale: 'pl'),
-    SupportedLanguage(tag: 'id', locale: Locale('id'), nativeName: 'Bahasa Indonesia', intlLocale: 'id'),
-    SupportedLanguage(tag: 'vi', locale: Locale('vi'), nativeName: 'Tiếng Việt', intlLocale: 'vi'),
-    SupportedLanguage(tag: 'ja', locale: Locale('ja'), nativeName: '日本語', intlLocale: 'ja'),
-    SupportedLanguage(tag: 'ko', locale: Locale('ko'), nativeName: '한국어', intlLocale: 'ko'),
-    SupportedLanguage(tag: 'th', locale: Locale('th'), nativeName: 'ไทย', intlLocale: 'th'),
-    SupportedLanguage(tag: 'bn', locale: Locale('bn'), nativeName: 'বাংলা', intlLocale: 'bn'),
-    SupportedLanguage(tag: 'ur', locale: Locale('ur'), nativeName: 'اردو', intlLocale: 'ur'),
-    SupportedLanguage(tag: 'fa', locale: Locale('fa'), nativeName: 'فارسی', intlLocale: 'fa'),
-  ];
+  /// Display order in the language picker (lib/l10n/languages.json).
+  static const all = _languages;
 
   static List<Locale> get locales => [for (final l in all) l.locale];
 
@@ -111,16 +86,28 @@ abstract final class AppLocales {
     return null;
   }
 
-  /// Exact language match only; there is no silent substitution of a
-  /// different language. Unsupported device languages fall back to English,
-  /// which is the documented default.
-  static SupportedLanguage forLocale(Locale? locale) {
-    if (locale == null) return english;
+  /// The best app language for a device [locale]: same language, preferring
+  /// the same script (zh-Hant) and a variant made for its region (en-GB for
+  /// GB or AU, pt-PT for PT, zh-Hant for TW or HK). Never a different
+  /// language: unsupported device languages fall back to English.
+  static SupportedLanguage? match(Locale locale) {
+    SupportedLanguage? best;
+    var bestScore = 0;
     for (final l in all) {
-      if (l.locale.languageCode == locale.languageCode) return l;
+      if (l.locale.languageCode != locale.languageCode) continue;
+      var score = l.regions.isEmpty ? 1 : 0;
+      if (locale.scriptCode != null && locale.scriptCode == l.locale.scriptCode) score += 4;
+      if (locale.countryCode != null && l.regions.contains(locale.countryCode)) score += 2;
+      if (score > bestScore) {
+        best = l;
+        bestScore = score;
+      }
     }
-    return english;
+    return best;
   }
+
+  static SupportedLanguage forLocale(Locale? locale) =>
+      (locale == null ? null : match(locale)) ?? english;
 
   /// Resolves the language to use: explicit user choice first, then the
   /// first supported device language, then English.
@@ -128,9 +115,8 @@ abstract final class AppLocales {
     final chosen = byTag(userTag);
     if (chosen != null) return chosen;
     for (final d in deviceLocales) {
-      for (final l in all) {
-        if (l.locale.languageCode == d.languageCode) return l;
-      }
+      final m = match(d);
+      if (m != null) return m;
     }
     return english;
   }

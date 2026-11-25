@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Afleidingsbewaker van Deep Focus</string>
+    <string name="guard_service_summary">Pauzeert de apps die je kiest terwijl je focust</string>
+    <string name="guard_service_description">Deep Focus gebruikt dit alleen om te zien welke app open is, zodat het de apps die je kiest kan pauzeren tijdens je focustijd of je planning, en Shorts en Reels kan sluiten als je dat hebt aangezet. Het leest geen tekst, bewaart niets en stuurt niets door. Je kunt het hier altijd uitzetten.</string>
+</resources>

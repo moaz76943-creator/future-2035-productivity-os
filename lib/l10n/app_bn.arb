@@ -1441,5 +1441,7 @@
   "wordsReset": "মূলটি ব্যবহার করুন",
   "wordsResetAll": "সব শব্দ রিসেট করুন",
   "wordsResetAllConfirm": "এই ভাষার প্রতিটি লেখা মূলে ফিরে যাবে।",
-  "wordsNone": "কোনো লেখা পাওয়া যায়নি"
+  "wordsNone": "কোনো লেখা পাওয়া যায়নি",
+  "settingsLanguageSearch": "ভাষা খুঁজুন",
+  "settingsLanguageNoMatch": "মিলে যাওয়া কোনো ভাষা নেই"
 }

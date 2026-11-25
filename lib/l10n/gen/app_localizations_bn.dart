@@ -5088,4 +5088,10 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get wordsNone => 'কোনো লেখা পাওয়া যায়নি';
+
+  @override
+  String get settingsLanguageSearch => 'ভাষা খুঁজুন';
+
+  @override
+  String get settingsLanguageNoMatch => 'মিলে যাওয়া কোনো ভাষা নেই';
 }

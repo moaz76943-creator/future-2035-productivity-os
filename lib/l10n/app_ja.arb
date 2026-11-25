@@ -1441,5 +1441,7 @@
   "wordsReset": "元に戻す",
   "wordsResetAll": "すべての言葉をリセット",
   "wordsResetAllConfirm": "この言語のすべての文言が元に戻ります。",
-  "wordsNone": "文言が見つかりません"
+  "wordsNone": "文言が見つかりません",
+  "settingsLanguageSearch": "言語を検索",
+  "settingsLanguageNoMatch": "一致する言語がありません"
 }

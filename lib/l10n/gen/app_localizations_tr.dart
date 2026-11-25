@@ -5202,4 +5202,10 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get wordsNone => 'Metin bulunamadı';
+
+  @override
+  String get settingsLanguageSearch => 'Dil ara';
+
+  @override
+  String get settingsLanguageNoMatch => 'Eşleşen dil yok';
 }

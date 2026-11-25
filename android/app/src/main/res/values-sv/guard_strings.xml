@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Distraktionsskydd i Deep Focus</string>
+    <string name="guard_service_summary">Pausar apparna du valt medan du fokuserar</string>
+    <string name="guard_service_description">Deep Focus använder detta bara för att se vilken app som är öppen, så att det kan pausa apparna du valt under fokustid eller enligt ditt schema och stänga Shorts och Reels om du har slagit på det. Det läser ingen text, sparar inget och skickar inget någonstans. Du kan stänga av det här när som helst.</string>
+</resources>

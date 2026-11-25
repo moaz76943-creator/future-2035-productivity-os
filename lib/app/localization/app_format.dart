@@ -14,7 +14,9 @@ class AppFormat {
   final SupportedLanguage language;
   final AppLocalizations l10n;
 
-  String get _loc => language.intlLocale;
+  /// The language's date/number locale; English if intl has no data for it
+  /// (tool/gen_languages.py rejects that, this only keeps the app running).
+  String get _loc => DateFormat.localeExists(language.intlLocale) ? language.intlLocale : 'en';
   String _w(String s) => TextNormalizer.westernDigits(s);
 
   String number(num value, {int decimals = 0}) {

@@ -1441,5 +1441,7 @@
   "wordsReset": "恢复原文",
   "wordsResetAll": "全部恢复",
   "wordsResetAllConfirm": "此语言的所有文字都将恢复为原文。",
-  "wordsNone": "未找到文字"
+  "wordsNone": "未找到文字",
+  "settingsLanguageSearch": "搜索语言",
+  "settingsLanguageNoMatch": "没有匹配的语言"
 }

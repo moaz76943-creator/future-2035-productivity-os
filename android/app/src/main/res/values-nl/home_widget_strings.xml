@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Focus en kaarten</string>
+    <string name="home_widget_description">Resterende focustijd en kaarten om te herhalen</string>
+    <string name="quick_widget_label">Snel toevoegen</string>
+    <string name="quick_widget_description">Voeg een taak of notitie toe, of herhaal kaarten</string>
+</resources>

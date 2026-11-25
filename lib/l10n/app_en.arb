@@ -6923,5 +6923,13 @@
   "wordsNone": "No text found",
   "@wordsNone": {
     "description": "No search result"
+  },
+  "settingsLanguageSearch": "Search languages",
+  "@settingsLanguageSearch": {
+    "description": "Hint of the search field in the language list"
+  },
+  "settingsLanguageNoMatch": "No language matches",
+  "@settingsLanguageNoMatch": {
+    "description": "Shown when no language matches the search"
   }
 }

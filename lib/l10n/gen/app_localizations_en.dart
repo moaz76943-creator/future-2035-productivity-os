@@ -5196,4 +5196,113 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get wordsNone => 'No text found';
+
+  @override
+  String get settingsLanguageSearch => 'Search languages';
+
+  @override
+  String get settingsLanguageNoMatch => 'No language matches';
+}
+
+/// The translations for English, as used in the United Kingdom (`en_GB`).
+class AppLocalizationsEnGb extends AppLocalizationsEn {
+  AppLocalizationsEnGb() : super('en_GB');
+
+  @override
+  String get actionCustomize => 'Customise';
+
+  @override
+  String get projectColor => 'Colour';
+
+  @override
+  String get notesViewFavorites => 'Favourites';
+
+  @override
+  String get noteFavorite => 'Favourite';
+
+  @override
+  String get noteUnfavorite => 'Remove from favourites';
+
+  @override
+  String get goalLinkedTasksHint => 'Each completed linked task counts as 1 towards this goal.';
+
+  @override
+  String get assistantSummarize => 'Summarise a note';
+
+  @override
+  String get settingsReduceMotionDesc => 'Minimise animations and moving backgrounds';
+
+  @override
+  String a11yProgress(int value) {
+    return 'Progress $value per cent';
+  }
+
+  @override
+  String a11yColor(int index) {
+    return 'Colour $index';
+  }
+
+  @override
+  String get assistantExtractHint =>
+      'Recognised: unchecked checkboxes \"- [ ]\" and lines starting with TODO: or To do:';
+
+  @override
+  String get assistantCardsHint =>
+      'Recognised: \"term: definition\", \"term — definition\" and Q:/A: line pairs';
+
+  @override
+  String get assistantSummarizing => 'Summarising…';
+
+  @override
+  String get calendarEventColor => 'Colour';
+
+  @override
+  String get calendarDefaultColor => 'Use type colour';
+
+  @override
+  String get focusDeleteConfirm =>
+      'Delete this session from your history? Its time will no longer count towards your targets.';
+
+  @override
+  String get goalsHistoryAllTime =>
+      'Entries from earlier periods are kept here but count only towards their own period.';
+
+  @override
+  String get habitsColor => 'Colour';
+
+  @override
+  String get notesNotebookColor => 'Colour';
+
+  @override
+  String get notesEmptyFavorites => 'Notes you mark as favourite appear here.';
+
+  @override
+  String projectSemantics(String name, int percent) {
+    return '$name, $percent per cent complete';
+  }
+
+  @override
+  String get taskOrganize => 'Organise';
+
+  @override
+  String get studyPracticeAll => 'Practise all cards (schedule unchanged)';
+
+  @override
+  String get studyPracticeMistakes => 'Practise recent mistakes';
+
+  @override
+  String get studyPracticeFavorites => 'Favourites';
+
+  @override
+  String get flashcardsFavorites => 'Favourites';
+
+  @override
+  String get flashcardsFavorite => 'Add to favourites';
+
+  @override
+  String get flashcardsUnfavorite => 'Remove from favourites';
+
+  @override
+  String get batteryGeneric =>
+      'In the battery settings choose this app and set it to Unrestricted (or Don\'t optimise).';
 }

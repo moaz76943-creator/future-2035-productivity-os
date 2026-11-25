@@ -4958,4 +4958,10 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get wordsNone => '텍스트를 찾을 수 없어요';
+
+  @override
+  String get settingsLanguageSearch => '언어 검색';
+
+  @override
+  String get settingsLanguageNoMatch => '일치하는 언어가 없습니다';
 }

@@ -5218,4 +5218,10 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get wordsNone => 'Nenhum texto encontrado';
+
+  @override
+  String get settingsLanguageSearch => 'Buscar idioma';
+
+  @override
+  String get settingsLanguageNoMatch => 'Nenhum idioma encontrado';
 }

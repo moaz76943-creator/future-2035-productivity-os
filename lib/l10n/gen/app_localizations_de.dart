@@ -5229,4 +5229,10 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get wordsNone => 'Kein Text gefunden';
+
+  @override
+  String get settingsLanguageSearch => 'Sprache suchen';
+
+  @override
+  String get settingsLanguageNoMatch => 'Keine passende Sprache';
 }

@@ -5201,4 +5201,10 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get wordsNone => 'کوئی متن نہیں ملا';
+
+  @override
+  String get settingsLanguageSearch => 'زبان تلاش کریں';
+
+  @override
+  String get settingsLanguageNoMatch => 'کوئی مماثل زبان نہیں';
 }

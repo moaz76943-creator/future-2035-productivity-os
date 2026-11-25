@@ -4932,4 +4932,10 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get wordsNone => '未找到文字';
+
+  @override
+  String get settingsLanguageSearch => '搜索语言';
+
+  @override
+  String get settingsLanguageNoMatch => '没有匹配的语言';
 }

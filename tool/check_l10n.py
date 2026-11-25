@@ -10,20 +10,27 @@ Checks every lib/l10n/app_*.arb against the English template:
   * no non-Western digits (Arabic-Indic, Persian, Devanagari)
   * no empty values; values not identical to English unless allow-listed
   * language list uses no flag emoji (regional indicator symbols)
-  * every ARB language is registered in AppLocales (and the other way round),
-    has plural rules below, the same right-to-left setting in Dart, and its own
-    Android res/values-<code>/ copy of every *_strings.xml with the same names
+  * every ARB language is in lib/l10n/languages.json (and the other way round)
+    with plural rules, a date locale intl knows and a writing system that agrees
+    with the right-to-left list (tool/gen_languages.py), and its own Android
+    res/values-<code>/ copy of every *_strings.xml with the same names
+  * a language intl has no plural rules for always takes 'other', so its
+    plurals must spell out =1 wherever the language has a 'one' form
   * no unused keys: every message is referenced from lib/ (a dead string is
     work for every translator and every future language)
 """
 import json, re, sys, pathlib
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from l10n_common import PLURAL_CATS, RTL, android_folder, android_strings, languages, registered_languages  # noqa: E402
+from gen_languages import problems  # noqa: E402
+from l10n_common import (PLURAL_CATS, android_folder, android_strings, base_code, languages,  # noqa: E402
+                         load_arb, load_manifest, overlays, support_data)
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 L10N = ROOT / 'lib' / 'l10n'
 REQUIRED = languages()
+OVERLAYS = overlays()
+INTL_PLURALS = set(support_data()['intl_plurals'])
 # Keys that may legitimately equal English in some locales.
 SAME_OK = {'appName', 'percentValue', 'taskSubtaskProgress', 'durationHours', 'durationMinutes',
            'durationHoursMinutes', 'settingsMinutesValue', 'focusModePomodoro', 'statSessionsDetail',
@@ -100,20 +107,9 @@ def project_checks(keys):
     """Everything outside the ARB files that a language needs."""
     errors = []
     langs = set(REQUIRED)
-    reg = registered_languages()
-    for c in sorted(langs - reg):
-        errors.append(f'app_{c}.arb exists but {c} is not in AppLocales.all (app_locales.dart)')
-    for c in sorted(reg - langs):
-        errors.append(f'AppLocales.all lists {c} but lib/l10n/app_{c}.arb is missing')
-    for c in sorted(langs - set(PLURAL_CATS)):
-        errors.append(f'{c}: add its CLDR plural categories to PLURAL_CATS in tool/l10n_common.py')
-    dart = (ROOT / 'lib' / 'app' / 'localization' / 'app_locales.dart').read_text(encoding='utf-8')
-    m = re.search(r'rtlLanguages = \{([^}]*)\}', dart)
-    dart_rtl = set(re.findall(r"'([a-z]+)'", m.group(1))) if m else set()
-    if dart_rtl != RTL:
-        errors.append(f'AppLocales.rtlLanguages {sorted(dart_rtl)} != RTL in l10n_common.py {sorted(RTL)}')
+    errors += problems(load_manifest())
     base = android_strings('values')
-    for c in sorted(langs - {'en'}):
+    for c in sorted(langs - {'en'} - set(OVERLAYS)):  # a variant may use its base's
         got = android_strings(android_folder(c))
         for f, names in base.items():
             if f not in got:
@@ -145,10 +141,15 @@ def main():
         if data.get('@@locale') != loc:
             errors.append(f'{path.name}: @@locale must be "{loc}"')
         vals = {k: v for k, v in data.items() if not k.startswith('@')}
+        base = load_arb(OVERLAYS[loc]) if loc in OVERLAYS else None
         for k in keys:
             if k not in vals:
-                errors.append(f'{path.name}: missing key {k}'); continue
+                if base is None:
+                    errors.append(f'{path.name}: missing key {k}')
+                continue
             v = vals[k]; ev = en[k]
+            if base is not None and v == base.get(k):
+                errors.append(f'{path.name}:{k}: same as {OVERLAYS[loc]}: remove it (a variant holds only differences)')
             if not isinstance(v, str) or not v.strip():
                 errors.append(f'{path.name}:{k}: empty value'); continue
             if not balanced(v):
@@ -159,15 +160,17 @@ def main():
                 cats = plural_cats(v)
                 if 'other' not in cats:
                     errors.append(f"{path.name}:{k}: plural without 'other'")
-                allowed = PLURAL_CATS.get(loc, {'one', 'other'})
+                allowed = PLURAL_CATS.get(base_code(loc), {'one', 'other'})
                 for c in cats:
                     if not c.startswith('=') and c not in allowed:
                         errors.append(f"{path.name}:{k}: plural category '{c}' invalid for {loc}")
+                if base_code(loc) not in INTL_PLURALS and 'one' in allowed and '=1' not in cats:
+                    errors.append(f"{path.name}:{k}: intl has no plural rules for {loc}: add an =1 branch")
             if BAD_DIGITS.search(v):
                 errors.append(f'{path.name}:{k}: non-Western digits')
             if FLAG.search(v):
                 errors.append(f'{path.name}:{k}: flag emoji')
-            if loc != 'en' and v == ev and k not in SAME_OK and k not in same_ok(loc) and len(ev) > 3:
+            if loc != 'en' and base is None and v == ev and k not in SAME_OK and k not in same_ok(loc) and len(ev) > 3:
                 errors.append(f'{path.name}:{k}: identical to English (untranslated?)')
             if k == 'weekdaysShort' and len(v.split(',')) != 7:
                 errors.append(f'{path.name}:{k}: must have 7 comma-separated items')

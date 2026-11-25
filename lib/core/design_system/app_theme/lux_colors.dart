@@ -107,28 +107,54 @@ extension LuxThemeX on BuildContext {
 
 /// Font family per script. Chinese uses the platform CJK font (Noto Sans
 /// CJK on Android) via fallback, keeping the APK small.
+/// Fonts and spacing per writing system. The language table is generated from
+/// lib/l10n/languages.json (language_fonts.g.dart): a language uses a bundled
+/// font only when that font has all its letters, otherwise the phone's font.
 abstract final class AppFonts {
   static const latin = 'Manrope';
   static const arabic = 'ReadexPro';
   static const devanagari = 'NotoSansDevanagari';
 
-  static String primaryFor(String languageCode) => switch (languageCode) {
-    'ar' => arabic,
-    'hi' => devanagari,
-    _ => latin,
+  static String _key(Locale l) {
+    final k = l.scriptCode == null ? l.languageCode : '${l.languageCode}-${l.scriptCode}';
+    return _languageScripts.containsKey(k) ? k : l.languageCode;
+  }
+
+  /// ISO 15924 writing system of the app language (Latin when unknown).
+  static String scriptOf(Locale l) => _languageScripts[_key(l)] ?? 'Latn';
+
+  /// Bundled font for the language, or null for the phone's own font.
+  static String? primaryFor(Locale l) =>
+      _languageFonts[_key(l)] ?? (_languageScripts.containsKey(_key(l)) ? null : latin);
+
+  /// Han characters differ between Chinese, Japanese and Korean, so each gets
+  /// its own system font variant; other scripts fall back by locale.
+  static List<String> fallbackFor(Locale l) => switch (scriptOf(l)) {
+    'Latn' || 'Cyrl' || 'Grek' => const [arabic, devanagari, 'sans-serif'],
+    'Arab' when primaryFor(l) != null => const [latin, devanagari, 'sans-serif'],
+    'Deva' when primaryFor(l) != null => const [latin, arabic, 'sans-serif'],
+    'Hans' => const ['Noto Sans CJK SC', 'Noto Sans SC', 'sans-serif'],
+    'Hant' => const ['Noto Sans CJK TC', 'Noto Sans TC', 'sans-serif'],
+    'Jpan' => const ['Noto Sans CJK JP', 'Noto Sans JP', 'sans-serif'],
+    'Kore' => const ['Noto Sans CJK KR', 'Noto Sans KR', 'sans-serif'],
+    _ => const ['sans-serif'],
   };
 
-  static List<String> fallbackFor(String languageCode) => switch (languageCode) {
-    'ar' => const [latin, devanagari, 'Noto Sans CJK SC', 'sans-serif'],
-    'hi' => const [latin, arabic, 'Noto Sans CJK SC', 'sans-serif'],
-    'zh' => const ['Noto Sans CJK SC', 'Noto Sans SC', latin, 'sans-serif'],
-    _ => const [arabic, devanagari, 'Noto Sans CJK SC', 'sans-serif'],
-  };
+  /// Scripts with tall marks above and below need extra line height.
+  static double lineHeightFactor(Locale l) {
+    if (l.languageCode == 'ur') return 1.25; // Nastaliq is very tall
+    return switch (scriptOf(l)) {
+      'Latn' || 'Cyrl' || 'Grek' || 'Hans' || 'Hant' || 'Jpan' || 'Kore' => 1.0,
+      'Mymr' || 'Tibt' => 1.25,
+      _ => 1.12,
+    };
+  }
 
-  /// Scripts with tall ascenders/descenders need extra line height.
-  static double lineHeightFactor(String languageCode) => switch (languageCode) {
-    'ar' || 'hi' => 1.12,
-    _ => 1.0,
+  /// Letter spacing (tracking) only suits separate letters: it breaks joined
+  /// scripts like Arabic and the stacked marks of Thai or Devanagari.
+  static bool allowsTracking(Locale l) => switch (scriptOf(l)) {
+    'Latn' || 'Cyrl' || 'Grek' => true,
+    _ => false,
   };
 }
 

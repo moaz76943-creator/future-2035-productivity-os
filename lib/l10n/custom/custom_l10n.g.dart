@@ -2550,6 +2550,10 @@ class _CustomL10n extends AppLocalizations {
   @override
   String get wordsNone => _o['wordsNone'] ?? _b.wordsNone;
   @override
+  String get settingsLanguageSearch => _o['settingsLanguageSearch'] ?? _b.settingsLanguageSearch;
+  @override
+  String get settingsLanguageNoMatch => _o['settingsLanguageNoMatch'] ?? _b.settingsLanguageNoMatch;
+  @override
   String dashFocusOfTarget(String done, String target) => _b.dashFocusOfTarget(done, target);
   @override
   String dashCardsDue(int count) => _b.dashCardsDue(count);
@@ -4206,6 +4210,8 @@ const customWordKeys = <String>[
   'wordsResetAll',
   'wordsResetAllConfirm',
   'wordsNone',
+  'settingsLanguageSearch',
+  'settingsLanguageNoMatch',
 ];
 
 /// The current app-language text of [key] (one of [customWordKeys]).
@@ -5457,5 +5463,7 @@ String customWordBase(AppLocalizations l, String key) => switch (key) {
   'wordsResetAll' => l.wordsResetAll,
   'wordsResetAllConfirm' => l.wordsResetAllConfirm,
   'wordsNone' => l.wordsNone,
+  'settingsLanguageSearch' => l.settingsLanguageSearch,
+  'settingsLanguageNoMatch' => l.settingsLanguageNoMatch,
   _ => '',
 };

@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:future_os/features/settings/presentation/language_chips.dart';
 import 'package:future_os/features/onboarding/presentation/onboarding_screen.dart';
 import 'package:future_os/features/settings/application/settings_providers.dart';
 import 'package:future_os/features/settings/data/settings_repository.dart';
@@ -27,11 +28,16 @@ void main() {
       );
       expect(find.text(l10n.onboardWelcomeTitle), findsOneWidget);
       expect(find.bySemanticsLabel(l10n.onboardStep(1, 4)), findsOneWidget);
-      // Every app language is visible on the first screen, no scrolling.
-      for (final name in ['العربية', 'English', '中文', 'Español', 'Русский', 'Français', 'हिन्दी']) {
+      // The likely languages are on the first screen (the full searchable list
+      // comes on the language step), at most LanguageChips.max of them.
+      final chips = suggested(null);
+      expect(chips.length, LanguageChips.max);
+      for (final lang in chips) {
+        expect(find.byKey(ValueKey('chip-lang-${lang.tag}')), findsOneWidget, reason: lang.tag);
+      }
+      for (final name in ['العربية', 'English']) {
         expect(find.text(name), findsOneWidget, reason: name);
       }
-      expect(find.byKey(const ValueKey('chip-lang-pt-BR')), findsOneWidget);
 
       await tester.tap(find.byKey(const ValueKey('onboard-next')));
       await settle(tester);

@@ -6,11 +6,15 @@ import '../../../app/localization/app_locales.dart';
 import '../../../core/design_system/tokens.dart';
 import '../application/settings_providers.dart';
 
-/// Every app language as chips that are all visible at once (no scrolling),
-/// each written in its own language. Used on the very first screen so nobody
-/// has to hunt for their language.
+/// The most likely languages as chips, each written in its own language: the
+/// phone's languages first, then the most used ones. Used on the very first
+/// screen so nobody has to hunt; the full searchable list follows in the
+/// onboarding and in Settings.
 class LanguageChips extends ConsumerWidget {
   const LanguageChips({super.key});
+
+  /// Chips shown at most (a calm first screen, whatever the language count).
+  static const max = 8;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -27,7 +31,7 @@ class LanguageChips extends ConsumerWidget {
           selected: current == null,
           onSelected: (_) => ctrl.update((c) => c.copyWith(clearLocale: true)),
         ),
-        for (final lang in AppLocales.all)
+        for (final lang in suggested(current))
           ChoiceChip(
             key: ValueKey('chip-lang-${lang.tag}'),
             label: Text(
@@ -40,4 +44,23 @@ class LanguageChips extends ConsumerWidget {
       ],
     );
   }
+}
+
+/// At most [LanguageChips.max] languages: the chosen one, the phone's, then the
+/// list order (most used first).
+List<SupportedLanguage> suggested(String? current, [List<Locale>? device]) {
+  final phone = device ?? WidgetsBinding.instance.platformDispatcher.locales;
+  final out = <SupportedLanguage>[];
+  void add(SupportedLanguage? l) {
+    if (l != null && !out.contains(l) && out.length < LanguageChips.max) out.add(l);
+  }
+
+  add(AppLocales.byTag(current));
+  for (final d in phone) {
+    for (final l in AppLocales.all) {
+      if (l.locale.languageCode == d.languageCode) add(l);
+    }
+  }
+  AppLocales.all.forEach(add);
+  return out;
 }
