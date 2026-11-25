@@ -56,8 +56,9 @@ def import_lines(code, paths):
             num, _, text = line.partition('\t')
             if not num.strip().isdigit() or not (1 <= int(num) <= len(ks)):
                 sys.exit(f'{p}: bad line number in: {line[:60]}')
-            text = western(text.split('\t')[0].replace('\\n', '\n').strip())
-            if not text:
+            # Not stripped: a separator such as ', ' keeps its space.
+            text = western(text.split('\t')[0].replace('\\n', '\n').rstrip('\r'))
+            if not text.strip():
                 sys.exit(f'{p}: empty text for line {num}')
             data[ks[int(num) - 1]] = text
             n += 1
