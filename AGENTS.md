@@ -43,7 +43,8 @@ Never push with a failing check. Never weaken or delete a test to make it pass: 
 - Calm design: white luxury in light mode, true black (AMOLED) in dark mode. Use the tokens in
   `lib/core/design_system/` (`Space`, `Radii`, `ModuleHue`, `context.lux`), never raw values.
 - Right-to-left must work: test Arabic (`localeTag: 'ar'`) in widget tests.
-- Data stays on the phone; the internet is used only by features the user turns on.
+- Data stays on the phone; the internet is used only by features the user turns on, plus the
+  AdMob banner (consent first where required; it never sees user content).
 
 ## How the code is built
 

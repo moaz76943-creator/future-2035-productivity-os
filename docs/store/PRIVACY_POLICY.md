@@ -7,8 +7,13 @@ FUTURE 2035 is a local-first productivity app. This policy describes what the ap
 ## Data you enter stays on your device
 Tasks, projects, calendar events, notes, flashcards, review history, goals, habits, focus sessions and settings are stored in a database on your device. The database is encrypted at rest (SQLCipher-compatible encryption via `sqlite3mc`); its key is kept in Android's secure storage (`flutter_secure_storage`). There is no account, no sign-in and no cloud sync.
 
-## No analytics, advertising or tracking
-The app contains no analytics, advertising, crash-reporting or tracking SDKs, and it does not send usage data anywhere.
+## Advertising (Google AdMob)
+The app shows one banner ad at the bottom of the main screens, served by Google AdMob (Google Mobile Ads SDK). To show and measure ads and prevent fraud, Google may collect device identifiers (such as the Android advertising ID), IP address, approximate location derived from it, and ad interactions, under [Google's privacy policy](https://policies.google.com/privacy) and [how Google uses information from apps](https://policies.google.com/technologies/partner-sites).
+- In regions where the law requires it (for example the EEA, UK and Switzerland), Google's consent form is shown before any ad is requested; ads load only when consent allows.
+- You can reset or delete your advertising ID, or opt out of personalized ads, in Android settings (Google > Ads / Privacy > Ads).
+- The ads SDK never receives your tasks, notes, flashcards or any other content you enter.
+
+The app contains no analytics, crash-reporting or tracking SDKs of its own.
 
 ## Optional AI assistant (off by default)
 The on-device assistant tools (plan my day, extract tasks, make flashcards, workload) run locally. The optional cloud summary works only if **you** enable the assistant and enter your own HTTPS endpoint and API key:
@@ -25,7 +30,8 @@ Backups are files you export yourself. They are encrypted with a password you ch
 - **Exact alarms** (Android 12 and older only): on-time reminders. Newer Android versions use inexact reminders.
 - **Run at startup**: restores scheduled reminders after a restart.
 - **Vibration**: focus and reminder alerts.
-- **Internet**: used only by the optional cloud assistant described above.
+- **Internet**: used by the banner ads (Google AdMob) and by the optional cloud assistant described above.
+- **Advertising ID** (added by the Google Mobile Ads SDK): used by Google for ads, measurement and fraud prevention.
 - **Microphone** (asked only when you tap Record on a flashcard): voice recordings for your cards. Recordings are stored only in the app's encrypted database on your device and in backups you create; they are never uploaded.
 - **Text-to-speech**: flashcards can be read aloud by the speech engine already installed on your device.
 

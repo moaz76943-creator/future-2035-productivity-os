@@ -113,6 +113,7 @@ documents each recording's source and licence. Each source page is listed so it 
 | fuchsia_remote_debug_protocol | 0.0.0 | BSD-3-Clause (Flutter SDK) | transitive |
 | glob | 2.2.0 | BSD-3-Clause | transitive |
 | go_router | 18.1.4 | BSD-3-Clause | app |
+| google_mobile_ads | 9.2.0 | Apache-2.0 | app |
 | graphs | 2.3.2 | BSD-3-Clause | transitive |
 | hijri | 3.0.1 | BSD-2-Clause | app |
 | hooks | 2.2.0 | BSD-3-Clause | transitive |
@@ -190,6 +191,10 @@ documents each recording's source and licence. Each source page is listed so it 
 | web_socket | 1.0.1 | BSD-3-Clause | transitive |
 | web_socket_channel | 3.0.3 | BSD-3-Clause | transitive |
 | webdriver | 3.2.0 | Apache-2.0 | transitive |
+| webview_flutter | 4.14.1 | BSD-3-Clause | transitive |
+| webview_flutter_android | 4.14.1 | BSD-3-Clause | transitive |
+| webview_flutter_platform_interface | 2.15.1 | BSD-3-Clause | transitive |
+| webview_flutter_wkwebview | 3.27.2 | BSD-3-Clause | transitive |
 | win32 | 6.4.0 | BSD-3-Clause | transitive |
 | windows_file_picker | 2.0.2 | MIT | transitive |
 | xdg_directories | 1.1.0 | BSD-3-Clause | transitive |

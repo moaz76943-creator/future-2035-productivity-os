@@ -37,11 +37,34 @@ class _BottomBannerAdWidgetState extends State<BottomBannerAdWidget> {
   void initState() {
     super.initState();
     if (_canShowAds) {
-      _loadAd();
+      unawaited(_loadAd());
     }
   }
 
-  void _loadAd() {
+  /// Runs once per app start: asks for ad consent where the law needs it
+  /// (Google's consent form, shown only in regions that require one), then
+  /// starts the ads SDK. Ads load only when consent allows them.
+  static Future<bool>? _ready;
+  static Future<bool> _prepare() async {
+    final consent = Completer<void>();
+    ConsentInformation.instance.requestConsentInfoUpdate(
+      ConsentRequestParameters(),
+      () => ConsentForm.loadAndShowConsentFormIfRequired((_) => consent.complete()),
+      (_) => consent.complete(),
+    );
+    await consent.future;
+    if (!await ConsentInformation.instance.canRequestAds()) return false;
+    await MobileAds.instance.initialize();
+    return true;
+  }
+
+  Future<void> _loadAd() async {
+    try {
+      if (!await (_ready ??= _prepare())) return;
+    } on Object {
+      return; // No consent service or SDK: simply no banner.
+    }
+    if (!mounted) return;
     final ad = BannerAd(
       adUnitId: _adUnitId,
       size: AdSize.banner,

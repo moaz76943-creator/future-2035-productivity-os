@@ -70,10 +70,14 @@ void main() {
 
     await tester.tap(find.byKey(const Key('voiceFront')));
     await settle(tester);
-    // Only Spanish voices are offered for the Spanish side; online ones are marked.
-    expect(find.text('en-us-x-iol-local'), findsNothing);
-    expect(find.text('es-us-x-sfb-network · ${l10n.speechVoiceOnline}'), findsOneWidget);
-    await tester.tap(find.text('es-es-x-eea-local').last);
+    // Only Spanish voices, numbered (no engine ids), on-phone first; online ones are marked.
+    expect(find.textContaining('x-'), findsNothing);
+    expect(find.text('${l10n.speechVoiceNumber('3')} · US'), findsNothing);
+    expect(
+      find.text('${l10n.speechVoiceNumber('2')} · US · ${l10n.speechVoiceOnline}'),
+      findsOneWidget,
+    );
+    await tester.tap(find.text('${l10n.speechVoiceNumber('1')} · ES').last);
     await settle(tester);
     final saved = (await tester.runAsync(() => SettingsRepository(env.db).load()))!;
     expect(saved.flashVoices['es'], 'es-es-x-eea-local');
