@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'dart:async';
 
 import 'package:flutter/services.dart';
@@ -13,6 +14,7 @@ import '../../settings/application/settings_providers.dart';
 import '../../sounds/domain/nature_sound.dart';
 import '../../sounds/presentation/widgets/sound_art.dart';
 import '../application/focus_controller.dart';
+import '../application/focus_draft.dart';
 import '../application/focus_prefs.dart';
 import '../domain/focus_timer_state.dart';
 import 'focus_screen.dart' show focusPhaseLabel;
@@ -30,7 +32,7 @@ class ImmersiveFocusScreen extends ConsumerStatefulWidget {
 class _ImmersiveFocusScreenState extends ConsumerState<ImmersiveFocusScreen> {
   Timer? _tick;
   Timer? _hide;
-  StreamSubscription<bool>? _flip;
+  late final FlipToFocus _flip = FlipToFocus(ref);
   bool _controls = true;
   late final FocusTools _tools = ref.read(focusToolsProvider);
 
@@ -42,7 +44,7 @@ class _ImmersiveFocusScreenState extends ConsumerState<ImmersiveFocusScreen> {
     _tick = Timer.periodic(const Duration(seconds: 1), (_) {
       if (mounted) setState(() {});
     });
-    _flip = _tools.faceDown.listen(_onFlip);
+    _flip.listen();
     _scheduleHide();
   }
 
@@ -50,26 +52,10 @@ class _ImmersiveFocusScreenState extends ConsumerState<ImmersiveFocusScreen> {
   void dispose() {
     _tick?.cancel();
     _hide?.cancel();
-    unawaited(_flip?.cancel());
+    unawaited(_flip.cancel());
     unawaited(_tools.keepAwake(false));
     unawaited(SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge));
     super.dispose();
-  }
-
-  Future<void> _onFlip(bool down) async {
-    final prefs = ref.read(focusPrefsProvider).value ?? const FocusPrefs();
-    if (!prefs.flipToFocus) return;
-    final ctrl = ref.read(focusControllerProvider.notifier);
-    final a = ref.read(focusControllerProvider).active;
-    if (down) {
-      if (a == null) {
-        await ctrl.start(mode: FocusMode.pomodoro);
-      } else if (!a.isRunning) {
-        await ctrl.resume();
-      }
-    } else if (a != null && a.isRunning) {
-      await ctrl.pause();
-    }
   }
 
   void _scheduleHide() {
@@ -95,10 +81,22 @@ class _ImmersiveFocusScreenState extends ConsumerState<ImmersiveFocusScreen> {
     final a = fs.active;
     final ctrl = ref.read(focusControllerProvider.notifier);
 
+    final draft = ref.watch(focusDraftProvider);
     final shown = a == null
-        ? Duration(minutes: settings.workMinutes)
+        ? Duration(
+            minutes: switch (draft.mode) {
+              FocusMode.pomodoro => settings.workMinutes,
+              FocusMode.countdown => draft.countdownMinutes,
+              _ => 0,
+            },
+          )
         : (a.remaining(now) ?? a.elapsed(now));
-    final countsDown = a == null || a.hasTarget;
+    final progress = a == null
+        ? 0.0
+        : (a.progress(now) ?? (a.elapsed(now).inSeconds % 3600) / 3600);
+    final countsDown = a == null
+        ? draft.mode == FocusMode.pomodoro || draft.mode == FocusMode.countdown
+        : a.hasTarget;
     final minutes = countsDown ? (shown.inSeconds / 60).ceil() : shown.inMinutes;
     final clock = prefs.calmPacing
         ? l10n.focusMinutesShort(context.fmt.number(minutes))
@@ -130,17 +128,20 @@ class _ImmersiveFocusScreenState extends ConsumerState<ImmersiveFocusScreen> {
                     style: context.text.titleMedium?.copyWith(color: white.withValues(alpha: 0.7)),
                   ),
                   const SizedBox(height: Space.sm),
-                  FittedBox(
-                    child: Directionality(
-                      textDirection: TextDirection.ltr,
-                      child: Text(
-                        clock,
-                        key: const Key('immersiveClock'),
-                        style: context.text.displayLarge?.copyWith(
-                          color: white,
-                          fontSize: 96,
-                          fontWeight: FontWeight.w300,
-                          fontFeatures: const [FontFeature.tabularFigures()],
+                  _Ring(
+                    progress: progress,
+                    child: FittedBox(
+                      child: Directionality(
+                        textDirection: TextDirection.ltr,
+                        child: Text(
+                          clock,
+                          key: const Key('immersiveClock'),
+                          style: context.text.displayLarge?.copyWith(
+                            color: white,
+                            fontSize: 96,
+                            fontWeight: FontWeight.w300,
+                            fontFeatures: const [FontFeature.tabularFigures()],
+                          ),
                         ),
                       ),
                     ),
@@ -165,7 +166,7 @@ class _ImmersiveFocusScreenState extends ConsumerState<ImmersiveFocusScreen> {
                         onPlay: () {
                           _scheduleHide();
                           if (a == null) {
-                            unawaited(ctrl.start(mode: FocusMode.pomodoro));
+                            unawaited(startFocusFromDraft(ref));
                           } else if (a.isRunning) {
                             unawaited(ctrl.pause());
                           } else {
@@ -227,6 +228,41 @@ class _Controls extends StatelessWidget {
         ),
         const SizedBox(width: Space.xl + 48),
       ],
+    );
+  }
+}
+
+/// A thin, calm progress ring around the clock (the time flows, no ticking needed).
+class _Ring extends StatelessWidget {
+  const _Ring({required this.progress, required this.child});
+  final double progress;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final size = math.min(MediaQuery.sizeOf(context).shortestSide * 0.82, 360.0);
+    return SizedBox.square(
+      dimension: size,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          SizedBox.expand(
+            child: TweenAnimationBuilder<double>(
+              tween: Tween(end: progress.clamp(0, 1)),
+              duration: const Duration(milliseconds: 900),
+              builder: (_, v, _) => CircularProgressIndicator(
+                key: const Key('immersiveRing'),
+                value: v,
+                strokeWidth: 3,
+                strokeCap: StrokeCap.round,
+                color: Colors.white.withValues(alpha: 0.85),
+                backgroundColor: Colors.white.withValues(alpha: 0.12),
+              ),
+            ),
+          ),
+          Padding(padding: const EdgeInsets.all(Space.xl), child: child),
+        ],
+      ),
     );
   }
 }

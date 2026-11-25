@@ -2,8 +2,12 @@ part of '../focus_screen.dart';
 
 class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingObserver {
   Timer? _ticker;
-  FocusMode _mode = FocusMode.pomodoro;
-  int _countdownMinutes = 25;
+  late final FlipToFocus _flip = FlipToFocus(ref);
+
+  // The set-up session lives in a provider so flip and immersive start the same one.
+  FocusMode get _mode => ref.read(focusDraftProvider).mode;
+  int get _countdownMinutes => ref.read(focusDraftProvider).countdownMinutes;
+  FocusDraftNotifier get _draft => ref.read(focusDraftProvider.notifier);
   bool _showBatteryHint = false;
   bool _batteryChecked = false;
 
@@ -18,7 +22,7 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
       ctrl.restored.then((_) {
         if (!mounted) return;
         final s = ref.read(focusControllerProvider);
-        if (s.active case final a?) setState(() => _mode = a.mode);
+        if (s.active case final a?) _draft.setMode(a.mode);
         final initial = widget.initialTaskId;
         if (initial != null && s.active == null) unawaited(ctrl.linkTask(initial));
       }),
@@ -29,6 +33,7 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
     _ticker?.cancel();
+    unawaited(_flip.cancel());
     super.dispose();
   }
 
@@ -55,6 +60,17 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
     }
   }
 
+  /// Flip to focus while this tab is the visible screen (not under another page).
+  void _syncFlip(bool on) {
+    final visible =
+        TickerMode.valuesOf(context).enabled && (ModalRoute.of(context)?.isCurrent ?? true);
+    if (on && visible) {
+      _flip.listen();
+    } else if (_flip.listening) {
+      unawaited(_flip.cancel());
+    }
+  }
+
   Future<void> _checkBatteryHint() async {
     if (_batteryChecked) return;
     _batteryChecked = true;
@@ -69,6 +85,8 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
     final l10n = context.l10n;
     final fs = ref.watch(focusControllerProvider);
     _syncTicker(fs.active);
+    ref.watch(focusDraftProvider);
+    _syncFlip(ref.watch(focusPrefsProvider).value?.flipToFocus ?? false);
     ref.listen<FocusControllerState>(focusControllerProvider, (prev, next) {
       final f = next.justFinished;
       if (f != null && prev?.justFinished?.id != f.id) {
@@ -76,7 +94,7 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
         unawaited(_askNote(f));
       }
       if (next.active case final a? when prev?.active == null) {
-        setState(() => _mode = a.mode);
+        _draft.setMode(a.mode);
       }
     });
 
@@ -115,7 +133,7 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
               _ModeSelector(
                 value: fs.active?.mode ?? _mode,
                 enabled: fs.ready && fs.active == null,
-                onChanged: (m) => setState(() => _mode = m),
+                onChanged: (m) => _draft.setMode(m),
               ),
               const SizedBox(height: Space.md),
               _TimerHero(
@@ -128,15 +146,15 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
                         context,
                         mode: _mode,
                         countdownMinutes: _countdownMinutes,
-                        onMode: (m) => setState(() => _mode = m),
-                        onCountdown: (m) => setState(() => _countdownMinutes = m),
+                        onMode: (m) => _draft.setMode(m),
+                        onCountdown: (m) => _draft.setMinutes(m),
                       )
                     : null,
               ),
               const SizedBox(height: Space.md),
               _Controls(
                 state: fs,
-                onStart: () => _ctrl.start(mode: _mode, countdownMinutes: _countdownMinutes),
+                onStart: () => startFocusFromDraft(ref),
                 onPause: _ctrl.pause,
                 onResume: _ctrl.resume,
                 onStop: _confirmStop,
@@ -190,7 +208,7 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
                   padding: const EdgeInsets.only(bottom: Space.md),
                   child: _CountdownChoices(
                     value: _countdownMinutes,
-                    onChanged: (m) => setState(() => _countdownMinutes = m),
+                    onChanged: (m) => _draft.setMinutes(m),
                   ),
                 ),
             ],

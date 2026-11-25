@@ -25,9 +25,14 @@ class ChannelFocusTools implements FocusTools {
     }
   }
 
+  /// One shared stream: the sensor runs while anyone listens and stops after the last.
+  static final Stream<bool> _flips = _e
+      .receiveBroadcastStream()
+      .map((v) => v == true)
+      .handleError((Object _) {});
+
   @override
-  Stream<bool> get faceDown =>
-      _e.receiveBroadcastStream().map((v) => v == true).handleError((Object _) {});
+  Stream<bool> get faceDown => _flips;
 }
 
 /// For tests: records keep-awake calls; [flip] simulates turning the phone.
