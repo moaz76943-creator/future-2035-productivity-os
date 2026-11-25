@@ -107,6 +107,20 @@ abstract final class TextNormalizer {
 
   /// Converts any non-Western decimal digits to 0-9. Used as a final guard
   /// on formatted strings so every locale displays Western digits.
+  /// Zero of the decimal digit block that [r] belongs to (Devanagari, Bengali,
+  /// Gurmukhi, Gujarati, Tamil, Telugu, Kannada, Malayalam, Thai, Lao, Myanmar,
+  /// Khmer and full-width digits), or null.
+  static int? _digitZero(int r) {
+    const zeros = [
+      0x0966, 0x09E6, 0x0A66, 0x0AE6, 0x0BE6, 0x0C66, 0x0CE6, 0x0D66,
+      0x0E50, 0x0ED0, 0x1040, 0x17E0, 0xFF10,
+    ];
+    for (final z in zeros) {
+      if (r >= z && r <= z + 9) return z;
+    }
+    return null;
+  }
+
   static String westernDigits(String input) {
     final out = StringBuffer();
     for (final r in input.runes) {
@@ -114,8 +128,8 @@ abstract final class TextNormalizer {
         out.writeCharCode(0x30 + r - 0x0660);
       } else if (r >= 0x06F0 && r <= 0x06F9) {
         out.writeCharCode(0x30 + r - 0x06F0);
-      } else if (r >= 0x0966 && r <= 0x096F) {
-        out.writeCharCode(0x30 + r - 0x0966);
+      } else if (_digitZero(r) case final zero?) {
+        out.writeCharCode(0x30 + r - zero);
       } else {
         out.writeCharCode(r);
       }

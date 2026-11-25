@@ -1,0 +1,360 @@
+1	Deep Focus
+2	Start
+3	Zadania
+4	Skupienie
+5	Kalendarz
+6	Przestrzenie
+7	Projekty
+8	Notatki
+9	Fiszki
+10	Cele
+11	Nawyki
+12	Statystyki
+13	Szukaj
+14	Asystent
+15	Ustawienia
+16	Kosz
+17	Zapisz
+18	Anuluj
+19	Usuń
+20	Edytuj
+21	Gotowe
+22	Dodaj
+23	Utwórz
+24	Zamknij
+25	Wstecz
+26	Cofnij
+27	Przywróć
+28	Spróbuj ponownie
+29	Dalej
+30	Pomiń
+31	Archiwizuj
+32	Przywróć z archiwum
+33	Przypnij
+34	Odepnij
+35	Więcej opcji
+36	Wyczyść
+37	Szukaj
+38	Sortuj
+39	Udostępnij
+40	Importuj
+41	Eksportuj
+42	Wstrzymaj
+43	Wznów
+44	Start
+45	Zatrzymaj
+46	Zakończ
+47	Usuń na zawsze
+48	Opróżnij kosz
+49	Odłącz
+50	Dostosuj
+51	Podgląd
+52	Zapisz postęp
+53	Wczytywanie…
+54	Zapisywanie…
+55	Zapisano
+56	Niezapisane zmiany
+57	Coś poszło nie tak
+58	Twoje dane są bezpieczne. Spróbuj ponownie.
+59	Nie udało się wczytać tej treści.
+60	Nie udało się zapisać. Twoje zmiany wciąż tu są.
+61	To pole jest wymagane
+62	Wpisz tytuł
+63	Wpisz nazwę
+64	To jest za długie
+65	Koniec musi być po początku
+66	Data rozpoczęcia musi być przed terminem
+67	Wpisz liczbę większą od zera
+68	To utworzyłoby zależność cykliczną
+69	Ta reguła powtarzania jest nieprawidłowa
+70	Przeniesiono do kosza
+71	Bez tytułu
+72	Bez projektu
+73	Dzień dobry
+74	Dzień dobry
+75	Dobry wieczór
+76	Dzisiejsze skupienie
+77	{done} z {target}
+78	Zacznij skupienie
+79	Sesja trwa
+80	Na dziś
+81	Plan dnia
+82	Dzisiejsze nawyki
+83	Cele
+84	Powtórki
+85	Ostatnie notatki
+86	Sugestia
+87	Pokaż wszystko
+88	{count, plural, =0{Brak fiszek do powtórki} =1{1 fiszka do powtórki} few{{count} fiszki do powtórki} many{{count} fiszek do powtórki} other{{count} fiszki do powtórki}}
+89	Powtórz teraz
+90	Sekcje ekranu głównego
+91	Wybierz, co pojawia się na ekranie głównym.
+92	Skupienie
+93	Zadania na dziś
+94	Plan dnia
+95	Nawyki
+96	Cele
+97	Powtórka fiszek
+98	Ostatnie notatki
+99	Sugestie
+100	Nowe zadanie
+101	Nowa notatka
+102	Nowe wydarzenie
+103	Skupienie
+104	{count, plural, =1{Masz 1 zaległe zadanie. Najpierw je przełóż lub zakończ.} few{Masz {count} zaległe zadania. Zacznij od najważniejszego.} many{Masz {count} zaległych zadań. Zacznij od najważniejszego.} other{Masz {count} zaległego zadania. Zacznij od najważniejszego.}}
+105	Do dziennego celu skupienia brakuje Ci {minutes} min.
+106	Powtórz teraz zaległe fiszki, póki są świeże.
+107	Wszystko idzie zgodnie z planem. Zaplanuj jutro albo zrób uważną przerwę.
+108	Utrzymaj serię: {habit} czeka dziś na wykonanie.
+109	Skupienie
+110	Pomodoro
+111	Minutnik
+112	Stoper
+113	Swobodna
+114	Skupienie
+115	Krótka przerwa
+116	Długa przerwa
+117	Gotowe, kiedy Ty będziesz
+118	Wstrzymano
+119	W skupieniu
+120	Czas trwania
+121	Połącz zadanie
+122	Pracujesz nad
+123	Brak połączonego zadania
+124	Cykl {current} z {total}
+125	Pomiń przerwę
+126	Zacznij przerwę
+127	Zacznij kolejne skupienie
+128	Sesja ukończona
+129	Sesja zapisana
+130	Skupiałeś się przez {duration}.
+131	Dodaj notatkę o tej sesji
+132	Historia
+133	Ukończone sesje pojawią się tutaj
+134	Cele
+135	Cel dzienny
+136	Cel tygodniowy
+137	Ukończona
+138	Przerwana wcześniej
+139	Sesja trwała dalej, gdy aplikacja była zamknięta.
+140	Sesja zakończyła się, gdy aplikacja była zamknięta, i została zapisana.
+141	Powiadomienia są wyłączone. Nie dostaniesz alertu po zakończeniu sesji.
+142	Niektóre urządzenia wstrzymują aplikacje w tle. Minutnik pozostaje dokładny, ale alerty mogą się spóźniać. Zezwól na nieograniczone użycie baterii, aby alerty były niezawodne.
+143	Otwórz ustawienia
+144	Zatrzymać tę sesję?
+145	Dotychczasowy czas skupienia zostanie zapisany.
+146	Odrzuć
+147	{minutes, plural, =1{1 minuta} few{{minutes} minuty} many{{minutes} minut} other{{minutes} minuty}}
+148	{phase}, pozostało {time}
+149	{phase}, minęło {time}
+150	Usuń sesję
+151	Zadania
+152	Dziś
+153	Nadchodzące
+154	Wszystkie
+155	Zaległe
+156	Ukończone
+157	Dodaj zadanie…
+158	Wszystko zrobione
+159	Dodaj zadanie, aby zaplanować swój dzień.
+160	Ukończone zadania pojawią się tutaj.
+161	Nowe zadanie
+162	Edytuj zadanie
+163	Tytuł
+164	Co trzeba zrobić?
+165	Opis
+166	Notatki
+167	Priorytet
+168	Brak
+169	Niski
+170	Średni
+171	Wysoki
+172	Pilny
+173	Termin
+174	Data rozpoczęcia
+175	Przypomnienie
+176	Powtarzaj
+177	Projekt
+178	Kategoria
+179	np. Praca, Dom, Nauka
+180	Szacunek (minuty)
+181	Zmierzone skupienie
+182	Etykiety
+183	Nowa etykieta
+184	Lista kontrolna
+185	Dodaj pozycję
+186	Podzadania
+187	Dodaj podzadanie
+188	Blokowane przez
+189	Dodaj zadanie blokujące
+190	Połączone notatki
+191	Ustaw godzinę
+192	Bez daty
+193	Zadanie ukończone
+194	Utworzono kolejne powtórzenie
+195	{done}/{total}
+196	{days, plural, =1{1 dzień po terminie} few{{days} dni po terminie} many{{days} dni po terminie} other{{days} dnia po terminie}}
+197	Oznacz „{title}” jako zrobione
+198	Oznacz „{title}” jako niezrobione
+199	Inteligentnie
+200	Termin
+201	Priorytet
+202	Najnowsze
+203	Tytuł
+204	Wszystkie projekty
+205	Dowolny priorytet
+206	Filtruj i sortuj
+207	Dziś
+208	Jutro
+209	Wczoraj
+210	Nie powtarza się
+211	Codziennie
+212	W dni robocze
+213	Co tydzień
+214	Co miesiąc
+215	Co rok
+216	Niestandardowe
+217	Powtarzaj co
+218	W dni
+219	{count, plural, =1{dzień} few{dni} many{dni} other{dnia}}
+220	{count, plural, =1{tydzień} few{tygodnie} many{tygodni} other{tygodnia}}
+221	{count, plural, =1{miesiąc} few{miesiące} many{miesięcy} other{miesiąca}}
+222	{count, plural, =1{rok} few{lata} many{lat} other{roku}}
+223	Kończy się po {count, plural, =1{1 razie} other{{count} razach}}
+224	Nigdy się nie kończy
+225	W chwili wydarzenia
+226	{minutes, plural, =1{1 minutę wcześniej} few{{minutes} minuty wcześniej} many{{minutes} minut wcześniej} other{{minutes} minuty wcześniej}}
+227	{hours, plural, =1{1 godzinę wcześniej} few{{hours} godziny wcześniej} many{{hours} godzin wcześniej} other{{hours} godziny wcześniej}}
+228	1 dzień wcześniej
+229	Projekty
+230	Brak projektów
+231	Grupuj powiązane zadania, notatki i czas skupienia.
+232	Nowy projekt
+233	Edytuj projekt
+234	Nazwa
+235	Opis
+236	Cel
+237	Termin
+238	Kolor
+239	Ikona
+240	Postęp
+241	Ukończono {done} z {total} zadań
+242	Czas skupienia
+243	Zarchiwizowane projekty
+244	Pokaż zarchiwizowane
+245	{days, plural, =0{Termin dziś} =1{Został 1 dzień} few{Zostały {days} dni} many{Zostało {days} dni} other{Zostało {days} dnia}}
+246	Po terminie
+247	Kalendarz
+248	Miesiąc
+249	Tydzień
+250	Dzień
+251	Dziś
+252	Poprzedni
+253	Następny
+254	Nic nie zaplanowano
+255	Cały dzień
+256	Nowe wydarzenie
+257	Edytuj wydarzenie
+258	Tytuł wydarzenia
+259	Początek
+260	Koniec
+261	Typ
+262	Wydarzenie
+263	Blok czasu
+264	Sesja skupienia
+265	Cel osobisty
+266	Szczegóły
+267	{count, plural, =1{Koliduje z 1 wydarzeniem} other{Koliduje z {count} wydarzeniami}}
+268	Konflikty w planie tego dnia
+269	Zadanie z terminem
+270	Przytrzymaj i przeciągnij wydarzenie, aby je przenieść
+271	Wydarzenie przeniesione
+272	Zaplanuj jako blok czasu
+273	Notatki
+274	Wszystkie
+275	Przypięte
+276	Ulubione
+277	Zarchiwizowane
+278	Tagi
+279	Nowy notes
+280	Bez notesu
+281	Czysta karta
+282	Zapisuj pomysły, notatki ze spotkań i wiedzę.
+283	Tytuł
+284	Zacznij pisać… Użyj # dla tagów i [[Tytuł]], aby łączyć notatki.
+285	Ulubiona
+286	Usuń z ulubionych
+287	Przenieś do notesu
+288	Linkowane z
+289	Połączone zadania
+290	Połącz zadanie
+291	Projekt
+292	Nagłówek
+293	Pogrubienie
+294	Kursywa
+295	Lista punktowana
+296	Lista kontrolna
+297	Link
+298	Edytowano {time}
+299	{count, plural, =1{1 słowo} few{{count} słowa} many{{count} słów} other{{count} słowa}}
+300	Fiszki
+301	Utwórz pierwszą talię
+302	Powtórki rozłożone w czasie pokazują każdą fiszkę tuż przed tym, zanim ją zapomnisz.
+303	Nowa talia
+304	Edytuj talię
+305	Nazwa talii
+306	Opis
+307	Nowe fiszki dziennie
+308	Dzienny cel powtórek
+309	{count, plural, =0{Brak fiszek} =1{1 fiszka} few{{count} fiszki} many{{count} fiszek} other{{count} fiszki}}
+310	Do powtórki
+311	Nowe
+312	Utrwalone
+313	Ucz się
+314	Teraz nic nie czeka. Wróć później.
+315	Dodaj fiszki, aby zacząć naukę.
+316	Nowa fiszka
+317	Edytuj fiszkę
+318	Przód
+319	Tył
+320	Pytanie lub pojęcie
+321	Odpowiedź lub definicja
+322	Tagi
+323	Zapisz i dodaj kolejną
+324	Pokaż odpowiedź
+325	Jeszcze raz
+326	Trudne
+327	Dobrze
+328	Łatwe
+329	{done} z {total}
+330	Sesja ukończona
+331	{count, plural, =1{Powtórzono 1 fiszkę.} few{Powtórzono {count} fiszki.} many{Powtórzono {count} fiszek.} other{Powtórzono {count} fiszki.}}
+332	Dotknij, aby zobaczyć odpowiedź
+333	Importuj fiszki
+334	Wklej jedną fiszkę na wiersz (przód i tył oddzielone tabulatorem lub średnikiem) albo wybierz plik: Excel (.xlsx), CSV, talię Anki (.apkg) lub wyeksportowaną talię.
+335	{count, plural, =0{Nie zaimportowano fiszek} =1{Zaimportowano 1 fiszkę} few{Zaimportowano {count} fiszki} many{Zaimportowano {count} fiszek} other{Zaimportowano {count} fiszki}}
+336	Nie udało się zaimportować tej treści.
+337	Talia wyeksportowana
+338	{count, plural, =1{1 min} other{{count} min}}
+339	{count, plural, =1{1 dzień} other{{count} dni}}
+340	Cele
+341	Postaw sobie cel
+342	Ustal cele dzienne, tygodniowe, miesięczne lub długoterminowe i śledź prawdziwy postęp.
+343	Nowy cel
+344	Edytuj cel
+345	Co chcesz osiągnąć?
+346	Okres
+347	Dzienny
+348	Tygodniowy
+349	Miesięczny
+350	Długoterminowy
+351	Wartość docelowa
+352	Jednostka
+353	np. strony, km, godziny
+354	Aktywny
+355	Wstrzymany
+356	Osiągnięty
+357	Wstrzymaj cel
+358	Wznów cel
+359	Oznacz jako osiągnięty
+360	{current} z {target}

@@ -19,7 +19,7 @@ import re
 import shutil
 import sys
 
-from l10n_common import L10N, LOCALES_DART, PLURAL_CATS, RES, RTL, languages, load_arb, save_arb
+from l10n_common import L10N, LOCALES_DART, PLURAL_CATS, RES, RTL, android_folder, languages, load_arb, save_arb
 from l10n_export import export
 
 SCRIPTS_WITH_FONT = 'Latin, Cyrillic, Greek (Manrope), Arabic (Readex Pro), Devanagari (Noto), CJK (system)'
@@ -49,7 +49,7 @@ arb.update({k: v for k, v in en.items() if not k.startswith('@')})
 save_arb(code, arb)
 
 # 2. Android strings.
-dst = RES / f'values-{code}'
+dst = RES / android_folder(code)
 dst.mkdir(exist_ok=True)
 for f in sorted((RES / 'values').glob('*_strings.xml')):
     if not (dst / f.name).exists():

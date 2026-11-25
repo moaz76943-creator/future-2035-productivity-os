@@ -87,6 +87,18 @@ abstract final class AppLocales {
       nativeName: 'हिन्दी',
       intlLocale: 'hi',
     ),
+    SupportedLanguage(tag: 'de', locale: Locale('de'), nativeName: 'Deutsch', intlLocale: 'de'),
+    SupportedLanguage(tag: 'it', locale: Locale('it'), nativeName: 'Italiano', intlLocale: 'it'),
+    SupportedLanguage(tag: 'tr', locale: Locale('tr'), nativeName: 'Türkçe', intlLocale: 'tr'),
+    SupportedLanguage(tag: 'pl', locale: Locale('pl'), nativeName: 'Polski', intlLocale: 'pl'),
+    SupportedLanguage(tag: 'id', locale: Locale('id'), nativeName: 'Bahasa Indonesia', intlLocale: 'id'),
+    SupportedLanguage(tag: 'vi', locale: Locale('vi'), nativeName: 'Tiếng Việt', intlLocale: 'vi'),
+    SupportedLanguage(tag: 'ja', locale: Locale('ja'), nativeName: '日本語', intlLocale: 'ja'),
+    SupportedLanguage(tag: 'ko', locale: Locale('ko'), nativeName: '한국어', intlLocale: 'ko'),
+    SupportedLanguage(tag: 'th', locale: Locale('th'), nativeName: 'ไทย', intlLocale: 'th'),
+    SupportedLanguage(tag: 'bn', locale: Locale('bn'), nativeName: 'বাংলা', intlLocale: 'bn'),
+    SupportedLanguage(tag: 'ur', locale: Locale('ur'), nativeName: 'اردو', intlLocale: 'ur'),
+    SupportedLanguage(tag: 'fa', locale: Locale('fa'), nativeName: 'فارسی', intlLocale: 'fa'),
   ];
 
   static List<Locale> get locales => [for (final l in all) l.locale];

@@ -47,6 +47,15 @@ PLURAL_CATS = {
 RTL = {'ar', 'fa', 'ur', 'ps', 'sd', 'ug', 'ckb', 'dv', 'yi'}
 
 
+# Android resource folders use the old codes for a few languages.
+_ANDROID_CODE = {'id': 'in', 'yi': 'ji'}
+
+
+def android_folder(code):
+    """res/values-<x> folder name of a language (Indonesian is values-in)."""
+    return f'values-{_ANDROID_CODE.get(code, code)}'
+
+
 def load_arb(code):
     p = L10N / f'app_{code}.arb'
     return json.loads(p.read_text(encoding='utf-8'), object_pairs_hook=collections.OrderedDict)

@@ -19,7 +19,7 @@ Checks every lib/l10n/app_*.arb against the English template:
 import json, re, sys, pathlib
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from l10n_common import PLURAL_CATS, RTL, android_strings, languages, registered_languages  # noqa: E402
+from l10n_common import PLURAL_CATS, RTL, android_folder, android_strings, languages, registered_languages  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 L10N = ROOT / 'lib' / 'l10n'
@@ -41,7 +41,7 @@ SAME_OK = {'appName', 'percentValue', 'taskSubtaskProgress', 'durationHours', 'd
            # Words that are spelled the same in some target languages (es "Color", fr "Notes").
            'calendarEventColor', 'habitsColor', 'notesNotebookColor', 'projectLinkedNotes',
            'repeatCountLabel', 'calendarAgenda', 'guardWeekPaused', 'wordsOriginal'}
-BAD_DIGITS = re.compile('[\u0660-\u0669\u06F0-\u06F9\u0966-\u096F]')
+BAD_DIGITS = re.compile('[\u0660-\u0669\u06F0-\u06F9\u0966-\u096F\u09E6-\u09EF\u0A66-\u0A6F\u0AE6-\u0AEF\u0BE6-\u0BEF\u0C66-\u0C6F\u0CE6-\u0CEF\u0D66-\u0D6F\u0E50-\u0E59\u0ED0-\u0ED9\u1040-\u1049\u17E0-\u17E9\uFF10-\uFF19]')
 FLAG = re.compile('[\U0001F1E6-\U0001F1FF]')
 
 def placeholders(text):
@@ -89,6 +89,13 @@ def plural_cats(text):
             i += 1
     return cats
 
+def same_ok(loc):
+    """Per-language texts that are rightly the same as English (lib/l10n/same_as_english.json)."""
+    p = ROOT / 'lib' / 'l10n' / 'same_as_english.json'
+    if not p.exists():
+        return set()
+    return set(json.loads(p.read_text(encoding='utf-8')).get(loc, []))
+
 def project_checks(keys):
     """Everything outside the ARB files that a language needs."""
     errors = []
@@ -107,12 +114,12 @@ def project_checks(keys):
         errors.append(f'AppLocales.rtlLanguages {sorted(dart_rtl)} != RTL in l10n_common.py {sorted(RTL)}')
     base = android_strings('values')
     for c in sorted(langs - {'en'}):
-        got = android_strings(f'values-{c}')
+        got = android_strings(android_folder(c))
         for f, names in base.items():
             if f not in got:
-                errors.append(f'android res/values-{c}/{f} missing (copy values/{f} and translate)')
+                errors.append(f'android res/{android_folder(c)}/{f} missing (copy values/{f} and translate)')
             elif set(got[f]) != set(names):
-                errors.append(f'android res/values-{c}/{f}: names differ from values/{f}')
+                errors.append(f'android res/{android_folder(c)}/{f}: names differ from values/{f}')
     src = '\n'.join(
         p.read_text(encoding='utf-8') for p in (ROOT / 'lib').rglob('*.dart')
         if '/l10n/gen/' not in p.as_posix() and not p.name.endswith('.g.dart'))
@@ -160,7 +167,7 @@ def main():
                 errors.append(f'{path.name}:{k}: non-Western digits')
             if FLAG.search(v):
                 errors.append(f'{path.name}:{k}: flag emoji')
-            if loc != 'en' and v == ev and k not in SAME_OK and len(ev) > 3:
+            if loc != 'en' and v == ev and k not in SAME_OK and k not in same_ok(loc) and len(ev) > 3:
                 errors.append(f'{path.name}:{k}: identical to English (untranslated?)')
             if k == 'weekdaysShort' and len(v.split(',')) != 7:
                 errors.append(f'{path.name}:{k}: must have 7 comma-separated items')
