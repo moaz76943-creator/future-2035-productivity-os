@@ -5109,4 +5109,9 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get dashOpenDecks => 'Abra seus cartões';
+
+  @override
+  String speechVoiceNumber(String n) {
+    return 'Voz $n';
+  }
 }

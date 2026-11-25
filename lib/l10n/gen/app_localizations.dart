@@ -8627,6 +8627,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Open your cards'**
   String get dashOpenDecks;
+
+  /// Name shown for a phone voice instead of its technical id, e.g. Voice 2
+  ///
+  /// In en, this message translates to:
+  /// **'Voice {n}'**
+  String speechVoiceNumber(String n);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

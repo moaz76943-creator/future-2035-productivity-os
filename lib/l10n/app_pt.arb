@@ -1419,5 +1419,6 @@
   "flashDeckActions": "Opções do baralho",
   "starterBrowse": "Baralhos prontos",
   "starterBrowseHint": "Adicione com um toque e comece",
-  "dashOpenDecks": "Abra seus cartões"
+  "dashOpenDecks": "Abra seus cartões",
+  "speechVoiceNumber": "Voz {n}"
 }

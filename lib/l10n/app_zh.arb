@@ -1419,5 +1419,6 @@
   "flashDeckActions": "卡组选项",
   "starterBrowse": "现成卡组",
   "starterBrowseHint": "轻点添加，马上开始学习",
-  "dashOpenDecks": "打开你的卡片"
+  "dashOpenDecks": "打开你的卡片",
+  "speechVoiceNumber": "语音 {n}"
 }

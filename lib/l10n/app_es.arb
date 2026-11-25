@@ -1419,5 +1419,6 @@
   "flashDeckActions": "Opciones del mazo",
   "starterBrowse": "Mazos listos",
   "starterBrowseHint": "Añade uno con un toque y empieza",
-  "dashOpenDecks": "Abre tus tarjetas"
+  "dashOpenDecks": "Abre tus tarjetas",
+  "speechVoiceNumber": "Voz {n}"
 }

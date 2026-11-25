@@ -188,7 +188,9 @@ class _LabelsEditor extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
     final all = ref.watch(labelsProvider).value ?? const <LabelRow>[];
-    final mine = {for (final l in ref.watch(taskLabelsProvider(taskId)).value ?? const <LabelRow>[]) l.id};
+    final mine = {
+      for (final l in ref.watch(taskLabelsProvider(taskId)).value ?? const <LabelRow>[]) l.id,
+    };
     final repo = ref.read(tasksRepositoryProvider);
     return Padding(
       padding: const EdgeInsets.only(top: Space.md),

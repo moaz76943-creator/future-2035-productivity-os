@@ -1419,5 +1419,6 @@
   "flashDeckActions": "Действия с колодой",
   "starterBrowse": "Готовые колоды",
   "starterBrowseHint": "Добавьте одним касанием и начните",
-  "dashOpenDecks": "Открыть карточки"
+  "dashOpenDecks": "Открыть карточки",
+  "speechVoiceNumber": "Голос {n}"
 }

@@ -1,6 +1,24 @@
 part of '../tasks_repository.dart';
 
 extension TaskRelations on TasksRepository {
+  // ---- moving between groups (drag and drop in grouped views) ---------------
+
+  /// Moves a task to another project (null = no project), priority or
+  /// category. Only the given field changes; the task keeps everything else.
+  Future<void> moveTask(
+    String id, {
+    Value<String?> projectId = const Value.absent(),
+    Value<int> priority = const Value.absent(),
+    Value<String> category = const Value.absent(),
+  }) => (_db.update(_db.tasks)..where((t) => t.id.equals(id))).write(
+    TasksCompanion(
+      projectId: projectId,
+      priority: priority,
+      category: category,
+      updatedAt: Value(_clock.nowUtc()),
+    ),
+  );
+
   // ---- checklist -----------------------------------------------------------
 
   Stream<List<ChecklistItemRow>> watchChecklist(String taskId) =>

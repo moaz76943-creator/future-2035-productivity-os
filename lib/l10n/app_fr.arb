@@ -1419,5 +1419,6 @@
   "flashDeckActions": "Options du paquet",
   "starterBrowse": "Paquets prêts",
   "starterBrowseHint": "Ajoutez-en un d'un geste et commencez",
-  "dashOpenDecks": "Ouvrez vos cartes"
+  "dashOpenDecks": "Ouvrez vos cartes",
+  "speechVoiceNumber": "Voix {n}"
 }

@@ -1419,5 +1419,6 @@
   "flashDeckActions": "समूह विकल्प",
   "starterBrowse": "तैयार समूह",
   "starterBrowseHint": "एक टैप में जोड़ें और सीखना शुरू करें",
-  "dashOpenDecks": "अपने कार्ड खोलें"
+  "dashOpenDecks": "अपने कार्ड खोलें",
+  "speechVoiceNumber": "आवाज़ {n}"
 }

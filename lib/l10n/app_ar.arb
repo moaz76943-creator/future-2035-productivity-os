@@ -1419,5 +1419,6 @@
   "flashDeckActions": "خيارات المجموعة",
   "starterBrowse": "مجموعات جاهزة",
   "starterBrowseHint": "أضف واحدة بلمسة وابدأ التعلّم",
-  "dashOpenDecks": "افتح بطاقاتك"
+  "dashOpenDecks": "افتح بطاقاتك",
+  "speechVoiceNumber": "الصوت {n}"
 }

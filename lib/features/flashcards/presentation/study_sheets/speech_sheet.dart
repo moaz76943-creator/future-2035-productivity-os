@@ -49,7 +49,13 @@ class _SpeechSheetState extends ConsumerState<_SpeechSheet> {
   Widget _voiceRow(String tag, List<TtsVoice> all, Key key) {
     final l10n = context.l10n;
     final lang = _lang(tag);
-    final options = all.where((v) => v.language == lang && !v.notInstalled).toList();
+    // Same order every time: on-phone voices first, then by region and engine name.
+    final options = all.where((v) => v.language == lang && !v.notInstalled).toList()
+      ..sort((a, b) {
+        if (a.network != b.network) return a.network ? 1 : -1;
+        final r = _region(a).compareTo(_region(b));
+        return r != 0 ? r : a.name.compareTo(b.name);
+      });
     final current = ref.watch(settingsProvider.select((s) => s.flashVoices[lang]));
     final value = options.any((v) => v.name == current) ? current : null;
     return Row(
@@ -62,11 +68,16 @@ class _SpeechSheetState extends ConsumerState<_SpeechSheet> {
             decoration: InputDecoration(labelText: l10n.speechVoice),
             items: [
               DropdownMenuItem<String?>(child: Text(l10n.speechVoiceDefault)),
-              for (final v in options)
+              // Engine ids ("en-us-x-sfg-local") mean nothing to people: number them instead.
+              for (final (i, v) in options.indexed)
                 DropdownMenuItem<String?>(
                   value: v.name,
                   child: Text(
-                    v.network ? '${v.name} · ${l10n.speechVoiceOnline}' : v.name,
+                    [
+                      l10n.speechVoiceNumber(context.fmt.number(i + 1)),
+                      if (_region(v).isNotEmpty) _region(v),
+                      if (v.network) l10n.speechVoiceOnline,
+                    ].join(' · '),
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
@@ -91,6 +102,11 @@ class _SpeechSheetState extends ConsumerState<_SpeechSheet> {
         ),
       ],
     );
+  }
+
+  static String _region(TtsVoice v) {
+    final parts = v.localeTag.split(RegExp('[-_]'));
+    return parts.length > 1 && parts[1].length == 2 ? parts[1].toUpperCase() : '';
   }
 
   Future<void> _save() => ref

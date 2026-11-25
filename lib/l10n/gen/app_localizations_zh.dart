@@ -4843,4 +4843,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get dashOpenDecks => '打开你的卡片';
+
+  @override
+  String speechVoiceNumber(String n) {
+    return '语音 $n';
+  }
 }

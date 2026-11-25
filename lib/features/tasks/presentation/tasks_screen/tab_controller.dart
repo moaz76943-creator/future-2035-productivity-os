@@ -178,6 +178,9 @@ class _TaskList extends ConsumerWidget {
     }
     final now = ref.watch(clockProvider).now();
     final groups = <(String, List<TaskRow>)>[];
+    // What dropping a task on each group changes (only in grouped views).
+    final drops = <Future<void> Function(TaskRow)?>[];
+    final repo = ref.read(tasksRepositoryProvider);
     switch (tab) {
       case TasksTab.today:
         final start = Days.startOfDay(now);
@@ -202,11 +205,15 @@ class _TaskList extends ConsumerWidget {
           );
         for (final k in keys) {
           groups.add((k == null ? l10n.noProject : projects[k]?.name ?? l10n.noProject, g[k]!));
+          drops.add((t) => repo.moveTask(t.id, projectId: Value(k)));
         }
       case TasksTab.byPriority:
         final g = groupBy(tasks, (t) => t.priority);
         for (final p in [4, 3, 2, 1, 0]) {
-          if (g[p] case final list?) groups.add((PriorityStyle.label(l10n, p), list));
+          if (g[p] case final list?) {
+            groups.add((PriorityStyle.label(l10n, p), list));
+            drops.add((t) => repo.moveTask(t.id, priority: Value(p)));
+          }
         }
       case TasksTab.byCategory:
         final g = groupBy(tasks, (t) => t.category);
@@ -214,15 +221,18 @@ class _TaskList extends ConsumerWidget {
           ..sort((a, b) => a.isEmpty ? 1 : (b.isEmpty ? -1 : a.compareTo(b)));
         for (final k in keys) {
           groups.add((k.isEmpty ? l10n.tasksGroupNoCategory : k, g[k]!));
+          drops.add((t) => repo.moveTask(t.id, category: Value(k)));
         }
       default:
         groups.add(('', tasks));
     }
 
     final children = <Widget>[];
-    for (final (title, list) in groups) {
+    for (final (gi, (title, list)) in groups.indexed) {
+      final drop = gi < drops.length ? drops[gi] : null;
+      final groupChildren = <Widget>[];
       if (title.isNotEmpty) {
-        children.add(
+        groupChildren.add(
           Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(
               Space.page,
@@ -241,13 +251,52 @@ class _TaskList extends ConsumerWidget {
         );
       }
       for (final t in list) {
-        children.add(
+        final tile = TaskTile(
+          task: t,
+          project: t.projectId == null ? null : projects[t.projectId],
+          showProject: tab != TasksTab.byProject,
+        );
+        groupChildren.add(
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: Space.page, vertical: Space.xxs),
-            child: TaskTile(
-              task: t,
-              project: t.projectId == null ? null : projects[t.projectId],
-              showProject: tab != TasksTab.byProject,
+            // In grouped views a long press lifts the task; drop it on another group.
+            child: drop == null
+                ? tile
+                : LongPressDraggable<TaskRow>(
+                    data: t,
+                    feedback: Material(
+                      elevation: 8,
+                      borderRadius: BorderRadius.circular(Radii.lg),
+                      child: SizedBox(
+                        width: MediaQuery.sizeOf(context).width - 2 * Space.page,
+                        child: tile,
+                      ),
+                    ),
+                    childWhenDragging: Opacity(opacity: 0.35, child: tile),
+                    child: tile,
+                  ),
+          ),
+        );
+      }
+      if (drop == null) {
+        children.addAll(groupChildren);
+      } else {
+        children.add(
+          DragTarget<TaskRow>(
+            onWillAcceptWithDetails: (d) => !list.contains(d.data),
+            onAcceptWithDetails: (d) => unawaited(drop(d.data)),
+            builder: (context, candidates, _) => AnimatedContainer(
+              duration: const Duration(milliseconds: 150),
+              decoration: BoxDecoration(
+                color: candidates.isEmpty
+                    ? Colors.transparent
+                    : ModuleHue.tasks.a.withValues(alpha: 0.08),
+                borderRadius: BorderRadius.circular(Radii.lg),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: groupChildren,
+              ),
             ),
           ),
         );

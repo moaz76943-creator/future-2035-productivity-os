@@ -6810,5 +6810,14 @@
   "dashOpenDecks": "Open your cards",
   "@dashOpenDecks": {
     "description": "Home review card when nothing is due: invites to open the decks"
+  },
+  "speechVoiceNumber": "Voice {n}",
+  "@speechVoiceNumber": {
+    "description": "Name shown for a phone voice instead of its technical id, e.g. Voice 2",
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
   }
 }

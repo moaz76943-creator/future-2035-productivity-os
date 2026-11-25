@@ -5228,4 +5228,9 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get dashOpenDecks => 'Открыть карточки';
+
+  @override
+  String speechVoiceNumber(String n) {
+    return 'Голос $n';
+  }
 }

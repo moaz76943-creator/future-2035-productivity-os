@@ -1,4 +1,6 @@
-import 'package:flutter/foundation.dart';
+import 'dart:async';
+import 'dart:io' show Platform;
+
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -23,8 +25,9 @@ class _BottomBannerAdWidgetState extends State<BottomBannerAdWidget> {
   BannerAd? _bannerAd;
   bool _isLoaded = false;
 
-  bool get _canShowAds =>
-      widget.enableAds && defaultTargetPlatform == TargetPlatform.android;
+  // The real phone only: widget tests run on the host, where the ads plugin
+  // does not exist (defaultTargetPlatform says "android" there too).
+  bool get _canShowAds => widget.enableAds && Platform.isAndroid;
 
   String get _adUnitId => widget.useProductionUnit
       ? BottomBannerAdWidget._prodBannerUnitId
@@ -65,7 +68,8 @@ class _BottomBannerAdWidgetState extends State<BottomBannerAdWidget> {
         },
       ),
     );
-    ad.load();
+    // A failed load must never reach the user as an error; the banner just stays hidden.
+    unawaited(ad.load().catchError((Object _) => ad.dispose()));
   }
 
   @override
