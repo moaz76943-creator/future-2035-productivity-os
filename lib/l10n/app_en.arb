@@ -6790,5 +6790,25 @@
   "focusTapToAdjust": "Tap to change the time",
   "@focusTapToAdjust": {
     "description": "Hint under the idle timer"
+  },
+  "flashArrangeDecks": "Arrange decks",
+  "@flashArrangeDecks": {
+    "description": "Action/sheet title: drag decks into order"
+  },
+  "flashDeckActions": "Deck options",
+  "@flashDeckActions": {
+    "description": "Tooltip: actions for one deck in the list"
+  },
+  "starterBrowse": "Ready-made decks",
+  "@starterBrowse": {
+    "description": "Decks list: card inviting to add a ready-made deck"
+  },
+  "starterBrowseHint": "Add one in a tap and start learning",
+  "@starterBrowseHint": {
+    "description": "Decks list: subtitle of the ready-made decks card"
+  },
+  "dashOpenDecks": "Open your cards",
+  "@dashOpenDecks": {
+    "description": "Home review card when nothing is due: invites to open the decks"
   }
 }

@@ -5073,4 +5073,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get focusTapToAdjust => 'Tap to change the time';
+
+  @override
+  String get flashArrangeDecks => 'Arrange decks';
+
+  @override
+  String get flashDeckActions => 'Deck options';
+
+  @override
+  String get starterBrowse => 'Ready-made decks';
+
+  @override
+  String get starterBrowseHint => 'Add one in a tap and start learning';
+
+  @override
+  String get dashOpenDecks => 'Open your cards';
 }

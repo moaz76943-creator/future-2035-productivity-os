@@ -4828,4 +4828,19 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get focusTapToAdjust => '点按以修改时间';
+
+  @override
+  String get flashArrangeDecks => '排列卡组';
+
+  @override
+  String get flashDeckActions => '卡组选项';
+
+  @override
+  String get starterBrowse => '现成卡组';
+
+  @override
+  String get starterBrowseHint => '轻点添加，马上开始学习';
+
+  @override
+  String get dashOpenDecks => '打开你的卡片';
 }

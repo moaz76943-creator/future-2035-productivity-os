@@ -142,13 +142,27 @@ String languageRegion(String tag) {
 }
 
 /// "Deutsch (AT)" for 'de-AT', "Deutsch" for 'de'; unknown codes show the tag.
+/// Language names in the app language, filled from the phone at start-up
+/// (see `languageNamesProvider`). Empty until then: names fall back to endonyms.
+Map<String, String> localLanguageNames = const {};
+
+/// "Indonesian (Bahasa Indonesia)": the name in the app language first, so
+/// everyone recognises it, then the language's own name.
 String languageDisplayName(String tag) {
-  final name = worldLanguages[languageCode(tag)];
-  if (name == null) return tag;
+  final code = languageCode(tag);
+  final own = worldLanguages[code];
+  if (own == null) return tag;
+  final local = localLanguageNames[code] ?? '';
   final region = languageRegion(tag);
-  return region.isEmpty ? name : '$name ($region)';
+  final inner = [
+    if (local.isNotEmpty && local.toLowerCase() != own.toLowerCase()) own,
+    region,
+  ].where((s) => s.isNotEmpty).join(' · ');
+  final head = local.isNotEmpty ? local : own;
+  return inner.isEmpty ? head : '$head ($inner)';
 }
 
 /// Lower-case text used to match a search in the language picker.
 String languageSearchText(String tag) =>
-    '${languageDisplayName(tag)} $tag ${languageCode(tag)}'.toLowerCase();
+    '${languageDisplayName(tag)} ${worldLanguages[languageCode(tag)] ?? ''} $tag ${languageCode(tag)}'
+        .toLowerCase();

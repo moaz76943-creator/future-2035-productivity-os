@@ -51,7 +51,6 @@ class SoundsScreen extends ConsumerWidget {
 
     return ModuleScaffold(
       title: l10n.soundsTitle,
-      subtitle: l10n.soundsSubtitle,
       hue: ModuleHue.sounds,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: mix.isEmpty ? null : const SoundPlayerBar(),

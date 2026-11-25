@@ -46,7 +46,8 @@ void main() {
       expect(rows.single.dailyReviewTarget, 40);
       expect(find.text('Español'), findsOneWidget);
       expect(find.text(l10n.deckCards(0)), findsOneWidget);
-      expect(find.text(l10n.deckNothingDue), findsOneWidget);
+      expect(find.text(l10n.deckNothingDue), findsNothing, reason: 'no discouraging banner');
+      expect(find.byKey(const Key('starterDecksCard')), findsOneWidget);
       await env.dispose();
     });
   }
@@ -96,5 +97,41 @@ void main() {
     await settle(tester);
     expect(tester.takeException(), isNull);
     await env.dispose();
+  });
+
+  testWidgets('deck options from the list; decks can be dragged into a new order (ar)', (
+    tester,
+  ) async {
+    final env = TestEnv();
+    final repo = FlashcardsRepository(env.db, env.clock);
+    final a = (await tester.runAsync(() => repo.createDeck('أول', color: 0xFF2EC4B6)))!;
+    final b = (await tester.runAsync(() => repo.createDeck('ثانٍ', color: 0xFF6C5CE7)))!;
+    await pumpScreen(tester, const DecksScreen(), localeTag: 'ar', env: env);
+    await settle(tester);
+    double y(String name) => tester.getTopLeft(find.text(name).first).dy;
+    final firstBefore = y('أول') < y('ثانٍ') ? 'أول' : 'ثانٍ';
+
+    await tester.tap(find.byKey(Key('deckMore_$a')));
+    await settle(tester);
+    expect(find.byKey(const Key('deckAction_delete')), findsOneWidget);
+    await tester.tap(find.byKey(const Key('deckAction_arrange')));
+    await settle(tester);
+    final handle = find.byKey(Key('deckDrag_${firstBefore == 'أول' ? a : b}'));
+    final drag = await tester.startGesture(tester.getCenter(handle));
+    await tester.pump(const Duration(milliseconds: 600));
+    await drag.moveBy(const Offset(0, 140));
+    await tester.pump();
+    await drag.up();
+    for (var i = 0; i < 3; i++) {
+      await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 50)));
+      await settle(tester);
+    }
+    Navigator.of(tester.element(find.byKey(const Key('arrangeDecks')))).pop();
+    await tester.pump(const Duration(seconds: 1));
+    await settle(tester);
+    expect(find.byKey(const Key('arrangeDecks')), findsNothing);
+    final firstAfter = y('أول') < y('ثانٍ') ? 'أول' : 'ثانٍ';
+    expect(firstAfter, isNot(firstBefore), reason: 'the dragged order is kept');
+    await closeEnv(tester, env);
   });
 }

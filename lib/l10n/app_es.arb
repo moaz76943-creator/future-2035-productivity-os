@@ -1414,5 +1414,10 @@
   "focusAdjustRounds": "Rondas",
   "focusRoundsOpen": "Sin límite",
   "focusMinutesShort": "{n} minutos",
-  "focusTapToAdjust": "Toca para cambiar el tiempo"
+  "focusTapToAdjust": "Toca para cambiar el tiempo",
+  "flashArrangeDecks": "Ordenar mazos",
+  "flashDeckActions": "Opciones del mazo",
+  "starterBrowse": "Mazos listos",
+  "starterBrowseHint": "Añade uno con un toque y empieza",
+  "dashOpenDecks": "Abre tus tarjetas"
 }

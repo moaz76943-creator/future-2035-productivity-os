@@ -1414,5 +1414,10 @@
   "focusAdjustRounds": "Раунды",
   "focusRoundsOpen": "Без ограничения",
   "focusMinutesShort": "{n} мин",
-  "focusTapToAdjust": "Нажмите, чтобы изменить время"
+  "focusTapToAdjust": "Нажмите, чтобы изменить время",
+  "flashArrangeDecks": "Упорядочить колоды",
+  "flashDeckActions": "Действия с колодой",
+  "starterBrowse": "Готовые колоды",
+  "starterBrowseHint": "Добавьте одним касанием и начните",
+  "dashOpenDecks": "Открыть карточки"
 }

@@ -77,7 +77,7 @@ class _DeckScreenState extends ConsumerState<DeckScreen> {
           floatingActionButton: listening
               ? const ListenBar()
               : FloatingActionButton.extended(
-                  heroTag: 'deck-card-fab',
+                  heroTag: null, // deck pages stack over the cards tab: no FAB flight between them
                   key: const Key('addCardFab'),
                   onPressed: () => showCardForm(context, deckId: deck.id),
                   icon: const Icon(Icons.add_rounded),

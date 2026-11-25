@@ -5,6 +5,7 @@ import '../core/design_system/app_theme.dart';
 import '../core/design_system/components/surfaces.dart';
 import '../core/design_system/tokens.dart';
 import '../features/backup/application/auto_backup_providers.dart';
+import '../features/flashcards/application/language_names.dart';
 import '../features/focus/application/focus_dnd_link.dart';
 import '../features/notifications/application/reminder_sync.dart';
 import '../features/prayer/application/prayer_providers.dart';
@@ -44,6 +45,8 @@ class FutureOsApp extends ConsumerWidget {
       WidgetsBinding.instance.platformDispatcher.locales,
     );
     final locale = language.locale;
+    // Language names in the app language for flashcard deck languages.
+    ref.watch(languageNamesProvider(locale.toLanguageTag()));
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       onGenerateTitle: (context) => AppLocalizations.of(context).appName,

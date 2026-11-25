@@ -42,7 +42,7 @@ class _Header extends ConsumerWidget {
             key: const Key('dashApps'),
             tooltip: l10n.actionMore,
             icon: const Icon(Icons.apps_rounded),
-            onSelected: context.push,
+            onSelected: (r) => openRoute(context, r),
             itemBuilder: (_) => [
               for (final (icon, label, route) in [
                 (Icons.style_outlined, l10n.moduleFlashcards, Routes.flashcards),
@@ -214,13 +214,8 @@ class _TodaySection extends ConsumerWidget {
     final l10n = context.l10n;
     final tasks = ref.watch(tasksProvider(const TaskFilter(view: TaskView.today))).value;
     if (tasks == null) return const SizedBox.shrink();
-    // Empty: one calm line, no heading.
-    if (tasks.isEmpty) {
-      return Padding(
-        padding: const EdgeInsets.fromLTRB(Space.page, Space.md, Space.page, 0),
-        child: _EmptyLine(l10n.dashNoTasksToday, Icons.wb_sunny_outlined),
-      );
-    }
+    // Nothing for today: the section simply stays away.
+    if (tasks.isEmpty) return const SizedBox.shrink();
     return _Section(
       title: l10n.dashTodayTasks,
       onSeeAll: () => context.go(Routes.tasks),

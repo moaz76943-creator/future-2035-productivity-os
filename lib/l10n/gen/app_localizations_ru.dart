@@ -5213,4 +5213,19 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get focusTapToAdjust => 'Нажмите, чтобы изменить время';
+
+  @override
+  String get flashArrangeDecks => 'Упорядочить колоды';
+
+  @override
+  String get flashDeckActions => 'Действия с колодой';
+
+  @override
+  String get starterBrowse => 'Готовые колоды';
+
+  @override
+  String get starterBrowseHint => 'Добавьте одним касанием и начните';
+
+  @override
+  String get dashOpenDecks => 'Открыть карточки';
 }

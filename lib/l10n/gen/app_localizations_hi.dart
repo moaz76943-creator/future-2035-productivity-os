@@ -5084,4 +5084,19 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get focusTapToAdjust => 'समय बदलने के लिए टैप करें';
+
+  @override
+  String get flashArrangeDecks => 'समूह क्रमबद्ध करें';
+
+  @override
+  String get flashDeckActions => 'समूह विकल्प';
+
+  @override
+  String get starterBrowse => 'तैयार समूह';
+
+  @override
+  String get starterBrowseHint => 'एक टैप में जोड़ें और सीखना शुरू करें';
+
+  @override
+  String get dashOpenDecks => 'अपने कार्ड खोलें';
 }

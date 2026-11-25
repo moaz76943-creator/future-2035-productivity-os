@@ -52,15 +52,21 @@ class _ReviewSection extends ConsumerWidget {
     return _Section(
       title: l10n.dashReview,
       child: LuxCard(
-        onTap: () => context.push(Routes.flashcards),
+        onTap: () => context.go(Routes.flashcards),
         child: Row(
           children: [
             const IconOrb(icon: Icons.style_outlined, hue: ModuleHue.flashcards, size: 44),
             const SizedBox(width: Space.md),
-            Expanded(child: Text(l10n.dashCardsDue(due), style: context.text.titleSmall)),
+            // Never a discouraging "nothing due": invite to open the cards instead.
+            Expanded(
+              child: Text(
+                due > 0 ? l10n.dashCardsDue(due) : l10n.dashOpenDecks,
+                style: context.text.titleSmall,
+              ),
+            ),
             if (due > 0)
               FilledButton.tonal(
-                onPressed: () => context.push(Routes.flashcards),
+                onPressed: () => context.go(Routes.flashcards),
                 child: Text(l10n.dashReviewNow),
               ),
           ],
@@ -177,9 +183,7 @@ class _InsightSection extends ConsumerWidget {
       child: LuxCard(
         accent: Palette.champagne,
         // Shell branches are switched with go(); other screens are pushed.
-        onTap: () => const {Routes.tasks, Routes.focus, Routes.calendar}.contains(route)
-            ? context.go(route)
-            : context.push(route),
+        onTap: () => openRoute(context, route),
         child: Row(
           children: [
             Icon(icon, color: Palette.champagne),
@@ -202,36 +206,25 @@ class _Section extends StatelessWidget {
   Widget build(BuildContext context) => Column(
     crossAxisAlignment: CrossAxisAlignment.stretch,
     children: [
-      SectionHeader(
-        title: title,
-        action: onSeeAll == null ? null : context.l10n.dashSeeAll,
-        onAction: onSeeAll,
+      // Long-press a section title to rearrange the home page by dragging.
+      GestureDetector(
+        onLongPress: () => showModalBottomSheet<void>(
+          context: context,
+          showDragHandle: true,
+          isScrollControlled: true,
+          builder: (_) => const DashboardCustomizeSheet(),
+        ),
+        child: SectionHeader(
+          title: title,
+          action: onSeeAll == null ? null : context.l10n.dashSeeAll,
+          onAction: onSeeAll,
+        ),
       ),
       Padding(
         padding: const EdgeInsets.symmetric(horizontal: Space.page),
         child: child,
       ),
     ],
-  );
-}
-
-class _EmptyLine extends StatelessWidget {
-  const _EmptyLine(this.text, this.icon);
-  final String text;
-  final IconData icon;
-
-  @override
-  Widget build(BuildContext context) => Padding(
-    padding: const EdgeInsets.symmetric(vertical: Space.xs),
-    child: Row(
-      children: [
-        Icon(icon, size: 20, color: context.lux.ink3),
-        const SizedBox(width: Space.sm),
-        Expanded(
-          child: Text(text, style: context.text.bodyMedium?.copyWith(color: context.lux.ink3)),
-        ),
-      ],
-    ),
   );
 }
 

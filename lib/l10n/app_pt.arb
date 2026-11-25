@@ -1414,5 +1414,10 @@
   "focusAdjustRounds": "Rodadas",
   "focusRoundsOpen": "Sem limite",
   "focusMinutesShort": "{n} minutos",
-  "focusTapToAdjust": "Toque para mudar o tempo"
+  "focusTapToAdjust": "Toque para mudar o tempo",
+  "flashArrangeDecks": "Organizar baralhos",
+  "flashDeckActions": "Opções do baralho",
+  "starterBrowse": "Baralhos prontos",
+  "starterBrowseHint": "Adicione com um toque e comece",
+  "dashOpenDecks": "Abra seus cartões"
 }

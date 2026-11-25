@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../app/localization/app_format.dart';
+import '../../../app/routing/deep_links.dart';
 import '../../../app/routing/routes.dart';
 import '../../../core/design_system/tokens.dart';
 
@@ -57,7 +58,7 @@ class _QuickAddSheet extends StatelessWidget {
               onPressed: () {
                 final router = GoRouter.of(context);
                 Navigator.of(context).pop();
-                router.push(route);
+                isTabRoute(route) ? router.go(route) : router.push(route);
               },
             ),
         ],

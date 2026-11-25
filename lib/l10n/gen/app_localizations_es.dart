@@ -5092,4 +5092,19 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get focusTapToAdjust => 'Toca para cambiar el tiempo';
+
+  @override
+  String get flashArrangeDecks => 'Ordenar mazos';
+
+  @override
+  String get flashDeckActions => 'Opciones del mazo';
+
+  @override
+  String get starterBrowse => 'Mazos listos';
+
+  @override
+  String get starterBrowseHint => 'Añade uno con un toque y empieza';
+
+  @override
+  String get dashOpenDecks => 'Abre tus tarjetas';
 }

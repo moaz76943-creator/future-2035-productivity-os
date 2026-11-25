@@ -5094,4 +5094,19 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get focusTapToAdjust => 'Toque para mudar o tempo';
+
+  @override
+  String get flashArrangeDecks => 'Organizar baralhos';
+
+  @override
+  String get flashDeckActions => 'Opções do baralho';
+
+  @override
+  String get starterBrowse => 'Baralhos prontos';
+
+  @override
+  String get starterBrowseHint => 'Adicione com um toque e comece';
+
+  @override
+  String get dashOpenDecks => 'Abra seus cartões';
 }

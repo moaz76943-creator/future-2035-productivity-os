@@ -241,5 +241,6 @@ bool looksLikeCards(String text) {
   if (lines.isEmpty || lines.length > 5000) return false;
   final sep = RegExp(r'\t|;|,| - | – |=');
   final ok = lines.where(sep.hasMatch).length;
-  return ok >= (lines.length * 0.6).ceil() && !text.contains(RegExp(r'\|\s*(tail|grep|head)\b|&&|\$\('));
+  return ok >= (lines.length * 0.6).ceil() &&
+      !text.contains(RegExp(r'\|\s*(tail|grep|head)\b|&&|\$\('));
 }

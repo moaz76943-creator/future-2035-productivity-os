@@ -8597,6 +8597,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Tap to change the time'**
   String get focusTapToAdjust;
+
+  /// Action/sheet title: drag decks into order
+  ///
+  /// In en, this message translates to:
+  /// **'Arrange decks'**
+  String get flashArrangeDecks;
+
+  /// Tooltip: actions for one deck in the list
+  ///
+  /// In en, this message translates to:
+  /// **'Deck options'**
+  String get flashDeckActions;
+
+  /// Decks list: card inviting to add a ready-made deck
+  ///
+  /// In en, this message translates to:
+  /// **'Ready-made decks'**
+  String get starterBrowse;
+
+  /// Decks list: subtitle of the ready-made decks card
+  ///
+  /// In en, this message translates to:
+  /// **'Add one in a tap and start learning'**
+  String get starterBrowseHint;
+
+  /// Home review card when nothing is due: invites to open the decks
+  ///
+  /// In en, this message translates to:
+  /// **'Open your cards'**
+  String get dashOpenDecks;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

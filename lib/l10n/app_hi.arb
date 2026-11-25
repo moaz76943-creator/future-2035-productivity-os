@@ -1414,5 +1414,10 @@
   "focusAdjustRounds": "राउंड",
   "focusRoundsOpen": "कोई सीमा नहीं",
   "focusMinutesShort": "{n} मिनट",
-  "focusTapToAdjust": "समय बदलने के लिए टैप करें"
+  "focusTapToAdjust": "समय बदलने के लिए टैप करें",
+  "flashArrangeDecks": "समूह क्रमबद्ध करें",
+  "flashDeckActions": "समूह विकल्प",
+  "starterBrowse": "तैयार समूह",
+  "starterBrowseHint": "एक टैप में जोड़ें और सीखना शुरू करें",
+  "dashOpenDecks": "अपने कार्ड खोलें"
 }

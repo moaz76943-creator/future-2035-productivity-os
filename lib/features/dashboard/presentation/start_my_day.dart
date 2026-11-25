@@ -144,7 +144,7 @@ class _MyDaySheet extends ConsumerWidget {
               Icons.style_outlined,
               ModuleHue.flashcards,
               l10n.dashCardsDue(due),
-              () => go(Routes.flashcards),
+              () => go(Routes.flashcards, tab: true),
             ),
           const SizedBox(height: Space.md),
           FilledButton.icon(

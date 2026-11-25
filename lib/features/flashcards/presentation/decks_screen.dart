@@ -13,8 +13,10 @@ import '../../../core/design_system/tokens.dart';
 import '../../../shared/widgets/async_value_view.dart';
 import '../../../shared/widgets/dialogs.dart';
 import '../../../shared/widgets/module_scaffold.dart';
+import '../application/deck_order.dart';
 import '../application/flashcards_providers.dart';
 import '../domain/world_languages.dart';
+import 'deck_tile_actions.dart';
 import 'widgets/starter_sheet.dart';
 import 'widgets/study_summary.dart';
 import 'widgets/deck_form_sheet.dart';
@@ -65,6 +67,9 @@ class DecksScreen extends ConsumerWidget {
           onSelected: (v) {
             if (v == 'starter') showStarterDecks(context);
             if (v == 'settings') context.push(Routes.settings);
+            if (v == 'arrange') {
+              showArrangeDecks(context, ref, ref.read(decksProvider).value ?? const []);
+            }
           },
           itemBuilder: (_) => [
             PopupMenuItem(
@@ -75,6 +80,17 @@ class DecksScreen extends ConsumerWidget {
                   const Icon(Icons.library_add_outlined, size: 20),
                   const SizedBox(width: Space.sm),
                   Text(l10n.starterTitle),
+                ],
+              ),
+            ),
+            PopupMenuItem(
+              key: const Key('arrangeDecksItem'),
+              value: 'arrange',
+              child: Row(
+                children: [
+                  const Icon(Icons.swap_vert_rounded, size: 20),
+                  const SizedBox(width: Space.sm),
+                  Text(l10n.flashArrangeDecks),
                 ],
               ),
             ),
@@ -92,7 +108,7 @@ class DecksScreen extends ConsumerWidget {
         ),
       ],
       floatingActionButton: FloatingActionButton.extended(
-        heroTag: 'decks-fab',
+        heroTag: null,
         key: const Key('newDeckFab'),
         onPressed: () => _createDeck(context, ref),
         icon: const Icon(Icons.add_rounded),
@@ -129,7 +145,8 @@ class DecksScreen extends ConsumerWidget {
             }
             // Grouped by the language being learned when there are several.
             final groups = <String, List<DeckRow>>{};
-            for (final d in list) {
+            final order = ref.watch(deckOrderProvider).value ?? const <String>[];
+            for (final d in orderDecks(list, order)) {
               groups.putIfAbsent(languageCode(d.frontLang), () => []).add(d);
             }
             final grouped = groups.length > 1;
@@ -155,6 +172,36 @@ class DecksScreen extends ConsumerWidget {
                     ),
                   ),
                 ],
+                // Ready-made decks stay in sight, so everyone knows they are there.
+                SliverPadding(
+                  padding: const EdgeInsets.fromLTRB(Space.page, Space.xs, Space.page, 96),
+                  sliver: SliverToBoxAdapter(
+                    child: LuxCard(
+                      key: const Key('starterDecksCard'),
+                      elevated: false,
+                      onTap: () => showStarterDecks(context),
+                      child: Row(
+                        children: [
+                          Icon(Icons.library_add_outlined, color: _hue.a),
+                          const SizedBox(width: Space.md),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(l10n.starterBrowse, style: context.text.titleSmall),
+                                Text(
+                                  l10n.starterBrowseHint,
+                                  style: context.text.bodySmall?.copyWith(color: context.lux.ink2),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const Icon(Icons.chevron_right_rounded),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
               ],
             );
           },
@@ -178,20 +225,12 @@ class _DueBanner extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
     final total = ref.watch(totalDueProvider).value;
-    if (total == null) return const SizedBox.shrink();
+    // Nothing due: no banner at all (the decks below say what there is).
+    if (total == null || total == 0) return const SizedBox.shrink();
     return Padding(
       padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.lg),
       child: total == 0
-          ? LuxCard(
-              elevated: false,
-              child: Row(
-                children: [
-                  const Icon(Icons.check_circle_rounded, color: Palette.emerald),
-                  const SizedBox(width: Space.sm),
-                  Expanded(child: Text(l10n.deckNothingDue, style: context.text.bodyMedium)),
-                ],
-              ),
-            )
+          ? const SizedBox.shrink()
           : AuroraCard(
               hue: _hue,
               child: Column(
@@ -233,7 +272,8 @@ class _DeckTile extends ConsumerWidget {
     return LuxCard(
       accent: color,
       onTap: () => context.push(Routes.deck(deck.id)),
-      padding: const EdgeInsetsDirectional.fromSTEB(Space.lg, Space.md, Space.md, Space.md),
+      onLongPress: () => showDeckActions(context, ref, deck),
+      padding: const EdgeInsetsDirectional.fromSTEB(Space.lg, Space.md, Space.xs, Space.md),
       child: Row(
         children: [
           GlowRing(
@@ -318,7 +358,13 @@ class _DeckTile extends ConsumerWidget {
               onPressed: () => context.push(Routes.review(deck.id)),
             )
           else
-            const Icon(Icons.chevron_right_rounded),
+            const SizedBox.shrink(),
+          IconButton(
+            key: Key('deckMore_${deck.id}'),
+            tooltip: l10n.flashDeckActions,
+            icon: const Icon(Icons.more_vert_rounded),
+            onPressed: () => showDeckActions(context, ref, deck),
+          ),
         ],
       ),
     );

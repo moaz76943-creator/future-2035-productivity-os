@@ -25,12 +25,30 @@ class PhoneCare(private val context: Context, messenger: BinaryMessenger) {
                 "info" -> result.success(info())
                 "openBattery" -> result.success(open(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS))
                 "openAppInfo" -> result.success(openAppInfo())
+                "languageNames" -> result.success(
+                    languageNames(
+                        call.argument<List<String>>("codes") ?: emptyList(),
+                        call.argument<String>("in") ?: "en",
+                    ),
+                )
                 else -> result.notImplemented()
             }
         }
     }
 
     fun dispose() = channel.setMethodCallHandler(null)
+
+    /** Each language's name written in the app language (from the phone's own locale data). */
+    private fun languageNames(codes: List<String>, inTag: String): Map<String, String> {
+        val inLocale = java.util.Locale.forLanguageTag(inTag)
+        return codes.associateWith { code ->
+            try {
+                java.util.Locale.forLanguageTag(code).getDisplayLanguage(inLocale)
+            } catch (_: Exception) {
+                ""
+            }
+        }
+    }
 
     private fun info(): Map<String, Any> {
         val pm = context.getSystemService(Context.POWER_SERVICE) as PowerManager

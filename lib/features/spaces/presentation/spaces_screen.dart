@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../app/localization/app_format.dart';
+import '../../../app/routing/navigation.dart';
 import '../../../app/routing/routes.dart';
 import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/components/surfaces.dart';
@@ -66,11 +66,6 @@ class SpacesScreen extends ConsumerWidget {
                       Semantics(
                         header: true,
                         child: Text(l10n.navSpaces, style: context.text.headlineMedium),
-                      ),
-                      const SizedBox(height: Space.xxs),
-                      Text(
-                        l10n.spacesSubtitle,
-                        style: context.text.bodyMedium?.copyWith(color: context.lux.ink2),
                       ),
                     ],
                   ),
@@ -152,7 +147,7 @@ class _Featured extends StatelessWidget {
     excludeSemantics: true,
     child: AuroraCard(
       hue: space.hue,
-      onTap: () => context.push(space.route),
+      onTap: () => openRoute(context, space.route),
       child: SizedBox(
         // Icon (fixed) + title + caption (scaled with the font size).
         // Two lines for the title and the caption: long translations
@@ -196,7 +191,7 @@ class _OrbTile extends StatelessWidget {
     excludeSemantics: true,
     child: InkWell(
       borderRadius: BorderRadius.circular(Radii.lg),
-      onTap: () => context.push(space.route),
+      onTap: () => openRoute(context, space.route),
       child: Column(
         children: [
           const SizedBox(height: Space.xs),

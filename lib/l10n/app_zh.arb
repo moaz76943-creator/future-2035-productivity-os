@@ -1414,5 +1414,10 @@
   "focusAdjustRounds": "回合数",
   "focusRoundsOpen": "不限",
   "focusMinutesShort": "{n} 分钟",
-  "focusTapToAdjust": "点按以修改时间"
+  "focusTapToAdjust": "点按以修改时间",
+  "flashArrangeDecks": "排列卡组",
+  "flashDeckActions": "卡组选项",
+  "starterBrowse": "现成卡组",
+  "starterBrowseHint": "轻点添加，马上开始学习",
+  "dashOpenDecks": "打开你的卡片"
 }

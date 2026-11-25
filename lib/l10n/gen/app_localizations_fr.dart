@@ -5108,4 +5108,19 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get focusTapToAdjust => 'Touchez pour changer la durée';
+
+  @override
+  String get flashArrangeDecks => 'Ranger les paquets';
+
+  @override
+  String get flashDeckActions => 'Options du paquet';
+
+  @override
+  String get starterBrowse => 'Paquets prêts';
+
+  @override
+  String get starterBrowseHint => 'Ajoutez-en un d\'un geste et commencez';
+
+  @override
+  String get dashOpenDecks => 'Ouvrez vos cartes';
 }

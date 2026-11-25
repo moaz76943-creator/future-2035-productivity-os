@@ -1414,5 +1414,10 @@
   "focusAdjustRounds": "Séries",
   "focusRoundsOpen": "Sans limite",
   "focusMinutesShort": "{n} minutes",
-  "focusTapToAdjust": "Touchez pour changer la durée"
+  "focusTapToAdjust": "Touchez pour changer la durée",
+  "flashArrangeDecks": "Ranger les paquets",
+  "flashDeckActions": "Options du paquet",
+  "starterBrowse": "Paquets prêts",
+  "starterBrowseHint": "Ajoutez-en un d'un geste et commencez",
+  "dashOpenDecks": "Ouvrez vos cartes"
 }

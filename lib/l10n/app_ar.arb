@@ -1414,5 +1414,10 @@
   "focusAdjustRounds": "عدد الجولات",
   "focusRoundsOpen": "بلا حد",
   "focusMinutesShort": "{n} د",
-  "focusTapToAdjust": "اضغط لتغيير الوقت"
+  "focusTapToAdjust": "اضغط لتغيير الوقت",
+  "flashArrangeDecks": "ترتيب المجموعات",
+  "flashDeckActions": "خيارات المجموعة",
+  "starterBrowse": "مجموعات جاهزة",
+  "starterBrowseHint": "أضف واحدة بلمسة وابدأ التعلّم",
+  "dashOpenDecks": "افتح بطاقاتك"
 }

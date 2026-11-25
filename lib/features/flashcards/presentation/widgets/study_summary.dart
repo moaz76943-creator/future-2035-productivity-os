@@ -23,7 +23,8 @@ class TodayStudyCard extends ConsumerWidget {
     final fmt = context.fmt;
     final a = ref.watch(todayActivityProvider).value;
     final goal = ref.watch(settingsProvider.select((s) => s.dailyCardGoal));
-    if (a == null) return const SizedBox.shrink();
+    // Nothing studied yet today: show nothing rather than a discouraging zero.
+    if (a == null || (a.reviews == 0 && a.time == Duration.zero)) return const SizedBox.shrink();
     Widget stat(IconData icon, String value, Key key) => Expanded(
       child: Row(
         children: [

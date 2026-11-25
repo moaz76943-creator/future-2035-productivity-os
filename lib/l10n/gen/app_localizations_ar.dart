@@ -5261,4 +5261,19 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get focusTapToAdjust => 'اضغط لتغيير الوقت';
+
+  @override
+  String get flashArrangeDecks => 'ترتيب المجموعات';
+
+  @override
+  String get flashDeckActions => 'خيارات المجموعة';
+
+  @override
+  String get starterBrowse => 'مجموعات جاهزة';
+
+  @override
+  String get starterBrowseHint => 'أضف واحدة بلمسة وابدأ التعلّم';
+
+  @override
+  String get dashOpenDecks => 'افتح بطاقاتك';
 }

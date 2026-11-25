@@ -19,6 +19,9 @@ abstract class PhoneCare {
   Future<PhoneInfo> info();
   Future<bool> openBattery();
   Future<bool> openAppInfo();
+
+  /// Each language code's name written in [inTag] (empty map when unknown).
+  Future<Map<String, String>> languageNames(List<String> codes, String inTag);
 }
 
 class ChannelPhoneCare implements PhoneCare {
@@ -43,6 +46,19 @@ class ChannelPhoneCare implements PhoneCare {
   Future<bool> openBattery() => _open('openBattery');
   @override
   Future<bool> openAppInfo() => _open('openAppInfo');
+
+  @override
+  Future<Map<String, String>> languageNames(List<String> codes, String inTag) async {
+    try {
+      final m = await _c.invokeMapMethod<String, String>('languageNames', {
+        'codes': codes,
+        'in': inTag,
+      });
+      return m ?? const {};
+    } on Object {
+      return const {};
+    }
+  }
 
   Future<bool> _open(String method) async {
     try {
@@ -72,6 +88,11 @@ class MemoryPhoneCare implements PhoneCare {
     opened.add('app');
     return true;
   }
+
+  /// Names a test wants the phone to report.
+  Map<String, String> names = const {};
+  @override
+  Future<Map<String, String>> languageNames(List<String> codes, String inTag) async => names;
 }
 
 final phoneCareProvider = Provider<PhoneCare>(
