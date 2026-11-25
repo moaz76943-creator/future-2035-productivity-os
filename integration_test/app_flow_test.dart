@@ -17,9 +17,14 @@ Future<void> wait(WidgetTester tester, [double seconds = 1]) async {
   }
 }
 
+/// Waits until [f] is built, then lets page and sheet transitions finish, so a
+/// tap lands on it and not on the page still sliding away (seen on the emulator).
 Future<void> waitFor(WidgetTester tester, Finder f, {int seconds = 20}) async {
   for (var i = 0; i < seconds * 10; i++) {
-    if (f.evaluate().isNotEmpty) return;
+    if (f.evaluate().isNotEmpty) {
+      await wait(tester, 0.8);
+      return;
+    }
     await tester.pump(const Duration(milliseconds: 100));
   }
   expect(f, findsWidgets, reason: 'timed out waiting');
@@ -48,8 +53,8 @@ void main() {
     await wait(tester);
     expect(find.byType(NavigationBar), findsOneWidget);
 
-    // Focus: start, pause, stop.
-    await tapTab(tester, 2);
+    // Focus: start, pause, stop. Tabs: Home, Tasks, Cards, Focus, Calendar, Spaces.
+    await tapTab(tester, 3);
     await tester.tap(find.byKey(const ValueKey('focus-start')));
     await wait(tester, 2);
     expect(find.byKey(const ValueKey('focus-pause')), findsOneWidget);
@@ -71,7 +76,7 @@ void main() {
 
     // Flashcards: add a starter deck into the real (encrypted) database.
     GoRouter router() => GoRouter.of(tester.element(find.byType(NavigationBar)));
-    router().push(Routes.flashcards);
+    router().go(Routes.flashcards);
     await waitFor(tester, find.byKey(const Key('starterDecksEmpty')));
     await tester.tap(find.byKey(const Key('starterDecksEmpty')));
     await waitFor(tester, find.byKey(const Key('starterAdd_capitals')));
@@ -79,10 +84,14 @@ void main() {
     await waitFor(tester, find.byIcon(Icons.check_circle_rounded));
     Navigator.of(tester.element(find.byKey(const Key('starter_capitals')))).pop();
     await wait(tester);
+    // The new deck is listed (the Today card appears only after studying).
     expect(
-      find.byKey(const Key('todayStudy')),
-      findsOneWidget,
-      reason: 'deck list with the Today card',
+      find.byWidgetPredicate(
+        (w) =>
+            w.key is ValueKey<String> && (w.key! as ValueKey<String>).value.startsWith('deckMore_'),
+      ),
+      findsWidgets,
+      reason: 'the starter deck in the deck list',
     );
 
     // Help: every answer is reachable; open one screen from it.
