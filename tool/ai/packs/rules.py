@@ -82,6 +82,7 @@ def term_problem(term, script, en=''):
         ok = sum(1 for ch in letters if any(w in unicodedata.name(ch, '') for w in want))
         if ok / len(letters) < 0.9:
             return f'not in {script} script'
-    if script == 'Latn' and BANNED.search(t):
-        return 'not allowed'
+    # No banned-word scan on translated words: harmless words collide with English ones
+    # (Swedish 'sex' = six, 'bra' = good). The concept was already checked in English and
+    # the critic rejects any word with a bad meaning in its own language.
     return None

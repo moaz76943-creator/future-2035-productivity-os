@@ -64,7 +64,22 @@ def main():
     steps = ['python3 tool/check_l10n.py']
     if '--full' in sys.argv:
         steps = ['flutter gen-l10n', 'python3 tool/gen_l10n_custom.py', 'python3 tool/check_l10n.py',
-                 'flutter analyze', 'flutter test --reporter compact --dart-define=ENABLE_ADS=false']
+                 'flutter analyze']
+        # Only the tests that can be affected (the whole suite takes ~20 minutes and ran out
+        # of the job's time; CI runs everything again when Claude merges a draft).
+        tests = set()
+        for f in changed:
+            if f.startswith('test/') and f.endswith('_test.dart'):
+                tests.add(f)
+            m = re.match(r'^lib/features/([^/]+)/', f)
+            if m:
+                tests.update(d for d in (f'test/unit/{m.group(1)}', f'test/widget/{m.group(1)}')
+                             if __import__('os').path.isdir(d))
+            if re.match(r'^lib/(shared|core)/', f):
+                tests.update(['test/unit', 'test/widget'])
+        if tests:
+            steps.append('flutter test --reporter compact --dart-define=ENABLE_ADS=false '
+                         + ' '.join(sorted(tests)))
     for step in steps:
         if problems:
             break

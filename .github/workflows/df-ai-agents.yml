@@ -32,7 +32,7 @@ concurrency:
 jobs:
   agent:
     runs-on: ubuntu-latest
-    timeout-minutes: 55
+    timeout-minutes: 80
     env:
       DF_GEMINI_KEY_1: ${{ secrets.DF_GEMINI_KEY_1 }}
       DF_GEMINI_KEY_2: ${{ secrets.DF_GEMINI_KEY_2 }}
@@ -96,15 +96,17 @@ jobs:
           fi
           echo "JOB=$job" >> "$GITHUB_ENV"
           if [ "$job" = review ]; then
-            DF_SLOT=$hour timeout 35m python3 tool/ai/review_draft.py --per-day 2 --max-fixes 30 || echo "review stopped"
+            DF_SLOT=$hour timeout 20m python3 tool/ai/review_draft.py --per-day 2 --max-fixes 30 || echo "review stopped"
           elif [ "$job" = improve ]; then
-            timeout 25m python3 tool/ai/improve_agent.py || echo "improve agent stopped"
+            timeout 15m python3 tool/ai/improve_agent.py || echo "improve agent stopped"
           else
-            timeout 35m python3 tool/ai/tests_agent.py || echo "tests agent stopped"
+            timeout 20m python3 tool/ai/tests_agent.py || echo "tests agent stopped"
           fi
 
       - name: Gates (assume the draft is wrong until proven otherwise)
+        timeout-minutes: 35
         run: |
+          echo "GATES=failed" >> "$GITHUB_ENV"   # stays failed if this step is cut short
           set -uo pipefail
           flag=""; [ "$JOB" = improve ] && flag="--allow-code"
           if python3 tool/ai/gates.py --base origin/claude-dev --full $flag > "$RUNNER_TEMP/gates.json"; then
@@ -115,6 +117,7 @@ jobs:
           cat "$RUNNER_TEMP/gates.json"
 
       - name: Keep or drop
+        if: always()
         run: |
           set -euo pipefail
           git config user.name "df-ai-agents"
