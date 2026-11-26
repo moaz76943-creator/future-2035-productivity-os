@@ -4,6 +4,7 @@ import '../../app/shell/app_shell.dart';
 import '../../core/design_system/app_theme.dart';
 import '../../core/design_system/components/surfaces.dart';
 import '../../core/design_system/tokens.dart';
+import '../../core/widgets/deep_focus_glass.dart';
 
 /// Standard page frame: a soft aurora wash tinted with the module hue at
 /// the top, a large title and scrollable content. Glass is reserved for the
@@ -36,7 +37,8 @@ class ModuleScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     final canPop = showBack ?? Navigator.of(context).canPop();
     final lux = context.lux;
-    return Scaffold(
+    return DeepFocusTealScope(
+      child: Scaffold(
       floatingActionButtonLocation: floatingActionButtonLocation,
       floatingActionButton: floatingActionButton == null
           ? null
@@ -78,6 +80,7 @@ class ModuleScaffold extends StatelessWidget {
             const SliverToBoxAdapter(child: SizedBox(height: 120)),
           ],
         ),
+      ),
       ),
     );
   }

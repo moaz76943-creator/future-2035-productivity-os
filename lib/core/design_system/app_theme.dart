@@ -58,7 +58,7 @@ abstract final class AppTheme {
       onPrimaryContainer: dark
           ? Palette.moon
           : (accent == null ? const Color(0xFF0B4A4D) : Color.lerp(primary, Palette.navy, 0.5)!),
-      secondary: Palette.aurora,
+      secondary: Palette.seafoam,
       onSecondary: Palette.white,
       tertiary: Palette.turquoise,
       onTertiary: Palette.white,

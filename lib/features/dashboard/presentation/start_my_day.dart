@@ -7,6 +7,8 @@ import '../../../app/routing/routes.dart';
 import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/components/surfaces.dart';
 import '../../../core/design_system/tokens.dart';
+import '../../../core/theme/deep_focus_visuals.dart';
+import '../../../core/widgets/deep_focus_glass.dart';
 import '../../../core/providers/core_providers.dart';
 import '../../flashcards/application/flashcards_providers.dart';
 import '../../focus/application/focus_controller.dart';
@@ -35,12 +37,16 @@ class StartMyDayCard extends ConsumerWidget {
     final l10n = context.l10n;
     return Padding(
       padding: const EdgeInsets.fromLTRB(Space.page, Space.xs, Space.page, Space.xs),
-      child: LuxCard(
+      child: DeepFocusGlassCard(
         key: const Key('startMyDay'),
         onTap: () => showStartMyDay(context),
         child: Row(
           children: [
-            const IconOrb(icon: Icons.wb_twilight_rounded, hue: ModuleHue.focus, size: 44),
+            const DeepFocusAssetIcon(
+              assetPath: DeepFocusAssets.startMyDay,
+              size: 44,
+              fallbackIcon: Icons.wb_twilight_rounded,
+            ),
             const SizedBox(width: Space.md),
             Expanded(
               child: Column(

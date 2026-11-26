@@ -7,7 +7,7 @@ import 'package:flutter/widgets.dart';
 abstract final class Palette {
   // Foundation (light)
   static const white = Color(0xFFFFFFFF);
-  static const porcelain = Color(0xFFF3F6FA); // app background (cool morning mist)
+  static const porcelain = Color(0xFFEEF4FA); // app background (cool morning mist)
   static const mist = Color(0xFFEAF0F5); // recessed surfaces
   static const pearl = Color(0xFFDDE5EC); // hairlines
   static const silver = Color(0xFFC9CEDC);
@@ -28,8 +28,8 @@ abstract final class Palette {
   static const moon3 = Color(0xFF8A90B2);
 
   // Accents
-  static const lagoon = Color(0xFF10787C); // Deep Lagoon (default accent)
-  static const seafoam = Color(0xFF3FB8A8);
+  static const lagoon = Color(0xFF0D7A7E); // Calm teal (default accent)
+  static const seafoam = Color(0xFF2FA4A9);
   static const violet = Color(0xFF6C4CFF); // Electric Violet
   static const aurora = Color(0xFF2F7BFF); // Aurora Blue
   static const turquoise = Color(0xFF00B8C4);
@@ -60,16 +60,16 @@ abstract final class Palette {
 /// The colour identity of each functional area.
 enum ModuleHue {
   focus(Palette.lagoon, Palette.seafoam),
-  tasks(Palette.aurora, Palette.turquoise),
-  calendar(Palette.lavender, Palette.aurora),
-  notes(Palette.champagne, Palette.emerald),
-  flashcards(Palette.violet, Palette.coral),
-  goals(Palette.emerald, Palette.champagne),
+  tasks(Palette.lagoon, Palette.turquoise),
+  calendar(Palette.seafoam, Palette.turquoise),
+  notes(Palette.champagne, Palette.seafoam),
+  flashcards(Palette.lagoon, Palette.emerald),
+  goals(Palette.emerald, Palette.seafoam),
   habits(Palette.turquoise, Palette.emerald),
-  analytics(Palette.aurora, Palette.violet),
-  projects(Palette.rose, Palette.violet),
-  assistant(Palette.violet, Palette.turquoise),
-  sounds(Palette.turquoise, Palette.aurora),
+  analytics(Palette.seafoam, Palette.lagoon),
+  projects(Palette.lagoon, Palette.turquoise),
+  assistant(Palette.seafoam, Palette.turquoise),
+  sounds(Palette.turquoise, Palette.seafoam),
   neutral(Palette.ink3, Palette.silver);
 
   const ModuleHue(this.a, this.b);

@@ -59,6 +59,19 @@ abstract final class DeepFocusVisuals {
     );
   }
 
+  /// Soft aqua edge light for selected/active elements only (never text).
+  static List<BoxShadow> edgeGlow({double strength = 1}) => [
+    BoxShadow(
+      color: aquaGlow.withValues(alpha: 0.38 * strength),
+      blurRadius: 14 * strength,
+      spreadRadius: 0.5,
+    ),
+    BoxShadow(
+      color: tealBright.withValues(alpha: 0.22 * strength),
+      blurRadius: 5 * strength,
+    ),
+  ];
+
   static BoxDecoration activePill() {
     return BoxDecoration(
       gradient: const LinearGradient(
@@ -67,12 +80,9 @@ abstract final class DeepFocusVisuals {
         colors: [tealPrimary, tealBright],
       ),
       borderRadius: BorderRadius.circular(pillRadius),
-      boxShadow: const [
-        BoxShadow(
-          color: Color(0x2E0D7A7E),
-          blurRadius: 12,
-          offset: Offset(0, 4),
-        ),
+      boxShadow: [
+        ...edgeGlow(strength: 0.8),
+        const BoxShadow(color: Color(0x2E0D7A7E), blurRadius: 12, offset: Offset(0, 4)),
       ],
     );
   }

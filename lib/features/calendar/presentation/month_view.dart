@@ -9,6 +9,7 @@ import '../../../core/time/hijri.dart';
 import '../application/calendar_layout.dart';
 import '../data/events_repository.dart';
 import 'event_style.dart';
+import '../../../core/theme/deep_focus_visuals.dart';
 
 /// Monday-first month grid with event dots and task-due markers.
 class MonthGrid extends StatelessWidget {
@@ -125,7 +126,6 @@ class _DayCell extends StatelessWidget {
     final lux = context.lux;
     final fmt = context.fmt;
     final l10n = context.l10n;
-    final hue = ModuleHue.calendar;
     final numberColor = selected
         ? Colors.white
         : inMonth
@@ -157,8 +157,9 @@ class _DayCell extends StatelessWidget {
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: selected ? hue.b : null,
-                      border: today && !selected ? Border.all(color: hue.b, width: 1.5) : null,
+                      color: selected ? DeepFocusVisuals.tealPrimary : null,
+                      boxShadow: selected ? DeepFocusVisuals.edgeGlow(strength: 0.8) : null,
+                      border: today && !selected ? Border.all(color: DeepFocusVisuals.tealPrimary, width: 1.5) : null,
                     ),
                     child: Text(
                       fmt.dayOfMonth(day),

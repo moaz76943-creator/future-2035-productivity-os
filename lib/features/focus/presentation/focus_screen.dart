@@ -15,6 +15,8 @@ import '../../../core/design_system/components/states.dart';
 import '../../../core/design_system/components/surfaces.dart';
 import '../../../core/design_system/tokens.dart';
 import '../../../core/providers/core_providers.dart';
+import '../../../core/theme/deep_focus_visuals.dart';
+import '../../../core/widgets/deep_focus_glass.dart';
 import '../../../l10n/gen/app_localizations.dart';
 import '../../../shared/widgets/async_value_view.dart';
 import '../../../shared/widgets/dialogs.dart';
@@ -37,6 +39,7 @@ import 'session_plan.dart';
 part 'focus_screen/focus_screen_state.dart';
 part 'focus_screen/countdown_choices.dart';
 part 'focus_screen/target_rings.dart';
+part 'focus_screen/timer_style.dart';
 
 /// Lengths offered for the plain timer mode, in minutes.
 const focusCountdownChoices = [5, 10, 15, 25, 45, 60, 90];
