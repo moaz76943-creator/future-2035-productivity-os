@@ -52,7 +52,7 @@ class AppLocalizationsKk extends AppLocalizations {
   String get moduleAssistant => 'Көмекші';
 
   @override
-  String get moduleSettings => 'Параметрлер';
+  String get moduleSettings => 'Баптаулар';
 
   @override
   String get moduleTrash => 'Себет';
@@ -163,7 +163,7 @@ class AppLocalizationsKk extends AppLocalizations {
   String get actionPreview => 'Алдын ала қарау';
 
   @override
-  String get actionLog => 'Прогресті жазу';
+  String get actionLog => 'Прогресті тіркеу';
 
   @override
   String get stateLoading => 'Жүктелуде…';
