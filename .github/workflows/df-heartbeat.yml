@@ -35,9 +35,14 @@ jobs:
             --jq '[.[] | select(.status=="queued" or .status=="in_progress" or .status=="waiting")] | length' 2>/dev/null || echo 1)" = 0 ]; }
           end=$(( $(date +%s) + 335 * 60 )); n=0
           while [ "$(date +%s)" -lt "$end" ]; do
-            idle df-ai-agents.yml && gh workflow run df-ai-agents.yml --ref claude-dev && echo "agents started"
-            # The rotating job and the task-queue job run side by side every hour.
-            gh workflow run df-ai-agents.yml --ref claude-dev -f job=task && echo "task agent started"
+            # Free-model quotas reset at 08:00 UTC: busy hours (08-19 UTC) run three different jobs
+            # side by side (task queue, file review, new tests); quiet hours run one small job.
+            h=$((10#$(date -u +%H)))
+            if [ "$h" -ge 8 ] && [ "$h" -lt 20 ]; then
+              for j in task improve tests; do gh workflow run df-ai-agents.yml --ref claude-dev -f job=$j && echo "$j started"; done
+            else
+              [ $((n % 2)) -eq 0 ] && idle df-ai-agents.yml && gh workflow run df-ai-agents.yml --ref claude-dev && echo "agent started"
+            fi
             # Word packs are paused (the owner provides the word lists); start df-packs by hand.
             [ $((n % 2)) -eq 0 ] && idle df-ai-watch.yml && gh workflow run df-ai-watch.yml --ref claude-dev
             n=$((n + 1)); sleep 3600

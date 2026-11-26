@@ -1,0 +1,31 @@
+name: DF dev tools (manual)
+# Adds dev-only packages (alchemist, very_good_analysis) and reports unused code.
+# Needed because Termux has no Flutter. Run: gh workflow run df-devtools.yml
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  tools:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: claude-dev}
+      - uses: subosito/flutter-action@v2
+        with: {channel: stable, cache: true}
+      - name: Add dev packages
+        run: |
+          flutter pub add --dev alchemist very_good_analysis
+          flutter pub get
+      - name: Analyze (must stay clean)
+        run: dart analyze lib test 2>&1 | tail -n 5
+      - name: Unused code report
+        run: |
+          dart pub global activate fcheck
+          dart pub global run fcheck 2>&1 | tail -n 60 >> "$GITHUB_STEP_SUMMARY" || true
+      - name: Commit lockfile and pubspec
+        run: |
+          git config user.name "df-bot"; git config user.email "df-bot@users.noreply.github.com"
+          git add pubspec.yaml pubspec.lock
+          git diff --cached --quiet || { git commit -qm "dev tools: alchemist, very_good_analysis"; git pull -q --rebase origin claude-dev; git push -q origin HEAD:claude-dev; }

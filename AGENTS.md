@@ -1,6 +1,7 @@
 # Working on Deep Focus (for AI agents and people)
 
 Flutter app for Android (package `com.deepfocus.study`). Read this before changing anything.
+Any AI agent (any company): read `docs/AGENT_GUIDE.md` first; it makes your work continue ours.
 Details: `docs/REPO_MAP.md` (where things are), `docs/ADR.md` (why), `docs/FLASHCARDS.md`.
 
 ## Before every commit
