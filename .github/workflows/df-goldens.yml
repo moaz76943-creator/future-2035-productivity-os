@@ -5,7 +5,7 @@ name: DF golden screens
 on:
   push:
     branches: [claude-dev]
-    paths: ['lib/**', 'test/golden/**']
+    paths: ['lib/**', 'test/golden/**', 'ai/run/goldens-update.txt']
   workflow_dispatch:
     inputs:
       update:
@@ -35,15 +35,15 @@ jobs:
           dart run build_runner build --delete-conflicting-outputs
           flutter gen-l10n && python3 tool/gen_l10n_custom.py
       - name: Compare
-        if: ${{ inputs.update != 'true' }}
+        if: ${{ (inputs.update != 'true' && github.event_name != 'push') || (github.event_name == 'push' && !contains(github.event.head_commit.modified, 'ai/run/goldens-update.txt') && !contains(github.event.head_commit.added, 'ai/run/goldens-update.txt')) }}
         run: |
           if [ ! -d test/golden/goldens/${{ matrix.tag }} ]; then echo "No reference images yet: run with -f update=true" >> "$GITHUB_STEP_SUMMARY"; exit 0; fi
           flutter test --reporter compact --dart-define=GOLDEN=true --dart-define=TAG=${{ matrix.tag }} test/golden
       - name: Update
-        if: ${{ inputs.update == 'true' }}
+        if: ${{ (inputs.update == 'true' || (github.event_name == 'push' && (contains(github.event.head_commit.modified, 'ai/run/goldens-update.txt') || contains(github.event.head_commit.added, 'ai/run/goldens-update.txt')))) }}
         run: flutter test --reporter compact --dart-define=GOLDEN=true --dart-define=TAG=${{ matrix.tag }} --update-goldens test/golden
       - name: Save images
-        if: ${{ inputs.update == 'true' }}
+        if: ${{ (inputs.update == 'true' || (github.event_name == 'push' && (contains(github.event.head_commit.modified, 'ai/run/goldens-update.txt') || contains(github.event.head_commit.added, 'ai/run/goldens-update.txt')))) }}
         run: |
           git config user.name "df-bot"; git config user.email "df-bot@users.noreply.github.com"
           git add test/golden/goldens

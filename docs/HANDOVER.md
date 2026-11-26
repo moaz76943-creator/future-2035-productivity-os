@@ -125,7 +125,7 @@ change visuals). Do not re-read large parts of the code "to understand"; use the
 - Slash commands: `/review-agents`, `/ship` (`.claude/commands/`).
 - Golden screens: `test/golden/screens_golden_test.dart` (plain flutter_test goldens, main tabs, ar+en),
   run only by `df-goldens.yml` (off locally unless `--dart-define=GOLDEN=true`). Red run = a screen
-  changed; if intended: `gh workflow run df-goldens.yml -f update=true`. First run must be an update.
+  changed; if intended: `gh workflow run df-goldens.yml -f update=true`. First run must be an update. Claude cannot dispatch workflows (403): to refresh the images, commit a change to `ai/run/goldens-update.txt` (any text) and push; the push starts an update run.
 
 ## 8. Open items
 
