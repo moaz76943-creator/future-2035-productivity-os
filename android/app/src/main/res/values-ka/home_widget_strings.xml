@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">ფოკუსი და ბარათები</string>
+    <string name="home_widget_description">დარჩენილი ფოკუსის დრო და გასამეორებელი ბარათები</string>
+    <string name="quick_widget_label">სწრაფი დამატება</string>
+    <string name="quick_widget_description">დაამატეთ ამოცანა ან ჩანაწერი, ან გაიმეორეთ ბარათები</string>
+</resources>

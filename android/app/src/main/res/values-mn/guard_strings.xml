@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focus анхаарал сарниулахаас хамгаалах</string>
+    <string name="guard_service_summary">Төвлөрөх үед сонгосон аппуудыг түр зогсооно</string>
+    <string name="guard_service_description">Deep Focus энэ функцийг зөвхөн аль апп нээлттэй байгааг харахад ашиглана: төвлөрөх үед эсвэл таны хуваарийн дагуу сонгосон аппуудыг түр зогсоож, асаасан бол Shorts ба Reels-ийг хаана. Энэ нь текст уншихгүй, юу ч хадгалахгүй, хаашаа ч юу ч илгээхгүй. Та үүнийг эндээс хүссэн үедээ унтрааж болно.</string>
+</resources>

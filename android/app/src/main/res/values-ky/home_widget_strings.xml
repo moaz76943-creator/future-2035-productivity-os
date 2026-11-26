@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Фокус жана карточкалар</string>
+    <string name="home_widget_description">Калган фокус убактысы жана кайталоочу карточкалар</string>
+    <string name="quick_widget_label">Тез кошуу</string>
+    <string name="quick_widget_description">Тапшырма же жазуу кошуңуз же карточкаларды кайталаңыз</string>
+</resources>

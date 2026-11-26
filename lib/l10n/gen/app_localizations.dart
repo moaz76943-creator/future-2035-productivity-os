@@ -32,10 +32,14 @@ import 'app_localizations_id.dart';
 import 'app_localizations_is.dart';
 import 'app_localizations_it.dart';
 import 'app_localizations_ja.dart';
+import 'app_localizations_ka.dart';
+import 'app_localizations_kk.dart';
 import 'app_localizations_ko.dart';
+import 'app_localizations_ky.dart';
 import 'app_localizations_lt.dart';
 import 'app_localizations_lv.dart';
 import 'app_localizations_mk.dart';
+import 'app_localizations_mn.dart';
 import 'app_localizations_ms.dart';
 import 'app_localizations_nb.dart';
 import 'app_localizations_nl.dart';
@@ -53,6 +57,7 @@ import 'app_localizations_th.dart';
 import 'app_localizations_tr.dart';
 import 'app_localizations_uk.dart';
 import 'app_localizations_ur.dart';
+import 'app_localizations_uz.dart';
 import 'app_localizations_vi.dart';
 import 'app_localizations_zh.dart';
 
@@ -168,10 +173,14 @@ abstract class AppLocalizations {
     Locale('is'),
     Locale('it'),
     Locale('ja'),
+    Locale('ka'),
+    Locale('kk'),
     Locale('ko'),
+    Locale('ky'),
     Locale('lt'),
     Locale('lv'),
     Locale('mk'),
+    Locale('mn'),
     Locale('ms'),
     Locale('nb'),
     Locale('nl'),
@@ -189,6 +198,7 @@ abstract class AppLocalizations {
     Locale('tr'),
     Locale('uk'),
     Locale('ur'),
+    Locale('uz'),
     Locale('vi'),
     Locale('zh'),
   ];
@@ -8895,10 +8905,14 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
     'is',
     'it',
     'ja',
+    'ka',
+    'kk',
     'ko',
+    'ky',
     'lt',
     'lv',
     'mk',
+    'mn',
     'ms',
     'nb',
     'nl',
@@ -8916,6 +8930,7 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
     'tr',
     'uk',
     'ur',
+    'uz',
     'vi',
     'zh',
   ].contains(locale.languageCode);
@@ -8993,14 +9008,22 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsIt();
     case 'ja':
       return AppLocalizationsJa();
+    case 'ka':
+      return AppLocalizationsKa();
+    case 'kk':
+      return AppLocalizationsKk();
     case 'ko':
       return AppLocalizationsKo();
+    case 'ky':
+      return AppLocalizationsKy();
     case 'lt':
       return AppLocalizationsLt();
     case 'lv':
       return AppLocalizationsLv();
     case 'mk':
       return AppLocalizationsMk();
+    case 'mn':
+      return AppLocalizationsMn();
     case 'ms':
       return AppLocalizationsMs();
     case 'nb':
@@ -9035,6 +9058,8 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsUk();
     case 'ur':
       return AppLocalizationsUr();
+    case 'uz':
+      return AppLocalizationsUz();
     case 'vi':
       return AppLocalizationsVi();
     case 'zh':

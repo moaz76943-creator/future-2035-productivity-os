@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focus алаксуудан коргоосу</string>
+    <string name="guard_service_summary">Фокус учурунда тандалган колдонмолорду тындырат</string>
+    <string name="guard_service_description">Deep Focus бул функцияны кайсы колдонмо ачык экенин көрүү үчүн гана колдонот: фокус учурунда же графигиңиз боюнча тандалган колдонмолорду тындырып, күйгүзгөн болсоңуз, Shorts жана Reels жабат. Ал текст окубайт, эч нерсе сактабайт жана эч жакка эч нерсе жөнөтпөйт. Аны бул жерден каалаган убакта өчүрө аласыз.</string>
+</resources>

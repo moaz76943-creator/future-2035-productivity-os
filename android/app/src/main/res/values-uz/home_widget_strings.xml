@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Diqqat va kartochkalar</string>
+    <string name="home_widget_description">Qolgan diqqat vaqti va takrorlanadigan kartochkalar</string>
+    <string name="quick_widget_label">Tezkor qoʻshish</string>
+    <string name="quick_widget_description">Vazifa yoki qayd qoʻshing yoxud kartochkalarni takrorlang</string>
+</resources>

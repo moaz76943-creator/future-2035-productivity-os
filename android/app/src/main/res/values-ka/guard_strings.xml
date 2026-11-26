@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focus-ის ყურადღების დაცვა</string>
+    <string name="guard_service_summary">აჩერებს არჩეულ აპებს, სანამ ფოკუსირებული ხართ</string>
+    <string name="guard_service_description">Deep Focus ამ ფუნქციას იყენებს მხოლოდ იმის სანახავად, რომელი აპია გახსნილი, რათა ფოკუსისას ან თქვენი განრიგით შეაჩეროს არჩეული აპები და, თუ ჩართეთ, დახუროს Shorts და Reels. ის არ კითხულობს ტექსტს, არაფერს ინახავს და არსად არაფერს აგზავნის. მისი გამორთვა აქ ნებისმიერ დროს შეგიძლიათ.</string>
+</resources>

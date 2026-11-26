@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focus chalgʻishdan himoyasi</string>
+    <string name="guard_service_summary">Diqqat paytida tanlangan ilovalarni pauza qiladi</string>
+    <string name="guard_service_description">Deep Focus bu funksiyadan faqat qaysi ilova ochiqligini koʻrish uchun foydalanadi: diqqat paytida yoki jadvalingiz boʻyicha tanlangan ilovalarni pauza qiladi va yoqgan boʻlsangiz, Shorts va Reels ni yopadi. U matn oʻqimaydi, hech narsa saqlamaydi va hech qayerga hech narsa yubormaydi. Uni shu yerda istalgan vaqtda oʻchirishingiz mumkin.</string>
+</resources>

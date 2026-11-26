@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focus алаңдаудан қорғауы</string>
+    <string name="guard_service_summary">Фокус кезінде таңдалған қолданбаларды кідіртеді</string>
+    <string name="guard_service_description">Deep Focus бұл функцияны тек қай қолданба ашық екенін көру үшін пайдаланады: фокус кезінде немесе кестеңіз бойынша таңдалған қолданбаларды кідіртіп, қосқан болсаңыз, Shorts пен Reels-ті жабады. Ол мәтін оқымайды, ештеңе сақтамайды және ешқайда ештеңе жібермейді. Оны мұнда кез келген уақытта өшіре аласыз.</string>
+</resources>
