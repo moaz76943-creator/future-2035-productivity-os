@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Fokus və kartlar</string>
+    <string name="home_widget_description">Qalan fokus vaxtı və təkrar ediləcək kartlar</string>
+    <string name="quick_widget_label">Sürətli əlavə</string>
+    <string name="quick_widget_description">Tapşırıq və ya qeyd əlavə edin, ya da kartları təkrarlayın</string>
+</resources>

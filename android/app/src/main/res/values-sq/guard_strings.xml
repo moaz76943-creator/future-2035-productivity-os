@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Mbrojtja nga shpërqendrimi e Deep Focus</string>
+    <string name="guard_service_summary">Ndal aplikacionet e zgjedhura ndërsa përqendrohesh</string>
+    <string name="guard_service_description">Deep Focus e përdor këtë funksion vetëm për të parë cili aplikacion është i hapur, që të mund të ndalë aplikacionet e zgjedhura gjatë përqendrimit ose sipas orarit tënd dhe të mbyllë Shorts dhe Reels nëse e ke aktivizuar. Nuk lexon tekst, nuk ruan asgjë dhe nuk dërgon asgjë askund. Mund ta çaktivizosh këtu kurdo.</string>
+</resources>

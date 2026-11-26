@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Абарона ад адцягненняў Deep Focus</string>
+    <string name="guard_service_summary">Прыпыняе выбраныя праграмы, пакуль вы засяроджаны</string>
+    <string name="guard_service_description">Deep Focus выкарыстоўвае гэту функцыю толькі для таго, каб бачыць, якая праграма адкрыта, і прыпыняць выбраныя праграмы падчас фокусу або паводле вашага раскладу, а таксама закрываць Shorts і Reels, калі вы гэта ўключылі. Яна не чытае тэксту, нічога не захоўвае і нічога нікуды не адпраўляе. Выключыць яе можна тут у любы час.</string>
+</resources>

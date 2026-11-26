@@ -7,8 +7,11 @@ import 'package:intl/intl.dart' as intl;
 
 import 'app_localizations_af.dart';
 import 'app_localizations_ar.dart';
+import 'app_localizations_az.dart';
+import 'app_localizations_be.dart';
 import 'app_localizations_bg.dart';
 import 'app_localizations_bn.dart';
+import 'app_localizations_bs.dart';
 import 'app_localizations_ca.dart';
 import 'app_localizations_cs.dart';
 import 'app_localizations_da.dart';
@@ -32,6 +35,7 @@ import 'app_localizations_ja.dart';
 import 'app_localizations_ko.dart';
 import 'app_localizations_lt.dart';
 import 'app_localizations_lv.dart';
+import 'app_localizations_mk.dart';
 import 'app_localizations_ms.dart';
 import 'app_localizations_nb.dart';
 import 'app_localizations_nl.dart';
@@ -41,6 +45,7 @@ import 'app_localizations_ro.dart';
 import 'app_localizations_ru.dart';
 import 'app_localizations_sk.dart';
 import 'app_localizations_sl.dart';
+import 'app_localizations_sq.dart';
 import 'app_localizations_sr.dart';
 import 'app_localizations_sv.dart';
 import 'app_localizations_sw.dart';
@@ -137,8 +142,11 @@ abstract class AppLocalizations {
   static const List<Locale> supportedLocales = <Locale>[
     Locale('af'),
     Locale('ar'),
+    Locale('az'),
+    Locale('be'),
     Locale('bg'),
     Locale('bn'),
+    Locale('bs'),
     Locale('ca'),
     Locale('cs'),
     Locale('da'),
@@ -163,6 +171,7 @@ abstract class AppLocalizations {
     Locale('ko'),
     Locale('lt'),
     Locale('lv'),
+    Locale('mk'),
     Locale('ms'),
     Locale('nb'),
     Locale('nl'),
@@ -172,6 +181,7 @@ abstract class AppLocalizations {
     Locale('ru'),
     Locale('sk'),
     Locale('sl'),
+    Locale('sq'),
     Locale('sr'),
     Locale('sv'),
     Locale('sw'),
@@ -8860,8 +8870,11 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
   bool isSupported(Locale locale) => <String>[
     'af',
     'ar',
+    'az',
+    'be',
     'bg',
     'bn',
+    'bs',
     'ca',
     'cs',
     'da',
@@ -8885,6 +8898,7 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
     'ko',
     'lt',
     'lv',
+    'mk',
     'ms',
     'nb',
     'nl',
@@ -8894,6 +8908,7 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
     'ru',
     'sk',
     'sl',
+    'sq',
     'sr',
     'sv',
     'sw',
@@ -8928,10 +8943,16 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsAf();
     case 'ar':
       return AppLocalizationsAr();
+    case 'az':
+      return AppLocalizationsAz();
+    case 'be':
+      return AppLocalizationsBe();
     case 'bg':
       return AppLocalizationsBg();
     case 'bn':
       return AppLocalizationsBn();
+    case 'bs':
+      return AppLocalizationsBs();
     case 'ca':
       return AppLocalizationsCa();
     case 'cs':
@@ -8978,6 +8999,8 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsLt();
     case 'lv':
       return AppLocalizationsLv();
+    case 'mk':
+      return AppLocalizationsMk();
     case 'ms':
       return AppLocalizationsMs();
     case 'nb':
@@ -8996,6 +9019,8 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsSk();
     case 'sl':
       return AppLocalizationsSl();
+    case 'sq':
+      return AppLocalizationsSq();
     case 'sr':
       return AppLocalizationsSr();
     case 'sv':

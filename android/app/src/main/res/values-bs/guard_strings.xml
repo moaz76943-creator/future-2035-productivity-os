@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focus zaštita od ometanja</string>
+    <string name="guard_service_summary">Pauzira odabrane aplikacije dok ste fokusirani</string>
+    <string name="guard_service_description">Deep Focus koristi ovu funkciju samo da vidi koja je aplikacija otvorena, kako bi tokom fokusa ili prema vašem rasporedu pauzirao odabrane aplikacije i zatvarao Shorts i Reels ako ste to uključili. Ne čita tekst, ništa ne čuva i ništa nikamo ne šalje. Ovdje je možete isključiti bilo kada.</string>
+</resources>

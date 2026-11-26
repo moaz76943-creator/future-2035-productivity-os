@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Përqendrimi dhe kartat</string>
+    <string name="home_widget_description">Koha e mbetur e përqendrimit dhe kartat për përsëritje</string>
+    <string name="quick_widget_label">Shtim i shpejtë</string>
+    <string name="quick_widget_description">Shto një detyrë ose shënim, ose përsërit kartat</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Заштита од одвлекување на Deep Focus</string>
+    <string name="guard_service_summary">Ги паузира избраните апликации додека сте фокусирани</string>
+    <string name="guard_service_description">Deep Focus ја користи оваа функција само за да види која апликација е отворена, за да може за време на фокусот или според вашиот распоред да ги паузира избраните апликации и да ги затвора Shorts и Reels ако сте го вклучиле тоа. Не чита текст, ништо не зачувува и ништо не праќа никаде. Можете да ја исклучите тука кога сакате.</string>
+</resources>

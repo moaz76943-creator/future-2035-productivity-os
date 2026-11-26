@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focus diqqət yayındırıcılardan qoruma</string>
+    <string name="guard_service_summary">Fokuslanarkən seçilmiş tətbiqləri dayandırır</string>
+    <string name="guard_service_description">Deep Focus bu funksiyadan yalnız hansı tətbiqin açıq olduğunu görmək üçün istifadə edir ki, fokus zamanı və ya cədvəlinizə görə seçilmiş tətbiqləri dayandıra və aktiv etmisinizsə Shorts və Reels-i bağlaya bilsin. O, mətn oxumur, heç nə saxlamır və heç yerə heç nə göndərmir. Onu burada istənilən vaxt deaktiv edə bilərsiniz.</string>
+</resources>

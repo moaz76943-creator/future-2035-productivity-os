@@ -15,7 +15,21 @@
     "priorityMedium",
     "trashCount"
   ],
+  "az": [
+    "assistantModel",
+    "prayerMethodIsna"
+  ],
+  "be": [
+    "prayerMethodIsna"
+  ],
   "bg": [
+    "prayerMethodIsna"
+  ],
+  "bs": [
+    "assistantModel",
+    "focusMinutesShort",
+    "goalPeriod",
+    "noteFormatLink",
     "prayerMethodIsna"
   ],
   "ca": [
@@ -183,6 +197,9 @@
     "prayerMethodIsna",
     "projectProgress"
   ],
+  "mk": [
+    "prayerMethodIsna"
+  ],
   "ms": [
     "actionEdit",
     "actionImport",
@@ -291,6 +308,10 @@
   ],
   "sl": [
     "assistantModel",
+    "focusMinutesShort",
+    "prayerMethodIsna"
+  ],
+  "sq": [
     "focusMinutesShort",
     "prayerMethodIsna"
   ],

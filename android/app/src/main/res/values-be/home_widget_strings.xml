@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Фокус і карткі</string>
+    <string name="home_widget_description">Застаўся час фокусу і карткі для паўтарэння</string>
+    <string name="quick_widget_label">Хуткае даданне</string>
+    <string name="quick_widget_description">Дадайце задачу або нататку ці паўтарыце карткі</string>
+</resources>

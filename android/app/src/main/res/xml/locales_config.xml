@@ -42,6 +42,11 @@
     <locale android:name="lv" />
     <locale android:name="et" />
     <locale android:name="ca" />
+    <locale android:name="az" />
+    <locale android:name="sq" />
+    <locale android:name="bs" />
+    <locale android:name="mk" />
+    <locale android:name="be" />
     <locale android:name="is" />
     <locale android:name="eu" />
     <locale android:name="gl" />
