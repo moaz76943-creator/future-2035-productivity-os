@@ -54,6 +54,7 @@ class Router:
         self.providers = [p for p in cfg['providers'] if not only or p['name'] in only]
         self.allow_paid = allow_paid
         self.dead = set()  # (provider, key name, model) that failed hard this run
+        self.strikes = {}  # (provider, model) -> timeouts/server errors across keys
         self.log = log
         self.last_groq = 0.0
 
@@ -63,7 +64,9 @@ class Router:
             keys = [k for k in p['keys'] if os.environ.get(k)]
             for m in models:
                 for k in keys:
-                    if (p['name'], k, m) not in self.dead:
+                    # A model that timed out or failed on the server twice is skipped
+                    # for the rest of the run, whatever the key (saves long timeouts).
+                    if (p['name'], k, m) not in self.dead and self.strikes.get((p['name'], m), 0) < 2:
                         yield p, m, k
 
     def ask(self, system, prompt, check=None):
@@ -87,11 +90,13 @@ class Router:
                         continue
                     self.log(f'  {label}: HTTP {e.code}, next')
                     self.dead.add((p['name'], key_name, model))
+                    if e.code in (404, 400) or e.code >= 500:
+                        self.strikes[(p['name'], model)] = 9 if e.code in (404, 400) else (
+                            self.strikes.get((p['name'], model), 0) + 1)
                     break
                 except (urllib.error.URLError, TimeoutError, OSError, KeyError, IndexError, ValueError) as e:
                     self.log(f'  {label}: {type(e).__name__}, next')
-                    if attempt == 0:
-                        continue
+                    self.strikes[(p['name'], model)] = self.strikes.get((p['name'], model), 0) + 1
                     self.dead.add((p['name'], key_name, model))
                     break
                 problem = check(text) if check else None
