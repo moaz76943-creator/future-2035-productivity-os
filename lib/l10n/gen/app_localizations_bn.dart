@@ -2949,14 +2949,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get taskReminderNeedsDue => 'আপেক্ষিক রিমাইন্ডার ব্যবহারে শেষ তারিখ দিন';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'উপ-কাজ, চেকলিস্ট আইটেম, লেবেল ও নির্ভরতা যোগ করতে আগে কাজটি সংরক্ষণ করুন।';
-
-  @override
   String get taskLabelName => 'লেবেলের নাম';
-
-  @override
-  String get taskMoreDetails => 'বিস্তারিত';
 
   @override
   String get taskPlanning => 'পরিকল্পনা';

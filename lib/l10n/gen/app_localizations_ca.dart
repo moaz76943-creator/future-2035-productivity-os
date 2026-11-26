@@ -3044,14 +3044,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get taskReminderNeedsDue => 'Defineix una data límit per fer servir recordatoris relatius';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Desa primer la tasca per afegir subtasques, elements de llista, etiquetes i dependències.';
-
-  @override
   String get taskLabelName => 'Nom de l’etiqueta';
-
-  @override
-  String get taskMoreDetails => 'Detalls';
 
   @override
   String get taskPlanning => 'Planificació';

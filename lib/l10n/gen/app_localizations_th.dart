@@ -2926,14 +2926,7 @@ class AppLocalizationsTh extends AppLocalizations {
   String get taskReminderNeedsDue => 'ตั้งวันครบกำหนดเพื่อใช้การเตือนแบบสัมพัทธ์';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'บันทึกงานก่อนเพื่อเพิ่มงานย่อย รายการตรวจสอบ ป้ายกำกับ และงานที่ต้องทำก่อน';
-
-  @override
   String get taskLabelName => 'ชื่อป้ายกำกับ';
-
-  @override
-  String get taskMoreDetails => 'รายละเอียด';
 
   @override
   String get taskPlanning => 'การวางแผน';

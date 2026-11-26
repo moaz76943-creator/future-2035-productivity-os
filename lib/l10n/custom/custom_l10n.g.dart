@@ -1456,11 +1456,7 @@ class _CustomL10n extends AppLocalizations {
   @override
   String get taskReminderNeedsDue => _o['taskReminderNeedsDue'] ?? _b.taskReminderNeedsDue;
   @override
-  String get taskSubtaskDetailsHint => _o['taskSubtaskDetailsHint'] ?? _b.taskSubtaskDetailsHint;
-  @override
   String get taskLabelName => _o['taskLabelName'] ?? _b.taskLabelName;
-  @override
-  String get taskMoreDetails => _o['taskMoreDetails'] ?? _b.taskMoreDetails;
   @override
   String get taskPlanning => _o['taskPlanning'] ?? _b.taskPlanning;
   @override
@@ -3685,9 +3681,7 @@ const customWordKeys = <String>[
   'taskSaved',
   'taskCreated',
   'taskReminderNeedsDue',
-  'taskSubtaskDetailsHint',
   'taskLabelName',
-  'taskMoreDetails',
   'taskPlanning',
   'taskOrganize',
   'taskBreakdown',
@@ -4945,9 +4939,7 @@ String customWordBase(AppLocalizations l, String key) => switch (key) {
   'taskSaved' => l.taskSaved,
   'taskCreated' => l.taskCreated,
   'taskReminderNeedsDue' => l.taskReminderNeedsDue,
-  'taskSubtaskDetailsHint' => l.taskSubtaskDetailsHint,
   'taskLabelName' => l.taskLabelName,
-  'taskMoreDetails' => l.taskMoreDetails,
   'taskPlanning' => l.taskPlanning,
   'taskOrganize' => l.taskOrganize,
   'taskBreakdown' => l.taskBreakdown,

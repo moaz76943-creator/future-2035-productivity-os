@@ -25,7 +25,6 @@
   "habitsCheckInHint": "Mantén presionado para ajustar",
   "onboardingLanguageBody": "Puedes cambiarlo en cualquier momento en Configuración.",
   "projectAddTask": "Agregar tarea al proyecto",
-  "taskSubtaskDetailsHint": "Guarda primero la tarea para agregar subtareas, elementos de lista, etiquetas y dependencias.",
   "flashcardsTtsLanguageUnavailable": "No hay ninguna voz instalada para este idioma. Agrega una en la configuración de texto a voz de Android.",
   "milestoneAdd": "Agregar hito",
   "milestonesEmpty": "Aún no hay hitos. Agrega puntos de control con fecha para seguir el proyecto en el calendario.",

@@ -3036,14 +3036,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get taskReminderNeedsDue => 'Cakto një afat për të përdorur kujtesa relative';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Ruaj fillimisht detyrën për të shtuar nëndetyra, elemente liste, etiketa dhe varësi.';
-
-  @override
   String get taskLabelName => 'Emri i etiketës';
-
-  @override
-  String get taskMoreDetails => 'Detaje';
 
   @override
   String get taskPlanning => 'Planifikimi';

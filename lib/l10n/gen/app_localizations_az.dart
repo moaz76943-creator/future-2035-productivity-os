@@ -3032,14 +3032,7 @@ class AppLocalizationsAz extends AppLocalizations {
   String get taskReminderNeedsDue => 'Nisbi xatırlatmalardan istifadə üçün son tarix təyin edin';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Alt tapşırıqlar, siyahı bəndləri, etiketlər və asılılıqlar əlavə etmək üçün əvvəlcə tapşırığı yadda saxlayın.';
-
-  @override
   String get taskLabelName => 'Etiketin adı';
-
-  @override
-  String get taskMoreDetails => 'Təfərrüatlar';
 
   @override
   String get taskPlanning => 'Planlaşdırma';

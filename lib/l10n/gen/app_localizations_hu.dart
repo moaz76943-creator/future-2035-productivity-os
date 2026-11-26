@@ -3034,14 +3034,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get taskReminderNeedsDue => 'A relatív emlékeztetőkhöz adj meg határidőt';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Előbb mentsd a feladatot, hogy részfeladatokat, listaelemeket, címkéket és függőségeket adhass hozzá.';
-
-  @override
   String get taskLabelName => 'A címke neve';
-
-  @override
-  String get taskMoreDetails => 'Részletek';
 
   @override
   String get taskPlanning => 'Tervezés';

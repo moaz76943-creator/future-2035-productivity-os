@@ -3044,14 +3044,7 @@ class AppLocalizationsDe extends AppLocalizations {
       'Lege ein Fälligkeitsdatum fest, um relative Erinnerungen zu nutzen';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Speichere die Aufgabe zuerst, um Unteraufgaben, Checklisteneinträge, Labels und Abhängigkeiten hinzuzufügen.';
-
-  @override
   String get taskLabelName => 'Name des Labels';
-
-  @override
-  String get taskMoreDetails => 'Details';
 
   @override
   String get taskPlanning => 'Planung';

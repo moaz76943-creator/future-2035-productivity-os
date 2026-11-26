@@ -4038,17 +4038,9 @@
   "@taskReminderNeedsDue": {
     "description": "Hint in reminder picker"
   },
-  "taskSubtaskDetailsHint": "Save the task first to add subtasks, checklist items, labels and dependencies.",
-  "@taskSubtaskDetailsHint": {
-    "description": "Hint shown in the new task editor"
-  },
   "taskLabelName": "Label name",
   "@taskLabelName": {
     "description": "Field label"
-  },
-  "taskMoreDetails": "Details",
-  "@taskMoreDetails": {
-    "description": "Section header in task editor for notes and description"
   },
   "taskPlanning": "Planning",
   "@taskPlanning": {

@@ -3114,14 +3114,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get taskReminderNeedsDue => 'Ustaw termin, aby używać przypomnień względnych';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Najpierw zapisz zadanie, aby dodać podzadania, pozycje listy, etykiety i zależności.';
-
-  @override
   String get taskLabelName => 'Nazwa etykiety';
-
-  @override
-  String get taskMoreDetails => 'Szczegóły';
 
   @override
   String get taskPlanning => 'Planowanie';

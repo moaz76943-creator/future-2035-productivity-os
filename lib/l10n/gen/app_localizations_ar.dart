@@ -3182,14 +3182,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get taskReminderNeedsDue => 'حدّد تاريخ استحقاق لاستخدام التذكيرات النسبية';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'احفظ المهمة أولًا لإضافة المهام الفرعية وعناصر قائمة التحقق والوسوم والتبعيات.';
-
-  @override
   String get taskLabelName => 'اسم الوسم';
-
-  @override
-  String get taskMoreDetails => 'التفاصيل';
 
   @override
   String get taskPlanning => 'التخطيط';

@@ -220,6 +220,8 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
                 if (!_isNew) _TrackedTime(taskId: _id!),
               ],
             ),
+            // Organize holds everything optional (project, category, notes, labels), so a new
+            // task shows only two folded rows under the essentials instead of four.
             _Section(
               title: l10n.taskOrganize,
               collapsed: _isNew,
@@ -230,38 +232,27 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
                 ),
                 const SizedBox(height: Space.sm),
                 _CategoryField(controller: _category),
-                if (!_isNew) _LabelsEditor(taskId: _id!),
-              ],
-            ),
-            _Section(
-              title: l10n.taskMoreDetails,
-              collapsed: _isNew,
-              children: [
+                const SizedBox(height: Space.sm),
                 TextField(
                   controller: _notes,
                   maxLines: null,
                   minLines: 2,
                   decoration: InputDecoration(labelText: l10n.taskNotesLabel),
                 ),
+                if (!_isNew) _LabelsEditor(taskId: _id!),
               ],
             ),
-            _Section(
-              title: l10n.taskBreakdown,
-              collapsed: _isNew,
-              children: [
-                if (_isNew)
-                  Text(
-                    l10n.taskSubtaskDetailsHint,
-                    style: context.text.bodyMedium?.copyWith(color: context.lux.ink3),
-                  )
-                else ...[
+            // Subtasks, checklist and links need a saved task: shown open once it exists.
+            if (!_isNew)
+              _Section(
+                title: l10n.taskBreakdown,
+                children: [
                   if (_loaded?.parentId == null) _SubtasksEditor(taskId: _id!),
                   _ChecklistEditor(taskId: _id!),
                   _DependenciesEditor(taskId: _id!),
                   _LinkedNotes(taskId: _id!),
                 ],
-              ],
-            ),
+              ),
             if (!_isNew && !(_loaded?.done ?? false)) ...[
               const SizedBox(height: Space.lg),
               OutlinedButton.icon(

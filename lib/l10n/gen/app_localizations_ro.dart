@@ -3098,14 +3098,7 @@ class AppLocalizationsRo extends AppLocalizations {
   String get taskReminderNeedsDue => 'Setează un termen pentru a folosi mementouri relative';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Salvează mai întâi sarcina ca să adaugi subsarcini, elemente de listă, etichete și dependențe.';
-
-  @override
   String get taskLabelName => 'Numele etichetei';
-
-  @override
-  String get taskMoreDetails => 'Detalii';
 
   @override
   String get taskPlanning => 'Planificare';

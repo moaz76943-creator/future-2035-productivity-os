@@ -3024,14 +3024,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get taskReminderNeedsDue => 'Set a due date to use relative reminders';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Save the task first to add subtasks, checklist items, labels and dependencies.';
-
-  @override
   String get taskLabelName => 'Label name';
-
-  @override
-  String get taskMoreDetails => 'Details';
 
   @override
   String get taskPlanning => 'Planning';

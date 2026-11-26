@@ -3033,14 +3033,7 @@ class AppLocalizationsKk extends AppLocalizations {
   String get taskReminderNeedsDue => 'Салыстырмалы еске салғыштарды пайдалану үшін мерзім қойыңыз';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Ішкі тапсырмалар, тексеру тізімі, белгілер мен тәуелділіктер қосу үшін алдымен тапсырманы сақтаңыз.';
-
-  @override
   String get taskLabelName => 'Белгі атауы';
-
-  @override
-  String get taskMoreDetails => 'Мәліметтер';
 
   @override
   String get taskPlanning => 'Жоспарлау';

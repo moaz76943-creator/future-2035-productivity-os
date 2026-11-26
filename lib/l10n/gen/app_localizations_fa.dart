@@ -3055,14 +3055,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get taskReminderNeedsDue => 'برای یادآوری نسبی، سررسید تعیین کنید';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'برای افزودن زیرکار، مورد چک‌لیست، برچسب و وابستگی، اول کار را ذخیره کنید.';
-
-  @override
   String get taskLabelName => 'نام برچسب';
-
-  @override
-  String get taskMoreDetails => 'جزئیات';
 
   @override
   String get taskPlanning => 'برنامه‌ریزی';

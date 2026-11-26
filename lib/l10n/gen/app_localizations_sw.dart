@@ -3030,14 +3030,7 @@ class AppLocalizationsSw extends AppLocalizations {
       'Weka tarehe ya mwisho ili kutumia vikumbusho vya muda linganishi';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Hifadhi jukumu kwanza ili kuongeza majukumu madogo, vipengee vya orodha, lebo na utegemezi.';
-
-  @override
   String get taskLabelName => 'Jina la lebo';
-
-  @override
-  String get taskMoreDetails => 'Maelezo';
 
   @override
   String get taskPlanning => 'Upangaji';

@@ -3036,14 +3036,7 @@ class AppLocalizationsUz extends AppLocalizations {
   String get taskReminderNeedsDue => 'Nisbiy eslatmalardan foydalanish uchun muddat belgilang';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Kichik vazifalar, nazorat roʻyxati, yorliqlar va bogʻliqliklar qoʻshish uchun avval vazifani saqlang.';
-
-  @override
   String get taskLabelName => 'Yorliq nomi';
-
-  @override
-  String get taskMoreDetails => 'Tafsilotlar';
 
   @override
   String get taskPlanning => 'Rejalashtirish';

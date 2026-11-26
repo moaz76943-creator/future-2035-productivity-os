@@ -3050,14 +3050,7 @@ class AppLocalizationsEl extends AppLocalizations {
       'Ορίστε προθεσμία για να χρησιμοποιήσετε σχετικές υπενθυμίσεις';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Αποθηκεύστε πρώτα την εργασία για να προσθέσετε υποεργασίες, στοιχεία λίστας, ετικέτες και εξαρτήσεις.';
-
-  @override
   String get taskLabelName => 'Όνομα ετικέτας';
-
-  @override
-  String get taskMoreDetails => 'Λεπτομέρειες';
 
   @override
   String get taskPlanning => 'Προγραμματισμός';

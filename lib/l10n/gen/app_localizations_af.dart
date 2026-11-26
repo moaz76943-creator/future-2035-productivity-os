@@ -3032,14 +3032,7 @@ class AppLocalizationsAf extends AppLocalizations {
   String get taskReminderNeedsDue => 'Stel ’n sperdatum om relatiewe herinneringe te gebruik';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Stoor eers die taak om subtake, kontrolelysitems, etikette en afhanklikhede by te voeg.';
-
-  @override
   String get taskLabelName => 'Naam van etiket';
-
-  @override
-  String get taskMoreDetails => 'Besonderhede';
 
   @override
   String get taskPlanning => 'Beplanning';

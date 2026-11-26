@@ -3095,14 +3095,7 @@ class AppLocalizationsLt extends AppLocalizations {
       'Nustatykite terminą, kad galėtumėte naudoti santykinius priminimus';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Pirmiausia išsaugokite užduotį, kad pridėtumėte papildomų užduočių, kontrolinio sąrašo punktų, žymų ir priklausomybių.';
-
-  @override
   String get taskLabelName => 'Žymos pavadinimas';
-
-  @override
-  String get taskMoreDetails => 'Išsami informacija';
 
   @override
   String get taskPlanning => 'Planavimas';

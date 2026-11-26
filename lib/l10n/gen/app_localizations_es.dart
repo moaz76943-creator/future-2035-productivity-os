@@ -3041,14 +3041,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get taskReminderNeedsDue => 'Establece una fecha límite para usar recordatorios relativos';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Guarda primero la tarea para añadir subtareas, elementos de lista, etiquetas y dependencias.';
-
-  @override
   String get taskLabelName => 'Nombre de la etiqueta';
-
-  @override
-  String get taskMoreDetails => 'Detalles';
 
   @override
   String get taskPlanning => 'Planificación';
@@ -5346,10 +5339,6 @@ class AppLocalizationsEs419 extends AppLocalizationsEs {
 
   @override
   String get projectAddTask => 'Agregar tarea al proyecto';
-
-  @override
-  String get taskSubtaskDetailsHint =>
-      'Guarda primero la tarea para agregar subtareas, elementos de lista, etiquetas y dependencias.';
 
   @override
   String get flashcardsTtsLanguageUnavailable =>

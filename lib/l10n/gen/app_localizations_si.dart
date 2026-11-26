@@ -3077,14 +3077,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get taskReminderNeedsDue => 'සාපේක්ෂ මතක් කිරීම් භාවිතයට නියමිත දිනයක් සකසන්න';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'උප කාර්යයන්, පිරික්සුම් අයිතම, ලේබල සහ යැපීම් එක් කිරීමට පළමුව කාර්යය සුරකින්න.';
-
-  @override
   String get taskLabelName => 'ලේබලයේ නම';
-
-  @override
-  String get taskMoreDetails => 'විස්තර';
 
   @override
   String get taskPlanning => 'සැලසුම්කරණය';

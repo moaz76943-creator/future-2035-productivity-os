@@ -3094,14 +3094,7 @@ class AppLocalizationsSk extends AppLocalizations {
   String get taskReminderNeedsDue => 'Na relatívne pripomienky nastavte termín';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Najprv úlohu uložte, potom môžete pridať čiastkové úlohy, položky zoznamu, štítky a závislosti.';
-
-  @override
   String get taskLabelName => 'Názov štítka';
-
-  @override
-  String get taskMoreDetails => 'Podrobnosti';
 
   @override
   String get taskPlanning => 'Plánovanie';

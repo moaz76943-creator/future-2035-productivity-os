@@ -60,20 +60,22 @@ class _FilterSheet extends ConsumerWidget {
                   onSelected: (_) => ctrl.set(rebuild(sort: s)),
                 ),
             ]),
-            section(l10n.taskProject, [
-              ChoiceChip(
-                label: Text(l10n.filterAllProjects),
-                selected: f.projectId == null,
-                onSelected: (_) => ctrl.set(rebuild(projectId: null)),
-              ),
-              for (final p in projects)
+            // Only when projects exist (or one is filtered): no empty "all projects" row.
+            if (projects.isNotEmpty || f.projectId != null)
+              section(l10n.taskProject, [
                 ChoiceChip(
-                  avatar: CircleAvatar(backgroundColor: Color(p.color), radius: 6),
-                  label: Text(p.name),
-                  selected: f.projectId == p.id,
-                  onSelected: (_) => ctrl.set(rebuild(projectId: p.id)),
+                  label: Text(l10n.filterAllProjects),
+                  selected: f.projectId == null,
+                  onSelected: (_) => ctrl.set(rebuild(projectId: null)),
                 ),
-            ]),
+                for (final p in projects)
+                  ChoiceChip(
+                    avatar: CircleAvatar(backgroundColor: Color(p.color), radius: 6),
+                    label: Text(p.name),
+                    selected: f.projectId == p.id,
+                    onSelected: (_) => ctrl.set(rebuild(projectId: p.id)),
+                  ),
+              ]),
             section(l10n.tasksFilterPriorityAtLeast, [
               ChoiceChip(
                 label: Text(l10n.filterAnyPriority),

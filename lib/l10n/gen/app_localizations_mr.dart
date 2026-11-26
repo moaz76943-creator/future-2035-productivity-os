@@ -3027,14 +3027,7 @@ class AppLocalizationsMr extends AppLocalizations {
   String get taskReminderNeedsDue => 'सापेक्ष स्मरणपत्रे वापरण्यासाठी अंतिम तारीख सेट करा';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'उपकार्ये, तपासणी सूची, लेबल आणि अवलंबित्वे जोडण्यासाठी आधी कार्य जतन करा.';
-
-  @override
   String get taskLabelName => 'लेबलचे नाव';
-
-  @override
-  String get taskMoreDetails => 'तपशील';
 
   @override
   String get taskPlanning => 'नियोजन';

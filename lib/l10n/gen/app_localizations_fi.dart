@@ -3045,14 +3045,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get taskReminderNeedsDue => 'Aseta määräpäivä käyttääksesi suhteellisia muistutuksia';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Tallenna tehtävä ensin, jotta voit lisätä alitehtäviä, tarkistuslistan kohtia, tunnisteita ja riippuvuuksia.';
-
-  @override
   String get taskLabelName => 'Tunnisteen nimi';
-
-  @override
-  String get taskMoreDetails => 'Lisätiedot';
 
   @override
   String get taskPlanning => 'Suunnittelu';

@@ -2939,14 +2939,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get taskReminderNeedsDue => 'Đặt hạn chót để dùng nhắc nhở tương đối';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Hãy lưu việc trước để thêm việc con, mục kiểm tra, nhãn và phụ thuộc.';
-
-  @override
   String get taskLabelName => 'Tên nhãn';
-
-  @override
-  String get taskMoreDetails => 'Chi tiết';
 
   @override
   String get taskPlanning => 'Lên kế hoạch';

@@ -3045,14 +3045,7 @@ class AppLocalizationsMk extends AppLocalizations {
   String get taskReminderNeedsDue => 'Поставете рок за да користите релативни потсетници';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Прво зачувајте ја задачата за да додадете подзадачи, ставки од список, етикети и зависности.';
-
-  @override
   String get taskLabelName => 'Име на етикетата';
-
-  @override
-  String get taskMoreDetails => 'Детали';
 
   @override
   String get taskPlanning => 'Планирање';

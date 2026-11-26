@@ -3097,14 +3097,7 @@ class AppLocalizationsBs extends AppLocalizations {
   String get taskReminderNeedsDue => 'Postavite rok da biste koristili relativne podsjetnike';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Prvo sačuvajte zadatak da biste dodali podzadatke, stavke kontrolne liste, oznake i zavisnosti.';
-
-  @override
   String get taskLabelName => 'Naziv oznake';
-
-  @override
-  String get taskMoreDetails => 'Detalji';
 
   @override
   String get taskPlanning => 'Planiranje';

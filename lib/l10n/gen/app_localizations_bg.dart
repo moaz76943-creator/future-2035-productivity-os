@@ -3045,14 +3045,7 @@ class AppLocalizationsBg extends AppLocalizations {
   String get taskReminderNeedsDue => 'Задайте краен срок, за да използвате относителни напомняния';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Първо запазете задачата, за да добавите подзадачи, елементи от списък, етикети и зависимости.';
-
-  @override
   String get taskLabelName => 'Име на етикета';
-
-  @override
-  String get taskMoreDetails => 'Подробности';
 
   @override
   String get taskPlanning => 'Планиране';

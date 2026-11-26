@@ -3046,14 +3046,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get taskReminderNeedsDue => 'Imposta una scadenza per usare i promemoria relativi';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Salva prima l\'attività per aggiungere sottoattività, voci di checklist, etichette e dipendenze.';
-
-  @override
   String get taskLabelName => 'Nome dell\'etichetta';
-
-  @override
-  String get taskMoreDetails => 'Dettagli';
 
   @override
   String get taskPlanning => 'Pianificazione';

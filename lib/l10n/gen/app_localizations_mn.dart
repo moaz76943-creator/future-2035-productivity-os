@@ -3037,14 +3037,7 @@ class AppLocalizationsMn extends AppLocalizations {
   String get taskReminderNeedsDue => 'Харьцангуй сануулга ашиглахын тулд хугацаа тогтооно уу';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Дэд даалгавар, шалгах жагсаалт, шошго, хамаарал нэмэхийн тулд эхлээд даалгавраа хадгална уу.';
-
-  @override
   String get taskLabelName => 'Шошгоны нэр';
-
-  @override
-  String get taskMoreDetails => 'Дэлгэрэнгүй';
 
   @override
   String get taskPlanning => 'Төлөвлөлт';

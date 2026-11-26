@@ -3058,14 +3058,7 @@ class AppLocalizationsEu extends AppLocalizations {
   String get taskReminderNeedsDue => 'Ezarri epemuga bat gogorarazpen erlatiboak erabiltzeko';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Gorde lehenik zeregina azpizereginak, zerrendako elementuak, etiketak eta mendekotasunak gehitzeko.';
-
-  @override
   String get taskLabelName => 'Etiketaren izena';
-
-  @override
-  String get taskMoreDetails => 'Xehetasunak';
 
   @override
   String get taskPlanning => 'Plangintza';

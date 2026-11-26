@@ -3075,14 +3075,7 @@ class AppLocalizationsPa extends AppLocalizations {
   String get taskReminderNeedsDue => 'ਸਾਪੇਖ ਯਾਦ-ਸੂਚਨਾਵਾਂ ਵਰਤਣ ਲਈ ਅੰਤਿਮ ਮਿਤੀ ਸੈੱਟ ਕਰੋ';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'ਉਪ-ਕੰਮ, ਜਾਂਚ ਸੂਚੀ, ਲੇਬਲ ਅਤੇ ਨਿਰਭਰਤਾਵਾਂ ਸ਼ਾਮਲ ਕਰਨ ਲਈ ਪਹਿਲਾਂ ਕੰਮ ਰੱਖਿਅਤ ਕਰੋ।';
-
-  @override
   String get taskLabelName => 'ਲੇਬਲ ਦਾ ਨਾਮ';
-
-  @override
-  String get taskMoreDetails => 'ਵੇਰਵੇ';
 
   @override
   String get taskPlanning => 'ਯੋਜਨਾਬੰਦੀ';

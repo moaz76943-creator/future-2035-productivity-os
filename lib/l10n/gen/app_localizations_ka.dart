@@ -3034,14 +3034,7 @@ class AppLocalizationsKa extends AppLocalizations {
   String get taskReminderNeedsDue => 'ფარდობითი შეხსენებებისთვის დააყენეთ ვადა';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'ქვეამოცანების, სიის, იარლიყებისა და დამოკიდებულებების დასამატებლად ჯერ შეინახეთ ამოცანა.';
-
-  @override
   String get taskLabelName => 'იარლიყის სახელი';
-
-  @override
-  String get taskMoreDetails => 'დეტალები';
 
   @override
   String get taskPlanning => 'დაგეგმვა';

@@ -3139,14 +3139,7 @@ class AppLocalizationsBe extends AppLocalizations {
   String get taskReminderNeedsDue => 'Задайце тэрмін, каб карыстацца адноснымі напамінамі';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Спачатку захавайце задачу, каб дадаць падзадачы, пункты спіса, меткі і залежнасці.';
-
-  @override
   String get taskLabelName => 'Назва меткі';
-
-  @override
-  String get taskMoreDetails => 'Падрабязнасці';
 
   @override
   String get taskPlanning => 'Планаванне';

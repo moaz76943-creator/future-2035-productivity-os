@@ -3092,14 +3092,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get taskReminderNeedsDue => 'Pro relativní připomenutí nastavte termín';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Nejdřív úkol uložte, pak můžete přidat dílčí úkoly, položky seznamu, štítky a závislosti.';
-
-  @override
   String get taskLabelName => 'Název štítku';
-
-  @override
-  String get taskMoreDetails => 'Podrobnosti';
 
   @override
   String get taskPlanning => 'Plánování';

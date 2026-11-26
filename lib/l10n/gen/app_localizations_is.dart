@@ -3047,14 +3047,7 @@ class AppLocalizationsIs extends AppLocalizations {
   String get taskReminderNeedsDue => 'Stilltu skiladag til að nota afstæðar áminningar';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Vistaðu verkefnið fyrst til að bæta við undirverkefnum, gátlistaatriðum, merkjum og tengslum.';
-
-  @override
   String get taskLabelName => 'Heiti merkis';
-
-  @override
-  String get taskMoreDetails => 'Nánar';
 
   @override
   String get taskPlanning => 'Skipulag';

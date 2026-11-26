@@ -3133,14 +3133,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get taskReminderNeedsDue => 'Укажіть термін, щоб використовувати відносні нагадування';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Спершу збережіть завдання, щоб додати підзавдання, пункти списку, мітки й залежності.';
-
-  @override
   String get taskLabelName => 'Назва мітки';
-
-  @override
-  String get taskMoreDetails => 'Подробиці';
 
   @override
   String get taskPlanning => 'Планування';

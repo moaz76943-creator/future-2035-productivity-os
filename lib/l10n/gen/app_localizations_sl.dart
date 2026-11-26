@@ -3133,14 +3133,7 @@ class AppLocalizationsSl extends AppLocalizations {
   String get taskReminderNeedsDue => 'Nastavite rok, če želite uporabljati relativne opomnike';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Najprej shranite opravilo, da boste lahko dodali podopravila, postavke seznama, oznake in odvisnosti.';
-
-  @override
   String get taskLabelName => 'Ime oznake';
-
-  @override
-  String get taskMoreDetails => 'Podrobnosti';
 
   @override
   String get taskPlanning => 'Načrtovanje';

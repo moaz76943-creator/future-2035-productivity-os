@@ -2882,13 +2882,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get taskReminderNeedsDue => '设置截止日期后才能使用相对提醒';
 
   @override
-  String get taskSubtaskDetailsHint => '请先保存任务，再添加子任务、清单项、标签和依赖关系。';
-
-  @override
   String get taskLabelName => '标签名称';
-
-  @override
-  String get taskMoreDetails => '详情';
 
   @override
   String get taskPlanning => '规划';
@@ -7833,13 +7827,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get taskReminderNeedsDue => '設定截止日期才能使用相對提醒';
 
   @override
-  String get taskSubtaskDetailsHint => '請先儲存任務，才能新增子任務、檢查清單項目、標籤與相依任務。';
-
-  @override
   String get taskLabelName => '標籤名稱';
-
-  @override
-  String get taskMoreDetails => '詳細資料';
 
   @override
   String get taskPlanning => '規劃';

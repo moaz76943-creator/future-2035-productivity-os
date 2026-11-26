@@ -26,7 +26,8 @@ class _TabsRow extends ConsumerWidget {
       TasksTab.byCategory => l10n.tasksViewByCategory,
     };
     // Four everyday views as chips; the other six live behind one "more" chip.
-    const main = [TasksTab.today, TasksTab.inbox, TasksTab.upcoming, TasksTab.all];
+    // The everyday views; inbox, upcoming and the grouped views stay one tap away under More.
+    const main = [TasksTab.today, TasksTab.overdue, TasksTab.completed, TasksTab.all];
     final extra = [
       for (final t in TasksTab.values)
         if (!main.contains(t)) t,

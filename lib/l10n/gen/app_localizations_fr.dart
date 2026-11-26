@@ -3069,14 +3069,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get taskReminderNeedsDue => 'Définissez une échéance pour utiliser les rappels relatifs';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Enregistrez d’abord la tâche pour ajouter des sous-tâches, éléments de liste, étiquettes et dépendances.';
-
-  @override
   String get taskLabelName => 'Nom de l’étiquette';
-
-  @override
-  String get taskMoreDetails => 'Détails';
 
   @override
   String get taskPlanning => 'Planification';

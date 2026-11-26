@@ -3025,14 +3025,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get taskReminderNeedsDue => 'نسبتی یاد دہانی کے لیے آخری تاریخ مقرر کریں';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'ذیلی کام، چیک لسٹ آئٹمز، لیبلز اور انحصار شامل کرنے کے لیے پہلے کام محفوظ کریں۔';
-
-  @override
   String get taskLabelName => 'لیبل کا نام';
-
-  @override
-  String get taskMoreDetails => 'تفصیلات';
 
   @override
   String get taskPlanning => 'منصوبہ بندی';

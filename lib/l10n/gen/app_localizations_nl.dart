@@ -3038,14 +3038,7 @@ class AppLocalizationsNl extends AppLocalizations {
       'Stel een vervaldatum in om relatieve herinneringen te gebruiken';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Sla de taak eerst op om subtaken, checklistpunten, labels en afhankelijkheden toe te voegen.';
-
-  @override
   String get taskLabelName => 'Naam van het label';
-
-  @override
-  String get taskMoreDetails => 'Details';
 
   @override
   String get taskPlanning => 'Planning';

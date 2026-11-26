@@ -5197,23 +5197,11 @@ abstract class AppLocalizations {
   /// **'Set a due date to use relative reminders'**
   String get taskReminderNeedsDue;
 
-  /// Hint shown in the new task editor
-  ///
-  /// In en, this message translates to:
-  /// **'Save the task first to add subtasks, checklist items, labels and dependencies.'**
-  String get taskSubtaskDetailsHint;
-
   /// Field label
   ///
   /// In en, this message translates to:
   /// **'Label name'**
   String get taskLabelName;
-
-  /// Section header in task editor for notes and description
-  ///
-  /// In en, this message translates to:
-  /// **'Details'**
-  String get taskMoreDetails;
 
   /// Section header in task editor for dates, repeat, reminders
   ///

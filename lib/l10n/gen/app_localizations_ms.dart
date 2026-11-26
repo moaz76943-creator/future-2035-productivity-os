@@ -2950,14 +2950,7 @@ class AppLocalizationsMs extends AppLocalizations {
   String get taskReminderNeedsDue => 'Tetapkan tarikh akhir untuk menggunakan peringatan relatif';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Simpan tugasan dahulu untuk menambah subtugasan, item senarai semak, label dan kebergantungan.';
-
-  @override
   String get taskLabelName => 'Nama label';
-
-  @override
-  String get taskMoreDetails => 'Butiran';
 
   @override
   String get taskPlanning => 'Perancangan';

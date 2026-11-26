@@ -3040,14 +3040,7 @@ class AppLocalizationsHy extends AppLocalizations {
       'Սահմանեք վերջնաժամկետ՝ հարաբերական հիշեցումներ օգտագործելու համար';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Նախ պահեք առաջադրանքը՝ ենթաառաջադրանքներ, ստուգաթերթի կետեր, պիտակներ և կախվածություններ ավելացնելու համար։';
-
-  @override
   String get taskLabelName => 'Պիտակի անուն';
-
-  @override
-  String get taskMoreDetails => 'Մանրամասներ';
 
   @override
   String get taskPlanning => 'Պլանավորում';

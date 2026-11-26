@@ -3034,14 +3034,7 @@ class AppLocalizationsDa extends AppLocalizations {
   String get taskReminderNeedsDue => 'Angiv en forfaldsdato for at bruge relative påmindelser';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Gem først opgaven for at tilføje delopgaver, tjeklistepunkter, etiketter og afhængigheder.';
-
-  @override
   String get taskLabelName => 'Etikettens navn';
-
-  @override
-  String get taskMoreDetails => 'Detaljer';
 
   @override
   String get taskPlanning => 'Planlægning';

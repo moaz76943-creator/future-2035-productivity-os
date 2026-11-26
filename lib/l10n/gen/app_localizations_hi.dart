@@ -3039,14 +3039,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get taskReminderNeedsDue => 'सापेक्ष रिमाइंडर के लिए नियत तिथि तय करें';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'उप-कार्य, चेकलिस्ट आइटम, लेबल और निर्भरताएँ जोड़ने के लिए पहले कार्य सहेजें।';
-
-  @override
   String get taskLabelName => 'लेबल का नाम';
-
-  @override
-  String get taskMoreDetails => 'विवरण';
 
   @override
   String get taskPlanning => 'योजना';

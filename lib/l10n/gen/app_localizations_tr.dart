@@ -3024,14 +3024,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get taskReminderNeedsDue => 'Göreli hatırlatıcılar için bir bitiş tarihi belirle';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Alt görev, kontrol listesi öğesi, etiket ve bağımlılık eklemek için önce görevi kaydet.';
-
-  @override
   String get taskLabelName => 'Etiket adı';
-
-  @override
-  String get taskMoreDetails => 'Ayrıntılar';
 
   @override
   String get taskPlanning => 'Planlama';

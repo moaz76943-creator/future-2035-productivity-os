@@ -196,7 +196,10 @@ class Agent:
                   f'script. Nouns singular; include the article or gender marker where learners need it '
                   f'(for example German der/die/das, French le/la). Verbs in dictionary form. ' + RULES +
                   ' If the usual word is rude, inappropriate or has a bad second meaning, give "". '
-                  'Answer JSON {"id": "word", ...}.')
+                  'Follow the conventions of this language (gender, articles, formality, regional '
+                  'standard) rather than English ones. For a non-Latin script also give a short '
+                  'pronunciation in Latin letters (pinyin with tones, romaji, standard romanization). '
+                  'Answer JSON {"id": {"word": "...", "pron": "..."}, ...} (pron "" for Latin scripts).')
         review = (f'You are a native {name} reviewer. Flag ids whose {name} word is wrong, unnatural, a '
                   f'literal calque, a different sense than the note, misspelled, not in {script} script, '
                   f'or rude or inappropriate in any common meaning. {RULES}')
@@ -230,9 +233,14 @@ class Agent:
             if rest:
                 out, label = self.ask(system, json.dumps(rest, ensure_ascii=False))
                 for k, v in (out or {}).items():
+                    say = ''
+                    if isinstance(v, dict):
+                        v, say = v.get('word', ''), str(v.get('pron') or '').strip()[:60]
                     if k in rest and isinstance(v, str) and v.strip():
                         if not rules.term_problem(v, script, rest[k]['en']):
                             draft[k] = v.strip()
+                            if say and script != 'Latn':
+                                todo[k]['seed'] = (draft[k], say)  # keeps the pronunciation
             bad = self.critic(review, {k: {'en': todo[k]['en'], 'note': todo[k]['note'], 'word': v}
                                        for k, v in draft.items()}, label)
             if bad is None:

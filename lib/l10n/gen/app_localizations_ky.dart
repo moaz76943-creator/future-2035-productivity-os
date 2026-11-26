@@ -3033,14 +3033,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get taskReminderNeedsDue => 'Салыштырмалуу эскерткичтерди колдонуу үчүн мөөнөт коюңуз';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Ички тапшырмаларды, текшерүү тизмесин, энбелгилерди жана көз карандылыктарды кошуу үчүн адегенде тапшырманы сактаңыз.';
-
-  @override
   String get taskLabelName => 'Энбелгинин аталышы';
-
-  @override
-  String get taskMoreDetails => 'Чоо-жайы';
 
   @override
   String get taskPlanning => 'Пландоо';

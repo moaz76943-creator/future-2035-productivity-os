@@ -3083,14 +3083,7 @@ class AppLocalizationsKn extends AppLocalizations {
   String get taskReminderNeedsDue => 'ಸಾಪೇಕ್ಷ ಜ್ಞಾಪನೆಗಳನ್ನು ಬಳಸಲು ಕೊನೆಯ ದಿನಾಂಕ ಹೊಂದಿಸಿ';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'ಉಪಕಾರ್ಯಗಳು, ಪರಿಶೀಲನಾ ಐಟಂಗಳು, ಲೇಬಲ್‌ಗಳು ಮತ್ತು ಅವಲಂಬನೆಗಳನ್ನು ಸೇರಿಸಲು ಮೊದಲು ಕಾರ್ಯವನ್ನು ಉಳಿಸಿ.';
-
-  @override
   String get taskLabelName => 'ಲೇಬಲ್ ಹೆಸರು';
-
-  @override
-  String get taskMoreDetails => 'ವಿವರಗಳು';
 
   @override
   String get taskPlanning => 'ಯೋಜನೆ';

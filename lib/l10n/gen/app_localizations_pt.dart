@@ -3065,14 +3065,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get taskReminderNeedsDue => 'Defina um prazo para usar lembretes relativos';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Salve a tarefa primeiro para adicionar subtarefas, itens de checklist, etiquetas e dependências.';
-
-  @override
   String get taskLabelName => 'Nome da etiqueta';
-
-  @override
-  String get taskMoreDetails => 'Detalhes';
 
   @override
   String get taskPlanning => 'Planejamento';
@@ -5768,10 +5761,6 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
 
   @override
   String get taskSaved => 'Tarefa guardada';
-
-  @override
-  String get taskSubtaskDetailsHint =>
-      'Guarde a tarefa primeiro para adicionar subtarefas, itens de checklist, etiquetas e dependências.';
 
   @override
   String get taskPlanning => 'Planeamento';

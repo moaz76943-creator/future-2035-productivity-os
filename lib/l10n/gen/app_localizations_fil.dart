@@ -3043,14 +3043,7 @@ class AppLocalizationsFil extends AppLocalizations {
   String get taskReminderNeedsDue => 'Magtakda ng takdang petsa para gumamit ng relatibong paalala';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'I-save muna ang gawain para magdagdag ng subtask, checklist, label at dependency.';
-
-  @override
   String get taskLabelName => 'Pangalan ng label';
-
-  @override
-  String get taskMoreDetails => 'Mga detalye';
 
   @override
   String get taskPlanning => 'Pagpaplano';

@@ -3029,14 +3029,7 @@ class AppLocalizationsNe extends AppLocalizations {
   String get taskReminderNeedsDue => 'सापेक्ष रिमाइन्डर प्रयोग गर्न अन्तिम मिति सेट गर्नुहोस्';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'उपकार्य, जाँचसूची वस्तु, लेबल र निर्भरताहरू थप्न पहिले कार्य सुरक्षित गर्नुहोस्।';
-
-  @override
   String get taskLabelName => 'लेबलको नाम';
-
-  @override
-  String get taskMoreDetails => 'विवरणहरू';
 
   @override
   String get taskPlanning => 'योजना';

@@ -2973,14 +2973,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get taskReminderNeedsDue => 'Atur tenggat untuk memakai pengingat relatif';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Simpan tugas dulu untuk menambahkan subtugas, item daftar periksa, label, dan ketergantungan.';
-
-  @override
   String get taskLabelName => 'Nama label';
-
-  @override
-  String get taskMoreDetails => 'Detail';
 
   @override
   String get taskPlanning => 'Perencanaan';

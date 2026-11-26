@@ -3041,14 +3041,7 @@ class AppLocalizationsGl extends AppLocalizations {
   String get taskReminderNeedsDue => 'Define unha data límite para usar recordatorios relativos';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Garda primeiro a tarefa para engadir subtarefas, elementos de lista, etiquetas e dependencias.';
-
-  @override
   String get taskLabelName => 'Nome da etiqueta';
-
-  @override
-  String get taskMoreDetails => 'Detalles';
 
   @override
   String get taskPlanning => 'Planificación';

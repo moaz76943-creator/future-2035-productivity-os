@@ -2870,13 +2870,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get taskReminderNeedsDue => '相対的なリマインダーを使うには期限を設定してください';
 
   @override
-  String get taskSubtaskDetailsHint => 'サブタスク、チェック項目、ラベル、依存関係を追加するには、先にタスクを保存してください。';
-
-  @override
   String get taskLabelName => 'ラベル名';
-
-  @override
-  String get taskMoreDetails => '詳細';
 
   @override
   String get taskPlanning => '計画';

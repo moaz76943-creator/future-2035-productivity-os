@@ -3075,14 +3075,7 @@ class AppLocalizationsGu extends AppLocalizations {
   String get taskReminderNeedsDue => 'સાપેક્ષ રિમાઇન્ડર વાપરવા અંતિમ તારીખ સેટ કરો';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'પેટા-કાર્યો, ચેકલિસ્ટ, લેબલ અને નિર્ભરતા ઉમેરવા પહેલાં કાર્ય સાચવો.';
-
-  @override
   String get taskLabelName => 'લેબલનું નામ';
-
-  @override
-  String get taskMoreDetails => 'વિગતો';
 
   @override
   String get taskPlanning => 'આયોજન';

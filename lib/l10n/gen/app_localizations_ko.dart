@@ -2866,13 +2866,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get taskReminderNeedsDue => '상대적 알림을 쓰려면 마감일을 설정하세요';
 
   @override
-  String get taskSubtaskDetailsHint => '하위 작업, 체크리스트, 라벨, 선행 작업을 추가하려면 먼저 할 일을 저장하세요.';
-
-  @override
   String get taskLabelName => '라벨 이름';
-
-  @override
-  String get taskMoreDetails => '세부 정보';
 
   @override
   String get taskPlanning => '계획';

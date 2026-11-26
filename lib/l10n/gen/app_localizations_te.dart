@@ -3035,14 +3035,7 @@ class AppLocalizationsTe extends AppLocalizations {
   String get taskReminderNeedsDue => 'సాపేక్ష రిమైండర్‌లను ఉపయోగించడానికి గడువు తేదీని సెట్ చేయండి';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'ఉప పనులు, చెక్‌లిస్ట్ అంశాలు, లేబుల్‌లు, ఆధారాలను జోడించడానికి ముందుగా పనిని సేవ్ చేయండి.';
-
-  @override
   String get taskLabelName => 'లేబుల్ పేరు';
-
-  @override
-  String get taskMoreDetails => 'వివరాలు';
 
   @override
   String get taskPlanning => 'ప్లానింగ్';

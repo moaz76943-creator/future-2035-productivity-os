@@ -3035,14 +3035,7 @@ class AppLocalizationsEt extends AppLocalizations {
   String get taskReminderNeedsDue => 'Suhteliste meeldetuletuste kasutamiseks määrake tähtaeg';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Alamülesannete, kontrollnimekirja punktide, siltide ja sõltuvuste lisamiseks salvestage esmalt ülesanne.';
-
-  @override
   String get taskLabelName => 'Sildi nimi';
-
-  @override
-  String get taskMoreDetails => 'Üksikasjad';
 
   @override
   String get taskPlanning => 'Planeerimine';

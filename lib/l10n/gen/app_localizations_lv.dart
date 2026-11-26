@@ -3083,14 +3083,7 @@ class AppLocalizationsLv extends AppLocalizations {
   String get taskReminderNeedsDue => 'Iestatiet termiņu, lai izmantotu relatīvus atgādinājumus';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Vispirms saglabājiet uzdevumu, lai pievienotu apakšuzdevumus, kontrolsaraksta punktus, birkas un atkarības.';
-
-  @override
   String get taskLabelName => 'Birkas nosaukums';
-
-  @override
-  String get taskMoreDetails => 'Sīkāka informācija';
 
   @override
   String get taskPlanning => 'Plānošana';

@@ -3053,14 +3053,7 @@ class AppLocalizationsTa extends AppLocalizations {
       'தொடர்புடைய நினைவூட்டல்களைப் பயன்படுத்த இறுதித் தேதியை அமைக்கவும்';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'துணைப் பணிகள், சரிபார்ப்புப் பட்டியல், லேபிள்கள், சார்புநிலைகளைச் சேர்க்க முதலில் பணியைச் சேமிக்கவும்.';
-
-  @override
   String get taskLabelName => 'லேபிள் பெயர்';
-
-  @override
-  String get taskMoreDetails => 'விவரங்கள்';
 
   @override
   String get taskPlanning => 'திட்டமிடல்';

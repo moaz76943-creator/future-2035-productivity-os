@@ -3041,14 +3041,7 @@ class AppLocalizationsMl extends AppLocalizations {
       'ആപേക്ഷിക ഓർമ്മപ്പെടുത്തലുകൾ ഉപയോഗിക്കാൻ അവസാന തീയതി സജ്ജമാക്കുക';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'ഉപ ടാസ്‌ക്കുകൾ, ചെക്ക്‌ലിസ്റ്റ് ഇനങ്ങൾ, ലേബലുകൾ, ആശ്രിതത്വങ്ങൾ എന്നിവ ചേർക്കാൻ ആദ്യം ടാസ്‌ക് സംരക്ഷിക്കുക.';
-
-  @override
   String get taskLabelName => 'ലേബലിന്റെ പേര്';
-
-  @override
-  String get taskMoreDetails => 'വിശദാംശങ്ങൾ';
 
   @override
   String get taskPlanning => 'ആസൂത്രണം';

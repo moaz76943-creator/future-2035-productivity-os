@@ -3142,14 +3142,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get taskReminderNeedsDue => 'Задайте срок, чтобы использовать относительные напоминания';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Сначала сохраните задачу, чтобы добавить подзадачи, пункты списка, метки и зависимости.';
-
-  @override
   String get taskLabelName => 'Название метки';
-
-  @override
-  String get taskMoreDetails => 'Подробности';
 
   @override
   String get taskPlanning => 'Планирование';

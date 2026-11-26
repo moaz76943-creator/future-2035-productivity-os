@@ -3032,14 +3032,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get taskReminderNeedsDue => 'Ange ett förfallodatum för att använda relativa påminnelser';
 
   @override
-  String get taskSubtaskDetailsHint =>
-      'Spara uppgiften först för att lägga till deluppgifter, checklistpunkter, etiketter och beroenden.';
-
-  @override
   String get taskLabelName => 'Etikettens namn';
-
-  @override
-  String get taskMoreDetails => 'Detaljer';
 
   @override
   String get taskPlanning => 'Planering';
