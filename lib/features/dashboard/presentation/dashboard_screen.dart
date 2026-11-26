@@ -12,6 +12,8 @@ import '../../../core/design_system/components/landscape.dart';
 import '../../../core/design_system/components/states.dart';
 import '../../../core/design_system/components/surfaces.dart';
 import '../../../core/design_system/tokens.dart';
+import '../../../core/theme/deep_focus_visuals.dart';
+import '../../../core/widgets/deep_focus_glass.dart';
 import '../../../core/providers/core_providers.dart';
 import '../../../core/time/clock.dart';
 import '../../../core/time/hijri.dart';
@@ -37,6 +39,7 @@ import 'start_my_day.dart';
 part 'dashboard_screen/header.dart';
 part 'dashboard_screen/goal_line.dart';
 part 'dashboard_screen/stats.dart';
+part 'dashboard_screen/quick_actions.dart';
 
 /// Section ids persisted in settings.dashboardSections (order = display order).
 String dashSectionName(AppLocalizations l10n, String id) => switch (id) {

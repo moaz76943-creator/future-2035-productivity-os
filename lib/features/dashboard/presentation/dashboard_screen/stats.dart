@@ -16,7 +16,12 @@ class _HeroBackdrop extends StatelessWidget {
           children: [
             Positioned.fill(
               child: ExcludeSemantics(
-                child: CustomPaint(painter: LandscapePainter(dark: context.lux.isDark)),
+                child: Image.asset(
+                  DeepFocusAssets.homeHeaderBg,
+                  fit: BoxFit.cover,
+                  errorBuilder: (_, _, _) =>
+                      CustomPaint(painter: LandscapePainter(dark: context.lux.isDark)),
+                ),
               ),
             ),
             Padding(padding: const EdgeInsets.only(bottom: 64), child: child),

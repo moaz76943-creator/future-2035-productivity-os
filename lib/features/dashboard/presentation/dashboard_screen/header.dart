@@ -16,6 +16,14 @@ class _Header extends ConsumerWidget {
       padding: const EdgeInsetsDirectional.fromSTEB(Space.page, Space.lg, Space.xs, Space.sm),
       child: Row(
         children: [
+          const ExcludeSemantics(
+            child: DeepFocusAssetIcon(
+              assetPath: DeepFocusAssets.appLeafMark,
+              size: 36,
+              fallbackIcon: Icons.eco_rounded,
+            ),
+          ),
+          const SizedBox(width: Space.sm),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,62 +84,6 @@ class _Header extends ConsumerWidget {
               builder: (_) => const DashboardCustomizeSheet(),
             ),
           ),
-        ],
-      ),
-    );
-  }
-}
-
-class _QuickActions extends ConsumerWidget {
-  const _QuickActions();
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = context.l10n;
-    Widget action(IconData icon, String label, ModuleHue hue, Object target) => Expanded(
-      child: Semantics(
-        button: true,
-        label: label,
-        excludeSemantics: true,
-        child: InkWell(
-          borderRadius: BorderRadius.circular(Radii.lg),
-          onTap: () async {
-            if (target is String) {
-              context.push(target);
-            } else {
-              await (target as Future<void> Function())();
-            }
-          },
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: Space.xs),
-            child: Column(
-              children: [
-                IconOrb(icon: icon, hue: hue, size: 48),
-                const SizedBox(height: Space.xxs),
-                Text(
-                  label,
-                  style: context.text.labelMedium,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: Space.sm),
-      child: Row(
-        children: [
-          action(Icons.add_task_rounded, l10n.quickAddTask, ModuleHue.tasks, Routes.taskNew),
-          action(Icons.edit_note_rounded, l10n.quickAddNote, ModuleHue.notes, () async {
-            final id = await ref.read(notesRepositoryProvider).create();
-            if (context.mounted) context.push(Routes.note(id));
-          }),
-          action(Icons.event_rounded, l10n.quickAddEvent, ModuleHue.calendar, Routes.eventNew),
-          action(Icons.timer_outlined, l10n.quickStartFocus, ModuleHue.focus, Routes.focus),
         ],
       ),
     );
