@@ -5230,4 +5230,17 @@ class AppLocalizationsGl extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Ningún idioma coincide';
+
+  @override
+  String get soundsMyMusic => 'A túa música';
+
+  @override
+  String get soundsMusicHint =>
+      'Reproduce un ficheiro de audio do teléfono. Non se copia nin se sube nada.';
+
+  @override
+  String get soundsChooseMusic => 'Escoller audio';
+
+  @override
+  String get soundsRemoveMusic => 'Quitar a música';
 }

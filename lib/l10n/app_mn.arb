@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Энэ хэлний бүх текст эх хувилбар руугаа буцна.",
   "wordsNone": "Текст олдсонгүй",
   "settingsLanguageSearch": "Хэл хайх",
-  "settingsLanguageNoMatch": "Тохирох хэл алга"
+  "settingsLanguageNoMatch": "Тохирох хэл алга",
+  "soundsMyMusic": "Таны хөгжим",
+  "soundsMusicHint": "Утасныхаа аудио файлыг тоглуулна уу. Юу ч хуулагдахгүй, байршуулагдахгүй.",
+  "soundsChooseMusic": "Аудио сонгох",
+  "soundsRemoveMusic": "Хөгжмийг хасах"
 }

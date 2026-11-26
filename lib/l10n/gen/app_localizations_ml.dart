@@ -5230,4 +5230,17 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'പൊരുത്തപ്പെടുന്ന ഭാഷയില്ല';
+
+  @override
+  String get soundsMyMusic => 'നിങ്ങളുടെ സംഗീതം';
+
+  @override
+  String get soundsMusicHint =>
+      'ഫോണിലെ ഒരു ഓഡിയോ ഫയൽ പ്ലേ ചെയ്യുക. ഒന്നും പകർത്തുകയോ അപ്‌ലോഡ് ചെയ്യുകയോ ഇല്ല.';
+
+  @override
+  String get soundsChooseMusic => 'ഓഡിയോ തിരഞ്ഞെടുക്കുക';
+
+  @override
+  String get soundsRemoveMusic => 'സംഗീതം നീക്കം ചെയ്യുക';
 }

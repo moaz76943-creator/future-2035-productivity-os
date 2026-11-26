@@ -5205,4 +5205,17 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Eşleşen dil yok';
+
+  @override
+  String get soundsMyMusic => 'Müziğin';
+
+  @override
+  String get soundsMusicHint =>
+      'Telefonundaki bir ses dosyasını çal. Hiçbir şey kopyalanmaz veya yüklenmez.';
+
+  @override
+  String get soundsChooseMusic => 'Ses seç';
+
+  @override
+  String get soundsRemoveMusic => 'Müziği kaldır';
 }

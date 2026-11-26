@@ -5238,4 +5238,16 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'زبانی پیدا نشد';
+
+  @override
+  String get soundsMyMusic => 'موسیقی شما';
+
+  @override
+  String get soundsMusicHint => 'یک فایل صوتی از تلفن خود پخش کنید. چیزی کپی یا بارگذاری نمی‌شود.';
+
+  @override
+  String get soundsChooseMusic => 'انتخاب فایل صوتی';
+
+  @override
+  String get soundsRemoveMusic => 'حذف موسیقی';
 }

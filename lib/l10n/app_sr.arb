@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Сви текстови на овом језику враћају се на оригинал.",
   "wordsNone": "Није пронађен текст",
   "settingsLanguageSearch": "Претражи језике",
-  "settingsLanguageNoMatch": "Ниједан језик се не подудара"
+  "settingsLanguageNoMatch": "Ниједан језик се не подудара",
+  "soundsMyMusic": "Ваша музика",
+  "soundsMusicHint": "Пустите аудио датотеку са телефона. Ништа се не копира нити отпрема.",
+  "soundsChooseMusic": "Изаберите аудио",
+  "soundsRemoveMusic": "Уклони музику"
 }

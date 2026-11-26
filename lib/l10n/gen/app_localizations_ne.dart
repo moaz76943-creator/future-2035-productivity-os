@@ -5207,4 +5207,17 @@ class AppLocalizationsNe extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'कुनै भाषा मिलेन';
+
+  @override
+  String get soundsMyMusic => 'तपाईंको सङ्गीत';
+
+  @override
+  String get soundsMusicHint =>
+      'आफ्नो फोनको अडियो फाइल बजाउनुहोस्। केही पनि प्रतिलिपि वा अपलोड हुँदैन।';
+
+  @override
+  String get soundsChooseMusic => 'अडियो छान्नुहोस्';
+
+  @override
+  String get soundsRemoveMusic => 'सङ्गीत हटाउनुहोस्';
 }

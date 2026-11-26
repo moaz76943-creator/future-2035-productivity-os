@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Bu dildeki her metin orijinaline döner.",
   "wordsNone": "Metin bulunamadı",
   "settingsLanguageSearch": "Dil ara",
-  "settingsLanguageNoMatch": "Eşleşen dil yok"
+  "settingsLanguageNoMatch": "Eşleşen dil yok",
+  "soundsMyMusic": "Müziğin",
+  "soundsMusicHint": "Telefonundaki bir ses dosyasını çal. Hiçbir şey kopyalanmaz veya yüklenmez.",
+  "soundsChooseMusic": "Ses seç",
+  "soundsRemoveMusic": "Müziği kaldır"
 }

@@ -5221,4 +5221,17 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Тохирох хэл алга';
+
+  @override
+  String get soundsMyMusic => 'Таны хөгжим';
+
+  @override
+  String get soundsMusicHint =>
+      'Утасныхаа аудио файлыг тоглуулна уу. Юу ч хуулагдахгүй, байршуулагдахгүй.';
+
+  @override
+  String get soundsChooseMusic => 'Аудио сонгох';
+
+  @override
+  String get soundsRemoveMusic => 'Хөгжмийг хасах';
 }

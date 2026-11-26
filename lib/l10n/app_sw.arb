@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Kila maandishi katika lugha hii yanarudi kwenye asili.",
   "wordsNone": "Hakuna maandishi yaliyopatikana",
   "settingsLanguageSearch": "Tafuta lugha",
-  "settingsLanguageNoMatch": "Hakuna lugha inayolingana"
+  "settingsLanguageNoMatch": "Hakuna lugha inayolingana",
+  "soundsMyMusic": "Muziki wako",
+  "soundsMusicHint": "Cheza faili ya sauti kutoka kwenye simu yako. Hakuna kinachonakiliwa wala kupakiwa.",
+  "soundsChooseMusic": "Chagua sauti",
+  "soundsRemoveMusic": "Ondoa muziki"
 }

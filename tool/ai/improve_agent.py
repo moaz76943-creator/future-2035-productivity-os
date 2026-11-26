@@ -50,6 +50,25 @@ def parse(text):
     return json.loads(re.sub(r'^```(?:json)?|```$', '', text.strip(), flags=re.M))
 
 
+def next_task():
+    """First open task in ai/tasks.md with the files it may change, or (None, [])."""
+    try:
+        text = open('ai/tasks.md', encoding='utf-8').read()
+    except OSError:
+        return None, []
+    open_tasks = []
+    for block in re.split(r'\n(?=- \[)', text):
+        if block.startswith('- [ ]'):
+            files = [f for f in re.findall(r'`([^`]+\.dart)`', block) if os.path.exists(f) and not SKIP.search(f)]
+            if files:
+                open_tasks.append((' '.join(block[5:].split()), files[:3]))
+    if not open_tasks:
+        return None, []
+    # Rotate through the open tasks, so one hard task never blocks the others.
+    slot = datetime.date.today().toordinal() * 24 + datetime.datetime.utcnow().hour
+    return open_tasks[(slot // 6) % len(open_tasks)]
+
+
 def pick():
     if '--file' in sys.argv:
         return sys.argv[sys.argv.index('--file') + 1]
@@ -60,12 +79,17 @@ def pick():
 
 def main():
     os.chdir(ROOT)
-    path = pick()
+    slot = datetime.date.today().toordinal() * 24 + datetime.datetime.utcnow().hour
+    task, files = next_task() if '--file' not in sys.argv and slot % 2 == 0 else (None, [])
+    path = files[0] if files else pick()
     if not path:
         return 0
     router = Router()
-    source = open(path, encoding='utf-8').read()[:30000]
-    note = {'file': path, 'kept': False}
+    paths = files or [path]
+    source = '\n'.join(f'File {p}:\n```dart\n{open(p, encoding="utf-8").read()[:30000]}\n```' for p in paths)
+    ask = (f'TASK (do exactly this, as one patch over these files): {task}\n\n{source}' if task
+           else source)
+    note = {'file': path, 'task': task, 'kept': False}
 
     def check(text):
         try:
@@ -75,7 +99,7 @@ def main():
         return None if isinstance(out, dict) and isinstance(out.get('findings', []), list) else 'bad shape'
 
     try:
-        text, label = router.ask(SYSTEM, f'File {path}:\n```dart\n{source}\n```', check)
+        text, label = router.ask(SYSTEM, ask, check)
     except NoModelAvailable:
         print('no model available')
         return 0
@@ -105,7 +129,7 @@ def main():
     router.save()
     os.makedirs('ai/reports', exist_ok=True)
     with open(f'ai/reports/improve-{datetime.date.today().isoformat()}.md', 'a', encoding='utf-8') as f:
-        f.write(f'## {path} ({label})\n- patch: {verdict}\n- why: {str(out.get("why", ""))[:200]}\n')
+        f.write(f'## {"task: " + task[:120] if task else path} ({label})\n- patch: {verdict}\n- why: {str(out.get("why", ""))[:200]}\n')
         for x in findings:
             f.write(f'- finding: {x}\n')
         f.write('\n')

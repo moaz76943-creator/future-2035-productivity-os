@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Bu dildəki bütün mətnlər orijinala qayıdır.",
   "wordsNone": "Mətn tapılmadı",
   "settingsLanguageSearch": "Dil axtar",
-  "settingsLanguageNoMatch": "Uyğun dil yoxdur"
+  "settingsLanguageNoMatch": "Uyğun dil yoxdur",
+  "soundsMyMusic": "Musiqiniz",
+  "soundsMusicHint": "Telefonunuzdan audio faylı oxudun. Heç nə kopyalanmır və yüklənmir.",
+  "soundsChooseMusic": "Audio seçin",
+  "soundsRemoveMusic": "Musiqini sil"
 }

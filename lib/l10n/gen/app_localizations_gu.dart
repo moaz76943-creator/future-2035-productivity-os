@@ -5262,4 +5262,16 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'કોઈ મેળ ખાતી ભાષા નથી';
+
+  @override
+  String get soundsMyMusic => 'તમારું સંગીત';
+
+  @override
+  String get soundsMusicHint => 'તમારા ફોનની ઑડિયો ફાઇલ વગાડો. કંઈ કૉપિ કે અપલોડ થતું નથી.';
+
+  @override
+  String get soundsChooseMusic => 'ઑડિયો પસંદ કરો';
+
+  @override
+  String get soundsRemoveMusic => 'સંગીત દૂર કરો';
 }

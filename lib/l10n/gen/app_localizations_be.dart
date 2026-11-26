@@ -5356,4 +5356,17 @@ class AppLocalizationsBe extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Няма адпаведнай мовы';
+
+  @override
+  String get soundsMyMusic => 'Ваша музыка';
+
+  @override
+  String get soundsMusicHint =>
+      'Прайгравайце аўдыяфайл з тэлефона. Нічога не капіюецца і не запампоўваецца.';
+
+  @override
+  String get soundsChooseMusic => 'Выбраць аўдыя';
+
+  @override
+  String get soundsRemoveMusic => 'Прыбраць музыку';
 }

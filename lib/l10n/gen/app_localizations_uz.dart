@@ -5221,4 +5221,17 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Mos til yoʻq';
+
+  @override
+  String get soundsMyMusic => 'Musiqangiz';
+
+  @override
+  String get soundsMusicHint =>
+      'Telefoningizdagi audio faylni ijro eting. Hech narsa nusxalanmaydi yoki yuklanmaydi.';
+
+  @override
+  String get soundsChooseMusic => 'Audio tanlash';
+
+  @override
+  String get soundsRemoveMusic => 'Musiqani olib tashlash';
 }

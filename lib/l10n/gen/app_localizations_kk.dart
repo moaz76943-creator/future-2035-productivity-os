@@ -5215,4 +5215,17 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Сәйкес тіл жоқ';
+
+  @override
+  String get soundsMyMusic => 'Сіздің музыкаңыз';
+
+  @override
+  String get soundsMusicHint =>
+      'Телефондағы аудиофайлды ойнатыңыз. Ештеңе көшірілмейді не жүктелмейді.';
+
+  @override
+  String get soundsChooseMusic => 'Аудио таңдау';
+
+  @override
+  String get soundsRemoveMusic => 'Музыканы алып тастау';
 }

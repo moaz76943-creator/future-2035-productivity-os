@@ -5295,4 +5295,17 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Žiadny jazyk nezodpovedá';
+
+  @override
+  String get soundsMyMusic => 'Vaša hudba';
+
+  @override
+  String get soundsMusicHint =>
+      'Prehrajte zvukový súbor z telefónu. Nič sa nekopíruje ani nenahráva.';
+
+  @override
+  String get soundsChooseMusic => 'Vybrať zvuk';
+
+  @override
+  String get soundsRemoveMusic => 'Odstrániť hudbu';
 }

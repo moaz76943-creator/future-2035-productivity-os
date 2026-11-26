@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Alla texter på det här språket går tillbaka till originalet.",
   "wordsNone": "Ingen text hittades",
   "settingsLanguageSearch": "Sök språk",
-  "settingsLanguageNoMatch": "Inget språk matchar"
+  "settingsLanguageNoMatch": "Inget språk matchar",
+  "soundsMyMusic": "Din musik",
+  "soundsMusicHint": "Spela upp en ljudfil från telefonen. Inget kopieras eller laddas upp.",
+  "soundsChooseMusic": "Välj ljud",
+  "soundsRemoveMusic": "Ta bort musik"
 }

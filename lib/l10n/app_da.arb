@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Alle tekster på dette sprog går tilbage til originalen.",
   "wordsNone": "Ingen tekst fundet",
   "settingsLanguageSearch": "Søg efter sprog",
-  "settingsLanguageNoMatch": "Intet sprog passer"
+  "settingsLanguageNoMatch": "Intet sprog passer",
+  "soundsMyMusic": "Din musik",
+  "soundsMusicHint": "Afspil en lydfil fra din telefon. Intet kopieres eller uploades.",
+  "soundsChooseMusic": "Vælg lyd",
+  "soundsRemoveMusic": "Fjern musik"
 }

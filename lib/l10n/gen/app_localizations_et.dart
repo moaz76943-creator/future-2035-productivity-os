@@ -5215,4 +5215,17 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Ükski keel ei sobi';
+
+  @override
+  String get soundsMyMusic => 'Sinu muusika';
+
+  @override
+  String get soundsMusicHint =>
+      'Esita helifail oma telefonist. Midagi ei kopeerita ega laadita üles.';
+
+  @override
+  String get soundsChooseMusic => 'Vali heli';
+
+  @override
+  String get soundsRemoveMusic => 'Eemalda muusika';
 }

@@ -33,26 +33,47 @@ const sleepChoices = [0, 15, 30, 45, 60, 90, 120];
 
 /// What is playing: volumes (0..1) of the sounds in the mix, play state and
 /// the remaining sleep time.
+/// The person's own audio file, played under the nature sounds. Only its name is
+/// known here: the file stays on the phone and is never copied or uploaded.
+class MusicPick {
+  const MusicPick({required this.name, this.volume = 0.8});
+
+  final String name;
+  final double volume;
+}
+
 class SoundMix {
   const SoundMix({
     this.volumes = const {},
     this.playing = false,
     this.sleepRemaining = Duration.zero,
+    this.music,
   });
 
   final Map<NatureSound, double> volumes;
   final bool playing;
   final Duration sleepRemaining;
+  final MusicPick? music;
 
+  /// No nature sounds (own music may still be chosen, see [isSilent]).
   bool get isEmpty => volumes.isEmpty;
+
+  /// Nothing to play at all: no nature sounds and no own music.
+  bool get isSilent => volumes.isEmpty && music == null;
   bool contains(NatureSound s) => volumes.containsKey(s);
 
-  SoundMix copyWith({Map<NatureSound, double>? volumes, bool? playing, Duration? sleepRemaining}) =>
-      SoundMix(
-        volumes: volumes ?? this.volumes,
-        playing: playing ?? this.playing,
-        sleepRemaining: sleepRemaining ?? this.sleepRemaining,
-      );
+  SoundMix copyWith({
+    Map<NatureSound, double>? volumes,
+    bool? playing,
+    Duration? sleepRemaining,
+    MusicPick? music,
+    bool clearMusic = false,
+  }) => SoundMix(
+    volumes: volumes ?? this.volumes,
+    playing: playing ?? this.playing,
+    sleepRemaining: sleepRemaining ?? this.sleepRemaining,
+    music: clearMusic ? null : music ?? this.music,
+  );
 
   /// Builds a mix from the engine's state map (unknown ids are ignored).
   static SoundMix fromState(Map<Object?, Object?> m) {
@@ -64,7 +85,16 @@ class SoundMix {
             s: (e.value! as num).toDouble().clamp(0.0, 1.0),
     };
     final ms = m['sleepRemainingMs'];
+    final music = m['music'];
     return SoundMix(
+      music: music is Map
+          ? MusicPick(
+              name: '${music['name'] ?? ''}',
+              volume: music['volume'] is num
+                  ? (music['volume']! as num).toDouble().clamp(0.0, 1.0)
+                  : 0.8,
+            )
+          : null,
       volumes: volumes,
       playing: m['playing'] == true,
       sleepRemaining: Duration(milliseconds: ms is int ? ms : 0),

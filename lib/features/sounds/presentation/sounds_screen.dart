@@ -9,6 +9,7 @@ import '../../../shared/widgets/dialogs.dart';
 import '../../../shared/widgets/module_scaffold.dart';
 import '../application/sounds_controller.dart';
 import '../domain/nature_sound.dart';
+import 'widgets/music_card.dart';
 import 'widgets/player_bar.dart';
 import 'widgets/presets_row.dart';
 import 'widgets/sound_tile.dart';
@@ -53,7 +54,7 @@ class SoundsScreen extends ConsumerWidget {
       title: l10n.soundsTitle,
       hue: ModuleHue.sounds,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: mix.isEmpty ? null : const SoundPlayerBar(),
+      floatingActionButton: mix.isSilent ? null : const SoundPlayerBar(),
       slivers: [
         if (mix.isEmpty)
           SliverToBoxAdapter(
@@ -63,6 +64,7 @@ class SoundsScreen extends ConsumerWidget {
             ),
           ),
         const SliverToBoxAdapter(child: SoundsExtras()),
+        const SliverToBoxAdapter(child: MusicCard()),
         SliverToBoxAdapter(child: SectionHeader(title: l10n.soundsNature)),
         grid(SoundGroup.nature),
         SliverToBoxAdapter(child: SectionHeader(title: l10n.soundsNoise)),

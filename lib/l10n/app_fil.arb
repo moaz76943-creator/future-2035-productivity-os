@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Babalik sa orihinal ang bawat teksto sa wikang ito.",
   "wordsNone": "Walang nakitang teksto",
   "settingsLanguageSearch": "Maghanap ng wika",
-  "settingsLanguageNoMatch": "Walang tugmang wika"
+  "settingsLanguageNoMatch": "Walang tugmang wika",
+  "soundsMyMusic": "Iyong musika",
+  "soundsMusicHint": "Magpatugtog ng audio file mula sa iyong telepono. Walang kinokopya o ina-upload.",
+  "soundsChooseMusic": "Pumili ng audio",
+  "soundsRemoveMusic": "Alisin ang musika"
 }

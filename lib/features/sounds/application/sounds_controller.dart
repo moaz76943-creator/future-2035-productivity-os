@@ -132,10 +132,31 @@ class SoundsController extends Notifier<SoundMix> {
     await _sync();
   }
 
-  /// Stops and empties the mix.
+  /// Chooses an audio file from the phone and plays it under the mix.
+  Future<bool> pickMusic(Map<String, String> labels) async {
+    final ok = await _platform.pickMusic();
+    if (ok) {
+      await _askNotificationsOnce();
+      await _platform.play(labels);
+    }
+    await _sync();
+    return ok;
+  }
+
+  Future<void> clearMusic() async {
+    await _platform.clearMusic();
+    await _sync();
+  }
+
+  Future<void> setMusicVolume(double volume) async {
+    await _platform.setMusicVolume(volume);
+    await _sync();
+  }
+
+  /// Stops and empties the mix (the chosen music stays chosen).
   Future<void> stop() async {
     await _platform.stop();
-    state = const SoundMix();
+    state = SoundMix(music: state.music);
     await _save();
   }
 

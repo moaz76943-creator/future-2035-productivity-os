@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "ഈ ഭാഷയിലെ എല്ലാ ടെക്സ്റ്റും യഥാർത്ഥത്തിലേക്ക് മടങ്ങും.",
   "wordsNone": "ടെക്സ്റ്റ് കണ്ടെത്തിയില്ല",
   "settingsLanguageSearch": "ഭാഷകൾ തിരയുക",
-  "settingsLanguageNoMatch": "പൊരുത്തപ്പെടുന്ന ഭാഷയില്ല"
+  "settingsLanguageNoMatch": "പൊരുത്തപ്പെടുന്ന ഭാഷയില്ല",
+  "soundsMyMusic": "നിങ്ങളുടെ സംഗീതം",
+  "soundsMusicHint": "ഫോണിലെ ഒരു ഓഡിയോ ഫയൽ പ്ലേ ചെയ്യുക. ഒന്നും പകർത്തുകയോ അപ്‌ലോഡ് ചെയ്യുകയോ ഇല്ല.",
+  "soundsChooseMusic": "ഓഡിയോ തിരഞ്ഞെടുക്കുക",
+  "soundsRemoveMusic": "സംഗീതം നീക്കം ചെയ്യുക"
 }

@@ -5199,6 +5199,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'No language matches';
+
+  @override
+  String get soundsMyMusic => 'Your music';
+
+  @override
+  String get soundsMusicHint =>
+      'Play an audio file from your phone. Nothing is copied or uploaded.';
+
+  @override
+  String get soundsChooseMusic => 'Choose audio';
+
+  @override
+  String get soundsRemoveMusic => 'Remove music';
 }
 
 /// The translations for English, as used in the United Kingdom (`en_GB`).

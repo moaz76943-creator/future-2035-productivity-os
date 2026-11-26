@@ -1,0 +1,55 @@
+name: DF AI watch (daily Arabic summary + stall alarm)
+
+# Every 6 hours: rewrites one issue "تقرير الوكلاء" with today's agent work in Arabic,
+# and comments on it (which notifies the owner) when the agents kept nothing for
+# 6 hours, e.g. every key is out of quota. Read-only for code: it writes issues only.
+on:
+  schedule:
+    - cron: '41 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Summarise and alert
+        run: |
+          set -uo pipefail
+          git fetch -q origin '+refs/heads/ai-drafts/*:refs/remotes/origin/ai-drafts/*' || true
+          day="origin/ai-drafts/day-$(date -u +%Y%m%d)"
+          count() { git log "$day" --since=midnight --format=%s 2>/dev/null | grep -c "$1" || true; }
+          if git rev-parse -q --verify "$day" >/dev/null; then
+            kept=$(count 'passed gates'); dropped=$(count 'failed gates')
+            rev=$(count 'AI review'); tst=$(count 'AI tests'); imp=$(count 'AI improve')
+            last=$(git log -1 --format=%ct "$day")
+          else
+            kept=0; dropped=0; rev=0; tst=0; imp=0; last=0
+          fi
+          merged=$(git log origin/claude-dev --since=midnight --format=%s | grep -c '^AI translation fixes (auto' || true)
+          body=$(printf '%s\n' \
+            "**تقرير الوكلاء — $(date -u +%Y-%m-%d) (آخر تحديث $(date -u +%H:%M) UTC)**" "" \
+            "- شغل نجح بالفحوصات: $kept" \
+            "- شغل انرفض من الفحوصات: $dropped" \
+            "- مراجعات ترجمة: $rev · اختبارات جديدة: $tst · تحسينات كود: $imp" \
+            "- تصحيحات ترجمة اندمجت تلقائيًا: $merged" "" \
+            "الفرع: \`${day#origin/}\` — Claude براجع الباقي ويدمج الجيد.")
+          num=$(gh issue list --state open --search 'in:title "تقرير الوكلاء"' --json number --jq '.[0].number' || true)
+          if [ -z "$num" ]; then
+            gh issue create --title "تقرير الوكلاء" --body "$body"
+          else
+            gh issue edit "$num" --body "$body"
+            idle=$(( $(date +%s) - last ))
+            if [ "$idle" -gt 21600 ]; then
+              gh issue comment "$num" --body "⚠️ الوكلاء ما سجّلوا أي شغل آخر 6 ساعات. ممكن المفاتيح خلصت أو في عطل. Claude بيفحص لما يرجع."
+            fi
+          fi

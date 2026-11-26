@@ -5292,4 +5292,17 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Žádný jazyk neodpovídá';
+
+  @override
+  String get soundsMyMusic => 'Vaše hudba';
+
+  @override
+  String get soundsMusicHint =>
+      'Přehrajte zvukový soubor z telefonu. Nic se nekopíruje ani nenahrává.';
+
+  @override
+  String get soundsChooseMusic => 'Vybrat zvuk';
+
+  @override
+  String get soundsRemoveMusic => 'Odebrat hudbu';
 }

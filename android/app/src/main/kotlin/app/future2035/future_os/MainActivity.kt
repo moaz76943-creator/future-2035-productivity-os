@@ -41,7 +41,9 @@ class MainActivity : FlutterActivity() {
         super.configureFlutterEngine(flutterEngine)
         // Nature sounds (playback lives in SoundEngine / SoundscapeService).
         soundscape?.detach()
-        soundscape = SoundscapeChannel(applicationContext, flutterEngine.dartExecutor.binaryMessenger)
+        soundscape = SoundscapeChannel(applicationContext, flutterEngine.dartExecutor.binaryMessenger).also {
+            it.pickAudio = { result -> pickMusic(result) }
+        }
 
         // Phone text-to-speech for flashcards (all installed languages).
         speech?.dispose()
@@ -148,6 +150,19 @@ class MainActivity : FlutterActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: android.content.Intent?) {
         @Suppress("DEPRECATION")
         super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == MUSIC_REQUEST) {
+            val r = pendingMusic ?: return
+            pendingMusic = null
+            val uri = if (resultCode == RESULT_OK) data?.data else null
+            if (uri != null) {
+                try {
+                    contentResolver.takePersistableUriPermission(uri, android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                } catch (_: SecurityException) {}
+                app.future2035.future_os.sound.MusicTrack.choose(uri)
+            }
+            r.success(uri != null)
+            return
+        }
         if (requestCode != SPEECH_REQUEST) return
         val r = pendingSpeech ?: return
         pendingSpeech = null
@@ -155,6 +170,25 @@ class MainActivity : FlutterActivity() {
             data?.getStringArrayListExtra(android.speech.RecognizerIntent.EXTRA_RESULTS)?.firstOrNull()
         } else null
         r.success(text)
+    }
+
+    private var pendingMusic: MethodChannel.Result? = null
+
+    /** System picker for the person's own audio file; the file is not copied. */
+    private fun pickMusic(result: MethodChannel.Result) {
+        pendingMusic?.success(false)
+        pendingMusic = result
+        val intent = android.content.Intent(android.content.Intent.ACTION_OPEN_DOCUMENT)
+            .addCategory(android.content.Intent.CATEGORY_OPENABLE)
+            .setType("audio/*")
+            .addFlags(android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION or android.content.Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION)
+        try {
+            @Suppress("DEPRECATION")
+            startActivityForResult(intent, MUSIC_REQUEST)
+        } catch (e: android.content.ActivityNotFoundException) {
+            pendingMusic = null
+            result.success(false)
+        }
     }
 
     /** Plays a card's audio clip from the app cache. One clip at a time. */
@@ -302,5 +336,6 @@ class MainActivity : FlutterActivity() {
     private companion object {
         const val RECORD_REQUEST = 4207
         const val SPEECH_REQUEST = 4208
+        const val MUSIC_REQUEST = 4209
     }
 }

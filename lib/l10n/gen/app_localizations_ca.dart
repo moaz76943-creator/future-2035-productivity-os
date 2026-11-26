@@ -5235,4 +5235,17 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Cap idioma coincideix';
+
+  @override
+  String get soundsMyMusic => 'La teva música';
+
+  @override
+  String get soundsMusicHint =>
+      'Reprodueix un fitxer d\'àudio del telèfon. No es copia ni es puja res.';
+
+  @override
+  String get soundsChooseMusic => 'Tria un àudio';
+
+  @override
+  String get soundsRemoveMusic => 'Treu la música';
 }

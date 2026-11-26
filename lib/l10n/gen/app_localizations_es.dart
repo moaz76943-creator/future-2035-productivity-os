@@ -5221,6 +5221,19 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Ningún idioma coincide';
+
+  @override
+  String get soundsMyMusic => 'Tu música';
+
+  @override
+  String get soundsMusicHint =>
+      'Reproduce un archivo de audio de tu teléfono. No se copia ni se sube nada.';
+
+  @override
+  String get soundsChooseMusic => 'Elegir audio';
+
+  @override
+  String get soundsRemoveMusic => 'Quitar música';
 }
 
 /// The translations for Spanish Castilian, as used in Latin America and the Caribbean (`es_419`).

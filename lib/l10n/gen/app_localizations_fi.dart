@@ -5232,4 +5232,17 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Yksikään kieli ei vastaa';
+
+  @override
+  String get soundsMyMusic => 'Oma musiikki';
+
+  @override
+  String get soundsMusicHint =>
+      'Toista äänitiedosto puhelimestasi. Mitään ei kopioida eikä ladata palvelimelle.';
+
+  @override
+  String get soundsChooseMusic => 'Valitse ääni';
+
+  @override
+  String get soundsRemoveMusic => 'Poista musiikki';
 }

@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "ამ ენის ყველა ტექსტი ორიგინალს დაუბრუნდება.",
   "wordsNone": "ტექსტი ვერ მოიძებნა",
   "settingsLanguageSearch": "ენების ძიება",
-  "settingsLanguageNoMatch": "შესაბამისი ენა არ არის"
+  "settingsLanguageNoMatch": "შესაბამისი ენა არ არის",
+  "soundsMyMusic": "თქვენი მუსიკა",
+  "soundsMusicHint": "დაუკარით აუდიოფაილი ტელეფონიდან. არაფერი კოპირდება ან იტვირთება.",
+  "soundsChooseMusic": "აუდიოს არჩევა",
+  "soundsRemoveMusic": "მუსიკის წაშლა"
 }

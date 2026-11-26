@@ -5222,4 +5222,17 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Nincs egyező nyelv';
+
+  @override
+  String get soundsMyMusic => 'Saját zene';
+
+  @override
+  String get soundsMusicHint =>
+      'Játssz le egy hangfájlt a telefonodról. Semmi sem lesz másolva vagy feltöltve.';
+
+  @override
+  String get soundsChooseMusic => 'Hang kiválasztása';
+
+  @override
+  String get soundsRemoveMusic => 'Zene eltávolítása';
 }

@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Jeder Text in dieser Sprache kehrt zum Original zurück.",
   "wordsNone": "Kein Text gefunden",
   "settingsLanguageSearch": "Sprache suchen",
-  "settingsLanguageNoMatch": "Keine passende Sprache"
+  "settingsLanguageNoMatch": "Keine passende Sprache",
+  "soundsMyMusic": "Deine Musik",
+  "soundsMusicHint": "Spiele eine Audiodatei von deinem Handy ab. Nichts wird kopiert oder hochgeladen.",
+  "soundsChooseMusic": "Audio wählen",
+  "soundsRemoveMusic": "Musik entfernen"
 }

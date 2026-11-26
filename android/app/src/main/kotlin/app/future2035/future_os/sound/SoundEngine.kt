@@ -48,6 +48,8 @@ object SoundEngine {
     fun init(context: Context) {
         if (app == null) app = context.applicationContext
         if (samples == null) samples = AssetSamples(context)
+        MusicTrack.init(context)
+        MusicTrack.onChange = { changed() }
     }
 
     fun addListener(l: () -> Unit) = listeners.add(l)
@@ -55,23 +57,24 @@ object SoundEngine {
     private fun changed() = main.post { listeners.forEach { it() } }
 
     fun volumes(): Map<String, Float> = mixer.volumes()
-    fun isEmpty(): Boolean = mixer.isEmpty()
+    fun isEmpty(): Boolean = mixer.isEmpty() && !MusicTrack.has()
 
     /** Sets one sound's volume (0 removes it). False when the mix is full. */
     fun setVolume(id: String, volume: Float): Boolean {
         val ok = mixer.setVolume(id, volume)
-        if (mixer.isEmpty() && playing) stop() else changed()
+        if (isEmpty() && playing) stop() else changed()
         return ok
     }
 
     fun play() {
-        if (mixer.isEmpty()) return
+        if (isEmpty()) return
         if (!requestFocus()) return
         synchronized(lock) {
             playing = true
             mixer.fadeMaster(true, 1.5f)
-            if (!alive) startThread()
+            if (!alive && !mixer.isEmpty()) startThread()
         }
+        MusicTrack.play()
         changed()
     }
 
@@ -80,6 +83,7 @@ object SoundEngine {
             playing = false
             mixer.fadeMaster(false, fadeSeconds)
         }
+        MusicTrack.pause()
         changed()
     }
 
@@ -105,10 +109,14 @@ object SoundEngine {
         changed()
     }
 
-    private val sleepFade = Runnable { synchronized(lock) { mixer.fadeMaster(false, SLEEP_FADE_MS / 1000f) } }
+    private val sleepFade = Runnable {
+        synchronized(lock) { mixer.fadeMaster(false, SLEEP_FADE_MS / 1000f) }
+        MusicTrack.fadeOut(SLEEP_FADE_MS / 1000f)
+    }
     private val sleepStop = Runnable {
         sleepEndsAt = 0L
         synchronized(lock) { playing = false }
+        MusicTrack.pause()
         abandonFocus()
         changed()
     }

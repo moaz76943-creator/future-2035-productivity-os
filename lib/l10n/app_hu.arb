@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Ezen a nyelven minden szöveg visszaáll az eredetire.",
   "wordsNone": "Nem található szöveg",
   "settingsLanguageSearch": "Nyelvek keresése",
-  "settingsLanguageNoMatch": "Nincs egyező nyelv"
+  "settingsLanguageNoMatch": "Nincs egyező nyelv",
+  "soundsMyMusic": "Saját zene",
+  "soundsMusicHint": "Játssz le egy hangfájlt a telefonodról. Semmi sem lesz másolva vagy feltöltve.",
+  "soundsChooseMusic": "Hang kiválasztása",
+  "soundsRemoveMusic": "Zene eltávolítása"
 }

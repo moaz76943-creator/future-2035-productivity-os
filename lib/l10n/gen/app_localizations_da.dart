@@ -5216,4 +5216,16 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Intet sprog passer';
+
+  @override
+  String get soundsMyMusic => 'Din musik';
+
+  @override
+  String get soundsMusicHint => 'Afspil en lydfil fra din telefon. Intet kopieres eller uploades.';
+
+  @override
+  String get soundsChooseMusic => 'Vælg lyd';
+
+  @override
+  String get soundsRemoveMusic => 'Fjern musik';
 }

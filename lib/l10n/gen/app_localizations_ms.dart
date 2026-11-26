@@ -5111,4 +5111,17 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Tiada bahasa yang sepadan';
+
+  @override
+  String get soundsMyMusic => 'Muzik anda';
+
+  @override
+  String get soundsMusicHint =>
+      'Mainkan fail audio daripada telefon anda. Tiada apa-apa disalin atau dimuat naik.';
+
+  @override
+  String get soundsChooseMusic => 'Pilih audio';
+
+  @override
+  String get soundsRemoveMusic => 'Alih keluar muzik';
 }

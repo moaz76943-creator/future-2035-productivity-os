@@ -5278,4 +5278,17 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'ಯಾವುದೇ ಭಾಷೆ ಹೊಂದುತ್ತಿಲ್ಲ';
+
+  @override
+  String get soundsMyMusic => 'ನಿಮ್ಮ ಸಂಗೀತ';
+
+  @override
+  String get soundsMusicHint =>
+      'ನಿಮ್ಮ ಫೋನ್‌ನ ಆಡಿಯೋ ಫೈಲ್ ಪ್ಲೇ ಮಾಡಿ. ಯಾವುದನ್ನೂ ನಕಲಿಸುವುದಿಲ್ಲ ಅಥವಾ ಅಪ್‌ಲೋಡ್ ಮಾಡುವುದಿಲ್ಲ.';
+
+  @override
+  String get soundsChooseMusic => 'ಆಡಿಯೋ ಆಯ್ಕೆಮಾಡಿ';
+
+  @override
+  String get soundsRemoveMusic => 'ಸಂಗೀತ ತೆಗೆದುಹಾಕಿ';
 }

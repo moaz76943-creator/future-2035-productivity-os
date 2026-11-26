@@ -5124,4 +5124,17 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Tidak ada bahasa yang cocok';
+
+  @override
+  String get soundsMyMusic => 'Musik Anda';
+
+  @override
+  String get soundsMusicHint =>
+      'Putar file audio dari ponsel Anda. Tidak ada yang disalin atau diunggah.';
+
+  @override
+  String get soundsChooseMusic => 'Pilih audio';
+
+  @override
+  String get soundsRemoveMusic => 'Hapus musik';
 }

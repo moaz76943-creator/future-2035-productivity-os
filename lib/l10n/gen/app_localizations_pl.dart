@@ -5317,4 +5317,17 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Brak pasującego języka';
+
+  @override
+  String get soundsMyMusic => 'Twoja muzyka';
+
+  @override
+  String get soundsMusicHint =>
+      'Odtwórz plik audio z telefonu. Nic nie jest kopiowane ani przesyłane.';
+
+  @override
+  String get soundsChooseMusic => 'Wybierz dźwięk';
+
+  @override
+  String get soundsRemoveMusic => 'Usuń muzykę';
 }

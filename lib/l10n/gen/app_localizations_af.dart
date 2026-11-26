@@ -5214,4 +5214,17 @@ class AppLocalizationsAf extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Geen taal pas nie';
+
+  @override
+  String get soundsMyMusic => 'Jou musiek';
+
+  @override
+  String get soundsMusicHint =>
+      'Speel \'n oudiolêer van jou foon. Niks word gekopieer of opgelaai nie.';
+
+  @override
+  String get soundsChooseMusic => 'Kies oudio';
+
+  @override
+  String get soundsRemoveMusic => 'Verwyder musiek';
 }

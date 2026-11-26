@@ -5056,4 +5056,16 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'ไม่พบภาษาที่ตรงกัน';
+
+  @override
+  String get soundsMyMusic => 'เพลงของคุณ';
+
+  @override
+  String get soundsMusicHint => 'เล่นไฟล์เสียงจากโทรศัพท์ของคุณ ไม่มีการคัดลอกหรืออัปโหลดใดๆ';
+
+  @override
+  String get soundsChooseMusic => 'เลือกไฟล์เสียง';
+
+  @override
+  String get soundsRemoveMusic => 'นำเพลงออก';
 }

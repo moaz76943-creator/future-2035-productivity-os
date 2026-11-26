@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "ఈ భాషలోని ప్రతి వచనం అసలుకు తిరిగి వెళ్తుంది.",
   "wordsNone": "వచనం కనుగొనబడలేదు",
   "settingsLanguageSearch": "భాషలను శోధించు",
-  "settingsLanguageNoMatch": "సరిపోయే భాష లేదు"
+  "settingsLanguageNoMatch": "సరిపోయే భాష లేదు",
+  "soundsMyMusic": "మీ సంగీతం",
+  "soundsMusicHint": "మీ ఫోన్‌లోని ఆడియో ఫైల్‌ను ప్లే చేయండి. ఏదీ కాపీ లేదా అప్‌లోడ్ చేయబడదు.",
+  "soundsChooseMusic": "ఆడియో ఎంచుకోండి",
+  "soundsRemoveMusic": "సంగీతం తీసివేయి"
 }

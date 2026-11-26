@@ -5219,4 +5219,16 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'შესაბამისი ენა არ არის';
+
+  @override
+  String get soundsMyMusic => 'თქვენი მუსიკა';
+
+  @override
+  String get soundsMusicHint => 'დაუკარით აუდიოფაილი ტელეფონიდან. არაფერი კოპირდება ან იტვირთება.';
+
+  @override
+  String get soundsChooseMusic => 'აუდიოს არჩევა';
+
+  @override
+  String get soundsRemoveMusic => 'მუსიკის წაშლა';
 }

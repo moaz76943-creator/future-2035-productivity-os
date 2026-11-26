@@ -5212,4 +5212,17 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Hakuna lugha inayolingana';
+
+  @override
+  String get soundsMyMusic => 'Muziki wako';
+
+  @override
+  String get soundsMusicHint =>
+      'Cheza faili ya sauti kutoka kwenye simu yako. Hakuna kinachonakiliwa wala kupakiwa.';
+
+  @override
+  String get soundsChooseMusic => 'Chagua sauti';
+
+  @override
+  String get soundsRemoveMusic => 'Ondoa muziki';
 }

@@ -85,7 +85,11 @@ void main() {
       // Confirm stopping (the last button is the confirming one).
       await tester.tap(
         find
-            .descendant(of: find.byType(AlertDialog), matching: find.byType(ButtonStyleButton))
+            .descendant(
+              of: find.byType(AlertDialog),
+              // byType matches the exact type only; the buttons are TextButton/FilledButton.
+              matching: find.byWidgetPredicate((w) => w is ButtonStyleButton),
+            )
             .last,
       );
       await wait(tester);

@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Svi tekstovi na ovom jeziku vraćaju se na original.",
   "wordsNone": "Tekst nije pronađen",
   "settingsLanguageSearch": "Pretraži jezike",
-  "settingsLanguageNoMatch": "Nijedan jezik ne odgovara"
+  "settingsLanguageNoMatch": "Nijedan jezik ne odgovara",
+  "soundsMyMusic": "Vaša muzika",
+  "soundsMusicHint": "Pustite audio datoteku s telefona. Ništa se ne kopira niti otprema.",
+  "soundsChooseMusic": "Odaberite audio",
+  "soundsRemoveMusic": "Ukloni muziku"
 }

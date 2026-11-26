@@ -5233,4 +5233,17 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Nessuna lingua corrisponde';
+
+  @override
+  String get soundsMyMusic => 'La tua musica';
+
+  @override
+  String get soundsMusicHint =>
+      'Riproduci un file audio dal telefono. Nulla viene copiato o caricato.';
+
+  @override
+  String get soundsChooseMusic => 'Scegli audio';
+
+  @override
+  String get soundsRemoveMusic => 'Rimuovi musica';
 }

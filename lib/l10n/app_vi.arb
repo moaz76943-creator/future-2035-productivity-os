@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Mọi văn bản trong ngôn ngữ này sẽ trở về bản gốc.",
   "wordsNone": "Không tìm thấy văn bản",
   "settingsLanguageSearch": "Tìm ngôn ngữ",
-  "settingsLanguageNoMatch": "Không có ngôn ngữ phù hợp"
+  "settingsLanguageNoMatch": "Không có ngôn ngữ phù hợp",
+  "soundsMyMusic": "Nhạc của bạn",
+  "soundsMusicHint": "Phát tệp âm thanh từ điện thoại. Không có gì được sao chép hay tải lên.",
+  "soundsChooseMusic": "Chọn âm thanh",
+  "soundsRemoveMusic": "Gỡ nhạc"
 }

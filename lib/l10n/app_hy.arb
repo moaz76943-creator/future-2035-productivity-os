@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Այս լեզվի բոլոր տեքստերը կվերադառնան բնօրինակին։",
   "wordsNone": "Տեքստ չգտնվեց",
   "settingsLanguageSearch": "Որոնել լեզուներ",
-  "settingsLanguageNoMatch": "Համապատասխան լեզու չկա"
+  "settingsLanguageNoMatch": "Համապատասխան լեզու չկա",
+  "soundsMyMusic": "Ձեր երաժշտությունը",
+  "soundsMusicHint": "Նվագեք աուդիո ֆայլ ձեր հեռախոսից։ Ոչինչ չի պատճենվում կամ վերբեռնվում։",
+  "soundsChooseMusic": "Ընտրել աուդիո",
+  "soundsRemoveMusic": "Հեռացնել երաժշտությունը"
 }

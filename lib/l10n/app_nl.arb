@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Elke tekst in deze taal gaat terug naar het origineel.",
   "wordsNone": "Geen tekst gevonden",
   "settingsLanguageSearch": "Talen zoeken",
-  "settingsLanguageNoMatch": "Geen taal gevonden"
+  "settingsLanguageNoMatch": "Geen taal gevonden",
+  "soundsMyMusic": "Jouw muziek",
+  "soundsMusicHint": "Speel een audiobestand van je telefoon af. Er wordt niets gekopieerd of geüpload.",
+  "soundsChooseMusic": "Audio kiezen",
+  "soundsRemoveMusic": "Muziek verwijderen"
 }

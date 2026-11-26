@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Setiap teks dalam bahasa ini kembali kepada asal.",
   "wordsNone": "Tiada teks ditemui",
   "settingsLanguageSearch": "Cari bahasa",
-  "settingsLanguageNoMatch": "Tiada bahasa yang sepadan"
+  "settingsLanguageNoMatch": "Tiada bahasa yang sepadan",
+  "soundsMyMusic": "Muzik anda",
+  "soundsMusicHint": "Mainkan fail audio daripada telefon anda. Tiada apa-apa disalin atau dimuat naik.",
+  "soundsChooseMusic": "Pilih audio",
+  "soundsRemoveMusic": "Alih keluar muzik"
 }

@@ -5247,6 +5247,19 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Nenhum idioma encontrado';
+
+  @override
+  String get soundsMyMusic => 'Sua música';
+
+  @override
+  String get soundsMusicHint =>
+      'Toque um arquivo de áudio do seu celular. Nada é copiado nem enviado.';
+
+  @override
+  String get soundsChooseMusic => 'Escolher áudio';
+
+  @override
+  String get soundsRemoveMusic => 'Remover música';
 }
 
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).

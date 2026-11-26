@@ -5218,4 +5218,17 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'సరిపోయే భాష లేదు';
+
+  @override
+  String get soundsMyMusic => 'మీ సంగీతం';
+
+  @override
+  String get soundsMusicHint =>
+      'మీ ఫోన్‌లోని ఆడియో ఫైల్‌ను ప్లే చేయండి. ఏదీ కాపీ లేదా అప్‌లోడ్ చేయబడదు.';
+
+  @override
+  String get soundsChooseMusic => 'ఆడియో ఎంచుకోండి';
+
+  @override
+  String get soundsRemoveMusic => 'సంగీతం తీసివేయి';
 }

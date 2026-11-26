@@ -5213,4 +5213,17 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Uyğun dil yoxdur';
+
+  @override
+  String get soundsMyMusic => 'Musiqiniz';
+
+  @override
+  String get soundsMusicHint =>
+      'Telefonunuzdan audio faylı oxudun. Heç nə kopyalanmır və yüklənmir.';
+
+  @override
+  String get soundsChooseMusic => 'Audio seçin';
+
+  @override
+  String get soundsRemoveMusic => 'Musiqini sil';
 }

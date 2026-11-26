@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "اس زبان کا ہر متن اصل پر واپس آ جائے گا۔",
   "wordsNone": "کوئی متن نہیں ملا",
   "settingsLanguageSearch": "زبان تلاش کریں",
-  "settingsLanguageNoMatch": "کوئی مماثل زبان نہیں"
+  "settingsLanguageNoMatch": "کوئی مماثل زبان نہیں",
+  "soundsMyMusic": "آپ کی موسیقی",
+  "soundsMusicHint": "اپنے فون کی آڈیو فائل چلائیں۔ کچھ بھی کاپی یا اپ لوڈ نہیں ہوتا۔",
+  "soundsChooseMusic": "آڈیو منتخب کریں",
+  "soundsRemoveMusic": "موسیقی ہٹائیں"
 }

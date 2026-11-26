@@ -5098,4 +5098,16 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'মিলে যাওয়া কোনো ভাষা নেই';
+
+  @override
+  String get soundsMyMusic => 'আপনার সংগীত';
+
+  @override
+  String get soundsMusicHint => 'আপনার ফোনের একটি অডিও ফাইল চালান। কিছুই কপি বা আপলোড হয় না।';
+
+  @override
+  String get soundsChooseMusic => 'অডিও বেছে নিন';
+
+  @override
+  String get soundsRemoveMusic => 'সংগীত সরান';
 }

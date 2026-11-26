@@ -5276,4 +5276,17 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Neviena valoda neatbilst';
+
+  @override
+  String get soundsMyMusic => 'Jūsu mūzika';
+
+  @override
+  String get soundsMusicHint =>
+      'Atskaņojiet audio failu no tālruņa. Nekas netiek kopēts vai augšupielādēts.';
+
+  @override
+  String get soundsChooseMusic => 'Izvēlēties audio';
+
+  @override
+  String get soundsRemoveMusic => 'Noņemt mūziku';
 }

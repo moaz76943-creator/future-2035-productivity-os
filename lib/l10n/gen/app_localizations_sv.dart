@@ -5212,4 +5212,17 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Inget språk matchar';
+
+  @override
+  String get soundsMyMusic => 'Din musik';
+
+  @override
+  String get soundsMusicHint =>
+      'Spela upp en ljudfil från telefonen. Inget kopieras eller laddas upp.';
+
+  @override
+  String get soundsChooseMusic => 'Välj ljud';
+
+  @override
+  String get soundsRemoveMusic => 'Ta bort musik';
 }

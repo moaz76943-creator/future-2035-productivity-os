@@ -5204,4 +5204,16 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'کوئی مماثل زبان نہیں';
+
+  @override
+  String get soundsMyMusic => 'آپ کی موسیقی';
+
+  @override
+  String get soundsMusicHint => 'اپنے فون کی آڈیو فائل چلائیں۔ کچھ بھی کاپی یا اپ لوڈ نہیں ہوتا۔';
+
+  @override
+  String get soundsChooseMusic => 'آڈیو منتخب کریں';
+
+  @override
+  String get soundsRemoveMusic => 'موسیقی ہٹائیں';
 }

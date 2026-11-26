@@ -5398,4 +5398,16 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'لا توجد لغة مطابقة';
+
+  @override
+  String get soundsMyMusic => 'موسيقاك';
+
+  @override
+  String get soundsMusicHint => 'شغّل ملفًا صوتيًا من هاتفك. لا يُنسخ أو يُرفع أي شيء.';
+
+  @override
+  String get soundsChooseMusic => 'اختر ملفًا صوتيًا';
+
+  @override
+  String get soundsRemoveMusic => 'إزالة الموسيقى';
 }

@@ -5299,4 +5299,17 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Nė viena kalba neatitinka';
+
+  @override
+  String get soundsMyMusic => 'Jūsų muzika';
+
+  @override
+  String get soundsMusicHint =>
+      'Paleiskite garso failą iš telefono. Niekas nekopijuojama ir neįkeliama.';
+
+  @override
+  String get soundsChooseMusic => 'Pasirinkti garsą';
+
+  @override
+  String get soundsRemoveMusic => 'Pašalinti muziką';
 }

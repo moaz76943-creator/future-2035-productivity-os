@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Tots els textos d’aquest idioma tornen a l’original.",
   "wordsNone": "No s’ha trobat cap text",
   "settingsLanguageSearch": "Cerca idiomes",
-  "settingsLanguageNoMatch": "Cap idioma coincideix"
+  "settingsLanguageNoMatch": "Cap idioma coincideix",
+  "soundsMyMusic": "La teva música",
+  "soundsMusicHint": "Reprodueix un fitxer d'àudio del telèfon. No es copia ni es puja res.",
+  "soundsChooseMusic": "Tria un àudio",
+  "soundsRemoveMusic": "Treu la música"
 }

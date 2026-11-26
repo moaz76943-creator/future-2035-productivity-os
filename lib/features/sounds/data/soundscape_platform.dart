@@ -19,6 +19,11 @@ abstract interface class SoundscapePlatform {
   Future<void> stop();
   Future<void> sleep(int minutes);
   Future<SoundMix> state();
+
+  /// Opens the phone's file picker for an audio file. True when one was chosen.
+  Future<bool> pickMusic();
+  Future<void> clearMusic();
+  Future<void> setMusicVolume(double volume);
 }
 
 class ChannelSoundscape implements SoundscapePlatform {
@@ -60,6 +65,15 @@ class ChannelSoundscape implements SoundscapePlatform {
   Future<void> sleep(int minutes) => _call<void>('sleep', {'minutes': minutes});
 
   @override
+  Future<bool> pickMusic() async => await _call<bool>('pickMusic') ?? false;
+
+  @override
+  Future<void> clearMusic() => _call<void>('clearMusic');
+
+  @override
+  Future<void> setMusicVolume(double volume) => _call<void>('setMusicVolume', {'volume': volume});
+
+  @override
   Future<SoundMix> state() async {
     final m = await _call<Map<Object?, Object?>>('state');
     return m == null ? const SoundMix() : SoundMix.fromState(m);
@@ -90,14 +104,14 @@ class MemorySoundscape implements SoundscapePlatform {
       if (!v.containsKey(sound) && v.length >= maxSoundsInMix) return false;
       v[sound] = volume;
     }
-    _emit(_mix.copyWith(volumes: v, playing: v.isEmpty ? false : null));
+    _emit(_mix.copyWith(volumes: v, playing: v.isEmpty && _mix.music == null ? false : null));
     return true;
   }
 
   @override
   Future<bool> play(Map<String, String> labels) async {
     calls.add('play');
-    if (_mix.isEmpty) return false;
+    if (_mix.isSilent) return false;
     _emit(_mix.copyWith(playing: true));
     return true;
   }
@@ -111,7 +125,39 @@ class MemorySoundscape implements SoundscapePlatform {
   @override
   Future<void> stop() async {
     calls.add('stop');
-    _emit(const SoundMix());
+    _emit(SoundMix(music: _mix.music));
+  }
+
+  /// Name the fake picker returns; null behaves like a cancelled picker.
+  String? nextPick = 'My track';
+
+  @override
+  Future<bool> pickMusic() async {
+    calls.add('pickMusic');
+    final name = nextPick;
+    if (name == null) return false;
+    _emit(_mix.copyWith(music: MusicPick(name: name)));
+    return true;
+  }
+
+  @override
+  Future<void> clearMusic() async {
+    calls.add('clearMusic');
+    final silent = _mix.volumes.isEmpty;
+    _emit(_mix.copyWith(clearMusic: true, playing: silent ? false : null));
+  }
+
+  @override
+  Future<void> setMusicVolume(double volume) async {
+    calls.add('setMusicVolume:${volume.toStringAsFixed(2)}');
+    final m = _mix.music;
+    if (m != null) {
+      _emit(
+        _mix.copyWith(
+          music: MusicPick(name: m.name, volume: volume),
+        ),
+      );
+    }
   }
 
   @override

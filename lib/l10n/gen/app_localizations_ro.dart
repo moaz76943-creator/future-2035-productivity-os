@@ -5303,4 +5303,17 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Nicio limbă nu se potrivește';
+
+  @override
+  String get soundsMyMusic => 'Muzica ta';
+
+  @override
+  String get soundsMusicHint =>
+      'Redă un fișier audio de pe telefon. Nimic nu este copiat sau încărcat.';
+
+  @override
+  String get soundsChooseMusic => 'Alege audio';
+
+  @override
+  String get soundsRemoveMusic => 'Elimină muzica';
 }

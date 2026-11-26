@@ -8886,6 +8886,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No language matches'**
   String get settingsLanguageNoMatch;
+
+  /// Card title on the sounds screen: play the person's own audio file
+  ///
+  /// In en, this message translates to:
+  /// **'Your music'**
+  String get soundsMyMusic;
+
+  /// Hint under the own-music card
+  ///
+  /// In en, this message translates to:
+  /// **'Play an audio file from your phone. Nothing is copied or uploaded.'**
+  String get soundsMusicHint;
+
+  /// Button: open the phone's file picker for an audio file
+  ///
+  /// In en, this message translates to:
+  /// **'Choose audio'**
+  String get soundsChooseMusic;
+
+  /// Tooltip: stop using the chosen audio file
+  ///
+  /// In en, this message translates to:
+  /// **'Remove music'**
+  String get soundsRemoveMusic;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -5244,4 +5244,17 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Καμία γλώσσα δεν ταιριάζει';
+
+  @override
+  String get soundsMyMusic => 'Η μουσική σας';
+
+  @override
+  String get soundsMusicHint =>
+      'Παίξτε ένα αρχείο ήχου από το τηλέφωνό σας. Τίποτα δεν αντιγράφεται ούτε ανεβαίνει.';
+
+  @override
+  String get soundsChooseMusic => 'Επιλογή ήχου';
+
+  @override
+  String get soundsRemoveMusic => 'Αφαίρεση μουσικής';
 }

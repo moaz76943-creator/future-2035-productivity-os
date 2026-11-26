@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Kõik selle keele tekstid taastatakse algseks.",
   "wordsNone": "Teksti ei leitud",
   "settingsLanguageSearch": "Otsi keeli",
-  "settingsLanguageNoMatch": "Ükski keel ei sobi"
+  "settingsLanguageNoMatch": "Ükski keel ei sobi",
+  "soundsMyMusic": "Sinu muusika",
+  "soundsMusicHint": "Esita helifail oma telefonist. Midagi ei kopeerita ega laadita üles.",
+  "soundsChooseMusic": "Vali heli",
+  "soundsRemoveMusic": "Eemalda muusika"
 }

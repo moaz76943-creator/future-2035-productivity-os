@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Todos os textos deste idioma volven ao orixinal.",
   "wordsNone": "Non se atopou ningún texto",
   "settingsLanguageSearch": "Buscar idiomas",
-  "settingsLanguageNoMatch": "Ningún idioma coincide"
+  "settingsLanguageNoMatch": "Ningún idioma coincide",
+  "soundsMyMusic": "A túa música",
+  "soundsMusicHint": "Reproduce un ficheiro de audio do teléfono. Non se copia nin se sube nada.",
+  "soundsChooseMusic": "Escoller audio",
+  "soundsRemoveMusic": "Quitar a música"
 }

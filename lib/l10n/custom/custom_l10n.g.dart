@@ -2552,6 +2552,14 @@ class _CustomL10n extends AppLocalizations {
   @override
   String get settingsLanguageNoMatch => _o['settingsLanguageNoMatch'] ?? _b.settingsLanguageNoMatch;
   @override
+  String get soundsMyMusic => _o['soundsMyMusic'] ?? _b.soundsMyMusic;
+  @override
+  String get soundsMusicHint => _o['soundsMusicHint'] ?? _b.soundsMusicHint;
+  @override
+  String get soundsChooseMusic => _o['soundsChooseMusic'] ?? _b.soundsChooseMusic;
+  @override
+  String get soundsRemoveMusic => _o['soundsRemoveMusic'] ?? _b.soundsRemoveMusic;
+  @override
   String dashFocusOfTarget(String done, String target) => _b.dashFocusOfTarget(done, target);
   @override
   String dashCardsDue(int count) => _b.dashCardsDue(count);
@@ -4209,6 +4217,10 @@ const customWordKeys = <String>[
   'wordsNone',
   'settingsLanguageSearch',
   'settingsLanguageNoMatch',
+  'soundsMyMusic',
+  'soundsMusicHint',
+  'soundsChooseMusic',
+  'soundsRemoveMusic',
 ];
 
 /// The current app-language text of [key] (one of [customWordKeys]).
@@ -5461,5 +5473,9 @@ String customWordBase(AppLocalizations l, String key) => switch (key) {
   'wordsNone' => l.wordsNone,
   'settingsLanguageSearch' => l.settingsLanguageSearch,
   'settingsLanguageNoMatch' => l.settingsLanguageNoMatch,
+  'soundsMyMusic' => l.soundsMyMusic,
+  'soundsMusicHint' => l.soundsMusicHint,
+  'soundsChooseMusic' => l.soundsChooseMusic,
+  'soundsRemoveMusic' => l.soundsRemoveMusic,
   _ => '',
 };

@@ -5233,4 +5233,17 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Walang tugmang wika';
+
+  @override
+  String get soundsMyMusic => 'Iyong musika';
+
+  @override
+  String get soundsMusicHint =>
+      'Magpatugtog ng audio file mula sa iyong telepono. Walang kinokopya o ina-upload.';
+
+  @override
+  String get soundsChooseMusic => 'Pumili ng audio';
+
+  @override
+  String get soundsRemoveMusic => 'Alisin ang musika';
 }

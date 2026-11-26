@@ -5226,4 +5226,17 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Geen taal gevonden';
+
+  @override
+  String get soundsMyMusic => 'Jouw muziek';
+
+  @override
+  String get soundsMusicHint =>
+      'Speel een audiobestand van je telefoon af. Er wordt niets gekopieerd of geüpload.';
+
+  @override
+  String get soundsChooseMusic => 'Audio kiezen';
+
+  @override
+  String get soundsRemoveMusic => 'Muziek verwijderen';
 }

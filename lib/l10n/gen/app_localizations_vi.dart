@@ -5084,4 +5084,17 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Không có ngôn ngữ phù hợp';
+
+  @override
+  String get soundsMyMusic => 'Nhạc của bạn';
+
+  @override
+  String get soundsMusicHint =>
+      'Phát tệp âm thanh từ điện thoại. Không có gì được sao chép hay tải lên.';
+
+  @override
+  String get soundsChooseMusic => 'Chọn âm thanh';
+
+  @override
+  String get soundsRemoveMusic => 'Gỡ nhạc';
 }

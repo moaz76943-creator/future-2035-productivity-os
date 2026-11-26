@@ -5260,6 +5260,19 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Aucune langue ne correspond';
+
+  @override
+  String get soundsMyMusic => 'Votre musique';
+
+  @override
+  String get soundsMusicHint =>
+      'Écoutez un fichier audio de votre téléphone. Rien n\'est copié ni envoyé.';
+
+  @override
+  String get soundsChooseMusic => 'Choisir un audio';
+
+  @override
+  String get soundsRemoveMusic => 'Retirer la musique';
 }
 
 /// The translations for French, as used in Canada (`fr_CA`).

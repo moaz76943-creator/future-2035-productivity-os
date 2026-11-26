@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "ทุกข้อความในภาษานี้จะกลับเป็นต้นฉบับ",
   "wordsNone": "ไม่พบข้อความ",
   "settingsLanguageSearch": "ค้นหาภาษา",
-  "settingsLanguageNoMatch": "ไม่พบภาษาที่ตรงกัน"
+  "settingsLanguageNoMatch": "ไม่พบภาษาที่ตรงกัน",
+  "soundsMyMusic": "เพลงของคุณ",
+  "soundsMusicHint": "เล่นไฟล์เสียงจากโทรศัพท์ของคุณ ไม่มีการคัดลอกหรืออัปโหลดใดๆ",
+  "soundsChooseMusic": "เลือกไฟล์เสียง",
+  "soundsRemoveMusic": "นำเพลงออก"
 }

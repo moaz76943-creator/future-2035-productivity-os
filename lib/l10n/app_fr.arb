@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Tous les textes de cette langue reviennent à l'original.",
   "wordsNone": "Aucun texte trouvé",
   "settingsLanguageSearch": "Rechercher une langue",
-  "settingsLanguageNoMatch": "Aucune langue ne correspond"
+  "settingsLanguageNoMatch": "Aucune langue ne correspond",
+  "soundsMyMusic": "Votre musique",
+  "soundsMusicHint": "Écoutez un fichier audio de votre téléphone. Rien n'est copié ni envoyé.",
+  "soundsChooseMusic": "Choisir un audio",
+  "soundsRemoveMusic": "Retirer la musique"
 }

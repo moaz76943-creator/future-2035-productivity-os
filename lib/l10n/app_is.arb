@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Allir textar á þessu tungumáli fara aftur í upprunalegt horf.",
   "wordsNone": "Enginn texti fannst",
   "settingsLanguageSearch": "Leita að tungumálum",
-  "settingsLanguageNoMatch": "Ekkert tungumál passar"
+  "settingsLanguageNoMatch": "Ekkert tungumál passar",
+  "soundsMyMusic": "Tónlistin þín",
+  "soundsMusicHint": "Spilaðu hljóðskrá úr símanum. Ekkert er afritað eða hlaðið upp.",
+  "soundsChooseMusic": "Veldu hljóð",
+  "soundsRemoveMusic": "Fjarlægja tónlist"
 }

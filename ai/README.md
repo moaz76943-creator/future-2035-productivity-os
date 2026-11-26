@@ -1,7 +1,11 @@
 # Helper-model drafts
 
 Helper models (Gemini, OpenRouter free models, Groq, NVIDIA) write drafts only.
-They never change app code and never push to `claude-dev`, `main`, `release/*` or `hermes/*`.
+They never push to `main`, `release/*` or `hermes/*`. Only translation fixes that passed every gate
+and were approved by a critic from another provider are auto-merged into `claude-dev`; code
+drafts (tests, fixes, tasks from `ai/tasks.md`) always wait on `ai-drafts/*` for Claude's review.
+The `DF AI watch` workflow keeps the issue "تقرير الوكلاء" up to date and comments on it when
+the agents stall for 6 hours.
 
 1. On a branch `ai-request/<task>` made from `claude-dev`, add `ai/requests/<task>.json`
    (an `l10n_add_keys` spec with English and `meta`), then push the branch.

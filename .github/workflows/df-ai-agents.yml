@@ -135,3 +135,24 @@ jobs:
           case "$DAY" in ai-drafts/*) ;; *) echo "::error::unsafe target"; exit 1;; esac
           git push -q origin "HEAD:refs/heads/$DAY"
           echo "### $JOB → \`$DAY\` (gates $GATES)" >> "$GITHUB_STEP_SUMMARY"
+
+      # Translation fixes only: worker and critic came from two different providers
+      # and every gate passed, so they go straight to claude-dev. Code never does.
+      - name: Auto-merge translation fixes
+        if: env.JOB == 'review' && env.GATES == 'passed'
+        run: |
+          set -euo pipefail
+          files=$(git diff --name-only HEAD~1 HEAD -- 'lib/l10n/app_*.arb')
+          other=$(git diff --name-only HEAD~1 HEAD | grep -vE '^(lib/l10n/app_[A-Za-z_]+\.arb|ai/reports/)' || true)
+          if [ -z "$files" ] || [ -n "$other" ]; then echo "Nothing to auto-merge."; exit 0; fi
+          day_commit=$(git rev-parse HEAD)
+          git diff HEAD~1 HEAD -- $files > "$RUNNER_TEMP/l10n.patch"
+          git fetch -q origin claude-dev
+          git checkout -q -B automerge FETCH_HEAD
+          # Apply only this hour's lines (never whole files, so newer keys on claude-dev stay).
+          git apply --3way "$RUNNER_TEMP/l10n.patch" || { echo "::warning::conflict; kept on $DAY only"; exit 0; }
+          git add $files
+          python3 tool/check_l10n.py
+          git commit -q -m "AI translation fixes (auto-merged)" \
+            -m "Worker and critic from different providers; all gates passed. Source: $DAY $day_commit"
+          git push -q origin HEAD:refs/heads/claude-dev || echo "::warning::claude-dev moved; kept on $DAY only"

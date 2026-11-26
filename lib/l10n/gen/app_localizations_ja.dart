@@ -4966,4 +4966,16 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => '一致する言語がありません';
+
+  @override
+  String get soundsMyMusic => '自分の音楽';
+
+  @override
+  String get soundsMusicHint => 'スマートフォンの音声ファイルを再生します。コピーやアップロードは行いません。';
+
+  @override
+  String get soundsChooseMusic => '音声を選ぶ';
+
+  @override
+  String get soundsRemoveMusic => '音楽を削除';
 }

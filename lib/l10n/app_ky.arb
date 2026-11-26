@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Бул тилдеги бардык тексттер түп нускасына кайтат.",
   "wordsNone": "Текст табылган жок",
   "settingsLanguageSearch": "Тилдерди издөө",
-  "settingsLanguageNoMatch": "Дал келген тил жок"
+  "settingsLanguageNoMatch": "Дал келген тил жок",
+  "soundsMyMusic": "Сиздин музыка",
+  "soundsMusicHint": "Телефондогу аудио файлды ойнотуңуз. Эч нерсе көчүрүлбөйт же жүктөлбөйт.",
+  "soundsChooseMusic": "Аудио тандоо",
+  "soundsRemoveMusic": "Музыканы алып салуу"
 }

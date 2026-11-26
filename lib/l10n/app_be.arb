@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Усе тэксты на гэтай мове вернуцца да арыгінала.",
   "wordsNone": "Тэкст не знойдзены",
   "settingsLanguageSearch": "Пошук моў",
-  "settingsLanguageNoMatch": "Няма адпаведнай мовы"
+  "settingsLanguageNoMatch": "Няма адпаведнай мовы",
+  "soundsMyMusic": "Ваша музыка",
+  "soundsMusicHint": "Прайгравайце аўдыяфайл з тэлефона. Нічога не капіюецца і не запампоўваецца.",
+  "soundsChooseMusic": "Выбраць аўдыя",
+  "soundsRemoveMusic": "Прыбраць музыку"
 }

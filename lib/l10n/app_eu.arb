@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Hizkuntza honetako testu guztiak jatorrizkora itzultzen dira.",
   "wordsNone": "Ez da testurik aurkitu",
   "settingsLanguageSearch": "Bilatu hizkuntzak",
-  "settingsLanguageNoMatch": "Ez dago bat datorren hizkuntzarik"
+  "settingsLanguageNoMatch": "Ez dago bat datorren hizkuntzarik",
+  "soundsMyMusic": "Zure musika",
+  "soundsMusicHint": "Erreproduzitu telefonoko audio-fitxategi bat. Ez da ezer kopiatzen edo igotzen.",
+  "soundsChooseMusic": "Aukeratu audioa",
+  "soundsRemoveMusic": "Kendu musika"
 }

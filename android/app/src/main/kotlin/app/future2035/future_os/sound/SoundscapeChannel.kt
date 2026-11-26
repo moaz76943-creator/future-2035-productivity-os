@@ -13,6 +13,9 @@ import io.flutter.plugin.common.MethodChannel
  * closed app leaves nothing behind while the sounds keep playing.
  */
 class SoundscapeChannel(private val context: Context, messenger: BinaryMessenger) {
+    /** Opens the system file picker for audio (set by the activity); null when unavailable. */
+    var pickAudio: ((MethodChannel.Result) -> Unit)? = null
+
     private val methods = MethodChannel(messenger, "future_os/soundscape")
     private val events = EventChannel(messenger, "future_os/soundscape/state")
     private var sink: EventChannel.EventSink? = null
@@ -49,6 +52,16 @@ class SoundscapeChannel(private val context: Context, messenger: BinaryMessenger
                     labels(call.argument<Map<String, String>>("labels"))
                     result.success(null)
                 }
+                "pickMusic" -> pickAudio?.invoke(result) ?: result.success(false)
+                "clearMusic" -> {
+                    MusicTrack.clear()
+                    if (SoundEngine.isEmpty() && SoundEngine.playing) SoundEngine.stop()
+                    result.success(null)
+                }
+                "setMusicVolume" -> {
+                    MusicTrack.setVolume((call.argument<Double>("volume") ?: 0.8).toFloat())
+                    result.success(null)
+                }
                 "state" -> result.success(state())
                 else -> result.notImplemented()
             }
@@ -71,10 +84,11 @@ class SoundscapeChannel(private val context: Context, messenger: BinaryMessenger
         if (map != null) SoundscapeService.labels = map
     }
 
-    private fun state(): Map<String, Any> = mapOf(
+    private fun state(): Map<String, Any?> = mapOf(
         "playing" to SoundEngine.playing,
         "volumes" to SoundEngine.volumes().mapValues { it.value.toDouble() },
         "sleepRemainingMs" to SoundEngine.sleepRemaining(),
+        "music" to (MusicTrack.uri?.let { mapOf("name" to MusicTrack.name, "volume" to MusicTrack.volume.toDouble()) }),
     )
 
     fun detach() {

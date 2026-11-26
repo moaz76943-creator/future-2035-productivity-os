@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "ਇਸ ਭਾਸ਼ਾ ਦਾ ਹਰ ਟੈਕਸਟ ਮੂਲ ’ਤੇ ਵਾਪਸ ਜਾਵੇਗਾ।",
   "wordsNone": "ਕੋਈ ਟੈਕਸਟ ਨਹੀਂ ਮਿਲਿਆ",
   "settingsLanguageSearch": "ਭਾਸ਼ਾਵਾਂ ਖੋਜੋ",
-  "settingsLanguageNoMatch": "ਕੋਈ ਮੇਲ ਖਾਂਦੀ ਭਾਸ਼ਾ ਨਹੀਂ"
+  "settingsLanguageNoMatch": "ਕੋਈ ਮੇਲ ਖਾਂਦੀ ਭਾਸ਼ਾ ਨਹੀਂ",
+  "soundsMyMusic": "ਤੁਹਾਡਾ ਸੰਗੀਤ",
+  "soundsMusicHint": "ਆਪਣੇ ਫ਼ੋਨ ਦੀ ਆਡੀਓ ਫ਼ਾਈਲ ਚਲਾਓ। ਕੁਝ ਵੀ ਕਾਪੀ ਜਾਂ ਅੱਪਲੋਡ ਨਹੀਂ ਹੁੰਦਾ।",
+  "soundsChooseMusic": "ਆਡੀਓ ਚੁਣੋ",
+  "soundsRemoveMusic": "ਸੰਗੀਤ ਹਟਾਓ"
 }

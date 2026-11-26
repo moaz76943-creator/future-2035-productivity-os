@@ -4935,6 +4935,18 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => '没有匹配的语言';
+
+  @override
+  String get soundsMyMusic => '我的音乐';
+
+  @override
+  String get soundsMusicHint => '播放手机中的音频文件。不会复制或上传任何内容。';
+
+  @override
+  String get soundsChooseMusic => '选择音频';
+
+  @override
+  String get soundsRemoveMusic => '移除音乐';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -9881,4 +9893,16 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get settingsLanguageNoMatch => '沒有符合的語言';
+
+  @override
+  String get soundsMyMusic => '我的音樂';
+
+  @override
+  String get soundsMusicHint => '播放手機中的音訊檔案。不會複製或上傳任何內容。';
+
+  @override
+  String get soundsChooseMusic => '選擇音訊';
+
+  @override
+  String get soundsRemoveMusic => '移除音樂';
 }

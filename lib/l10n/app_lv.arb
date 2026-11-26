@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Visi teksti šajā valodā atgriežas pie oriģināla.",
   "wordsNone": "Teksts nav atrasts",
   "settingsLanguageSearch": "Meklēt valodas",
-  "settingsLanguageNoMatch": "Neviena valoda neatbilst"
+  "settingsLanguageNoMatch": "Neviena valoda neatbilst",
+  "soundsMyMusic": "Jūsu mūzika",
+  "soundsMusicHint": "Atskaņojiet audio failu no tālruņa. Nekas netiek kopēts vai augšupielādēts.",
+  "soundsChooseMusic": "Izvēlēties audio",
+  "soundsRemoveMusic": "Noņemt mūziku"
 }

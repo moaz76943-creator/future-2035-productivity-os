@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "此語言的所有文字都會恢復原文。",
   "wordsNone": "找不到文字",
   "settingsLanguageSearch": "搜尋語言",
-  "settingsLanguageNoMatch": "沒有符合的語言"
+  "settingsLanguageNoMatch": "沒有符合的語言",
+  "soundsMyMusic": "我的音樂",
+  "soundsMusicHint": "播放手機中的音訊檔案。不會複製或上傳任何內容。",
+  "soundsChooseMusic": "選擇音訊",
+  "soundsRemoveMusic": "移除音樂"
 }

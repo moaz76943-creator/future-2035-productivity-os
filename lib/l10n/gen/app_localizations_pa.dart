@@ -5263,4 +5263,16 @@ class AppLocalizationsPa extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'ਕੋਈ ਮੇਲ ਖਾਂਦੀ ਭਾਸ਼ਾ ਨਹੀਂ';
+
+  @override
+  String get soundsMyMusic => 'ਤੁਹਾਡਾ ਸੰਗੀਤ';
+
+  @override
+  String get soundsMusicHint => 'ਆਪਣੇ ਫ਼ੋਨ ਦੀ ਆਡੀਓ ਫ਼ਾਈਲ ਚਲਾਓ। ਕੁਝ ਵੀ ਕਾਪੀ ਜਾਂ ਅੱਪਲੋਡ ਨਹੀਂ ਹੁੰਦਾ।';
+
+  @override
+  String get soundsChooseMusic => 'ਆਡੀਓ ਚੁਣੋ';
+
+  @override
+  String get soundsRemoveMusic => 'ਸੰਗੀਤ ਹਟਾਓ';
 }

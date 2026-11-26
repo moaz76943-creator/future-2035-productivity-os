@@ -56,7 +56,9 @@ class ListenBar extends ConsumerWidget {
                     minimumSize: const Size(52, 52),
                   ),
                   icon: Icon(s.playing ? Icons.pause_rounded : Icons.play_arrow_rounded),
-                  onPressed: s.playing ? ctrl.pause : ctrl.resume,
+                  // No voice for this language: retrying cannot work, so the
+                  // button rests (the message below says why) until listening restarts.
+                  onPressed: s.playing ? ctrl.pause : (problem == null ? ctrl.resume : null),
                 ),
                 IconButton(
                   key: const Key('listenNext'),

@@ -5251,4 +5251,17 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Ez dago bat datorren hizkuntzarik';
+
+  @override
+  String get soundsMyMusic => 'Zure musika';
+
+  @override
+  String get soundsMusicHint =>
+      'Erreproduzitu telefonoko audio-fitxategi bat. Ez da ezer kopiatzen edo igotzen.';
+
+  @override
+  String get soundsChooseMusic => 'Aukeratu audioa';
+
+  @override
+  String get soundsRemoveMusic => 'Kendu musika';
 }

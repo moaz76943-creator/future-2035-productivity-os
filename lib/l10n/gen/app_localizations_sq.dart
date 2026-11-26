@@ -5223,4 +5223,17 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Asnjë gjuhë nuk përputhet';
+
+  @override
+  String get soundsMyMusic => 'Muzika jote';
+
+  @override
+  String get soundsMusicHint =>
+      'Luaj një skedar audio nga telefoni. Asgjë nuk kopjohet apo ngarkohet.';
+
+  @override
+  String get soundsChooseMusic => 'Zgjidh audio';
+
+  @override
+  String get soundsRemoveMusic => 'Hiq muzikën';
 }

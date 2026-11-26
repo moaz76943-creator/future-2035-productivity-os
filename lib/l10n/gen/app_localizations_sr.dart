@@ -5288,4 +5288,17 @@ class AppLocalizationsSr extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Ниједан језик се не подудара';
+
+  @override
+  String get soundsMyMusic => 'Ваша музика';
+
+  @override
+  String get soundsMusicHint =>
+      'Пустите аудио датотеку са телефона. Ништа се не копира нити отпрема.';
+
+  @override
+  String get soundsChooseMusic => 'Изаберите аудио';
+
+  @override
+  String get soundsRemoveMusic => 'Уклони музику';
 }

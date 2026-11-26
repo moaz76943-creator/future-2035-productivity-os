@@ -4961,4 +4961,16 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => '일치하는 언어가 없습니다';
+
+  @override
+  String get soundsMyMusic => '내 음악';
+
+  @override
+  String get soundsMusicHint => '휴대폰의 오디오 파일을 재생합니다. 복사하거나 업로드하지 않습니다.';
+
+  @override
+  String get soundsChooseMusic => '오디오 선택';
+
+  @override
+  String get soundsRemoveMusic => '음악 제거';
 }

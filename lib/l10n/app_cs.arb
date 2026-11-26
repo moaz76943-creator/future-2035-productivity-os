@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "Všechny texty v tomto jazyce se vrátí k původním.",
   "wordsNone": "Nenalezen žádný text",
   "settingsLanguageSearch": "Hledat jazyky",
-  "settingsLanguageNoMatch": "Žádný jazyk neodpovídá"
+  "settingsLanguageNoMatch": "Žádný jazyk neodpovídá",
+  "soundsMyMusic": "Vaše hudba",
+  "soundsMusicHint": "Přehrajte zvukový soubor z telefonu. Nic se nekopíruje ani nenahrává.",
+  "soundsChooseMusic": "Vybrat zvuk",
+  "soundsRemoveMusic": "Odebrat hudbu"
 }

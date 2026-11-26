@@ -5216,4 +5216,17 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'कोई मेल खाती भाषा नहीं';
+
+  @override
+  String get soundsMyMusic => 'आपका संगीत';
+
+  @override
+  String get soundsMusicHint =>
+      'अपने फ़ोन की कोई ऑडियो फ़ाइल चलाएँ। कुछ भी कॉपी या अपलोड नहीं होता।';
+
+  @override
+  String get soundsChooseMusic => 'ऑडियो चुनें';
+
+  @override
+  String get soundsRemoveMusic => 'संगीत हटाएँ';
 }

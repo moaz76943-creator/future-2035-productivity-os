@@ -5230,4 +5230,17 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Համապատասխան լեզու չկա';
+
+  @override
+  String get soundsMyMusic => 'Ձեր երաժշտությունը';
+
+  @override
+  String get soundsMusicHint =>
+      'Նվագեք աուդիո ֆայլ ձեր հեռախոսից։ Ոչինչ չի պատճենվում կամ վերբեռնվում։';
+
+  @override
+  String get soundsChooseMusic => 'Ընտրել աուդիո';
+
+  @override
+  String get soundsRemoveMusic => 'Հեռացնել երաժշտությունը';
 }

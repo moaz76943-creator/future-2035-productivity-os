@@ -5248,4 +5248,17 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'பொருந்தும் மொழி இல்லை';
+
+  @override
+  String get soundsMyMusic => 'உங்கள் இசை';
+
+  @override
+  String get soundsMusicHint =>
+      'உங்கள் ஃபோனில் உள்ள ஆடியோ கோப்பை இயக்குங்கள். எதுவும் நகலெடுக்கப்படுவதில்லை, பதிவேற்றப்படுவதில்லை.';
+
+  @override
+  String get soundsChooseMusic => 'ஆடியோவைத் தேர்வுசெய்';
+
+  @override
+  String get soundsRemoveMusic => 'இசையை அகற்று';
 }

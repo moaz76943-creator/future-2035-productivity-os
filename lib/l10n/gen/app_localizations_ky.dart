@@ -5217,4 +5217,17 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Дал келген тил жок';
+
+  @override
+  String get soundsMyMusic => 'Сиздин музыка';
+
+  @override
+  String get soundsMusicHint =>
+      'Телефондогу аудио файлды ойнотуңуз. Эч нерсе көчүрүлбөйт же жүктөлбөйт.';
+
+  @override
+  String get soundsChooseMusic => 'Аудио тандоо';
+
+  @override
+  String get soundsRemoveMusic => 'Музыканы алып салуу';
 }

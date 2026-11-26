@@ -5344,4 +5344,17 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Язык не найден';
+
+  @override
+  String get soundsMyMusic => 'Ваша музыка';
+
+  @override
+  String get soundsMusicHint =>
+      'Воспроизводите аудиофайл с телефона. Ничего не копируется и не загружается.';
+
+  @override
+  String get soundsChooseMusic => 'Выбрать аудио';
+
+  @override
+  String get soundsRemoveMusic => 'Убрать музыку';
 }

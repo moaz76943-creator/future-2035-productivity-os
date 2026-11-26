@@ -5349,4 +5349,17 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Немає відповідної мови';
+
+  @override
+  String get soundsMyMusic => 'Ваша музика';
+
+  @override
+  String get soundsMusicHint =>
+      'Відтворюйте аудіофайл із телефона. Нічого не копіюється й не завантажується.';
+
+  @override
+  String get soundsChooseMusic => 'Вибрати аудіо';
+
+  @override
+  String get soundsRemoveMusic => 'Прибрати музику';
 }

@@ -1,0 +1,42 @@
+name: DF screens (4 languages, overflow check)
+
+# On every app change: renders the main tabs in Arabic (RTL), English, German (long
+# words) and Hindi (tall script) on a 412dp phone. A cut-off or overflowing layout
+# fails the job; the screenshots are attached to the run for a quick look.
+on:
+  push:
+    branches: [claude-dev]
+    paths: ['lib/**', 'test/_preview/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  screens:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        tag: [ar, en, de, hi]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.50.0'
+          channel: stable
+          cache: true
+      - name: Render
+        run: |
+          flutter pub get --enforce-lockfile
+          dart run build_runner build --delete-conflicting-outputs
+          flutter gen-l10n && python3 tool/gen_l10n_custom.py
+          flutter test --reporter compact --dart-define=TAG=${{ matrix.tag }} test/_preview/preview_shell_test.dart
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: screens-${{ matrix.tag }}
+          path: build/preview_*.png
+          if-no-files-found: ignore
+          retention-days: 14

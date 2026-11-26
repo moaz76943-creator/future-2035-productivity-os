@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "इस भाषा का हर टेक्स्ट मूल पर लौट जाएगा।",
   "wordsNone": "कोई टेक्स्ट नहीं मिला",
   "settingsLanguageSearch": "भाषा खोजें",
-  "settingsLanguageNoMatch": "कोई मेल खाती भाषा नहीं"
+  "settingsLanguageNoMatch": "कोई मेल खाती भाषा नहीं",
+  "soundsMyMusic": "आपका संगीत",
+  "soundsMusicHint": "अपने फ़ोन की कोई ऑडियो फ़ाइल चलाएँ। कुछ भी कॉपी या अपलोड नहीं होता।",
+  "soundsChooseMusic": "ऑडियो चुनें",
+  "soundsRemoveMusic": "संगीत हटाएँ"
 }

@@ -1442,5 +1442,9 @@
   "wordsResetAllConfirm": "この言語のすべての文言が元に戻ります。",
   "wordsNone": "文言が見つかりません",
   "settingsLanguageSearch": "言語を検索",
-  "settingsLanguageNoMatch": "一致する言語がありません"
+  "settingsLanguageNoMatch": "一致する言語がありません",
+  "soundsMyMusic": "自分の音楽",
+  "soundsMusicHint": "スマートフォンの音声ファイルを再生します。コピーやアップロードは行いません。",
+  "soundsChooseMusic": "音声を選ぶ",
+  "soundsRemoveMusic": "音楽を削除"
 }
