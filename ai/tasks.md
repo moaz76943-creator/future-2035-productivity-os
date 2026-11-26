@@ -14,3 +14,11 @@ reviewing and merging the draft; agents never edit this file.
       large text without overflow) `lib/features/sounds/presentation/widgets/music_card.dart`
 - [ ] Sounds screen: when only the own audio file plays, the mixer sheet should not show the
       "add a sound" hint as if nothing plays `lib/features/sounds/presentation/widgets/player_bar.dart`
+- [ ] Tasks screen (reference design): show "Today" and "Upcoming" as collapsible groups with a
+      count in the header, and a rounded "add task" bar at the top; reuse existing texts, keep
+      every filter, sort and key `lib/features/tasks/presentation/tasks_screen.dart`
+- [ ] Calendar (reference design): under the month grid, a "today's events" list with a coloured
+      dot and time per event, reusing existing texts and data `lib/features/calendar/presentation/day_agenda.dart`
+- [ ] Focus (reference design): mode chips as one rounded segmented row above the ring and two
+      small stat cards (sessions today, total focus minutes) under the controls, reusing existing
+      texts and data `lib/features/focus/presentation/focus_screen/countdown_choices.dart`
