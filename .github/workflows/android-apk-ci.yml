@@ -110,7 +110,7 @@ jobs:
       # previous one (a fresh runner key forces uninstalling and losing data).
       # The key lives only in the Actions cache, never in the repository.
       - name: Restore QA debug keystore
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.android/debug.keystore
           key: future2035-qa-debug-keystore-v1
