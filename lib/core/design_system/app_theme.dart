@@ -8,7 +8,7 @@ part 'app_theme/lux_colors.dart';
 
 abstract final class AppTheme {
   static ThemeData build({required Brightness brightness, required Locale locale, Color? accent}) {
-    final primary = accent ?? Palette.violet;
+    final primary = accent ?? Palette.lagoon;
     final dark = brightness == Brightness.dark;
     final lux = brightness == Brightness.dark ? LuxColors.dark : LuxColors.light;
     final family = AppFonts.primaryFor(locale);
@@ -50,14 +50,14 @@ abstract final class AppTheme {
       primary: primary,
       onPrimary: Palette.white,
       primaryContainer: accent == null
-          ? (dark ? const Color(0xFF2A2170) : const Color(0xFFEDE8FF))
+          ? (dark ? const Color(0xFF123B3D) : const Color(0xFFDCEFEE))
           : Color.alphaBlend(
               primary.withValues(alpha: dark ? 0.32 : 0.12),
               dark ? Palette.dusk : Palette.white,
             ),
       onPrimaryContainer: dark
           ? Palette.moon
-          : (accent == null ? const Color(0xFF2A1A8C) : Color.lerp(primary, Palette.navy, 0.5)!),
+          : (accent == null ? const Color(0xFF0B4A4D) : Color.lerp(primary, Palette.navy, 0.5)!),
       secondary: Palette.aurora,
       onSecondary: Palette.white,
       tertiary: Palette.turquoise,
@@ -122,7 +122,7 @@ abstract final class AppTheme {
         contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
         hintStyle: textTheme.bodyLarge!.copyWith(color: lux.ink3),
         labelStyle: textTheme.bodyMedium,
-        floatingLabelStyle: textTheme.labelMedium!.copyWith(color: Palette.violet),
+        floatingLabelStyle: textTheme.labelMedium!.copyWith(color: primary),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(Radii.md),
           borderSide: BorderSide.none,
@@ -133,7 +133,7 @@ abstract final class AppTheme {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(Radii.md),
-          borderSide: const BorderSide(color: Palette.violet, width: 1.6),
+          borderSide: BorderSide(color: primary, width: 1.6),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(Radii.md),
@@ -146,7 +146,7 @@ abstract final class AppTheme {
           padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 14),
           shape: shape,
           textStyle: textTheme.labelLarge,
-          backgroundColor: Palette.violet,
+          backgroundColor: primary,
           foregroundColor: Palette.white,
         ),
       ),
@@ -164,7 +164,7 @@ abstract final class AppTheme {
         style: TextButton.styleFrom(
           minimumSize: const Size(48, kMinTouchTarget),
           shape: shape,
-          foregroundColor: Palette.violet,
+          foregroundColor: primary,
           textStyle: textTheme.labelLarge,
         ),
       ),
@@ -205,7 +205,9 @@ abstract final class AppTheme {
         contentTextStyle: textTheme.bodyMedium!.copyWith(
           color: brightness == Brightness.dark ? Palette.navy : Palette.white,
         ),
-        actionTextColor: brightness == Brightness.dark ? Palette.violet : Palette.lavender,
+        actionTextColor: brightness == Brightness.dark
+            ? primary
+            : Color.lerp(primary, Palette.white, 0.45),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Radii.md)),
       ),
       switchTheme: SwitchThemeData(
@@ -213,7 +215,7 @@ abstract final class AppTheme {
           (s) => s.contains(WidgetState.selected) ? Palette.white : lux.ink3,
         ),
         trackColor: WidgetStateProperty.resolveWith(
-          (s) => s.contains(WidgetState.selected) ? Palette.violet : lux.recessed,
+          (s) => s.contains(WidgetState.selected) ? primary : lux.recessed,
         ),
         trackOutlineColor: WidgetStateProperty.resolveWith(
           (s) => s.contains(WidgetState.selected) ? Colors.transparent : lux.hairline,
@@ -223,17 +225,17 @@ abstract final class AppTheme {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
         side: BorderSide(color: lux.ink3, width: 1.6),
         fillColor: WidgetStateProperty.resolveWith(
-          (s) => s.contains(WidgetState.selected) ? Palette.violet : Colors.transparent,
+          (s) => s.contains(WidgetState.selected) ? primary : Colors.transparent,
         ),
       ),
       sliderTheme: SliderThemeData(
-        activeTrackColor: Palette.violet,
+        activeTrackColor: primary,
         inactiveTrackColor: lux.recessed,
-        thumbColor: Palette.violet,
-        overlayColor: Palette.violet.withValues(alpha: 0.12),
+        thumbColor: primary,
+        overlayColor: primary.withValues(alpha: 0.12),
       ),
       progressIndicatorTheme: ProgressIndicatorThemeData(
-        color: Palette.violet,
+        color: primary,
         linearTrackColor: lux.recessed,
         circularTrackColor: lux.recessed,
       ),
@@ -259,8 +261,8 @@ abstract final class AppTheme {
           textStyle: WidgetStatePropertyAll(textTheme.labelMedium),
         ),
       ),
-      floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        backgroundColor: Palette.violet,
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: primary,
         foregroundColor: Palette.white,
         elevation: 0,
         highlightElevation: 0,

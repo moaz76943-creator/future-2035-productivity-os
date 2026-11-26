@@ -7,9 +7,9 @@ import 'package:flutter/widgets.dart';
 abstract final class Palette {
   // Foundation (light)
   static const white = Color(0xFFFFFFFF);
-  static const porcelain = Color(0xFFF8F9FC); // app background
-  static const mist = Color(0xFFF1F3F9); // recessed surfaces
-  static const pearl = Color(0xFFE6E9F2); // hairlines
+  static const porcelain = Color(0xFFF3F6FA); // app background (cool morning mist)
+  static const mist = Color(0xFFEAF0F5); // recessed surfaces
+  static const pearl = Color(0xFFDDE5EC); // hairlines
   static const silver = Color(0xFFC9CEDC);
 
   // Ink
@@ -28,6 +28,8 @@ abstract final class Palette {
   static const moon3 = Color(0xFF8A90B2);
 
   // Accents
+  static const lagoon = Color(0xFF10787C); // Deep Lagoon (default accent)
+  static const seafoam = Color(0xFF3FB8A8);
   static const violet = Color(0xFF6C4CFF); // Electric Violet
   static const aurora = Color(0xFF2F7BFF); // Aurora Blue
   static const turquoise = Color(0xFF00B8C4);
@@ -57,7 +59,7 @@ abstract final class Palette {
 
 /// The colour identity of each functional area.
 enum ModuleHue {
-  focus(Palette.violet, Palette.aurora),
+  focus(Palette.lagoon, Palette.seafoam),
   tasks(Palette.aurora, Palette.turquoise),
   calendar(Palette.lavender, Palette.aurora),
   notes(Palette.champagne, Palette.emerald),
@@ -118,14 +120,14 @@ const double kMinTouchTarget = 48;
 /// for white text on buttons (at least 4.5:1).
 abstract final class AppAccents {
   static const all = <String, Color>{
+    'teal': Palette.lagoon,
     'violet': Palette.violet,
     'blue': Color(0xFF2F62D6),
-    'teal': Color(0xFF0B7C74),
     'green': Color(0xFF2E7D4F),
     'rose': Color(0xFFC03A6E),
     'amber': Color(0xFFA85B12),
   };
 
   /// Null for the default (keeps the original tuned containers).
-  static Color? of(String name) => name == 'violet' ? null : all[name];
+  static Color? of(String name) => name == 'teal' ? null : all[name];
 }

@@ -133,42 +133,59 @@ class _TimerHero extends ConsumerWidget {
                 hue: ModuleHue.focus,
                 size: size,
                 stroke: 14,
-                child: Padding(
-                  padding: const EdgeInsets.all(Space.xl),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        phaseLabel,
-                        style: context.text.titleMedium?.copyWith(color: ModuleHue.focus.a),
-                        textAlign: TextAlign.center,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      const SizedBox(height: Space.xxs),
-                      FittedBox(
+                // A calm lake landscape inside the ring; white text sits on its deep sky.
+                child: Container(
+                  width: size - 44,
+                  height: size - 44,
+                  decoration: const ShapeDecoration(shape: CircleBorder()),
+                  clipBehavior: Clip.antiAlias,
+                  child: CustomPaint(
+                    painter: const LandscapePainter(mood: LandscapeMood.deep),
+                    // Scales down instead of overflowing on short screens and large text.
+                    child: Center(
+                      child: FittedBox(
                         fit: BoxFit.scaleDown,
-                        child: Directionality(
-                          textDirection: TextDirection.ltr,
-                          child: Text(
-                            shownText,
-                            key: const ValueKey('focus-clock'),
-                            style: context.text.displayMedium?.copyWith(
-                              fontFeatures: const [FontFeature.tabularFigures()],
-                              fontWeight: FontWeight.w600,
-                            ),
+                        child: SizedBox(
+                          width: size - 44 - Space.lg * 2,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                phaseLabel,
+                                style: context.text.titleMedium?.copyWith(color: Colors.white),
+                                textAlign: TextAlign.center,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              const SizedBox(height: Space.xxs),
+                              FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Directionality(
+                                  textDirection: TextDirection.ltr,
+                                  child: Text(
+                                    shownText,
+                                    key: const ValueKey('focus-clock'),
+                                    style: context.text.displayMedium?.copyWith(
+                                      fontFeatures: const [FontFeature.tabularFigures()],
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: Space.xxs),
+                              Text(
+                                status,
+                                style: context.text.bodyMedium?.copyWith(color: Colors.white),
+                                textAlign: TextAlign.center,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ],
                           ),
                         ),
                       ),
-                      const SizedBox(height: Space.xxs),
-                      Text(
-                        status,
-                        style: context.text.bodyMedium?.copyWith(color: context.lux.ink2),
-                        textAlign: TextAlign.center,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
+                    ),
                   ),
                 ),
               ),

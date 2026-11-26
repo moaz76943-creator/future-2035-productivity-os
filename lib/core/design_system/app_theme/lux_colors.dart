@@ -48,7 +48,7 @@ class LuxColors extends ThemeExtension<LuxColors> {
     ink3: Palette.ink3,
     glass: Color(0xB8FFFFFF),
     glassBorder: Color(0xCCFFFFFF),
-    shadow: Color(0x1A1B2470),
+    shadow: Color(0x1A0E3A4A),
     success: Color(0xFF0E9F6E),
     warning: Color(0xFFB7791F),
     danger: Color(0xFFDC3545),

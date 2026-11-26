@@ -8,6 +8,7 @@ import '../../../app/routing/routes.dart';
 import '../../../core/database/app_database.dart';
 import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/components/indicators.dart';
+import '../../../core/design_system/components/landscape.dart';
 import '../../../core/design_system/components/states.dart';
 import '../../../core/design_system/components/surfaces.dart';
 import '../../../core/design_system/tokens.dart';
@@ -35,6 +36,7 @@ import 'start_my_day.dart';
 
 part 'dashboard_screen/header.dart';
 part 'dashboard_screen/goal_line.dart';
+part 'dashboard_screen/stats.dart';
 
 /// Section ids persisted in settings.dashboardSections (order = display order).
 String dashSectionName(AppLocalizations l10n, String id) => switch (id) {
@@ -65,7 +67,8 @@ class DashboardScreen extends ConsumerWidget {
           bottom: false,
           child: CustomScrollView(
             slivers: [
-              const SliverToBoxAdapter(child: _Header()),
+              const SliverToBoxAdapter(child: _HeroBackdrop(child: _Header())),
+              const SliverToBoxAdapter(child: _StatTiles()),
               const SliverToBoxAdapter(child: _QuickActions()),
               // Flashcards are a pillar: always right under the quick actions.
               if (sections.contains('review')) const SliverToBoxAdapter(child: _ReviewSection()),
