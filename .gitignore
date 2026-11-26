@@ -56,3 +56,5 @@ key.properties
 *.db-wal
 *.db-shm
 __pycache__/
+.ai-state/
+ai/state/

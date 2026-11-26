@@ -23,6 +23,7 @@ sys.path.insert(0, os.path.join(ROOT, 'tool'))
 sys.path.insert(0, os.path.dirname(__file__))
 from l10n_common import full_languages, load_arb  # noqa: E402
 from router import NoModelAvailable, Router  # noqa: E402
+from critic import critique  # noqa: E402
 
 BATCH = 40
 PH = re.compile(r'\{(\w+)[,}]')
@@ -113,6 +114,10 @@ def main():
             except NoModelAvailable:
                 left += [f'{k}:{lang}' for k, _ in chunk]
                 continue
+            bad, _, checker = critique(
+                router, names.get(lang, lang), {k: {'en': spec[k]['en'], 'draft': t} for k, t in good.items()}, label)
+            good = {k: t for k, t in good.items() if k not in bad}
+            label = f'{label} + {checker or "unchecked"}'
             for k, t in good.items():
                 spec[k][lang] = t
             report.append(f'| {lang} | {len(good)}/{len(chunk)} | {label} |')
@@ -127,6 +132,7 @@ def main():
                 '| Language | Accepted | Model |\n|---|---|---|\n' + '\n'.join(report) + '\n')
         if left:
             f.write(f'\n## Still missing ({len(left)})\n\n' + '\n'.join(f'- {x}' for x in left) + '\n')
+    router.save()
     print(f'drafted; {len(left)} still missing')
     return 0
 

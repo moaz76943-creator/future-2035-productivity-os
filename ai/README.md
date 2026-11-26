@@ -13,14 +13,26 @@ They never change app code and never push to `claude-dev`, `main`, `release/*` o
 Models and their order: `tool/ai/models.json` (no lite models; paid OpenRouter models
 only with `allow_paid`). Keys come from the `DF_*` repository secrets and are never printed.
 
-## Daily review (runs without Claude)
+## Hourly agents (run without Claude)
 
-`DF AI daily` reviews a few languages every day (rotation, about two weeks for all) and
-pushes `ai-drafts/daily-<date>-<run>` with `ai/reports/review-<date>.md` and the full test
-status in the commit title. Nothing reaches `claude-dev` on its own.
+`DF AI agents` runs every hour (`.github/workflows/df-ai-agents.yml`):
+- even hours: `tool/ai/review_draft.py` reviews two languages (all languages every ~3 days);
+- odd hours: `tool/ai/tests_agent.py` writes unit tests for one pure-Dart file.
 
-Claude, when back: `git fetch origin 'refs/heads/ai-drafts/*:refs/remotes/origin/ai-drafts/*'`,
-read the reports, keep only drafts whose tests passed, check each fix (one sample per
-language is enough when the reasons are sound), bring them over with
-`git checkout origin/ai-drafts/<name> -- lib/l10n/app_<code>.arb`, run
-`bash tool/check_l10n_fast.sh`, commit, then delete nothing (drafts stay as history).
+Safety, assuming every model output is wrong until proven otherwise:
+1. Worker model output must be valid JSON/Dart and pass the format checks.
+2. A critic model from a different provider must agree (`tool/ai/critic.py`), or the item is dropped.
+3. `tool/ai/gates.py --full`: allowed paths only (`lib/l10n`, `test/ai_generated`, `ai/`), no
+   secret-looking text, 400-line rule, analyzer and the whole test suite. Failing jobs are dropped.
+4. Results collect on `ai-drafts/day-YYYYMMDD`. Nothing reaches `claude-dev` without Claude.
+
+Resilience: 13 keys across four providers, models that fail twice are skipped for the run,
+a health memory (cached between runs) puts recently failing models last, every step has a
+time limit, and a failed hour never blocks the next one.
+
+## Reviewing drafts (Claude, when back)
+
+`git fetch origin 'refs/heads/ai-drafts/*:refs/remotes/origin/ai-drafts/*'`, read
+`ai/reports/` on each day branch (and `dropped.md` for what failed and why), spot-check fixes,
+then bring good files over with `git checkout origin/ai-drafts/<day> -- <paths>`, run
+`bash tool/check_l10n_fast.sh` (or `tool/check_all.sh` for tests) and commit.

@@ -1,0 +1,129 @@
+name: DF AI agents (hourly drafts, review required)
+
+# Around the clock, one small job per hour:
+#   even hours: two languages get a translation review (worker + critic from another provider)
+#   odd hours:  one pure-Dart file gets new unit tests (must pass twice, analyze clean)
+# Every result must pass tool/ai/gates.py (allowed paths only, no secrets, 400-line rule,
+# analyzer, all tests). Results collect on one branch per day, ai-drafts/day-YYYYMMDD,
+# never on claude-dev, main, release/* or hermes/*. Claude reviews and merges later.
+# A failing job is dropped and logged; the next hour starts clean, so nothing gets stuck.
+# Schedules run only from the default branch: make claude-dev the default branch.
+on:
+  schedule:
+    - cron: '23 * * * *'
+  push:
+    branches:
+      - 'ai-trigger/agents'
+  workflow_dispatch:
+    inputs:
+      job:
+        description: 'review or tests (empty = by hour)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: df-ai-agents
+  cancel-in-progress: false
+
+jobs:
+  agent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      DF_GEMINI_KEY_1: ${{ secrets.DF_GEMINI_KEY_1 }}
+      DF_GEMINI_KEY_2: ${{ secrets.DF_GEMINI_KEY_2 }}
+      DF_GEMINI_KEY_3: ${{ secrets.DF_GEMINI_KEY_3 }}
+      DF_GEMINI_KEY_4: ${{ secrets.DF_GEMINI_KEY_4 }}
+      DF_GEMINI_KEY_5: ${{ secrets.DF_GEMINI_KEY_5 }}
+      DF_GEMINI_KEY_6: ${{ secrets.DF_GEMINI_KEY_6 }}
+      DF_GEMINI_KEY_7: ${{ secrets.DF_GEMINI_KEY_7 }}
+      DF_GEMINI_KEY_8: ${{ secrets.DF_GEMINI_KEY_8 }}
+      DF_GEMINI_KEY_9: ${{ secrets.DF_GEMINI_KEY_9 }}
+      DF_OPENROUTER_KEY: ${{ secrets.DF_OPENROUTER_KEY }}
+      DF_OPENROUTER_KEY_2: ${{ secrets.DF_OPENROUTER_KEY_2 }}
+      DF_GROQ_KEY: ${{ secrets.DF_GROQ_KEY }}
+      DF_NVIDIA_KEY: ${{ secrets.DF_NVIDIA_KEY }}
+      AI_STATE: ${{ github.workspace }}/.ai-state/health.json
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude-dev
+          fetch-depth: 0
+
+      - name: Continue today's draft branch
+        run: |
+          day="ai-drafts/day-$(date -u +%Y%m%d)"
+          echo "DAY=$day" >> "$GITHUB_ENV"
+          if git ls-remote --exit-code --heads origin "$day" >/dev/null; then
+            git fetch -q origin "$day" && git checkout -q -B "$day" FETCH_HEAD
+          else
+            git checkout -q -b "$day"
+          fi
+
+      - name: Restore model health memory
+        uses: actions/cache@v4
+        with:
+          path: .ai-state
+          key: df-ai-health-${{ github.run_id }}
+          restore-keys: df-ai-health-
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.50.0'
+          channel: stable
+          cache: true
+
+      - name: Prepare
+        run: |
+          flutter pub get --enforce-lockfile
+          dart run build_runner build --delete-conflicting-outputs
+          flutter gen-l10n
+
+      - name: Run this hour's job
+        env:
+          JOB: ${{ inputs.job }}
+        run: |
+          set -uo pipefail
+          hour=$((10#$(date -u +%H)))
+          job="${JOB:-}"
+          [ -n "$job" ] || { [ $((hour % 2)) -eq 0 ] && job=review || job=tests; }
+          echo "JOB=$job" >> "$GITHUB_ENV"
+          if [ "$job" = review ]; then
+            DF_SLOT=$hour timeout 35m python3 tool/ai/review_draft.py --per-day 2 --max-fixes 30 || echo "review stopped"
+          else
+            timeout 35m python3 tool/ai/tests_agent.py || echo "tests agent stopped"
+          fi
+
+      - name: Gates (assume the draft is wrong until proven otherwise)
+        run: |
+          set -uo pipefail
+          if python3 tool/ai/gates.py --base origin/claude-dev --full > "$RUNNER_TEMP/gates.json"; then
+            echo "GATES=passed" >> "$GITHUB_ENV"
+          else
+            echo "GATES=failed" >> "$GITHUB_ENV"
+          fi
+          cat "$RUNNER_TEMP/gates.json"
+
+      - name: Keep or drop
+        run: |
+          set -euo pipefail
+          git config user.name "df-ai-agents"
+          git config user.email "df-ai-agents@users.noreply.github.com"
+          mkdir -p ai/reports
+          if [ "$GATES" != passed ]; then
+            # Drop the job's changes; keep only a short log line for review.
+            git checkout -q -- lib test 2>/dev/null || true
+            git clean -fdq -- lib test 2>/dev/null || true
+            why=$(python3 -c 'import json,os;print("; ".join(json.load(open(os.environ["RUNNER_TEMP"]+"/gates.json"))["problems"])[:300])')
+            echo "- $(date -u +%H:%M) $JOB dropped by gates: $why" >> ai/reports/dropped.md
+          fi
+          git add -A ai/reports lib/l10n test/ai_generated
+          if git diff --cached --quiet; then echo "Nothing to keep this hour."; exit 0; fi
+          git commit -q -m "AI $JOB ($GATES gates)" -m "Unreviewed helper-model draft. Do not merge without review."
+          case "$DAY" in ai-drafts/*) ;; *) echo "::error::unsafe target"; exit 1;; esac
+          git push -q origin "HEAD:refs/heads/$DAY"
+          echo "### $JOB → \`$DAY\` (gates $GATES)" >> "$GITHUB_STEP_SUMMARY"
