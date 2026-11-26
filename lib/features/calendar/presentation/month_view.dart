@@ -158,6 +158,7 @@ class _DayCell extends StatelessWidget {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: selected ? DeepFocusVisuals.tealPrimary : null,
+                      boxShadow: selected ? DeepFocusVisuals.edgeGlow(strength: 0.8) : null,
                       border: today && !selected ? Border.all(color: DeepFocusVisuals.tealPrimary, width: 1.5) : null,
                     ),
                     child: Text(

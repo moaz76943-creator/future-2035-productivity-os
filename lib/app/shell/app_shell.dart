@@ -78,15 +78,9 @@ class AppShell extends StatelessWidget {
                       NavigationDestination(
                         icon: Icon(d.$1),
                         selectedIcon: DecoratedBox(
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Color(0x663BC4C0),
-                                blurRadius: 14,
-                                spreadRadius: 1,
-                              ),
-                            ],
+                            boxShadow: DeepFocusVisuals.edgeGlow(),
                           ),
                           child: Icon(d.$2, color: DeepFocusVisuals.tealPrimary),
                         ),

@@ -128,7 +128,12 @@ class _TimerHero extends ConsumerWidget {
             liveRegion: false,
             label: semantics,
             child: ExcludeSemantics(
-              child: GlowRing(
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  boxShadow: a == null ? null : DeepFocusVisuals.edgeGlow(strength: 1.3),
+                ),
+                child: GlowRing(
                 value: progress,
                 hue: ModuleHue.focus,
                 size: size,
@@ -187,6 +192,7 @@ class _TimerHero extends ConsumerWidget {
                     ),
                   ),
                 ),
+              ),
               ),
             ),
           ),
