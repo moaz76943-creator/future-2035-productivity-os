@@ -1,0 +1,1 @@
+- 11-26 18:44 task lib/features/sounds/presentation/widgets/player_bar.dart: patch did not apply: error: patch failed: lib/features/sound; Player bar shows mixer, play/pause, sleep, stop but never displays the active custom audio file name.
