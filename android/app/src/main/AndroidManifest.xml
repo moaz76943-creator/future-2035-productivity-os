@@ -2,6 +2,7 @@
     <!-- Network is used only by the optional, user-configured HTTPS assistant.
          The app remains local-first and asks for consent before sending note text. -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
     <!-- Optional "Do Not Disturb while focusing"; the user grants access in system settings. -->
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
     <!-- Notifications (task/event/habit/review reminders, focus timer alerts).

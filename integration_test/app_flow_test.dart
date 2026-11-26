@@ -1,6 +1,8 @@
 // On-device checks of the real app (encrypted database, platform channels,
 // notifications, speech), run on an Android emulator in CI:
 //   flutter test integration_test -d emulator-5554
+import 'dart:ui' show PlatformDispatcher;
+
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:future_os/app/bootstrap/bootstrap.dart';
@@ -45,7 +47,21 @@ void main() {
   WidgetController.hitTestWarningShouldBeFatal = true;
 
   testWidgets('first run, focus, starter deck review, help', (tester) async {
+    // bootstrap() installs the app's own error handlers. Chain the test's
+    // handlers behind them and restore them at the end, otherwise any failure
+    // shows up only as "A test overrode FlutterError.onError" and hides the cause.
+    final testOnError = FlutterError.onError;
+    final testPlatformOnError = PlatformDispatcher.instance.onError;
     await bootstrap();
+    final appOnError = FlutterError.onError;
+    FlutterError.onError = (details) {
+      appOnError?.call(details);
+      testOnError?.call(details);
+    };
+    addTearDown(() {
+      FlutterError.onError = testOnError;
+      PlatformDispatcher.instance.onError = testPlatformOnError;
+    });
     await waitFor(tester, find.byKey(const ValueKey('onboard-skip')), seconds: 60);
 
     // First-run setup, then the three-page tour once.

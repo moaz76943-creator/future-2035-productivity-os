@@ -22,3 +22,13 @@
 
 # Flutter deferred components (not used; prevents R8 missing play.core classes)
 -dontwarn com.google.android.play.core.**
+
+# Google Mobile Ads
+-keep class com.google.android.gms.ads.** { *; }
+-keep class io.flutter.plugins.googlemobileads.** { *; }
+
+# AndroidX WorkManager, Room & Startup (required by Google Mobile Ads under R8)
+-keep class * extends androidx.room.RoomDatabase { *; }
+-keep class androidx.work.** { *; }
+-keep class androidx.room.** { *; }
+-keep class androidx.startup.** { *; }
