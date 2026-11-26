@@ -1,0 +1,98 @@
+name: DF AI draft (helper models, review required)
+
+# Helper models write DRAFTS only. Requests live in ai/requests/<task>.json on a
+# branch named ai-trigger/<task> (created from claude-dev). The result goes to a
+# new branch ai-drafts/<task>-<run>; nothing is ever pushed to claude-dev, main,
+# release/* or hermes/*. Claude reviews the draft and merges what is correct.
+on:
+  push:
+    branches:
+      - 'ai-trigger/**'
+  workflow_dispatch:
+    inputs:
+      request:
+        description: 'Request file, e.g. ai/requests/my-task.json'
+        required: true
+      allow_paid:
+        description: 'Allow paid OpenRouter models (normally false)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: df-ai-draft-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.50.0'
+          channel: stable
+          cache: true
+
+      - name: Draft translations
+        env:
+          DF_GEMINI_KEY_1: ${{ secrets.DF_GEMINI_KEY_1 }}
+          DF_GEMINI_KEY_2: ${{ secrets.DF_GEMINI_KEY_2 }}
+          DF_GEMINI_KEY_3: ${{ secrets.DF_GEMINI_KEY_3 }}
+          DF_GEMINI_KEY_4: ${{ secrets.DF_GEMINI_KEY_4 }}
+          DF_GEMINI_KEY_5: ${{ secrets.DF_GEMINI_KEY_5 }}
+          DF_GEMINI_KEY_6: ${{ secrets.DF_GEMINI_KEY_6 }}
+          DF_GEMINI_KEY_7: ${{ secrets.DF_GEMINI_KEY_7 }}
+          DF_GEMINI_KEY_8: ${{ secrets.DF_GEMINI_KEY_8 }}
+          DF_GEMINI_KEY_9: ${{ secrets.DF_GEMINI_KEY_9 }}
+          DF_OPENROUTER_KEY: ${{ secrets.DF_OPENROUTER_KEY }}
+          DF_OPENROUTER_KEY_2: ${{ secrets.DF_OPENROUTER_KEY_2 }}
+          DF_GROQ_KEY: ${{ secrets.DF_GROQ_KEY }}
+          DF_NVIDIA_KEY: ${{ secrets.DF_NVIDIA_KEY }}
+          REQUEST: ${{ inputs.request }}
+          ALLOW_PAID: ${{ inputs.allow_paid }}
+        run: |
+          set -euo pipefail
+          flag=""; [ "${ALLOW_PAID:-false}" = "true" ] && flag="--allow-paid"
+          files="${REQUEST:-}"
+          [ -n "$files" ] || files=$(ls ai/requests/*.json 2>/dev/null || true)
+          [ -n "$files" ] || { echo "::error::no request in ai/requests/"; exit 1; }
+          for f in $files; do python3 tool/ai/translate_draft.py "$f" $flag; done
+
+      - name: Apply and check the draft (on the draft branch only)
+        run: |
+          set -uo pipefail
+          flutter pub get --enforce-lockfile
+          status="ready"
+          for f in ai/requests/*.json; do
+            python3 tool/l10n_add_keys.py "$f" || status="incomplete"
+          done
+          if [ "$status" = "ready" ]; then
+            flutter gen-l10n && python3 tool/gen_l10n_custom.py \
+              && python3 tool/check_l10n.py \
+              && flutter test test/unit/l10n --reporter compact || status="failed checks"
+          fi
+          echo "STATUS=$status" >> "$GITHUB_ENV"
+          echo "Draft status: $status" | tee -a ai/reports/STATUS.txt
+
+      - name: Push draft branch
+        run: |
+          set -euo pipefail
+          src="${GITHUB_REF_NAME#ai-trigger/}"
+          dest="ai-drafts/${src//\//-}-${GITHUB_RUN_NUMBER}"
+          case "$dest" in ai-drafts/*) ;; *) echo "::error::unsafe target"; exit 1;; esac
+          git config user.name "df-ai-draft"
+          git config user.email "df-ai-draft@users.noreply.github.com"
+          git checkout -b "$dest"
+          git add -A ai lib/l10n android/app/src/main/res lib/app/localization lib/core/design_system
+          git commit -m "AI draft ($STATUS): $src" -m "Unreviewed helper-model draft. Do not merge without review."
+          git push origin "HEAD:refs/heads/$dest"
+          echo "### Draft pushed to \`$dest\` ($STATUS)" >> "$GITHUB_STEP_SUMMARY"
+          cat ai/reports/*.md >> "$GITHUB_STEP_SUMMARY" || true

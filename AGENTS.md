@@ -64,6 +64,17 @@ Never push with a failing check. Never weaken or delete a test to make it pass: 
 
 ## Git
 
+- `claude-dev` is the one permanent branch for Claude's work. Do not create a branch per task;
+  only for a real need (a risky experiment, a release fix), and say why. `hermes/*` belongs to
+  Hermes; never merge it automatically. Old work lives under `archive/`, builds under `release/`.
+- Helper models (Gemini, OpenRouter, Groq, NVIDIA) only write drafts through `ai/` and the
+  `DF AI draft` workflow, onto `ai-drafts/*` branches that Claude reviews (see `ai/README.md`).
+- Never remove or hide the bottom banner ad (`lib/core/ads/`, shown in `app_shell.dart`), its unit
+  IDs, consent flow, AD_ID permission or R8 keep rules.
+- Never change the signing setup: release builds use only the `FUTURE_UPLOAD_*` upload key and the
+  release workflow checks its certificate. No new keystore, no debug signing, no new package name.
+  Raise the build number in `pubspec.yaml` above every build already uploaded.
+
 - Work on the `claude-dev` branch (or a branch from it). The owner merges into `main`.
 - Never force-push, never rewrite history, never commit keystores, passwords or keys.
 - Format only the files you changed (`dart format <files>`), not whole folders.
