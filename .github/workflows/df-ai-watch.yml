@@ -1,16 +1,25 @@
-name: DF AI watch (daily Arabic summary + stall alarm)
+name: DF AI watch (self-healing + daily Arabic report)
 
-# Every 6 hours: rewrites one issue "تقرير الوكلاء" with today's agent work in Arabic,
-# and comments on it (which notifies the owner) when the agents kept nothing for
-# 6 hours, e.g. every key is out of quota. Read-only for code: it writes issues only.
+# Every 2 hours, fixes what it can by itself instead of only alerting:
+#   - keeps the agents workflow enabled (GitHub disables idle schedules after 60 days)
+#   - cancels an agents run that hangs past 65 minutes
+#   - when nothing was kept for 3 hours, starts a run itself with the next job, so a
+#     quiet hour (all keys resting, one job stuck) never becomes a quiet day
+#   - writes the issue "تقرير الوكلاء" in Arabic: today's work and what it fixed
+# It never touches code; it only starts, cancels or enables workflow runs.
 on:
   schedule:
-    - cron: '41 */6 * * *'
+    - cron: '41 */2 * * *'
   workflow_dispatch:
 
 permissions:
   contents: read
   issues: write
+  actions: write
+
+concurrency:
+  group: df-ai-watch
+  cancel-in-progress: true
 
 jobs:
   watch:
@@ -18,38 +27,49 @@ jobs:
     timeout-minutes: 10
     env:
       GH_TOKEN: ${{ github.token }}
+      WF: df-ai-agents.yml
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Summarise and alert
+      - name: Heal, then report
         run: |
           set -uo pipefail
+          fixed=()
+          gh workflow enable "$WF" >/dev/null 2>&1 && true
+          # 1) A hung run blocks every later hour (one run at a time): cancel it.
+          for id in $(gh run list --workflow "$WF" --status in_progress --json databaseId,startedAt \
+              --jq '.[] | select((now - (.startedAt | fromdateiso8601)) > 3900) | .databaseId'); do
+            gh run cancel "$id" && fixed+=("أوقفت تشغيل عالق ($id)")
+          done
           git fetch -q origin '+refs/heads/ai-drafts/*:refs/remotes/origin/ai-drafts/*' || true
           day="origin/ai-drafts/day-$(date -u +%Y%m%d)"
+          last=$(git for-each-ref --sort=-committerdate --count=1 --format='%(committerdate:unix)' refs/remotes/origin/ai-drafts/ || echo 0)
+          idle=$(( $(date +%s) - ${last:-0} ))
+          busy=$(gh run list --workflow "$WF" --json status --jq '[.[] | select(.status=="queued" or .status=="in_progress")] | length')
+          # 2) Nothing kept for 3 hours and nothing running: start the next job now.
+          if [ "$idle" -gt 10800 ] && [ "${busy:-0}" -eq 0 ]; then
+            jobs=(review tests improve); pick=${jobs[$(( $(date -u +%H) / 2 % 3 ))]}
+            gh workflow run "$WF" --ref claude-dev -f job="$pick" && fixed+=("شغّلت الوكلاء من جديد ($pick) بعد توقف")
+          fi
           count() { git log "$day" --since=midnight --format=%s 2>/dev/null | grep -c "$1" || true; }
           if git rev-parse -q --verify "$day" >/dev/null; then
             kept=$(count 'passed gates'); dropped=$(count 'failed gates')
             rev=$(count 'AI review'); tst=$(count 'AI tests'); imp=$(count 'AI improve')
-            last=$(git log -1 --format=%ct "$day")
-          else
-            kept=0; dropped=0; rev=0; tst=0; imp=0; last=0
-          fi
+          else kept=0; dropped=0; rev=0; tst=0; imp=0; fi
           merged=$(git log origin/claude-dev --since=midnight --format=%s | grep -c '^AI translation fixes (auto' || true)
+          failed=$(gh run list --workflow "$WF" --limit 6 --json conclusion --jq '[.[] | select(.conclusion=="failure")] | length')
+          state="✅ شغالين"
+          [ "${failed:-0}" -ge 4 ] && state="🛠️ أغلب آخر 6 تشغيلات فشلت؛ بيرجعوا يحاولوا كل ساعة، وClaude بيراجع السبب"
+          heal="لا شيء"; [ ${#fixed[@]} -gt 0 ] && heal=$(IFS='، '; echo "${fixed[*]}")
           body=$(printf '%s\n' \
             "**تقرير الوكلاء — $(date -u +%Y-%m-%d) (آخر تحديث $(date -u +%H:%M) UTC)**" "" \
-            "- شغل نجح بالفحوصات: $kept" \
-            "- شغل انرفض من الفحوصات: $dropped" \
+            "- الحالة: $state" \
+            "- إصلاح تلقائي آخر فحص: $heal" \
+            "- شغل نجح بالفحوصات: $kept · انرفض: $dropped" \
             "- مراجعات ترجمة: $rev · اختبارات جديدة: $tst · تحسينات كود: $imp" \
             "- تصحيحات ترجمة اندمجت تلقائيًا: $merged" "" \
             "الفرع: \`${day#origin/}\` — Claude براجع الباقي ويدمج الجيد.")
           num=$(gh issue list --state open --search 'in:title "تقرير الوكلاء"' --json number --jq '.[0].number' || true)
-          if [ -z "$num" ]; then
-            gh issue create --title "تقرير الوكلاء" --body "$body"
-          else
-            gh issue edit "$num" --body "$body"
-            idle=$(( $(date +%s) - last ))
-            if [ "$idle" -gt 21600 ]; then
-              gh issue comment "$num" --body "⚠️ الوكلاء ما سجّلوا أي شغل آخر 6 ساعات. ممكن المفاتيح خلصت أو في عطل. Claude بيفحص لما يرجع."
-            fi
-          fi
+          if [ -z "$num" ]; then gh issue create --title "تقرير الوكلاء" --body "$body"
+          else gh issue edit "$num" --body "$body"; fi

@@ -4,8 +4,11 @@ Helper models (Gemini, OpenRouter free models, Groq, NVIDIA) write drafts only.
 They never push to `main`, `release/*` or `hermes/*`. Only translation fixes that passed every gate
 and were approved by a critic from another provider are auto-merged into `claude-dev`; code
 drafts (tests, fixes, tasks from `ai/tasks.md`) always wait on `ai-drafts/*` for Claude's review.
-The `DF AI watch` workflow keeps the issue "تقرير الوكلاء" up to date and comments on it when
-the agents stall for 6 hours.
+The `DF AI watch` workflow heals instead of alerting: every 2 hours it re-enables the agents,
+cancels a hung run, and starts the next job itself when nothing was kept for 3 hours; it
+writes the issue "تقرير الوكلاء" in Arabic. The router always picks the smartest model that can
+answer now across all providers (scores in `tool/ai/models.json`), rests failing routes
+(daily quotas until the reset, remembered across runs) and discovers new Gemini versions.
 
 1. On a branch `ai-request/<task>` made from `claude-dev`, add `ai/requests/<task>.json`
    (an `l10n_add_keys` spec with English and `meta`), then push the branch.

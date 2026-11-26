@@ -1443,8 +1443,8 @@
   "wordsNone": "কোনো লেখা পাওয়া যায়নি",
   "settingsLanguageSearch": "ভাষা খুঁজুন",
   "settingsLanguageNoMatch": "মিলে যাওয়া কোনো ভাষা নেই",
-  "soundsMyMusic": "আপনার সংগীত",
+  "soundsMyMusic": "আপনার অডিও",
   "soundsMusicHint": "আপনার ফোনের একটি অডিও ফাইল চালান। কিছুই কপি বা আপলোড হয় না।",
   "soundsChooseMusic": "অডিও বেছে নিন",
-  "soundsRemoveMusic": "সংগীত সরান"
+  "soundsRemoveMusic": "অডিও সরান"
 }

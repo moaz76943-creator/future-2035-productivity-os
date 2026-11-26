@@ -5209,7 +5209,7 @@ class AppLocalizationsNe extends AppLocalizations {
   String get settingsLanguageNoMatch => 'कुनै भाषा मिलेन';
 
   @override
-  String get soundsMyMusic => 'तपाईंको सङ्गीत';
+  String get soundsMyMusic => 'तपाईंको अडियो';
 
   @override
   String get soundsMusicHint =>
@@ -5219,5 +5219,5 @@ class AppLocalizationsNe extends AppLocalizations {
   String get soundsChooseMusic => 'अडियो छान्नुहोस्';
 
   @override
-  String get soundsRemoveMusic => 'सङ्गीत हटाउनुहोस्';
+  String get soundsRemoveMusic => 'अडियो हटाउनुहोस्';
 }

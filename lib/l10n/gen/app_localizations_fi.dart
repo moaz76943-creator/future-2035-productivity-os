@@ -5234,7 +5234,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Yksikään kieli ei vastaa';
 
   @override
-  String get soundsMyMusic => 'Oma musiikki';
+  String get soundsMyMusic => 'Oma äänitiedosto';
 
   @override
   String get soundsMusicHint =>
@@ -5244,5 +5244,5 @@ class AppLocalizationsFi extends AppLocalizations {
   String get soundsChooseMusic => 'Valitse ääni';
 
   @override
-  String get soundsRemoveMusic => 'Poista musiikki';
+  String get soundsRemoveMusic => 'Poista ääni';
 }

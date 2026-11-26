@@ -1443,8 +1443,8 @@
   "wordsNone": "Текст олдсонгүй",
   "settingsLanguageSearch": "Хэл хайх",
   "settingsLanguageNoMatch": "Тохирох хэл алга",
-  "soundsMyMusic": "Таны хөгжим",
+  "soundsMyMusic": "Таны аудио",
   "soundsMusicHint": "Утасныхаа аудио файлыг тоглуулна уу. Юу ч хуулагдахгүй, байршуулагдахгүй.",
   "soundsChooseMusic": "Аудио сонгох",
-  "soundsRemoveMusic": "Хөгжмийг хасах"
+  "soundsRemoveMusic": "Аудиог хасах"
 }

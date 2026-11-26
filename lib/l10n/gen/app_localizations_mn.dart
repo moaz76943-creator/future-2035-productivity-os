@@ -5223,7 +5223,7 @@ class AppLocalizationsMn extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Тохирох хэл алга';
 
   @override
-  String get soundsMyMusic => 'Таны хөгжим';
+  String get soundsMyMusic => 'Таны аудио';
 
   @override
   String get soundsMusicHint =>
@@ -5233,5 +5233,5 @@ class AppLocalizationsMn extends AppLocalizations {
   String get soundsChooseMusic => 'Аудио сонгох';
 
   @override
-  String get soundsRemoveMusic => 'Хөгжмийг хасах';
+  String get soundsRemoveMusic => 'Аудиог хасах';
 }

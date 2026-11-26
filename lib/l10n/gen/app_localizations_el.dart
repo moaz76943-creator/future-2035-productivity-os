@@ -5246,7 +5246,7 @@ class AppLocalizationsEl extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Καμία γλώσσα δεν ταιριάζει';
 
   @override
-  String get soundsMyMusic => 'Η μουσική σας';
+  String get soundsMyMusic => 'Ο ήχος σας';
 
   @override
   String get soundsMusicHint =>
@@ -5256,5 +5256,5 @@ class AppLocalizationsEl extends AppLocalizations {
   String get soundsChooseMusic => 'Επιλογή ήχου';
 
   @override
-  String get soundsRemoveMusic => 'Αφαίρεση μουσικής';
+  String get soundsRemoveMusic => 'Αφαίρεση ήχου';
 }

@@ -8,9 +8,9 @@ reviewing and merging the draft; agents never edit this file.
       expansion labelled with an existing text, keep every feature and key) `lib/features/goals/presentation/widgets/goal_editor_sheet.dart`
 - [ ] Habit editor sheet: show the colour choices in one horizontally scrolling row and group
       optional fields, keep every feature and key `lib/features/habits/presentation/widgets/habit_editor_sheet.dart`
-- [ ] Own music: show the chosen track's name in the player bar when it plays, reusing
-      existing texts only `lib/features/sounds/presentation/widgets/player_bar.dart`
-- [ ] Own music card: make the whole card accessible (one semantic label, 48dp targets,
+- [ ] Own audio file: show the chosen file's name in the player bar when it plays, reusing
+      existing texts only (never the word "music") `lib/features/sounds/presentation/widgets/player_bar.dart`
+- [ ] Own audio card: make the whole card accessible (one semantic label, 48dp targets,
       large text without overflow) `lib/features/sounds/presentation/widgets/music_card.dart`
-- [ ] Sounds screen: when only own music plays, the mixer sheet should not show the
+- [ ] Sounds screen: when only the own audio file plays, the mixer sheet should not show the
       "add a sound" hint as if nothing plays `lib/features/sounds/presentation/widgets/player_bar.dart`

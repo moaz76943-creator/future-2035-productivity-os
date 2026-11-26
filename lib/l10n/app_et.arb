@@ -1443,8 +1443,8 @@
   "wordsNone": "Teksti ei leitud",
   "settingsLanguageSearch": "Otsi keeli",
   "settingsLanguageNoMatch": "Ükski keel ei sobi",
-  "soundsMyMusic": "Sinu muusika",
+  "soundsMyMusic": "Sinu heli",
   "soundsMusicHint": "Esita helifail oma telefonist. Midagi ei kopeerita ega laadita üles.",
   "soundsChooseMusic": "Vali heli",
-  "soundsRemoveMusic": "Eemalda muusika"
+  "soundsRemoveMusic": "Eemalda heli"
 }

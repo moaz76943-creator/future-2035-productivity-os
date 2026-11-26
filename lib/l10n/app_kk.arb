@@ -1443,8 +1443,8 @@
   "wordsNone": "Мәтін табылмады",
   "settingsLanguageSearch": "Тілдерді іздеу",
   "settingsLanguageNoMatch": "Сәйкес тіл жоқ",
-  "soundsMyMusic": "Сіздің музыкаңыз",
+  "soundsMyMusic": "Сіздің аудиоңыз",
   "soundsMusicHint": "Телефондағы аудиофайлды ойнатыңыз. Ештеңе көшірілмейді не жүктелмейді.",
   "soundsChooseMusic": "Аудио таңдау",
-  "soundsRemoveMusic": "Музыканы алып тастау"
+  "soundsRemoveMusic": "Аудионы алып тастау"
 }

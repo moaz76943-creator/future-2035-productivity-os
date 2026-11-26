@@ -8887,10 +8887,10 @@ abstract class AppLocalizations {
   /// **'No language matches'**
   String get settingsLanguageNoMatch;
 
-  /// Card title on the sounds screen: play the person's own audio file
+  /// Card title on the sounds screen: play the person's own audio file (avoid the word music)
   ///
   /// In en, this message translates to:
-  /// **'Your music'**
+  /// **'Your audio'**
   String get soundsMyMusic;
 
   /// Hint under the own-music card
@@ -8905,10 +8905,10 @@ abstract class AppLocalizations {
   /// **'Choose audio'**
   String get soundsChooseMusic;
 
-  /// Tooltip: stop using the chosen audio file
+  /// Tooltip: stop using the chosen audio file (avoid the word music)
   ///
   /// In en, this message translates to:
-  /// **'Remove music'**
+  /// **'Remove audio'**
   String get soundsRemoveMusic;
 }
 

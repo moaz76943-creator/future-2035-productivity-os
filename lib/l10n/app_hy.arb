@@ -1443,8 +1443,8 @@
   "wordsNone": "Տեքստ չգտնվեց",
   "settingsLanguageSearch": "Որոնել լեզուներ",
   "settingsLanguageNoMatch": "Համապատասխան լեզու չկա",
-  "soundsMyMusic": "Ձեր երաժշտությունը",
+  "soundsMyMusic": "Ձեր աուդիոն",
   "soundsMusicHint": "Նվագեք աուդիո ֆայլ ձեր հեռախոսից։ Ոչինչ չի պատճենվում կամ վերբեռնվում։",
   "soundsChooseMusic": "Ընտրել աուդիո",
-  "soundsRemoveMusic": "Հեռացնել երաժշտությունը"
+  "soundsRemoveMusic": "Հեռացնել աուդիոն"
 }

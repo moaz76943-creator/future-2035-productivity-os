@@ -1443,8 +1443,8 @@
   "wordsNone": "No s’ha trobat cap text",
   "settingsLanguageSearch": "Cerca idiomes",
   "settingsLanguageNoMatch": "Cap idioma coincideix",
-  "soundsMyMusic": "La teva música",
+  "soundsMyMusic": "El teu àudio",
   "soundsMusicHint": "Reprodueix un fitxer d'àudio del telèfon. No es copia ni es puja res.",
   "soundsChooseMusic": "Tria un àudio",
-  "soundsRemoveMusic": "Treu la música"
+  "soundsRemoveMusic": "Treu l'àudio"
 }

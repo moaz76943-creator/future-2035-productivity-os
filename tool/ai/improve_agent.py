@@ -116,7 +116,7 @@ def main():
             try:
                 ctext, clabel = router.ask(CRITIC, f'Why: {out.get("why", "")}\nPatch:\n{patch[:12000]}',
                                            lambda t: None if 'approve' in t else 'bad shape',
-                                           avoid=label.split('/')[0])
+                                           avoid=label)
                 c = parse(ctext)
             except (NoModelAvailable, ValueError):
                 c = {'approve': False, 'reason': 'no independent critic available'}

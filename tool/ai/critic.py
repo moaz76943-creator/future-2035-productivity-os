@@ -22,7 +22,6 @@ def critique(router, language, items, drafted_by):
     """items: {key: {'en': str, 'draft': str}}. Returns (bad_keys, notes, checker or None)."""
     if not items:
         return set(), {}, None
-    provider = drafted_by.split('/')[0]
     prompt = f'Language: {language}\nItems:\n{json.dumps(items, ensure_ascii=False, indent=1)}'
 
     def check(text):
@@ -33,7 +32,7 @@ def critique(router, language, items, drafted_by):
         return None if isinstance(out, dict) and isinstance(out.get('bad', []), list) else 'bad shape'
 
     try:
-        text, label = router.ask(SYSTEM, prompt, check, avoid=provider)
+        text, label = router.ask(SYSTEM, prompt, check, avoid=drafted_by)
     except NoModelAvailable:
         return set(), {}, None
     out = json.loads(re.sub(r'^```(?:json)?|```$', '', text.strip(), flags=re.M))

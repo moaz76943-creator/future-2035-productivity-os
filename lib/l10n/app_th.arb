@@ -1443,8 +1443,8 @@
   "wordsNone": "ไม่พบข้อความ",
   "settingsLanguageSearch": "ค้นหาภาษา",
   "settingsLanguageNoMatch": "ไม่พบภาษาที่ตรงกัน",
-  "soundsMyMusic": "เพลงของคุณ",
+  "soundsMyMusic": "ไฟล์เสียงของคุณ",
   "soundsMusicHint": "เล่นไฟล์เสียงจากโทรศัพท์ของคุณ ไม่มีการคัดลอกหรืออัปโหลดใดๆ",
   "soundsChooseMusic": "เลือกไฟล์เสียง",
-  "soundsRemoveMusic": "นำเพลงออก"
+  "soundsRemoveMusic": "นำไฟล์เสียงออก"
 }

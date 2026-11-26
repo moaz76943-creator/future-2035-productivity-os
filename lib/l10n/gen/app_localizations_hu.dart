@@ -5224,7 +5224,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Nincs egyező nyelv';
 
   @override
-  String get soundsMyMusic => 'Saját zene';
+  String get soundsMyMusic => 'Saját hangfájl';
 
   @override
   String get soundsMusicHint =>
@@ -5234,5 +5234,5 @@ class AppLocalizationsHu extends AppLocalizations {
   String get soundsChooseMusic => 'Hang kiválasztása';
 
   @override
-  String get soundsRemoveMusic => 'Zene eltávolítása';
+  String get soundsRemoveMusic => 'Hang eltávolítása';
 }

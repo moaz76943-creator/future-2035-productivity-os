@@ -1443,8 +1443,8 @@
   "wordsNone": "Текст не знайдено",
   "settingsLanguageSearch": "Пошук мов",
   "settingsLanguageNoMatch": "Немає відповідної мови",
-  "soundsMyMusic": "Ваша музика",
+  "soundsMyMusic": "Ваше аудіо",
   "soundsMusicHint": "Відтворюйте аудіофайл із телефона. Нічого не копіюється й не завантажується.",
   "soundsChooseMusic": "Вибрати аудіо",
-  "soundsRemoveMusic": "Прибрати музику"
+  "soundsRemoveMusic": "Прибрати аудіо"
 }

@@ -5221,7 +5221,7 @@ class AppLocalizationsKa extends AppLocalizations {
   String get settingsLanguageNoMatch => 'შესაბამისი ენა არ არის';
 
   @override
-  String get soundsMyMusic => 'თქვენი მუსიკა';
+  String get soundsMyMusic => 'თქვენი აუდიო';
 
   @override
   String get soundsMusicHint => 'დაუკარით აუდიოფაილი ტელეფონიდან. არაფერი კოპირდება ან იტვირთება.';
@@ -5230,5 +5230,5 @@ class AppLocalizationsKa extends AppLocalizations {
   String get soundsChooseMusic => 'აუდიოს არჩევა';
 
   @override
-  String get soundsRemoveMusic => 'მუსიკის წაშლა';
+  String get soundsRemoveMusic => 'აუდიოს წაშლა';
 }

@@ -4968,7 +4968,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get settingsLanguageNoMatch => '一致する言語がありません';
 
   @override
-  String get soundsMyMusic => '自分の音楽';
+  String get soundsMyMusic => '自分の音声';
 
   @override
   String get soundsMusicHint => 'スマートフォンの音声ファイルを再生します。コピーやアップロードは行いません。';
@@ -4977,5 +4977,5 @@ class AppLocalizationsJa extends AppLocalizations {
   String get soundsChooseMusic => '音声を選ぶ';
 
   @override
-  String get soundsRemoveMusic => '音楽を削除';
+  String get soundsRemoveMusic => '音声を削除';
 }

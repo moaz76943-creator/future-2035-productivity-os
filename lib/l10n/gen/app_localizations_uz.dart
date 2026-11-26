@@ -5223,7 +5223,7 @@ class AppLocalizationsUz extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Mos til yoʻq';
 
   @override
-  String get soundsMyMusic => 'Musiqangiz';
+  String get soundsMyMusic => 'Audiongiz';
 
   @override
   String get soundsMusicHint =>
@@ -5233,5 +5233,5 @@ class AppLocalizationsUz extends AppLocalizations {
   String get soundsChooseMusic => 'Audio tanlash';
 
   @override
-  String get soundsRemoveMusic => 'Musiqani olib tashlash';
+  String get soundsRemoveMusic => 'Audioni olib tashlash';
 }

@@ -5214,7 +5214,7 @@ class AppLocalizationsSw extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Hakuna lugha inayolingana';
 
   @override
-  String get soundsMyMusic => 'Muziki wako';
+  String get soundsMyMusic => 'Sauti yako';
 
   @override
   String get soundsMusicHint =>
@@ -5224,5 +5224,5 @@ class AppLocalizationsSw extends AppLocalizations {
   String get soundsChooseMusic => 'Chagua sauti';
 
   @override
-  String get soundsRemoveMusic => 'Ondoa muziki';
+  String get soundsRemoveMusic => 'Ondoa sauti';
 }

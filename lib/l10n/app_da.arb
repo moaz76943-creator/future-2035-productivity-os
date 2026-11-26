@@ -1443,8 +1443,8 @@
   "wordsNone": "Ingen tekst fundet",
   "settingsLanguageSearch": "Søg efter sprog",
   "settingsLanguageNoMatch": "Intet sprog passer",
-  "soundsMyMusic": "Din musik",
+  "soundsMyMusic": "Din lyd",
   "soundsMusicHint": "Afspil en lydfil fra din telefon. Intet kopieres eller uploades.",
   "soundsChooseMusic": "Vælg lyd",
-  "soundsRemoveMusic": "Fjern musik"
+  "soundsRemoveMusic": "Fjern lyd"
 }

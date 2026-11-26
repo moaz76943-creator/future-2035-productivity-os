@@ -5346,7 +5346,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Язык не найден';
 
   @override
-  String get soundsMyMusic => 'Ваша музыка';
+  String get soundsMyMusic => 'Ваше аудио';
 
   @override
   String get soundsMusicHint =>
@@ -5356,5 +5356,5 @@ class AppLocalizationsRu extends AppLocalizations {
   String get soundsChooseMusic => 'Выбрать аудио';
 
   @override
-  String get soundsRemoveMusic => 'Убрать музыку';
+  String get soundsRemoveMusic => 'Убрать аудио';
 }

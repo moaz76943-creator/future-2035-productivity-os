@@ -5319,7 +5319,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Brak pasującego języka';
 
   @override
-  String get soundsMyMusic => 'Twoja muzyka';
+  String get soundsMyMusic => 'Twój dźwięk';
 
   @override
   String get soundsMusicHint =>
@@ -5329,5 +5329,5 @@ class AppLocalizationsPl extends AppLocalizations {
   String get soundsChooseMusic => 'Wybierz dźwięk';
 
   @override
-  String get soundsRemoveMusic => 'Usuń muzykę';
+  String get soundsRemoveMusic => 'Usuń dźwięk';
 }

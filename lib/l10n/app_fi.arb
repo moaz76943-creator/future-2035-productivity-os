@@ -1443,8 +1443,8 @@
   "wordsNone": "Tekstiä ei löytynyt",
   "settingsLanguageSearch": "Hae kieliä",
   "settingsLanguageNoMatch": "Yksikään kieli ei vastaa",
-  "soundsMyMusic": "Oma musiikki",
+  "soundsMyMusic": "Oma äänitiedosto",
   "soundsMusicHint": "Toista äänitiedosto puhelimestasi. Mitään ei kopioida eikä ladata palvelimelle.",
   "soundsChooseMusic": "Valitse ääni",
-  "soundsRemoveMusic": "Poista musiikki"
+  "soundsRemoveMusic": "Poista ääni"
 }

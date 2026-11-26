@@ -5223,7 +5223,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Ningún idioma coincide';
 
   @override
-  String get soundsMyMusic => 'Tu música';
+  String get soundsMyMusic => 'Tu audio';
 
   @override
   String get soundsMusicHint =>
@@ -5233,7 +5233,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get soundsChooseMusic => 'Elegir audio';
 
   @override
-  String get soundsRemoveMusic => 'Quitar música';
+  String get soundsRemoveMusic => 'Quitar audio';
 }
 
 /// The translations for Spanish Castilian, as used in Latin America and the Caribbean (`es_419`).

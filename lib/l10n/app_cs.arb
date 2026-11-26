@@ -1443,8 +1443,8 @@
   "wordsNone": "Nenalezen žádný text",
   "settingsLanguageSearch": "Hledat jazyky",
   "settingsLanguageNoMatch": "Žádný jazyk neodpovídá",
-  "soundsMyMusic": "Vaše hudba",
+  "soundsMyMusic": "Váš zvuk",
   "soundsMusicHint": "Přehrajte zvukový soubor z telefonu. Nic se nekopíruje ani nenahrává.",
   "soundsChooseMusic": "Vybrat zvuk",
-  "soundsRemoveMusic": "Odebrat hudbu"
+  "soundsRemoveMusic": "Odebrat zvuk"
 }

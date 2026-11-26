@@ -1443,8 +1443,8 @@
   "wordsNone": "Nije pronađen nijedan tekst",
   "settingsLanguageSearch": "Pretraži jezike",
   "settingsLanguageNoMatch": "Nijedan jezik ne odgovara",
-  "soundsMyMusic": "Vaša glazba",
+  "soundsMyMusic": "Vaš zvuk",
   "soundsMusicHint": "Reproducirajte audiodatoteku s telefona. Ništa se ne kopira ni ne prenosi.",
   "soundsChooseMusic": "Odaberite zvuk",
-  "soundsRemoveMusic": "Ukloni glazbu"
+  "soundsRemoveMusic": "Ukloni zvuk"
 }

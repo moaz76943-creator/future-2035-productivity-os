@@ -1443,8 +1443,8 @@
   "wordsNone": "文言が見つかりません",
   "settingsLanguageSearch": "言語を検索",
   "settingsLanguageNoMatch": "一致する言語がありません",
-  "soundsMyMusic": "自分の音楽",
+  "soundsMyMusic": "自分の音声",
   "soundsMusicHint": "スマートフォンの音声ファイルを再生します。コピーやアップロードは行いません。",
   "soundsChooseMusic": "音声を選ぶ",
-  "soundsRemoveMusic": "音楽を削除"
+  "soundsRemoveMusic": "音声を削除"
 }

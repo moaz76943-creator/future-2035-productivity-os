@@ -5201,7 +5201,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsLanguageNoMatch => 'No language matches';
 
   @override
-  String get soundsMyMusic => 'Your music';
+  String get soundsMyMusic => 'Your audio';
 
   @override
   String get soundsMusicHint =>
@@ -5211,7 +5211,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get soundsChooseMusic => 'Choose audio';
 
   @override
-  String get soundsRemoveMusic => 'Remove music';
+  String get soundsRemoveMusic => 'Remove audio';
 }
 
 /// The translations for English, as used in the United Kingdom (`en_GB`).

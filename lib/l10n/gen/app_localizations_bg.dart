@@ -5238,7 +5238,7 @@ class AppLocalizationsBg extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Няма съвпадащ език';
 
   @override
-  String get soundsMyMusic => 'Вашата музика';
+  String get soundsMyMusic => 'Вашето аудио';
 
   @override
   String get soundsMusicHint => 'Пуснете аудиофайл от телефона си. Нищо не се копира или качва.';
@@ -5247,5 +5247,5 @@ class AppLocalizationsBg extends AppLocalizations {
   String get soundsChooseMusic => 'Изберете аудио';
 
   @override
-  String get soundsRemoveMusic => 'Премахване на музиката';
+  String get soundsRemoveMusic => 'Премахване на аудиото';
 }

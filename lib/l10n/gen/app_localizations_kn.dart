@@ -5280,7 +5280,7 @@ class AppLocalizationsKn extends AppLocalizations {
   String get settingsLanguageNoMatch => 'ಯಾವುದೇ ಭಾಷೆ ಹೊಂದುತ್ತಿಲ್ಲ';
 
   @override
-  String get soundsMyMusic => 'ನಿಮ್ಮ ಸಂಗೀತ';
+  String get soundsMyMusic => 'ನಿಮ್ಮ ಆಡಿಯೋ';
 
   @override
   String get soundsMusicHint =>
@@ -5290,5 +5290,5 @@ class AppLocalizationsKn extends AppLocalizations {
   String get soundsChooseMusic => 'ಆಡಿಯೋ ಆಯ್ಕೆಮಾಡಿ';
 
   @override
-  String get soundsRemoveMusic => 'ಸಂಗೀತ ತೆಗೆದುಹಾಕಿ';
+  String get soundsRemoveMusic => 'ಆಡಿಯೋ ತೆಗೆದುಹಾಕಿ';
 }

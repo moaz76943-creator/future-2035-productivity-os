@@ -1443,8 +1443,8 @@
   "wordsNone": "Besedila ni bilo mogoče najti",
   "settingsLanguageSearch": "Poišči jezike",
   "settingsLanguageNoMatch": "Noben jezik se ne ujema",
-  "soundsMyMusic": "Vaša glasba",
+  "soundsMyMusic": "Vaš zvok",
   "soundsMusicHint": "Predvajajte zvočno datoteko iz telefona. Nič se ne kopira ali naloži.",
   "soundsChooseMusic": "Izberi zvok",
-  "soundsRemoveMusic": "Odstrani glasbo"
+  "soundsRemoveMusic": "Odstrani zvok"
 }

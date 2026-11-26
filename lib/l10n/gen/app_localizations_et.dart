@@ -5217,7 +5217,7 @@ class AppLocalizationsEt extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Ükski keel ei sobi';
 
   @override
-  String get soundsMyMusic => 'Sinu muusika';
+  String get soundsMyMusic => 'Sinu heli';
 
   @override
   String get soundsMusicHint =>
@@ -5227,5 +5227,5 @@ class AppLocalizationsEt extends AppLocalizations {
   String get soundsChooseMusic => 'Vali heli';
 
   @override
-  String get soundsRemoveMusic => 'Eemalda muusika';
+  String get soundsRemoveMusic => 'Eemalda heli';
 }

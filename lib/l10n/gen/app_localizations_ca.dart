@@ -5237,7 +5237,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Cap idioma coincideix';
 
   @override
-  String get soundsMyMusic => 'La teva música';
+  String get soundsMyMusic => 'El teu àudio';
 
   @override
   String get soundsMusicHint =>
@@ -5247,5 +5247,5 @@ class AppLocalizationsCa extends AppLocalizations {
   String get soundsChooseMusic => 'Tria un àudio';
 
   @override
-  String get soundsRemoveMusic => 'Treu la música';
+  String get soundsRemoveMusic => 'Treu l\'àudio';
 }

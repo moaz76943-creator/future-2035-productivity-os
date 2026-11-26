@@ -1443,8 +1443,8 @@
   "wordsNone": "ტექსტი ვერ მოიძებნა",
   "settingsLanguageSearch": "ენების ძიება",
   "settingsLanguageNoMatch": "შესაბამისი ენა არ არის",
-  "soundsMyMusic": "თქვენი მუსიკა",
+  "soundsMyMusic": "თქვენი აუდიო",
   "soundsMusicHint": "დაუკარით აუდიოფაილი ტელეფონიდან. არაფერი კოპირდება ან იტვირთება.",
   "soundsChooseMusic": "აუდიოს არჩევა",
-  "soundsRemoveMusic": "მუსიკის წაშლა"
+  "soundsRemoveMusic": "აუდიოს წაშლა"
 }

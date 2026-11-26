@@ -1443,8 +1443,8 @@
   "wordsNone": "Не е пронајден текст",
   "settingsLanguageSearch": "Барај јазици",
   "settingsLanguageNoMatch": "Ниеден јазик не одговара",
-  "soundsMyMusic": "Вашата музика",
+  "soundsMyMusic": "Вашето аудио",
   "soundsMusicHint": "Пуштете аудиодатотека од телефонот. Ништо не се копира ниту прикачува.",
   "soundsChooseMusic": "Изберете аудио",
-  "soundsRemoveMusic": "Отстрани музика"
+  "soundsRemoveMusic": "Отстрани аудио"
 }

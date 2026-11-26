@@ -5253,7 +5253,7 @@ class AppLocalizationsEu extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Ez dago bat datorren hizkuntzarik';
 
   @override
-  String get soundsMyMusic => 'Zure musika';
+  String get soundsMyMusic => 'Zure audioa';
 
   @override
   String get soundsMusicHint =>
@@ -5263,5 +5263,5 @@ class AppLocalizationsEu extends AppLocalizations {
   String get soundsChooseMusic => 'Aukeratu audioa';
 
   @override
-  String get soundsRemoveMusic => 'Kendu musika';
+  String get soundsRemoveMusic => 'Kendu audioa';
 }

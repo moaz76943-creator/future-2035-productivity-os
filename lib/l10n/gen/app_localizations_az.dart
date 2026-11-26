@@ -5215,7 +5215,7 @@ class AppLocalizationsAz extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Uyğun dil yoxdur';
 
   @override
-  String get soundsMyMusic => 'Musiqiniz';
+  String get soundsMyMusic => 'Audio faylınız';
 
   @override
   String get soundsMusicHint =>
@@ -5225,5 +5225,5 @@ class AppLocalizationsAz extends AppLocalizations {
   String get soundsChooseMusic => 'Audio seçin';
 
   @override
-  String get soundsRemoveMusic => 'Musiqini sil';
+  String get soundsRemoveMusic => 'Audionu sil';
 }

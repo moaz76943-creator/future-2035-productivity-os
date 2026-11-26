@@ -1443,8 +1443,8 @@
   "wordsNone": "Niciun text găsit",
   "settingsLanguageSearch": "Caută limbi",
   "settingsLanguageNoMatch": "Nicio limbă nu se potrivește",
-  "soundsMyMusic": "Muzica ta",
+  "soundsMyMusic": "Audio-ul tău",
   "soundsMusicHint": "Redă un fișier audio de pe telefon. Nimic nu este copiat sau încărcat.",
   "soundsChooseMusic": "Alege audio",
-  "soundsRemoveMusic": "Elimină muzica"
+  "soundsRemoveMusic": "Elimină audio"
 }

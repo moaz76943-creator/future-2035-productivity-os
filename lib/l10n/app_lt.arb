@@ -1443,8 +1443,8 @@
   "wordsNone": "Tekstas nerastas",
   "settingsLanguageSearch": "Ieškoti kalbų",
   "settingsLanguageNoMatch": "Nė viena kalba neatitinka",
-  "soundsMyMusic": "Jūsų muzika",
+  "soundsMyMusic": "Jūsų garsas",
   "soundsMusicHint": "Paleiskite garso failą iš telefono. Niekas nekopijuojama ir neįkeliama.",
   "soundsChooseMusic": "Pasirinkti garsą",
-  "soundsRemoveMusic": "Pašalinti muziką"
+  "soundsRemoveMusic": "Pašalinti garsą"
 }

@@ -1443,8 +1443,8 @@
   "wordsNone": "텍스트를 찾을 수 없어요",
   "settingsLanguageSearch": "언어 검색",
   "settingsLanguageNoMatch": "일치하는 언어가 없습니다",
-  "soundsMyMusic": "내 음악",
+  "soundsMyMusic": "내 오디오",
   "soundsMusicHint": "휴대폰의 오디오 파일을 재생합니다. 복사하거나 업로드하지 않습니다.",
   "soundsChooseMusic": "오디오 선택",
-  "soundsRemoveMusic": "음악 제거"
+  "soundsRemoveMusic": "오디오 제거"
 }

@@ -1443,8 +1443,8 @@
   "wordsNone": "Nem található szöveg",
   "settingsLanguageSearch": "Nyelvek keresése",
   "settingsLanguageNoMatch": "Nincs egyező nyelv",
-  "soundsMyMusic": "Saját zene",
+  "soundsMyMusic": "Saját hangfájl",
   "soundsMusicHint": "Játssz le egy hangfájlt a telefonodról. Semmi sem lesz másolva vagy feltöltve.",
   "soundsChooseMusic": "Hang kiválasztása",
-  "soundsRemoveMusic": "Zene eltávolítása"
+  "soundsRemoveMusic": "Hang eltávolítása"
 }

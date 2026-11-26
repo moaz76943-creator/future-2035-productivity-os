@@ -1443,8 +1443,8 @@
   "wordsNone": "Metin bulunamadı",
   "settingsLanguageSearch": "Dil ara",
   "settingsLanguageNoMatch": "Eşleşen dil yok",
-  "soundsMyMusic": "Müziğin",
+  "soundsMyMusic": "Ses dosyan",
   "soundsMusicHint": "Telefonundaki bir ses dosyasını çal. Hiçbir şey kopyalanmaz veya yüklenmez.",
   "soundsChooseMusic": "Ses seç",
-  "soundsRemoveMusic": "Müziği kaldır"
+  "soundsRemoveMusic": "Sesi kaldır"
 }

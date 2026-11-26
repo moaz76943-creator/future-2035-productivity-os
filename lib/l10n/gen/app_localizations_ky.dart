@@ -5219,7 +5219,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Дал келген тил жок';
 
   @override
-  String get soundsMyMusic => 'Сиздин музыка';
+  String get soundsMyMusic => 'Сиздин аудио';
 
   @override
   String get soundsMusicHint =>
@@ -5229,5 +5229,5 @@ class AppLocalizationsKy extends AppLocalizations {
   String get soundsChooseMusic => 'Аудио тандоо';
 
   @override
-  String get soundsRemoveMusic => 'Музыканы алып салуу';
+  String get soundsRemoveMusic => 'Аудиону алып салуу';
 }

@@ -1443,8 +1443,8 @@
   "wordsNone": "Nuk u gjet tekst",
   "settingsLanguageSearch": "Kërko gjuhë",
   "settingsLanguageNoMatch": "Asnjë gjuhë nuk përputhet",
-  "soundsMyMusic": "Muzika jote",
+  "soundsMyMusic": "Audio jote",
   "soundsMusicHint": "Luaj një skedar audio nga telefoni. Asgjë nuk kopjohet apo ngarkohet.",
   "soundsChooseMusic": "Zgjidh audio",
-  "soundsRemoveMusic": "Hiq muzikën"
+  "soundsRemoveMusic": "Hiq audion"
 }

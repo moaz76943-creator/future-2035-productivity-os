@@ -1443,8 +1443,8 @@
   "wordsNone": "لا يوجد نص",
   "settingsLanguageSearch": "ابحث عن لغة",
   "settingsLanguageNoMatch": "لا توجد لغة مطابقة",
-  "soundsMyMusic": "موسيقاك",
+  "soundsMyMusic": "ملفك الصوتي",
   "soundsMusicHint": "شغّل ملفًا صوتيًا من هاتفك. لا يُنسخ أو يُرفع أي شيء.",
   "soundsChooseMusic": "اختر ملفًا صوتيًا",
-  "soundsRemoveMusic": "إزالة الموسيقى"
+  "soundsRemoveMusic": "إزالة الملف الصوتي"
 }

@@ -1443,8 +1443,8 @@
   "wordsNone": "Enginn texti fannst",
   "settingsLanguageSearch": "Leita að tungumálum",
   "settingsLanguageNoMatch": "Ekkert tungumál passar",
-  "soundsMyMusic": "Tónlistin þín",
+  "soundsMyMusic": "Hljóðið þitt",
   "soundsMusicHint": "Spilaðu hljóðskrá úr símanum. Ekkert er afritað eða hlaðið upp.",
   "soundsChooseMusic": "Veldu hljóð",
-  "soundsRemoveMusic": "Fjarlægja tónlist"
+  "soundsRemoveMusic": "Fjarlægja hljóð"
 }

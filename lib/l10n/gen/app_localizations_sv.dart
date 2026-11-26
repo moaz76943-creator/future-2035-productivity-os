@@ -5214,7 +5214,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Inget språk matchar';
 
   @override
-  String get soundsMyMusic => 'Din musik';
+  String get soundsMyMusic => 'Ditt ljud';
 
   @override
   String get soundsMusicHint =>
@@ -5224,5 +5224,5 @@ class AppLocalizationsSv extends AppLocalizations {
   String get soundsChooseMusic => 'Välj ljud';
 
   @override
-  String get soundsRemoveMusic => 'Ta bort musik';
+  String get soundsRemoveMusic => 'Ta bort ljud';
 }

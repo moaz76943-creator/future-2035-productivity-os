@@ -5216,7 +5216,7 @@ class AppLocalizationsAf extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Geen taal pas nie';
 
   @override
-  String get soundsMyMusic => 'Jou musiek';
+  String get soundsMyMusic => 'Jou oudio';
 
   @override
   String get soundsMusicHint =>
@@ -5226,5 +5226,5 @@ class AppLocalizationsAf extends AppLocalizations {
   String get soundsChooseMusic => 'Kies oudio';
 
   @override
-  String get soundsRemoveMusic => 'Verwyder musiek';
+  String get soundsRemoveMusic => 'Verwyder oudio';
 }

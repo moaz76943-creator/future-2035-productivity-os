@@ -5278,7 +5278,7 @@ class AppLocalizationsLv extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Neviena valoda neatbilst';
 
   @override
-  String get soundsMyMusic => 'Jūsu mūzika';
+  String get soundsMyMusic => 'Jūsu audio';
 
   @override
   String get soundsMusicHint =>
@@ -5288,5 +5288,5 @@ class AppLocalizationsLv extends AppLocalizations {
   String get soundsChooseMusic => 'Izvēlēties audio';
 
   @override
-  String get soundsRemoveMusic => 'Noņemt mūziku';
+  String get soundsRemoveMusic => 'Noņemt audio';
 }

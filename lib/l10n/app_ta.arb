@@ -1443,8 +1443,8 @@
   "wordsNone": "உரை எதுவும் கிடைக்கவில்லை",
   "settingsLanguageSearch": "மொழிகளைத் தேடு",
   "settingsLanguageNoMatch": "பொருந்தும் மொழி இல்லை",
-  "soundsMyMusic": "உங்கள் இசை",
+  "soundsMyMusic": "உங்கள் ஆடியோ",
   "soundsMusicHint": "உங்கள் ஃபோனில் உள்ள ஆடியோ கோப்பை இயக்குங்கள். எதுவும் நகலெடுக்கப்படுவதில்லை, பதிவேற்றப்படுவதில்லை.",
   "soundsChooseMusic": "ஆடியோவைத் தேர்வுசெய்",
-  "soundsRemoveMusic": "இசையை அகற்று"
+  "soundsRemoveMusic": "ஆடியோவை அகற்று"
 }

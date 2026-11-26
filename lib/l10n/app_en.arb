@@ -6928,9 +6928,9 @@
   "@settingsLanguageNoMatch": {
     "description": "Shown when no language matches the search"
   },
-  "soundsMyMusic": "Your music",
+  "soundsMyMusic": "Your audio",
   "@soundsMyMusic": {
-    "description": "Card title on the sounds screen: play the person's own audio file"
+    "description": "Card title on the sounds screen: play the person's own audio file (avoid the word music)"
   },
   "soundsMusicHint": "Play an audio file from your phone. Nothing is copied or uploaded.",
   "@soundsMusicHint": {
@@ -6940,8 +6940,8 @@
   "@soundsChooseMusic": {
     "description": "Button: open the phone's file picker for an audio file"
   },
-  "soundsRemoveMusic": "Remove music",
+  "soundsRemoveMusic": "Remove audio",
   "@soundsRemoveMusic": {
-    "description": "Tooltip: stop using the chosen audio file"
+    "description": "Tooltip: stop using the chosen audio file (avoid the word music)"
   }
 }

@@ -1443,8 +1443,8 @@
   "wordsNone": "Geen tekst gevonden",
   "settingsLanguageSearch": "Talen zoeken",
   "settingsLanguageNoMatch": "Geen taal gevonden",
-  "soundsMyMusic": "Jouw muziek",
+  "soundsMyMusic": "Jouw audio",
   "soundsMusicHint": "Speel een audiobestand van je telefoon af. Er wordt niets gekopieerd of geüpload.",
   "soundsChooseMusic": "Audio kiezen",
-  "soundsRemoveMusic": "Muziek verwijderen"
+  "soundsRemoveMusic": "Audio verwijderen"
 }

@@ -5217,7 +5217,7 @@ class AppLocalizationsKk extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Сәйкес тіл жоқ';
 
   @override
-  String get soundsMyMusic => 'Сіздің музыкаңыз';
+  String get soundsMyMusic => 'Сіздің аудиоңыз';
 
   @override
   String get soundsMusicHint =>
@@ -5227,5 +5227,5 @@ class AppLocalizationsKk extends AppLocalizations {
   String get soundsChooseMusic => 'Аудио таңдау';
 
   @override
-  String get soundsRemoveMusic => 'Музыканы алып тастау';
+  String get soundsRemoveMusic => 'Аудионы алып тастау';
 }

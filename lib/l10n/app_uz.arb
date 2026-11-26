@@ -1443,8 +1443,8 @@
   "wordsNone": "Matn topilmadi",
   "settingsLanguageSearch": "Tillarni qidirish",
   "settingsLanguageNoMatch": "Mos til yoʻq",
-  "soundsMyMusic": "Musiqangiz",
+  "soundsMyMusic": "Audiongiz",
   "soundsMusicHint": "Telefoningizdagi audio faylni ijro eting. Hech narsa nusxalanmaydi yoki yuklanmaydi.",
   "soundsChooseMusic": "Audio tanlash",
-  "soundsRemoveMusic": "Musiqani olib tashlash"
+  "soundsRemoveMusic": "Audioni olib tashlash"
 }

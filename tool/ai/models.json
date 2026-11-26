@@ -1,32 +1,62 @@
 {
-  "_note": "Order = preference. Only strong models; no lite models. Paid OpenRouter models stay off unless the run sets allow_paid. Keys come from DF_* secrets only.",
+  "_note": "Routes are tried smartest first across ALL providers (by score, 0-100), every key of a model before the next model, so a model that runs out moves to an equally smart one elsewhere, not to an older version. Scores are Claude's estimate; health memory moves recently failing models down. New Gemini pro/flash versions are discovered at run time (never lite). Paid models only with allow_paid.",
   "providers": [
     {
       "name": "gemini",
       "kind": "gemini",
       "url": "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
-      "keys": ["DF_GEMINI_KEY_1", "DF_GEMINI_KEY_2", "DF_GEMINI_KEY_3", "DF_GEMINI_KEY_4", "DF_GEMINI_KEY_5",
-               "DF_GEMINI_KEY_6", "DF_GEMINI_KEY_7", "DF_GEMINI_KEY_8", "DF_GEMINI_KEY_9"],
-      "models": ["gemini-4-hydrogen", "gemini-3.8-flash", "gemini-3.7-flash", "gemini-3.6-flash"],
+      "keys": [
+        "DF_GEMINI_KEY_1",
+        "DF_GEMINI_KEY_2",
+        "DF_GEMINI_KEY_3",
+        "DF_GEMINI_KEY_4",
+        "DF_GEMINI_KEY_5",
+        "DF_GEMINI_KEY_6",
+        "DF_GEMINI_KEY_7",
+        "DF_GEMINI_KEY_8",
+        "DF_GEMINI_KEY_9"
+      ],
+      "models": [
+        "gemini-4-hydrogen",
+        "gemini-3.8-flash",
+        "gemini-3.7-flash",
+        "gemini-3.6-flash"
+      ],
       "timeout": 60
     },
     {
       "name": "openrouter",
       "kind": "openai",
       "url": "https://openrouter.ai/api/v1/chat/completions",
-      "keys": ["DF_OPENROUTER_KEY", "DF_OPENROUTER_KEY_2"],
-      "models": ["nvidia/nemotron-3-ultra-550b-a55b:free", "google/gemma-4-31b-it:free",
-                 "particle-ai/particle-1:free", "baidu/ernie-5.5-flash-preview:free",
-                 "nvidia/nemotron-3.5-super-vl:free", "openrouter/free"],
-      "paid_models": ["google/gemini-4-neon"],
+      "keys": [
+        "DF_OPENROUTER_KEY",
+        "DF_OPENROUTER_KEY_2"
+      ],
+      "models": [
+        "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "google/gemma-4-31b-it:free",
+        "particle-ai/particle-1:free",
+        "baidu/ernie-5.5-flash-preview:free",
+        "nvidia/nemotron-3.5-super-vl:free",
+        "openrouter/free"
+      ],
+      "paid_models": [
+        "google/gemini-4-neon"
+      ],
       "timeout": 120
     },
     {
       "name": "groq",
       "kind": "openai",
       "url": "https://api.groq.com/openai/v1/chat/completions",
-      "keys": ["DF_GROQ_KEY"],
-      "models": ["openai/gpt-oss-120b", "qwen/qwen3.8-27b", "openai/gpt-oss-20b"],
+      "keys": [
+        "DF_GROQ_KEY"
+      ],
+      "models": [
+        "openai/gpt-oss-120b",
+        "qwen/qwen3.8-27b",
+        "openai/gpt-oss-20b"
+      ],
       "timeout": 60,
       "tokens_per_minute": 8000
     },
@@ -34,10 +64,36 @@
       "name": "nvidia",
       "kind": "openai",
       "url": "https://integrate.api.nvidia.com/v1/chat/completions",
-      "keys": ["DF_NVIDIA_KEY"],
-      "models": ["mistralai/mistral-large-4-1t-a52b", "nvidia/nemotron-3-ultra-550b-a55b",
-                 "moonshotai/kimi-k3.1-pro", "z-ai/glm-5.3-flash"],
+      "keys": [
+        "DF_NVIDIA_KEY"
+      ],
+      "models": [
+        "mistralai/mistral-large-4-1t-a52b",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "moonshotai/kimi-k3.1-pro",
+        "z-ai/glm-5.3-flash"
+      ],
       "timeout": 120
     }
-  ]
+  ],
+  "scores": {
+    "gemini-4-hydrogen": 95,
+    "google/gemini-4-neon": 93,
+    "moonshotai/kimi-k3.1-pro": 88,
+    "nvidia/nemotron-3-ultra-550b-a55b": 86,
+    "nvidia/nemotron-3-ultra-550b-a55b:free": 86,
+    "mistralai/mistral-large-4-1t-a52b": 85,
+    "gemini-3.8-flash": 84,
+    "openai/gpt-oss-120b": 80,
+    "gemini-3.7-flash": 80,
+    "gemini-3.6-flash": 76,
+    "z-ai/glm-5.3-flash": 74,
+    "qwen/qwen3.8-27b": 73,
+    "google/gemma-4-31b-it:free": 72,
+    "nvidia/nemotron-3.5-super-vl:free": 72,
+    "baidu/ernie-5.5-flash-preview:free": 70,
+    "openai/gpt-oss-20b": 62,
+    "particle-ai/particle-1:free": 60,
+    "openrouter/free": 50
+  }
 }

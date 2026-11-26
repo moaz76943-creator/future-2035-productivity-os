@@ -1443,8 +1443,8 @@
   "wordsNone": "कुनै पाठ फेला परेन",
   "settingsLanguageSearch": "भाषाहरू खोज्नुहोस्",
   "settingsLanguageNoMatch": "कुनै भाषा मिलेन",
-  "soundsMyMusic": "तपाईंको सङ्गीत",
+  "soundsMyMusic": "तपाईंको अडियो",
   "soundsMusicHint": "आफ्नो फोनको अडियो फाइल बजाउनुहोस्। केही पनि प्रतिलिपि वा अपलोड हुँदैन।",
   "soundsChooseMusic": "अडियो छान्नुहोस्",
-  "soundsRemoveMusic": "सङ्गीत हटाउनुहोस्"
+  "soundsRemoveMusic": "अडियो हटाउनुहोस्"
 }

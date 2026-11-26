@@ -5235,7 +5235,7 @@ class AppLocalizationsMk extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Ниеден јазик не одговара';
 
   @override
-  String get soundsMyMusic => 'Вашата музика';
+  String get soundsMyMusic => 'Вашето аудио';
 
   @override
   String get soundsMusicHint =>
@@ -5245,5 +5245,5 @@ class AppLocalizationsMk extends AppLocalizations {
   String get soundsChooseMusic => 'Изберете аудио';
 
   @override
-  String get soundsRemoveMusic => 'Отстрани музика';
+  String get soundsRemoveMusic => 'Отстрани аудио';
 }

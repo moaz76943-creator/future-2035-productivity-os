@@ -5358,7 +5358,7 @@ class AppLocalizationsBe extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Няма адпаведнай мовы';
 
   @override
-  String get soundsMyMusic => 'Ваша музыка';
+  String get soundsMyMusic => 'Ваш аўдыяфайл';
 
   @override
   String get soundsMusicHint =>
@@ -5368,5 +5368,5 @@ class AppLocalizationsBe extends AppLocalizations {
   String get soundsChooseMusic => 'Выбраць аўдыя';
 
   @override
-  String get soundsRemoveMusic => 'Прыбраць музыку';
+  String get soundsRemoveMusic => 'Прыбраць аўдыя';
 }

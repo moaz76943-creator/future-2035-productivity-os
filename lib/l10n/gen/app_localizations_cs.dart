@@ -5294,7 +5294,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Žádný jazyk neodpovídá';
 
   @override
-  String get soundsMyMusic => 'Vaše hudba';
+  String get soundsMyMusic => 'Váš zvuk';
 
   @override
   String get soundsMusicHint =>
@@ -5304,5 +5304,5 @@ class AppLocalizationsCs extends AppLocalizations {
   String get soundsChooseMusic => 'Vybrat zvuk';
 
   @override
-  String get soundsRemoveMusic => 'Odebrat hudbu';
+  String get soundsRemoveMusic => 'Odebrat zvuk';
 }

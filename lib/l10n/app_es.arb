@@ -1443,8 +1443,8 @@
   "wordsNone": "No se encontró texto",
   "settingsLanguageSearch": "Buscar idioma",
   "settingsLanguageNoMatch": "Ningún idioma coincide",
-  "soundsMyMusic": "Tu música",
+  "soundsMyMusic": "Tu audio",
   "soundsMusicHint": "Reproduce un archivo de audio de tu teléfono. No se copia ni se sube nada.",
   "soundsChooseMusic": "Elegir audio",
-  "soundsRemoveMusic": "Quitar música"
+  "soundsRemoveMusic": "Quitar audio"
 }

@@ -5225,7 +5225,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Asnjë gjuhë nuk përputhet';
 
   @override
-  String get soundsMyMusic => 'Muzika jote';
+  String get soundsMyMusic => 'Audio jote';
 
   @override
   String get soundsMusicHint =>
@@ -5235,5 +5235,5 @@ class AppLocalizationsSq extends AppLocalizations {
   String get soundsChooseMusic => 'Zgjidh audio';
 
   @override
-  String get soundsRemoveMusic => 'Hiq muzikën';
+  String get soundsRemoveMusic => 'Hiq audion';
 }

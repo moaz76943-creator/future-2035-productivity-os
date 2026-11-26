@@ -5220,7 +5220,7 @@ class AppLocalizationsTe extends AppLocalizations {
   String get settingsLanguageNoMatch => 'సరిపోయే భాష లేదు';
 
   @override
-  String get soundsMyMusic => 'మీ సంగీతం';
+  String get soundsMyMusic => 'మీ ఆడియో';
 
   @override
   String get soundsMusicHint =>
@@ -5230,5 +5230,5 @@ class AppLocalizationsTe extends AppLocalizations {
   String get soundsChooseMusic => 'ఆడియో ఎంచుకోండి';
 
   @override
-  String get soundsRemoveMusic => 'సంగీతం తీసివేయి';
+  String get soundsRemoveMusic => 'ఆడియో తీసివేయి';
 }

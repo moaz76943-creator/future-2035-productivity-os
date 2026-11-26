@@ -1443,8 +1443,8 @@
   "wordsNone": "Текст не найден",
   "settingsLanguageSearch": "Поиск языка",
   "settingsLanguageNoMatch": "Язык не найден",
-  "soundsMyMusic": "Ваша музыка",
+  "soundsMyMusic": "Ваше аудио",
   "soundsMusicHint": "Воспроизводите аудиофайл с телефона. Ничего не копируется и не загружается.",
   "soundsChooseMusic": "Выбрать аудио",
-  "soundsRemoveMusic": "Убрать музыку"
+  "soundsRemoveMusic": "Убрать аудио"
 }

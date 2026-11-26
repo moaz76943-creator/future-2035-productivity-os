@@ -5249,7 +5249,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Nenhum idioma encontrado';
 
   @override
-  String get soundsMyMusic => 'Sua música';
+  String get soundsMyMusic => 'Seu áudio';
 
   @override
   String get soundsMusicHint =>
@@ -5259,7 +5259,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get soundsChooseMusic => 'Escolher áudio';
 
   @override
-  String get soundsRemoveMusic => 'Remover música';
+  String get soundsRemoveMusic => 'Remover áudio';
 }
 
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).

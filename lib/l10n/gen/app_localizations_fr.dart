@@ -5262,7 +5262,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Aucune langue ne correspond';
 
   @override
-  String get soundsMyMusic => 'Votre musique';
+  String get soundsMyMusic => 'Votre audio';
 
   @override
   String get soundsMusicHint =>
@@ -5272,7 +5272,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get soundsChooseMusic => 'Choisir un audio';
 
   @override
-  String get soundsRemoveMusic => 'Retirer la musique';
+  String get soundsRemoveMusic => 'Retirer l\'audio';
 }
 
 /// The translations for French, as used in Canada (`fr_CA`).

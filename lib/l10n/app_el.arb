@@ -1443,8 +1443,8 @@
   "wordsNone": "Δεν βρέθηκε κείμενο",
   "settingsLanguageSearch": "Αναζήτηση γλωσσών",
   "settingsLanguageNoMatch": "Καμία γλώσσα δεν ταιριάζει",
-  "soundsMyMusic": "Η μουσική σας",
+  "soundsMyMusic": "Ο ήχος σας",
   "soundsMusicHint": "Παίξτε ένα αρχείο ήχου από το τηλέφωνό σας. Τίποτα δεν αντιγράφεται ούτε ανεβαίνει.",
   "soundsChooseMusic": "Επιλογή ήχου",
-  "soundsRemoveMusic": "Αφαίρεση μουσικής"
+  "soundsRemoveMusic": "Αφαίρεση ήχου"
 }

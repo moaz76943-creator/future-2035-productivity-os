@@ -5264,7 +5264,7 @@ class AppLocalizationsGu extends AppLocalizations {
   String get settingsLanguageNoMatch => 'કોઈ મેળ ખાતી ભાષા નથી';
 
   @override
-  String get soundsMyMusic => 'તમારું સંગીત';
+  String get soundsMyMusic => 'તમારો ઑડિયો';
 
   @override
   String get soundsMusicHint => 'તમારા ફોનની ઑડિયો ફાઇલ વગાડો. કંઈ કૉપિ કે અપલોડ થતું નથી.';
@@ -5273,5 +5273,5 @@ class AppLocalizationsGu extends AppLocalizations {
   String get soundsChooseMusic => 'ઑડિયો પસંદ કરો';
 
   @override
-  String get soundsRemoveMusic => 'સંગીત દૂર કરો';
+  String get soundsRemoveMusic => 'ઑડિયો દૂર કરો';
 }

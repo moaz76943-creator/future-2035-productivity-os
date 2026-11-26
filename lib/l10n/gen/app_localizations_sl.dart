@@ -5350,7 +5350,7 @@ class AppLocalizationsSl extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Noben jezik se ne ujema';
 
   @override
-  String get soundsMyMusic => 'Vaša glasba';
+  String get soundsMyMusic => 'Vaš zvok';
 
   @override
   String get soundsMusicHint =>
@@ -5360,5 +5360,5 @@ class AppLocalizationsSl extends AppLocalizations {
   String get soundsChooseMusic => 'Izberi zvok';
 
   @override
-  String get soundsRemoveMusic => 'Odstrani glasbo';
+  String get soundsRemoveMusic => 'Odstrani zvok';
 }

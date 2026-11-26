@@ -5230,7 +5230,7 @@ class AppLocalizationsIs extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Ekkert tungumál passar';
 
   @override
-  String get soundsMyMusic => 'Tónlistin þín';
+  String get soundsMyMusic => 'Hljóðið þitt';
 
   @override
   String get soundsMusicHint => 'Spilaðu hljóðskrá úr símanum. Ekkert er afritað eða hlaðið upp.';
@@ -5239,5 +5239,5 @@ class AppLocalizationsIs extends AppLocalizations {
   String get soundsChooseMusic => 'Veldu hljóð';
 
   @override
-  String get soundsRemoveMusic => 'Fjarlægja tónlist';
+  String get soundsRemoveMusic => 'Fjarlægja hljóð';
 }

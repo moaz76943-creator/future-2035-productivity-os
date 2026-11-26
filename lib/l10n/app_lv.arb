@@ -1443,8 +1443,8 @@
   "wordsNone": "Teksts nav atrasts",
   "settingsLanguageSearch": "Meklēt valodas",
   "settingsLanguageNoMatch": "Neviena valoda neatbilst",
-  "soundsMyMusic": "Jūsu mūzika",
+  "soundsMyMusic": "Jūsu audio",
   "soundsMusicHint": "Atskaņojiet audio failu no tālruņa. Nekas netiek kopēts vai augšupielādēts.",
   "soundsChooseMusic": "Izvēlēties audio",
-  "soundsRemoveMusic": "Noņemt mūziku"
+  "soundsRemoveMusic": "Noņemt audio"
 }

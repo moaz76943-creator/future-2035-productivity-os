@@ -5235,7 +5235,7 @@ class AppLocalizationsFil extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Walang tugmang wika';
 
   @override
-  String get soundsMyMusic => 'Iyong musika';
+  String get soundsMyMusic => 'Iyong audio';
 
   @override
   String get soundsMusicHint =>
@@ -5245,5 +5245,5 @@ class AppLocalizationsFil extends AppLocalizations {
   String get soundsChooseMusic => 'Pumili ng audio';
 
   @override
-  String get soundsRemoveMusic => 'Alisin ang musika';
+  String get soundsRemoveMusic => 'Alisin ang audio';
 }

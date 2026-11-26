@@ -1443,8 +1443,8 @@
   "wordsNone": "Mətn tapılmadı",
   "settingsLanguageSearch": "Dil axtar",
   "settingsLanguageNoMatch": "Uyğun dil yoxdur",
-  "soundsMyMusic": "Musiqiniz",
+  "soundsMyMusic": "Audio faylınız",
   "soundsMusicHint": "Telefonunuzdan audio faylı oxudun. Heç nə kopyalanmır və yüklənmir.",
   "soundsChooseMusic": "Audio seçin",
-  "soundsRemoveMusic": "Musiqini sil"
+  "soundsRemoveMusic": "Audionu sil"
 }

@@ -1443,8 +1443,8 @@
   "wordsNone": "Fant ingen tekst",
   "settingsLanguageSearch": "Søk etter språk",
   "settingsLanguageNoMatch": "Ingen språk passer",
-  "soundsMyMusic": "Din musikk",
+  "soundsMyMusic": "Din lyd",
   "soundsMusicHint": "Spill av en lydfil fra telefonen. Ingenting kopieres eller lastes opp.",
   "soundsChooseMusic": "Velg lyd",
-  "soundsRemoveMusic": "Fjern musikk"
+  "soundsRemoveMusic": "Fjern lyd"
 }

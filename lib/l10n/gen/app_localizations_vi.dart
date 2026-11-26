@@ -5086,7 +5086,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Không có ngôn ngữ phù hợp';
 
   @override
-  String get soundsMyMusic => 'Nhạc của bạn';
+  String get soundsMyMusic => 'Âm thanh của bạn';
 
   @override
   String get soundsMusicHint =>
@@ -5096,5 +5096,5 @@ class AppLocalizationsVi extends AppLocalizations {
   String get soundsChooseMusic => 'Chọn âm thanh';
 
   @override
-  String get soundsRemoveMusic => 'Gỡ nhạc';
+  String get soundsRemoveMusic => 'Gỡ âm thanh';
 }

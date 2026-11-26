@@ -1443,8 +1443,8 @@
   "wordsNone": "未找到文字",
   "settingsLanguageSearch": "搜索语言",
   "settingsLanguageNoMatch": "没有匹配的语言",
-  "soundsMyMusic": "我的音乐",
+  "soundsMyMusic": "我的音频",
   "soundsMusicHint": "播放手机中的音频文件。不会复制或上传任何内容。",
   "soundsChooseMusic": "选择音频",
-  "soundsRemoveMusic": "移除音乐"
+  "soundsRemoveMusic": "移除音频"
 }

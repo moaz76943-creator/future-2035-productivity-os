@@ -5206,7 +5206,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get settingsLanguageNoMatch => 'کوئی مماثل زبان نہیں';
 
   @override
-  String get soundsMyMusic => 'آپ کی موسیقی';
+  String get soundsMyMusic => 'آپ کی آڈیو';
 
   @override
   String get soundsMusicHint => 'اپنے فون کی آڈیو فائل چلائیں۔ کچھ بھی کاپی یا اپ لوڈ نہیں ہوتا۔';
@@ -5215,5 +5215,5 @@ class AppLocalizationsUr extends AppLocalizations {
   String get soundsChooseMusic => 'آڈیو منتخب کریں';
 
   @override
-  String get soundsRemoveMusic => 'موسیقی ہٹائیں';
+  String get soundsRemoveMusic => 'آڈیو ہٹائیں';
 }

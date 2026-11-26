@@ -5240,7 +5240,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get settingsLanguageNoMatch => 'زبانی پیدا نشد';
 
   @override
-  String get soundsMyMusic => 'موسیقی شما';
+  String get soundsMyMusic => 'فایل صوتی شما';
 
   @override
   String get soundsMusicHint => 'یک فایل صوتی از تلفن خود پخش کنید. چیزی کپی یا بارگذاری نمی‌شود.';
@@ -5249,5 +5249,5 @@ class AppLocalizationsFa extends AppLocalizations {
   String get soundsChooseMusic => 'انتخاب فایل صوتی';
 
   @override
-  String get soundsRemoveMusic => 'حذف موسیقی';
+  String get soundsRemoveMusic => 'حذف فایل صوتی';
 }

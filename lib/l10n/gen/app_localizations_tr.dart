@@ -5207,7 +5207,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get settingsLanguageNoMatch => 'Eşleşen dil yok';
 
   @override
-  String get soundsMyMusic => 'Müziğin';
+  String get soundsMyMusic => 'Ses dosyan';
 
   @override
   String get soundsMusicHint =>
@@ -5217,5 +5217,5 @@ class AppLocalizationsTr extends AppLocalizations {
   String get soundsChooseMusic => 'Ses seç';
 
   @override
-  String get soundsRemoveMusic => 'Müziği kaldır';
+  String get soundsRemoveMusic => 'Sesi kaldır';
 }
