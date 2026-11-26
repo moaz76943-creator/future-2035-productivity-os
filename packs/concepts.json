@@ -1,0 +1,206 @@
+{
+ "basics.greetings": {
+  "bye": {
+   "emoji": "",
+   "en": "bye",
+   "note": "informal farewell"
+  },
+  "excuse_me": {
+   "emoji": "",
+   "en": "excuse me",
+   "note": "polite phrase to get attention or apologize for a small inte"
+  },
+  "good_afternoon": {
+   "emoji": "",
+   "en": "good afternoon",
+   "note": "greeting used from noon until evening"
+  },
+  "good_evening": {
+   "emoji": "",
+   "en": "good evening",
+   "note": "greeting used in the evening"
+  },
+  "good_morning": {
+   "emoji": "",
+   "en": "good morning",
+   "note": "greeting used in the morning"
+  },
+  "good_night": {
+   "emoji": "",
+   "en": "good night",
+   "note": "farewell said before sleeping or leaving at night"
+  },
+  "goodbye": {
+   "emoji": "",
+   "en": "goodbye",
+   "note": "farewell said when parting"
+  },
+  "have_a_nice_day": {
+   "emoji": "",
+   "en": "have a nice day",
+   "note": "polite farewell wishing someone a pleasant day"
+  },
+  "hello": {
+   "emoji": "",
+   "en": "hello",
+   "note": "standard greeting when meeting someone"
+  },
+  "hi": {
+   "emoji": "",
+   "en": "hi",
+   "note": "informal greeting"
+  },
+  "how_are_you": {
+   "emoji": "",
+   "en": "how are you",
+   "note": "polite question asking about someone's well-being"
+  },
+  "nice_to_meet_you": {
+   "emoji": "",
+   "en": "nice to meet you",
+   "note": "polite phrase said when meeting someone for the first time"
+  },
+  "please": {
+   "emoji": "",
+   "en": "please",
+   "note": "polite word used when making a request"
+  },
+  "see_you_later": {
+   "emoji": "",
+   "en": "see you later",
+   "note": "friendly farewell when expecting to meet again"
+  },
+  "sorry": {
+   "emoji": "",
+   "en": "sorry",
+   "note": "expression of apology or regret"
+  },
+  "take_care": {
+   "emoji": "",
+   "en": "take care",
+   "note": "kind farewell wishing someone safety and well-being"
+  },
+  "thank_you": {
+   "emoji": "",
+   "en": "thank you",
+   "note": "polite expression of gratitude"
+  },
+  "thanks": {
+   "emoji": "",
+   "en": "thanks",
+   "note": "informal expression of gratitude"
+  },
+  "welcome": {
+   "emoji": "",
+   "en": "welcome",
+   "note": "warm greeting to someone arriving"
+  },
+  "you_are_welcome": {
+   "emoji": "",
+   "en": "you are welcome",
+   "note": "polite reply when someone says thank you"
+  }
+ },
+ "basics.numbers": {
+  "eight": {
+   "emoji": "",
+   "en": "eight",
+   "note": "The number 8"
+  },
+  "eighteen": {
+   "emoji": "",
+   "en": "eighteen",
+   "note": "The number 18"
+  },
+  "eleven": {
+   "emoji": "",
+   "en": "eleven",
+   "note": "The number 11"
+  },
+  "fifteen": {
+   "emoji": "",
+   "en": "fifteen",
+   "note": "The number 15"
+  },
+  "five": {
+   "emoji": "",
+   "en": "five",
+   "note": "The number 5"
+  },
+  "four": {
+   "emoji": "",
+   "en": "four",
+   "note": "The number 4"
+  },
+  "fourteen": {
+   "emoji": "",
+   "en": "fourteen",
+   "note": "The number 14"
+  },
+  "nine": {
+   "emoji": "",
+   "en": "nine",
+   "note": "The number 9"
+  },
+  "nineteen": {
+   "emoji": "",
+   "en": "nineteen",
+   "note": "The number 19"
+  },
+  "one": {
+   "emoji": "",
+   "en": "one",
+   "note": "The number 1"
+  },
+  "seven": {
+   "emoji": "",
+   "en": "seven",
+   "note": "The number 7"
+  },
+  "seventeen": {
+   "emoji": "",
+   "en": "seventeen",
+   "note": "The number 17"
+  },
+  "six": {
+   "emoji": "",
+   "en": "six",
+   "note": "The number 6"
+  },
+  "sixteen": {
+   "emoji": "",
+   "en": "sixteen",
+   "note": "The number 16"
+  },
+  "ten": {
+   "emoji": "",
+   "en": "ten",
+   "note": "The number 10"
+  },
+  "thirteen": {
+   "emoji": "",
+   "en": "thirteen",
+   "note": "The number 13"
+  },
+  "three": {
+   "emoji": "",
+   "en": "three",
+   "note": "The number 3"
+  },
+  "twelve": {
+   "emoji": "",
+   "en": "twelve",
+   "note": "The number 12"
+  },
+  "twenty": {
+   "emoji": "",
+   "en": "twenty",
+   "note": "The number 20"
+  },
+  "two": {
+   "emoji": "",
+   "en": "two",
+   "note": "The number 2"
+  }
+ }
+}
