@@ -1,13 +1,13 @@
 name: DF AI draft (helper models, review required)
 
 # Helper models write DRAFTS only. Requests live in ai/requests/<task>.json on a
-# branch named ai-trigger/<task> (created from claude-dev). The result goes to a
+# branch named ai-request/<task> (created from claude-dev). The result goes to a
 # new branch ai-drafts/<task>-<run>; nothing is ever pushed to claude-dev, main,
 # release/* or hermes/*. Claude reviews the draft and merges what is correct.
 on:
   push:
     branches:
-      - 'ai-trigger/**'
+      - 'ai-request/**'
   workflow_dispatch:
     inputs:
       request:
@@ -85,7 +85,7 @@ jobs:
       - name: Push draft branch
         run: |
           set -euo pipefail
-          src="${GITHUB_REF_NAME#ai-trigger/}"
+          src="${GITHUB_REF_NAME#ai-request/}"
           dest="ai-drafts/${src//\//-}-${GITHUB_RUN_NUMBER}"
           case "$dest" in ai-drafts/*) ;; *) echo "::error::unsafe target"; exit 1;; esac
           git config user.name "df-ai-draft"

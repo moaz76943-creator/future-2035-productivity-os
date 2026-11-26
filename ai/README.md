@@ -3,7 +3,7 @@
 Helper models (Gemini, OpenRouter free models, Groq, NVIDIA) write drafts only.
 They never change app code and never push to `claude-dev`, `main`, `release/*` or `hermes/*`.
 
-1. On a branch `ai-trigger/<task>` made from `claude-dev`, add `ai/requests/<task>.json`
+1. On a branch `ai-request/<task>` made from `claude-dev`, add `ai/requests/<task>.json`
    (an `l10n_add_keys` spec with English and `meta`), then push the branch.
 2. The `DF AI draft` workflow reuses existing translations first (no API call), asks the
    models for the rest, rejects malformed answers, applies the draft and runs the
