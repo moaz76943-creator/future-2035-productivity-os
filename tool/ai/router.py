@@ -104,6 +104,7 @@ class Router:
         self.strikes = {}      # (provider, model) -> timeouts/server errors
         self.cool = {}         # (provider, key, model) -> time it may be tried again
         self.key_quota = {}    # (provider, key) -> models that hit quota on it
+        self.overload = {}     # (provider, model) -> 5xx/timeouts this run
         self.last_groq = 0.0
         try:
             self.health = json.load(open(STATE, encoding='utf-8'))
@@ -193,7 +194,8 @@ class Router:
             for k in p['keys']:
                 if not os.environ.get(k) or (p['name'], k, m) in self.dead:
                     continue
-                if self.cool.get((p['name'], k, m), 0) <= now and self.cool.get((p['name'], k, '*'), 0) <= now:
+                if (self.cool.get((p['name'], k, m), 0) <= now and self.cool.get((p['name'], k, '*'), 0) <= now
+                        and self.cool.get((p['name'], '*', m), 0) <= now):
                     yield p, m, k
 
     # ---- asking -------------------------------------------------------------------
@@ -228,6 +230,11 @@ class Router:
             self.cool[(p['name'], key, model)] = until + 86400 if until <= now else until
         else:
             self.cool[(p['name'], key, model)] = now + (retry_after or min(600, 60 * (n + 1)))
+        if code is None or code >= 500:
+            # Overloaded or hanging model: after two keys fail, rest the model on every key.
+            self.overload[(p['name'], model)] = self.overload.get((p['name'], model), 0) + 1
+            if self.overload[(p['name'], model)] >= 2:
+                self.cool[(p['name'], '*', model)] = now + min(900, 180 * self.overload[(p['name'], model)])
         if code == 429:
             hit = self.key_quota.setdefault((p['name'], key), set())
             hit.add(model)

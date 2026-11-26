@@ -68,7 +68,9 @@ class _WordPacksSheetState extends ConsumerState<WordPacksSheet> {
         final meaning = mine.items[e.key] ?? en.items[e.key];
         if (meaning == null) continue;
         final icon = en.emoji[e.key];
-        cards.add(ImportedCard(e.value, icon == null ? meaning : '$icon $meaning'));
+        final say = learn.pron[e.key];
+        final back = icon == null ? meaning : '$icon $meaning';
+        cards.add(ImportedCard(e.value, say == null ? back : '$back\n$say'));
       }
       final topic = key.split('.').first;
       String name(String k) => mine.names[k] ?? en.names[k] ?? k;

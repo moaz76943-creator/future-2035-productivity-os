@@ -7,7 +7,12 @@ import 'package:http/http.dart' as http;
 /// is fetched, on request; nothing about the user is sent and nothing is stored
 /// except the cards the user adds.
 class WordPack {
-  const WordPack({required this.names, required this.items, this.emoji = const {}});
+  const WordPack({
+    required this.names,
+    required this.items,
+    this.emoji = const {},
+    this.pron = const {},
+  });
 
   /// 'home' and 'home.kitchen' -> title.
   final Map<String, String> names;
@@ -15,6 +20,9 @@ class WordPack {
   /// 'home.kitchen.fridge' -> word.
   final Map<String, String> items;
   final Map<String, String> emoji;
+
+  /// Pronunciation of a word (from the user's own lists), when known.
+  final Map<String, String> pron;
 
   static WordPack parse(String body) {
     final j = jsonDecode(body);
@@ -24,7 +32,12 @@ class WordPack {
           if (e.value is String && '${e.value}'.trim().isNotEmpty) '${e.key}': '${e.value}'.trim(),
     };
     return j is Map
-        ? WordPack(names: m(j['names']), items: m(j['items']), emoji: m(j['emoji']))
+        ? WordPack(
+            names: m(j['names']),
+            items: m(j['items']),
+            emoji: m(j['emoji']),
+            pron: m(j['pron']),
+          )
         : const WordPack(names: {}, items: {});
   }
 

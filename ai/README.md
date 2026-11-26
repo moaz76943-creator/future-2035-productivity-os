@@ -48,7 +48,9 @@ then bring good files over with `git checkout origin/ai-drafts/<day> -- <paths>`
 
 `DF word packs` runs hourly as 4 parallel agents on the data-only branch `content-packs`
 (`packs/<lang>.json`, one file per language; the app downloads only the chosen language).
-Claude owns the topic tree `tool/ai/packs/catalog.json`; agents add the words. Each word passes
+Claude owns the topic tree `tool/ai/packs/catalog.json` (it follows the owner's own lists in
+`packs/seed/*.csv` on that branch: 720 English concepts, 13 languages, Arabic meanings,
+pronunciation). Seed words skip the worker and only need the critic; agents fill the rest. Each word passes
 `tool/ai/packs/rules.py` (banned topics, emoji without living beings, script checks), a worker
 and a critic from another provider; anything in doubt is left out. Existing words are removed
 only when two different critics reject them, then redone. Cheap review: read

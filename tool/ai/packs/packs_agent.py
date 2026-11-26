@@ -11,7 +11,9 @@ added, never wiped: an existing word is removed only when two different critics 
 call it wrong, and it is then redone on a later run. Progress is saved after every
 branch, so a stop, a timeout or an empty quota loses nothing.
 """
+import csv
 import datetime
+import glob
 import json
 import os
 import random
@@ -65,10 +67,55 @@ class Agent:
         self.concepts = load(self.concepts_path, {})
         self.router = Router(log=self.log)
         self.lines = []
+        self.seeds = self.load_seeds()
+
+    # ---- 0. the user's own word lists (packs/seed/*.csv) ---------------------------
+    def load_seeds(self):
+        """lang -> {(branch, arabic meaning): (word, pronunciation)} from the user's CSV files."""
+        seeds = {}
+        for f in sorted(glob.glob(os.path.join(self.root, 'packs', 'seed', '*.csv'))):
+            with open(f, encoding='utf-8') as fh:
+                for row in csv.DictReader(fh):
+                    lang = {'zh-CN': 'zh', 'zh-TW': 'zh_Hant'}.get(row.get('lang', ''), row.get('lang', ''))
+                    key = f"{row.get('main', '')}.{row.get('sub', '')}"
+                    ar, word = (row.get('ar') or '').strip(), (row.get('target') or '').strip()
+                    if lang and ar and word:
+                        seeds.setdefault(lang, {})[(key, ar)] = (word, (row.get('pron') or '').strip())
+        return seeds
+
+    def import_seed_concepts(self):
+        """English seed rows become concepts (shard 0); each keeps its Arabic meaning."""
+        added = 0
+        for (key, ar), (word, _) in sorted(self.seeds.get('en', {}).items()):
+            cat, _, sub = key.partition('.')
+            if sub not in self.catalog.get(cat, {}).get('subs', {}):
+                continue
+            have = self.concepts.setdefault(key, {})
+            if any(c.get('ar') == ar or c['en'].lower() == word.lower() for c in have.values()):
+                continue
+            cid = re.sub(r'[^a-z0-9]+', '_', word.lower()).strip('_')[:30] or 'w'
+            if not cid[0].isalpha() or len(cid) < 2:
+                cid = 'w_' + cid
+            while cid in have:
+                cid += '_'
+            item = {'en': word, 'note': '', 'emoji': '', 'ar': ar}
+            if rules.concept_problem(cid, item):
+                self.log(f'- seed {key} {word}: refused by rules')
+                continue
+            have[cid] = item
+            added += 1
+        if added:
+            save(self.concepts_path, self.concepts)
+            self.log(f'- imported {added} words from the user\'s lists')
+
+    def in_tree(self, key):
+        cat, _, sub = key.partition('.')
+        return sub in self.catalog.get(cat, {}).get('subs', {})
 
     def log(self, msg):
         print(msg)
-        self.lines.append(msg)
+        if msg.startswith('-'):  # the log file keeps results only (cheap to review)
+            self.lines.append(msg)
 
     def time_left(self):
         return time.time() < self.stop_at
@@ -135,7 +182,9 @@ class Agent:
     def languages(self):
         langs = [x for x in load(os.path.join(self.src, 'lib', 'l10n', 'languages.json'), [])
                  if not x.get('base') and x['code'] != 'en']
-        return [x for i, x in enumerate(langs) if i % self.shards == self.shard]
+        mine = [x for i, x in enumerate(langs) if i % self.shards == self.shard]
+        # Languages with the user's own lists go first (cheapest: review only).
+        return sorted(mine, key=lambda x: (x['code'] not in self.seeds and x['code'] != 'ar', random.random()))
 
     def translate(self, lang, max_branches=4):
         code, name, script = lang['code'], lang['english'], lang.get('script', 'Latn')
@@ -157,8 +206,13 @@ class Agent:
             for sub, title in c['subs'].items():
                 names[f'{cat}.{sub}'] = {'en': title, 'note': f'title of a vocabulary list under {c["en"]}'}
         jobs = [('names', {k: v for k, v in names.items() if k not in pack['names']})]
+        seed = self.seeds.get(code, {})
+        pack.setdefault('pron', {})
         for key, words in self.concepts.items():
-            todo = {f'{key}.{cid}': {'en': w['en'], 'note': w.get('note', '')}
+            if not self.in_tree(key):
+                continue
+            todo = {f'{key}.{cid}': {'en': w['en'], 'note': w.get('note') or w.get('ar', ''),
+                                     'seed': (w['ar'], '') if code == 'ar' and w.get('ar') else seed.get((key, w.get('ar')))}
                     for cid, w in words.items() if f'{key}.{cid}' not in pack['items']}
             if todo:
                 jobs.append((key, todo))
@@ -167,12 +221,18 @@ class Agent:
             if not todo or done >= max_branches or not self.time_left():
                 continue
             done += 1
-            out, label = self.ask(system, json.dumps(todo, ensure_ascii=False))
-            draft = {}
-            for k, v in (out or {}).items():
-                if k in todo and isinstance(v, str) and v.strip():
-                    if not rules.term_problem(v, script, todo[k]['en']):
-                        draft[k] = v.strip()
+            # The user's own lists first: they only need the critic's review, not a worker.
+            draft, label = {}, 'seed/user'
+            for k, t in todo.items():
+                if t.get('seed') and not rules.term_problem(t['seed'][0], script, t['en']):
+                    draft[k] = t['seed'][0]
+            rest = {k: {'en': t['en'], 'note': t['note']} for k, t in todo.items() if k not in draft}
+            if rest:
+                out, label = self.ask(system, json.dumps(rest, ensure_ascii=False))
+                for k, v in (out or {}).items():
+                    if k in rest and isinstance(v, str) and v.strip():
+                        if not rules.term_problem(v, script, rest[k]['en']):
+                            draft[k] = v.strip()
             bad = self.critic(review, {k: {'en': todo[k]['en'], 'note': todo[k]['note'], 'word': v}
                                        for k, v in draft.items()}, label)
             if bad is None:
@@ -181,6 +241,9 @@ class Agent:
             target = pack['names'] if key == 'names' else pack['items']
             kept = {k: v for k, v in draft.items() if k not in bad}
             target.update(kept)
+            for k in kept:
+                if todo.get(k, {}).get('seed') and todo[k]['seed'][0] == kept[k] and todo[k]['seed'][1]:
+                    pack['pron'][k] = todo[k]['seed'][1]
             save(path, pack)
             self.log(f'- {code} {key}: +{len(kept)} of {len(todo)} (critic dropped {len(draft) - len(kept)})')
         self.recheck(code, review, pack, path)
@@ -213,18 +276,21 @@ class Agent:
             names[cat] = c['en']
             for sub, title in c['subs'].items():
                 names[f'{cat}.{sub}'] = title
-        items = {f'{k}.{cid}': w['en'] for k, ws in self.concepts.items() for cid, w in ws.items()}
+        items = {f'{k}.{cid}': w['en'] for k, ws in self.concepts.items() if self.in_tree(k) for cid, w in ws.items()}
+        pron = {f'{k}.{cid}': self.seeds.get('en', {}).get((k, w.get('ar')), ('', ''))[1]
+                for k, ws in self.concepts.items() if self.in_tree(k) for cid, w in ws.items()}
         emoji = {f'{cat}': c.get('emoji', '') for cat, c in self.catalog.items()}
         emoji.update({f'{k}.{cid}': w['emoji'] for k, ws in self.concepts.items() for cid, w in ws.items() if w.get('emoji')})
-        save(os.path.join(self.root, 'packs', 'en.json'), {'lang': 'en', 'names': names, 'items': items, 'emoji': emoji})
+        save(os.path.join(self.root, 'packs', 'en.json'),
+             {'lang': 'en', 'names': names, 'items': items, 'emoji': emoji, 'pron': {k: v for k, v in pron.items() if v}})
 
     def run(self):
         try:
             if self.shard == 0:
+                self.import_seed_concepts()
                 self.fill_concepts()
                 self.english()
             langs = self.languages()
-            random.shuffle(langs)  # a language that keeps failing never starves the others
             for lang in langs:
                 if not self.time_left():
                     break
