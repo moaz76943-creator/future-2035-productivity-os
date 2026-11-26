@@ -5226,7 +5226,7 @@ class AppLocalizationsMl extends AppLocalizations {
   String get soundsRemoveMusic => 'ഓഡിയോ നീക്കം ചെയ്യുക';
 
   @override
-  String get wordPacksTitle => 'വാക്ക് പാക്കുകൾ';
+  String get wordPacksTitle => 'ഭാഷകൾ പഠിക്കുക';
 
   @override
   String get wordPacksHint =>

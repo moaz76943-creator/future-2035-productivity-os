@@ -5240,7 +5240,7 @@ class AppLocalizationsEl extends AppLocalizations {
   String get soundsRemoveMusic => 'Αφαίρεση ήχου';
 
   @override
-  String get wordPacksTitle => 'Πακέτα λέξεων';
+  String get wordPacksTitle => 'Μάθε γλώσσες';
 
   @override
   String get wordPacksHint =>

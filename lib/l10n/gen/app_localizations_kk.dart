@@ -5211,7 +5211,7 @@ class AppLocalizationsKk extends AppLocalizations {
   String get soundsRemoveMusic => 'Аудионы алып тастау';
 
   @override
-  String get wordPacksTitle => 'Сөз топтамалары';
+  String get wordPacksTitle => 'Тілдерді үйрену';
 
   @override
   String get wordPacksHint =>

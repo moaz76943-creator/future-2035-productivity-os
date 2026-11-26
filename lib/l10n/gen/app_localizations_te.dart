@@ -5214,7 +5214,7 @@ class AppLocalizationsTe extends AppLocalizations {
   String get soundsRemoveMusic => 'ఆడియో తీసివేయి';
 
   @override
-  String get wordPacksTitle => 'పద ప్యాక్‌లు';
+  String get wordPacksTitle => 'భాషలు నేర్చుకోండి';
 
   @override
   String get wordPacksHint =>

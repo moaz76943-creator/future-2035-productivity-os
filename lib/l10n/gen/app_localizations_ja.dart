@@ -4962,7 +4962,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get soundsRemoveMusic => '音声を削除';
 
   @override
-  String get wordPacksTitle => '単語パック';
+  String get wordPacksTitle => '言語を学ぶ';
 
   @override
   String get wordPacksHint => 'テーマ別の単語リストです。必要な言語だけをダウンロードし、カードは自由に編集・削除できます。';

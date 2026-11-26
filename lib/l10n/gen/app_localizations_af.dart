@@ -5210,7 +5210,7 @@ class AppLocalizationsAf extends AppLocalizations {
   String get soundsRemoveMusic => 'Verwyder oudio';
 
   @override
-  String get wordPacksTitle => 'Woordpakke';
+  String get wordPacksTitle => 'Leer tale';
 
   @override
   String get wordPacksHint =>

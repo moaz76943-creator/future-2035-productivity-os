@@ -5093,7 +5093,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get soundsRemoveMusic => 'অডিও সরান';
 
   @override
-  String get wordPacksTitle => 'শব্দ প্যাক';
+  String get wordPacksTitle => 'ভাষা শিখুন';
 
   @override
   String get wordPacksHint =>

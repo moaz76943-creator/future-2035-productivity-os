@@ -5299,7 +5299,7 @@ class AppLocalizationsRo extends AppLocalizations {
   String get soundsRemoveMusic => 'Elimină audio';
 
   @override
-  String get wordPacksTitle => 'Pachete de cuvinte';
+  String get wordPacksTitle => 'Învață limbi';
 
   @override
   String get wordPacksHint =>

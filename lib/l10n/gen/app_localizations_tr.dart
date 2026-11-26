@@ -5201,7 +5201,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get soundsRemoveMusic => 'Sesi kaldır';
 
   @override
-  String get wordPacksTitle => 'Kelime paketleri';
+  String get wordPacksTitle => 'Dil öğren';
 
   @override
   String get wordPacksHint =>

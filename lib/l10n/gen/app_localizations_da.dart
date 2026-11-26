@@ -5211,7 +5211,7 @@ class AppLocalizationsDa extends AppLocalizations {
   String get soundsRemoveMusic => 'Fjern lyd';
 
   @override
-  String get wordPacksTitle => 'Ordpakker';
+  String get wordPacksTitle => 'Lær sprog';
 
   @override
   String get wordPacksHint =>

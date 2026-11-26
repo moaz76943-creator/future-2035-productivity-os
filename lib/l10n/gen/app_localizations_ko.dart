@@ -4957,7 +4957,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get soundsRemoveMusic => '오디오 제거';
 
   @override
-  String get wordPacksTitle => '단어 팩';
+  String get wordPacksTitle => '언어 배우기';
 
   @override
   String get wordPacksHint => '주제별 단어 목록입니다. 원하는 언어만 내려받고 카드는 자유롭게 수정하거나 삭제하세요.';

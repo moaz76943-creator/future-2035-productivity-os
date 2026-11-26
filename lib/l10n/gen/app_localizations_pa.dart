@@ -5258,7 +5258,7 @@ class AppLocalizationsPa extends AppLocalizations {
   String get soundsRemoveMusic => 'ਆਡੀਓ ਹਟਾਓ';
 
   @override
-  String get wordPacksTitle => 'ਸ਼ਬਦ ਪੈਕ';
+  String get wordPacksTitle => 'ਭਾਸ਼ਾਵਾਂ ਸਿੱਖੋ';
 
   @override
   String get wordPacksHint =>

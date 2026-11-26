@@ -5223,7 +5223,7 @@ class AppLocalizationsIs extends AppLocalizations {
   String get soundsRemoveMusic => 'Fjarlægja hljóð';
 
   @override
-  String get wordPacksTitle => 'Orðapakkar';
+  String get wordPacksTitle => 'Læra tungumál';
 
   @override
   String get wordPacksHint =>

@@ -5352,7 +5352,7 @@ class AppLocalizationsBe extends AppLocalizations {
   String get soundsRemoveMusic => 'Прыбраць аўдыя';
 
   @override
-  String get wordPacksTitle => 'Пакеты слоў';
+  String get wordPacksTitle => 'Вывучэнне моў';
 
   @override
   String get wordPacksHint =>

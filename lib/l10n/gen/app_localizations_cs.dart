@@ -5288,7 +5288,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get soundsRemoveMusic => 'Odebrat zvuk';
 
   @override
-  String get wordPacksTitle => 'Balíčky slovíček';
+  String get wordPacksTitle => 'Učení jazyků';
 
   @override
   String get wordPacksHint =>

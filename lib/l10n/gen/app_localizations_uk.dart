@@ -5345,7 +5345,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get soundsRemoveMusic => 'Прибрати аудіо';
 
   @override
-  String get wordPacksTitle => 'Набори слів';
+  String get wordPacksTitle => 'Вивчення мов';
 
   @override
   String get wordPacksHint =>
