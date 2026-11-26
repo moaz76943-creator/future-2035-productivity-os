@@ -30,6 +30,7 @@ class _QuickActions extends ConsumerWidget {
             }
           },
           child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 asset == null
                     ? IconOrb(icon: icon, hue: hue, size: 48)
@@ -37,10 +38,10 @@ class _QuickActions extends ConsumerWidget {
                 const SizedBox(height: Space.xxs),
                 Text(
                   label,
-                  style: context.text.labelMedium,
-                  maxLines: 1,
+                  maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
+                  style: context.text.labelSmall?.copyWith(height: 1.15),
                 ),
               ],
           ),
@@ -50,7 +51,9 @@ class _QuickActions extends ConsumerWidget {
     );
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: Space.sm),
-      child: Row(
+      child: IntrinsicHeight(
+        child: Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           action(Icons.add_task_rounded, l10n.quickAddTask, ModuleHue.tasks, Routes.taskNew, DeepFocusAssets.quickTask),
           action(Icons.edit_note_rounded, l10n.quickAddNote, ModuleHue.notes, () async {
@@ -60,6 +63,7 @@ class _QuickActions extends ConsumerWidget {
           action(Icons.event_rounded, l10n.quickAddEvent, ModuleHue.calendar, Routes.eventNew, DeepFocusAssets.quickEvent),
           action(Icons.timer_outlined, l10n.quickStartFocus, ModuleHue.focus, Routes.focus, DeepFocusAssets.quickFocus),
         ],
+      ),
       ),
     );
   }

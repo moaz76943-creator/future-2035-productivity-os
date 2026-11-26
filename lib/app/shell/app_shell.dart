@@ -40,8 +40,21 @@ class AppShell extends StatelessWidget {
       backgroundColor: Colors.transparent,
       extendBody: true,
       body: ShellScope(child: shell),
-      bottomNavigationBar: SafeArea(
-        minimum: const EdgeInsets.fromLTRB(Space.sm, 0, Space.sm, Space.sm),
+      bottomNavigationBar: DecoratedBox(
+        // Fade the content out behind the floating bar so it never shows through.
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              DeepFocusVisuals.canvasLight.withValues(alpha: 0),
+              DeepFocusVisuals.canvasLight.withValues(alpha: 0.92),
+            ],
+            stops: const [0, 0.35],
+          ),
+        ),
+        child: SafeArea(
+        minimum: const EdgeInsets.fromLTRB(Space.sm, Space.xs, Space.sm, Space.sm),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -94,6 +107,7 @@ class AppShell extends StatelessWidget {
             ),
             const BottomBannerAdWidget(useProductionUnit: true),
           ],
+        ),
         ),
       ),
       ),
