@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focus අවධාන වික්ෂේප ආරක්ෂකය</string>
+    <string name="guard_service_summary">ඔබ අවධානය යොමු කරන විට තෝරාගත් යෙදුම් විරාම කරයි</string>
+    <string name="guard_service_description">කුමන යෙදුම විවෘතද බැලීමට පමණක් Deep Focus මෙම විශේෂාංගය භාවිත කරයි, එවිට අවධානයේදී හෝ ඔබගේ කාලසටහන අනුව තෝරාගත් යෙදුම් විරාම කිරීමට සහ ඔබ සක්‍රිය කර ඇත්නම් Shorts සහ Reels වැසීමට හැකිය. එය පෙළ නොකියවයි, කිසිවක් ගබඩා නොකරයි, කොහේටවත් කිසිවක් නොයවයි. ඔබට මෙය මෙතැනින් ඕනෑම වේලාවක අක්‍රිය කළ හැකිය.</string>
+</resources>

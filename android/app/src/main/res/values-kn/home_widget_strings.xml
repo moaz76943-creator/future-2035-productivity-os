@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">ಫೋಕಸ್ ಮತ್ತು ಕಾರ್ಡ್‌ಗಳು</string>
+    <string name="home_widget_description">ಉಳಿದ ಫೋಕಸ್ ಸಮಯ ಮತ್ತು ಪುನರಾವಲೋಕನಕ್ಕಿರುವ ಕಾರ್ಡ್‌ಗಳು</string>
+    <string name="quick_widget_label">ತ್ವರಿತ ಸೇರ್ಪಡೆ</string>
+    <string name="quick_widget_description">ಕಾರ್ಯ ಅಥವಾ ಟಿಪ್ಪಣಿ ಸೇರಿಸಿ, ಅಥವಾ ಕಾರ್ಡ್‌ಗಳನ್ನು ಪುನರಾವಲೋಕಿಸಿ</string>
+</resources>

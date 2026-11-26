@@ -117,3 +117,17 @@ flutter test integration_test -d <emulator>   # on-device flow (CI: android-emul
 python3 tool/check_l10n.py            # 8 locales complete, Western digits, no he/iw
 python3 tool/third_party_licenses.py --check
 ```
+
+## Recipes (do these, in this order, to keep changes small and safe)
+
+- **New screen:** route constant in `lib/app/routing/routes.dart`, page in
+  `lib/app/routing/app_router.dart`, code in `lib/features/<feature>/presentation/`;
+  add the path to `_screens` in `test/widget/responsive/responsive_matrix_test.dart` and to
+  `_routes` in `test/widget/inventory/control_inventory_test.dart`; one widget test for it.
+- **New texts:** English in a spec → `python3 tool/l10n_reuse.py spec.json` → translate only
+  what it lists → `python3 tool/l10n_add_keys.py spec.json` → `bash tool/check_l10n_fast.sh`.
+- **New database column/table:** `lib/core/database/tables*.dart`, bump `schemaVersion` and add
+  a step in `migration` (`app_database.dart`; a new table also goes in `tablesAddedIn`), then
+  `dart run build_runner build --delete-conflicting-outputs` and a migration test.
+- **Reuse before writing:** shared widgets live in `lib/shared/widgets/` and
+  `lib/core/design_system/`; a fix there reaches every screen at once.

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focus વિક્ષેપ રક્ષક</string>
+    <string name="guard_service_summary">તમે ધ્યાન કેન્દ્રિત કરો ત્યારે પસંદ કરેલી ઍપ્સને થોભાવે છે</string>
+    <string name="guard_service_description">કઈ ઍપ ખુલ્લી છે તે જોવા માટે જ Deep Focus આ સુવિધાનો ઉપયોગ કરે છે, જેથી ફોકસ દરમિયાન અથવા તમારા સમયપત્રક મુજબ પસંદ કરેલી ઍપ્સને થોભાવી શકાય અને તમે ચાલુ કર્યું હોય તો Shorts અને Reels બંધ કરી શકાય. તે લખાણ વાંચતી નથી, કંઈ સંગ્રહતી નથી અને ક્યાંય કંઈ મોકલતી નથી. તમે તેને અહીં ગમે ત્યારે બંધ કરી શકો છો.</string>
+</resources>

@@ -5264,3 +5264,257 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get settingsLanguageNoMatch => 'Aucune langue ne correspond';
 }
+
+/// The translations for French, as used in Canada (`fr_CA`).
+class AppLocalizationsFrCa extends AppLocalizationsFr {
+  AppLocalizationsFrCa() : super('fr_CA');
+
+  @override
+  String get focusModeCountdown => 'Minuterie';
+
+  @override
+  String get focusCompletedWhileAway =>
+      'Une séance s’est terminée pendant que l’app était fermée; elle a été enregistrée.';
+
+  @override
+  String get focusBatteryHint =>
+      'Certains appareils mettent les apps en pause en arrière-plan. La minuterie reste précise, mais les alertes peuvent être retardées. Autorisez l’utilisation illimitée de la batterie pour des alertes fiables.';
+
+  @override
+  String get focusStopConfirmTitle => 'Arrêter cette séance?';
+
+  @override
+  String get taskTitleHint => 'Que faut-il faire?';
+
+  @override
+  String get goalTitleHint => 'Que voulez-vous accomplir?';
+
+  @override
+  String get assistantWorkloadOk => 'Votre horaire tient dans votre temps disponible.';
+
+  @override
+  String get assistantConsentTitle => 'Envoyer ce contenu à votre fournisseur d’IA?';
+
+  @override
+  String get settingsFocus => 'Minuterie de concentration';
+
+  @override
+  String get settingsEraseConfirmTitle => 'Effacer toutes les données?';
+
+  @override
+  String get backupRestoreConfirmTitle => 'Remplacer toutes les données?';
+
+  @override
+  String get notifChannelFocus => 'Minuterie de concentration';
+
+  @override
+  String get notifBreakDoneBody => 'Prêt pour la prochaine séance de concentration?';
+
+  @override
+  String assistantWorkloadRule(String start, String end, String days) {
+    return 'Le temps libre compte de $start à $end les jours ouvrables ($days), hors événements horaires. Le travail estimé correspond à la somme des estimations des tâches ouvertes à échéance dans les 7 prochains jours.';
+  }
+
+  @override
+  String get assistantScheduleConfirmTitle => 'Ajouter des blocs horaires à votre calendrier?';
+
+  @override
+  String get assistantRemoveProviderConfirm =>
+      'Retirer le fournisseur et supprimer la clé API enregistrée sur cet appareil?';
+
+  @override
+  String get focusDeleteConfirm =>
+      'Supprimer cette séance de votre historique? Sa durée ne comptera plus dans vos objectifs.';
+
+  @override
+  String get focusNoteHint => 'Sur quoi avez-vous travaillé?';
+
+  @override
+  String get focusModeLabel => 'Mode de la minuterie';
+
+  @override
+  String get projectGoalHint => 'À quoi ressemble la réussite?';
+
+  @override
+  String get taskBlockedWarning =>
+      'Cette tâche est bloquée par des tâches non terminées. La terminer quand même?';
+
+  @override
+  String get trashDeleteTaskTitle => 'Supprimer définitivement cette tâche?';
+
+  @override
+  String get trashDeleteNoteTitle => 'Supprimer définitivement cette note?';
+
+  @override
+  String get trashEmptyTitle => 'Vider la corbeille?';
+
+  @override
+  String get focusSeriesComplete => 'Série terminée. Bravo!';
+
+  @override
+  String get studyHowTitle => 'Comment voulez-vous réviser?';
+
+  @override
+  String get studyPracticeAll => 'S’entraîner sur toutes (horaire inchangé)';
+
+  @override
+  String get studyPracticeHint =>
+      'L’entraînement ne modifie pas les échéances. La révision met à jour l’horaire.';
+
+  @override
+  String get studyNoMistakes => 'Aucune erreur récente dans ce paquet. Bravo!';
+
+  @override
+  String flashcardsDuplicateMessage(String front, String back) {
+    return 'Ce paquet contient déjà « $front » → « $back ». Enregistrer quand même?';
+  }
+
+  @override
+  String get flashcardsLayoutStepRevealHint =>
+      'Le verso d’abord; chaque champ s’ouvre d’un toucher.';
+
+  @override
+  String get settingsEndTone => 'Son de fin de la minuterie';
+
+  @override
+  String get autoBackupDesc => 'Chaque jour sur ce téléphone; les 7 dernières sont gardées';
+
+  @override
+  String autoBackupConfirm(String date) {
+    return 'Remplacer toutes les données actuelles par la sauvegarde du $date?';
+  }
+
+  @override
+  String soundsDeleteMix(String name) {
+    return 'Supprimer le mélange « $name »?';
+  }
+
+  @override
+  String get studyGoalReached => 'Objectif du jour atteint. Bravo!';
+
+  @override
+  String get prayerPauseFocusHint => 'La séance se met en pause; reprenez ensuite';
+
+  @override
+  String get faqMyDayQ => 'À quoi sert « Commencer ma journée »?';
+
+  @override
+  String get faqTasksQ => 'Comment ajouter une tâche avec un rappel?';
+
+  @override
+  String get faqFocusQ => 'Comment fonctionne la minuterie de concentration?';
+
+  @override
+  String get faqFocusA =>
+      'Choisissez Pomodoro, un compte à rebours ou un temps libre et touchez Démarrer; les pauses peuvent s’enchaîner. Dans Réglages, choisissez le son de fin, activez Ne pas déranger pendant la concentration et lancez vos sons de la nature à chaque séance.';
+
+  @override
+  String get faqSoundsQ => 'Puis-je mélanger des sons de la nature?';
+
+  @override
+  String get faqCalendarQ => 'Le calendrier affiche-t-il les dates de l’Hégire?';
+
+  @override
+  String get faqFlashcardsQ => 'Comment la révision choisit-elle les cartes?';
+
+  @override
+  String get faqImportQ => 'Puis-je importer des cartes d’Anki ou d’Excel?';
+
+  @override
+  String get faqNotesQ => 'Que permettent les notes?';
+
+  @override
+  String get faqHabitsQ => 'Comment les séries d’habitudes sont-elles comptées?';
+
+  @override
+  String get faqGoalsQ => 'Comment les objectifs suivent-ils la progression?';
+
+  @override
+  String get faqProjectsQ => 'À quoi servent les projets?';
+
+  @override
+  String get faqInsightsQ => 'Que montrent les statistiques?';
+
+  @override
+  String get faqSpacesQ => 'Où sont toutes les sections?';
+
+  @override
+  String get faqBackupQ => 'Comment mes données sont-elles sauvegardées?';
+
+  @override
+  String get faqPrayerQ => 'Comment fonctionnent les horaires de prière?';
+
+  @override
+  String get faqPrayerA =>
+      'Choisissez votre ville dans Réglages → Horaires de prière. Ils sont calculés sur le téléphone selon la méthode locale; vous pouvez changer la méthode et l’école pour Asr. Une notification peut arriver à chaque prière et la séance en cours se met en pause.';
+
+  @override
+  String get faqPrivacyQ => 'Où sont stockées mes données?';
+
+  @override
+  String get faqAssistantQ => 'Qu’est-ce que l’assistant?';
+
+  @override
+  String get faqFilesQ => 'Puis-je utiliser des fichiers Excel, Word ou PDF?';
+
+  @override
+  String get examToday => 'Examen aujourd’hui. Bonne chance!';
+
+  @override
+  String get batterySubtitle =>
+      'Certains téléphones arrêtent les apps en arrière-plan. Vérifiez le vôtre.';
+
+  @override
+  String get batteryStatusOk =>
+      'L\'économie de batterie ne limite pas l’app. Rappels et sons devraient arriver à l\'heure.';
+
+  @override
+  String get batteryStatusLimited =>
+      'L\'économie de batterie peut arrêter l’app en arrière-plan : rappels et sons peuvent être en retard ou absents.';
+
+  @override
+  String get batteryOpenApp => 'Ouvrir les réglages de l’app';
+
+  @override
+  String get batteryGeneric =>
+      'Dans les réglages de batterie, choisissez cette app et réglez-la sur « Sans restriction » (ou « Ne pas optimiser »).';
+
+  @override
+  String get batteryXiaomi =>
+      'Xiaomi / Redmi / POCO : ouvrez aussi Sécurité › Autorisations › Démarrage automatique et activez l’app; économiseur de batterie sur « Sans restrictions ».';
+
+  @override
+  String get batteryOppo =>
+      'Oppo / Realme / OnePlus : ouvrez Batterie › cette app et autorisez l\'activité en arrière-plan et le lancement auto; verrouillez l’app dans les récents.';
+
+  @override
+  String get batterySamsung =>
+      'Samsung : Batterie › Limites d\'utilisation en arrière-plan : retirez l’app des apps en veille et en veille prolongée.';
+
+  @override
+  String get batteryHuawei =>
+      'Huawei / Honor : Lancement des apps › cette app › gérer manuellement, et autorisez lancement auto, secondaire et arrière-plan.';
+
+  @override
+  String get batteryVivo =>
+      'Vivo / iQOO : Batterie › Consommation en arrière-plan › autorisez l’app et activez le démarrage auto dans les autorisations.';
+
+  @override
+  String focusFlowBreakOffer(String m) {
+    return 'Belle concentration. Pause de $m min?';
+  }
+
+  @override
+  String get guardAllowlistHint =>
+      'Toutes les autres sont en pause; appels, réglages et clavier fonctionnent toujours';
+
+  @override
+  String get guardQuestion => 'Avez-vous besoin de cette app maintenant?';
+
+  @override
+  String get faqGuardQ => 'Comment bloquer les apps distrayantes pendant la concentration?';
+
+  @override
+  String get faqGuardA =>
+      'Ouvrez Concentration → réglages de la minuterie → Garde anti-distraction. Choisissez les apps, puis Doux (5 secondes de respiration et la question « Avez-vous besoin de cette app maintenant? ») ou Strict (elles restent fermées). Elle agit pendant les sessions et, avec les Plages horaires, aux jours et heures choisis. « N\'autoriser que les apps choisies » met tout le reste en pause; appels, réglages et clavier fonctionnent toujours. Android vous demande une fois de l\'activer dans Accessibilité. Elle voit seulement quelle app est ouverte et n\'envoie rien.';
+}

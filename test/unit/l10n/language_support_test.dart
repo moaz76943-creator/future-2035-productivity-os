@@ -93,6 +93,12 @@ void main() {
     expect(pick(const Locale('en', 'US')), 'en');
     expect(pick(const Locale('en')), 'en');
     expect(pick(const Locale('pt', 'BR')), 'pt-BR');
+    expect(pick(const Locale('pt', 'PT')), 'pt-PT');
+    expect(pick(const Locale('es', '419')), 'es-419');
+    expect(pick(const Locale('es', 'MX')), 'es-419');
+    expect(pick(const Locale('es', 'ES')), 'es');
+    expect(pick(const Locale('fr', 'CA')), 'fr-CA');
+    expect(pick(const Locale('fr', 'FR')), 'fr');
     expect(pick(const Locale('xx')), 'en');
     for (final l in AppLocales.all) {
       expect(AppLocales.forLocale(l.locale), same(l), reason: l.tag);

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focus ध्यान भङ्ग सुरक्षा</string>
+    <string name="guard_service_summary">तपाईं ध्यान दिँदा छानिएका एपहरू रोक्छ</string>
+    <string name="guard_service_description">कुन एप खुला छ हेर्नका लागि मात्र Deep Focus ले यो सुविधा प्रयोग गर्छ, ताकि ध्यानको समयमा वा तपाईंको तालिका अनुसार छानिएका एपहरू रोक्न र तपाईंले खोल्नुभएको भए Shorts र Reels बन्द गर्न सकियोस्। यसले पाठ पढ्दैन, केही भण्डारण गर्दैन र कतै केही पठाउँदैन। तपाईं यसलाई यहाँ जुनसुकै बेला बन्द गर्न सक्नुहुन्छ।</string>
+</resources>

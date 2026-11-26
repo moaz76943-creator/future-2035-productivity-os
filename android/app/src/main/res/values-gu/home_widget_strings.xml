@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">ફોકસ અને કાર્ડ્સ</string>
+    <string name="home_widget_description">બાકી ફોકસ સમય અને સમીક્ષા માટેનાં કાર્ડ્સ</string>
+    <string name="quick_widget_label">ઝડપી ઉમેરો</string>
+    <string name="quick_widget_description">કાર્ય અથવા નોંધ ઉમેરો, અથવા કાર્ડ્સની સમીક્ષા કરો</string>
+</resources>

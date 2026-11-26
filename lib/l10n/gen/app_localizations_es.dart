@@ -5225,3 +5225,256 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get settingsLanguageNoMatch => 'Ningún idioma coincide';
 }
+
+/// The translations for Spanish Castilian, as used in Latin America and the Caribbean (`es_419`).
+class AppLocalizationsEs419 extends AppLocalizationsEs {
+  AppLocalizationsEs419() : super('es_419');
+
+  @override
+  String get moduleSettings => 'Configuración';
+
+  @override
+  String get actionAdd => 'Agregar';
+
+  @override
+  String get focusAddNote => 'Agrega una nota sobre esta sesión';
+
+  @override
+  String get focusOpenSettings => 'Abrir configuración';
+
+  @override
+  String get tasksQuickAddHint => 'Agregar una tarea…';
+
+  @override
+  String get tasksEmptyMessage => 'Agrega una tarea para empezar a dar forma a tu día.';
+
+  @override
+  String get taskAddChecklistItem => 'Agregar un elemento';
+
+  @override
+  String get taskAddSubtask => 'Agregar una subtarea';
+
+  @override
+  String get taskAddDependency => 'Agregar tarea bloqueante';
+
+  @override
+  String get calendarDragHint => 'Mantén presionado y arrastra un evento para cambiarlo de hora';
+
+  @override
+  String get deckEmptyCards => 'Agrega tarjetas para empezar a aprender.';
+
+  @override
+  String get cardAddAnother => 'Guardar y agregar otra';
+
+  @override
+  String get settingsTitle => 'Configuración';
+
+  @override
+  String get settingsGeneral => 'Configuración general';
+
+  @override
+  String get settingsPermissionDenied =>
+      'Las notificaciones están bloqueadas en la configuración del sistema.';
+
+  @override
+  String get assistantScheduleConfirmTitle => '¿Agregar bloques de tiempo a tu calendario?';
+
+  @override
+  String assistantScheduleConfirmBody(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Se agregarán $count bloques de tiempo al calendario de hoy.',
+      one: 'Se agregará 1 bloque de tiempo al calendario de hoy.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String assistantScheduled(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count bloques de tiempo agregados',
+      one: '1 bloque de tiempo agregado',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get assistantNoEstimate => 'Agrega una estimación para planificarlas';
+
+  @override
+  String get calendarNoEventsHint =>
+      'Agrega un evento o un bloque de tiempo para planificar este día.';
+
+  @override
+  String get flashcardsCardAdded => 'Tarjeta agregada';
+
+  @override
+  String get focusNotificationsDisabledInApp =>
+      'Los recordatorios están desactivados en Configuración. No recibirás ningún aviso cuando termine una sesión.';
+
+  @override
+  String get habitsCheckInHint => 'Mantén presionado para ajustar';
+
+  @override
+  String get notesTagsHint => 'Agrega etiquetas escribiendo #etiqueta en la nota.';
+
+  @override
+  String get onboardingLanguageBody => 'Puedes cambiarlo en cualquier momento en Configuración.';
+
+  @override
+  String get projectAddTask => 'Agregar tarea al proyecto';
+
+  @override
+  String get taskSubtaskDetailsHint =>
+      'Guarda primero la tarea para agregar subtareas, elementos de lista, etiquetas y dependencias.';
+
+  @override
+  String get flashcardsTtsLanguageUnavailable =>
+      'No hay ninguna voz instalada para este idioma. Agrega una en la configuración de texto a voz de Android.';
+
+  @override
+  String get milestoneAdd => 'Agregar hito';
+
+  @override
+  String get milestonesEmpty =>
+      'Aún no hay hitos. Agrega puntos de control con fecha para seguir el proyecto en el calendario.';
+
+  @override
+  String get flashcardsFavorite => 'Agregar a favoritas';
+
+  @override
+  String get flashcardsAddTag => 'Agregar etiqueta';
+
+  @override
+  String get flashcardsAddImage => 'Agregar imagen';
+
+  @override
+  String get flashcardsAddAudio => 'Agregar audio';
+
+  @override
+  String get flashcardsAddField => 'Agregar campo';
+
+  @override
+  String get flashcardsTemplateConfirm =>
+      'La plantilla define cómo se muestran los campos y agrega los suyos. Tus tarjetas y campos se mantienen.';
+
+  @override
+  String get flashcardsMicDenied =>
+      'El acceso al micrófono está desactivado. Permítelo en la configuración del sistema para grabar.';
+
+  @override
+  String get speechGetVoicesHint =>
+      'Los idiomas sin voz se pueden descargar en la configuración de voz del teléfono.';
+
+  @override
+  String get speechSettingsFailed => 'No se pudo abrir la configuración de voz de este teléfono.';
+
+  @override
+  String get flashMenuAdd => 'Agregar tarjetas';
+
+  @override
+  String get focusDndNeedsAccess =>
+      'Permite el acceso en la configuración del teléfono para usarlo';
+
+  @override
+  String get starterHint => 'Agrega uno para estudiar ya. Puedes editarlo o borrarlo después.';
+
+  @override
+  String get starterAdd => 'Agregar';
+
+  @override
+  String get faqMyDayA =>
+      'Aparece una vez al día en Inicio: ves las tareas de hoy, el próximo evento, los hábitos pendientes y las tarjetas por repasar, y empiezas una sesión de enfoque con un toque. Mantén presionado el icono de la app para accesos rápidos o agrega el widget a tu pantalla.';
+
+  @override
+  String get faqTasksQ => '¿Cómo agrego una tarea con recordatorio?';
+
+  @override
+  String get faqFocusA =>
+      'Elige Pomodoro, cuenta regresiva o tiempo libre y toca Empezar; los descansos pueden seguir solos. En Configuración eliges el sonido final, activas No molestar durante el enfoque y reproduces tus sonidos naturales en cada sesión.';
+
+  @override
+  String get faqCalendarA =>
+      'Sí. Las fechas hégira (Umm al-Qura) se muestran solas en árabe y puedes activarlas en Configuración para cualquier idioma. Eventos, tareas con fecha e hitos de proyectos aparecen juntos.';
+
+  @override
+  String get faqImportA =>
+      'Sí. En un mazo elige Importar y un archivo: Anki (.apkg), Excel (.xlsx) o CSV, y asigna las columnas. Usa «Plantilla de hoja de cálculo» para escribir tarjetas en la computadora. Las imágenes y sonidos de Anki no se importan.';
+
+  @override
+  String get faqNotesA =>
+      'Escribe con listas y formato, fija o marca como favoritas las notas importantes, agrega etiquetas y enlaza notas con tareas. El botón del micrófono te deja dictar. Una nota nueva puede empezar con una plantilla (clase, resumen de libro, diario, plan semanal) y el botón de imagen agrega fotos.';
+
+  @override
+  String get faqProjectsA =>
+      'Agrupa tareas en un proyecto, agrega hitos con fecha y sigue el progreso general. Los hitos también aparecen en el calendario.';
+
+  @override
+  String get faqBackupA =>
+      'Cada día la app guarda en silencio una copia cifrada en este teléfono y conserva las 7 últimas. En Configuración también puedes exportar una copia con contraseña y restaurarla en otro teléfono.';
+
+  @override
+  String get faqPrayerA =>
+      'Elige tu ciudad en Configuración → Horarios de oración. Se calculan en el teléfono con el método de ese lugar, y puedes cambiar el método y la escuela del Asr. Puedes recibir un aviso en cada oración y la sesión de enfoque se pausa.';
+
+  @override
+  String get faqAssistantA =>
+      'Un ayudante opcional que conectas a tu propio servicio de IA en Configuración. Está apagado por defecto y pregunta antes de enviar texto de tus notas.';
+
+  @override
+  String transferImported(int added) {
+    String _temp0 = intl.Intl.pluralLogic(
+      added,
+      locale: localeName,
+      other: '$added agregados',
+      one: '1 agregado',
+      zero: 'Nada nuevo que agregar',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get noteAddImage => 'Agregar imagen';
+
+  @override
+  String get flashReorderHint => 'Mantén presionado el asa y arrastra una tarjeta para moverla.';
+
+  @override
+  String get batteryOpen => 'Abrir configuración de batería';
+
+  @override
+  String get batteryOpenApp => 'Abrir configuración de la app';
+
+  @override
+  String get batteryGeneric =>
+      'En la configuración de batería elige esta app y ponla en «Sin restricciones» (o «No optimizar»).';
+
+  @override
+  String get whatsNewCareBody =>
+      'Configuración tiene ahora una página de almacenamiento con limpieza de imágenes y una guía de batería para tu marca.';
+
+  @override
+  String autoBackupCheckFailed(String date) {
+    return 'Revisado $date: no se pudo abrir la última copia. Guarda una copia tú mismo desde Configuración.';
+  }
+
+  @override
+  String get studySessionSettings => 'Configuración de la sesión';
+
+  @override
+  String get starterBrowseHint => 'Agrega uno con un toque y empieza';
+
+  @override
+  String get guardAgree => 'Aceptar y abrir configuración';
+
+  @override
+  String get guardAllowlistHint =>
+      'Todas las demás se pausan; llamadas, configuración y teclado siempre funcionan';
+
+  @override
+  String get faqGuardA =>
+      'Abre Concentración → configuración del temporizador → Guardián de distracciones. Elige las apps y luego Suave (5 segundos de respiración y la pregunta \"¿Necesitas esta app ahora?\") o Estricto (quedan cerradas). Funciona en las sesiones y, con Horario protegido, en los días y horas que elijas. \"Permitir solo las apps elegidas\" pausa todo lo demás; llamadas, configuración y teclado siempre funcionan. Android te pide una vez activarlo en Accesibilidad. Solo ve qué app está abierta y no envía nada.';
+}

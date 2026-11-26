@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">फोकस आणि कार्ड्स</string>
+    <string name="home_widget_description">उरलेला फोकस वेळ आणि उजळणीसाठी कार्ड्स</string>
+    <string name="quick_widget_label">झटपट जोडा</string>
+    <string name="quick_widget_description">कार्य किंवा टीप जोडा, किंवा कार्ड्सची उजळणी करा</string>
+</resources>

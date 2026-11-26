@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focus ਧਿਆਨ ਭਟਕਣ ਰੱਖਿਅਕ</string>
+    <string name="guard_service_summary">ਜਦੋਂ ਤੁਸੀਂ ਧਿਆਨ ਲਗਾਉਂਦੇ ਹੋ ਤਾਂ ਚੁਣੀਆਂ ਐਪਾਂ ਨੂੰ ਰੋਕਦਾ ਹੈ</string>
+    <string name="guard_service_description">Deep Focus ਇਹ ਵਿਸ਼ੇਸ਼ਤਾ ਸਿਰਫ਼ ਇਹ ਦੇਖਣ ਲਈ ਵਰਤਦਾ ਹੈ ਕਿ ਕਿਹੜੀ ਐਪ ਖੁੱਲ੍ਹੀ ਹੈ, ਤਾਂ ਜੋ ਫੋਕਸ ਦੌਰਾਨ ਜਾਂ ਤੁਹਾਡੀ ਸਮਾਂ-ਸੂਚੀ ਅਨੁਸਾਰ ਚੁਣੀਆਂ ਐਪਾਂ ਨੂੰ ਰੋਕਿਆ ਜਾ ਸਕੇ ਅਤੇ ਜੇ ਤੁਸੀਂ ਚਾਲੂ ਕੀਤਾ ਹੈ ਤਾਂ Shorts ਅਤੇ Reels ਬੰਦ ਕੀਤੇ ਜਾ ਸਕਣ। ਇਹ ਲਿਖਤ ਨਹੀਂ ਪੜ੍ਹਦਾ, ਕੁਝ ਵੀ ਸਟੋਰ ਨਹੀਂ ਕਰਦਾ ਅਤੇ ਕਿਤੇ ਵੀ ਕੁਝ ਨਹੀਂ ਭੇਜਦਾ। ਤੁਸੀਂ ਇਸਨੂੰ ਇੱਥੇ ਕਿਸੇ ਵੀ ਸਮੇਂ ਬੰਦ ਕਰ ਸਕਦੇ ਹੋ।</string>
+</resources>

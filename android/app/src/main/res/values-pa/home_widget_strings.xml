@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">ਫੋਕਸ ਅਤੇ ਕਾਰਡ</string>
+    <string name="home_widget_description">ਬਾਕੀ ਫੋਕਸ ਸਮਾਂ ਅਤੇ ਦੁਹਰਾਈ ਲਈ ਕਾਰਡ</string>
+    <string name="quick_widget_label">ਝਟਪਟ ਜੋੜੋ</string>
+    <string name="quick_widget_description">ਕੰਮ ਜਾਂ ਨੋਟ ਜੋੜੋ, ਜਾਂ ਕਾਰਡ ਦੁਹਰਾਓ</string>
+</resources>

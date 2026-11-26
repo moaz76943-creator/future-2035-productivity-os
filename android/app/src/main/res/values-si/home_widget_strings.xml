@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">අවධානය සහ කාඩ්</string>
+    <string name="home_widget_description">ඉතිරි අවධාන කාලය සහ පුනරීක්ෂණයට කාඩ්</string>
+    <string name="quick_widget_label">ඉක්මන් එක් කිරීම</string>
+    <string name="quick_widget_description">කාර්යයක් හෝ සටහනක් එක් කරන්න, නැතහොත් කාඩ් පුනරීක්ෂණය කරන්න</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focus विचलन रक्षक</string>
+    <string name="guard_service_summary">तुम्ही लक्ष केंद्रित करत असताना निवडलेल्या ॲप्सना विराम देतो</string>
+    <string name="guard_service_description">कोणते ॲप उघडे आहे हे पाहण्यासाठीच Deep Focus हे वैशिष्ट्य वापरते, जेणेकरून लक्ष केंद्रित करताना किंवा तुमच्या वेळापत्रकानुसार निवडलेल्या ॲप्सना विराम देता येईल आणि तुम्ही सुरू केले असल्यास Shorts व Reels बंद करता येतील. ते मजकूर वाचत नाही, काहीही साठवत नाही आणि कुठेही काहीही पाठवत नाही. तुम्ही हे इथे कधीही बंद करू शकता.</string>
+</resources>

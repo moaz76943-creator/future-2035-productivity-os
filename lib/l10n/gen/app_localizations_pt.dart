@@ -5251,3 +5251,895 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get settingsLanguageNoMatch => 'Nenhum idioma encontrado';
 }
+
+/// The translations for Portuguese, as used in Portugal (`pt_PT`).
+class AppLocalizationsPtPt extends AppLocalizationsPt {
+  AppLocalizationsPtPt() : super('pt_PT');
+
+  @override
+  String get moduleSettings => 'Definições';
+
+  @override
+  String get actionSave => 'Guardar';
+
+  @override
+  String get actionDelete => 'Eliminar';
+
+  @override
+  String get actionShare => 'Partilhar';
+
+  @override
+  String get actionDeleteForever => 'Eliminar de vez';
+
+  @override
+  String get actionLog => 'Registar progresso';
+
+  @override
+  String get stateLoading => 'A carregar…';
+
+  @override
+  String get stateSaving => 'A guardar…';
+
+  @override
+  String get stateSaved => 'Guardado';
+
+  @override
+  String get stateUnsaved => 'Alterações não guardadas';
+
+  @override
+  String get errorGenericMessage => 'Os seus dados estão seguros. Tente de novo.';
+
+  @override
+  String get errorSaveFailed => 'Não foi possível guardar. As suas alterações continuam aqui.';
+
+  @override
+  String get validationTitleRequired => 'Escreva um título';
+
+  @override
+  String get validationNameRequired => 'Escreva um nome';
+
+  @override
+  String get validationPositiveNumber => 'Escreva um número maior que zero';
+
+  @override
+  String get dashCustomizeTitle => 'Secções do início';
+
+  @override
+  String get dashCustomizeHint => 'Escolha o que aparece no seu ecrã principal.';
+
+  @override
+  String insightOverdue(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Tem $count tarefas atrasadas. Comece pela mais importante.',
+      one: 'Tem $count tarefa atrasada. Remarque ou conclua primeiro.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String insightFocusGap(int minutes) {
+    return 'Faltam $minutes minutos para a sua meta diária de foco.';
+  }
+
+  @override
+  String get insightCardsDue =>
+      'Revise agora os seus cartões pendentes, enquanto estão frescos na memória.';
+
+  @override
+  String get insightAllClear => 'Tudo em dia. Planee o amanhã ou faça uma pausa consciente.';
+
+  @override
+  String insightHabitStreak(String habit) {
+    return 'Mantenha a sua sequência: $habit ainda está pendente hoje.';
+  }
+
+  @override
+  String get focusReady => 'Quando quiser';
+
+  @override
+  String get focusLinkedTask => 'A trabalhar em';
+
+  @override
+  String get focusSessionStopped => 'Sessão guardada';
+
+  @override
+  String focusSessionSummary(String duration) {
+    return 'Ficou em foco por $duration.';
+  }
+
+  @override
+  String get focusRecovered => 'A sua sessão continuou enquanto o app estava fechado.';
+
+  @override
+  String get focusCompletedWhileAway =>
+      'Uma sessão terminou enquanto o app estava fechado e foi guardada.';
+
+  @override
+  String get focusNotificationsOff =>
+      'As notificações estão desativadas. Não será avisado quando uma sessão terminar.';
+
+  @override
+  String get focusBatteryHint =>
+      'Alguns aparelhos pausam apps em segundo plano. O temporizador continua preciso, mas os alertas podem atrasar. Permita o uso irrestrito da bateria para receber alertas confiáveis.';
+
+  @override
+  String get focusOpenSettings => 'Abrir definições';
+
+  @override
+  String get focusStopConfirmMessage => 'O tempo de foco até agora será guardado.';
+
+  @override
+  String get focusDeleteSession => 'Eliminar sessão';
+
+  @override
+  String get tasksEmptyMessage => 'Adicione uma tarefa para começar a organizar o seu dia.';
+
+  @override
+  String get taskTracked => 'Foco registado';
+
+  @override
+  String get calendarDragHint => 'Mantenha premido um evento e arraste para remarcá-lo';
+
+  @override
+  String get notesEmptyMessage => 'Registe ideias, anotações de reuniões e conhecimentos.';
+
+  @override
+  String get flashEmptyTitle => 'Crie o seu primeiro baralho';
+
+  @override
+  String get flashEmptyMessage =>
+      'A repetição espaçada mostra cada cartão logo antes de esquecê-lo.';
+
+  @override
+  String get cardAddAnother => 'Guardar e adicionar outro';
+
+  @override
+  String reviewFinishedMessage(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Revisou $count cartões.',
+      one: 'Revisou $count cartão.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get importCardsHint =>
+      'Cole um cartão por linha (frente e verso separados por tab ou ponto e vírgula) ou escolha um ficheiro: Excel (.xlsx), CSV, um baralho do Anki (.apkg) ou um baralho exportado.';
+
+  @override
+  String get goalsEmptyMessage =>
+      'Defina metas diárias, semanais, mensais ou de longo prazo e acompanhe o seu progresso real.';
+
+  @override
+  String get goalTitleHint => 'O que quer alcançar?';
+
+  @override
+  String get goalNoHistory => 'O progresso registado vai aparecer aqui';
+
+  @override
+  String get assistantIntro =>
+      'Ajuda para planear que funciona no seu aparelho. Se quiser, ligue um fornecedor de IA da sua escolha para resumos e geração de conteúdo.';
+
+  @override
+  String get assistantCloud => 'Fornecedor de IA';
+
+  @override
+  String get assistantPlanDay => 'Planear o meu dia';
+
+  @override
+  String get assistantPlanDayDesc =>
+      'Ordena as tarefas abertas por urgência, prioridade e estimativa, e as encaixa entre os seus eventos.';
+
+  @override
+  String get assistantExtractTasksDesc =>
+      'Encontra itens de listas de verificação e linhas de ação numa nota e os transforma em tarefas.';
+
+  @override
+  String get assistantSummarizeDesc =>
+      'Requer um fornecedor de IA. A nota só é enviada depois que confirmar.';
+
+  @override
+  String get assistantWorkloadDesc =>
+      'Compara o trabalho estimado com o seu tempo livre nesta semana.';
+
+  @override
+  String get assistantPlanEmpty => 'Nenhuma tarefa aberta para planear. Aproveite o tempo livre.';
+
+  @override
+  String get assistantWorkloadOver =>
+      'Planeou mais do que o tempo disponível. Considere reorganizar as tarefas de menor prioridade.';
+
+  @override
+  String get assistantWorkloadOk => 'O seu plano cabe no seu tempo disponível.';
+
+  @override
+  String get assistantProviderTitle => 'Fornecedor de IA';
+
+  @override
+  String get assistantProviderOff =>
+      'Nenhum fornecedor ligado. As ferramentas no aparelho continuam a funcionar.';
+
+  @override
+  String assistantProviderOn(String host) {
+    return 'Ligado a $host';
+  }
+
+  @override
+  String get assistantConsentTitle => 'Enviar este conteúdo ao seu fornecedor de IA?';
+
+  @override
+  String get assistantConsentAlways => 'Não perguntar de novo para este fornecedor';
+
+  @override
+  String get assistantUnavailable =>
+      'Não foi possível acessar o fornecedor de IA. Tente mais tarde.';
+
+  @override
+  String get assistantDisabledMessage =>
+      'Ative-o para usar as ferramentas de planeamento. Nenhum dado sai do seu aparelho, a menos que ligue um fornecedor e confirme cada solicitação.';
+
+  @override
+  String get assistantRemoveProvider => 'Remover fornecedor';
+
+  @override
+  String get settingsTitle => 'Definições';
+
+  @override
+  String get settingsFocus => 'Temporizador de foco';
+
+  @override
+  String get settingsPermissionDenied =>
+      'As notificações estão bloqueadas nas definições do sistema.';
+
+  @override
+  String get settingsPrivacyStatement =>
+      'Os seus dados ficam armazenados só neste aparelho, com encriptação. Sem conta, sem análises de uso e sem monitorização.';
+
+  @override
+  String get settingsBackup => 'Criar backup encriptado';
+
+  @override
+  String get settingsBackupDesc => 'Protegido por uma palavra-passe que escolhe';
+
+  @override
+  String settingsEraseConfirmBody(String word) {
+    return 'Todas as tarefas, notas, cartões, metas, hábitos, eventos e sessões serão eliminados permanentemente. Escreva $word para confirmar.';
+  }
+
+  @override
+  String get backupPassword => 'Palavra-passe do backup';
+
+  @override
+  String get backupPasswordConfirm => 'Confirmar palavra-passe';
+
+  @override
+  String backupPasswordHint(int count) {
+    return 'No mínimo $count caracteres. Não é possível recuperá-la se esquecer.';
+  }
+
+  @override
+  String get backupPasswordMismatch => 'As palavras-passe não coincidem';
+
+  @override
+  String get backupPasswordShort => 'A palavra-passe é muito curta';
+
+  @override
+  String get backupCreating => 'A encriptar backup…';
+
+  @override
+  String get backupCreated => 'Backup pronto para guardar';
+
+  @override
+  String get backupRestoring => 'A verificar e a restaurar…';
+
+  @override
+  String get backupWrongPassword => 'Palavra-passe incorreta, ou o ficheiro foi modificado.';
+
+  @override
+  String get backupNotABackup => 'Este ficheiro não é um backup do Deep Focus.';
+
+  @override
+  String get backupCorrupted => 'O ficheiro de backup está danificado.';
+
+  @override
+  String get settingsDashboard => 'Secções do início';
+
+  @override
+  String get trashHint => 'Os itens eliminados ficam aqui até removê-los.';
+
+  @override
+  String get onboardPrivateBody =>
+      'Tudo fica neste aparelho, encriptado. Sem conta. Sem monitorização. O controlo é seu.';
+
+  @override
+  String get onboardLanguageTitle => 'Escolha o seu idioma';
+
+  @override
+  String get onboardNotifBody =>
+      'Permita notificações para lembretes de tarefas e alertas de foco. Pode mudar isso quando quiser.';
+
+  @override
+  String get notifChannelFocus => 'Temporizador de foco';
+
+  @override
+  String get notifReviewTitle => 'Os seus cartões estão prontos';
+
+  @override
+  String get notifReviewBody => 'Uma revisão rápida mantém a sua memória afiada.';
+
+  @override
+  String get analyticsRetentionNote => 'Proporção de cartões maduros que lembrou';
+
+  @override
+  String assistantWorkloadDay(String estimated, String free) {
+    return '$estimated planeado · $free livre';
+  }
+
+  @override
+  String assistantPlanRule(String end) {
+    return 'Planeado de agora até $end, a respeitar os eventos de hoje. Primeiro as tarefas atrasadas, depois prioridade, prazo e estimativa.';
+  }
+
+  @override
+  String get assistantNoEstimate => 'Adicione uma estimativa para planear estas tarefas';
+
+  @override
+  String get assistantApiKeyKeep => 'Deixe vazio para manter a chave guardada';
+
+  @override
+  String get assistantApiKeyRequired => 'Escreva uma chave de API';
+
+  @override
+  String get assistantProviderSaved => 'Fornecedor guardado';
+
+  @override
+  String get assistantProviderRemoved => 'Fornecedor removido e chave eliminada';
+
+  @override
+  String get assistantRemoveProviderConfirm =>
+      'Remover o fornecedor e eliminar a chave de API guardada neste dispositivo?';
+
+  @override
+  String get assistantSummarizing => 'A resumir…';
+
+  @override
+  String get assistantConfigure => 'Configurar fornecedor';
+
+  @override
+  String get calendarNoEventsHint =>
+      'Adicione um evento ou um bloco de tempo para planear este dia.';
+
+  @override
+  String get startupErrorTitle => 'Não foi possível abrir os seus dados';
+
+  @override
+  String get startupErrorLocked =>
+      'A chave de encriptação dos dados deste aparelho não está disponível. Nada foi eliminado. Reiniciar o aparelho costuma resolver. Se restaurou o aparelho recentemente, restaure os seus dados a partir de um backup encriptado.';
+
+  @override
+  String get startupErrorCipher =>
+      'Este aparelho não é compatível com o armazenamento encriptado exigido pelo app. Nada foi guardado sem encriptação.';
+
+  @override
+  String get flashcardsValidationNonNegative => 'Escreva 0 ou mais';
+
+  @override
+  String get flashcardsDeleteDeck => 'Eliminar baralho';
+
+  @override
+  String get focusSessionDeleted => 'Sessão eliminada';
+
+  @override
+  String get focusDeleteConfirm =>
+      'Eliminar esta sessão do seu histórico? O tempo dela deixará de contar para as suas metas.';
+
+  @override
+  String get focusNoteHint => 'No que trabalhou?';
+
+  @override
+  String get focusTargetCaption => 'Calculado a partir das sessões guardadas';
+
+  @override
+  String get focusModeLabel => 'Modo do temporizador';
+
+  @override
+  String get focusStopwatchHint => 'Conta o tempo até parar.';
+
+  @override
+  String get focusNotificationsDisabledInApp =>
+      'Os lembretes estão desativados nas definições. Não será avisado quando uma sessão terminar.';
+
+  @override
+  String get goalsLogged => 'Progresso registado';
+
+  @override
+  String get goalsEntryDeleted => 'Registo removido';
+
+  @override
+  String get goalsDeleteEntry => 'Remover registo';
+
+  @override
+  String get goalsDeleted => 'Meta eliminada';
+
+  @override
+  String get habitsDecrease => 'Remover um registo';
+
+  @override
+  String get habitsCalendar => 'Histórico de registos';
+
+  @override
+  String get habitsCalendarHint => 'Toque num dia para corrigi-lo.';
+
+  @override
+  String get habitsPausedNote => 'Dias em pausa não afetam a sua sequência.';
+
+  @override
+  String get notesDeleteNotebook => 'Eliminar caderno';
+
+  @override
+  String get notesEmptyFavorites => 'As notas que marcar como favoritas aparecem aqui.';
+
+  @override
+  String get notesTagsHint => 'Adicione tags a escrever #tag na nota.';
+
+  @override
+  String get notifTimerDoneBody => 'O tempo que definiu acabou.';
+
+  @override
+  String get onboardingPrivatePointDevice => 'Armazenado apenas neste dispositivo, encriptado';
+
+  @override
+  String get onboardingPrivatePointTracking => 'Sem análises, sem monitorização';
+
+  @override
+  String get onboardingLanguageBody => 'Pode mudar isso a qualquer momento em Definições.';
+
+  @override
+  String get settingsNotificationsHint =>
+      'Isso guarda a sua preferência no app. O sistema também pode pedir permissão.';
+
+  @override
+  String get settingsDashboardHint =>
+      'Arraste para reordenar. Desative as secções de que não precisa.';
+
+  @override
+  String get settingsAssistantDesc =>
+      'Ajuda opcional de planeamento. Nada sai deste dispositivo a menos que ligue um fornecedor.';
+
+  @override
+  String get settingsAssistantSetup => 'Assistente e configuração do fornecedor';
+
+  @override
+  String get settingsTrashDesc => 'Restaure ou elimine permanentemente os itens removidos';
+
+  @override
+  String get settingsEraseFirstBody =>
+      'Isso não pode ser desfeito. Considere criar um backup encriptado antes.';
+
+  @override
+  String settingsEraseTypeLabel(String word) {
+    return 'Escreva $word';
+  }
+
+  @override
+  String get backupShowPassword => 'Mostrar palavra-passe';
+
+  @override
+  String get backupHidePassword => 'Ocultar palavra-passe';
+
+  @override
+  String get backupSaved => 'Backup guardado';
+
+  @override
+  String get backupFailed => 'Não foi possível criar o backup. Os seus dados não foram alterados.';
+
+  @override
+  String get backupReadFailed => 'Não foi possível ler o ficheiro selecionado.';
+
+  @override
+  String get backupShareSubject => 'Backup encriptado do Deep Focus';
+
+  @override
+  String get reminderCustomTime => 'Num horário específico';
+
+  @override
+  String get taskSaved => 'Tarefa guardada';
+
+  @override
+  String get taskSubtaskDetailsHint =>
+      'Guarde a tarefa primeiro para adicionar subtarefas, itens de checklist, etiquetas e dependências.';
+
+  @override
+  String get taskPlanning => 'Planeamento';
+
+  @override
+  String get trashDeleteTaskTitle => 'Eliminar esta tarefa de vez?';
+
+  @override
+  String get trashDeleteNoteTitle => 'Eliminar esta nota de vez?';
+
+  @override
+  String trashEmptyBody(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count itens serão eliminados permanentemente.',
+      one: '$count item será eliminado permanentemente.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get trashPurged => 'Eliminado de vez';
+
+  @override
+  String trashDeletedOn(String date) {
+    return 'Eliminado em $date';
+  }
+
+  @override
+  String get flashcardsTtsLanguageUnavailable =>
+      'Nenhuma voz instalada para este idioma. Adicione uma nas definições de conversão de texto em fala do Android.';
+
+  @override
+  String get milestoneDeleted => 'Marco eliminado';
+
+  @override
+  String get focusPlanSave => 'Guardar plano';
+
+  @override
+  String get focusPlanSaved => 'Plano guardado';
+
+  @override
+  String get flashcardsImportFile => 'De ficheiro';
+
+  @override
+  String get speechHint =>
+      'Usa as vozes instaladas no aparelho, offline. Se um idioma não tiver voz, será avisado e nenhuma outra será usada.';
+
+  @override
+  String get studyHowTitle => 'Como quer estudar?';
+
+  @override
+  String get studyTypeAnswer => 'Escreva a sua resposta';
+
+  @override
+  String get flashcardsImportFileFailed =>
+      'Não foi possível abrir o ficheiro. Pode colar o conteúdo.';
+
+  @override
+  String flashcardsDuplicateMessage(String front, String back) {
+    return 'Este baralho já tem “$front” → “$back”. Guardar mesmo assim?';
+  }
+
+  @override
+  String get flashcardsSaveAnyway => 'Guardar mesmo assim';
+
+  @override
+  String get flashcardsStatLearning => 'A aprender';
+
+  @override
+  String flashcardsMediaTooLarge(int mb) {
+    return 'O ficheiro tem mais de $mb MB.';
+  }
+
+  @override
+  String get flashcardsCustomFields => 'Os seus campos';
+
+  @override
+  String get flashcardsTemplateConfirm =>
+      'O modelo define a exibição e adiciona os seus campos. Os seus cartões e campos continuam iguais.';
+
+  @override
+  String get flashcardsRecording => 'A gravar…';
+
+  @override
+  String get flashcardsMicDenied =>
+      'O acesso ao microfone está desativado. Permita-o nas definições do sistema para gravar.';
+
+  @override
+  String get soundsSleep => 'Temporizador de sono';
+
+  @override
+  String get soundsHint =>
+      'Toque num som para começar. Misture vários e ajuste o volume de cada um.';
+
+  @override
+  String get speechGetVoices => 'Transferir mais vozes';
+
+  @override
+  String get speechGetVoicesHint =>
+      'Idiomas sem voz podem ser baixados nas definições de fala do telefone.';
+
+  @override
+  String get speechSettingsFailed => 'Não foi possível abrir as definições de fala deste telefone.';
+
+  @override
+  String get autoBackupHint =>
+      'Essas cópias ficam neste telefone e são apagadas se o app for desinstalado. Para trocar de telefone, use “Backup” para guardar um ficheiro.';
+
+  @override
+  String get errorLogTitle => 'Registo de erros';
+
+  @override
+  String get errorLogHint =>
+      'Se algo der errado, fica anotado aqui: só o tipo de erro e onde ocorreu no código, nunca o seu conteúdo. Partilhe para ajudar a corrigir.';
+
+  @override
+  String get errorLogEmpty => 'Nenhum erro registado.';
+
+  @override
+  String get soundsWithFocusHint => 'A sua mistura começa com a sessão e pausa nos intervalos.';
+
+  @override
+  String get soundsSavedMixes => 'Misturas guardadas';
+
+  @override
+  String get soundsSaveMix => 'Guardar esta mistura';
+
+  @override
+  String soundsDeleteMix(String name) {
+    return 'Eliminar a mistura “$name”?';
+  }
+
+  @override
+  String get myDayTitle => 'Começar o meu dia';
+
+  @override
+  String get myDayHint => 'O seu dia num relance e um toque para focar';
+
+  @override
+  String get studyWeekTitle => 'A sua semana';
+
+  @override
+  String get focusDndNeedsAccess => 'Permita o acesso nas definições do telefone';
+
+  @override
+  String get prayerOffHint =>
+      'Escolha a sua cidade para ver os horários. São calculados no telefone, sem acesso à localização.';
+
+  @override
+  String get importAnkiNewFormat =>
+      'Este ficheiro do Anki usa o formato mais novo. No Anki, exporte de novo com “Compatível com versões antigas do Anki” ativado.';
+
+  @override
+  String get importTemplate => 'Modelo de folha de cálculo';
+
+  @override
+  String get starterHint => 'Adicione um para estudar agora. Pode editar ou eliminar depois.';
+
+  @override
+  String get faqMyDayQ => 'O que faz “Começar o meu dia”?';
+
+  @override
+  String get faqMyDayA =>
+      'Aparece uma vez por dia no início: veja as tarefas de hoje, o próximo evento, os hábitos que faltam e os cartões pendentes, e comece uma sessão de foco com um toque. Mantenha premido o ícone do app para atalhos ou adicione o widget ao ecrã inicial.';
+
+  @override
+  String get faqTasksA =>
+      'Toque em Nova tarefa no início ou em + em Tarefas. Escreva o título ou dite pelo microfone e defina data, hora e lembrete. Tarefas atrasadas aparecem primeiro.';
+
+  @override
+  String get faqFocusQ => 'Como funciona o temporizador de foco?';
+
+  @override
+  String get faqFocusA =>
+      'Escolha Pomodoro, contagem decrescente ou tempo livre e toque em Iniciar; as pausas podem vir automaticamente. Em Definições escolha o som final, ative Não perturbe durante o foco e toque os seus sons da natureza a cada sessão.';
+
+  @override
+  String get faqSoundsA =>
+      'Ative até seis gravações reais, ajuste cada volume e guarde a mistura com um nome. Elas continuam em segundo plano e um temporizador pode pará-las. Nenhuma música é usada.';
+
+  @override
+  String get faqCalendarA =>
+      'Sim. As datas hegirianas (Umm al-Qura) aparecem sozinhas em árabe e podem ser ativadas em Definições para qualquer idioma. Eventos, tarefas com data e marcos de projetos aparecem juntos.';
+
+  @override
+  String get faqFlashcardsA =>
+      'Cartões que sabe bem voltam depois de mais tempo e os que erra voltam logo (repetição espaçada). Avalie cada resposta: De novo, Difícil, Bom ou Fácil. Defina uma meta diária e mantenha a sua sequência no cartão Hoje. Defina a data da prova num baralho para ver os dias que faltam e quantos cartões novos aprender por dia. Ordene por «A minha ordem» para arrastar cartões, toque no alto-falante de cada lado para ouvir e ajuste velocidade e repetições no menu de voz.';
+
+  @override
+  String get faqImportA =>
+      'Sim. Num baralho, escolha Importar e um ficheiro: Anki (.apkg), Excel (.xlsx) ou CSV, e associe as colunas. Use “Modelo de folha de cálculo” para escrever cartões no computador. Imagens e sons de ficheiros do Anki não são importados.';
+
+  @override
+  String get faqHabitsA =>
+      'Um dia conta quando atinge a meta do hábito num dia programado. Pausar um hábito protege a sequência. Cada hábito pode ter o seu próprio lembrete.';
+
+  @override
+  String get faqGoalsA =>
+      'Dê à meta uma quantidade e unidade e registe o progresso. O cartão mostra quanto já fez e quanto falta antes do prazo.';
+
+  @override
+  String get faqProjectsA =>
+      'Agrupe tarefas num projeto, adicione marcos com data e acompanhe o progresso. Os marcos também aparecem no calendário.';
+
+  @override
+  String get faqInsightsA =>
+      'O seu tempo de foco, tarefas concluídas e estudo por dias e semanas, com sugestões. Tudo é calculado no seu telefone.';
+
+  @override
+  String get faqSpacesQ => 'Onde ficam todas as secções?';
+
+  @override
+  String get faqBackupQ => 'Como os meus dados são copiados?';
+
+  @override
+  String get faqBackupA =>
+      'Todo dia o app guarda discretamente uma cópia encriptada neste telefone e mantém as 7 últimas. Em Definições também pode exportar um backup com palavra-passe e restaurá-lo noutro telefone.';
+
+  @override
+  String get faqPrayerA =>
+      'Escolha a sua cidade em Definições → Horários de oração. Os horários são calculados no telefone com o método local, e pode mudar o método e a escola do Asr. Pode ser avisado em cada oração e a sessão de foco pausa.';
+
+  @override
+  String get faqPrivacyQ => 'Onde ficam os meus dados?';
+
+  @override
+  String get faqPrivacyA =>
+      'Somente no seu telefone, num base de dados encriptado. Sem conta e sem monitorização. A internet só é usada por recursos que ativa, como o assistente opcional.';
+
+  @override
+  String get faqAssistantA =>
+      'Um ajudante opcional que liga ao seu próprio serviço de IA em Definições. Vem desligado e pergunta antes de enviar texto de notas.';
+
+  @override
+  String get tourPlanTitle => 'Planee o seu dia';
+
+  @override
+  String get tourPlanBody =>
+      'Tarefas, calendário e hábitos num só lugar tranquilo. Comece cada manhã com “Começar o meu dia”.';
+
+  @override
+  String get transferSaveAs => 'Guardar como';
+
+  @override
+  String get transferImport => 'Importar de um ficheiro';
+
+  @override
+  String get transferImportNotesHint =>
+      'Ficheiros Word, Markdown ou texto viram uma nota. Excel ou CSV: uma nota por linha (título, conteúdo).';
+
+  @override
+  String get transferSaved => 'Ficheiro guardado';
+
+  @override
+  String get transferFailed => 'Não foi possível criar o ficheiro. Nada foi alterado.';
+
+  @override
+  String get transferUnsupported =>
+      'Este ficheiro não pode ser lido aqui. Use Excel, CSV, Word, Markdown ou texto.';
+
+  @override
+  String get transferDeckFormats => 'Guardar como Excel, Word ou PDF';
+
+  @override
+  String get faqFilesQ => 'Posso usar ficheiros do Excel, Word ou PDF?';
+
+  @override
+  String get faqFilesA =>
+      'Sim. Tarefas e Notas têm no topo um botão de importar e exportar (duas setas), e cada baralho tem no menu. Guarde como Excel, CSV, Word ou PDF, ou traga ficheiros do Excel, CSV, Word, Markdown ou texto. As colunas podem estar em qualquer idioma do app e o que guardar sempre pode ser importado de novo.';
+
+  @override
+  String get noteImageUnreadable => 'Este ficheiro não é uma imagem que o app consiga ler.';
+
+  @override
+  String get examAllLearnt => 'todos aprendidos, continue a revisar';
+
+  @override
+  String get backupDriveHint =>
+      'Para guardar uma cópia online, escolha o Google Drive (ou outro app de nuvem) no ecrã de guardar que abre em seguida.';
+
+  @override
+  String get flashShareDeck => 'Partilhar baralho com um amigo';
+
+  @override
+  String get flashSortManual => 'A minha ordem (arrastar)';
+
+  @override
+  String get reportEmpty => 'Nada registado neste mês ainda.';
+
+  @override
+  String get reportSave => 'Guardar como PDF ou Word';
+
+  @override
+  String get storageLow =>
+      'O seu telefone está quase cheio. Liberte espaço para que backups e lembretes continuem a funcionar.';
+
+  @override
+  String get batteryTitle => 'Mantenha os lembretes a funcionar';
+
+  @override
+  String get batteryOpen => 'Abrir definições de bateria';
+
+  @override
+  String get batteryOpenApp => 'Abrir definições do app';
+
+  @override
+  String get batteryGeneric =>
+      'Nas definições de bateria escolha este app e defina «Sem restrições» (ou «Não otimizar»).';
+
+  @override
+  String get batteryHuawei =>
+      'Huawei / Honor: Início de apps › este app › gerir manualmente e permita início automático, secundário e em segundo plano.';
+
+  @override
+  String get whatsNewOrderTitle => 'Arraste cartões para a sua ordem';
+
+  @override
+  String get whatsNewOrderBody => 'No baralho escolha Ordem › A minha ordem e arraste a alça.';
+
+  @override
+  String get whatsNewSpeechBody =>
+      'Toque para ouvir a palavra ou a tradução. Velocidade, repetições e voz estão no menu de revisão. O idioma é detetado pelo texto.';
+
+  @override
+  String get whatsNewReportBody =>
+      'Em Estatísticas toque no ícone do relatório para ver o mês e guardar em PDF ou Word.';
+
+  @override
+  String get whatsNewCareBody =>
+      'Definições agora tem página de armazenamento com limpeza de imagens e guia de bateria para a sua marca.';
+
+  @override
+  String autoBackupCheckFailed(String date) {
+    return 'Verificado $date: não foi possível abrir o último backup. Guarde um ficheiro de backup nas Definições.';
+  }
+
+  @override
+  String smartReviewTimeTitle(String time) {
+    return 'Costuma estudar por volta das $time';
+  }
+
+  @override
+  String get focusAdjustTitle => 'A sua sessão';
+
+  @override
+  String get dashOpenDecks => 'Abra os seus cartões';
+
+  @override
+  String tasksFinishAt(String time) {
+    return 'A começar agora, termina tudo às $time';
+  }
+
+  @override
+  String get guardDisclosureBody =>
+      'Para pausar os apps que escolher, o Deep Focus usa o serviço de acessibilidade do Android para saber qual app está aberto. Com \"Fechar Shorts e Reels\" ativado, também verifica se há um leitor de vídeos curtos no ecrã.\n\nNão lê texto, não guarda nada do que vê e não envia nada: tudo fica no seu telefone. Pode desativar a qualquer momento em Acessibilidade.';
+
+  @override
+  String get guardGentleHint => 'Uma pausa de 5 segundos para respirar, depois escolhe';
+
+  @override
+  String get guardQuestion => 'Precisa deste app agora?';
+
+  @override
+  String get faqGuardA =>
+      'Abra Foco → ajustes do temporizador → Guarda de distrações. Escolha os apps e depois Suave (5 segundos de respiração e a pergunta \"Precisa deste app agora?\") ou Rígido (ficam fechados). Funciona nas sessões de foco e, com Horário protegido, nos dias e horas que definir. \"Permitir só os apps escolhidos\" pausa todo o resto; chamadas, ajustes e teclado sempre funcionam. O Android pede uma vez para ativar em Acessibilidade. Só vê qual app está aberto e não envia nada.';
+
+  @override
+  String guardDueNudge(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count cartões estão a esperar por si',
+      one: '$count cartão está a esperar por si',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String guardEmergencyHolding(Object n) {
+    return 'Continue a segurar… $n';
+  }
+
+  @override
+  String get wordsSubtitle => 'Use a sua própria palavra para qualquer texto';
+
+  @override
+  String get wordsHint =>
+      'Toque num texto para mudá-lo. As suas palavras valem só para este idioma e ficam nos backups.';
+}

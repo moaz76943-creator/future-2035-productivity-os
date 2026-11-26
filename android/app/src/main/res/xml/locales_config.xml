@@ -5,10 +5,13 @@
     <locale android:name="en-GB" />
     <locale android:name="ar" />
     <locale android:name="es" />
+    <locale android:name="es-419" />
     <locale android:name="pt-BR" />
+    <locale android:name="pt-PT" />
     <locale android:name="zh-CN" />
     <locale android:name="zh-TW" />
     <locale android:name="fr" />
+    <locale android:name="fr-CA" />
     <locale android:name="de" />
     <locale android:name="ru" />
     <locale android:name="ja" />
@@ -46,7 +49,13 @@
     <locale android:name="ca" />
     <locale android:name="ta" />
     <locale android:name="te" />
+    <locale android:name="mr" />
+    <locale android:name="gu" />
+    <locale android:name="kn" />
     <locale android:name="ml" />
+    <locale android:name="pa" />
+    <locale android:name="ne" />
+    <locale android:name="si" />
     <locale android:name="az" />
     <locale android:name="kk" />
     <locale android:name="uz" />

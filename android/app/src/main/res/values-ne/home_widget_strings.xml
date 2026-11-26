@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">ध्यान र कार्डहरू</string>
+    <string name="home_widget_description">बाँकी ध्यान समय र पुनरावलोकनका कार्डहरू</string>
+    <string name="quick_widget_label">छिटो थप्नुहोस्</string>
+    <string name="quick_widget_description">कार्य वा टिपोट थप्नुहोस्, वा कार्डहरू पुनरावलोकन गर्नुहोस्</string>
+</resources>

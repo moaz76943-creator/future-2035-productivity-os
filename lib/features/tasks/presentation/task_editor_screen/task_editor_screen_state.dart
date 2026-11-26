@@ -71,7 +71,14 @@ class _TaskEditorScreenState extends ConsumerState<TaskEditorScreen> {
             ),
           Padding(
             padding: const EdgeInsetsDirectional.only(end: Space.sm),
-            child: FilledButton(onPressed: _saving ? null : _save, child: Text(l10n.actionSave)),
+            child: FilledButton(
+              onPressed: _saving ? null : _save,
+              // Long words for Save (ne, ta, ...) shrink slightly instead of pushing the bar past narrow screens.
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 140),
+                child: FittedBox(fit: BoxFit.scaleDown, child: Text(l10n.actionSave, maxLines: 1)),
+              ),
+            ),
           ),
         ],
       ),
