@@ -94,6 +94,19 @@ void main() {
       );
       await wait(tester);
     }
+    // A saved session asks for an optional note next: skip it (its first button).
+    if (find.byType(AlertDialog).evaluate().isNotEmpty) {
+      await tester.tap(
+        find
+            .descendant(
+              of: find.byType(AlertDialog),
+              matching: find.byWidgetPredicate((w) => w is ButtonStyleButton),
+            )
+            .first,
+      );
+      await wait(tester);
+    }
+    expect(find.byType(AlertDialog), findsNothing);
     expect(find.byKey(const ValueKey('focus-start')), findsOneWidget);
 
     // Flashcards: add a starter deck into the real (encrypted) database.
