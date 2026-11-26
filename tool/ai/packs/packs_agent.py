@@ -174,7 +174,15 @@ class Agent:
         try:
             out, self.last_critic = self.ask(system, json.dumps(items, ensure_ascii=False), avoid=drafted_by)
         except NoModelAvailable:
-            return None
+            if not drafted_by or '/' not in drafted_by:
+                return None
+            # No other provider answered: a different model of the same provider still
+            # reviews independently (other providers were blocked or overloaded).
+            try:
+                out, self.last_critic = self.ask(system, json.dumps(items, ensure_ascii=False),
+                                                 avoid='/' + drafted_by.split('/', 1)[1])
+            except NoModelAvailable:
+                return None
         bad = out.get('bad') if out else None
         return {str(b) for b in bad} if isinstance(bad, list) else None
 
