@@ -36,6 +36,9 @@ def main():
     changed = [f for f in sh(f'git diff --name-only {base}...HEAD; git diff --name-only;'
                              f' git ls-files --others --exclude-standard').stdout.split() if f]
     changed = sorted(set(changed))
+    # Regenerated build outputs (build_runner, gen-l10n) may differ by tool version; agents
+    # never write them and they are not kept, so they are not counted as agent changes.
+    changed = [f for f in changed if not re.search(r'(\.g\.dart$|^lib/l10n/gen/|^\.dart_tool/)', f)]
     problems = []
     for f in changed:
         if NEVER.search(f) or not ALLOWED.search(f):

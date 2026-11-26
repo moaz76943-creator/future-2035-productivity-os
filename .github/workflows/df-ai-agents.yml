@@ -116,12 +116,13 @@ jobs:
           mkdir -p ai/reports
           if [ "$GATES" != passed ]; then
             # Drop the job's changes; keep only a short log line for review.
-            git checkout -q -- lib test 2>/dev/null || true
-            git clean -fdq -- lib test 2>/dev/null || true
+            git checkout -q -- lib/l10n test 2>/dev/null || true
+            git clean -fdq -- test/ai_generated 2>/dev/null || true
             why=$(python3 -c 'import json,os;print("; ".join(json.load(open(os.environ["RUNNER_TEMP"]+"/gates.json"))["problems"])[:300])')
             echo "- $(date -u +%H:%M) $JOB dropped by gates: $why" >> ai/reports/dropped.md
           fi
-          git add -A ai/reports lib/l10n test/ai_generated
+          git add -A ai/reports lib/l10n
+          [ -d test/ai_generated ] && git add -A test/ai_generated
           if git diff --cached --quiet; then echo "Nothing to keep this hour."; exit 0; fi
           git commit -q -m "AI $JOB ($GATES gates)" -m "Unreviewed helper-model draft. Do not merge without review."
           case "$DAY" in ai-drafts/*) ;; *) echo "::error::unsafe target"; exit 1;; esac
