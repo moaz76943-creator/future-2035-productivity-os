@@ -18,7 +18,7 @@ on:
   workflow_dispatch:
     inputs:
       job:
-        description: 'review, tests or improve (empty = by hour)'
+        description: 'review, tests, improve or task (empty = by hour)'
         required: false
         default: ''
 
@@ -26,7 +26,8 @@ permissions:
   contents: write
 
 concurrency:
-  group: df-ai-agents
+  # One run per kind of job, so the rotating job and the task job work in parallel.
+  group: df-ai-agents-${{ inputs.job || 'auto' }}
   cancel-in-progress: false
 
 jobs:
@@ -97,6 +98,8 @@ jobs:
           echo "JOB=$job" >> "$GITHUB_ENV"
           if [ "$job" = review ]; then
             DF_SLOT=$hour timeout 20m python3 tool/ai/review_draft.py --per-day 2 --max-fixes 30 || echo "review stopped"
+          elif [ "$job" = task ]; then
+            timeout 15m python3 tool/ai/improve_agent.py --task || echo "task agent stopped"
           elif [ "$job" = improve ]; then
             timeout 15m python3 tool/ai/improve_agent.py || echo "improve agent stopped"
           else
@@ -108,7 +111,7 @@ jobs:
         run: |
           echo "GATES=failed" >> "$GITHUB_ENV"   # stays failed if this step is cut short
           set -uo pipefail
-          flag=""; [ "$JOB" = improve ] && flag="--allow-code"
+          flag=""; case "$JOB" in improve|task) flag="--allow-code";; esac
           if python3 tool/ai/gates.py --base origin/claude-dev --full $flag > "$RUNNER_TEMP/gates.json"; then
             echo "GATES=passed" >> "$GITHUB_ENV"
           else
@@ -131,7 +134,7 @@ jobs:
             echo "- $(date -u +%H:%M) $JOB dropped by gates: $why" >> ai/reports/dropped.md
           fi
           git add -A ai/reports lib/l10n
-          [ "$JOB" = improve ] && git add -A lib test
+          case "$JOB" in improve|task) git add -A lib test;; esac
           [ -d test/ai_generated ] && git add -A test/ai_generated
           if git diff --cached --quiet; then echo "Nothing to keep this hour."; exit 0; fi
           git commit -q -m "AI $JOB ($GATES gates)" -m "Unreviewed helper-model draft. Do not merge without review."
@@ -142,7 +145,11 @@ jobs:
           if ! git merge -q --no-edit -m "Sync with claude-dev" origin/claude-dev; then
             git merge --abort; echo "::warning::draft conflicts with claude-dev; kept for the next hour"; exit 0
           fi
-          git push -q origin "HEAD:refs/heads/$DAY"
+          # Parallel jobs share the day branch: on a race, merge the other job's push and retry.
+          for i in 1 2 3 4; do
+            git push -q origin "HEAD:refs/heads/$DAY" && break
+            sleep $((i * 5)); git fetch -q origin "$DAY" && git merge -q --no-edit FETCH_HEAD || true
+          done
           echo "### $JOB → \`$DAY\` (gates $GATES)" >> "$GITHUB_STEP_SUMMARY"
 
       # Translation fixes only: worker and critic came from two different providers

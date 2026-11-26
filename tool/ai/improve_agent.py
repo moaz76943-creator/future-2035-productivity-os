@@ -66,7 +66,7 @@ def next_task():
         return None, []
     # Rotate through the open tasks, so one hard task never blocks the others.
     slot = datetime.date.today().toordinal() * 24 + datetime.datetime.utcnow().hour
-    return open_tasks[(slot // 6) % len(open_tasks)]
+    return open_tasks[(slot // (1 if '--task' in sys.argv else 6)) % len(open_tasks)]
 
 
 IDEAS = (
@@ -117,9 +117,10 @@ def pick():
 def main():
     os.chdir(ROOT)
     slot = datetime.date.today().toordinal() * 24 + datetime.datetime.utcnow().hour
-    if '--file' not in sys.argv and slot % 4 == 1:
+    if '--file' not in sys.argv and '--task' not in sys.argv and slot % 4 == 1:
         return ideas(slot)
-    task, files = next_task() if '--file' not in sys.argv and slot % 2 == 0 else (None, [])
+    want_task = '--task' in sys.argv or ('--file' not in sys.argv and slot % 2 == 0)
+    task, files = next_task() if want_task else (None, [])
     path = files[0] if files else pick()
     if not path:
         return 0
