@@ -437,15 +437,6 @@ class AppLocalizationsKy extends AppLocalizations {
   String get focusNoHistory => 'Аяктаган сеанстар бул жерде көрүнөт';
 
   @override
-  String get focusTargets => 'Белгилер';
-
-  @override
-  String get focusDailyTarget => 'Күндүк белги';
-
-  @override
-  String get focusWeeklyTarget => 'Жумалык белги';
-
-  @override
   String get focusOutcomeCompleted => 'Аяктады';
 
   @override
@@ -2400,9 +2391,6 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Эмне менен алектендиңиз?';
-
-  @override
-  String get focusTargetCaption => 'Сакталган сеанстардан өлчөнгөн';
 
   @override
   String get focusModeLabel => 'Таймер режими';

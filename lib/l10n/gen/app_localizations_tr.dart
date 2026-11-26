@@ -436,15 +436,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get focusNoHistory => 'Tamamlanan oturumlar burada görünür';
 
   @override
-  String get focusTargets => 'Hedefler';
-
-  @override
-  String get focusDailyTarget => 'Günlük hedef';
-
-  @override
-  String get focusWeeklyTarget => 'Haftalık hedef';
-
-  @override
   String get focusOutcomeCompleted => 'Tamamlandı';
 
   @override
@@ -2393,9 +2384,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Ne üzerinde çalıştın?';
-
-  @override
-  String get focusTargetCaption => 'Kaydedilen oturumlardan ölçüldü';
 
   @override
   String get focusModeLabel => 'Zamanlayıcı modu';

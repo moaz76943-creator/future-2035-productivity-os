@@ -437,15 +437,6 @@ class AppLocalizationsHu extends AppLocalizations {
   String get focusNoHistory => 'A befejezett munkamenetek itt jelennek meg';
 
   @override
-  String get focusTargets => 'Célok';
-
-  @override
-  String get focusDailyTarget => 'Napi cél';
-
-  @override
-  String get focusWeeklyTarget => 'Heti cél';
-
-  @override
   String get focusOutcomeCompleted => 'Befejezve';
 
   @override
@@ -2401,9 +2392,6 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Min dolgoztál?';
-
-  @override
-  String get focusTargetCaption => 'A mentett munkamenetekből mérve';
 
   @override
   String get focusModeLabel => 'Időzítő módja';

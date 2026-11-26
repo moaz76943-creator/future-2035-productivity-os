@@ -1027,24 +1027,6 @@ abstract class AppLocalizations {
   /// **'Completed sessions will appear here'**
   String get focusNoHistory;
 
-  /// Section title
-  ///
-  /// In en, this message translates to:
-  /// **'Targets'**
-  String get focusTargets;
-
-  /// Label
-  ///
-  /// In en, this message translates to:
-  /// **'Daily target'**
-  String get focusDailyTarget;
-
-  /// Label
-  ///
-  /// In en, this message translates to:
-  /// **'Weekly target'**
-  String get focusWeeklyTarget;
-
   /// Session outcome label
   ///
   /// In en, this message translates to:
@@ -1912,7 +1894,7 @@ abstract class AppLocalizations {
   /// Empty state
   ///
   /// In en, this message translates to:
-  /// **'A blank canvas'**
+  /// **'Start writing'**
   String get notesEmptyTitle;
 
   /// Empty state
@@ -4194,12 +4176,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'What did you work on?'**
   String get focusNoteHint;
-
-  /// Caption under the daily and weekly focus target rings explaining where the numbers come from
-  ///
-  /// In en, this message translates to:
-  /// **'Measured from saved sessions'**
-  String get focusTargetCaption;
 
   /// Screen reader label for the focus mode selector
   ///
@@ -8902,7 +8878,7 @@ abstract class AppLocalizations {
   /// Flashcards: downloadable word lists by topic
   ///
   /// In en, this message translates to:
-  /// **'Word packs'**
+  /// **'Learn languages'**
   String get wordPacksTitle;
 
   /// Under the word-packs title

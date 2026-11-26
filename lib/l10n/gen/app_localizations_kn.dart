@@ -439,15 +439,6 @@ class AppLocalizationsKn extends AppLocalizations {
   String get focusNoHistory => 'ಪೂರ್ಣಗೊಂಡ ಸೆಷನ್‌ಗಳು ಇಲ್ಲಿ ಕಾಣಿಸುತ್ತವೆ';
 
   @override
-  String get focusTargets => 'ಗುರಿ ಮೊತ್ತಗಳು';
-
-  @override
-  String get focusDailyTarget => 'ದೈನಂದಿನ ಗುರಿ';
-
-  @override
-  String get focusWeeklyTarget => 'ವಾರದ ಗುರಿ';
-
-  @override
   String get focusOutcomeCompleted => 'ಪೂರ್ಣಗೊಂಡಿದೆ';
 
   @override
@@ -2444,9 +2435,6 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'ನೀವು ಯಾವುದರ ಮೇಲೆ ಕೆಲಸ ಮಾಡಿದಿರಿ?';
-
-  @override
-  String get focusTargetCaption => 'ಉಳಿಸಿದ ಸೆಷನ್‌ಗಳಿಂದ ಅಳೆಯಲಾಗಿದೆ';
 
   @override
   String get focusModeLabel => 'ಟೈಮರ್ ಮೋಡ್';

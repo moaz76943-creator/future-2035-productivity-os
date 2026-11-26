@@ -437,15 +437,6 @@ class AppLocalizationsMr extends AppLocalizations {
   String get focusNoHistory => 'पूर्ण झालेली सत्रे इथे दिसतील';
 
   @override
-  String get focusTargets => 'उद्दिष्टे';
-
-  @override
-  String get focusDailyTarget => 'दैनिक उद्दिष्ट';
-
-  @override
-  String get focusWeeklyTarget => 'साप्ताहिक उद्दिष्ट';
-
-  @override
   String get focusOutcomeCompleted => 'पूर्ण';
 
   @override
@@ -2399,9 +2390,6 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'तुम्ही कशावर काम केले?';
-
-  @override
-  String get focusTargetCaption => 'जतन केलेल्या सत्रांवरून मोजलेले';
 
   @override
   String get focusModeLabel => 'टायमर मोड';

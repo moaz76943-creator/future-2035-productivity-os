@@ -442,15 +442,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get focusNoHistory => 'ستظهر الجلسات المكتملة هنا';
 
   @override
-  String get focusTargets => 'الأهداف الزمنية';
-
-  @override
-  String get focusDailyTarget => 'الهدف اليومي';
-
-  @override
-  String get focusWeeklyTarget => 'الهدف الأسبوعي';
-
-  @override
   String get focusOutcomeCompleted => 'مكتملة';
 
   @override
@@ -1018,7 +1009,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get notesNoNotebook => 'بلا دفتر';
 
   @override
-  String get notesEmptyTitle => 'صفحة بيضاء';
+  String get notesEmptyTitle => 'ابدأ الكتابة';
 
   @override
   String get notesEmptyMessage => 'دوّن أفكارك وملاحظات اجتماعاتك ومعارفك.';
@@ -2520,9 +2511,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'على ماذا عملت؟';
-
-  @override
-  String get focusTargetCaption => 'محسوب من الجلسات المحفوظة';
 
   @override
   String get focusModeLabel => 'وضع المؤقت';
@@ -5405,7 +5393,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get soundsRemoveMusic => 'إزالة الملف الصوتي';
 
   @override
-  String get wordPacksTitle => 'حزم الكلمات';
+  String get wordPacksTitle => 'تعلّم اللغات';
 
   @override
   String get wordPacksHint =>

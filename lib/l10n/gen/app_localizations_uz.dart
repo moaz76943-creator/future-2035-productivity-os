@@ -437,15 +437,6 @@ class AppLocalizationsUz extends AppLocalizations {
   String get focusNoHistory => 'Yakunlangan seanslar shu yerda koʻrinadi';
 
   @override
-  String get focusTargets => 'Marralar';
-
-  @override
-  String get focusDailyTarget => 'Kunlik marra';
-
-  @override
-  String get focusWeeklyTarget => 'Haftalik marra';
-
-  @override
   String get focusOutcomeCompleted => 'Yakunlangan';
 
   @override
@@ -2402,9 +2393,6 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Nima ustida ishladingiz?';
-
-  @override
-  String get focusTargetCaption => 'Saqlangan seanslardan oʻlchangan';
 
   @override
   String get focusModeLabel => 'Taymer rejimi';

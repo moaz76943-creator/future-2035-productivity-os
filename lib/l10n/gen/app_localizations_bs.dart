@@ -439,15 +439,6 @@ class AppLocalizationsBs extends AppLocalizations {
   String get focusNoHistory => 'Završene sesije će se pojaviti ovdje';
 
   @override
-  String get focusTargets => 'Ciljevi';
-
-  @override
-  String get focusDailyTarget => 'Dnevni cilj';
-
-  @override
-  String get focusWeeklyTarget => 'Sedmični cilj';
-
-  @override
   String get focusOutcomeCompleted => 'Završeno';
 
   @override
@@ -2454,9 +2445,6 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Na čemu ste radili?';
-
-  @override
-  String get focusTargetCaption => 'Izmjereno iz sačuvanih sesija';
 
   @override
   String get focusModeLabel => 'Način tajmera';

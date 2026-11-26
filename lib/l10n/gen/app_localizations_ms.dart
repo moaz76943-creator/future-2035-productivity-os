@@ -436,15 +436,6 @@ class AppLocalizationsMs extends AppLocalizations {
   String get focusNoHistory => 'Sesi yang selesai akan dipaparkan di sini';
 
   @override
-  String get focusTargets => 'Sasaran';
-
-  @override
-  String get focusDailyTarget => 'Sasaran harian';
-
-  @override
-  String get focusWeeklyTarget => 'Sasaran mingguan';
-
-  @override
   String get focusOutcomeCompleted => 'Selesai';
 
   @override
@@ -2334,9 +2325,6 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Apa yang anda kerjakan?';
-
-  @override
-  String get focusTargetCaption => 'Diukur daripada sesi yang disimpan';
 
   @override
   String get focusModeLabel => 'Mod pemasa';

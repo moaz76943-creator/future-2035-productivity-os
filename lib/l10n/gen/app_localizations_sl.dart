@@ -441,15 +441,6 @@ class AppLocalizationsSl extends AppLocalizations {
   String get focusNoHistory => 'Končane seje bodo prikazane tukaj';
 
   @override
-  String get focusTargets => 'Cilji';
-
-  @override
-  String get focusDailyTarget => 'Dnevni cilj';
-
-  @override
-  String get focusWeeklyTarget => 'Tedenski cilj';
-
-  @override
   String get focusOutcomeCompleted => 'Končano';
 
   @override
@@ -2481,9 +2472,6 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Na čem ste delali?';
-
-  @override
-  String get focusTargetCaption => 'Izmerjeno iz shranjenih sej';
 
   @override
   String get focusModeLabel => 'Način časovnika';

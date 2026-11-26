@@ -437,15 +437,6 @@ class AppLocalizationsFa extends AppLocalizations {
   String get focusNoHistory => 'جلسه‌های تمام‌شده اینجا نمایش داده می‌شوند';
 
   @override
-  String get focusTargets => 'هدف‌ها';
-
-  @override
-  String get focusDailyTarget => 'هدف روزانه';
-
-  @override
-  String get focusWeeklyTarget => 'هدف هفتگی';
-
-  @override
   String get focusOutcomeCompleted => 'تمام‌شده';
 
   @override
@@ -2419,9 +2410,6 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'روی چه کاری کار کردید؟';
-
-  @override
-  String get focusTargetCaption => 'اندازه‌گیری‌شده از جلسه‌های ذخیره‌شده';
 
   @override
   String get focusModeLabel => 'حالت تایمر';

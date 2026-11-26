@@ -437,15 +437,6 @@ class AppLocalizationsMk extends AppLocalizations {
   String get focusNoHistory => 'Завршените сесии ќе се појават тука';
 
   @override
-  String get focusTargets => 'Цели';
-
-  @override
-  String get focusDailyTarget => 'Дневна цел';
-
-  @override
-  String get focusWeeklyTarget => 'Неделна цел';
-
-  @override
   String get focusOutcomeCompleted => 'Завршена';
 
   @override
@@ -2410,9 +2401,6 @@ class AppLocalizationsMk extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'На што работевте?';
-
-  @override
-  String get focusTargetCaption => 'Измерено од зачуваните сесии';
 
   @override
   String get focusModeLabel => 'Режим на тајмерот';

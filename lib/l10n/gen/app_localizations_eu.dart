@@ -437,15 +437,6 @@ class AppLocalizationsEu extends AppLocalizations {
   String get focusNoHistory => 'Osatutako saioak hemen agertuko dira';
 
   @override
-  String get focusTargets => 'Xedeak';
-
-  @override
-  String get focusDailyTarget => 'Eguneko xedea';
-
-  @override
-  String get focusWeeklyTarget => 'Asteko xedea';
-
-  @override
   String get focusOutcomeCompleted => 'Osatuta';
 
   @override
@@ -2425,9 +2416,6 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Zertan aritu zara?';
-
-  @override
-  String get focusTargetCaption => 'Gordetako saioetatik neurtuta';
 
   @override
   String get focusModeLabel => 'Tenporizadorearen modua';

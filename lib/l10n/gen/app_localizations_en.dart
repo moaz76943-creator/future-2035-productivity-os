@@ -436,15 +436,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get focusNoHistory => 'Completed sessions will appear here';
 
   @override
-  String get focusTargets => 'Targets';
-
-  @override
-  String get focusDailyTarget => 'Daily target';
-
-  @override
-  String get focusWeeklyTarget => 'Weekly target';
-
-  @override
   String get focusOutcomeCompleted => 'Completed';
 
   @override
@@ -961,7 +952,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get notesNoNotebook => 'No notebook';
 
   @override
-  String get notesEmptyTitle => 'A blank canvas';
+  String get notesEmptyTitle => 'Start writing';
 
   @override
   String get notesEmptyMessage => 'Capture ideas, meeting notes and knowledge.';
@@ -2395,9 +2386,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'What did you work on?';
-
-  @override
-  String get focusTargetCaption => 'Measured from saved sessions';
 
   @override
   String get focusModeLabel => 'Timer mode';
@@ -5207,7 +5195,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get soundsRemoveMusic => 'Remove audio';
 
   @override
-  String get wordPacksTitle => 'Word packs';
+  String get wordPacksTitle => 'Learn languages';
 
   @override
   String get wordPacksHint =>

@@ -439,15 +439,6 @@ class AppLocalizationsSk extends AppLocalizations {
   String get focusNoHistory => 'Dokončené sedenia sa zobrazia tu';
 
   @override
-  String get focusTargets => 'Ciele';
-
-  @override
-  String get focusDailyTarget => 'Denný cieľ';
-
-  @override
-  String get focusWeeklyTarget => 'Týždenný cieľ';
-
-  @override
   String get focusOutcomeCompleted => 'Dokončené';
 
   @override
@@ -2453,9 +2444,6 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Na čom ste pracovali?';
-
-  @override
-  String get focusTargetCaption => 'Namerané z uložených sedení';
 
   @override
   String get focusModeLabel => 'Režim časovača';

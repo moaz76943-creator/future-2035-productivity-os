@@ -437,15 +437,6 @@ class AppLocalizationsAz extends AppLocalizations {
   String get focusNoHistory => 'Tamamlanmış sessiyalar burada görünəcək';
 
   @override
-  String get focusTargets => 'Hədəflər';
-
-  @override
-  String get focusDailyTarget => 'Gündəlik hədəf';
-
-  @override
-  String get focusWeeklyTarget => 'Həftəlik hədəf';
-
-  @override
   String get focusOutcomeCompleted => 'Tamamlandı';
 
   @override
@@ -2400,9 +2391,6 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Nə üzərində işlədiniz?';
-
-  @override
-  String get focusTargetCaption => 'Saxlanmış sessiyalardan ölçülüb';
 
   @override
   String get focusModeLabel => 'Taymer rejimi';

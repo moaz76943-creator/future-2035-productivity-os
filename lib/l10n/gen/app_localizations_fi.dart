@@ -437,15 +437,6 @@ class AppLocalizationsFi extends AppLocalizations {
   String get focusNoHistory => 'Valmiit istunnot näkyvät täällä';
 
   @override
-  String get focusTargets => 'Tavoitteet';
-
-  @override
-  String get focusDailyTarget => 'Päivätavoite';
-
-  @override
-  String get focusWeeklyTarget => 'Viikkotavoite';
-
-  @override
   String get focusOutcomeCompleted => 'Valmis';
 
   @override
@@ -2412,9 +2403,6 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Mitä teit?';
-
-  @override
-  String get focusTargetCaption => 'Mitattu tallennetuista istunnoista';
 
   @override
   String get focusModeLabel => 'Ajastintila';

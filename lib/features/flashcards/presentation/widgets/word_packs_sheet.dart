@@ -106,6 +106,7 @@ class _WordPacksSheetState extends ConsumerState<WordPacksSheet> {
           expandedInsets: EdgeInsets.zero,
           initialSelection: _learn,
           enableFilter: true,
+          showTrailingIcon: false, // an unlabeled arrow button otherwise; the field opens the list
           requestFocusOnTap: true,
           onSelected: (t) => t == null ? null : _pick(t),
           dropdownMenuEntries: [
@@ -138,32 +139,39 @@ class _WordPacksSheetState extends ConsumerState<WordPacksSheet> {
               }..removeWhere((_, v) => v.isEmpty);
               if (ready.isEmpty) return Text(l10n.wordPacksEmpty, style: muted);
               String name(String k) => mine.names[k] ?? en.names[k] ?? k;
+              final branches = [for (final t in ready.values) ...t];
+              final words = branches.fold<int>(0, (n, b) => n + learn.branch(b).length);
+              final done = branches.every(_added.contains);
               return Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  // The whole language at once: one deck per branch, grouped by topic name.
                   for (final t in ready.entries)
-                    ExpansionTile(
+                    ListTile(
                       key: Key('wordTopic_${t.key}'),
+                      contentPadding: EdgeInsets.zero,
                       leading: Text(en.emoji[t.key] ?? '', style: context.text.titleLarge),
                       title: Text(name(t.key)),
-                      children: [
-                        for (final b in t.value)
-                          ListTile(
-                            key: Key('wordBranch_$b'),
-                            title: Text(name(b)),
-                            subtitle: Text(l10n.deckCards(learn.branch(b).length)),
-                            trailing: _added.contains(b)
-                                ? Icon(Icons.check_circle_rounded, color: ModuleHue.flashcards.a)
-                                : IconButton.filledTonal(
-                                    key: Key('wordAdd_$b'),
-                                    tooltip: l10n.starterAdd,
-                                    icon: const Icon(Icons.download_rounded),
-                                    onPressed: _busy == null
-                                        ? () => _add(b, learn, mine, en)
-                                        : null,
-                                  ),
-                          ),
-                      ],
+                      subtitle: Text(
+                        t.value.map(name).join(' · '),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
+                  const SizedBox(height: Space.md),
+                  FilledButton.icon(
+                    key: const Key('wordPacksAddAll'),
+                    onPressed: done || _busy != null
+                        ? null
+                        : () async {
+                            for (final b in branches) {
+                              if (!mounted) return;
+                              if (!_added.contains(b)) await _add(b, learn, mine, en);
+                            }
+                          },
+                    icon: Icon(done ? Icons.check_circle_rounded : Icons.download_rounded),
+                    label: Text('${l10n.starterAdd} · ${l10n.deckCards(words)}'),
+                  ),
                 ],
               );
             },

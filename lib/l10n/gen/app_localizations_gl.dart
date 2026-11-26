@@ -436,15 +436,6 @@ class AppLocalizationsGl extends AppLocalizations {
   String get focusNoHistory => 'As sesións completadas aparecerán aquí';
 
   @override
-  String get focusTargets => 'Metas';
-
-  @override
-  String get focusDailyTarget => 'Meta diaria';
-
-  @override
-  String get focusWeeklyTarget => 'Meta semanal';
-
-  @override
   String get focusOutcomeCompleted => 'Completada';
 
   @override
@@ -2407,9 +2398,6 @@ class AppLocalizationsGl extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'En que traballaches?';
-
-  @override
-  String get focusTargetCaption => 'Medido a partir das sesións gardadas';
 
   @override
   String get focusModeLabel => 'Modo do temporizador';

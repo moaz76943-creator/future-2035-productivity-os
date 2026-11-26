@@ -437,15 +437,6 @@ class AppLocalizationsMn extends AppLocalizations {
   String get focusNoHistory => 'Дууссан сессүүд энд харагдана';
 
   @override
-  String get focusTargets => 'Зорилтууд';
-
-  @override
-  String get focusDailyTarget => 'Өдрийн зорилт';
-
-  @override
-  String get focusWeeklyTarget => 'Долоо хоногийн зорилт';
-
-  @override
   String get focusOutcomeCompleted => 'Дууссан';
 
   @override
@@ -2405,9 +2396,6 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Юун дээр ажилласан бэ?';
-
-  @override
-  String get focusTargetCaption => 'Хадгалсан сессүүдээс хэмжсэн';
 
   @override
   String get focusModeLabel => 'Таймерын горим';

@@ -436,15 +436,6 @@ class AppLocalizationsEt extends AppLocalizations {
   String get focusNoHistory => 'Lõpetatud seansid kuvatakse siin';
 
   @override
-  String get focusTargets => 'Eesmärgid';
-
-  @override
-  String get focusDailyTarget => 'Päeva eesmärk';
-
-  @override
-  String get focusWeeklyTarget => 'Nädala eesmärk';
-
-  @override
   String get focusOutcomeCompleted => 'Lõpetatud';
 
   @override
@@ -2402,9 +2393,6 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Mille kallal töötasite?';
-
-  @override
-  String get focusTargetCaption => 'Mõõdetud salvestatud seansside põhjal';
 
   @override
   String get focusModeLabel => 'Taimeri režiim';

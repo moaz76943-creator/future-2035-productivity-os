@@ -439,15 +439,6 @@ class AppLocalizationsLt extends AppLocalizations {
   String get focusNoHistory => 'Baigtos sesijos bus rodomos čia';
 
   @override
-  String get focusTargets => 'Tikslai';
-
-  @override
-  String get focusDailyTarget => 'Dienos tikslas';
-
-  @override
-  String get focusWeeklyTarget => 'Savaitės tikslas';
-
-  @override
   String get focusOutcomeCompleted => 'Baigta';
 
   @override
@@ -2452,9 +2443,6 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Su kuo dirbote?';
-
-  @override
-  String get focusTargetCaption => 'Išmatuota pagal išsaugotas sesijas';
 
   @override
   String get focusModeLabel => 'Laikmačio režimas';

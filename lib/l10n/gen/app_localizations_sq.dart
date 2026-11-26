@@ -437,15 +437,6 @@ class AppLocalizationsSq extends AppLocalizations {
   String get focusNoHistory => 'Seancat e përfunduara do të shfaqen këtu';
 
   @override
-  String get focusTargets => 'Objektivat';
-
-  @override
-  String get focusDailyTarget => 'Objektivi ditor';
-
-  @override
-  String get focusWeeklyTarget => 'Objektivi javor';
-
-  @override
   String get focusOutcomeCompleted => 'E përfunduar';
 
   @override
@@ -2402,9 +2393,6 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Me çfarë punove?';
-
-  @override
-  String get focusTargetCaption => 'Matur nga seancat e ruajtura';
 
   @override
   String get focusModeLabel => 'Modaliteti i kohëmatësit';

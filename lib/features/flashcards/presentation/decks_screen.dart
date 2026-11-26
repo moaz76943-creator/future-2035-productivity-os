@@ -18,6 +18,7 @@ import '../application/flashcards_providers.dart';
 import '../domain/world_languages.dart';
 import 'deck_tile_actions.dart';
 import 'widgets/starter_sheet.dart';
+import 'widgets/word_packs_sheet.dart';
 import 'widgets/study_summary.dart';
 import 'widgets/deck_form_sheet.dart';
 import '../data/flashcards_repository.dart';
@@ -133,6 +134,12 @@ class DecksScreen extends ConsumerWidget {
                         onAction: () => _createDeck(context, ref),
                       ),
                       TextButton.icon(
+                        key: const Key('wordPacksEmpty'),
+                        onPressed: () => showWordPacks(context),
+                        icon: const Icon(Icons.translate_rounded),
+                        label: Text(l10n.wordPacksTitle),
+                      ),
+                      TextButton.icon(
                         key: const Key('starterDecksEmpty'),
                         onPressed: () => showStarterDecks(context),
                         icon: const Icon(Icons.library_add_outlined),
@@ -172,7 +179,27 @@ class DecksScreen extends ConsumerWidget {
                     ),
                   ),
                 ],
-                // Ready-made decks stay in sight, so everyone knows they are there.
+                // Learning languages and ready-made decks stay in sight.
+                SliverPadding(
+                  padding: const EdgeInsets.fromLTRB(Space.page, Space.xs, Space.page, 0),
+                  sliver: SliverToBoxAdapter(
+                    child: LuxCard(
+                      key: const Key('wordPacksCard'),
+                      elevated: false,
+                      onTap: () => showWordPacks(context),
+                      child: Row(
+                        children: [
+                          Icon(Icons.translate_rounded, color: _hue.a),
+                          const SizedBox(width: Space.md),
+                          Expanded(
+                            child: Text(l10n.wordPacksTitle, style: context.text.titleSmall),
+                          ),
+                          const Icon(Icons.chevron_right_rounded),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
                 SliverPadding(
                   padding: const EdgeInsets.fromLTRB(Space.page, Space.xs, Space.page, 96),
                   sliver: SliverToBoxAdapter(

@@ -439,15 +439,6 @@ class AppLocalizationsMl extends AppLocalizations {
   String get focusNoHistory => 'പൂർത്തിയായ സെഷനുകൾ ഇവിടെ ദൃശ്യമാകും';
 
   @override
-  String get focusTargets => 'ലക്ഷ്യങ്ങൾ';
-
-  @override
-  String get focusDailyTarget => 'ദിവസേനയുള്ള ലക്ഷ്യം';
-
-  @override
-  String get focusWeeklyTarget => 'ആഴ്ചതോറുമുള്ള ലക്ഷ്യം';
-
-  @override
   String get focusOutcomeCompleted => 'പൂർത്തിയായി';
 
   @override
@@ -2403,9 +2394,6 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'നിങ്ങൾ എന്തിൽ പ്രവർത്തിച്ചു?';
-
-  @override
-  String get focusTargetCaption => 'സംരക്ഷിച്ച സെഷനുകളിൽ നിന്ന് അളന്നത്';
 
   @override
   String get focusModeLabel => 'ടൈമർ മോഡ്';

@@ -214,8 +214,6 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
             ],
           ),
         ),
-        SliverToBoxAdapter(child: SectionHeader(title: l10n.focusTargets)),
-        const SliverToBoxAdapter(child: _TargetRings()),
         SliverToBoxAdapter(child: SectionHeader(title: l10n.focusHistory)),
         _HistorySliver(onDelete: _deleteSession),
       ],

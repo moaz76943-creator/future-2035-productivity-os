@@ -265,12 +265,6 @@ class _CustomL10n extends AppLocalizations {
   @override
   String get focusNoHistory => _o['focusNoHistory'] ?? _b.focusNoHistory;
   @override
-  String get focusTargets => _o['focusTargets'] ?? _b.focusTargets;
-  @override
-  String get focusDailyTarget => _o['focusDailyTarget'] ?? _b.focusDailyTarget;
-  @override
-  String get focusWeeklyTarget => _o['focusWeeklyTarget'] ?? _b.focusWeeklyTarget;
-  @override
   String get focusOutcomeCompleted => _o['focusOutcomeCompleted'] ?? _b.focusOutcomeCompleted;
   @override
   String get focusOutcomeInterrupted => _o['focusOutcomeInterrupted'] ?? _b.focusOutcomeInterrupted;
@@ -1171,8 +1165,6 @@ class _CustomL10n extends AppLocalizations {
   String get focusUnlinkTask => _o['focusUnlinkTask'] ?? _b.focusUnlinkTask;
   @override
   String get focusNoteHint => _o['focusNoteHint'] ?? _b.focusNoteHint;
-  @override
-  String get focusTargetCaption => _o['focusTargetCaption'] ?? _b.focusTargetCaption;
   @override
   String get focusModeLabel => _o['focusModeLabel'] ?? _b.focusModeLabel;
   @override
@@ -3099,9 +3091,6 @@ const customWordKeys = <String>[
   'focusAddNote',
   'focusHistory',
   'focusNoHistory',
-  'focusTargets',
-  'focusDailyTarget',
-  'focusWeeklyTarget',
   'focusOutcomeCompleted',
   'focusOutcomeInterrupted',
   'focusRecovered',
@@ -3543,7 +3532,6 @@ const customWordKeys = <String>[
   'focusDeleteConfirm',
   'focusUnlinkTask',
   'focusNoteHint',
-  'focusTargetCaption',
   'focusModeLabel',
   'focusStopwatchHint',
   'focusOpenHint',
@@ -4357,9 +4345,6 @@ String customWordBase(AppLocalizations l, String key) => switch (key) {
   'focusAddNote' => l.focusAddNote,
   'focusHistory' => l.focusHistory,
   'focusNoHistory' => l.focusNoHistory,
-  'focusTargets' => l.focusTargets,
-  'focusDailyTarget' => l.focusDailyTarget,
-  'focusWeeklyTarget' => l.focusWeeklyTarget,
   'focusOutcomeCompleted' => l.focusOutcomeCompleted,
   'focusOutcomeInterrupted' => l.focusOutcomeInterrupted,
   'focusRecovered' => l.focusRecovered,
@@ -4801,7 +4786,6 @@ String customWordBase(AppLocalizations l, String key) => switch (key) {
   'focusDeleteConfirm' => l.focusDeleteConfirm,
   'focusUnlinkTask' => l.focusUnlinkTask,
   'focusNoteHint' => l.focusNoteHint,
-  'focusTargetCaption' => l.focusTargetCaption,
   'focusModeLabel' => l.focusModeLabel,
   'focusStopwatchHint' => l.focusStopwatchHint,
   'focusOpenHint' => l.focusOpenHint,

@@ -436,15 +436,6 @@ class AppLocalizationsNl extends AppLocalizations {
   String get focusNoHistory => 'Voltooide sessies verschijnen hier';
 
   @override
-  String get focusTargets => 'Doelen';
-
-  @override
-  String get focusDailyTarget => 'Dagdoel';
-
-  @override
-  String get focusWeeklyTarget => 'Weekdoel';
-
-  @override
   String get focusOutcomeCompleted => 'Voltooid';
 
   @override
@@ -2404,9 +2395,6 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Waar heb je aan gewerkt?';
-
-  @override
-  String get focusTargetCaption => 'Gemeten uit opgeslagen sessies';
 
   @override
   String get focusModeLabel => 'Timermodus';

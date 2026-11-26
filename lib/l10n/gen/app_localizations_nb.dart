@@ -437,15 +437,6 @@ class AppLocalizationsNb extends AppLocalizations {
   String get focusNoHistory => 'Fullførte økter vises her';
 
   @override
-  String get focusTargets => 'Mål';
-
-  @override
-  String get focusDailyTarget => 'Dagsmål';
-
-  @override
-  String get focusWeeklyTarget => 'Ukemål';
-
-  @override
   String get focusOutcomeCompleted => 'Fullført';
 
   @override
@@ -2404,9 +2395,6 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Hva jobbet du med?';
-
-  @override
-  String get focusTargetCaption => 'Målt fra lagrede økter';
 
   @override
   String get focusModeLabel => 'Tidtakermodus';

@@ -435,15 +435,6 @@ class AppLocalizationsVi extends AppLocalizations {
   String get focusNoHistory => 'Các phiên đã hoàn thành sẽ hiện ở đây';
 
   @override
-  String get focusTargets => 'Mục tiêu';
-
-  @override
-  String get focusDailyTarget => 'Mục tiêu ngày';
-
-  @override
-  String get focusWeeklyTarget => 'Mục tiêu tuần';
-
-  @override
   String get focusOutcomeCompleted => 'Hoàn thành';
 
   @override
@@ -2325,9 +2316,6 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Bạn đã làm gì?';
-
-  @override
-  String get focusTargetCaption => 'Đo từ các phiên đã lưu';
 
   @override
   String get focusModeLabel => 'Chế độ hẹn giờ';

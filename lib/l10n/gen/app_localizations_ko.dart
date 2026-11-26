@@ -435,15 +435,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get focusNoHistory => '완료한 세션이 여기에 표시됩니다';
 
   @override
-  String get focusTargets => '목표';
-
-  @override
-  String get focusDailyTarget => '일일 목표';
-
-  @override
-  String get focusWeeklyTarget => '주간 목표';
-
-  @override
   String get focusOutcomeCompleted => '완료';
 
   @override
@@ -2280,9 +2271,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get focusNoteHint => '무엇을 했나요?';
-
-  @override
-  String get focusTargetCaption => '저장된 세션에서 측정';
 
   @override
   String get focusModeLabel => '타이머 모드';

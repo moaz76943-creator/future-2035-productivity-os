@@ -40,6 +40,7 @@ class _GoalEditorSheetState extends ConsumerState<GoalEditorSheet> {
   late final TextEditingController _description;
   late final TextEditingController _target;
   late final TextEditingController _unit;
+  late final bool _advanced;
   late GoalPeriod _period;
   DateTime? _due;
   bool _saving = false;
@@ -54,6 +55,7 @@ class _GoalEditorSheetState extends ConsumerState<GoalEditorSheet> {
     _unit = TextEditingController(text: g?.unit ?? '');
     _period = g == null ? GoalPeriod.weekly : goalPeriodOf(g);
     _due = g?.dueDate?.toLocal();
+    _advanced = g != null && (g.target != 1 || g.unit.isNotEmpty || g.dueDate != null);
   }
 
   static String _plain(double v) {
@@ -168,67 +170,71 @@ class _GoalEditorSheetState extends ConsumerState<GoalEditorSheet> {
                     ),
                 ],
               ),
-              const SizedBox(height: Space.md),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: TextFormField(
-                      key: const ValueKey('goal-target'),
-                      controller: _target,
-                      keyboardType: const TextInputType.numberWithOptions(decimal: true),
-                      decoration: InputDecoration(labelText: l10n.goalTarget),
-                      validator: (v) {
-                        final n = parseGoalAmount(v ?? '');
-                        return (n == null || n <= 0) ? l10n.validationPositiveNumber : null;
-                      },
-                    ),
-                  ),
-                  const SizedBox(width: Space.sm),
-                  Expanded(
-                    child: TextFormField(
-                      key: const ValueKey('goal-unit'),
-                      controller: _unit,
-                      maxLength: 40,
-                      decoration: InputDecoration(
-                        labelText: l10n.goalUnit,
-                        hintText: l10n.goalUnitHint,
-                        counterText: '',
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: Space.sm),
-              ListTile(
-                contentPadding: EdgeInsets.zero,
-                leading: const Icon(Icons.event_rounded),
-                title: Text(l10n.goalsDeadline),
-                subtitle: Text(_due == null ? l10n.goalsNoDeadline : fmt.date(_due!)),
-                onTap: () async {
-                  final d = await pickDate(
-                    context,
-                    initial: _due ?? now,
-                    first: DateTime(now.year - 5),
-                  );
-                  if (d != null) setState(() => _due = DateTime(d.year, d.month, d.day));
-                },
-                trailing: _due == null
-                    ? TextButton(
-                        onPressed: () async {
-                          final d = await pickDate(context, initial: now);
-                          if (d != null) {
-                            setState(() => _due = DateTime(d.year, d.month, d.day));
-                          }
+              // A new goal is just a title and a period (done or not). Amount, unit and
+              // deadline stay editable only on goals that already use them.
+              if (_advanced) ...[
+                const SizedBox(height: Space.md),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        key: const ValueKey('goal-target'),
+                        controller: _target,
+                        keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                        decoration: InputDecoration(labelText: l10n.goalTarget),
+                        validator: (v) {
+                          final n = parseGoalAmount(v ?? '');
+                          return (n == null || n <= 0) ? l10n.validationPositiveNumber : null;
                         },
-                        child: Text(l10n.goalsSetDeadline),
-                      )
-                    : IconButton(
-                        tooltip: l10n.goalsRemoveDeadline,
-                        icon: const Icon(Icons.close_rounded),
-                        onPressed: () => setState(() => _due = null),
                       ),
-              ),
+                    ),
+                    const SizedBox(width: Space.sm),
+                    Expanded(
+                      child: TextFormField(
+                        key: const ValueKey('goal-unit'),
+                        controller: _unit,
+                        maxLength: 40,
+                        decoration: InputDecoration(
+                          labelText: l10n.goalUnit,
+                          hintText: l10n.goalUnitHint,
+                          counterText: '',
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: Space.sm),
+                ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  leading: const Icon(Icons.event_rounded),
+                  title: Text(l10n.goalsDeadline),
+                  subtitle: Text(_due == null ? l10n.goalsNoDeadline : fmt.date(_due!)),
+                  onTap: () async {
+                    final d = await pickDate(
+                      context,
+                      initial: _due ?? now,
+                      first: DateTime(now.year - 5),
+                    );
+                    if (d != null) setState(() => _due = DateTime(d.year, d.month, d.day));
+                  },
+                  trailing: _due == null
+                      ? TextButton(
+                          onPressed: () async {
+                            final d = await pickDate(context, initial: now);
+                            if (d != null) {
+                              setState(() => _due = DateTime(d.year, d.month, d.day));
+                            }
+                          },
+                          child: Text(l10n.goalsSetDeadline),
+                        )
+                      : IconButton(
+                          tooltip: l10n.goalsRemoveDeadline,
+                          icon: const Icon(Icons.close_rounded),
+                          onPressed: () => setState(() => _due = null),
+                        ),
+                ),
+              ],
               const SizedBox(height: Space.md),
               FilledButton(
                 key: const ValueKey('goal-save'),

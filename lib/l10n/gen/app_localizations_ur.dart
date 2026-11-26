@@ -437,15 +437,6 @@ class AppLocalizationsUr extends AppLocalizations {
   String get focusNoHistory => 'مکمل سیشن یہاں نظر آئیں گے';
 
   @override
-  String get focusTargets => 'اہداف';
-
-  @override
-  String get focusDailyTarget => 'روزانہ ہدف';
-
-  @override
-  String get focusWeeklyTarget => 'ہفتہ وار ہدف';
-
-  @override
   String get focusOutcomeCompleted => 'مکمل';
 
   @override
@@ -2396,9 +2387,6 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'آپ نے کس پر کام کیا؟';
-
-  @override
-  String get focusTargetCaption => 'محفوظ سیشنز سے ناپا گیا';
 
   @override
   String get focusModeLabel => 'ٹائمر موڈ';

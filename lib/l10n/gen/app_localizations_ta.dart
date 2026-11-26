@@ -439,15 +439,6 @@ class AppLocalizationsTa extends AppLocalizations {
   String get focusNoHistory => 'நிறைவடைந்த அமர்வுகள் இங்கே தோன்றும்';
 
   @override
-  String get focusTargets => 'இலக்குகள்';
-
-  @override
-  String get focusDailyTarget => 'தினசரி இலக்கு';
-
-  @override
-  String get focusWeeklyTarget => 'வாராந்திர இலக்கு';
-
-  @override
   String get focusOutcomeCompleted => 'நிறைவடைந்தது';
 
   @override
@@ -2419,9 +2410,6 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'நீங்கள் எதில் வேலை செய்தீர்கள்?';
-
-  @override
-  String get focusTargetCaption => 'சேமித்த அமர்வுகளிலிருந்து அளக்கப்பட்டது';
 
   @override
   String get focusModeLabel => 'டைமர் பயன்முறை';
