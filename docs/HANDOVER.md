@@ -115,6 +115,18 @@ change visuals). Do not re-read large parts of the code "to understand"; use the
   good parts (cherry-pick or apply), run affected tests + inventory, tick `ai/tasks.md`; reject the
   rest with one line in the reply. Never merge unreviewed code.
 
+## 7b. Tools installed (use them, don't reinstall)
+
+- Dev-only packages in `pubspec.yaml`: `alchemist` (golden screenshot tests) and `very_good_analysis`
+  (stricter lints; NOT enabled in `analysis_options.yaml` yet: enabling gives many warnings, do it
+  gradually). Termux has no Flutter: change dependencies through the manual workflow
+  `df-devtools.yml` (`gh workflow run df-devtools.yml`), which also lists unused code (`fcheck`).
+- CI: `df-secrets.yml` (gitleaks), Dependabot weekly PRs, app builds skipped for docs/agent-only pushes.
+- Slash commands: `/review-agents`, `/ship` (`.claude/commands/`).
+- Golden tests: not written yet. Alchemist could not be resolved offline here, so write the first
+  ones where pub works (CI) and commit the reference images from there; then any screen change shows up
+  as a failing image instead of needing owner screenshots.
+
 ## 8. Open items
 
 1. Review the agents' drafts when the owner asks.

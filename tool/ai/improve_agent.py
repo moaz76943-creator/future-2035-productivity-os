@@ -33,6 +33,7 @@ HOUSE_RULES = (
     'FittedBox); every feature, key and test stays; ads, signing and settings untouched; no new '
     'packages; no new user-facing strings (reuse existing l10n keys); files stay under 400 lines; '
     'family-friendly and within Islamic guidelines (no music, no images of living beings). '
+    'Dev tools already installed: alchemist (golden tests), very_good_analysis. '
 )
 SYSTEM = (
     'You are a senior Flutter engineer and product designer for Deep Focus, a calm offline study '
