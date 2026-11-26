@@ -1,0 +1,13 @@
+{
+  "aiSmokeTest": {
+    "meta": {
+      "description": "Test text for the helper-model pipeline; never shipped",
+      "placeholders": {
+        "count": {
+          "type": "int"
+        }
+      }
+    },
+    "en": "Your focus streak grew to {count} days"
+  }
+}
