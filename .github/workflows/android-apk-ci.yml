@@ -6,6 +6,14 @@ on:
       - main
       - claude-dev
       - 'repair/**'
+    paths-ignore:
+      - 'docs/**'
+      - 'ai/**'
+      - 'tool/ai/**'
+      - '.claude/**'
+      - '**/*.md'
+      - '.github/workflows/df-*.yml'
+      - '.github/dependabot.yml'
   pull_request:
     branches:
       - main

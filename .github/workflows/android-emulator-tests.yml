@@ -8,6 +8,14 @@ on:
     branches:
       - main
       - claude-dev
+    paths-ignore:
+      - 'docs/**'
+      - 'ai/**'
+      - 'tool/ai/**'
+      - '.claude/**'
+      - '**/*.md'
+      - '.github/workflows/df-*.yml'
+      - '.github/dependabot.yml'
   workflow_dispatch:
 
 permissions:

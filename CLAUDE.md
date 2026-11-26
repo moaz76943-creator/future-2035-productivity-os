@@ -28,3 +28,10 @@ New session? Read [docs/HANDOVER.md](docs/HANDOVER.md) first: the owner, his pre
 - Read only the specific files and line ranges relevant to the task; avoid scanning unrelated directories.
 - For multi-file or architectural changes, outline a brief 3–5 bullet plan before editing.
 - **Quality Guardrail:** Never skip validation gates, never cut corners on edge cases, and never trade correctness for brevity.
+
+## Token savers (standing)
+
+- Docs/agent-only pushes (`docs/`, `ai/`, `tool/ai/`, `*.md`, `.claude/`) skip the APK and emulator builds: no `qa-` link is made for them.
+- Review agents with `.claude/commands/review-agents.md`; ship with `.claude/commands/ship.md`.
+- One task per message; run only affected tests while working, the full suite + inventory once before the final push.
+- Grep/tail logs, never print them whole; edit with small replacements instead of rewriting files.
