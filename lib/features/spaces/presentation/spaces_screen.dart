@@ -6,6 +6,8 @@ import '../../../app/routing/navigation.dart';
 import '../../../app/routing/routes.dart';
 import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/components/surfaces.dart';
+import '../../../core/theme/deep_focus_visuals.dart';
+import '../../../core/widgets/deep_focus_glass.dart';
 import '../../../core/design_system/tokens.dart';
 import '../../dashboard/application/dashboard_providers.dart';
 import '../../flashcards/application/flashcards_providers.dart';
@@ -26,11 +28,11 @@ class SpacesScreen extends ConsumerWidget {
     final habitsDone = habits?.where((h) => h.stats.doneToday).length;
 
     final grid = <_Space>[
-      _Space(Icons.water_drop_outlined, l10n.soundsTitle, ModuleHue.sounds, Routes.sounds),
-      _Space(Icons.sticky_note_2_outlined, l10n.moduleNotes, ModuleHue.notes, Routes.notes),
-      _Space(Icons.flag_outlined, l10n.moduleGoals, ModuleHue.goals, Routes.goals),
+      _Space(Icons.water_drop_outlined, DeepFocusAssets.spaceSounds, l10n.soundsTitle, ModuleHue.sounds, Routes.sounds),
+      _Space(Icons.sticky_note_2_outlined, DeepFocusAssets.spaceNotes, l10n.moduleNotes, ModuleHue.notes, Routes.notes),
+      _Space(Icons.flag_outlined, DeepFocusAssets.spaceGoals, l10n.moduleGoals, ModuleHue.goals, Routes.goals),
       _Space(
-        Icons.event_repeat_rounded,
+        Icons.event_repeat_rounded, DeepFocusAssets.spaceHabits,
         l10n.moduleHabits,
         ModuleHue.habits,
         Routes.habits,
@@ -38,17 +40,17 @@ class SpacesScreen extends ConsumerWidget {
             ? null
             : l10n.habitsTodaySummary(habitsDone!, habits.length),
       ),
-      _Space(Icons.insights_rounded, l10n.moduleAnalytics, ModuleHue.analytics, Routes.insights),
-      _Space(Icons.search_rounded, l10n.moduleSearch, ModuleHue.calendar, Routes.search),
+      _Space(Icons.insights_rounded, DeepFocusAssets.spaceInsights, l10n.moduleAnalytics, ModuleHue.analytics, Routes.insights),
+      _Space(Icons.search_rounded, DeepFocusAssets.spaceSearch, l10n.moduleSearch, ModuleHue.calendar, Routes.search),
       _Space(
-        Icons.auto_awesome_outlined,
+        Icons.auto_awesome_outlined, DeepFocusAssets.spaceAssistant,
         l10n.moduleAssistant,
         ModuleHue.assistant,
         Routes.assistant,
       ),
-      _Space(Icons.settings_outlined, l10n.moduleSettings, ModuleHue.neutral, Routes.settings),
-      _Space(Icons.delete_outline_rounded, l10n.moduleTrash, ModuleHue.neutral, Routes.trash),
-      _Space(Icons.help_outline_rounded, l10n.helpTitle, ModuleHue.neutral, Routes.help),
+      _Space(Icons.settings_outlined, DeepFocusAssets.spaceSettings, l10n.moduleSettings, ModuleHue.neutral, Routes.settings),
+      _Space(Icons.delete_outline_rounded, DeepFocusAssets.spaceTrash, l10n.moduleTrash, ModuleHue.neutral, Routes.trash),
+      _Space(Icons.help_outline_rounded, DeepFocusAssets.spaceHelp, l10n.helpTitle, ModuleHue.neutral, Routes.help),
     ];
 
     return Scaffold(
@@ -79,7 +81,7 @@ class SpacesScreen extends ConsumerWidget {
                       Expanded(
                         child: _Featured(
                           space: _Space(
-                            Icons.workspaces_outline,
+                            Icons.workspaces_outline, DeepFocusAssets.spaceProjects,
                             l10n.moduleProjects,
                             ModuleHue.projects,
                             Routes.projects,
@@ -91,7 +93,7 @@ class SpacesScreen extends ConsumerWidget {
                       Expanded(
                         child: _Featured(
                           space: _Space(
-                            Icons.style_outlined,
+                            Icons.style_outlined, DeepFocusAssets.spaceFlashcards,
                             l10n.moduleFlashcards,
                             ModuleHue.flashcards,
                             Routes.flashcards,
@@ -128,8 +130,9 @@ class SpacesScreen extends ConsumerWidget {
 }
 
 class _Space {
-  const _Space(this.icon, this.label, this.hue, this.route, [this.caption]);
+  const _Space(this.icon, this.asset, this.label, this.hue, this.route, [this.caption]);
   final IconData icon;
+  final String asset;
   final String label;
   final ModuleHue hue;
   final String route;
@@ -146,7 +149,7 @@ class _Featured extends StatelessWidget {
     label: [space.label, ?space.caption].join(', '),
     excludeSemantics: true,
     // Calm glass card like the design; the module colour lives in the icon orb.
-    child: LuxCard(
+    child: DeepFocusGlassCard(
       onTap: () => openRoute(context, space.route),
       child: SizedBox(
         // Icon (fixed) + title + caption (scaled with the font size).
@@ -156,7 +159,7 @@ class _Featured extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            IconOrb(icon: space.icon, hue: space.hue, size: 44),
+            DeepFocusAssetIcon(assetPath: space.asset, fallbackIcon: space.icon, size: 52),
             const Spacer(),
             Text(
               space.label,
@@ -187,13 +190,13 @@ class _OrbTile extends StatelessWidget {
     button: true,
     label: [space.label, ?space.caption].join(', '),
     excludeSemantics: true,
-    child: LuxCard(
+    child: DeepFocusGlassCard(
       onTap: () => openRoute(context, space.route),
       padding: EdgeInsets.zero,
       child: Column(
         children: [
           const SizedBox(height: Space.xs),
-          IconOrb(icon: space.icon, hue: space.hue, size: 60),
+          DeepFocusAssetIcon(assetPath: space.asset, fallbackIcon: space.icon, size: 56),
           const SizedBox(height: Space.xs),
           Text(
             space.label,
