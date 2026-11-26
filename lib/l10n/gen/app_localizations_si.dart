@@ -5262,7 +5262,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get soundsRemoveMusic => 'ශ්‍රව්‍ය ඉවත් කරන්න';
 
   @override
-  String get wordPacksTitle => 'වචන පැකේජ';
+  String get wordPacksTitle => 'භාෂා ඉගෙන ගන්න';
 
   @override
   String get wordPacksHint =>

@@ -5213,7 +5213,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get soundsRemoveMusic => 'Аудиону алып салуу';
 
   @override
-  String get wordPacksTitle => 'Сөз топтомдору';
+  String get wordPacksTitle => 'Тилдерди үйрөнүү';
 
   @override
   String get wordPacksHint =>

@@ -5222,7 +5222,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get soundsRemoveMusic => 'Audio verwijderen';
 
   @override
-  String get wordPacksTitle => 'Woordpakketten';
+  String get wordPacksTitle => 'Talen leren';
 
   @override
   String get wordPacksHint =>

@@ -1441,7 +1441,7 @@
   "soundsMusicHint": "スマートフォンの音声ファイルを再生します。コピーやアップロードは行いません。",
   "soundsChooseMusic": "音声を選ぶ",
   "soundsRemoveMusic": "音声を削除",
-  "wordPacksTitle": "単語パック",
+  "wordPacksTitle": "言語を学ぶ",
   "wordPacksHint": "テーマ別の単語リストです。必要な言語だけをダウンロードし、カードは自由に編集・削除できます。",
   "wordPacksFailed": "ダウンロードできませんでした。接続を確認してください。",
   "wordPacksEmpty": "この言語の単語はまだ準備中です。"

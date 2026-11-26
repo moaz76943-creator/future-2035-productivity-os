@@ -5217,7 +5217,7 @@ class AppLocalizationsUz extends AppLocalizations {
   String get soundsRemoveMusic => 'Audioni olib tashlash';
 
   @override
-  String get wordPacksTitle => 'So\'z to\'plamlari';
+  String get wordPacksTitle => 'Tillarni o\'rganish';
 
   @override
   String get wordPacksHint =>

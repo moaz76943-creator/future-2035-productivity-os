@@ -5284,7 +5284,7 @@ class AppLocalizationsSr extends AppLocalizations {
   String get soundsRemoveMusic => 'Уклони аудио';
 
   @override
-  String get wordPacksTitle => 'Пакети речи';
+  String get wordPacksTitle => 'Учење језика';
 
   @override
   String get wordPacksHint =>

@@ -1441,7 +1441,7 @@
   "soundsMusicHint": "Luaj një skedar audio nga telefoni. Asgjë nuk kopjohet apo ngarkohet.",
   "soundsChooseMusic": "Zgjidh audio",
   "soundsRemoveMusic": "Hiq audion",
-  "wordPacksTitle": "Paketa fjalësh",
+  "wordPacksTitle": "Mëso gjuhë",
   "wordPacksHint": "Lista fjalësh sipas temës. Shkarko vetëm gjuhën që do, pastaj ndrysho ose fshi kartat lirisht.",
   "wordPacksFailed": "Shkarkimi dështoi. Kontrollo lidhjen.",
   "wordPacksEmpty": "Fjalët për këtë gjuhë po përgatiten ende."

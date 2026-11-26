@@ -5226,7 +5226,7 @@ class AppLocalizationsHy extends AppLocalizations {
   String get soundsRemoveMusic => 'Հեռացնել աուդիոն';
 
   @override
-  String get wordPacksTitle => 'Բառերի փաթեթներ';
+  String get wordPacksTitle => 'Լեզուների ուսուցում';
 
   @override
   String get wordPacksHint =>

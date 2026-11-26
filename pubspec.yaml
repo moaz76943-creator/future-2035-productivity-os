@@ -89,6 +89,8 @@ flutter:
   generate: true
 
   assets:
+    - assets/images/ui/
+    - assets/images/spaces/
     - assets/sound_art/
     - assets/fonts/OFL-Manrope.txt
     - assets/fonts/OFL-ReadexPro.txt

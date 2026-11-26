@@ -5313,7 +5313,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get soundsRemoveMusic => 'Usuń dźwięk';
 
   @override
-  String get wordPacksTitle => 'Pakiety słówek';
+  String get wordPacksTitle => 'Nauka języków';
 
   @override
   String get wordPacksHint =>

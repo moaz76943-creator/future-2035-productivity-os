@@ -5080,7 +5080,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get soundsRemoveMusic => 'Gỡ âm thanh';
 
   @override
-  String get wordPacksTitle => 'Gói từ vựng';
+  String get wordPacksTitle => 'Học ngôn ngữ';
 
   @override
   String get wordPacksHint =>
