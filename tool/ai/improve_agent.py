@@ -24,19 +24,30 @@ from router import NoModelAvailable, Router  # noqa: E402
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 SKIP = re.compile(r'(\.g\.dart$|/l10n/|^lib/app/|^lib/core/(ads|security|database|backup|platform)/'
                   r'|^lib/features/(guard|backup)/)')
+HOUSE_RULES = (
+    'House rules: calm "future premium" look with nature and high visual comfort; no clutter: few '
+    'controls per row, clear primary action, consistent spacing from Space tokens, colours from '
+    'context.lux / Palette / ModuleHue, radii from Radii, never hard-coded values; buttons at least '
+    '48dp and never under the bottom navigation or system bars; RTL-safe (EdgeInsetsDirectional, '
+    'AlignmentDirectional); works with large text (no fixed heights for text, ellipsis or '
+    'FittedBox); every feature, key and test stays; ads, signing and settings untouched; no new '
+    'packages; no new user-facing strings (reuse existing l10n keys); files stay under 400 lines; '
+    'family-friendly and within Islamic guidelines (no music, no images of living beings). '
+)
 SYSTEM = (
-    'You are a senior Flutter reviewer for Deep Focus, a calm offline study app (67 languages, '
-    'RTL, accessibility, ads must stay). Review the file: list concrete findings (real bugs, '
-    'crash risks, missing null checks, overflow on small screens or large text, RTL issues, '
-    'accessibility labels, confusing UI, dead code). Then propose AT MOST ONE minimal fix as a '
-    'unified diff against this exact file (paths a/<path> b/<path>), changing as few lines as '
-    'possible, never adding packages, never removing features, ads or tests, no new user-facing '
-    'strings. If unsure, give no patch. Answer JSON only: '
+    'You are a senior Flutter engineer and product designer for Deep Focus, a calm offline study '
+    'app (67 languages, RTL, accessibility). ' + HOUSE_RULES +
+    'Review the file: list concrete findings (bugs, crash risks, overflow on small screens or large '
+    'text, RTL issues, accessibility, cluttered or confusing layout, weak visual hierarchy, a strong '
+    'feature that is missing). Then propose AT MOST ONE focused improvement (a fix, a calmer layout '
+    'or a small feature) as a unified diff against this exact file (paths a/<path> b/<path>). If a '
+    'TASK is given, do exactly that task. If unsure, give no patch. Answer JSON only: '
     '{"findings": ["..."], "patch": "diff text or empty", "why": "short reason for the patch"}'
 )
 CRITIC = (
     'You are a strict reviewer. Assume this patch is wrong. Reject it if it could change behaviour '
     'beyond its stated purpose, break something, remove a feature, or is not clearly better. '
+    'Also reject it if it breaks a house rule. ' + HOUSE_RULES +
     'Answer JSON only: {"approve": true|false, "reason": "short"}'
 )
 
@@ -66,7 +77,7 @@ def next_task():
         return None, []
     # Rotate through the open tasks, so one hard task never blocks the others.
     slot = datetime.date.today().toordinal() * 24 + datetime.datetime.utcnow().hour
-    return open_tasks[(slot // 6) % len(open_tasks)]
+    return open_tasks[(slot // (1 if '--task' in sys.argv else 6)) % len(open_tasks)]
 
 
 IDEAS = (
@@ -76,7 +87,7 @@ IDEAS = (
     'collect no personal data and send nothing anywhere, no paid services or servers, no copying other '
     'apps\' names, designs or content, family-friendly and within Islamic guidelines (no music, no images '
     'of living beings), keep ads as they are. Each idea: a title, why it helps, and the smallest way to '
-    'build it. Answer JSON {"ideas": [{"title": "...", "why": "...", "how": "..."}]}'
+    'build it. ' + HOUSE_RULES + 'Answer JSON {"ideas": [{"title": "...", "why": "...", "how": "..."}]}'
 )
 
 
@@ -117,9 +128,10 @@ def pick():
 def main():
     os.chdir(ROOT)
     slot = datetime.date.today().toordinal() * 24 + datetime.datetime.utcnow().hour
-    if '--file' not in sys.argv and slot % 4 == 1:
+    if '--file' not in sys.argv and '--task' not in sys.argv and slot % 4 == 1:
         return ideas(slot)
-    task, files = next_task() if '--file' not in sys.argv and slot % 2 == 0 else (None, [])
+    want_task = '--task' in sys.argv or ('--file' not in sys.argv and slot % 2 == 0)
+    task, files = next_task() if want_task else (None, [])
     path = files[0] if files else pick()
     if not path:
         return 0

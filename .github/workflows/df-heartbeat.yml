@@ -1,7 +1,7 @@
 name: DF heartbeat (keeps every agent running, even when cron does not fire)
 
 # GitHub's scheduler did not start the hourly cron workflows here, so this job is the clock:
-# it runs ~5h40m, starts the agents and word packs every hour when they are idle and the
+# it runs ~5h40m, starts the agents (rotating job + task job) every hour when idle and the
 # watch every 2 hours, then starts its own next run. Free on a public repository.
 # A push of this file (or tool/ai changes) or a manual run starts it again.
 on:
@@ -36,7 +36,9 @@ jobs:
           end=$(( $(date +%s) + 335 * 60 )); n=0
           while [ "$(date +%s)" -lt "$end" ]; do
             idle df-ai-agents.yml && gh workflow run df-ai-agents.yml --ref claude-dev && echo "agents started"
-            idle df-packs.yml && gh workflow run df-packs.yml --ref claude-dev && echo "packs started"
+            # The rotating job and the task-queue job run side by side every hour.
+            gh workflow run df-ai-agents.yml --ref claude-dev -f job=task && echo "task agent started"
+            # Word packs are paused (the owner provides the word lists); start df-packs by hand.
             [ $((n % 2)) -eq 0 ] && idle df-ai-watch.yml && gh workflow run df-ai-watch.yml --ref claude-dev
             n=$((n + 1)); sleep 3600
           done
