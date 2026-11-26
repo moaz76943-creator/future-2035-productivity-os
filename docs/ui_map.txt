@@ -10,7 +10,7 @@
      93 lib/app/routing/deep_links.dart
      22 lib/app/routing/navigation.dart
      41 lib/app/routing/routes.dart
-    106 lib/app/shell/app_shell.dart
+    140 lib/app/shell/app_shell.dart
     115 lib/core/ads/bottom_banner_ad_widget.dart
     373 lib/core/backup/backup_service.dart
     185 lib/core/database/app_database.dart
@@ -97,12 +97,13 @@
     135 lib/features/care/presentation/storage_sheet.dart
      90 lib/features/care/presentation/whats_new_sheet.dart
     116 lib/features/dashboard/application/dashboard_providers.dart
-     99 lib/features/dashboard/presentation/dashboard_screen.dart
+    102 lib/features/dashboard/presentation/dashboard_screen.dart
     306 lib/features/dashboard/presentation/dashboard_screen/goal_line.dart
-    363 lib/features/dashboard/presentation/dashboard_screen/header.dart
-    115 lib/features/dashboard/presentation/dashboard_screen/stats.dart
+    315 lib/features/dashboard/presentation/dashboard_screen/header.dart
+     67 lib/features/dashboard/presentation/dashboard_screen/quick_actions.dart
+    120 lib/features/dashboard/presentation/dashboard_screen/stats.dart
      69 lib/features/dashboard/presentation/quick_add_sheet.dart
-    168 lib/features/dashboard/presentation/start_my_day.dart
+    174 lib/features/dashboard/presentation/start_my_day.dart
      39 lib/features/flashcards/application/deck_order.dart
     100 lib/features/flashcards/application/deck_view_prefs.dart
      52 lib/features/flashcards/application/flashcards_providers.dart
@@ -287,7 +288,7 @@
     147 lib/features/sounds/presentation/widgets/sound_art.dart
     312 lib/features/sounds/presentation/widgets/sound_art_scenes.dart
     138 lib/features/sounds/presentation/widgets/sound_tile.dart
-    217 lib/features/spaces/presentation/spaces_screen.dart
+    220 lib/features/spaces/presentation/spaces_screen.dart
      61 lib/features/tasks/application/tasks_providers.dart
     317 lib/features/tasks/data/tasks_repository.dart
     137 lib/features/tasks/data/tasks_repository/relations.dart
@@ -316,4 +317,4 @@
     242 lib/shared/widgets/recurrence_picker.dart
      95 lib/shared/widgets/task_picker.dart
     172 lib/shared/widgets/transfer_sheet.dart
-  47272 total
+  47342 total
