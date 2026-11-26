@@ -5245,4 +5245,17 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Audio entfernen';
+
+  @override
+  String get wordPacksTitle => 'Wortpakete';
+
+  @override
+  String get wordPacksHint =>
+      'Wortlisten nach Thema. Lade nur die gewünschte Sprache herunter und bearbeite oder lösche die Karten danach frei.';
+
+  @override
+  String get wordPacksFailed => 'Download fehlgeschlagen. Prüfe die Verbindung.';
+
+  @override
+  String get wordPacksEmpty => 'Die Wörter für diese Sprache werden noch vorbereitet.';
 }

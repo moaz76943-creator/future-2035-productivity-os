@@ -5228,4 +5228,17 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Fjern lyd';
+
+  @override
+  String get wordPacksTitle => 'Ordpakker';
+
+  @override
+  String get wordPacksHint =>
+      'Ordlister efter emne. Hent kun det sprog, du vil have, og redigér eller slet kortene frit.';
+
+  @override
+  String get wordPacksFailed => 'Kunne ikke hente. Tjek forbindelsen.';
+
+  @override
+  String get wordPacksEmpty => 'Ordene til dette sprog er stadig under forberedelse.';
 }

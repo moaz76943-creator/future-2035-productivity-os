@@ -1446,5 +1446,9 @@
   "soundsMyMusic": "Sauti yako",
   "soundsMusicHint": "Cheza faili ya sauti kutoka kwenye simu yako. Hakuna kinachonakiliwa wala kupakiwa.",
   "soundsChooseMusic": "Chagua sauti",
-  "soundsRemoveMusic": "Ondoa sauti"
+  "soundsRemoveMusic": "Ondoa sauti",
+  "wordPacksTitle": "Vifurushi vya maneno",
+  "wordPacksHint": "Orodha za maneno kwa mada. Pakua lugha unayotaka tu, kisha hariri au futa kadi kwa uhuru.",
+  "wordPacksFailed": "Imeshindwa kupakua. Angalia muunganisho.",
+  "wordPacksEmpty": "Maneno ya lugha hii bado yanaandaliwa."
 }

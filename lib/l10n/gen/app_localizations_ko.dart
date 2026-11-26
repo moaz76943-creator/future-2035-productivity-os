@@ -4973,4 +4973,16 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => '오디오 제거';
+
+  @override
+  String get wordPacksTitle => '단어 팩';
+
+  @override
+  String get wordPacksHint => '주제별 단어 목록입니다. 원하는 언어만 내려받고 카드는 자유롭게 수정하거나 삭제하세요.';
+
+  @override
+  String get wordPacksFailed => '내려받지 못했습니다. 연결을 확인하세요.';
+
+  @override
+  String get wordPacksEmpty => '이 언어의 단어는 아직 준비 중입니다.';
 }

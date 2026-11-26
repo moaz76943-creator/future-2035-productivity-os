@@ -1446,5 +1446,9 @@
   "soundsMyMusic": "Seu áudio",
   "soundsMusicHint": "Toque um arquivo de áudio do seu celular. Nada é copiado nem enviado.",
   "soundsChooseMusic": "Escolher áudio",
-  "soundsRemoveMusic": "Remover áudio"
+  "soundsRemoveMusic": "Remover áudio",
+  "wordPacksTitle": "Pacotes de palavras",
+  "wordPacksHint": "Listas de palavras por tema. Baixe só o idioma que quiser e depois edite ou exclua os cartões livremente.",
+  "wordPacksFailed": "Não foi possível baixar. Verifique a conexão.",
+  "wordPacksEmpty": "As palavras deste idioma ainda estão sendo preparadas."
 }

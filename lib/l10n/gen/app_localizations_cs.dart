@@ -5305,4 +5305,17 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Odebrat zvuk';
+
+  @override
+  String get wordPacksTitle => 'Balíčky slovíček';
+
+  @override
+  String get wordPacksHint =>
+      'Seznamy slov podle témat. Stáhněte jen jazyk, který chcete, a kartičky pak volně upravujte nebo mažte.';
+
+  @override
+  String get wordPacksFailed => 'Stažení se nezdařilo. Zkontrolujte připojení.';
+
+  @override
+  String get wordPacksEmpty => 'Slova pro tento jazyk se ještě připravují.';
 }

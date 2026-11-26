@@ -1446,5 +1446,9 @@
   "soundsMyMusic": "Jou oudio",
   "soundsMusicHint": "Speel 'n oudiolêer van jou foon. Niks word gekopieer of opgelaai nie.",
   "soundsChooseMusic": "Kies oudio",
-  "soundsRemoveMusic": "Verwyder oudio"
+  "soundsRemoveMusic": "Verwyder oudio",
+  "wordPacksTitle": "Woordpakke",
+  "wordPacksHint": "Woordlyste volgens onderwerp. Laai net die taal af wat jy wil hê en wysig of skrap die kaarte vrylik.",
+  "wordPacksFailed": "Kon nie aflaai nie. Kontroleer die verbinding.",
+  "wordPacksEmpty": "Woorde vir hierdie taal word nog voorberei."
 }

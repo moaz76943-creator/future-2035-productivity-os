@@ -1446,5 +1446,9 @@
   "soundsMyMusic": "我的音频",
   "soundsMusicHint": "播放手机中的音频文件。不会复制或上传任何内容。",
   "soundsChooseMusic": "选择音频",
-  "soundsRemoveMusic": "移除音频"
+  "soundsRemoveMusic": "移除音频",
+  "wordPacksTitle": "词汇包",
+  "wordPacksHint": "按主题分类的词汇表。只下载你需要的语言，之后可自由编辑或删除卡片。",
+  "wordPacksFailed": "下载失败。请检查网络连接。",
+  "wordPacksEmpty": "该语言的词汇仍在准备中。"
 }

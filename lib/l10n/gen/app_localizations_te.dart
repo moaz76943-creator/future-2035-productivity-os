@@ -5231,4 +5231,17 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'ఆడియో తీసివేయి';
+
+  @override
+  String get wordPacksTitle => 'పద ప్యాక్‌లు';
+
+  @override
+  String get wordPacksHint =>
+      'అంశాల వారీగా పదాల జాబితాలు. మీకు కావాల్సిన భాషను మాత్రమే డౌన్‌లోడ్ చేసి, తర్వాత కార్డ్‌లను స్వేచ్ఛగా సవరించండి లేదా తొలగించండి.';
+
+  @override
+  String get wordPacksFailed => 'డౌన్‌లోడ్ కాలేదు. కనెక్షన్‌ను తనిఖీ చేయండి.';
+
+  @override
+  String get wordPacksEmpty => 'ఈ భాష పదాలు ఇంకా సిద్ధమవుతున్నాయి.';
 }

@@ -5250,4 +5250,17 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'حذف فایل صوتی';
+
+  @override
+  String get wordPacksTitle => 'بسته‌های واژه';
+
+  @override
+  String get wordPacksHint =>
+      'فهرست واژه‌ها بر اساس موضوع. فقط زبانی را که می‌خواهید دانلود کنید و سپس کارت‌ها را آزادانه ویرایش یا حذف کنید.';
+
+  @override
+  String get wordPacksFailed => 'دانلود نشد. اتصال را بررسی کنید.';
+
+  @override
+  String get wordPacksEmpty => 'واژه‌های این زبان هنوز در حال آماده‌سازی است.';
 }

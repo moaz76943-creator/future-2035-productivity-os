@@ -5228,4 +5228,17 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Eemalda heli';
+
+  @override
+  String get wordPacksTitle => 'Sõnapaketid';
+
+  @override
+  String get wordPacksHint =>
+      'Sõnaloendid teemade kaupa. Laadi alla ainult soovitud keel ning muuda või kustuta kaarte vabalt.';
+
+  @override
+  String get wordPacksFailed => 'Allalaadimine ebaõnnestus. Kontrolli ühendust.';
+
+  @override
+  String get wordPacksEmpty => 'Selle keele sõnu alles valmistatakse ette.';
 }

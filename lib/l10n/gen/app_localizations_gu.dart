@@ -5274,4 +5274,17 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'ઑડિયો દૂર કરો';
+
+  @override
+  String get wordPacksTitle => 'શબ્દ પેક';
+
+  @override
+  String get wordPacksHint =>
+      'વિષય મુજબ શબ્દોની યાદીઓ. ફક્ત જોઈતી ભાષા ડાઉનલોડ કરો, પછી કાર્ડ મુક્તપણે સંપાદિત કરો કે કાઢી નાખો.';
+
+  @override
+  String get wordPacksFailed => 'ડાઉનલોડ થઈ શક્યું નહીં. કનેક્શન તપાસો.';
+
+  @override
+  String get wordPacksEmpty => 'આ ભાષાના શબ્દો હજી તૈયાર થઈ રહ્યા છે.';
 }

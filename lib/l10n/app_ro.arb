@@ -1446,5 +1446,9 @@
   "soundsMyMusic": "Audio-ul tău",
   "soundsMusicHint": "Redă un fișier audio de pe telefon. Nimic nu este copiat sau încărcat.",
   "soundsChooseMusic": "Alege audio",
-  "soundsRemoveMusic": "Elimină audio"
+  "soundsRemoveMusic": "Elimină audio",
+  "wordPacksTitle": "Pachete de cuvinte",
+  "wordPacksHint": "Liste de cuvinte pe teme. Descarcă doar limba dorită, apoi editează sau șterge liber cardurile.",
+  "wordPacksFailed": "Descărcarea a eșuat. Verifică conexiunea.",
+  "wordPacksEmpty": "Cuvintele pentru această limbă sunt încă în pregătire."
 }

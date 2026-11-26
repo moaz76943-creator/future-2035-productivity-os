@@ -5275,4 +5275,17 @@ class AppLocalizationsPa extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'ਆਡੀਓ ਹਟਾਓ';
+
+  @override
+  String get wordPacksTitle => 'ਸ਼ਬਦ ਪੈਕ';
+
+  @override
+  String get wordPacksHint =>
+      'ਵਿਸ਼ੇ ਅਨੁਸਾਰ ਸ਼ਬਦਾਂ ਦੀਆਂ ਸੂਚੀਆਂ। ਸਿਰਫ਼ ਲੋੜੀਂਦੀ ਭਾਸ਼ਾ ਡਾਊਨਲੋਡ ਕਰੋ, ਫਿਰ ਕਾਰਡ ਖੁੱਲ੍ਹ ਕੇ ਸੋਧੋ ਜਾਂ ਮਿਟਾਓ।';
+
+  @override
+  String get wordPacksFailed => 'ਡਾਊਨਲੋਡ ਨਹੀਂ ਹੋ ਸਕਿਆ। ਕਨੈਕਸ਼ਨ ਜਾਂਚੋ।';
+
+  @override
+  String get wordPacksEmpty => 'ਇਸ ਭਾਸ਼ਾ ਦੇ ਸ਼ਬਦ ਹਾਲੇ ਤਿਆਰ ਹੋ ਰਹੇ ਹਨ।';
 }

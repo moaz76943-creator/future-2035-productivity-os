@@ -5234,4 +5234,17 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Аудиог хасах';
+
+  @override
+  String get wordPacksTitle => 'Үгийн багц';
+
+  @override
+  String get wordPacksHint =>
+      'Сэдвээр ангилсан үгийн жагсаалт. Хүссэн хэлээ л татаж аваад картуудыг чөлөөтэй засах эсвэл устгана уу.';
+
+  @override
+  String get wordPacksFailed => 'Татаж чадсангүй. Холболтоо шалгана уу.';
+
+  @override
+  String get wordPacksEmpty => 'Энэ хэлний үгс бэлтгэгдсээр байна.';
 }

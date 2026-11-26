@@ -10,6 +10,7 @@ import '../../application/flashcards_providers.dart';
 import '../../data/flashcards_repository.dart';
 import '../../domain/card_import.dart';
 import '../../domain/starter_decks.dart';
+import 'word_packs_sheet.dart';
 
 /// Ready-made decks to try the app with, written for it (free to use).
 Future<void> showStarterDecks(BuildContext context) => showModalBottomSheet<void>(
@@ -74,6 +75,21 @@ class _StarterSheetState extends ConsumerState<_StarterSheet> {
         const SizedBox(height: Space.xxs),
         Text(l10n.starterHint, style: context.text.bodyMedium?.copyWith(color: context.lux.ink2)),
         const SizedBox(height: Space.md),
+        Padding(
+          padding: const EdgeInsets.only(bottom: Space.sm),
+          child: LuxCard(
+            key: const Key('starterWordPacks'),
+            onTap: () => showWordPacks(context),
+            child: Row(
+              children: [
+                const IconOrb(icon: Icons.category_rounded, hue: ModuleHue.flashcards, size: 44),
+                const SizedBox(width: Space.md),
+                Expanded(child: Text(l10n.wordPacksTitle, style: context.text.titleSmall)),
+                const Icon(Icons.chevron_right_rounded),
+              ],
+            ),
+          ),
+        ),
         for (final d in decks)
           Padding(
             padding: const EdgeInsets.only(bottom: Space.sm),

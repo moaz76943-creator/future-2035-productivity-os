@@ -5410,4 +5410,17 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'إزالة الملف الصوتي';
+
+  @override
+  String get wordPacksTitle => 'حزم الكلمات';
+
+  @override
+  String get wordPacksHint =>
+      'قوائم كلمات حسب الموضوع. نزّل اللغة التي تريدها فقط، ثم عدّل البطاقات أو احذفها بحرية.';
+
+  @override
+  String get wordPacksFailed => 'تعذّر التنزيل. تحقّق من الاتصال.';
+
+  @override
+  String get wordPacksEmpty => 'ما زالت كلمات هذه اللغة قيد التحضير.';
 }

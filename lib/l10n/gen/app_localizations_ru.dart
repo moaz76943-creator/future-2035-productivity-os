@@ -5357,4 +5357,17 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Убрать аудио';
+
+  @override
+  String get wordPacksTitle => 'Наборы слов';
+
+  @override
+  String get wordPacksHint =>
+      'Списки слов по темам. Скачайте только нужный язык, а затем свободно меняйте или удаляйте карточки.';
+
+  @override
+  String get wordPacksFailed => 'Не удалось скачать. Проверьте подключение.';
+
+  @override
+  String get wordPacksEmpty => 'Слова для этого языка ещё готовятся.';
 }

@@ -43,3 +43,14 @@ time limit, and a failed hour never blocks the next one.
 `ai/reports/` on each day branch (and `dropped.md` for what failed and why), spot-check fixes,
 then bring good files over with `git checkout origin/ai-drafts/<day> -- <paths>`, run
 `bash tool/check_l10n_fast.sh` (or `tool/check_all.sh` for tests) and commit.
+
+## Word packs (flashcards)
+
+`DF word packs` runs hourly as 4 parallel agents on the data-only branch `content-packs`
+(`packs/<lang>.json`, one file per language; the app downloads only the chosen language).
+Claude owns the topic tree `tool/ai/packs/catalog.json`; agents add the words. Each word passes
+`tool/ai/packs/rules.py` (banned topics, emoji without living beings, script checks), a worker
+and a critic from another provider; anything in doubt is left out. Existing words are removed
+only when two different critics reject them, then redone. Cheap review: read
+`packs/log/<date>-s<k>.md` on that branch (counts and drops only).
+Idea runs write `ai/reports/ideas-<date>.md` (suggestions only); Claude turns good ones into tasks.

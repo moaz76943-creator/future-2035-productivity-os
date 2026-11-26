@@ -69,6 +69,43 @@ def next_task():
     return open_tasks[(slot // 6) % len(open_tasks)]
 
 
+IDEAS = (
+    'You are a product designer for Deep Focus, a calm offline study and focus app (tasks, focus timer, '
+    'flashcards, notes, habits, goals, calendar, nature sounds, 67 languages). Propose 5 new features or '
+    'improvements for the given section that make it clearly better for students. Rules: work offline, '
+    'collect no personal data and send nothing anywhere, no paid services or servers, no copying other '
+    'apps\' names, designs or content, family-friendly and within Islamic guidelines (no music, no images '
+    'of living beings), keep ads as they are. Each idea: a title, why it helps, and the smallest way to '
+    'build it. Answer JSON {"ideas": [{"title": "...", "why": "...", "how": "..."}]}'
+)
+
+
+def ideas(slot):
+    """Idea run: writes suggestions only (no code). Claude turns the good ones into tasks."""
+    sections = sorted(d for d in os.listdir('lib/features') if os.path.isdir(f'lib/features/{d}'))
+    section = sections[(slot // 4) % len(sections)]
+    files = sorted(glob.glob(f'lib/features/{section}/**/*.dart', recursive=True))
+    outline = '\n'.join(f[len('lib/features/'):] for f in files)[:4000]
+    router = Router()
+    try:
+        text, label = router.ask(IDEAS, f'Section: {section}\nFiles:\n{outline}',
+                                 lambda t: None if '"ideas"' in t else 'bad shape')
+        out = parse(text)
+    except (NoModelAvailable, ValueError):
+        return 0
+    finally:
+        router.save()
+    os.makedirs('ai/reports', exist_ok=True)
+    with open(f'ai/reports/ideas-{datetime.date.today().isoformat()}.md', 'a', encoding='utf-8') as f:
+        f.write(f'## {section} ({label})\n')
+        for i in out.get('ideas', [])[:5]:
+            if isinstance(i, dict):
+                f.write(f'- **{str(i.get("title", ""))[:80]}**: {str(i.get("why", ""))[:200]} '
+                        f'_How:_ {str(i.get("how", ""))[:240]}\n')
+        f.write('\n')
+    return 0
+
+
 def pick():
     if '--file' in sys.argv:
         return sys.argv[sys.argv.index('--file') + 1]
@@ -80,6 +117,8 @@ def pick():
 def main():
     os.chdir(ROOT)
     slot = datetime.date.today().toordinal() * 24 + datetime.datetime.utcnow().hour
+    if '--file' not in sys.argv and slot % 4 == 1:
+        return ideas(slot)
     task, files = next_task() if '--file' not in sys.argv and slot % 2 == 0 else (None, [])
     path = files[0] if files else pick()
     if not path:

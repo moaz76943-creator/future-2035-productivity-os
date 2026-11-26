@@ -5273,6 +5273,19 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Retirer l\'audio';
+
+  @override
+  String get wordPacksTitle => 'Packs de mots';
+
+  @override
+  String get wordPacksHint =>
+      'Listes de mots par thème. Téléchargez seulement la langue souhaitée, puis modifiez ou supprimez librement les cartes.';
+
+  @override
+  String get wordPacksFailed => 'Échec du téléchargement. Vérifiez la connexion.';
+
+  @override
+  String get wordPacksEmpty => 'Les mots de cette langue sont encore en préparation.';
 }
 
 /// The translations for French, as used in Canada (`fr_CA`).

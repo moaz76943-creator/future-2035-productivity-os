@@ -5235,4 +5235,17 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Hang eltávolítása';
+
+  @override
+  String get wordPacksTitle => 'Szócsomagok';
+
+  @override
+  String get wordPacksHint =>
+      'Szólisták témák szerint. Csak a kívánt nyelvet töltsd le, aztán szabadon szerkeszd vagy töröld a kártyákat.';
+
+  @override
+  String get wordPacksFailed => 'A letöltés nem sikerült. Ellenőrizd a kapcsolatot.';
+
+  @override
+  String get wordPacksEmpty => 'A nyelv szavai még készülnek.';
 }

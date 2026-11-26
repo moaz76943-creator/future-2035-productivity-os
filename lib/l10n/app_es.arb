@@ -1446,5 +1446,9 @@
   "soundsMyMusic": "Tu audio",
   "soundsMusicHint": "Reproduce un archivo de audio de tu teléfono. No se copia ni se sube nada.",
   "soundsChooseMusic": "Elegir audio",
-  "soundsRemoveMusic": "Quitar audio"
+  "soundsRemoveMusic": "Quitar audio",
+  "wordPacksTitle": "Paquetes de palabras",
+  "wordPacksHint": "Listas de palabras por tema. Descarga solo el idioma que quieras y luego edita o elimina las tarjetas libremente.",
+  "wordPacksFailed": "No se pudo descargar. Comprueba la conexión.",
+  "wordPacksEmpty": "Las palabras de este idioma aún se están preparando."
 }

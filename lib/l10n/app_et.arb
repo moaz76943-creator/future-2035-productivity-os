@@ -1446,5 +1446,9 @@
   "soundsMyMusic": "Sinu heli",
   "soundsMusicHint": "Esita helifail oma telefonist. Midagi ei kopeerita ega laadita üles.",
   "soundsChooseMusic": "Vali heli",
-  "soundsRemoveMusic": "Eemalda heli"
+  "soundsRemoveMusic": "Eemalda heli",
+  "wordPacksTitle": "Sõnapaketid",
+  "wordPacksHint": "Sõnaloendid teemade kaupa. Laadi alla ainult soovitud keel ning muuda või kustuta kaarte vabalt.",
+  "wordPacksFailed": "Allalaadimine ebaõnnestus. Kontrolli ühendust.",
+  "wordPacksEmpty": "Selle keele sõnu alles valmistatakse ette."
 }

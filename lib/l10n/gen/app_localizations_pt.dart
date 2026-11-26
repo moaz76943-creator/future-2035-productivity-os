@@ -5260,6 +5260,19 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Remover áudio';
+
+  @override
+  String get wordPacksTitle => 'Pacotes de palavras';
+
+  @override
+  String get wordPacksHint =>
+      'Listas de palavras por tema. Baixe só o idioma que quiser e depois edite ou exclua os cartões livremente.';
+
+  @override
+  String get wordPacksFailed => 'Não foi possível baixar. Verifique a conexão.';
+
+  @override
+  String get wordPacksEmpty => 'As palavras deste idioma ainda estão sendo preparadas.';
 }
 
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).

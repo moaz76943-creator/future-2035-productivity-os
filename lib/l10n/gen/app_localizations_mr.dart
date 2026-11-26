@@ -5219,4 +5219,17 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'ऑडिओ काढा';
+
+  @override
+  String get wordPacksTitle => 'शब्द पॅक';
+
+  @override
+  String get wordPacksHint =>
+      'विषयानुसार शब्दांच्या याद्या. फक्त हवी ती भाषा डाउनलोड करा, मग कार्ड मोकळेपणाने संपादित करा किंवा हटवा.';
+
+  @override
+  String get wordPacksFailed => 'डाउनलोड करता आले नाही. कनेक्शन तपासा.';
+
+  @override
+  String get wordPacksEmpty => 'या भाषेतील शब्द अजून तयार होत आहेत.';
 }

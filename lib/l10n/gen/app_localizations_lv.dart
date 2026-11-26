@@ -5289,4 +5289,17 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Noņemt audio';
+
+  @override
+  String get wordPacksTitle => 'Vārdu paketes';
+
+  @override
+  String get wordPacksHint =>
+      'Vārdu saraksti pa tēmām. Lejupielādējiet tikai vajadzīgo valodu un pēc tam brīvi rediģējiet vai dzēsiet kartītes.';
+
+  @override
+  String get wordPacksFailed => 'Neizdevās lejupielādēt. Pārbaudiet savienojumu.';
+
+  @override
+  String get wordPacksEmpty => 'Šīs valodas vārdi vēl tiek gatavoti.';
 }

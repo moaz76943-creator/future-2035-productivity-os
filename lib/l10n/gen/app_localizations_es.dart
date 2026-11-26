@@ -5234,6 +5234,19 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Quitar audio';
+
+  @override
+  String get wordPacksTitle => 'Paquetes de palabras';
+
+  @override
+  String get wordPacksHint =>
+      'Listas de palabras por tema. Descarga solo el idioma que quieras y luego edita o elimina las tarjetas libremente.';
+
+  @override
+  String get wordPacksFailed => 'No se pudo descargar. Comprueba la conexión.';
+
+  @override
+  String get wordPacksEmpty => 'Las palabras de este idioma aún se están preparando.';
 }
 
 /// The translations for Spanish Castilian, as used in Latin America and the Caribbean (`es_419`).

@@ -5228,4 +5228,17 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Аудионы алып тастау';
+
+  @override
+  String get wordPacksTitle => 'Сөз топтамалары';
+
+  @override
+  String get wordPacksHint =>
+      'Тақырып бойынша сөздер тізімі. Тек қажет тілді жүктеп алыңыз, содан кейін карталарды еркін өзгертіңіз не жойыңыз.';
+
+  @override
+  String get wordPacksFailed => 'Жүктеп алу мүмкін болмады. Байланысты тексеріңіз.';
+
+  @override
+  String get wordPacksEmpty => 'Бұл тілдің сөздері әлі дайындалуда.';
 }

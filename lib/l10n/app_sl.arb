@@ -1446,5 +1446,9 @@
   "soundsMyMusic": "Vaš zvok",
   "soundsMusicHint": "Predvajajte zvočno datoteko iz telefona. Nič se ne kopira ali naloži.",
   "soundsChooseMusic": "Izberi zvok",
-  "soundsRemoveMusic": "Odstrani zvok"
+  "soundsRemoveMusic": "Odstrani zvok",
+  "wordPacksTitle": "Paketi besed",
+  "wordPacksHint": "Seznami besed po temah. Prenesite samo želeni jezik, nato kartice prosto urejajte ali brišite.",
+  "wordPacksFailed": "Prenos ni uspel. Preverite povezavo.",
+  "wordPacksEmpty": "Besede za ta jezik se še pripravljajo."
 }

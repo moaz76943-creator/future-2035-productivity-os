@@ -5291,4 +5291,17 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'ಆಡಿಯೋ ತೆಗೆದುಹಾಕಿ';
+
+  @override
+  String get wordPacksTitle => 'ಪದ ಪ್ಯಾಕ್‌ಗಳು';
+
+  @override
+  String get wordPacksHint =>
+      'ವಿಷಯವಾರು ಪದಗಳ ಪಟ್ಟಿಗಳು. ನಿಮಗೆ ಬೇಕಾದ ಭಾಷೆಯನ್ನು ಮಾತ್ರ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ, ನಂತರ ಕಾರ್ಡ್‌ಗಳನ್ನು ಮುಕ್ತವಾಗಿ ಸಂಪಾದಿಸಿ ಅಥವಾ ಅಳಿಸಿ.';
+
+  @override
+  String get wordPacksFailed => 'ಡೌನ್‌ಲೋಡ್ ಆಗಲಿಲ್ಲ. ಸಂಪರ್ಕ ಪರಿಶೀಲಿಸಿ.';
+
+  @override
+  String get wordPacksEmpty => 'ಈ ಭಾಷೆಯ ಪದಗಳು ಇನ್ನೂ ಸಿದ್ಧವಾಗುತ್ತಿವೆ.';
 }

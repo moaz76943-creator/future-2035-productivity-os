@@ -5110,4 +5110,17 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'অডিও সরান';
+
+  @override
+  String get wordPacksTitle => 'শব্দ প্যাক';
+
+  @override
+  String get wordPacksHint =>
+      'বিষয় অনুযায়ী শব্দের তালিকা। শুধু যে ভাষা চান সেটি ডাউনলোড করুন, তারপর কার্ডগুলো ইচ্ছেমতো সম্পাদনা বা মুছুন।';
+
+  @override
+  String get wordPacksFailed => 'ডাউনলোড করা যায়নি। সংযোগ পরীক্ষা করুন।';
+
+  @override
+  String get wordPacksEmpty => 'এই ভাষার শব্দ এখনও প্রস্তুত হচ্ছে।';
 }

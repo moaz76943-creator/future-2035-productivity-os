@@ -5311,4 +5311,17 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Ukloni audio';
+
+  @override
+  String get wordPacksTitle => 'Paketi riječi';
+
+  @override
+  String get wordPacksHint =>
+      'Liste riječi po temama. Preuzmite samo jezik koji želite, a zatim slobodno uređujte ili brišite kartice.';
+
+  @override
+  String get wordPacksFailed => 'Preuzimanje nije uspjelo. Provjerite vezu.';
+
+  @override
+  String get wordPacksEmpty => 'Riječi za ovaj jezik se još pripremaju.';
 }

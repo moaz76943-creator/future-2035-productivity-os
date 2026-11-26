@@ -5245,4 +5245,17 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Poista ääni';
+
+  @override
+  String get wordPacksTitle => 'Sanapaketit';
+
+  @override
+  String get wordPacksHint =>
+      'Sanalistoja aiheittain. Lataa vain haluamasi kieli ja muokkaa tai poista kortteja vapaasti.';
+
+  @override
+  String get wordPacksFailed => 'Lataus epäonnistui. Tarkista yhteys.';
+
+  @override
+  String get wordPacksEmpty => 'Tämän kielen sanoja valmistellaan vielä.';
 }

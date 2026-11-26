@@ -52,6 +52,13 @@ jobs:
             jobs=(review tests improve); pick=${jobs[$(( $(date -u +%H) / 2 % 3 ))]}
             gh workflow run "$WF" --ref claude-dev -f job="$pick" && fixed+=("شغّلت الوكلاء من جديد ($pick) بعد توقف")
           fi
+          # 3) Word packs: restart them too when the content branch was quiet for 4 hours.
+          git fetch -q origin content-packs 2>/dev/null && plast=$(git log -1 --format=%ct FETCH_HEAD) || plast=0
+          pbusy=$(gh run list --workflow df-packs.yml --json status --jq '[.[] | select(.status=="queued" or .status=="in_progress")] | length')
+          if [ $(( $(date +%s) - plast )) -gt 14400 ] && [ "${pbusy:-0}" -eq 0 ]; then
+            gh workflow run df-packs.yml --ref claude-dev && fixed+=("شغّلت وكلاء الكلمات من جديد")
+          fi
+          gh workflow enable df-packs.yml >/dev/null 2>&1 || true
           count() { git log "$day" --since=midnight --format=%s 2>/dev/null | grep -c "$1" || true; }
           if git rev-parse -q --verify "$day" >/dev/null; then
             kept=$(count 'passed gates'); dropped=$(count 'failed gates')

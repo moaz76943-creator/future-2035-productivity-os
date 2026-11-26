@@ -1446,5 +1446,9 @@
   "soundsMyMusic": "Audio Anda",
   "soundsMusicHint": "Putar file audio dari ponsel Anda. Tidak ada yang disalin atau diunggah.",
   "soundsChooseMusic": "Pilih audio",
-  "soundsRemoveMusic": "Hapus audio"
+  "soundsRemoveMusic": "Hapus audio",
+  "wordPacksTitle": "Paket kata",
+  "wordPacksHint": "Daftar kata per topik. Unduh hanya bahasa yang Anda inginkan, lalu edit atau hapus kartunya dengan bebas.",
+  "wordPacksFailed": "Gagal mengunduh. Periksa koneksi.",
+  "wordPacksEmpty": "Kata untuk bahasa ini masih disiapkan."
 }

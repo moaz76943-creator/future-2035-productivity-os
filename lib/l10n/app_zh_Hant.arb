@@ -1446,5 +1446,9 @@
   "soundsMyMusic": "我的音訊",
   "soundsMusicHint": "播放手機中的音訊檔案。不會複製或上傳任何內容。",
   "soundsChooseMusic": "選擇音訊",
-  "soundsRemoveMusic": "移除音訊"
+  "soundsRemoveMusic": "移除音訊",
+  "wordPacksTitle": "詞彙包",
+  "wordPacksHint": "依主題分類的詞彙表。只下載你需要的語言，之後可自由編輯或刪除卡片。",
+  "wordPacksFailed": "下載失敗。請檢查網路連線。",
+  "wordPacksEmpty": "該語言的詞彙仍在準備中。"
 }

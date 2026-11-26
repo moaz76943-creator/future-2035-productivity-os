@@ -1446,5 +1446,9 @@
   "soundsMyMusic": "Vaš zvuk",
   "soundsMusicHint": "Reproducirajte audiodatoteku s telefona. Ništa se ne kopira ni ne prenosi.",
   "soundsChooseMusic": "Odaberite zvuk",
-  "soundsRemoveMusic": "Ukloni zvuk"
+  "soundsRemoveMusic": "Ukloni zvuk",
+  "wordPacksTitle": "Paketi riječi",
+  "wordPacksHint": "Popisi riječi po temama. Preuzmite samo jezik koji želite, a zatim slobodno uređujte ili brišite kartice.",
+  "wordPacksFailed": "Preuzimanje nije uspjelo. Provjerite vezu.",
+  "wordPacksEmpty": "Riječi za ovaj jezik još se pripremaju."
 }

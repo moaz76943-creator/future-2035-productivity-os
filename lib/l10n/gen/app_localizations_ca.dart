@@ -5248,4 +5248,17 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Treu l\'àudio';
+
+  @override
+  String get wordPacksTitle => 'Paquets de paraules';
+
+  @override
+  String get wordPacksHint =>
+      'Llistes de paraules per tema. Baixa només l\'idioma que vulguis i després edita o suprimeix les targetes lliurement.';
+
+  @override
+  String get wordPacksFailed => 'No s\'ha pogut baixar. Comprova la connexió.';
+
+  @override
+  String get wordPacksEmpty => 'Les paraules d\'aquest idioma encara s\'estan preparant.';
 }

@@ -5220,4 +5220,17 @@ class AppLocalizationsNe extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'अडियो हटाउनुहोस्';
+
+  @override
+  String get wordPacksTitle => 'शब्द प्याक';
+
+  @override
+  String get wordPacksHint =>
+      'विषयअनुसार शब्दसूचीहरू। चाहिएको भाषा मात्र डाउनलोड गर्नुहोस्, त्यसपछि कार्डहरू स्वतन्त्र रूपमा सम्पादन वा मेटाउनुहोस्।';
+
+  @override
+  String get wordPacksFailed => 'डाउनलोड हुन सकेन। जडान जाँच गर्नुहोस्।';
+
+  @override
+  String get wordPacksEmpty => 'यो भाषाका शब्दहरू अझै तयार हुँदैछन्।';
 }

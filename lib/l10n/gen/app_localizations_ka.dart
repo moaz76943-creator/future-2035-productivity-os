@@ -5231,4 +5231,17 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'აუდიოს წაშლა';
+
+  @override
+  String get wordPacksTitle => 'სიტყვების პაკეტები';
+
+  @override
+  String get wordPacksHint =>
+      'სიტყვების სიები თემების მიხედვით. ჩამოტვირთეთ მხოლოდ სასურველი ენა და შემდეგ თავისუფლად შეცვალეთ ან წაშალეთ ბარათები.';
+
+  @override
+  String get wordPacksFailed => 'ჩამოტვირთვა ვერ მოხერხდა. შეამოწმეთ კავშირი.';
+
+  @override
+  String get wordPacksEmpty => 'ამ ენის სიტყვები ჯერ კიდევ მზადდება.';
 }

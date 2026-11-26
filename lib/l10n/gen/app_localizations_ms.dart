@@ -5124,4 +5124,17 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Alih keluar audio';
+
+  @override
+  String get wordPacksTitle => 'Pek perkataan';
+
+  @override
+  String get wordPacksHint =>
+      'Senarai perkataan mengikut topik. Muat turun bahasa yang anda mahu sahaja, kemudian sunting atau padam kad dengan bebas.';
+
+  @override
+  String get wordPacksFailed => 'Tidak dapat memuat turun. Semak sambungan.';
+
+  @override
+  String get wordPacksEmpty => 'Perkataan untuk bahasa ini masih disediakan.';
 }

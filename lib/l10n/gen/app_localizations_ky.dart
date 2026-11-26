@@ -5230,4 +5230,17 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Аудиону алып салуу';
+
+  @override
+  String get wordPacksTitle => 'Сөз топтомдору';
+
+  @override
+  String get wordPacksHint =>
+      'Темалар боюнча сөз тизмелери. Керектүү тилди гана жүктөп алып, карталарды эркин өзгөртүңүз же өчүрүңүз.';
+
+  @override
+  String get wordPacksFailed => 'Жүктөп алуу мүмкүн болгон жок. Байланышты текшериңиз.';
+
+  @override
+  String get wordPacksEmpty => 'Бул тилдин сөздөрү азырынча даярдалууда.';
 }

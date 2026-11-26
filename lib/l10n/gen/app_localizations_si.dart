@@ -5279,4 +5279,17 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'ශ්‍රව්‍ය ඉවත් කරන්න';
+
+  @override
+  String get wordPacksTitle => 'වචන පැකේජ';
+
+  @override
+  String get wordPacksHint =>
+      'මාතෘකා අනුව වචන ලැයිස්තු. ඔබට අවශ්‍ය භාෂාව පමණක් බාගත කර, පසුව කාඩ්පත් නිදහසේ සංස්කරණය කරන්න හෝ මකන්න.';
+
+  @override
+  String get wordPacksFailed => 'බාගත කළ නොහැකි විය. සම්බන්ධතාවය පරීක්ෂා කරන්න.';
+
+  @override
+  String get wordPacksEmpty => 'මෙම භාෂාවේ වචන තවමත් සූදානම් වෙමින් පවතී.';
 }

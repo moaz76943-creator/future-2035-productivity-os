@@ -5264,4 +5264,17 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Kendu audioa';
+
+  @override
+  String get wordPacksTitle => 'Hitz-paketeak';
+
+  @override
+  String get wordPacksHint =>
+      'Gaika antolatutako hitz-zerrendak. Deskargatu nahi duzun hizkuntza bakarrik, eta gero editatu edo ezabatu txartelak libreki.';
+
+  @override
+  String get wordPacksFailed => 'Ezin izan da deskargatu. Egiaztatu konexioa.';
+
+  @override
+  String get wordPacksEmpty => 'Hizkuntza honetako hitzak prestatzen ari dira oraindik.';
 }

@@ -1446,5 +1446,9 @@
   "soundsMyMusic": "Jūsų garsas",
   "soundsMusicHint": "Paleiskite garso failą iš telefono. Niekas nekopijuojama ir neįkeliama.",
   "soundsChooseMusic": "Pasirinkti garsą",
-  "soundsRemoveMusic": "Pašalinti garsą"
+  "soundsRemoveMusic": "Pašalinti garsą",
+  "wordPacksTitle": "Žodžių paketai",
+  "wordPacksHint": "Žodžių sąrašai pagal temas. Atsisiųskite tik norimą kalbą, tada laisvai redaguokite ar trinkite korteles.",
+  "wordPacksFailed": "Nepavyko atsisiųsti. Patikrinkite ryšį.",
+  "wordPacksEmpty": "Šios kalbos žodžiai dar ruošiami."
 }

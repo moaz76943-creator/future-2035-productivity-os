@@ -1446,5 +1446,9 @@
   "soundsMyMusic": "Zure audioa",
   "soundsMusicHint": "Erreproduzitu telefonoko audio-fitxategi bat. Ez da ezer kopiatzen edo igotzen.",
   "soundsChooseMusic": "Aukeratu audioa",
-  "soundsRemoveMusic": "Kendu audioa"
+  "soundsRemoveMusic": "Kendu audioa",
+  "wordPacksTitle": "Hitz-paketeak",
+  "wordPacksHint": "Gaika antolatutako hitz-zerrendak. Deskargatu nahi duzun hizkuntza bakarrik, eta gero editatu edo ezabatu txartelak libreki.",
+  "wordPacksFailed": "Ezin izan da deskargatu. Egiaztatu konexioa.",
+  "wordPacksEmpty": "Hizkuntza honetako hitzak prestatzen ari dira oraindik."
 }

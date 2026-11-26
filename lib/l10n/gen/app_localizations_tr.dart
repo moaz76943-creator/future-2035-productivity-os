@@ -5218,4 +5218,17 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Sesi kaldır';
+
+  @override
+  String get wordPacksTitle => 'Kelime paketleri';
+
+  @override
+  String get wordPacksHint =>
+      'Konuya göre kelime listeleri. Yalnızca istediğin dili indir, sonra kartları dilediğin gibi düzenle veya sil.';
+
+  @override
+  String get wordPacksFailed => 'İndirilemedi. Bağlantıyı kontrol et.';
+
+  @override
+  String get wordPacksEmpty => 'Bu dilin kelimeleri hâlâ hazırlanıyor.';
 }

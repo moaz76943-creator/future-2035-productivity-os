@@ -5068,4 +5068,17 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'นำไฟล์เสียงออก';
+
+  @override
+  String get wordPacksTitle => 'ชุดคำศัพท์';
+
+  @override
+  String get wordPacksHint =>
+      'รายการคำศัพท์ตามหัวข้อ ดาวน์โหลดเฉพาะภาษาที่ต้องการ แล้วแก้ไขหรือลบการ์ดได้ตามใจ';
+
+  @override
+  String get wordPacksFailed => 'ดาวน์โหลดไม่สำเร็จ ตรวจสอบการเชื่อมต่อ';
+
+  @override
+  String get wordPacksEmpty => 'คำศัพท์ของภาษานี้ยังอยู่ระหว่างการเตรียม';
 }

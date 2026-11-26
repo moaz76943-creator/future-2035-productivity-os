@@ -5216,4 +5216,17 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'آڈیو ہٹائیں';
+
+  @override
+  String get wordPacksTitle => 'الفاظ کے پیک';
+
+  @override
+  String get wordPacksHint =>
+      'موضوع کے لحاظ سے الفاظ کی فہرستیں۔ صرف وہ زبان ڈاؤن لوڈ کریں جو آپ چاہتے ہیں، پھر کارڈز آزادی سے تبدیل یا حذف کریں۔';
+
+  @override
+  String get wordPacksFailed => 'ڈاؤن لوڈ نہیں ہو سکا۔ کنکشن چیک کریں۔';
+
+  @override
+  String get wordPacksEmpty => 'اس زبان کے الفاظ ابھی تیار ہو رہے ہیں۔';
 }

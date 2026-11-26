@@ -1446,5 +1446,9 @@
   "soundsMyMusic": "Iyong audio",
   "soundsMusicHint": "Magpatugtog ng audio file mula sa iyong telepono. Walang kinokopya o ina-upload.",
   "soundsChooseMusic": "Pumili ng audio",
-  "soundsRemoveMusic": "Alisin ang audio"
+  "soundsRemoveMusic": "Alisin ang audio",
+  "wordPacksTitle": "Mga pakete ng salita",
+  "wordPacksHint": "Mga listahan ng salita ayon sa paksa. I-download lang ang wikang gusto mo, saka malayang i-edit o burahin ang mga card.",
+  "wordPacksFailed": "Hindi ma-download. Tingnan ang koneksyon.",
+  "wordPacksEmpty": "Inihahanda pa ang mga salita para sa wikang ito."
 }

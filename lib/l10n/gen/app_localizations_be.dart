@@ -5369,4 +5369,17 @@ class AppLocalizationsBe extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Прыбраць аўдыя';
+
+  @override
+  String get wordPacksTitle => 'Пакеты слоў';
+
+  @override
+  String get wordPacksHint =>
+      'Спісы слоў па тэмах. Спампуйце толькі патрэбную мову, а потым свабодна змяняйце або выдаляйце карткі.';
+
+  @override
+  String get wordPacksFailed => 'Не ўдалося спампаваць. Праверце злучэнне.';
+
+  @override
+  String get wordPacksEmpty => 'Словы для гэтай мовы яшчэ рыхтуюцца.';
 }

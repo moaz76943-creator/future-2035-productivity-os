@@ -5212,6 +5212,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Remove audio';
+
+  @override
+  String get wordPacksTitle => 'Word packs';
+
+  @override
+  String get wordPacksHint =>
+      'Word lists by topic. Download only the language you want, then edit or delete the cards freely.';
+
+  @override
+  String get wordPacksFailed => 'Could not download. Check the connection.';
+
+  @override
+  String get wordPacksEmpty => 'Words for this language are still being prepared.';
 }
 
 /// The translations for English, as used in the United Kingdom (`en_GB`).

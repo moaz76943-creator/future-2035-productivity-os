@@ -5261,4 +5261,17 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'ஆடியோவை அகற்று';
+
+  @override
+  String get wordPacksTitle => 'சொல் தொகுப்புகள்';
+
+  @override
+  String get wordPacksHint =>
+      'தலைப்பு வாரியான சொல் பட்டியல்கள். வேண்டிய மொழியை மட்டும் பதிவிறக்கி, பிறகு அட்டைகளைச் சுதந்திரமாகத் திருத்தலாம் அல்லது நீக்கலாம்.';
+
+  @override
+  String get wordPacksFailed => 'பதிவிறக்க முடியவில்லை. இணைப்பைச் சரிபார்க்கவும்.';
+
+  @override
+  String get wordPacksEmpty => 'இந்த மொழிக்கான சொற்கள் இன்னும் தயாராகின்றன.';
 }

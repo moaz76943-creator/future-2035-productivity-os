@@ -1446,5 +1446,9 @@
   "soundsMyMusic": "Saját hangfájl",
   "soundsMusicHint": "Játssz le egy hangfájlt a telefonodról. Semmi sem lesz másolva vagy feltöltve.",
   "soundsChooseMusic": "Hang kiválasztása",
-  "soundsRemoveMusic": "Hang eltávolítása"
+  "soundsRemoveMusic": "Hang eltávolítása",
+  "wordPacksTitle": "Szócsomagok",
+  "wordPacksHint": "Szólisták témák szerint. Csak a kívánt nyelvet töltsd le, aztán szabadon szerkeszd vagy töröld a kártyákat.",
+  "wordPacksFailed": "A letöltés nem sikerült. Ellenőrizd a kapcsolatot.",
+  "wordPacksEmpty": "A nyelv szavai még készülnek."
 }

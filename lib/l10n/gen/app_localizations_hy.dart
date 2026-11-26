@@ -5243,4 +5243,17 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Հեռացնել աուդիոն';
+
+  @override
+  String get wordPacksTitle => 'Բառերի փաթեթներ';
+
+  @override
+  String get wordPacksHint =>
+      'Բառացանկեր ըստ թեմաների։ Ներբեռնեք միայն ցանկալի լեզուն, ապա ազատ խմբագրեք կամ ջնջեք քարտերը։';
+
+  @override
+  String get wordPacksFailed => 'Չհաջողվեց ներբեռնել։ Ստուգեք կապը։';
+
+  @override
+  String get wordPacksEmpty => 'Այս լեզվի բառերը դեռ պատրաստվում են։';
 }

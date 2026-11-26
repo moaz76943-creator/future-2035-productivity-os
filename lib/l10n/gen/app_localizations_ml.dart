@@ -5243,4 +5243,17 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'ഓഡിയോ നീക്കം ചെയ്യുക';
+
+  @override
+  String get wordPacksTitle => 'വാക്ക് പാക്കുകൾ';
+
+  @override
+  String get wordPacksHint =>
+      'വിഷയം തിരിച്ചുള്ള വാക്കുകളുടെ പട്ടികകൾ. വേണ്ട ഭാഷ മാത്രം ഡൗൺലോഡ് ചെയ്യുക, പിന്നെ കാർഡുകൾ സ്വതന്ത്രമായി തിരുത്തുകയോ ഇല്ലാതാക്കുകയോ ചെയ്യുക.';
+
+  @override
+  String get wordPacksFailed => 'ഡൗൺലോഡ് ചെയ്യാനായില്ല. കണക്ഷൻ പരിശോധിക്കുക.';
+
+  @override
+  String get wordPacksEmpty => 'ഈ ഭാഷയിലെ വാക്കുകൾ ഇപ്പോഴും തയ്യാറാക്കുന്നു.';
 }

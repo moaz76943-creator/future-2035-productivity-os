@@ -1446,5 +1446,9 @@
   "soundsMyMusic": "Oma äänitiedosto",
   "soundsMusicHint": "Toista äänitiedosto puhelimestasi. Mitään ei kopioida eikä ladata palvelimelle.",
   "soundsChooseMusic": "Valitse ääni",
-  "soundsRemoveMusic": "Poista ääni"
+  "soundsRemoveMusic": "Poista ääni",
+  "wordPacksTitle": "Sanapaketit",
+  "wordPacksHint": "Sanalistoja aiheittain. Lataa vain haluamasi kieli ja muokkaa tai poista kortteja vapaasti.",
+  "wordPacksFailed": "Lataus epäonnistui. Tarkista yhteys.",
+  "wordPacksEmpty": "Tämän kielen sanoja valmistellaan vielä."
 }

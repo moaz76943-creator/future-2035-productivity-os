@@ -5248,4 +5248,17 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Премахване на аудиото';
+
+  @override
+  String get wordPacksTitle => 'Пакети с думи';
+
+  @override
+  String get wordPacksHint =>
+      'Списъци с думи по теми. Изтеглете само езика, който искате, после свободно редактирайте или изтривайте картите.';
+
+  @override
+  String get wordPacksFailed => 'Изтеглянето не бе успешно. Проверете връзката.';
+
+  @override
+  String get wordPacksEmpty => 'Думите за този език все още се подготвят.';
 }

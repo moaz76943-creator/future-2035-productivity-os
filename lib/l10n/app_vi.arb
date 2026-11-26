@@ -1446,5 +1446,9 @@
   "soundsMyMusic": "Âm thanh của bạn",
   "soundsMusicHint": "Phát tệp âm thanh từ điện thoại. Không có gì được sao chép hay tải lên.",
   "soundsChooseMusic": "Chọn âm thanh",
-  "soundsRemoveMusic": "Gỡ âm thanh"
+  "soundsRemoveMusic": "Gỡ âm thanh",
+  "wordPacksTitle": "Gói từ vựng",
+  "wordPacksHint": "Danh sách từ theo chủ đề. Chỉ tải ngôn ngữ bạn muốn, rồi tùy ý sửa hoặc xóa thẻ.",
+  "wordPacksFailed": "Không tải được. Hãy kiểm tra kết nối.",
+  "wordPacksEmpty": "Từ vựng cho ngôn ngữ này vẫn đang được chuẩn bị."
 }

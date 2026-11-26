@@ -5257,4 +5257,17 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Αφαίρεση ήχου';
+
+  @override
+  String get wordPacksTitle => 'Πακέτα λέξεων';
+
+  @override
+  String get wordPacksHint =>
+      'Λίστες λέξεων ανά θέμα. Κατεβάστε μόνο τη γλώσσα που θέλετε και μετά επεξεργαστείτε ή διαγράψτε ελεύθερα τις κάρτες.';
+
+  @override
+  String get wordPacksFailed => 'Η λήψη απέτυχε. Ελέγξτε τη σύνδεση.';
+
+  @override
+  String get wordPacksEmpty => 'Οι λέξεις για αυτή τη γλώσσα ετοιμάζονται ακόμη.';
 }

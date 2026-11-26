@@ -5234,4 +5234,17 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Audioni olib tashlash';
+
+  @override
+  String get wordPacksTitle => 'So\'z to\'plamlari';
+
+  @override
+  String get wordPacksHint =>
+      'Mavzular bo\'yicha so\'zlar ro\'yxati. Faqat kerakli tilni yuklab oling, so\'ng kartalarni bemalol tahrirlang yoki o\'chiring.';
+
+  @override
+  String get wordPacksFailed => 'Yuklab bo\'lmadi. Ulanishni tekshiring.';
+
+  @override
+  String get wordPacksEmpty => 'Bu til so\'zlari hali tayyorlanmoqda.';
 }

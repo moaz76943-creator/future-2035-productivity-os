@@ -5137,4 +5137,17 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Hapus audio';
+
+  @override
+  String get wordPacksTitle => 'Paket kata';
+
+  @override
+  String get wordPacksHint =>
+      'Daftar kata per topik. Unduh hanya bahasa yang Anda inginkan, lalu edit atau hapus kartunya dengan bebas.';
+
+  @override
+  String get wordPacksFailed => 'Gagal mengunduh. Periksa koneksi.';
+
+  @override
+  String get wordPacksEmpty => 'Kata untuk bahasa ini masih disiapkan.';
 }

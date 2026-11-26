@@ -5312,4 +5312,17 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Pašalinti garsą';
+
+  @override
+  String get wordPacksTitle => 'Žodžių paketai';
+
+  @override
+  String get wordPacksHint =>
+      'Žodžių sąrašai pagal temas. Atsisiųskite tik norimą kalbą, tada laisvai redaguokite ar trinkite korteles.';
+
+  @override
+  String get wordPacksFailed => 'Nepavyko atsisiųsti. Patikrinkite ryšį.';
+
+  @override
+  String get wordPacksEmpty => 'Šios kalbos žodžiai dar ruošiami.';
 }

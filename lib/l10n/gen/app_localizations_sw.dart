@@ -5225,4 +5225,17 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Ondoa sauti';
+
+  @override
+  String get wordPacksTitle => 'Vifurushi vya maneno';
+
+  @override
+  String get wordPacksHint =>
+      'Orodha za maneno kwa mada. Pakua lugha unayotaka tu, kisha hariri au futa kadi kwa uhuru.';
+
+  @override
+  String get wordPacksFailed => 'Imeshindwa kupakua. Angalia muunganisho.';
+
+  @override
+  String get wordPacksEmpty => 'Maneno ya lugha hii bado yanaandaliwa.';
 }

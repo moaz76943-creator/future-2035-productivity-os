@@ -5225,4 +5225,17 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Fjern lyd';
+
+  @override
+  String get wordPacksTitle => 'Ordpakker';
+
+  @override
+  String get wordPacksHint =>
+      'Ordlister etter tema. Last ned bare språket du vil ha, og rediger eller slett kortene fritt.';
+
+  @override
+  String get wordPacksFailed => 'Kunne ikke laste ned. Sjekk tilkoblingen.';
+
+  @override
+  String get wordPacksEmpty => 'Ordene for dette språket blir fortsatt forberedt.';
 }

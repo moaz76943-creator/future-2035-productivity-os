@@ -5246,4 +5246,17 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Rimuovi audio';
+
+  @override
+  String get wordPacksTitle => 'Pacchetti di parole';
+
+  @override
+  String get wordPacksHint =>
+      'Elenchi di parole per argomento. Scarica solo la lingua che vuoi, poi modifica o elimina liberamente le schede.';
+
+  @override
+  String get wordPacksFailed => 'Download non riuscito. Controlla la connessione.';
+
+  @override
+  String get wordPacksEmpty => 'Le parole per questa lingua sono ancora in preparazione.';
 }

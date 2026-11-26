@@ -54,12 +54,7 @@ class _LayoutSheetState extends ConsumerState<_LayoutSheet> {
     final l = _layout;
     if (l == null) return const SizedBox(height: 200);
     return SingleChildScrollView(
-      padding: EdgeInsets.fromLTRB(
-        Space.page,
-        0,
-        Space.page,
-        Space.lg + sheetBottomInset(context),
-      ),
+      padding: EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.lg + sheetBottomInset(context)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [

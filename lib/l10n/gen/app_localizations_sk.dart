@@ -5308,4 +5308,17 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Odstrániť zvuk';
+
+  @override
+  String get wordPacksTitle => 'Balíčky slovíčok';
+
+  @override
+  String get wordPacksHint =>
+      'Zoznamy slov podľa tém. Stiahnite iba jazyk, ktorý chcete, a kartičky potom voľne upravujte alebo mažte.';
+
+  @override
+  String get wordPacksFailed => 'Stiahnutie zlyhalo. Skontrolujte pripojenie.';
+
+  @override
+  String get wordPacksEmpty => 'Slová pre tento jazyk sa ešte pripravujú.';
 }

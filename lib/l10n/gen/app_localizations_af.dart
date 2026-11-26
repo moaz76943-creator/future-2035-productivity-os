@@ -5227,4 +5227,17 @@ class AppLocalizationsAf extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Verwyder oudio';
+
+  @override
+  String get wordPacksTitle => 'Woordpakke';
+
+  @override
+  String get wordPacksHint =>
+      'Woordlyste volgens onderwerp. Laai net die taal af wat jy wil hê en wysig of skrap die kaarte vrylik.';
+
+  @override
+  String get wordPacksFailed => 'Kon nie aflaai nie. Kontroleer die verbinding.';
+
+  @override
+  String get wordPacksEmpty => 'Woorde vir hierdie taal word nog voorberei.';
 }

@@ -5239,4 +5239,17 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Audio verwijderen';
+
+  @override
+  String get wordPacksTitle => 'Woordpakketten';
+
+  @override
+  String get wordPacksHint =>
+      'Woordenlijsten per onderwerp. Download alleen de taal die je wilt en bewerk of verwijder de kaarten daarna vrij.';
+
+  @override
+  String get wordPacksFailed => 'Downloaden mislukt. Controleer de verbinding.';
+
+  @override
+  String get wordPacksEmpty => 'De woorden voor deze taal worden nog voorbereid.';
 }

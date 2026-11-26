@@ -5225,4 +5225,17 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Ta bort ljud';
+
+  @override
+  String get wordPacksTitle => 'Ordpaket';
+
+  @override
+  String get wordPacksHint =>
+      'Ordlistor efter ämne. Ladda bara ned språket du vill ha och redigera eller ta bort korten fritt.';
+
+  @override
+  String get wordPacksFailed => 'Det gick inte att ladda ned. Kontrollera anslutningen.';
+
+  @override
+  String get wordPacksEmpty => 'Orden för det här språket förbereds fortfarande.';
 }

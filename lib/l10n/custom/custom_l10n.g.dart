@@ -2560,6 +2560,14 @@ class _CustomL10n extends AppLocalizations {
   @override
   String get soundsRemoveMusic => _o['soundsRemoveMusic'] ?? _b.soundsRemoveMusic;
   @override
+  String get wordPacksTitle => _o['wordPacksTitle'] ?? _b.wordPacksTitle;
+  @override
+  String get wordPacksHint => _o['wordPacksHint'] ?? _b.wordPacksHint;
+  @override
+  String get wordPacksFailed => _o['wordPacksFailed'] ?? _b.wordPacksFailed;
+  @override
+  String get wordPacksEmpty => _o['wordPacksEmpty'] ?? _b.wordPacksEmpty;
+  @override
   String dashFocusOfTarget(String done, String target) => _b.dashFocusOfTarget(done, target);
   @override
   String dashCardsDue(int count) => _b.dashCardsDue(count);
@@ -4221,6 +4229,10 @@ const customWordKeys = <String>[
   'soundsMusicHint',
   'soundsChooseMusic',
   'soundsRemoveMusic',
+  'wordPacksTitle',
+  'wordPacksHint',
+  'wordPacksFailed',
+  'wordPacksEmpty',
 ];
 
 /// The current app-language text of [key] (one of [customWordKeys]).
@@ -5477,5 +5489,9 @@ String customWordBase(AppLocalizations l, String key) => switch (key) {
   'soundsMusicHint' => l.soundsMusicHint,
   'soundsChooseMusic' => l.soundsChooseMusic,
   'soundsRemoveMusic' => l.soundsRemoveMusic,
+  'wordPacksTitle' => l.wordPacksTitle,
+  'wordPacksHint' => l.wordPacksHint,
+  'wordPacksFailed' => l.wordPacksFailed,
+  'wordPacksEmpty' => l.wordPacksEmpty,
   _ => '',
 };

@@ -1446,5 +1446,9 @@
   "soundsMyMusic": "Hljóðið þitt",
   "soundsMusicHint": "Spilaðu hljóðskrá úr símanum. Ekkert er afritað eða hlaðið upp.",
   "soundsChooseMusic": "Veldu hljóð",
-  "soundsRemoveMusic": "Fjarlægja hljóð"
+  "soundsRemoveMusic": "Fjarlægja hljóð",
+  "wordPacksTitle": "Orðapakkar",
+  "wordPacksHint": "Orðalistar eftir efni. Sæktu aðeins tungumálið sem þú vilt og breyttu eða eyddu spjöldunum að vild.",
+  "wordPacksFailed": "Ekki tókst að sækja. Athugaðu tenginguna.",
+  "wordPacksEmpty": "Orð fyrir þetta tungumál eru enn í vinnslu."
 }

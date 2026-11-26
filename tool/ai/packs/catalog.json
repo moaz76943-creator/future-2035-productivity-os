@@ -1,0 +1,16 @@
+{
+ "_note": "Word-pack tree (English). Claude owns this file; agents fill the words under each branch.",
+ "basics": {"en": "Basics", "emoji": "🔤", "subs": {"greetings": "Greetings and courtesy", "numbers": "Numbers", "colors": "Colors", "days_months": "Days and months", "time": "Time words", "questions": "Question words"}},
+ "home": {"en": "Home", "emoji": "🏠", "subs": {"living_room": "Living room", "kitchen": "Kitchen", "bathroom": "Bathroom", "bedroom": "Bedroom", "cleaning": "Cleaning", "garden": "Garden"}},
+ "clothes": {"en": "Clothes", "emoji": "👕", "subs": {"everyday": "Everyday clothes", "outerwear": "Coats and shoes", "accessories": "Accessories"}},
+ "food": {"en": "Food", "emoji": "🍎", "subs": {"fruits": "Fruits", "vegetables": "Vegetables", "drinks": "Drinks", "meals": "Meals", "bakery": "Bakery", "tableware": "Tableware"}},
+ "family": {"en": "Family", "emoji": "🏡", "subs": {"members": "Family members", "relatives": "Relatives"}},
+ "school": {"en": "School", "emoji": "🎒", "subs": {"classroom": "Classroom", "stationery": "Stationery", "subjects": "School subjects"}},
+ "work": {"en": "Work", "emoji": "💼", "subs": {"office": "Office", "jobs": "Jobs", "tools": "Tools"}},
+ "city": {"en": "City", "emoji": "🏙️", "subs": {"places": "Places", "transport": "Transport", "shopping": "Shopping", "directions": "Directions"}},
+ "travel": {"en": "Travel", "emoji": "✈️", "subs": {"airport": "Airport", "hotel": "Hotel", "luggage": "Luggage"}},
+ "nature": {"en": "Nature", "emoji": "🌳", "subs": {"weather": "Weather", "plants": "Plants", "landscape": "Landscape", "sky": "Sky and space"}},
+ "health": {"en": "Health", "emoji": "🩺", "subs": {"doctor": "At the doctor", "feelings": "Feelings"}},
+ "verbs": {"en": "Everyday verbs", "emoji": "🔁", "subs": {"daily": "Daily routine", "movement": "Movement", "communication": "Communication"}},
+ "adjectives": {"en": "Describing words", "emoji": "📏", "subs": {"size_shape": "Size and shape", "qualities": "Qualities", "opposites": "Opposites"}}
+}

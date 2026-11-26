@@ -5362,4 +5362,17 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Прибрати аудіо';
+
+  @override
+  String get wordPacksTitle => 'Набори слів';
+
+  @override
+  String get wordPacksHint =>
+      'Списки слів за темами. Завантажте лише потрібну мову, а потім вільно змінюйте чи видаляйте картки.';
+
+  @override
+  String get wordPacksFailed => 'Не вдалося завантажити. Перевірте з\'єднання.';
+
+  @override
+  String get wordPacksEmpty => 'Слова для цієї мови ще готуються.';
 }

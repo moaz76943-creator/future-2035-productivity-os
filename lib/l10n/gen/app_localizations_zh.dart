@@ -4947,6 +4947,18 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => '移除音频';
+
+  @override
+  String get wordPacksTitle => '词汇包';
+
+  @override
+  String get wordPacksHint => '按主题分类的词汇表。只下载你需要的语言，之后可自由编辑或删除卡片。';
+
+  @override
+  String get wordPacksFailed => '下载失败。请检查网络连接。';
+
+  @override
+  String get wordPacksEmpty => '该语言的词汇仍在准备中。';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -9905,4 +9917,16 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get soundsRemoveMusic => '移除音訊';
+
+  @override
+  String get wordPacksTitle => '詞彙包';
+
+  @override
+  String get wordPacksHint => '依主題分類的詞彙表。只下載你需要的語言，之後可自由編輯或刪除卡片。';
+
+  @override
+  String get wordPacksFailed => '下載失敗。請檢查網路連線。';
+
+  @override
+  String get wordPacksEmpty => '該語言的詞彙仍在準備中。';
 }

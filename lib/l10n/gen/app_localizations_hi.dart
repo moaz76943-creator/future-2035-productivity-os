@@ -5229,4 +5229,17 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'ऑडियो हटाएँ';
+
+  @override
+  String get wordPacksTitle => 'शब्द पैक';
+
+  @override
+  String get wordPacksHint =>
+      'विषय के अनुसार शब्दों की सूचियाँ। केवल वह भाषा डाउनलोड करें जो आप चाहते हैं, फिर कार्ड आज़ादी से बदलें या हटाएँ।';
+
+  @override
+  String get wordPacksFailed => 'डाउनलोड नहीं हो सका। कनेक्शन जाँचें।';
+
+  @override
+  String get wordPacksEmpty => 'इस भाषा के शब्द अभी तैयार किए जा रहे हैं।';
 }

@@ -1446,5 +1446,9 @@
   "soundsMyMusic": "Ditt ljud",
   "soundsMusicHint": "Spela upp en ljudfil från telefonen. Inget kopieras eller laddas upp.",
   "soundsChooseMusic": "Välj ljud",
-  "soundsRemoveMusic": "Ta bort ljud"
+  "soundsRemoveMusic": "Ta bort ljud",
+  "wordPacksTitle": "Ordpaket",
+  "wordPacksHint": "Ordlistor efter ämne. Ladda bara ned språket du vill ha och redigera eller ta bort korten fritt.",
+  "wordPacksFailed": "Det gick inte att ladda ned. Kontrollera anslutningen.",
+  "wordPacksEmpty": "Orden för det här språket förbereds fortfarande."
 }

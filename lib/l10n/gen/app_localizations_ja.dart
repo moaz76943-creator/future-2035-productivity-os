@@ -4978,4 +4978,16 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => '音声を削除';
+
+  @override
+  String get wordPacksTitle => '単語パック';
+
+  @override
+  String get wordPacksHint => 'テーマ別の単語リストです。必要な言語だけをダウンロードし、カードは自由に編集・削除できます。';
+
+  @override
+  String get wordPacksFailed => 'ダウンロードできませんでした。接続を確認してください。';
+
+  @override
+  String get wordPacksEmpty => 'この言語の単語はまだ準備中です。';
 }

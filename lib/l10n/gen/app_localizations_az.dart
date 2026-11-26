@@ -5226,4 +5226,17 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Audionu sil';
+
+  @override
+  String get wordPacksTitle => 'Söz paketləri';
+
+  @override
+  String get wordPacksHint =>
+      'Mövzulara görə söz siyahıları. Yalnız istədiyiniz dili yükləyin, sonra kartları sərbəst redaktə edin və ya silin.';
+
+  @override
+  String get wordPacksFailed => 'Yükləmək alınmadı. Bağlantını yoxlayın.';
+
+  @override
+  String get wordPacksEmpty => 'Bu dil üçün sözlər hələ hazırlanır.';
 }

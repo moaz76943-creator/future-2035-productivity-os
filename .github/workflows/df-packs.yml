@@ -1,0 +1,89 @@
+name: DF word packs (hourly, 4 parallel agents)
+
+# Builds downloadable flashcard word packs for every app language on the permanent
+# branch content-packs (data only; the app downloads one language on request).
+# Four jobs run in parallel, each owning different language files, so they never
+# overwrite each other. Every word passes deterministic rules plus a worker and a
+# critic from different providers; work is only added, saved after every branch.
+on:
+  schedule:
+    - cron: '7 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  packs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3]
+    concurrency:
+      group: df-packs-${{ matrix.shard }}
+      cancel-in-progress: false
+    env:
+      DF_GEMINI_KEY_1: ${{ secrets.DF_GEMINI_KEY_1 }}
+      DF_GEMINI_KEY_2: ${{ secrets.DF_GEMINI_KEY_2 }}
+      DF_GEMINI_KEY_3: ${{ secrets.DF_GEMINI_KEY_3 }}
+      DF_GEMINI_KEY_4: ${{ secrets.DF_GEMINI_KEY_4 }}
+      DF_GEMINI_KEY_5: ${{ secrets.DF_GEMINI_KEY_5 }}
+      DF_GEMINI_KEY_6: ${{ secrets.DF_GEMINI_KEY_6 }}
+      DF_GEMINI_KEY_7: ${{ secrets.DF_GEMINI_KEY_7 }}
+      DF_GEMINI_KEY_8: ${{ secrets.DF_GEMINI_KEY_8 }}
+      DF_GEMINI_KEY_9: ${{ secrets.DF_GEMINI_KEY_9 }}
+      DF_OPENROUTER_KEY: ${{ secrets.DF_OPENROUTER_KEY }}
+      DF_OPENROUTER_KEY_2: ${{ secrets.DF_OPENROUTER_KEY_2 }}
+      DF_GROQ_KEY: ${{ secrets.DF_GROQ_KEY }}
+      DF_NVIDIA_KEY: ${{ secrets.DF_NVIDIA_KEY }}
+      AI_STATE: ${{ github.workspace }}/.ai-state/health.json
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude-dev
+          path: src
+      - name: Content branch
+        run: |
+          set -euo pipefail
+          cd src
+          if git ls-remote --exit-code --heads origin content-packs >/dev/null; then
+            git fetch -q origin content-packs
+            git worktree add -q ../content FETCH_HEAD
+            cd ../content && git checkout -q -B content-packs
+          elif [ "${{ matrix.shard }}" = 0 ]; then
+            git worktree add -q --detach ../content
+            cd ../content && git checkout -q --orphan content-packs && git rm -rqf . && mkdir -p packs
+          else
+            echo "SKIP=1" >> "$GITHUB_ENV"   # shard 0 creates the branch first
+          fi
+      - uses: actions/cache@v4
+        if: env.SKIP != '1'
+        with:
+          path: .ai-state
+          key: df-packs-health-${{ matrix.shard }}-${{ github.run_id }}
+          restore-keys: df-packs-health-${{ matrix.shard }}-
+      - name: Build words
+        if: env.SKIP != '1'
+        run: |
+          timeout 38m python3 src/tool/ai/packs/packs_agent.py --root content --src src \
+            --shard ${{ matrix.shard }} --shards 4 --minutes 32 || echo "agent stopped; saved work is kept"
+      - name: Validate and push
+        if: env.SKIP != '1'
+        run: |
+          set -euo pipefail
+          cd content
+          # Only valid JSON under packs/ may be pushed.
+          for f in $(git ls-files -mo --exclude-standard packs); do
+            case "$f" in *.json) python3 -m json.tool "$f" >/dev/null || git checkout -q -- "$f" 2>/dev/null || rm -f "$f";; esac
+          done
+          git add -A packs
+          git diff --cached --quiet && { echo "Nothing new."; exit 0; }
+          git -c user.name=df-packs -c user.email=df-packs@users.noreply.github.com \
+            commit -q -m "Word packs: shard ${{ matrix.shard }} $(date -u +%H:%M)"
+          for i in 1 2 3 4 5; do
+            git push -q origin HEAD:refs/heads/content-packs && exit 0
+            sleep $((i * 7)); git pull -q --rebase origin content-packs || true
+          done
+          echo "::warning::could not push; the next hour retries"

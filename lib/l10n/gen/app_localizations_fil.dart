@@ -5246,4 +5246,17 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Alisin ang audio';
+
+  @override
+  String get wordPacksTitle => 'Mga pakete ng salita';
+
+  @override
+  String get wordPacksHint =>
+      'Mga listahan ng salita ayon sa paksa. I-download lang ang wikang gusto mo, saka malayang i-edit o burahin ang mga card.';
+
+  @override
+  String get wordPacksFailed => 'Hindi ma-download. Tingnan ang koneksyon.';
+
+  @override
+  String get wordPacksEmpty => 'Inihahanda pa ang mga salita para sa wikang ito.';
 }

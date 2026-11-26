@@ -6943,5 +6943,21 @@
   "soundsRemoveMusic": "Remove audio",
   "@soundsRemoveMusic": {
     "description": "Tooltip: stop using the chosen audio file (avoid the word music)"
+  },
+  "wordPacksTitle": "Word packs",
+  "@wordPacksTitle": {
+    "description": "Flashcards: downloadable word lists by topic"
+  },
+  "wordPacksHint": "Word lists by topic. Download only the language you want, then edit or delete the cards freely.",
+  "@wordPacksHint": {
+    "description": "Under the word-packs title"
+  },
+  "wordPacksFailed": "Could not download. Check the connection.",
+  "@wordPacksFailed": {
+    "description": "Download failed"
+  },
+  "wordPacksEmpty": "Words for this language are still being prepared.",
+  "@wordPacksEmpty": {
+    "description": "No words yet for this language"
   }
 }

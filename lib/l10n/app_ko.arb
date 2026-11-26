@@ -1446,5 +1446,9 @@
   "soundsMyMusic": "내 오디오",
   "soundsMusicHint": "휴대폰의 오디오 파일을 재생합니다. 복사하거나 업로드하지 않습니다.",
   "soundsChooseMusic": "오디오 선택",
-  "soundsRemoveMusic": "오디오 제거"
+  "soundsRemoveMusic": "오디오 제거",
+  "wordPacksTitle": "단어 팩",
+  "wordPacksHint": "주제별 단어 목록입니다. 원하는 언어만 내려받고 카드는 자유롭게 수정하거나 삭제하세요.",
+  "wordPacksFailed": "내려받지 못했습니다. 연결을 확인하세요.",
+  "wordPacksEmpty": "이 언어의 단어는 아직 준비 중입니다."
 }

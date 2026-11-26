@@ -5236,4 +5236,17 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Hiq audion';
+
+  @override
+  String get wordPacksTitle => 'Paketa fjalësh';
+
+  @override
+  String get wordPacksHint =>
+      'Lista fjalësh sipas temës. Shkarko vetëm gjuhën që do, pastaj ndrysho ose fshi kartat lirisht.';
+
+  @override
+  String get wordPacksFailed => 'Shkarkimi dështoi. Kontrollo lidhjen.';
+
+  @override
+  String get wordPacksEmpty => 'Fjalët për këtë gjuhë po përgatiten ende.';
 }

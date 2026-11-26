@@ -5246,4 +5246,17 @@ class AppLocalizationsMk extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Отстрани аудио';
+
+  @override
+  String get wordPacksTitle => 'Пакети зборови';
+
+  @override
+  String get wordPacksHint =>
+      'Списоци зборови по теми. Преземете го само јазикот што го сакате, а потоа слободно уредувајте или бришете картички.';
+
+  @override
+  String get wordPacksFailed => 'Преземањето не успеа. Проверете ја врската.';
+
+  @override
+  String get wordPacksEmpty => 'Зборовите за овој јазик сè уште се подготвуваат.';
 }

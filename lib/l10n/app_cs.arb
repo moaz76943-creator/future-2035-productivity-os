@@ -1446,5 +1446,9 @@
   "soundsMyMusic": "Váš zvuk",
   "soundsMusicHint": "Přehrajte zvukový soubor z telefonu. Nic se nekopíruje ani nenahrává.",
   "soundsChooseMusic": "Vybrat zvuk",
-  "soundsRemoveMusic": "Odebrat zvuk"
+  "soundsRemoveMusic": "Odebrat zvuk",
+  "wordPacksTitle": "Balíčky slovíček",
+  "wordPacksHint": "Seznamy slov podle témat. Stáhněte jen jazyk, který chcete, a kartičky pak volně upravujte nebo mažte.",
+  "wordPacksFailed": "Stažení se nezdařilo. Zkontrolujte připojení.",
+  "wordPacksEmpty": "Slova pro tento jazyk se ještě připravují."
 }

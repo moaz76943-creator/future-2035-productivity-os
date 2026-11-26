@@ -8910,6 +8910,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Remove audio'**
   String get soundsRemoveMusic;
+
+  /// Flashcards: downloadable word lists by topic
+  ///
+  /// In en, this message translates to:
+  /// **'Word packs'**
+  String get wordPacksTitle;
+
+  /// Under the word-packs title
+  ///
+  /// In en, this message translates to:
+  /// **'Word lists by topic. Download only the language you want, then edit or delete the cards freely.'**
+  String get wordPacksHint;
+
+  /// Download failed
+  ///
+  /// In en, this message translates to:
+  /// **'Could not download. Check the connection.'**
+  String get wordPacksFailed;
+
+  /// No words yet for this language
+  ///
+  /// In en, this message translates to:
+  /// **'Words for this language are still being prepared.'**
+  String get wordPacksEmpty;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

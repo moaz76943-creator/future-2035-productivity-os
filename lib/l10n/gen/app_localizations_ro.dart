@@ -5316,4 +5316,17 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Elimină audio';
+
+  @override
+  String get wordPacksTitle => 'Pachete de cuvinte';
+
+  @override
+  String get wordPacksHint =>
+      'Liste de cuvinte pe teme. Descarcă doar limba dorită, apoi editează sau șterge liber cardurile.';
+
+  @override
+  String get wordPacksFailed => 'Descărcarea a eșuat. Verifică conexiunea.';
+
+  @override
+  String get wordPacksEmpty => 'Cuvintele pentru această limbă sunt încă în pregătire.';
 }

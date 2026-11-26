@@ -5240,4 +5240,17 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Fjarlægja hljóð';
+
+  @override
+  String get wordPacksTitle => 'Orðapakkar';
+
+  @override
+  String get wordPacksHint =>
+      'Orðalistar eftir efni. Sæktu aðeins tungumálið sem þú vilt og breyttu eða eyddu spjöldunum að vild.';
+
+  @override
+  String get wordPacksFailed => 'Ekki tókst að sækja. Athugaðu tenginguna.';
+
+  @override
+  String get wordPacksEmpty => 'Orð fyrir þetta tungumál eru enn í vinnslu.';
 }

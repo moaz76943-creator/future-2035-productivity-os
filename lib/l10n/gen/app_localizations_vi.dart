@@ -5097,4 +5097,17 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get soundsRemoveMusic => 'Gỡ âm thanh';
+
+  @override
+  String get wordPacksTitle => 'Gói từ vựng';
+
+  @override
+  String get wordPacksHint =>
+      'Danh sách từ theo chủ đề. Chỉ tải ngôn ngữ bạn muốn, rồi tùy ý sửa hoặc xóa thẻ.';
+
+  @override
+  String get wordPacksFailed => 'Không tải được. Hãy kiểm tra kết nối.';
+
+  @override
+  String get wordPacksEmpty => 'Từ vựng cho ngôn ngữ này vẫn đang được chuẩn bị.';
 }
