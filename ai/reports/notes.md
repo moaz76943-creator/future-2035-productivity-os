@@ -1,1 +1,2 @@
 - 11-26 18:44 task lib/features/sounds/presentation/widgets/player_bar.dart: patch did not apply: error: patch failed: lib/features/sound; Player bar shows mixer, play/pause, sleep, stop but never displays the active custom audio file name.
+- 11-26 19:44 improve lib/features/tasks/data/tasks_repository/task_status.dart: patch did not apply: warning: recount: unexpected line: enum; TaskStatus uses string constants instead of an enum, missing 'done' status mentioned in its own doc comment
