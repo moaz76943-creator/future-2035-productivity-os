@@ -5295,7 +5295,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get soundsRemoveMusic => 'Pašalinti garsą';
 
   @override
-  String get wordPacksTitle => 'Žodžių paketai';
+  String get wordPacksTitle => 'Kalbų mokymasis';
 
   @override
   String get wordPacksHint =>

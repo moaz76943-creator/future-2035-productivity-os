@@ -5257,7 +5257,7 @@ class AppLocalizationsGu extends AppLocalizations {
   String get soundsRemoveMusic => 'ઑડિયો દૂર કરો';
 
   @override
-  String get wordPacksTitle => 'શબ્દ પેક';
+  String get wordPacksTitle => 'ભાષાઓ શીખો';
 
   @override
   String get wordPacksHint =>

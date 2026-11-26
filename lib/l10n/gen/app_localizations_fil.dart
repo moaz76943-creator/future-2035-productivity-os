@@ -5229,7 +5229,7 @@ class AppLocalizationsFil extends AppLocalizations {
   String get soundsRemoveMusic => 'Alisin ang audio';
 
   @override
-  String get wordPacksTitle => 'Mga pakete ng salita';
+  String get wordPacksTitle => 'Mag-aral ng mga wika';
 
   @override
   String get wordPacksHint =>

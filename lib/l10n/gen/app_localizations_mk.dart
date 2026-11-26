@@ -5229,7 +5229,7 @@ class AppLocalizationsMk extends AppLocalizations {
   String get soundsRemoveMusic => 'Отстрани аудио';
 
   @override
-  String get wordPacksTitle => 'Пакети зборови';
+  String get wordPacksTitle => 'Учење јазици';
 
   @override
   String get wordPacksHint =>

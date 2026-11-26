@@ -5120,7 +5120,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get soundsRemoveMusic => 'Hapus audio';
 
   @override
-  String get wordPacksTitle => 'Paket kata';
+  String get wordPacksTitle => 'Belajar bahasa';
 
   @override
   String get wordPacksHint =>

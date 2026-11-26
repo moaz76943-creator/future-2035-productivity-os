@@ -5219,7 +5219,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get soundsRemoveMusic => 'Hiq audion';
 
   @override
-  String get wordPacksTitle => 'Paketa fjalësh';
+  String get wordPacksTitle => 'Mëso gjuhë';
 
   @override
   String get wordPacksHint =>

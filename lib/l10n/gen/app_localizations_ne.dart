@@ -5203,7 +5203,7 @@ class AppLocalizationsNe extends AppLocalizations {
   String get soundsRemoveMusic => 'अडियो हटाउनुहोस्';
 
   @override
-  String get wordPacksTitle => 'शब्द प्याक';
+  String get wordPacksTitle => 'भाषा सिक्नुहोस्';
 
   @override
   String get wordPacksHint =>

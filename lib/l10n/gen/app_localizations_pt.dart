@@ -5243,7 +5243,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get soundsRemoveMusic => 'Remover áudio';
 
   @override
-  String get wordPacksTitle => 'Pacotes de palavras';
+  String get wordPacksTitle => 'Aprender idiomas';
 
   @override
   String get wordPacksHint =>

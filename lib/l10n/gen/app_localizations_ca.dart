@@ -5231,7 +5231,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get soundsRemoveMusic => 'Treu l\'àudio';
 
   @override
-  String get wordPacksTitle => 'Paquets de paraules';
+  String get wordPacksTitle => 'Aprèn idiomes';
 
   @override
   String get wordPacksHint =>

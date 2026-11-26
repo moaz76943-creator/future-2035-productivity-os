@@ -5340,7 +5340,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get soundsRemoveMusic => 'Убрать аудио';
 
   @override
-  String get wordPacksTitle => 'Наборы слов';
+  String get wordPacksTitle => 'Изучение языков';
 
   @override
   String get wordPacksHint =>

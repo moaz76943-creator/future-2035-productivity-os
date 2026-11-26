@@ -1441,7 +1441,7 @@
   "soundsMusicHint": "Telefoningizdagi audio faylni ijro eting. Hech narsa nusxalanmaydi yoki yuklanmaydi.",
   "soundsChooseMusic": "Audio tanlash",
   "soundsRemoveMusic": "Audioni olib tashlash",
-  "wordPacksTitle": "So'z to'plamlari",
+  "wordPacksTitle": "Tillarni o'rganish",
   "wordPacksHint": "Mavzular bo'yicha so'zlar ro'yxati. Faqat kerakli tilni yuklab oling, so'ng kartalarni bemalol tahrirlang yoki o'chiring.",
   "wordPacksFailed": "Yuklab bo'lmadi. Ulanishni tekshiring.",
   "wordPacksEmpty": "Bu til so'zlari hali tayyorlanmoqda."

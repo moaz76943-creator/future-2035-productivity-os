@@ -5274,7 +5274,7 @@ class AppLocalizationsKn extends AppLocalizations {
   String get soundsRemoveMusic => 'ಆಡಿಯೋ ತೆಗೆದುಹಾಕಿ';
 
   @override
-  String get wordPacksTitle => 'ಪದ ಪ್ಯಾಕ್‌ಗಳು';
+  String get wordPacksTitle => 'ಭಾಷೆಗಳನ್ನು ಕಲಿಯಿರಿ';
 
   @override
   String get wordPacksHint =>

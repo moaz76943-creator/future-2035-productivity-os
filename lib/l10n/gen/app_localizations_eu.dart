@@ -5247,7 +5247,7 @@ class AppLocalizationsEu extends AppLocalizations {
   String get soundsRemoveMusic => 'Kendu audioa';
 
   @override
-  String get wordPacksTitle => 'Hitz-paketeak';
+  String get wordPacksTitle => 'Ikasi hizkuntzak';
 
   @override
   String get wordPacksHint =>

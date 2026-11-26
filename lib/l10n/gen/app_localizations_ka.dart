@@ -5214,7 +5214,7 @@ class AppLocalizationsKa extends AppLocalizations {
   String get soundsRemoveMusic => 'აუდიოს წაშლა';
 
   @override
-  String get wordPacksTitle => 'სიტყვების პაკეტები';
+  String get wordPacksTitle => 'ენების სწავლა';
 
   @override
   String get wordPacksHint =>
