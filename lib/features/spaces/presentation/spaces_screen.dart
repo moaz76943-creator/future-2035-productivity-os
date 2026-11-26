@@ -145,8 +145,8 @@ class _Featured extends StatelessWidget {
     button: true,
     label: [space.label, ?space.caption].join(', '),
     excludeSemantics: true,
-    child: AuroraCard(
-      hue: space.hue,
+    // Calm glass card like the design; the module colour lives in the icon orb.
+    child: LuxCard(
       onTap: () => openRoute(context, space.route),
       child: SizedBox(
         // Icon (fixed) + title + caption (scaled with the font size).
@@ -156,22 +156,20 @@ class _Featured extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(space.icon, color: Colors.white, size: 28),
+            IconOrb(icon: space.icon, hue: space.hue, size: 44),
             const Spacer(),
             Text(
               space.label,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: context.text.titleMedium?.copyWith(color: Colors.white, height: 1.2),
+              style: context.text.titleMedium?.copyWith(height: 1.2),
             ),
             if (space.caption != null)
               Text(
                 space.caption!,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
-                style: context.text.labelMedium?.copyWith(
-                  color: Colors.white.withValues(alpha: 0.9),
-                ),
+                style: context.text.labelMedium,
               ),
           ],
         ),
@@ -189,9 +187,9 @@ class _OrbTile extends StatelessWidget {
     button: true,
     label: [space.label, ?space.caption].join(', '),
     excludeSemantics: true,
-    child: InkWell(
-      borderRadius: BorderRadius.circular(Radii.lg),
+    child: LuxCard(
       onTap: () => openRoute(context, space.route),
+      padding: EdgeInsets.zero,
       child: Column(
         children: [
           const SizedBox(height: Space.xs),
