@@ -53,6 +53,23 @@ CRITIC = (
 )
 
 
+NOTES = 'ai/reports/notes.md'
+
+
+def read_notes():
+    """Last lines other agents left (what they touched and found), so work is not repeated."""
+    try:
+        return ''.join(open(NOTES, encoding='utf-8').readlines()[-25:])[-2500:]
+    except OSError:
+        return ''
+
+
+def add_note(who, path, verdict, hint):
+    os.makedirs('ai/reports', exist_ok=True)
+    with open(NOTES, 'a', encoding='utf-8') as f:
+        f.write(f'- {datetime.datetime.utcnow():%m-%d %H:%M} {who} {path}: {verdict[:60]}; {hint[:160]}\n')
+
+
 def run(cmd):
     r = subprocess.run(cmd, shell=True, capture_output=True, text=True, cwd=ROOT)
     return r.returncode, (r.stdout + r.stderr)[-1500:]
@@ -141,6 +158,10 @@ def main():
     source = '\n'.join(f'File {p}:\n```dart\n{open(p, encoding="utf-8").read()[:30000]}\n```' for p in paths)
     ask = (f'TASK (do exactly this, as one patch over these files): {task}\n\n{source}' if task
            else source)
+    notes = read_notes()
+    if notes:
+        ask = ('Notes left by other helper agents (do not repeat their work; avoid files they are '
+               f'changing; build on their findings):\n{notes}\n\n' + ask)
     note = {'file': path, 'task': task, 'kept': False}
 
     def check(text):
@@ -179,6 +200,7 @@ def main():
             else:
                 verdict = f'critic rejected: {str(c.get("reason", ""))[:200]}'
     router.save()
+    add_note('task' if task else 'improve', path, verdict, findings[0] if findings else 'no findings')
     os.makedirs('ai/reports', exist_ok=True)
     with open(f'ai/reports/improve-{datetime.date.today().isoformat()}.md', 'a', encoding='utf-8') as f:
         f.write(f'## {"task: " + task[:120] if task else path} ({label})\n- patch: {verdict}\n- why: {str(out.get("why", ""))[:200]}\n')

@@ -1,6 +1,7 @@
 # Instructions
 
 Read and follow [AGENTS.md](AGENTS.md): rules, product constraints and architecture.
+Other AI agents: `docs/AGENT_GUIDE.md`.
 New session? Read [docs/HANDOVER.md](docs/HANDOVER.md) first: the owner, his preferences and the full state.
 
 ## Validation gates (never skip)
