@@ -1,0 +1,94 @@
+name: DF AI daily (translation review drafts)
+
+# Every day the helper models review a few languages and write their fixes to
+# ai-drafts/daily-<date>; they never touch claude-dev, main, release/* or hermes/*.
+# The full test suite runs on the draft, and its status is in the commit title.
+# Claude reviews the drafts when it is back and brings the good fixes over.
+# Note: GitHub runs schedules only from the repository's default branch, so the
+# schedule starts once claude-dev is the default branch; until then use "Run workflow"
+# or push any commit to a branch named ai-trigger/daily.
+on:
+  schedule:
+    - cron: '17 1 * * *'
+  push:
+    branches:
+      - 'ai-trigger/daily'
+  workflow_dispatch:
+    inputs:
+      langs:
+        description: 'Languages to review, e.g. ar,de (empty = daily rotation)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: df-ai-daily
+  cancel-in-progress: false
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude-dev
+          fetch-depth: 0
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.50.0'
+          channel: stable
+          cache: true
+
+      - name: Review translations
+        env:
+          DF_GEMINI_KEY_1: ${{ secrets.DF_GEMINI_KEY_1 }}
+          DF_GEMINI_KEY_2: ${{ secrets.DF_GEMINI_KEY_2 }}
+          DF_GEMINI_KEY_3: ${{ secrets.DF_GEMINI_KEY_3 }}
+          DF_GEMINI_KEY_4: ${{ secrets.DF_GEMINI_KEY_4 }}
+          DF_GEMINI_KEY_5: ${{ secrets.DF_GEMINI_KEY_5 }}
+          DF_GEMINI_KEY_6: ${{ secrets.DF_GEMINI_KEY_6 }}
+          DF_GEMINI_KEY_7: ${{ secrets.DF_GEMINI_KEY_7 }}
+          DF_GEMINI_KEY_8: ${{ secrets.DF_GEMINI_KEY_8 }}
+          DF_GEMINI_KEY_9: ${{ secrets.DF_GEMINI_KEY_9 }}
+          DF_OPENROUTER_KEY: ${{ secrets.DF_OPENROUTER_KEY }}
+          DF_OPENROUTER_KEY_2: ${{ secrets.DF_OPENROUTER_KEY_2 }}
+          DF_GROQ_KEY: ${{ secrets.DF_GROQ_KEY }}
+          DF_NVIDIA_KEY: ${{ secrets.DF_NVIDIA_KEY }}
+          LANGS: ${{ inputs.langs }}
+        run: |
+          set -euo pipefail
+          if [ -n "${LANGS:-}" ]; then
+            python3 tool/ai/review_draft.py --langs "$LANGS"
+          else
+            python3 tool/ai/review_draft.py
+          fi
+
+      - name: Check the draft with the full gates
+        run: |
+          set -uo pipefail
+          status="passed"
+          flutter pub get --enforce-lockfile
+          dart run build_runner build --delete-conflicting-outputs
+          flutter gen-l10n && python3 tool/gen_l10n_custom.py && python3 tool/check_l10n.py \
+            && flutter analyze \
+            && flutter test --reporter compact --dart-define=ENABLE_ADS=false || status="failed"
+          echo "STATUS=$status" >> "$GITHUB_ENV"
+
+      - name: Push draft branch
+        run: |
+          set -euo pipefail
+          dest="ai-drafts/daily-$(date -u +%Y%m%d)-${GITHUB_RUN_NUMBER}"
+          git config user.name "df-ai-daily"
+          git config user.email "df-ai-daily@users.noreply.github.com"
+          git checkout -b "$dest"
+          git add -A ai/reports lib/l10n
+          if git diff --cached --quiet; then echo "No changes today."; exit 0; fi
+          git commit -m "AI daily review (tests $STATUS)" -m "Unreviewed helper-model draft. Do not merge without review."
+          git push origin "HEAD:refs/heads/$dest"
+          echo "### \`$dest\` (tests $STATUS)" >> "$GITHUB_STEP_SUMMARY"
+          cat ai/reports/review-*.md >> "$GITHUB_STEP_SUMMARY" || true
