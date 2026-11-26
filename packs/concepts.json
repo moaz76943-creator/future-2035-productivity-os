@@ -202,5 +202,4375 @@
    "en": "two",
    "note": "The number 2"
   }
+ },
+ "home.appliances": {
+  "air_conditioner": {
+   "ar": "مكيف هواء",
+   "emoji": "",
+   "en": "air conditioner",
+   "note": ""
+  },
+  "air_purifier": {
+   "ar": "منقي هواء",
+   "emoji": "",
+   "en": "air purifier",
+   "note": ""
+  },
+  "blender": {
+   "ar": "خلاط",
+   "emoji": "",
+   "en": "blender",
+   "note": ""
+  },
+  "clothes_dryer": {
+   "ar": "مجفف ملابس",
+   "emoji": "",
+   "en": "clothes dryer",
+   "note": ""
+  },
+  "dishwasher": {
+   "ar": "غسالة أطباق",
+   "emoji": "",
+   "en": "dishwasher",
+   "note": ""
+  },
+  "fan": {
+   "ar": "مروحة",
+   "emoji": "",
+   "en": "fan",
+   "note": ""
+  },
+  "food_processor": {
+   "ar": "محضر طعام",
+   "emoji": "",
+   "en": "food processor",
+   "note": ""
+  },
+  "freezer": {
+   "ar": "مجمد",
+   "emoji": "",
+   "en": "freezer",
+   "note": ""
+  },
+  "hair_dryer": {
+   "ar": "مجفف شعر",
+   "emoji": "",
+   "en": "hair dryer",
+   "note": ""
+  },
+  "heater": {
+   "ar": "مدفأة",
+   "emoji": "",
+   "en": "heater",
+   "note": ""
+  },
+  "humidifier": {
+   "ar": "مرطب هواء",
+   "emoji": "",
+   "en": "humidifier",
+   "note": ""
+  },
+  "iron": {
+   "ar": "مكواة",
+   "emoji": "",
+   "en": "iron",
+   "note": ""
+  },
+  "kettle": {
+   "ar": "غلاية كهربائية",
+   "emoji": "",
+   "en": "kettle",
+   "note": ""
+  },
+  "light_bulb": {
+   "ar": "مصباح كهربائي",
+   "emoji": "",
+   "en": "light bulb",
+   "note": ""
+  },
+  "light_switch": {
+   "ar": "مفتاح كهرباء",
+   "emoji": "",
+   "en": "light switch",
+   "note": ""
+  },
+  "microwave": {
+   "ar": "ميكروويف",
+   "emoji": "",
+   "en": "microwave",
+   "note": ""
+  },
+  "oven": {
+   "ar": "فرن",
+   "emoji": "",
+   "en": "oven",
+   "note": ""
+  },
+  "plug": {
+   "ar": "قابس كهرباء",
+   "emoji": "",
+   "en": "plug",
+   "note": ""
+  },
+  "refrigerator": {
+   "ar": "ثلاجة",
+   "emoji": "",
+   "en": "refrigerator",
+   "note": ""
+  },
+  "socket": {
+   "ar": "مقبس كهرباء",
+   "emoji": "",
+   "en": "socket",
+   "note": ""
+  },
+  "stove": {
+   "ar": "موقد",
+   "emoji": "",
+   "en": "stove",
+   "note": ""
+  },
+  "television": {
+   "ar": "تلفاز",
+   "emoji": "",
+   "en": "television",
+   "note": ""
+  },
+  "thermostat": {
+   "ar": "منظم حرارة",
+   "emoji": "",
+   "en": "thermostat",
+   "note": ""
+  },
+  "toaster": {
+   "ar": "محمصة خبز",
+   "emoji": "",
+   "en": "toaster",
+   "note": ""
+  },
+  "vacuum_cleaner": {
+   "ar": "مكنسة كهربائية",
+   "emoji": "",
+   "en": "vacuum cleaner",
+   "note": ""
+  },
+  "washing_machine": {
+   "ar": "غسالة ملابس",
+   "emoji": "",
+   "en": "washing machine",
+   "note": ""
+  }
+ },
+ "home.bathroom": {
+  "bath_mat": {
+   "ar": "سجادة حمام",
+   "emoji": "",
+   "en": "bath mat",
+   "note": ""
+  },
+  "bathrobe": {
+   "ar": "رداء استحمام",
+   "emoji": "",
+   "en": "bathrobe",
+   "note": ""
+  },
+  "bathroom": {
+   "ar": "حمام",
+   "emoji": "",
+   "en": "bathroom",
+   "note": ""
+  },
+  "bathtub": {
+   "ar": "حوض استحمام",
+   "emoji": "",
+   "en": "bathtub",
+   "note": ""
+  },
+  "comb": {
+   "ar": "مشط",
+   "emoji": "",
+   "en": "comb",
+   "note": ""
+  },
+  "conditioner": {
+   "ar": "بلسم شعر",
+   "emoji": "",
+   "en": "conditioner",
+   "note": ""
+  },
+  "dental_floss": {
+   "ar": "خيط أسنان",
+   "emoji": "",
+   "en": "dental floss",
+   "note": ""
+  },
+  "drain": {
+   "ar": "مصرف ماء",
+   "emoji": "",
+   "en": "drain",
+   "note": ""
+  },
+  "hairbrush": {
+   "ar": "فرشاة شعر",
+   "emoji": "",
+   "en": "hairbrush",
+   "note": ""
+  },
+  "mirror": {
+   "ar": "مرآة",
+   "emoji": "",
+   "en": "mirror",
+   "note": ""
+  },
+  "mouthwash": {
+   "ar": "غسول فم",
+   "emoji": "",
+   "en": "mouthwash",
+   "note": ""
+  },
+  "shampoo": {
+   "ar": "شامبو",
+   "emoji": "",
+   "en": "shampoo",
+   "note": ""
+  },
+  "shower": {
+   "ar": "دش استحمام",
+   "emoji": "",
+   "en": "shower",
+   "note": ""
+  },
+  "shower_curtain": {
+   "ar": "ستارة الدش",
+   "emoji": "",
+   "en": "shower curtain",
+   "note": ""
+  },
+  "soap": {
+   "ar": "صابون",
+   "emoji": "",
+   "en": "soap",
+   "note": ""
+  },
+  "sponge": {
+   "ar": "إسفنجة",
+   "emoji": "",
+   "en": "sponge",
+   "note": ""
+  },
+  "tissue": {
+   "ar": "مناديل ورقية",
+   "emoji": "",
+   "en": "tissue",
+   "note": ""
+  },
+  "toothbrush": {
+   "ar": "فرشاة أسنان",
+   "emoji": "",
+   "en": "toothbrush",
+   "note": ""
+  },
+  "toothpaste": {
+   "ar": "معجون أسنان",
+   "emoji": "",
+   "en": "toothpaste",
+   "note": ""
+  },
+  "towel": {
+   "ar": "منشفة",
+   "emoji": "",
+   "en": "towel",
+   "note": ""
+  },
+  "towel_rack": {
+   "ar": "رف مناشف",
+   "emoji": "",
+   "en": "towel rack",
+   "note": ""
+  },
+  "washbasin": {
+   "ar": "مغسلة يدين",
+   "emoji": "",
+   "en": "washbasin",
+   "note": ""
+  }
+ },
+ "home.bedroom": {
+  "alarm_clock": {
+   "ar": "منبه",
+   "emoji": "",
+   "en": "alarm clock",
+   "note": ""
+  },
+  "bed": {
+   "ar": "سرير",
+   "emoji": "",
+   "en": "bed",
+   "note": ""
+  },
+  "bedroom": {
+   "ar": "غرفة نوم",
+   "emoji": "",
+   "en": "bedroom",
+   "note": ""
+  },
+  "bedsheet": {
+   "ar": "ملاءة سرير",
+   "emoji": "",
+   "en": "bedsheet",
+   "note": ""
+  },
+  "bedspread": {
+   "ar": "مفرش سرير",
+   "emoji": "",
+   "en": "bedspread",
+   "note": ""
+  },
+  "blackout_curtains": {
+   "ar": "ستائر معتمة",
+   "emoji": "",
+   "en": "blackout curtains",
+   "note": ""
+  },
+  "blanket": {
+   "ar": "بطانية",
+   "emoji": "",
+   "en": "blanket",
+   "note": ""
+  },
+  "bunk_bed": {
+   "ar": "سرير بطابقين",
+   "emoji": "",
+   "en": "bunk bed",
+   "note": ""
+  },
+  "crib": {
+   "ar": "مهد طفل",
+   "emoji": "",
+   "en": "crib",
+   "note": ""
+  },
+  "drawer": {
+   "ar": "درج",
+   "emoji": "",
+   "en": "drawer",
+   "note": ""
+  },
+  "dresser": {
+   "ar": "خزانة أدراج",
+   "emoji": "",
+   "en": "dresser",
+   "note": ""
+  },
+  "duvet": {
+   "ar": "لحاف محشو",
+   "emoji": "",
+   "en": "duvet",
+   "note": ""
+  },
+  "hanger": {
+   "ar": "علاقة ملابس",
+   "emoji": "",
+   "en": "hanger",
+   "note": ""
+  },
+  "headboard": {
+   "ar": "لوح رأس السرير",
+   "emoji": "",
+   "en": "headboard",
+   "note": ""
+  },
+  "lamp": {
+   "ar": "مصباح طاولة",
+   "emoji": "",
+   "en": "lamp",
+   "note": ""
+  },
+  "mattress": {
+   "ar": "مرتبة سرير",
+   "emoji": "",
+   "en": "mattress",
+   "note": ""
+  },
+  "nightstand": {
+   "ar": "طاولة جانبية",
+   "emoji": "",
+   "en": "nightstand",
+   "note": ""
+  },
+  "pillow": {
+   "ar": "وسادة",
+   "emoji": "",
+   "en": "pillow",
+   "note": ""
+  },
+  "pillowcase": {
+   "ar": "غطاء وسادة",
+   "emoji": "",
+   "en": "pillowcase",
+   "note": ""
+  },
+  "quilt": {
+   "ar": "لحاف",
+   "emoji": "",
+   "en": "quilt",
+   "note": ""
+  },
+  "vanity_table": {
+   "ar": "طاولة زينة",
+   "emoji": "",
+   "en": "vanity table",
+   "note": ""
+  },
+  "wardrobe": {
+   "ar": "خزانة ملابس",
+   "emoji": "",
+   "en": "wardrobe",
+   "note": ""
+  }
+ },
+ "home.colors": {
+  "beige": {
+   "ar": "بيج",
+   "emoji": "",
+   "en": "beige",
+   "note": ""
+  },
+  "black": {
+   "ar": "أسود",
+   "emoji": "",
+   "en": "black",
+   "note": ""
+  },
+  "blue": {
+   "ar": "أزرق",
+   "emoji": "",
+   "en": "blue",
+   "note": ""
+  },
+  "brown": {
+   "ar": "بني",
+   "emoji": "",
+   "en": "brown",
+   "note": ""
+  },
+  "crimson": {
+   "ar": "قرمزي",
+   "emoji": "",
+   "en": "crimson",
+   "note": ""
+  },
+  "dark": {
+   "ar": "داكن",
+   "emoji": "",
+   "en": "dark",
+   "note": ""
+  },
+  "emerald": {
+   "ar": "زمردي",
+   "emoji": "",
+   "en": "emerald",
+   "note": ""
+  },
+  "gold": {
+   "ar": "ذهبي",
+   "emoji": "",
+   "en": "gold",
+   "note": ""
+  },
+  "gray": {
+   "ar": "رمادي",
+   "emoji": "",
+   "en": "gray",
+   "note": ""
+  },
+  "green": {
+   "ar": "أخضر",
+   "emoji": "",
+   "en": "green",
+   "note": ""
+  },
+  "indigo": {
+   "ar": "نيلي",
+   "emoji": "",
+   "en": "indigo",
+   "note": ""
+  },
+  "ivory": {
+   "ar": "عاجي",
+   "emoji": "",
+   "en": "ivory",
+   "note": ""
+  },
+  "light": {
+   "ar": "فاتح",
+   "emoji": "",
+   "en": "light",
+   "note": ""
+  },
+  "maroon": {
+   "ar": "عنابي",
+   "emoji": "",
+   "en": "maroon",
+   "note": ""
+  },
+  "navy": {
+   "ar": "كحلي",
+   "emoji": "",
+   "en": "navy",
+   "note": ""
+  },
+  "olive": {
+   "ar": "زيتوني",
+   "emoji": "",
+   "en": "olive",
+   "note": ""
+  },
+  "orange": {
+   "ar": "برتقالي",
+   "emoji": "",
+   "en": "orange",
+   "note": ""
+  },
+  "pink": {
+   "ar": "وردي",
+   "emoji": "",
+   "en": "pink",
+   "note": ""
+  },
+  "purple": {
+   "ar": "بنفسجي",
+   "emoji": "",
+   "en": "purple",
+   "note": ""
+  },
+  "red": {
+   "ar": "أحمر",
+   "emoji": "",
+   "en": "red",
+   "note": ""
+  },
+  "silver": {
+   "ar": "فضي",
+   "emoji": "",
+   "en": "silver",
+   "note": ""
+  },
+  "sky_blue": {
+   "ar": "سماوي",
+   "emoji": "",
+   "en": "sky blue",
+   "note": ""
+  },
+  "turquoise": {
+   "ar": "تركوازي",
+   "emoji": "",
+   "en": "turquoise",
+   "note": ""
+  },
+  "white": {
+   "ar": "أبيض",
+   "emoji": "",
+   "en": "white",
+   "note": ""
+  },
+  "yellow": {
+   "ar": "أصفر",
+   "emoji": "",
+   "en": "yellow",
+   "note": ""
+  }
+ },
+ "home.garden_clean": {
+  "bench": {
+   "ar": "مقعد حديقة",
+   "emoji": "",
+   "en": "bench",
+   "note": ""
+  },
+  "broom": {
+   "ar": "مكنسة يدوية",
+   "emoji": "",
+   "en": "broom",
+   "note": ""
+  },
+  "bucket": {
+   "ar": "دلو",
+   "emoji": "",
+   "en": "bucket",
+   "note": ""
+  },
+  "clothespin": {
+   "ar": "مشبك غسيل",
+   "emoji": "",
+   "en": "clothespin",
+   "note": ""
+  },
+  "compost": {
+   "ar": "سماد طبيعي",
+   "emoji": "",
+   "en": "compost",
+   "note": ""
+  },
+  "detergent": {
+   "ar": "منظف غسيل",
+   "emoji": "",
+   "en": "detergent",
+   "note": ""
+  },
+  "duster": {
+   "ar": "منفضة غبار",
+   "emoji": "",
+   "en": "duster",
+   "note": ""
+  },
+  "dustpan": {
+   "ar": "مجرود غبار",
+   "emoji": "",
+   "en": "dustpan",
+   "note": ""
+  },
+  "fence": {
+   "ar": "سياج",
+   "emoji": "",
+   "en": "fence",
+   "note": ""
+  },
+  "flower": {
+   "ar": "زهرة",
+   "emoji": "",
+   "en": "flower",
+   "note": ""
+  },
+  "flowerpot": {
+   "ar": "أصيص نبات",
+   "emoji": "",
+   "en": "flowerpot",
+   "note": ""
+  },
+  "garden": {
+   "ar": "حديقة",
+   "emoji": "",
+   "en": "garden",
+   "note": ""
+  },
+  "gate": {
+   "ar": "بوابة",
+   "emoji": "",
+   "en": "gate",
+   "note": ""
+  },
+  "grass": {
+   "ar": "عشب",
+   "emoji": "",
+   "en": "grass",
+   "note": ""
+  },
+  "hose": {
+   "ar": "خرطوم ماء",
+   "emoji": "",
+   "en": "hose",
+   "note": ""
+  },
+  "laundry_basket": {
+   "ar": "سلة غسيل",
+   "emoji": "",
+   "en": "laundry basket",
+   "note": ""
+  },
+  "lawnmower": {
+   "ar": "جزازة عشب",
+   "emoji": "",
+   "en": "lawnmower",
+   "note": ""
+  },
+  "mop": {
+   "ar": "ممسحة أرضية",
+   "emoji": "",
+   "en": "mop",
+   "note": ""
+  },
+  "pruning_shears": {
+   "ar": "مقص تقليم",
+   "emoji": "",
+   "en": "pruning shears",
+   "note": ""
+  },
+  "rake": {
+   "ar": "مشط حديقة",
+   "emoji": "",
+   "en": "rake",
+   "note": ""
+  },
+  "shovel": {
+   "ar": "مجرفة",
+   "emoji": "",
+   "en": "shovel",
+   "note": ""
+  },
+  "soil": {
+   "ar": "تربة",
+   "emoji": "",
+   "en": "soil",
+   "note": ""
+  },
+  "trash_can": {
+   "ar": "سلة مهملات",
+   "emoji": "",
+   "en": "trash can",
+   "note": ""
+  },
+  "tree": {
+   "ar": "شجرة",
+   "emoji": "",
+   "en": "tree",
+   "note": ""
+  },
+  "watering_can": {
+   "ar": "مرشة ماء",
+   "emoji": "",
+   "en": "watering can",
+   "note": ""
+  },
+  "wheelbarrow": {
+   "ar": "عربة يدوية",
+   "emoji": "",
+   "en": "wheelbarrow",
+   "note": ""
+  }
+ },
+ "home.kitchen": {
+  "apron": {
+   "ar": "مئزر مطبخ",
+   "emoji": "",
+   "en": "apron",
+   "note": ""
+  },
+  "bowl": {
+   "ar": "وعاء عميق",
+   "emoji": "",
+   "en": "bowl",
+   "note": ""
+  },
+  "can_opener": {
+   "ar": "فتاحة علب",
+   "emoji": "",
+   "en": "can opener",
+   "note": ""
+  },
+  "colander": {
+   "ar": "مصفاة معكرونة",
+   "emoji": "",
+   "en": "colander",
+   "note": ""
+  },
+  "cup": {
+   "ar": "كوب",
+   "emoji": "",
+   "en": "cup",
+   "note": ""
+  },
+  "cupboard": {
+   "ar": "خزانة مطبخ",
+   "emoji": "",
+   "en": "cupboard",
+   "note": ""
+  },
+  "cutting_board": {
+   "ar": "لوح تقطيع",
+   "emoji": "",
+   "en": "cutting board",
+   "note": ""
+  },
+  "faucet": {
+   "ar": "صنبور",
+   "emoji": "",
+   "en": "faucet",
+   "note": ""
+  },
+  "fork": {
+   "ar": "شوكة",
+   "emoji": "",
+   "en": "fork",
+   "note": ""
+  },
+  "glass": {
+   "ar": "كأس زجاجي",
+   "emoji": "",
+   "en": "glass",
+   "note": ""
+  },
+  "grater": {
+   "ar": "مبشرة",
+   "emoji": "",
+   "en": "grater",
+   "note": ""
+  },
+  "kitchen": {
+   "ar": "مطبخ",
+   "emoji": "",
+   "en": "kitchen",
+   "note": ""
+  },
+  "ladle": {
+   "ar": "مغرفة",
+   "emoji": "",
+   "en": "ladle",
+   "note": ""
+  },
+  "lid": {
+   "ar": "غطاء القدر",
+   "emoji": "",
+   "en": "lid",
+   "note": ""
+  },
+  "mug": {
+   "ar": "فنجان كبير",
+   "emoji": "",
+   "en": "mug",
+   "note": ""
+  },
+  "napkin": {
+   "ar": "منديل طعام",
+   "emoji": "",
+   "en": "napkin",
+   "note": ""
+  },
+  "pan": {
+   "ar": "مقلاة",
+   "emoji": "",
+   "en": "pan",
+   "note": ""
+  },
+  "pantry": {
+   "ar": "مخزن المؤن",
+   "emoji": "",
+   "en": "pantry",
+   "note": ""
+  },
+  "peeler": {
+   "ar": "مقشرة",
+   "emoji": "",
+   "en": "peeler",
+   "note": ""
+  },
+  "pitcher": {
+   "ar": "إبريق ماء",
+   "emoji": "",
+   "en": "pitcher",
+   "note": ""
+  },
+  "plate": {
+   "ar": "طبق",
+   "emoji": "",
+   "en": "plate",
+   "note": ""
+  },
+  "pot": {
+   "ar": "قدر طبخ",
+   "emoji": "",
+   "en": "pot",
+   "note": ""
+  },
+  "rolling_pin": {
+   "ar": "شوبك عجين",
+   "emoji": "",
+   "en": "rolling pin",
+   "note": ""
+  },
+  "sink": {
+   "ar": "حوض المطبخ",
+   "emoji": "",
+   "en": "sink",
+   "note": ""
+  },
+  "spatula": {
+   "ar": "ملعقة تقليب",
+   "emoji": "",
+   "en": "spatula",
+   "note": ""
+  },
+  "spoon": {
+   "ar": "ملعقة",
+   "emoji": "",
+   "en": "spoon",
+   "note": ""
+  },
+  "strainer": {
+   "ar": "مصفاة",
+   "emoji": "",
+   "en": "strainer",
+   "note": ""
+  },
+  "table_knife": {
+   "ar": "سكين طعام",
+   "emoji": "",
+   "en": "table knife",
+   "note": ""
+  },
+  "teapot": {
+   "ar": "إبريق شاي",
+   "emoji": "",
+   "en": "teapot",
+   "note": ""
+  },
+  "tongs": {
+   "ar": "ملاقط طعام",
+   "emoji": "",
+   "en": "tongs",
+   "note": ""
+  },
+  "tray": {
+   "ar": "صينية",
+   "emoji": "",
+   "en": "tray",
+   "note": ""
+  },
+  "whisk": {
+   "ar": "خفاقة يدوية",
+   "emoji": "",
+   "en": "whisk",
+   "note": ""
+  }
+ },
+ "home.living": {
+  "armchair": {
+   "ar": "كرسي بذراعين",
+   "emoji": "",
+   "en": "armchair",
+   "note": ""
+  },
+  "balcony": {
+   "ar": "شرفة",
+   "emoji": "",
+   "en": "balcony",
+   "note": ""
+  },
+  "blinds": {
+   "ar": "ستائر شرائح",
+   "emoji": "",
+   "en": "blinds",
+   "note": ""
+  },
+  "bookshelf": {
+   "ar": "مكتبة كتب",
+   "emoji": "",
+   "en": "bookshelf",
+   "note": ""
+  },
+  "carpet": {
+   "ar": "سجادة",
+   "emoji": "",
+   "en": "carpet",
+   "note": ""
+  },
+  "ceiling": {
+   "ar": "سقف",
+   "emoji": "",
+   "en": "ceiling",
+   "note": ""
+  },
+  "chair": {
+   "ar": "كرسي",
+   "emoji": "",
+   "en": "chair",
+   "note": ""
+  },
+  "chandelier": {
+   "ar": "ثريا",
+   "emoji": "",
+   "en": "chandelier",
+   "note": ""
+  },
+  "coffee_table": {
+   "ar": "طاولة قهوة",
+   "emoji": "",
+   "en": "coffee table",
+   "note": ""
+  },
+  "curtain": {
+   "ar": "ستارة",
+   "emoji": "",
+   "en": "curtain",
+   "note": ""
+  },
+  "cushion": {
+   "ar": "وسادة أريكة",
+   "emoji": "",
+   "en": "cushion",
+   "note": ""
+  },
+  "door": {
+   "ar": "باب",
+   "emoji": "",
+   "en": "door",
+   "note": ""
+  },
+  "doorknob": {
+   "ar": "مقبض الباب",
+   "emoji": "",
+   "en": "doorknob",
+   "note": ""
+  },
+  "floor": {
+   "ar": "أرضية",
+   "emoji": "",
+   "en": "floor",
+   "note": ""
+  },
+  "footstool": {
+   "ar": "مسند قدمين",
+   "emoji": "",
+   "en": "footstool",
+   "note": ""
+  },
+  "hallway": {
+   "ar": "ممر",
+   "emoji": "",
+   "en": "hallway",
+   "note": ""
+  },
+  "key": {
+   "ar": "مفتاح",
+   "emoji": "",
+   "en": "key",
+   "note": ""
+  },
+  "living_room": {
+   "ar": "غرفة معيشة",
+   "emoji": "",
+   "en": "living room",
+   "note": ""
+  },
+  "lock": {
+   "ar": "قفل",
+   "emoji": "",
+   "en": "lock",
+   "note": ""
+  },
+  "rug": {
+   "ar": "بساط صغير",
+   "emoji": "",
+   "en": "rug",
+   "note": ""
+  },
+  "shelf": {
+   "ar": "رف",
+   "emoji": "",
+   "en": "shelf",
+   "note": ""
+  },
+  "sofa": {
+   "ar": "أريكة",
+   "emoji": "",
+   "en": "sofa",
+   "note": ""
+  },
+  "stairs": {
+   "ar": "درج المنزل",
+   "emoji": "",
+   "en": "stairs",
+   "note": ""
+  },
+  "table": {
+   "ar": "طاولة",
+   "emoji": "",
+   "en": "table",
+   "note": ""
+  },
+  "wall": {
+   "ar": "جدار",
+   "emoji": "",
+   "en": "wall",
+   "note": ""
+  },
+  "wall_clock": {
+   "ar": "ساعة حائط",
+   "emoji": "",
+   "en": "wall clock",
+   "note": ""
+  },
+  "window": {
+   "ar": "نافذة",
+   "emoji": "",
+   "en": "window",
+   "note": ""
+  }
+ },
+ "life.body_health": {
+  "ankle": {
+   "ar": "كاحل",
+   "emoji": "",
+   "en": "ankle",
+   "note": ""
+  },
+  "arm": {
+   "ar": "ذراع",
+   "emoji": "",
+   "en": "arm",
+   "note": ""
+  },
+  "back": {
+   "ar": "ظهر",
+   "emoji": "",
+   "en": "back",
+   "note": ""
+  },
+  "bandage": {
+   "ar": "ضمادة",
+   "emoji": "",
+   "en": "bandage",
+   "note": ""
+  },
+  "cough": {
+   "ar": "سعال",
+   "emoji": "",
+   "en": "cough",
+   "note": ""
+  },
+  "ear": {
+   "ar": "أذن",
+   "emoji": "",
+   "en": "ear",
+   "note": ""
+  },
+  "elbow": {
+   "ar": "كوع",
+   "emoji": "",
+   "en": "elbow",
+   "note": ""
+  },
+  "eye": {
+   "ar": "عين",
+   "emoji": "",
+   "en": "eye",
+   "note": ""
+  },
+  "face": {
+   "ar": "وجه",
+   "emoji": "",
+   "en": "face",
+   "note": ""
+  },
+  "fever": {
+   "ar": "حمى",
+   "emoji": "",
+   "en": "fever",
+   "note": ""
+  },
+  "finger": {
+   "ar": "إصبع",
+   "emoji": "",
+   "en": "finger",
+   "note": ""
+  },
+  "foot": {
+   "ar": "قدم",
+   "emoji": "",
+   "en": "foot",
+   "note": ""
+  },
+  "forehead": {
+   "ar": "جبين",
+   "emoji": "",
+   "en": "forehead",
+   "note": ""
+  },
+  "hair": {
+   "ar": "شعر",
+   "emoji": "",
+   "en": "hair",
+   "note": ""
+  },
+  "hand": {
+   "ar": "يد",
+   "emoji": "",
+   "en": "hand",
+   "note": ""
+  },
+  "head": {
+   "ar": "رأس",
+   "emoji": "",
+   "en": "head",
+   "note": ""
+  },
+  "headache": {
+   "ar": "صداع",
+   "emoji": "",
+   "en": "headache",
+   "note": ""
+  },
+  "health": {
+   "ar": "صحة",
+   "emoji": "",
+   "en": "health",
+   "note": ""
+  },
+  "heart": {
+   "ar": "قلب",
+   "emoji": "",
+   "en": "heart",
+   "note": ""
+  },
+  "immunity": {
+   "ar": "مناعة",
+   "emoji": "",
+   "en": "immunity",
+   "note": ""
+  },
+  "knee": {
+   "ar": "ركبة",
+   "emoji": "",
+   "en": "knee",
+   "note": ""
+  },
+  "leg": {
+   "ar": "ساق",
+   "emoji": "",
+   "en": "leg",
+   "note": ""
+  },
+  "medicine": {
+   "ar": "دواء",
+   "emoji": "",
+   "en": "medicine",
+   "note": ""
+  },
+  "mouth": {
+   "ar": "فم",
+   "emoji": "",
+   "en": "mouth",
+   "note": ""
+  },
+  "neck": {
+   "ar": "رقبة",
+   "emoji": "",
+   "en": "neck",
+   "note": ""
+  },
+  "nose": {
+   "ar": "أنف",
+   "emoji": "",
+   "en": "nose",
+   "note": ""
+  },
+  "shoulder": {
+   "ar": "كتف",
+   "emoji": "",
+   "en": "shoulder",
+   "note": ""
+  },
+  "stomach": {
+   "ar": "معدة",
+   "emoji": "",
+   "en": "stomach",
+   "note": ""
+  },
+  "tongue": {
+   "ar": "لسان",
+   "emoji": "",
+   "en": "tongue",
+   "note": ""
+  },
+  "tooth": {
+   "ar": "سن",
+   "emoji": "",
+   "en": "tooth",
+   "note": ""
+  },
+  "vitamin": {
+   "ar": "فيتامين",
+   "emoji": "",
+   "en": "vitamin",
+   "note": ""
+  },
+  "wrist": {
+   "ar": "معصم",
+   "emoji": "",
+   "en": "wrist",
+   "note": ""
+  }
+ },
+ "life.clothing": {
+  "bag": {
+   "ar": "حقيبة",
+   "emoji": "",
+   "en": "bag",
+   "note": ""
+  },
+  "belt": {
+   "ar": "حزام",
+   "emoji": "",
+   "en": "belt",
+   "note": ""
+  },
+  "boots": {
+   "ar": "حذاء طويل",
+   "emoji": "",
+   "en": "boots",
+   "note": ""
+  },
+  "button": {
+   "ar": "زر",
+   "emoji": "",
+   "en": "button",
+   "note": ""
+  },
+  "coat": {
+   "ar": "معطف",
+   "emoji": "",
+   "en": "coat",
+   "note": ""
+  },
+  "collar": {
+   "ar": "ياقة",
+   "emoji": "",
+   "en": "collar",
+   "note": ""
+  },
+  "dress": {
+   "ar": "فستان",
+   "emoji": "",
+   "en": "dress",
+   "note": ""
+  },
+  "glasses": {
+   "ar": "نظارات",
+   "emoji": "",
+   "en": "glasses",
+   "note": ""
+  },
+  "gloves": {
+   "ar": "قفازات",
+   "emoji": "",
+   "en": "gloves",
+   "note": ""
+  },
+  "hat": {
+   "ar": "قبعة",
+   "emoji": "",
+   "en": "hat",
+   "note": ""
+  },
+  "jacket": {
+   "ar": "سترة",
+   "emoji": "",
+   "en": "jacket",
+   "note": ""
+  },
+  "pajamas": {
+   "ar": "ملابس نوم",
+   "emoji": "",
+   "en": "pajamas",
+   "note": ""
+  },
+  "pants": {
+   "ar": "بنطال",
+   "emoji": "",
+   "en": "pants",
+   "note": ""
+  },
+  "pocket": {
+   "ar": "جيب",
+   "emoji": "",
+   "en": "pocket",
+   "note": ""
+  },
+  "sandals": {
+   "ar": "صندل",
+   "emoji": "",
+   "en": "sandals",
+   "note": ""
+  },
+  "scarf": {
+   "ar": "وشاح",
+   "emoji": "",
+   "en": "scarf",
+   "note": ""
+  },
+  "shirt": {
+   "ar": "قميص",
+   "emoji": "",
+   "en": "shirt",
+   "note": ""
+  },
+  "shoes": {
+   "ar": "حذاء",
+   "emoji": "",
+   "en": "shoes",
+   "note": ""
+  },
+  "skirt": {
+   "ar": "تنورة",
+   "emoji": "",
+   "en": "skirt",
+   "note": ""
+  },
+  "sleeve": {
+   "ar": "كم القميص",
+   "emoji": "",
+   "en": "sleeve",
+   "note": ""
+  },
+  "slippers": {
+   "ar": "خف منزلي",
+   "emoji": "",
+   "en": "slippers",
+   "note": ""
+  },
+  "sneakers": {
+   "ar": "حذاء رياضي",
+   "emoji": "",
+   "en": "sneakers",
+   "note": ""
+  },
+  "sock": {
+   "ar": "جورب",
+   "emoji": "",
+   "en": "sock",
+   "note": ""
+  },
+  "suit": {
+   "ar": "بدلة رسمية",
+   "emoji": "",
+   "en": "suit",
+   "note": ""
+  },
+  "sweater": {
+   "ar": "كنزة صوفية",
+   "emoji": "",
+   "en": "sweater",
+   "note": ""
+  },
+  "tie": {
+   "ar": "ربطة عنق",
+   "emoji": "",
+   "en": "tie",
+   "note": ""
+  },
+  "umbrella": {
+   "ar": "مظلة مطر",
+   "emoji": "",
+   "en": "umbrella",
+   "note": ""
+  },
+  "zipper": {
+   "ar": "سحاب",
+   "emoji": "",
+   "en": "zipper",
+   "note": ""
+  }
+ },
+ "life.family_traits": {
+  "active": {
+   "ar": "نشيط",
+   "emoji": "",
+   "en": "active",
+   "note": ""
+  },
+  "aunt": {
+   "ar": "عمة أو خالة",
+   "emoji": "",
+   "en": "aunt",
+   "note": ""
+  },
+  "brave": {
+   "ar": "شجاع",
+   "emoji": "",
+   "en": "brave",
+   "note": ""
+  },
+  "brother": {
+   "ar": "أخ",
+   "emoji": "",
+   "en": "brother",
+   "note": ""
+  },
+  "calm": {
+   "ar": "هادئ",
+   "emoji": "",
+   "en": "calm",
+   "note": ""
+  },
+  "cheerful": {
+   "ar": "متفائل",
+   "emoji": "",
+   "en": "cheerful",
+   "note": ""
+  },
+  "child": {
+   "ar": "طفل",
+   "emoji": "",
+   "en": "child",
+   "note": ""
+  },
+  "cousin": {
+   "ar": "ابن العم",
+   "emoji": "",
+   "en": "cousin",
+   "note": ""
+  },
+  "creative": {
+   "ar": "مبدع",
+   "emoji": "",
+   "en": "creative",
+   "note": ""
+  },
+  "curious": {
+   "ar": "فضولي للعلم",
+   "emoji": "",
+   "en": "curious",
+   "note": ""
+  },
+  "daughter": {
+   "ar": "ابنة",
+   "emoji": "",
+   "en": "daughter",
+   "note": ""
+  },
+  "family": {
+   "ar": "عائلة",
+   "emoji": "",
+   "en": "family",
+   "note": ""
+  },
+  "father": {
+   "ar": "أب",
+   "emoji": "",
+   "en": "father",
+   "note": ""
+  },
+  "friend": {
+   "ar": "صديق",
+   "emoji": "",
+   "en": "friend",
+   "note": ""
+  },
+  "generous": {
+   "ar": "كريم",
+   "emoji": "",
+   "en": "generous",
+   "note": ""
+  },
+  "grandfather": {
+   "ar": "جد",
+   "emoji": "",
+   "en": "grandfather",
+   "note": ""
+  },
+  "grandmother": {
+   "ar": "جدة",
+   "emoji": "",
+   "en": "grandmother",
+   "note": ""
+  },
+  "grateful": {
+   "ar": "ممتن",
+   "emoji": "",
+   "en": "grateful",
+   "note": ""
+  },
+  "happy": {
+   "ar": "سعيد",
+   "emoji": "",
+   "en": "happy",
+   "note": ""
+  },
+  "helpful": {
+   "ar": "متعاون",
+   "emoji": "",
+   "en": "helpful",
+   "note": ""
+  },
+  "honest": {
+   "ar": "صادق",
+   "emoji": "",
+   "en": "honest",
+   "note": ""
+  },
+  "humble": {
+   "ar": "متواضع",
+   "emoji": "",
+   "en": "humble",
+   "note": ""
+  },
+  "kind": {
+   "ar": "لطيف",
+   "emoji": "",
+   "en": "kind",
+   "note": ""
+  },
+  "mother": {
+   "ar": "أم",
+   "emoji": "",
+   "en": "mother",
+   "note": ""
+  },
+  "neighbor": {
+   "ar": "جار",
+   "emoji": "",
+   "en": "neighbor",
+   "note": ""
+  },
+  "patient": {
+   "ar": "صبور",
+   "emoji": "",
+   "en": "patient",
+   "note": ""
+  },
+  "polite": {
+   "ar": "مهذب",
+   "emoji": "",
+   "en": "polite",
+   "note": ""
+  },
+  "responsible": {
+   "ar": "مسؤول",
+   "emoji": "",
+   "en": "responsible",
+   "note": ""
+  },
+  "sister": {
+   "ar": "أخت",
+   "emoji": "",
+   "en": "sister",
+   "note": ""
+  },
+  "smart": {
+   "ar": "ذكي",
+   "emoji": "",
+   "en": "smart",
+   "note": ""
+  },
+  "son": {
+   "ar": "ابن",
+   "emoji": "",
+   "en": "son",
+   "note": ""
+  },
+  "strong": {
+   "ar": "قوي",
+   "emoji": "",
+   "en": "strong",
+   "note": ""
+  },
+  "uncle": {
+   "ar": "عم أو خال",
+   "emoji": "",
+   "en": "uncle",
+   "note": ""
+  },
+  "wise": {
+   "ar": "حكيم",
+   "emoji": "",
+   "en": "wise",
+   "note": ""
+  }
+ },
+ "life.food_drink": {
+  "beef": {
+   "ar": "لحم بقر",
+   "emoji": "",
+   "en": "beef",
+   "note": ""
+  },
+  "biscuit": {
+   "ar": "بسكويت",
+   "emoji": "",
+   "en": "biscuit",
+   "note": ""
+  },
+  "bread": {
+   "ar": "خبز",
+   "emoji": "",
+   "en": "bread",
+   "note": ""
+  },
+  "breakfast": {
+   "ar": "فطور",
+   "emoji": "",
+   "en": "breakfast",
+   "note": ""
+  },
+  "broth": {
+   "ar": "حساء مرق",
+   "emoji": "",
+   "en": "broth",
+   "note": ""
+  },
+  "butter": {
+   "ar": "زبدة",
+   "emoji": "",
+   "en": "butter",
+   "note": ""
+  },
+  "cake": {
+   "ar": "كعكة",
+   "emoji": "",
+   "en": "cake",
+   "note": ""
+  },
+  "cheese": {
+   "ar": "جبن",
+   "emoji": "",
+   "en": "cheese",
+   "note": ""
+  },
+  "chicken": {
+   "ar": "دجاج",
+   "emoji": "",
+   "en": "chicken",
+   "note": ""
+  },
+  "coffee": {
+   "ar": "قهوة",
+   "emoji": "",
+   "en": "coffee",
+   "note": ""
+  },
+  "dinner": {
+   "ar": "عشاء",
+   "emoji": "",
+   "en": "dinner",
+   "note": ""
+  },
+  "dough": {
+   "ar": "عجينة",
+   "emoji": "",
+   "en": "dough",
+   "note": ""
+  },
+  "egg": {
+   "ar": "بيضة",
+   "emoji": "",
+   "en": "egg",
+   "note": ""
+  },
+  "fish": {
+   "ar": "سمك",
+   "emoji": "",
+   "en": "fish",
+   "note": ""
+  },
+  "honey": {
+   "ar": "عسل",
+   "emoji": "",
+   "en": "honey",
+   "note": ""
+  },
+  "ice_cream": {
+   "ar": "مثلجات",
+   "emoji": "",
+   "en": "ice cream",
+   "note": ""
+  },
+  "jam": {
+   "ar": "مربى",
+   "emoji": "",
+   "en": "jam",
+   "note": ""
+  },
+  "juice": {
+   "ar": "عصير",
+   "emoji": "",
+   "en": "juice",
+   "note": ""
+  },
+  "lamb": {
+   "ar": "لحم ضأن",
+   "emoji": "",
+   "en": "lamb",
+   "note": ""
+  },
+  "lunch": {
+   "ar": "غداء",
+   "emoji": "",
+   "en": "lunch",
+   "note": ""
+  },
+  "milk": {
+   "ar": "حليب",
+   "emoji": "",
+   "en": "milk",
+   "note": ""
+  },
+  "pasta": {
+   "ar": "معكرونة",
+   "emoji": "",
+   "en": "pasta",
+   "note": ""
+  },
+  "pie": {
+   "ar": "فطيرة",
+   "emoji": "",
+   "en": "pie",
+   "note": ""
+  },
+  "salad": {
+   "ar": "سلطة",
+   "emoji": "",
+   "en": "salad",
+   "note": ""
+  },
+  "sandwich": {
+   "ar": "شطيرة",
+   "emoji": "",
+   "en": "sandwich",
+   "note": ""
+  },
+  "snack": {
+   "ar": "وجبة خفيفة",
+   "emoji": "",
+   "en": "snack",
+   "note": ""
+  },
+  "soup": {
+   "ar": "حساء",
+   "emoji": "",
+   "en": "soup",
+   "note": ""
+  },
+  "tea": {
+   "ar": "شاي",
+   "emoji": "",
+   "en": "tea",
+   "note": ""
+  },
+  "water": {
+   "ar": "ماء",
+   "emoji": "",
+   "en": "water",
+   "note": ""
+  },
+  "yogurt": {
+   "ar": "زبادي",
+   "emoji": "",
+   "en": "yogurt",
+   "note": ""
+  }
+ },
+ "life.produce": {
+  "apple": {
+   "ar": "تفاحة",
+   "emoji": "",
+   "en": "apple",
+   "note": ""
+  },
+  "apricot": {
+   "ar": "مشمش",
+   "emoji": "",
+   "en": "apricot",
+   "note": ""
+  },
+  "banana": {
+   "ar": "موزة",
+   "emoji": "",
+   "en": "banana",
+   "note": ""
+  },
+  "bell_pepper": {
+   "ar": "فلفل حلو",
+   "emoji": "",
+   "en": "bell pepper",
+   "note": ""
+  },
+  "broccoli": {
+   "ar": "بروكلي",
+   "emoji": "",
+   "en": "broccoli",
+   "note": ""
+  },
+  "cabbage": {
+   "ar": "ملفوف",
+   "emoji": "",
+   "en": "cabbage",
+   "note": ""
+  },
+  "carrot": {
+   "ar": "جزر",
+   "emoji": "",
+   "en": "carrot",
+   "note": ""
+  },
+  "cauliflower": {
+   "ar": "قرنبيط",
+   "emoji": "",
+   "en": "cauliflower",
+   "note": ""
+  },
+  "celery": {
+   "ar": "كرفس",
+   "emoji": "",
+   "en": "celery",
+   "note": ""
+  },
+  "cherry": {
+   "ar": "كرز",
+   "emoji": "",
+   "en": "cherry",
+   "note": ""
+  },
+  "corn": {
+   "ar": "ذرة",
+   "emoji": "",
+   "en": "corn",
+   "note": ""
+  },
+  "cucumber": {
+   "ar": "خيار",
+   "emoji": "",
+   "en": "cucumber",
+   "note": ""
+  },
+  "eggplant": {
+   "ar": "باذنجان",
+   "emoji": "",
+   "en": "eggplant",
+   "note": ""
+  },
+  "fig": {
+   "ar": "تين",
+   "emoji": "",
+   "en": "fig",
+   "note": ""
+  },
+  "garlic": {
+   "ar": "ثوم",
+   "emoji": "",
+   "en": "garlic",
+   "note": ""
+  },
+  "grapes": {
+   "ar": "عنب",
+   "emoji": "",
+   "en": "grapes",
+   "note": ""
+  },
+  "lemon": {
+   "ar": "ليمون",
+   "emoji": "",
+   "en": "lemon",
+   "note": ""
+  },
+  "lettuce": {
+   "ar": "خس",
+   "emoji": "",
+   "en": "lettuce",
+   "note": ""
+  },
+  "mango": {
+   "ar": "مانجو",
+   "emoji": "",
+   "en": "mango",
+   "note": ""
+  },
+  "onion": {
+   "ar": "بصل",
+   "emoji": "",
+   "en": "onion",
+   "note": ""
+  },
+  "peach": {
+   "ar": "خوخ",
+   "emoji": "",
+   "en": "peach",
+   "note": ""
+  },
+  "pear": {
+   "ar": "كمثرى",
+   "emoji": "",
+   "en": "pear",
+   "note": ""
+  },
+  "pineapple": {
+   "ar": "أناناس",
+   "emoji": "",
+   "en": "pineapple",
+   "note": ""
+  },
+  "pomegranate": {
+   "ar": "رمان",
+   "emoji": "",
+   "en": "pomegranate",
+   "note": ""
+  },
+  "potato": {
+   "ar": "بطاطس",
+   "emoji": "",
+   "en": "potato",
+   "note": ""
+  },
+  "radish": {
+   "ar": "فجل",
+   "emoji": "",
+   "en": "radish",
+   "note": ""
+  },
+  "spinach": {
+   "ar": "سبانخ",
+   "emoji": "",
+   "en": "spinach",
+   "note": ""
+  },
+  "strawberry": {
+   "ar": "فراولة",
+   "emoji": "",
+   "en": "strawberry",
+   "note": ""
+  },
+  "tangerine": {
+   "ar": "يوسفي",
+   "emoji": "",
+   "en": "tangerine",
+   "note": ""
+  },
+  "tomato": {
+   "ar": "طماطم",
+   "emoji": "",
+   "en": "tomato",
+   "note": ""
+  },
+  "watermelon": {
+   "ar": "بطيخ",
+   "emoji": "",
+   "en": "watermelon",
+   "note": ""
+  },
+  "zucchini": {
+   "ar": "كوسا",
+   "emoji": "",
+   "en": "zucchini",
+   "note": ""
+  }
+ },
+ "life.spices_grains": {
+  "almond": {
+   "ar": "لوز",
+   "emoji": "",
+   "en": "almond",
+   "note": ""
+  },
+  "barley": {
+   "ar": "شعير",
+   "emoji": "",
+   "en": "barley",
+   "note": ""
+  },
+  "beans": {
+   "ar": "فاصوليا",
+   "emoji": "",
+   "en": "beans",
+   "note": ""
+  },
+  "black_pepper": {
+   "ar": "فلفل أسود",
+   "emoji": "",
+   "en": "black pepper",
+   "note": ""
+  },
+  "cardamom": {
+   "ar": "هيل",
+   "emoji": "",
+   "en": "cardamom",
+   "note": ""
+  },
+  "chickpeas": {
+   "ar": "حمص",
+   "emoji": "",
+   "en": "chickpeas",
+   "note": ""
+  },
+  "cinnamon": {
+   "ar": "قرفة",
+   "emoji": "",
+   "en": "cinnamon",
+   "note": ""
+  },
+  "clove": {
+   "ar": "قرنفل",
+   "emoji": "",
+   "en": "clove",
+   "note": ""
+  },
+  "coriander": {
+   "ar": "كزبرة",
+   "emoji": "",
+   "en": "coriander",
+   "note": ""
+  },
+  "cumin": {
+   "ar": "كمون",
+   "emoji": "",
+   "en": "cumin",
+   "note": ""
+  },
+  "flour": {
+   "ar": "دقيق",
+   "emoji": "",
+   "en": "flour",
+   "note": ""
+  },
+  "ginger": {
+   "ar": "زنجبيل",
+   "emoji": "",
+   "en": "ginger",
+   "note": ""
+  },
+  "lentils": {
+   "ar": "عدس",
+   "emoji": "",
+   "en": "lentils",
+   "note": ""
+  },
+  "mint": {
+   "ar": "نعناع",
+   "emoji": "",
+   "en": "mint",
+   "note": ""
+  },
+  "oats": {
+   "ar": "شوفان",
+   "emoji": "",
+   "en": "oats",
+   "note": ""
+  },
+  "parsley": {
+   "ar": "بقدونس",
+   "emoji": "",
+   "en": "parsley",
+   "note": ""
+  },
+  "rice": {
+   "ar": "أرز",
+   "emoji": "",
+   "en": "rice",
+   "note": ""
+  },
+  "salt": {
+   "ar": "ملح",
+   "emoji": "",
+   "en": "salt",
+   "note": ""
+  },
+  "sesame": {
+   "ar": "سمسم",
+   "emoji": "",
+   "en": "sesame",
+   "note": ""
+  },
+  "sugar": {
+   "ar": "سكر",
+   "emoji": "",
+   "en": "sugar",
+   "note": ""
+  },
+  "thyme": {
+   "ar": "زعتر",
+   "emoji": "",
+   "en": "thyme",
+   "note": ""
+  },
+  "turmeric": {
+   "ar": "كركم",
+   "emoji": "",
+   "en": "turmeric",
+   "note": ""
+  },
+  "walnut": {
+   "ar": "جوز",
+   "emoji": "",
+   "en": "walnut",
+   "note": ""
+  },
+  "wheat": {
+   "ar": "قمح",
+   "emoji": "",
+   "en": "wheat",
+   "note": ""
+  }
+ },
+ "study.core_verbs": {
+  "analyze": {
+   "ar": "يحلل",
+   "emoji": "",
+   "en": "analyze",
+   "note": ""
+  },
+  "answer": {
+   "ar": "يجيب",
+   "emoji": "",
+   "en": "answer",
+   "note": ""
+  },
+  "ask": {
+   "ar": "يسأل",
+   "emoji": "",
+   "en": "ask",
+   "note": ""
+  },
+  "build": {
+   "ar": "يبني",
+   "emoji": "",
+   "en": "build",
+   "note": ""
+  },
+  "choose": {
+   "ar": "يختار",
+   "emoji": "",
+   "en": "choose",
+   "note": ""
+  },
+  "close": {
+   "ar": "يغلق",
+   "emoji": "",
+   "en": "close",
+   "note": ""
+  },
+  "come": {
+   "ar": "يأتي",
+   "emoji": "",
+   "en": "come",
+   "note": ""
+  },
+  "compare": {
+   "ar": "يقارن",
+   "emoji": "",
+   "en": "compare",
+   "note": ""
+  },
+  "discover": {
+   "ar": "يكتشف",
+   "emoji": "",
+   "en": "discover",
+   "note": ""
+  },
+  "drink": {
+   "ar": "يشرب",
+   "emoji": "",
+   "en": "drink",
+   "note": ""
+  },
+  "eat": {
+   "ar": "يأكل",
+   "emoji": "",
+   "en": "eat",
+   "note": ""
+  },
+  "explain": {
+   "ar": "يشرح",
+   "emoji": "",
+   "en": "explain",
+   "note": ""
+  },
+  "finish": {
+   "ar": "ينهي",
+   "emoji": "",
+   "en": "finish",
+   "note": ""
+  },
+  "forget": {
+   "ar": "ينسى",
+   "emoji": "",
+   "en": "forget",
+   "note": ""
+  },
+  "go": {
+   "ar": "يذهب",
+   "emoji": "",
+   "en": "go",
+   "note": ""
+  },
+  "help": {
+   "ar": "يساعد",
+   "emoji": "",
+   "en": "help",
+   "note": ""
+  },
+  "improve": {
+   "ar": "يحسن",
+   "emoji": "",
+   "en": "improve",
+   "note": ""
+  },
+  "know": {
+   "ar": "يعرف",
+   "emoji": "",
+   "en": "know",
+   "note": ""
+  },
+  "learn": {
+   "ar": "يتعلم",
+   "emoji": "",
+   "en": "learn",
+   "note": ""
+  },
+  "listen": {
+   "ar": "يسمع",
+   "emoji": "",
+   "en": "listen",
+   "note": ""
+  },
+  "open": {
+   "ar": "يفتح",
+   "emoji": "",
+   "en": "open",
+   "note": ""
+  },
+  "organize": {
+   "ar": "ينظم",
+   "emoji": "",
+   "en": "organize",
+   "note": ""
+  },
+  "play": {
+   "ar": "يلعب",
+   "emoji": "",
+   "en": "play",
+   "note": ""
+  },
+  "read": {
+   "ar": "يقرأ",
+   "emoji": "",
+   "en": "read",
+   "note": ""
+  },
+  "remember": {
+   "ar": "يتذكر",
+   "emoji": "",
+   "en": "remember",
+   "note": ""
+  },
+  "see": {
+   "ar": "يرى",
+   "emoji": "",
+   "en": "see",
+   "note": ""
+  },
+  "sleep": {
+   "ar": "ينام",
+   "emoji": "",
+   "en": "sleep",
+   "note": ""
+  },
+  "speak": {
+   "ar": "يتحدث",
+   "emoji": "",
+   "en": "speak",
+   "note": ""
+  },
+  "start": {
+   "ar": "يبدأ",
+   "emoji": "",
+   "en": "start",
+   "note": ""
+  },
+  "study": {
+   "ar": "يدرس",
+   "emoji": "",
+   "en": "study",
+   "note": ""
+  },
+  "think": {
+   "ar": "يفكر",
+   "emoji": "",
+   "en": "think",
+   "note": ""
+  },
+  "try": {
+   "ar": "يحاول",
+   "emoji": "",
+   "en": "try",
+   "note": ""
+  },
+  "understand": {
+   "ar": "يفهم",
+   "emoji": "",
+   "en": "understand",
+   "note": ""
+  },
+  "work": {
+   "ar": "يعمل",
+   "emoji": "",
+   "en": "work",
+   "note": ""
+  },
+  "write": {
+   "ar": "يكتب",
+   "emoji": "",
+   "en": "write",
+   "note": ""
+  }
+ },
+ "study.grammar_links": {
+  "after": {
+   "ar": "بعد",
+   "emoji": "",
+   "en": "after",
+   "note": ""
+  },
+  "always": {
+   "ar": "دائماً",
+   "emoji": "",
+   "en": "always",
+   "note": ""
+  },
+  "and": {
+   "ar": "و",
+   "emoji": "",
+   "en": "and",
+   "note": ""
+  },
+  "because": {
+   "ar": "لأن",
+   "emoji": "",
+   "en": "because",
+   "note": ""
+  },
+  "before": {
+   "ar": "قبل",
+   "emoji": "",
+   "en": "before",
+   "note": ""
+  },
+  "between": {
+   "ar": "بين",
+   "emoji": "",
+   "en": "between",
+   "note": ""
+  },
+  "but": {
+   "ar": "لكن",
+   "emoji": "",
+   "en": "but",
+   "note": ""
+  },
+  "during": {
+   "ar": "خلال",
+   "emoji": "",
+   "en": "during",
+   "note": ""
+  },
+  "he": {
+   "ar": "هو",
+   "emoji": "",
+   "en": "he",
+   "note": ""
+  },
+  "here": {
+   "ar": "هنا",
+   "emoji": "",
+   "en": "here",
+   "note": ""
+  },
+  "however": {
+   "ar": "ومع ذلك",
+   "emoji": "",
+   "en": "however",
+   "note": ""
+  },
+  "in": {
+   "ar": "في",
+   "emoji": "",
+   "en": "in",
+   "note": ""
+  },
+  "meanwhile": {
+   "ar": "بينما",
+   "emoji": "",
+   "en": "meanwhile",
+   "note": ""
+  },
+  "never": {
+   "ar": "أبداً",
+   "emoji": "",
+   "en": "never",
+   "note": ""
+  },
+  "now": {
+   "ar": "الآن",
+   "emoji": "",
+   "en": "now",
+   "note": ""
+  },
+  "often": {
+   "ar": "غالباً",
+   "emoji": "",
+   "en": "often",
+   "note": ""
+  },
+  "on": {
+   "ar": "على",
+   "emoji": "",
+   "en": "on",
+   "note": ""
+  },
+  "or": {
+   "ar": "أو",
+   "emoji": "",
+   "en": "or",
+   "note": ""
+  },
+  "quickly": {
+   "ar": "سريعاً",
+   "emoji": "",
+   "en": "quickly",
+   "note": ""
+  },
+  "she": {
+   "ar": "هي",
+   "emoji": "",
+   "en": "she",
+   "note": ""
+  },
+  "slowly": {
+   "ar": "ببطء",
+   "emoji": "",
+   "en": "slowly",
+   "note": ""
+  },
+  "sometimes": {
+   "ar": "أحياناً",
+   "emoji": "",
+   "en": "sometimes",
+   "note": ""
+  },
+  "there": {
+   "ar": "هناك",
+   "emoji": "",
+   "en": "there",
+   "note": ""
+  },
+  "therefore": {
+   "ar": "لذلك",
+   "emoji": "",
+   "en": "therefore",
+   "note": ""
+  },
+  "they": {
+   "ar": "هم",
+   "emoji": "",
+   "en": "they",
+   "note": ""
+  },
+  "together": {
+   "ar": "معاً",
+   "emoji": "",
+   "en": "together",
+   "note": ""
+  },
+  "under": {
+   "ar": "تحت",
+   "emoji": "",
+   "en": "under",
+   "note": ""
+  },
+  "w_i": {
+   "ar": "أنا",
+   "emoji": "",
+   "en": "I",
+   "note": ""
+  },
+  "we": {
+   "ar": "نحن",
+   "emoji": "",
+   "en": "we",
+   "note": ""
+  },
+  "you": {
+   "ar": "أنت",
+   "emoji": "",
+   "en": "you",
+   "note": ""
+  }
+ },
+ "study.numbers_time": {
+  "afternoon": {
+   "ar": "ظهيرة",
+   "emoji": "",
+   "en": "afternoon",
+   "note": ""
+  },
+  "autumn": {
+   "ar": "فصل الخريف",
+   "emoji": "",
+   "en": "autumn",
+   "note": ""
+  },
+  "calendar": {
+   "ar": "تقويم",
+   "emoji": "",
+   "en": "calendar",
+   "note": ""
+  },
+  "century": {
+   "ar": "قرن زمني",
+   "emoji": "",
+   "en": "century",
+   "note": ""
+  },
+  "day": {
+   "ar": "يوم",
+   "emoji": "",
+   "en": "day",
+   "note": ""
+  },
+  "deadline": {
+   "ar": "موعد نهائي",
+   "emoji": "",
+   "en": "deadline",
+   "note": ""
+  },
+  "decade": {
+   "ar": "عقد زمني",
+   "emoji": "",
+   "en": "decade",
+   "note": ""
+  },
+  "evening": {
+   "ar": "مساء",
+   "emoji": "",
+   "en": "evening",
+   "note": ""
+  },
+  "hour": {
+   "ar": "ساعة زمنية",
+   "emoji": "",
+   "en": "hour",
+   "note": ""
+  },
+  "hundred": {
+   "ar": "مئة",
+   "emoji": "",
+   "en": "hundred",
+   "note": ""
+  },
+  "midnight": {
+   "ar": "منتصف الليل",
+   "emoji": "",
+   "en": "midnight",
+   "note": ""
+  },
+  "minute": {
+   "ar": "دقيقة",
+   "emoji": "",
+   "en": "minute",
+   "note": ""
+  },
+  "month": {
+   "ar": "شهر",
+   "emoji": "",
+   "en": "month",
+   "note": ""
+  },
+  "morning": {
+   "ar": "صباح",
+   "emoji": "",
+   "en": "morning",
+   "note": ""
+  },
+  "night": {
+   "ar": "ليل",
+   "emoji": "",
+   "en": "night",
+   "note": ""
+  },
+  "one": {
+   "ar": "واحد",
+   "emoji": "",
+   "en": "one",
+   "note": ""
+  },
+  "schedule": {
+   "ar": "جدول مواعيد",
+   "emoji": "",
+   "en": "schedule",
+   "note": ""
+  },
+  "second": {
+   "ar": "ثانية",
+   "emoji": "",
+   "en": "second",
+   "note": ""
+  },
+  "spring": {
+   "ar": "فصل الربيع",
+   "emoji": "",
+   "en": "spring",
+   "note": ""
+  },
+  "summer": {
+   "ar": "فصل الصيف",
+   "emoji": "",
+   "en": "summer",
+   "note": ""
+  },
+  "ten": {
+   "ar": "عشرة",
+   "emoji": "",
+   "en": "ten",
+   "note": ""
+  },
+  "thousand": {
+   "ar": "ألف",
+   "emoji": "",
+   "en": "thousand",
+   "note": ""
+  },
+  "time": {
+   "ar": "وقت",
+   "emoji": "",
+   "en": "time",
+   "note": ""
+  },
+  "today": {
+   "ar": "اليوم",
+   "emoji": "",
+   "en": "today",
+   "note": ""
+  },
+  "tomorrow": {
+   "ar": "غداً",
+   "emoji": "",
+   "en": "tomorrow",
+   "note": ""
+  },
+  "week": {
+   "ar": "أسبوع",
+   "emoji": "",
+   "en": "week",
+   "note": ""
+  },
+  "winter": {
+   "ar": "فصل الشتاء",
+   "emoji": "",
+   "en": "winter",
+   "note": ""
+  },
+  "year": {
+   "ar": "سنة",
+   "emoji": "",
+   "en": "year",
+   "note": ""
+  },
+  "yesterday": {
+   "ar": "أمس",
+   "emoji": "",
+   "en": "yesterday",
+   "note": ""
+  },
+  "zero": {
+   "ar": "صفر",
+   "emoji": "",
+   "en": "zero",
+   "note": ""
+  }
+ },
+ "study.office_tech": {
+  "application": {
+   "ar": "تطبيق",
+   "emoji": "",
+   "en": "application",
+   "note": ""
+  },
+  "backup": {
+   "ar": "نسخة احتياطية",
+   "emoji": "",
+   "en": "backup",
+   "note": ""
+  },
+  "battery": {
+   "ar": "بطارية",
+   "emoji": "",
+   "en": "battery",
+   "note": ""
+  },
+  "camera": {
+   "ar": "كاميرا",
+   "emoji": "",
+   "en": "camera",
+   "note": ""
+  },
+  "charger": {
+   "ar": "شاحن",
+   "emoji": "",
+   "en": "charger",
+   "note": ""
+  },
+  "computer": {
+   "ar": "حاسوب",
+   "emoji": "",
+   "en": "computer",
+   "note": ""
+  },
+  "database": {
+   "ar": "قاعدة بيانات",
+   "emoji": "",
+   "en": "database",
+   "note": ""
+  },
+  "desk": {
+   "ar": "مكتب",
+   "emoji": "",
+   "en": "desk",
+   "note": ""
+  },
+  "email": {
+   "ar": "بريد إلكتروني",
+   "emoji": "",
+   "en": "email",
+   "note": ""
+  },
+  "file": {
+   "ar": "ملف",
+   "emoji": "",
+   "en": "file",
+   "note": ""
+  },
+  "folder": {
+   "ar": "مجلد",
+   "emoji": "",
+   "en": "folder",
+   "note": ""
+  },
+  "hardware": {
+   "ar": "عتاد حاسوب",
+   "emoji": "",
+   "en": "hardware",
+   "note": ""
+  },
+  "headphones": {
+   "ar": "سماعات رأس",
+   "emoji": "",
+   "en": "headphones",
+   "note": ""
+  },
+  "internet": {
+   "ar": "إنترنت",
+   "emoji": "",
+   "en": "internet",
+   "note": ""
+  },
+  "keyboard": {
+   "ar": "لوحة مفاتيح",
+   "emoji": "",
+   "en": "keyboard",
+   "note": ""
+  },
+  "laptop": {
+   "ar": "حاسوب محمول",
+   "emoji": "",
+   "en": "laptop",
+   "note": ""
+  },
+  "message": {
+   "ar": "رسالة",
+   "emoji": "",
+   "en": "message",
+   "note": ""
+  },
+  "mouse": {
+   "ar": "فأرة حاسوب",
+   "emoji": "",
+   "en": "mouse",
+   "note": ""
+  },
+  "paper": {
+   "ar": "ورقة",
+   "emoji": "",
+   "en": "paper",
+   "note": ""
+  },
+  "paperclip": {
+   "ar": "مشبك ورق",
+   "emoji": "",
+   "en": "paperclip",
+   "note": ""
+  },
+  "password": {
+   "ar": "كلمة مرور",
+   "emoji": "",
+   "en": "password",
+   "note": ""
+  },
+  "phone": {
+   "ar": "هاتف",
+   "emoji": "",
+   "en": "phone",
+   "note": ""
+  },
+  "printer": {
+   "ar": "طابعة",
+   "emoji": "",
+   "en": "printer",
+   "note": ""
+  },
+  "screen": {
+   "ar": "شاشة",
+   "emoji": "",
+   "en": "screen",
+   "note": ""
+  },
+  "software": {
+   "ar": "برمجيات",
+   "emoji": "",
+   "en": "software",
+   "note": ""
+  },
+  "speaker": {
+   "ar": "مكبر صوت",
+   "emoji": "",
+   "en": "speaker",
+   "note": ""
+  },
+  "stapler": {
+   "ar": "دباسة",
+   "emoji": "",
+   "en": "stapler",
+   "note": ""
+  },
+  "tablet": {
+   "ar": "جهاز لوحي",
+   "emoji": "",
+   "en": "tablet",
+   "note": ""
+  },
+  "update": {
+   "ar": "تحديث",
+   "emoji": "",
+   "en": "update",
+   "note": ""
+  },
+  "website": {
+   "ar": "موقع إلكتروني",
+   "emoji": "",
+   "en": "website",
+   "note": ""
+  }
+ },
+ "study.polite_phrases": {
+  "could_you_help_me": {
+   "ar": "هل يمكنك المساعدة",
+   "emoji": "",
+   "en": "could you help me",
+   "note": ""
+  },
+  "excuse_me": {
+   "ar": "لو سمحت",
+   "emoji": "",
+   "en": "excuse me",
+   "note": ""
+  },
+  "good_evening": {
+   "ar": "مساء الخير",
+   "emoji": "",
+   "en": "good evening",
+   "note": ""
+  },
+  "good_morning": {
+   "ar": "صباح الخير",
+   "emoji": "",
+   "en": "good morning",
+   "note": ""
+  },
+  "good_night": {
+   "ar": "تصبح على خير",
+   "emoji": "",
+   "en": "good night",
+   "note": ""
+  },
+  "goodbye": {
+   "ar": "إلى اللقاء",
+   "emoji": "",
+   "en": "goodbye",
+   "note": ""
+  },
+  "have_a_nice_day": {
+   "ar": "يوم سعيد لك",
+   "emoji": "",
+   "en": "have a nice day",
+   "note": ""
+  },
+  "hello": {
+   "ar": "مرحباً",
+   "emoji": "",
+   "en": "hello",
+   "note": ""
+  },
+  "how_are_you": {
+   "ar": "كيف حالك",
+   "emoji": "",
+   "en": "how are you",
+   "note": ""
+  },
+  "i_am_fine": {
+   "ar": "أنا بخير",
+   "emoji": "",
+   "en": "I am fine",
+   "note": ""
+  },
+  "i_am_sorry": {
+   "ar": "أنا آسف",
+   "emoji": "",
+   "en": "I am sorry",
+   "note": ""
+  },
+  "i_appreciate_your_help": {
+   "ar": "أقدر مساعدتك",
+   "emoji": "",
+   "en": "I appreciate your help",
+   "note": ""
+  },
+  "i_wish_you_success": {
+   "ar": "أتمنى لك التوفيق",
+   "emoji": "",
+   "en": "I wish you success",
+   "note": ""
+  },
+  "nice_to_meet_you": {
+   "ar": "تشرفت بلقائك",
+   "emoji": "",
+   "en": "nice to meet you",
+   "note": ""
+  },
+  "no": {
+   "ar": "لا",
+   "emoji": "",
+   "en": "no",
+   "note": ""
+  },
+  "no_problem": {
+   "ar": "لا مشكلة",
+   "emoji": "",
+   "en": "no problem",
+   "note": ""
+  },
+  "of_course": {
+   "ar": "بالتأكيد",
+   "emoji": "",
+   "en": "of course",
+   "note": ""
+  },
+  "please": {
+   "ar": "من فضلك",
+   "emoji": "",
+   "en": "please",
+   "note": ""
+  },
+  "see_you_later": {
+   "ar": "أراك لاحقاً",
+   "emoji": "",
+   "en": "see you later",
+   "note": ""
+  },
+  "take_care": {
+   "ar": "اعتن بنفسك",
+   "emoji": "",
+   "en": "take care",
+   "note": ""
+  },
+  "thank_you": {
+   "ar": "شكراً لك",
+   "emoji": "",
+   "en": "thank you",
+   "note": ""
+  },
+  "thank_you_very_much": {
+   "ar": "أشكرك جزيلاً",
+   "emoji": "",
+   "en": "thank you very much",
+   "note": ""
+  },
+  "well_done": {
+   "ar": "عمل رائع",
+   "emoji": "",
+   "en": "well done",
+   "note": ""
+  },
+  "yes": {
+   "ar": "نعم",
+   "emoji": "",
+   "en": "yes",
+   "note": ""
+  },
+  "you_are_welcome": {
+   "ar": "عفواً",
+   "emoji": "",
+   "en": "you are welcome",
+   "note": ""
+  }
+ },
+ "study.school": {
+  "backpack": {
+   "ar": "حقيبة ظهر",
+   "emoji": "",
+   "en": "backpack",
+   "note": ""
+  },
+  "book": {
+   "ar": "كتاب",
+   "emoji": "",
+   "en": "book",
+   "note": ""
+  },
+  "certificate": {
+   "ar": "شهادة",
+   "emoji": "",
+   "en": "certificate",
+   "note": ""
+  },
+  "classroom": {
+   "ar": "فصل دراسي",
+   "emoji": "",
+   "en": "classroom",
+   "note": ""
+  },
+  "curriculum": {
+   "ar": "منهج دراسي",
+   "emoji": "",
+   "en": "curriculum",
+   "note": ""
+  },
+  "dictionary": {
+   "ar": "قاموس",
+   "emoji": "",
+   "en": "dictionary",
+   "note": ""
+  },
+  "eraser": {
+   "ar": "ممحاة",
+   "emoji": "",
+   "en": "eraser",
+   "note": ""
+  },
+  "exam": {
+   "ar": "امتحان",
+   "emoji": "",
+   "en": "exam",
+   "note": ""
+  },
+  "glue": {
+   "ar": "صمغ",
+   "emoji": "",
+   "en": "glue",
+   "note": ""
+  },
+  "grade": {
+   "ar": "درجة علمية",
+   "emoji": "",
+   "en": "grade",
+   "note": ""
+  },
+  "graduation": {
+   "ar": "تخرج",
+   "emoji": "",
+   "en": "graduation",
+   "note": ""
+  },
+  "homework": {
+   "ar": "واجب منزلي",
+   "emoji": "",
+   "en": "homework",
+   "note": ""
+  },
+  "laboratory": {
+   "ar": "مختبر",
+   "emoji": "",
+   "en": "laboratory",
+   "note": ""
+  },
+  "lecture": {
+   "ar": "محاضرة",
+   "emoji": "",
+   "en": "lecture",
+   "note": ""
+  },
+  "lesson": {
+   "ar": "درس",
+   "emoji": "",
+   "en": "lesson",
+   "note": ""
+  },
+  "library": {
+   "ar": "مكتبة",
+   "emoji": "",
+   "en": "library",
+   "note": ""
+  },
+  "notebook": {
+   "ar": "دفتر",
+   "emoji": "",
+   "en": "notebook",
+   "note": ""
+  },
+  "page": {
+   "ar": "صفحة",
+   "emoji": "",
+   "en": "page",
+   "note": ""
+  },
+  "pen": {
+   "ar": "قلم حبر",
+   "emoji": "",
+   "en": "pen",
+   "note": ""
+  },
+  "pencil": {
+   "ar": "قلم رصاص",
+   "emoji": "",
+   "en": "pencil",
+   "note": ""
+  },
+  "research": {
+   "ar": "بحث علمي",
+   "emoji": "",
+   "en": "research",
+   "note": ""
+  },
+  "ruler": {
+   "ar": "مسطرة",
+   "emoji": "",
+   "en": "ruler",
+   "note": ""
+  },
+  "school": {
+   "ar": "مدرسة",
+   "emoji": "",
+   "en": "school",
+   "note": ""
+  },
+  "scissors": {
+   "ar": "مقص ورق",
+   "emoji": "",
+   "en": "scissors",
+   "note": ""
+  },
+  "sharpener": {
+   "ar": "مبراة",
+   "emoji": "",
+   "en": "sharpener",
+   "note": ""
+  },
+  "student": {
+   "ar": "طالب",
+   "emoji": "",
+   "en": "student",
+   "note": ""
+  },
+  "subject": {
+   "ar": "مادة دراسية",
+   "emoji": "",
+   "en": "subject",
+   "note": ""
+  },
+  "teacher": {
+   "ar": "معلم",
+   "emoji": "",
+   "en": "teacher",
+   "note": ""
+  },
+  "university": {
+   "ar": "جامعة",
+   "emoji": "",
+   "en": "university",
+   "note": ""
+  },
+  "whiteboard": {
+   "ar": "سبورة",
+   "emoji": "",
+   "en": "whiteboard",
+   "note": ""
+  }
+ },
+ "world.animals_plants": {
+  "ant": {
+   "ar": "نملة",
+   "emoji": "",
+   "en": "ant",
+   "note": ""
+  },
+  "bee": {
+   "ar": "نحلة",
+   "emoji": "",
+   "en": "bee",
+   "note": ""
+  },
+  "bird": {
+   "ar": "طائر",
+   "emoji": "",
+   "en": "bird",
+   "note": ""
+  },
+  "branch": {
+   "ar": "غصن",
+   "emoji": "",
+   "en": "branch",
+   "note": ""
+  },
+  "butterfly": {
+   "ar": "فراشة",
+   "emoji": "",
+   "en": "butterfly",
+   "note": ""
+  },
+  "camel": {
+   "ar": "جمل",
+   "emoji": "",
+   "en": "camel",
+   "note": ""
+  },
+  "cat": {
+   "ar": "قطة",
+   "emoji": "",
+   "en": "cat",
+   "note": ""
+  },
+  "coral": {
+   "ar": "مرجان",
+   "emoji": "",
+   "en": "coral",
+   "note": ""
+  },
+  "cow": {
+   "ar": "بقرة",
+   "emoji": "",
+   "en": "cow",
+   "note": ""
+  },
+  "deer": {
+   "ar": "غزال",
+   "emoji": "",
+   "en": "deer",
+   "note": ""
+  },
+  "dog": {
+   "ar": "كلب",
+   "emoji": "",
+   "en": "dog",
+   "note": ""
+  },
+  "dolphin": {
+   "ar": "دلفين",
+   "emoji": "",
+   "en": "dolphin",
+   "note": ""
+  },
+  "duck": {
+   "ar": "بطة",
+   "emoji": "",
+   "en": "duck",
+   "note": ""
+  },
+  "eagle": {
+   "ar": "نسر",
+   "emoji": "",
+   "en": "eagle",
+   "note": ""
+  },
+  "elephant": {
+   "ar": "فيل",
+   "emoji": "",
+   "en": "elephant",
+   "note": ""
+  },
+  "falcon": {
+   "ar": "صقر",
+   "emoji": "",
+   "en": "falcon",
+   "note": ""
+  },
+  "giraffe": {
+   "ar": "زرافة",
+   "emoji": "",
+   "en": "giraffe",
+   "note": ""
+  },
+  "horse": {
+   "ar": "حصان",
+   "emoji": "",
+   "en": "horse",
+   "note": ""
+  },
+  "leaf": {
+   "ar": "ورقة شجر",
+   "emoji": "",
+   "en": "leaf",
+   "note": ""
+  },
+  "lion": {
+   "ar": "أسد",
+   "emoji": "",
+   "en": "lion",
+   "note": ""
+  },
+  "palm_tree": {
+   "ar": "نخلة",
+   "emoji": "",
+   "en": "palm tree",
+   "note": ""
+  },
+  "penguin": {
+   "ar": "بطريق",
+   "emoji": "",
+   "en": "penguin",
+   "note": ""
+  },
+  "pigeon": {
+   "ar": "حمامة",
+   "emoji": "",
+   "en": "pigeon",
+   "note": ""
+  },
+  "plant": {
+   "ar": "نبات",
+   "emoji": "",
+   "en": "plant",
+   "note": ""
+  },
+  "rabbit": {
+   "ar": "أرنب",
+   "emoji": "",
+   "en": "rabbit",
+   "note": ""
+  },
+  "root": {
+   "ar": "جذر",
+   "emoji": "",
+   "en": "root",
+   "note": ""
+  },
+  "seed": {
+   "ar": "بذرة",
+   "emoji": "",
+   "en": "seed",
+   "note": ""
+  },
+  "sheep": {
+   "ar": "خروف",
+   "emoji": "",
+   "en": "sheep",
+   "note": ""
+  },
+  "turtle": {
+   "ar": "سلحفاة",
+   "emoji": "",
+   "en": "turtle",
+   "note": ""
+  },
+  "whale": {
+   "ar": "حوت",
+   "emoji": "",
+   "en": "whale",
+   "note": ""
+  }
+ },
+ "world.city_directions": {
+  "bakery": {
+   "ar": "مخبز",
+   "emoji": "",
+   "en": "bakery",
+   "note": ""
+  },
+  "bridge": {
+   "ar": "جسر",
+   "emoji": "",
+   "en": "bridge",
+   "note": ""
+  },
+  "building": {
+   "ar": "مبنى",
+   "emoji": "",
+   "en": "building",
+   "note": ""
+  },
+  "city": {
+   "ar": "مدينة",
+   "emoji": "",
+   "en": "city",
+   "note": ""
+  },
+  "crosswalk": {
+   "ar": "ممر مشاة",
+   "emoji": "",
+   "en": "crosswalk",
+   "note": ""
+  },
+  "downtown": {
+   "ar": "وسط المدينة",
+   "emoji": "",
+   "en": "downtown",
+   "note": ""
+  },
+  "east": {
+   "ar": "شرق",
+   "emoji": "",
+   "en": "east",
+   "note": ""
+  },
+  "hospital": {
+   "ar": "مستشفى",
+   "emoji": "",
+   "en": "hospital",
+   "note": ""
+  },
+  "house": {
+   "ar": "منزل",
+   "emoji": "",
+   "en": "house",
+   "note": ""
+  },
+  "intersection": {
+   "ar": "تقاطع طرق",
+   "emoji": "",
+   "en": "intersection",
+   "note": ""
+  },
+  "left": {
+   "ar": "يسار",
+   "emoji": "",
+   "en": "left",
+   "note": ""
+  },
+  "market": {
+   "ar": "سوق",
+   "emoji": "",
+   "en": "market",
+   "note": ""
+  },
+  "museum": {
+   "ar": "متحف",
+   "emoji": "",
+   "en": "museum",
+   "note": ""
+  },
+  "neighborhood": {
+   "ar": "حي سكني",
+   "emoji": "",
+   "en": "neighborhood",
+   "note": ""
+  },
+  "north": {
+   "ar": "شمال",
+   "emoji": "",
+   "en": "north",
+   "note": ""
+  },
+  "park": {
+   "ar": "حديقة عامة",
+   "emoji": "",
+   "en": "park",
+   "note": ""
+  },
+  "parking_lot": {
+   "ar": "موقف سيارات",
+   "emoji": "",
+   "en": "parking lot",
+   "note": ""
+  },
+  "pharmacy": {
+   "ar": "صيدلية",
+   "emoji": "",
+   "en": "pharmacy",
+   "note": ""
+  },
+  "post_office": {
+   "ar": "مكتب بريد",
+   "emoji": "",
+   "en": "post office",
+   "note": ""
+  },
+  "restaurant": {
+   "ar": "مطعم",
+   "emoji": "",
+   "en": "restaurant",
+   "note": ""
+  },
+  "right": {
+   "ar": "يمين",
+   "emoji": "",
+   "en": "right",
+   "note": ""
+  },
+  "shop": {
+   "ar": "متجر",
+   "emoji": "",
+   "en": "shop",
+   "note": ""
+  },
+  "sidewalk": {
+   "ar": "رصيف مشاة",
+   "emoji": "",
+   "en": "sidewalk",
+   "note": ""
+  },
+  "south": {
+   "ar": "جنوب",
+   "emoji": "",
+   "en": "south",
+   "note": ""
+  },
+  "square": {
+   "ar": "ميدان عام",
+   "emoji": "",
+   "en": "square",
+   "note": ""
+  },
+  "street": {
+   "ar": "شارع",
+   "emoji": "",
+   "en": "street",
+   "note": ""
+  },
+  "traffic_light": {
+   "ar": "إشارة مرور",
+   "emoji": "",
+   "en": "traffic light",
+   "note": ""
+  },
+  "tunnel": {
+   "ar": "نفق",
+   "emoji": "",
+   "en": "tunnel",
+   "note": ""
+  },
+  "village": {
+   "ar": "قرية",
+   "emoji": "",
+   "en": "village",
+   "note": ""
+  },
+  "west": {
+   "ar": "غرب",
+   "emoji": "",
+   "en": "west",
+   "note": ""
+  }
+ },
+ "world.jobs_sports": {
+  "archery": {
+   "ar": "رماية بالقوس",
+   "emoji": "",
+   "en": "archery",
+   "note": ""
+  },
+  "architect": {
+   "ar": "معماري",
+   "emoji": "",
+   "en": "architect",
+   "note": ""
+  },
+  "basketball": {
+   "ar": "كرة سلة",
+   "emoji": "",
+   "en": "basketball",
+   "note": ""
+  },
+  "carpenter": {
+   "ar": "نجار",
+   "emoji": "",
+   "en": "carpenter",
+   "note": ""
+  },
+  "chef": {
+   "ar": "طباخ",
+   "emoji": "",
+   "en": "chef",
+   "note": ""
+  },
+  "coach": {
+   "ar": "مدرب رياضي",
+   "emoji": "",
+   "en": "coach",
+   "note": ""
+  },
+  "cycling": {
+   "ar": "ركوب الدراجات",
+   "emoji": "",
+   "en": "cycling",
+   "note": ""
+  },
+  "dentist": {
+   "ar": "طبيب أسنان",
+   "emoji": "",
+   "en": "dentist",
+   "note": ""
+  },
+  "doctor": {
+   "ar": "طبيب",
+   "emoji": "",
+   "en": "doctor",
+   "note": ""
+  },
+  "electrician": {
+   "ar": "كهربائي",
+   "emoji": "",
+   "en": "electrician",
+   "note": ""
+  },
+  "engineer": {
+   "ar": "مهندس",
+   "emoji": "",
+   "en": "engineer",
+   "note": ""
+  },
+  "farmer": {
+   "ar": "مزارع",
+   "emoji": "",
+   "en": "farmer",
+   "note": ""
+  },
+  "football": {
+   "ar": "كرة قدم",
+   "emoji": "",
+   "en": "football",
+   "note": ""
+  },
+  "hiking": {
+   "ar": "تسلق الجبال",
+   "emoji": "",
+   "en": "hiking",
+   "note": ""
+  },
+  "medal": {
+   "ar": "ميدالية",
+   "emoji": "",
+   "en": "medal",
+   "note": ""
+  },
+  "nurse": {
+   "ar": "ممرض",
+   "emoji": "",
+   "en": "nurse",
+   "note": ""
+  },
+  "pharmacist": {
+   "ar": "صيدلي",
+   "emoji": "",
+   "en": "pharmacist",
+   "note": ""
+  },
+  "pilot": {
+   "ar": "طيار",
+   "emoji": "",
+   "en": "pilot",
+   "note": ""
+  },
+  "plumber": {
+   "ar": "سباك",
+   "emoji": "",
+   "en": "plumber",
+   "note": ""
+  },
+  "programmer": {
+   "ar": "مبرمج",
+   "emoji": "",
+   "en": "programmer",
+   "note": ""
+  },
+  "running": {
+   "ar": "جري",
+   "emoji": "",
+   "en": "running",
+   "note": ""
+  },
+  "scientist": {
+   "ar": "عالم",
+   "emoji": "",
+   "en": "scientist",
+   "note": ""
+  },
+  "sport": {
+   "ar": "رياضة",
+   "emoji": "",
+   "en": "sport",
+   "note": ""
+  },
+  "stadium": {
+   "ar": "ملعب",
+   "emoji": "",
+   "en": "stadium",
+   "note": ""
+  },
+  "swimming": {
+   "ar": "سباحة",
+   "emoji": "",
+   "en": "swimming",
+   "note": ""
+  },
+  "tailor": {
+   "ar": "خياط",
+   "emoji": "",
+   "en": "tailor",
+   "note": ""
+  },
+  "team": {
+   "ar": "فريق",
+   "emoji": "",
+   "en": "team",
+   "note": ""
+  },
+  "tennis": {
+   "ar": "تنس",
+   "emoji": "",
+   "en": "tennis",
+   "note": ""
+  },
+  "translator": {
+   "ar": "مترجم",
+   "emoji": "",
+   "en": "translator",
+   "note": ""
+  },
+  "volleyball": {
+   "ar": "كرة طائرة",
+   "emoji": "",
+   "en": "volleyball",
+   "note": ""
+  }
+ },
+ "world.materials_shop": {
+  "aluminum": {
+   "ar": "ألمنيوم",
+   "emoji": "",
+   "en": "aluminum",
+   "note": ""
+  },
+  "box": {
+   "ar": "صندوق",
+   "emoji": "",
+   "en": "box",
+   "note": ""
+  },
+  "clay": {
+   "ar": "طين",
+   "emoji": "",
+   "en": "clay",
+   "note": ""
+  },
+  "copper": {
+   "ar": "نحاس",
+   "emoji": "",
+   "en": "copper",
+   "note": ""
+  },
+  "cotton": {
+   "ar": "قطن",
+   "emoji": "",
+   "en": "cotton",
+   "note": ""
+  },
+  "customer": {
+   "ar": "زبون",
+   "emoji": "",
+   "en": "customer",
+   "note": ""
+  },
+  "discount": {
+   "ar": "خصم سعر",
+   "emoji": "",
+   "en": "discount",
+   "note": ""
+  },
+  "invoice": {
+   "ar": "فاتورة",
+   "emoji": "",
+   "en": "invoice",
+   "note": ""
+  },
+  "kilogram": {
+   "ar": "كيلوغرام",
+   "emoji": "",
+   "en": "kilogram",
+   "note": ""
+  },
+  "leather": {
+   "ar": "جلد طبيعي",
+   "emoji": "",
+   "en": "leather",
+   "note": ""
+  },
+  "length": {
+   "ar": "طول",
+   "emoji": "",
+   "en": "length",
+   "note": ""
+  },
+  "marble": {
+   "ar": "رخام",
+   "emoji": "",
+   "en": "marble",
+   "note": ""
+  },
+  "metal": {
+   "ar": "معدن",
+   "emoji": "",
+   "en": "metal",
+   "note": ""
+  },
+  "meter": {
+   "ar": "متر",
+   "emoji": "",
+   "en": "meter",
+   "note": ""
+  },
+  "money": {
+   "ar": "نقود",
+   "emoji": "",
+   "en": "money",
+   "note": ""
+  },
+  "plastic": {
+   "ar": "بلاستيك",
+   "emoji": "",
+   "en": "plastic",
+   "note": ""
+  },
+  "price": {
+   "ar": "سعر",
+   "emoji": "",
+   "en": "price",
+   "note": ""
+  },
+  "quality": {
+   "ar": "جودة",
+   "emoji": "",
+   "en": "quality",
+   "note": ""
+  },
+  "receipt": {
+   "ar": "إيصال شراء",
+   "emoji": "",
+   "en": "receipt",
+   "note": ""
+  },
+  "rubber": {
+   "ar": "مطاط",
+   "emoji": "",
+   "en": "rubber",
+   "note": ""
+  },
+  "sand": {
+   "ar": "رمل",
+   "emoji": "",
+   "en": "sand",
+   "note": ""
+  },
+  "seller": {
+   "ar": "بائع",
+   "emoji": "",
+   "en": "seller",
+   "note": ""
+  },
+  "silk": {
+   "ar": "حرير",
+   "emoji": "",
+   "en": "silk",
+   "note": ""
+  },
+  "size": {
+   "ar": "حجم",
+   "emoji": "",
+   "en": "size",
+   "note": ""
+  },
+  "steel": {
+   "ar": "فولاذ",
+   "emoji": "",
+   "en": "steel",
+   "note": ""
+  },
+  "stone": {
+   "ar": "حجر",
+   "emoji": "",
+   "en": "stone",
+   "note": ""
+  },
+  "warranty": {
+   "ar": "ضمان منتج",
+   "emoji": "",
+   "en": "warranty",
+   "note": ""
+  },
+  "weight": {
+   "ar": "وزن",
+   "emoji": "",
+   "en": "weight",
+   "note": ""
+  },
+  "wood": {
+   "ar": "خشب",
+   "emoji": "",
+   "en": "wood",
+   "note": ""
+  },
+  "wool": {
+   "ar": "صوف",
+   "emoji": "",
+   "en": "wool",
+   "note": ""
+  }
+ },
+ "world.nature_weather": {
+  "beach": {
+   "ar": "شاطئ",
+   "emoji": "",
+   "en": "beach",
+   "note": ""
+  },
+  "breeze": {
+   "ar": "نسيم عليل",
+   "emoji": "",
+   "en": "breeze",
+   "note": ""
+  },
+  "climate": {
+   "ar": "مناخ",
+   "emoji": "",
+   "en": "climate",
+   "note": ""
+  },
+  "cloud": {
+   "ar": "سحابة",
+   "emoji": "",
+   "en": "cloud",
+   "note": ""
+  },
+  "desert": {
+   "ar": "صحراء",
+   "emoji": "",
+   "en": "desert",
+   "note": ""
+  },
+  "fog": {
+   "ar": "ضباب",
+   "emoji": "",
+   "en": "fog",
+   "note": ""
+  },
+  "forest": {
+   "ar": "غابة",
+   "emoji": "",
+   "en": "forest",
+   "note": ""
+  },
+  "horizon": {
+   "ar": "أفق",
+   "emoji": "",
+   "en": "horizon",
+   "note": ""
+  },
+  "humidity": {
+   "ar": "رطوبة",
+   "emoji": "",
+   "en": "humidity",
+   "note": ""
+  },
+  "island": {
+   "ar": "جزيرة",
+   "emoji": "",
+   "en": "island",
+   "note": ""
+  },
+  "lake": {
+   "ar": "بحيرة",
+   "emoji": "",
+   "en": "lake",
+   "note": ""
+  },
+  "lightning": {
+   "ar": "برق",
+   "emoji": "",
+   "en": "lightning",
+   "note": ""
+  },
+  "moon": {
+   "ar": "قمر",
+   "emoji": "",
+   "en": "moon",
+   "note": ""
+  },
+  "mountain": {
+   "ar": "جبل",
+   "emoji": "",
+   "en": "mountain",
+   "note": ""
+  },
+  "ocean": {
+   "ar": "محيط",
+   "emoji": "",
+   "en": "ocean",
+   "note": ""
+  },
+  "planet": {
+   "ar": "كوكب",
+   "emoji": "",
+   "en": "planet",
+   "note": ""
+  },
+  "rain": {
+   "ar": "مطر",
+   "emoji": "",
+   "en": "rain",
+   "note": ""
+  },
+  "rainbow": {
+   "ar": "قوس قزح",
+   "emoji": "",
+   "en": "rainbow",
+   "note": ""
+  },
+  "river": {
+   "ar": "نهر",
+   "emoji": "",
+   "en": "river",
+   "note": ""
+  },
+  "sea": {
+   "ar": "بحر",
+   "emoji": "",
+   "en": "sea",
+   "note": ""
+  },
+  "sky": {
+   "ar": "سماء",
+   "emoji": "",
+   "en": "sky",
+   "note": ""
+  },
+  "snow": {
+   "ar": "ثلج",
+   "emoji": "",
+   "en": "snow",
+   "note": ""
+  },
+  "star": {
+   "ar": "نجم",
+   "emoji": "",
+   "en": "star",
+   "note": ""
+  },
+  "storm": {
+   "ar": "عاصفة",
+   "emoji": "",
+   "en": "storm",
+   "note": ""
+  },
+  "sun": {
+   "ar": "شمس",
+   "emoji": "",
+   "en": "sun",
+   "note": ""
+  },
+  "thunder": {
+   "ar": "رعد",
+   "emoji": "",
+   "en": "thunder",
+   "note": ""
+  },
+  "valley": {
+   "ar": "وادي",
+   "emoji": "",
+   "en": "valley",
+   "note": ""
+  },
+  "waterfall": {
+   "ar": "شلال",
+   "emoji": "",
+   "en": "waterfall",
+   "note": ""
+  },
+  "weather": {
+   "ar": "طقس",
+   "emoji": "",
+   "en": "weather",
+   "note": ""
+  },
+  "wind": {
+   "ar": "رياح",
+   "emoji": "",
+   "en": "wind",
+   "note": ""
+  }
+ },
+ "world.transport_travel": {
+  "airplane": {
+   "ar": "طائرة",
+   "emoji": "",
+   "en": "airplane",
+   "note": ""
+  },
+  "airport": {
+   "ar": "مطار",
+   "emoji": "",
+   "en": "airport",
+   "note": ""
+  },
+  "arrival": {
+   "ar": "وصول",
+   "emoji": "",
+   "en": "arrival",
+   "note": ""
+  },
+  "bicycle": {
+   "ar": "دراجة هوائية",
+   "emoji": "",
+   "en": "bicycle",
+   "note": ""
+  },
+  "boat": {
+   "ar": "قارب",
+   "emoji": "",
+   "en": "boat",
+   "note": ""
+  },
+  "bus": {
+   "ar": "حافلة",
+   "emoji": "",
+   "en": "bus",
+   "note": ""
+  },
+  "car": {
+   "ar": "سيارة",
+   "emoji": "",
+   "en": "car",
+   "note": ""
+  },
+  "compass": {
+   "ar": "بوصلة",
+   "emoji": "",
+   "en": "compass",
+   "note": ""
+  },
+  "departure": {
+   "ar": "مغادرة",
+   "emoji": "",
+   "en": "departure",
+   "note": ""
+  },
+  "destination": {
+   "ar": "وجهة سفر",
+   "emoji": "",
+   "en": "destination",
+   "note": ""
+  },
+  "driver": {
+   "ar": "سائق",
+   "emoji": "",
+   "en": "driver",
+   "note": ""
+  },
+  "fuel": {
+   "ar": "وقود",
+   "emoji": "",
+   "en": "fuel",
+   "note": ""
+  },
+  "harbor": {
+   "ar": "ميناء",
+   "emoji": "",
+   "en": "harbor",
+   "note": ""
+  },
+  "hotel": {
+   "ar": "فندق",
+   "emoji": "",
+   "en": "hotel",
+   "note": ""
+  },
+  "map": {
+   "ar": "خريطة",
+   "emoji": "",
+   "en": "map",
+   "note": ""
+  },
+  "passenger": {
+   "ar": "راكب",
+   "emoji": "",
+   "en": "passenger",
+   "note": ""
+  },
+  "passport": {
+   "ar": "جواز سفر",
+   "emoji": "",
+   "en": "passport",
+   "note": ""
+  },
+  "road": {
+   "ar": "طريق",
+   "emoji": "",
+   "en": "road",
+   "note": ""
+  },
+  "ship": {
+   "ar": "سفينة",
+   "emoji": "",
+   "en": "ship",
+   "note": ""
+  },
+  "station": {
+   "ar": "محطة",
+   "emoji": "",
+   "en": "station",
+   "note": ""
+  },
+  "subway": {
+   "ar": "قطار أنفاق",
+   "emoji": "",
+   "en": "subway",
+   "note": ""
+  },
+  "suitcase": {
+   "ar": "حقيبة سفر",
+   "emoji": "",
+   "en": "suitcase",
+   "note": ""
+  },
+  "taxi": {
+   "ar": "سيارة أجرة",
+   "emoji": "",
+   "en": "taxi",
+   "note": ""
+  },
+  "ticket": {
+   "ar": "تذكرة",
+   "emoji": "",
+   "en": "ticket",
+   "note": ""
+  },
+  "traffic": {
+   "ar": "حركة المرور",
+   "emoji": "",
+   "en": "traffic",
+   "note": ""
+  },
+  "train": {
+   "ar": "قطار",
+   "emoji": "",
+   "en": "train",
+   "note": ""
+  },
+  "travel": {
+   "ar": "سفر",
+   "emoji": "",
+   "en": "travel",
+   "note": ""
+  },
+  "trip": {
+   "ar": "رحلة",
+   "emoji": "",
+   "en": "trip",
+   "note": ""
+  },
+  "truck": {
+   "ar": "شاحنة",
+   "emoji": "",
+   "en": "truck",
+   "note": ""
+  },
+  "wheel": {
+   "ar": "عجلة",
+   "emoji": "",
+   "en": "wheel",
+   "note": ""
+  }
  }
 }
