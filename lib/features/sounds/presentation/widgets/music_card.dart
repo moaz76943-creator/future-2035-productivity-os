@@ -43,7 +43,7 @@ class MusicCard extends ConsumerWidget {
                         icon: const Icon(Icons.close),
                         onPressed: ctrl.clearMusic,
                       ),
-                onTap: pick,
+                onTap: music == null ? pick : null,
               ),
               if (music == null)
                 Align(

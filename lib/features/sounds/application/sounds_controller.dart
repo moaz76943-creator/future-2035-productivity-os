@@ -43,8 +43,8 @@ class SoundsController extends Notifier<SoundMix> {
   Future<void> _restore() async {
     final current = await _platform.state();
     if (!ref.mounted) return;
-    if (!current.isEmpty) {
-      state = current; // still playing from before (service kept running)
+    if (!current.isSilent) {
+      state = current; // still playing from before, or own audio chosen (service kept running)
       return;
     }
     final saved = SoundMix.decodeVolumes(await ref.read(databaseProvider).readValue(_savedKey));
@@ -104,7 +104,8 @@ class SoundsController extends Notifier<SoundMix> {
   }
 
   Future<void> playPause(Map<String, String> labels) async {
-    if (state.playing) {
+    // The engine is the truth: the notification, headphones or a call may have changed it.
+    if ((await _platform.state()).playing) {
       await _platform.pause();
     } else {
       await _platform.play(labels);
@@ -127,7 +128,7 @@ class SoundsController extends Notifier<SoundMix> {
 
   /// Pauses without changing the mix (focus link).
   Future<void> pause() async {
-    if (!state.playing) return;
+    if (!(await _platform.state()).playing) return;
     await _platform.pause();
     await _sync();
   }

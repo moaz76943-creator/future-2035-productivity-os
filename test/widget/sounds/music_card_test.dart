@@ -35,6 +35,24 @@ void main() {
     expect(find.text('My track'), findsOneWidget);
     expect(find.byKey(const Key('soundsPlayPause')), findsOneWidget);
 
+    // The player bar controls the own audio too (pause, play, stop keep the choice).
+    await tester.tap(find.byKey(const Key('soundsPlayPause')));
+    await settle(tester);
+    expect((await engine.state()).playing, isFalse);
+    expect(find.byIcon(Icons.play_arrow_rounded), findsOneWidget);
+    await tester.tap(find.byKey(const Key('soundsPlayPause')));
+    await settle(tester);
+    expect((await engine.state()).playing, isTrue);
+
+    await tester.tap(find.byKey(const Key('soundsStop')));
+    await settle(tester);
+    expect((await engine.state()).playing, isFalse);
+    expect((await engine.state()).music?.name, 'My track', reason: 'stop keeps the chosen file');
+    expect(find.byIcon(Icons.play_arrow_rounded), findsOneWidget);
+    await tester.tap(find.byKey(const Key('soundsPlayPause')));
+    await settle(tester);
+    expect((await engine.state()).playing, isTrue);
+
     tester.widget<Slider>(find.byKey(const Key('soundsMusicVolume'))).onChanged!(0.3);
     await settle(tester);
     expect((await engine.state()).music!.volume, 0.3);
