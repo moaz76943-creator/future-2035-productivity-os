@@ -3,6 +3,8 @@ import 'package:material_ui/material_ui.dart';
 
 import '../../core/design_system/components/surfaces.dart';
 import '../../core/design_system/tokens.dart';
+import '../../core/theme/deep_focus_visuals.dart';
+import '../../core/widgets/deep_focus_glass.dart';
 import '../localization/app_format.dart';
 import '../../core/ads/bottom_banner_ad_widget.dart';
 
@@ -33,7 +35,9 @@ class AppShell extends StatelessWidget {
       ),
       (Icons.grid_view_outlined, Icons.grid_view_rounded, l10n.navSpaces, ModuleHue.projects),
     ];
-    return Scaffold(
+    return DeepFocusMeshScaffold(
+      child: Scaffold(
+      backgroundColor: Colors.transparent,
       extendBody: true,
       body: ShellScope(child: shell),
       bottomNavigationBar: SafeArea(
@@ -43,12 +47,28 @@ class AppShell extends StatelessWidget {
           children: [
             RepaintBoundary(
               child: GlassPanel(
+                child: NavigationBarTheme(
+                  data: NavigationBarThemeData(
+                    labelPadding: EdgeInsets.zero,
+                    labelTextStyle: WidgetStateProperty.resolveWith(
+                      (states) => TextStyle(
+                        fontSize: 10.5,
+                        fontWeight: states.contains(WidgetState.selected)
+                            ? FontWeight.w700
+                            : FontWeight.w500,
+                        color: states.contains(WidgetState.selected)
+                            ? DeepFocusVisuals.tealPrimary
+                            : DeepFocusVisuals.textMuted,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ),
                 child: NavigationBar(
                   height: 68,
                   backgroundColor: Colors.transparent,
                   surfaceTintColor: Colors.transparent,
                   elevation: 0,
-                  indicatorColor: Theme.of(context).colorScheme.primary.withValues(alpha: 0.14),
+                  indicatorColor: DeepFocusVisuals.aquaGlow.withValues(alpha: 0.22),
                   labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
                   selectedIndex: shell.currentIndex,
                   onDestinationSelected: (i) =>
@@ -57,17 +77,31 @@ class AppShell extends StatelessWidget {
                     for (final d in destinations)
                       NavigationDestination(
                         icon: Icon(d.$1),
-                        selectedIcon: Icon(d.$2, color: d.$4.a),
+                        selectedIcon: DecoratedBox(
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color(0x663BC4C0),
+                                blurRadius: 14,
+                                spreadRadius: 1,
+                              ),
+                            ],
+                          ),
+                          child: Icon(d.$2, color: DeepFocusVisuals.tealPrimary),
+                        ),
                         label: d.$3,
                         tooltip: d.$3,
                       ),
                   ],
+                ),
                 ),
               ),
             ),
             const BottomBannerAdWidget(useProductionUnit: true),
           ],
         ),
+      ),
       ),
     );
   }
