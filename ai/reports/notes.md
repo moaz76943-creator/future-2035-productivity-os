@@ -1,2 +1,3 @@
 - 11-26 18:44 task lib/features/sounds/presentation/widgets/player_bar.dart: patch did not apply: error: patch failed: lib/features/sound; Player bar shows mixer, play/pause, sleep, stop but never displays the active custom audio file name.
 - 11-26 19:44 improve lib/features/tasks/data/tasks_repository/task_status.dart: patch did not apply: warning: recount: unexpected line: enum; TaskStatus uses string constants instead of an enum, missing 'done' status mentioned in its own doc comment
+- 11-26 20:44 task lib/core/design_system/components/surfaces.dart: patch did not apply: warning: recount: unexpected line: /// ; AuroraBackground uses CustomPaint with radial glows per module hue, not a consistent subtle cool gradient across all screens.
