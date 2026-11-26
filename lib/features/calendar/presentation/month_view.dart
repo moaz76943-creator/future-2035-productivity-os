@@ -126,7 +126,6 @@ class _DayCell extends StatelessWidget {
     final lux = context.lux;
     final fmt = context.fmt;
     final l10n = context.l10n;
-    final hue = ModuleHue.calendar;
     final numberColor = selected
         ? Colors.white
         : inMonth
