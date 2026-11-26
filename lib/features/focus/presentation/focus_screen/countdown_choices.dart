@@ -139,8 +139,7 @@ class _TimerHero extends ConsumerWidget {
                   height: size - 44,
                   decoration: const ShapeDecoration(shape: CircleBorder()),
                   clipBehavior: Clip.antiAlias,
-                  child: CustomPaint(
-                    painter: const LandscapePainter(mood: LandscapeMood.deep),
+                  child: _TimerFace(
                     // Scales down instead of overflowing on short screens and large text.
                     child: Center(
                       child: FittedBox(
@@ -246,6 +245,7 @@ class _Controls extends StatelessWidget {
     if (!state.ready) {
       buttons.add(
         FilledButton.icon(
+          style: focusTealButton,
           onPressed: null,
           icon: const Icon(Icons.play_arrow_rounded),
           label: Text(l10n.actionStart),
@@ -256,6 +256,7 @@ class _Controls extends StatelessWidget {
       final breakNext = pending != null && pending.phase != FocusPhase.work;
       buttons.add(
         FilledButton.icon(
+          style: focusTealButton,
           key: const ValueKey('focus-start'),
           onPressed: onStart,
           icon: const Icon(Icons.play_arrow_rounded),
@@ -279,12 +280,14 @@ class _Controls extends StatelessWidget {
       buttons.add(
         a.isRunning
             ? FilledButton.icon(
+          style: focusTealButton,
                 key: const ValueKey('focus-pause'),
                 onPressed: onPause,
                 icon: const Icon(Icons.pause_rounded),
                 label: Text(l10n.actionPause),
               )
             : FilledButton.icon(
+          style: focusTealButton,
                 key: const ValueKey('focus-resume'),
                 onPressed: onResume,
                 icon: const Icon(Icons.play_arrow_rounded),

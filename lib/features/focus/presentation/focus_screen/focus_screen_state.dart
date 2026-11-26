@@ -357,31 +357,3 @@ class _InfoBanner extends StatelessWidget {
     );
   }
 }
-
-class _ModeSelector extends StatelessWidget {
-  const _ModeSelector({required this.value, required this.enabled, required this.onChanged});
-  final FocusMode value;
-  final bool enabled;
-  final ValueChanged<FocusMode> onChanged;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = context.l10n;
-    return Semantics(
-      label: l10n.focusModeLabel,
-      container: true,
-      child: Wrap(
-        spacing: Space.xs,
-        runSpacing: Space.xs,
-        children: [
-          for (final m in FocusMode.values)
-            ChoiceChip(
-              label: Text(focusModeLabel(l10n, m)),
-              selected: m == value,
-              onSelected: enabled ? (_) => onChanged(m) : null,
-            ),
-        ],
-      ),
-    );
-  }
-}
