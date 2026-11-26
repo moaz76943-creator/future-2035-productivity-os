@@ -18,8 +18,11 @@ import subprocess
 import sys
 
 ALLOWED = re.compile(r'^(lib/l10n/|test/ai_generated/|ai/)')
+# --allow-code (improve agent): app code too, except the protected areas in NEVER.
+ALLOWED_CODE = re.compile(r'^(lib/l10n/|lib/features/|lib/shared/|lib/core/(time|text|recurrence|design_system)/|test/|ai/)')
 NEVER = re.compile(r'(^\.github/|^android/|pubspec\.|\.jks$|\.keystore$|key\.properties|'
-                   r'^lib/core/ads/|^lib/app/|^tool/)')
+                   r'^lib/core/ads/|^lib/app/|^tool/|^lib/core/(security|database|backup|platform)/|'
+                   r'^lib/features/(guard|backup|settings/data)/)')
 SECRETS = re.compile(
     r'(AIza[0-9A-Za-z_\-]{30,}|AQ\.[0-9A-Za-z_\-]{30,}|sk-or-v1-[0-9a-f]{20,}|gsk_[0-9A-Za-z]{20,}'
     r'|nvapi-[0-9A-Za-z_\-]{20,}|ghp_[0-9A-Za-z]{30,}|github_pat_[0-9A-Za-z_]{30,}'
@@ -41,8 +44,14 @@ def main():
     changed = [f for f in changed if not re.search(r'(\.g\.dart$|^lib/l10n/gen/|^\.dart_tool/)', f)]
     problems = []
     for f in changed:
-        if NEVER.search(f) or not ALLOWED.search(f):
+        allowed = ALLOWED_CODE if '--allow-code' in sys.argv else ALLOWED
+        if NEVER.search(f) or not allowed.search(f):
             problems.append(f'not allowed for agents: {f}')
+    # Agents may add tests but never edit or delete existing ones (no weakening tests).
+    touched = sh(f'git diff --name-only --diff-filter=MD {base}...HEAD -- test; git diff --name-only --diff-filter=MD -- test').stdout.split()
+    for f in sorted(set(touched)):
+        if not f.startswith('test/ai_generated/'):
+            problems.append(f'existing test changed: {f}')
     for f in changed:
         try:
             text = open(f, encoding='utf-8', errors='ignore').read()

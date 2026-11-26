@@ -1,8 +1,9 @@
 name: DF AI agents (hourly drafts, review required)
 
 # Around the clock, one small job per hour:
-#   even hours: two languages get a translation review (worker + critic from another provider)
-#   odd hours:  one pure-Dart file gets new unit tests (must pass twice, analyze clean)
+#   hour % 3 == 0: two languages get a translation review (worker + critic from another provider)
+#   hour % 3 == 1: one pure-Dart file gets new unit tests (must pass twice, analyze clean)
+#   hour % 3 == 2: one app file is reviewed; at most one small fix (critic + all gates)
 # Every result must pass tool/ai/gates.py (allowed paths only, no secrets, 400-line rule,
 # analyzer, all tests). Results collect on one branch per day, ai-drafts/day-YYYYMMDD,
 # never on claude-dev, main, release/* or hermes/*. Claude reviews and merges later.
@@ -17,7 +18,7 @@ on:
   workflow_dispatch:
     inputs:
       job:
-        description: 'review or tests (empty = by hour)'
+        description: 'review, tests or improve (empty = by hour)'
         required: false
         default: ''
 
@@ -90,10 +91,14 @@ jobs:
           set -uo pipefail
           hour=$((10#$(date -u +%H)))
           job="${JOB:-}"
-          [ -n "$job" ] || { [ $((hour % 2)) -eq 0 ] && job=review || job=tests; }
+          if [ -z "$job" ]; then
+            case $((hour % 3)) in 0) job=review;; 1) job=tests;; *) job=improve;; esac
+          fi
           echo "JOB=$job" >> "$GITHUB_ENV"
           if [ "$job" = review ]; then
             DF_SLOT=$hour timeout 35m python3 tool/ai/review_draft.py --per-day 2 --max-fixes 30 || echo "review stopped"
+          elif [ "$job" = improve ]; then
+            timeout 25m python3 tool/ai/improve_agent.py || echo "improve agent stopped"
           else
             timeout 35m python3 tool/ai/tests_agent.py || echo "tests agent stopped"
           fi
@@ -101,7 +106,8 @@ jobs:
       - name: Gates (assume the draft is wrong until proven otherwise)
         run: |
           set -uo pipefail
-          if python3 tool/ai/gates.py --base origin/claude-dev --full > "$RUNNER_TEMP/gates.json"; then
+          flag=""; [ "$JOB" = improve ] && flag="--allow-code"
+          if python3 tool/ai/gates.py --base origin/claude-dev --full $flag > "$RUNNER_TEMP/gates.json"; then
             echo "GATES=passed" >> "$GITHUB_ENV"
           else
             echo "GATES=failed" >> "$GITHUB_ENV"
@@ -116,12 +122,13 @@ jobs:
           mkdir -p ai/reports
           if [ "$GATES" != passed ]; then
             # Drop the job's changes; keep only a short log line for review.
-            git checkout -q -- lib/l10n test 2>/dev/null || true
+            git checkout -q -- lib test 2>/dev/null || true
             git clean -fdq -- test/ai_generated 2>/dev/null || true
             why=$(python3 -c 'import json,os;print("; ".join(json.load(open(os.environ["RUNNER_TEMP"]+"/gates.json"))["problems"])[:300])')
             echo "- $(date -u +%H:%M) $JOB dropped by gates: $why" >> ai/reports/dropped.md
           fi
           git add -A ai/reports lib/l10n
+          [ "$JOB" = improve ] && git add -A lib test
           [ -d test/ai_generated ] && git add -A test/ai_generated
           if git diff --cached --quiet; then echo "Nothing to keep this hour."; exit 0; fi
           git commit -q -m "AI $JOB ($GATES gates)" -m "Unreviewed helper-model draft. Do not merge without review."

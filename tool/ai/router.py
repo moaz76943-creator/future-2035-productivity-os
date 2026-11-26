@@ -57,6 +57,9 @@ class Router:
         self.allow_paid = allow_paid
         self.dead = set()  # (provider, key name, model) that failed hard this run
         self.strikes = {}  # (provider, model) -> timeouts/server errors across keys
+        # Failed routes rest for a while instead of being dropped, then come back in
+        # their original (smartest-first) place: 429/503 are usually temporary.
+        self.cool = {}  # (provider, key, model) -> time it may be tried again
         self.log = log
         self.last_groq = 0.0
         # Health memory across runs: models that failed recently go last, good ones first.
@@ -92,12 +95,33 @@ class Router:
             for k in [k for k in p['keys'] if os.environ.get(k)]:
                 # A model that timed out or failed on the server twice is skipped
                 # for the rest of the run, whatever the key (saves long timeouts).
-                if (p['name'], k, m) not in self.dead and self.strikes.get((p['name'], m), 0) < 2:
+                if (p['name'], k, m) in self.dead or self.strikes.get((p['name'], m), 0) >= 9:
+                    continue  # 400/404: this model does not exist for this key
+                if self.cool.get((p['name'], k, m), 0) <= time.time():
                     yield p, m, k
 
-    def ask(self, system, prompt, check=None, avoid=None):
+    def ask(self, system, prompt, check=None, avoid=None, patience=240):
         """Returns (text, 'provider/model'). [check] rejects malformed output and
-        moves on to the next model, so one bad model cannot stop the run."""
+        moves on to the next model, so one bad model cannot stop the run. When every
+        route is resting, waits (up to [patience] seconds) for the first to return."""
+        deadline = time.time() + patience
+        while True:
+            try:
+                return self._ask_once(system, prompt, check, avoid)
+            except NoModelAvailable:
+                waits = [t for t in self.cool.values() if t > time.time()]
+                if not waits or min(waits) > deadline:
+                    raise
+                time.sleep(max(1, min(waits) - time.time()))
+
+    def _rest(self, p, key_name, model, code=None):
+        n = self.strikes.get((p['name'], model), 0)
+        if code in (400, 404):
+            self.dead.add((p['name'], key_name, model))
+            return
+        self.cool[(p['name'], key_name, model)] = time.time() + min(600, 60 * (n + 1))
+
+    def _ask_once(self, system, prompt, check, avoid):
         for p, model, key_name in self._routes(avoid):
             if p.get('tokens_per_minute'):
                 # Stay under Groq's per-minute token budget: roughly 4 chars per token.
@@ -116,7 +140,7 @@ class Router:
                         continue
                     self.log(f'  {label}: HTTP {e.code}, next')
                     self._note(label, False)
-                    self.dead.add((p['name'], key_name, model))
+                    self._rest(p, key_name, model, e.code)
                     if e.code in (404, 400) or e.code >= 500:
                         self.strikes[(p['name'], model)] = 9 if e.code in (404, 400) else (
                             self.strikes.get((p['name'], model), 0) + 1)
@@ -125,7 +149,7 @@ class Router:
                     self.log(f'  {label}: {type(e).__name__}, next')
                     self._note(label, False)
                     self.strikes[(p['name'], model)] = self.strikes.get((p['name'], model), 0) + 1
-                    self.dead.add((p['name'], key_name, model))
+                    self._rest(p, key_name, model)
                     break
                 problem = check(text) if check else None
                 self._note(label, not problem)
