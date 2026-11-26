@@ -36,3 +36,11 @@ New session? Read [docs/HANDOVER.md](docs/HANDOVER.md) first: the owner, his pre
 - Review agents with `.claude/commands/review-agents.md`; ship with `.claude/commands/ship.md`.
 - One task per message; run only affected tests while working, the full suite + inventory once before the final push.
 - Grep/tail logs, never print them whole; edit with small replacements instead of rewriting files.
+
+## UI Redesign & Token-Saving Rules
+- NEVER use subagents or background watchers; work directly in the current session.
+- NEVER read generated files (`*.g.dart`, `*.freezed.dart`, `lib/l10n/gen/*`, `build/`).
+- Check `docs/ui_map.txt` first to locate exact UI files instead of broad repo scans.
+- Use `DeepFocusAssets`, `DeepFocusVisuals`, and `deep_focus_glass.dart` for all UI updates; do NOT draw nature scenes with `CustomPainter`.
+- Strictly preserve ALL existing tabs (6 tabs), features, Hijri date, prayer times, session planner, and RTL/LTR dynamic layout.
+- Keep every manual `.dart` file <= 400 lines (split via `part` files if needed) and keep final replies <= 4 lines.
