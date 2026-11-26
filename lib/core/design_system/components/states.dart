@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:material_ui/material_ui.dart';
 
+import '../../theme/deep_focus_visuals.dart';
 import '../app_theme.dart';
 import '../tokens.dart';
 import 'surfaces.dart';
@@ -78,10 +79,15 @@ class EmptyState extends StatelessWidget {
           children: [
             SizedBox.square(
               dimension: size,
-              child: CustomPaint(
-                painter: _OrbitPainter(hue, context.lux.hairline),
-                child: Center(
-                  child: IconOrb(icon: icon, hue: hue, size: size * 0.46),
+              child: Image.asset(
+                DeepFocusAssets.emptyStateNature,
+                fit: BoxFit.contain,
+                excludeFromSemantics: true,
+                errorBuilder: (_, _, _) => CustomPaint(
+                  painter: _OrbitPainter(hue, context.lux.hairline),
+                  child: Center(
+                    child: IconOrb(icon: icon, hue: hue, size: size * 0.46),
+                  ),
                 ),
               ),
             ),
@@ -96,6 +102,7 @@ class EmptyState extends StatelessWidget {
             if (actionLabel != null) ...[
               const SizedBox(height: Space.lg),
               FilledButton.icon(
+                style: FilledButton.styleFrom(backgroundColor: DeepFocusVisuals.tealPrimary),
                 onPressed: onAction,
                 icon: const Icon(Icons.add_rounded),
                 label: Text(actionLabel!),

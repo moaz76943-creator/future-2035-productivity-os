@@ -133,7 +133,7 @@ class NavClearFab extends StatelessWidget {
     if (!ShellScope.of(context)) return child;
     final bottom = ShellScope.navHeight + MediaQuery.viewPaddingOf(context).bottom;
     return Padding(
-      padding: EdgeInsets.only(bottom: bottom),
+      padding: EdgeInsets.only(bottom: bottom + Space.md),
       child: child,
     );
   }

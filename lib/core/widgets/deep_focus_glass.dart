@@ -84,3 +84,43 @@ class DeepFocusAssetIcon extends StatelessWidget {
     );
   }
 }
+
+/// Unifies buttons, chips and segmented filters to the calm teal (#0D7A7E).
+class DeepFocusTealScope extends StatelessWidget {
+  const DeepFocusTealScope({super.key, required this.child});
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    const teal = DeepFocusVisuals.tealPrimary;
+    final theme = Theme.of(context);
+    return Theme(
+      data: theme.copyWith(
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: teal,
+          foregroundColor: Colors.white,
+        ),
+        chipTheme: theme.chipTheme.copyWith(
+          selectedColor: teal,
+          checkmarkColor: Colors.white,
+          labelStyle: WidgetStateTextStyle.resolveWith(
+            (s) => (theme.textTheme.labelLarge ?? const TextStyle()).copyWith(
+              color: s.contains(WidgetState.selected) ? Colors.white : null,
+            ),
+          ),
+        ),
+        segmentedButtonTheme: SegmentedButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor: WidgetStateProperty.resolveWith(
+              (s) => s.contains(WidgetState.selected) ? teal : null,
+            ),
+            foregroundColor: WidgetStateProperty.resolveWith(
+              (s) => s.contains(WidgetState.selected) ? Colors.white : null,
+            ),
+          ),
+        ),
+      ),
+      child: child,
+    );
+  }
+}
