@@ -123,9 +123,9 @@ change visuals). Do not re-read large parts of the code "to understand"; use the
   `df-devtools.yml` (`gh workflow run df-devtools.yml`), which also lists unused code (`fcheck`).
 - CI: `df-secrets.yml` (gitleaks), Dependabot weekly PRs, app builds skipped for docs/agent-only pushes.
 - Slash commands: `/review-agents`, `/ship` (`.claude/commands/`).
-- Golden tests: not written yet. Alchemist could not be resolved offline here, so write the first
-  ones where pub works (CI) and commit the reference images from there; then any screen change shows up
-  as a failing image instead of needing owner screenshots.
+- Golden screens: `test/golden/screens_golden_test.dart` (plain flutter_test goldens, main tabs, ar+en),
+  run only by `df-goldens.yml` (off locally unless `--dart-define=GOLDEN=true`). Red run = a screen
+  changed; if intended: `gh workflow run df-goldens.yml -f update=true`. First run must be an update.
 
 ## 8. Open items
 
