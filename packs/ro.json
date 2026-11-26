@@ -1,0 +1,49 @@
+{
+ "items": {
+  "home.bathroom.comb": "pieptene",
+  "home.bathroom.mirror": "oglindă",
+  "home.bathroom.shampoo": "șampon",
+  "home.bathroom.shower_curtain": "perdea de duș",
+  "home.bathroom.soap": "săpun",
+  "home.bathroom.sponge": "burete",
+  "home.bathroom.toothbrush": "periuță de dinți",
+  "home.bathroom.toothpaste": "pastă de dinți",
+  "home.bathroom.towel": "prosop"
+ },
+ "lang": "ro",
+ "names": {
+  "home": "Acasă",
+  "home.bathroom": "baie",
+  "home.bedroom": "dormitor",
+  "home.garden_clean": "Grădină și curățenie",
+  "home.kitchen": "bucătărie",
+  "home.living": "living",
+  "life": "Viață cotidiană",
+  "life.body_health": "Corp și sănătate",
+  "life.clothing": "îmbrăcăminte",
+  "life.family_traits": "Familie și caracter",
+  "life.food_drink": "Mâncare și băutură",
+  "life.produce": "Fructe și legume",
+  "life.spices_grains": "Condimente și cereale",
+  "study": "Studiu și muncă",
+  "study.core_verbs": "Verbe de bază",
+  "study.numbers_time": "Numere și timp",
+  "study.office_tech": "Birou și tehnologie",
+  "study.school": "școală",
+  "world": "Lume",
+  "world.animals_plants": "Animale și plante",
+  "world.city_directions": "Oraș și direcții",
+  "world.materials_shop": "Materiale și cumpărături",
+  "world.nature_weather": "Natură și vreme",
+  "world.transport_travel": "Transport și călătorii"
+ },
+ "pron": {
+  "home.bathroom.comb": "/ˈpjepte.ne/",
+  "home.bathroom.mirror": "/oˈɡlin.də/",
+  "home.bathroom.shampoo": "/ʃamˈpon/",
+  "home.bathroom.soap": "/səˈpun/",
+  "home.bathroom.toothbrush": "/pe.riˈu.t͡sə de dinˈt͡sʲ/",
+  "home.bathroom.toothpaste": "/ˈpas.tə de dinˈt͡sʲ/",
+  "home.bathroom.towel": "/proˈsop/"
+ }
+}
