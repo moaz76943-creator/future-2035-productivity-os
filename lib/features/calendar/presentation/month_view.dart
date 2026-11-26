@@ -155,12 +155,16 @@ class _DayCell extends StatelessWidget {
                     constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
                     padding: const EdgeInsets.symmetric(horizontal: 4),
                     alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: selected ? DeepFocusVisuals.tealPrimary : null,
-                      boxShadow: selected ? DeepFocusVisuals.edgeGlow(strength: 0.8) : null,
-                      border: today && !selected ? Border.all(color: DeepFocusVisuals.tealPrimary, width: 1.5) : null,
-                    ),
+                    decoration: selected
+                        ? DeepFocusVisuals.glowBorder(
+                            circle: true,
+                            fill: DeepFocusVisuals.tealPrimary,
+                            strength: 0.8,
+                          )
+                        : BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: today ? Border.all(color: DeepFocusVisuals.tealPrimary, width: 1.5) : null,
+                          ),
                     child: Text(
                       fmt.dayOfMonth(day),
                       style: context.text.bodyMedium?.copyWith(

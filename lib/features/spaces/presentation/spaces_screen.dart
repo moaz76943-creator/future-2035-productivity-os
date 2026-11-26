@@ -76,7 +76,9 @@ class SpacesScreen extends ConsumerWidget {
               SliverPadding(
                 padding: const EdgeInsets.symmetric(horizontal: Space.page),
                 sliver: SliverToBoxAdapter(
-                  child: Row(
+                  child: IntrinsicHeight(
+                    child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Expanded(
                         child: _Featured(
@@ -102,6 +104,7 @@ class SpacesScreen extends ConsumerWidget {
                         ),
                       ),
                     ],
+                  ),
                   ),
                 ),
               ),
@@ -156,6 +159,7 @@ class _Featured extends StatelessWidget {
         // Two lines for the title and the caption: long translations
         // (e.g. Arabic "البطاقات التعليمية") were cut with an ellipsis.
         height: 64 + MediaQuery.textScalerOf(context).scale(84),
+        width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

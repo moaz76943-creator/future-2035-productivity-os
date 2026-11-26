@@ -72,6 +72,20 @@ abstract final class DeepFocusVisuals {
     ),
   ];
 
+  /// Aqua glow border + subtle outer glow for a selected/active element.
+  static BoxDecoration glowBorder({
+    bool circle = false,
+    double radius = 14,
+    Color? fill,
+    double strength = 1,
+  }) => BoxDecoration(
+    shape: circle ? BoxShape.circle : BoxShape.rectangle,
+    borderRadius: circle ? null : BorderRadius.circular(radius),
+    color: fill,
+    border: Border.all(color: aquaGlow.withValues(alpha: 0.9), width: 1.4),
+    boxShadow: edgeGlow(strength: strength),
+  );
+
   static BoxDecoration activePill() {
     return BoxDecoration(
       gradient: const LinearGradient(
