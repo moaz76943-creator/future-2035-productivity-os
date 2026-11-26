@@ -4969,4 +4969,9 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => '一致する言語がありません';
+
+  @override
+  String aiSmokeTest(int count) {
+    return '連続集中記録が$count日になりました';
+  }
 }

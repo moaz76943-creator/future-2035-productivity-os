@@ -5224,4 +5224,9 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Тохирох хэл алга';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Таны төвлөрлийн цуврал $count өдөр болж нэмэгдлээ.';
+  }
 }

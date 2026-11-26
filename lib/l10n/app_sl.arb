@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Vsa besedila v tem jeziku se vrnejo na izvirnik.",
   "wordsNone": "Besedila ni bilo mogoče najti",
   "settingsLanguageSearch": "Poišči jezike",
-  "settingsLanguageNoMatch": "Noben jezik se ne ujema"
+  "settingsLanguageNoMatch": "Noben jezik se ne ujema",
+  "aiSmokeTest": "Tvoj niz zbranosti se je povečal na {count} dni"
 }

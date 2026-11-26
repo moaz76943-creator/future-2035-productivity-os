@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "이 언어의 모든 텍스트가 원래대로 돌아갑니다.",
   "wordsNone": "텍스트를 찾을 수 없어요",
   "settingsLanguageSearch": "언어 검색",
-  "settingsLanguageNoMatch": "일치하는 언어가 없습니다"
+  "settingsLanguageNoMatch": "일치하는 언어가 없습니다",
+  "aiSmokeTest": "연속 집중 기록이 {count}일로 늘어났습니다."
 }

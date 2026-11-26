@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Babalik sa orihinal ang bawat teksto sa wikang ito.",
   "wordsNone": "Walang nakitang teksto",
   "settingsLanguageSearch": "Maghanap ng wika",
-  "settingsLanguageNoMatch": "Walang tugmang wika"
+  "settingsLanguageNoMatch": "Walang tugmang wika",
+  "aiSmokeTest": "Umabot na sa {count} araw ang iyong focus streak"
 }

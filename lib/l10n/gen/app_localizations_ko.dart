@@ -4964,4 +4964,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => '일치하는 언어가 없습니다';
+
+  @override
+  String aiSmokeTest(int count) {
+    return '연속 집중 기록이 $count일로 늘어났습니다.';
+  }
 }

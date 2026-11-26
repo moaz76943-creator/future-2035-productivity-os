@@ -5059,4 +5059,9 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'ไม่พบภาษาที่ตรงกัน';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'สเต็กโฟกัสของคุณเพิ่มเป็น $count วัน';
+  }
 }

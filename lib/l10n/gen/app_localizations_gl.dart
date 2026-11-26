@@ -5233,4 +5233,9 @@ class AppLocalizationsGl extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Ningún idioma coincide';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'A túa serie de concentración medrou ata $count días';
+  }
 }

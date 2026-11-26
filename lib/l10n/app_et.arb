@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Kõik selle keele tekstid taastatakse algseks.",
   "wordsNone": "Teksti ei leitud",
   "settingsLanguageSearch": "Otsi keeli",
-  "settingsLanguageNoMatch": "Ükski keel ei sobi"
+  "settingsLanguageNoMatch": "Ükski keel ei sobi",
+  "aiSmokeTest": "Sinu fookuseseeria kasvas {count} päevani"
 }

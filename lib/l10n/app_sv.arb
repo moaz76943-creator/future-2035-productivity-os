@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Alla texter på det här språket går tillbaka till originalet.",
   "wordsNone": "Ingen text hittades",
   "settingsLanguageSearch": "Sök språk",
-  "settingsLanguageNoMatch": "Inget språk matchar"
+  "settingsLanguageNoMatch": "Inget språk matchar",
+  "aiSmokeTest": "Din fokussvit ökade till {count} dagar"
 }

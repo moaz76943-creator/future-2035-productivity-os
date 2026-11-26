@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "همه متن‌های این زبان به حالت اصلی برمی‌گردند.",
   "wordsNone": "متنی پیدا نشد",
   "settingsLanguageSearch": "جستجوی زبان",
-  "settingsLanguageNoMatch": "زبانی پیدا نشد"
+  "settingsLanguageNoMatch": "زبانی پیدا نشد",
+  "aiSmokeTest": "توالی تمرکز شما به {count} روز رسید"
 }

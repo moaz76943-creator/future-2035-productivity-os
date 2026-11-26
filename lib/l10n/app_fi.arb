@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Kaikki tämän kielen tekstit palautuvat alkuperäisiksi.",
   "wordsNone": "Tekstiä ei löytynyt",
   "settingsLanguageSearch": "Hae kieliä",
-  "settingsLanguageNoMatch": "Yksikään kieli ei vastaa"
+  "settingsLanguageNoMatch": "Yksikään kieli ei vastaa",
+  "aiSmokeTest": "Keskittymisputkesi kasvoi {count} päivään"
 }

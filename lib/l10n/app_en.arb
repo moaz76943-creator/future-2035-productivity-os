@@ -6931,5 +6931,14 @@
   "settingsLanguageNoMatch": "No language matches",
   "@settingsLanguageNoMatch": {
     "description": "Shown when no language matches the search"
+  },
+  "aiSmokeTest": "Your focus streak grew to {count} days",
+  "@aiSmokeTest": {
+    "description": "Test text for the helper-model pipeline; never shipped",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
   }
 }

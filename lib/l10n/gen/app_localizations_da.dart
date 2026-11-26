@@ -5219,4 +5219,9 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Intet sprog passer';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Din fokusserie voksede til $count dage';
+  }
 }

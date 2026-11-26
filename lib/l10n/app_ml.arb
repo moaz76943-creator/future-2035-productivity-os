@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "ഈ ഭാഷയിലെ എല്ലാ ടെക്സ്റ്റും യഥാർത്ഥത്തിലേക്ക് മടങ്ങും.",
   "wordsNone": "ടെക്സ്റ്റ് കണ്ടെത്തിയില്ല",
   "settingsLanguageSearch": "ഭാഷകൾ തിരയുക",
-  "settingsLanguageNoMatch": "പൊരുത്തപ്പെടുന്ന ഭാഷയില്ല"
+  "settingsLanguageNoMatch": "പൊരുത്തപ്പെടുന്ന ഭാഷയില്ല",
+  "aiSmokeTest": "നിങ്ങളുടെ ഫോക്കസ് സ്ട്രീക്ക് {count} ദിവസമായി ഉയർന്നു"
 }

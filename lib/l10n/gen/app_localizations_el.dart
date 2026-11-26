@@ -5247,4 +5247,9 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Καμία γλώσσα δεν ταιριάζει';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Το σερί εστίασής σου έφτασε τις $count ημέρες';
+  }
 }

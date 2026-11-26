@@ -5266,4 +5266,9 @@ class AppLocalizationsPa extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'ਕੋਈ ਮੇਲ ਖਾਂਦੀ ਭਾਸ਼ਾ ਨਹੀਂ';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'ਤੁਹਾਡਾ ਫੋਕਸ ਸਿਲਸਿਲਾ $count ਦਿਨਾਂ ਤੱਕ ਵਧ ਗਿਆ ਹੈ';
+  }
 }

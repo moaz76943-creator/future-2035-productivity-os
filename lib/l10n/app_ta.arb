@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "இந்த மொழியின் ஒவ்வொரு உரையும் மூலத்துக்குத் திரும்பும்.",
   "wordsNone": "உரை எதுவும் கிடைக்கவில்லை",
   "settingsLanguageSearch": "மொழிகளைத் தேடு",
-  "settingsLanguageNoMatch": "பொருந்தும் மொழி இல்லை"
+  "settingsLanguageNoMatch": "பொருந்தும் மொழி இல்லை",
+  "aiSmokeTest": "உங்கள் கவனத் தொடர் {count} நாட்களாக உயர்ந்தது"
 }

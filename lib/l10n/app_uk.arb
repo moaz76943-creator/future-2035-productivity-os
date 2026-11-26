@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Усі тексти цією мовою повернуться до оригіналу.",
   "wordsNone": "Текст не знайдено",
   "settingsLanguageSearch": "Пошук мов",
-  "settingsLanguageNoMatch": "Немає відповідної мови"
+  "settingsLanguageNoMatch": "Немає відповідної мови",
+  "aiSmokeTest": "Ваша серія фокусу зросла до {count} днів"
 }

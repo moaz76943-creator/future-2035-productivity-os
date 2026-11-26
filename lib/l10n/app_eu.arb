@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Hizkuntza honetako testu guztiak jatorrizkora itzultzen dira.",
   "wordsNone": "Ez da testurik aurkitu",
   "settingsLanguageSearch": "Bilatu hizkuntzak",
-  "settingsLanguageNoMatch": "Ez dago bat datorren hizkuntzarik"
+  "settingsLanguageNoMatch": "Ez dago bat datorren hizkuntzarik",
+  "aiSmokeTest": "Zure kontzentrazio-bolada {count} egunera luzatu da"
 }

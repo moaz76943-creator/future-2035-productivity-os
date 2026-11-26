@@ -5224,6 +5224,11 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Ningún idioma coincide';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Tu racha de concentración aumentó a $count días';
+  }
 }
 
 /// The translations for Spanish Castilian, as used in Latin America and the Caribbean (`es_419`).

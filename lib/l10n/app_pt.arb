@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Todos os textos deste idioma voltam ao original.",
   "wordsNone": "Nenhum texto encontrado",
   "settingsLanguageSearch": "Buscar idioma",
-  "settingsLanguageNoMatch": "Nenhum idioma encontrado"
+  "settingsLanguageNoMatch": "Nenhum idioma encontrado",
+  "aiSmokeTest": "Sua sequência de foco aumentou para {count} dias"
 }

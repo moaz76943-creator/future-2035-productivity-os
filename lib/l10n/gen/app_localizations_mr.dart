@@ -5209,4 +5209,9 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'जुळणारी भाषा नाही';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'तुमची लक्ष केंद्रित करण्याची मालिका $count दिवसांपर्यंत वाढली';
+  }
 }

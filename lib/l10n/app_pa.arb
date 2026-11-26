@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "ਇਸ ਭਾਸ਼ਾ ਦਾ ਹਰ ਟੈਕਸਟ ਮੂਲ ’ਤੇ ਵਾਪਸ ਜਾਵੇਗਾ।",
   "wordsNone": "ਕੋਈ ਟੈਕਸਟ ਨਹੀਂ ਮਿਲਿਆ",
   "settingsLanguageSearch": "ਭਾਸ਼ਾਵਾਂ ਖੋਜੋ",
-  "settingsLanguageNoMatch": "ਕੋਈ ਮੇਲ ਖਾਂਦੀ ਭਾਸ਼ਾ ਨਹੀਂ"
+  "settingsLanguageNoMatch": "ਕੋਈ ਮੇਲ ਖਾਂਦੀ ਭਾਸ਼ਾ ਨਹੀਂ",
+  "aiSmokeTest": "ਤੁਹਾਡਾ ਫੋਕਸ ਸਿਲਸਿਲਾ {count} ਦਿਨਾਂ ਤੱਕ ਵਧ ਗਿਆ ਹੈ"
 }

@@ -5208,4 +5208,9 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Eşleşen dil yok';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Odak seriniz $count güne ulaştı';
+  }
 }

@@ -5101,4 +5101,9 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'মিলে যাওয়া কোনো ভাষা নেই';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'আপনার ফোকাস স্ট্রিক বেড়ে $count দিন হয়েছে';
+  }
 }

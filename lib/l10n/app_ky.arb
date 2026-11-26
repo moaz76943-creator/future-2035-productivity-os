@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Бул тилдеги бардык тексттер түп нускасына кайтат.",
   "wordsNone": "Текст табылган жок",
   "settingsLanguageSearch": "Тилдерди издөө",
-  "settingsLanguageNoMatch": "Дал келген тил жок"
+  "settingsLanguageNoMatch": "Дал келген тил жок",
+  "aiSmokeTest": "Фокус серияңыз {count} күнгө өстү"
 }

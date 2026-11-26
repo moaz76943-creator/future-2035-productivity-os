@@ -5250,6 +5250,11 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Nenhum idioma encontrado';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Sua sequência de foco aumentou para $count dias';
+  }
 }
 
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).

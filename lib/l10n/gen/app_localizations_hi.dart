@@ -5219,4 +5219,9 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'कोई मेल खाती भाषा नहीं';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'आपकी फ़ोकस स्ट्रीक बढ़कर $count दिन हो गई';
+  }
 }

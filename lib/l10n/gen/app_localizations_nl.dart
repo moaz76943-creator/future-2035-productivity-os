@@ -5229,4 +5229,9 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Geen taal gevonden';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Je focusreeks is gegroeid naar $count dagen';
+  }
 }

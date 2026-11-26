@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Çdo tekst në këtë gjuhë kthehet në origjinal.",
   "wordsNone": "Nuk u gjet tekst",
   "settingsLanguageSearch": "Kërko gjuhë",
-  "settingsLanguageNoMatch": "Asnjë gjuhë nuk përputhet"
+  "settingsLanguageNoMatch": "Asnjë gjuhë nuk përputhet",
+  "aiSmokeTest": "Ecuria juaj e përqendrimit u rrit në {count} ditë"
 }

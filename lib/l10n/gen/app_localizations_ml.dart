@@ -5233,4 +5233,9 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'പൊരുത്തപ്പെടുന്ന ഭാഷയില്ല';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'നിങ്ങളുടെ ഫോക്കസ് സ്ട്രീക്ക് $count ദിവസമായി ഉയർന്നു';
+  }
 }

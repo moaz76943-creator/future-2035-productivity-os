@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Bu tildagi barcha matnlar asl holiga qaytadi.",
   "wordsNone": "Matn topilmadi",
   "settingsLanguageSearch": "Tillarni qidirish",
-  "settingsLanguageNoMatch": "Mos til yoʻq"
+  "settingsLanguageNoMatch": "Mos til yoʻq",
+  "aiSmokeTest": "Sizning diqqat ketma-ketligingiz {count} kunga yetdi"
 }

@@ -5087,4 +5087,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Không có ngôn ngữ phù hợp';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Chuỗi tập trung của bạn đã đạt $count ngày';
+  }
 }

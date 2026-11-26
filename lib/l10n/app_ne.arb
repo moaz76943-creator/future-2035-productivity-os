@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "यो भाषाका हरेक पाठ मूलमा फर्कन्छन्।",
   "wordsNone": "कुनै पाठ फेला परेन",
   "settingsLanguageSearch": "भाषाहरू खोज्नुहोस्",
-  "settingsLanguageNoMatch": "कुनै भाषा मिलेन"
+  "settingsLanguageNoMatch": "कुनै भाषा मिलेन",
+  "aiSmokeTest": "तपाईंको ध्यानको निरन्तरता {count} दिन पुग्यो"
 }

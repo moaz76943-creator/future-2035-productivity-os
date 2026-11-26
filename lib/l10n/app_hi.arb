@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "इस भाषा का हर टेक्स्ट मूल पर लौट जाएगा।",
   "wordsNone": "कोई टेक्स्ट नहीं मिला",
   "settingsLanguageSearch": "भाषा खोजें",
-  "settingsLanguageNoMatch": "कोई मेल खाती भाषा नहीं"
+  "settingsLanguageNoMatch": "कोई मेल खाती भाषा नहीं",
+  "aiSmokeTest": "आपकी फ़ोकस स्ट्रीक बढ़कर {count} दिन हो गई"
 }

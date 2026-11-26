@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "この言語のすべての文言が元に戻ります。",
   "wordsNone": "文言が見つかりません",
   "settingsLanguageSearch": "言語を検索",
-  "settingsLanguageNoMatch": "一致する言語がありません"
+  "settingsLanguageNoMatch": "一致する言語がありません",
+  "aiSmokeTest": "連続集中記録が{count}日になりました"
 }

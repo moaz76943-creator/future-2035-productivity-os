@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Бұл тілдегі барлық мәтін түпнұсқасына қайтады.",
   "wordsNone": "Мәтін табылмады",
   "settingsLanguageSearch": "Тілдерді іздеу",
-  "settingsLanguageNoMatch": "Сәйкес тіл жоқ"
+  "settingsLanguageNoMatch": "Сәйкес тіл жоқ",
+  "aiSmokeTest": "Фокус серияңыз {count} күнге жетті"
 }

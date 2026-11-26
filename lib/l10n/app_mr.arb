@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "या भाषेतील प्रत्येक मजकूर मूळकडे परत जाईल.",
   "wordsNone": "मजकूर सापडला नाही",
   "settingsLanguageSearch": "भाषा शोधा",
-  "settingsLanguageNoMatch": "जुळणारी भाषा नाही"
+  "settingsLanguageNoMatch": "जुळणारी भाषा नाही",
+  "aiSmokeTest": "तुमची लक्ष केंद्रित करण्याची मालिका {count} दिवसांपर्यंत वाढली"
 }

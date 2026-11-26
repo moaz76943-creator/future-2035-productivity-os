@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "All tekst på dette språket går tilbake til originalen.",
   "wordsNone": "Fant ingen tekst",
   "settingsLanguageSearch": "Søk etter språk",
-  "settingsLanguageNoMatch": "Ingen språk passer"
+  "settingsLanguageNoMatch": "Ingen språk passer",
+  "aiSmokeTest": "Fokusrekken din vokste til {count} dager"
 }

@@ -5215,4 +5215,9 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Inget språk matchar';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Din fokussvit ökade till $count dagar';
+  }
 }

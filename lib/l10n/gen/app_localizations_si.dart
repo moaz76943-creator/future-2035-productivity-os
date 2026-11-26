@@ -5269,4 +5269,9 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'කිසිදු භාෂාවක් නොගැළපේ';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'ඔබේ අවධානයේ දින මාලාව දින $count දක්වා වැඩි විය';
+  }
 }

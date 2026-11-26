@@ -5306,4 +5306,9 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Nicio limbă nu se potrivește';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Seria ta de concentrare a crescut la $count zile';
+  }
 }

@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Bu dildəki bütün mətnlər orijinala qayıdır.",
   "wordsNone": "Mətn tapılmadı",
   "settingsLanguageSearch": "Dil axtar",
-  "settingsLanguageNoMatch": "Uyğun dil yoxdur"
+  "settingsLanguageNoMatch": "Uyğun dil yoxdur",
+  "aiSmokeTest": "Fokus seriyanız {count} günə çatdı"
 }

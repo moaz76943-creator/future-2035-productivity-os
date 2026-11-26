@@ -5114,4 +5114,9 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Tiada bahasa yang sepadan';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Rentetan fokus anda meningkat kepada $count hari';
+  }
 }

@@ -5218,4 +5218,9 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Сәйкес тіл жоқ';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Фокус серияңыз $count күнге жетті';
+  }
 }

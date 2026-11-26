@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "此語言的所有文字都會恢復原文。",
   "wordsNone": "找不到文字",
   "settingsLanguageSearch": "搜尋語言",
-  "settingsLanguageNoMatch": "沒有符合的語言"
+  "settingsLanguageNoMatch": "沒有符合的語言",
+  "aiSmokeTest": "您的專注連續天數已達 {count} 天"
 }

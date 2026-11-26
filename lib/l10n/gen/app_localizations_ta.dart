@@ -5251,4 +5251,9 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'பொருந்தும் மொழி இல்லை';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'உங்கள் கவனத் தொடர் $count நாட்களாக உயர்ந்தது';
+  }
 }

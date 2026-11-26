@@ -5347,4 +5347,9 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Язык не найден';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Ваша серия фокуса выросла до $count дней';
+  }
 }

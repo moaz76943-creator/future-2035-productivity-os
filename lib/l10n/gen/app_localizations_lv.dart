@@ -5279,4 +5279,9 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Neviena valoda neatbilst';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Tava fokusa sērija pieauga līdz $count dienām';
+  }
 }

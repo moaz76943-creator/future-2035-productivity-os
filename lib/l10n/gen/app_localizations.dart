@@ -8892,6 +8892,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No language matches'**
   String get settingsLanguageNoMatch;
+
+  /// Test text for the helper-model pipeline; never shipped
+  ///
+  /// In en, this message translates to:
+  /// **'Your focus streak grew to {count} days'**
+  String aiSmokeTest(int count);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Ezen a nyelven minden szöveg visszaáll az eredetire.",
   "wordsNone": "Nem található szöveg",
   "settingsLanguageSearch": "Nyelvek keresése",
-  "settingsLanguageNoMatch": "Nincs egyező nyelv"
+  "settingsLanguageNoMatch": "Nincs egyező nyelv",
+  "aiSmokeTest": "A fókuszsorozatod {count} napra nőtt"
 }

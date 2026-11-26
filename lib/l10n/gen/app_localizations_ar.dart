@@ -5401,4 +5401,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'لا توجد لغة مطابقة';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'وصلت سلسلة تركيزك إلى $count أيام';
+  }
 }

@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Svi tekstovi na ovom jeziku vraćaju se na izvornik.",
   "wordsNone": "Nije pronađen nijedan tekst",
   "settingsLanguageSearch": "Pretraži jezike",
-  "settingsLanguageNoMatch": "Nijedan jezik ne odgovara"
+  "settingsLanguageNoMatch": "Nijedan jezik ne odgovara",
+  "aiSmokeTest": "Tvoj niz fokusa narastao je na {count} dana"
 }

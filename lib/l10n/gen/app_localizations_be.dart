@@ -5359,4 +5359,9 @@ class AppLocalizationsBe extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Няма адпаведнай мовы';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Ваша серыя фокусу вырасла да $count дзён';
+  }
 }

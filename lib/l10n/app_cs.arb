@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Všechny texty v tomto jazyce se vrátí k původním.",
   "wordsNone": "Nenalezen žádný text",
   "settingsLanguageSearch": "Hledat jazyky",
-  "settingsLanguageNoMatch": "Žádný jazyk neodpovídá"
+  "settingsLanguageNoMatch": "Žádný jazyk neodpovídá",
+  "aiSmokeTest": "Vaše série soustředění vzrostla na {count} dní"
 }

@@ -5298,4 +5298,9 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Žiadny jazyk nezodpovedá';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Tvoja séria sústredenia sa predĺžila na $count dní.';
+  }
 }

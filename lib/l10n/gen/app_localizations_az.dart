@@ -5216,4 +5216,9 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Uyğun dil yoxdur';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Fokus seriyanız $count günə çatdı';
+  }
 }

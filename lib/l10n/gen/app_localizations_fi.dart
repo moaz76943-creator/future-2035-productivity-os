@@ -5235,4 +5235,9 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Yksikään kieli ei vastaa';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Keskittymisputkesi kasvoi $count päivään';
+  }
 }

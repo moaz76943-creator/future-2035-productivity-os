@@ -5215,4 +5215,9 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Hakuna lugha inayolingana';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Mfululizo wako wa umakini umekua hadi siku $count';
+  }
 }

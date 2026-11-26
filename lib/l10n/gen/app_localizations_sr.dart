@@ -5291,4 +5291,9 @@ class AppLocalizationsSr extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Ниједан језик се не подудара';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Твој низ фокуса је порастао на $count дана';
+  }
 }

@@ -5254,4 +5254,9 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Ez dago bat datorren hizkuntzarik';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Zure kontzentrazio-bolada $count egunera luzatu da';
+  }
 }

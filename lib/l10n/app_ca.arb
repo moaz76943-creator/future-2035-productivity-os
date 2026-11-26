@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Tots els textos d’aquest idioma tornen a l’original.",
   "wordsNone": "No s’ha trobat cap text",
   "settingsLanguageSearch": "Cerca idiomes",
-  "settingsLanguageNoMatch": "Cap idioma coincideix"
+  "settingsLanguageNoMatch": "Cap idioma coincideix",
+  "aiSmokeTest": "La teva ratxa de concentració ha crescut fins a {count} dies"
 }

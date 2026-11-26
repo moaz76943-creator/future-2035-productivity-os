@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "ამ ენის ყველა ტექსტი ორიგინალს დაუბრუნდება.",
   "wordsNone": "ტექსტი ვერ მოიძებნა",
   "settingsLanguageSearch": "ენების ძიება",
-  "settingsLanguageNoMatch": "შესაბამისი ენა არ არის"
+  "settingsLanguageNoMatch": "შესაბამისი ენა არ არის",
+  "aiSmokeTest": "თქვენი ფოკუსის სერია {count} დღემდე გაიზარდა"
 }

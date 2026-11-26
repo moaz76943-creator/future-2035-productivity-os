@@ -5224,4 +5224,9 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Mos til yoʻq';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Sizning diqqat ketma-ketligingiz $count kunga yetdi';
+  }
 }

@@ -5236,4 +5236,9 @@ class AppLocalizationsMk extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Ниеден јазик не одговара';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Твојата низа на фокус се зголеми на $count дена';
+  }
 }

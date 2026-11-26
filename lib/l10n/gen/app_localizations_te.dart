@@ -5221,4 +5221,9 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'సరిపోయే భాష లేదు';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'మీ ఫోకస్ స్ట్రీక్ $count రోజులకు పెంచబడింది';
+  }
 }

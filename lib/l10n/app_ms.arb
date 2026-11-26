@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Setiap teks dalam bahasa ini kembali kepada asal.",
   "wordsNone": "Tiada teks ditemui",
   "settingsLanguageSearch": "Cari bahasa",
-  "settingsLanguageNoMatch": "Tiada bahasa yang sepadan"
+  "settingsLanguageNoMatch": "Tiada bahasa yang sepadan",
+  "aiSmokeTest": "Rentetan fokus anda meningkat kepada {count} hari"
 }

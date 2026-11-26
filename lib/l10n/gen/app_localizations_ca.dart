@@ -5238,4 +5238,9 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Cap idioma coincideix';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'La teva ratxa de concentració ha crescut fins a $count dies';
+  }
 }

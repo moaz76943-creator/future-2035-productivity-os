@@ -5202,6 +5202,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'No language matches';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Your focus streak grew to $count days';
+  }
 }
 
 /// The translations for English, as used in the United Kingdom (`en_GB`).

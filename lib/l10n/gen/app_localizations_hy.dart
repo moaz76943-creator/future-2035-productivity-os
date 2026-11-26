@@ -5233,4 +5233,9 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Համապատասխան լեզու չկա';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Ձեր կենտրոնացման շարքն աճեց մինչև $count օր';
+  }
 }

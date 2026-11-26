@@ -5302,4 +5302,9 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Nė viena kalba neatitinka';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Jūsų fokuso serija išaugo iki $count d.';
+  }
 }

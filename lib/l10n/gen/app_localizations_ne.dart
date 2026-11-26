@@ -5210,4 +5210,9 @@ class AppLocalizationsNe extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'कुनै भाषा मिलेन';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'तपाईंको ध्यानको निरन्तरता $count दिन पुग्यो';
+  }
 }

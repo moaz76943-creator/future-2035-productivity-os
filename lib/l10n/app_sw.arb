@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Kila maandishi katika lugha hii yanarudi kwenye asili.",
   "wordsNone": "Hakuna maandishi yaliyopatikana",
   "settingsLanguageSearch": "Tafuta lugha",
-  "settingsLanguageNoMatch": "Hakuna lugha inayolingana"
+  "settingsLanguageNoMatch": "Hakuna lugha inayolingana",
+  "aiSmokeTest": "Mfululizo wako wa umakini umekua hadi siku {count}"
 }

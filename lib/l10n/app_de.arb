@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Jeder Text in dieser Sprache kehrt zum Original zurück.",
   "wordsNone": "Kein Text gefunden",
   "settingsLanguageSearch": "Sprache suchen",
-  "settingsLanguageNoMatch": "Keine passende Sprache"
+  "settingsLanguageNoMatch": "Keine passende Sprache",
+  "aiSmokeTest": "Deine Fokus-Serie ist auf {count} Tage angewachsen"
 }

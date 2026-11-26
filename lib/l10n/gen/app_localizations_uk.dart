@@ -5352,4 +5352,9 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Немає відповідної мови';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Ваша серія фокусу зросла до $count днів';
+  }
 }

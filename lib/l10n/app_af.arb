@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Elke teks in hierdie taal gaan terug na die oorspronklike.",
   "wordsNone": "Geen teks gevind nie",
   "settingsLanguageSearch": "Soek tale",
-  "settingsLanguageNoMatch": "Geen taal pas nie"
+  "settingsLanguageNoMatch": "Geen taal pas nie",
+  "aiSmokeTest": "Jou fokusreeks het tot {count} dae gegroei"
 }

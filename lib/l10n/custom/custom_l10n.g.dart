@@ -2959,6 +2959,8 @@ class _CustomL10n extends AppLocalizations {
   String guardWeekReturned(int count) => _b.guardWeekReturned(count);
   @override
   String wordsOriginal(String text) => _b.wordsOriginal(text);
+  @override
+  String aiSmokeTest(int count) => _b.aiSmokeTest(count);
 }
 
 /// Every plain text the user can rename, in the order of the English file.

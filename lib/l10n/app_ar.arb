@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "سترجع كل نصوص هذه اللغة إلى الأصل.",
   "wordsNone": "لا يوجد نص",
   "settingsLanguageSearch": "ابحث عن لغة",
-  "settingsLanguageNoMatch": "لا توجد لغة مطابقة"
+  "settingsLanguageNoMatch": "لا توجد لغة مطابقة",
+  "aiSmokeTest": "وصلت سلسلة تركيزك إلى {count} أيام"
 }

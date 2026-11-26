@@ -5320,4 +5320,9 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Brak pasującego języka';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Twoja seria skupienia wzrosła do $count dni';
+  }
 }

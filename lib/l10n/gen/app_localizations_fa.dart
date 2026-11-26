@@ -5241,4 +5241,9 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'زبانی پیدا نشد';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'توالی تمرکز شما به $count روز رسید';
+  }
 }

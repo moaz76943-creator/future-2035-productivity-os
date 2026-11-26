@@ -5225,4 +5225,9 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Nincs egyező nyelv';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'A fókuszsorozatod $count napra nőtt';
+  }
 }

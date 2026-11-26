@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "এই ভাষার প্রতিটি লেখা মূলে ফিরে যাবে।",
   "wordsNone": "কোনো লেখা পাওয়া যায়নি",
   "settingsLanguageSearch": "ভাষা খুঁজুন",
-  "settingsLanguageNoMatch": "মিলে যাওয়া কোনো ভাষা নেই"
+  "settingsLanguageNoMatch": "মিলে যাওয়া কোনো ভাষা নেই",
+  "aiSmokeTest": "আপনার ফোকাস স্ট্রিক বেড়ে {count} দিন হয়েছে"
 }

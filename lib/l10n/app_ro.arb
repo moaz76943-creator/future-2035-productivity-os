@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Toate textele din această limbă revin la original.",
   "wordsNone": "Niciun text găsit",
   "settingsLanguageSearch": "Caută limbi",
-  "settingsLanguageNoMatch": "Nicio limbă nu se potrivește"
+  "settingsLanguageNoMatch": "Nicio limbă nu se potrivește",
+  "aiSmokeTest": "Seria ta de concentrare a crescut la {count} zile"
 }

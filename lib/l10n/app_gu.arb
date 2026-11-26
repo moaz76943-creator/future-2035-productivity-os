@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "આ ભાષાનું દરેક ટેક્સ્ટ મૂળ પર પાછું જશે.",
   "wordsNone": "કોઈ ટેક્સ્ટ મળ્યું નથી",
   "settingsLanguageSearch": "ભાષાઓ શોધો",
-  "settingsLanguageNoMatch": "કોઈ મેળ ખાતી ભાષા નથી"
+  "settingsLanguageNoMatch": "કોઈ મેળ ખાતી ભાષા નથી",
+  "aiSmokeTest": "તમારી ફોકસ સ્ટ્રીક {count} દિવસ સુધી વધી ગઈ"
 }

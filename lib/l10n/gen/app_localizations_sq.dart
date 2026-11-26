@@ -5226,4 +5226,9 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Asnjë gjuhë nuk përputhet';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Ecuria juaj e përqendrimit u rrit në $count ditë';
+  }
 }

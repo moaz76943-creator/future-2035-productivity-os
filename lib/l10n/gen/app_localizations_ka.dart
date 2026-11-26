@@ -5222,4 +5222,9 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'შესაბამისი ენა არ არის';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'თქვენი ფოკუსის სერია $count დღემდე გაიზარდა';
+  }
 }

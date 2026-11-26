@@ -5239,4 +5239,9 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Няма съвпадащ език';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Серията ви за фокус нарасна до $count дни';
+  }
 }

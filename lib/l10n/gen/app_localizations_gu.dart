@@ -5265,4 +5265,9 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'કોઈ મેળ ખાતી ભાષા નથી';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'તમારી ફોકસ સ્ટ્રીક $count દિવસ સુધી વધી ગઈ';
+  }
 }

@@ -5295,4 +5295,9 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Žádný jazyk neodpovídá';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Vaše série soustředění vzrostla na $count dní';
+  }
 }

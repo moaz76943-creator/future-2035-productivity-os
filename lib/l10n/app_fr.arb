@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Tous les textes de cette langue reviennent à l'original.",
   "wordsNone": "Aucun texte trouvé",
   "settingsLanguageSearch": "Rechercher une langue",
-  "settingsLanguageNoMatch": "Aucune langue ne correspond"
+  "settingsLanguageNoMatch": "Aucune langue ne correspond",
+  "aiSmokeTest": "Votre série de concentration a atteint {count} jours"
 }

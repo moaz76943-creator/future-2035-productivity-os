@@ -5218,4 +5218,9 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Ükski keel ei sobi';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Sinu fookuseseeria kasvas $count päevani';
+  }
 }

@@ -5207,4 +5207,9 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'کوئی مماثل زبان نہیں';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'آپ کا فوکس سٹریک $count دن تک بڑھ گیا';
+  }
 }

@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Сите текстови на овој јазик се враќаат на оригиналот.",
   "wordsNone": "Не е пронајден текст",
   "settingsLanguageSearch": "Барај јазици",
-  "settingsLanguageNoMatch": "Ниеден јазик не одговара"
+  "settingsLanguageNoMatch": "Ниеден јазик не одговара",
+  "aiSmokeTest": "Твојата низа на фокус се зголеми на {count} дена"
 }

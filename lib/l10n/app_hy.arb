@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Այս լեզվի բոլոր տեքստերը կվերադառնան բնօրինակին։",
   "wordsNone": "Տեքստ չգտնվեց",
   "settingsLanguageSearch": "Որոնել լեզուներ",
-  "settingsLanguageNoMatch": "Համապատասխան լեզու չկա"
+  "settingsLanguageNoMatch": "Համապատասխան լեզու չկա",
+  "aiSmokeTest": "Ձեր կենտրոնացման շարքն աճեց մինչև {count} օր"
 }

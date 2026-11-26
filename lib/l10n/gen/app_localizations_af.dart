@@ -5217,4 +5217,9 @@ class AppLocalizationsAf extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Geen taal pas nie';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Jou fokusreeks het tot $count dae gegroei';
+  }
 }

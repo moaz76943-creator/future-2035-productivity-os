@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Энэ хэлний бүх текст эх хувилбар руугаа буцна.",
   "wordsNone": "Текст олдсонгүй",
   "settingsLanguageSearch": "Хэл хайх",
-  "settingsLanguageNoMatch": "Тохирох хэл алга"
+  "settingsLanguageNoMatch": "Тохирох хэл алга",
+  "aiSmokeTest": "Таны төвлөрлийн цуврал {count} өдөр болж нэмэгдлээ."
 }

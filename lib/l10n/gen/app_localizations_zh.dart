@@ -4938,6 +4938,11 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => '没有匹配的语言';
+
+  @override
+  String aiSmokeTest(int count) {
+    return '您的专注连续天数已达 $count 天';
+  }
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -9887,4 +9892,9 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get settingsLanguageNoMatch => '沒有符合的語言';
+
+  @override
+  String aiSmokeTest(int count) {
+    return '您的專注連續天數已達 $count 天';
+  }
 }

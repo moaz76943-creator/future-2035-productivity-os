@@ -5220,4 +5220,9 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Дал келген тил жок';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Фокус серияңыз $count күнгө өстү';
+  }
 }

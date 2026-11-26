@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Visi teksti šajā valodā atgriežas pie oriģināla.",
   "wordsNone": "Teksts nav atrasts",
   "settingsLanguageSearch": "Meklēt valodas",
-  "settingsLanguageNoMatch": "Neviena valoda neatbilst"
+  "settingsLanguageNoMatch": "Neviena valoda neatbilst",
+  "aiSmokeTest": "Tava fokusa sērija pieauga līdz {count} dienām"
 }

@@ -5236,4 +5236,9 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Nessuna lingua corrisponde';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'La tua serie di focus è arrivata a $count giorni';
+  }
 }

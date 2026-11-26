@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Mọi văn bản trong ngôn ngữ này sẽ trở về bản gốc.",
   "wordsNone": "Không tìm thấy văn bản",
   "settingsLanguageSearch": "Tìm ngôn ngữ",
-  "settingsLanguageNoMatch": "Không có ngôn ngữ phù hợp"
+  "settingsLanguageNoMatch": "Không có ngôn ngữ phù hợp",
+  "aiSmokeTest": "Chuỗi tập trung của bạn đã đạt {count} ngày"
 }

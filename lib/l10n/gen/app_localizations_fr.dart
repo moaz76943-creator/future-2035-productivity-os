@@ -5263,6 +5263,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'Aucune langue ne correspond';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'Votre série de concentration a atteint $count jours';
+  }
 }
 
 /// The translations for French, as used in Canada (`fr_CA`).

@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Todos os textos deste idioma volven ao orixinal.",
   "wordsNone": "Non se atopou ningún texto",
   "settingsLanguageSearch": "Buscar idiomas",
-  "settingsLanguageNoMatch": "Ningún idioma coincide"
+  "settingsLanguageNoMatch": "Ningún idioma coincide",
+  "aiSmokeTest": "A túa serie de concentración medrou ata {count} días"
 }

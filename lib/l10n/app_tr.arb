@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Bu dildeki her metin orijinaline döner.",
   "wordsNone": "Metin bulunamadı",
   "settingsLanguageSearch": "Dil ara",
-  "settingsLanguageNoMatch": "Eşleşen dil yok"
+  "settingsLanguageNoMatch": "Eşleşen dil yok",
+  "aiSmokeTest": "Odak seriniz {count} güne ulaştı"
 }

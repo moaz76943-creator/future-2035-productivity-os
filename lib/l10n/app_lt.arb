@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Visi šios kalbos tekstai grįžta į originalą.",
   "wordsNone": "Tekstas nerastas",
   "settingsLanguageSearch": "Ieškoti kalbų",
-  "settingsLanguageNoMatch": "Nė viena kalba neatitinka"
+  "settingsLanguageNoMatch": "Nė viena kalba neatitinka",
+  "aiSmokeTest": "Jūsų fokuso serija išaugo iki {count} d."
 }

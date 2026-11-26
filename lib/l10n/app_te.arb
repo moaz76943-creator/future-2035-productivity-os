@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "ఈ భాషలోని ప్రతి వచనం అసలుకు తిరిగి వెళ్తుంది.",
   "wordsNone": "వచనం కనుగొనబడలేదు",
   "settingsLanguageSearch": "భాషలను శోధించు",
-  "settingsLanguageNoMatch": "సరిపోయే భాష లేదు"
+  "settingsLanguageNoMatch": "సరిపోయే భాష లేదు",
+  "aiSmokeTest": "మీ ఫోకస్ స్ట్రీక్ {count} రోజులకు పెంచబడింది"
 }

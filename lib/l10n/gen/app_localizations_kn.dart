@@ -5281,4 +5281,9 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get settingsLanguageNoMatch => 'ಯಾವುದೇ ಭಾಷೆ ಹೊಂದುತ್ತಿಲ್ಲ';
+
+  @override
+  String aiSmokeTest(int count) {
+    return 'ನಿಮ್ಮ ಫೋಕಸ್ ಸರಣಿಯು $count ದಿನಗಳಿಗೆ ಬೆಳೆದಿದೆ.';
+  }
 }

@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Allir textar á þessu tungumáli fara aftur í upprunalegt horf.",
   "wordsNone": "Enginn texti fannst",
   "settingsLanguageSearch": "Leita að tungumálum",
-  "settingsLanguageNoMatch": "Ekkert tungumál passar"
+  "settingsLanguageNoMatch": "Ekkert tungumál passar",
+  "aiSmokeTest": "Einbeitingarröðin þín lengdist í {count} daga"
 }

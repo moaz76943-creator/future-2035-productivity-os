@@ -1443,5 +1443,6 @@
   "wordsResetAllConfirm": "Όλα τα κείμενα σε αυτή τη γλώσσα επιστρέφουν στο αρχικό.",
   "wordsNone": "Δεν βρέθηκε κείμενο",
   "settingsLanguageSearch": "Αναζήτηση γλωσσών",
-  "settingsLanguageNoMatch": "Καμία γλώσσα δεν ταιριάζει"
+  "settingsLanguageNoMatch": "Καμία γλώσσα δεν ταιριάζει",
+  "aiSmokeTest": "Το σερί εστίασής σου έφτασε τις {count} ημέρες"
 }
