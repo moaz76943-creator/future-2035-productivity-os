@@ -5212,7 +5212,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get soundsRemoveMusic => 'ऑडियो हटाएँ';
 
   @override
-  String get wordPacksTitle => 'शब्द पैक';
+  String get wordPacksTitle => 'भाषाएँ सीखें';
 
   @override
   String get wordPacksHint =>

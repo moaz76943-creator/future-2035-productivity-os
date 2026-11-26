@@ -5244,7 +5244,7 @@ class AppLocalizationsTa extends AppLocalizations {
   String get soundsRemoveMusic => 'ஆடியோவை அகற்று';
 
   @override
-  String get wordPacksTitle => 'சொல் தொகுப்புகள்';
+  String get wordPacksTitle => 'மொழிகளைக் கற்கவும்';
 
   @override
   String get wordPacksHint =>

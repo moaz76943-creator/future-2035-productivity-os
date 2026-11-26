@@ -5228,7 +5228,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get soundsRemoveMusic => 'Poista ääni';
 
   @override
-  String get wordPacksTitle => 'Sanapaketit';
+  String get wordPacksTitle => 'Opi kieliä';
 
   @override
   String get wordPacksHint =>

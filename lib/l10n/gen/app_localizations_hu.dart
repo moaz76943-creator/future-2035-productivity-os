@@ -5218,7 +5218,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get soundsRemoveMusic => 'Hang eltávolítása';
 
   @override
-  String get wordPacksTitle => 'Szócsomagok';
+  String get wordPacksTitle => 'Nyelvtanulás';
 
   @override
   String get wordPacksHint =>

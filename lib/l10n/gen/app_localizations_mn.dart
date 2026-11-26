@@ -5217,7 +5217,7 @@ class AppLocalizationsMn extends AppLocalizations {
   String get soundsRemoveMusic => 'Аудиог хасах';
 
   @override
-  String get wordPacksTitle => 'Үгийн багц';
+  String get wordPacksTitle => 'Хэл сурах';
 
   @override
   String get wordPacksHint =>

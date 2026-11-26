@@ -53,7 +53,7 @@ jobs:
         run: |
           git config user.name "df-bot"; git config user.email "df-bot@users.noreply.github.com"
           git add test/golden/goldens
-          git diff --cached --quiet || { git commit -qm "golden screens (${{ matrix.tag }})"; for i in 1 2 3 4; do git pull -q --rebase origin claude-dev && git push -q origin HEAD:claude-dev && break; sleep 5; done; }
+          git diff --cached --quiet || { git commit -qm "golden screens (${{ matrix.tag }})"; ok=0; for i in 1 2 3 4; do git pull -q --rebase --autostash origin claude-dev && git push -q origin HEAD:claude-dev && ok=1 && break; sleep 5; done; [ $ok = 1 ] || { echo '::error::push failed'; exit 1; }; }
       - uses: actions/upload-artifact@v4
         if: failure()
         with:

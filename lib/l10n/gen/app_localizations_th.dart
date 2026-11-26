@@ -5051,7 +5051,7 @@ class AppLocalizationsTh extends AppLocalizations {
   String get soundsRemoveMusic => 'นำไฟล์เสียงออก';
 
   @override
-  String get wordPacksTitle => 'ชุดคำศัพท์';
+  String get wordPacksTitle => 'เรียนภาษา';
 
   @override
   String get wordPacksHint =>

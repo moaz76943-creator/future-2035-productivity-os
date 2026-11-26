@@ -5199,7 +5199,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get soundsRemoveMusic => 'آڈیو ہٹائیں';
 
   @override
-  String get wordPacksTitle => 'الفاظ کے پیک';
+  String get wordPacksTitle => 'زبانیں سیکھیں';
 
   @override
   String get wordPacksHint =>

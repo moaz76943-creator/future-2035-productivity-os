@@ -5107,7 +5107,7 @@ class AppLocalizationsMs extends AppLocalizations {
   String get soundsRemoveMusic => 'Alih keluar audio';
 
   @override
-  String get wordPacksTitle => 'Pek perkataan';
+  String get wordPacksTitle => 'Belajar bahasa';
 
   @override
   String get wordPacksHint =>

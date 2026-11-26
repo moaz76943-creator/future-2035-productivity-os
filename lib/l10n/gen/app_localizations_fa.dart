@@ -5233,7 +5233,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get soundsRemoveMusic => 'حذف فایل صوتی';
 
   @override
-  String get wordPacksTitle => 'بسته‌های واژه';
+  String get wordPacksTitle => 'یادگیری زبان';
 
   @override
   String get wordPacksHint =>

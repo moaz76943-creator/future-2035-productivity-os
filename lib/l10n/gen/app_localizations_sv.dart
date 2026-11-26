@@ -5208,7 +5208,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get soundsRemoveMusic => 'Ta bort ljud';
 
   @override
-  String get wordPacksTitle => 'Ordpaket';
+  String get wordPacksTitle => 'Lär dig språk';
 
   @override
   String get wordPacksHint =>

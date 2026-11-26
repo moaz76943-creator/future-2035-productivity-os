@@ -5217,7 +5217,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get soundsRemoveMusic => 'Quitar audio';
 
   @override
-  String get wordPacksTitle => 'Paquetes de palabras';
+  String get wordPacksTitle => 'Aprender idiomas';
 
   @override
   String get wordPacksHint =>

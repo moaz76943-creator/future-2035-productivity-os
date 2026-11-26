@@ -5211,7 +5211,7 @@ class AppLocalizationsEt extends AppLocalizations {
   String get soundsRemoveMusic => 'Eemalda heli';
 
   @override
-  String get wordPacksTitle => 'Sõnapaketid';
+  String get wordPacksTitle => 'Keeleõpe';
 
   @override
   String get wordPacksHint =>

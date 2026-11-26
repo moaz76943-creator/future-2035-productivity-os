@@ -1441,7 +1441,7 @@
   "soundsMusicHint": "Reprodueix un fitxer d'àudio del telèfon. No es copia ni es puja res.",
   "soundsChooseMusic": "Tria un àudio",
   "soundsRemoveMusic": "Treu l'àudio",
-  "wordPacksTitle": "Paquets de paraules",
+  "wordPacksTitle": "Aprèn idiomes",
   "wordPacksHint": "Llistes de paraules per tema. Baixa només l'idioma que vulguis i després edita o suprimeix les targetes lliurement.",
   "wordPacksFailed": "No s'ha pogut baixar. Comprova la connexió.",
   "wordPacksEmpty": "Les paraules d'aquest idioma encara s'estan preparant."

@@ -130,8 +130,6 @@ class DecksScreen extends ConsumerWidget {
                         hue: _hue,
                         title: l10n.flashEmptyTitle,
                         message: l10n.flashEmptyMessage,
-                        actionLabel: l10n.deckNew,
-                        onAction: () => _createDeck(context, ref),
                       ),
                       TextButton.icon(
                         key: const Key('wordPacksEmpty'),

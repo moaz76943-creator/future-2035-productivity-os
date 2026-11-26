@@ -5208,7 +5208,7 @@ class AppLocalizationsSw extends AppLocalizations {
   String get soundsRemoveMusic => 'Ondoa sauti';
 
   @override
-  String get wordPacksTitle => 'Vifurushi vya maneno';
+  String get wordPacksTitle => 'Jifunze lugha';
 
   @override
   String get wordPacksHint =>

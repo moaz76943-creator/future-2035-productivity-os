@@ -5209,7 +5209,7 @@ class AppLocalizationsAz extends AppLocalizations {
   String get soundsRemoveMusic => 'Audionu sil';
 
   @override
-  String get wordPacksTitle => 'Söz paketləri';
+  String get wordPacksTitle => 'Dil öyrən';
 
   @override
   String get wordPacksHint =>

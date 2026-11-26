@@ -5202,7 +5202,7 @@ class AppLocalizationsMr extends AppLocalizations {
   String get soundsRemoveMusic => 'ऑडिओ काढा';
 
   @override
-  String get wordPacksTitle => 'शब्द पॅक';
+  String get wordPacksTitle => 'भाषा शिका';
 
   @override
   String get wordPacksHint =>

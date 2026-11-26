@@ -91,8 +91,6 @@ class _GoalsScreenState extends ConsumerState<GoalsScreen> {
                   hue: ModuleHue.goals,
                   title: l10n.goalsEmptyTitle,
                   message: l10n.goalsEmptyMessage,
-                  actionLabel: l10n.goalNew,
-                  onAction: _create,
                 ),
               );
             }

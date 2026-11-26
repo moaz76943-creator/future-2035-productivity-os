@@ -155,8 +155,6 @@ class _NotesScreenState extends ConsumerState<NotesScreen> {
         title: l10n.notesEmptyTitle,
         message: l10n.notesEmptyMessage,
         hue: ModuleHue.notes,
-        actionLabel: l10n.quickAddNote,
-        onAction: _create,
       );
     }
     final message = filtered

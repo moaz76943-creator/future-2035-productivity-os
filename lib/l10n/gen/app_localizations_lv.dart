@@ -5272,7 +5272,7 @@ class AppLocalizationsLv extends AppLocalizations {
   String get soundsRemoveMusic => 'Noņemt audio';
 
   @override
-  String get wordPacksTitle => 'Vārdu paketes';
+  String get wordPacksTitle => 'Valodu apguve';
 
   @override
   String get wordPacksHint =>
