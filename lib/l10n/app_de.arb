@@ -747,7 +747,6 @@
   "notesNotFound": "Diese Notiz existiert nicht mehr.",
   "notesCheckboxSemantics": "Checklisteneintrag: {label}",
   "notesOpenLinkedNote": "Notiz {title} öffnen",
-  "notesTagsHint": "Füge Tags hinzu, indem du #tag in die Notiz schreibst.",
   "notesTaskDone": "Erledigt",
   "notifTimerDoneBody": "Die eingestellte Zeit ist abgelaufen.",
   "onboardingPrivatePointDevice": "Nur auf diesem Gerät gespeichert, verschlüsselt",

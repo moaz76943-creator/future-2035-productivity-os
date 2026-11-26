@@ -747,7 +747,6 @@
   "notesNotFound": "ไม่มีโน้ตนี้แล้ว",
   "notesCheckboxSemantics": "รายการตรวจสอบ: {label}",
   "notesOpenLinkedNote": "เปิดโน้ต {title}",
-  "notesTagsHint": "เพิ่มแท็กโดยพิมพ์ #แท็ก ในโน้ต",
   "notesTaskDone": "เสร็จแล้ว",
   "notifTimerDoneBody": "ครบเวลาที่ตั้งไว้แล้ว",
   "onboardingPrivatePointDevice": "เก็บบนอุปกรณ์นี้เท่านั้น เข้ารหัสไว้",

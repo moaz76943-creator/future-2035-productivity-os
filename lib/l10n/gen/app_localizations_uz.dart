@@ -2724,9 +2724,6 @@ class AppLocalizationsUz extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Qaydga #teg deb yozib, teglar qoʻshing.';
-
-  @override
   String get notesTaskDone => 'Bajarilgan';
 
   @override

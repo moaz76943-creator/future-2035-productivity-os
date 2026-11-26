@@ -2724,9 +2724,6 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Lägg till taggar genom att skriva #tagg i anteckningen.';
-
-  @override
   String get notesTaskDone => 'Slutförd';
 
   @override

@@ -2726,9 +2726,6 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Voeg tags toe door #tag in de notitie te schrijven.';
-
-  @override
   String get notesTaskDone => 'Voltooid';
 
   @override

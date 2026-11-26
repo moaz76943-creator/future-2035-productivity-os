@@ -747,7 +747,6 @@
   "notesNotFound": "Այս նշումն այլևս գոյություն չունի։",
   "notesCheckboxSemantics": "Ստուգաթերթի կետ՝ {label}",
   "notesOpenLinkedNote": "Բացել {title} նշումը",
-  "notesTagsHint": "Ավելացրեք պիտակներ՝ նշման մեջ գրելով #պիտակ։",
   "notesTaskDone": "Ավարտված",
   "notifTimerDoneBody": "Ձեր սահմանած ժամն անցել է։",
   "onboardingPrivatePointDevice": "Պահվում է միայն այս սարքում՝ գաղտնագրված",

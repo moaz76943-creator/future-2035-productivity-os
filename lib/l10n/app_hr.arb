@@ -747,7 +747,6 @@
   "notesNotFound": "Ova bilješka više ne postoji.",
   "notesCheckboxSemantics": "Stavka popisa: {label}",
   "notesOpenLinkedNote": "Otvori bilješku {title}",
-  "notesTagsHint": "Dodaj oznake tako da u bilješku napišeš #oznaka.",
   "notesTaskDone": "Završeno",
   "notifTimerDoneBody": "Vrijeme koje si postavio je isteklo.",
   "onboardingPrivatePointDevice": "Spremljeno samo na ovom uređaju, šifrirano",

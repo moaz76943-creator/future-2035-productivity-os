@@ -747,7 +747,6 @@
   "notesNotFound": "یہ نوٹ اب موجود نہیں۔",
   "notesCheckboxSemantics": "چیک لسٹ آئٹم: {label}",
   "notesOpenLinkedNote": "نوٹ {title} کھولیں",
-  "notesTagsHint": "نوٹ میں #ٹیگ لکھ کر ٹیگ شامل کریں۔",
   "notesTaskDone": "مکمل",
   "notifTimerDoneBody": "آپ کا مقرر کردہ وقت پورا ہو گیا۔",
   "onboardingPrivatePointDevice": "صرف اسی آلے پر، انکرپٹڈ",

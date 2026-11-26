@@ -2779,9 +2779,6 @@ class AppLocalizationsBs extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Dodajte oznake pisanjem #oznaka u bilješci.';
-
-  @override
   String get notesTaskDone => 'Završeno';
 
   @override

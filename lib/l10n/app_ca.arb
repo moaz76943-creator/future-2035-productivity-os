@@ -747,7 +747,6 @@
   "notesNotFound": "Aquesta nota ja no existeix.",
   "notesCheckboxSemantics": "Element de la llista: {label}",
   "notesOpenLinkedNote": "Obre la nota {title}",
-  "notesTagsHint": "Afegeix etiquetes escrivint #etiqueta a la nota.",
   "notesTaskDone": "Completada",
   "notifTimerDoneBody": "El temps que has definit s’ha esgotat.",
   "onboardingPrivatePointDevice": "Desat només en aquest dispositiu, xifrat",

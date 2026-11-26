@@ -747,7 +747,6 @@
   "notesNotFound": "ეს ჩანაწერი აღარ არსებობს.",
   "notesCheckboxSemantics": "სიის პუნქტი: {label}",
   "notesOpenLinkedNote": "ჩანაწერის გახსნა: {title}",
-  "notesTagsHint": "დაამატეთ ტეგები ჩანაწერში #ტეგის დაწერით.",
   "notesTaskDone": "შესრულებული",
   "notifTimerDoneBody": "თქვენ მიერ დაყენებული დრო გავიდა.",
   "onboardingPrivatePointDevice": "ინახება მხოლოდ ამ მოწყობილობაზე, დაშიფრულად",

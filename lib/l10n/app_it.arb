@@ -747,7 +747,6 @@
   "notesNotFound": "Questa nota non esiste più.",
   "notesCheckboxSemantics": "Voce della checklist: {label}",
   "notesOpenLinkedNote": "Apri la nota {title}",
-  "notesTagsHint": "Aggiungi tag scrivendo #tag nella nota.",
   "notesTaskDone": "Completata",
   "notifTimerDoneBody": "Il tempo impostato è trascorso.",
   "onboardingPrivatePointDevice": "Salvato solo su questo dispositivo, cifrato",

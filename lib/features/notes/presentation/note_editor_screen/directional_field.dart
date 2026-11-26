@@ -203,6 +203,8 @@ class _TagsSection extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
     final tags = ref.watch(noteTagsProvider(noteId)).value ?? const <String>[];
+    // No tags yet: nothing to show (the text field's hint already explains #tags).
+    if (tags.isEmpty) return const SizedBox.shrink();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -210,16 +212,13 @@ class _TagsSection extends ConsumerWidget {
           title: l10n.notesTags,
           padding: const EdgeInsets.only(top: Space.md, bottom: Space.xs),
         ),
-        if (tags.isEmpty)
-          Text(l10n.notesTagsHint, style: context.text.bodySmall?.copyWith(color: context.lux.ink3))
-        else
-          Wrap(
-            spacing: Space.xs,
-            runSpacing: Space.xs,
-            children: [
-              for (final t in tags) LuxPill(label: l10n.notesTagFilter(t), color: Palette.emerald),
-            ],
-          ),
+        Wrap(
+          spacing: Space.xs,
+          runSpacing: Space.xs,
+          children: [
+            for (final t in tags) LuxPill(label: l10n.notesTagFilter(t), color: Palette.emerald),
+          ],
+        ),
       ],
     );
   }

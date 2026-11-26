@@ -747,7 +747,6 @@
   "notesNotFound": "Ta notatka już nie istnieje.",
   "notesCheckboxSemantics": "Pozycja listy: {label}",
   "notesOpenLinkedNote": "Otwórz notatkę {title}",
-  "notesTagsHint": "Dodawaj tagi, pisząc #tag w notatce.",
   "notesTaskDone": "Ukończone",
   "notifTimerDoneBody": "Ustawiony czas minął.",
   "onboardingPrivatePointDevice": "Przechowywane tylko na tym urządzeniu, zaszyfrowane",

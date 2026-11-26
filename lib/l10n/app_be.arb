@@ -747,7 +747,6 @@
   "notesNotFound": "Гэтай нататкі больш няма.",
   "notesCheckboxSemantics": "Пункт спіса: {label}",
   "notesOpenLinkedNote": "Адкрыць нататку {title}",
-  "notesTagsHint": "Дадавайце меткі, пішучы #метка ў нататцы.",
   "notesTaskDone": "Выканана",
   "notifTimerDoneBody": "Зададзены вамі час скончыўся.",
   "onboardingPrivatePointDevice": "Захоўваецца толькі на гэтай прыладзе, у зашыфраваным выглядзе",

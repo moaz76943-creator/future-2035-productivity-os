@@ -747,7 +747,6 @@
   "notesNotFound": "ही टीप आता अस्तित्वात नाही.",
   "notesCheckboxSemantics": "तपासणी सूची आयटम: {label}",
   "notesOpenLinkedNote": "{title} टीप उघडा",
-  "notesTagsHint": "टिपेत #टॅग लिहून टॅग जोडा.",
   "notesTaskDone": "पूर्ण",
   "notifTimerDoneBody": "तुम्ही ठरवलेली वेळ उलटून गेली आहे.",
   "onboardingPrivatePointDevice": "फक्त या डिव्हाइसवर, कूटबद्ध स्वरूपात साठवले जाते",

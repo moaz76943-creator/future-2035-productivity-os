@@ -747,7 +747,6 @@
   "notesNotFound": "Šī piezīme vairs nepastāv.",
   "notesCheckboxSemantics": "Kontrolsaraksta punkts: {label}",
   "notesOpenLinkedNote": "Atvērt piezīmi {title}",
-  "notesTagsHint": "Pievienojiet birkas, piezīmē rakstot #birka.",
   "notesTaskDone": "Pabeigts",
   "notifTimerDoneBody": "Jūsu iestatītais laiks ir pagājis.",
   "onboardingPrivatePointDevice": "Glabāts tikai šajā ierīcē, šifrēts",

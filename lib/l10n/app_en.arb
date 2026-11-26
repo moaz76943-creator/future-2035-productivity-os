@@ -3658,10 +3658,6 @@
       }
     }
   },
-  "notesTagsHint": "Add tags by writing #tag in the note.",
-  "@notesTagsHint": {
-    "description": "Hint in the tags section of a note without tags"
-  },
   "notesTaskDone": "Completed",
   "@notesTaskDone": {
     "description": "Accessibility label for a linked task that is done"

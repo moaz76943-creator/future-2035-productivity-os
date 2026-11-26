@@ -747,7 +747,6 @@
   "notesNotFound": "Bu qeyd artıq mövcud deyil.",
   "notesCheckboxSemantics": "Siyahı bəndi: {label}",
   "notesOpenLinkedNote": "{title} qeydini aç",
-  "notesTagsHint": "Qeydə #etiket yazaraq etiketlər əlavə edin.",
   "notesTaskDone": "Tamamlandı",
   "notifTimerDoneBody": "Təyin etdiyiniz vaxt keçdi.",
   "onboardingPrivatePointDevice": "Yalnız bu cihazda, şifrələnmiş şəkildə saxlanılır",

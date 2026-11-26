@@ -2719,9 +2719,6 @@ class AppLocalizationsSw extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Ongeza lebo kwa kuandika #lebo kwenye dokezo.';
-
-  @override
   String get notesTaskDone => 'Limekamilika';
 
   @override

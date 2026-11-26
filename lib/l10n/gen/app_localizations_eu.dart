@@ -2747,9 +2747,6 @@ class AppLocalizationsEu extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Gehitu etiketak oharrean #etiketa idatziz.';
-
-  @override
   String get notesTaskDone => 'Osatuta';
 
   @override

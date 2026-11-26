@@ -747,7 +747,6 @@
   "notesNotFound": "Цієї нотатки більше не існує.",
   "notesCheckboxSemantics": "Пункт списку: {label}",
   "notesOpenLinkedNote": "Відкрити нотатку {title}",
-  "notesTagsHint": "Додавайте теги, пишучи #тег у нотатці.",
   "notesTaskDone": "Виконано",
   "notifTimerDoneBody": "Заданий час минув.",
   "onboardingPrivatePointDevice": "Зберігається лише на цьому пристрої, зашифровано",

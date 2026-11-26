@@ -747,7 +747,6 @@
   "notesNotFound": "Catatan ini sudah tidak ada.",
   "notesCheckboxSemantics": "Item daftar periksa: {label}",
   "notesOpenLinkedNote": "Buka catatan {title}",
-  "notesTagsHint": "Tambahkan tag dengan menulis #tag di catatan.",
   "notesTaskDone": "Selesai",
   "notifTimerDoneBody": "Waktu yang Anda atur sudah habis.",
   "onboardingPrivatePointDevice": "Hanya disimpan di perangkat ini, terenkripsi",

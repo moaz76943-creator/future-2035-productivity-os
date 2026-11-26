@@ -747,7 +747,6 @@
   "notesNotFound": "Wala na ang talang ito.",
   "notesCheckboxSemantics": "Item sa checklist: {label}",
   "notesOpenLinkedNote": "Buksan ang tala {title}",
-  "notesTagsHint": "Magdagdag ng tag sa pagsulat ng #tag sa tala.",
   "notesTaskDone": "Natapos",
   "notifTimerDoneBody": "Lumipas na ang oras na itinakda mo.",
   "onboardingPrivatePointDevice": "Sa device na ito lang nakatago, naka-encrypt",

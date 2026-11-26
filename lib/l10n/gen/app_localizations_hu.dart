@@ -2722,9 +2722,6 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Címkét úgy adhatsz hozzá, hogy #címke formában beírod a jegyzetbe.';
-
-  @override
   String get notesTaskDone => 'Befejezve';
 
   @override

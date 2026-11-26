@@ -747,7 +747,6 @@
   "notesNotFound": "Nota ini tidak wujud lagi.",
   "notesCheckboxSemantics": "Item senarai semak: {label}",
   "notesOpenLinkedNote": "Buka nota {title}",
-  "notesTagsHint": "Tambah tag dengan menulis #tag dalam nota.",
   "notesTaskDone": "Selesai",
   "notifTimerDoneBody": "Masa yang anda tetapkan telah berlalu.",
   "onboardingPrivatePointDevice": "Disimpan hanya pada peranti ini, disulitkan",

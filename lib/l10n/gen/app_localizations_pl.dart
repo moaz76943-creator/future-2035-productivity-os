@@ -2798,9 +2798,6 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Dodawaj tagi, pisząc #tag w notatce.';
-
-  @override
   String get notesTaskDone => 'Ukończone';
 
   @override

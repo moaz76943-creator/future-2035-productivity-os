@@ -2723,9 +2723,6 @@ class AppLocalizationsNb extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Legg til emneknagger ved å skrive #emne i notatet.';
-
-  @override
   String get notesTaskDone => 'Fullført';
 
   @override

@@ -2630,9 +2630,6 @@ class AppLocalizationsTh extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'เพิ่มแท็กโดยพิมพ์ #แท็ก ในโน้ต';
-
-  @override
   String get notesTaskDone => 'เสร็จแล้ว';
 
   @override

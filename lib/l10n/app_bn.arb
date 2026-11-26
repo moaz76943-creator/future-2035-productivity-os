@@ -747,7 +747,6 @@
   "notesNotFound": "এই নোটটি আর নেই।",
   "notesCheckboxSemantics": "চেকলিস্ট আইটেম: {label}",
   "notesOpenLinkedNote": "{title} নোট খুলুন",
-  "notesTagsHint": "নোটে #ট্যাগ লিখে ট্যাগ যোগ করুন।",
   "notesTaskDone": "সম্পন্ন",
   "notifTimerDoneBody": "আপনার ঠিক করা সময় শেষ হয়েছে।",
   "onboardingPrivatePointDevice": "শুধু এই ডিভাইসে, এনক্রিপ্ট করে রাখা",

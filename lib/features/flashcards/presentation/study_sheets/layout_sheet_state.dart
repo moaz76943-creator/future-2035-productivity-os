@@ -58,7 +58,7 @@ class _LayoutSheetState extends ConsumerState<_LayoutSheet> {
         Space.page,
         0,
         Space.page,
-        Space.lg + MediaQuery.viewInsetsOf(context).bottom,
+        Space.lg + sheetBottomInset(context),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

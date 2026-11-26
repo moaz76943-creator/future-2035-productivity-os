@@ -2816,9 +2816,6 @@ class AppLocalizationsBe extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Дадавайце меткі, пішучы #метка ў нататцы.';
-
-  @override
   String get notesTaskDone => 'Выканана';
 
   @override

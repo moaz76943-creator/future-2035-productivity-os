@@ -2741,9 +2741,6 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'با نوشتن #برچسب در یادداشت، برچسب اضافه کنید.';
-
-  @override
   String get notesTaskDone => 'انجام‌شده';
 
   @override

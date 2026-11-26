@@ -747,7 +747,6 @@
   "notesNotFound": "Anteckningen finns inte längre.",
   "notesCheckboxSemantics": "Checklistpunkt: {label}",
   "notesOpenLinkedNote": "Öppna anteckningen {title}",
-  "notesTagsHint": "Lägg till taggar genom att skriva #tagg i anteckningen.",
   "notesTaskDone": "Slutförd",
   "notifTimerDoneBody": "Tiden du ställde in har gått.",
   "onboardingPrivatePointDevice": "Lagras krypterat, bara på enheten",

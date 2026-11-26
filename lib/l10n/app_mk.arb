@@ -747,7 +747,6 @@
   "notesNotFound": "Оваа белешка повеќе не постои.",
   "notesCheckboxSemantics": "Ставка од списокот: {label}",
   "notesOpenLinkedNote": "Отвори белешка {title}",
-  "notesTagsHint": "Додајте етикети со пишување #етикета во белешката.",
   "notesTaskDone": "Завршено",
   "notifTimerDoneBody": "Времето што го поставивте помина.",
   "onboardingPrivatePointDevice": "Се чува само на овој уред, шифрирано",

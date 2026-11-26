@@ -2809,9 +2809,6 @@ class AppLocalizationsSl extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Oznake dodate tako, da v zapisek napišete #oznaka.';
-
-  @override
   String get notesTaskDone => 'Končano';
 
   @override

@@ -747,7 +747,6 @@
   "notesNotFound": "මෙම සටහන තවදුරටත් නොපවතී.",
   "notesCheckboxSemantics": "පිරික්සුම් අයිතමය: {label}",
   "notesOpenLinkedNote": "සටහන {title} විවෘත කරන්න",
-  "notesTagsHint": "සටහනේ #ටැග් ලියා ටැග් එක් කරන්න.",
   "notesTaskDone": "නිමයි",
   "notifTimerDoneBody": "ඔබ සැකසූ කාලය ගත විය.",
   "onboardingPrivatePointDevice": "මෙම උපාංගයේ පමණක්, සංකේතිතව ගබඩා වේ",

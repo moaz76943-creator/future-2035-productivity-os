@@ -2774,9 +2774,6 @@ class AppLocalizationsSr extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Додајте ознаке тако што у белешци напишете #ознака.';
-
-  @override
   String get notesTaskDone => 'Завршено';
 
   @override

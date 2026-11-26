@@ -2730,9 +2730,6 @@ class AppLocalizationsFil extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Magdagdag ng tag sa pagsulat ng #tag sa tala.';
-
-  @override
   String get notesTaskDone => 'Natapos';
 
   @override

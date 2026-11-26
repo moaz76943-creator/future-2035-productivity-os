@@ -747,7 +747,6 @@
   "notesNotFound": "Deze notitie bestaat niet meer.",
   "notesCheckboxSemantics": "Checklistpunt: {label}",
   "notesOpenLinkedNote": "Notitie {title} openen",
-  "notesTagsHint": "Voeg tags toe door #tag in de notitie te schrijven.",
   "notesTaskDone": "Voltooid",
   "notifTimerDoneBody": "De ingestelde tijd is voorbij.",
   "onboardingPrivatePointDevice": "Alleen versleuteld op dit toestel opgeslagen",

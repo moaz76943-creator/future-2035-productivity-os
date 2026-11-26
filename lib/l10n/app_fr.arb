@@ -747,7 +747,6 @@
   "notesNotFound": "Cette note n’existe plus.",
   "notesCheckboxSemantics": "Élément de liste : {label}",
   "notesOpenLinkedNote": "Ouvrir la note {title}",
-  "notesTagsHint": "Ajoutez des étiquettes en écrivant #étiquette dans la note.",
   "notesTaskDone": "Terminée",
   "notifTimerDoneBody": "Le temps que vous avez défini est écoulé.",
   "onboardingPrivatePointDevice": "Stocké uniquement sur cet appareil, chiffré",

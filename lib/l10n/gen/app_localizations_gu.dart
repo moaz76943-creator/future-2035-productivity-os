@@ -2760,9 +2760,6 @@ class AppLocalizationsGu extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'નોંધમાં #ટૅગ લખીને ટૅગ ઉમેરો.';
-
-  @override
   String get notesTaskDone => 'પૂર્ણ';
 
   @override

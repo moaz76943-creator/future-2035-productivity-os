@@ -747,7 +747,6 @@
   "notesNotFound": "Ez a jegyzet már nem létezik.",
   "notesCheckboxSemantics": "Ellenőrzőlista-elem: {label}",
   "notesOpenLinkedNote": "{title} jegyzet megnyitása",
-  "notesTagsHint": "Címkét úgy adhatsz hozzá, hogy #címke formában beírod a jegyzetbe.",
   "notesTaskDone": "Befejezve",
   "notifTimerDoneBody": "A beállított idő letelt.",
   "onboardingPrivatePointDevice": "Csak ezen az eszközön, titkosítva tárolva",

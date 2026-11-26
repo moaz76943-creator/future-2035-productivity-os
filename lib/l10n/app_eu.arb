@@ -747,7 +747,6 @@
   "notesNotFound": "Ohar hau ez da existitzen jada.",
   "notesCheckboxSemantics": "Zerrendako elementua: {label}",
   "notesOpenLinkedNote": "Ireki {title} oharra",
-  "notesTagsHint": "Gehitu etiketak oharrean #etiketa idatziz.",
   "notesTaskDone": "Osatuta",
   "notifTimerDoneBody": "Ezarri duzun denbora igaro da.",
   "onboardingPrivatePointDevice": "Gailu honetan bakarrik gordeta, zifratuta",

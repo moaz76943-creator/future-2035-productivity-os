@@ -2761,9 +2761,6 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'සටහනේ #ටැග් ලියා ටැග් එක් කරන්න.';
-
-  @override
   String get notesTaskDone => 'නිමයි';
 
   @override

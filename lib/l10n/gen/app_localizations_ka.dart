@@ -2722,9 +2722,6 @@ class AppLocalizationsKa extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'დაამატეთ ტეგები ჩანაწერში #ტეგის დაწერით.';
-
-  @override
   String get notesTaskDone => 'შესრულებული';
 
   @override

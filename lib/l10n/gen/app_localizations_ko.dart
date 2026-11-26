@@ -2586,9 +2586,6 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => '노트에 #태그를 쓰면 태그가 추가됩니다.';
-
-  @override
   String get notesTaskDone => '완료됨';
 
   @override

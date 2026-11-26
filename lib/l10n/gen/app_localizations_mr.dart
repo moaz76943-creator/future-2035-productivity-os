@@ -2718,9 +2718,6 @@ class AppLocalizationsMr extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'टिपेत #टॅग लिहून टॅग जोडा.';
-
-  @override
   String get notesTaskDone => 'पूर्ण';
 
   @override

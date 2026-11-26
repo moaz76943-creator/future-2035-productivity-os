@@ -2722,9 +2722,6 @@ class AppLocalizationsKy extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Жазууга #тег деп жазып, тегдерди кошуңуз.';
-
-  @override
   String get notesTaskDone => 'Аткарылды';
 
   @override

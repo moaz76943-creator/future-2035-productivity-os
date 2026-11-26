@@ -747,7 +747,6 @@
   "notesNotFound": "Seda märget enam pole.",
   "notesCheckboxSemantics": "Kontrollnimekirja punkt: {label}",
   "notesOpenLinkedNote": "Ava märge {title}",
-  "notesTagsHint": "Lisage silte, kirjutades märkmesse #silt.",
   "notesTaskDone": "Tehtud",
   "notifTimerDoneBody": "Teie määratud aeg on täis.",
   "onboardingPrivatePointDevice": "Salvestatakse ainult selles seadmes, krüpteeritult",

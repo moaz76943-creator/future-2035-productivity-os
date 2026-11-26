@@ -2810,9 +2810,6 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Додавайте теги, пишучи #тег у нотатці.';
-
-  @override
   String get notesTaskDone => 'Виконано';
 
   @override

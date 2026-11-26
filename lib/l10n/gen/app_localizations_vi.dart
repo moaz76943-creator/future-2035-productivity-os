@@ -2640,9 +2640,6 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Thêm thẻ bằng cách viết #thẻ trong ghi chú.';
-
-  @override
   String get notesTaskDone => 'Đã hoàn thành';
 
   @override

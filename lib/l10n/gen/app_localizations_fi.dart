@@ -2734,9 +2734,6 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Lisää tunnisteita kirjoittamalla muistiinpanoon #tunniste.';
-
-  @override
   String get notesTaskDone => 'Valmis';
 
   @override

@@ -2736,9 +2736,6 @@ class AppLocalizationsEl extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Προσθέστε ετικέτες γράφοντας #ετικέτα στη σημείωση.';
-
-  @override
   String get notesTaskDone => 'Ολοκληρώθηκε';
 
   @override

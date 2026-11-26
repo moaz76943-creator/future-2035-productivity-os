@@ -747,7 +747,6 @@
   "notesNotFound": "இந்தக் குறிப்பு இனி இல்லை.",
   "notesCheckboxSemantics": "சரிபார்ப்புப் பட்டியல் உருப்படி: {label}",
   "notesOpenLinkedNote": "{title} குறிப்பைத் திற",
-  "notesTagsHint": "குறிப்பில் #குறிச்சொல் என எழுதிக் குறிச்சொற்களைச் சேர்க்கவும்.",
   "notesTaskDone": "நிறைவடைந்தது",
   "notifTimerDoneBody": "நீங்கள் அமைத்த நேரம் கடந்துவிட்டது.",
   "onboardingPrivatePointDevice": "இந்தச் சாதனத்தில் மட்டுமே மறையாக்கத்துடன் சேமிக்கப்படும்",

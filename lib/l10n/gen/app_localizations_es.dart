@@ -2730,9 +2730,6 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Añade etiquetas escribiendo #etiqueta en la nota.';
-
-  @override
   String get notesTaskDone => 'Completada';
 
   @override
@@ -5317,9 +5314,6 @@ class AppLocalizationsEs419 extends AppLocalizationsEs {
 
   @override
   String get habitsCheckInHint => 'Mantén presionado para ajustar';
-
-  @override
-  String get notesTagsHint => 'Agrega etiquetas escribiendo #etiqueta en la nota.';
 
   @override
   String get onboardingLanguageBody => 'Puedes cambiarlo en cualquier momento en Configuración.';

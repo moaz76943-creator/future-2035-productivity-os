@@ -2720,9 +2720,6 @@ class AppLocalizationsNe extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'टिपोटमा #ट्याग लेखेर ट्यागहरू थप्नुहोस्।';
-
-  @override
   String get notesTaskDone => 'सम्पन्न';
 
   @override

@@ -747,7 +747,6 @@
   "notesNotFound": "このメモはもう存在しません。",
   "notesCheckboxSemantics": "チェック項目：{label}",
   "notesOpenLinkedNote": "メモ「{title}」を開く",
-  "notesTagsHint": "メモに #タグ と書くとタグを追加できます。",
   "notesTaskDone": "完了",
   "notifTimerDoneBody": "設定した時間になりました。",
   "onboardingPrivatePointDevice": "この端末にのみ暗号化して保存",

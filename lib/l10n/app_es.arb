@@ -747,7 +747,6 @@
   "notesNotFound": "Esta nota ya no existe.",
   "notesCheckboxSemantics": "Elemento de la lista: {label}",
   "notesOpenLinkedNote": "Abrir la nota {title}",
-  "notesTagsHint": "Añade etiquetas escribiendo #etiqueta en la nota.",
   "notesTaskDone": "Completada",
   "notifTimerDoneBody": "El tiempo que configuraste ha terminado.",
   "onboardingPrivatePointDevice": "Se guarda solo en este dispositivo, cifrado",

@@ -747,7 +747,6 @@
   "notesNotFound": "Dokezo hili halipo tena.",
   "notesCheckboxSemantics": "Kipengee cha orodha: {label}",
   "notesOpenLinkedNote": "Fungua dokezo {title}",
-  "notesTagsHint": "Ongeza lebo kwa kuandika #lebo kwenye dokezo.",
   "notesTaskDone": "Limekamilika",
   "notifTimerDoneBody": "Muda uliouweka umepita.",
   "onboardingPrivatePointDevice": "Huhifadhiwa kwenye kifaa hiki pekee, kimesimbwa",

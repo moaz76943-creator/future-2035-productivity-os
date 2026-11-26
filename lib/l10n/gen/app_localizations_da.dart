@@ -2723,9 +2723,6 @@ class AppLocalizationsDa extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Tilføj tags ved at skrive #tag i noten.';
-
-  @override
   String get notesTaskDone => 'Fuldført';
 
   @override

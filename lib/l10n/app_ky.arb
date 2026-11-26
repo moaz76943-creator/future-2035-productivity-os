@@ -747,7 +747,6 @@
   "notesNotFound": "Бул жазуу мындан ары жок.",
   "notesCheckboxSemantics": "Текшерүү тизмесинин пункту: {label}",
   "notesOpenLinkedNote": "{title} жазуусун ачуу",
-  "notesTagsHint": "Жазууга #тег деп жазып, тегдерди кошуңуз.",
   "notesTaskDone": "Аткарылды",
   "notifTimerDoneBody": "Сиз койгон убакыт өтүп кетти.",
   "onboardingPrivatePointDevice": "Ушул түзмөктө гана, шифрленген түрдө сакталат",

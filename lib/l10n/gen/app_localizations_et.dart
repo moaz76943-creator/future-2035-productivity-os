@@ -2724,9 +2724,6 @@ class AppLocalizationsEt extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Lisage silte, kirjutades märkmesse #silt.';
-
-  @override
   String get notesTaskDone => 'Tehtud';
 
   @override

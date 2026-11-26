@@ -747,7 +747,6 @@
   "notesNotFound": "Этой заметки больше нет.",
   "notesCheckboxSemantics": "Пункт списка: {label}",
   "notesOpenLinkedNote": "Открыть заметку {title}",
-  "notesTagsHint": "Добавляйте теги, написав #тег в заметке.",
   "notesTaskDone": "Выполнено",
   "notifTimerDoneBody": "Заданное вами время истекло.",
   "onboardingPrivatePointDevice": "Хранится только на этом устройстве, в зашифрованном виде",

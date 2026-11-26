@@ -2732,9 +2732,6 @@ class AppLocalizationsBg extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Добавяйте тагове, като пишете #таг в бележката.';
-
-  @override
   String get notesTaskDone => 'Изпълнена';
 
   @override

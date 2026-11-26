@@ -1,5 +1,7 @@
 import 'package:material_ui/material_ui.dart';
 
+import '../../core/design_system/components/surfaces.dart';
+
 import '../../app/localization/app_format.dart';
 import '../../core/design_system/tokens.dart';
 import '../../core/recurrence/recurrence_rule.dart';
@@ -99,7 +101,7 @@ class _RecurrenceSheetState extends State<_RecurrenceSheet> {
           Space.page,
           0,
           Space.page,
-          Space.lg + MediaQuery.viewInsetsOf(context).bottom,
+          Space.lg + sheetBottomInset(context),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,

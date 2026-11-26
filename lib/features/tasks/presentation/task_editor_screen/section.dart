@@ -55,23 +55,33 @@ class _PrioritySelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    // One line instead of five chips: the current priority, tap to change it.
+    return Row(
       children: [
-        Text(l10n.taskPriority, style: context.text.labelLarge),
-        const SizedBox(height: Space.xs),
-        Wrap(
-          spacing: Space.xs,
-          runSpacing: Space.xs,
-          children: [
+        Expanded(child: Text(l10n.taskPriority, style: context.text.labelLarge)),
+        PopupMenuButton<int>(
+          key: const Key('taskPriority'),
+          tooltip: l10n.taskPriority,
+          initialValue: value,
+          onSelected: onChanged,
+          itemBuilder: (_) => [
             for (var p = 0; p <= 4; p++)
-              ChoiceChip(
-                avatar: Icon(PriorityStyle.icon(p), size: 16, color: PriorityStyle.color(p)),
-                label: Text(PriorityStyle.label(l10n, p)),
-                selected: value == p,
-                onSelected: (_) => onChanged(p),
+              PopupMenuItem(
+                key: Key('priority_$p'),
+                value: p,
+                child: Row(
+                  children: [
+                    Icon(PriorityStyle.icon(p), size: 20, color: PriorityStyle.color(p)),
+                    const SizedBox(width: Space.sm),
+                    Text(PriorityStyle.label(l10n, p)),
+                  ],
+                ),
               ),
           ],
+          child: Chip(
+            avatar: Icon(PriorityStyle.icon(value), size: 16, color: PriorityStyle.color(value)),
+            label: Text(PriorityStyle.label(l10n, value)),
+          ),
         ),
       ],
     );

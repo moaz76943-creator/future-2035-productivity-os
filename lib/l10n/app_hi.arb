@@ -747,7 +747,6 @@
   "notesNotFound": "यह नोट अब मौजूद नहीं है।",
   "notesCheckboxSemantics": "चेकलिस्ट आइटम: {label}",
   "notesOpenLinkedNote": "नोट {title} खोलें",
-  "notesTagsHint": "नोट में #टैग लिखकर टैग जोड़ें।",
   "notesTaskDone": "पूरा हुआ",
   "notifTimerDoneBody": "आपका तय किया समय बीत चुका है।",
   "onboardingPrivatePointDevice": "केवल इसी डिवाइस पर, एन्क्रिप्टेड रूप में सहेजा जाता है",

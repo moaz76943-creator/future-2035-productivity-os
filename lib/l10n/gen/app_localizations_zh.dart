@@ -2587,9 +2587,6 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => '在笔记中输入 #标签 即可添加标签。';
-
-  @override
   String get notesTaskDone => '已完成';
 
   @override
@@ -7515,9 +7512,6 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String notesOpenLinkedNote(String title) {
     return '開啟筆記 $title';
   }
-
-  @override
-  String get notesTagsHint => '在筆記中輸入 #標籤 即可新增標籤。';
 
   @override
   String get notesTaskDone => '已完成';

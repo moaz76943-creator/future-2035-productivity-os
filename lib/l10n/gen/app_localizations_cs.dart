@@ -2775,9 +2775,6 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Štítky přidáte napsáním #štítek do poznámky.';
-
-  @override
   String get notesTaskDone => 'Dokončeno';
 
   @override

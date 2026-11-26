@@ -2852,9 +2852,6 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'أضف وسومًا بكتابة #وسم داخل الملاحظة.';
-
-  @override
   String get notesTaskDone => 'مكتملة';
 
   @override

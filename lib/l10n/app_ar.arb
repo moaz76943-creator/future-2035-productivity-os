@@ -747,7 +747,6 @@
   "notesNotFound": "هذه الملاحظة لم تعد موجودة.",
   "notesCheckboxSemantics": "عنصر قائمة تحقق: {label}",
   "notesOpenLinkedNote": "فتح الملاحظة {title}",
-  "notesTagsHint": "أضف وسومًا بكتابة #وسم داخل الملاحظة.",
   "notesTaskDone": "مكتملة",
   "notifTimerDoneBody": "انقضى الوقت الذي حددته.",
   "onboardingPrivatePointDevice": "مخزّنة على هذا الجهاز فقط، ومشفّرة",

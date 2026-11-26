@@ -2749,9 +2749,6 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Adicione tags escrevendo #tag na nota.';
-
-  @override
   String get notesTaskDone => 'Concluída';
 
   @override
@@ -5682,9 +5679,6 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
 
   @override
   String get notesEmptyFavorites => 'As notas que marcar como favoritas aparecem aqui.';
-
-  @override
-  String get notesTagsHint => 'Adicione tags a escrever #tag na nota.';
 
   @override
   String get notifTimerDoneBody => 'O tempo que definiu acabou.';

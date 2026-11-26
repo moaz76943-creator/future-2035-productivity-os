@@ -2729,9 +2729,6 @@ class AppLocalizationsGl extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Engade etiquetas escribindo #etiqueta na nota.';
-
-  @override
   String get notesTaskDone => 'Completada';
 
   @override

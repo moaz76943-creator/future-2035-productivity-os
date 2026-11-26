@@ -747,7 +747,6 @@
   "notesNotFound": "Šio užrašo nebėra.",
   "notesCheckboxSemantics": "Kontrolinio sąrašo punktas: {label}",
   "notesOpenLinkedNote": "Atidaryti užrašą {title}",
-  "notesTagsHint": "Pridėkite žymų užraše parašydami #žyma.",
   "notesTaskDone": "Atlikta",
   "notifTimerDoneBody": "Jūsų nustatytas laikas baigėsi.",
   "onboardingPrivatePointDevice": "Laikoma tik šiame įrenginyje, užšifruota",

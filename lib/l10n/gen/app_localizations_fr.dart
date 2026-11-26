@@ -2754,9 +2754,6 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Ajoutez des étiquettes en écrivant #étiquette dans la note.';
-
-  @override
   String get notesTaskDone => 'Terminée';
 
   @override

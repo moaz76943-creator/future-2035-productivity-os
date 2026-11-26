@@ -2645,9 +2645,6 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'নোটে #ট্যাগ লিখে ট্যাগ যোগ করুন।';
-
-  @override
   String get notesTaskDone => 'সম্পন্ন';
 
   @override

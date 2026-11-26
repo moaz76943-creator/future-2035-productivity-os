@@ -747,7 +747,6 @@
   "notesNotFound": "Энэ тэмдэглэл байхгүй болсон.",
   "notesCheckboxSemantics": "Шалгах жагсаалтын зүйл: {label}",
   "notesOpenLinkedNote": "{title} тэмдэглэлийг нээх",
-  "notesTagsHint": "Тэмдэглэлд #шошго гэж бичиж шошго нэмнэ үү.",
   "notesTaskDone": "Дууссан",
   "notifTimerDoneBody": "Таны тогтоосон цаг өнгөрсөн.",
   "onboardingPrivatePointDevice": "Зөвхөн энэ төхөөрөмжид шифрлэгдэн хадгалагдана",

@@ -747,7 +747,6 @@
   "notesNotFound": "ఈ నోట్ ఇక లేదు.",
   "notesCheckboxSemantics": "చెక్‌లిస్ట్ అంశం: {label}",
   "notesOpenLinkedNote": "{title} నోట్‌ను తెరువు",
-  "notesTagsHint": "నోట్‌లో #ట్యాగ్ అని రాసి ట్యాగ్‌లను జోడించండి.",
   "notesTaskDone": "పూర్తయింది",
   "notifTimerDoneBody": "మీరు సెట్ చేసిన సమయం దాటిపోయింది.",
   "onboardingPrivatePointDevice": "ఈ పరికరంలో మాత్రమే ఎన్‌క్రిప్ట్ చేసి నిల్వ చేయబడుతుంది",

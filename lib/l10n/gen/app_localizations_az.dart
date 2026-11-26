@@ -2722,9 +2722,6 @@ class AppLocalizationsAz extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Qeydə #etiket yazaraq etiketlər əlavə edin.';
-
-  @override
   String get notesTaskDone => 'Tamamlandı';
 
   @override

@@ -747,7 +747,6 @@
   "notesNotFound": "Această notiță nu mai există.",
   "notesCheckboxSemantics": "Element din listă: {label}",
   "notesOpenLinkedNote": "Deschide notița {title}",
-  "notesTagsHint": "Adaugă etichete scriind #etichetă în notiță.",
   "notesTaskDone": "Finalizată",
   "notifTimerDoneBody": "Timpul setat a trecut.",
   "onboardingPrivatePointDevice": "Stocat doar pe acest dispozitiv, criptat",

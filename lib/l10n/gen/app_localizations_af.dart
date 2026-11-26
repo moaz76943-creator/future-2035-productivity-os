@@ -2721,9 +2721,6 @@ class AppLocalizationsAf extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Voeg etikette by deur #etiket in die nota te skryf.';
-
-  @override
   String get notesTaskDone => 'Voltooi';
 
   @override

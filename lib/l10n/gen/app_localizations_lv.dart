@@ -2767,9 +2767,6 @@ class AppLocalizationsLv extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Pievienojiet birkas, piezīmē rakstot #birka.';
-
-  @override
   String get notesTaskDone => 'Pabeigts';
 
   @override

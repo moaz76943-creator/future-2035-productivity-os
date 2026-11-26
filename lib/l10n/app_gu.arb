@@ -747,7 +747,6 @@
   "notesNotFound": "આ નોંધ હવે અસ્તિત્વમાં નથી.",
   "notesCheckboxSemantics": "ચેકલિસ્ટ આઇટમ: {label}",
   "notesOpenLinkedNote": "{title} નોંધ ખોલો",
-  "notesTagsHint": "નોંધમાં #ટૅગ લખીને ટૅગ ઉમેરો.",
   "notesTaskDone": "પૂર્ણ",
   "notifTimerDoneBody": "તમે સેટ કરેલો સમય વીતી ગયો છે.",
   "onboardingPrivatePointDevice": "માત્ર આ ઉપકરણ પર, એન્ક્રિપ્ટેડ રીતે સંગ્રહિત",

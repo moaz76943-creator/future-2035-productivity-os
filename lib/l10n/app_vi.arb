@@ -747,7 +747,6 @@
   "notesNotFound": "Ghi chú này không còn tồn tại.",
   "notesCheckboxSemantics": "Mục kiểm tra: {label}",
   "notesOpenLinkedNote": "Mở ghi chú {title}",
-  "notesTagsHint": "Thêm thẻ bằng cách viết #thẻ trong ghi chú.",
   "notesTaskDone": "Đã hoàn thành",
   "notifTimerDoneBody": "Đã hết thời gian bạn đặt.",
   "onboardingPrivatePointDevice": "Chỉ lưu trên thiết bị này, có mã hóa",

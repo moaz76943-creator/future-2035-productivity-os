@@ -2724,9 +2724,6 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Shto etiketa duke shkruar #etiketë në shënim.';
-
-  @override
   String get notesTaskDone => 'E përfunduar';
 
   @override

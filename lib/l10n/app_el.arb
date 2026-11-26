@@ -747,7 +747,6 @@
   "notesNotFound": "Αυτή η σημείωση δεν υπάρχει πια.",
   "notesCheckboxSemantics": "Στοιχείο λίστας: {label}",
   "notesOpenLinkedNote": "Άνοιγμα σημείωσης {title}",
-  "notesTagsHint": "Προσθέστε ετικέτες γράφοντας #ετικέτα στη σημείωση.",
   "notesTaskDone": "Ολοκληρώθηκε",
   "notifTimerDoneBody": "Ο χρόνος που ορίσατε πέρασε.",
   "onboardingPrivatePointDevice": "Αποθηκεύεται μόνο σε αυτή τη συσκευή, κρυπτογραφημένα",

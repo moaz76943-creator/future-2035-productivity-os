@@ -747,7 +747,6 @@
   "notesNotFound": "Hierdie nota bestaan nie meer nie.",
   "notesCheckboxSemantics": "Kontrolelysitem: {label}",
   "notesOpenLinkedNote": "Maak nota {title} oop",
-  "notesTagsHint": "Voeg etikette by deur #etiket in die nota te skryf.",
   "notesTaskDone": "Voltooi",
   "notifTimerDoneBody": "Die tyd wat jy gestel het, is verby.",
   "onboardingPrivatePointDevice": "Slegs op hierdie toestel gestoor, geënkripteer",

@@ -2724,9 +2724,6 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'नोट में #टैग लिखकर टैग जोड़ें।';
-
-  @override
   String get notesTaskDone => 'पूरा हुआ';
 
   @override

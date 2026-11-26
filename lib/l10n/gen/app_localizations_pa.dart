@@ -2761,9 +2761,6 @@ class AppLocalizationsPa extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'ਨੋਟ ਵਿੱਚ #ਟੈਗ ਲਿਖ ਕੇ ਟੈਗ ਸ਼ਾਮਲ ਕਰੋ।';
-
-  @override
   String get notesTaskDone => 'ਪੂਰਾ';
 
   @override

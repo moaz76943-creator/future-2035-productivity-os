@@ -747,7 +747,6 @@
   "notesNotFound": "Ова белешка више не постоји.",
   "notesCheckboxSemantics": "Ставка листе: {label}",
   "notesOpenLinkedNote": "Отвори белешку {title}",
-  "notesTagsHint": "Додајте ознаке тако што у белешци напишете #ознака.",
   "notesTaskDone": "Завршено",
   "notifTimerDoneBody": "Време које сте подесили је истекло.",
   "onboardingPrivatePointDevice": "Чува се само на овом уређају, шифровано",

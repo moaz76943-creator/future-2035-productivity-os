@@ -747,7 +747,6 @@
   "notesNotFound": "Bu not artık yok.",
   "notesCheckboxSemantics": "Kontrol listesi öğesi: {label}",
   "notesOpenLinkedNote": "{title} notunu aç",
-  "notesTagsHint": "Nota #etiket yazarak etiket ekle.",
   "notesTaskDone": "Tamamlandı",
   "notifTimerDoneBody": "Ayarladığın süre doldu.",
   "onboardingPrivatePointDevice": "Yalnızca bu cihazda, şifreli olarak saklanır",

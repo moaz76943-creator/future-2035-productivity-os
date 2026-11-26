@@ -2671,9 +2671,6 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Tambahkan tag dengan menulis #tag di catatan.';
-
-  @override
   String get notesTaskDone => 'Selesai';
 
   @override

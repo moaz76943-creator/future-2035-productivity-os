@@ -747,7 +747,6 @@
   "notesNotFound": "這則筆記已不存在。",
   "notesCheckboxSemantics": "檢查清單項目：{label}",
   "notesOpenLinkedNote": "開啟筆記 {title}",
-  "notesTagsHint": "在筆記中輸入 #標籤 即可新增標籤。",
   "notesTaskDone": "已完成",
   "notifTimerDoneBody": "你設定的時間已經過了。",
   "onboardingPrivatePointDevice": "只儲存在這台裝置上，並已加密",

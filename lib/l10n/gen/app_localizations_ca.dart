@@ -2732,9 +2732,6 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Afegeix etiquetes escrivint #etiqueta a la nota.';
-
-  @override
   String get notesTaskDone => 'Completada';
 
   @override

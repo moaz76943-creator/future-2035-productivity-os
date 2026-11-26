@@ -2714,9 +2714,6 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Nota #etiket yazarak etiket ekle.';
-
-  @override
   String get notesTaskDone => 'Tamamlandı';
 
   @override

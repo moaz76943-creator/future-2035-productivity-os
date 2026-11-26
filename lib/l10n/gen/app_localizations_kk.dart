@@ -2722,9 +2722,6 @@ class AppLocalizationsKk extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Жазбаға #тег деп жазып, тегтер қосыңыз.';
-
-  @override
   String get notesTaskDone => 'Орындалды';
 
   @override

@@ -747,7 +747,6 @@
   "notesNotFound": "Tätä muistiinpanoa ei ole enää olemassa.",
   "notesCheckboxSemantics": "Tarkistuslistan kohta: {label}",
   "notesOpenLinkedNote": "Avaa muistiinpano {title}",
-  "notesTagsHint": "Lisää tunnisteita kirjoittamalla muistiinpanoon #tunniste.",
   "notesTaskDone": "Valmis",
   "notifTimerDoneBody": "Asettamasi aika on kulunut.",
   "onboardingPrivatePointDevice": "Tallennetaan salattuna vain tälle laitteelle",

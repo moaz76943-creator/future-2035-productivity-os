@@ -747,7 +747,6 @@
   "notesNotFound": "Notatet finnes ikke lenger.",
   "notesCheckboxSemantics": "Sjekklistepunkt: {label}",
   "notesOpenLinkedNote": "Åpne notatet {title}",
-  "notesTagsHint": "Legg til emneknagger ved å skrive #emne i notatet.",
   "notesTaskDone": "Fullført",
   "notifTimerDoneBody": "Tiden du stilte inn, har gått.",
   "onboardingPrivatePointDevice": "Lagres kryptert, bare på denne enheten",

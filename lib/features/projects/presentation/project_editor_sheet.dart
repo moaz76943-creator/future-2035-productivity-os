@@ -1,6 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../core/design_system/components/surfaces.dart';
+
 import '../../../app/localization/app_format.dart';
 import '../../../core/database/app_database.dart';
 import '../../../core/design_system/tokens.dart';
@@ -77,7 +79,7 @@ class _ProjectEditorState extends ConsumerState<_ProjectEditor> {
           Space.page,
           0,
           Space.page,
-          Space.lg + MediaQuery.viewInsetsOf(context).bottom,
+          Space.lg + sheetBottomInset(context),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,

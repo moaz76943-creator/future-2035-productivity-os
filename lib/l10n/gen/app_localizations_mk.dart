@@ -2732,9 +2732,6 @@ class AppLocalizationsMk extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Додајте етикети со пишување #етикета во белешката.';
-
-  @override
   String get notesTaskDone => 'Завршено';
 
   @override

@@ -2777,9 +2777,6 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Pridėkite žymų užraše parašydami #žyma.';
-
-  @override
   String get notesTaskDone => 'Atlikta';
 
   @override

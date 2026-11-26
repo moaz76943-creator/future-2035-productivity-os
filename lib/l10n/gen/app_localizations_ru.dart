@@ -2817,9 +2817,6 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Добавляйте теги, написав #тег в заметке.';
-
-  @override
   String get notesTaskDone => 'Выполнено';
 
   @override

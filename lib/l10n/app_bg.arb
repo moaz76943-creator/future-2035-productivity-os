@@ -747,7 +747,6 @@
   "notesNotFound": "Тази бележка вече не съществува.",
   "notesCheckboxSemantics": "Елемент от списъка: {label}",
   "notesOpenLinkedNote": "Отваряне на бележката {title}",
-  "notesTagsHint": "Добавяйте тагове, като пишете #таг в бележката.",
   "notesTaskDone": "Изпълнена",
   "notifTimerDoneBody": "Зададеното време изтече.",
   "onboardingPrivatePointDevice": "Съхранява се само на това устройство, шифровано",

@@ -308,7 +308,7 @@ class _LanguageSheet extends StatelessWidget {
     return SafeArea(
       child: SingleChildScrollView(
         // Keeps the search field above the keyboard.
-        padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
+        padding: EdgeInsets.only(bottom: sheetBottomInset(context)),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,

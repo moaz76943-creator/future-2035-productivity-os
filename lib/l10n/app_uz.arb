@@ -747,7 +747,6 @@
   "notesNotFound": "Bu qayd endi mavjud emas.",
   "notesCheckboxSemantics": "Nazorat roʻyxati bandi: {label}",
   "notesOpenLinkedNote": "{title} qaydini ochish",
-  "notesTagsHint": "Qaydga #teg deb yozib, teglar qoʻshing.",
   "notesTaskDone": "Bajarilgan",
   "notifTimerDoneBody": "Siz belgilagan vaqt oʻtib ketdi.",
   "onboardingPrivatePointDevice": "Faqat shu qurilmada, shifrlangan holda saqlanadi",

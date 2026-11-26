@@ -2724,9 +2724,6 @@ class AppLocalizationsHy extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Ավելացրեք պիտակներ՝ նշման մեջ գրելով #պիտակ։';
-
-  @override
   String get notesTaskDone => 'Ավարտված';
 
   @override

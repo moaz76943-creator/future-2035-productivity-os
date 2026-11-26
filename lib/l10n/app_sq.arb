@@ -747,7 +747,6 @@
   "notesNotFound": "Ky shënim nuk ekziston më.",
   "notesCheckboxSemantics": "Element i listës: {label}",
   "notesOpenLinkedNote": "Hap shënimin {title}",
-  "notesTagsHint": "Shto etiketa duke shkruar #etiketë në shënim.",
   "notesTaskDone": "E përfunduar",
   "notifTimerDoneBody": "Koha që caktove ka kaluar.",
   "onboardingPrivatePointDevice": "Ruhet vetëm në këtë pajisje, e enkriptuar",

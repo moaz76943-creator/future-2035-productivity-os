@@ -747,7 +747,6 @@
   "notesNotFound": "이 노트는 더 이상 없습니다.",
   "notesCheckboxSemantics": "체크리스트 항목: {label}",
   "notesOpenLinkedNote": "'{title}' 노트 열기",
-  "notesTagsHint": "노트에 #태그를 쓰면 태그가 추가됩니다.",
   "notesTaskDone": "완료됨",
   "notifTimerDoneBody": "설정한 시간이 지났어요.",
   "onboardingPrivatePointDevice": "이 기기에만 암호화되어 저장",

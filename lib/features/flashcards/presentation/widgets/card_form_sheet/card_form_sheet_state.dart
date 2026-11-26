@@ -173,7 +173,7 @@ class _CardFormSheetState extends ConsumerState<_CardFormSheet> {
       padding: EdgeInsetsDirectional.only(
         start: Space.page,
         end: Space.page,
-        bottom: MediaQuery.viewInsetsOf(context).bottom + Space.lg,
+        bottom: sheetBottomInset(context) + Space.lg,
       ),
       child: Form(
         key: _form,

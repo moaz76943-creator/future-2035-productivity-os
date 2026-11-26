@@ -20,9 +20,11 @@ void main() {
     );
     await tester.pump(const Duration(milliseconds: 300));
     await settle(tester);
+    await tester.tap(find.byKey(const Key('noteTemplates')));
+    await settle(tester);
     await tester.tap(find.byKey(const Key('template_lecture')));
     await settle(tester);
-    expect(find.byKey(const Key('template_lecture')), findsNothing);
+    expect(find.byKey(const Key('noteTemplates')), findsNothing);
     final fields = tester.widgetList<TextField>(find.byType(TextField)).toList();
     expect(fields.first.controller!.text, 'محاضرة');
     expect(fields[1].controller!.text, startsWith('## النقاط الرئيسية'));

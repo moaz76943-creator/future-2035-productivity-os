@@ -2726,9 +2726,6 @@ class AppLocalizationsMn extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Тэмдэглэлд #шошго гэж бичиж шошго нэмнэ үү.';
-
-  @override
   String get notesTaskDone => 'Дууссан';
 
   @override

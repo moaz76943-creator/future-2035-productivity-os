@@ -2716,9 +2716,6 @@ class AppLocalizationsUr extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'نوٹ میں #ٹیگ لکھ کر ٹیگ شامل کریں۔';
-
-  @override
   String get notesTaskDone => 'مکمل';
 
   @override

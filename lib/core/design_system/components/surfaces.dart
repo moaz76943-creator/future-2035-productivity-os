@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'dart:ui' as ui;
 
 import 'package:material_ui/material_ui.dart';
@@ -332,3 +333,11 @@ class IconOrb extends StatelessWidget {
     );
   }
 }
+
+/// Space a bottom sheet keeps free at its bottom: the keyboard when open, otherwise the
+/// system navigation bar (gesture bar or three buttons), so its last button is never
+/// hidden under them.
+double sheetBottomInset(BuildContext context) => math.max(
+  MediaQuery.viewInsetsOf(context).bottom,
+  MediaQuery.viewPaddingOf(context).bottom,
+);

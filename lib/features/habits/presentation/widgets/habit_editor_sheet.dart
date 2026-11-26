@@ -1,6 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../core/design_system/components/surfaces.dart';
+
 import '../../../../app/localization/app_format.dart';
 import '../../../../core/database/app_database.dart';
 import '../../../../core/design_system/app_theme.dart';
@@ -111,7 +113,7 @@ class _HabitEditorSheetState extends ConsumerState<HabitEditorSheet> {
       padding: EdgeInsetsDirectional.only(
         start: Space.page,
         end: Space.page,
-        bottom: MediaQuery.viewInsetsOf(context).bottom + Space.lg,
+        bottom: sheetBottomInset(context) + Space.lg,
       ),
       child: Form(
         key: _form,

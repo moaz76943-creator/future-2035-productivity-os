@@ -2735,9 +2735,6 @@ class AppLocalizationsIs extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Bættu við merkjum með því að skrifa #merki í glósuna.';
-
-  @override
   String get notesTaskDone => 'Lokið';
 
   @override

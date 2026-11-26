@@ -747,7 +747,6 @@
   "notesNotFound": "यो टिपोट अब अस्तित्वमा छैन।",
   "notesCheckboxSemantics": "जाँचसूची वस्तु: {label}",
   "notesOpenLinkedNote": "टिपोट {title} खोल्नुहोस्",
-  "notesTagsHint": "टिपोटमा #ट्याग लेखेर ट्यागहरू थप्नुहोस्।",
   "notesTaskDone": "सम्पन्न",
   "notifTimerDoneBody": "तपाईंले सेट गरेको समय पुग्यो।",
   "onboardingPrivatePointDevice": "यही उपकरणमा मात्र, इन्क्रिप्ट गरी भण्डारण",

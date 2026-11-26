@@ -2777,9 +2777,6 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Štítky pridáte napísaním #štítok do poznámky.';
-
-  @override
   String get notesTaskDone => 'Dokončené';
 
   @override

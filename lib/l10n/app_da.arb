@@ -747,7 +747,6 @@
   "notesNotFound": "Noten findes ikke længere.",
   "notesCheckboxSemantics": "Tjeklistepunkt: {label}",
   "notesOpenLinkedNote": "Åbn noten {title}",
-  "notesTagsHint": "Tilføj tags ved at skrive #tag i noten.",
   "notesTaskDone": "Fuldført",
   "notifTimerDoneBody": "Den tid, du har indstillet, er gået.",
   "onboardingPrivatePointDevice": "Gemmes krypteret og kun på denne enhed",

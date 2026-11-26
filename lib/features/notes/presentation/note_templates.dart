@@ -38,28 +38,38 @@ class NoteTemplatesRow extends StatelessWidget {
         if (body.text.trim().isNotEmpty) return const SizedBox.shrink();
         return Padding(
           padding: const EdgeInsets.only(top: Space.xs),
-          child: Semantics(
-            container: true,
-            label: l10n.tplHint,
-            child: Wrap(
-              spacing: Space.xs,
-              runSpacing: Space.xs,
-              children: [
+          // One quiet button instead of four chips: the empty note stays calm.
+          child: Align(
+            alignment: AlignmentDirectional.centerStart,
+            child: PopupMenuButton<NoteTemplate>(
+              key: const Key('noteTemplates'),
+              tooltip: l10n.tplHint,
+              onSelected: (t) {
+                if (title.text.trim().isEmpty) title.text = t.name(l10n);
+                final text = t.body(l10n);
+                body.value = TextEditingValue(
+                  text: text,
+                  selection: TextSelection.collapsed(offset: text.indexOf('\n') + 1),
+                );
+              },
+              itemBuilder: (_) => [
                 for (final t in noteTemplates)
-                  ActionChip(
+                  PopupMenuItem(
                     key: Key('template_${t.id}'),
-                    avatar: Icon(t.icon, size: 18),
-                    label: Text(t.name(l10n)),
-                    onPressed: () {
-                      if (title.text.trim().isEmpty) title.text = t.name(l10n);
-                      final text = t.body(l10n);
-                      body.value = TextEditingValue(
-                        text: text,
-                        selection: TextSelection.collapsed(offset: text.indexOf('\n') + 1),
-                      );
-                    },
+                    value: t,
+                    child: Row(
+                      children: [
+                        Icon(t.icon, size: 20),
+                        const SizedBox(width: Space.sm),
+                        Text(t.name(l10n)),
+                      ],
+                    ),
                   ),
               ],
+              child: Chip(
+                avatar: const Icon(Icons.auto_awesome_mosaic_outlined, size: 18),
+                label: Text(l10n.tplHint),
+              ),
             ),
           ),
         );

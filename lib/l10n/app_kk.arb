@@ -747,7 +747,6 @@
   "notesNotFound": "Бұл жазба енді жоқ.",
   "notesCheckboxSemantics": "Тексеру тізімі тармағы: {label}",
   "notesOpenLinkedNote": "{title} жазбасын ашу",
-  "notesTagsHint": "Жазбаға #тег деп жазып, тегтер қосыңыз.",
   "notesTaskDone": "Орындалды",
   "notifTimerDoneBody": "Сіз қойған уақыт өтіп кетті.",
   "onboardingPrivatePointDevice": "Тек осы құрылғыда, шифрланған түрде сақталады",

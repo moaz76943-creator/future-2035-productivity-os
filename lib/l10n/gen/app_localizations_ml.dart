@@ -2727,9 +2727,6 @@ class AppLocalizationsMl extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'കുറിപ്പിൽ #ടാഗ് എന്ന് എഴുതി ടാഗുകൾ ചേർക്കുക.';
-
-  @override
   String get notesTaskDone => 'പൂർത്തിയായി';
 
   @override

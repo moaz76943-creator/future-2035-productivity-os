@@ -747,7 +747,6 @@
   "notesNotFound": "这条笔记已不存在。",
   "notesCheckboxSemantics": "清单项：{label}",
   "notesOpenLinkedNote": "打开笔记 {title}",
-  "notesTagsHint": "在笔记中输入 #标签 即可添加标签。",
   "notesTaskDone": "已完成",
   "notifTimerDoneBody": "你设定的时间已到。",
   "onboardingPrivatePointDevice": "仅存储在此设备上，并已加密",

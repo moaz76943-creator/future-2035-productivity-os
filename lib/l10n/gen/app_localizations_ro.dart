@@ -2781,9 +2781,6 @@ class AppLocalizationsRo extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Adaugă etichete scriind #etichetă în notiță.';
-
-  @override
   String get notesTaskDone => 'Finalizată';
 
   @override

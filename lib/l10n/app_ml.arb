@@ -747,7 +747,6 @@
   "notesNotFound": "ഈ കുറിപ്പ് ഇനി നിലവിലില്ല.",
   "notesCheckboxSemantics": "ചെക്ക്‌ലിസ്റ്റ് ഇനം: {label}",
   "notesOpenLinkedNote": "{title} എന്ന കുറിപ്പ് തുറക്കുക",
-  "notesTagsHint": "കുറിപ്പിൽ #ടാഗ് എന്ന് എഴുതി ടാഗുകൾ ചേർക്കുക.",
   "notesTaskDone": "പൂർത്തിയായി",
   "notifTimerDoneBody": "നിങ്ങൾ സജ്ജമാക്കിയ സമയം കഴിഞ്ഞു.",
   "onboardingPrivatePointDevice": "ഈ ഉപകരണത്തിൽ മാത്രം എൻക്രിപ്റ്റ് ചെയ്ത് സംഭരിക്കുന്നു",

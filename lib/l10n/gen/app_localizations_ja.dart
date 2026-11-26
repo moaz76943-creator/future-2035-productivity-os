@@ -2585,9 +2585,6 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'メモに #タグ と書くとタグを追加できます。';
-
-  @override
   String get notesTaskDone => '完了';
 
   @override

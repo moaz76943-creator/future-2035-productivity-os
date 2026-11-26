@@ -2741,9 +2741,6 @@ class AppLocalizationsTa extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'குறிப்பில் #குறிச்சொல் என எழுதிக் குறிச்சொற்களைச் சேர்க்கவும்.';
-
-  @override
   String get notesTaskDone => 'நிறைவடைந்தது';
 
   @override

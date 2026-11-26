@@ -1309,8 +1309,6 @@ class _CustomL10n extends AppLocalizations {
   @override
   String get notesNotFound => _o['notesNotFound'] ?? _b.notesNotFound;
   @override
-  String get notesTagsHint => _o['notesTagsHint'] ?? _b.notesTagsHint;
-  @override
   String get notesTaskDone => _o['notesTaskDone'] ?? _b.notesTaskDone;
   @override
   String get notifTimerDoneBody => _o['notifTimerDoneBody'] ?? _b.notifTimerDoneBody;
@@ -3600,7 +3598,6 @@ const customWordKeys = <String>[
   'notesBacklinksNeedTitle',
   'notesLinkedTasksEmpty',
   'notesNotFound',
-  'notesTagsHint',
   'notesTaskDone',
   'notifTimerDoneBody',
   'onboardingPrivatePointDevice',
@@ -4853,7 +4850,6 @@ String customWordBase(AppLocalizations l, String key) => switch (key) {
   'notesBacklinksNeedTitle' => l.notesBacklinksNeedTitle,
   'notesLinkedTasksEmpty' => l.notesLinkedTasksEmpty,
   'notesNotFound' => l.notesNotFound,
-  'notesTagsHint' => l.notesTagsHint,
   'notesTaskDone' => l.notesTaskDone,
   'notifTimerDoneBody' => l.notifTimerDoneBody,
   'onboardingPrivatePointDevice' => l.onboardingPrivatePointDevice,

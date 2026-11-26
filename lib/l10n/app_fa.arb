@@ -747,7 +747,6 @@
   "notesNotFound": "این یادداشت دیگر وجود ندارد.",
   "notesCheckboxSemantics": "مورد چک‌لیست: {label}",
   "notesOpenLinkedNote": "باز کردن یادداشت {title}",
-  "notesTagsHint": "با نوشتن #برچسب در یادداشت، برچسب اضافه کنید.",
   "notesTaskDone": "انجام‌شده",
   "notifTimerDoneBody": "زمانی که تعیین کرده بودید تمام شد.",
   "onboardingPrivatePointDevice": "فقط روی همین دستگاه، رمزگذاری‌شده",

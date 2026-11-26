@@ -747,7 +747,6 @@
   "notesNotFound": "Þessi glósa er ekki lengur til.",
   "notesCheckboxSemantics": "Gátlistaatriði: {label}",
   "notesOpenLinkedNote": "Opna glósuna {title}",
-  "notesTagsHint": "Bættu við merkjum með því að skrifa #merki í glósuna.",
   "notesTaskDone": "Lokið",
   "notifTimerDoneBody": "Tíminn sem þú stilltir er liðinn.",
   "onboardingPrivatePointDevice": "Aðeins geymt á þessu tæki, dulkóðað",

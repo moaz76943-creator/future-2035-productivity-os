@@ -2768,9 +2768,6 @@ class AppLocalizationsKn extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'ಟಿಪ್ಪಣಿಯಲ್ಲಿ #ಟ್ಯಾಗ್ ಬರೆದು ಟ್ಯಾಗ್‌ಗಳನ್ನು ಸೇರಿಸಿ.';
-
-  @override
   String get notesTaskDone => 'ಪೂರ್ಣಗೊಂಡಿದೆ';
 
   @override

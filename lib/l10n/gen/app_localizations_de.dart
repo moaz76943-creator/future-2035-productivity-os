@@ -2729,9 +2729,6 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get notesTagsHint => 'Füge Tags hinzu, indem du #tag in die Notiz schreibst.';
-
-  @override
   String get notesTaskDone => 'Erledigt';
 
   @override

@@ -4711,12 +4711,6 @@ abstract class AppLocalizations {
   /// **'Open note {title}'**
   String notesOpenLinkedNote(String title);
 
-  /// Hint in the tags section of a note without tags
-  ///
-  /// In en, this message translates to:
-  /// **'Add tags by writing #tag in the note.'**
-  String get notesTagsHint;
-
   /// Accessibility label for a linked task that is done
   ///
   /// In en, this message translates to:

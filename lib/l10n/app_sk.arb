@@ -747,7 +747,6 @@
   "notesNotFound": "Táto poznámka už neexistuje.",
   "notesCheckboxSemantics": "Položka zoznamu: {label}",
   "notesOpenLinkedNote": "Otvoriť poznámku {title}",
-  "notesTagsHint": "Štítky pridáte napísaním #štítok do poznámky.",
   "notesTaskDone": "Dokončené",
   "notifTimerDoneBody": "Nastavený čas uplynul.",
   "onboardingPrivatePointDevice": "Uložené len v tomto zariadení, šifrovane",

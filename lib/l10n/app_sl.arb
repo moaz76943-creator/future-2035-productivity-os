@@ -747,7 +747,6 @@
   "notesNotFound": "Ta zapisek ne obstaja več.",
   "notesCheckboxSemantics": "Postavka seznama: {label}",
   "notesOpenLinkedNote": "Odpri zapisek {title}",
-  "notesTagsHint": "Oznake dodate tako, da v zapisek napišete #oznaka.",
   "notesTaskDone": "Končano",
   "notifTimerDoneBody": "Nastavljeni čas je potekel.",
   "onboardingPrivatePointDevice": "Shranjeno samo v tej napravi, šifrirano",
