@@ -136,7 +136,13 @@ jobs:
           if git diff --cached --quiet; then echo "Nothing to keep this hour."; exit 0; fi
           git commit -q -m "AI $JOB ($GATES gates)" -m "Unreviewed helper-model draft. Do not merge without review."
           case "$DAY" in ai-drafts/*) ;; *) echo "::error::unsafe target"; exit 1;; esac
-          git push -q origin "HEAD:refs/heads/$DAY"
+          # The job token may not push a branch whose workflow files differ from claude-dev,
+          # so the day branch is replayed on the newest claude-dev before every push.
+          git fetch -q origin claude-dev
+          if ! git rebase -q origin/claude-dev; then
+            git rebase --abort; echo "::warning::draft conflicts with claude-dev; kept for the next hour"; exit 0
+          fi
+          git push -q --force-with-lease origin "HEAD:refs/heads/$DAY"
           echo "### $JOB → \`$DAY\` (gates $GATES)" >> "$GITHUB_STEP_SUMMARY"
 
       # Translation fixes only: worker and critic came from two different providers
