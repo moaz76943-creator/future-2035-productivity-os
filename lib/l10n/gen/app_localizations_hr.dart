@@ -438,15 +438,6 @@ class AppLocalizationsHr extends AppLocalizations {
   String get focusNoHistory => 'Završene sesije pojavit će se ovdje';
 
   @override
-  String get focusTargets => 'Ciljevi';
-
-  @override
-  String get focusDailyTarget => 'Dnevni cilj';
-
-  @override
-  String get focusWeeklyTarget => 'Tjedni cilj';
-
-  @override
   String get focusOutcomeCompleted => 'Završeno';
 
   @override
@@ -2450,9 +2441,6 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Na čemu si radio?';
-
-  @override
-  String get focusTargetCaption => 'Izmjereno iz spremljenih sesija';
 
   @override
   String get focusModeLabel => 'Način mjerača';

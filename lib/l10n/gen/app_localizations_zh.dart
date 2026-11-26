@@ -435,15 +435,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get focusNoHistory => '已完成的专注时段会显示在这里';
 
   @override
-  String get focusTargets => '目标';
-
-  @override
-  String get focusDailyTarget => '每日目标';
-
-  @override
-  String get focusWeeklyTarget => '每周目标';
-
-  @override
   String get focusOutcomeCompleted => '已完成';
 
   @override
@@ -2277,9 +2268,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get focusNoteHint => '你做了什么？';
-
-  @override
-  String get focusTargetCaption => '根据已保存的专注记录统计';
 
   @override
   String get focusModeLabel => '计时模式';
@@ -5384,15 +5372,6 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get focusNoHistory => '完成的專注會顯示在這裡';
 
   @override
-  String get focusTargets => '目標';
-
-  @override
-  String get focusDailyTarget => '每日目標';
-
-  @override
-  String get focusWeeklyTarget => '每週目標';
-
-  @override
   String get focusOutcomeCompleted => '已完成';
 
   @override
@@ -7226,9 +7205,6 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get focusNoteHint => '你做了些什麼？';
-
-  @override
-  String get focusTargetCaption => '依已儲存的專注紀錄測量';
 
   @override
   String get focusModeLabel => '計時模式';

@@ -436,15 +436,6 @@ class AppLocalizationsSw extends AppLocalizations {
   String get focusNoHistory => 'Vipindi vilivyokamilika vitaonekana hapa';
 
   @override
-  String get focusTargets => 'Malengo';
-
-  @override
-  String get focusDailyTarget => 'Lengo la kila siku';
-
-  @override
-  String get focusWeeklyTarget => 'Lengo la kila wiki';
-
-  @override
   String get focusOutcomeCompleted => 'Kimekamilika';
 
   @override
@@ -2397,9 +2388,6 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Ulifanya kazi gani?';
-
-  @override
-  String get focusTargetCaption => 'Imepimwa kutoka vipindi vilivyohifadhiwa';
 
   @override
   String get focusModeLabel => 'Hali ya kipima muda';

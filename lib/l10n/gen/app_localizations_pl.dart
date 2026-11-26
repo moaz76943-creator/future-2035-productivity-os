@@ -441,15 +441,6 @@ class AppLocalizationsPl extends AppLocalizations {
   String get focusNoHistory => 'Ukończone sesje pojawią się tutaj';
 
   @override
-  String get focusTargets => 'Cele';
-
-  @override
-  String get focusDailyTarget => 'Cel dzienny';
-
-  @override
-  String get focusWeeklyTarget => 'Cel tygodniowy';
-
-  @override
   String get focusOutcomeCompleted => 'Ukończona';
 
   @override
@@ -2475,9 +2466,6 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Nad czym pracowałeś?';
-
-  @override
-  String get focusTargetCaption => 'Zmierzone z zapisanych sesji';
 
   @override
   String get focusModeLabel => 'Tryb minutnika';

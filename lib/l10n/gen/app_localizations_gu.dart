@@ -437,15 +437,6 @@ class AppLocalizationsGu extends AppLocalizations {
   String get focusNoHistory => 'પૂર્ણ થયેલાં સત્રો અહીં દેખાશે';
 
   @override
-  String get focusTargets => 'લક્ષ્યાંકો';
-
-  @override
-  String get focusDailyTarget => 'દૈનિક લક્ષ્યાંક';
-
-  @override
-  String get focusWeeklyTarget => 'સાપ્તાહિક લક્ષ્યાંક';
-
-  @override
   String get focusOutcomeCompleted => 'પૂર્ણ';
 
   @override
@@ -2437,9 +2428,6 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'તમે શેના પર કામ કર્યું?';
-
-  @override
-  String get focusTargetCaption => 'સાચવેલાં સત્રોમાંથી માપેલું';
 
   @override
   String get focusModeLabel => 'ટાઇમર મોડ';

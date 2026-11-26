@@ -437,15 +437,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get focusNoHistory => 'Les séances terminées apparaîtront ici';
 
   @override
-  String get focusTargets => 'Objectifs';
-
-  @override
-  String get focusDailyTarget => 'Objectif quotidien';
-
-  @override
-  String get focusWeeklyTarget => 'Objectif hebdomadaire';
-
-  @override
   String get focusOutcomeCompleted => 'Terminée';
 
   @override
@@ -2431,9 +2422,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Sur quoi avez-vous travaillé ?';
-
-  @override
-  String get focusTargetCaption => 'Calculé d’après les séances enregistrées';
 
   @override
   String get focusModeLabel => 'Mode du minuteur';

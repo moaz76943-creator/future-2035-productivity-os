@@ -436,15 +436,6 @@ class AppLocalizationsIt extends AppLocalizations {
   String get focusNoHistory => 'Le sessioni completate appariranno qui';
 
   @override
-  String get focusTargets => 'Obiettivi';
-
-  @override
-  String get focusDailyTarget => 'Obiettivo giornaliero';
-
-  @override
-  String get focusWeeklyTarget => 'Obiettivo settimanale';
-
-  @override
   String get focusOutcomeCompleted => 'Completata';
 
   @override
@@ -2412,9 +2403,6 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Su cosa hai lavorato?';
-
-  @override
-  String get focusTargetCaption => 'Misurato dalle sessioni salvate';
 
   @override
   String get focusModeLabel => 'Modalità timer';

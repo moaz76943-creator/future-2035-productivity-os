@@ -435,15 +435,6 @@ class AppLocalizationsTh extends AppLocalizations {
   String get focusNoHistory => 'เซสชันที่เสร็จแล้วจะแสดงที่นี่';
 
   @override
-  String get focusTargets => 'เป้าหมาย';
-
-  @override
-  String get focusDailyTarget => 'เป้าหมายรายวัน';
-
-  @override
-  String get focusWeeklyTarget => 'เป้าหมายรายสัปดาห์';
-
-  @override
   String get focusOutcomeCompleted => 'เสร็จสิ้น';
 
   @override
@@ -2318,9 +2309,6 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'คุณทำอะไรไปบ้าง';
-
-  @override
-  String get focusTargetCaption => 'วัดจากเซสชันที่บันทึกไว้';
 
   @override
   String get focusModeLabel => 'โหมดตัวจับเวลา';

@@ -437,15 +437,6 @@ class AppLocalizationsBn extends AppLocalizations {
   String get focusNoHistory => 'সম্পন্ন সেশনগুলো এখানে দেখা যাবে';
 
   @override
-  String get focusTargets => 'লক্ষ্য';
-
-  @override
-  String get focusDailyTarget => 'দৈনিক লক্ষ্য';
-
-  @override
-  String get focusWeeklyTarget => 'সাপ্তাহিক লক্ষ্য';
-
-  @override
   String get focusOutcomeCompleted => 'সম্পন্ন';
 
   @override
@@ -2331,9 +2322,6 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'কী নিয়ে কাজ করলেন?';
-
-  @override
-  String get focusTargetCaption => 'সংরক্ষিত সেশন থেকে মাপা';
 
   @override
   String get focusModeLabel => 'টাইমার মোড';

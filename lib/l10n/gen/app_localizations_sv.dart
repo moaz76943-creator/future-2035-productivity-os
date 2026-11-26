@@ -436,15 +436,6 @@ class AppLocalizationsSv extends AppLocalizations {
   String get focusNoHistory => 'Slutförda sessioner visas här';
 
   @override
-  String get focusTargets => 'Mål';
-
-  @override
-  String get focusDailyTarget => 'Dagsmål';
-
-  @override
-  String get focusWeeklyTarget => 'Veckomål';
-
-  @override
   String get focusOutcomeCompleted => 'Slutförd';
 
   @override
@@ -2402,9 +2393,6 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Vad arbetade du med?';
-
-  @override
-  String get focusTargetCaption => 'Uppmätt från sparade sessioner';
 
   @override
   String get focusModeLabel => 'Timerläge';

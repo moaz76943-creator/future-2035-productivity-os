@@ -573,18 +573,6 @@
   "@focusNoHistory": {
     "description": "Empty state"
   },
-  "focusTargets": "Targets",
-  "@focusTargets": {
-    "description": "Section title"
-  },
-  "focusDailyTarget": "Daily target",
-  "@focusDailyTarget": {
-    "description": "Label"
-  },
-  "focusWeeklyTarget": "Weekly target",
-  "@focusWeeklyTarget": {
-    "description": "Label"
-  },
   "focusOutcomeCompleted": "Completed",
   "@focusOutcomeCompleted": {
     "description": "Session outcome label"
@@ -1258,7 +1246,7 @@
   "@notesNoNotebook": {
     "description": "Option"
   },
-  "notesEmptyTitle": "A blank canvas",
+  "notesEmptyTitle": "Start writing",
   "@notesEmptyTitle": {
     "description": "Empty state"
   },
@@ -3188,10 +3176,6 @@
   "focusNoteHint": "What did you work on?",
   "@focusNoteHint": {
     "description": "Hint text inside the optional session note field"
-  },
-  "focusTargetCaption": "Measured from saved sessions",
-  "@focusTargetCaption": {
-    "description": "Caption under the daily and weekly focus target rings explaining where the numbers come from"
   },
   "focusModeLabel": "Timer mode",
   "@focusModeLabel": {
@@ -6936,7 +6920,7 @@
   "@soundsRemoveMusic": {
     "description": "Tooltip: stop using the chosen audio file (avoid the word music)"
   },
-  "wordPacksTitle": "Word packs",
+  "wordPacksTitle": "Learn languages",
   "@wordPacksTitle": {
     "description": "Flashcards: downloadable word lists by topic"
   },

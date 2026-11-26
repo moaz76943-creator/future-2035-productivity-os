@@ -437,15 +437,6 @@ class AppLocalizationsKa extends AppLocalizations {
   String get focusNoHistory => 'დასრულებული სესიები აქ გამოჩნდება';
 
   @override
-  String get focusTargets => 'სამიზნეები';
-
-  @override
-  String get focusDailyTarget => 'დღიური სამიზნე';
-
-  @override
-  String get focusWeeklyTarget => 'კვირის სამიზნე';
-
-  @override
   String get focusOutcomeCompleted => 'დასრულებული';
 
   @override
@@ -2400,9 +2391,6 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'რაზე იმუშავეთ?';
-
-  @override
-  String get focusTargetCaption => 'გაზომილია შენახული სესიებით';
 
   @override
   String get focusModeLabel => 'ტაიმერის რეჟიმი';

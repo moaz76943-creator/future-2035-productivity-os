@@ -439,15 +439,6 @@ class AppLocalizationsRo extends AppLocalizations {
   String get focusNoHistory => 'Sesiunile finalizate apar aici';
 
   @override
-  String get focusTargets => 'Obiective';
-
-  @override
-  String get focusDailyTarget => 'Obiectiv zilnic';
-
-  @override
-  String get focusWeeklyTarget => 'Obiectiv săptămânal';
-
-  @override
   String get focusOutcomeCompleted => 'Finalizată';
 
   @override
@@ -2456,9 +2447,6 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'La ce ai lucrat?';
-
-  @override
-  String get focusTargetCaption => 'Măsurat din sesiunile salvate';
 
   @override
   String get focusModeLabel => 'Modul cronometrului';

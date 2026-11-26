@@ -437,15 +437,6 @@ class AppLocalizationsIs extends AppLocalizations {
   String get focusNoHistory => 'Loknar lotur birtast hér';
 
   @override
-  String get focusTargets => 'Mörk';
-
-  @override
-  String get focusDailyTarget => 'Daglegt mark';
-
-  @override
-  String get focusWeeklyTarget => 'Vikulegt mark';
-
-  @override
   String get focusOutcomeCompleted => 'Lokið';
 
   @override
@@ -2415,9 +2406,6 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Að hverju vannstu?';
-
-  @override
-  String get focusTargetCaption => 'Mælt út frá vistuðum lotum';
 
   @override
   String get focusModeLabel => 'Stilling tímastillis';

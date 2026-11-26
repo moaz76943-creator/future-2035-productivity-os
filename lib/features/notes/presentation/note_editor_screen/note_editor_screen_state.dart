@@ -223,6 +223,8 @@ class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with Widget
                         onUndo: () => _repo.setFlags(note.id, archived: !archive),
                       );
                     }
+                  case 'connections':
+                    await _showConnections(note.title);
                   case 'move':
                     await _moveNotebook(note);
                   case 'file':
@@ -236,6 +238,11 @@ class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with Widget
                 PopupMenuItem(
                   value: 'archive',
                   child: Text(note.archived ? l10n.actionUnarchive : l10n.actionArchive),
+                ),
+                PopupMenuItem(
+                  key: const Key('noteConnections'),
+                  value: 'connections',
+                  child: Text(l10n.noteConnections),
                 ),
                 PopupMenuItem(value: 'move', child: Text(l10n.noteMoveTo)),
                 PopupMenuItem(value: 'file', child: Text(l10n.transferTitle)),
@@ -330,21 +337,7 @@ class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with Widget
                       ),
                     ),
                   ),
-                const SizedBox(height: Space.lg),
-                _TagsSection(noteId: widget.noteId),
-                // Rarely needed parts sit in one folded group so the page stays about the writing.
-                ExpansionTile(
-                  key: const Key('noteConnections'),
-                  tilePadding: EdgeInsets.zero,
-                  shape: const Border(),
-                  collapsedShape: const Border(),
-                  maintainState: true,
-                  title: Text(l10n.noteConnections, style: context.text.titleSmall),
-                  children: [
-                    _BacklinksSection(noteId: widget.noteId, title: note?.title ?? _savedTitle),
-                    _LinkedTasksSection(noteId: widget.noteId, onLink: _linkTask),
-                  ],
-                ),
+                // Tags, backlinks and linked tasks live in the ⋮ menu: the page is for writing.
               ],
             ),
           ),
@@ -353,4 +346,22 @@ class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with Widget
       ),
     );
   }
+
+  Future<void> _showConnections(String title) => showModalBottomSheet<void>(
+    useRootNavigator: true,
+    context: context,
+    showDragHandle: true,
+    useSafeArea: true,
+    isScrollControlled: true,
+    builder: (_) => ListView(
+      shrinkWrap: true,
+      padding: EdgeInsets.fromLTRB(Space.page, 0, Space.page, sheetBottomInset(context) + Space.lg),
+      children: [
+        Text(context.l10n.noteConnections, style: context.text.titleLarge),
+        _TagsSection(noteId: widget.noteId),
+        _BacklinksSection(noteId: widget.noteId, title: title),
+        _LinkedTasksSection(noteId: widget.noteId, onLink: _linkTask),
+      ],
+    ),
+  );
 }

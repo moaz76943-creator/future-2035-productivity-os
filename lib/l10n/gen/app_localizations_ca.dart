@@ -436,15 +436,6 @@ class AppLocalizationsCa extends AppLocalizations {
   String get focusNoHistory => 'Les sessions completades apareixeran aquí';
 
   @override
-  String get focusTargets => 'Objectius';
-
-  @override
-  String get focusDailyTarget => 'Objectiu diari';
-
-  @override
-  String get focusWeeklyTarget => 'Objectiu setmanal';
-
-  @override
   String get focusOutcomeCompleted => 'Completada';
 
   @override
@@ -2410,9 +2401,6 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'En què has treballat?';
-
-  @override
-  String get focusTargetCaption => 'Mesurat a partir de les sessions desades';
 
   @override
   String get focusModeLabel => 'Mode del temporitzador';

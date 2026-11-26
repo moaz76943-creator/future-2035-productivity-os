@@ -437,15 +437,6 @@ class AppLocalizationsPa extends AppLocalizations {
   String get focusNoHistory => 'ਪੂਰੇ ਹੋਏ ਸੈਸ਼ਨ ਇੱਥੇ ਦਿਸਣਗੇ';
 
   @override
-  String get focusTargets => 'ਟੀਚਾ ਮਾਤਰਾ';
-
-  @override
-  String get focusDailyTarget => 'ਰੋਜ਼ਾਨਾ ਟੀਚਾ';
-
-  @override
-  String get focusWeeklyTarget => 'ਹਫ਼ਤਾਵਾਰੀ ਟੀਚਾ';
-
-  @override
   String get focusOutcomeCompleted => 'ਪੂਰਾ';
 
   @override
@@ -2438,9 +2429,6 @@ class AppLocalizationsPa extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'ਤੁਸੀਂ ਕਿਸ ’ਤੇ ਕੰਮ ਕੀਤਾ?';
-
-  @override
-  String get focusTargetCaption => 'ਰੱਖਿਅਤ ਸੈਸ਼ਨਾਂ ਤੋਂ ਮਾਪਿਆ';
 
   @override
   String get focusModeLabel => 'ਟਾਈਮਰ ਮੋਡ';

@@ -437,15 +437,6 @@ class AppLocalizationsEl extends AppLocalizations {
   String get focusNoHistory => 'Οι ολοκληρωμένες συνεδρίες θα εμφανίζονται εδώ';
 
   @override
-  String get focusTargets => 'Στόχοι';
-
-  @override
-  String get focusDailyTarget => 'Ημερήσιος στόχος';
-
-  @override
-  String get focusWeeklyTarget => 'Εβδομαδιαίος στόχος';
-
-  @override
   String get focusOutcomeCompleted => 'Ολοκληρώθηκε';
 
   @override
@@ -2414,9 +2405,6 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Σε τι δουλέψατε;';
-
-  @override
-  String get focusTargetCaption => 'Μετρημένο από τις αποθηκευμένες συνεδρίες';
 
   @override
   String get focusModeLabel => 'Λειτουργία χρονομέτρου';

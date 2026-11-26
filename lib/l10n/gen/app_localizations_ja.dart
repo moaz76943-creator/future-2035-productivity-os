@@ -435,15 +435,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get focusNoHistory => '完了したセッションがここに表示されます';
 
   @override
-  String get focusTargets => '目標';
-
-  @override
-  String get focusDailyTarget => '1日の目標';
-
-  @override
-  String get focusWeeklyTarget => '1週間の目標';
-
-  @override
   String get focusOutcomeCompleted => '完了';
 
   @override
@@ -2279,9 +2270,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get focusNoteHint => '何に取り組みましたか？';
-
-  @override
-  String get focusTargetCaption => '保存したセッションから計測';
 
   @override
   String get focusModeLabel => 'タイマーモード';

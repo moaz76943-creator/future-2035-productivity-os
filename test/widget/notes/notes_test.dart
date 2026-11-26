@@ -156,7 +156,12 @@ void main() {
       expect(saved!.title, 'Meeting');
       expect(saved.body, 'Agenda for #team today');
       expect(find.text('Saved'), findsOneWidget);
-      expect(find.text('#team'), findsOneWidget); // tag chip from note_tags
+      // Tag chips (from note_tags) live in the ⋮ menu's "Tags, links and tasks" sheet.
+      await tester.tap(find.byIcon(Icons.more_vert));
+      await settle(tester);
+      await tester.tap(find.text('Tags, links and tasks'));
+      await settle(tester);
+      expect(find.text('#team'), findsOneWidget);
       await closeEnv(tester, env);
     });
 
@@ -309,16 +314,9 @@ void main() {
       });
       await pumpScreen(tester, NoteEditorScreen(noteId: id), env: env);
       await settle(tester);
-      await tester.scrollUntilVisible(
-        find.text('Tags, links and tasks'),
-        100,
-        scrollable: find
-            .ancestor(
-              of: find.byKey(const Key('noteConnections')),
-              matching: find.byType(Scrollable),
-            )
-            .first,
-      );
+      // Tags, backlinks and linked tasks moved to the ⋮ menu (a sheet).
+      await tester.tap(find.byIcon(Icons.more_vert));
+      await settle(tester);
       await tester.tap(find.text('Tags, links and tasks'));
       await settle(tester);
       final linkedTasksScroll = find

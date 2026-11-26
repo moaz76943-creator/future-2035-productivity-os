@@ -52,9 +52,8 @@ void main() {
     await settle(tester);
     await tester.tap(find.text('Deutsch').last);
     await settle(tester);
-    await tester.tap(find.byKey(const Key('wordTopic_home')));
-    await settle(tester);
-    await tester.tap(find.byKey(const Key('wordAdd_home.living')));
+    expect(find.byKey(const Key('wordTopic_home')), findsOneWidget);
+    await tester.tap(find.byKey(const Key('wordPacksAddAll')));
     await settle(tester);
     expect(find.byIcon(Icons.check_circle_rounded), findsOneWidget);
     final decks = await tester.runAsync(

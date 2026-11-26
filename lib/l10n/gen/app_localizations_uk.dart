@@ -441,15 +441,6 @@ class AppLocalizationsUk extends AppLocalizations {
   String get focusNoHistory => 'Завершені сеанси з’являться тут';
 
   @override
-  String get focusTargets => 'Цілі';
-
-  @override
-  String get focusDailyTarget => 'Денна ціль';
-
-  @override
-  String get focusWeeklyTarget => 'Тижнева ціль';
-
-  @override
   String get focusOutcomeCompleted => 'Завершено';
 
   @override
@@ -2483,9 +2474,6 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Над чим ви працювали?';
-
-  @override
-  String get focusTargetCaption => 'Виміряно зі збережених сеансів';
 
   @override
   String get focusModeLabel => 'Режим таймера';

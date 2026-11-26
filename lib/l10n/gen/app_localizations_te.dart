@@ -438,15 +438,6 @@ class AppLocalizationsTe extends AppLocalizations {
   String get focusNoHistory => 'పూర్తయిన సెషన్‌లు ఇక్కడ కనిపిస్తాయి';
 
   @override
-  String get focusTargets => 'లక్ష్యాలు';
-
-  @override
-  String get focusDailyTarget => 'రోజువారీ లక్ష్యం';
-
-  @override
-  String get focusWeeklyTarget => 'వారపు లక్ష్యం';
-
-  @override
   String get focusOutcomeCompleted => 'పూర్తయింది';
 
   @override
@@ -2404,9 +2395,6 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'మీరు దేనిపై పనిచేశారు?';
-
-  @override
-  String get focusTargetCaption => 'సేవ్ చేసిన సెషన్‌ల నుండి కొలవబడింది';
 
   @override
   String get focusModeLabel => 'టైమర్ మోడ్';

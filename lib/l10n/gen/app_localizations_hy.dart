@@ -437,15 +437,6 @@ class AppLocalizationsHy extends AppLocalizations {
   String get focusNoHistory => 'Ավարտված սեանսներն այստեղ կհայտնվեն';
 
   @override
-  String get focusTargets => 'Նպատակային ցուցանիշներ';
-
-  @override
-  String get focusDailyTarget => 'Օրական նպատակ';
-
-  @override
-  String get focusWeeklyTarget => 'Շաբաթական նպատակ';
-
-  @override
   String get focusOutcomeCompleted => 'Ավարտված';
 
   @override
@@ -2403,9 +2394,6 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Ինչի՞ վրա էիք աշխատում';
-
-  @override
-  String get focusTargetCaption => 'Չափված պահված սեանսներից';
 
   @override
   String get focusModeLabel => 'Ժամաչափի ռեժիմ';

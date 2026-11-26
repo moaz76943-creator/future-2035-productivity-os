@@ -437,15 +437,6 @@ class AppLocalizationsKk extends AppLocalizations {
   String get focusNoHistory => 'Аяқталған сеанстар осында көрсетіледі';
 
   @override
-  String get focusTargets => 'Нысаналар';
-
-  @override
-  String get focusDailyTarget => 'Күнделікті нысана';
-
-  @override
-  String get focusWeeklyTarget => 'Апталық нысана';
-
-  @override
   String get focusOutcomeCompleted => 'Аяқталды';
 
   @override
@@ -2401,9 +2392,6 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Немен айналыстыңыз?';
-
-  @override
-  String get focusTargetCaption => 'Сақталған сеанстар бойынша өлшенген';
 
   @override
   String get focusModeLabel => 'Таймер режимі';

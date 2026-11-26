@@ -439,15 +439,6 @@ class AppLocalizationsCs extends AppLocalizations {
   String get focusNoHistory => 'Dokončená sezení se zobrazí tady';
 
   @override
-  String get focusTargets => 'Cíle';
-
-  @override
-  String get focusDailyTarget => 'Denní cíl';
-
-  @override
-  String get focusWeeklyTarget => 'Týdenní cíl';
-
-  @override
   String get focusOutcomeCompleted => 'Dokončeno';
 
   @override
@@ -2451,9 +2442,6 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Na čem jste pracovali?';
-
-  @override
-  String get focusTargetCaption => 'Naměřeno z uložených sezení';
 
   @override
   String get focusModeLabel => 'Režim časovače';

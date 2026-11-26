@@ -438,15 +438,6 @@ class AppLocalizationsSi extends AppLocalizations {
   String get focusNoHistory => 'නිම වූ සැසි මෙහි දිස්වේ';
 
   @override
-  String get focusTargets => 'ඉලක්ක ප්‍රමාණ';
-
-  @override
-  String get focusDailyTarget => 'දෛනික ඉලක්කය';
-
-  @override
-  String get focusWeeklyTarget => 'සතිපතා ඉලක්කය';
-
-  @override
   String get focusOutcomeCompleted => 'නිමයි';
 
   @override
@@ -2437,9 +2428,6 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'ඔබ කුමක් මත වැඩ කළාද?';
-
-  @override
-  String get focusTargetCaption => 'සුරැකි සැසිවලින් මනින ලදී';
 
   @override
   String get focusModeLabel => 'ටයිමර් ප්‍රකාරය';

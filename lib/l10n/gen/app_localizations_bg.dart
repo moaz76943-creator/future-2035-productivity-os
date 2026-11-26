@@ -437,15 +437,6 @@ class AppLocalizationsBg extends AppLocalizations {
   String get focusNoHistory => 'Завършените сесии ще се показват тук';
 
   @override
-  String get focusTargets => 'Цели';
-
-  @override
-  String get focusDailyTarget => 'Дневна цел';
-
-  @override
-  String get focusWeeklyTarget => 'Седмична цел';
-
-  @override
   String get focusOutcomeCompleted => 'Завършена';
 
   @override
@@ -2410,9 +2401,6 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'По какво работихте?';
-
-  @override
-  String get focusTargetCaption => 'Измерено от запазените сесии';
 
   @override
   String get focusModeLabel => 'Режим на таймера';

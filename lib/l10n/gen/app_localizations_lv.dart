@@ -438,15 +438,6 @@ class AppLocalizationsLv extends AppLocalizations {
   String get focusNoHistory => 'Pabeigtās sesijas būs redzamas šeit';
 
   @override
-  String get focusTargets => 'Mērķi';
-
-  @override
-  String get focusDailyTarget => 'Dienas mērķis';
-
-  @override
-  String get focusWeeklyTarget => 'Nedēļas mērķis';
-
-  @override
   String get focusOutcomeCompleted => 'Pabeigta';
 
   @override
@@ -2443,9 +2434,6 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Pie kā strādājāt?';
-
-  @override
-  String get focusTargetCaption => 'Izmērīts no saglabātajām sesijām';
 
   @override
   String get focusModeLabel => 'Taimera režīms';

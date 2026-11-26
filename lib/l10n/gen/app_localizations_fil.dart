@@ -437,15 +437,6 @@ class AppLocalizationsFil extends AppLocalizations {
   String get focusNoHistory => 'Dito lalabas ang mga natapos na session';
 
   @override
-  String get focusTargets => 'Mga target';
-
-  @override
-  String get focusDailyTarget => 'Pang-araw-araw na target';
-
-  @override
-  String get focusWeeklyTarget => 'Lingguhang target';
-
-  @override
   String get focusOutcomeCompleted => 'Natapos';
 
   @override
@@ -2409,9 +2400,6 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get focusNoteHint => 'Ano ang ginawa mo?';
-
-  @override
-  String get focusTargetCaption => 'Sinukat mula sa mga naka-save na session';
 
   @override
   String get focusModeLabel => 'Mode ng timer';
