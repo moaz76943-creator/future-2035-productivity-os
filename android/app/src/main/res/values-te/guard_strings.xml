@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focus దృష్టి మళ్లింపు రక్షణ</string>
+    <string name="guard_service_summary">మీరు ఫోకస్ చేస్తున్నప్పుడు ఎంచుకున్న యాప్‌లను పాజ్ చేస్తుంది</string>
+    <string name="guard_service_description">Deep Focus ఈ ఫీచర్‌ను ఏ యాప్ తెరిచి ఉందో చూడటానికి మాత్రమే ఉపయోగిస్తుంది, తద్వారా ఫోకస్ సమయంలో లేదా మీ షెడ్యూల్ ప్రకారం ఎంచుకున్న యాప్‌లను పాజ్ చేయగలదు, మీరు ఆన్ చేసి ఉంటే Shorts, Reelsను మూసివేయగలదు. ఇది వచనాన్ని చదవదు, ఏదీ నిల్వ చేయదు, ఎక్కడికీ ఏదీ పంపదు. దీన్ని ఇక్కడ ఎప్పుడైనా ఆఫ్ చేయవచ్చు.</string>
+</resources>

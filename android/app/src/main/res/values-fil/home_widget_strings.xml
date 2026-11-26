@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Focus at mga card</string>
+    <string name="home_widget_description">Natitirang oras ng focus at mga card na dapat i-review</string>
+    <string name="quick_widget_label">Mabilisang pagdagdag</string>
+    <string name="quick_widget_description">Magdagdag ng gawain o tala, o mag-review ng mga card</string>
+</resources>

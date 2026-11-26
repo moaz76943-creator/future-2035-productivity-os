@@ -4939,3 +4939,4952 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String get settingsLanguageNoMatch => '没有匹配的语言';
 }
+
+/// The translations for Chinese, using the Han script (`zh_Hant`).
+class AppLocalizationsZhHant extends AppLocalizationsZh {
+  AppLocalizationsZhHant() : super('zh_Hant');
+
+  @override
+  String get appName => 'Deep Focus';
+
+  @override
+  String get navHome => '首頁';
+
+  @override
+  String get navTasks => '任務';
+
+  @override
+  String get navFocus => '專注';
+
+  @override
+  String get navCalendar => '行事曆';
+
+  @override
+  String get navSpaces => '空間';
+
+  @override
+  String get moduleProjects => '專案';
+
+  @override
+  String get moduleNotes => '筆記';
+
+  @override
+  String get moduleFlashcards => '單字卡';
+
+  @override
+  String get moduleGoals => '目標';
+
+  @override
+  String get moduleHabits => '習慣';
+
+  @override
+  String get moduleAnalytics => '洞察';
+
+  @override
+  String get moduleSearch => '搜尋';
+
+  @override
+  String get moduleAssistant => '助理';
+
+  @override
+  String get moduleSettings => '設定';
+
+  @override
+  String get moduleTrash => '垃圾桶';
+
+  @override
+  String get actionSave => '儲存';
+
+  @override
+  String get actionCancel => '取消';
+
+  @override
+  String get actionDelete => '刪除';
+
+  @override
+  String get actionEdit => '編輯';
+
+  @override
+  String get actionDone => '完成';
+
+  @override
+  String get actionAdd => '新增';
+
+  @override
+  String get actionCreate => '建立';
+
+  @override
+  String get actionClose => '關閉';
+
+  @override
+  String get actionBack => '返回';
+
+  @override
+  String get actionUndo => '復原';
+
+  @override
+  String get actionRestore => '還原';
+
+  @override
+  String get actionRetry => '再試一次';
+
+  @override
+  String get actionContinue => '繼續';
+
+  @override
+  String get actionSkip => '略過';
+
+  @override
+  String get actionArchive => '封存';
+
+  @override
+  String get actionUnarchive => '取消封存';
+
+  @override
+  String get actionPin => '釘選';
+
+  @override
+  String get actionUnpin => '取消釘選';
+
+  @override
+  String get actionMore => '更多選項';
+
+  @override
+  String get actionClear => '清除';
+
+  @override
+  String get actionSearch => '搜尋';
+
+  @override
+  String get actionSort => '排序';
+
+  @override
+  String get actionShare => '分享';
+
+  @override
+  String get actionImport => '匯入';
+
+  @override
+  String get actionExport => '匯出';
+
+  @override
+  String get actionPause => '暫停';
+
+  @override
+  String get actionResume => '繼續';
+
+  @override
+  String get actionStart => '開始';
+
+  @override
+  String get actionStop => '停止';
+
+  @override
+  String get actionComplete => '完成';
+
+  @override
+  String get actionDeleteForever => '永久刪除';
+
+  @override
+  String get actionEmptyTrash => '清空垃圾桶';
+
+  @override
+  String get actionUnlink => '取消連結';
+
+  @override
+  String get actionCustomize => '自訂';
+
+  @override
+  String get actionPreview => '預覽';
+
+  @override
+  String get actionLog => '記錄進度';
+
+  @override
+  String get stateLoading => '載入中…';
+
+  @override
+  String get stateSaving => '儲存中…';
+
+  @override
+  String get stateSaved => '已儲存';
+
+  @override
+  String get stateUnsaved => '有未儲存的變更';
+
+  @override
+  String get errorGenericTitle => '發生錯誤';
+
+  @override
+  String get errorGenericMessage => '你的資料很安全，請再試一次。';
+
+  @override
+  String get errorLoadFailed => '無法載入此內容。';
+
+  @override
+  String get errorSaveFailed => '無法儲存，你的變更仍保留在這裡。';
+
+  @override
+  String get validationRequired => '此欄位為必填';
+
+  @override
+  String get validationTitleRequired => '請輸入標題';
+
+  @override
+  String get validationNameRequired => '請輸入名稱';
+
+  @override
+  String get validationTooLong => '內容太長';
+
+  @override
+  String get validationEndBeforeStart => '結束時間必須晚於開始時間';
+
+  @override
+  String get validationStartAfterDue => '開始日期必須早於截止日期';
+
+  @override
+  String get validationPositiveNumber => '請輸入大於零的數字';
+
+  @override
+  String get validationDependencyCycle => '這會造成循環相依';
+
+  @override
+  String get validationInvalidRepeat => '此重複規則無效';
+
+  @override
+  String get deletedItem => '已移至垃圾桶';
+
+  @override
+  String get untitled => '未命名';
+
+  @override
+  String get noProject => '無專案';
+
+  @override
+  String get greetingMorning => '早安';
+
+  @override
+  String get greetingAfternoon => '午安';
+
+  @override
+  String get greetingEvening => '晚安';
+
+  @override
+  String get dashFocusToday => '今日專注';
+
+  @override
+  String dashFocusOfTarget(String done, String target) {
+    return '$done / $target';
+  }
+
+  @override
+  String get dashStartFocus => '開始專注';
+
+  @override
+  String get dashFocusRunning => '專注進行中';
+
+  @override
+  String get dashTodayTasks => '今天到期';
+
+  @override
+  String get dashAgenda => '行程';
+
+  @override
+  String get dashHabits => '今日習慣';
+
+  @override
+  String get dashGoals => '目標';
+
+  @override
+  String get dashReview => '複習';
+
+  @override
+  String get dashRecentNotes => '最近的筆記';
+
+  @override
+  String get dashInsight => '建議';
+
+  @override
+  String get dashSeeAll => '查看全部';
+
+  @override
+  String dashCardsDue(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 張卡片待複習',
+      zero: '沒有待複習的卡片',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get dashReviewNow => '立即複習';
+
+  @override
+  String get dashCustomizeTitle => '儀表板區塊';
+
+  @override
+  String get dashCustomizeHint => '選擇要在首頁顯示的內容。';
+
+  @override
+  String get dashSectionFocus => '專注';
+
+  @override
+  String get dashSectionToday => '今天到期的任務';
+
+  @override
+  String get dashSectionAgenda => '行程';
+
+  @override
+  String get dashSectionHabits => '習慣';
+
+  @override
+  String get dashSectionGoals => '目標';
+
+  @override
+  String get dashSectionReview => '單字卡複習';
+
+  @override
+  String get dashSectionNotes => '最近的筆記';
+
+  @override
+  String get dashSectionInsight => '建議';
+
+  @override
+  String get quickAddTask => '新增任務';
+
+  @override
+  String get quickAddNote => '新增筆記';
+
+  @override
+  String get quickAddEvent => '新增活動';
+
+  @override
+  String get quickStartFocus => '專注';
+
+  @override
+  String insightOverdue(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '你有 $count 項逾期任務，先從最重要的開始。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String insightFocusGap(int minutes) {
+    return '距離每日專注目標還差 $minutes 分鐘。';
+  }
+
+  @override
+  String get insightCardsDue => '趁記憶猶新，現在複習到期的單字卡吧。';
+
+  @override
+  String get insightAllClear => '一切順利。規劃明天，或安靜地休息一下。';
+
+  @override
+  String insightHabitStreak(String habit) {
+    return '保持連續紀錄：今天的「$habit」還沒完成。';
+  }
+
+  @override
+  String get focusTitle => '專注';
+
+  @override
+  String get focusModePomodoro => '番茄鐘';
+
+  @override
+  String get focusModeCountdown => '計時器';
+
+  @override
+  String get focusModeCountUp => '碼錶';
+
+  @override
+  String get focusModeOpen => '不限時';
+
+  @override
+  String get focusPhaseWork => '專注';
+
+  @override
+  String get focusPhaseShortBreak => '短休息';
+
+  @override
+  String get focusPhaseLongBreak => '長休息';
+
+  @override
+  String get focusReady => '準備好就開始';
+
+  @override
+  String get focusPaused => '已暫停';
+
+  @override
+  String get focusRunning => '專注中';
+
+  @override
+  String get focusDuration => '時長';
+
+  @override
+  String get focusLinkTask => '連結任務';
+
+  @override
+  String get focusLinkedTask => '正在進行';
+
+  @override
+  String get focusNoTask => '未連結任務';
+
+  @override
+  String focusCycle(int current, int total) {
+    return '第 $current / $total 輪';
+  }
+
+  @override
+  String get focusSkipBreak => '略過休息';
+
+  @override
+  String get focusStartBreak => '開始休息';
+
+  @override
+  String get focusStartNext => '開始下一輪專注';
+
+  @override
+  String get focusSessionComplete => '專注完成';
+
+  @override
+  String get focusSessionStopped => '已儲存專注紀錄';
+
+  @override
+  String focusSessionSummary(String duration) {
+    return '你專注了 $duration。';
+  }
+
+  @override
+  String get focusAddNote => '為這次專注新增備註';
+
+  @override
+  String get focusHistory => '紀錄';
+
+  @override
+  String get focusNoHistory => '完成的專注會顯示在這裡';
+
+  @override
+  String get focusTargets => '目標';
+
+  @override
+  String get focusDailyTarget => '每日目標';
+
+  @override
+  String get focusWeeklyTarget => '每週目標';
+
+  @override
+  String get focusOutcomeCompleted => '已完成';
+
+  @override
+  String get focusOutcomeInterrupted => '提前結束';
+
+  @override
+  String get focusRecovered => '應用程式關閉期間，你的專注仍在繼續。';
+
+  @override
+  String get focusCompletedWhileAway => '應用程式關閉期間有一次專注已結束，並已儲存。';
+
+  @override
+  String get focusNotificationsOff => '通知已關閉，專注結束時不會提醒你。';
+
+  @override
+  String get focusBatteryHint => '部分裝置會在背景暫停應用程式。計時仍然準確，但提醒可能延遲。請允許不受限制的電池使用，以確保提醒準時。';
+
+  @override
+  String get focusOpenSettings => '開啟設定';
+
+  @override
+  String get focusStopConfirmTitle => '要停止這次專注嗎？';
+
+  @override
+  String get focusStopConfirmMessage => '目前已專注的時間會被儲存。';
+
+  @override
+  String get focusDiscard => '捨棄';
+
+  @override
+  String focusMinutesLabel(int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(minutes, locale: localeName, other: '$minutes 分鐘');
+    return '$_temp0';
+  }
+
+  @override
+  String focusTimerSemantics(String phase, String time) {
+    return '$phase，剩餘 $time';
+  }
+
+  @override
+  String focusTimerSemanticsElapsed(String phase, String time) {
+    return '$phase，已過 $time';
+  }
+
+  @override
+  String get focusDeleteSession => '刪除專注紀錄';
+
+  @override
+  String get tasksTitle => '任務';
+
+  @override
+  String get tasksViewToday => '今天';
+
+  @override
+  String get tasksViewUpcoming => '即將到來';
+
+  @override
+  String get tasksViewAll => '全部';
+
+  @override
+  String get tasksViewOverdue => '已逾期';
+
+  @override
+  String get tasksViewCompleted => '已完成';
+
+  @override
+  String get tasksQuickAddHint => '新增任務…';
+
+  @override
+  String get tasksEmptyTitle => '全部完成';
+
+  @override
+  String get tasksEmptyMessage => '新增任務，開始安排你的一天。';
+
+  @override
+  String get tasksEmptyCompleted => '已完成的任務會顯示在這裡。';
+
+  @override
+  String get taskNew => '新增任務';
+
+  @override
+  String get taskEdit => '編輯任務';
+
+  @override
+  String get taskTitleLabel => '標題';
+
+  @override
+  String get taskTitleHint => '要做什麼？';
+
+  @override
+  String get taskDescriptionLabel => '描述';
+
+  @override
+  String get taskNotesLabel => '備註';
+
+  @override
+  String get taskPriority => '優先順序';
+
+  @override
+  String get priorityNone => '無';
+
+  @override
+  String get priorityLow => '低';
+
+  @override
+  String get priorityMedium => '中';
+
+  @override
+  String get priorityHigh => '高';
+
+  @override
+  String get priorityUrgent => '緊急';
+
+  @override
+  String get taskDueDate => '截止日期';
+
+  @override
+  String get taskStartDate => '開始日期';
+
+  @override
+  String get taskReminder => '提醒';
+
+  @override
+  String get taskRepeat => '重複';
+
+  @override
+  String get taskProject => '專案';
+
+  @override
+  String get taskCategory => '類別';
+
+  @override
+  String get taskCategoryHint => '例如：工作、家庭、學習';
+
+  @override
+  String get taskEstimateMinutes => '預估（分鐘）';
+
+  @override
+  String get taskTracked => '已記錄的專注';
+
+  @override
+  String get taskLabels => '標籤';
+
+  @override
+  String get taskAddLabel => '新增標籤';
+
+  @override
+  String get taskChecklist => '檢查清單';
+
+  @override
+  String get taskAddChecklistItem => '新增項目';
+
+  @override
+  String get taskSubtasks => '子任務';
+
+  @override
+  String get taskAddSubtask => '新增子任務';
+
+  @override
+  String get taskDependencies => '被以下任務阻擋';
+
+  @override
+  String get taskAddDependency => '新增阻擋任務';
+
+  @override
+  String get taskLinkedNotes => '已連結的筆記';
+
+  @override
+  String get taskSetTime => '設定時間';
+
+  @override
+  String get taskNoDate => '無日期';
+
+  @override
+  String get taskCompleted => '任務已完成';
+
+  @override
+  String get taskNextOccurrence => '已建立下一次重複';
+
+  @override
+  String taskSubtaskProgress(int done, int total) {
+    return '$done/$total';
+  }
+
+  @override
+  String taskOverdueBy(int days) {
+    String _temp0 = intl.Intl.pluralLogic(days, locale: localeName, other: '逾期 $days 天');
+    return '$_temp0';
+  }
+
+  @override
+  String taskCheckboxSemantics(String title) {
+    return '將「$title」標示為已完成';
+  }
+
+  @override
+  String taskCheckboxSemanticsDone(String title) {
+    return '將「$title」標示為未完成';
+  }
+
+  @override
+  String get sortSmart => '智慧';
+
+  @override
+  String get sortDueDate => '截止日期';
+
+  @override
+  String get sortPriority => '優先順序';
+
+  @override
+  String get sortCreated => '最新';
+
+  @override
+  String get sortTitle => '標題';
+
+  @override
+  String get filterAllProjects => '所有專案';
+
+  @override
+  String get filterAnyPriority => '任何優先順序';
+
+  @override
+  String get filterTitle => '篩選與排序';
+
+  @override
+  String get dateToday => '今天';
+
+  @override
+  String get dateTomorrow => '明天';
+
+  @override
+  String get dateYesterday => '昨天';
+
+  @override
+  String get repeatNever => '不重複';
+
+  @override
+  String get repeatDaily => '每天';
+
+  @override
+  String get repeatWeekdays => '每個工作日';
+
+  @override
+  String get repeatWeekly => '每週';
+
+  @override
+  String get repeatMonthly => '每月';
+
+  @override
+  String get repeatYearly => '每年';
+
+  @override
+  String get repeatCustom => '自訂';
+
+  @override
+  String get repeatEvery => '重複間隔';
+
+  @override
+  String get repeatOnDays => '於以下日子';
+
+  @override
+  String repeatUnitDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '天');
+    return '$_temp0';
+  }
+
+  @override
+  String repeatUnitWeeks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '週');
+    return '$_temp0';
+  }
+
+  @override
+  String repeatUnitMonths(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '個月');
+    return '$_temp0';
+  }
+
+  @override
+  String repeatUnitYears(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '年');
+    return '$_temp0';
+  }
+
+  @override
+  String repeatEndsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '重複 $count 次後結束');
+    return '$_temp0';
+  }
+
+  @override
+  String get repeatEndsNever => '永不結束';
+
+  @override
+  String get reminderAtTime => '活動開始時';
+
+  @override
+  String reminderMinutesBefore(int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(minutes, locale: localeName, other: '$minutes 分鐘前');
+    return '$_temp0';
+  }
+
+  @override
+  String reminderHoursBefore(int hours) {
+    String _temp0 = intl.Intl.pluralLogic(hours, locale: localeName, other: '$hours 小時前');
+    return '$_temp0';
+  }
+
+  @override
+  String get reminderDayBefore => '1 天前';
+
+  @override
+  String get projectsTitle => '專案';
+
+  @override
+  String get projectsEmptyTitle => '尚無專案';
+
+  @override
+  String get projectsEmptyMessage => '將相關的任務、筆記和專注時間歸在一起。';
+
+  @override
+  String get projectNew => '新增專案';
+
+  @override
+  String get projectEdit => '編輯專案';
+
+  @override
+  String get projectName => '名稱';
+
+  @override
+  String get projectDescription => '描述';
+
+  @override
+  String get projectGoal => '目標';
+
+  @override
+  String get projectDeadline => '截止期限';
+
+  @override
+  String get projectColor => '顏色';
+
+  @override
+  String get projectIcon => '圖示';
+
+  @override
+  String get projectProgress => '進度';
+
+  @override
+  String projectTasksDone(int done, int total) {
+    return '已完成 $done / $total 項任務';
+  }
+
+  @override
+  String get projectFocusTime => '專注時間';
+
+  @override
+  String get projectArchived => '已封存的專案';
+
+  @override
+  String get projectShowArchived => '顯示已封存';
+
+  @override
+  String projectDaysLeft(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: '還剩 $days 天',
+      zero: '今天到期',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get projectOverdue => '已過截止期限';
+
+  @override
+  String get calendarTitle => '行事曆';
+
+  @override
+  String get calendarMonth => '月';
+
+  @override
+  String get calendarWeek => '週';
+
+  @override
+  String get calendarDay => '日';
+
+  @override
+  String get calendarToday => '今天';
+
+  @override
+  String get calendarPrevious => '上一個';
+
+  @override
+  String get calendarNext => '下一個';
+
+  @override
+  String get calendarNoEvents => '沒有安排';
+
+  @override
+  String get calendarAllDay => '整天';
+
+  @override
+  String get eventNew => '新增活動';
+
+  @override
+  String get eventEdit => '編輯活動';
+
+  @override
+  String get eventTitleHint => '活動標題';
+
+  @override
+  String get eventStarts => '開始';
+
+  @override
+  String get eventEnds => '結束';
+
+  @override
+  String get eventKind => '類型';
+
+  @override
+  String get eventKindEvent => '活動';
+
+  @override
+  String get eventKindTimeBlock => '時間區塊';
+
+  @override
+  String get eventKindFocus => '專注時段';
+
+  @override
+  String get eventKindGoal => '個人目標';
+
+  @override
+  String get eventDescription => '詳細資料';
+
+  @override
+  String eventConflict(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '與 $count 個活動重疊');
+    return '$_temp0';
+  }
+
+  @override
+  String get eventConflictsToday => '這天有時間衝突';
+
+  @override
+  String get calendarTaskDue => '任務到期';
+
+  @override
+  String get calendarDragHint => '長按並拖曳活動即可重新安排';
+
+  @override
+  String get calendarRescheduled => '活動已移動';
+
+  @override
+  String get calendarScheduleTask => '排入時間區塊';
+
+  @override
+  String get notesTitle => '筆記';
+
+  @override
+  String get notesViewAll => '全部';
+
+  @override
+  String get notesViewPinned => '已釘選';
+
+  @override
+  String get notesViewFavorites => '我的最愛';
+
+  @override
+  String get notesViewArchived => '已封存';
+
+  @override
+  String get notesTags => '標籤';
+
+  @override
+  String get notesNewNotebook => '新增筆記本';
+
+  @override
+  String get notesNoNotebook => '無筆記本';
+
+  @override
+  String get notesEmptyTitle => '一張白紙';
+
+  @override
+  String get notesEmptyMessage => '記下想法、會議記錄和知識。';
+
+  @override
+  String get noteTitleHint => '標題';
+
+  @override
+  String get noteBodyHint => '開始書寫… 用 # 加標籤，用 [[標題]] 連結筆記。';
+
+  @override
+  String get noteFavorite => '加入最愛';
+
+  @override
+  String get noteUnfavorite => '從最愛移除';
+
+  @override
+  String get noteMoveTo => '移至筆記本';
+
+  @override
+  String get noteBacklinks => '連結自';
+
+  @override
+  String get noteLinkedTasks => '已連結的任務';
+
+  @override
+  String get noteLinkTask => '連結任務';
+
+  @override
+  String get noteLinkProject => '專案';
+
+  @override
+  String get noteFormatHeading => '標題';
+
+  @override
+  String get noteFormatBold => '粗體';
+
+  @override
+  String get noteFormatItalic => '斜體';
+
+  @override
+  String get noteFormatList => '項目符號清單';
+
+  @override
+  String get noteFormatChecklist => '檢查清單';
+
+  @override
+  String get noteFormatLink => '連結';
+
+  @override
+  String noteEdited(String time) {
+    return '編輯於 $time';
+  }
+
+  @override
+  String noteWordCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count 個字');
+    return '$_temp0';
+  }
+
+  @override
+  String get flashTitle => '單字卡';
+
+  @override
+  String get flashEmptyTitle => '建立你的第一副卡組';
+
+  @override
+  String get flashEmptyMessage => '間隔重複會在你快要忘記時顯示每張卡片。';
+
+  @override
+  String get deckNew => '新增卡組';
+
+  @override
+  String get deckEdit => '編輯卡組';
+
+  @override
+  String get deckName => '卡組名稱';
+
+  @override
+  String get deckDescription => '描述';
+
+  @override
+  String get deckDailyNew => '每日新卡片數';
+
+  @override
+  String get deckDailyReview => '每日複習目標';
+
+  @override
+  String deckCards(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 張卡片',
+      zero: '沒有卡片',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get deckDue => '到期';
+
+  @override
+  String get deckNewCards => '新卡';
+
+  @override
+  String get deckMature => '已熟記';
+
+  @override
+  String get deckStudy => '學習';
+
+  @override
+  String get deckNothingDue => '目前沒有到期的卡片，稍後再來吧。';
+
+  @override
+  String get deckEmptyCards => '新增卡片以開始學習。';
+
+  @override
+  String get cardNew => '新增卡片';
+
+  @override
+  String get cardEdit => '編輯卡片';
+
+  @override
+  String get cardFront => '正面';
+
+  @override
+  String get cardBack => '背面';
+
+  @override
+  String get cardFrontHint => '問題或詞彙';
+
+  @override
+  String get cardBackHint => '答案或定義';
+
+  @override
+  String get cardTags => '標籤';
+
+  @override
+  String get cardAddAnother => '儲存並繼續新增';
+
+  @override
+  String get reviewShowAnswer => '顯示答案';
+
+  @override
+  String get reviewAgain => '重來';
+
+  @override
+  String get reviewHard => '困難';
+
+  @override
+  String get reviewGood => '良好';
+
+  @override
+  String get reviewEasy => '簡單';
+
+  @override
+  String reviewProgress(int done, int total) {
+    return '$done / $total';
+  }
+
+  @override
+  String get reviewFinishedTitle => '學習完成';
+
+  @override
+  String reviewFinishedMessage(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '你複習了 $count 張卡片。');
+    return '$_temp0';
+  }
+
+  @override
+  String get reviewTapToFlip => '點一下顯示答案';
+
+  @override
+  String get importCardsTitle => '匯入卡片';
+
+  @override
+  String get importCardsHint =>
+      '每行貼上一張卡片（正面與背面以 Tab 或分號分隔），或選擇檔案：Excel (.xlsx)、CSV、Anki 卡組 (.apkg) 或匯出的卡組。';
+
+  @override
+  String importCardsResult(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '已匯入 $count 張卡片',
+      zero: '未匯入任何卡片',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get importFailed => '無法匯入此內容。';
+
+  @override
+  String get exportCopied => '卡組已匯出';
+
+  @override
+  String intervalMinutes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count 分鐘');
+    return '$_temp0';
+  }
+
+  @override
+  String intervalDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count 天');
+    return '$_temp0';
+  }
+
+  @override
+  String get goalsTitle => '目標';
+
+  @override
+  String get goalsEmptyTitle => '設定一個目標';
+
+  @override
+  String get goalsEmptyMessage => '設定每日、每週、每月或長期目標，追蹤實際進度。';
+
+  @override
+  String get goalNew => '新增目標';
+
+  @override
+  String get goalEdit => '編輯目標';
+
+  @override
+  String get goalTitleHint => '你想達成什麼？';
+
+  @override
+  String get goalPeriod => '週期';
+
+  @override
+  String get goalPeriodDaily => '每日';
+
+  @override
+  String get goalPeriodWeekly => '每週';
+
+  @override
+  String get goalPeriodMonthly => '每月';
+
+  @override
+  String get goalPeriodLongTerm => '長期';
+
+  @override
+  String get goalTarget => '目標值';
+
+  @override
+  String get goalUnit => '單位';
+
+  @override
+  String get goalUnitHint => '例如：頁、公里、小時';
+
+  @override
+  String get goalStatusActive => '進行中';
+
+  @override
+  String get goalStatusPaused => '已暫停';
+
+  @override
+  String get goalStatusAchieved => '已達成';
+
+  @override
+  String get goalPause => '暫停目標';
+
+  @override
+  String get goalResume => '繼續目標';
+
+  @override
+  String get goalMarkAchieved => '標示為已達成';
+
+  @override
+  String goalProgressOf(String current, String target) {
+    return '$current / $target';
+  }
+
+  @override
+  String get goalLogAmount => '數量';
+
+  @override
+  String get goalLogNote => '備註（選填）';
+
+  @override
+  String get goalHistory => '紀錄';
+
+  @override
+  String get goalNoHistory => '記錄的進度會顯示在這裡';
+
+  @override
+  String get goalLinkedTasks => '已連結的任務';
+
+  @override
+  String get goalLinkedTasksHint => '每完成一項已連結的任務，就為此目標計 1。';
+
+  @override
+  String get goalThisPeriod => '本期';
+
+  @override
+  String get habitsTitle => '習慣';
+
+  @override
+  String get habitsEmptyTitle => '每天一小步';
+
+  @override
+  String get habitsEmptyMessage => '建立習慣，完成時打個勾。';
+
+  @override
+  String get habitNew => '新增習慣';
+
+  @override
+  String get habitEdit => '編輯習慣';
+
+  @override
+  String get habitNameHint => '例如：閱讀 20 頁';
+
+  @override
+  String get habitDays => '排程';
+
+  @override
+  String get habitEveryDay => '每天';
+
+  @override
+  String get habitTargetPerDay => '每天幾次';
+
+  @override
+  String get habitReminder => '每日提醒';
+
+  @override
+  String habitStreak(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '連續 $count 天',
+      zero: '沒有連續紀錄',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get habitBestStreak => '最佳連續紀錄';
+
+  @override
+  String get habitCurrentStreak => '目前連續紀錄';
+
+  @override
+  String get habitConsistency => '穩定度';
+
+  @override
+  String get habitLast90 => '過去 90 天';
+
+  @override
+  String get habitPaused => '已暫停';
+
+  @override
+  String get habitPause => '暫停習慣';
+
+  @override
+  String get habitResume => '繼續習慣';
+
+  @override
+  String get habitDoneToday => '今天已完成';
+
+  @override
+  String habitCountToday(int count, int target) {
+    return '今天 $count / $target';
+  }
+
+  @override
+  String habitToggleSemantics(String name) {
+    return '勾選「$name」';
+  }
+
+  @override
+  String get habitNotScheduledToday => '今天未安排';
+
+  @override
+  String get analyticsTitle => '洞察';
+
+  @override
+  String get rangeWeek => '7 天';
+
+  @override
+  String get rangeMonth => '30 天';
+
+  @override
+  String get rangeQuarter => '90 天';
+
+  @override
+  String get statFocusTime => '專注時間';
+
+  @override
+  String get statSessions => '專注次數';
+
+  @override
+  String statSessionsDetail(int completed, int interrupted) {
+    return '完成 $completed 次 · 提前結束 $interrupted 次';
+  }
+
+  @override
+  String get statTasksDone => '已完成的任務';
+
+  @override
+  String get statCompletionRate => '準時完成率';
+
+  @override
+  String get statHabitConsistency => '習慣穩定度';
+
+  @override
+  String get statRetention => '卡片記憶率';
+
+  @override
+  String get statReviews => '複習';
+
+  @override
+  String get statActiveGoals => '進行中的目標';
+
+  @override
+  String get statEstimated => '預估完成的工作量';
+
+  @override
+  String get statEstimatedNote => '依據你的預估，而非實際測量的時間';
+
+  @override
+  String get statMeasuredNote => '依據專注時段測量';
+
+  @override
+  String get chartFocusByDay => '每日專注分鐘數';
+
+  @override
+  String get chartTasksByDay => '每日完成的任務';
+
+  @override
+  String get chartTimeByProject => '各專案時間';
+
+  @override
+  String get chartProjectProgress => '專案進度';
+
+  @override
+  String chartSemanticsTotal(String title, String total, String best) {
+    return '$title：總計 $total，最佳的一天 $best';
+  }
+
+  @override
+  String get analyticsNoData => '資料還不夠';
+
+  @override
+  String get analyticsUnassigned => '未指定';
+
+  @override
+  String get searchHint => '搜尋全部…';
+
+  @override
+  String get searchRecent => '最近的搜尋';
+
+  @override
+  String get searchClearRecent => '清除最近的搜尋';
+
+  @override
+  String searchNoResults(String query) {
+    return '找不到「$query」的結果';
+  }
+
+  @override
+  String get searchStartTyping => '搜尋任務、筆記、卡片、目標、活動等。搜尋只在這台裝置上進行。';
+
+  @override
+  String get searchCatTask => '任務';
+
+  @override
+  String get searchCatProject => '專案';
+
+  @override
+  String get searchCatNote => '筆記';
+
+  @override
+  String get searchCatFlashcard => '單字卡';
+
+  @override
+  String get searchCatDeck => '卡組';
+
+  @override
+  String get searchCatGoal => '目標';
+
+  @override
+  String get searchCatHabit => '習慣';
+
+  @override
+  String get searchCatEvent => '活動';
+
+  @override
+  String get searchCatSession => '專注紀錄';
+
+  @override
+  String get searchAll => '全部';
+
+  @override
+  String get assistantTitle => '助理';
+
+  @override
+  String get assistantIntro => '在你的裝置上運作的規劃協助。如有需要，可連接你選擇的 AI 服務來產生摘要與內容。';
+
+  @override
+  String get assistantOnDevice => '在裝置上';
+
+  @override
+  String get assistantCloud => 'AI 服務';
+
+  @override
+  String get assistantPlanDay => '規劃我的一天';
+
+  @override
+  String get assistantPlanDayDesc => '依緊急程度、優先順序與預估排列未完成的任務，並安插在你的活動之間。';
+
+  @override
+  String get assistantExtractTasks => '從筆記擷取任務';
+
+  @override
+  String get assistantExtractTasksDesc => '找出筆記中的檢查清單項目與待辦行，轉成任務。';
+
+  @override
+  String get assistantMakeCards => '從筆記建立單字卡';
+
+  @override
+  String get assistantMakeCardsDesc => '將「詞彙：定義」與問/答行轉成卡片。';
+
+  @override
+  String get assistantSummarize => '摘要筆記';
+
+  @override
+  String get assistantSummarizeDesc => '需要 AI 服務。筆記只會在你確認後才傳送。';
+
+  @override
+  String get assistantWorkload => '工作量總覽';
+
+  @override
+  String get assistantWorkloadDesc => '比較預估工作量與你本週的空閒時間。';
+
+  @override
+  String get assistantPlanEmpty => '沒有需要規劃的任務，好好享受空閒時間吧。';
+
+  @override
+  String assistantPlanCapacity(String time) {
+    return '今天的空閒專注時間：$time';
+  }
+
+  @override
+  String get assistantPlanOverflow => '這些今天可能排不下：';
+
+  @override
+  String get assistantChooseNote => '選擇筆記';
+
+  @override
+  String assistantFoundTasks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '找到 $count 項任務',
+      zero: '這則筆記中沒有找到任務',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String assistantFoundCards(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '找到 $count 張卡片',
+      zero: '這則筆記中沒有找到卡片',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get assistantChooseDeck => '選擇卡組';
+
+  @override
+  String assistantWorkloadResult(String estimated, String free) {
+    return '預估工作量：$estimated。空閒時間：$free。';
+  }
+
+  @override
+  String get assistantWorkloadOver => '你安排的工作超過可用時間，可以考慮延後優先順序較低的任務。';
+
+  @override
+  String get assistantWorkloadOk => '你的計畫在可用時間內。';
+
+  @override
+  String assistantWorkloadUnestimated(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '有 $count 項未完成的任務沒有預估。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get assistantProviderTitle => 'AI 服務';
+
+  @override
+  String get assistantProviderOff => '尚未連接服務，裝置上的工具仍可使用。';
+
+  @override
+  String assistantProviderOn(String host) {
+    return '已連接至 $host';
+  }
+
+  @override
+  String get assistantEndpoint => 'API 端點 (HTTPS)';
+
+  @override
+  String get assistantModel => '模型';
+
+  @override
+  String get assistantApiKey => 'API 金鑰';
+
+  @override
+  String get assistantApiKeyStored => '安全地儲存在這台裝置上';
+
+  @override
+  String get assistantHttpsOnly => '只允許 HTTPS 端點';
+
+  @override
+  String get assistantConsentTitle => '要將此內容傳送給你的 AI 服務嗎？';
+
+  @override
+  String assistantConsentBody(String host) {
+    return '所選筆記的文字會離開這台裝置，並由 $host 處理。不會傳送其他任何內容。';
+  }
+
+  @override
+  String get assistantConsentAlways => '不再為此服務詢問';
+
+  @override
+  String get assistantSend => '傳送';
+
+  @override
+  String get assistantUnavailable => '無法連線至 AI 服務，請稍後再試。';
+
+  @override
+  String get assistantDisabledTitle => '助理已關閉';
+
+  @override
+  String get assistantDisabledMessage => '開啟後即可使用規劃工具。除非你連接服務並確認每一次請求，否則資料不會離開裝置。';
+
+  @override
+  String get assistantSummaryTitle => '摘要';
+
+  @override
+  String get assistantRemoveProvider => '移除服務';
+
+  @override
+  String get settingsTitle => '設定';
+
+  @override
+  String get settingsGeneral => '一般';
+
+  @override
+  String get settingsLanguage => '語言';
+
+  @override
+  String get settingsLanguageSystem => '裝置語言';
+
+  @override
+  String get settingsAppearance => '外觀';
+
+  @override
+  String get settingsTheme => '主題';
+
+  @override
+  String get themeLight => '淺色';
+
+  @override
+  String get themeDark => '深色';
+
+  @override
+  String get themeSystem => '系統';
+
+  @override
+  String get settingsReduceMotion => '減少動態效果';
+
+  @override
+  String get settingsReduceMotionDesc => '減少動畫與動態背景';
+
+  @override
+  String get settingsFocus => '專注計時器';
+
+  @override
+  String get settingsWorkLength => '專注時長';
+
+  @override
+  String get settingsShortBreak => '短休息';
+
+  @override
+  String get settingsLongBreak => '長休息';
+
+  @override
+  String get settingsLongBreakEvery => '長休息間隔';
+
+  @override
+  String settingsCycles(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count 次專注');
+    return '$_temp0';
+  }
+
+  @override
+  String get settingsAutoBreaks => '自動開始休息';
+
+  @override
+  String get settingsSound => '結束音效';
+
+  @override
+  String get settingsDailyFocusTarget => '每日專注目標';
+
+  @override
+  String get settingsWeeklyFocusTarget => '每週專注目標';
+
+  @override
+  String get settingsNotifications => '通知';
+
+  @override
+  String get settingsNotificationsEnable => '允許提醒';
+
+  @override
+  String get settingsQuietHours => '勿擾時段';
+
+  @override
+  String settingsQuietHoursDesc(String start, String end) {
+    return '習慣、目標與複習提醒在 $start–$end 靜音';
+  }
+
+  @override
+  String get settingsReviewReminder => '單字卡複習提醒';
+
+  @override
+  String get settingsPermissionDenied => '通知已在系統設定中封鎖。';
+
+  @override
+  String get settingsPrivacy => '隱私與資料';
+
+  @override
+  String get settingsPrivacyStatement => '你的資料只存在這台裝置上，並已加密。沒有帳號、沒有分析、沒有追蹤。';
+
+  @override
+  String get settingsBackup => '建立加密備份';
+
+  @override
+  String get settingsBackupDesc => '以你選擇的密碼保護';
+
+  @override
+  String get settingsRestore => '從備份還原';
+
+  @override
+  String get settingsRestoreDesc => '取代這台裝置上的所有資料';
+
+  @override
+  String get settingsErase => '清除所有資料';
+
+  @override
+  String get settingsEraseDesc => '永久移除這台裝置上的一切';
+
+  @override
+  String get settingsEraseConfirmTitle => '要清除所有資料嗎？';
+
+  @override
+  String settingsEraseConfirmBody(String word) {
+    return '所有任務、筆記、卡片、目標、習慣、活動與專注紀錄都會被永久刪除。請輸入 $word 確認。';
+  }
+
+  @override
+  String get settingsEraseWord => '清除';
+
+  @override
+  String get settingsErased => '已清除所有資料';
+
+  @override
+  String get backupPassword => '備份密碼';
+
+  @override
+  String get backupPasswordConfirm => '確認密碼';
+
+  @override
+  String backupPasswordHint(int count) {
+    return '至少 $count 個字元。遺失後無法復原。';
+  }
+
+  @override
+  String get backupPasswordMismatch => '密碼不一致';
+
+  @override
+  String get backupPasswordShort => '密碼太短';
+
+  @override
+  String get backupCreating => '正在加密備份…';
+
+  @override
+  String get backupCreated => '備份已準備好儲存';
+
+  @override
+  String get backupRestoring => '正在驗證並還原…';
+
+  @override
+  String backupRestored(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '已還原 $count 個項目');
+    return '$_temp0';
+  }
+
+  @override
+  String get backupWrongPassword => '密碼錯誤，或檔案已被修改。';
+
+  @override
+  String get backupNotABackup => '這不是 Deep Focus 的備份檔。';
+
+  @override
+  String get backupCorrupted => '備份檔已損壞。';
+
+  @override
+  String get backupNewer => '此備份由較新版本的應用程式建立，請先更新。';
+
+  @override
+  String get backupRestoreConfirmTitle => '要取代所有資料嗎？';
+
+  @override
+  String get backupRestoreConfirmBody => '這台裝置上目前的所有內容都會被備份取代。若還原失敗，不會有任何變更。';
+
+  @override
+  String get settingsAbout => '關於';
+
+  @override
+  String settingsVersion(String version) {
+    return '版本 $version';
+  }
+
+  @override
+  String get settingsLicenses => '開放原始碼授權';
+
+  @override
+  String get settingsAssistant => '助理';
+
+  @override
+  String get settingsAssistantEnable => '啟用助理';
+
+  @override
+  String get settingsDashboard => '首頁區塊';
+
+  @override
+  String get settingsTrash => '垃圾桶';
+
+  @override
+  String settingsMinutesValue(int minutes) {
+    return '$minutes 分鐘';
+  }
+
+  @override
+  String get trashEmpty => '垃圾桶是空的';
+
+  @override
+  String get trashHint => '刪除的項目會留在這裡，直到你移除為止。';
+
+  @override
+  String get trashTasks => '任務';
+
+  @override
+  String get trashNotes => '筆記';
+
+  @override
+  String get onboardWelcomeTitle => '歡迎來到你的未來工作空間';
+
+  @override
+  String get onboardWelcomeBody => '任務、專注、行事曆、筆記、單字卡、目標與習慣——整合在一起，美觀又簡單。';
+
+  @override
+  String get onboardPrivateTitle => '隱私至上';
+
+  @override
+  String get onboardPrivateBody => '一切都留在這台裝置上，並已加密。沒有帳號。沒有追蹤。由你掌控。';
+
+  @override
+  String get onboardLanguageTitle => '選擇語言';
+
+  @override
+  String get onboardNotifTitle => '溫和的提醒';
+
+  @override
+  String get onboardNotifBody => '允許通知，以接收任務提醒與專注提示。你隨時可以變更。';
+
+  @override
+  String get onboardGetStarted => '開始使用';
+
+  @override
+  String onboardStep(int current, int total) {
+    return '第 $current / $total 步';
+  }
+
+  @override
+  String get notifChannelReminders => '提醒';
+
+  @override
+  String get notifChannelRemindersDesc => '任務、活動、習慣與目標提醒';
+
+  @override
+  String get notifChannelFocus => '專注計時器';
+
+  @override
+  String get notifChannelFocusDesc => '專注或休息結束時提醒';
+
+  @override
+  String get notifTaskTitle => '任務提醒';
+
+  @override
+  String get notifEventTitle => '即將到來的活動';
+
+  @override
+  String notifEventBody(String title, String time) {
+    return '$title，$time';
+  }
+
+  @override
+  String get notifFocusDoneTitle => '專注完成';
+
+  @override
+  String get notifFocusDoneBody => '做得好，休息一下吧。';
+
+  @override
+  String get notifBreakDoneTitle => '休息結束';
+
+  @override
+  String get notifBreakDoneBody => '準備好下一輪專注了嗎？';
+
+  @override
+  String get notifHabitTitle => '習慣提醒';
+
+  @override
+  String get notifReviewTitle => '單字卡準備好了';
+
+  @override
+  String get notifReviewBody => '簡短的複習能讓記憶更牢固。';
+
+  @override
+  String durationHoursMinutes(int hours, int minutes) {
+    return '$hours 小時 $minutes 分鐘';
+  }
+
+  @override
+  String durationHours(int hours) {
+    return '$hours 小時';
+  }
+
+  @override
+  String durationMinutes(int minutes) {
+    return '$minutes 分鐘';
+  }
+
+  @override
+  String percentValue(int value) {
+    return '$value%';
+  }
+
+  @override
+  String get weekdaysShort => '一,二,三,四,五,六,日';
+
+  @override
+  String a11yProgress(int value) {
+    return '進度百分之 $value';
+  }
+
+  @override
+  String a11yPriority(String level) {
+    return '優先順序：$level';
+  }
+
+  @override
+  String a11yColor(int index) {
+    return '顏色 $index';
+  }
+
+  @override
+  String get analyticsRangeLabel => '時間範圍';
+
+  @override
+  String get analyticsRefresh => '重新整理';
+
+  @override
+  String analyticsOnTimeDetail(int done, int total) {
+    return '$total 項有期限的任務中，$done 項準時完成';
+  }
+
+  @override
+  String analyticsProjectTasks(int done, int total) {
+    return '已完成 $done / $total 項任務';
+  }
+
+  @override
+  String get analyticsNoProjects => '沒有進行中的專案';
+
+  @override
+  String get analyticsNoFocus => '這段期間沒有專注紀錄';
+
+  @override
+  String get analyticsHabitsNone => '沒有進行中的習慣';
+
+  @override
+  String get analyticsRetentionNote => '熟記卡片中記住的比例';
+
+  @override
+  String analyticsBarValue(String name, String value) {
+    return '$name：$value';
+  }
+
+  @override
+  String assistantWorkloadRule(String start, String end, String days) {
+    return '空閒時間以工作日（$days）$start–$end 計算，並扣除有時間的活動。預估工作量是未來 7 天內到期之未完成任務的預估總和。';
+  }
+
+  @override
+  String get assistantWorkdaysMonFri => '週一至週五';
+
+  @override
+  String get assistantWorkdaysSunThu => '週日至週四';
+
+  @override
+  String get assistantWorkloadDayOff => '休息日';
+
+  @override
+  String assistantWorkloadDay(String estimated, String free) {
+    return '已安排 $estimated · 空閒 $free';
+  }
+
+  @override
+  String assistantPlanRule(String end) {
+    return '從現在到 $end，依今天的活動安排。先排逾期任務，再依優先順序、截止日期與預估排序。';
+  }
+
+  @override
+  String assistantTimeRange(String start, String end) {
+    return '$start – $end';
+  }
+
+  @override
+  String get assistantScheduleBlocks => '排入時間區塊';
+
+  @override
+  String get assistantScheduleConfirmTitle => '要將時間區塊加入行事曆嗎？';
+
+  @override
+  String assistantScheduleConfirmBody(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '將在今天的行事曆中加入 $count 個時間區塊。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String assistantScheduled(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '已加入 $count 個時間區塊');
+    return '$_temp0';
+  }
+
+  @override
+  String get assistantAlreadyScheduled => '已在你的行事曆上';
+
+  @override
+  String get assistantPlanTimeline => '今天排得下';
+
+  @override
+  String get assistantNoEstimate => '新增預估以便安排';
+
+  @override
+  String get assistantNoNotes => '還沒有筆記，請先寫一則筆記。';
+
+  @override
+  String get assistantNoteEmpty => '這則筆記是空的。';
+
+  @override
+  String assistantTasksCreated(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '已建立 $count 項任務');
+    return '$_temp0';
+  }
+
+  @override
+  String assistantCardsCreated(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '已建立 $count 張卡片');
+    return '$_temp0';
+  }
+
+  @override
+  String assistantCreateSelected(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '建立 $count 項',
+      zero: '未選取任何項目',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get assistantExtractHint => '可辨識：未勾選的「- [ ]」核取方塊，以及以 TODO: 或 To do: 開頭的行';
+
+  @override
+  String get assistantCardsHint => '可辨識：「詞彙: 定義」、「詞彙 — 定義」以及 Q:/A: 成對的行';
+
+  @override
+  String get assistantProviderHint => '可使用任何與 OpenAI 相容的服務。金鑰保存在這台裝置的安全儲存空間中，絕不會包含在備份裡。';
+
+  @override
+  String get assistantEndpointHelp => '例如 https://api.example.com/v1';
+
+  @override
+  String get assistantApiKeyKeep => '留空即保留已儲存的金鑰';
+
+  @override
+  String get assistantApiKeyRequired => '請輸入 API 金鑰';
+
+  @override
+  String get assistantProviderSaved => '已儲存服務';
+
+  @override
+  String get assistantProviderRemoved => '已移除服務並刪除金鑰';
+
+  @override
+  String get assistantRemoveProviderConfirm => '要移除服務並從這台裝置刪除已儲存的 API 金鑰嗎？';
+
+  @override
+  String get assistantAskEveryTime => '每次請求前詢問';
+
+  @override
+  String get assistantSummarizing => '正在摘要…';
+
+  @override
+  String assistantSummaryNote(String host) {
+    return '由 $host 產生，使用前請先檢查。';
+  }
+
+  @override
+  String get assistantCopy => '複製';
+
+  @override
+  String get assistantCopied => '已複製';
+
+  @override
+  String get assistantConfigure => '設定服務';
+
+  @override
+  String calendarTimeRange(String start, String end) {
+    return '$start – $end';
+  }
+
+  @override
+  String calendarWeekRange(String start, String end) {
+    return '$start – $end';
+  }
+
+  @override
+  String get calendarSeriesMoved => '此系列的所有活動都已移動';
+
+  @override
+  String get calendarEventReminder => '提醒';
+
+  @override
+  String get calendarEventRepeat => '重複';
+
+  @override
+  String get calendarEventColor => '顏色';
+
+  @override
+  String get calendarDefaultColor => '使用類型顏色';
+
+  @override
+  String get calendarEventLinkedTask => '連結的任務';
+
+  @override
+  String get calendarEventNoTask => '未連結任務';
+
+  @override
+  String calendarEventsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 個活動',
+      zero: '沒有活動',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String calendarTasksDueCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 項到期任務',
+      zero: '沒有到期任務',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String calendarDaySemantics(String date, String events, String tasks) {
+    return '$date。$events，$tasks';
+  }
+
+  @override
+  String get calendarNoEventsHint => '新增活動或時間區塊來安排這一天。';
+
+  @override
+  String get calendarNow => '目前時間';
+
+  @override
+  String get calendarRecurring => '重複';
+
+  @override
+  String get calendarEventNotFound => '此活動已不存在';
+
+  @override
+  String get calendarEventLocalTime => '時間以你裝置的時區顯示';
+
+  @override
+  String get calendarEventDeleted => '活動已移至垃圾桶';
+
+  @override
+  String get calendarConflictMarker => '與其他活動重疊';
+
+  @override
+  String calendarEventSemantics(String title, String time) {
+    return '$title，$time';
+  }
+
+  @override
+  String get calendarSeriesEditNote => '變更會套用到此系列的所有活動';
+
+  @override
+  String get calendarDragHintSeries => '拖曳重複活動會移動整個系列';
+
+  @override
+  String calendarTaskDueSemantics(String title) {
+    return '$title，任務到期';
+  }
+
+  @override
+  String get startupErrorTitle => '無法開啟你的資料';
+
+  @override
+  String get startupErrorLocked =>
+      '這台裝置資料的加密金鑰無法使用。沒有任何資料被刪除。重新啟動裝置通常能解決問題。如果你最近還原過裝置，請改從加密備份還原資料。';
+
+  @override
+  String get startupErrorCipher => '這台裝置不支援應用程式所需的加密儲存。沒有任何資料以未加密方式儲存。';
+
+  @override
+  String get startupErrorRetry => '再試一次';
+
+  @override
+  String flashcardsDueBanner(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '有 $count 張卡片待複習');
+    return '$_temp0';
+  }
+
+  @override
+  String flashcardsDueCount(int count) {
+    return '$count 張到期';
+  }
+
+  @override
+  String flashcardsNewCount(int count) {
+    return '$count 張新卡';
+  }
+
+  @override
+  String flashcardsMatureRing(String percent) {
+    return '已熟記卡片：$percent';
+  }
+
+  @override
+  String get flashcardsValidationNonNegative => '請輸入 0 或以上';
+
+  @override
+  String get flashcardsSearchCards => '搜尋卡片';
+
+  @override
+  String get flashcardsSearchEmpty => '沒有符合搜尋的卡片';
+
+  @override
+  String get flashcardsCardAdded => '已新增卡片';
+
+  @override
+  String flashcardsCardDueOn(String date) {
+    return '$date 到期';
+  }
+
+  @override
+  String get flashcardsCopyToClipboard => '複製到剪貼簿';
+
+  @override
+  String get flashcardsExportTitle => '匯出卡組';
+
+  @override
+  String get flashcardsDeleteDeck => '刪除卡組';
+
+  @override
+  String flashcardsRatingA11y(String rating, String interval) {
+    return '$rating，下次複習於 $interval 後';
+  }
+
+  @override
+  String flashcardsQuestionA11y(String text) {
+    return '問題：$text';
+  }
+
+  @override
+  String flashcardsAnswerA11y(String text) {
+    return '答案：$text';
+  }
+
+  @override
+  String get flashcardsShowQuestion => '顯示問題';
+
+  @override
+  String get flashcardsImportField => '要匯入的卡片';
+
+  @override
+  String get flashcardsNothingToStudy => '沒有要學習的內容';
+
+  @override
+  String flashcardsReadyCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 張卡片可以學習',
+      zero: '沒有可學習的卡片',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get flashcardsByRating => '依評分';
+
+  @override
+  String get flashcardsDeckNotFound => '此卡組已無法使用。';
+
+  @override
+  String get focusSessionDeleted => '已刪除專注紀錄';
+
+  @override
+  String get focusDeleteConfirm => '要從紀錄中刪除這次專注嗎？它的時間將不再計入你的目標。';
+
+  @override
+  String get focusUnlinkTask => '移除連結的任務';
+
+  @override
+  String get focusNoteHint => '你做了些什麼？';
+
+  @override
+  String get focusTargetCaption => '依已儲存的專注紀錄測量';
+
+  @override
+  String get focusModeLabel => '計時模式';
+
+  @override
+  String focusUpNext(String phase) {
+    return '接下來：$phase';
+  }
+
+  @override
+  String get focusStopwatchHint => '持續往上計時，直到你停止。';
+
+  @override
+  String get focusOpenHint => '不限時間，完成時停止即可。';
+
+  @override
+  String get focusNotificationsDisabledInApp => '設定中已關閉提醒，專注結束時不會通知你。';
+
+  @override
+  String focusHistoryItem(String mode, String duration, String when) {
+    return '$mode，$duration，$when';
+  }
+
+  @override
+  String get goalsFilterAll => '全部';
+
+  @override
+  String get goalsFilterPeriod => '週期篩選';
+
+  @override
+  String get goalsFilterStatus => '狀態篩選';
+
+  @override
+  String get goalsEmptyFiltered => '沒有符合此篩選條件的目標';
+
+  @override
+  String goalsDueOn(String date) {
+    return '$date 到期';
+  }
+
+  @override
+  String get goalsDeadline => '截止期限（選填）';
+
+  @override
+  String get goalsNoDeadline => '無截止期限';
+
+  @override
+  String get goalsSetDeadline => '設定截止期限';
+
+  @override
+  String get goalsRemoveDeadline => '移除截止期限';
+
+  @override
+  String get goalsDescription => '描述（選填）';
+
+  @override
+  String get goalsTitleLabel => '標題';
+
+  @override
+  String goalsAmountWithUnit(String amount, String unit) {
+    return '$amount $unit';
+  }
+
+  @override
+  String goalsCardSemantics(String title, String progress, String status) {
+    return '$title，$progress，$status';
+  }
+
+  @override
+  String get goalsReached => '已達成目標';
+
+  @override
+  String get goalsLogged => '已記錄進度';
+
+  @override
+  String get goalsEntryDeleted => '已移除紀錄';
+
+  @override
+  String get goalsDeleteEntry => '移除紀錄';
+
+  @override
+  String get goalsDeleted => '已刪除目標';
+
+  @override
+  String get goalsMarkActive => '標示為進行中';
+
+  @override
+  String get goalsNotFound => '此目標已無法使用';
+
+  @override
+  String get goalsLinkTask => '連結任務';
+
+  @override
+  String get goalsNoLinkedTasks => '尚無連結的任務';
+
+  @override
+  String get goalsUnlinkTask => '取消連結任務';
+
+  @override
+  String get goalsTaskOpen => '尚未完成';
+
+  @override
+  String get goalsTaskLinked => '已連結任務';
+
+  @override
+  String get goalsTaskUnlinked => '已取消連結任務';
+
+  @override
+  String goalsFromTasks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count 項已完成的連結任務');
+    return '本期包含 $_temp0';
+  }
+
+  @override
+  String get goalsHistoryAllTime => '先前週期的紀錄保留在這裡，但只計入各自的週期。';
+
+  @override
+  String habitsTodaySummary(int done, int total) {
+    return '今天已完成 $done / $total';
+  }
+
+  @override
+  String get habitsNothingToday => '今天沒有安排習慣';
+
+  @override
+  String get habitsDecrease => '移除一次打卡';
+
+  @override
+  String get habitsResetToday => '重設今天';
+
+  @override
+  String get habitsCheckInHint => '長按以調整';
+
+  @override
+  String get habitsName => '名稱';
+
+  @override
+  String get habitsColor => '顏色';
+
+  @override
+  String get habitsValidationDays => '請至少選擇一天';
+
+  @override
+  String habitsReminderAt(String time) {
+    return '每天 $time';
+  }
+
+  @override
+  String get habitsSetReminder => '設定提醒時間';
+
+  @override
+  String get habitsRemoveReminder => '移除提醒';
+
+  @override
+  String get habitsReminderNote => '允許通知後，提醒會在排定的日子出現。';
+
+  @override
+  String get habitsArchived => '已封存習慣';
+
+  @override
+  String get habitsNotFound => '此習慣已無法使用';
+
+  @override
+  String get habitsLast30 => '過去 30 天';
+
+  @override
+  String get habitsConsistencyNone => '資料還不夠';
+
+  @override
+  String get habitsCalendar => '打卡紀錄';
+
+  @override
+  String get habitsCalendarHint => '點一下日期即可修正。';
+
+  @override
+  String habitsDaySemantics(String date, int count, int target) {
+    return '$date：$count / $target';
+  }
+
+  @override
+  String habitsHeatmapSemantics(String percent) {
+    return '過去 90 天的打卡。穩定度 $percent。';
+  }
+
+  @override
+  String get habitsHeatmapSemanticsEmpty => '過去 90 天的打卡。資料還不夠。';
+
+  @override
+  String habitsDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count 天');
+    return '$_temp0';
+  }
+
+  @override
+  String get habitsPausedNote => '暫停的日子不會影響你的連續紀錄。';
+
+  @override
+  String get habitsListSeparator => '、';
+
+  @override
+  String get habitsArchive => '封存習慣';
+
+  @override
+  String habitsTimesPerDayValue(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '每天 $count 次',
+      one: '每天一次',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get notesSectionOthers => '其他筆記';
+
+  @override
+  String get notesAllNotebooks => '所有筆記本';
+
+  @override
+  String get notesNotebookName => '筆記本名稱';
+
+  @override
+  String get notesNotebookColor => '顏色';
+
+  @override
+  String get notesDeleteNotebook => '刪除筆記本';
+
+  @override
+  String get notesDeleteNotebookMessage => '筆記本會被移除，其中的筆記會保留並顯示在「所有筆記本」中。';
+
+  @override
+  String notesTagFilter(String tag) {
+    return '#$tag';
+  }
+
+  @override
+  String get notesEmptyPinned => '釘選重要筆記，讓它們固定在最上方。';
+
+  @override
+  String get notesEmptyFavorites => '標示為最愛的筆記會顯示在這裡。';
+
+  @override
+  String get notesEmptyArchived => '已封存的筆記會顯示在這裡。';
+
+  @override
+  String get notesEmptyFiltered => '沒有符合這些篩選條件的筆記。';
+
+  @override
+  String get notesArchivedSnack => '已封存筆記';
+
+  @override
+  String get notesUnarchivedSnack => '筆記已移回你的筆記';
+
+  @override
+  String notesChecklistProgress(int done, int total) {
+    return '已完成 $done / $total';
+  }
+
+  @override
+  String notesUpdatedAt(String day, String time) {
+    return '$day · $time';
+  }
+
+  @override
+  String get notesFormatting => '格式';
+
+  @override
+  String get notesWrite => '撰寫';
+
+  @override
+  String get notesPreviewEmpty => '還沒有可預覽的內容。';
+
+  @override
+  String notesBacklinksEmpty(String title) {
+    return '目前沒有其他筆記連結到這裡。使用 [[$title]] 連結到這則筆記。';
+  }
+
+  @override
+  String get notesBacklinksNeedTitle => '為這則筆記取個標題，其他筆記才能連結到它。';
+
+  @override
+  String get notesLinkedTasksEmpty => '沒有任務連結到這則筆記。';
+
+  @override
+  String notesLinkMissing(String title) {
+    return '還沒有標題為「$title」的筆記。';
+  }
+
+  @override
+  String get notesNotFound => '這則筆記已不存在。';
+
+  @override
+  String notesCheckboxSemantics(String label) {
+    return '檢查清單項目：$label';
+  }
+
+  @override
+  String notesOpenLinkedNote(String title) {
+    return '開啟筆記 $title';
+  }
+
+  @override
+  String get notesTagsHint => '在筆記中輸入 #標籤 即可新增標籤。';
+
+  @override
+  String get notesTaskDone => '已完成';
+
+  @override
+  String get notifTimerDoneBody => '你設定的時間已經過了。';
+
+  @override
+  String get onboardingPrivatePointDevice => '只儲存在這台裝置上，並已加密';
+
+  @override
+  String get onboardingPrivatePointAccount => '不需要帳號';
+
+  @override
+  String get onboardingPrivatePointTracking => '沒有分析，沒有追蹤';
+
+  @override
+  String get onboardingLanguageBody => '你隨時可以在「設定」中變更。';
+
+  @override
+  String get onboardingNext => '下一步';
+
+  @override
+  String get projectsActive => '進行中';
+
+  @override
+  String get projectNameHint => '例如：產品發表';
+
+  @override
+  String get projectGoalHint => '完成時會是什麼樣子？';
+
+  @override
+  String get projectNoDeadline => '無截止期限';
+
+  @override
+  String get projectTasksOpen => '未完成的任務';
+
+  @override
+  String get projectTasksCompleted => '已完成的任務';
+
+  @override
+  String get projectAddTask => '新增任務到專案';
+
+  @override
+  String get projectAddNote => '新增專案筆記';
+
+  @override
+  String get projectLinkedNotes => '筆記';
+
+  @override
+  String get projectNoTasks => '此專案還沒有任務';
+
+  @override
+  String get projectArchivedBadge => '已封存';
+
+  @override
+  String get projectDeleted => '專案已移至垃圾桶';
+
+  @override
+  String get projectDeleteMessage => '任務會保留在你的清單中，不屬於任何專案。';
+
+  @override
+  String projectSemantics(String name, int percent) {
+    return '$name，已完成百分之 $percent';
+  }
+
+  @override
+  String searchResultCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count 個結果');
+    return '$_temp0';
+  }
+
+  @override
+  String get searchCategoryFilter => '依類型篩選';
+
+  @override
+  String searchRecentTap(String query) {
+    return '再次搜尋 $query';
+  }
+
+  @override
+  String get settingsLanguageHint => '選擇整個應用程式的語言。語言名稱以各自的語言顯示。';
+
+  @override
+  String get settingsThemeHint => '淺色、深色或跟隨系統';
+
+  @override
+  String settingsDecrease(String setting) {
+    return '減少$setting';
+  }
+
+  @override
+  String settingsIncrease(String setting) {
+    return '增加$setting';
+  }
+
+  @override
+  String get settingsQuietStart => '開始';
+
+  @override
+  String get settingsQuietEnd => '結束';
+
+  @override
+  String get settingsNotificationsHint => '這會將你的偏好儲存在應用程式中。系統也可能要求權限。';
+
+  @override
+  String get settingsDashboardHint => '拖曳以調整順序。關閉不需要的區塊。';
+
+  @override
+  String settingsDashboardReorder(String section) {
+    return '調整「$section」的順序';
+  }
+
+  @override
+  String get settingsDashboardReset => '恢復預設順序';
+
+  @override
+  String get settingsAssistantDesc => '選用的規劃協助。除非你連接服務，否則不會有任何內容離開這台裝置。';
+
+  @override
+  String get settingsAssistantSetup => '助理與服務設定';
+
+  @override
+  String get settingsTrashDesc => '還原或永久刪除已移除的項目';
+
+  @override
+  String get settingsEraseFirstBody => '此操作無法復原。建議先建立加密備份。';
+
+  @override
+  String settingsEraseTypeLabel(String word) {
+    return '輸入 $word';
+  }
+
+  @override
+  String get settingsEraseFailed => '無法清除資料，沒有任何變更。';
+
+  @override
+  String get settingsAboutTagline => '私密、以本機為優先的生產力工作空間。';
+
+  @override
+  String get backupShowPassword => '顯示密碼';
+
+  @override
+  String get backupHidePassword => '隱藏密碼';
+
+  @override
+  String get backupSaved => '已儲存備份';
+
+  @override
+  String get backupFailed => '無法建立備份，你的資料沒有變更。';
+
+  @override
+  String get backupReadFailed => '無法讀取所選的檔案。';
+
+  @override
+  String get backupRestoreFailed => '還原失敗，沒有任何變更。';
+
+  @override
+  String get backupShareSubject => 'Deep Focus 加密備份';
+
+  @override
+  String repeatSummaryEveryN(String unit, int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '每 $count 天',
+      one: '每天',
+    );
+    String _temp1 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '每 $count 週',
+      one: '每週',
+    );
+    String _temp2 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '每 $count 個月',
+      one: '每月',
+    );
+    String _temp3 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '每 $count 年',
+      one: '每年',
+    );
+    String _temp4 = intl.Intl.selectLogic(unit, {
+      'day': '$_temp0',
+      'week': '$_temp1',
+      'month': '$_temp2',
+      'other': '$_temp3',
+    });
+    return '$_temp4';
+  }
+
+  @override
+  String repeatOnWeekdays(String days) {
+    return '於$days';
+  }
+
+  @override
+  String get repeatEndsLabel => '結束';
+
+  @override
+  String get repeatEndsAfter => '重複指定次數後';
+
+  @override
+  String get repeatCountLabel => '次數';
+
+  @override
+  String get reminderNone => '不提醒';
+
+  @override
+  String get reminderCustomTime => '在指定時間';
+
+  @override
+  String get a11yDecrease => '減少';
+
+  @override
+  String get a11yIncrease => '增加';
+
+  @override
+  String get pickTaskTitle => '選擇任務';
+
+  @override
+  String get pickTaskEmpty => '沒有未完成的任務';
+
+  @override
+  String get tasksSearchTooltip => '搜尋任務';
+
+  @override
+  String get tasksSectionOverdue => '已逾期';
+
+  @override
+  String get tasksSectionToday => '今天';
+
+  @override
+  String get tasksRecurringSemantics => '重複';
+
+  @override
+  String get tasksFilterPriorityAtLeast => '最低優先順序';
+
+  @override
+  String get tasksFilterCategory => '類別';
+
+  @override
+  String get tasksFilterAnyCategory => '任何類別';
+
+  @override
+  String get tasksFilterLabel => '標籤';
+
+  @override
+  String get tasksFilterAnyLabel => '任何標籤';
+
+  @override
+  String get tasksFilterReset => '重設篩選條件';
+
+  @override
+  String get tasksViewByProject => '依專案';
+
+  @override
+  String get tasksViewByPriority => '依優先順序';
+
+  @override
+  String get tasksViewByCategory => '依類別';
+
+  @override
+  String get tasksGroupNoCategory => '無類別';
+
+  @override
+  String taskBlockedBy(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count 項任務');
+    return '被 $_temp0阻擋';
+  }
+
+  @override
+  String get taskBlockedWarning => '此任務被未完成的任務阻擋。仍要完成嗎？';
+
+  @override
+  String get taskStartFocus => '專注於此任務';
+
+  @override
+  String get taskRemoveDate => '移除日期';
+
+  @override
+  String get taskAllDay => '不指定時間';
+
+  @override
+  String get taskSaved => '已儲存任務';
+
+  @override
+  String get taskCreated => '已建立任務';
+
+  @override
+  String get taskReminderNeedsDue => '設定截止日期才能使用相對提醒';
+
+  @override
+  String get taskSubtaskDetailsHint => '請先儲存任務，才能新增子任務、檢查清單項目、標籤與相依任務。';
+
+  @override
+  String get taskLabelName => '標籤名稱';
+
+  @override
+  String get taskMoreDetails => '詳細資料';
+
+  @override
+  String get taskPlanning => '規劃';
+
+  @override
+  String get taskOrganize => '整理';
+
+  @override
+  String get taskBreakdown => '拆解';
+
+  @override
+  String get trashDeleteTaskTitle => '要永久刪除此任務嗎？';
+
+  @override
+  String get trashDeleteNoteTitle => '要永久刪除此筆記嗎？';
+
+  @override
+  String get trashDeleteBody => '此操作無法復原。';
+
+  @override
+  String get trashEmptyTitle => '要清空垃圾桶嗎？';
+
+  @override
+  String trashEmptyBody(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count 個項目將被永久刪除。');
+    return '$_temp0';
+  }
+
+  @override
+  String get trashRestored => '已還原';
+
+  @override
+  String get trashPurged => '已永久刪除';
+
+  @override
+  String trashDeletedOn(String date) {
+    return '刪除於 $date';
+  }
+
+  @override
+  String trashCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count 個項目');
+    return '$_temp0';
+  }
+
+  @override
+  String get flashcardsReadAloud => '朗讀';
+
+  @override
+  String get flashcardsTtsUnavailable => '這台裝置無法使用文字轉語音。';
+
+  @override
+  String get flashcardsTtsLanguageUnavailable => '此語言尚未安裝語音。請在 Android 文字轉語音設定中新增。';
+
+  @override
+  String get calendarAgenda => '行程';
+
+  @override
+  String projectIconName(String name) {
+    String _temp0 = intl.Intl.selectLogic(name, {
+      'spark': '火花',
+      'rocket': '火箭',
+      'book': '書本',
+      'work': '工作',
+      'home': '家',
+      'heart': '愛心',
+      'code': '程式碼',
+      'palette': '調色盤',
+      'fitness': '健身',
+      'school': '學校',
+      'travel': '旅行',
+      'money': '儲蓄',
+      'other': '圖示',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String get cardMoreFields => '更多欄位';
+
+  @override
+  String get cardFieldExample => '例句';
+
+  @override
+  String get cardFieldExplanation => '解釋';
+
+  @override
+  String get cardFieldPronunciation => '發音';
+
+  @override
+  String get cardFieldNotes => '其他備註';
+
+  @override
+  String get projectMilestones => '里程碑';
+
+  @override
+  String get milestoneAdd => '新增里程碑';
+
+  @override
+  String get milestoneEdit => '編輯里程碑';
+
+  @override
+  String get milestoneTitleLabel => '里程碑';
+
+  @override
+  String get milestoneNoDate => '無日期';
+
+  @override
+  String get milestonesEmpty => '還沒有里程碑。新增有日期的檢查點，在行事曆上追蹤專案。';
+
+  @override
+  String get milestoneDeleted => '已刪除里程碑';
+
+  @override
+  String milestoneDoneA11y(String title) {
+    return '將里程碑「$title」標示為已完成';
+  }
+
+  @override
+  String calendarMilestone(String project) {
+    return '里程碑 · $project';
+  }
+
+  @override
+  String get tasksViewInbox => '收件匣';
+
+  @override
+  String get tasksViewArchived => '已封存';
+
+  @override
+  String get tasksEmptyInbox => '沒有專案或日期的任務會放在這裡，有空時再整理。';
+
+  @override
+  String get tasksEmptyArchived => '已封存的任務保留在這裡，不會出現在清單與提醒中。';
+
+  @override
+  String get taskArchivedBadge => '已封存';
+
+  @override
+  String get taskStatusInProgress => '進行中';
+
+  @override
+  String get taskArchived => '已封存任務';
+
+  @override
+  String get taskUnarchived => '已從封存還原任務';
+
+  @override
+  String get focusPlanTitle => '專注計畫';
+
+  @override
+  String focusPlanTotal(String duration) {
+    return '總計 $duration';
+  }
+
+  @override
+  String get focusPlanRounds => '專注次數';
+
+  @override
+  String get focusPlanUnlimited => '∞';
+
+  @override
+  String get focusPlanLongEvery => '長休息間隔';
+
+  @override
+  String get focusPlanSkipLastBreak => '略過最後一次休息';
+
+  @override
+  String get focusPlanAutoBreaks => '自動開始休息';
+
+  @override
+  String get focusPlanAutoFocus => '休息後自動開始專注';
+
+  @override
+  String get focusPlanSave => '儲存計畫';
+
+  @override
+  String get focusPlanNameHint => '例如：準備考試';
+
+  @override
+  String get focusPlanSaved => '已儲存計畫';
+
+  @override
+  String focusPlanPresetA11y(String name, int work, int rest) {
+    return '$name：專注 $work 分鐘，休息 $rest 分鐘';
+  }
+
+  @override
+  String focusPlanDecrease(String label) {
+    return '減少$label';
+  }
+
+  @override
+  String focusPlanIncrease(String label) {
+    return '增加$label';
+  }
+
+  @override
+  String focusRoundOf(int current, int total) {
+    return '第 $current / $total 輪';
+  }
+
+  @override
+  String get focusSeriesComplete => '全部完成，做得好！';
+
+  @override
+  String get filterAll => '全部';
+
+  @override
+  String importCardsResultDetail(int added, int duplicates, int invalid) {
+    return '已匯入 $added · 略過 $duplicates 筆重複 · $invalid 列不完整';
+  }
+
+  @override
+  String get flashcardsSuspend => '暫停卡片';
+
+  @override
+  String get flashcardsResume => '恢復卡片';
+
+  @override
+  String get flashcardsSuspended => '卡片已暫停：不會再排入複習';
+
+  @override
+  String get flashcardsResumed => '卡片已恢復';
+
+  @override
+  String get flashcardsSuspendedFilter => '已暫停';
+
+  @override
+  String flashcardsShownOf(int shown, int total) {
+    return '$shown / $total 張卡片';
+  }
+
+  @override
+  String get flashcardsImportFile => '從檔案';
+
+  @override
+  String get speechTitle => '語音';
+
+  @override
+  String get speechAppLanguage => '應用程式語言';
+
+  @override
+  String get speechFrontLanguage => '正面語言';
+
+  @override
+  String get speechBackLanguage => '背面語言';
+
+  @override
+  String get speechRepeat => '每次朗讀重複';
+
+  @override
+  String get speechRate => '速度';
+
+  @override
+  String get speechAutoRead => '自動朗讀問題';
+
+  @override
+  String get speechHint => '使用這台裝置上已安裝的語音，離線運作。若某語言沒有語音，會告知你，且不會改用其他語音。';
+
+  @override
+  String get studyHowTitle => '你想怎麼學習？';
+
+  @override
+  String studyDueCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '複習 $count 張卡片');
+    return '$_temp0';
+  }
+
+  @override
+  String get studyPracticeAll => '練習所有卡片（不影響排程）';
+
+  @override
+  String get studyPracticeMistakes => '練習最近答錯的卡片';
+
+  @override
+  String get studyPracticeHint => '練習回合不會改變卡片的到期時間，複習才會更新排程。';
+
+  @override
+  String get studyModeClassic => '經典';
+
+  @override
+  String get studyModeReverse => '反向';
+
+  @override
+  String get studyModeMixed => '雙向';
+
+  @override
+  String get studyModeTyped => '輸入答案';
+
+  @override
+  String get studyModeChoice => '選擇題';
+
+  @override
+  String get studyModeListening => '聽力';
+
+  @override
+  String get studyPractice => '練習';
+
+  @override
+  String get studyNoMistakes => '這副卡組最近沒有答錯，太棒了！';
+
+  @override
+  String get studyTypeAnswer => '輸入你的答案';
+
+  @override
+  String get studyCheck => '檢查';
+
+  @override
+  String get studyKnewIt => '我會';
+
+  @override
+  String get studyDidntKnow => '我不會';
+
+  @override
+  String studyMistakes(int count) {
+    return '答錯（$count）';
+  }
+
+  @override
+  String get studyRepeatMistakes => '重複答錯的卡片';
+
+  @override
+  String get studyCorrect => '正確';
+
+  @override
+  String get studyAlmost => '差一點——檢查拼寫';
+
+  @override
+  String get studyWrong => '不太對';
+
+  @override
+  String get studyShowText => '顯示文字';
+
+  @override
+  String get flashcardsImportFileFailed => '無法開啟檔案，你可以改為貼上其內容。';
+
+  @override
+  String get studyNoMatchingCards => '還沒有符合此選擇的卡片。';
+
+  @override
+  String get studyPracticeNew => '只看新卡';
+
+  @override
+  String get studyPracticeHard => '困難卡片';
+
+  @override
+  String get studyPracticeFavorites => '我的最愛';
+
+  @override
+  String get studySessionSize => '每次學習的卡片數';
+
+  @override
+  String get studySessionAll => '全部';
+
+  @override
+  String get studyOrder => '順序';
+
+  @override
+  String get studyOrderDue => '最久逾期的優先';
+
+  @override
+  String get studyOrderRandom => '隨機';
+
+  @override
+  String get studyOrderHardest => '最難的優先';
+
+  @override
+  String get flashcardsHard => '困難';
+
+  @override
+  String get flashcardsFavorites => '我的最愛';
+
+  @override
+  String get flashcardsFavorite => '加入最愛';
+
+  @override
+  String get flashcardsUnfavorite => '從最愛移除';
+
+  @override
+  String get flashcardsDuplicate => '複製';
+
+  @override
+  String get flashcardsMoveTo => '移至卡組';
+
+  @override
+  String get flashcardsNoOtherDeck => '請先建立另一副卡組。';
+
+  @override
+  String flashcardsMoved(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '已移動 $count 張卡片');
+    return '$_temp0';
+  }
+
+  @override
+  String get flashcardsAddTag => '新增標籤';
+
+  @override
+  String get flashcardsTagHint => '例如：動詞';
+
+  @override
+  String flashcardsSelected(int count) {
+    return '已選取 $count 項';
+  }
+
+  @override
+  String get flashcardsSelectAll => '全選顯示的項目';
+
+  @override
+  String flashcardsSelectCard(String front) {
+    return '選取 $front';
+  }
+
+  @override
+  String flashcardsRecall(String value) {
+    return '記憶率 $value';
+  }
+
+  @override
+  String get flashcardsDuplicateTitle => '可能重複';
+
+  @override
+  String flashcardsDuplicateMessage(String front, String back) {
+    return '這副卡組已經有「$front」→「$back」。仍要儲存嗎？';
+  }
+
+  @override
+  String get flashcardsSaveAnyway => '仍要儲存';
+
+  @override
+  String get flashcardsStats => '統計';
+
+  @override
+  String get flashcardsStatTotal => '卡片';
+
+  @override
+  String get flashcardsStatLearning => '學習中';
+
+  @override
+  String get flashcardsStatMatureCaption => '記住 21 天以上';
+
+  @override
+  String get flashcardsStatReviewsToday => '今日複習';
+
+  @override
+  String get flashcardsStatCorrect => '正確答案';
+
+  @override
+  String flashcardsStatLastDays(int days) {
+    return '過去 $days 天';
+  }
+
+  @override
+  String get flashcardsStatForget => '遺忘率';
+
+  @override
+  String get flashcardsStatForgetCaption => '已學會卡片上的「重來」';
+
+  @override
+  String get flashcardsStatRecall => '目前記憶率';
+
+  @override
+  String get flashcardsStatRecallCaption => 'FSRS 估計值，已複習的卡片';
+
+  @override
+  String flashcardsStatActivity(int count) {
+    return '每日複習 · 總計 $count';
+  }
+
+  @override
+  String get flashcardsStatHistory => '最近的作答';
+
+  @override
+  String get flashcardsStatNoHistory => '還沒有複習紀錄。學習這副卡組，就能在這裡看到進度。';
+
+  @override
+  String flashcardsSpeakField(String field) {
+    return '朗讀$field';
+  }
+
+  @override
+  String get speechVoice => '語音';
+
+  @override
+  String get speechVoiceDefault => '自動';
+
+  @override
+  String get speechVoiceOnline => '需要網路';
+
+  @override
+  String get speechTest => '測試語音';
+
+  @override
+  String get importNext => '預覽';
+
+  @override
+  String get importPreviewTitle => '將欄對應到欄位';
+
+  @override
+  String get importIgnoreColumn => '略過';
+
+  @override
+  String importColumn(int n) {
+    return '第 $n 欄';
+  }
+
+  @override
+  String importPreviewSummary(int ready, int invalid) {
+    return '$ready 張卡片就緒 · 將略過 $invalid 列不完整的資料';
+  }
+
+  @override
+  String get importNeedFrontBack => '選擇哪些欄是正面與背面。';
+
+  @override
+  String get actionMoveUp => '上移';
+
+  @override
+  String get actionMoveDown => '下移';
+
+  @override
+  String get flashcardsLayoutTitle => '卡片版面';
+
+  @override
+  String get flashcardsLayoutHint => '重新命名、隱藏或調整此卡組額外欄位的順序。卡片內容不會被更改。';
+
+  @override
+  String flashcardsLayoutShow(String field) {
+    return '學習時顯示$field';
+  }
+
+  @override
+  String get flashcardsLayoutStepReveal => '逐步顯示答案';
+
+  @override
+  String get flashcardsLayoutStepRevealHint => '先顯示背面；每個額外欄位點一下即可展開。';
+
+  @override
+  String flashcardsRevealNext(String field) {
+    return '顯示$field';
+  }
+
+  @override
+  String flashcardsMediaTooLarge(int mb) {
+    return '此檔案大於 $mb MB。';
+  }
+
+  @override
+  String get flashcardsImage => '圖片';
+
+  @override
+  String get flashcardsAudio => '音訊';
+
+  @override
+  String get flashcardsAddImage => '新增圖片';
+
+  @override
+  String get flashcardsAddAudio => '新增音訊';
+
+  @override
+  String get flashcardsPlayAudio => '播放錄音';
+
+  @override
+  String get flashcardsAudioUnavailable => '這台裝置無法播放此錄音。';
+
+  @override
+  String get flashcardsCustomFields => '你的欄位';
+
+  @override
+  String get flashcardsTemplates => '範本';
+
+  @override
+  String flashcardsNewFieldName(int n) {
+    return '欄位 $n';
+  }
+
+  @override
+  String get flashcardsAddField => '新增欄位';
+
+  @override
+  String get flashcardsFieldName => '欄位名稱';
+
+  @override
+  String get flashcardsFieldLangDefault => '該面語言';
+
+  @override
+  String get flashcardsTemplateConfirm => '範本會設定欄位的顯示方式並加入其欄位。你的卡片與現有欄位保持不變。';
+
+  @override
+  String get flashcardsApplyTemplate => '套用';
+
+  @override
+  String get templateVocabulary => '詞彙';
+
+  @override
+  String get templateTwoTranslations => '有兩種翻譯的單字';
+
+  @override
+  String get templateQuestionAnswer => '問與答';
+
+  @override
+  String get templateDefinition => '詞彙與定義';
+
+  @override
+  String get templateGrammar => '文法規則';
+
+  @override
+  String get templateFieldPlural => '複數';
+
+  @override
+  String get templateFieldTranslation2 => '第二種翻譯';
+
+  @override
+  String get templateFieldSynonyms => '同義詞';
+
+  @override
+  String get templateFieldRule => '規則';
+
+  @override
+  String get deckCategory => '程度或主題';
+
+  @override
+  String get deckCategoryHint => '例如：A1、醫學';
+
+  @override
+  String get flashcardsSearchAll => '搜尋所有卡片';
+
+  @override
+  String get flashcardsSearchAllHint => '單字、翻譯、例句、備註、標籤…';
+
+  @override
+  String get flashcardsAllDecks => '所有卡組';
+
+  @override
+  String get flashcardsAllLanguages => '所有語言';
+
+  @override
+  String get flashcardsLangUnset => '未設定語言';
+
+  @override
+  String get flashcardsLevelUnset => '無程度或主題';
+
+  @override
+  String get flashcardsByLanguage => '依語言的進度';
+
+  @override
+  String get flashcardsByLevel => '依程度或主題的進度';
+
+  @override
+  String flashcardsGroupLine(int decks, int cards, int mature, int due, String correct) {
+    return '$decks 副卡組 · $cards 張卡片 · $mature 張已熟記 · $due 張到期 · 正確率 $correct（30 天）';
+  }
+
+  @override
+  String get flashcardsRecord => '錄音';
+
+  @override
+  String get flashcardsRecording => '錄音中…';
+
+  @override
+  String get flashcardsRecordStop => '停止並保留';
+
+  @override
+  String get flashcardsMicDenied => '麥克風權限已關閉。請在系統設定中允許，才能錄音。';
+
+  @override
+  String get flashcardsRecordFailed => '這台裝置無法錄音。';
+
+  @override
+  String get soundsTitle => '聲音';
+
+  @override
+  String get soundsNature => '大自然';
+
+  @override
+  String get soundsNoise => '專注雜訊';
+
+  @override
+  String get soundRain => '雨聲';
+
+  @override
+  String get soundStorm => '雷雨';
+
+  @override
+  String get soundRiver => '河流';
+
+  @override
+  String get soundOcean => '海浪';
+
+  @override
+  String get soundFire => '營火';
+
+  @override
+  String get soundForest => '森林鳥鳴';
+
+  @override
+  String get soundNight => '夏夜';
+
+  @override
+  String get soundWhite => '白噪音';
+
+  @override
+  String get soundPink => '粉紅噪音';
+
+  @override
+  String get soundBrown => '棕色噪音';
+
+  @override
+  String get soundsPlay => '播放';
+
+  @override
+  String get soundsSleep => '睡眠定時器';
+
+  @override
+  String get soundsSleepOff => '關閉';
+
+  @override
+  String soundsSleepAt(String time) {
+    return '將於 $time 停止';
+  }
+
+  @override
+  String soundsMixFull(int count) {
+    return '最多可同時播放 $count 種聲音。';
+  }
+
+  @override
+  String get soundsHint => '點一下聲音即可開始。混合多種聲音並分別調整音量。';
+
+  @override
+  String get soundsMixer => '混音';
+
+  @override
+  String soundsVolumeOf(String name) {
+    return '$name音量';
+  }
+
+  @override
+  String get soundsChannel => '大自然聲音';
+
+  @override
+  String get settingsEndTone => '計時結束音效';
+
+  @override
+  String get toneGentle => '輕柔提示音';
+
+  @override
+  String get toneBeeps => '提示音';
+
+  @override
+  String get toneWood => '敲木聲';
+
+  @override
+  String get toneBird => '鳥叫聲';
+
+  @override
+  String get toneStream => '溪流';
+
+  @override
+  String get toneSystem => '手機音效';
+
+  @override
+  String get speechOnPhone => '在這支手機上';
+
+  @override
+  String get speechAllLanguages => '所有語言';
+
+  @override
+  String get speechSearchLanguage => '搜尋語言';
+
+  @override
+  String get speechGetVoices => '下載更多語音';
+
+  @override
+  String get speechGetVoicesHint => '沒有語音的語言可以在手機的語音設定中下載。';
+
+  @override
+  String get speechSettingsFailed => '無法開啟這支手機的語音設定。';
+
+  @override
+  String get speechVoiceMissing => '未安裝語音';
+
+  @override
+  String get speechPause => '每次重複間的停頓';
+
+  @override
+  String speechSeconds(String seconds) {
+    return '$seconds 秒';
+  }
+
+  @override
+  String get speechExample => '連同答案朗讀例句';
+
+  @override
+  String get flashListen => '聆聽';
+
+  @override
+  String get flashListenNext => '下一張卡片';
+
+  @override
+  String get flashListenEmpty => '沒有可聆聽的卡片。';
+
+  @override
+  String get flashViewTable => '表格';
+
+  @override
+  String get flashViewCards => '卡片';
+
+  @override
+  String get flashSwapSides => '交換欄位';
+
+  @override
+  String get flashSort => '排序';
+
+  @override
+  String get flashSortNewest => '最新的優先';
+
+  @override
+  String get flashSortAlpha => 'A 到 Z';
+
+  @override
+  String get flashSortDue => '到期的優先';
+
+  @override
+  String get flashSortHard => '最難的優先';
+
+  @override
+  String get flashPasteCards => '貼上卡片';
+
+  @override
+  String get flashClipboardEmpty => '剪貼簿中沒有文字。';
+
+  @override
+  String get flashMenuAdd => '新增卡片';
+
+  @override
+  String get flashMenuDeck => '卡組';
+
+  @override
+  String get flashToday => '今天';
+
+  @override
+  String get flashStudyNow => '學習';
+
+  @override
+  String flashTodayAnswered(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '已作答 $count 張卡片',
+      zero: '尚未作答任何卡片',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get soundForestRain => '森林裡的雨';
+
+  @override
+  String get autoBackupTitle => '自動備份';
+
+  @override
+  String get autoBackupDesc => '每天在這支手機上備份；保留最近 7 份';
+
+  @override
+  String get autoBackupHint => '這些備份保存在這支手機上，解除安裝應用程式時會一併移除。若要換新手機，請使用「備份」儲存檔案。';
+
+  @override
+  String get autoBackupNone => '尚無自動備份，第一份會在今天建立。';
+
+  @override
+  String get autoBackupRestore => '還原';
+
+  @override
+  String autoBackupConfirm(String date) {
+    return '要以 $date 的備份取代目前所有資料嗎？';
+  }
+
+  @override
+  String get autoBackupRestored => '已還原。';
+
+  @override
+  String get errorLogTitle => '錯誤紀錄';
+
+  @override
+  String get errorLogHint => '發生問題時會記錄在這裡：只記錄錯誤類型與程式碼位置，絕不包含你的內容。分享紀錄可協助修正問題。';
+
+  @override
+  String get errorLogEmpty => '沒有錯誤紀錄。';
+
+  @override
+  String get errorLogClear => '清除';
+
+  @override
+  String get soundsWithFocus => '與專注時段一起播放';
+
+  @override
+  String get soundsWithFocusHint => '你的混音會在專注開始時播放，休息時暫停。';
+
+  @override
+  String get soundsSavedMixes => '已儲存的混音';
+
+  @override
+  String get soundsSaveMix => '儲存此混音';
+
+  @override
+  String get soundsMixNameHint => '名稱，例如：下雨的圖書館';
+
+  @override
+  String soundsDeleteMix(String name) {
+    return '要刪除混音「$name」嗎？';
+  }
+
+  @override
+  String get settingsReviewReminderHint => '每天一次，僅在有卡片到期時';
+
+  @override
+  String get settingsReviewTime => '提醒時間';
+
+  @override
+  String get shortcutFocus => '專注';
+
+  @override
+  String get shortcutNewTask => '新增任務';
+
+  @override
+  String get shortcutReview => '複習卡片';
+
+  @override
+  String get shortcutSounds => '大自然聲音';
+
+  @override
+  String get myDayTitle => '開始我的一天';
+
+  @override
+  String get myDayHint => '一眼掌握今天，一鍵開始專注';
+
+  @override
+  String myDayTasks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '今天有 $count 項任務',
+      zero: '今天沒有任務',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get myDayNoEvents => '今天沒有其他活動了';
+
+  @override
+  String myDayNextEvent(String title, String time) {
+    return '接下來：$title，$time';
+  }
+
+  @override
+  String myDayHabits(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '還剩 $count 個習慣',
+      zero: '所有習慣都完成了',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get myDayBeginFocus => '從一次專注開始';
+
+  @override
+  String get hijriMonth1 => '穆哈蘭姆月';
+
+  @override
+  String get hijriMonth2 => '色法爾月';
+
+  @override
+  String get hijriMonth3 => '賴比爾·敖外魯月';
+
+  @override
+  String get hijriMonth4 => '賴比爾·阿色尼月';
+
+  @override
+  String get hijriMonth5 => '主馬達·敖外魯月';
+
+  @override
+  String get hijriMonth6 => '主馬達·阿色尼月';
+
+  @override
+  String get hijriMonth7 => '賴哲卜月';
+
+  @override
+  String get hijriMonth8 => '舍爾邦月';
+
+  @override
+  String get hijriMonth9 => '萊麥丹月';
+
+  @override
+  String get hijriMonth10 => '閃瓦魯月';
+
+  @override
+  String get hijriMonth11 => '都爾喀爾德月';
+
+  @override
+  String get hijriMonth12 => '都爾黑哲月';
+
+  @override
+  String hijriDate(int day, String month, int year) {
+    return '伊斯蘭曆 $year年 $month $day日';
+  }
+
+  @override
+  String get settingsHijri => '伊斯蘭曆日期';
+
+  @override
+  String get settingsHijriHint => '顯示在行事曆與首頁（烏姆庫拉曆）';
+
+  @override
+  String studyStreakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count 天');
+    return '$_temp0';
+  }
+
+  @override
+  String studyGoalProgress(int done, int goal) {
+    return '今天 $done / $goal 張卡片';
+  }
+
+  @override
+  String get studyGoalReached => '已達成每日目標，做得好！';
+
+  @override
+  String get studyWeekTitle => '你的一週';
+
+  @override
+  String studyWeekCards(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '7 天內作答了 $count 張卡片',
+      zero: '7 天內沒有作答卡片',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String studyWeekFocus(String duration) {
+    return '7 天內專注 $duration';
+  }
+
+  @override
+  String studyStreakLine(int current, int best) {
+    return '連續：$current · 最佳：$best';
+  }
+
+  @override
+  String get studyGoalTitle => '每日目標（卡片）';
+
+  @override
+  String get studyGoalOff => '關閉';
+
+  @override
+  String get focusDndTitle => '專注時開啟「勿擾」';
+
+  @override
+  String get focusDndHint => '每次專注時開啟，休息時關閉';
+
+  @override
+  String get focusDndNeedsAccess => '請在手機設定中允許存取權，才能使用此功能';
+
+  @override
+  String get voiceInput => '語音輸入';
+
+  @override
+  String get voiceInputPrompt => '請說話';
+
+  @override
+  String get voiceInputUnavailable =>
+      '這支手機無法使用語音輸入。請安裝或開啟語音服務（例如 Google 的 Speech Recognition & Synthesis）。';
+
+  @override
+  String get prayerFajr => '晨禮';
+
+  @override
+  String get prayerSunrise => '日出';
+
+  @override
+  String get prayerDhuhr => '晌禮';
+
+  @override
+  String get prayerAsr => '晡禮';
+
+  @override
+  String get prayerMaghrib => '昏禮';
+
+  @override
+  String get prayerIsha => '宵禮';
+
+  @override
+  String get prayerMethodMwl => '世界穆斯林聯盟';
+
+  @override
+  String get prayerMethodUmmAlQura => '烏姆庫拉（麥加）';
+
+  @override
+  String get prayerMethodEgypt => '埃及測繪總局';
+
+  @override
+  String get prayerMethodJordan => '約旦宗教基金部';
+
+  @override
+  String get prayerMethodKarachi => '卡拉奇伊斯蘭科學大學';
+
+  @override
+  String get prayerMethodIsna => '北美伊斯蘭協會';
+
+  @override
+  String get prayerMethodGulf => '波斯灣地區';
+
+  @override
+  String get prayerMethodKuwait => '科威特';
+
+  @override
+  String get prayerMethodQatar => '卡達';
+
+  @override
+  String get prayerMethodTurkey => '土耳其宗教事務局';
+
+  @override
+  String get prayerMethodSingapore => '新加坡、馬來西亞、印尼';
+
+  @override
+  String get prayerMethodFrance => '法國（12°）';
+
+  @override
+  String get prayerMethodRussia => '俄羅斯穆斯林宗教管理局';
+
+  @override
+  String prayerNotifTitle(String name) {
+    return '$name時間到了';
+  }
+
+  @override
+  String prayerNotifBody(String time) {
+    return '禮拜時間 · $time';
+  }
+
+  @override
+  String get prayerTitle => '禮拜時間';
+
+  @override
+  String get prayerOffHint => '選擇你的城市以查看禮拜時間。時間在手機上計算，不需要位置存取權。';
+
+  @override
+  String get prayerChooseCity => '選擇城市';
+
+  @override
+  String get prayerCity => '城市';
+
+  @override
+  String get prayerCitySearch => '搜尋城市';
+
+  @override
+  String get prayerMethod => '計算方式';
+
+  @override
+  String get prayerHanafiAsr => '哈乃斐派晡禮（較晚）';
+
+  @override
+  String get prayerReminders => '每次禮拜時間通知';
+
+  @override
+  String get prayerPauseFocus => '禮拜時間暫停專注';
+
+  @override
+  String get prayerPauseFocusHint => '進行中的專注會暫停，禮拜後再繼續';
+
+  @override
+  String get prayerTurnOff => '關閉禮拜時間';
+
+  @override
+  String get prayerAccuracyNote => '計算出的時間可能與當地清真寺相差幾分鐘。';
+
+  @override
+  String prayerNext(String name, String time) {
+    return '$name，$time';
+  }
+
+  @override
+  String get importAnkiNewFormat =>
+      '這個 Anki 檔案使用最新格式。請在 Anki 中開啟「Support older Anki versions」後重新匯出，再匯入該檔案。';
+
+  @override
+  String get importTemplate => '試算表範本';
+
+  @override
+  String get importTemplateFront => '蘋果';
+
+  @override
+  String get importTemplateBack => '一種圓形的水果';
+
+  @override
+  String get importTemplateExample => '我每天吃一顆蘋果。';
+
+  @override
+  String get importTemplateTag => '食物';
+
+  @override
+  String get starterTitle => '入門卡組';
+
+  @override
+  String get starterHint => '新增一副立即開始學習，之後可以編輯或刪除。';
+
+  @override
+  String get starterAdd => '新增';
+
+  @override
+  String get starterWords => '日常英文單字（阿拉伯文）';
+
+  @override
+  String get starterCapitals => '世界各國首都';
+
+  @override
+  String get starterElements => '化學元素';
+
+  @override
+  String get settingsAccent => '強調色';
+
+  @override
+  String get accentViolet => '紫羅蘭';
+
+  @override
+  String get accentBlue => '藍';
+
+  @override
+  String get accentTeal => '藍綠';
+
+  @override
+  String get accentGreen => '綠';
+
+  @override
+  String get accentRose => '玫瑰';
+
+  @override
+  String get accentAmber => '琥珀';
+
+  @override
+  String get settingsFlashTextSize => '單字卡文字大小';
+
+  @override
+  String get settingsFlashTextSample => '範例';
+
+  @override
+  String get widgetStartFocus => '點一下開始專注';
+
+  @override
+  String widgetFocusUntil(String time) {
+    return '專注到 $time';
+  }
+
+  @override
+  String get widgetNoCardsDue => '卡片：全部完成';
+
+  @override
+  String get faqMyDayQ => '「開始我的一天」有什麼功能？';
+
+  @override
+  String get faqMyDayA =>
+      '首頁每天會出現一次：查看今天的任務、下一個活動、剩下的習慣與到期卡片，然後一鍵開始專注。長按應用程式圖示可使用快速動作，也可以新增桌面小工具查看專注時間與到期卡片。';
+
+  @override
+  String get faqTasksQ => '如何新增有提醒的任務？';
+
+  @override
+  String get faqTasksA => '在首頁點「新增任務」，或在「任務」中點 +。輸入標題或用麥克風說出來，再設定截止日期、時間與提醒。逾期任務會排在最前面。';
+
+  @override
+  String get faqFocusQ => '專注計時器怎麼運作？';
+
+  @override
+  String get faqFocusA => '選擇番茄鐘、倒數或不限時，然後按「開始」；休息可以自動接續。在「設定」中可以選擇結束音效、專注時開啟「勿擾」，並在每次專注時播放大自然聲音。';
+
+  @override
+  String get faqSoundsQ => '可以混合大自然聲音嗎？';
+
+  @override
+  String get faqSoundsA => '最多開啟六種真實錄音，分別調整音量，並為混音命名儲存。聲音會在背景持續播放，也可以用睡眠定時器停止。不使用音樂。';
+
+  @override
+  String get faqCalendarQ => '行事曆可以顯示伊斯蘭曆日期嗎？';
+
+  @override
+  String get faqCalendarA => '可以。伊斯蘭曆日期（烏姆庫拉曆）在阿拉伯文中會自動顯示，其他語言可在「設定」中開啟。活動、有截止日期的任務與專案里程碑會一起顯示。';
+
+  @override
+  String get faqFlashcardsQ => '複習時如何決定我會看到哪些卡片？';
+
+  @override
+  String get faqFlashcardsA =>
+      '熟悉的卡片會間隔較久再出現，答錯的卡片很快就會再出現（間隔重複）。每次作答請選擇「重來」、「困難」、「良好」或「簡單」。設定每日目標，並在「今天」卡片上保持連續紀錄。在卡組中設定考試日期，即可看到剩餘天數與每天要學的新卡數。選擇「我的順序」排序即可拖曳卡片，點任一面的喇叭即可聆聽，並在「語音」選單中設定速度與重複次數。';
+
+  @override
+  String get faqImportQ => '可以從 Anki 或 Excel 匯入卡片嗎？';
+
+  @override
+  String get faqImportA =>
+      '可以。在卡組中選擇「匯入」，然後選擇檔案：Anki (.apkg)、Excel (.xlsx) 或 CSV，再對應欄位。用「試算表範本」在電腦上製作卡片。Anki 檔案中的圖片與聲音不會匯入。';
+
+  @override
+  String get faqNotesQ => '筆記可以做什麼？';
+
+  @override
+  String get faqNotesA =>
+      '使用檢查清單與格式自由書寫，釘選或收藏重要筆記，新增標籤並將筆記連結到任務。麥克風按鈕可讓你口述。新筆記可以從範本開始（課堂筆記、讀書摘要、日記、每週計畫），圖片按鈕可以加入照片。';
+
+  @override
+  String get faqHabitsQ => '習慣的連續紀錄怎麼計算？';
+
+  @override
+  String get faqHabitsA => '在排定的日子達成習慣目標，就算一天。暫停習慣不會中斷連續紀錄。每個習慣都可以有自己的提醒時間。';
+
+  @override
+  String get faqGoalsQ => '目標如何追蹤進度？';
+
+  @override
+  String get faqGoalsA => '為目標設定目標數量與單位，然後記錄進度。目標卡片會顯示你完成了多少，以及截止前還剩多少。';
+
+  @override
+  String get faqProjectsQ => '專案有什麼用？';
+
+  @override
+  String get faqProjectsA => '將任務歸入專案，新增有日期的里程碑，並追蹤整體進度。里程碑也會顯示在行事曆中。';
+
+  @override
+  String get faqInsightsQ => '「洞察」會顯示什麼？';
+
+  @override
+  String get faqInsightsA => '依日與週顯示你的專注時間、完成的任務與學習情況，並附上溫和的建議。一切都在你的手機上計算。';
+
+  @override
+  String get faqSpacesQ => '所有區塊在哪裡？';
+
+  @override
+  String get faqSpacesA => '「空間」列出應用程式的每個部分（筆記、卡組、習慣、目標、專案、聲音等），讓主導覽列保持簡潔。';
+
+  @override
+  String get faqBackupQ => '我的資料如何備份？';
+
+  @override
+  String get faqBackupA => '應用程式每天會在這支手機上默默保存一份加密備份，並保留最近 7 份。你也可以在「設定」中匯出受密碼保護的備份檔，並在其他手機上還原。';
+
+  @override
+  String get faqPrayerQ => '禮拜時間如何運作？';
+
+  @override
+  String get faqPrayerA =>
+      '在「設定」→「禮拜時間」中選擇你的城市。時間會依當地使用的方式在手機上計算，你也可以更改計算方式與晡禮學派。每次禮拜都可以收到通知，進行中的專注會暫停。';
+
+  @override
+  String get faqPrivacyQ => '我的資料存放在哪裡？';
+
+  @override
+  String get faqPrivacyA => '只存放在你的手機上的加密資料庫中。沒有帳號，也沒有追蹤。只有你自己開啟的功能才會使用網路，例如選用的助理。';
+
+  @override
+  String get faqAssistantQ => '助理是什麼？';
+
+  @override
+  String get faqAssistantA => '選用的小幫手，可在「設定」中連接你自己的 AI 服務。預設為關閉，傳送任何筆記文字前都會先詢問。';
+
+  @override
+  String get tourPlanTitle => '規劃你的一天';
+
+  @override
+  String get tourPlanBody => '任務、行事曆與習慣集中在一個安靜的地方。每天早上從「開始我的一天」開始。';
+
+  @override
+  String get tourFocusTitle => '深度專注';
+
+  @override
+  String get tourFocusBody => '計時專注搭配真實的大自然聲音、勿擾模式與輕柔的結束音。';
+
+  @override
+  String get tourLearnTitle => '真正學會';
+
+  @override
+  String get tourLearnBody => '間隔重複的單字卡、多種語言的語音，以及從 Anki 或 Excel 匯入。';
+
+  @override
+  String get helpTitle => '說明與常見問題';
+
+  @override
+  String get helpOpen => '開啟';
+
+  @override
+  String get helpTour => '開始導覽';
+
+  @override
+  String get tourNext => '下一步';
+
+  @override
+  String get tourDone => '開始吧';
+
+  @override
+  String get transferColTitle => '標題';
+
+  @override
+  String get transferColNotes => '備註';
+
+  @override
+  String get transferColBody => '文字';
+
+  @override
+  String get transferColDue => '截止日期';
+
+  @override
+  String get transferColPriority => '優先順序（0-3）';
+
+  @override
+  String get transferColDone => '完成';
+
+  @override
+  String get transferColProject => '專案';
+
+  @override
+  String get transferColCategory => '類別';
+
+  @override
+  String get transferTitle => '匯入與匯出';
+
+  @override
+  String get transferSaveAs => '另存為';
+
+  @override
+  String get transferImport => '從檔案匯入';
+
+  @override
+  String get transferImportTasksHint =>
+      'Excel、CSV 或 Word 中的表格。欄位：標題、截止日期（2026-12-31）、優先順序 0-3、完成、專案、備註。應用程式中已有的任務會被略過。';
+
+  @override
+  String get transferImportNotesHint => 'Word、Markdown 或文字檔會變成一則筆記。Excel 或 CSV：每列一則筆記（標題、文字）。';
+
+  @override
+  String get transferSaved => '已儲存檔案';
+
+  @override
+  String get transferFailed => '無法建立檔案，沒有任何變更。';
+
+  @override
+  String get transferUnsupported => '無法在此讀取這個檔案。請使用 Excel、CSV、Word、Markdown 或文字檔。';
+
+  @override
+  String transferImported(int added) {
+    String _temp0 = intl.Intl.pluralLogic(
+      added,
+      locale: localeName,
+      other: '已新增 $added 項',
+      zero: '沒有新內容可新增',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get transferFormatText => '文字';
+
+  @override
+  String get transferAllNotes => '所有筆記';
+
+  @override
+  String get transferThisNote => '這則筆記';
+
+  @override
+  String get transferDeckFormats => '另存為 Excel、Word 或 PDF';
+
+  @override
+  String get faqFilesQ => '可以使用 Excel、Word 或 PDF 檔案嗎？';
+
+  @override
+  String get faqFilesA =>
+      '可以。「任務」與「筆記」頂端有匯入與匯出按鈕（兩個箭頭），每副卡組的選單中也有。可另存為 Excel、CSV、Word 或 PDF，也能匯入 Excel、CSV、Word、Markdown 或文字檔。欄位名稱可以使用應用程式支援的任何語言，你儲存的檔案隨時都能再次匯入。';
+
+  @override
+  String get tplLecture => '課堂筆記';
+
+  @override
+  String get tplBook => '讀書摘要';
+
+  @override
+  String get tplJournal => '日記';
+
+  @override
+  String get tplWeek => '每週計畫';
+
+  @override
+  String get tplLectureBody => '## 重點\n- \n\n## 問題\n- [ ] \n\n## 摘要\n';
+
+  @override
+  String get tplBookBody => '## 主旨\n\n## 我學到的\n- \n\n## 摘錄\n> \n\n## 實踐\n- [ ] \n';
+
+  @override
+  String get tplJournalBody => '## 感恩的事\n- \n\n## 今日專注\n- [ ] \n\n## 備註\n';
+
+  @override
+  String get tplWeekBody =>
+      '## 本週目標\n- [ ] \n\n### 星期六\n- [ ] \n\n### 星期日\n- [ ] \n\n### 星期一\n- [ ] \n\n### 星期二\n- [ ] \n\n### 星期三\n- [ ] \n\n### 星期四\n- [ ] \n\n### 星期五\n- [ ] \n';
+
+  @override
+  String get tplHint => '從範本開始';
+
+  @override
+  String get noteImage => '圖片';
+
+  @override
+  String get noteAddImage => '新增圖片';
+
+  @override
+  String get noteImageUnreadable => '此檔案不是應用程式能讀取的圖片。';
+
+  @override
+  String get noteImageTooLarge => '這張圖片太大了。';
+
+  @override
+  String get examSet => '設定考試日期';
+
+  @override
+  String get examDate => '考試日期';
+
+  @override
+  String get examToday => '今天考試，祝你順利！';
+
+  @override
+  String examInDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 天後考試',
+      one: '明天考試',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String examNewPerDay(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '每天學 $count 張新卡');
+    return '$_temp0';
+  }
+
+  @override
+  String get examAllLearnt => '所有卡片都學過了，繼續複習吧';
+
+  @override
+  String examRaiseLimit(int count) {
+    return '每天顯示 $count 張新卡';
+  }
+
+  @override
+  String get backupDriveHint => '若要在線上保留一份副本，請在接下來開啟的儲存畫面中選擇 Google 雲端硬碟（或其他雲端應用程式）。';
+
+  @override
+  String get flashShareDeck => '與朋友分享卡組';
+
+  @override
+  String get flashSortManual => '我的順序（拖曳）';
+
+  @override
+  String get flashReorderHint => '按住握把並拖曳卡片即可移動。';
+
+  @override
+  String get flashReorderNeedsAll => '清除搜尋與篩選條件後才能拖曳卡片。';
+
+  @override
+  String get flashDragHandle => '拖曳以移動';
+
+  @override
+  String get reportTitle => '月報';
+
+  @override
+  String get reportFocus => '專注時間';
+
+  @override
+  String reportSessions(int count) {
+    return '$count 次專注';
+  }
+
+  @override
+  String reportBestDay(String day, String time) {
+    return '最佳的一天：$day（$time）';
+  }
+
+  @override
+  String reportActiveDays(int count) {
+    return '$count 個活躍日';
+  }
+
+  @override
+  String get reportCards => '複習的卡片';
+
+  @override
+  String reportCardsKnown(String percent) {
+    return '記住 $percent';
+  }
+
+  @override
+  String get reportTasks => '完成的任務';
+
+  @override
+  String get reportHabits => '習慣打卡';
+
+  @override
+  String get reportEmpty => '這個月還沒有任何紀錄。';
+
+  @override
+  String get reportSave => '另存為 PDF 或 Word';
+
+  @override
+  String get reportPrevMonth => '上個月';
+
+  @override
+  String get reportNextMonth => '下個月';
+
+  @override
+  String get careTitle => '手機與資料維護';
+
+  @override
+  String get storageTitle => '儲存空間';
+
+  @override
+  String get storageSubtitle => '查看占用空間的項目並清理未使用的圖片';
+
+  @override
+  String get storagePictures => '筆記中的圖片';
+
+  @override
+  String get storageCardMedia => '卡片中的圖片與音訊';
+
+  @override
+  String get storageText => '筆記文字';
+
+  @override
+  String get storageFree => '手機可用空間';
+
+  @override
+  String get storageLow => '你的手機空間快滿了。請釋放一些空間，讓備份與提醒能正常運作。';
+
+  @override
+  String storageUnused(int count, String size) {
+    return '$count 張未使用的圖片（$size）';
+  }
+
+  @override
+  String get storageNoUnused => '沒有未使用的圖片，一切井然有序。';
+
+  @override
+  String get storageClean => '移除未使用的圖片';
+
+  @override
+  String storageCleaned(int count) {
+    return '已移除 $count 張圖片';
+  }
+
+  @override
+  String get storageHint => '只有在沒有任何筆記（包括垃圾桶中的筆記）顯示圖片時，才會視為未使用。';
+
+  @override
+  String get batteryTitle => '讓提醒正常運作';
+
+  @override
+  String get batterySubtitle => '有些手機會在背景停止應用程式，請檢查你的手機。';
+
+  @override
+  String get batteryStatusOk => '省電功能不會限制此應用程式，提醒與聲音應能準時送達。';
+
+  @override
+  String get batteryStatusLimited => '省電功能可能會在背景停止此應用程式，導致提醒與聲音延遲或遺漏。';
+
+  @override
+  String get batteryOpen => '開啟電池設定';
+
+  @override
+  String get batteryOpenApp => '開啟應用程式設定';
+
+  @override
+  String get batteryGeneric => '在電池設定中選擇此應用程式，並設為「不受限制」（或「不最佳化」）。';
+
+  @override
+  String get batteryXiaomi => 'Xiaomi / Redmi / POCO：另請開啟「安全」›「權限」›「自動啟動」並開啟此應用程式，再將「省電模式」設為「無限制」。';
+
+  @override
+  String get batteryOppo =>
+      'Oppo / Realme / OnePlus：開啟「電池」› 此應用程式，允許背景活動與自動啟動；並在最近使用的應用程式清單中鎖定此應用程式。';
+
+  @override
+  String get batterySamsung => 'Samsung：「電池」›「背景使用限制」：將此應用程式從「休眠應用程式」與「深度休眠應用程式」中移除。';
+
+  @override
+  String get batteryHuawei => 'Huawei / Honor：「應用程式啟動」› 此應用程式 ›「手動管理」，並允許自動啟動、關聯啟動與背景執行。';
+
+  @override
+  String get batteryVivo => 'Vivo / iQOO：「電池」›「背景耗電管理」› 允許此應用程式，並在權限中開啟自動啟動。';
+
+  @override
+  String get whatsNewTitle => '最新功能';
+
+  @override
+  String get whatsNewSubtitle => '用幾行文字看最新變更';
+
+  @override
+  String get whatsNewDone => '知道了';
+
+  @override
+  String get whatsNewOrderTitle => '依自己的順序拖曳卡片';
+
+  @override
+  String get whatsNewOrderBody => '在卡組中選擇「排序」›「我的順序」，然後按住握把拖曳。';
+
+  @override
+  String get whatsNewSpeechTitle => '卡片每一面都有喇叭';
+
+  @override
+  String get whatsNewSpeechBody => '點一下即可聽單字或翻譯。速度、重複次數與語音在複習選單中。語言會從文字自動判斷。';
+
+  @override
+  String get whatsNewReportTitle => '月報';
+
+  @override
+  String get whatsNewReportBody => '在「洞察」中點月報圖示，即可查看當月並另存為 PDF 或 Word。';
+
+  @override
+  String get whatsNewCareTitle => '手機與資料維護';
+
+  @override
+  String get whatsNewCareBody => '「設定」現在有儲存空間頁面，可清理圖片，還有依手機品牌提供的電池設定指南。';
+
+  @override
+  String get whatsNewSoundTitle => '更柔和的聲音';
+
+  @override
+  String get whatsNewSoundBody => '大自然聲音更柔和安靜，圖片卡也更美觀。';
+
+  @override
+  String autoBackupCheckOk(String date) {
+    return '$date 檢查：最新的備份可以正常開啟。';
+  }
+
+  @override
+  String autoBackupCheckFixed(String date) {
+    return '$date 檢查：發現損壞的備份，已換成新的備份。';
+  }
+
+  @override
+  String autoBackupCheckFailed(String date) {
+    return '$date 檢查：無法開啟最新的備份。請自行從「設定」儲存備份檔。';
+  }
+
+  @override
+  String smartReviewTimeTitle(String time) {
+    return '你通常在 $time 左右學習';
+  }
+
+  @override
+  String get smartReviewTimeUse => '使用';
+
+  @override
+  String get widgetNewNote => '新增筆記';
+
+  @override
+  String get noteConnections => '標籤、連結與任務';
+
+  @override
+  String get navCards => '卡片';
+
+  @override
+  String get studyAnswerWay => '作答方式';
+
+  @override
+  String get studyMorePractice => '額外練習';
+
+  @override
+  String get studySessionSettings => '學習設定';
+
+  @override
+  String get focusAdjustTitle => '你的專注';
+
+  @override
+  String get focusPresetsTitle => '現成設定';
+
+  @override
+  String get focusPresetStudy => '讀書';
+
+  @override
+  String get focusPresetDeep => '深度工作';
+
+  @override
+  String get focusPresetQuick => '快速衝刺';
+
+  @override
+  String get focusPresetReading => '閱讀';
+
+  @override
+  String get focusPresetWorkout => '運動回合';
+
+  @override
+  String get focusAdjustMinutes => '專注時長';
+
+  @override
+  String get focusAdjustBreak => '休息時長';
+
+  @override
+  String get focusAdjustRounds => '回合數';
+
+  @override
+  String get focusRoundsOpen => '不限';
+
+  @override
+  String focusMinutesShort(String n) {
+    return '$n 分鐘';
+  }
+
+  @override
+  String get focusTapToAdjust => '點一下即可更改時間';
+
+  @override
+  String get flashArrangeDecks => '排列卡組';
+
+  @override
+  String get flashDeckActions => '卡組選項';
+
+  @override
+  String get starterBrowse => '現成卡組';
+
+  @override
+  String get starterBrowseHint => '一鍵新增，馬上開始學習';
+
+  @override
+  String get dashOpenDecks => '開啟你的卡片';
+
+  @override
+  String speechVoiceNumber(String n) {
+    return '語音 $n';
+  }
+
+  @override
+  String focusFlowBreakOffer(String m) {
+    return '專注狀態很好。休息 $m 分鐘嗎？';
+  }
+
+  @override
+  String get focusFlowBreakStart => '開始休息';
+
+  @override
+  String tasksFinishAt(String time) {
+    return '現在開始，就能在 $time 前完成所有事';
+  }
+
+  @override
+  String get focusCalmPacing => '平靜節奏';
+
+  @override
+  String get focusCalmPacingHint => '只顯示整數分鐘與圓環，不顯示跳動的秒數';
+
+  @override
+  String get focusFlipHint => '將手機螢幕朝下放即可開始';
+
+  @override
+  String get focusImmersive => '沉浸模式';
+
+  @override
+  String get focusImmersiveBlack => '純黑（省電）';
+
+  @override
+  String get focusFlipToFocus => '翻轉專注';
+
+  @override
+  String get focusFlipToFocusHint => '在沉浸模式中：螢幕朝下即開始，拿起手機即暫停';
+
+  @override
+  String get guardTitle => '分心防護';
+
+  @override
+  String get guardSubtitle => '專注時暫停容易分心的應用程式';
+
+  @override
+  String get guardSwitch => '暫停容易分心的應用程式';
+
+  @override
+  String get guardSwitchHint => '在專注時段與「時間守護」時段內';
+
+  @override
+  String get guardNeedsAccess => '需要開啟無障礙開關：點一下開啟';
+
+  @override
+  String get guardDisclosureTitle => '防護如何運作';
+
+  @override
+  String get guardDisclosureBody =>
+      '為了暫停你選擇的應用程式，Deep Focus 會使用 Android 的無障礙服務來查看目前開啟的是哪個應用程式。開啟「關閉 Shorts 與 Reels」後，也會檢查畫面上是否有短影片播放器。\n\n它不會讀取任何文字、不會儲存看到的內容，也不會傳送任何資料到任何地方：一切都留在你的手機上。你可以隨時在無障礙設定中關閉它。';
+
+  @override
+  String get guardAgree => '同意並開啟設定';
+
+  @override
+  String get guardModeGentle => '溫和';
+
+  @override
+  String get guardModeStrict => '嚴格';
+
+  @override
+  String get guardGentleHint => '先暫停 5 秒深呼吸，再由你決定';
+
+  @override
+  String get guardStrictHint => '選擇的應用程式會保持關閉，直到專注時間結束';
+
+  @override
+  String get guardApps => '要暫停的應用程式';
+
+  @override
+  String get guardAppsAllowed => '允許的應用程式';
+
+  @override
+  String guardAppsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 個應用程式',
+      zero: '尚未選擇',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get guardAllowlist => '只允許選擇的應用程式';
+
+  @override
+  String get guardAllowlistHint => '其他應用程式都會暫停；通話、設定與鍵盤始終可用';
+
+  @override
+  String get guardShorts => '關閉 Shorts 與 Reels';
+
+  @override
+  String get guardShortsHint => '只要防護開啟就生效。盡力而為：這些應用程式經常更新';
+
+  @override
+  String get guardSchedule => '時間守護';
+
+  @override
+  String get guardScheduleHint => '也在設定的日子與時段防護，例如上課或上班時間';
+
+  @override
+  String get guardFrom => '從';
+
+  @override
+  String get guardTo => '到';
+
+  @override
+  String get guardSearchApps => '搜尋應用程式';
+
+  @override
+  String get guardNoApps => '找不到應用程式';
+
+  @override
+  String get guardPrivacy => '只在你的手機上運作：防護只看得到開啟的是哪個應用程式，絕不看其中內容，也不會傳送任何資料。';
+
+  @override
+  String get guardBreathe => '吸氣……吐氣';
+
+  @override
+  String get guardQuestion => '你現在需要這個應用程式嗎？';
+
+  @override
+  String get guardBackToFocus => '回到專注';
+
+  @override
+  String get guardOpenFive => '開啟 5 分鐘';
+
+  @override
+  String get guardStrictBody => '此應用程式已暫停，直到你的專注時間結束。';
+
+  @override
+  String get guardShortsClosed => '防護開啟時，短影片會被關閉';
+
+  @override
+  String get faqGuardQ => '專注時如何阻擋容易分心的應用程式？';
+
+  @override
+  String get faqGuardA =>
+      '開啟「專注」→ 計時器設定 →「分心防護」。選擇應用程式，再選「溫和」（深呼吸 5 秒並詢問「你現在需要這個應用程式嗎？」）或「嚴格」（保持關閉）。它會在專注時段運作，搭配「時間守護」也會在你設定的日子與時段運作。「只允許選擇的應用程式」會暫停其他所有應用程式；通話、設定與鍵盤始終可用。Android 會請你在無障礙設定中開啟一次防護。它只看得到開啟的是哪個應用程式，不會傳送任何資料。';
+
+  @override
+  String notesMovedToNotebook(String name) {
+    return '已移至 $name';
+  }
+
+  @override
+  String get notesDragHint => '按住筆記並拖曳到筆記本上';
+
+  @override
+  String get guardReviewCards => '改為複習卡片';
+
+  @override
+  String guardDueNudge(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '有 $count 張卡片在等你');
+    return '$_temp0';
+  }
+
+  @override
+  String get guardEmergencyHold => '緊急：按住 10 秒';
+
+  @override
+  String guardEmergencyHolding(Object n) {
+    return '繼續按住… $n';
+  }
+
+  @override
+  String get guardWeekTitle => '本週';
+
+  @override
+  String guardWeekPaused(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '暫停 $count 次');
+    return '$_temp0';
+  }
+
+  @override
+  String guardWeekReturned(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '回到專注 $count 次');
+    return '$_temp0';
+  }
+
+  @override
+  String get wordsTitle => '重新命名文字';
+
+  @override
+  String get wordsSubtitle => '為應用程式中的任何文字使用你自己的用詞';
+
+  @override
+  String get wordsHint => '點一下文字即可更改。你的用詞只套用到此語言，並會保存在備份中。';
+
+  @override
+  String get wordsSearch => '搜尋文字';
+
+  @override
+  String get wordsChangedOnly => '只看已更改';
+
+  @override
+  String wordsOriginal(String text) {
+    return '原文：$text';
+  }
+
+  @override
+  String get wordsReset => '使用原文';
+
+  @override
+  String get wordsResetAll => '重設所有用詞';
+
+  @override
+  String get wordsResetAllConfirm => '此語言的所有文字都會恢復原文。';
+
+  @override
+  String get wordsNone => '找不到文字';
+
+  @override
+  String get settingsLanguageSearch => '搜尋語言';
+
+  @override
+  String get settingsLanguageNoMatch => '沒有符合的語言';
+}

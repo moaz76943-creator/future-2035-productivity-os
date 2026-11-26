@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">Կենտրոնացում և քարտեր</string>
+    <string name="home_widget_description">Մնացած կենտրոնացման ժամանակը և կրկնելու քարտերը</string>
+    <string name="quick_widget_label">Արագ ավելացում</string>
+    <string name="quick_widget_description">Ավելացրեք առաջադրանք կամ նշում, կամ կրկնեք քարտերը</string>
+</resources>

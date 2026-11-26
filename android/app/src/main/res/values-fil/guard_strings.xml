@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Bantay sa distraksyon ng Deep Focus</string>
+    <string name="guard_service_summary">Pina-pause ang mga piniling app habang nagfo-focus ka</string>
+    <string name="guard_service_description">Ginagamit lang ng Deep Focus ang feature na ito para makita kung aling app ang bukas, para ma-pause ang mga piniling app habang nagfo-focus o ayon sa iskedyul mo, at isara ang Shorts at Reels kung in-on mo iyon. Wala itong binabasang teksto, walang iniimbak at walang ipinapadala kahit saan. Maaari mo itong i-off dito anumang oras.</string>
+</resources>

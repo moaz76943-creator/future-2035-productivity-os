@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focus-ի պաշտպանություն շեղումներից</string>
+    <string name="guard_service_summary">Դադարեցնում է ընտրված հավելվածները, մինչ կենտրոնացած եք</string>
+    <string name="guard_service_description">Deep Focus-ն այս գործառույթն օգտագործում է միայն տեսնելու համար, թե որ հավելվածն է բաց, որպեսզի կենտրոնացման ժամանակ կամ ձեր ժամանակացույցով դադարեցնի ընտրված հավելվածները և, եթե միացրել եք, փակի Shorts-ը և Reels-ը։ Այն չի կարդում տեքստ, ոչինչ չի պահում և ոչինչ ոչ մի տեղ չի ուղարկում։ Կարող եք այն անջատել այստեղ ցանկացած պահի։</string>
+</resources>

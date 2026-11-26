@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">ഫോക്കസും കാർഡുകളും</string>
+    <string name="home_widget_description">ബാക്കിയുള്ള ഫോക്കസ് സമയവും അവലോകനത്തിനുള്ള കാർഡുകളും</string>
+    <string name="quick_widget_label">വേഗത്തിൽ ചേർക്കുക</string>
+    <string name="quick_widget_description">ടാസ്‌ക്കോ കുറിപ്പോ ചേർക്കുക, അല്ലെങ്കിൽ കാർഡുകൾ അവലോകനം ചെയ്യുക</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">ఫోకస్, కార్డ్‌లు</string>
+    <string name="home_widget_description">మిగిలిన ఫోకస్ సమయం, సమీక్షించాల్సిన కార్డ్‌లు</string>
+    <string name="quick_widget_label">శీఘ్ర జోడింపు</string>
+    <string name="quick_widget_description">పని లేదా నోట్‌ను జోడించండి, లేదా కార్డ్‌లను సమీక్షించండి</string>
+</resources>

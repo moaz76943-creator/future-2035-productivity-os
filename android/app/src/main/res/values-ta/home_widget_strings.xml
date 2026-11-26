@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_widget_label">கவனமும் கார்டுகளும்</string>
+    <string name="home_widget_description">மீதமுள்ள கவன நேரமும் மீள்பார்வைக் கார்டுகளும்</string>
+    <string name="quick_widget_label">விரைவுச் சேர்ப்பு</string>
+    <string name="quick_widget_description">பணி அல்லது குறிப்பைச் சேர்க்கவும், அல்லது கார்டுகளை மீள்பார்வை செய்யவும்</string>
+</resources>

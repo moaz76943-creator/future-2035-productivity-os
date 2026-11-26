@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_service_label">Deep Focus 分心防護</string>
+    <string name="guard_service_summary">專注時暫停你選擇的應用程式</string>
+    <string name="guard_service_description">Deep Focus 使用此功能只為了查看目前開啟的是哪個應用程式，以便在專注時或依你的排程暫停選擇的應用程式，並在你開啟時關閉 Shorts 與 Reels。它不會讀取文字、不會儲存任何內容，也不會傳送任何資料到任何地方。你可以隨時在這裡關閉。</string>
+</resources>
