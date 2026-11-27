@@ -963,7 +963,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Mulai menulis… Gunakan # untuk tag dan [[Judul]] untuk menautkan catatan.';
+      'Mulai menulis…';
 
   @override
   String get noteFavorite => 'Favorit';

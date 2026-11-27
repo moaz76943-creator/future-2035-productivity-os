@@ -960,7 +960,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Yazmaya başla… Etiketler için #, notları bağlamak için [[Başlık]] kullan.';
+      'Yazmaya başla…';
 
   @override
   String get noteFavorite => 'Favori';

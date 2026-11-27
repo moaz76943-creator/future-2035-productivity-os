@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Eine leere Leinwand",
   "notesEmptyMessage": "Halte Ideen, Besprechungsnotizen und Wissen fest.",
   "noteTitleHint": "Titel",
-  "noteBodyHint": "Schreib los… Nutze # für Tags und [[Titel]], um Notizen zu verknüpfen.",
+  "noteBodyHint": "Schreib los…",
   "noteFavorite": "Favorit",
   "noteUnfavorite": "Aus Favoriten entfernen",
   "noteMoveTo": "In Notizbuch verschieben",

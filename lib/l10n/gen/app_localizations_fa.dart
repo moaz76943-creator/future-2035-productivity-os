@@ -985,7 +985,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'شروع به نوشتن کنید… برای برچسب از # و برای پیوند یادداشت‌ها از [[عنوان]] استفاده کنید.';
+      'شروع به نوشتن کنید…';
 
   @override
   String get noteFavorite => 'علاقه‌مندی';

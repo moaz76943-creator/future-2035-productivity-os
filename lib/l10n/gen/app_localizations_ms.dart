@@ -938,7 +938,7 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Mula menulis… Gunakan # untuk tag dan [[Tajuk]] untuk memautkan nota.';
+      'Mula menulis…';
 
   @override
   String get noteFavorite => 'Kegemaran';

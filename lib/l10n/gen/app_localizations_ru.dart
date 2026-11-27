@@ -1009,7 +1009,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Начните писать… Используйте # для тегов и [[Заголовок]] для ссылок на заметки.';
+      'Начните писать…';
 
   @override
   String get noteFavorite => 'В избранное';

@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Tuščias lapas",
   "notesEmptyMessage": "Užsirašykite idėjas, susitikimų pastabas ir žinias.",
   "noteTitleHint": "Pavadinimas",
-  "noteBodyHint": "Pradėkite rašyti… Naudokite # žymoms ir [[Pavadinimas]] užrašams susieti.",
+  "noteBodyHint": "Pradėkite rašyti…",
   "noteFavorite": "Į mėgstamus",
   "noteUnfavorite": "Pašalinti iš mėgstamų",
   "noteMoveTo": "Perkelti į sąsiuvinį",

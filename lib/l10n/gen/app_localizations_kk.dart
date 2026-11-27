@@ -963,7 +963,7 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Жаза бастаңыз… Тегтер үшін # және жазбаларды байланыстыру үшін [[Тақырып]] пайдаланыңыз.';
+      'Жаза бастаңыз…';
 
   @override
   String get noteFavorite => 'Таңдаулы';

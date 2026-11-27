@@ -961,7 +961,7 @@ class AppLocalizationsSw extends AppLocalizations {
   String get noteTitleHint => 'Kichwa';
 
   @override
-  String get noteBodyHint => 'Anza kuandika… Tumia # kwa lebo na [[Kichwa]] kuunganisha madokezo.';
+  String get noteBodyHint => 'Anza kuandika…';
 
   @override
   String get noteFavorite => 'Kipendwa';

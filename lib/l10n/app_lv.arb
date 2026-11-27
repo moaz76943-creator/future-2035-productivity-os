@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Tukša lapa",
   "notesEmptyMessage": "Pierakstiet idejas, sapulču piezīmes un zināšanas.",
   "noteTitleHint": "Nosaukums",
-  "noteBodyHint": "Sāciet rakstīt… Izmantojiet # birkām un [[Nosaukums]], lai saistītu piezīmes.",
+  "noteBodyHint": "Sāciet rakstīt…",
   "noteFavorite": "Pievienot izlasei",
   "noteUnfavorite": "Noņemt no izlases",
   "noteMoveTo": "Pārvietot uz kladi",

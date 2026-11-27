@@ -995,7 +995,7 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'ಬರೆಯಲು ಪ್ರಾರಂಭಿಸಿ… ಟ್ಯಾಗ್‌ಗಳಿಗೆ # ಮತ್ತು ಟಿಪ್ಪಣಿಗಳನ್ನು ಲಿಂಕ್ ಮಾಡಲು [[ಶೀರ್ಷಿಕೆ]] ಬಳಸಿ.';
+      'ಬರೆಯಲು ಪ್ರಾರಂಭಿಸಿ…';
 
   @override
   String get noteFavorite => 'ಮೆಚ್ಚಿನದು';

@@ -962,7 +962,7 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Yozishni boshlang… Teglar uchun # va qaydlarni bogʻlash uchun [[Sarlavha]] dan foydalaning.';
+      'Yozishni boshlang…';
 
   @override
   String get noteFavorite => 'Sevimli';

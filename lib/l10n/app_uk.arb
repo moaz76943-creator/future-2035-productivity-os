@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Чистий аркуш",
   "notesEmptyMessage": "Записуйте ідеї, нотатки з нарад і знання.",
   "noteTitleHint": "Назва",
-  "noteBodyHint": "Почніть писати… # — для тегів, [[Назва]] — щоб зв’язати нотатки.",
+  "noteBodyHint": "Почніть писати…",
   "noteFavorite": "Обране",
   "noteUnfavorite": "Прибрати з обраного",
   "noteMoveTo": "Перемістити в блокнот",

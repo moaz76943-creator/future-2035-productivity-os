@@ -280,7 +280,7 @@
   "notesEmptyTitle": "’n Skoon blad",
   "notesEmptyMessage": "Teken idees, vergadernotas en kennis aan.",
   "noteTitleHint": "Titel",
-  "noteBodyHint": "Begin skryf… Gebruik # vir etikette en [[Titel]] om notas te koppel.",
+  "noteBodyHint": "Begin skryf…",
   "noteFavorite": "Gunsteling",
   "noteUnfavorite": "Verwyder uit gunstelinge",
   "noteMoveTo": "Skuif na notaboek",

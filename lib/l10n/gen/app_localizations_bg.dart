@@ -973,7 +973,7 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Започнете да пишете… Използвайте # за тагове и [[Заглавие]] за свързване на бележки.';
+      'Започнете да пишете…';
 
   @override
   String get noteFavorite => 'Любима';

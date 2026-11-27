@@ -982,7 +982,7 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Byrjaðu að skrifa… Notaðu # fyrir merki og [[Titill]] til að tengja glósur.';
+      'Byrjaðu að skrifa…';
 
   @override
   String get noteFavorite => 'Eftirlæti';

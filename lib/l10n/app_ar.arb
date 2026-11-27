@@ -280,7 +280,7 @@
   "notesEmptyTitle": "ابدأ الكتابة",
   "notesEmptyMessage": "دوّن أفكارك وملاحظات اجتماعاتك ومعارفك.",
   "noteTitleHint": "العنوان",
-  "noteBodyHint": "ابدأ الكتابة… استخدم # للوسوم و[[العنوان]] لربط الملاحظات.",
+  "noteBodyHint": "ابدأ الكتابة…",
   "noteFavorite": "إضافة إلى المفضلة",
   "noteUnfavorite": "إزالة من المفضلة",
   "noteMoveTo": "نقل إلى دفتر",

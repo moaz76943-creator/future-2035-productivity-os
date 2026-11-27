@@ -280,7 +280,7 @@
   "notesEmptyTitle": "まっさらなページ",
   "notesEmptyMessage": "アイデア、会議メモ、知識を書き留めましょう。",
   "noteTitleHint": "タイトル",
-  "noteBodyHint": "書き始めましょう… # でタグ、[[タイトル]] でメモをリンクできます。",
+  "noteBodyHint": "書き始めましょう…",
   "noteFavorite": "お気に入り",
   "noteUnfavorite": "お気に入りから外す",
   "noteMoveTo": "ノートへ移動",

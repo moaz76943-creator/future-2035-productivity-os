@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Цэвэр хуудас",
   "notesEmptyMessage": "Санаа, уулзалтын тэмдэглэл, мэдлэгээ бичиж аваарай.",
   "noteTitleHint": "Гарчиг",
-  "noteBodyHint": "Бичиж эхлээрэй… Шошгонд #, тэмдэглэл холбоход [[Гарчиг]] ашиглана уу.",
+  "noteBodyHint": "Бичиж эхлээрэй…",
   "noteFavorite": "Дуртай",
   "noteUnfavorite": "Дуртайгаас хасах",
   "noteMoveTo": "Дэвтэр рүү зөөх",

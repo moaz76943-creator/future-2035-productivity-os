@@ -997,7 +997,7 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Începe să scrii… Folosește # pentru etichete și [[Titlu]] pentru a lega notițe.';
+      'Începe să scrii…';
 
   @override
   String get noteFavorite => 'Favorită';

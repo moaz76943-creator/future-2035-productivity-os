@@ -24,6 +24,7 @@ import '../../goals/application/goals_providers.dart';
 import '../../notes/application/notes_providers.dart';
 import '../../prayer/presentation/next_prayer_chip.dart';
 import '../../goals/data/goals_repository.dart';
+import '../../goals/presentation/widgets/goal_editor_sheet.dart';
 import '../../habits/application/habits_providers.dart';
 import '../../settings/application/settings_providers.dart';
 import '../../settings/data/settings_repository.dart';
@@ -61,15 +62,14 @@ class DashboardScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final sections = ref.watch(settingsProvider.select((s) => s.dashboardSections));
     return Scaffold(
-      // No floating +: the four quick actions below the stats already add everything.
+      // No floating +: the four quick actions below the header already add everything.
       body: AuroraBackground(
         child: SafeArea(
           bottom: false,
           child: CustomScrollView(
             slivers: [
               const SliverToBoxAdapter(child: _HeroBackdrop(child: _Header())),
-              const SliverToBoxAdapter(child: _StatTiles()),
-              const SliverToBoxAdapter(child: _QuickActions()),
+                            const SliverToBoxAdapter(child: _QuickActions()),
               const SliverToBoxAdapter(child: _QuickFocusBanner()),
               // Flashcards are a pillar: always right under the quick actions.
               if (sections.contains('review')) const SliverToBoxAdapter(child: _ReviewSection()),

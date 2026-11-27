@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Một trang giấy trắng",
   "notesEmptyMessage": "Ghi lại ý tưởng, biên bản họp và kiến thức.",
   "noteTitleHint": "Tiêu đề",
-  "noteBodyHint": "Bắt đầu viết… Dùng # cho thẻ và [[Tiêu đề]] để liên kết ghi chú.",
+  "noteBodyHint": "Bắt đầu viết…",
   "noteFavorite": "Yêu thích",
   "noteUnfavorite": "Bỏ yêu thích",
   "noteMoveTo": "Chuyển vào sổ",

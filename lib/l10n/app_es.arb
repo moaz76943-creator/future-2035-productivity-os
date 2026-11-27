@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Un lienzo en blanco",
   "notesEmptyMessage": "Captura ideas, notas de reuniones y conocimientos.",
   "noteTitleHint": "Título",
-  "noteBodyHint": "Empieza a escribir… Usa # para etiquetas y [[Título]] para vincular notas.",
+  "noteBodyHint": "Empieza a escribir…",
   "noteFavorite": "Favorita",
   "noteUnfavorite": "Quitar de favoritas",
   "noteMoveTo": "Mover a cuaderno",

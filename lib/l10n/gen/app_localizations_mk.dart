@@ -973,7 +973,7 @@ class AppLocalizationsMk extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Почнете да пишувате… Користете # за етикети и [[Наслов]] за поврзување белешки.';
+      'Почнете да пишувате…';
 
   @override
   String get noteFavorite => 'Омилено';

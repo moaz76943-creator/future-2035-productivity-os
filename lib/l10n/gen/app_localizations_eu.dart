@@ -984,7 +984,7 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Hasi idazten… Erabili # etiketetarako eta [[Izenburua]] oharrak estekatzeko.';
+      'Hasi idazten…';
 
   @override
   String get noteFavorite => 'Gogokoa';

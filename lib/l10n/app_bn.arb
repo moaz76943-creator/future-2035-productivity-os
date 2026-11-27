@@ -280,7 +280,7 @@
   "notesEmptyTitle": "একটি ফাঁকা পাতা",
   "notesEmptyMessage": "ভাবনা, মিটিংয়ের নোট আর জ্ঞান লিখে রাখুন।",
   "noteTitleHint": "শিরোনাম",
-  "noteBodyHint": "লেখা শুরু করুন… ট্যাগের জন্য # এবং নোট যুক্ত করতে [[শিরোনাম]] ব্যবহার করুন।",
+  "noteBodyHint": "লেখা শুরু করুন…",
   "noteFavorite": "প্রিয়",
   "noteUnfavorite": "প্রিয় থেকে সরান",
   "noteMoveTo": "নোটবুকে সরান",

@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Tühi leht",
   "notesEmptyMessage": "Pange kirja ideed, koosolekumärkmed ja teadmised.",
   "noteTitleHint": "Pealkiri",
-  "noteBodyHint": "Alustage kirjutamist… Kasutage silte # abil ja märkmete linkimiseks [[Pealkiri]].",
+  "noteBodyHint": "Alustage kirjutamist…",
   "noteFavorite": "Lemmik",
   "noteUnfavorite": "Eemalda lemmikutest",
   "noteMoveTo": "Teisalda märkmikku",

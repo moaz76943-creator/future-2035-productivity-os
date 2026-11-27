@@ -1004,7 +1004,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get noteTitleHint => 'Tytuł';
 
   @override
-  String get noteBodyHint => 'Zacznij pisać… Użyj # dla tagów i [[Tytuł]], aby łączyć notatki.';
+  String get noteBodyHint => 'Zacznij pisać…';
 
   @override
   String get noteFavorite => 'Ulubiona';

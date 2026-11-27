@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Een leeg vel",
   "notesEmptyMessage": "Leg ideeën, vergadernotities en kennis vast.",
   "noteTitleHint": "Titel",
-  "noteBodyHint": "Begin met schrijven… Gebruik # voor tags en [[Titel]] om notities te koppelen.",
+  "noteBodyHint": "Begin met schrijven…",
   "noteFavorite": "Favoriet",
   "noteUnfavorite": "Uit favorieten verwijderen",
   "noteMoveTo": "Naar notitieboek verplaatsen",

@@ -967,7 +967,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Börja skriva… Använd # för taggar och [[Rubrik]] för att länka anteckningar.';
+      'Börja skriva…';
 
   @override
   String get noteFavorite => 'Favorit';

@@ -1008,7 +1008,7 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Začnite pisati … Uporabite # za oznake in [[Naslov]] za povezovanje zapiskov.';
+      'Začnite pisati…';
 
   @override
   String get noteFavorite => 'Priljubljeno';

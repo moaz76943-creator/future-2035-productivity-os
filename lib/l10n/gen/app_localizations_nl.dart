@@ -967,7 +967,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Begin met schrijven… Gebruik # voor tags en [[Titel]] om notities te koppelen.';
+      'Begin met schrijven…';
 
   @override
   String get noteFavorite => 'Favoriet';

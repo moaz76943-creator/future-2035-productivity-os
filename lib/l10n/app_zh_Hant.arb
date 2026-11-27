@@ -280,7 +280,7 @@
   "notesEmptyTitle": "一張白紙",
   "notesEmptyMessage": "記下想法、會議記錄和知識。",
   "noteTitleHint": "標題",
-  "noteBodyHint": "開始書寫… 用 # 加標籤，用 [[標題]] 連結筆記。",
+  "noteBodyHint": "開始書寫…",
   "noteFavorite": "加入最愛",
   "noteUnfavorite": "從最愛移除",
   "noteMoveTo": "移至筆記本",

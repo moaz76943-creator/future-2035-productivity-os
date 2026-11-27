@@ -996,7 +996,7 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Počnite pisati… Koristite # za oznake i [[Naslov]] za povezivanje bilješki.';
+      'Počnite pisati…';
 
   @override
   String get noteFavorite => 'Omiljeno';

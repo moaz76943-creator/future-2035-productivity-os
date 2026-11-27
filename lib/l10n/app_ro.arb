@@ -280,7 +280,7 @@
   "notesEmptyTitle": "O pagină albă",
   "notesEmptyMessage": "Notează idei, note de la ședințe și cunoștințe.",
   "noteTitleHint": "Titlu",
-  "noteBodyHint": "Începe să scrii… Folosește # pentru etichete și [[Titlu]] pentru a lega notițe.",
+  "noteBodyHint": "Începe să scrii…",
   "noteFavorite": "Favorită",
   "noteUnfavorite": "Elimină de la favorite",
   "noteMoveTo": "Mută în carnet",

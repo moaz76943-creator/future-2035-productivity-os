@@ -967,7 +967,7 @@ class AppLocalizationsGl extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Comeza a escribir… Usa # para etiquetas e [[Título]] para vincular notas.';
+      'Comeza a escribir…';
 
   @override
   String get noteFavorite => 'Favorita';

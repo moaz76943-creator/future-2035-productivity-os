@@ -936,7 +936,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get noteTitleHint => 'Tiêu đề';
 
   @override
-  String get noteBodyHint => 'Bắt đầu viết… Dùng # cho thẻ và [[Tiêu đề]] để liên kết ghi chú.';
+  String get noteBodyHint => 'Bắt đầu viết…';
 
   @override
   String get noteFavorite => 'Yêu thích';

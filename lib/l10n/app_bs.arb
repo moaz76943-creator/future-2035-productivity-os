@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Prazan list",
   "notesEmptyMessage": "Zapišite ideje, bilješke sa sastanaka i znanje.",
   "noteTitleHint": "Naslov",
-  "noteBodyHint": "Počnite pisati… Koristite # za oznake i [[Naslov]] za povezivanje bilješki.",
+  "noteBodyHint": "Počnite pisati…",
   "noteFavorite": "Omiljeno",
   "noteUnfavorite": "Ukloni iz omiljenih",
   "noteMoveTo": "Premjesti u svesku",

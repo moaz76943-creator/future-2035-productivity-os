@@ -963,7 +963,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Fillo të shkruash… Përdor # për etiketa dhe [[Titulli]] për të lidhur shënimet.';
+      'Fillo të shkruash…';
 
   @override
   String get noteFavorite => 'E preferuar';

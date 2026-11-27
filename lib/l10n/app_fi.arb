@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Tyhjä sivu",
   "notesEmptyMessage": "Tallenna ideat, kokousmuistiinpanot ja tieto.",
   "noteTitleHint": "Otsikko",
-  "noteBodyHint": "Aloita kirjoittaminen… Käytä #-merkkiä tunnisteisiin ja [[Otsikko]] linkittämään muistiinpanoja.",
+  "noteBodyHint": "Aloita kirjoittaminen…",
   "noteFavorite": "Suosikki",
   "noteUnfavorite": "Poista suosikeista",
   "noteMoveTo": "Siirrä muistikirjaan",

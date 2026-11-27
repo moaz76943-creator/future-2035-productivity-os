@@ -963,7 +963,7 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Yazmağa başlayın… Etiketlər üçün #, qeydləri əlaqələndirmək üçün [[Başlıq]] istifadə edin.';
+      'Yazmağa başlayın…';
 
   @override
   String get noteFavorite => 'Seçilmiş';

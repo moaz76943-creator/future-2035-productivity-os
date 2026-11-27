@@ -56,12 +56,6 @@ extension _NoteEditorActions on _NoteEditorScreenState {
     await _repo.moveTo(note.id, notebookId: picked.value, projectId: note.projectId);
   }
 
-  Future<void> _moveProject(NoteRow note) async {
-    final picked = await pickProject(context, current: note.projectId);
-    if (picked == null) return;
-    await _repo.moveTo(note.id, notebookId: note.notebookId, projectId: picked.value);
-  }
-
   Future<void> _linkTask(List<TaskRow> linked) async {
     final task = await pickTask(context, exclude: {for (final t in linked) t.id});
     if (task == null) return;

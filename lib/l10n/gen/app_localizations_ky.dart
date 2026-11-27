@@ -962,7 +962,7 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Жаза баштаңыз… Тегдер үчүн # жана жазууларды байланыштыруу үчүн [[Аталыш]] колдонуңуз.';
+      'Жаза баштаңыз…';
 
   @override
   String get noteFavorite => 'Тандалма';

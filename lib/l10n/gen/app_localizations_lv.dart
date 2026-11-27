@@ -994,7 +994,7 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Sāciet rakstīt… Izmantojiet # birkām un [[Nosaukums]], lai saistītu piezīmes.';
+      'Sāciet rakstīt…';
 
   @override
   String get noteFavorite => 'Pievienot izlasei';

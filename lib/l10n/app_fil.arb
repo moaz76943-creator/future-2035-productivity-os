@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Isang blangkong canvas",
   "notesEmptyMessage": "Itala ang mga ideya, tala ng pulong at kaalaman.",
   "noteTitleHint": "Pamagat",
-  "noteBodyHint": "Magsimulang magsulat… Gamitin ang # para sa tag at [[Pamagat]] para i-link ang mga tala.",
+  "noteBodyHint": "Magsimulang magsulat…",
   "noteFavorite": "Paborito",
   "noteUnfavorite": "Alisin sa mga paborito",
   "noteMoveTo": "Ilipat sa notebook",

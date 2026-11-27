@@ -988,7 +988,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Commencez à écrire… Utilisez # pour les étiquettes et [[Titre]] pour lier des notes.';
+      'Commencez à écrire…';
 
   @override
   String get noteFavorite => 'Ajouter aux favoris';

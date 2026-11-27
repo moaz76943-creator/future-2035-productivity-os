@@ -962,7 +962,7 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'लिहायला सुरुवात करा… टॅगसाठी # आणि टिपा जोडण्यासाठी [[शीर्षक]] वापरा.';
+      'लिहायला सुरुवात करा…';
 
   @override
   String get noteFavorite => 'आवडती';

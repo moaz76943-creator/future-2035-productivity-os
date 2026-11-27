@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Prázdny list",
   "notesEmptyMessage": "Zachyťte nápady, poznámky zo stretnutí a znalosti.",
   "noteTitleHint": "Názov",
-  "noteBodyHint": "Začnite písať… Použite # pre štítky a [[Názov]] na prepojenie poznámok.",
+  "noteBodyHint": "Začnite písať…",
   "noteFavorite": "Obľúbené",
   "noteUnfavorite": "Odobrať z obľúbených",
   "noteMoveTo": "Presunúť do zápisníka",

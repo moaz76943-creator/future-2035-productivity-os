@@ -258,6 +258,8 @@ class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with Widget
       ),
       body: Column(
         children: [
+          // Formatting stays pinned right under the app bar, never lost below the keyboard.
+          if (!_preview) _FormatToolbar(onApply: _apply, body: _body, onImage: _addImage),
           Expanded(
             child: ListView(
               keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.manual,
@@ -293,7 +295,6 @@ class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with Widget
                   note: note,
                   onRetry: _flush,
                   onNotebook: note == null ? null : () => _moveNotebook(note),
-                  onProject: note == null ? null : () => _moveProject(note),
                 ),
                 if (!_preview) NoteTemplatesRow(title: _title, body: _body),
                 const SizedBox(height: Space.sm),
@@ -341,7 +342,6 @@ class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> with Widget
               ],
             ),
           ),
-          if (!_preview) _FormatToolbar(onApply: _apply, body: _body, onImage: _addImage),
         ],
       ),
     );

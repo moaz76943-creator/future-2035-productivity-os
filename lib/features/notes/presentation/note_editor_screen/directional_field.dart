@@ -25,7 +25,6 @@ class _MetaRow extends ConsumerWidget {
     required this.note,
     required this.onRetry,
     required this.onNotebook,
-    required this.onProject,
   });
   final NoteSaveStatus status;
   final DateTime? savedAt;
@@ -33,7 +32,6 @@ class _MetaRow extends ConsumerWidget {
   final NoteRow? note;
   final VoidCallback onRetry;
   final VoidCallback? onNotebook;
-  final VoidCallback? onProject;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -42,8 +40,6 @@ class _MetaRow extends ConsumerWidget {
     final t = context.text;
     final notebooks = ref.watch(notebooksProvider).value ?? const <NotebookRow>[];
     final notebook = notebooks.where((n) => n.id == note?.notebookId).firstOrNull;
-    final projects = ref.watch(projectsProvider(false)).value ?? const <ProjectRow>[];
-    final project = projects.where((p) => p.id == note?.projectId).firstOrNull;
     final now = ref.watch(clockProvider).now();
 
     final (label, color, icon) = switch (status) {
@@ -98,14 +94,6 @@ class _MetaRow extends ConsumerWidget {
           tooltip: l10n.noteMoveTo,
           onPressed: onNotebook,
         ),
-        ActionChip(
-          avatar: project == null
-              ? const Icon(Icons.workspaces_outline, size: 18)
-              : GlowDot(color: Color(project.color)),
-          label: Text(project?.name ?? l10n.noProject),
-          tooltip: l10n.noteLinkProject,
-          onPressed: onProject,
-        ),
       ],
     );
   }
@@ -149,10 +137,11 @@ class _FormatToolbar extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           color: lux.surface,
-          border: Border(top: BorderSide(color: lux.hairline)),
+          border: Border(bottom: BorderSide(color: lux.hairline)),
         ),
         child: SafeArea(
           top: false,
+          bottom: false,
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.symmetric(horizontal: Space.xs),

@@ -967,7 +967,7 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Comença a escriure… Fes servir # per a etiquetes i [[Títol]] per vincular notes.';
+      'Comença a escriure…';
 
   @override
   String get noteFavorite => 'Preferida';

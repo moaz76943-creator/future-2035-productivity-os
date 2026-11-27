@@ -967,7 +967,7 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Бичиж эхлээрэй… Шошгонд #, тэмдэглэл холбоход [[Гарчиг]] ашиглана уу.';
+      'Бичиж эхлээрэй…';
 
   @override
   String get noteFavorite => 'Дуртай';

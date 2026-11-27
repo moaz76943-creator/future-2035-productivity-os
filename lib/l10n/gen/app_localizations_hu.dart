@@ -964,7 +964,7 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Kezdj el írni… A # címkét jelöl, a [[Cím]] összekapcsolja a jegyzeteket.';
+      'Kezdj el írni…';
 
   @override
   String get noteFavorite => 'Kedvenc';

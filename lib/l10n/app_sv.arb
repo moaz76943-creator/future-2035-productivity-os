@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Ett tomt blad",
   "notesEmptyMessage": "Fånga idéer, mötesanteckningar och kunskap.",
   "noteTitleHint": "Rubrik",
-  "noteBodyHint": "Börja skriva… Använd # för taggar och [[Rubrik]] för att länka anteckningar.",
+  "noteBodyHint": "Börja skriva…",
   "noteFavorite": "Favorit",
   "noteUnfavorite": "Ta bort från favoriter",
   "noteMoveTo": "Flytta till anteckningsbok",

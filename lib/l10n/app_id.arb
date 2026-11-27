@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Kanvas kosong",
   "notesEmptyMessage": "Tuangkan ide, catatan rapat, dan pengetahuan.",
   "noteTitleHint": "Judul",
-  "noteBodyHint": "Mulai menulis… Gunakan # untuk tag dan [[Judul]] untuk menautkan catatan.",
+  "noteBodyHint": "Mulai menulis…",
   "noteFavorite": "Favorit",
   "noteUnfavorite": "Hapus dari favorit",
   "noteMoveTo": "Pindahkan ke buku catatan",

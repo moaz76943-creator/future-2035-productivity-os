@@ -280,7 +280,7 @@
   "notesEmptyTitle": "一张白纸",
   "notesEmptyMessage": "记录灵感、会议纪要和知识。",
   "noteTitleHint": "标题",
-  "noteBodyHint": "开始书写… 用 # 添加标签，用 [[标题]] 链接笔记。",
+  "noteBodyHint": "开始书写…",
   "noteFavorite": "收藏",
   "noteUnfavorite": "取消收藏",
   "noteMoveTo": "移至笔记本",
