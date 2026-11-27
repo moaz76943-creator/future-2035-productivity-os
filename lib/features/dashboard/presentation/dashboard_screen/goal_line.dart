@@ -52,10 +52,17 @@ class _ReviewSection extends ConsumerWidget {
     return _Section(
       title: l10n.dashReview,
       child: LuxCard(
+        glass: true,
         onTap: () => context.go(Routes.flashcards),
         child: Row(
           children: [
-            const IconOrb(icon: Icons.style_outlined, hue: ModuleHue.flashcards, size: 44),
+            const ExcludeSemantics(
+              child: DeepFocusAssetIcon(
+                assetPath: DeepFocusAssets.spaceFlashcards,
+                size: 52,
+                fallbackIcon: Icons.style_outlined,
+              ),
+            ),
             const SizedBox(width: Space.md),
             // Never a discouraging "nothing due": invite to open the cards instead.
             Expanded(
@@ -110,6 +117,7 @@ class _NoteChip extends StatelessWidget {
     return SizedBox(
       width: 200,
       child: LuxCard(
+        glass: true,
         accent: ModuleHue.notes.a,
         onTap: () => context.push(Routes.note(note.id)),
         child: Column(
@@ -181,6 +189,7 @@ class _InsightSection extends ConsumerWidget {
     return _Section(
       title: l10n.dashInsight,
       child: LuxCard(
+        glass: true,
         accent: Palette.champagne,
         // Shell branches are switched with go(); other screens are pushed.
         onTap: () => openRoute(context, route),

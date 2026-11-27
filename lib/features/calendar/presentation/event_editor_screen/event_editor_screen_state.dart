@@ -112,7 +112,12 @@ class _EventEditorScreenState extends ConsumerState<EventEditorScreen> {
             children: [
               for (final k in EventKind.values)
                 ChoiceChip(
-                  avatar: Icon(EventStyle.kindIcon(k), size: 18, color: EventStyle.kindColor(k)),
+                  avatar: Icon(
+                    EventStyle.kindIcon(k),
+                    size: 18,
+                    // White on the dark selected pill, the kind colour otherwise.
+                    color: _kind == k ? Colors.white : EventStyle.kindColor(k),
+                  ),
                   label: Text(EventStyle.kindLabel(context, k)),
                   selected: _kind == k,
                   onSelected: (_) => setState(() => _kind = k),

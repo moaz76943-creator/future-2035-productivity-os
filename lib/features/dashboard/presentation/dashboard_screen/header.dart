@@ -12,77 +12,128 @@ class _Header extends ConsumerWidget {
         : now.hour < 18
         ? l10n.greetingAfternoon
         : l10n.greetingEvening;
+    final hijri = ref.watch(settingsProvider).showHijri(context.language.tag)
+        ? HijriDay.of(now)
+        : null;
+    final dateStyle = context.text.labelLarge?.copyWith(color: context.lux.ink3);
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(Space.page, Space.lg, Space.xs, Space.sm),
-      child: Row(
+      padding: const EdgeInsetsDirectional.fromSTEB(Space.page, Space.lg, Space.md, Space.sm),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const ExcludeSemantics(
-            child: DeepFocusAssetIcon(
-              assetPath: DeepFocusAssets.appLeafMark,
-              size: 36,
-              fallbackIcon: Icons.eco_rounded,
-            ),
-          ),
-          const SizedBox(width: Space.sm),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+          // Gregorian at the start edge, Hijri at the end edge: one tidy top row.
+          Padding(
+            padding: const EdgeInsetsDirectional.only(end: Space.xs, bottom: Space.xs),
+            child: Row(
               children: [
-                Text(switch (ref.watch(settingsProvider).showHijri(context.language.tag)
-                    ? HijriDay.of(now)
-                    : null) {
-                  final h? => '${context.fmt.dayLong(now)} · ${h.long(l10n)}',
-                  null => context.fmt.dayLong(now),
-                }, style: context.text.labelLarge?.copyWith(color: context.lux.ink3)),
-                const SizedBox(height: Space.xxs),
-                Semantics(header: true, child: Text(greeting, style: context.text.headlineMedium)),
-                const NextPrayerChip(),
+                Expanded(
+                  child: Text(
+                    context.fmt.dayLong(now),
+                    key: const Key('dashDateGregorian'),
+                    style: dateStyle,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+                if (hijri != null) ...[
+                  const SizedBox(width: Space.sm),
+                  Flexible(
+                    child: Text(
+                      hijri.long(l10n),
+                      key: const Key('dashDateHijri'),
+                      style: dateStyle,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.end,
+                    ),
+                  ),
+                ],
               ],
             ),
           ),
-          IconButton(
-            tooltip: l10n.moduleSearch,
-            icon: const Icon(Icons.search_rounded),
-            onPressed: () => context.push(Routes.search),
-          ),
-          // One menu to every part of the app, so nothing needs a hunt through screens.
-          PopupMenuButton<String>(
-            key: const Key('dashApps'),
-            tooltip: l10n.actionMore,
-            icon: const Icon(Icons.apps_rounded),
-            onSelected: (r) => openRoute(context, r),
-            itemBuilder: (_) => [
-              for (final (icon, label, route) in [
-                (Icons.style_outlined, l10n.moduleFlashcards, Routes.flashcards),
-                (Icons.sticky_note_2_outlined, l10n.moduleNotes, Routes.notes),
-                (Icons.event_repeat_rounded, l10n.moduleHabits, Routes.habits),
-                (Icons.flag_outlined, l10n.moduleGoals, Routes.goals),
-                (Icons.graphic_eq_rounded, l10n.soundsTitle, Routes.sounds),
-                (Icons.insights_rounded, l10n.moduleAnalytics, Routes.insights),
-                (Icons.settings_outlined, l10n.moduleSettings, Routes.settings),
-              ])
-                PopupMenuItem(
-                  value: route,
-                  child: Row(
-                    children: [
-                      Icon(icon, size: 20),
-                      const SizedBox(width: Space.sm),
-                      Text(label),
-                    ],
-                  ),
+          Row(
+            children: [
+              const ExcludeSemantics(
+                child: DeepFocusAssetIcon(
+                  assetPath: DeepFocusAssets.appLeafMark,
+                  size: 36,
+                  fallbackIcon: Icons.eco_rounded,
                 ),
+              ),
+              const SizedBox(width: Space.sm),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Semantics(
+                      header: true,
+                      child: Text(greeting, style: context.text.headlineMedium),
+                    ),
+                    const NextPrayerChip(),
+                  ],
+                ),
+              ),
+              // Search, all apps and customize share one soft glass capsule.
+              DecoratedBox(
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.55),
+                  borderRadius: BorderRadius.circular(DeepFocusVisuals.pillRadius),
+                  border: Border.all(color: Colors.white.withValues(alpha: 0.9)),
+                  boxShadow: const [
+                    BoxShadow(color: Color(0x140D7A7E), blurRadius: 12, offset: Offset(0, 4)),
+                  ],
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    IconButton(
+                      tooltip: l10n.moduleSearch,
+                      icon: const Icon(Icons.search_rounded),
+                      onPressed: () => context.push(Routes.search),
+                    ),
+                    // One menu to every part of the app, so nothing needs a hunt through screens.
+                    PopupMenuButton<String>(
+                      key: const Key('dashApps'),
+                      tooltip: l10n.actionMore,
+                      icon: const Icon(Icons.apps_rounded),
+                      onSelected: (r) => openRoute(context, r),
+                      itemBuilder: (_) => [
+                        for (final (icon, label, route) in [
+                          (Icons.style_outlined, l10n.moduleFlashcards, Routes.flashcards),
+                          (Icons.sticky_note_2_outlined, l10n.moduleNotes, Routes.notes),
+                          (Icons.event_repeat_rounded, l10n.moduleHabits, Routes.habits),
+                          (Icons.flag_outlined, l10n.moduleGoals, Routes.goals),
+                          (Icons.graphic_eq_rounded, l10n.soundsTitle, Routes.sounds),
+                          (Icons.insights_rounded, l10n.moduleAnalytics, Routes.insights),
+                          (Icons.settings_outlined, l10n.moduleSettings, Routes.settings),
+                        ])
+                          PopupMenuItem(
+                            value: route,
+                            child: Row(
+                              children: [
+                                Icon(icon, size: 20),
+                                const SizedBox(width: Space.sm),
+                                Text(label),
+                              ],
+                            ),
+                          ),
+                      ],
+                    ),
+                    IconButton(
+                      tooltip: l10n.actionCustomize,
+                      icon: const Icon(Icons.tune_rounded),
+                      onPressed: () => showModalBottomSheet<void>(
+                        useRootNavigator: true,
+                        context: context,
+                        showDragHandle: true,
+                        isScrollControlled: true,
+                        builder: (_) => const DashboardCustomizeSheet(),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
-          ),
-          IconButton(
-            tooltip: l10n.actionCustomize,
-            icon: const Icon(Icons.tune_rounded),
-            onPressed: () => showModalBottomSheet<void>(
-              useRootNavigator: true,
-              context: context,
-              showDragHandle: true,
-              isScrollControlled: true,
-              builder: (_) => const DashboardCustomizeSheet(),
-            ),
           ),
         ],
       ),
@@ -103,8 +154,9 @@ class _FocusSection extends ConsumerWidget {
     final fmt = context.fmt;
     return Padding(
       padding: const EdgeInsets.fromLTRB(Space.page, Space.lg, Space.page, 0),
-      child: AuroraCard(
-        hue: ModuleHue.focus,
+      child: LuxCard(
+        glass: true,
+        radius: Radii.xl,
         onTap: () => context.go(Routes.focus),
         child: Row(
           children: [
@@ -112,42 +164,35 @@ class _FocusSection extends ConsumerWidget {
               value: ratio,
               hue: ModuleHue.focus,
               size: 84,
-              trackColor: Colors.white.withValues(alpha: 0.25),
               semanticsLabel: l10n.dashFocusToday,
               semanticsValue: fmt.percent(ratio),
-              child: Text(
-                fmt.percent(ratio),
-                style: context.text.titleSmall?.copyWith(color: Colors.white),
-              ),
+              child: Text(fmt.percent(ratio), style: context.text.titleSmall),
             ),
             const SizedBox(width: Space.md),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    l10n.dashFocusToday,
-                    style: context.text.titleMedium?.copyWith(color: Colors.white),
-                  ),
+                  Text(l10n.dashFocusToday, style: context.text.titleMedium),
                   const SizedBox(height: Space.xxs),
                   Text(
                     l10n.dashFocusOfTarget(
                       fmt.duration(Duration(seconds: seconds)),
                       fmt.duration(Duration(minutes: target)),
                     ),
-                    style: context.text.bodyMedium?.copyWith(color: Colors.white),
+                    style: context.text.bodyMedium?.copyWith(color: context.lux.ink2),
                   ),
                   const SizedBox(height: Space.sm),
                   if (running)
                     LuxPill(
                       label: l10n.dashFocusRunning,
                       icon: Icons.play_arrow_rounded,
-                      color: Colors.white,
+                      color: ModuleHue.focus.a,
                     )
                   else
                     Text(
                       l10n.dashStartFocus,
-                      style: context.text.labelLarge?.copyWith(color: Colors.white),
+                      style: context.text.labelLarge?.copyWith(color: DeepFocusVisuals.tealPrimary),
                     ),
                 ],
               ),
@@ -202,6 +247,7 @@ class _AgendaSection extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.only(bottom: Space.xs),
               child: LuxCard(
+                glass: true,
                 padding: const EdgeInsets.all(Space.sm),
                 accent: o.event.color == null ? null : Color(o.event.color!),
                 onTap: () => context.push(Routes.event(o.event.id)),

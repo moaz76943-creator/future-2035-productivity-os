@@ -8,7 +8,11 @@ final focusTealButton = FilledButton.styleFrom(
   disabledForegroundColor: Colors.white70,
 );
 
-/// Timer circle: the Deep Focus backdrop with the leaf mark above the clock.
+/// Soft shadow that keeps white timer text readable on any backdrop.
+const _timerTextShadow = [Shadow(color: Color(0x99000000), blurRadius: 8)];
+
+/// Timer card face: the Deep Focus backdrop under a soft dark scrim, so the white
+/// clock stays crisp and the picture reads as calm depth, not clutter.
 class _TimerFace extends StatelessWidget {
   const _TimerFace({required this.child});
   final Widget child;
@@ -24,17 +28,14 @@ class _TimerFace extends StatelessWidget {
           errorBuilder: (_, _, _) =>
               const CustomPaint(painter: LandscapePainter(mood: LandscapeMood.deep)),
         ),
-        const Positioned(
-          top: 10,
-          left: 0,
-          right: 0,
-          child: ExcludeSemantics(
-            child: Center(
-              child: DeepFocusAssetIcon(
-                assetPath: DeepFocusAssets.appLeafMark,
-                size: 26,
-                fallbackIcon: Icons.eco_rounded,
-              ),
+        // Soft vertical scrim: even legibility for the clock, scene still visible.
+        const DecoratedBox(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Color(0x80071F26), Color(0xA6071F26), Color(0x99071F26)],
+              stops: [0, 0.5, 1],
             ),
           ),
         ),

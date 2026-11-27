@@ -122,67 +122,74 @@ class _LanguageSheetState extends ConsumerState<_LanguageSheet> {
       ..sort((a, b) => languageDisplayName(a).compareTo(languageDisplayName(b)));
     final all = worldLanguages.keys.where(_matches).toList()
       ..sort((a, b) => worldLanguages[a]!.compareTo(worldLanguages[b]!));
-    return DraggableScrollableSheet(
-      expand: false,
-      initialChildSize: 0.85,
-      maxChildSize: 0.95,
-      builder: (context, scroll) => Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.xs),
-            child: TextField(
-              key: const Key('langSearch'),
-              controller: _search,
-              onChanged: (v) => setState(() => _query = v.trim().toLowerCase()),
-              decoration: InputDecoration(
-                hintText: l10n.speechSearchLanguage,
-                prefixIcon: const Icon(Icons.search_rounded),
+    // A plain, bounded sheet: the list always starts at the top and fills a
+    // fixed share of the screen, lifted above the keyboard, so languages are
+    // never pushed down out of sight.
+    final media = MediaQuery.of(context);
+    final height = (media.size.height - media.viewInsets.bottom) * 0.82;
+    return AnimatedPadding(
+      duration: const Duration(milliseconds: 150),
+      padding: EdgeInsets.only(bottom: media.viewInsets.bottom),
+      child: SizedBox(
+        height: height,
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.xs),
+              child: TextField(
+                key: const Key('langSearch'),
+                controller: _search,
+                onChanged: (v) => setState(() => _query = v.trim().toLowerCase()),
+                decoration: InputDecoration(
+                  hintText: l10n.speechSearchLanguage,
+                  prefixIcon: const Icon(Icons.search_rounded),
+                ),
               ),
             ),
-          ),
-          Expanded(
-            child: ListView(
-              controller: scroll,
-              children: [
-                if (_query.isEmpty) _tile('', spoken: true),
-                if (onPhone.isNotEmpty) ...[
-                  SectionHeader(title: l10n.speechOnPhone),
-                  for (final t in onPhone) _tile(t, spoken: true, keyPrefix: 'langPhone_'),
-                ],
-                SectionHeader(title: l10n.speechAllLanguages),
-                for (final t in all) _tile(t, spoken: phoneCodes.contains(t)),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(Space.page, Space.md, Space.page, Space.lg),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Text(
-                        l10n.speechGetVoicesHint,
-                        style: context.text.bodySmall?.copyWith(color: context.lux.ink2),
-                      ),
-                      const SizedBox(height: Space.xs),
-                      OutlinedButton.icon(
-                        key: const Key('ttsOpenSettings'),
-                        onPressed: _openSettings,
-                        icon: const Icon(Icons.download_rounded),
-                        label: Text(l10n.speechGetVoices),
-                      ),
-                      if (_error != null)
-                        Padding(
-                          padding: const EdgeInsets.only(top: Space.xs),
-                          child: Text(
-                            _error!,
-                            key: const Key('ttsSettingsError'),
-                            style: context.text.bodySmall?.copyWith(color: context.lux.danger),
-                          ),
+            Expanded(
+              child: ListView(
+                primary: false,
+                children: [
+                  if (_query.isEmpty) _tile('', spoken: true),
+                  if (onPhone.isNotEmpty) ...[
+                    SectionHeader(title: l10n.speechOnPhone),
+                    for (final t in onPhone) _tile(t, spoken: true, keyPrefix: 'langPhone_'),
+                  ],
+                  SectionHeader(title: l10n.speechAllLanguages),
+                  for (final t in all) _tile(t, spoken: phoneCodes.contains(t)),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(Space.page, Space.md, Space.page, Space.lg),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Text(
+                          l10n.speechGetVoicesHint,
+                          style: context.text.bodySmall?.copyWith(color: context.lux.ink2),
                         ),
-                    ],
+                        const SizedBox(height: Space.xs),
+                        OutlinedButton.icon(
+                          key: const Key('ttsOpenSettings'),
+                          onPressed: _openSettings,
+                          icon: const Icon(Icons.download_rounded),
+                          label: Text(l10n.speechGetVoices),
+                        ),
+                        if (_error != null)
+                          Padding(
+                            padding: const EdgeInsets.only(top: Space.xs),
+                            child: Text(
+                              _error!,
+                              key: const Key('ttsSettingsError'),
+                              style: context.text.bodySmall?.copyWith(color: context.lux.danger),
+                            ),
+                          ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

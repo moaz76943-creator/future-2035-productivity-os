@@ -28,79 +28,92 @@ class AppShell extends StatelessWidget {
     ];
     return DeepFocusMeshScaffold(
       child: Scaffold(
-      backgroundColor: Colors.transparent,
-      extendBody: true,
-      body: ShellScope(child: shell),
-      bottomNavigationBar: DecoratedBox(
-        // Fade the content out behind the floating bar so it never shows through.
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              DeepFocusVisuals.canvasLight.withValues(alpha: 0),
-              DeepFocusVisuals.canvasLight.withValues(alpha: 0.92),
-            ],
-            stops: const [0, 0.35],
+        backgroundColor: Colors.transparent,
+        extendBody: true,
+        body: ShellScope(child: shell),
+        bottomNavigationBar: DecoratedBox(
+          // Fade the content out behind the floating bar so it never shows through.
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                DeepFocusVisuals.canvasLight.withValues(alpha: 0),
+                DeepFocusVisuals.canvasLight.withValues(alpha: 0.92),
+              ],
+              stops: const [0, 0.35],
+            ),
           ),
-        ),
-        child: SafeArea(
-        minimum: const EdgeInsets.fromLTRB(Space.sm, Space.xs, Space.sm, Space.sm),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            RepaintBoundary(
-              child: GlassPanel(
-                child: NavigationBarTheme(
-                  data: NavigationBarThemeData(
-                    labelPadding: EdgeInsets.zero,
-                    labelTextStyle: WidgetStateProperty.resolveWith(
-                      (states) => TextStyle(
-                        fontSize: 10.5,
-                        fontWeight: states.contains(WidgetState.selected)
-                            ? FontWeight.w700
-                            : FontWeight.w500,
-                        color: states.contains(WidgetState.selected)
-                            ? DeepFocusVisuals.tealPrimary
-                            : DeepFocusVisuals.textMuted,
-                        overflow: TextOverflow.ellipsis,
+          child: SafeArea(
+            minimum: const EdgeInsets.fromLTRB(Space.sm, Space.xs, Space.sm, Space.sm),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                RepaintBoundary(
+                  child: GlassPanel(
+                    child: NavigationBarTheme(
+                      data: NavigationBarThemeData(
+                        labelPadding: EdgeInsets.zero,
+                        labelTextStyle: WidgetStateProperty.resolveWith(
+                          (states) => TextStyle(
+                            fontSize: 10.5,
+                            fontWeight: states.contains(WidgetState.selected)
+                                ? FontWeight.w700
+                                : FontWeight.w500,
+                            color: states.contains(WidgetState.selected)
+                                ? DeepFocusVisuals.tealPrimary
+                                : DeepFocusVisuals.textMuted,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: Space.xs),
+                        child: NavigationBar(
+                          height: 68,
+                          backgroundColor: Colors.transparent,
+                          surfaceTintColor: Colors.transparent,
+                          elevation: 0,
+                          // The active capsule is drawn in the icon (slimmer than the default 64px one).
+                          indicatorColor: Colors.transparent,
+                          labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+                          selectedIndex: shell.currentIndex,
+                          onDestinationSelected: (i) =>
+                              shell.goBranch(i, initialLocation: i == shell.currentIndex),
+                          destinations: [
+                            for (final d in destinations)
+                              NavigationDestination(
+                                icon: NavGlyph(d.$1, color: DeepFocusVisuals.textMuted),
+                                selectedIcon: Container(
+                                  width: 50,
+                                  height: 30,
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(
+                                      DeepFocusVisuals.pillRadius,
+                                    ),
+                                    color: DeepFocusVisuals.aquaGlow.withValues(alpha: 0.22),
+                                  ),
+                                  child: NavGlyph(
+                                    d.$1,
+                                    color: DeepFocusVisuals.tealPrimary,
+                                    selected: true,
+                                  ),
+                                ),
+                                label: d.$2,
+                                tooltip: d.$2,
+                              ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                child: NavigationBar(
-                  height: 68,
-                  backgroundColor: Colors.transparent,
-                  surfaceTintColor: Colors.transparent,
-                  elevation: 0,
-                  indicatorColor: DeepFocusVisuals.aquaGlow.withValues(alpha: 0.22),
-                  labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
-                  selectedIndex: shell.currentIndex,
-                  onDestinationSelected: (i) =>
-                      shell.goBranch(i, initialLocation: i == shell.currentIndex),
-                  destinations: [
-                    for (final d in destinations)
-                      NavigationDestination(
-                        icon: NavGlyph(d.$1, color: DeepFocusVisuals.textMuted),
-                        selectedIcon: DecoratedBox(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            boxShadow: DeepFocusVisuals.edgeGlow(),
-                          ),
-                          child: NavGlyph(d.$1, color: DeepFocusVisuals.tealPrimary, selected: true),
-                        ),
-                        label: d.$2,
-                        tooltip: d.$2,
-                      ),
-                  ],
                 ),
-                ),
-              ),
+                const BottomBannerAdWidget(useProductionUnit: true),
+              ],
             ),
-            const BottomBannerAdWidget(useProductionUnit: true),
-          ],
+          ),
         ),
-        ),
-      ),
       ),
     );
   }

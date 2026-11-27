@@ -14,60 +14,79 @@ class _QuickFocusBanner extends StatelessWidget {
         button: true,
         label: '${l10n.quickStartFocus}, $subtitle',
         excludeSemantics: true,
-        child: DeepFocusGlassCard(
-          padding: EdgeInsets.zero,
-          onTap: () => context.push(Routes.focus),
-          child: SizedBox(
-            height: 80,
-            child: Row(
-              children: [
-                ClipRRect(
-                  borderRadius: const BorderRadiusDirectional.horizontal(
-                    start: Radius.circular(DeepFocusVisuals.cardRadius),
-                  ),
-                  child: Image.asset(
-                    DeepFocusAssets.quickFocusPlant,
-                    width: 104,
-                    height: 80,
-                    fit: BoxFit.cover,
-                    excludeFromSemantics: true,
-                    errorBuilder: (_, _, _) => const SizedBox(width: 104),
-                  ),
-                ),
-                const SizedBox(width: Space.md),
-                Expanded(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        l10n.quickStartFocus,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: context.text.titleMedium,
-                      ),
-                      Text(
-                        subtitle,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: context.text.labelMedium?.copyWith(
-                          color: DeepFocusVisuals.tealPrimary,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(DeepFocusVisuals.cardRadius),
+          child: Material(
+            color: DeepFocusVisuals.tealPrimary,
+            child: InkWell(
+              onTap: () => context.push(Routes.focus),
+              child: SizedBox(
+                height: 96,
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    Image.asset(
+                      DeepFocusAssets.quickFocusPlant,
+                      fit: BoxFit.cover,
+                      excludeFromSemantics: true,
+                      errorBuilder: (_, _, _) => const SizedBox.shrink(),
+                    ),
+                    // Scrim: darker on the text side, fading out toward the scene.
+                    const DecoratedBox(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: AlignmentDirectional.centerStart,
+                          end: AlignmentDirectional.centerEnd,
+                          colors: [Color(0xCC062E30), Color(0x66062E30), Color(0x00062E30)],
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsetsDirectional.symmetric(horizontal: Space.md),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  l10n.quickStartFocus,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: context.text.titleLarge?.copyWith(color: Colors.white),
+                                ),
+                                Text(
+                                  subtitle,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: context.text.labelLarge?.copyWith(
+                                    color: Colors.white.withValues(alpha: 0.92),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            width: 48,
+                            height: 48,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: DeepFocusVisuals.tealPrimary,
+                              border: Border.all(color: Colors.white, width: 1.5),
+                            ),
+                            child: const Icon(
+                              Icons.play_arrow_rounded,
+                              color: Colors.white,
+                              size: 30,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
-                Container(
-                  width: 44,
-                  height: 44,
-                  margin: const EdgeInsetsDirectional.only(end: Space.md),
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: DeepFocusVisuals.tealPrimary,
-                  ),
-                  child: const Icon(Icons.play_arrow_rounded, color: Colors.white, size: 28),
-                ),
-              ],
+              ),
             ),
           ),
         ),

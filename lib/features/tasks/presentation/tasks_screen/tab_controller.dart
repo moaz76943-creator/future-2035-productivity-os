@@ -33,8 +33,14 @@ class _TabsRow extends ConsumerWidget {
         if (!main.contains(t)) t,
     ];
     final inExtra = extra.contains(tab);
+    final primary = Theme.of(context).colorScheme.primary;
+    final ink = Theme.of(context).colorScheme.onSurface;
+    final idleBg = context.lux.surface;
+    final idleSide = BorderSide(color: ink.withValues(alpha: 0.28));
+    final chipShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(Radii.pill));
+    const chipPad = EdgeInsets.symmetric(horizontal: Space.sm, vertical: Space.xs);
     return SizedBox(
-      height: 52,
+      height: 56,
       child: ListView(
         key: const Key('tasksTabs'),
         scrollDirection: Axis.horizontal,
@@ -44,7 +50,21 @@ class _TabsRow extends ConsumerWidget {
             Padding(
               padding: const EdgeInsetsDirectional.only(end: Space.xs),
               child: ChoiceChip(
-                label: Text(label(t)),
+                // Explicit colours: dark text on a light pill when idle, white on primary
+                // when selected, so no label is ever white-on-white.
+                label: Text(label(t), maxLines: 1, softWrap: false),
+                labelStyle: context.text.labelLarge?.copyWith(
+                  color: t == tab ? Colors.white : ink,
+                  fontWeight: FontWeight.w600,
+                ),
+                backgroundColor: idleBg,
+                selectedColor: primary,
+                side: t == tab ? BorderSide(color: primary) : idleSide,
+                shape: chipShape,
+                padding: chipPad,
+                labelPadding: const EdgeInsets.symmetric(horizontal: Space.xs),
+                showCheckmark: false,
+                visualDensity: VisualDensity.standard,
                 selected: t == tab,
                 onSelected: (_) => ref.read(tasksTabProvider.notifier).set(t),
               ),
@@ -58,9 +78,17 @@ class _TabsRow extends ConsumerWidget {
                 CheckedPopupMenuItem(value: t, checked: t == tab, child: Text(label(t))),
             ],
             child: Chip(
-              avatar: const Icon(Icons.expand_more_rounded, size: 18),
-              label: Text(inExtra ? label(tab) : l10n.actionMore),
-              backgroundColor: inExtra ? context.lux.surface : null,
+              avatar: Icon(Icons.expand_more_rounded, size: 18, color: ink),
+              label: Text(
+                inExtra ? label(tab) : l10n.actionMore,
+                maxLines: 1,
+                softWrap: false,
+                style: context.text.labelLarge?.copyWith(color: ink, fontWeight: FontWeight.w600),
+              ),
+              backgroundColor: idleBg,
+              side: idleSide,
+              shape: chipShape,
+              padding: chipPad,
             ),
           ),
         ],
@@ -168,7 +196,7 @@ class _TaskList extends ConsumerWidget {
           },
           hue: ModuleHue.tasks,
           assetPath: DeepFocusAssets.emptyTasks,
-          title: l10n.tasksEmptyTitle,
+          title: tab == TasksTab.completed ? l10n.tasksViewCompleted : l10n.tasksEmptyTitle,
           message: switch (tab) {
             TasksTab.completed => l10n.tasksEmptyCompleted,
             TasksTab.archived => l10n.tasksEmptyArchived,

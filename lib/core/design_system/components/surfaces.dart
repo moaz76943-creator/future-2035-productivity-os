@@ -3,6 +3,7 @@ import 'dart:ui' as ui;
 
 import 'package:material_ui/material_ui.dart';
 
+import '../../theme/deep_focus_visuals.dart';
 import '../app_theme.dart';
 import '../tokens.dart';
 
@@ -150,6 +151,7 @@ class LuxCard extends StatelessWidget {
     this.elevated = true,
     this.semanticLabel,
     this.color,
+    this.glass = false,
   });
   final Widget child;
   final EdgeInsetsGeometry padding;
@@ -161,10 +163,15 @@ class LuxCard extends StatelessWidget {
   final String? semanticLabel;
   final Color? color;
 
+  /// Soft light glass (translucent white, pale rim, faint teal shadow) in light
+  /// mode, as on the full-screen focus; dark mode keeps the normal surface.
+  final bool glass;
+
   @override
   Widget build(BuildContext context) {
     final lux = context.lux;
     final br = BorderRadius.circular(radius);
+    final softGlass = glass && !lux.isDark && color == null;
     Widget content = Padding(padding: padding, child: child);
     if (accent != null) {
       content = Stack(
@@ -188,26 +195,28 @@ class LuxCard extends StatelessWidget {
       );
     }
     final decorated = DecoratedBox(
-      decoration: BoxDecoration(
-        color: color ?? lux.surface,
-        borderRadius: br,
-        border: Border.all(color: lux.hairline),
-        boxShadow: elevated
-            ? [
-                BoxShadow(
-                  color: lux.shadow,
-                  blurRadius: 24,
-                  offset: const Offset(0, 10),
-                  spreadRadius: -12,
-                ),
-                BoxShadow(
-                  color: lux.shadow.withValues(alpha: 0.05),
-                  blurRadius: 2,
-                  offset: const Offset(0, 1),
-                ),
-              ]
-            : null,
-      ),
+      decoration: softGlass
+          ? DeepFocusVisuals.glassCard(radius: radius)
+          : BoxDecoration(
+              color: color ?? lux.surface,
+              borderRadius: br,
+              border: Border.all(color: lux.hairline),
+              boxShadow: elevated
+                  ? [
+                      BoxShadow(
+                        color: lux.shadow,
+                        blurRadius: 24,
+                        offset: const Offset(0, 10),
+                        spreadRadius: -12,
+                      ),
+                      BoxShadow(
+                        color: lux.shadow.withValues(alpha: 0.05),
+                        blurRadius: 2,
+                        offset: const Offset(0, 1),
+                      ),
+                    ]
+                  : null,
+            ),
       child: Material(
         type: MaterialType.transparency,
         borderRadius: br,
@@ -337,7 +346,5 @@ class IconOrb extends StatelessWidget {
 /// Space a bottom sheet keeps free at its bottom: the keyboard when open, otherwise the
 /// system navigation bar (gesture bar or three buttons), so its last button is never
 /// hidden under them.
-double sheetBottomInset(BuildContext context) => math.max(
-  MediaQuery.viewInsetsOf(context).bottom,
-  MediaQuery.viewPaddingOf(context).bottom,
-);
+double sheetBottomInset(BuildContext context) =>
+    math.max(MediaQuery.viewInsetsOf(context).bottom, MediaQuery.viewPaddingOf(context).bottom);

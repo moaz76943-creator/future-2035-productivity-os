@@ -38,6 +38,8 @@ import 'session_plan.dart';
 
 part 'focus_screen/focus_screen_state.dart';
 part 'focus_screen/countdown_choices.dart';
+part 'focus_screen/focus_controls.dart';
+part 'focus_screen/linked_task.dart';
 part 'focus_screen/target_rings.dart';
 part 'focus_screen/timer_style.dart';
 

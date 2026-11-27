@@ -139,7 +139,15 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
     return ModuleScaffold(
       title: l10n.calendarTitle,
       hue: ModuleHue.calendar,
+      frostedBar: true,
       actions: [
+        // Replaces the floating +, which crowded the bottom of the screen.
+        IconButton(
+          key: const Key('calendarNewEvent'),
+          tooltip: l10n.eventNew,
+          icon: const Icon(Icons.add_rounded),
+          onPressed: () => _newEvent(_defaultStart()),
+        ),
         TextButton(
           // Disabled while today is already shown, so the tap is never silently ignored.
           onPressed:
@@ -150,12 +158,6 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
           child: Text(l10n.calendarToday),
         ),
       ],
-      floatingActionButton: FloatingActionButton(
-        heroTag: 'calendar-fab',
-        tooltip: l10n.eventNew,
-        onPressed: () => _newEvent(_defaultStart()),
-        child: const Icon(Icons.add_rounded),
-      ),
       slivers: [
         SliverToBoxAdapter(child: _toolbar(context)),
         SliverToBoxAdapter(
