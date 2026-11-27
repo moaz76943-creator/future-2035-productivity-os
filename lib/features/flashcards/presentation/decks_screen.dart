@@ -18,6 +18,7 @@ import '../application/deck_order.dart';
 import '../application/flashcards_providers.dart';
 import '../domain/world_languages.dart';
 import 'deck_tile_actions.dart';
+import 'widgets/deck_shortcut_card.dart';
 import 'widgets/starter_sheet.dart';
 import 'widgets/word_packs_sheet.dart';
 import 'widgets/study_summary.dart';
@@ -133,24 +134,29 @@ class DecksScreen extends ConsumerWidget {
                         title: l10n.flashEmptyTitle,
                         message: l10n.flashEmptyMessage,
                       ),
-                      TextButton.icon(
+                      DeckShortcutCard(
                         key: const Key('wordPacksEmpty'),
-                        onPressed: () => showWordPacks(context),
-                        icon: const Icon(Icons.translate_rounded),
-                        label: Text(l10n.wordPacksTitle),
+                        icon: Icons.translate_rounded,
+                        title: l10n.wordPacksTitle,
+                        subtitle: l10n.wordPacksHint,
+                        color: _hue.a,
+                        onTap: () => showWordPacks(context),
                       ),
-                      TextButton.icon(
+                      const SizedBox(height: Space.sm),
+                      DeckShortcutCard(
                         key: const Key('starterDecksEmpty'),
-                        onPressed: () => showStarterDecks(context),
-                        icon: const Icon(Icons.library_add_outlined),
-                        label: Text(l10n.starterTitle),
+                        icon: Icons.library_add_rounded,
+                        title: l10n.starterBrowse,
+                        subtitle: l10n.starterBrowseHint,
+                        color: DeepFocusVisuals.tealPrimary,
+                        onTap: () => showStarterDecks(context),
                       ),
                     ],
                   ),
                 ),
               );
             }
-                    final groups = <String, List<DeckRow>>{};
+            final groups = <String, List<DeckRow>>{};
             final order = ref.watch(deckOrderProvider).value ?? const <String>[];
             for (final d in orderDecks(list, order)) {
               groups.putIfAbsent(languageCode(d.frontLang), () => []).add(d);
@@ -182,49 +188,26 @@ class DecksScreen extends ConsumerWidget {
                 SliverPadding(
                   padding: const EdgeInsets.fromLTRB(Space.page, Space.xs, Space.page, 0),
                   sliver: SliverToBoxAdapter(
-                    child: LuxCard(
+                    child: DeckShortcutCard(
                       key: const Key('wordPacksCard'),
-                      elevated: false,
+                      icon: Icons.translate_rounded,
+                      title: l10n.wordPacksTitle,
+                      subtitle: l10n.wordPacksHint,
+                      color: _hue.a,
                       onTap: () => showWordPacks(context),
-                      child: Row(
-                        children: [
-                          Icon(Icons.translate_rounded, color: _hue.a),
-                          const SizedBox(width: Space.md),
-                          Expanded(
-                            child: Text(l10n.wordPacksTitle, style: context.text.titleSmall),
-                          ),
-                          const Icon(Icons.chevron_right_rounded),
-                        ],
-                      ),
                     ),
                   ),
                 ),
                 SliverPadding(
-                  padding: const EdgeInsets.fromLTRB(Space.page, Space.xs, Space.page, 96),
+                  padding: const EdgeInsets.fromLTRB(Space.page, Space.sm, Space.page, 96),
                   sliver: SliverToBoxAdapter(
-                    child: LuxCard(
+                    child: DeckShortcutCard(
                       key: const Key('starterDecksCard'),
-                      elevated: false,
+                      icon: Icons.library_add_rounded,
+                      title: l10n.starterBrowse,
+                      subtitle: l10n.starterBrowseHint,
+                      color: DeepFocusVisuals.tealPrimary,
                       onTap: () => showStarterDecks(context),
-                      child: Row(
-                        children: [
-                          Icon(Icons.library_add_outlined, color: _hue.a),
-                          const SizedBox(width: Space.md),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(l10n.starterBrowse, style: context.text.titleSmall),
-                                Text(
-                                  l10n.starterBrowseHint,
-                                  style: context.text.bodySmall?.copyWith(color: context.lux.ink2),
-                                ),
-                              ],
-                            ),
-                          ),
-                          const Icon(Icons.chevron_right_rounded),
-                        ],
-                      ),
                     ),
                   ),
                 ),

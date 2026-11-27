@@ -5,7 +5,6 @@ import 'package:material_ui/material_ui.dart';
 import '../../../app/localization/app_format.dart';
 import '../../../app/routing/navigation.dart';
 import '../../../app/routing/routes.dart';
-import '../../../app/shell/app_shell.dart';
 import '../../../core/database/app_database.dart';
 import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/components/indicators.dart';
@@ -34,7 +33,6 @@ import '../../tasks/presentation/widgets/task_tile.dart';
 import '../application/dashboard_providers.dart';
 import '../../care/presentation/whats_new_sheet.dart';
 import '../../help/presentation/tour_sheet.dart';
-import 'quick_add_sheet.dart';
 import 'start_my_day.dart';
 
 part 'dashboard_screen/header.dart';
@@ -63,7 +61,7 @@ class DashboardScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final sections = ref.watch(settingsProvider.select((s) => s.dashboardSections));
     return Scaffold(
-      floatingActionButton: const NavClearFab(child: QuickAddButton()),
+      // No floating +: the four quick actions below the stats already add everything.
       body: AuroraBackground(
         child: SafeArea(
           bottom: false,

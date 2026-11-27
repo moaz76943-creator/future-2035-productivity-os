@@ -163,7 +163,9 @@ class _DayCell extends StatelessWidget {
                           )
                         : BoxDecoration(
                             shape: BoxShape.circle,
-                            border: today ? Border.all(color: DeepFocusVisuals.tealPrimary, width: 1.5) : null,
+                            border: today
+                                ? Border.all(color: DeepFocusVisuals.tealPrimary, width: 1.5)
+                                : null,
                           ),
                     child: Text(
                       fmt.dayOfMonth(day),

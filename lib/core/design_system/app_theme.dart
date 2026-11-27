@@ -182,11 +182,14 @@ abstract final class AppTheme {
         ),
       ),
       chipTheme: ChipThemeData(
-        backgroundColor: lux.surface,
-        selectedColor: scheme.primaryContainer,
-        side: BorderSide(color: lux.hairline),
+        // Clear contrast in both states: a tinted pill with a visible border
+        // when idle, a solid primary pill with white text when selected.
+        backgroundColor: lux.ink.withValues(alpha: 0.06),
+        selectedColor: primary,
+        side: BorderSide(color: lux.ink3.withValues(alpha: 0.55)),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Radii.pill)),
         labelStyle: textTheme.labelMedium!.copyWith(color: lux.ink),
+        secondaryLabelStyle: textTheme.labelMedium!.copyWith(color: Palette.white),
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
         showCheckmark: false,
       ),
