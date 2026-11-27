@@ -1,0 +1,32 @@
+{
+ "items": {},
+ "lang": "lv",
+ "names": {
+  "home": "Māja",
+  "home.bathroom": "Vannas istaba",
+  "home.bedroom": "Miegistaba",
+  "home.colors": "Krāsas",
+  "home.garden_clean": "Dārzs un tīrīšana",
+  "home.kitchen": "Virtuve",
+  "home.living": "Dzīvojamā istaba",
+  "life.body_health": "Ķermens un veselība",
+  "life.clothing": "Apģērbs",
+  "life.family_traits": "Ģimene un raksturs",
+  "life.food_drink": "Ēdiens un dzērieni",
+  "life.produce": "Augļi un dārzeņi",
+  "life.spices_grains": "Garšvielas un graudi",
+  "study": "Mācīšanās un darbs",
+  "study.core_verbs": "Pamata darbības vārdi",
+  "study.grammar_links": "Saikļi",
+  "study.numbers_time": "Skaitļi un laiks",
+  "study.school": "Skola",
+  "world": "Pasaule",
+  "world.animals_plants": "Dzīvnieki un augi",
+  "world.city_directions": "Pilsēta un virzieni",
+  "world.jobs_sports": "Profesijas un sporta veidi",
+  "world.materials_shop": "Materiāli un iepirkšanās",
+  "world.nature_weather": "Daba un laika apstākļi",
+  "world.transport_travel": "Transports un ceļošana"
+ },
+ "pron": {}
+}
