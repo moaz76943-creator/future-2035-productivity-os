@@ -53,6 +53,9 @@ void main() {
     expect(find.text('Budget notes'), findsOneWidget);
     expect(find.text('2 results'), findsOneWidget);
 
+    // The chip row scrolls horizontally; bring the chip into view first.
+    await tester.ensureVisible(find.widgetWithText(ChoiceChip, 'Notes'));
+    await tester.pumpAndSettle();
     await tester.tap(find.widgetWithText(ChoiceChip, 'Notes'));
     await settle(tester);
     expect(find.text('Budget review'), findsNothing);

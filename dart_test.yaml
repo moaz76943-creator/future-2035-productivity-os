@@ -1,0 +1,7 @@
+# Golden (screenshot-match) tests are slow and break on any colour/image tweak,
+# so they are kept out of the fast gate: run them with tool/check_goldens.sh.
+tags:
+  golden:
+    description: Pixel-match screenshot tests (excluded from tool/check_all.sh)
+  slow:
+    description: Minutes-long sweeps (all languages, control crawl); run by check_all.sh --full
