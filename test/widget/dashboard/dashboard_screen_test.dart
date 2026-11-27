@@ -22,6 +22,8 @@ void main() {
       await settle(tester);
       final l10n = AppLocalizations.of(tester.element(find.byType(DashboardScreen)));
       expect(find.text(l10n.greetingMorning), findsOneWidget); // fixed clock 10:00
+      // The quick focus banner sits above the task list, so scroll to it.
+      await tester.scrollUntilVisible(find.text('Ship build'), 300);
       expect(find.text('Ship build'), findsOneWidget);
       await tester.scrollUntilVisible(find.text(l10n.insightOverdue(1)), 300);
       expect(find.text(l10n.insightOverdue(1)), findsOneWidget);
