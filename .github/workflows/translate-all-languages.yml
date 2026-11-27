@@ -1,0 +1,62 @@
+name: Translate All Languages (9 Gemini Keys)
+
+on:
+  workflow_dispatch:
+    inputs:
+      langs:
+        description: 'Optional comma-separated lang codes (empty = all remaining)'
+        required: false
+        default: ''
+      max_langs:
+        description: 'Max languages per run (0 = all)'
+        required: false
+        default: '0'
+      model:
+        description: 'Optional model override (empty = auto-select strongest)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run unified multi-key translator
+        env:
+          DF_GEMINI_KEY_1: ${{ secrets.DF_GEMINI_KEY_1 }}
+          DF_GEMINI_KEY_2: ${{ secrets.DF_GEMINI_KEY_2 }}
+          DF_GEMINI_KEY_3: ${{ secrets.DF_GEMINI_KEY_3 }}
+          DF_GEMINI_KEY_4: ${{ secrets.DF_GEMINI_KEY_4 }}
+          DF_GEMINI_KEY_5: ${{ secrets.DF_GEMINI_KEY_5 }}
+          DF_GEMINI_KEY_6: ${{ secrets.DF_GEMINI_KEY_6 }}
+          DF_GEMINI_KEY_7: ${{ secrets.DF_GEMINI_KEY_7 }}
+          DF_GEMINI_KEY_8: ${{ secrets.DF_GEMINI_KEY_8 }}
+          DF_GEMINI_KEY_9: ${{ secrets.DF_GEMINI_KEY_9 }}
+        run: |
+          python3 tool/ai/packs/translate_all_langs.py \
+            --repo . \
+            --out /tmp/master_all.csv \
+            --langs "${{ inputs.langs }}" \
+            --max-langs "${{ inputs.max_langs }}" \
+            --model "${{ inputs.model }}" \
+            --push-packs
+
+      - name: Upload unified master_all.csv artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: master-all-csv
+          path: /tmp/master_all.csv
+          if-no-files-found: ignore
