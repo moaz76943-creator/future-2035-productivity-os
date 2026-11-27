@@ -50,7 +50,7 @@ jobs:
       DF_NVIDIA_KEY: ${{ secrets.DF_NVIDIA_KEY }}
       AI_STATE: ${{ github.workspace }}/.ai-state/health.json
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: claude-dev
           fetch-depth: 0
