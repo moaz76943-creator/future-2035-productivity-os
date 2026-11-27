@@ -349,7 +349,6 @@ class _DeckTile extends ConsumerWidget {
                         LuxPill(
                           label: l10n.flashcardsDueCount(stats.due),
                           color: _hue.a,
-                          filled: true,
                         ),
                       if (stats.newCount > 0)
                         LuxPill(label: l10n.flashcardsNewCount(stats.newCount), color: _hue.b),
