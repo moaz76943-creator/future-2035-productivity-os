@@ -150,8 +150,7 @@ class DecksScreen extends ConsumerWidget {
                 ),
               );
             }
-            // Grouped by the language being learned when there are several.
-            final groups = <String, List<DeckRow>>{};
+                    final groups = <String, List<DeckRow>>{};
             final order = ref.watch(deckOrderProvider).value ?? const <String>[];
             for (final d in orderDecks(list, order)) {
               groups.putIfAbsent(languageCode(d.frontLang), () => []).add(d);

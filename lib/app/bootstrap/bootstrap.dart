@@ -15,6 +15,7 @@ import '../../core/database/database_connection.dart';
 import '../../core/diagnostics/error_log.dart';
 import '../../core/providers/core_providers.dart';
 import '../../core/security/secret_store.dart';
+import '../../core/theme/deep_focus_visuals.dart';
 import '../../features/notifications/data/notification_service.dart';
 import '../../features/settings/application/settings_providers.dart';
 import '../../features/settings/data/settings_repository.dart';
@@ -28,6 +29,7 @@ const databaseFileName = 'future_os.db';
 /// reset data; the user sees an explanation and the file stays untouched.
 Future<void> bootstrap() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await DeepFocusVisuals.loadTuningConfig();
   registerFontLicenses();
   await initializeDateFormatting();
   // Release builds never print errors that may contain user content; the

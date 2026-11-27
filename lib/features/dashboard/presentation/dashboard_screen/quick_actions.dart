@@ -38,7 +38,7 @@ class _QuickActions extends ConsumerWidget {
                 const SizedBox(height: Space.xxs),
                 Text(
                   label,
-                  maxLines: 2,
+                  maxLines: 3,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
                   style: context.text.labelSmall?.copyWith(height: 1.15),
