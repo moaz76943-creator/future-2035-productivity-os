@@ -46,7 +46,7 @@ class _StatTiles extends ConsumerWidget {
     final tasks = ref.watch(tasksProvider(const TaskFilter(view: TaskView.today))).value?.length;
     final events = ref.watch(todayAgendaProvider).value?.length;
     final goals = ref.watch(goalsListProvider(GoalStatus.active)).value?.length;
-    Widget tile(String key, IconData icon, Color color, String value, String label, String route) =>
+    Widget tile(String key, String asset, IconData icon, String value, String label, String route) =>
         Expanded(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: Space.xxs),
@@ -57,7 +57,9 @@ class _StatTiles extends ConsumerWidget {
               padding: const EdgeInsets.symmetric(vertical: Space.sm, horizontal: Space.xxs),
               child: Column(
                 children: [
-                  Icon(icon, color: color, size: 24),
+                  ExcludeSemantics(
+                    child: DeepFocusAssetIcon(assetPath: asset, size: 40, fallbackIcon: icon),
+                  ),
                   const SizedBox(height: Space.xxs),
                   FittedBox(
                     fit: BoxFit.scaleDown,
@@ -83,32 +85,32 @@ class _StatTiles extends ConsumerWidget {
         children: [
           tile(
             'focus',
+            DeepFocusAssets.spaceInsights,
             Icons.bar_chart_rounded,
-            ModuleHue.focus.a,
             fmt.percent(ratio),
             l10n.navFocus,
             Routes.focus,
           ),
           tile(
             'tasks',
+            DeepFocusAssets.quickTask,
             Icons.check_circle_outline_rounded,
-            ModuleHue.tasks.a,
             n(tasks),
             l10n.navTasks,
             Routes.tasks,
           ),
           tile(
             'events',
+            DeepFocusAssets.quickEvent,
             Icons.event_available_rounded,
-            ModuleHue.calendar.a,
             n(events),
             l10n.dashAgenda,
             Routes.calendar,
           ),
           tile(
             'goals',
+            DeepFocusAssets.spaceGoals,
             Icons.track_changes_rounded,
-            ModuleHue.goals.a,
             n(goals),
             l10n.moduleGoals,
             Routes.goals,

@@ -55,7 +55,13 @@ class _ReviewSection extends ConsumerWidget {
         onTap: () => context.go(Routes.flashcards),
         child: Row(
           children: [
-            const IconOrb(icon: Icons.style_outlined, hue: ModuleHue.flashcards, size: 44),
+            const ExcludeSemantics(
+              child: DeepFocusAssetIcon(
+                assetPath: DeepFocusAssets.spaceFlashcards,
+                size: 52,
+                fallbackIcon: Icons.style_outlined,
+              ),
+            ),
             const SizedBox(width: Space.md),
             // Never a discouraging "nothing due": invite to open the cards instead.
             Expanded(

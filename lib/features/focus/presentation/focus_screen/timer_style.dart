@@ -11,7 +11,7 @@ final focusTealButton = FilledButton.styleFrom(
 /// Soft shadow that keeps white timer text readable on any backdrop.
 const _timerTextShadow = [Shadow(color: Color(0x99000000), blurRadius: 8)];
 
-/// Timer circle: the Deep Focus backdrop under a soft dark scrim, so the white
+/// Timer card face: the Deep Focus backdrop under a soft dark scrim, so the white
 /// clock stays crisp and the picture reads as calm depth, not clutter.
 class _TimerFace extends StatelessWidget {
   const _TimerFace({required this.child});
@@ -28,12 +28,14 @@ class _TimerFace extends StatelessWidget {
           errorBuilder: (_, _, _) =>
               const CustomPaint(painter: LandscapePainter(mood: LandscapeMood.deep)),
         ),
-        // Darkest in the middle, where the text sits; lighter towards the rim.
+        // Soft vertical scrim: even legibility for the clock, scene still visible.
         const DecoratedBox(
           decoration: BoxDecoration(
-            gradient: RadialGradient(
-              colors: [Color(0xB3071F26), Color(0x80071F26), Color(0x330D7A7E)],
-              stops: [0, 0.65, 1],
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Color(0x80071F26), Color(0xA6071F26), Color(0x99071F26)],
+              stops: [0, 0.5, 1],
             ),
           ),
         ),

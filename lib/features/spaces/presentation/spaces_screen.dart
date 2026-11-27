@@ -117,19 +117,26 @@ class SpacesScreen extends ConsumerWidget {
                   Space.page,
                   ShellScope.navHeight + MediaQuery.viewPaddingOf(context).bottom + Space.lg,
                 ),
-                sliver: SliverGrid.builder(
+                sliver: Builder(
+                  builder: (context) {
+                    // Big 3D icons fill the wide two-column cards; smaller on wide screens.
+                    final wide = MediaQuery.sizeOf(context).width >= 600;
+                    final icon = wide ? 72.0 : 84.0;
+                    return SliverGrid.builder(
                   // Ten tiles: two columns on phones (5 full rows) and five on wide
                   // screens (2 full rows), so the last row is never left half empty.
                   // Tile height grows with the system font scale: orb (fixed) + up to two
                   // label lines and a caption (scaled).
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: MediaQuery.sizeOf(context).width >= 600 ? 5 : 2,
-                    mainAxisExtent: 76 + MediaQuery.textScalerOf(context).scale(52),
+                    crossAxisCount: wide ? 5 : 2,
+                    mainAxisExtent: icon + 36 + MediaQuery.textScalerOf(context).scale(56),
                     crossAxisSpacing: Space.sm,
                     mainAxisSpacing: Space.md,
                   ),
                   itemCount: grid.length,
-                  itemBuilder: (_, i) => _OrbTile(space: grid[i]),
+                  itemBuilder: (_, i) => _OrbTile(space: grid[i], iconSize: icon),
+                    );
+                  },
                 ),
               ),
             ],
@@ -194,8 +201,9 @@ class _Featured extends StatelessWidget {
 }
 
 class _OrbTile extends StatelessWidget {
-  const _OrbTile({required this.space});
+  const _OrbTile({required this.space, required this.iconSize});
   final _Space space;
+  final double iconSize;
 
   @override
   Widget build(BuildContext context) => Semantics(
@@ -206,16 +214,16 @@ class _OrbTile extends StatelessWidget {
       onTap: () => openRoute(context, space.route),
       padding: EdgeInsets.zero,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(height: Space.xs),
-          DeepFocusAssetIcon(assetPath: space.asset, fallbackIcon: space.icon, size: 56),
+          DeepFocusAssetIcon(assetPath: space.asset, fallbackIcon: space.icon, size: iconSize),
           const SizedBox(height: Space.xs),
           Text(
             space.label,
             textAlign: TextAlign.center,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            style: context.text.labelLarge,
+            style: context.text.titleSmall?.copyWith(height: 1.15),
           ),
           if (space.caption != null)
             Text(

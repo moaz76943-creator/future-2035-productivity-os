@@ -12,34 +12,67 @@ class _Header extends ConsumerWidget {
         : now.hour < 18
         ? l10n.greetingAfternoon
         : l10n.greetingEvening;
+    final hijri = ref.watch(settingsProvider).showHijri(context.language.tag)
+        ? HijriDay.of(now)
+        : null;
+    final dateStyle = context.text.labelLarge?.copyWith(color: context.lux.ink3);
     return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(Space.page, Space.lg, Space.md, Space.sm),
-      child: Row(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const ExcludeSemantics(
-            child: DeepFocusAssetIcon(
-              assetPath: DeepFocusAssets.appLeafMark,
-              size: 36,
-              fallbackIcon: Icons.eco_rounded,
-            ),
-          ),
-          const SizedBox(width: Space.sm),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+          // Gregorian at the start edge, Hijri at the end edge: one tidy top row.
+          Padding(
+            padding: const EdgeInsetsDirectional.only(end: Space.xs, bottom: Space.xs),
+            child: Row(
               children: [
-                Text(switch (ref.watch(settingsProvider).showHijri(context.language.tag)
-                    ? HijriDay.of(now)
-                    : null) {
-                  final h? => '${context.fmt.dayLong(now)} · ${h.long(l10n)}',
-                  null => context.fmt.dayLong(now),
-                }, style: context.text.labelLarge?.copyWith(color: context.lux.ink3)),
-                const SizedBox(height: Space.xxs),
-                Semantics(header: true, child: Text(greeting, style: context.text.headlineMedium)),
-                const NextPrayerChip(),
+                Expanded(
+                  child: Text(
+                    context.fmt.dayLong(now),
+                    key: const Key('dashDateGregorian'),
+                    style: dateStyle,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+                if (hijri != null) ...[
+                  const SizedBox(width: Space.sm),
+                  Flexible(
+                    child: Text(
+                      hijri.long(l10n),
+                      key: const Key('dashDateHijri'),
+                      style: dateStyle,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.end,
+                    ),
+                  ),
+                ],
               ],
             ),
           ),
+          Row(
+            children: [
+              const ExcludeSemantics(
+                child: DeepFocusAssetIcon(
+                  assetPath: DeepFocusAssets.appLeafMark,
+                  size: 36,
+                  fallbackIcon: Icons.eco_rounded,
+                ),
+              ),
+              const SizedBox(width: Space.sm),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Semantics(
+                      header: true,
+                      child: Text(greeting, style: context.text.headlineMedium),
+                    ),
+                    const NextPrayerChip(),
+                  ],
+                ),
+              ),
           IconButton(
             tooltip: l10n.moduleSearch,
             icon: const Icon(Icons.search_rounded),
@@ -83,6 +116,8 @@ class _Header extends ConsumerWidget {
               isScrollControlled: true,
               builder: (_) => const DashboardCustomizeSheet(),
             ),
+          ),
+            ],
           ),
         ],
       ),

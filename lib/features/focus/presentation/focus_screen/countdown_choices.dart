@@ -114,119 +114,116 @@ class _TimerHero extends ConsumerWidget {
         .min(screen.width - Space.page * 2 - Space.xl * 2, screen.height * 0.3)
         .clamp(floor, 300.0);
 
-    // A soft tint of the Focus colour makes the timer the calm centre of the screen.
-    final tint = Color.alphaBlend(ModuleHue.focus.a.withValues(alpha: 0.08), context.lux.surface);
+    final onScene = context.text.bodyMedium?.copyWith(color: Colors.white, shadows: _timerTextShadow);
     return LuxCard(
       onTap: a == null ? onAdjust : null,
       semanticLabel: a == null && onAdjust != null ? l10n.focusTapToAdjust : null,
-      color: tint,
+      color: DeepFocusVisuals.tealPrimary,
       radius: Radii.xl,
-      padding: const EdgeInsets.all(Space.xl),
-      child: Column(
-        children: [
-          Semantics(
-            liveRegion: false,
-            label: semantics,
-            child: ExcludeSemantics(
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  boxShadow: a == null ? null : DeepFocusVisuals.edgeGlow(strength: 1.3),
-                ),
-                child: GlowRing(
-                value: progress,
-                hue: ModuleHue.focus,
-                size: size,
-                stroke: 14,
-                // A calm lake landscape inside the ring; white text sits on its deep sky.
-                child: Container(
-                  width: size - 44,
-                  height: size - 44,
-                  decoration: const ShapeDecoration(shape: CircleBorder()),
-                  clipBehavior: Clip.antiAlias,
-                  child: _TimerFace(
-                    // Scales down instead of overflowing on short screens and large text.
-                    child: Center(
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: SizedBox(
-                          width: size - 44 - Space.lg * 2,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                phaseLabel,
-                                style: context.text.titleMedium?.copyWith(
-                                  color: Colors.white,
-                                  shadows: _timerTextShadow,
-                                ),
-                                textAlign: TextAlign.center,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              const SizedBox(height: Space.xxs),
-                              FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: Directionality(
-                                  textDirection: TextDirection.ltr,
-                                  child: Text(
-                                    shownText,
-                                    key: const ValueKey('focus-clock'),
-                                    style: context.text.displayMedium?.copyWith(
-                                      fontFeatures: const [FontFeature.tabularFigures()],
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.white,
-                                      shadows: _timerTextShadow,
+      padding: EdgeInsets.zero,
+      // The scene covers the whole card; the progress ring floats above it.
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(Radii.xl),
+        child: Stack(
+          children: [
+            const Positioned.fill(child: _TimerFace(child: SizedBox.shrink())),
+            Padding(
+              padding: const EdgeInsets.all(Space.xl),
+              child: SizedBox(
+                width: double.infinity,
+                child: Column(
+                  children: [
+                    Semantics(
+                      liveRegion: false,
+                      label: semantics,
+                      child: ExcludeSemantics(
+                        child: GlowRing(
+                          value: progress,
+                          hue: ModuleHue.focus,
+                          size: size,
+                          stroke: 14,
+                          trackColor: Colors.white.withValues(alpha: 0.28),
+                          child: Padding(
+                            padding: const EdgeInsets.all(26),
+                            // Scales down instead of overflowing on short screens / large text.
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: SizedBox(
+                                width: size - 52 - Space.lg,
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(
+                                      phaseLabel,
+                                      style: context.text.titleLarge?.copyWith(
+                                        color: Colors.white,
+                                        shadows: _timerTextShadow,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
                                     ),
-                                  ),
+                                    const SizedBox(height: Space.xxs),
+                                    FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: Directionality(
+                                        textDirection: TextDirection.ltr,
+                                        child: Text(
+                                          shownText,
+                                          key: const ValueKey('focus-clock'),
+                                          style: context.text.displayLarge?.copyWith(
+                                            fontFeatures: const [FontFeature.tabularFigures()],
+                                            fontWeight: FontWeight.w700,
+                                            color: Colors.white,
+                                            shadows: _timerTextShadow,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(height: Space.xxs),
+                                    Text(
+                                      status,
+                                      style: onScene,
+                                      textAlign: TextAlign.center,
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ],
                                 ),
                               ),
-                              const SizedBox(height: Space.xxs),
-                              Text(
-                                status,
-                                style: context.text.bodyMedium?.copyWith(
-                                  color: Colors.white,
-                                  shadows: _timerTextShadow,
-                                ),
-                                textAlign: TextAlign.center,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ],
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
+                    const SizedBox(height: Space.md),
+                    if (mode == FocusMode.pomodoro)
+                      LuxPill(
+                        key: const Key('focusCyclePill'),
+                        label: config.rounds > 0
+                            ? l10n.focusRoundOf(
+                                (phase == FocusPhase.work ? cycles + 1 : cycles).clamp(
+                                  1,
+                                  config.rounds,
+                                ),
+                                config.rounds,
+                              )
+                            : l10n.focusCycle(
+                                focusCyclePosition(phase, cycles, config.longBreakEvery),
+                                config.longBreakEvery,
+                              ),
+                        color: Colors.white,
+                      )
+                    else if (mode == FocusMode.countUp)
+                      Text(l10n.focusStopwatchHint, style: onScene, textAlign: TextAlign.center)
+                    else if (mode == FocusMode.open)
+                      Text(l10n.focusOpenHint, style: onScene, textAlign: TextAlign.center),
+                  ],
                 ),
               ),
-              ),
             ),
-          ),
-          const SizedBox(height: Space.md),
-          if (mode == FocusMode.pomodoro)
-            LuxPill(
-              key: const Key('focusCyclePill'),
-              label: config.rounds > 0
-                  ? l10n.focusRoundOf(
-                      (phase == FocusPhase.work ? cycles + 1 : cycles).clamp(1, config.rounds),
-                      config.rounds,
-                    )
-                  : l10n.focusCycle(
-                      focusCyclePosition(phase, cycles, config.longBreakEvery),
-                      config.longBreakEvery,
-                    ),
-              color: ModuleHue.focus.a,
-            )
-          else if (mode == FocusMode.countUp)
-            Text(
-              l10n.focusStopwatchHint,
-              style: context.text.bodySmall,
-              textAlign: TextAlign.center,
-            )
-          else if (mode == FocusMode.open)
-            Text(l10n.focusOpenHint, style: context.text.bodySmall, textAlign: TextAlign.center),
-        ],
+          ],
+        ),
       ),
     );
   }
