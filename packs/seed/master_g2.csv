@@ -1,0 +1,1085 @@
+lang,id,lvl,pos,main,sub,ar,target,pron
+zh-CN,zh_0001,1,noun,home,colors,أحمر,红色,hóngsè
+zh-CN,zh_0002,1,noun,home,colors,أزرق,蓝色,lánsè
+zh-CN,zh_0003,1,noun,home,colors,أخضر,绿色,lǜsè
+zh-CN,zh_0004,1,noun,home,colors,أصفر,黄色,huángsè
+zh-CN,zh_0005,1,noun,home,colors,أبيض,白色,báisè
+zh-CN,zh_0006,1,noun,home,colors,أسود,黑色,hēisè
+zh-CN,zh_0007,1,noun,home,colors,برتقالي,橙色,chéngsè
+zh-CN,zh_0008,1,noun,home,colors,بنفسجي,紫色,zǐsè
+zh-CN,zh_0009,1,noun,home,colors,رمادي,灰色,huīsè
+zh-CN,zh_0010,1,noun,home,kitchen,مطبخ,厨房,chúfáng
+zh-CN,zh_0011,1,noun,home,kitchen,كوب,杯子,bēizi
+zh-CN,zh_0012,1,noun,home,kitchen,صحن,盘子,pánzi
+zh-CN,zh_0013,1,noun,home,kitchen,وعاء,碗,wǎn
+zh-CN,zh_0014,1,noun,home,kitchen,ملعقة,勺子,sháozi
+zh-CN,zh_0015,1,noun,home,kitchen,شوكة,叉子,chāzi
+zh-CN,zh_0016,1,noun,home,kitchen,سكين مطبخ,菜刀,càidāo
+zh-CN,zh_0017,1,noun,home,kitchen,قدر,锅,guō
+zh-CN,zh_0018,1,noun,home,kitchen,إبريق شاي,茶壶,cháhú
+zh-CN,zh_0019,1,noun,home,bathroom,حمام,浴室,yùshì
+zh-CN,zh_0020,1,noun,home,bathroom,صابون,香皂,xiāngzào
+zh-CN,zh_0021,1,noun,home,bathroom,منشفة,毛巾,máojīn
+zh-CN,zh_0022,1,noun,home,bathroom,فرشاة أسنان,牙刷,yáshuā
+zh-CN,zh_0023,1,noun,home,bathroom,معجون أسنان,牙膏,yágāo
+zh-CN,zh_0024,1,noun,home,bathroom,مرآة,镜子,jìngzi
+zh-CN,zh_0025,1,noun,home,bathroom,شامبو,洗发水,xǐfàshuǐ
+zh-CN,zh_0026,1,noun,home,bathroom,مشط,梳子,shūzi
+zh-CN,zh_0027,1,noun,home,bathroom,صنبور ماء,水龙头,shuǐlóngtóu
+zh-CN,zh_0028,1,noun,home,bedroom,غرفة نوم,卧室,wòshì
+zh-CN,zh_0029,1,noun,home,bedroom,سرير,床,chuáng
+zh-CN,zh_0030,1,noun,home,bedroom,وسادة,枕头,zhěntou
+zh-CN,zh_0031,1,noun,home,bedroom,لحاف,被子,bèizi
+zh-CN,zh_0032,1,noun,home,bedroom,بطانية,毯子,tǎnzi
+zh-CN,zh_0033,1,noun,home,bedroom,خزانة ملابس,衣柜,yīguì
+zh-CN,zh_0034,1,noun,home,bedroom,مصباح طاولة,台灯,táidēng
+zh-CN,zh_0035,1,noun,home,bedroom,منبه,闹钟,nàozhōng
+zh-CN,zh_0036,1,noun,home,bedroom,نافذة,窗户,chuānghu
+zh-CN,zh_0037,1,noun,home,living,غرفة المعيشة,客厅,kètīng
+zh-CN,zh_0038,1,noun,home,living,أريكة,沙发,shāfā
+zh-CN,zh_0039,1,noun,home,living,طاولة,桌子,zhuōzi
+zh-CN,zh_0040,1,noun,home,living,كرسي,椅子,yǐzi
+zh-CN,zh_0041,1,noun,home,living,باب,门,mén
+zh-CN,zh_0042,1,noun,home,living,سجادة,地毯,dìtǎn
+zh-CN,zh_0043,1,noun,home,living,ستارة,窗帘,chuānglián
+zh-CN,zh_0044,1,noun,home,living,ساعة حائط,挂钟,guàzhōng
+zh-CN,zh_0045,1,noun,home,living,رف كتب,书架,shūjià
+zh-CN,zh_0046,1,noun,home,appliances,ثلاجة,冰箱,bīngxiāng
+zh-CN,zh_0047,1,noun,home,appliances,غسالة ملابس,洗衣机,xǐyījī
+zh-CN,zh_0048,1,noun,home,appliances,مكيف هواء,空调,kōngtiáo
+zh-CN,zh_0049,1,noun,home,appliances,تلفاز,电视机,diànshìjī
+zh-CN,zh_0050,1,noun,home,appliances,مروحة كهربائية,电风扇,diànfēngshàn
+zh-CN,zh_0051,1,noun,home,appliances,ميكروويف,微波炉,wēibōlú
+zh-CN,zh_0052,1,noun,home,appliances,فرن,烤箱,kǎoxiāng
+zh-CN,zh_0053,1,noun,home,appliances,غلاية كهربائية,电水壶,diànshuǐhú
+zh-CN,zh_0054,1,noun,home,appliances,مكنسة كهربائية,吸尘器,xīchénqì
+zh-CN,zh_0055,1,noun,home,garden_clean,حديقة,花园,huāyuán
+zh-CN,zh_0056,1,noun,home,garden_clean,مكنسة يدوية,扫帚,sàozhou
+zh-CN,zh_0057,1,noun,home,garden_clean,ممسحة أرضية,拖把,tuōbǎ
+zh-CN,zh_0058,1,noun,home,garden_clean,دلو,水桶,shuǐtǒng
+zh-CN,zh_0059,1,noun,home,garden_clean,مسحوق غسيل,洗衣粉,xǐyīfěn
+zh-CN,zh_0060,1,noun,home,garden_clean,إسفنجة تنظيف,海绵,hǎimián
+zh-CN,zh_0061,1,noun,home,garden_clean,أصيص نباتات,花盆,huāpén
+zh-CN,zh_0062,1,noun,home,garden_clean,تربة,土壤,tǔrǎng
+zh-CN,zh_0063,1,noun,home,garden_clean,سياج,围栏,wéilán
+zh-CN,zh_0064,2,noun,home,colors,بني,棕色,zōngsè
+zh-CN,zh_0065,2,noun,home,colors,وردي,粉色,fěnsè
+zh-CN,zh_0066,2,noun,home,colors,ذهبي,金色,jīnsè
+zh-CN,zh_0067,2,noun,home,colors,فضي,银色,yínsè
+zh-CN,zh_0068,2,noun,home,colors,بيج,米色,mǐsè
+zh-CN,zh_0069,2,noun,home,colors,أزرق سماوي,天蓝色,tiānlánsè
+zh-CN,zh_0070,2,noun,home,colors,أزرق داكن,深蓝色,shēnlánsè
+zh-CN,zh_0071,2,noun,home,colors,لون فاتح,浅色,qiǎnsè
+zh-CN,zh_0072,2,noun,home,colors,لون داكن,深色,shēnsè
+zh-CN,zh_0073,2,noun,home,kitchen,لوح تقطيع,砧板,zhēnbǎn
+zh-CN,zh_0074,2,noun,home,kitchen,مقلاة,平底锅,píngdǐguō
+zh-CN,zh_0075,2,noun,home,kitchen,عيدان طعام,筷子,kuàizi
+zh-CN,zh_0076,2,noun,home,kitchen,حوض المطبخ,水槽,shuǐcáo
+zh-CN,zh_0077,2,noun,home,kitchen,خزانة المطبخ,橱柜,chúguì
+zh-CN,zh_0078,2,noun,home,kitchen,غطاء القدر,锅盖,guōgài
+zh-CN,zh_0079,2,noun,home,kitchen,مصفاة طعام,漏勺,lòusháo
+zh-CN,zh_0080,2,noun,home,kitchen,مريلة مطبخ,围裙,wéiqún
+zh-CN,zh_0081,2,noun,home,kitchen,سلة مهملات,垃圾桶,lājītǒng
+zh-CN,zh_0082,2,noun,home,bathroom,حوض غسيل اليدين,洗手池,xǐshǒuchí
+zh-CN,zh_0083,2,noun,home,bathroom,حوض استحمام,浴缸,yùgāng
+zh-CN,zh_0084,2,noun,home,bathroom,دش استحمام,淋浴喷头,línyù pēntóu
+zh-CN,zh_0085,2,noun,home,bathroom,منشفة استحمام,浴巾,yùjīn
+zh-CN,zh_0086,2,noun,home,bathroom,غسول اليدين,洗手液,xǐshǒuyè
+zh-CN,zh_0087,2,noun,home,bathroom,ورق حمام,卫生纸,wèishēngzhǐ
+zh-CN,zh_0088,2,noun,home,bathroom,غسول جسم,沐浴露,mùyùlù
+zh-CN,zh_0089,2,noun,home,bathroom,مقص أظافر,指甲剪,zhǐjiǎjiǎn
+zh-CN,zh_0090,2,noun,home,bathroom,سلة غسيل,脏衣篮,zāngyīlán
+zh-CN,zh_0091,2,noun,home,bedroom,مرتبة سرير,床垫,chuángdiàn
+zh-CN,zh_0092,2,noun,home,bedroom,ملاءة سرير,床单,chuángdān
+zh-CN,zh_0093,2,noun,home,bedroom,غطاء وسادة,枕套,zhěntào
+zh-CN,zh_0094,2,noun,home,bedroom,طاولة بجانب السرير,床头柜,chuángtóuguì
+zh-CN,zh_0095,2,noun,home,bedroom,علاقة ملابس,衣架,yījià
+zh-CN,zh_0096,2,noun,home,bedroom,درج,抽屉,chōuti
+zh-CN,zh_0097,2,noun,home,bedroom,طاولة دراسة,书桌,shūzhuō
+zh-CN,zh_0098,2,noun,home,bedroom,ستارة معتمة,遮光窗帘,zhēguāng chuānglián
+zh-CN,zh_0099,2,noun,home,bedroom,ناموسية,蚊帐,wénzhàng
+zh-CN,zh_0100,2,noun,home,living,طاولة قهوة,茶几,chájī
+zh-CN,zh_0101,2,noun,home,living,وسادة أريكة,抱枕,bàozhěn
+zh-CN,zh_0102,2,noun,home,living,جدار,墙壁,qiángbì
+zh-CN,zh_0103,2,noun,home,living,أرضية,地板,dìbǎn
+zh-CN,zh_0104,2,noun,home,living,سقف,天花板,tiānhuābǎn
+zh-CN,zh_0105,2,noun,home,living,مدخل المنزل,玄关,xuánguān
+zh-CN,zh_0106,2,noun,home,living,خزانة أحذية,鞋柜,xiéguì
+zh-CN,zh_0107,2,noun,home,living,شرفة,阳台,yángtái
+zh-CN,zh_0108,2,noun,home,living,مصباح سقف,吊灯,diàodēng
+zh-CN,zh_0109,2,noun,home,appliances,قدر طبخ الأرز,电饭煲,diànfànbāo
+zh-CN,zh_0110,2,noun,home,appliances,خلاط كهربائي,搅拌机,jiǎobànjī
+zh-CN,zh_0111,2,noun,home,appliances,مكواة,熨斗,yùndǒu
+zh-CN,zh_0112,2,noun,home,appliances,مجفف شعر,吹风机,chuīfēngjī
+zh-CN,zh_0113,2,noun,home,appliances,سخان مياه,热水器,rèshuǐqì
+zh-CN,zh_0114,2,noun,home,appliances,غسالة صحون,洗碗机,xǐwǎnjī
+zh-CN,zh_0115,2,noun,home,appliances,محمصة خبز,烤面包机,kǎomiànbāojī
+zh-CN,zh_0116,2,noun,home,appliances,مقبس كهربائي,插座,chāzuò
+zh-CN,zh_0117,2,noun,home,appliances,جهاز تحكم عن بعد,遥控器,yáokòngqì
+zh-CN,zh_0118,2,noun,home,garden_clean,مجرفة قمامة,簸箕,bòji
+zh-CN,zh_0119,2,noun,home,garden_clean,سائل غسيل الصحون,洗洁精,xǐjiéjīng
+zh-CN,zh_0120,2,noun,home,garden_clean,سائل غسيل الملابس,洗衣液,xǐyīyè
+zh-CN,zh_0121,2,noun,home,garden_clean,منفضة غبار,鸡毛掸子,jīmáo dǎnzi
+zh-CN,zh_0122,2,noun,home,garden_clean,إبريق سقي النباتات,浇水壶,jiāoshuǐhú
+zh-CN,zh_0123,2,noun,home,garden_clean,خرطوم ماء,水管,shuǐguǎn
+zh-CN,zh_0124,2,noun,home,garden_clean,مقص تقليم,园艺剪,yuányìjiǎn
+zh-CN,zh_0125,2,noun,home,garden_clean,مجرفة حديقة,铲子,chǎnzi
+zh-CN,zh_0126,2,noun,home,garden_clean,كيس قمامة,垃圾袋,lājīdài
+zh-CN,zh_0127,3,noun,home,colors,فيروزي,青绿色,qīnglǜsè
+zh-CN,zh_0128,3,noun,home,colors,زيتوني,橄榄绿,gǎnlǎnlǜ
+zh-CN,zh_0129,3,adj,home,colors,شفاف,透明,tòumíng
+zh-CN,zh_0130,3,adj,home,colors,زاهي اللون,鲜艳,xiānyàn
+zh-CN,zh_0131,3,verb,home,colors,يبهت لونه,褪色,tuìsè
+zh-CN,zh_0132,3,phrase,home,colors,ألوان متناسقة,配色协调,pèisè xiétiáo
+zh-CN,zh_0133,3,phrase,home,colors,هذا اللون مريح للعين,这个颜色很护眼,zhège yánsè hěn hùyǎn
+zh-CN,zh_0134,3,phrase,home,colors,أحب الألوان الهادئة في المنزل,我喜欢家里柔和的颜色,wǒ xǐhuan jiālǐ róuhé de yánsè
+zh-CN,zh_0135,3,noun,home,kitchen,صينية تقديم,托盘,tuōpán
+zh-CN,zh_0136,3,noun,home,kitchen,برطمان محكم الإغلاق,密封罐,mìfēngguàn
+zh-CN,zh_0137,3,noun,home,kitchen,فوطة مطبخ,抹布,mābù
+zh-CN,zh_0138,3,noun,home,kitchen,غلاف حفظ الطعام,保鲜膜,bǎoxiānmó
+zh-CN,zh_0139,3,verb,home,kitchen,يطبخ الطعام,做饭,zuòfàn
+zh-CN,zh_0140,3,verb,home,kitchen,يغسل الأطباق,洗碗,xǐwǎn
+zh-CN,zh_0141,3,phrase,home,kitchen,من فضلك ناولني الملعقة,请把勺子递给我,qǐng bǎ sháozi dì gěi wǒ
+zh-CN,zh_0142,3,phrase,home,kitchen,المطبخ نظيف ومرتب اليوم,今天厨房很干净整洁,jīntiān chúfáng hěn gānjìng zhěngjié
+zh-CN,zh_0143,3,noun,home,bathroom,سجادة مانعة للانزلاق,防滑垫,fánghuádiàn
+zh-CN,zh_0144,3,noun,home,bathroom,حامل مناشف,毛巾架,máojīnjià
+zh-CN,zh_0145,3,noun,home,bathroom,خيط أسنان,牙线,yáxiàn
+zh-CN,zh_0146,3,noun,home,bathroom,غسول فم,漱口水,shùkǒushuǐ
+zh-CN,zh_0147,3,verb,home,bathroom,يغسل يديه,洗手,xǐshǒu
+zh-CN,zh_0148,3,verb,home,bathroom,ينظف أسنانه,刷牙,shuāyá
+zh-CN,zh_0149,3,phrase,home,bathroom,أغلق الصنبور جيداً بعد الاستخدام,用完水请关紧水龙头,yòngwán shuǐ qǐng guānjǐn shuǐlóngtóu
+zh-CN,zh_0150,3,phrase,home,bathroom,الأرضية مبللة فاحذر الانزلاق,地面湿滑请注意安全,dìmiàn shīhuá qǐng zhùyì ānquán
+zh-CN,zh_0151,3,noun,home,bedroom,خزانة أدراج,五斗柜,wǔdǒuguì
+zh-CN,zh_0152,3,noun,home,bedroom,غطاء لحاف,被套,bèitào
+zh-CN,zh_0153,3,noun,home,bedroom,صندوق تخزين,收纳箱,shōunàxiāng
+zh-CN,zh_0154,3,noun,home,bedroom,مفتاح الإضاءة,开关,kāiguān
+zh-CN,zh_0155,3,verb,home,bedroom,يرتب السرير,整理床铺,zhěnglǐ chuángpù
+zh-CN,zh_0156,3,verb,home,bedroom,يفتح النافذة للتهوية,开窗通风,kāichuāng tōngfēng
+zh-CN,zh_0157,3,phrase,home,bedroom,أطفئ المصباح قبل النوم,睡觉前请关掉台灯,shuìjiào qián qǐng guāndiào táidēng
+zh-CN,zh_0158,3,phrase,home,bedroom,أحب غرفة النوم الهادئة والمرتبة,我喜欢安静整洁的卧室,wǒ xǐhuan ānjìng zhěngjié de wòshì
+zh-CN,zh_0159,3,noun,home,living,مزهرية,花瓶,huāpíng
+zh-CN,zh_0160,3,noun,home,living,إطار صورة,相框,xiàngkuàng
+zh-CN,zh_0161,3,noun,home,living,مقعد صغير,凳子,dèngzi
+zh-CN,zh_0162,3,noun,home,living,مفتاح المنزل,钥匙,yàoshi
+zh-CN,zh_0163,3,noun,home,living,مقبض الباب,门把手,ménbǎshǒu
+zh-CN,zh_0164,3,phrase,home,living,تفضل بالجلوس في غرفة المعيشة,请在客厅坐一下,qǐng zài kètīng zuò yīxià
+zh-CN,zh_0165,3,phrase,home,living,أشعة الشمس تملأ الصالة صباحاً,早晨阳光照进客厅,zǎochén yángguāng zhàojìn kètīng
+zh-CN,zh_0166,3,phrase,home,living,ضع المفاتيح عند المدخل,请把钥匙放在玄关,qǐng bǎ yàoshi fàngzài xuánguān
+zh-CN,zh_0167,3,noun,home,appliances,منقي هواء,空气净化器,kōngqì jìnghuàqì
+zh-CN,zh_0168,3,noun,home,appliances,مرطب هواء,加湿器,jiāshīqì
+zh-CN,zh_0169,3,noun,home,appliances,مجفف ملابس,烘干机,hōnggānjī
+zh-CN,zh_0170,3,noun,home,appliances,شفاط مطبخ,抽油烟机,chōuyóuyānjī
+zh-CN,zh_0171,3,noun,home,appliances,وصلة كهرباء متعددة,插线板,chāxiànbǎn
+zh-CN,zh_0172,3,verb,home,appliances,يفصل القابس الكهربائي,拔掉插头,bádiào chātóu
+zh-CN,zh_0173,3,phrase,home,appliances,اضبط المكيف على درجة مريحة,请把空调调到舒适的温度,qǐng bǎ kōngtiáo tiáodào shūshì de wēndù
+zh-CN,zh_0174,3,phrase,home,appliances,تأكد من إطفاء الأجهزة قبل الخروج,出门前请检查电器是否关闭,chūmén qián qǐng jiǎnchá diànqì shìfǒu guānbì
+zh-CN,zh_0175,3,noun,home,garden_clean,منظف الزجاج,玻璃清洁剂,bōli qīngjiéjì
+zh-CN,zh_0176,3,noun,home,garden_clean,قفازات تنظيف,橡胶手套,xiàngjiāo shǒutào
+zh-CN,zh_0177,3,noun,home,garden_clean,سماد عضوي,有机肥,yǒujīféi
+zh-CN,zh_0178,3,noun,home,garden_clean,فرز النفايات,垃圾分类,lājī fēnlèi
+zh-CN,zh_0179,3,verb,home,garden_clean,يكنس الأرضية,扫地,sǎodì
+zh-CN,zh_0180,3,verb,home,garden_clean,يمسح الأرضية,拖地,tuōdì
+zh-CN,zh_0181,3,phrase,home,garden_clean,حان وقت سقي الزهور في الحديقة,该给花园里的花浇水了,gāi gěi huāyuán lǐ de huā jiāoshuǐ le
+zh-CN,zh_0182,3,phrase,home,garden_clean,لننظف المنزل معاً في عطلة نهاية الأسبوع,我们周末一起打扫卫生吧,wǒmen zhōumò yīqǐ dǎsǎo wèishēng ba
+zh-CN,zh_0183,1,noun,life,produce,تفاح,苹果,píngguǒ
+zh-CN,zh_0184,1,noun,life,produce,موز,香蕉,xiāngjiāo
+zh-CN,zh_0185,1,noun,life,produce,برتقال,橙子,chéngzi
+zh-CN,zh_0186,1,noun,life,produce,عنب,葡萄,pútao
+zh-CN,zh_0187,1,noun,life,produce,بطيخ,西瓜,xīguā
+zh-CN,zh_0188,1,noun,life,produce,طماطم,西红柿,xīhóngshì
+zh-CN,zh_0189,1,noun,life,produce,خيار,黄瓜,huángguā
+zh-CN,zh_0190,1,noun,life,produce,بطاطا,土豆,tǔdòu
+zh-CN,zh_0191,1,noun,life,produce,جزر,胡萝卜,húluóbo
+zh-CN,zh_0192,1,noun,life,produce,بصل,洋葱,yángcōng
+zh-CN,zh_0193,1,noun,life,food_drink,ماء,水,shuǐ
+zh-CN,zh_0194,1,noun,life,food_drink,حليب,牛奶,niúnǎi
+zh-CN,zh_0195,1,noun,life,food_drink,شاي,茶,chá
+zh-CN,zh_0196,1,noun,life,food_drink,عصير,果汁,guǒzhī
+zh-CN,zh_0197,1,noun,life,food_drink,خبز,面包,miànbāo
+zh-CN,zh_0198,1,noun,life,food_drink,أرز مطبوخ,米饭,mǐfàn
+zh-CN,zh_0199,1,noun,life,food_drink,معكرونة,面条,miàntiáo
+zh-CN,zh_0200,1,noun,life,food_drink,بيض,鸡蛋,jīdàn
+zh-CN,zh_0201,1,noun,life,food_drink,لحم دجاج,鸡肉,jīròu
+zh-CN,zh_0202,1,noun,life,food_drink,سمك,鱼肉,yúròu
+zh-CN,zh_0203,1,noun,life,spices_grains,ملح,盐,yán
+zh-CN,zh_0204,1,noun,life,spices_grains,سكر,糖,táng
+zh-CN,zh_0205,1,noun,life,spices_grains,زيت طبخ,食用油,shíyòngyóu
+zh-CN,zh_0206,1,noun,life,spices_grains,خل,醋,cù
+zh-CN,zh_0207,1,noun,life,spices_grains,ثوم,大蒜,dàsuàn
+zh-CN,zh_0208,1,noun,life,spices_grains,زنجبيل,生姜,shēngjiāng
+zh-CN,zh_0209,1,noun,life,spices_grains,أرز غير مطبوخ,大米,dàmǐ
+zh-CN,zh_0210,1,noun,life,spices_grains,دقيق قمح,面粉,miànfěn
+zh-CN,zh_0211,1,noun,life,spices_grains,فول صويا,黄豆,huángdòu
+zh-CN,zh_0212,1,noun,life,spices_grains,ذرة,玉米,yùmǐ
+zh-CN,zh_0213,1,noun,life,clothing,ملابس,衣服,yīfu
+zh-CN,zh_0214,1,noun,life,clothing,قميص,衬衫,chènshān
+zh-CN,zh_0215,1,noun,life,clothing,بنطال,裤子,kùzi
+zh-CN,zh_0216,1,noun,life,clothing,معطف,外套,wàitào
+zh-CN,zh_0217,1,noun,life,clothing,فستان,连衣裙,liányīqún
+zh-CN,zh_0218,1,noun,life,clothing,حذاء,鞋子,xiézi
+zh-CN,zh_0219,1,noun,life,clothing,جوارب,袜子,wàzi
+zh-CN,zh_0220,1,noun,life,clothing,قبعة,帽子,màozi
+zh-CN,zh_0221,1,noun,life,clothing,وشاح,围巾,wéijīn
+zh-CN,zh_0222,1,noun,life,clothing,نظارة,眼镜,yǎnjìng
+zh-CN,zh_0223,1,noun,life,body_health,رأس,头,tóu
+zh-CN,zh_0224,1,noun,life,body_health,عين,眼睛,yǎnjing
+zh-CN,zh_0225,1,noun,life,body_health,أذن,耳朵,ěrduo
+zh-CN,zh_0226,1,noun,life,body_health,أنف,鼻子,bízi
+zh-CN,zh_0227,1,noun,life,body_health,فم,嘴巴,zuǐba
+zh-CN,zh_0228,1,noun,life,body_health,يد,手,shǒu
+zh-CN,zh_0229,1,noun,life,body_health,قدم,脚,jiǎo
+zh-CN,zh_0230,1,noun,life,body_health,قلب,心脏,xīnzàng
+zh-CN,zh_0231,1,noun,life,body_health,صحة,健康,jiànkāng
+zh-CN,zh_0232,1,noun,life,body_health,دواء,药,yào
+zh-CN,zh_0233,1,noun,life,family_traits,أب,爸爸,bàba
+zh-CN,zh_0234,1,noun,life,family_traits,أم,妈妈,māma
+zh-CN,zh_0235,1,noun,life,family_traits,أخ أكبر,哥哥,gēge
+zh-CN,zh_0236,1,noun,life,family_traits,أخ أصغر,弟弟,dìdi
+zh-CN,zh_0237,1,noun,life,family_traits,أخت كبرى,姐姐,jiějie
+zh-CN,zh_0238,1,noun,life,family_traits,أخت صغرى,妹妹,mèimei
+zh-CN,zh_0239,1,noun,life,family_traits,جد,爷爷,yéye
+zh-CN,zh_0240,1,noun,life,family_traits,جدة,奶奶,nǎinai
+zh-CN,zh_0241,1,noun,life,family_traits,عائلة,家庭,jiātíng
+zh-CN,zh_0242,1,noun,life,family_traits,صديق,朋友,péngyou
+zh-CN,zh_0243,2,noun,life,produce,فراولة,草莓,cǎoméi
+zh-CN,zh_0244,2,noun,life,produce,خوخ,桃子,táozi
+zh-CN,zh_0245,2,noun,life,produce,كمثرى,梨,lí
+zh-CN,zh_0246,2,noun,life,produce,مانجو,芒果,mángguǒ
+zh-CN,zh_0247,2,noun,life,produce,رمان,石榴,shíliu
+zh-CN,zh_0248,2,noun,life,produce,باذنجان,茄子,qiézi
+zh-CN,zh_0249,2,noun,life,produce,سبانخ,菠菜,bōcài
+zh-CN,zh_0250,2,noun,life,produce,ملفوف,卷心菜,juǎnxīncài
+zh-CN,zh_0251,2,noun,life,produce,فلفل أخضر,青椒,qīngjiāo
+zh-CN,zh_0252,2,noun,life,produce,فطر,蘑菇,mógu
+zh-CN,zh_0253,2,noun,life,food_drink,قهوة,咖啡,kāfēi
+zh-CN,zh_0254,2,noun,life,food_drink,زبادي,酸奶,suānnǎi
+zh-CN,zh_0255,2,noun,life,food_drink,جبن,奶酪,nǎilào
+zh-CN,zh_0256,2,noun,life,food_drink,عسل,蜂蜜,fēngmì
+zh-CN,zh_0257,2,noun,life,food_drink,لحم بقر,牛肉,niúròu
+zh-CN,zh_0258,2,noun,life,food_drink,لحم غنم,羊肉,yángròu
+zh-CN,zh_0259,2,noun,life,food_drink,حساء,汤,tāng
+zh-CN,zh_0260,2,noun,life,food_drink,سلطة خضار,蔬菜沙拉,shūcài shālā
+zh-CN,zh_0261,2,noun,life,food_drink,فطور,早餐,zǎocān
+zh-CN,zh_0262,2,noun,life,food_drink,عشاء,晚餐,wǎncān
+zh-CN,zh_0263,2,noun,life,spices_grains,فلفل أسود,黑胡椒,hēihújiāo
+zh-CN,zh_0264,2,noun,life,spices_grains,قرفة,肉桂,ròuguì
+zh-CN,zh_0265,2,noun,life,spices_grains,كمون,孜然,zīrán
+zh-CN,zh_0266,2,noun,life,spices_grains,كركم,姜黄,jiānghuáng
+zh-CN,zh_0267,2,noun,life,spices_grains,صلصة صويا,酱油,jiàngyóu
+zh-CN,zh_0268,2,noun,life,spices_grains,زيت زيتون,橄榄油,gǎnlǎnyóu
+zh-CN,zh_0269,2,noun,life,spices_grains,شوفان,燕麦,yànmài
+zh-CN,zh_0270,2,noun,life,spices_grains,عدس,扁豆,biǎndòu
+zh-CN,zh_0271,2,noun,life,spices_grains,حمص,鹰嘴豆,yīngzuǐdòu
+zh-CN,zh_0272,2,noun,life,spices_grains,سمسم,芝麻,zhīma
+zh-CN,zh_0273,2,noun,life,clothing,سترة صوفية,毛衣,máoyī
+zh-CN,zh_0274,2,noun,life,clothing,تيشيرت,短袖衫,duǎnxiùshān
+zh-CN,zh_0275,2,noun,life,clothing,بنطال جينز,牛仔裤,niúzǎikù
+zh-CN,zh_0276,2,noun,life,clothing,ملابس رياضية,运动服,yùndòngfú
+zh-CN,zh_0277,2,noun,life,clothing,حذاء رياضي,运动鞋,yùndòngxié
+zh-CN,zh_0278,2,noun,life,clothing,معطف مطر,雨衣,yǔyī
+zh-CN,zh_0279,2,noun,life,clothing,قفازات شتوية,手套,shǒutào
+zh-CN,zh_0280,2,noun,life,clothing,حزام,皮带,pídài
+zh-CN,zh_0281,2,noun,life,clothing,جيب الملابس,口袋,kǒudài
+zh-CN,zh_0282,2,noun,life,clothing,زر قميص,纽扣,niǔkòu
+zh-CN,zh_0283,2,noun,life,body_health,شعر,头发,tóufa
+zh-CN,zh_0284,2,noun,life,body_health,أسنان,牙齿,yáchǐ
+zh-CN,zh_0285,2,noun,life,body_health,رقبة,脖子,bózi
+zh-CN,zh_0286,2,noun,life,body_health,كتف,肩膀,jiānbǎng
+zh-CN,zh_0287,2,noun,life,body_health,معدة,胃,wèi
+zh-CN,zh_0288,2,noun,life,body_health,ركبة,膝盖,xīgài
+zh-CN,zh_0289,2,noun,life,body_health,حمى,发烧,fāshāo
+zh-CN,zh_0290,2,noun,life,body_health,زكام,感冒,gǎnmào
+zh-CN,zh_0291,2,noun,life,body_health,صداع,头痛,tóutòng
+zh-CN,zh_0292,2,noun,life,body_health,مستشفى,医院,yīyuàn
+zh-CN,zh_0293,2,noun,life,family_traits,ابن,儿子,érzi
+zh-CN,zh_0294,2,noun,life,family_traits,ابنة,女儿,nǚér
+zh-CN,zh_0295,2,noun,life,family_traits,عم,叔叔,shūshu
+zh-CN,zh_0296,2,noun,life,family_traits,خالة,阿姨,āyí
+zh-CN,zh_0297,2,noun,life,family_traits,جار,邻居,línjū
+zh-CN,zh_0298,2,adj,life,family_traits,طيب القلب,善良,shànliáng
+zh-CN,zh_0299,2,adj,life,family_traits,صادق,诚实,chéngshí
+zh-CN,zh_0300,2,adj,life,family_traits,صبور,有耐心,yǒu nàixīn
+zh-CN,zh_0301,2,adj,life,family_traits,مجتهد,勤奋,qínfèn
+zh-CN,zh_0302,2,adj,life,family_traits,مهذب,有礼貌,yǒu lǐmào
+zh-CN,zh_0303,3,noun,life,produce,كيوي,猕猴桃,míhóutáo
+zh-CN,zh_0304,3,noun,life,produce,تين,无花果,wúhuāguǒ
+zh-CN,zh_0305,3,noun,life,produce,قرنبيط أخضر,西兰花,xīlánhuā
+zh-CN,zh_0306,3,noun,life,produce,يقطين,南瓜,nánguā
+zh-CN,zh_0307,3,adj,life,produce,طازج,新鲜,xīnxiān
+zh-CN,zh_0308,3,adj,life,produce,ناضج,成熟,chéngshú
+zh-CN,zh_0309,3,verb,life,produce,يقشر الفاكهة,削皮,xuēpí
+zh-CN,zh_0310,3,verb,life,produce,يغسل الخضار,洗菜,xǐcài
+zh-CN,zh_0311,3,phrase,life,produce,هذه الفاكهة طازجة وحلوة جداً,这种水果很新鲜很甜,zhè zhǒng shuǐguǒ hěn xīnxiān hěn tián
+zh-CN,zh_0312,3,phrase,life,produce,تناول الخضار كل يوم مفيد للجسم,每天吃蔬菜对身体好,měitiān chī shūcài duì shēntǐ hǎo
+zh-CN,zh_0313,3,noun,life,food_drink,غداء,午餐,wǔcān
+zh-CN,zh_0314,3,noun,life,food_drink,وجبة خفيفة,点心,diǎnxin
+zh-CN,zh_0315,3,noun,life,food_drink,طعام حلال,清真食品,qīngzhēn shípǐn
+zh-CN,zh_0316,3,noun,life,food_drink,قائمة الطعام,菜单,càidān
+zh-CN,zh_0317,3,adj,life,food_drink,لذيذ,美味,měiwèi
+zh-CN,zh_0318,3,adj,life,food_drink,متوازن غذائياً,营养均衡,yíngyǎng jūnhéng
+zh-CN,zh_0319,3,verb,life,food_drink,يشرب ماء دافئاً,喝温水,hē wēnshuǐ
+zh-CN,zh_0320,3,verb,life,food_drink,يطلب الطعام,点菜,diǎncài
+zh-CN,zh_0321,3,phrase,life,food_drink,من فضلك أريد كوباً من الماء الدافئ,请给我一杯温水,qǐng gěi wǒ yī bēi wēnshuǐ
+zh-CN,zh_0322,3,phrase,life,food_drink,الفطور الصحي يمنحنا نشاطاً طوال اليوم,健康的早餐让我们精力充沛,jiànkāng de zǎocān ràng wǒmen jīnglì chōngpèi
+zh-CN,zh_0323,3,noun,life,spices_grains,نعناع,薄荷,bòhe
+zh-CN,zh_0324,3,noun,life,spices_grains,كزبرة,香菜,xiāngcài
+zh-CN,zh_0325,3,noun,life,spices_grains,هيل,豆蔻,dòukòu
+zh-CN,zh_0326,3,noun,life,spices_grains,شعير,大麦,dàmài
+zh-CN,zh_0327,3,noun,life,spices_grains,حبوب كاملة,全谷物,quángǔwù
+zh-CN,zh_0328,3,adj,life,spices_grains,عطري الرائحة,清香,qīngxiāng
+zh-CN,zh_0329,3,verb,life,spices_grains,يتبل الطعام,调味,tiáowèi
+zh-CN,zh_0330,3,verb,life,spices_grains,ينقع الحبوب في الماء,浸泡谷物,jìnpào gǔwù
+zh-CN,zh_0331,3,phrase,life,spices_grains,أضف قليلاً من الملح والكمون,加一点盐和孜然,jiā yīdiǎn yán hé zīrán
+zh-CN,zh_0332,3,phrase,life,spices_grains,احفظ التوابل في مكان جاف وبارد,请把香料放在阴凉干燥处,qǐng bǎ xiāngliào fàngzài yīnliáng gānzào chù
+zh-CN,zh_0333,3,noun,life,clothing,مقاس الملابس,尺码,chǐmǎ
+zh-CN,zh_0334,3,noun,life,clothing,قماش قطني,纯棉面料,chúnmián miànliào
+zh-CN,zh_0335,3,noun,life,clothing,سحاب الملابس,拉链,lāliàn
+zh-CN,zh_0336,3,noun,life,clothing,معطف شتوي,冬装外套,dōngzhuāng wàitào
+zh-CN,zh_0337,3,adj,life,clothing,مريح في اللبس,合身舒适,héshēn shūshì
+zh-CN,zh_0338,3,adj,life,clothing,دافئ,保暖,bǎonuǎn
+zh-CN,zh_0339,3,verb,life,clothing,يقيس الملابس,试穿,shìchuān
+zh-CN,zh_0340,3,verb,life,clothing,يطوي الملابس,叠衣服,dié yīfu
+zh-CN,zh_0341,3,phrase,life,clothing,هل يوجد مقاس أكبر من هذا القميص,这件衬衫有大一号的吗,zhè jiàn chènshān yǒu dà yī hào de ma
+zh-CN,zh_0342,3,phrase,life,clothing,ارتدِ معطفاً دافئاً لأن الجو بارد اليوم,今天天气冷请穿上暖和的外套,jīntiān tiānqì lěng qǐng chuānshàng nuǎnhuo de wàitào
+zh-CN,zh_0343,3,noun,life,body_health,جهاز المناعة,免疫力,miǎnyìlì
+zh-CN,zh_0344,3,noun,life,body_health,فحص طبي,体检,tǐjiǎn
+zh-CN,zh_0345,3,noun,life,body_health,وصفة طبية,处方,chǔfāng
+zh-CN,zh_0346,3,noun,life,body_health,إسعافات أولية,急救,jíjiù
+zh-CN,zh_0347,3,verb,life,body_health,يتنفس بعمق,深呼吸,shēnhūxī
+zh-CN,zh_0348,3,verb,life,body_health,يمارس الرياضة,锻炼身体,duànliàn shēntǐ
+zh-CN,zh_0349,3,verb,life,body_health,يرتاح جيداً,好好休息,hǎohǎo xiūxi
+zh-CN,zh_0350,3,verb,life,body_health,يتعافى بسرعة,早日康复,zǎorì kāngfù
+zh-CN,zh_0351,3,phrase,life,body_health,النوم المبكر مهم جداً لصحة الجسم,早睡对身体健康非常重要,zǎoshuì duì shēntǐ jiànkāng fēicháng zhòngyào
+zh-CN,zh_0352,3,phrase,life,body_health,اشرب الكثير من الماء واسترح جيداً,请多喝水并好好休息,qǐng duō hēshuǐ bìng hǎohǎo xiūxi
+zh-CN,zh_0353,3,noun,life,family_traits,صلة الرحم,亲情,qīnqíng
+zh-CN,zh_0354,3,noun,life,family_traits,الاحترام المتبادل,互相尊重,hùxiāng zūnzhòng
+zh-CN,zh_0355,3,noun,life,family_traits,روح التعاون,合作精神,hézuò jīngshén
+zh-CN,zh_0356,3,adj,life,family_traits,متواضع,谦虚,qiānxū
+zh-CN,zh_0357,3,adj,life,family_traits,مسؤول,有责任心,yǒu zérènxīn
+zh-CN,zh_0358,3,adj,life,family_traits,متفائل,乐观,lèguān
+zh-CN,zh_0359,3,verb,life,family_traits,يساعد والديه,帮父母做事,bāng fùmǔ zuòshì
+zh-CN,zh_0360,3,verb,life,family_traits,يحترم الكبار,尊敬长辈,zūnjìng zhǎngbèi
+zh-CN,zh_0361,3,phrase,life,family_traits,أحب قضاء الوقت مع عائلتي,我喜欢和家人在一起,wǒ xǐhuan hé jiārén zài yīqǐ
+zh-CN,zh_0362,3,phrase,life,family_traits,نحن نساعد بعضنا البعض في المنزل,我们在家里互相帮助,wǒmen zài jiālǐ hùxiāng bāngzhù
+zh-CN,zh_0363,1,noun,study,school,مدرسة,学校,xuéxiào
+zh-CN,zh_0364,1,noun,study,school,صف دراسي,教室,jiàoshì
+zh-CN,zh_0365,1,noun,study,school,معلم,老师,lǎoshī
+zh-CN,zh_0366,1,noun,study,school,طالب,学生,xuésheng
+zh-CN,zh_0367,1,noun,study,school,كتاب,书,shū
+zh-CN,zh_0368,1,noun,study,school,دفتر,笔记本,bǐjìběn
+zh-CN,zh_0369,1,noun,study,school,قلم حبر,钢笔,gāngbǐ
+zh-CN,zh_0370,1,noun,study,school,قلم رصاص,铅笔,qiānbǐ
+zh-CN,zh_0371,1,noun,study,school,ممحاة,橡皮,xiàngpí
+zh-CN,zh_0372,1,noun,study,school,حقيبة مدرسية,书包,shūbāo
+zh-CN,zh_0373,1,noun,study,office_tech,حاسوب,电脑,diànnǎo
+zh-CN,zh_0374,1,noun,study,office_tech,هاتف,手机,shǒujī
+zh-CN,zh_0375,1,noun,study,office_tech,شاشة,屏幕,píngmù
+zh-CN,zh_0376,1,noun,study,office_tech,لوحة مفاتيح,键盘,jiànpán
+zh-CN,zh_0377,1,noun,study,office_tech,فأرة حاسوب,鼠标,shǔbiāo
+zh-CN,zh_0378,1,noun,study,office_tech,طابعة,打印机,dǎyìnjī
+zh-CN,zh_0379,1,noun,study,office_tech,ملف,文件,wénjiàn
+zh-CN,zh_0380,1,noun,study,office_tech,إنترنت,网络,wǎngluò
+zh-CN,zh_0381,1,noun,study,office_tech,مكتب,办公室,bàngōngshì
+zh-CN,zh_0382,1,noun,study,office_tech,ورقة,纸,zhǐ
+zh-CN,zh_0383,1,num,study,numbers_time,واحد,一,yī
+zh-CN,zh_0384,1,num,study,numbers_time,اثنان,二,èr
+zh-CN,zh_0385,1,num,study,numbers_time,ثلاثة,三,sān
+zh-CN,zh_0386,1,num,study,numbers_time,أربعة,四,sì
+zh-CN,zh_0387,1,num,study,numbers_time,خمسة,五,wǔ
+zh-CN,zh_0388,1,num,study,numbers_time,عشرة,十,shí
+zh-CN,zh_0389,1,noun,study,numbers_time,ساعة زمنية,小时,xiǎoshí
+zh-CN,zh_0390,1,noun,study,numbers_time,دقيقة,分钟,fēnzhōng
+zh-CN,zh_0391,1,noun,study,numbers_time,اليوم,今天,jīntiān
+zh-CN,zh_0392,1,noun,study,numbers_time,غداً,明天,míngtiān
+zh-CN,zh_0393,1,verb,study,core_verbs,يقرأ,读,dú
+zh-CN,zh_0394,1,verb,study,core_verbs,يكتب,写,xiě
+zh-CN,zh_0395,1,verb,study,core_verbs,يستمع,听,tīng
+zh-CN,zh_0396,1,verb,study,core_verbs,يتحدث,说,shuō
+zh-CN,zh_0397,1,verb,study,core_verbs,ينظر,看,kàn
+zh-CN,zh_0398,1,verb,study,core_verbs,يتعلم,学,xué
+zh-CN,zh_0399,1,verb,study,core_verbs,يذهب,去,qù
+zh-CN,zh_0400,1,verb,study,core_verbs,يأتي,来,lái
+zh-CN,zh_0401,1,verb,study,core_verbs,يعمل,做,zuò
+zh-CN,zh_0402,1,verb,study,core_verbs,يفهم,懂,dǒng
+zh-CN,zh_0403,1,pron,study,grammar_links,أنا,我,wǒ
+zh-CN,zh_0404,1,pron,study,grammar_links,أنت,你,nǐ
+zh-CN,zh_0405,1,pron,study,grammar_links,هو أو هي,他,tā
+zh-CN,zh_0406,1,pron,study,grammar_links,نحن,我们,wǒmen
+zh-CN,zh_0407,1,pron,study,grammar_links,هذا,这,zhè
+zh-CN,zh_0408,1,pron,study,grammar_links,ذاك,那,nà
+zh-CN,zh_0409,1,conj,study,grammar_links,و,和,hé
+zh-CN,zh_0410,1,adv,study,grammar_links,أيضاً,也,yě
+zh-CN,zh_0411,1,adv,study,grammar_links,جداً,很,hěn
+zh-CN,zh_0412,1,adv,study,grammar_links,لا أو ليس,不,bù
+zh-CN,zh_0413,1,phrase,study,polite_phrases,مرحباً,你好,nǐhǎo
+zh-CN,zh_0414,1,phrase,study,polite_phrases,شكراً لك,谢谢,xièxie
+zh-CN,zh_0415,1,phrase,study,polite_phrases,عفواً أو لا شكر على واجب,不客气,bù kèqi
+zh-CN,zh_0416,1,phrase,study,polite_phrases,من فضلك,请,qǐng
+zh-CN,zh_0417,1,phrase,study,polite_phrases,آسف,对不起,duìbuqǐ
+zh-CN,zh_0418,1,phrase,study,polite_phrases,لا بأس,没关系,méi guānxi
+zh-CN,zh_0419,1,phrase,study,polite_phrases,إلى اللقاء,再见,zàijiàn
+zh-CN,zh_0420,1,phrase,study,polite_phrases,صباح الخير,早上好,zǎoshang hǎo
+zh-CN,zh_0421,1,phrase,study,polite_phrases,تصبح على خير,晚安,wǎn'ān
+zh-CN,zh_0422,1,phrase,study,polite_phrases,حسناً,好的,hǎo de
+zh-CN,zh_0423,2,noun,study,school,درس,课文,kèwén
+zh-CN,zh_0424,2,noun,study,school,واجب منزلي,作业,zuòyè
+zh-CN,zh_0425,2,noun,study,school,امتحان,考试,kǎoshì
+zh-CN,zh_0426,2,noun,study,school,مكتبة,图书馆,túshūguǎn
+zh-CN,zh_0427,2,noun,study,school,قاموس,词典,cídiǎn
+zh-CN,zh_0428,2,noun,study,school,سبورة,黑板,hēibǎn
+zh-CN,zh_0429,2,noun,study,school,مسطرة,尺子,chǐzi
+zh-CN,zh_0430,2,noun,study,school,مادة دراسية,科目,kēmù
+zh-CN,zh_0431,2,noun,study,school,فصل دراسي,学期,xuéqī
+zh-CN,zh_0432,2,noun,study,school,زميل دراسة,同学,tóngxué
+zh-CN,zh_0433,2,noun,study,office_tech,بريد إلكتروني,电子邮件,diànzǐ yóujiàn
+zh-CN,zh_0434,2,noun,study,office_tech,كلمة مرور,密码,mìmǎ
+zh-CN,zh_0435,2,noun,study,office_tech,تطبيق,应用程序,yìngyòng chéngxù
+zh-CN,zh_0436,2,noun,study,office_tech,مجلد,文件夹,wénjiànjiā
+zh-CN,zh_0437,2,noun,study,office_tech,اجتماع,会议,huìyì
+zh-CN,zh_0438,2,noun,study,office_tech,تقرير,报告,bàogào
+zh-CN,zh_0439,2,noun,study,office_tech,خطة عمل,计划,jìhuà
+zh-CN,zh_0440,2,noun,study,office_tech,نسخة احتياطية,备份,bèifèn
+zh-CN,zh_0441,2,noun,study,office_tech,تحديث,更新,gēngxīn
+zh-CN,zh_0442,2,noun,study,office_tech,اتصال لاسلكي,无线网络,wúxiàn wǎngluò
+zh-CN,zh_0443,2,num,study,numbers_time,ستة,六,liù
+zh-CN,zh_0444,2,num,study,numbers_time,سبعة,七,qī
+zh-CN,zh_0445,2,num,study,numbers_time,ثمانية,八,bā
+zh-CN,zh_0446,2,num,study,numbers_time,تسعة,九,jiǔ
+zh-CN,zh_0447,2,num,study,numbers_time,مائة,一百,yībǎi
+zh-CN,zh_0448,2,noun,study,numbers_time,أمس,昨天,zuótiān
+zh-CN,zh_0449,2,noun,study,numbers_time,أسبوع,星期,xīngqī
+zh-CN,zh_0450,2,noun,study,numbers_time,شهر,月份,yuèfèn
+zh-CN,zh_0451,2,noun,study,numbers_time,سنة,年份,niánfèn
+zh-CN,zh_0452,2,noun,study,numbers_time,موعد,时间,shíjiān
+zh-CN,zh_0453,2,verb,study,core_verbs,يراجع,复习,fùxí
+zh-CN,zh_0454,2,verb,study,core_verbs,يحفظ,背诵,bèisòng
+zh-CN,zh_0455,2,verb,study,core_verbs,يسأل,问,wèn
+zh-CN,zh_0456,2,verb,study,core_verbs,يجيب,回答,huídá
+zh-CN,zh_0457,2,verb,study,core_verbs,يشرح,解释,jiěshì
+zh-CN,zh_0458,2,verb,study,core_verbs,يخطط,规划,guīhuà
+zh-CN,zh_0459,2,verb,study,core_verbs,يركز,集中注意力,jízhōng zhùyìlì
+zh-CN,zh_0460,2,verb,study,core_verbs,يحفظ ملفاً,保存,bǎocún
+zh-CN,zh_0461,2,verb,study,core_verbs,يبحث,查找,cházhǎo
+zh-CN,zh_0462,2,verb,study,core_verbs,يستمر,继续,jìxù
+zh-CN,zh_0463,2,conj,study,grammar_links,لكن,但是,dànshì
+zh-CN,zh_0464,2,conj,study,grammar_links,لأن,因为,yīnwèi
+zh-CN,zh_0465,2,conj,study,grammar_links,لذلك,所以,suǒyǐ
+zh-CN,zh_0466,2,conj,study,grammar_links,إذا أو لو,如果,rúguǒ
+zh-CN,zh_0467,2,conj,study,grammar_links,أو,或者,huòzhě
+zh-CN,zh_0468,2,adv,study,grammar_links,دائماً,总是,zǒngshì
+zh-CN,zh_0469,2,adv,study,grammar_links,أحياناً,有时,yǒushí
+zh-CN,zh_0470,2,adv,study,grammar_links,معاً,一起,yīqǐ
+zh-CN,zh_0471,2,adv,study,grammar_links,فقط,只,zhǐ
+zh-CN,zh_0472,2,prep,study,grammar_links,في أو داخل,在,zài
+zh-CN,zh_0473,2,phrase,study,polite_phrases,تفضل بالدخول,请进,qǐng jìn
+zh-CN,zh_0474,2,phrase,study,polite_phrases,أهلاً بك,欢迎,huānyíng
+zh-CN,zh_0475,2,phrase,study,polite_phrases,هل يمكنك مساعدتي,请问你能帮我吗,qǐngwèn nǐ néng bāng wǒ ma
+zh-CN,zh_0476,2,phrase,study,polite_phrases,تحدث ببطء من فضلك,请说慢一点,qǐng shuō màn yīdiǎn
+zh-CN,zh_0477,2,phrase,study,polite_phrases,أراك غداً,明天见,míngtiān jiàn
+zh-CN,zh_0478,2,phrase,study,polite_phrases,عمل رائع,做得好,zuò de hǎo
+zh-CN,zh_0479,2,phrase,study,polite_phrases,بالتوفيق,祝你好运,zhù nǐ hǎoyùn
+zh-CN,zh_0480,2,phrase,study,polite_phrases,عذراً على الإزعاج,不好意思打扰了,bù hǎoyìsi dǎrǎo le
+zh-CN,zh_0481,2,phrase,study,polite_phrases,أنا موافق,我同意,wǒ tóngyì
+zh-CN,zh_0482,2,phrase,study,polite_phrases,شكراً على المساعدة,谢谢你的帮助,xièxie nǐ de bāngzhù
+zh-CN,zh_0483,3,noun,study,school,منهج دراسي,课程,kèchéng
+zh-CN,zh_0484,3,noun,study,school,مهارة التعلم,学习能力,xuéxí nénglì
+zh-CN,zh_0485,3,noun,study,school,ملاحظة دراسية,笔记,bǐjì
+zh-CN,zh_0486,3,noun,study,school,ملخص الدرس,总结,zǒngjié
+zh-CN,zh_0487,3,verb,study,school,يدون الملاحظات,记笔记,jì bǐjì
+zh-CN,zh_0488,3,verb,study,school,يلخص المحتوى,整理重点,zhěnglǐ zhòngdiǎn
+zh-CN,zh_0489,3,adj,study,school,منظم,有条理,yǒu tiáolǐ
+zh-CN,zh_0490,3,adj,study,school,واضح ومفهوم,清晰易懂,qīngxī yìdǒng
+zh-CN,zh_0491,3,phrase,study,school,المراجعة المنتظمة تقوي الذاكرة,定期复习能巩固记忆,dìngqī fùxí néng gǒnggù jìyì
+zh-CN,zh_0492,3,phrase,study,school,أنهيت قراءة الفصل الدراسي اليوم,我今天读完了这一章,wǒ jīntiān dúwán le zhè yī zhāng
+zh-CN,zh_0493,3,noun,study,office_tech,قاعدة بيانات,数据库,shùjùkù
+zh-CN,zh_0494,3,noun,study,office_tech,كفاءة العمل,工作效率,gōngzuò xiàolǜ
+zh-CN,zh_0495,3,noun,study,office_tech,إعدادات النظام,系统设置,xìtǒng shèzhì
+zh-CN,zh_0496,3,noun,study,office_tech,واجهة المستخدم,用户界面,yònghù jièmiàn
+zh-CN,zh_0497,3,verb,study,office_tech,ينظم الملفات,整理文件,zhěnglǐ wénjiàn
+zh-CN,zh_0498,3,verb,study,office_tech,يتحقق من البيانات,核对数据,héduì shùjù
+zh-CN,zh_0499,3,adj,study,office_tech,سريع الاستجابة,响应迅速,xiǎngyìng xùnsù
+zh-CN,zh_0500,3,adj,study,office_tech,موثوق,可靠,kěkào
+zh-CN,zh_0501,3,phrase,study,office_tech,احفظ نسخة احتياطية من ملفاتك بانتظام,请定期备份重要文件,qǐng dìngqī bèifèn zhòngyào wénjiàn
+zh-CN,zh_0502,3,phrase,study,office_tech,الأدوات المنظمة ترفع كفاءة الإنجاز,有序的工具能提高效率,yǒuxù de gōngjù néng tígāo xiàolǜ
+zh-CN,zh_0503,3,num,study,numbers_time,ألف,一千,yīqiān
+zh-CN,zh_0504,3,num,study,numbers_time,عشرة آلاف,一万,yīwàn
+zh-CN,zh_0505,3,noun,study,numbers_time,جدول زمني,时间表,shíjiānbiǎo
+zh-CN,zh_0506,3,noun,study,numbers_time,إدارة الوقت,时间管理,shíjiān guǎnlǐ
+zh-CN,zh_0507,3,adv,study,numbers_time,في الموعد المحدد,准时,zhǔnshí
+zh-CN,zh_0508,3,adv,study,numbers_time,تدريجياً,逐步,zhúbù
+zh-CN,zh_0509,3,verb,study,numbers_time,ينظم الوقت,安排时间,ānpái shíjiān
+zh-CN,zh_0510,3,verb,study,numbers_time,يلتزم بالموعد,按时完成,ànshí wánchéng
+zh-CN,zh_0511,3,phrase,study,numbers_time,تخصيص وقت يومي للدراسة يحقق تقدماً ثابتاً,每天安排固定时间学习能稳步进步,měitiān ānpái gùdìng shíjiān xuéxí néng wěnbù jìnbù
+zh-CN,zh_0512,3,phrase,study,numbers_time,خطوات صغيرة يومية تصنع فرقاً كبيراً,每天一小步积累成大进步,měitiān yī xiǎobù jīlěi chéng dà jìnbù
+zh-CN,zh_0513,3,verb,study,core_verbs,يطبق عملياً,实践,shíjiàn
+zh-CN,zh_0514,3,verb,study,core_verbs,يكتشف,发现,fāxiàn
+zh-CN,zh_0515,3,verb,study,core_verbs,يقارن,比较,bǐjiào
+zh-CN,zh_0516,3,verb,study,core_verbs,يحسن,改进,gǎijìn
+zh-CN,zh_0517,3,verb,study,core_verbs,يتغلب على الصعوبات,克服困难,kèfú kùnnan
+zh-CN,zh_0518,3,verb,study,core_verbs,يحقق هدفاً,实现目标,shíxiàn mùbiāo
+zh-CN,zh_0519,3,adj,study,core_verbs,واضح,明确,míngquè
+zh-CN,zh_0520,3,adj,study,core_verbs,مفيد,有用,yǒuyòng
+zh-CN,zh_0521,3,phrase,study,core_verbs,الفهم العميق أفضل من الحفظ السطحي,深入理解比死记硬背更好,shēnrù lǐjiě bǐ sǐjì yìngbèi gèng hǎo
+zh-CN,zh_0522,3,phrase,study,core_verbs,الاستمرار في التدريب يبني الثقة,坚持练习能建立自信,jiānchí liànxí néng jiànlì zìxìn
+zh-CN,zh_0523,3,conj,study,grammar_links,بالإضافة إلى ذلك,此外,cǐwài
+zh-CN,zh_0524,3,conj,study,grammar_links,على الرغم من ذلك,尽管如此,jǐnguǎn rúcǐ
+zh-CN,zh_0525,3,conj,study,grammar_links,من جهة أخرى,另一方面,lìng yī fāngmiàn
+zh-CN,zh_0526,3,conj,study,grammar_links,بناءً على ذلك,因此,yīncǐ
+zh-CN,zh_0527,3,adv,study,grammar_links,بشكل خاص,尤其,yóuqí
+zh-CN,zh_0528,3,adv,study,grammar_links,بالفعل,已经,yǐjīng
+zh-CN,zh_0529,3,adv,study,grammar_links,مؤخراً,最近,zuìjìn
+zh-CN,zh_0530,3,adv,study,grammar_links,بوضوح,清楚地,qīngchu de
+zh-CN,zh_0531,3,phrase,study,grammar_links,إذا راجعت يومياً فستتذكر بسهولة,如果每天复习就会很容易记住,rúguǒ měitiān fùxí jiù huì hěn róngyì jìzhù
+zh-CN,zh_0532,3,phrase,study,grammar_links,التركيز أولاً ثم الاستراحة يجعل التعلم أمتع,先专注再休息让学习更轻松,xiān zhuānzhù zài xiūxi ràng xuéxí gèng qīngsōng
+zh-CN,zh_0533,3,phrase,study,polite_phrases,أشكرك جزيل الشكر على وقتك,非常感谢你的时间,fēicháng gǎnxiè nǐ de shíjiān
+zh-CN,zh_0534,3,phrase,study,polite_phrases,هل لي بسؤال لو سمحت,请问我可以问一个问题吗,qǐngwèn wǒ kěyǐ wèn yī gè wèntí ma
+zh-CN,zh_0535,3,phrase,study,polite_phrases,يسعدني جداً التعاون معك,很高兴和你一起合作,hěn gāoxìng hé nǐ yīqǐ hézuò
+zh-CN,zh_0536,3,phrase,study,polite_phrases,أقدّر ملاحظاتك المفيدة,感谢你宝贵的建议,gǎnxiè nǐ bǎoguì de jiànyì
+zh-CN,zh_0537,3,phrase,study,polite_phrases,خذ وقتك ولا تتعجل,不着急慢慢来,bù zháojí mànman lái
+zh-CN,zh_0538,3,phrase,study,polite_phrases,أتمنى لك يوماً مليئاً بالنجاح,祝你今天顺利愉快,zhù nǐ jīntiān shùnlì yúkuài
+zh-CN,zh_0539,3,phrase,study,polite_phrases,لنبدأ معاً خطوة بخطوة,我们一步一步开始吧,wǒmen yī bù yī bù kāishǐ ba
+zh-CN,zh_0540,3,phrase,study,polite_phrases,شرحك واضح ومفيد للغاية,你的讲解非常清楚有帮助,nǐ de jiǎngjiě fēicháng qīngchu yǒu bāngzhù
+zh-CN,zh_0541,3,phrase,study,polite_phrases,سأكون ممتناً لو أعدت هذه النقطة,如果能再讲一遍我将非常感激,rúguǒ néng zài jiǎng yībiàn wǒ jiāng fēicháng gǎnjī
+zh-CN,zh_0542,3,phrase,study,polite_phrases,إلى لقاء قريب إن شاء الله,期待下次再见,qīdài xiàcì zàijiàn
+zh-CN,zh_0543,1,noun,world,nature_weather,شمس,太阳,tàiyáng
+zh-CN,zh_0544,1,noun,world,nature_weather,قمر,月亮,yuèliang
+zh-CN,zh_0545,1,noun,world,nature_weather,سماء,天空,tiānkōng
+zh-CN,zh_0546,1,noun,world,nature_weather,سحابة,云,yún
+zh-CN,zh_0547,1,noun,world,nature_weather,مطر,雨,yǔ
+zh-CN,zh_0548,1,noun,world,nature_weather,رياح,风,fēng
+zh-CN,zh_0549,1,noun,world,nature_weather,ثلج,雪,xuě
+zh-CN,zh_0550,1,noun,world,nature_weather,جبل,山,shān
+zh-CN,zh_0551,1,noun,world,nature_weather,نهر,河,hé
+zh-CN,zh_0552,1,noun,world,nature_weather,بحر,大海,dàhǎi
+zh-CN,zh_0553,1,noun,world,animals_plants,قطة,猫,māo
+zh-CN,zh_0554,1,noun,world,animals_plants,كلب,狗,gǒu
+zh-CN,zh_0555,1,noun,world,animals_plants,طائر,鸟,niǎo
+zh-CN,zh_0556,1,noun,world,animals_plants,حصان,马,mǎ
+zh-CN,zh_0557,1,noun,world,animals_plants,خروف,羊,yáng
+zh-CN,zh_0558,1,noun,world,animals_plants,بقرة,牛,niú
+zh-CN,zh_0559,1,noun,world,animals_plants,شجرة,树,shù
+zh-CN,zh_0560,1,noun,world,animals_plants,زهرة,花,huā
+zh-CN,zh_0561,1,noun,world,animals_plants,عشب,草,cǎo
+zh-CN,zh_0562,1,noun,world,animals_plants,ورقة شجر,树叶,shùyè
+zh-CN,zh_0563,1,noun,world,transport_travel,سيارة,汽车,qìchē
+zh-CN,zh_0564,1,noun,world,transport_travel,حافلة,公共汽车,gōnggòng qìchē
+zh-CN,zh_0565,1,noun,world,transport_travel,قطار,火车,huǒchē
+zh-CN,zh_0566,1,noun,world,transport_travel,طائرة,飞机,fēijī
+zh-CN,zh_0567,1,noun,world,transport_travel,دراجة هوائية,自行车,zìxíngchē
+zh-CN,zh_0568,1,noun,world,transport_travel,سفينة,船,chuán
+zh-CN,zh_0569,1,noun,world,transport_travel,مطار,机场,jīchǎng
+zh-CN,zh_0570,1,noun,world,transport_travel,محطة قطار,火车站,huǒchēzhàn
+zh-CN,zh_0571,1,noun,world,transport_travel,تذكرة,票,piào
+zh-CN,zh_0572,1,noun,world,transport_travel,حقيبة سفر,行李箱,xínglixiāng
+zh-CN,zh_0573,1,noun,world,city_directions,مدينة,城市,chéngshì
+zh-CN,zh_0574,1,noun,world,city_directions,طريق,路,lù
+zh-CN,zh_0575,1,noun,world,city_directions,شارع,街道,jiēdào
+zh-CN,zh_0576,1,noun,world,city_directions,جسر,桥,qiáo
+zh-CN,zh_0577,1,noun,world,city_directions,حديقة عامة,公园,gōngyuán
+zh-CN,zh_0578,1,noun,world,city_directions,يسار,左边,zuǒbiān
+zh-CN,zh_0579,1,noun,world,city_directions,يمين,右边,yòubiān
+zh-CN,zh_0580,1,noun,world,city_directions,أمام,前面,qiánmiàn
+zh-CN,zh_0581,1,noun,world,city_directions,خلف,后面,hòumiàn
+zh-CN,zh_0582,1,noun,world,city_directions,خريطة,地图,dìtú
+zh-CN,zh_0583,1,noun,world,jobs_sports,طبيب,医生,yīshēng
+zh-CN,zh_0584,1,noun,world,jobs_sports,ممرض,护士,hùshi
+zh-CN,zh_0585,1,noun,world,jobs_sports,مهندس,工程师,gōngchéngshī
+zh-CN,zh_0586,1,noun,world,jobs_sports,طباخ,厨师,chúshī
+zh-CN,zh_0587,1,noun,world,jobs_sports,سائق,司机,sījī
+zh-CN,zh_0588,1,noun,world,jobs_sports,كرة القدم,足球,zúqiú
+zh-CN,zh_0589,1,noun,world,jobs_sports,كرة السلة,篮球,lánqiú
+zh-CN,zh_0590,1,noun,world,jobs_sports,سباحة,游泳,yóuyǒng
+zh-CN,zh_0591,1,noun,world,jobs_sports,جري,跑步,pǎobù
+zh-CN,zh_0592,1,noun,world,jobs_sports,رياضة,体育运动,tǐyù yùndòng
+zh-CN,zh_0593,1,noun,world,materials_shop,متجر,商店,shāngdiàn
+zh-CN,zh_0594,1,noun,world,materials_shop,سوق,市场,shìchǎng
+zh-CN,zh_0595,1,noun,world,materials_shop,سعر,价格,jiàgé
+zh-CN,zh_0596,1,noun,world,materials_shop,نقود,钱,qián
+zh-CN,zh_0597,1,noun,world,materials_shop,خشب,木头,mùtou
+zh-CN,zh_0598,1,noun,world,materials_shop,معدن,金属,jīnshǔ
+zh-CN,zh_0599,1,noun,world,materials_shop,زجاج,玻璃,bōli
+zh-CN,zh_0600,1,noun,world,materials_shop,بلاستيك,塑料,sùliào
+zh-CN,zh_0601,1,noun,world,materials_shop,قطن,棉花,miánhua
+zh-CN,zh_0602,1,noun,world,materials_shop,حجر,石头,shítou
+zh-CN,zh_0603,2,noun,world,nature_weather,طقس,天气,tiānqì
+zh-CN,zh_0604,2,noun,world,nature_weather,درجة الحرارة,温度,wēndù
+zh-CN,zh_0605,2,noun,world,nature_weather,غابة,森林,sēnlín
+zh-CN,zh_0606,2,noun,world,nature_weather,بحيرة,湖泊,húpō
+zh-CN,zh_0607,2,noun,world,nature_weather,جزيرة,岛屿,dǎoyǔ
+zh-CN,zh_0608,2,noun,world,nature_weather,صحراء,沙漠,shāmò
+zh-CN,zh_0609,2,noun,world,nature_weather,قوس قزح,彩虹,cǎihóng
+zh-CN,zh_0610,2,noun,world,nature_weather,ضباب,雾,wù
+zh-CN,zh_0611,2,adj,world,nature_weather,مشمس,晴朗,qínglǎng
+zh-CN,zh_0612,2,adj,world,nature_weather,غائم,多云,duōyún
+zh-CN,zh_0613,2,noun,world,animals_plants,أسد,狮子,shīzi
+zh-CN,zh_0614,2,noun,world,animals_plants,نمر,老虎,lǎohǔ
+zh-CN,zh_0615,2,noun,world,animals_plants,فيل,大象,dàxiàng
+zh-CN,zh_0616,2,noun,world,animals_plants,أرنب,兔子,tùzi
+zh-CN,zh_0617,2,noun,world,animals_plants,نحلة,蜜蜂,mìfēng
+zh-CN,zh_0618,2,noun,world,animals_plants,فراشة,蝴蝶,húdié
+zh-CN,zh_0619,2,noun,world,animals_plants,غصن شجرة,树枝,shùzhī
+zh-CN,zh_0620,2,noun,world,animals_plants,جذر النبات,树根,shùgēn
+zh-CN,zh_0621,2,noun,world,animals_plants,بذرة,种子,zhǒngzi
+zh-CN,zh_0622,2,noun,world,animals_plants,نخلة,棕榈树,zōnglǘshù
+zh-CN,zh_0623,2,noun,world,transport_travel,مترو الأنفاق,地铁,dìtiě
+zh-CN,zh_0624,2,noun,world,transport_travel,سيارة أجرة,出租车,chūzūchē
+zh-CN,zh_0625,2,noun,world,transport_travel,جواز سفر,护照,hùzhào
+zh-CN,zh_0626,2,noun,world,transport_travel,نزل إقامة,宾馆,bīnguǎn
+zh-CN,zh_0627,2,noun,world,transport_travel,سفر,旅行,lǚxíng
+zh-CN,zh_0628,2,noun,world,transport_travel,سائح,游客,yóukè
+zh-CN,zh_0629,2,noun,world,transport_travel,ميناء,港口,gǎngkǒu
+zh-CN,zh_0630,2,noun,world,transport_travel,رحلة جوية,航班,hángbān
+zh-CN,zh_0631,2,verb,world,transport_travel,ينطلق,出发,chūfā
+zh-CN,zh_0632,2,verb,world,transport_travel,يصل,到达,dàodá
+zh-CN,zh_0633,2,noun,world,city_directions,شمال,北方,běifāng
+zh-CN,zh_0634,2,noun,world,city_directions,جنوب,南方,nánfāng
+zh-CN,zh_0635,2,noun,world,city_directions,شرق,东方,dōngfāng
+zh-CN,zh_0636,2,noun,world,city_directions,غرب,西方,xīfāng
+zh-CN,zh_0637,2,noun,world,city_directions,تقاطع طرق,十字路口,shízì lùkǒu
+zh-CN,zh_0638,2,noun,world,city_directions,إشارة مرور,红绿灯,hónglǜdēng
+zh-CN,zh_0639,2,noun,world,city_directions,مبنى,建筑物,jiànzhùwù
+zh-CN,zh_0640,2,noun,world,city_directions,ساحة عامة,广场,guǎngchǎng
+zh-CN,zh_0641,2,noun,world,city_directions,متحف,博物馆,bówùguǎn
+zh-CN,zh_0642,2,noun,world,city_directions,عنوان,地址,dìzhǐ
+zh-CN,zh_0643,2,noun,world,jobs_sports,مبرمج,程序员,chéngxùyuán
+zh-CN,zh_0644,2,noun,world,jobs_sports,مترجم,翻译,fānyì
+zh-CN,zh_0645,2,noun,world,jobs_sports,عالم,科学家,kēxuéjiā
+zh-CN,zh_0646,2,noun,world,jobs_sports,صحفي,记者,jìzhě
+zh-CN,zh_0647,2,noun,world,jobs_sports,مزارع,农民,nóngmín
+zh-CN,zh_0648,2,noun,world,jobs_sports,تنس الطاولة,乒乓球,pīngpāngqiú
+zh-CN,zh_0649,2,noun,world,jobs_sports,كرة التنس,网球,wǎngqiú
+zh-CN,zh_0650,2,noun,world,jobs_sports,تسلق الجبال,爬山,páshān
+zh-CN,zh_0651,2,noun,world,jobs_sports,مباراة,比赛,bǐsài
+zh-CN,zh_0652,2,noun,world,jobs_sports,فريق,团队,tuánduì
+zh-CN,zh_0653,2,noun,world,materials_shop,سوبرماركت,超市,chāoshì
+zh-CN,zh_0654,2,noun,world,materials_shop,صيدلية,药店,yàodiàn
+zh-CN,zh_0655,2,noun,world,materials_shop,مخبز,面包店,miànbāodiàn
+zh-CN,zh_0656,2,noun,world,materials_shop,فاتورة شراء,收据,shōujù
+zh-CN,zh_0657,2,noun,world,materials_shop,تخفيض,折扣,zhékòu
+zh-CN,zh_0658,2,noun,world,materials_shop,حرير,丝绸,sīchóu
+zh-CN,zh_0659,2,noun,world,materials_shop,صوف,羊毛,yángmáo
+zh-CN,zh_0660,2,noun,world,materials_shop,جلد طبيعي,皮革,pígé
+zh-CN,zh_0661,2,noun,world,materials_shop,خزف,陶瓷,táocí
+zh-CN,zh_0662,2,noun,world,materials_shop,ورق مقوى,纸板,zhǐbǎn
+zh-CN,zh_0663,3,noun,world,nature_weather,مناخ,气候,qìhòu
+zh-CN,zh_0664,3,noun,world,nature_weather,نشرة جوية,天气预报,tiānqì yùbào
+zh-CN,zh_0665,3,noun,world,nature_weather,نسيم عليل,微风,wēifēng
+zh-CN,zh_0666,3,noun,world,nature_weather,رطوبة الجو,湿度,shīdù
+zh-CN,zh_0667,3,adj,world,nature_weather,معتدل,温和,wēnhé
+zh-CN,zh_0668,3,adj,world,nature_weather,رطب,潮湿,cháoshī
+zh-CN,zh_0669,3,verb,world,nature_weather,تشرق الشمس,太阳升起,tàiyáng shēngqǐ
+zh-CN,zh_0670,3,verb,world,nature_weather,يهطل المطر,下雨,xiàyǔ
+zh-CN,zh_0671,3,phrase,world,nature_weather,الطقس اليوم مشمس ومناسب للمشي,今天天气晴朗适合散步,jīntiān tiānqì qínglǎng shìhé sànbù
+zh-CN,zh_0672,3,phrase,world,nature_weather,حماية البيئة مسؤولية الجميع,保护环境是每个人的责任,bǎohù huánjìng shì měi gè rén de zérèn
+zh-CN,zh_0673,3,noun,world,animals_plants,غزال,鹿,lù
+zh-CN,zh_0674,3,noun,world,animals_plants,بومة,猫头鹰,māotóuyīng
+zh-CN,zh_0675,3,noun,world,animals_plants,نباتات خضراء,绿色植物,lǜsè zhíwù
+zh-CN,zh_0676,3,noun,world,animals_plants,غابة مطيرة,雨林,yǔlín
+zh-CN,zh_0677,3,noun,world,animals_plants,حياة برية,野生动物,yěshēng dòngwù
+zh-CN,zh_0678,3,verb,world,animals_plants,يزرع الأشجار,植树,zhíshù
+zh-CN,zh_0679,3,verb,world,animals_plants,يرعى الحيوانات,照顾动物,zhàogù dòngwù
+zh-CN,zh_0680,3,adj,world,animals_plants,نادر,珍稀,zhēnxī
+zh-CN,zh_0681,3,phrase,world,animals_plants,الأشجار تنقي الهواء وتجمل المدينة,树木能净化空气并美化城市,shùmù néng jìnghuà kōngqì bìng měihuà chéngshì
+zh-CN,zh_0682,3,phrase,world,animals_plants,الطيور تغرد فوق الأغصان في الصباح,早晨鸟儿在树枝上歌唱,zǎochén niǎo'ér zài shùzhī shàng gēchàng
+zh-CN,zh_0683,3,noun,world,transport_travel,مواصلات عامة,公共交通,gōnggòng jiāotōng
+zh-CN,zh_0684,3,noun,world,transport_travel,قطار فائق السرعة,高铁,gāotiě
+zh-CN,zh_0685,3,noun,world,transport_travel,حجز تذكرة,预订车票,yùdìng chēpiào
+zh-CN,zh_0686,3,noun,world,transport_travel,بوابة الصعود,登机口,dēngjīkǒu
+zh-CN,zh_0687,3,verb,world,transport_travel,يبدل المواصلات,换乘,huànchéng
+zh-CN,zh_0688,3,verb,world,transport_travel,يستكشف مكاناً,探索,tànsuǒ
+zh-CN,zh_0689,3,adj,world,transport_travel,سريع ومريح,快捷舒适,kuàijié shūshì
+zh-CN,zh_0690,3,adj,world,transport_travel,آمن,安全,ānquán
+zh-CN,zh_0691,3,phrase,world,transport_travel,من فضلك أين تقع محطة المترو القريبة,请问最近的地铁站在哪里,qǐngwèn zuìjìn de dìtiězhàn zài nǎlǐ
+zh-CN,zh_0692,3,phrase,world,transport_travel,السفر يوسع الآفاق ويعلمنا ثقافات جديدة,旅行能开阔眼界并了解新文化,lǚxíng néng kāikuò yǎnjiè bìng liǎojiě xīn wénhuà
+zh-CN,zh_0693,3,noun,world,city_directions,وسط المدينة,市中心,shìzhōngxīn
+zh-CN,zh_0694,3,noun,world,city_directions,رصيف المشاة,人行道,rénxíngdào
+zh-CN,zh_0695,3,noun,world,city_directions,موقف حافلات,公交车站,gōngjiāochē zhàn
+zh-CN,zh_0696,3,noun,world,city_directions,مسافة,距离,jùlí
+zh-CN,zh_0697,3,verb,world,city_directions,يتجه مباشرة,直走,zhízǒu
+zh-CN,zh_0698,3,verb,world,city_directions,ينعطف يساراً,向左转,xiàng zuǒ zhuǎn
+zh-CN,zh_0699,3,adj,world,city_directions,قريب,附近,fùjìn
+zh-CN,zh_0700,3,adj,world,city_directions,بعيد,遥远,yáoyuǎn
+zh-CN,zh_0701,3,phrase,world,city_directions,سر مباشرة ثم انعطف يميناً عند التقاطع,一直往前走然后在路口向右转,yīzhí wǎng qián zǒu ránhòu zài lùkǒu xiàng yòu zhuǎn
+zh-CN,zh_0702,3,phrase,world,city_directions,المكتبة قريبة جداً من الحديقة العامة,图书馆就在公园旁边,túshūguǎn jiù zài gōngyuán pángbiān
+zh-CN,zh_0703,3,noun,world,jobs_sports,مهنة,职业,zhíyè
+zh-CN,zh_0704,3,noun,world,jobs_sports,خبرة عملية,工作经验,gōngzuò jīngyàn
+zh-CN,zh_0705,3,noun,world,jobs_sports,لياقة بدنية,体能,tǐnéng
+zh-CN,zh_0706,3,noun,world,jobs_sports,روح رياضية,体育精神,tǐyù jīngshén
+zh-CN,zh_0707,3,verb,world,jobs_sports,يتدرب بانتظام,坚持训练,jiānchí xùnliàn
+zh-CN,zh_0708,3,verb,world,jobs_sports,يتعاون مع الفريق,团队合作,tuánduì hézuò
+zh-CN,zh_0709,3,adj,world,jobs_sports,محترف,专业,zhuānyè
+zh-CN,zh_0710,3,adj,world,jobs_sports,نشيط,充满活力,chōngmǎn huólì
+zh-CN,zh_0711,3,phrase,world,jobs_sports,العمل الجماعي يساعدنا على إنجاز المهام بسرعة,团队合作帮助我们更快完成任务,tuánduì hézuò bāngzhù wǒmen gèng kuài wánchéng rènwu
+zh-CN,zh_0712,3,phrase,world,jobs_sports,الرياضة المنتظمة تقوي الجسم والعقل,规律运动能强健体魄和精神,guīlǜ yùndòng néng qiángjiàn tǐpò hé jīngshén
+zh-CN,zh_0713,3,noun,world,materials_shop,جودة عالية,高质量,gāo zhìliàng
+zh-CN,zh_0714,3,noun,world,materials_shop,مواد صديقة للبيئة,环保材料,huánbǎo cáiliào
+zh-CN,zh_0715,3,noun,world,materials_shop,زبون,顾客,gùkè
+zh-CN,zh_0716,3,noun,world,materials_shop,خدمة العملاء,客户服务,kèhù fúwù
+zh-CN,zh_0717,3,verb,world,materials_shop,يشتري حاجياته,购物,gòuwù
+zh-CN,zh_0718,3,verb,world,materials_shop,يدفع الثمن,付款,fùkuǎn
+zh-CN,zh_0719,3,adj,world,materials_shop,متين,结实耐用,jiēshi nàiyòng
+zh-CN,zh_0720,3,adj,world,materials_shop,معقول السعر,价格合理,jiàgé hélǐ
+zh-CN,zh_0721,3,phrase,world,materials_shop,كم سعر هذا المنتج من فضلك,请问这个商品多少钱,qǐngwèn zhège shāngpǐn duōshao qián
+zh-CN,zh_0722,3,phrase,world,materials_shop,نفضل استخدام المواد القابلة لإعادة التدوير,我们提倡使用可回收材料,wǒmen tíchàng shǐyòng kě huíshōu cáiliào
+ja,ja_0001,1,noun,home,colors,أحمر,赤い,akai
+ja,ja_0002,1,noun,home,colors,أزرق,青い,aoi
+ja,ja_0003,1,noun,home,colors,أخضر,緑,midori
+ja,ja_0004,1,noun,home,colors,أصفر,黄色,kiiro
+ja,ja_0005,1,noun,home,colors,أبيض,白い,shiroi
+ja,ja_0006,1,noun,home,colors,أسود,黒い,kuroi
+ja,ja_0007,1,noun,home,colors,برتقالي,オレンジ,orenji
+ja,ja_0008,1,noun,home,colors,بنفسجي,紫,murasaki
+ja,ja_0009,1,noun,home,colors,رمادي,灰色,haiiro
+ja,ja_0010,1,noun,home,kitchen,مطبخ,台所,daidokoro
+ja,ja_0011,1,noun,home,kitchen,كوب,コップ,koppu
+ja,ja_0012,1,noun,home,kitchen,صحن,皿,sara
+ja,ja_0013,1,noun,home,kitchen,وعاء,椀,wan
+ja,ja_0014,1,noun,home,kitchen,ملعقة,スプーン,supūn
+ja,ja_0015,1,noun,home,kitchen,شوكة,フォーク,fōku
+ja,ja_0016,1,noun,home,kitchen,سكين مطبخ,包丁,hōchō
+ja,ja_0017,1,noun,home,kitchen,قدر,鍋,nabe
+ja,ja_0018,1,noun,home,kitchen,إبريق شاي,急須,kyūsu
+ja,ja_0019,1,noun,home,bathroom,حمام,風呂場,furoba
+ja,ja_0020,1,noun,home,bathroom,صابون,石鹸,sekken
+ja,ja_0021,1,noun,home,bathroom,منشفة,タオル,taoru
+ja,ja_0022,1,noun,home,bathroom,فرشاة أسنان,歯ブラシ,haburashi
+ja,ja_0023,1,noun,home,bathroom,معجون أسنان,歯磨き粉,hamigakiko
+ja,ja_0024,1,noun,home,bathroom,مرآة,鏡,kagami
+ja,ja_0025,1,noun,home,bathroom,شامبو,シャンプー,shanpū
+ja,ja_0026,1,noun,home,bathroom,مشط,櫛,kushi
+ja,ja_0027,1,noun,home,bathroom,صنبور ماء,蛇口,jaguchi
+ja,ja_0028,1,noun,home,bedroom,غرفة نوم,寝室,shinshitsu
+ja,ja_0029,1,noun,home,bedroom,سرير,ベッド,beddo
+ja,ja_0030,1,noun,home,bedroom,وسادة,枕,makura
+ja,ja_0031,1,noun,home,bedroom,لحاف,布団,futon
+ja,ja_0032,1,noun,home,bedroom,بطانية,毛布,mōfu
+ja,ja_0033,1,noun,home,bedroom,خزانة ملابس,クローゼット,kurōzetto
+ja,ja_0034,1,noun,home,bedroom,مصباح طاولة,卓上ランプ,takujō ranpu
+ja,ja_0035,1,noun,home,bedroom,منبه,目覚まし時計,mezamashidokei
+ja,ja_0036,1,noun,home,bedroom,نافذة,窓,mado
+ja,ja_0037,1,noun,home,living,غرفة المعيشة,居間,ima
+ja,ja_0038,1,noun,home,living,أريكة,ソファ,sofa
+ja,ja_0039,1,noun,home,living,طاولة,机,tsukue
+ja,ja_0040,1,noun,home,living,كرسي,椅子,isu
+ja,ja_0041,1,noun,home,living,باب,ドア,doa
+ja,ja_0042,1,noun,home,living,سجادة,カーペット,kāpetto
+ja,ja_0043,1,noun,home,living,ستارة,カーテン,kāten
+ja,ja_0044,1,noun,home,living,ساعة حائط,掛け時計,kakedokei
+ja,ja_0045,1,noun,home,living,رف كتب,本棚,hondana
+ja,ja_0046,1,noun,home,appliances,ثلاجة,冷蔵庫,reizōko
+ja,ja_0047,1,noun,home,appliances,غسالة ملابس,洗濯機,sentakuki
+ja,ja_0048,1,noun,home,appliances,مكيف هواء,エアコン,eakon
+ja,ja_0049,1,noun,home,appliances,تلفاز,テレビ,terebi
+ja,ja_0050,1,noun,home,appliances,مروحة كهربائية,扇風機,senpūki
+ja,ja_0051,1,noun,home,appliances,ميكروويف,電子レンジ,denshi renji
+ja,ja_0052,1,noun,home,appliances,فرن,オーブン,ōbun
+ja,ja_0053,1,noun,home,appliances,غلاية كهربائية,電気ケトル,denki ketoru
+ja,ja_0054,1,noun,home,appliances,مكنسة كهربائية,掃除機,sōjiki
+ja,ja_0055,1,noun,home,garden_clean,حديقة,庭,niwa
+ja,ja_0056,1,noun,home,garden_clean,مكنسة يدوية,ほうき,hōki
+ja,ja_0057,1,noun,home,garden_clean,ممسحة أرضية,モップ,moppu
+ja,ja_0058,1,noun,home,garden_clean,دلو,バケツ,baketsu
+ja,ja_0059,1,noun,home,garden_clean,مسحوق غسيل,洗濯洗剤,sentaku senzai
+ja,ja_0060,1,noun,home,garden_clean,إسفنجة تنظيف,スポンジ,suponji
+ja,ja_0061,1,noun,home,garden_clean,أصيص نباتات,植木鉢,uekibachi
+ja,ja_0062,1,noun,home,garden_clean,تربة,土,tsuchi
+ja,ja_0063,1,noun,home,garden_clean,سياج,塀,hei
+ja,ja_0064,2,noun,home,colors,بني,茶色,chairo
+ja,ja_0065,2,noun,home,colors,وردي,ピンク,pinku
+ja,ja_0066,2,noun,home,colors,ذهبي,金色,kin'iro
+ja,ja_0067,2,noun,home,colors,فضي,銀色,gin'iro
+ja,ja_0068,2,noun,home,colors,بيج,ベージュ,bēju
+ja,ja_0069,2,noun,home,colors,أزرق سماوي,水色,mizuiro
+ja,ja_0070,2,noun,home,colors,أزرق داكن,紺色,kon'iro
+ja,ja_0071,2,noun,home,colors,لون فاتح,明るい色,akarui iro
+ja,ja_0072,2,noun,home,colors,لون داكن,暗い色,kurai iro
+ja,ja_0073,2,noun,home,kitchen,لوح تقطيع,まな板,manaita
+ja,ja_0074,2,noun,home,kitchen,مقلاة,フライパン,furaipan
+ja,ja_0075,2,noun,home,kitchen,عيدان طعام,箸,hashi
+ja,ja_0076,2,noun,home,kitchen,حوض المطبخ,流し台,nagashidai
+ja,ja_0077,2,noun,home,kitchen,خزانة المطبخ,食器棚,shokkidana
+ja,ja_0078,2,noun,home,kitchen,غطاء القدر,鍋蓋,nabefuta
+ja,ja_0079,2,noun,home,kitchen,مصفاة طعام,ざる,zaru
+ja,ja_0080,2,noun,home,kitchen,مريلة مطبخ,エプロン,epuron
+ja,ja_0081,2,noun,home,kitchen,سلة مهملات,ゴミ箱,gomibako
+ja,ja_0082,2,noun,home,bathroom,حوض غسيل اليدين,洗面台,senmendai
+ja,ja_0083,2,noun,home,bathroom,حوض استحمام,湯船,yubune
+ja,ja_0084,2,noun,home,bathroom,دش استحمام,シャワー,shawā
+ja,ja_0085,2,noun,home,bathroom,منشفة استحمام,バスタオル,basutaoru
+ja,ja_0086,2,noun,home,bathroom,غسول اليدين,ハンドソープ,hando sōpu
+ja,ja_0087,2,noun,home,bathroom,ورق حمام,トイレットペーパー,toiretto pēpā
+ja,ja_0088,2,noun,home,bathroom,غسول جسم,ボディソープ,bodi sōpu
+ja,ja_0089,2,noun,home,bathroom,مقص أظافر,爪切り,tsumekiri
+ja,ja_0090,2,noun,home,bathroom,سلة غسيل,洗濯かご,sentaku kago
+ja,ja_0091,2,noun,home,bedroom,مرتبة سرير,マットレス,mattoresu
+ja,ja_0092,2,noun,home,bedroom,ملاءة سرير,シーツ,shītsu
+ja,ja_0093,2,noun,home,bedroom,غطاء وسادة,枕カバー,makura kabā
+ja,ja_0094,2,noun,home,bedroom,طاولة بجانب السرير,ナイトテーブル,naito tēburu
+ja,ja_0095,2,noun,home,bedroom,علاقة ملابس,ハンガー,hangā
+ja,ja_0096,2,noun,home,bedroom,درج,引き出し,hikidashi
+ja,ja_0097,2,noun,home,bedroom,طاولة دراسة,勉強机,benkyōzukue
+ja,ja_0098,2,noun,home,bedroom,ستارة معتمة,遮光カーテン,shakō kāten
+ja,ja_0099,2,noun,home,bedroom,ناموسية,蚊帳,kaya
+ja,ja_0100,2,noun,home,living,طاولة قهوة,ローテーブル,rō tēburu
+ja,ja_0101,2,noun,home,living,وسادة أريكة,クッション,kusshon
+ja,ja_0102,2,noun,home,living,جدار,壁,kabe
+ja,ja_0103,2,noun,home,living,أرضية,床,yuka
+ja,ja_0104,2,noun,home,living,سقف,天井,tenjō
+ja,ja_0105,2,noun,home,living,مدخل المنزل,玄関,genkan
+ja,ja_0106,2,noun,home,living,خزانة أحذية,下駄箱,getabako
+ja,ja_0107,2,noun,home,living,شرفة,ベランダ,beranda
+ja,ja_0108,2,noun,home,living,مصباح سقف,シーリングライト,shīringu raito
+ja,ja_0109,2,noun,home,appliances,قدر طبخ الأرز,炊飯器,suihanki
+ja,ja_0110,2,noun,home,appliances,خلاط كهربائي,ミキサー,mikusā
+ja,ja_0111,2,noun,home,appliances,مكواة,アイロン,airon
+ja,ja_0112,2,noun,home,appliances,مجفف شعر,ドライヤー,doraiyā
+ja,ja_0113,2,noun,home,appliances,سخان مياه,給湯器,kyūtōki
+ja,ja_0114,2,noun,home,appliances,غسالة صحون,食器洗い機,shokki araiki
+ja,ja_0115,2,noun,home,appliances,محمصة خبز,トースター,tōsutā
+ja,ja_0116,2,noun,home,appliances,مقبس كهربائي,コンセント,konsento
+ja,ja_0117,2,noun,home,appliances,جهاز تحكم عن بعد,リモコン,rimokon
+ja,ja_0118,2,noun,home,garden_clean,مجرفة قمامة,ちりとり,chiritori
+ja,ja_0119,2,noun,home,garden_clean,سائل غسيل الصحون,食器用洗剤,shokkiyō senzai
+ja,ja_0120,2,noun,home,garden_clean,سائل غسيل الملابس,液体洗剤,ekitai senzai
+ja,ja_0121,2,noun,home,garden_clean,منفضة غبار,はたき,hataki
+ja,ja_0122,2,noun,home,garden_clean,إبريق سقي النباتات,じょうろ,jōro
+ja,ja_0123,2,noun,home,garden_clean,خرطوم ماء,ホース,hōsu
+ja,ja_0124,2,noun,home,garden_clean,مقص تقليم,剪定ばさみ,sentei basami
+ja,ja_0125,2,noun,home,garden_clean,مجرفة حديقة,シャベル,shaberu
+ja,ja_0126,2,noun,home,garden_clean,كيس قمامة,ゴミ袋,gomibukuro
+ja,ja_0127,3,noun,home,colors,فيروزي,ターコイズ,tākoizu
+ja,ja_0128,3,noun,home,colors,زيتوني,オリーブ色,orību iro
+ja,ja_0129,3,adj,home,colors,شفاف,透明な,tōmei na
+ja,ja_0130,3,adj,home,colors,زاهي اللون,鮮やかな,azayaka na
+ja,ja_0131,3,verb,home,colors,يبهت لونه,色あせる,iro aseru
+ja,ja_0132,3,phrase,home,colors,ألوان متناسقة,調和した色合い,chōwa shita iroai
+ja,ja_0133,3,phrase,home,colors,هذا اللون مريح للعين,この色は目に優しいです,kono iro wa me ni yasashii desu
+ja,ja_0134,3,phrase,home,colors,أحب الألوان الهادئة في المنزل,家の落ち着いた色が好きです,ie no ochitsuita iro ga suki desu
+ja,ja_0135,3,noun,home,kitchen,صينية تقديم,お盆,obon
+ja,ja_0136,3,noun,home,kitchen,برطمان محكم الإغلاق,保存容器,hozon yōki
+ja,ja_0137,3,noun,home,kitchen,فوطة مطبخ,ふきん,fukin
+ja,ja_0138,3,noun,home,kitchen,غلاف حفظ الطعام,ラップ,rappu
+ja,ja_0139,3,verb,home,kitchen,يطبخ الطعام,料理する,ryōri suru
+ja,ja_0140,3,verb,home,kitchen,يغسل الأطباق,皿洗いする,saraarai suru
+ja,ja_0141,3,phrase,home,kitchen,من فضلك ناولني الملعقة,スプーンを取ってください,supūn o totte kudasai
+ja,ja_0142,3,phrase,home,kitchen,المطبخ نظيف ومرتب اليوم,今日の台所は清潔で整っています,kyō no daidokoro wa seiketsu de totonotte imasu
+ja,ja_0143,3,noun,home,bathroom,سجادة مانعة للانزلاق,バスマット,basu matto
+ja,ja_0144,3,noun,home,bathroom,حامل مناشف,タオル掛け,taoru kake
+ja,ja_0145,3,noun,home,bathroom,خيط أسنان,デンタルフロス,dentaru furosu
+ja,ja_0146,3,noun,home,bathroom,غسول فم,マウスウォッシュ,mausu wosshu
+ja,ja_0147,3,verb,home,bathroom,يغسل يديه,手を洗う,te o arau
+ja,ja_0148,3,verb,home,bathroom,ينظف أسنانه,歯を磨く,ha o migaku
+ja,ja_0149,3,phrase,home,bathroom,أغلق الصنبور جيداً بعد الاستخدام,使った後は蛇口をしっかり閉めてください,tsukatta ato wa jaguchi o shikkari shimete kudasai
+ja,ja_0150,3,phrase,home,bathroom,الأرضية مبللة فاحذر الانزلاق,床が濡れているので滑らないでください,yuka ga nurete iru node suberanai de kudasai
+ja,ja_0151,3,noun,home,bedroom,خزانة أدراج,チェスト,chesuto
+ja,ja_0152,3,noun,home,bedroom,غطاء لحاف,掛け布団カバー,kakebuton kabā
+ja,ja_0153,3,noun,home,bedroom,صندوق تخزين,収納ボックス,shūnō bokkusu
+ja,ja_0154,3,noun,home,bedroom,مفتاح الإضاءة,照明スイッチ,shōmei suitchi
+ja,ja_0155,3,verb,home,bedroom,يرتب السرير,布団を整える,futon o totonoeru
+ja,ja_0156,3,verb,home,bedroom,يفتح النافذة للتهوية,窓を開けて換気する,mado o akete kanki suru
+ja,ja_0157,3,phrase,home,bedroom,أطفئ المصباح قبل النوم,寝る前にランプを消してください,neru mae ni ranpu o keshite kudasai
+ja,ja_0158,3,phrase,home,bedroom,أحب غرفة النوم الهادئة والمرتبة,静かで片付いた寝室が好きです,shizuka de katazuita shinshitsu ga suki desu
+ja,ja_0159,3,noun,home,living,مزهرية,花瓶,kabin
+ja,ja_0160,3,noun,home,living,إطار صورة,写真立て,shashintate
+ja,ja_0161,3,noun,home,living,مقعد صغير,スツール,sutūru
+ja,ja_0162,3,noun,home,living,مفتاح المنزل,鍵,kagi
+ja,ja_0163,3,noun,home,living,مقبض الباب,ドアノブ,doa nobu
+ja,ja_0164,3,phrase,home,living,تفضل بالجلوس في غرفة المعيشة,居間でおくつろぎください,ima de okutsurogi kudasai
+ja,ja_0165,3,phrase,home,living,أشعة الشمس تملأ الصالة صباحاً,朝の日差しが居間に差し込みます,asa no hizashi ga ima ni sashikomimasu
+ja,ja_0166,3,phrase,home,living,ضع المفاتيح عند المدخل,鍵は玄関に置いてください,kagi wa genkan ni oite kudasai
+ja,ja_0167,3,noun,home,appliances,منقي هواء,空気清浄機,kūki seijōki
+ja,ja_0168,3,noun,home,appliances,مرطب هواء,加湿器,kashitsuki
+ja,ja_0169,3,noun,home,appliances,مجفف ملابس,衣類乾燥機,irui kansōki
+ja,ja_0170,3,noun,home,appliances,شفاط مطبخ,換気扇,kankisen
+ja,ja_0171,3,noun,home,appliances,وصلة كهرباء متعددة,電源タップ,dengen tappu
+ja,ja_0172,3,verb,home,appliances,يفصل القابس الكهربائي,プラグを抜く,puragu o nuku
+ja,ja_0173,3,phrase,home,appliances,اضبط المكيف على درجة مريحة,エアコンを快適な温度に設定してください,eakon o kaiteki na ondo ni settei shite kudasai
+ja,ja_0174,3,phrase,home,appliances,تأكد من إطفاء الأجهزة قبل الخروج,出かける前に家電が消えているか確認してください,dekakeru mae ni kaden ga kiete iru ka kakunin shite kudasai
+ja,ja_0175,3,noun,home,garden_clean,منظف الزجاج,ガラスクリーナー,garasu kurīnā
+ja,ja_0176,3,noun,home,garden_clean,قفازات تنظيف,ゴム手袋,gomu tebukuro
+ja,ja_0177,3,noun,home,garden_clean,سماد عضوي,有機肥料,yūki hiryō
+ja,ja_0178,3,noun,home,garden_clean,فرز النفايات,ゴミの分別,gomi no funbetsu
+ja,ja_0179,3,verb,home,garden_clean,يكنس الأرضية,掃き掃除する,hakisōji suru
+ja,ja_0180,3,verb,home,garden_clean,يمسح الأرضية,拭き掃除する,fukisōji suru
+ja,ja_0181,3,phrase,home,garden_clean,حان وقت سقي الزهور في الحديقة,庭の花に水をやる時間です,niwa no hana ni mizu o yaru jikan desu
+ja,ja_0182,3,phrase,home,garden_clean,لننظف المنزل معاً في عطلة نهاية الأسبوع,週末に一緒に部屋を掃除しましょう,shūmatsu ni issho ni heya o sōji shimashō
+ja,ja_0183,1,noun,life,produce,تفاح,りんご,ringo
+ja,ja_0184,1,noun,life,produce,موز,バナナ,banana
+ja,ja_0185,1,noun,life,produce,برتقال,みかん,mikan
+ja,ja_0186,1,noun,life,produce,عنب,ぶどう,budō
+ja,ja_0187,1,noun,life,produce,بطيخ,すいか,suika
+ja,ja_0188,1,noun,life,produce,طماطم,トマト,tomato
+ja,ja_0189,1,noun,life,produce,خيار,きゅうり,kyūri
+ja,ja_0190,1,noun,life,produce,بطاطا,じゃがいも,jagaimo
+ja,ja_0191,1,noun,life,produce,جزر,にんじん,ninjin
+ja,ja_0192,1,noun,life,produce,بصل,玉ねぎ,tamanegi
+ja,ja_0193,1,noun,life,food_drink,ماء,水,mizu
+ja,ja_0194,1,noun,life,food_drink,حليب,牛乳,gyūnyū
+ja,ja_0195,1,noun,life,food_drink,شاي,お茶,ocha
+ja,ja_0196,1,noun,life,food_drink,عصير,ジュース,jūsu
+ja,ja_0197,1,noun,life,food_drink,خبز,パン,pan
+ja,ja_0198,1,noun,life,food_drink,أرز مطبوخ,ご飯,gohan
+ja,ja_0199,1,noun,life,food_drink,معكرونة,麺,men
+ja,ja_0200,1,noun,life,food_drink,بيض,卵,tamago
+ja,ja_0201,1,noun,life,food_drink,لحم دجاج,鶏肉,toriniku
+ja,ja_0202,1,noun,life,food_drink,سمك,魚,sakana
+ja,ja_0203,1,noun,life,spices_grains,ملح,塩,shio
+ja,ja_0204,1,noun,life,spices_grains,سكر,砂糖,satō
+ja,ja_0205,1,noun,life,spices_grains,زيت طبخ,食用油,shokuyō abura
+ja,ja_0206,1,noun,life,spices_grains,خل,酢,su
+ja,ja_0207,1,noun,life,spices_grains,ثوم,にんにく,ninniku
+ja,ja_0208,1,noun,life,spices_grains,زنجبيل,しょうが,shōga
+ja,ja_0209,1,noun,life,spices_grains,أرز غير مطبوخ,米,kome
+ja,ja_0210,1,noun,life,spices_grains,دقيق قمح,小麦粉,komugiko
+ja,ja_0211,1,noun,life,spices_grains,فول صويا,大豆,daizu
+ja,ja_0212,1,noun,life,spices_grains,ذرة,とうもろこし,tōmorokoshi
+ja,ja_0213,1,noun,life,clothing,ملابس,服,fuku
+ja,ja_0214,1,noun,life,clothing,قميص,シャツ,shatsu
+ja,ja_0215,1,noun,life,clothing,بنطال,ズボン,zubon
+ja,ja_0216,1,noun,life,clothing,معطف,コート,kōto
+ja,ja_0217,1,noun,life,clothing,فستان,ワンピース,wanpīsu
+ja,ja_0218,1,noun,life,clothing,حذاء,靴,kutsu
+ja,ja_0219,1,noun,life,clothing,جوارب,靴下,kutsushita
+ja,ja_0220,1,noun,life,clothing,قبعة,帽子,bōshi
+ja,ja_0221,1,noun,life,clothing,وشاح,マフラー,mafurā
+ja,ja_0222,1,noun,life,clothing,نظارة,眼鏡,megane
+ja,ja_0223,1,noun,life,body_health,رأس,頭,atama
+ja,ja_0224,1,noun,life,body_health,عين,目,me
+ja,ja_0225,1,noun,life,body_health,أذن,耳,mimi
+ja,ja_0226,1,noun,life,body_health,أنف,鼻,hana
+ja,ja_0227,1,noun,life,body_health,فم,口,kuchi
+ja,ja_0228,1,noun,life,body_health,يد,手,te
+ja,ja_0229,1,noun,life,body_health,قدم,足,ashi
+ja,ja_0230,1,noun,life,body_health,قلب,心臓,shinzō
+ja,ja_0231,1,noun,life,body_health,صحة,健康,kenkō
+ja,ja_0232,1,noun,life,body_health,دواء,薬,kusuri
+ja,ja_0233,1,noun,life,family_traits,أب,父,chichi
+ja,ja_0234,1,noun,life,family_traits,أم,母,haha
+ja,ja_0235,1,noun,life,family_traits,أخ أكبر,兄,ani
+ja,ja_0236,1,noun,life,family_traits,أخ أصغر,弟,otōto
+ja,ja_0237,1,noun,life,family_traits,أخت كبرى,姉,ane
+ja,ja_0238,1,noun,life,family_traits,أخت صغرى,妹,imōto
+ja,ja_0239,1,noun,life,family_traits,جد,祖父,sofu
+ja,ja_0240,1,noun,life,family_traits,جدة,祖母,sobo
+ja,ja_0241,1,noun,life,family_traits,عائلة,家族,kazoku
+ja,ja_0242,1,noun,life,family_traits,صديق,友達,tomodachi
+ja,ja_0243,2,noun,life,produce,فراولة,いちご,ichigo
+ja,ja_0244,2,noun,life,produce,خوخ,桃,momo
+ja,ja_0245,2,noun,life,produce,كمثرى,なし,nashi
+ja,ja_0246,2,noun,life,produce,مانجو,マンゴー,mangō
+ja,ja_0247,2,noun,life,produce,رمان,ざくろ,zakuro
+ja,ja_0248,2,noun,life,produce,باذنجان,なす,nasu
+ja,ja_0249,2,noun,life,produce,سبانخ,ほうれん草,hōrensō
+ja,ja_0250,2,noun,life,produce,ملفوف,キャベツ,kyabetsu
+ja,ja_0251,2,noun,life,produce,فلفل أخضر,ピーマン,pīman
+ja,ja_0252,2,noun,life,produce,فطر,きのこ,kinoko
+ja,ja_0253,2,noun,life,food_drink,قهوة,コーヒー,kōhī
+ja,ja_0254,2,noun,life,food_drink,زبادي,ヨーグルト,yōguruto
+ja,ja_0255,2,noun,life,food_drink,جبن,チーズ,chīzu
+ja,ja_0256,2,noun,life,food_drink,عسل,はちみつ,hachimitsu
+ja,ja_0257,2,noun,life,food_drink,لحم بقر,牛肉,gyūniku
+ja,ja_0258,2,noun,life,food_drink,لحم غنم,羊肉,yōniku
+ja,ja_0259,2,noun,life,food_drink,حساء,スープ,sūpu
+ja,ja_0260,2,noun,life,food_drink,سلطة خضار,野菜サラダ,yasai sarada
+ja,ja_0261,2,noun,life,food_drink,فطور,朝食,chōshoku
+ja,ja_0262,2,noun,life,food_drink,عشاء,夕食,yūshoku
+ja,ja_0263,2,noun,life,spices_grains,فلفل أسود,黒胡椒,kuro koshō
+ja,ja_0264,2,noun,life,spices_grains,قرفة,シナモン,shinamon
+ja,ja_0265,2,noun,life,spices_grains,كمون,クミン,kumin
+ja,ja_0266,2,noun,life,spices_grains,كركم,ターメリック,tāmerikku
+ja,ja_0267,2,noun,life,spices_grains,صلصة صويا,醤油,shōyu
+ja,ja_0268,2,noun,life,spices_grains,زيت زيتون,オリーブ油,orību yu
+ja,ja_0269,2,noun,life,spices_grains,شوفان,オーツ麦,ōtsumugi
+ja,ja_0270,2,noun,life,spices_grains,عدس,レンズ豆,renzumame
+ja,ja_0271,2,noun,life,spices_grains,حمص,ひよこ豆,hiyokomame
+ja,ja_0272,2,noun,life,spices_grains,سمسم,ごま,goma
+ja,ja_0273,2,noun,life,clothing,سترة صوفية,セーター,sētā
+ja,ja_0274,2,noun,life,clothing,تيشيرت,ティーシャツ,tīshatsu
+ja,ja_0275,2,noun,life,clothing,بنطال جينز,ジーンズ,jīnzu
+ja,ja_0276,2,noun,life,clothing,ملابس رياضية,ジャージ,jāji
+ja,ja_0277,2,noun,life,clothing,حذاء رياضي,スニーカー,sunīkā
+ja,ja_0278,2,noun,life,clothing,معطف مطر,レインコート,rein kōto
+ja,ja_0279,2,noun,life,clothing,قفازات شتوية,手袋,tebukuro
+ja,ja_0280,2,noun,life,clothing,حزام,ベルト,beruto
+ja,ja_0281,2,noun,life,clothing,جيب الملابس,ポケット,poketto
+ja,ja_0282,2,noun,life,clothing,زر قميص,ボタン,botan
+ja,ja_0283,2,noun,life,body_health,شعر,髪,kami
+ja,ja_0284,2,noun,life,body_health,أسنان,歯,ha
+ja,ja_0285,2,noun,life,body_health,رقبة,首,kubi
+ja,ja_0286,2,noun,life,body_health,كتف,肩,kata
+ja,ja_0287,2,noun,life,body_health,معدة,胃,i
+ja,ja_0288,2,noun,life,body_health,ركبة,膝,hiza
+ja,ja_0289,2,noun,life,body_health,حمى,発熱,hatsunetsu
+ja,ja_0290,2,noun,life,body_health,زكام,風邪,kaze
+ja,ja_0291,2,noun,life,body_health,صداع,頭痛,zutsū
+ja,ja_0292,2,noun,life,body_health,مستشفى,病院,byōin
+ja,ja_0293,2,noun,life,family_traits,ابن,息子,musuko
+ja,ja_0294,2,noun,life,family_traits,ابنة,娘,musume
+ja,ja_0295,2,noun,life,family_traits,عم,おじ,oji
+ja,ja_0296,2,noun,life,family_traits,خالة,おば,oba
+ja,ja_0297,2,noun,life,family_traits,جار,隣人,rinjin
+ja,ja_0298,2,adj,life,family_traits,طيب القلب,優しい,yasashii
+ja,ja_0299,2,adj,life,family_traits,صادق,誠実な,seijitsu na
+ja,ja_0300,2,adj,life,family_traits,صبور,忍耐強い,nintaizuyoi
+ja,ja_0301,2,adj,life,family_traits,مجتهد,勤勉な,kinben na
+ja,ja_0302,2,adj,life,family_traits,مهذب,礼儀正しい,reigi tadashii
+ja,ja_0303,3,noun,life,produce,كيوي,キウイ,kiui
+ja,ja_0304,3,noun,life,produce,تين,いちじく,ichijiku
+ja,ja_0305,3,noun,life,produce,قرنبيط أخضر,ブロッコリー,burokkorī
+ja,ja_0306,3,noun,life,produce,يقطين,かぼちゃ,kabocha
+ja,ja_0307,3,adj,life,produce,طازج,新鮮な,shinsen na
+ja,ja_0308,3,adj,life,produce,ناضج,熟した,jukushita
+ja,ja_0309,3,verb,life,produce,يقشر الفاكهة,皮をむく,kawa o muku
+ja,ja_0310,3,verb,life,produce,يغسل الخضار,野菜を洗う,yasai o arau
+ja,ja_0311,3,phrase,life,produce,هذه الفاكهة طازجة وحلوة جداً,この果物はとても新鮮で甘いです,kono kudamono wa totemo shinsen de amai desu
+ja,ja_0312,3,phrase,life,produce,تناول الخضار كل يوم مفيد للجسم,毎日野菜を食べると体に良いです,mainichi yasai o taberu to karada ni yoi desu
+ja,ja_0313,3,noun,life,food_drink,غداء,昼食,chūshoku
+ja,ja_0314,3,noun,life,food_drink,وجبة خفيفة,おやつ,oyatsu
+ja,ja_0315,3,noun,life,food_drink,طعام حلال,ハラルフード,hararu fūdo
+ja,ja_0316,3,noun,life,food_drink,قائمة الطعام,メニュー,menyū
+ja,ja_0317,3,adj,life,food_drink,لذيذ,おいしい,oishii
+ja,ja_0318,3,adj,life,food_drink,متوازن غذائياً,栄養バランスの良い,eiyō baransu no yoi
+ja,ja_0319,3,verb,life,food_drink,يشرب ماء دافئاً,白湯を飲む,sayu o nomu
+ja,ja_0320,3,verb,life,food_drink,يطلب الطعام,注文する,chūmon suru
+ja,ja_0321,3,phrase,life,food_drink,من فضلك أريد كوباً من الماء الدافئ,温かい水をコップ一杯ください,atatakai mizu o koppu ippai kudasai
+ja,ja_0322,3,phrase,life,food_drink,الفطور الصحي يمنحنا نشاطاً طوال اليوم,健康的な朝食は一日中元気を与えます,kenkōteki na chōshoku wa ichinichijū genki o ataemasu
+ja,ja_0323,3,noun,life,spices_grains,نعناع,ミント,minto
+ja,ja_0324,3,noun,life,spices_grains,كزبرة,コリアンダー,koriandā
+ja,ja_0325,3,noun,life,spices_grains,هيل,カルダモン,karudamon
+ja,ja_0326,3,noun,life,spices_grains,شعير,大麦,ōmugi
+ja,ja_0327,3,noun,life,spices_grains,حبوب كاملة,全粒穀物,zenryū kokumotsu
+ja,ja_0328,3,adj,life,spices_grains,عطري الرائحة,香り高い,kaori takai
+ja,ja_0329,3,verb,life,spices_grains,يتبل الطعام,味付けする,ajitsuke suru
+ja,ja_0330,3,verb,life,spices_grains,ينقع الحبوب في الماء,穀物を水に浸す,kokumotsu o mizu ni hitasu
+ja,ja_0331,3,phrase,life,spices_grains,أضف قليلاً من الملح والكمون,塩とクミンを少し加えてください,shio to kumin o sukoshi kuwaete kudasai
+ja,ja_0332,3,phrase,life,spices_grains,احفظ التوابل في مكان جاف وبارد,香辛料は涼しく乾いた場所に保管してください,kōshinryō wa suzushiku kawaita basho ni hokan shite kudasai
+ja,ja_0333,3,noun,life,clothing,مقاس الملابس,サイズ,saizu
+ja,ja_0334,3,noun,life,clothing,قماش قطني,綿生地,men kiji
+ja,ja_0335,3,noun,life,clothing,سحاب الملابس,ファスナー,fasunā
+ja,ja_0336,3,noun,life,clothing,معطف شتوي,冬用コート,fuyuyō kōto
+ja,ja_0337,3,adj,life,clothing,مريح في اللبس,着心地が良い,kigokochi ga yoi
+ja,ja_0338,3,adj,life,clothing,دافئ,暖かい,atatakai
+ja,ja_0339,3,verb,life,clothing,يقيس الملابس,試着する,shichaku suru
+ja,ja_0340,3,verb,life,clothing,يطوي الملابس,服をたたむ,fuku o tatamu
+ja,ja_0341,3,phrase,life,clothing,هل يوجد مقاس أكبر من هذا القميص,このシャツのもう少し大きいサイズはありますか,kono shatsu no mō sukoshi ōkii saizu wa arimasu ka
+ja,ja_0342,3,phrase,life,clothing,ارتدِ معطفاً دافئاً لأن الجو بارد اليوم,今日は寒いので暖かいコートを着てください,kyō wa samui node atatakai kōto o kite kudasai
+ja,ja_0343,3,noun,life,body_health,جهاز المناعة,免疫力,men'ekiryoku
+ja,ja_0344,3,noun,life,body_health,فحص طبي,健康診断,kenkō shindan
+ja,ja_0345,3,noun,life,body_health,وصفة طبية,処方箋,shohōsen
+ja,ja_0346,3,noun,life,body_health,إسعافات أولية,応急処置,ōkyū shochi
+ja,ja_0347,3,verb,life,body_health,يتنفس بعمق,深呼吸する,shinkokyū suru
+ja,ja_0348,3,verb,life,body_health,يمارس الرياضة,運動する,undō suru
+ja,ja_0349,3,verb,life,body_health,يرتاح جيداً,しっかり休む,shikkari yasumu
+ja,ja_0350,3,verb,life,body_health,يتعافى بسرعة,早く回復する,hayaku kaifuku suru
+ja,ja_0351,3,phrase,life,body_health,النوم المبكر مهم جداً لصحة الجسم,早寝は体の健康にとても大切です,hayane wa karada no kenkō ni totemo taisetsu desu
+ja,ja_0352,3,phrase,life,body_health,اشرب الكثير من الماء واسترح جيداً,水をたくさん飲んでしっかり休んでください,mizu o takusan nonde shikkari yasunde kudasai
+ja,ja_0353,3,noun,life,family_traits,صلة الرحم,家族の絆,kazoku no kizuna
+ja,ja_0354,3,noun,life,family_traits,الاحترام المتبادل,相互尊重,sōgo sonchō
+ja,ja_0355,3,noun,life,family_traits,روح التعاون,協調性,kyōchōsei
+ja,ja_0356,3,adj,life,family_traits,متواضع,謙虚な,kenkyo na
+ja,ja_0357,3,adj,life,family_traits,مسؤول,責任感のある,sekininkan no aru
+ja,ja_0358,3,adj,life,family_traits,متفائل,前向きな,maemuki na
+ja,ja_0359,3,verb,life,family_traits,يساعد والديه,両親を手伝う,ryōshin o tetsudau
+ja,ja_0360,3,verb,life,family_traits,يحترم الكبار,年長者を敬う,nenchōsha o uyamau
+ja,ja_0361,3,phrase,life,family_traits,أحب قضاء الوقت مع عائلتي,家族と過ごす時間が好きです,kazoku to sugosu jikan ga suki desu
+ja,ja_0362,3,phrase,life,family_traits,نحن نساعد بعضنا البعض في المنزل,家の中で助け合っています,ie no naka de tasukeatte imasu
