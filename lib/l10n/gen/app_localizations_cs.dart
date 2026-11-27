@@ -994,8 +994,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get noteTitleHint => 'Název';
 
   @override
-  String get noteBodyHint =>
-      'Začněte psát…';
+  String get noteBodyHint => 'Začněte psát…';
 
   @override
   String get noteFavorite => 'Oblíbené';

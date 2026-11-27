@@ -962,8 +962,7 @@ class AppLocalizationsKk extends AppLocalizations {
   String get noteTitleHint => 'Тақырып';
 
   @override
-  String get noteBodyHint =>
-      'Жаза бастаңыз…';
+  String get noteBodyHint => 'Жаза бастаңыз…';
 
   @override
   String get noteFavorite => 'Таңдаулы';

@@ -962,8 +962,7 @@ class AppLocalizationsHy extends AppLocalizations {
   String get noteTitleHint => 'Վերնագիր';
 
   @override
-  String get noteBodyHint =>
-      'Սկսեք գրել…';
+  String get noteBodyHint => 'Սկսեք գրել…';
 
   @override
   String get noteFavorite => 'Ընտրյալ';

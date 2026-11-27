@@ -967,8 +967,7 @@ class AppLocalizationsTe extends AppLocalizations {
   String get noteTitleHint => 'శీర్షిక';
 
   @override
-  String get noteBodyHint =>
-      'రాయడం ప్రారంభించండి…';
+  String get noteBodyHint => 'రాయడం ప్రారంభించండి…';
 
   @override
   String get noteFavorite => 'ఇష్టమైనది';

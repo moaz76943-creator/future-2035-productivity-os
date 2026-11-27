@@ -972,8 +972,7 @@ class AppLocalizationsMk extends AppLocalizations {
   String get noteTitleHint => 'Наслов';
 
   @override
-  String get noteBodyHint =>
-      'Почнете да пишувате…';
+  String get noteBodyHint => 'Почнете да пишувате…';
 
   @override
   String get noteFavorite => 'Омилено';

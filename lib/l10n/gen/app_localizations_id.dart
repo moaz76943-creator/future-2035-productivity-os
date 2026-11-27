@@ -962,8 +962,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get noteTitleHint => 'Judul';
 
   @override
-  String get noteBodyHint =>
-      'Mulai menulis…';
+  String get noteBodyHint => 'Mulai menulis…';
 
   @override
   String get noteFavorite => 'Favorit';

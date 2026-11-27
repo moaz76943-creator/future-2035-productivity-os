@@ -1007,8 +1007,7 @@ class AppLocalizationsSl extends AppLocalizations {
   String get noteTitleHint => 'Naslov';
 
   @override
-  String get noteBodyHint =>
-      'Začnite pisati…';
+  String get noteBodyHint => 'Začnite pisati…';
 
   @override
   String get noteFavorite => 'Priljubljeno';

@@ -1008,8 +1008,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get noteTitleHint => 'Заголовок';
 
   @override
-  String get noteBodyHint =>
-      'Начните писать…';
+  String get noteBodyHint => 'Начните писать…';
 
   @override
   String get noteFavorite => 'В избранное';
