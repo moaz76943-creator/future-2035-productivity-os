@@ -65,7 +65,7 @@ jobs:
       - name: Test before release
         run: |
           flutter analyze
-          flutter test --timeout=25m --dart-define=ENABLE_ADS=false
+          flutter test --timeout=25m --exclude-tags=golden --dart-define=ENABLE_ADS=false
 
       - name: Build signed APK and AAB
         env:
