@@ -970,7 +970,7 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Αρχίστε να γράφετε… Χρησιμοποιήστε # για ετικέτες και [[Τίτλος]] για να συνδέσετε σημειώσεις.';
+      'Αρχίστε να γράφετε…';
 
   @override
   String get noteFavorite => 'Αγαπημένη';

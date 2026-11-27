@@ -963,7 +963,7 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'დაიწყეთ წერა… გამოიყენეთ # ტეგებისთვის და [[სათაური]] ჩანაწერების დასაკავშირებლად.';
+      'დაიწყეთ წერა…';
 
   @override
   String get noteFavorite => 'რჩეული';

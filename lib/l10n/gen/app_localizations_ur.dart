@@ -962,7 +962,7 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'لکھنا شروع کریں… ٹیگ کے لیے # اور نوٹس جوڑنے کے لیے [[عنوان]] استعمال کریں۔';
+      'لکھنا شروع کریں…';
 
   @override
   String get noteFavorite => 'پسندیدہ';

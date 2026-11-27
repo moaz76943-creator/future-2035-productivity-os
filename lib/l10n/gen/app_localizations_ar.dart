@@ -1018,7 +1018,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get noteTitleHint => 'العنوان';
 
   @override
-  String get noteBodyHint => 'ابدأ الكتابة… استخدم # للوسوم و[[العنوان]] لربط الملاحظات.';
+  String get noteBodyHint => 'ابدأ الكتابة…';
 
   @override
   String get noteFavorite => 'إضافة إلى المفضلة';

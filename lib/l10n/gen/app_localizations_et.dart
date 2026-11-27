@@ -967,7 +967,7 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Alustage kirjutamist… Kasutage silte # abil ja märkmete linkimiseks [[Pealkiri]].';
+      'Alustage kirjutamist…';
 
   @override
   String get noteFavorite => 'Lemmik';

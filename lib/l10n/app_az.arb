@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Boş vərəq",
   "notesEmptyMessage": "Fikirləri, görüş qeydlərini və bilikləri yazın.",
   "noteTitleHint": "Başlıq",
-  "noteBodyHint": "Yazmağa başlayın… Etiketlər üçün #, qeydləri əlaqələndirmək üçün [[Başlıq]] istifadə edin.",
+  "noteBodyHint": "Yazmağa başlayın…",
   "noteFavorite": "Seçilmiş",
   "noteUnfavorite": "Seçilmişlərdən çıxar",
   "noteMoveTo": "Dəftərə köçür",

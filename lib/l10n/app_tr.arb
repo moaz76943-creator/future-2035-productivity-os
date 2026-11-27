@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Boş bir sayfa",
   "notesEmptyMessage": "Fikirleri, toplantı notlarını ve bilgileri kaydet.",
   "noteTitleHint": "Başlık",
-  "noteBodyHint": "Yazmaya başla… Etiketler için #, notları bağlamak için [[Başlık]] kullan.",
+  "noteBodyHint": "Yazmaya başla…",
   "noteFavorite": "Favori",
   "noteUnfavorite": "Favorilerden çıkar",
   "noteMoveTo": "Deftere taşı",

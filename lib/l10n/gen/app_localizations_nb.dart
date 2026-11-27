@@ -968,7 +968,7 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Begynn å skrive… Bruk # for emneknagger og [[Tittel]] for å lenke notater.';
+      'Begynn å skrive…';
 
   @override
   String get noteFavorite => 'Favoritt';

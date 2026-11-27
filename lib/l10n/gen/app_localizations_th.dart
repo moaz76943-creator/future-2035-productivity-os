@@ -931,7 +931,7 @@ class AppLocalizationsTh extends AppLocalizations {
   String get noteTitleHint => 'ชื่อเรื่อง';
 
   @override
-  String get noteBodyHint => 'เริ่มเขียน… ใช้ # สำหรับแท็ก และ [[ชื่อเรื่อง]] เพื่อลิงก์โน้ต';
+  String get noteBodyHint => 'เริ่มเขียน…';
 
   @override
   String get noteFavorite => 'รายการโปรด';

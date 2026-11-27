@@ -926,7 +926,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get noteTitleHint => '标题';
 
   @override
-  String get noteBodyHint => '开始书写… 用 # 添加标签，用 [[标题]] 链接笔记。';
+  String get noteBodyHint => '开始书写…';
 
   @override
   String get noteFavorite => '收藏';
@@ -5863,7 +5863,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get noteTitleHint => '標題';
 
   @override
-  String get noteBodyHint => '開始書寫… 用 # 加標籤，用 [[標題]] 連結筆記。';
+  String get noteBodyHint => '開始書寫…';
 
   @override
   String get noteFavorite => '加入最愛';

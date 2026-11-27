@@ -963,7 +963,7 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Սկսեք գրել… Օգտագործեք # պիտակների համար և [[Վերնագիր]]՝ նշումները կապելու համար։';
+      'Սկսեք գրել…';
 
   @override
   String get noteFavorite => 'Ընտրյալ';

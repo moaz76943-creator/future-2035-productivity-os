@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Autt blað",
   "notesEmptyMessage": "Skráðu hugmyndir, fundarglósur og þekkingu.",
   "noteTitleHint": "Titill",
-  "noteBodyHint": "Byrjaðu að skrifa… Notaðu # fyrir merki og [[Titill]] til að tengja glósur.",
+  "noteBodyHint": "Byrjaðu að skrifa…",
   "noteFavorite": "Eftirlæti",
   "noteUnfavorite": "Fjarlægja úr eftirlætum",
   "noteMoveTo": "Færa í glósubók",

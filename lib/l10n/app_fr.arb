@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Une page blanche",
   "notesEmptyMessage": "Notez vos idées, comptes rendus de réunion et connaissances.",
   "noteTitleHint": "Titre",
-  "noteBodyHint": "Commencez à écrire… Utilisez # pour les étiquettes et [[Titre]] pour lier des notes.",
+  "noteBodyHint": "Commencez à écrire…",
   "noteFavorite": "Ajouter aux favoris",
   "noteUnfavorite": "Retirer des favoris",
   "noteMoveTo": "Déplacer vers un carnet",

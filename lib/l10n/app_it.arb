@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Una tela bianca",
   "notesEmptyMessage": "Annota idee, riunioni e conoscenze.",
   "noteTitleHint": "Titolo",
-  "noteBodyHint": "Inizia a scrivere… Usa # per i tag e [[Titolo]] per collegare le note.",
+  "noteBodyHint": "Inizia a scrivere…",
   "noteFavorite": "Preferita",
   "noteUnfavorite": "Rimuovi dai preferiti",
   "noteMoveTo": "Sposta in un quaderno",

@@ -972,7 +972,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Inizia a scrivere… Usa # per i tag e [[Titolo]] per collegare le note.';
+      'Inizia a scrivere…';
 
   @override
   String get noteFavorite => 'Preferita';

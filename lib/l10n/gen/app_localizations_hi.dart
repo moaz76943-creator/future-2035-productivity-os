@@ -967,7 +967,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'लिखना शुरू करें… टैग के लिए # और नोट्स लिंक करने के लिए [[शीर्षक]] का उपयोग करें।';
+      'लिखना शुरू करें…';
 
   @override
   String get noteFavorite => 'पसंदीदा में जोड़ें';

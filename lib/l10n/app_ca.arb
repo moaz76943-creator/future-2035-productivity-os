@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Un full en blanc",
   "notesEmptyMessage": "Captura idees, notes de reunions i coneixement.",
   "noteTitleHint": "Títol",
-  "noteBodyHint": "Comença a escriure… Fes servir # per a etiquetes i [[Títol]] per vincular notes.",
+  "noteBodyHint": "Comença a escriure…",
   "noteFavorite": "Preferida",
   "noteUnfavorite": "Treu de les preferides",
   "noteMoveTo": "Mou a la llibreta",

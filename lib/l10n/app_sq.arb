@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Një fletë e bardhë",
   "notesEmptyMessage": "Mbaj shënim ide, shënime takimesh dhe njohuri.",
   "noteTitleHint": "Titulli",
-  "noteBodyHint": "Fillo të shkruash… Përdor # për etiketa dhe [[Titulli]] për të lidhur shënimet.",
+  "noteBodyHint": "Fillo të shkruash…",
   "noteFavorite": "E preferuar",
   "noteUnfavorite": "Hiq nga të preferuarat",
   "noteMoveTo": "Zhvendos në fletore",

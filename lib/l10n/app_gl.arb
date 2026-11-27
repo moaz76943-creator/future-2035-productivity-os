@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Unha folla en branco",
   "notesEmptyMessage": "Garda ideas, notas de reunións e coñecemento.",
   "noteTitleHint": "Título",
-  "noteBodyHint": "Comeza a escribir… Usa # para etiquetas e [[Título]] para vincular notas.",
+  "noteBodyHint": "Comeza a escribir…",
   "noteFavorite": "Favorita",
   "noteUnfavorite": "Quitar de favoritas",
   "noteMoveTo": "Mover ao caderno",

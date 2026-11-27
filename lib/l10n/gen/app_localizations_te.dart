@@ -968,7 +968,7 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'రాయడం ప్రారంభించండి… ట్యాగ్‌ల కోసం # మరియు నోట్స్‌ను లింక్ చేయడానికి [[శీర్షిక]] ఉపయోగించండి.';
+      'రాయడం ప్రారంభించండి…';
 
   @override
   String get noteFavorite => 'ఇష్టమైనది';

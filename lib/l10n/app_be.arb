@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Чысты аркуш",
   "notesEmptyMessage": "Запісвайце ідэі, нататкі з сустрэч і веды.",
   "noteTitleHint": "Назва",
-  "noteBodyHint": "Пачніце пісаць… Выкарыстоўвайце # для метак і [[Назва]] для сувязі нататак.",
+  "noteBodyHint": "Пачніце пісаць…",
   "noteFavorite": "У абранае",
   "noteUnfavorite": "Выдаліць з абранага",
   "noteMoveTo": "Перамясціць у блакнот",

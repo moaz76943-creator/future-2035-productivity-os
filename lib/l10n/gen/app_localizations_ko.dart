@@ -927,7 +927,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get noteTitleHint => '제목';
 
   @override
-  String get noteBodyHint => '쓰기 시작하세요… 태그는 #, 노트 연결은 [[제목]]을 사용하세요.';
+  String get noteBodyHint => '쓰기 시작하세요…';
 
   @override
   String get noteFavorite => '즐겨찾기';

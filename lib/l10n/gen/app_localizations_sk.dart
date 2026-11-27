@@ -996,7 +996,7 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Začnite písať… Použite # pre štítky a [[Názov]] na prepojenie poznámok.';
+      'Začnite písať…';
 
   @override
   String get noteFavorite => 'Obľúbené';

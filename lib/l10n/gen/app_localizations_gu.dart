@@ -992,7 +992,7 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'લખવાનું શરૂ કરો… ટૅગ માટે # અને નોંધો લિંક કરવા માટે [[શીર્ષક]] વાપરો.';
+      'લખવાનું શરૂ કરો…';
 
   @override
   String get noteFavorite => 'મનપસંદ';

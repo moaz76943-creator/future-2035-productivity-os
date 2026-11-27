@@ -993,7 +993,7 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'ලිවීම අරඹන්න… ටැග් සඳහා # සහ සටහන් සම්බන්ධ කිරීමට [[මාතෘකාව]] භාවිත කරන්න.';
+      'ලිවීම අරඹන්න…';
 
   @override
   String get noteFavorite => 'ප්‍රියතම';

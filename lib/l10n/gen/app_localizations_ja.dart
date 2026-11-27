@@ -927,7 +927,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get noteTitleHint => 'タイトル';
 
   @override
-  String get noteBodyHint => '書き始めましょう… # でタグ、[[タイトル]] でメモをリンクできます。';
+  String get noteBodyHint => '書き始めましょう…';
 
   @override
   String get noteFavorite => 'お気に入り';

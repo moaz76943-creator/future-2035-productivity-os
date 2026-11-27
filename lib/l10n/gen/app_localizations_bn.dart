@@ -935,7 +935,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'লেখা শুরু করুন… ট্যাগের জন্য # এবং নোট যুক্ত করতে [[শিরোনাম]] ব্যবহার করুন।';
+      'লেখা শুরু করুন…';
 
   @override
   String get noteFavorite => 'প্রিয়';

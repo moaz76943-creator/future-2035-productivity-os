@@ -280,7 +280,7 @@
   "notesEmptyTitle": "หน้าว่างเปล่า",
   "notesEmptyMessage": "จดไอเดีย บันทึกการประชุม และความรู้",
   "noteTitleHint": "ชื่อเรื่อง",
-  "noteBodyHint": "เริ่มเขียน… ใช้ # สำหรับแท็ก และ [[ชื่อเรื่อง]] เพื่อลิงก์โน้ต",
+  "noteBodyHint": "เริ่มเขียน…",
   "noteFavorite": "รายการโปรด",
   "noteUnfavorite": "นำออกจากรายการโปรด",
   "noteMoveTo": "ย้ายไปสมุดโน้ต",

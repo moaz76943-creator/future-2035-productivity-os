@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Kanvas kosong",
   "notesEmptyMessage": "Catat idea, nota mesyuarat dan pengetahuan.",
   "noteTitleHint": "Tajuk",
-  "noteBodyHint": "Mula menulis… Gunakan # untuk tag dan [[Tajuk]] untuk memautkan nota.",
+  "noteBodyHint": "Mula menulis…",
   "noteFavorite": "Kegemaran",
   "noteUnfavorite": "Alih keluar daripada kegemaran",
   "noteMoveTo": "Alihkan ke buku nota",

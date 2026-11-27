@@ -280,7 +280,7 @@
   "notesEmptyTitle": "빈 캔버스",
   "notesEmptyMessage": "아이디어, 회의 메모, 지식을 기록하세요.",
   "noteTitleHint": "제목",
-  "noteBodyHint": "쓰기 시작하세요… 태그는 #, 노트 연결은 [[제목]]을 사용하세요.",
+  "noteBodyHint": "쓰기 시작하세요…",
   "noteFavorite": "즐겨찾기",
   "noteUnfavorite": "즐겨찾기에서 삭제",
   "noteMoveTo": "노트북으로 이동",

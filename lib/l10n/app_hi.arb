@@ -280,7 +280,7 @@
   "notesEmptyTitle": "एक कोरा कैनवास",
   "notesEmptyMessage": "विचार, मीटिंग नोट्स और ज्ञान सहेजें।",
   "noteTitleHint": "शीर्षक",
-  "noteBodyHint": "लिखना शुरू करें… टैग के लिए # और नोट्स लिंक करने के लिए [[शीर्षक]] का उपयोग करें।",
+  "noteBodyHint": "लिखना शुरू करें…",
   "noteFavorite": "पसंदीदा में जोड़ें",
   "noteUnfavorite": "पसंदीदा से हटाएँ",
   "noteMoveTo": "नोटबुक में ले जाएँ",

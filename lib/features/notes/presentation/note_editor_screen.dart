@@ -18,7 +18,6 @@ import '../../../core/time/clock.dart';
 import '../../../shared/widgets/dialogs.dart';
 import '../../../shared/widgets/mic_button.dart';
 import '../../../shared/widgets/task_picker.dart';
-import '../../projects/application/projects_providers.dart';
 import '../application/note_text.dart';
 import '../../../core/platform/media_picker.dart';
 import '../data/note_images.dart';

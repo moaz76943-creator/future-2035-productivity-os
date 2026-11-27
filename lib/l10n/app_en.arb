@@ -1258,7 +1258,7 @@
   "@noteTitleHint": {
     "description": "Field hint"
   },
-  "noteBodyHint": "Start writing… Use # for tags and [[Title]] to link notes.",
+  "noteBodyHint": "Start writing…",
   "@noteBodyHint": {
     "description": "Field hint"
   },

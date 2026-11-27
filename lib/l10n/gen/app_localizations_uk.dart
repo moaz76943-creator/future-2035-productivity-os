@@ -1008,7 +1008,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get noteTitleHint => 'Назва';
 
   @override
-  String get noteBodyHint => 'Почніть писати… # — для тегів, [[Назва]] — щоб зв’язати нотатки.';
+  String get noteBodyHint => 'Почніть писати…';
 
   @override
   String get noteFavorite => 'Обране';

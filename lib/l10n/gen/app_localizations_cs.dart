@@ -995,7 +995,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Začněte psát… Použijte # pro štítky a [[Název]] pro propojení poznámek.';
+      'Začněte psát…';
 
   @override
   String get noteFavorite => 'Oblíbené';

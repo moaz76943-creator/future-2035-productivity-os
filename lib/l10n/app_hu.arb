@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Üres lap",
   "notesEmptyMessage": "Rögzítsd az ötleteket, a megbeszélések jegyzeteit és a tudást.",
   "noteTitleHint": "Cím",
-  "noteBodyHint": "Kezdj el írni… A # címkét jelöl, a [[Cím]] összekapcsolja a jegyzeteket.",
+  "noteBodyHint": "Kezdj el írni…",
   "noteFavorite": "Kedvenc",
   "noteUnfavorite": "Eltávolítás a kedvencekből",
   "noteMoveTo": "Áthelyezés jegyzetfüzetbe",

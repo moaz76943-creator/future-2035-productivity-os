@@ -991,7 +991,7 @@ class AppLocalizationsPa extends AppLocalizations {
   String get noteTitleHint => 'ਸਿਰਲੇਖ';
 
   @override
-  String get noteBodyHint => 'ਲਿਖਣਾ ਸ਼ੁਰੂ ਕਰੋ… ਟੈਗਾਂ ਲਈ # ਅਤੇ ਨੋਟ ਲਿੰਕ ਕਰਨ ਲਈ [[ਸਿਰਲੇਖ]] ਵਰਤੋ।';
+  String get noteBodyHint => 'ਲਿਖਣਾ ਸ਼ੁਰੂ ਕਰੋ…';
 
   @override
   String get noteFavorite => 'ਮਨਪਸੰਦ';

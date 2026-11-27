@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Toza varaq",
   "notesEmptyMessage": "Gʻoyalar, uchrashuv qaydlari va bilimlarni yozib oling.",
   "noteTitleHint": "Sarlavha",
-  "noteBodyHint": "Yozishni boshlang… Teglar uchun # va qaydlarni bogʻlash uchun [[Sarlavha]] dan foydalaning.",
+  "noteBodyHint": "Yozishni boshlang…",
   "noteFavorite": "Sevimli",
   "noteUnfavorite": "Sevimlilardan olib tashlash",
   "noteMoveTo": "Daftarga koʻchirish",

@@ -216,42 +216,47 @@ class _Featured extends StatelessWidget {
   final _Space space;
 
   @override
-  Widget build(BuildContext context) => Semantics(
-    button: true,
-    label: [space.label, ?space.caption].join(', '),
-    excludeSemantics: true,
-    // Calm glass card like the design; the module colour lives in the icon orb.
-    child: DeepFocusGlassCard(
-      onTap: () => openRoute(context, space.route),
-      child: SizedBox(
-        // Icon (fixed) + title + caption (scaled with the font size).
-        // Two lines for the title and the caption: long translations
-        // (e.g. Arabic "البطاقات التعليمية") were cut with an ellipsis.
-        height: 64 + MediaQuery.textScalerOf(context).scale(84),
-        width: double.infinity,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            DeepFocusAssetIcon(assetPath: space.asset, fallbackIcon: space.icon, size: 52),
-            const Spacer(),
-            Text(
-              space.label,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              style: context.text.titleMedium?.copyWith(height: 1.2),
-            ),
-            if (space.caption != null)
+  Widget build(BuildContext context) {
+    // Same big 3D icon as the grid below (smaller on wide screens), centred.
+    final icon = MediaQuery.sizeOf(context).width >= 600 ? 64.0 : 80.0;
+    return Semantics(
+      button: true,
+      label: [space.label, ?space.caption].join(', '),
+      excludeSemantics: true,
+      // Calm glass card like the design; the module colour lives in the icon orb.
+      child: DeepFocusGlassCard(
+        onTap: () => openRoute(context, space.route),
+        child: SizedBox(
+          // Icon (fixed) + title + caption (scaled with the font size). Two lines each:
+          // long translations (e.g. Arabic "البطاقات التعليمية") were cut with an ellipsis.
+          height: icon + Space.xs + MediaQuery.textScalerOf(context).scale(84),
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              DeepFocusAssetIcon(assetPath: space.asset, fallbackIcon: space.icon, size: icon),
+              const SizedBox(height: Space.xs),
               Text(
-                space.caption!,
+                space.label,
+                textAlign: TextAlign.center,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
-                style: context.text.labelMedium,
+                style: context.text.titleMedium?.copyWith(height: 1.2),
               ),
-          ],
+              if (space.caption != null)
+                Text(
+                  space.caption!,
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: context.text.labelMedium,
+                ),
+            ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 }
 
 class _OrbTile extends StatelessWidget {

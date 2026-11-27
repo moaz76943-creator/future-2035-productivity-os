@@ -980,7 +980,7 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'எழுதத் தொடங்குங்கள்… குறிச்சொற்களுக்கு # மற்றும் குறிப்புகளை இணைக்க [[தலைப்பு]] பயன்படுத்துங்கள்.';
+      'எழுதத் தொடங்குங்கள்…';
 
   @override
   String get noteFavorite => 'பிடித்தது';

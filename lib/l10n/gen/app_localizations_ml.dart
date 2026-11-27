@@ -966,7 +966,7 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'എഴുതാൻ തുടങ്ങുക… ടാഗുകൾക്ക് # ഉം കുറിപ്പുകൾ ലിങ്ക് ചെയ്യാൻ [[ശീർഷകം]] ഉം ഉപയോഗിക്കുക.';
+      'എഴുതാൻ തുടങ്ങുക…';
 
   @override
   String get noteFavorite => 'പ്രിയപ്പെട്ടത്';

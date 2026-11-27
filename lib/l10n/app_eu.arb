@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Orri zuri bat",
   "notesEmptyMessage": "Jaso ideiak, bileretako oharrak eta jakintza.",
   "noteTitleHint": "Izenburua",
-  "noteBodyHint": "Hasi idazten… Erabili # etiketetarako eta [[Izenburua]] oharrak estekatzeko.",
+  "noteBodyHint": "Hasi idazten…",
   "noteFavorite": "Gogokoa",
   "noteUnfavorite": "Kendu gogokoetatik",
   "noteMoveTo": "Eraman koadernora",

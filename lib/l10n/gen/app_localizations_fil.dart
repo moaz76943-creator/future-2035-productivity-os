@@ -969,7 +969,7 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Magsimulang magsulat… Gamitin ang # para sa tag at [[Pamagat]] para i-link ang mga tala.';
+      'Magsimulang magsulat…';
 
   @override
   String get noteFavorite => 'Paborito';

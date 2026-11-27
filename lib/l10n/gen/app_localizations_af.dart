@@ -961,7 +961,7 @@ class AppLocalizationsAf extends AppLocalizations {
   String get noteTitleHint => 'Titel';
 
   @override
-  String get noteBodyHint => 'Begin skryf… Gebruik # vir etikette en [[Titel]] om notas te koppel.';
+  String get noteBodyHint => 'Begin skryf…';
 
   @override
   String get noteFavorite => 'Gunsteling';

@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Czysta karta",
   "notesEmptyMessage": "Zapisuj pomysły, notatki ze spotkań i wiedzę.",
   "noteTitleHint": "Tytuł",
-  "noteBodyHint": "Zacznij pisać… Użyj # dla tagów i [[Tytuł]], aby łączyć notatki.",
+  "noteBodyHint": "Zacznij pisać…",
   "noteFavorite": "Ulubiona",
   "noteUnfavorite": "Usuń z ulubionych",
   "noteMoveTo": "Przenieś do notesu",

@@ -1009,7 +1009,7 @@ class AppLocalizationsBe extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Пачніце пісаць… Выкарыстоўвайце # для метак і [[Назва]] для сувязі нататак.';
+      'Пачніце пісаць…';
 
   @override
   String get noteFavorite => 'У абранае';

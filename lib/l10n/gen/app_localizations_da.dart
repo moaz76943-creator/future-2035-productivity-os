@@ -967,7 +967,7 @@ class AppLocalizationsDa extends AppLocalizations {
   String get noteTitleHint => 'Titel';
 
   @override
-  String get noteBodyHint => 'Begynd at skrive… Brug # til tags og [[Titel]] til at linke noter.';
+  String get noteBodyHint => 'Begynd at skrive…';
 
   @override
   String get noteFavorite => 'Favorit';

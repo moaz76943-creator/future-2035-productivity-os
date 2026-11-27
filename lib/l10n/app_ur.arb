@@ -280,7 +280,7 @@
   "notesEmptyTitle": "ایک خالی صفحہ",
   "notesEmptyMessage": "خیالات، میٹنگ نوٹس اور معلومات لکھ لیں۔",
   "noteTitleHint": "عنوان",
-  "noteBodyHint": "لکھنا شروع کریں… ٹیگ کے لیے # اور نوٹس جوڑنے کے لیے [[عنوان]] استعمال کریں۔",
+  "noteBodyHint": "لکھنا شروع کریں…",
   "noteFavorite": "پسندیدہ",
   "noteUnfavorite": "پسندیدہ سے ہٹائیں",
   "noteMoveTo": "نوٹ بک میں منتقل کریں",

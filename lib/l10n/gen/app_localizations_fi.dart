@@ -974,7 +974,7 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get noteBodyHint =>
-      'Aloita kirjoittaminen… Käytä #-merkkiä tunnisteisiin ja [[Otsikko]] linkittämään muistiinpanoja.';
+      'Aloita kirjoittaminen…';
 
   @override
   String get noteFavorite => 'Suosikki';

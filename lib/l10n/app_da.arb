@@ -280,7 +280,7 @@
   "notesEmptyTitle": "Et blankt ark",
   "notesEmptyMessage": "Gem idéer, mødenoter og viden.",
   "noteTitleHint": "Titel",
-  "noteBodyHint": "Begynd at skrive… Brug # til tags og [[Titel]] til at linke noter.",
+  "noteBodyHint": "Begynd at skrive…",
   "noteFavorite": "Favorit",
   "noteUnfavorite": "Fjern fra favoritter",
   "noteMoveTo": "Flyt til notesbog",
