@@ -994,8 +994,7 @@ class AppLocalizationsKn extends AppLocalizations {
   String get noteTitleHint => 'ಶೀರ್ಷಿಕೆ';
 
   @override
-  String get noteBodyHint =>
-      'ಬರೆಯಲು ಪ್ರಾರಂಭಿಸಿ…';
+  String get noteBodyHint => 'ಬರೆಯಲು ಪ್ರಾರಂಭಿಸಿ…';
 
   @override
   String get noteFavorite => 'ಮೆಚ್ಚಿನದು';

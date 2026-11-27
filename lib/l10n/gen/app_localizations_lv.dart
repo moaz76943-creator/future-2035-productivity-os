@@ -993,8 +993,7 @@ class AppLocalizationsLv extends AppLocalizations {
   String get noteTitleHint => 'Nosaukums';
 
   @override
-  String get noteBodyHint =>
-      'Sāciet rakstīt…';
+  String get noteBodyHint => 'Sāciet rakstīt…';
 
   @override
   String get noteFavorite => 'Pievienot izlasei';

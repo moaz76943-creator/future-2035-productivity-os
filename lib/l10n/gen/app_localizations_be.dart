@@ -1008,8 +1008,7 @@ class AppLocalizationsBe extends AppLocalizations {
   String get noteTitleHint => 'Назва';
 
   @override
-  String get noteBodyHint =>
-      'Пачніце пісаць…';
+  String get noteBodyHint => 'Пачніце пісаць…';
 
   @override
   String get noteFavorite => 'У абранае';

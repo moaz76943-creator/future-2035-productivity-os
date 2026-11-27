@@ -962,8 +962,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get noteTitleHint => 'Titulli';
 
   @override
-  String get noteBodyHint =>
-      'Fillo të shkruash…';
+  String get noteBodyHint => 'Fillo të shkruash…';
 
   @override
   String get noteFavorite => 'E preferuar';

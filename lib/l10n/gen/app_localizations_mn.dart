@@ -966,8 +966,7 @@ class AppLocalizationsMn extends AppLocalizations {
   String get noteTitleHint => 'Гарчиг';
 
   @override
-  String get noteBodyHint =>
-      'Бичиж эхлээрэй…';
+  String get noteBodyHint => 'Бичиж эхлээрэй…';
 
   @override
   String get noteFavorite => 'Дуртай';

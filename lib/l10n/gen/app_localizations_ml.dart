@@ -965,8 +965,7 @@ class AppLocalizationsMl extends AppLocalizations {
   String get noteTitleHint => 'ശീർഷകം';
 
   @override
-  String get noteBodyHint =>
-      'എഴുതാൻ തുടങ്ങുക…';
+  String get noteBodyHint => 'എഴുതാൻ തുടങ്ങുക…';
 
   @override
   String get noteFavorite => 'പ്രിയപ്പെട്ടത്';

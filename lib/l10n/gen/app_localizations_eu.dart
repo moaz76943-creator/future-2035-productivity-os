@@ -983,8 +983,7 @@ class AppLocalizationsEu extends AppLocalizations {
   String get noteTitleHint => 'Izenburua';
 
   @override
-  String get noteBodyHint =>
-      'Hasi idazten…';
+  String get noteBodyHint => 'Hasi idazten…';
 
   @override
   String get noteFavorite => 'Gogokoa';

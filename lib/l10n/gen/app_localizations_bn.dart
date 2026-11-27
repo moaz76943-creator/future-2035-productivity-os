@@ -934,8 +934,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get noteTitleHint => 'শিরোনাম';
 
   @override
-  String get noteBodyHint =>
-      'লেখা শুরু করুন…';
+  String get noteBodyHint => 'লেখা শুরু করুন…';
 
   @override
   String get noteFavorite => 'প্রিয়';

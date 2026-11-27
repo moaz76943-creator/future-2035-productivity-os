@@ -968,8 +968,7 @@ class AppLocalizationsFil extends AppLocalizations {
   String get noteTitleHint => 'Pamagat';
 
   @override
-  String get noteBodyHint =>
-      'Magsimulang magsulat…';
+  String get noteBodyHint => 'Magsimulang magsulat…';
 
   @override
   String get noteFavorite => 'Paborito';

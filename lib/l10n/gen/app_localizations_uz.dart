@@ -961,8 +961,7 @@ class AppLocalizationsUz extends AppLocalizations {
   String get noteTitleHint => 'Sarlavha';
 
   @override
-  String get noteBodyHint =>
-      'Yozishni boshlang…';
+  String get noteBodyHint => 'Yozishni boshlang…';
 
   @override
   String get noteFavorite => 'Sevimli';
