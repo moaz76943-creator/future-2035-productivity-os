@@ -995,8 +995,7 @@ class AppLocalizationsBs extends AppLocalizations {
   String get noteTitleHint => 'Naslov';
 
   @override
-  String get noteBodyHint =>
-      'Počnite pisati…';
+  String get noteBodyHint => 'Počnite pisati…';
 
   @override
   String get noteFavorite => 'Omiljeno';

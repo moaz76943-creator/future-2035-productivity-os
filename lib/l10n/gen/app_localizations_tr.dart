@@ -959,8 +959,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get noteTitleHint => 'Başlık';
 
   @override
-  String get noteBodyHint =>
-      'Yazmaya başla…';
+  String get noteBodyHint => 'Yazmaya başla…';
 
   @override
   String get noteFavorite => 'Favori';

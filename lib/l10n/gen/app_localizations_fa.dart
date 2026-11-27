@@ -984,8 +984,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get noteTitleHint => 'عنوان';
 
   @override
-  String get noteBodyHint =>
-      'شروع به نوشتن کنید…';
+  String get noteBodyHint => 'شروع به نوشتن کنید…';
 
   @override
   String get noteFavorite => 'علاقه‌مندی';

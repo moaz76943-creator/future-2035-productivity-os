@@ -979,8 +979,7 @@ class AppLocalizationsTa extends AppLocalizations {
   String get noteTitleHint => 'தலைப்பு';
 
   @override
-  String get noteBodyHint =>
-      'எழுதத் தொடங்குங்கள்…';
+  String get noteBodyHint => 'எழுதத் தொடங்குங்கள்…';
 
   @override
   String get noteFavorite => 'பிடித்தது';

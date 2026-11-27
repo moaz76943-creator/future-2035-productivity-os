@@ -971,8 +971,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get noteTitleHint => 'Titolo';
 
   @override
-  String get noteBodyHint =>
-      'Inizia a scrivere…';
+  String get noteBodyHint => 'Inizia a scrivere…';
 
   @override
   String get noteFavorite => 'Preferita';

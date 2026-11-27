@@ -973,8 +973,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get noteTitleHint => 'Otsikko';
 
   @override
-  String get noteBodyHint =>
-      'Aloita kirjoittaminen…';
+  String get noteBodyHint => 'Aloita kirjoittaminen…';
 
   @override
   String get noteFavorite => 'Suosikki';
