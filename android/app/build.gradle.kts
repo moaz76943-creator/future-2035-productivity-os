@@ -77,6 +77,9 @@ flutter {
 dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
     implementation("com.google.android.play:integrity:1.4.0")
+    // Enables Baseline Profiles for faster cold starts and smoother scrolling.
+    // Generate profiles with Macrobenchmark; ProfileInstaller applies them on install.
+    implementation("androidx.profileinstaller:profileinstaller:1.4.1")
 }
 
 // Fail release packaging early and clearly when no upload key is configured.
