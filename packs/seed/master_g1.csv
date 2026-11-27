@@ -1,0 +1,1261 @@
+lang,id,lvl,pos,main,sub,ar,target,pron
+en,en_0001,1,adj,home,colors,أحمر,red,ريد
+en,en_0002,1,adj,home,colors,أزرق,blue,بلو
+en,en_0003,1,adj,home,colors,أخضر,green,غرين
+en,en_0004,1,adj,home,colors,أصفر,yellow,ييلو
+en,en_0005,1,adj,home,colors,أبيض,white,وايت
+en,en_0006,1,adj,home,colors,أسود,black,بلاك
+en,en_0007,1,adj,home,colors,برتقالي,orange,أورنج
+en,en_0008,1,adj,home,colors,وردي,pink,بينك
+en,en_0009,1,adj,home,colors,بنفسجي,purple,بيربل
+en,en_0010,1,adj,home,colors,بني,brown,براون
+en,en_0011,1,adj,home,colors,رمادي,gray,غراي
+en,en_0012,1,adj,home,colors,ذهبي,gold,غولد
+en,en_0013,1,adj,home,colors,فضي,silver,سيلفر
+en,en_0014,2,adj,home,colors,بيج,beige,بيج
+en,en_0015,2,adj,home,colors,كحلي,navy,نيفي
+en,en_0016,2,adj,home,colors,تركوازي,turquoise,تيركويز
+en,en_0017,2,adj,home,colors,زيتوني,olive,أوليف
+en,en_0018,2,adj,home,colors,عنابي,maroon,مارون
+en,en_0019,2,adj,home,colors,سماوي,sky blue,سكاي بلو
+en,en_0020,2,adj,home,colors,فاتح,light,لايت
+en,en_0021,2,adj,home,colors,داكن,dark,دارك
+en,en_0022,3,adj,home,colors,قرمزي,crimson,كريمزون
+en,en_0023,3,adj,home,colors,زمردي,emerald,إيميرالد
+en,en_0024,3,adj,home,colors,عاجي,ivory,آيفوري
+en,en_0025,3,adj,home,colors,نيلي,indigo,إنديغو
+en,en_0026,1,n,home,kitchen,مطبخ,kitchen,كيتشن
+en,en_0027,1,n,home,kitchen,طبق,plate,بليت
+en,en_0028,1,n,home,kitchen,كوب,cup,كاب
+en,en_0029,1,n,home,kitchen,كأس زجاجي,glass,غلاس
+en,en_0030,1,n,home,kitchen,ملعقة,spoon,سبون
+en,en_0031,1,n,home,kitchen,شوكة,fork,فورك
+en,en_0032,1,n,home,kitchen,سكين طعام,table knife,تيبل نايف
+en,en_0033,1,n,home,kitchen,وعاء عميق,bowl,بول
+en,en_0034,1,n,home,kitchen,قدر طبخ,pot,بوت
+en,en_0035,1,n,home,kitchen,مقلاة,pan,بان
+en,en_0036,1,n,home,kitchen,إبريق شاي,teapot,تيبوت
+en,en_0037,1,n,home,kitchen,فنجان كبير,mug,ماغ
+en,en_0038,1,n,home,kitchen,صينية,tray,تراي
+en,en_0039,1,n,home,kitchen,حوض المطبخ,sink,سينك
+en,en_0040,1,n,home,kitchen,صنبور,faucet,فوسيت
+en,en_0041,2,n,home,kitchen,لوح تقطيع,cutting board,كاتينغ بورد
+en,en_0042,2,n,home,kitchen,مصفاة,strainer,سترينر
+en,en_0043,2,n,home,kitchen,مبشرة,grater,غريتر
+en,en_0044,2,n,home,kitchen,مغرفة,ladle,ليدل
+en,en_0045,2,n,home,kitchen,ملعقة تقليب,spatula,سباتشولا
+en,en_0046,2,n,home,kitchen,مقشرة,peeler,بيلر
+en,en_0047,2,n,home,kitchen,مئزر مطبخ,apron,أيبروون
+en,en_0048,2,n,home,kitchen,منديل طعام,napkin,نابكين
+en,en_0049,2,n,home,kitchen,إبريق ماء,pitcher,بيتشر
+en,en_0050,2,n,home,kitchen,غطاء القدر,lid,ليد
+en,en_0051,2,n,home,kitchen,خزانة مطبخ,cupboard,كابورد
+en,en_0052,3,n,home,kitchen,خفاقة يدوية,whisk,ويسك
+en,en_0053,3,n,home,kitchen,شوبك عجين,rolling pin,رولينغ بين
+en,en_0054,3,n,home,kitchen,مصفاة معكرونة,colander,كولاندر
+en,en_0055,3,n,home,kitchen,ملاقط طعام,tongs,تونغز
+en,en_0056,3,n,home,kitchen,فتاحة علب,can opener,كان أوبنر
+en,en_0057,3,n,home,kitchen,مخزن المؤن,pantry,بانتري
+en,en_0058,1,n,home,bathroom,حمام,bathroom,باثروم
+en,en_0059,1,n,home,bathroom,صابون,soap,سوب
+en,en_0060,1,n,home,bathroom,منشفة,towel,تاول
+en,en_0061,1,n,home,bathroom,فرشاة أسنان,toothbrush,توثبراش
+en,en_0062,1,n,home,bathroom,معجون أسنان,toothpaste,توثبيست
+en,en_0063,1,n,home,bathroom,شامبو,shampoo,شامبو
+en,en_0064,1,n,home,bathroom,مرآة,mirror,ميرور
+en,en_0065,1,n,home,bathroom,دش استحمام,shower,شاور
+en,en_0066,1,n,home,bathroom,مشط,comb,كوم
+en,en_0067,1,n,home,bathroom,فرشاة شعر,hairbrush,هيربراش
+en,en_0068,1,n,home,bathroom,إسفنجة,sponge,سبونج
+en,en_0069,2,n,home,bathroom,حوض استحمام,bathtub,باثتاب
+en,en_0070,2,n,home,bathroom,مناديل ورقية,tissue,تيشو
+en,en_0071,2,n,home,bathroom,بلسم شعر,conditioner,كونديشنر
+en,en_0072,2,n,home,bathroom,رداء استحمام,bathrobe,باثروب
+en,en_0073,2,n,home,bathroom,سجادة حمام,bath mat,باث مات
+en,en_0074,2,n,home,bathroom,رف مناشف,towel rack,تاول راك
+en,en_0075,2,n,home,bathroom,ستارة الدش,shower curtain,شاور كيرتن
+en,en_0076,3,n,home,bathroom,مغسلة يدين,washbasin,ووشبيسن
+en,en_0077,3,n,home,bathroom,خيط أسنان,dental floss,دينتال فلوس
+en,en_0078,3,n,home,bathroom,غسول فم,mouthwash,ماوثووش
+en,en_0079,3,n,home,bathroom,مصرف ماء,drain,درين
+en,en_0080,1,n,home,bedroom,غرفة نوم,bedroom,بيدروم
+en,en_0081,1,n,home,bedroom,سرير,bed,بيد
+en,en_0082,1,n,home,bedroom,وسادة,pillow,بيلو
+en,en_0083,1,n,home,bedroom,بطانية,blanket,بلانكيت
+en,en_0084,1,n,home,bedroom,ملاءة سرير,bedsheet,بيدشيت
+en,en_0085,1,n,home,bedroom,خزانة ملابس,wardrobe,ووردروب
+en,en_0086,1,n,home,bedroom,منبه,alarm clock,ألارم كلوك
+en,en_0087,1,n,home,bedroom,مصباح طاولة,lamp,لامب
+en,en_0088,1,n,home,bedroom,علاقة ملابس,hanger,هانغر
+en,en_0089,2,n,home,bedroom,مرتبة سرير,mattress,ماتريس
+en,en_0090,2,n,home,bedroom,لحاف,quilt,كويلت
+en,en_0091,2,n,home,bedroom,غطاء وسادة,pillowcase,بيلوكيس
+en,en_0092,2,n,home,bedroom,طاولة جانبية,nightstand,نايتستاند
+en,en_0093,2,n,home,bedroom,خزانة أدراج,dresser,دريسر
+en,en_0094,2,n,home,bedroom,درج,drawer,درور
+en,en_0095,2,n,home,bedroom,سرير بطابقين,bunk bed,بانك بيد
+en,en_0096,2,n,home,bedroom,مهد طفل,crib,كريب
+en,en_0097,3,n,home,bedroom,لحاف محشو,duvet,دوفيه
+en,en_0098,3,n,home,bedroom,مفرش سرير,bedspread,بيدسبريد
+en,en_0099,3,n,home,bedroom,لوح رأس السرير,headboard,هيدبورد
+en,en_0100,3,n,home,bedroom,طاولة زينة,vanity table,فانيتي تيبل
+en,en_0101,3,n,home,bedroom,ستائر معتمة,blackout curtains,بلاكآوت كيرتنز
+en,en_0102,1,n,home,living,غرفة معيشة,living room,ليفينغ روم
+en,en_0103,1,n,home,living,أريكة,sofa,سوفا
+en,en_0104,1,n,home,living,كرسي,chair,تشير
+en,en_0105,1,n,home,living,طاولة,table,تيبل
+en,en_0106,1,n,home,living,سجادة,carpet,كاربت
+en,en_0107,1,n,home,living,ستارة,curtain,كيرتن
+en,en_0108,1,n,home,living,باب,door,دور
+en,en_0109,1,n,home,living,نافذة,window,ويندو
+en,en_0110,1,n,home,living,جدار,wall,وول
+en,en_0111,1,n,home,living,أرضية,floor,فلور
+en,en_0112,1,n,home,living,سقف,ceiling,سيلينغ
+en,en_0113,1,n,home,living,رف,shelf,شيلف
+en,en_0114,1,n,home,living,ساعة حائط,wall clock,وول كلوك
+en,en_0115,1,n,home,living,مفتاح,key,كي
+en,en_0116,2,n,home,living,كرسي بذراعين,armchair,آرمتشير
+en,en_0117,2,n,home,living,طاولة قهوة,coffee table,كوفي تيبل
+en,en_0118,2,n,home,living,مكتبة كتب,bookshelf,بوكشيلف
+en,en_0119,2,n,home,living,بساط صغير,rug,راغ
+en,en_0120,2,n,home,living,وسادة أريكة,cushion,كوشن
+en,en_0121,2,n,home,living,ممر,hallway,هولواي
+en,en_0122,2,n,home,living,درج المنزل,stairs,ستيرز
+en,en_0123,2,n,home,living,شرفة,balcony,بالكوني
+en,en_0124,2,n,home,living,مقبض الباب,doorknob,دورنوب
+en,en_0125,2,n,home,living,قفل,lock,لوك
+en,en_0126,3,n,home,living,ثريا,chandelier,شانديلير
+en,en_0127,3,n,home,living,مسند قدمين,footstool,فوتستول
+en,en_0128,3,n,home,living,ستائر شرائح,blinds,بلايندز
+en,en_0129,1,n,home,appliances,ثلاجة,refrigerator,ريفريجيريتور
+en,en_0130,1,n,home,appliances,فرن,oven,أوفن
+en,en_0131,1,n,home,appliances,موقد,stove,ستوف
+en,en_0132,1,n,home,appliances,غسالة ملابس,washing machine,ووشينغ ماشين
+en,en_0133,1,n,home,appliances,مروحة,fan,فان
+en,en_0134,1,n,home,appliances,مكيف هواء,air conditioner,إير كونديشنر
+en,en_0135,1,n,home,appliances,مكواة,iron,آيرون
+en,en_0136,1,n,home,appliances,غلاية كهربائية,kettle,كيتل
+en,en_0137,1,n,home,appliances,تلفاز,television,تيليفيجن
+en,en_0138,1,n,home,appliances,مصباح كهربائي,light bulb,لايت بالب
+en,en_0139,2,n,home,appliances,ميكروويف,microwave,مايكروويف
+en,en_0140,2,n,home,appliances,خلاط,blender,بليندر
+en,en_0141,2,n,home,appliances,محمصة خبز,toaster,توستر
+en,en_0142,2,n,home,appliances,مكنسة كهربائية,vacuum cleaner,فاكيوم كلينر
+en,en_0143,2,n,home,appliances,غسالة أطباق,dishwasher,ديشووشر
+en,en_0144,2,n,home,appliances,مجمد,freezer,فريزر
+en,en_0145,2,n,home,appliances,مدفأة,heater,هيتر
+en,en_0146,2,n,home,appliances,مجفف شعر,hair dryer,هير دراير
+en,en_0147,2,n,home,appliances,مفتاح كهرباء,light switch,لايت سويتش
+en,en_0148,2,n,home,appliances,مقبس كهرباء,socket,سوكيت
+en,en_0149,2,n,home,appliances,قابس كهرباء,plug,بلاغ
+en,en_0150,3,n,home,appliances,مجفف ملابس,clothes dryer,كلوذز دراير
+en,en_0151,3,n,home,appliances,محضر طعام,food processor,فود بروسيسور
+en,en_0152,3,n,home,appliances,منقي هواء,air purifier,إير بيوريفاير
+en,en_0153,3,n,home,appliances,مرطب هواء,humidifier,هيوميديفاير
+en,en_0154,3,n,home,appliances,منظم حرارة,thermostat,ثيرموستات
+en,en_0155,1,n,home,garden_clean,حديقة,garden,غاردن
+en,en_0156,1,n,home,garden_clean,مكنسة يدوية,broom,بروم
+en,en_0157,1,n,home,garden_clean,دلو,bucket,باكيت
+en,en_0158,1,n,home,garden_clean,سلة مهملات,trash can,تراش كان
+en,en_0159,1,n,home,garden_clean,عشب,grass,غراس
+en,en_0160,1,n,home,garden_clean,زهرة,flower,فلاور
+en,en_0161,1,n,home,garden_clean,شجرة,tree,تري
+en,en_0162,1,n,home,garden_clean,سياج,fence,فينس
+en,en_0163,1,n,home,garden_clean,بوابة,gate,غيت
+en,en_0164,1,n,home,garden_clean,تربة,soil,سويل
+en,en_0165,2,n,home,garden_clean,ممسحة أرضية,mop,موب
+en,en_0166,2,n,home,garden_clean,مجرود غبار,dustpan,داستبان
+en,en_0167,2,n,home,garden_clean,منظف غسيل,detergent,ديتيرجنت
+en,en_0168,2,n,home,garden_clean,خرطوم ماء,hose,هوز
+en,en_0169,2,n,home,garden_clean,مرشة ماء,watering can,ووترينغ كان
+en,en_0170,2,n,home,garden_clean,أصيص نبات,flowerpot,فلاوربوت
+en,en_0171,2,n,home,garden_clean,مجرفة,shovel,شافل
+en,en_0172,2,n,home,garden_clean,مقعد حديقة,bench,بينتش
+en,en_0173,2,n,home,garden_clean,منفضة غبار,duster,داستر
+en,en_0174,2,n,home,garden_clean,سلة غسيل,laundry basket,لوندري باسكيت
+en,en_0175,2,n,home,garden_clean,مشبك غسيل,clothespin,كلوذزبين
+en,en_0176,3,n,home,garden_clean,جزازة عشب,lawnmower,لونمور
+en,en_0177,3,n,home,garden_clean,مشط حديقة,rake,ريك
+en,en_0178,3,n,home,garden_clean,عربة يدوية,wheelbarrow,ويلبارو
+en,en_0179,3,n,home,garden_clean,سماد طبيعي,compost,كومبوست
+en,en_0180,3,n,home,garden_clean,مقص تقليم,pruning shears,برونينغ شيرز
+en,en_0181,1,n,life,produce,تفاحة,apple,آبل
+en,en_0182,1,n,life,produce,موزة,banana,بنانا
+en,en_0183,1,n,life,produce,عنب,grapes,غريبس
+en,en_0184,1,n,life,produce,بطيخ,watermelon,ووترميلون
+en,en_0185,1,n,life,produce,فراولة,strawberry,ستروبيري
+en,en_0186,1,n,life,produce,ليمون,lemon,ليمون
+en,en_0187,1,n,life,produce,طماطم,tomato,توميتو
+en,en_0188,1,n,life,produce,بطاطس,potato,بوتيتو
+en,en_0189,1,n,life,produce,جزر,carrot,كاروت
+en,en_0190,1,n,life,produce,بصل,onion,أونيون
+en,en_0191,1,n,life,produce,خيار,cucumber,كيوكمبر
+en,en_0192,1,n,life,produce,ثوم,garlic,غارليك
+en,en_0193,1,n,life,produce,خس,lettuce,ليتوس
+en,en_0194,1,n,life,produce,ذرة,corn,كورن
+en,en_0195,1,n,life,produce,كمثرى,pear,بير
+en,en_0196,1,n,life,produce,خوخ,peach,بيتش
+en,en_0197,2,n,life,produce,مانجو,mango,مانغو
+en,en_0198,2,n,life,produce,أناناس,pineapple,باينآبل
+en,en_0199,2,n,life,produce,كرز,cherry,تشيري
+en,en_0200,2,n,life,produce,مشمش,apricot,أيبريكوت
+en,en_0201,2,n,life,produce,تين,fig,فيغ
+en,en_0202,2,n,life,produce,رمان,pomegranate,بوميغرانيت
+en,en_0203,2,n,life,produce,يوسفي,tangerine,تانجيرين
+en,en_0204,2,n,life,produce,فلفل حلو,bell pepper,بيل بيبر
+en,en_0205,2,n,life,produce,سبانخ,spinach,سبينيتش
+en,en_0206,2,n,life,produce,ملفوف,cabbage,كابيج
+en,en_0207,2,n,life,produce,باذنجان,eggplant,إيغبلانت
+en,en_0208,2,n,life,produce,كوسا,zucchini,زوكيني
+en,en_0209,3,n,life,produce,بروكلي,broccoli,بروكولي
+en,en_0210,3,n,life,produce,قرنبيط,cauliflower,كوليفلاور
+en,en_0211,3,n,life,produce,فجل,radish,راديش
+en,en_0212,3,n,life,produce,كرفس,celery,سيليري
+en,en_0213,1,n,life,food_drink,ماء,water,ووتر
+en,en_0214,1,n,life,food_drink,خبز,bread,بريد
+en,en_0215,1,n,life,food_drink,حليب,milk,ميلك
+en,en_0216,1,n,life,food_drink,جبن,cheese,تشيز
+en,en_0217,1,n,life,food_drink,بيضة,egg,إيغ
+en,en_0218,1,n,life,food_drink,زبدة,butter,باتر
+en,en_0219,1,n,life,food_drink,عسل,honey,هاني
+en,en_0220,1,n,life,food_drink,شاي,tea,تي
+en,en_0221,1,n,life,food_drink,قهوة,coffee,كوفي
+en,en_0222,1,n,life,food_drink,عصير,juice,جوس
+en,en_0223,1,n,life,food_drink,دجاج,chicken,تشيكن
+en,en_0224,1,n,life,food_drink,سمك,fish,فيش
+en,en_0225,1,n,life,food_drink,لحم بقر,beef,بيف
+en,en_0226,1,n,life,food_drink,حساء,soup,سوب
+en,en_0227,1,n,life,food_drink,سلطة,salad,سالاد
+en,en_0228,1,n,life,food_drink,كعكة,cake,كيك
+en,en_0229,2,n,life,food_drink,زبادي,yogurt,يوغرت
+en,en_0230,2,n,life,food_drink,مربى,jam,جام
+en,en_0231,2,n,life,food_drink,معكرونة,pasta,باستا
+en,en_0232,2,n,life,food_drink,شطيرة,sandwich,ساندويتش
+en,en_0233,2,n,life,food_drink,بسكويت,biscuit,بيسكيت
+en,en_0234,2,n,life,food_drink,مثلجات,ice cream,آيس كريم
+en,en_0235,2,n,life,food_drink,لحم ضأن,lamb,لام
+en,en_0236,2,n,life,food_drink,فطيرة,pie,باي
+en,en_0237,2,n,life,food_drink,فطور,breakfast,بريكفاست
+en,en_0238,2,n,life,food_drink,غداء,lunch,لانتش
+en,en_0239,2,n,life,food_drink,عشاء,dinner,دينر
+en,en_0240,3,n,life,food_drink,وجبة خفيفة,snack,سناك
+en,en_0241,3,n,life,food_drink,حساء مرق,broth,بروث
+en,en_0242,3,n,life,food_drink,عجينة,dough,دو
+en,en_0243,1,n,life,spices_grains,أرز,rice,رايس
+en,en_0244,1,n,life,spices_grains,ملح,salt,سولت
+en,en_0245,1,n,life,spices_grains,سكر,sugar,شوغر
+en,en_0246,1,n,life,spices_grains,دقيق,flour,فلاور
+en,en_0247,1,n,life,spices_grains,فلفل أسود,black pepper,بلاك بيبر
+en,en_0248,1,n,life,spices_grains,قمح,wheat,ويت
+en,en_0249,1,n,life,spices_grains,فاصوليا,beans,بينز
+en,en_0250,2,n,life,spices_grains,عدس,lentils,لينتيلز
+en,en_0251,2,n,life,spices_grains,حمص,chickpeas,تشيكبيز
+en,en_0252,2,n,life,spices_grains,شوفان,oats,أوتس
+en,en_0253,2,n,life,spices_grains,شعير,barley,بارلي
+en,en_0254,2,n,life,spices_grains,قرفة,cinnamon,سينامون
+en,en_0255,2,n,life,spices_grains,كمون,cumin,كيومين
+en,en_0256,2,n,life,spices_grains,نعناع,mint,مينت
+en,en_0257,2,n,life,spices_grains,زعتر,thyme,ثايم
+en,en_0258,2,n,life,spices_grains,زنجبيل,ginger,جينجر
+en,en_0259,2,n,life,spices_grains,سمسم,sesame,سيسامي
+en,en_0260,2,n,life,spices_grains,لوز,almond,آلموند
+en,en_0261,2,n,life,spices_grains,جوز,walnut,وولنات
+en,en_0262,3,n,life,spices_grains,كركم,turmeric,تيرميريك
+en,en_0263,3,n,life,spices_grains,هيل,cardamom,كارداموم
+en,en_0264,3,n,life,spices_grains,قرنفل,clove,كلوف
+en,en_0265,3,n,life,spices_grains,كزبرة,coriander,كورياندر
+en,en_0266,3,n,life,spices_grains,بقدونس,parsley,بارسلي
+en,en_0267,1,n,life,clothing,قميص,shirt,شيرت
+en,en_0268,1,n,life,clothing,بنطال,pants,بانتس
+en,en_0269,1,n,life,clothing,حذاء,shoes,شوز
+en,en_0270,1,n,life,clothing,جورب,sock,سوك
+en,en_0271,1,n,life,clothing,معطف,coat,كوت
+en,en_0272,1,n,life,clothing,سترة,jacket,جاكيت
+en,en_0273,1,n,life,clothing,قبعة,hat,هات
+en,en_0274,1,n,life,clothing,فستان,dress,دريس
+en,en_0275,1,n,life,clothing,تنورة,skirt,سكيرت
+en,en_0276,1,n,life,clothing,حزام,belt,بيلت
+en,en_0277,1,n,life,clothing,حقيبة,bag,باغ
+en,en_0278,1,n,life,clothing,نظارات,glasses,غلاسز
+en,en_0279,2,n,life,clothing,كنزة صوفية,sweater,سويتر
+en,en_0280,2,n,life,clothing,وشاح,scarf,سكارف
+en,en_0281,2,n,life,clothing,قفازات,gloves,غلافز
+en,en_0282,2,n,life,clothing,حذاء رياضي,sneakers,سنيكرز
+en,en_0283,2,n,life,clothing,حذاء طويل,boots,بوتس
+en,en_0284,2,n,life,clothing,صندل,sandals,ساندالز
+en,en_0285,2,n,life,clothing,خف منزلي,slippers,سليبرز
+en,en_0286,2,n,life,clothing,بدلة رسمية,suit,سوت
+en,en_0287,2,n,life,clothing,ربطة عنق,tie,تاي
+en,en_0288,2,n,life,clothing,ملابس نوم,pajamas,باجاماز
+en,en_0289,2,n,life,clothing,جيب,pocket,بوكيت
+en,en_0290,2,n,life,clothing,زر,button,باتون
+en,en_0291,3,n,life,clothing,سحاب,zipper,زيبر
+en,en_0292,3,n,life,clothing,ياقة,collar,كولار
+en,en_0293,3,n,life,clothing,كم القميص,sleeve,سليف
+en,en_0294,3,n,life,clothing,مظلة مطر,umbrella,أمبريلا
+en,en_0295,1,n,life,body_health,رأس,head,هيد
+en,en_0296,1,n,life,body_health,وجه,face,فيس
+en,en_0297,1,n,life,body_health,عين,eye,آي
+en,en_0298,1,n,life,body_health,أذن,ear,إير
+en,en_0299,1,n,life,body_health,أنف,nose,نوز
+en,en_0300,1,n,life,body_health,فم,mouth,ماوث
+en,en_0301,1,n,life,body_health,سن,tooth,توث
+en,en_0302,1,n,life,body_health,شعر,hair,هير
+en,en_0303,1,n,life,body_health,يد,hand,هاند
+en,en_0304,1,n,life,body_health,إصبع,finger,فينغر
+en,en_0305,1,n,life,body_health,ذراع,arm,آرم
+en,en_0306,1,n,life,body_health,ساق,leg,ليغ
+en,en_0307,1,n,life,body_health,قدم,foot,فوت
+en,en_0308,1,n,life,body_health,قلب,heart,هارت
+en,en_0309,1,n,life,body_health,صحة,health,هيلث
+en,en_0310,1,n,life,body_health,دواء,medicine,ميديسين
+en,en_0311,2,n,life,body_health,رقبة,neck,نيك
+en,en_0312,2,n,life,body_health,كتف,shoulder,شولدر
+en,en_0313,2,n,life,body_health,ظهر,back,باك
+en,en_0314,2,n,life,body_health,ركبة,knee,ني
+en,en_0315,2,n,life,body_health,معدة,stomach,ستوماك
+en,en_0316,2,n,life,body_health,لسان,tongue,تانغ
+en,en_0317,2,n,life,body_health,جبين,forehead,فورهيد
+en,en_0318,2,n,life,body_health,كوع,elbow,إيلبو
+en,en_0319,2,n,life,body_health,معصم,wrist,ريست
+en,en_0320,2,n,life,body_health,كاحل,ankle,آنكل
+en,en_0321,2,n,life,body_health,حمى,fever,فيفر
+en,en_0322,2,n,life,body_health,سعال,cough,كوف
+en,en_0323,2,n,life,body_health,صداع,headache,هيديك
+en,en_0324,3,n,life,body_health,ضمادة,bandage,بانديج
+en,en_0325,3,n,life,body_health,فيتامين,vitamin,فايتامين
+en,en_0326,3,n,life,body_health,مناعة,immunity,إيميونيتي
+en,en_0327,1,n,life,family_traits,عائلة,family,فاميلي
+en,en_0328,1,n,life,family_traits,أب,father,فاذر
+en,en_0329,1,n,life,family_traits,أم,mother,ماذر
+en,en_0330,1,n,life,family_traits,أخ,brother,براذر
+en,en_0331,1,n,life,family_traits,أخت,sister,سيستر
+en,en_0332,1,n,life,family_traits,ابن,son,سان
+en,en_0333,1,n,life,family_traits,ابنة,daughter,دوتر
+en,en_0334,1,n,life,family_traits,جد,grandfather,غراندفاذر
+en,en_0335,1,n,life,family_traits,جدة,grandmother,غراندماذر
+en,en_0336,1,n,life,family_traits,صديق,friend,فريند
+en,en_0337,1,n,life,family_traits,طفل,child,تشايلد
+en,en_0338,1,adj,life,family_traits,سعيد,happy,هابي
+en,en_0339,1,adj,life,family_traits,لطيف,kind,كايند
+en,en_0340,1,adj,life,family_traits,قوي,strong,سترونغ
+en,en_0341,1,adj,life,family_traits,ذكي,smart,سمارت
+en,en_0342,1,adj,life,family_traits,هادئ,calm,كام
+en,en_0343,2,n,life,family_traits,عم أو خال,uncle,آنكل
+en,en_0344,2,n,life,family_traits,عمة أو خالة,aunt,آنت
+en,en_0345,2,n,life,family_traits,ابن العم,cousin,كازن
+en,en_0346,2,n,life,family_traits,جار,neighbor,نيبر
+en,en_0347,2,adj,life,family_traits,صادق,honest,أونست
+en,en_0348,2,adj,life,family_traits,شجاع,brave,بريف
+en,en_0349,2,adj,life,family_traits,صبور,patient,بيشنت
+en,en_0350,2,adj,life,family_traits,مهذب,polite,بولايت
+en,en_0351,2,adj,life,family_traits,نشيط,active,أكتيف
+en,en_0352,2,adj,life,family_traits,متعاون,helpful,هيلبفل
+en,en_0353,2,adj,life,family_traits,ممتن,grateful,غريتفول
+en,en_0354,2,adj,life,family_traits,متفائل,cheerful,تشيرفل
+en,en_0355,3,adj,life,family_traits,كريم,generous,جينيروس
+en,en_0356,3,adj,life,family_traits,متواضع,humble,هامبل
+en,en_0357,3,adj,life,family_traits,حكيم,wise,وايز
+en,en_0358,3,adj,life,family_traits,مسؤول,responsible,ريسبونسبل
+en,en_0359,3,adj,life,family_traits,فضولي للعلم,curious,كيوريوس
+en,en_0360,3,adj,life,family_traits,مبدع,creative,كرييتيف
+en,en_0361,1,n,study,school,مدرسة,school,سكول
+en,en_0362,1,n,study,school,كتاب,book,بوك
+en,en_0363,1,n,study,school,دفتر,notebook,نوتبوك
+en,en_0364,1,n,study,school,قلم حبر,pen,بين
+en,en_0365,1,n,study,school,قلم رصاص,pencil,بينسيل
+en,en_0366,1,n,study,school,ممحاة,eraser,إيريسر
+en,en_0367,1,n,study,school,مسطرة,ruler,رولر
+en,en_0368,1,n,study,school,حقيبة ظهر,backpack,باكباك
+en,en_0369,1,n,study,school,فصل دراسي,classroom,كلاسروم
+en,en_0370,1,n,study,school,معلم,teacher,تيتشر
+en,en_0371,1,n,study,school,طالب,student,ستيودنت
+en,en_0372,1,n,study,school,درس,lesson,ليسون
+en,en_0373,1,n,study,school,واجب منزلي,homework,هوموورك
+en,en_0374,1,n,study,school,امتحان,exam,إيغزام
+en,en_0375,1,n,study,school,مكتبة,library,لايبراري
+en,en_0376,2,n,study,school,جامعة,university,يونيفيرسيتي
+en,en_0377,2,n,study,school,سبورة,whiteboard,وايتبورد
+en,en_0378,2,n,study,school,مبراة,sharpener,شاربنر
+en,en_0379,2,n,study,school,مقص ورق,scissors,سيزرز
+en,en_0380,2,n,study,school,صمغ,glue,غلو
+en,en_0381,2,n,study,school,قاموس,dictionary,ديكشنري
+en,en_0382,2,n,study,school,صفحة,page,بيج
+en,en_0383,2,n,study,school,مادة دراسية,subject,سابجيكت
+en,en_0384,2,n,study,school,درجة علمية,grade,غريد
+en,en_0385,2,n,study,school,شهادة,certificate,سيرتيفيكيت
+en,en_0386,2,n,study,school,مختبر,laboratory,لابوراتوري
+en,en_0387,3,n,study,school,منهج دراسي,curriculum,كيريكيولوم
+en,en_0388,3,n,study,school,محاضرة,lecture,ليكتشر
+en,en_0389,3,n,study,school,بحث علمي,research,ريسيرتش
+en,en_0390,3,n,study,school,تخرج,graduation,غرادجويشن
+en,en_0391,1,n,study,office_tech,حاسوب,computer,كمبيوتر
+en,en_0392,1,n,study,office_tech,هاتف,phone,فون
+en,en_0393,1,n,study,office_tech,شاشة,screen,سكرين
+en,en_0394,1,n,study,office_tech,لوحة مفاتيح,keyboard,كيبورد
+en,en_0395,1,n,study,office_tech,فأرة حاسوب,mouse,ماوس
+en,en_0396,1,n,study,office_tech,إنترنت,internet,إنترنت
+en,en_0397,1,n,study,office_tech,مكتب,desk,ديسك
+en,en_0398,1,n,study,office_tech,ورقة,paper,بيبر
+en,en_0399,1,n,study,office_tech,ملف,file,فايل
+en,en_0400,1,n,study,office_tech,رسالة,message,ميسيج
+en,en_0401,1,n,study,office_tech,بريد إلكتروني,email,إيميل
+en,en_0402,1,n,study,office_tech,بطارية,battery,باتري
+en,en_0403,1,n,study,office_tech,شاحن,charger,تشارجر
+en,en_0404,2,n,study,office_tech,حاسوب محمول,laptop,لابتوب
+en,en_0405,2,n,study,office_tech,جهاز لوحي,tablet,تابلت
+en,en_0406,2,n,study,office_tech,طابعة,printer,برينتر
+en,en_0407,2,n,study,office_tech,مجلد,folder,فولدر
+en,en_0408,2,n,study,office_tech,كلمة مرور,password,باسوورد
+en,en_0409,2,n,study,office_tech,موقع إلكتروني,website,ويبسايت
+en,en_0410,2,n,study,office_tech,تطبيق,application,أبليكيشن
+en,en_0411,2,n,study,office_tech,سماعات رأس,headphones,هيدفونز
+en,en_0412,2,n,study,office_tech,مكبر صوت,speaker,سبيكر
+en,en_0413,2,n,study,office_tech,كاميرا,camera,كاميرا
+en,en_0414,2,n,study,office_tech,دباسة,stapler,ستيبلر
+en,en_0415,2,n,study,office_tech,مشبك ورق,paperclip,بيبركليب
+en,en_0416,3,n,study,office_tech,برمجيات,software,سوفتوير
+en,en_0417,3,n,study,office_tech,عتاد حاسوب,hardware,هاردوير
+en,en_0418,3,n,study,office_tech,قاعدة بيانات,database,داتابيس
+en,en_0419,3,n,study,office_tech,نسخة احتياطية,backup,باكآب
+en,en_0420,3,n,study,office_tech,تحديث,update,أبديت
+en,en_0421,1,n,study,numbers_time,صفر,zero,زيرو
+en,en_0422,1,n,study,numbers_time,واحد,one,وان
+en,en_0423,1,n,study,numbers_time,عشرة,ten,تين
+en,en_0424,1,n,study,numbers_time,مئة,hundred,هاندريد
+en,en_0425,1,n,study,numbers_time,ألف,thousand,ثاوزند
+en,en_0426,1,n,study,numbers_time,وقت,time,تايم
+en,en_0427,1,n,study,numbers_time,ثانية,second,سيكند
+en,en_0428,1,n,study,numbers_time,دقيقة,minute,مينيت
+en,en_0429,1,n,study,numbers_time,ساعة زمنية,hour,آور
+en,en_0430,1,n,study,numbers_time,يوم,day,داي
+en,en_0431,1,n,study,numbers_time,أسبوع,week,ويك
+en,en_0432,1,n,study,numbers_time,شهر,month,مانث
+en,en_0433,1,n,study,numbers_time,سنة,year,يير
+en,en_0434,1,n,study,numbers_time,صباح,morning,مورنينغ
+en,en_0435,1,n,study,numbers_time,مساء,evening,إيفنينغ
+en,en_0436,1,n,study,numbers_time,ليل,night,نايت
+en,en_0437,1,adv,study,numbers_time,اليوم,today,توداي
+en,en_0438,1,adv,study,numbers_time,غداً,tomorrow,تومورو
+en,en_0439,1,adv,study,numbers_time,أمس,yesterday,يسترداي
+en,en_0440,2,n,study,numbers_time,ظهيرة,afternoon,آفترنون
+en,en_0441,2,n,study,numbers_time,منتصف الليل,midnight,ميدنايت
+en,en_0442,2,n,study,numbers_time,تقويم,calendar,كاليندر
+en,en_0443,2,n,study,numbers_time,جدول مواعيد,schedule,سكيدجول
+en,en_0444,2,n,study,numbers_time,فصل الربيع,spring,سبرينغ
+en,en_0445,2,n,study,numbers_time,فصل الصيف,summer,سامر
+en,en_0446,2,n,study,numbers_time,فصل الخريف,autumn,أوتوم
+en,en_0447,2,n,study,numbers_time,فصل الشتاء,winter,وينتر
+en,en_0448,3,n,study,numbers_time,عقد زمني,decade,ديكيد
+en,en_0449,3,n,study,numbers_time,قرن زمني,century,سينتشوري
+en,en_0450,3,n,study,numbers_time,موعد نهائي,deadline,ديدلاين
+en,en_0451,1,v,study,core_verbs,يقرأ,read,ريد
+en,en_0452,1,v,study,core_verbs,يكتب,write,رايت
+en,en_0453,1,v,study,core_verbs,يتعلم,learn,ليرن
+en,en_0454,1,v,study,core_verbs,يدرس,study,ستادي
+en,en_0455,1,v,study,core_verbs,يسمع,listen,ليسن
+en,en_0456,1,v,study,core_verbs,يتحدث,speak,سبيك
+en,en_0457,1,v,study,core_verbs,يرى,see,سي
+en,en_0458,1,v,study,core_verbs,يذهب,go,غو
+en,en_0459,1,v,study,core_verbs,يأتي,come,كام
+en,en_0460,1,v,study,core_verbs,يأكل,eat,إيت
+en,en_0461,1,v,study,core_verbs,يشرب,drink,درينك
+en,en_0462,1,v,study,core_verbs,ينام,sleep,سليب
+en,en_0463,1,v,study,core_verbs,يعمل,work,وورك
+en,en_0464,1,v,study,core_verbs,يلعب,play,بلاي
+en,en_0465,1,v,study,core_verbs,يساعد,help,هيلب
+en,en_0466,1,v,study,core_verbs,يعرف,know,نو
+en,en_0467,1,v,study,core_verbs,يفكر,think,ثينك
+en,en_0468,1,v,study,core_verbs,يفتح,open,أوبن
+en,en_0469,1,v,study,core_verbs,يغلق,close,كلوز
+en,en_0470,2,v,study,core_verbs,يفهم,understand,أندرستاند
+en,en_0471,2,v,study,core_verbs,يتذكر,remember,ريميمبر
+en,en_0472,2,v,study,core_verbs,ينسى,forget,فورغيت
+en,en_0473,2,v,study,core_verbs,يشرح,explain,إكسبلين
+en,en_0474,2,v,study,core_verbs,يسأل,ask,آسك
+en,en_0475,2,v,study,core_verbs,يجيب,answer,آنسر
+en,en_0476,2,v,study,core_verbs,يحاول,try,تراي
+en,en_0477,2,v,study,core_verbs,يبدأ,start,ستارت
+en,en_0478,2,v,study,core_verbs,ينهي,finish,فينيش
+en,en_0479,2,v,study,core_verbs,يبني,build,بيلد
+en,en_0480,2,v,study,core_verbs,يختار,choose,تشوز
+en,en_0481,3,v,study,core_verbs,يحلل,analyze,أنالايز
+en,en_0482,3,v,study,core_verbs,يقارن,compare,كومبير
+en,en_0483,3,v,study,core_verbs,ينظم,organize,أورغانايز
+en,en_0484,3,v,study,core_verbs,يحسن,improve,إمبروف
+en,en_0485,3,v,study,core_verbs,يكتشف,discover,ديسكفر
+en,en_0486,1,n,study,grammar_links,أنا,I,آي
+en,en_0487,1,n,study,grammar_links,أنت,you,يو
+en,en_0488,1,n,study,grammar_links,نحن,we,وي
+en,en_0489,1,n,study,grammar_links,هو,he,هي
+en,en_0490,1,n,study,grammar_links,هي,she,شي
+en,en_0491,1,n,study,grammar_links,هم,they,ذاي
+en,en_0492,1,adv,study,grammar_links,هنا,here,هير
+en,en_0493,1,adv,study,grammar_links,هناك,there,ذير
+en,en_0494,1,adv,study,grammar_links,الآن,now,ناو
+en,en_0495,1,adv,study,grammar_links,دائماً,always,أولويز
+en,en_0496,1,adv,study,grammar_links,أبداً,never,نيفر
+en,en_0497,1,adv,study,grammar_links,معاً,together,توغيذر
+en,en_0498,1,adv,study,grammar_links,و,and,آند
+en,en_0499,1,adv,study,grammar_links,أو,or,أور
+en,en_0500,1,adv,study,grammar_links,لكن,but,بات
+en,en_0501,1,adv,study,grammar_links,لأن,because,بيكوز
+en,en_0502,1,adv,study,grammar_links,في,in,إن
+en,en_0503,1,adv,study,grammar_links,على,on,أون
+en,en_0504,1,adv,study,grammar_links,تحت,under,أندر
+en,en_0505,2,adv,study,grammar_links,بين,between,بيتوين
+en,en_0506,2,adv,study,grammar_links,قبل,before,بيفور
+en,en_0507,2,adv,study,grammar_links,بعد,after,آفتر
+en,en_0508,2,adv,study,grammar_links,خلال,during,ديورينغ
+en,en_0509,2,adv,study,grammar_links,أحياناً,sometimes,سامتايمز
+en,en_0510,2,adv,study,grammar_links,غالباً,often,أوفن
+en,en_0511,2,adv,study,grammar_links,سريعاً,quickly,كويكلي
+en,en_0512,2,adv,study,grammar_links,ببطء,slowly,سلولي
+en,en_0513,3,adv,study,grammar_links,ومع ذلك,however,هاوإيفر
+en,en_0514,3,adv,study,grammar_links,لذلك,therefore,ذيرفور
+en,en_0515,3,adv,study,grammar_links,بينما,meanwhile,مينوايل
+en,en_0516,1,phr,study,polite_phrases,مرحباً,hello,هيلو
+en,en_0517,1,phr,study,polite_phrases,صباح الخير,good morning,غود مورنينغ
+en,en_0518,1,phr,study,polite_phrases,مساء الخير,good evening,غود إيفنينغ
+en,en_0519,1,phr,study,polite_phrases,تصبح على خير,good night,غود نايت
+en,en_0520,1,phr,study,polite_phrases,من فضلك,please,بليز
+en,en_0521,1,phr,study,polite_phrases,شكراً لك,thank you,ثانك يو
+en,en_0522,1,phr,study,polite_phrases,عفواً,you are welcome,يو آر ويلكم
+en,en_0523,1,phr,study,polite_phrases,لو سمحت,excuse me,إكسكيوز مي
+en,en_0524,1,phr,study,polite_phrases,أنا آسف,I am sorry,آي آم سوري
+en,en_0525,1,phr,study,polite_phrases,إلى اللقاء,goodbye,غودباي
+en,en_0526,1,phr,study,polite_phrases,نعم,yes,ييس
+en,en_0527,1,phr,study,polite_phrases,لا,no,نو
+en,en_0528,2,phr,study,polite_phrases,كيف حالك,how are you,هاو آر يو
+en,en_0529,2,phr,study,polite_phrases,أنا بخير,I am fine,آي آم فاين
+en,en_0530,2,phr,study,polite_phrases,تشرفت بلقائك,nice to meet you,نايس تو ميت يو
+en,en_0531,2,phr,study,polite_phrases,أراك لاحقاً,see you later,سي يو ليتر
+en,en_0532,2,phr,study,polite_phrases,اعتن بنفسك,take care,تيك كير
+en,en_0533,2,phr,study,polite_phrases,لا مشكلة,no problem,نو بروبلم
+en,en_0534,2,phr,study,polite_phrases,بالتأكيد,of course,أوف كورس
+en,en_0535,2,phr,study,polite_phrases,عمل رائع,well done,ويل دان
+en,en_0536,3,phr,study,polite_phrases,أقدر مساعدتك,I appreciate your help,آي أبريشييت يور هيلب
+en,en_0537,3,phr,study,polite_phrases,هل يمكنك المساعدة,could you help me,كود يو هيلب مي
+en,en_0538,3,phr,study,polite_phrases,يوم سعيد لك,have a nice day,هاف أ نايس داي
+en,en_0539,3,phr,study,polite_phrases,أتمنى لك التوفيق,I wish you success,آي ويش يو ساكسيس
+en,en_0540,3,phr,study,polite_phrases,أشكرك جزيلاً,thank you very much,ثانك يو فيري ماتش
+en,en_0541,1,n,world,nature_weather,شمس,sun,سان
+en,en_0542,1,n,world,nature_weather,قمر,moon,مون
+en,en_0543,1,n,world,nature_weather,نجم,star,ستار
+en,en_0544,1,n,world,nature_weather,سماء,sky,سكاي
+en,en_0545,1,n,world,nature_weather,سحابة,cloud,كلاود
+en,en_0546,1,n,world,nature_weather,مطر,rain,رين
+en,en_0547,1,n,world,nature_weather,ثلج,snow,سنو
+en,en_0548,1,n,world,nature_weather,رياح,wind,ويند
+en,en_0549,1,n,world,nature_weather,بحر,sea,سي
+en,en_0550,1,n,world,nature_weather,نهر,river,ريفر
+en,en_0551,1,n,world,nature_weather,جبل,mountain,ماونتن
+en,en_0552,1,n,world,nature_weather,غابة,forest,فورست
+en,en_0553,1,n,world,nature_weather,صحراء,desert,ديزرت
+en,en_0554,1,n,world,nature_weather,جزيرة,island,آيلاند
+en,en_0555,1,n,world,nature_weather,طقس,weather,ويذر
+en,en_0556,2,n,world,nature_weather,محيط,ocean,أوشن
+en,en_0557,2,n,world,nature_weather,بحيرة,lake,ليك
+en,en_0558,2,n,world,nature_weather,وادي,valley,فالي
+en,en_0559,2,n,world,nature_weather,شاطئ,beach,بيتش
+en,en_0560,2,n,world,nature_weather,عاصفة,storm,ستورم
+en,en_0561,2,n,world,nature_weather,ضباب,fog,فوغ
+en,en_0562,2,n,world,nature_weather,رعد,thunder,ثاندر
+en,en_0563,2,n,world,nature_weather,برق,lightning,لايتنينغ
+en,en_0564,2,n,world,nature_weather,قوس قزح,rainbow,رينبو
+en,en_0565,2,n,world,nature_weather,شلال,waterfall,ووترفول
+en,en_0566,2,n,world,nature_weather,كوكب,planet,بلانيت
+en,en_0567,3,n,world,nature_weather,مناخ,climate,كلايمت
+en,en_0568,3,n,world,nature_weather,رطوبة,humidity,هيوميديتي
+en,en_0569,3,n,world,nature_weather,أفق,horizon,هورايزون
+en,en_0570,3,n,world,nature_weather,نسيم عليل,breeze,بريز
+en,en_0571,1,n,world,animals_plants,قطة,cat,كات
+en,en_0572,1,n,world,animals_plants,كلب,dog,دوغ
+en,en_0573,1,n,world,animals_plants,طائر,bird,بيرد
+en,en_0574,1,n,world,animals_plants,حصان,horse,هورس
+en,en_0575,1,n,world,animals_plants,بقرة,cow,كاو
+en,en_0576,1,n,world,animals_plants,خروف,sheep,شيب
+en,en_0577,1,n,world,animals_plants,جمل,camel,كامل
+en,en_0578,1,n,world,animals_plants,أسد,lion,لايون
+en,en_0579,1,n,world,animals_plants,فيل,elephant,إيليفانت
+en,en_0580,1,n,world,animals_plants,أرنب,rabbit,رابيت
+en,en_0581,1,n,world,animals_plants,بطة,duck,داك
+en,en_0582,1,n,world,animals_plants,نحلة,bee,بي
+en,en_0583,1,n,world,animals_plants,فراشة,butterfly,باترفلاي
+en,en_0584,1,n,world,animals_plants,نبات,plant,بلانت
+en,en_0585,1,n,world,animals_plants,ورقة شجر,leaf,ليف
+en,en_0586,2,n,world,animals_plants,زرافة,giraffe,جيراف
+en,en_0587,2,n,world,animals_plants,غزال,deer,دير
+en,en_0588,2,n,world,animals_plants,سلحفاة,turtle,تيرتل
+en,en_0589,2,n,world,animals_plants,دلفين,dolphin,دولفين
+en,en_0590,2,n,world,animals_plants,حوت,whale,ويل
+en,en_0591,2,n,world,animals_plants,نسر,eagle,إيغل
+en,en_0592,2,n,world,animals_plants,حمامة,pigeon,بيجون
+en,en_0593,2,n,world,animals_plants,نملة,ant,آنت
+en,en_0594,2,n,world,animals_plants,بذرة,seed,سيد
+en,en_0595,2,n,world,animals_plants,جذر,root,روت
+en,en_0596,2,n,world,animals_plants,غصن,branch,برانتش
+en,en_0597,3,n,world,animals_plants,بطريق,penguin,بينغوين
+en,en_0598,3,n,world,animals_plants,صقر,falcon,فالكون
+en,en_0599,3,n,world,animals_plants,نخلة,palm tree,بالم تري
+en,en_0600,3,n,world,animals_plants,مرجان,coral,كورال
+en,en_0601,1,n,world,transport_travel,سيارة,car,كار
+en,en_0602,1,n,world,transport_travel,حافلة,bus,باس
+en,en_0603,1,n,world,transport_travel,قطار,train,ترين
+en,en_0604,1,n,world,transport_travel,طائرة,airplane,إيربلين
+en,en_0605,1,n,world,transport_travel,دراجة هوائية,bicycle,بايسيكل
+en,en_0606,1,n,world,transport_travel,سفينة,ship,شيب
+en,en_0607,1,n,world,transport_travel,قارب,boat,بوت
+en,en_0608,1,n,world,transport_travel,سيارة أجرة,taxi,تاكسي
+en,en_0609,1,n,world,transport_travel,طريق,road,رود
+en,en_0610,1,n,world,transport_travel,تذكرة,ticket,تيكيت
+en,en_0611,1,n,world,transport_travel,حقيبة سفر,suitcase,سوتكيس
+en,en_0612,1,n,world,transport_travel,سفر,travel,ترافل
+en,en_0613,1,n,world,transport_travel,مطار,airport,إيربورت
+en,en_0614,1,n,world,transport_travel,محطة,station,ستيشن
+en,en_0615,1,n,world,transport_travel,خريطة,map,ماب
+en,en_0616,2,n,world,transport_travel,شاحنة,truck,تراك
+en,en_0617,2,n,world,transport_travel,قطار أنفاق,subway,سابواي
+en,en_0618,2,n,world,transport_travel,جواز سفر,passport,باسبورت
+en,en_0619,2,n,world,transport_travel,فندق,hotel,هوتيل
+en,en_0620,2,n,world,transport_travel,رحلة,trip,تريب
+en,en_0621,2,n,world,transport_travel,سائق,driver,درايفر
+en,en_0622,2,n,world,transport_travel,راكب,passenger,باسنجر
+en,en_0623,2,n,world,transport_travel,عجلة,wheel,ويل
+en,en_0624,2,n,world,transport_travel,وقود,fuel,فيول
+en,en_0625,2,n,world,transport_travel,حركة المرور,traffic,ترافيك
+en,en_0626,2,n,world,transport_travel,ميناء,harbor,هاربور
+en,en_0627,3,n,world,transport_travel,وجهة سفر,destination,ديستينيشن
+en,en_0628,3,n,world,transport_travel,مغادرة,departure,ديبارتشر
+en,en_0629,3,n,world,transport_travel,وصول,arrival,أرايفال
+en,en_0630,3,n,world,transport_travel,بوصلة,compass,كومباس
+en,en_0631,1,n,world,city_directions,مدينة,city,سيتي
+en,en_0632,1,n,world,city_directions,قرية,village,فيليج
+en,en_0633,1,n,world,city_directions,شارع,street,ستريت
+en,en_0634,1,n,world,city_directions,منزل,house,هاوس
+en,en_0635,1,n,world,city_directions,مبنى,building,بيلدينغ
+en,en_0636,1,n,world,city_directions,مستشفى,hospital,هوسبيتال
+en,en_0637,1,n,world,city_directions,سوق,market,ماركت
+en,en_0638,1,n,world,city_directions,متجر,shop,شوب
+en,en_0639,1,n,world,city_directions,حديقة عامة,park,بارك
+en,en_0640,1,n,world,city_directions,جسر,bridge,بريدج
+en,en_0641,1,n,world,city_directions,يمين,right,رايت
+en,en_0642,1,n,world,city_directions,يسار,left,ليفت
+en,en_0643,1,n,world,city_directions,شمال,north,نورث
+en,en_0644,1,n,world,city_directions,جنوب,south,ساوث
+en,en_0645,1,n,world,city_directions,شرق,east,إيست
+en,en_0646,1,n,world,city_directions,غرب,west,ويست
+en,en_0647,2,n,world,city_directions,صيدلية,pharmacy,فارماسي
+en,en_0648,2,n,world,city_directions,مخبز,bakery,بيكري
+en,en_0649,2,n,world,city_directions,مطعم,restaurant,ريستورانت
+en,en_0650,2,n,world,city_directions,متحف,museum,ميوزيوم
+en,en_0651,2,n,world,city_directions,مكتب بريد,post office,بوست أوفيس
+en,en_0652,2,n,world,city_directions,رصيف مشاة,sidewalk,سايدووك
+en,en_0653,2,n,world,city_directions,تقاطع طرق,intersection,إنترسيكشن
+en,en_0654,2,n,world,city_directions,إشارة مرور,traffic light,ترافيك لايت
+en,en_0655,2,n,world,city_directions,وسط المدينة,downtown,داونتاون
+en,en_0656,2,n,world,city_directions,ميدان عام,square,سكوير
+en,en_0657,3,n,world,city_directions,موقف سيارات,parking lot,باركينغ لوت
+en,en_0658,3,n,world,city_directions,حي سكني,neighborhood,نيبرهود
+en,en_0659,3,n,world,city_directions,نفق,tunnel,تانل
+en,en_0660,3,n,world,city_directions,ممر مشاة,crosswalk,كروسووك
+en,en_0661,1,n,world,jobs_sports,طبيب,doctor,دكتور
+en,en_0662,1,n,world,jobs_sports,مهندس,engineer,إنجينير
+en,en_0663,1,n,world,jobs_sports,ممرض,nurse,نيرس
+en,en_0664,1,n,world,jobs_sports,مزارع,farmer,فارمر
+en,en_0665,1,n,world,jobs_sports,طباخ,chef,شيف
+en,en_0666,1,n,world,jobs_sports,طيار,pilot,بايلوت
+en,en_0667,1,n,world,jobs_sports,نجار,carpenter,كاربنتر
+en,en_0668,1,n,world,jobs_sports,خياط,tailor,تيلور
+en,en_0669,1,n,world,jobs_sports,رياضة,sport,سبورت
+en,en_0670,1,n,world,jobs_sports,كرة قدم,football,فوتبول
+en,en_0671,1,n,world,jobs_sports,سباحة,swimming,سويمينغ
+en,en_0672,1,n,world,jobs_sports,جري,running,رانينغ
+en,en_0673,1,n,world,jobs_sports,كرة سلة,basketball,باسكتبول
+en,en_0674,1,n,world,jobs_sports,فريق,team,تيم
+en,en_0675,1,n,world,jobs_sports,ملعب,stadium,ستيديوم
+en,en_0676,2,n,world,jobs_sports,مبرمج,programmer,بروغرامر
+en,en_0677,2,n,world,jobs_sports,عالم,scientist,ساينتست
+en,en_0678,2,n,world,jobs_sports,معماري,architect,آركيتيكت
+en,en_0679,2,n,world,jobs_sports,طبيب أسنان,dentist,دينتست
+en,en_0680,2,n,world,jobs_sports,كهربائي,electrician,إلكتريشن
+en,en_0681,2,n,world,jobs_sports,سباك,plumber,بلامر
+en,en_0682,2,n,world,jobs_sports,مدرب رياضي,coach,كوتش
+en,en_0683,2,n,world,jobs_sports,كرة طائرة,volleyball,فوليبول
+en,en_0684,2,n,world,jobs_sports,تنس,tennis,تينيس
+en,en_0685,2,n,world,jobs_sports,ركوب الدراجات,cycling,سايكلينغ
+en,en_0686,2,n,world,jobs_sports,تسلق الجبال,hiking,هايكينغ
+en,en_0687,3,n,world,jobs_sports,صيدلي,pharmacist,فارماسيست
+en,en_0688,3,n,world,jobs_sports,مترجم,translator,ترانسليتور
+en,en_0689,3,n,world,jobs_sports,رماية بالقوس,archery,آرتشري
+en,en_0690,3,n,world,jobs_sports,ميدالية,medal,ميدال
+en,en_0691,1,n,world,materials_shop,خشب,wood,وود
+en,en_0692,1,n,world,materials_shop,معدن,metal,ميتال
+en,en_0693,1,n,world,materials_shop,بلاستيك,plastic,بلاستيك
+en,en_0694,1,n,world,materials_shop,حجر,stone,ستون
+en,en_0695,1,n,world,materials_shop,قطن,cotton,كوتون
+en,en_0696,1,n,world,materials_shop,صوف,wool,وول
+en,en_0697,1,n,world,materials_shop,جلد طبيعي,leather,ليذر
+en,en_0698,1,n,world,materials_shop,سعر,price,برايس
+en,en_0699,1,n,world,materials_shop,نقود,money,ماني
+en,en_0700,1,n,world,materials_shop,صندوق,box,بوكس
+en,en_0701,1,n,world,materials_shop,وزن,weight,ويت
+en,en_0702,1,n,world,materials_shop,حجم,size,سايز
+en,en_0703,1,n,world,materials_shop,طول,length,لينغث
+en,en_0704,1,n,world,materials_shop,متر,meter,ميتر
+en,en_0705,1,n,world,materials_shop,كيلوغرام,kilogram,كيلوغرام
+en,en_0706,2,n,world,materials_shop,حرير,silk,سيلك
+en,en_0707,2,n,world,materials_shop,مطاط,rubber,رابر
+en,en_0708,2,n,world,materials_shop,فولاذ,steel,ستيل
+en,en_0709,2,n,world,materials_shop,نحاس,copper,كوبر
+en,en_0710,2,n,world,materials_shop,طين,clay,كلاي
+en,en_0711,2,n,world,materials_shop,رمل,sand,ساند
+en,en_0712,2,n,world,materials_shop,إيصال شراء,receipt,ريسيت
+en,en_0713,2,n,world,materials_shop,خصم سعر,discount,ديسكاونت
+en,en_0714,2,n,world,materials_shop,زبون,customer,كاستومر
+en,en_0715,2,n,world,materials_shop,بائع,seller,سيلر
+en,en_0716,2,n,world,materials_shop,جودة,quality,كواليتي
+en,en_0717,3,n,world,materials_shop,ألمنيوم,aluminum,ألومينوم
+en,en_0718,3,n,world,materials_shop,رخام,marble,ماربل
+en,en_0719,3,n,world,materials_shop,ضمان منتج,warranty,وارانتي
+en,en_0720,3,n,world,materials_shop,فاتورة,invoice,إنفويس
+es,es_0001,1,adj,home,colors,أحمر,rojo,روخو
+es,es_0002,1,adj,home,colors,أزرق,azul,أثول
+es,es_0003,1,adj,home,colors,أخضر,verde,بيردي
+es,es_0004,1,adj,home,colors,أصفر,amarillo,أمارييو
+es,es_0005,1,adj,home,colors,أبيض,blanco,بلانكو
+es,es_0006,1,adj,home,colors,أسود,negro,نيغرو
+es,es_0007,1,adj,home,colors,برتقالي,naranja,نارانخا
+es,es_0008,1,adj,home,colors,وردي,rosa,روسا
+es,es_0009,1,adj,home,colors,بنفسجي,morado,مورادو
+es,es_0010,1,adj,home,colors,بني,marrón,مارون
+es,es_0011,1,adj,home,colors,رمادي,gris,غريس
+es,es_0012,1,adj,home,colors,ذهبي,dorado,دورادو
+es,es_0013,1,adj,home,colors,فضي,plateado,بلاتيدو
+es,es_0014,2,adj,home,colors,بيج,beis,بيس
+es,es_0015,2,adj,home,colors,كحلي,azul marino,أثول مارينو
+es,es_0016,2,adj,home,colors,تركوازي,turquesa,توركيسا
+es,es_0017,2,adj,home,colors,زيتوني,verde oliva,بيردي أوليبا
+es,es_0018,2,adj,home,colors,عنابي,granate,غرانيتي
+es,es_0019,2,adj,home,colors,سماوي,celeste,ثيليستي
+es,es_0020,2,adj,home,colors,فاتح,claro,كلارو
+es,es_0021,2,adj,home,colors,داكن,oscuro,أوسكورو
+es,es_0022,3,adj,home,colors,قرمزي,carmesí,كارميسي
+es,es_0023,3,adj,home,colors,زمردي,esmeralda,إيسميرالدا
+es,es_0024,3,adj,home,colors,عاجي,marfil,مارفيل
+es,es_0025,3,adj,home,colors,نيلي,añil,أنييل
+es,es_0026,1,n,home,kitchen,مطبخ,la cocina,لا كوثينا
+es,es_0027,1,n,home,kitchen,طبق,el plato,إل بلاتو
+es,es_0028,1,n,home,kitchen,كوب,la taza,لا تاثا
+es,es_0029,1,n,home,kitchen,كأس زجاجي,el vaso,إل باسو
+es,es_0030,1,n,home,kitchen,ملعقة,la cuchara,لا كوتشارا
+es,es_0031,1,n,home,kitchen,شوكة,el tenedor,إل تينيدور
+es,es_0032,1,n,home,kitchen,سكين طعام,el cuchillo de mesa,إل كوتشييو دي ميسا
+es,es_0033,1,n,home,kitchen,وعاء عميق,el cuenco,إل كوينكو
+es,es_0034,1,n,home,kitchen,قدر طبخ,la olla,لا أويا
+es,es_0035,1,n,home,kitchen,مقلاة,la sartén,لا سارتين
+es,es_0036,1,n,home,kitchen,إبريق شاي,la tetera,لا تيتيرا
+es,es_0037,1,n,home,kitchen,فنجان كبير,el tazón,إل تاثون
+es,es_0038,1,n,home,kitchen,صينية,la bandeja,لا بانديخا
+es,es_0039,1,n,home,kitchen,حوض المطبخ,el fregadero,إل فريغاديرو
+es,es_0040,1,n,home,kitchen,صنبور,el grifo,إل غريفو
+es,es_0041,2,n,home,kitchen,لوح تقطيع,la tabla de cortar,لا تابلا دي كورتار
+es,es_0042,2,n,home,kitchen,مصفاة,el colador,إل كولادور
+es,es_0043,2,n,home,kitchen,مبشرة,el rallador,إل رايادور
+es,es_0044,2,n,home,kitchen,مغرفة,el cucharón,إل كوتشارون
+es,es_0045,2,n,home,kitchen,ملعقة تقليب,la espátula,لا إسباتولا
+es,es_0046,2,n,home,kitchen,مقشرة,el pelador,إل بيلادور
+es,es_0047,2,n,home,kitchen,مئزر مطبخ,el delantal,إل ديلانتال
+es,es_0048,2,n,home,kitchen,منديل طعام,la servilleta,لا سيربييتا
+es,es_0049,2,n,home,kitchen,إبريق ماء,la jarra,لا خارا
+es,es_0050,2,n,home,kitchen,غطاء القدر,la tapa,لا تابا
+es,es_0051,2,n,home,kitchen,خزانة مطبخ,la alacena,لا ألاثينا
+es,es_0052,3,n,home,kitchen,خفاقة يدوية,el batidor,إل باتيدور
+es,es_0053,3,n,home,kitchen,شوبك عجين,el rodillo,إل رودييو
+es,es_0054,3,n,home,kitchen,مصفاة معكرونة,el escurridor,إل إسكوريدور
+es,es_0055,3,n,home,kitchen,ملاقط طعام,las pinzas de cocina,لاس بينثاس دي كوثينا
+es,es_0056,3,n,home,kitchen,فتاحة علب,el abrelatas,إل أبريلاتاس
+es,es_0057,3,n,home,kitchen,مخزن المؤن,la despensa,لا ديسبينسا
+es,es_0058,1,n,home,bathroom,حمام,el baño,إل بانيو
+es,es_0059,1,n,home,bathroom,صابون,el jabón,إل خابون
+es,es_0060,1,n,home,bathroom,منشفة,la toalla,لا توايا
+es,es_0061,1,n,home,bathroom,فرشاة أسنان,el cepillo de dientes,إل ثيبييو دي ديينتيس
+es,es_0062,1,n,home,bathroom,معجون أسنان,la pasta de dientes,لا باستا دي ديينتيس
+es,es_0063,1,n,home,bathroom,شامبو,el champú,إل تشامبو
+es,es_0064,1,n,home,bathroom,مرآة,el espejo,إل إسبيخو
+es,es_0065,1,n,home,bathroom,دش استحمام,la ducha,لا دوتشا
+es,es_0066,1,n,home,bathroom,مشط,el peine,إل بيني
+es,es_0067,1,n,home,bathroom,فرشاة شعر,el cepillo de pelo,إل ثيبييو دي بيلو
+es,es_0068,1,n,home,bathroom,إسفنجة,la esponja,لا إسبونخا
+es,es_0069,2,n,home,bathroom,حوض استحمام,la bañera,لا بانييرا
+es,es_0070,2,n,home,bathroom,مناديل ورقية,el pañuelo de papel,إل بانيويلو دي بابيل
+es,es_0071,2,n,home,bathroom,بلسم شعر,el acondicionador,إل أكونديثيونادور
+es,es_0072,2,n,home,bathroom,رداء استحمام,la bata de baño,لا باتا دي بانيو
+es,es_0073,2,n,home,bathroom,سجادة حمام,la alfombrilla de baño,لا ألفومبرييا دي بانيو
+es,es_0074,2,n,home,bathroom,رف مناشف,el toallero,إل تواييرو
+es,es_0075,2,n,home,bathroom,ستارة الدش,la cortina de ducha,لا كورتينا دي دوتشا
+es,es_0076,3,n,home,bathroom,مغسلة يدين,el lavabo,إل لابابو
+es,es_0077,3,n,home,bathroom,خيط أسنان,el hilo dental,إل إيلو دينتال
+es,es_0078,3,n,home,bathroom,غسول فم,el enjuague bucal,إل إنخواغي بوكال
+es,es_0079,3,n,home,bathroom,مصرف ماء,el desagüe,إل ديساغوي
+es,es_0080,1,n,home,bedroom,غرفة نوم,el dormitorio,إل دورميتوريو
+es,es_0081,1,n,home,bedroom,سرير,la cama,لا كاما
+es,es_0082,1,n,home,bedroom,وسادة,la almohada,لا ألموادا
+es,es_0083,1,n,home,bedroom,بطانية,la manta,لا مانتا
+es,es_0084,1,n,home,bedroom,ملاءة سرير,la sábana,لا سابانا
+es,es_0085,1,n,home,bedroom,خزانة ملابس,el armario,إل أرماريو
+es,es_0086,1,n,home,bedroom,منبه,el despertador,إل ديسبيرتادور
+es,es_0087,1,n,home,bedroom,مصباح طاولة,la lámpara,لا لامبارا
+es,es_0088,1,n,home,bedroom,علاقة ملابس,la percha,لا بيرتشا
+es,es_0089,2,n,home,bedroom,مرتبة سرير,el colchón,إل كولتشون
+es,es_0090,2,n,home,bedroom,لحاف,la colcha,لا كولتشه
+es,es_0091,2,n,home,bedroom,غطاء وسادة,la funda de almohada,لا فوندا دي ألموادا
+es,es_0092,2,n,home,bedroom,طاولة جانبية,la mesita de noche,لا ميسيتا دي نوتشي
+es,es_0093,2,n,home,bedroom,خزانة أدراج,la cómoda,لا كومودا
+es,es_0094,2,n,home,bedroom,درج,el cajón,إل كاخون
+es,es_0095,2,n,home,bedroom,سرير بطابقين,la litera,لا ليتيرا
+es,es_0096,2,n,home,bedroom,مهد طفل,la cuna,لا كونا
+es,es_0097,3,n,home,bedroom,لحاف محشو,el edredón,إل إيدريدون
+es,es_0098,3,n,home,bedroom,مفرش سرير,el cubrecama,إل كوبريكاما
+es,es_0099,3,n,home,bedroom,لوح رأس السرير,el cabecero,إل كابيثيرو
+es,es_0100,3,n,home,bedroom,طاولة زينة,el tocador,إل توكادور
+es,es_0101,3,n,home,bedroom,ستائر معتمة,las cortinas opacas,لاس كورتيناس أوباكاس
+es,es_0102,1,n,home,living,غرفة معيشة,la sala de estar,لا سالا دي إستار
+es,es_0103,1,n,home,living,أريكة,el sofá,إل سوفا
+es,es_0104,1,n,home,living,كرسي,la silla,لا سييا
+es,es_0105,1,n,home,living,طاولة,la mesa,لا ميسا
+es,es_0106,1,n,home,living,سجادة,la alfombra,لا ألفومبرا
+es,es_0107,1,n,home,living,ستارة,la cortina,لا كورتينا
+es,es_0108,1,n,home,living,باب,la puerta,لا بويرتا
+es,es_0109,1,n,home,living,نافذة,la ventana,لا بينتانا
+es,es_0110,1,n,home,living,جدار,la pared,لا باريد
+es,es_0111,1,n,home,living,أرضية,el suelo,إل سويلو
+es,es_0112,1,n,home,living,سقف,el techo,إل تيتشو
+es,es_0113,1,n,home,living,رف,el estante,إل إستانتي
+es,es_0114,1,n,home,living,ساعة حائط,el reloj de pared,إل ريلوخ دي باريد
+es,es_0115,1,n,home,living,مفتاح,la llave,لا يابي
+es,es_0116,2,n,home,living,كرسي بذراعين,el sillón,إل سييون
+es,es_0117,2,n,home,living,طاولة قهوة,la mesa de centro,لا ميسا دي ثينترو
+es,es_0118,2,n,home,living,مكتبة كتب,la estantería,لا إستانتيريا
+es,es_0119,2,n,home,living,بساط صغير,el tapete,إل تابيتي
+es,es_0120,2,n,home,living,وسادة أريكة,el cojín,إل كوخين
+es,es_0121,2,n,home,living,ممر,el pasillo,إل باسييو
+es,es_0122,2,n,home,living,درج المنزل,las escaleras,لاس إسكاليراس
+es,es_0123,2,n,home,living,شرفة,el balcón,إل بالكون
+es,es_0124,2,n,home,living,مقبض الباب,el picaporte,إل بيكابورتي
+es,es_0125,2,n,home,living,قفل,la cerradura,لا ثيرادورا
+es,es_0126,3,n,home,living,ثريا,la lámpara de araña,لا لامبارا دي أرانيا
+es,es_0127,3,n,home,living,مسند قدمين,el reposapiés,إل ريبوسابييس
+es,es_0128,3,n,home,living,ستائر شرائح,las persianas,لاس بيرسياناس
+es,es_0129,1,n,home,appliances,ثلاجة,el refrigerador,إل ريفريخيرادور
+es,es_0130,1,n,home,appliances,فرن,el horno,إل أورنو
+es,es_0131,1,n,home,appliances,موقد,la estufa,لا إستوفا
+es,es_0132,1,n,home,appliances,غسالة ملابس,la lavadora,لا لابادورا
+es,es_0133,1,n,home,appliances,مروحة,el ventilador,إل بينتيلادور
+es,es_0134,1,n,home,appliances,مكيف هواء,el aire acondicionado,إل أيري أكونديثيونادو
+es,es_0135,1,n,home,appliances,مكواة,la plancha,لا بلانتشا
+es,es_0136,1,n,home,appliances,غلاية كهربائية,el hervidor eléctrico,إل إيربيدور إيليكتريكو
+es,es_0137,1,n,home,appliances,تلفاز,el televisor,إل تيليبيسور
+es,es_0138,1,n,home,appliances,مصباح كهربائي,la bombilla,لا بومبييا
+es,es_0139,2,n,home,appliances,ميكروويف,el microondas,إل ميكروونداس
+es,es_0140,2,n,home,appliances,خلاط,la licuadora,لا ليكوادورا
+es,es_0141,2,n,home,appliances,محمصة خبز,la tostadora,لا توستادورا
+es,es_0142,2,n,home,appliances,مكنسة كهربائية,la aspiradora,لا أسبيرادورا
+es,es_0143,2,n,home,appliances,غسالة أطباق,el lavavajillas,إل لاباباخيياس
+es,es_0144,2,n,home,appliances,مجمد,el congelador,إل كونخيلادور
+es,es_0145,2,n,home,appliances,مدفأة,el calefactor,إل كاليفاكتور
+es,es_0146,2,n,home,appliances,مجفف شعر,el secador de pelo,إل سيكادور دي بيلو
+es,es_0147,2,n,home,appliances,مفتاح كهرباء,el interruptor,إل إينتيروبتور
+es,es_0148,2,n,home,appliances,مقبس كهرباء,el enchufe,إل إنتشوفي
+es,es_0149,2,n,home,appliances,سلك كهرباء,el cable eléctrico,إل كابلي إيليكتريكو
+es,es_0150,3,n,home,appliances,مجفف ملابس,la secadora,لا سيكادورا
+es,es_0151,3,n,home,appliances,محضر طعام,el procesador de alimentos,إل بروثيسادور دي أليمينتوس
+es,es_0152,3,n,home,appliances,منقي هواء,el purificador de aire,إل بوريفيكادور دي أيري
+es,es_0153,3,n,home,appliances,مرطب هواء,el humidificador,إل أوميديفيكادور
+es,es_0154,3,n,home,appliances,منظم حرارة,el termostato,إل تيرموستاتو
+es,es_0155,1,n,home,garden_clean,حديقة,el jardín,إل خاردين
+es,es_0156,1,n,home,garden_clean,مكنسة يدوية,la escoba,لا إسكوبا
+es,es_0157,1,n,home,garden_clean,دلو,el cubo,إل كوبو
+es,es_0158,1,n,home,garden_clean,سلة مهملات,el cubo de basura,إل كوبو دي باسورا
+es,es_0159,1,n,home,garden_clean,عشب,el césped,إل ثيسبيد
+es,es_0160,1,n,home,garden_clean,زهرة,la flor,لا فلور
+es,es_0161,1,n,home,garden_clean,شجرة,el árbol,إل أربول
+es,es_0162,1,n,home,garden_clean,سياج,la valla,لا بايا
+es,es_0163,1,n,home,garden_clean,بوابة,el portón,إل بورتون
+es,es_0164,1,n,home,garden_clean,تربة,la tierra,لا تييرا
+es,es_0165,2,n,home,garden_clean,ممسحة أرضية,la fregona,لا فريغونا
+es,es_0166,2,n,home,garden_clean,مجرود غبار,el recogedor,إل ريكوخيدور
+es,es_0167,2,n,home,garden_clean,منظف غسيل,el detergente,إل ديتيرخينتي
+es,es_0168,2,n,home,garden_clean,خرطوم ماء,la manguera,لا مانغيرا
+es,es_0169,2,n,home,garden_clean,مرشة ماء,la regadera,لا ريغاديرا
+es,es_0170,2,n,home,garden_clean,أصيص نبات,la maceta,لا ماثيتا
+es,es_0171,2,n,home,garden_clean,مجرفة,la pala,لا بالا
+es,es_0172,2,n,home,garden_clean,مقعد حديقة,el asiento de jardín,إل أسيينتو دي خاردين
+es,es_0173,2,n,home,garden_clean,منفضة غبار,el plumero,إل بلوميرو
+es,es_0174,2,n,home,garden_clean,سلة غسيل,la cesta de ropa,لا ثيستا دي روبا
+es,es_0175,2,n,home,garden_clean,مشبك غسيل,la pinza de ropa,لا بينثا دي روبا
+es,es_0176,3,n,home,garden_clean,جزازة عشب,el cortacésped,إل كورتاثيسبيد
+es,es_0177,3,n,home,garden_clean,مشط حديقة,el rastrillo,إل راسترييو
+es,es_0178,3,n,home,garden_clean,عربة يدوية,la carretilla,لا كاريتييا
+es,es_0179,3,n,home,garden_clean,سماد طبيعي,el abono natural,إل أبونو ناتورال
+es,es_0180,3,n,home,garden_clean,مقص تقليم,las tijeras de podar,لاس تيخيراس دي بودار
+es,es_0181,1,n,life,produce,تفاحة,la manzana,لا مانثانا
+es,es_0182,1,n,life,produce,موزة,el plátano,إل بلاتانو
+es,es_0183,1,n,life,produce,عنب,las uvas,لاس أوباس
+es,es_0184,1,n,life,produce,بطيخ,la sandía,لا سانديا
+es,es_0185,1,n,life,produce,فراولة,la fresa,لا فريسا
+es,es_0186,1,n,life,produce,ليمون,el limón,إل ليمون
+es,es_0187,1,n,life,produce,طماطم,el tomate,إل توماتي
+es,es_0188,1,n,life,produce,بطاطس,la patata,لا باتاتا
+es,es_0189,1,n,life,produce,جزر,la zanahoria,لا ثاناوريا
+es,es_0190,1,n,life,produce,بصل,la cebolla,لا ثيبويا
+es,es_0191,1,n,life,produce,خيار,el pepino,إل بيبينو
+es,es_0192,1,n,life,produce,ثوم,el ajo,إل أخو
+es,es_0193,1,n,life,produce,خس,la lechuga,لا ليتشوغا
+es,es_0194,1,n,life,produce,ذرة,el maíz,إل مايث
+es,es_0195,1,n,life,produce,كمثرى,la pera,لا بيرا
+es,es_0196,1,n,life,produce,خوخ,el melocotón,إل ميلوكوتون
+es,es_0197,2,n,life,produce,مانجو,el mango,إل مانغو
+es,es_0198,2,n,life,produce,أناناس,la piña,لا بينيا
+es,es_0199,2,n,life,produce,كرز,la cereza,لا ثيريثا
+es,es_0200,2,n,life,produce,مشمش,el albaricoque,إل ألباريكوكي
+es,es_0201,2,n,life,produce,تين,el higo,إل إيغو
+es,es_0202,2,n,life,produce,رمان,la granada,لا غرانادا
+es,es_0203,2,n,life,produce,يوسفي,la mandarina,لا ماندارينا
+es,es_0204,2,n,life,produce,فلفل حلو,el pimiento,إل بيمينتو
+es,es_0205,2,n,life,produce,سبانخ,las espinacas,لاس إسبيناكاس
+es,es_0206,2,n,life,produce,ملفوف,el repollo,إل ريبويو
+es,es_0207,2,n,life,produce,باذنجان,la berenjena,لا بيرينخينا
+es,es_0208,2,n,life,produce,كوسا,el calabacín,إل كالاباثين
+es,es_0209,3,n,life,produce,بروكلي,el brócoli,إل بروكولي
+es,es_0210,3,n,life,produce,قرنبيط,la coliflor,لا كوليفلور
+es,es_0211,3,n,life,produce,فجل,el rábano,إل رابانو
+es,es_0212,3,n,life,produce,كرفس,el apio,إل أبيو
+es,es_0213,1,n,life,food_drink,ماء,el agua,إل أغوا
+es,es_0214,1,n,life,food_drink,خبز,el pan,إل بان
+es,es_0215,1,n,life,food_drink,حليب,la leche,لا ليتشي
+es,es_0216,1,n,life,food_drink,جبن,el queso,إل كيسو
+es,es_0217,1,n,life,food_drink,بيضة,el huevo,إل ويبو
+es,es_0218,1,n,life,food_drink,زبدة,la mantequilla,لا مانتيكييا
+es,es_0219,1,n,life,food_drink,عسل,la miel,لا مييل
+es,es_0220,1,n,life,food_drink,شاي,el té,إل تي
+es,es_0221,1,n,life,food_drink,قهوة,el café,إل كافي
+es,es_0222,1,n,life,food_drink,عصير,el jugo,إل خوغو
+es,es_0223,1,n,life,food_drink,دجاج,el pollo,إل بويو
+es,es_0224,1,n,life,food_drink,سمك,el pescado,إل بيسكادو
+es,es_0225,1,n,life,food_drink,لحم بقر,la carne de res,لا كارني دي ريس
+es,es_0226,1,n,life,food_drink,حساء,la sopa,لا سوبا
+es,es_0227,1,n,life,food_drink,سلطة,la ensalada,لا إنسالادا
+es,es_0228,1,n,life,food_drink,كعكة,el pastel,إل باستيل
+es,es_0229,2,n,life,food_drink,زبادي,el yogur,إل يوغور
+es,es_0230,2,n,life,food_drink,مربى,la mermelada,لا ميرميلادا
+es,es_0231,2,n,life,food_drink,معكرونة,la pasta,لا باستا
+es,es_0232,2,n,life,food_drink,شطيرة,el sándwich,إل ساندويتش
+es,es_0233,2,n,life,food_drink,بسكويت,la galleta,لا غاييتا
+es,es_0234,2,n,life,food_drink,مثلجات,el helado,إل إيلادو
+es,es_0235,2,n,life,food_drink,لحم ضأن,el cordero,إل كورديرو
+es,es_0236,2,n,life,food_drink,فطيرة,la empanada,لا إمبانادا
+es,es_0237,2,n,life,food_drink,فطور,el desayuno,إل ديسايونو
+es,es_0238,2,n,life,food_drink,غداء,el almuerzo,إل ألمويرثو
+es,es_0239,2,n,life,food_drink,عشاء,la cena,لا ثينا
+es,es_0240,3,n,life,food_drink,وجبة خفيفة,la merienda,لا ميرييندا
+es,es_0241,3,n,life,food_drink,حساء مرق,el caldo,إل كالدو
+es,es_0242,3,n,life,food_drink,عجينة,la masa,لا ماسا
+es,es_0243,1,n,life,spices_grains,أرز,el arroz,إل أروث
+es,es_0244,1,n,life,spices_grains,ملح,la sal,لا سال
+es,es_0245,1,n,life,spices_grains,سكر,el azúcar,إل أثوكار
+es,es_0246,1,n,life,spices_grains,دقيق,la harina,لا أرينا
+es,es_0247,1,n,life,spices_grains,فلفل أسود,la pimienta negra,لا بيميينتا نيغرا
+es,es_0248,1,n,life,spices_grains,قمح,el trigo,إل تريغو
+es,es_0249,1,n,life,spices_grains,فاصوليا,los frijoles,لوس فريخوليس
+es,es_0250,2,n,life,spices_grains,عدس,las lentejas,لاس لينتيخاس
+es,es_0251,2,n,life,spices_grains,حمص,los garbanzos,لوس غاربانثوس
+es,es_0252,2,n,life,spices_grains,شوفان,la avena,لا أبينا
+es,es_0253,2,n,life,spices_grains,شعير,la cebada,لا ثيبادا
+es,es_0254,2,n,life,spices_grains,قرفة,la canela,لا كانيلا
+es,es_0255,2,n,life,spices_grains,كمون,el comino,إل كومينو
+es,es_0256,2,n,life,spices_grains,نعناع,la menta,لا مينتا
+es,es_0257,2,n,life,spices_grains,زعتر,el tomillo,إل تومييو
+es,es_0258,2,n,life,spices_grains,زنجبيل,el jengibre,إل خينخيبري
+es,es_0259,2,n,life,spices_grains,سمسم,el sésamo,إل سيسامو
+es,es_0260,2,n,life,spices_grains,لوز,la almendra,لا ألميندرا
+es,es_0261,2,n,life,spices_grains,جوز,la nuez,لا نويث
+es,es_0262,3,n,life,spices_grains,كركم,la cúrcuma,لا كوركوما
+es,es_0263,3,n,life,spices_grains,هيل,el cardamomo,إل كاردامومو
+es,es_0264,3,n,life,spices_grains,قرنفل,el clavo de olor,إل كلابو دي أولور
+es,es_0265,3,n,life,spices_grains,كزبرة,el cilantro,إل ثيلانترو
+es,es_0266,3,n,life,spices_grains,بقدونس,el perejil,إل بيريخيل
+es,es_0267,1,n,life,clothing,قميص,la camisa,لا كاميسا
+es,es_0268,1,n,life,clothing,بنطال,los pantalones,لوس بانتالونيس
+es,es_0269,1,n,life,clothing,حذاء,los zapatos,لوس ثاباتوس
+es,es_0270,1,n,life,clothing,جورب,el calcetín,إل كالثيتين
+es,es_0271,1,n,life,clothing,معطف,el abrigo,إل أبريغو
+es,es_0272,1,n,life,clothing,سترة,la chaqueta,لا تشاكيتا
+es,es_0273,1,n,life,clothing,قبعة,el sombrero,إل سومبريرو
+es,es_0274,1,n,life,clothing,فستان,el vestido,إل بيستيدو
+es,es_0275,1,n,life,clothing,تنورة,la falda,لا فالدا
+es,es_0276,1,n,life,clothing,حزام,el cinturón,إل ثينتورون
+es,es_0277,1,n,life,clothing,حقيبة,el bolso,إل بولسو
+es,es_0278,1,n,life,clothing,نظارات,las gafas,لاس غافاس
+es,es_0279,2,n,life,clothing,كنزة صوفية,el suéter,إل سوئيتير
+es,es_0280,2,n,life,clothing,وشاح,la bufanda,لا بوفاندا
+es,es_0281,2,n,life,clothing,قفازات,los guantes,لوس غوانتيس
+es,es_0282,2,n,life,clothing,حذاء رياضي,las zapatillas deportivas,لاس ثاباتياس ديبورتيباس
+es,es_0283,2,n,life,clothing,حذاء طويل,las botas,لاس بوتاس
+es,es_0284,2,n,life,clothing,صندل,las sandalias,لاس ساندالياس
+es,es_0285,2,n,life,clothing,خف منزلي,las zapatillas de casa,لاس ثاباتياس دي كاسا
+es,es_0286,2,n,life,clothing,بدلة رسمية,el traje,إل تراخي
+es,es_0287,2,n,life,clothing,ربطة عنق,la corbata,لا كورباتا
+es,es_0288,2,n,life,clothing,ملابس نوم,el pijama,إل بيخاما
+es,es_0289,2,n,life,clothing,جيب,el bolsillo,إل بوسييو
+es,es_0290,2,n,life,clothing,زر,el botón,إل بوتون
+es,es_0291,3,n,life,clothing,سحاب,la cremallera,لا كريماييرا
+es,es_0292,3,n,life,clothing,ياقة,el cuello,إل كوييو
+es,es_0293,3,n,life,clothing,كم القميص,la manga,لا مانغا
+es,es_0294,3,n,life,clothing,مظلة مطر,el paraguas,إل باراغواس
+es,es_0295,1,n,life,body_health,رأس,la cabeza,لا كابيثا
+es,es_0296,1,n,life,body_health,وجه,la cara,لا كارا
+es,es_0297,1,n,life,body_health,عين,el ojo,إل أوخو
+es,es_0298,1,n,life,body_health,أذن,la oreja,لا أوريخا
+es,es_0299,1,n,life,body_health,أنف,la nariz,لا ناريث
+es,es_0300,1,n,life,body_health,فم,la boca,لا بوكا
+es,es_0301,1,n,life,body_health,سن,el diente,إل ديينتي
+es,es_0302,1,n,life,body_health,شعر,el cabello,إل كابيييو
+es,es_0303,1,n,life,body_health,يد,la mano,لا مانو
+es,es_0304,1,n,life,body_health,إصبع,el dedo,إل ديدو
+es,es_0305,1,n,life,body_health,ذراع,el brazo,إل براثو
+es,es_0306,1,n,life,body_health,ساق,la pierna,لا بييرنا
+es,es_0307,1,n,life,body_health,قدم,el pie,إل بيي
+es,es_0308,1,n,life,body_health,قلب,el corazón,إل كوراثون
+es,es_0309,1,n,life,body_health,صحة,la salud,لا سالود
+es,es_0310,1,n,life,body_health,دواء,la medicina,لا ميديثينا
+es,es_0311,2,n,life,body_health,رقبة,el cuello de cuerpo,إل كوييو
+es,es_0312,2,n,life,body_health,كتف,el hombro,إل أومبرو
+es,es_0313,2,n,life,body_health,ظهر,la espalda,لا إسبالدا
+es,es_0314,2,n,life,body_health,ركبة,la rodilla,لا رودييا
+es,es_0315,2,n,life,body_health,معدة,el estómago,إل إستوماغو
+es,es_0316,2,n,life,body_health,لسان,la lengua,لا لينغوا
+es,es_0317,2,n,life,body_health,جبين,la frente,لا فرينتي
+es,es_0318,2,n,life,body_health,كوع,el codo,إل كودو
+es,es_0319,2,n,life,body_health,معصم,la muñeca,لا مونيكا
+es,es_0320,2,n,life,body_health,كاحل,el tobillo,إل توبييو
+es,es_0321,2,n,life,body_health,حمى,la fiebre,لا فييبري
+es,es_0322,2,n,life,body_health,سعال,la tos,لا توس
+es,es_0323,2,n,life,body_health,صداع,el dolor de cabeza,إل دولور دي كابيثا
+es,es_0324,3,n,life,body_health,ضمادة,la venda,لا بيندا
+es,es_0325,3,n,life,body_health,فيتامين,la vitamina,لا بيتامينا
+es,es_0326,3,n,life,body_health,مناعة,la inmunidad,لا إينمونيداد
+es,es_0327,1,n,life,family_traits,عائلة,la familia,لا فاميليا
+es,es_0328,1,n,life,family_traits,أب,el padre,إل بادري
+es,es_0329,1,n,life,family_traits,أم,la madre,لا مادري
+es,es_0330,1,n,life,family_traits,أخ,el hermano,إل إرمانو
+es,es_0331,1,n,life,family_traits,أخت,la hermana,لا إرمانا
+es,es_0332,1,n,life,family_traits,ابن,el hijo,إل إيخو
+es,es_0333,1,n,life,family_traits,ابنة,la hija,لا إيخا
+es,es_0334,1,n,life,family_traits,جد,el abuelo,إل أبويلو
+es,es_0335,1,n,life,family_traits,جدة,la abuela,لا أبويلا
+es,es_0336,1,n,life,family_traits,صديق,el amigo,إل أميغو
+es,es_0337,1,n,life,family_traits,طفل,el niño,إل نينيو
+es,es_0338,1,adj,life,family_traits,سعيد,feliz,فيليث
+es,es_0339,1,adj,life,family_traits,لطيف,amable,أمامبلي
+es,es_0340,1,adj,life,family_traits,قوي,fuerte,فويرتي
+es,es_0341,1,adj,life,family_traits,ذكي,inteligente,إنتيليخينتي
+es,es_0342,1,adj,life,family_traits,هادئ,tranquilo,ترانكيلو
+es,es_0343,2,n,life,family_traits,عم أو خال,el tío,إل تيو
+es,es_0344,2,n,life,family_traits,عمة أو خالة,la tía,لا تيا
+es,es_0345,2,n,life,family_traits,ابن العم,el primo,إل بريمو
+es,es_0346,2,n,life,family_traits,جار,el vecino,إل بيثينو
+es,es_0347,2,adj,life,family_traits,صادق,honesto,أونيستو
+es,es_0348,2,adj,life,family_traits,شجاع,valiente,باليينتي
+es,es_0349,2,adj,life,family_traits,صبور,paciente,باثيينتي
+es,es_0350,2,adj,life,family_traits,مهذب,educado,إدوكادو
+es,es_0351,2,adj,life,family_traits,نشيط,activo,أكتيبو
+es,es_0352,2,adj,life,family_traits,متعاون,colaborador,كولابورادور
+es,es_0353,2,adj,life,family_traits,ممتن,agradecido,أغراديثيدو
+es,es_0354,2,adj,life,family_traits,متفائل,optimista,أوبتيميستا
+es,es_0355,3,adj,life,family_traits,كريم,generoso,خينيروسو
+es,es_0356,3,adj,life,family_traits,متواضع,humilde,أوميلدي
+es,es_0357,3,adj,life,family_traits,حكيم,sabio,سابيو
+es,es_0358,3,adj,life,family_traits,مسؤول,responsable,ريسبونسابلي
+es,es_0359,3,adj,life,family_traits,فضولي للعلم,curioso,كوريوسو
+es,es_0360,3,adj,life,family_traits,مبدع,creativo,كرياتيبو
+es,es_0361,1,n,study,school,مدرسة,la escuela,لا إسكويلا
+es,es_0362,1,n,study,school,كتاب,el libro,إل ليبرو
+es,es_0363,1,n,study,school,دفتر,el cuaderno,إل كواديرنو
+es,es_0364,1,n,study,school,قلم حبر,el bolígrafo,إل بوليغرافو
+es,es_0365,1,n,study,school,قلم رصاص,el lápiz,إل لابيث
+es,es_0366,1,n,study,school,ممحاة,la goma de borrar,لا غوما دي بورار
+es,es_0367,1,n,study,school,مسطرة,la regla,لا ريغلا
+es,es_0368,1,n,study,school,حقيبة ظهر,la mochila,لا موتشيلا
+es,es_0369,1,n,study,school,فصل دراسي,el aula,إل أولا
+es,es_0370,1,n,study,school,معلم,el profesor,إل بروفيسور
+es,es_0371,1,n,study,school,طالب,el estudiante,إل إستوديانثي
+es,es_0372,1,n,study,school,درس,la lección,لا ليكثيون
+es,es_0373,1,n,study,school,واجب منزلي,la tarea,لا تاريا
+es,es_0374,1,n,study,school,امتحان,el examen,إل إكسامين
+es,es_0375,1,n,study,school,مكتبة,la biblioteca,لا بيبليوتيكا
+es,es_0376,2,n,study,school,جامعة,la universidad,لا أونيبيرسيداد
+es,es_0377,2,n,study,school,سبورة,la pizarra,لا بيثارا
+es,es_0378,2,n,study,school,مبراة,el sacapuntas,إل ساكابونتاس
+es,es_0379,2,n,study,school,مقص ورق,las tijeras,لاس تيخيراس
+es,es_0380,2,n,study,school,صمغ,el pegamento,إل بيغامنتو
+es,es_0381,2,n,study,school,قاموس,el diccionario,إل ديكثيوناريو
+es,es_0382,2,n,study,school,صفحة,la página,لا باخينا
+es,es_0383,2,n,study,school,مادة دراسية,la asignatura,لا أسيغناتورا
+es,es_0384,2,n,study,school,درجة علمية,la calificación,لا كاليفيكاثيون
+es,es_0385,2,n,study,school,شهادة,el certificado,إل ثيرتيفيكادو
+es,es_0386,2,n,study,school,مختبر,el laboratorio,إل لابوراتوريو
+es,es_0387,3,n,study,school,منهج دراسي,el programa de estudios,إل بروغراما دي إستوديوس
+es,es_0388,3,n,study,school,محاضرة,la conferencia,لا كونفيرينثيا
+es,es_0389,3,n,study,school,بحث علمي,la investigación,لا إينبيستيغاثيون
+es,es_0390,3,n,study,school,تخرج,la graduación,لا غرادواثيون
+es,es_0391,1,n,study,office_tech,حاسوب,la computadora,لا كومبوتادورا
+es,es_0392,1,n,study,office_tech,هاتف,el teléfono,إل تيليفونو
+es,es_0393,1,n,study,office_tech,شاشة,la pantalla,لا بانتايا
+es,es_0394,1,n,study,office_tech,لوحة مفاتيح,el teclado,إل تيكلادو
+es,es_0395,1,n,study,office_tech,فأرة حاسوب,el ratón,إل راتُون
+es,es_0396,1,n,study,office_tech,إنترنت,el internet,إل إنترنت
+es,es_0397,1,n,study,office_tech,مكتب,el escritorio,إل إسكريتوريو
+es,es_0398,1,n,study,office_tech,ورقة,el papel,إل بابيل
+es,es_0399,1,n,study,office_tech,ملف,el archivo,إل أرتشيبو
+es,es_0400,1,n,study,office_tech,رسالة,el mensaje,إل مينساخي
+es,es_0401,1,n,study,office_tech,بريد إلكتروني,el correo electrónico,إل كوريو إيليكترونيكو
+es,es_0402,1,n,study,office_tech,بطارية,la batería,لا باتيريا
+es,es_0403,1,n,study,office_tech,شاحن,el cargador,إل كارغادور
+es,es_0404,2,n,study,office_tech,حاسوب محمول,la computadora portátil,لا كومبوتادورا بورتاتيل
+es,es_0405,2,n,study,office_tech,جهاز لوحي,la tableta,لا تابليتا
+es,es_0406,2,n,study,office_tech,طابعة,la impresora,لا إمبريسورا
+es,es_0407,2,n,study,office_tech,مجلد,la carpeta,لا كاربيتا
+es,es_0408,2,n,study,office_tech,كلمة مرور,la contraseña,لا كونتراسينا
+es,es_0409,2,n,study,office_tech,موقع إلكتروني,el sitio web,إل سيتيو ويب
+es,es_0410,2,n,study,office_tech,تطبيق,la aplicación,لا أبليكاسيون
+es,es_0411,2,n,study,office_tech,سماعات رأس,los auriculares,لوس أوريكولاريس
+es,es_0412,2,n,study,office_tech,مكبر صوت,el altavoz,إل ألتابوث
+es,es_0413,2,n,study,office_tech,كاميرا,la cámara,لا كامارا
+es,es_0414,2,n,study,office_tech,دباسة,la grapadora,لا غرابادورا
+es,es_0415,2,n,study,office_tech,مشبك ورق,el sujetapapeles,إل سوخيتابابيليس
+es,es_0416,3,n,study,office_tech,برمجيات,el software,إل سوفتوير
+es,es_0417,3,n,study,office_tech,عتاد حاسوب,el hardware,إل هاردوير
+es,es_0418,3,n,study,office_tech,قاعدة بيانات,la base de datos,لا باسي دي داتوس
+es,es_0419,3,n,study,office_tech,نسخة احتياطية,la copia de seguridad,لا كوبيا دي سيغوريداد
+es,es_0420,3,n,study,office_tech,تحديث,la actualización,لا أكتواليثاثيون
+es,es_0421,1,n,study,numbers_time,صفر,cero,ثيرو
+es,es_0422,1,n,study,numbers_time,واحد,uno,أونو
+es,es_0423,1,n,study,numbers_time,عشرة,diez,دييث
+es,es_0424,1,n,study,numbers_time,مئة,cien,ثيين
+es,es_0425,1,n,study,numbers_time,ألف,mil,ميل
+es,es_0426,1,n,study,numbers_time,وقت,el tiempo,إل تييمبو
+es,es_0427,1,n,study,numbers_time,ثانية,el segundo,إل سيغوندو
+es,es_0428,1,n,study,numbers_time,دقيقة,el minuto,إل مينوتو
+es,es_0429,1,n,study,numbers_time,ساعة زمنية,la hora,لا أورا
+es,es_0430,1,n,study,numbers_time,يوم,el día,إل ديا
+es,es_0431,1,n,study,numbers_time,أسبوع,la semana,لا سيمانا
+es,es_0432,1,n,study,numbers_time,شهر,el mes,إل ميس
+es,es_0433,1,n,study,numbers_time,سنة,el año,إل أنيو
+es,es_0434,1,n,study,numbers_time,صباح,la mañana,لا مانيانا
+es,es_0435,1,n,study,numbers_time,مساء,la tarde,لا تاردي
+es,es_0436,1,n,study,numbers_time,ليل,la noche,لا نوتشي
+es,es_0437,1,adv,study,numbers_time,اليوم,hoy,أوي
+es,es_0438,1,adv,study,numbers_time,غداً,mañana,مانيانا
+es,es_0439,1,adv,study,numbers_time,أمس,ayer,أيير
+es,es_0440,2,n,study,numbers_time,ظهيرة,el mediodía,إل ميديو ديا
+es,es_0441,2,n,study,numbers_time,منتصف الليل,la medianoche,لا ميديانوتشي
+es,es_0442,2,n,study,numbers_time,تقويم,el calendario,إل كالينداريو
+es,es_0443,2,n,study,numbers_time,جدول مواعيد,el horario,إل أوراريو
+es,es_0444,2,n,study,numbers_time,فصل الربيع,la primavera,لا بريمابيرا
+es,es_0445,2,n,study,numbers_time,فصل الصيف,el verano,إل بيرنو
+es,es_0446,2,n,study,numbers_time,فصل الخريف,el otoño,إل أوتونيو
+es,es_0447,2,n,study,numbers_time,فصل الشتاء,el invierno,إل إينبييرنو
+es,es_0448,3,n,study,numbers_time,عقد زمني,la década,لا ديكادا
+es,es_0449,3,n,study,numbers_time,قرن زمني,el siglo,إل سيغلو
+es,es_0450,3,n,study,numbers_time,موعد نهائي,la fecha límite,لا فيتشا ليميتي
+es,es_0451,1,v,study,core_verbs,يقرأ,leer,ليير
+es,es_0452,1,v,study,core_verbs,يكتب,escribir,إسكريبير
+es,es_0453,1,v,study,core_verbs,يتعلم,aprender,أبريندر
+es,es_0454,1,v,study,core_verbs,يدرس,estudiar,إستوديار
+es,es_0455,1,v,study,core_verbs,يسمع,escuchar,إسكوتشار
+es,es_0456,1,v,study,core_verbs,يتحدث,hablar,أبلار
+es,es_0457,1,v,study,core_verbs,يرى,ver,بير
+es,es_0458,1,v,study,core_verbs,يذهب,ir,إير
+es,es_0459,1,v,study,core_verbs,يأتي,venir,بينير
+es,es_0460,1,v,study,core_verbs,يأكل,comer,كومير
+es,es_0461,1,v,study,core_verbs,يشرب,beber,بيبير
+es,es_0462,1,v,study,core_verbs,ينام,dormir,دورمير
+es,es_0463,1,v,study,core_verbs,يعمل,trabajar,تراباخار
+es,es_0464,1,v,study,core_verbs,يلعب,jugar,خوغار
+es,es_0465,1,v,study,core_verbs,يساعد,ayudar,أيودار
+es,es_0466,1,v,study,core_verbs,يعرف,saber,سابير
+es,es_0467,1,v,study,core_verbs,يفكر,pensar,بينسار
+es,es_0468,1,v,study,core_verbs,يفتح,abrir,أبرير
+es,es_0469,1,v,study,core_verbs,يغلق,cerrar,ثيرار
+es,es_0470,2,v,study,core_verbs,يفهم,entender,إنتيندر
+es,es_0471,2,v,study,core_verbs,يتذكر,recordar,ريكوردار
+es,es_0472,2,v,study,core_verbs,ينسى,olvidar,أولبيدار
+es,es_0473,2,v,study,core_verbs,يشرح,explicar,إكسبليكـار
+es,es_0474,2,v,study,core_verbs,يسأل,preguntar,بريغونتار
+es,es_0475,2,v,study,core_verbs,يجيب,responder,ريسبوندر
+es,es_0476,2,v,study,core_verbs,يحاول,intentar,إينتينتار
+es,es_0477,2,v,study,core_verbs,يبدأ,empezar,إمبيثار
+es,es_0478,2,v,study,core_verbs,ينهي,terminar,تيرمينار
+es,es_0479,2,v,study,core_verbs,يبني,construir,كونستروير
+es,es_0480,2,v,study,core_verbs,يختار,elegir,إيليخير
+es,es_0481,3,v,study,core_verbs,يحلل,analizar,أناليثار
+es,es_0482,3,v,study,core_verbs,يقارن,comparar,كومبارار
+es,es_0483,3,v,study,core_verbs,ينظم,organizar,أورغانيثار
+es,es_0484,3,v,study,core_verbs,يحسن,mejorar,ميخورار
+es,es_0485,3,v,study,core_verbs,يكتشف,descubrir,ديسكوبارير
+es,es_0486,1,n,study,grammar_links,أنا,yo,يو
+es,es_0487,1,n,study,grammar_links,أنت,tú,تو
+es,es_0488,1,n,study,grammar_links,نحن,nosotros,نوسوتروس
+es,es_0489,1,n,study,grammar_links,هو,él,إل
+es,es_0490,1,n,study,grammar_links,هي,ella,إيا
+es,es_0491,1,n,study,grammar_links,هم,ellos,إيوس
+es,es_0492,1,adv,study,grammar_links,هنا,aquí,أكي
+es,es_0493,1,adv,study,grammar_links,هناك,allí,أيي
+es,es_0494,1,adv,study,grammar_links,الآن,ahora,أورا
+es,es_0495,1,adv,study,grammar_links,دائماً,siempre,سييمبري
+es,es_0496,1,adv,study,grammar_links,أبداً,nunca,نونكا
+es,es_0497,1,adv,study,grammar_links,معاً,juntos,خونتوس
+es,es_0498,1,adv,study,grammar_links,و,y,إي
+es,es_0499,1,adv,study,grammar_links,أو,o,أو
+es,es_0500,1,adv,study,grammar_links,لكن,pero,بيرو
+es,es_0501,1,adv,study,grammar_links,لأن,porque,بوركي
+es,es_0502,1,adv,study,grammar_links,في,en,إن
+es,es_0503,1,adv,study,grammar_links,على,sobre,سوبري
+es,es_0504,1,adv,study,grammar_links,تحت,debajo,ديباخو
+es,es_0505,2,adv,study,grammar_links,بين,entre,إينتري
+es,es_0506,2,adv,study,grammar_links,قبل,antes,أنتيس
+es,es_0507,2,adv,study,grammar_links,بعد,después,ديسبويس
+es,es_0508,2,adv,study,grammar_links,خلال,durante,دورانثي
+es,es_0509,2,adv,study,grammar_links,أحياناً,a veces,أ بيثيس
+es,es_0510,2,adv,study,grammar_links,غالباً,a menudo,أ مينودو
+es,es_0511,2,adv,study,grammar_links,سريعاً,rápidamente,رابيدامينتي
+es,es_0512,2,adv,study,grammar_links,ببطء,lentamente,لينتامينتي
+es,es_0513,3,adv,study,grammar_links,ومع ذلك,sin embargo,سين إمبارغو
+es,es_0514,3,adv,study,grammar_links,لذلك,por lo tanto,بور لو تانتو
+es,es_0515,3,adv,study,grammar_links,بينما,mientras,ميينتراس
+es,es_0516,1,phr,study,polite_phrases,مرحباً,hola,أولا
+es,es_0517,1,phr,study,polite_phrases,صباح الخير,buenos días,بوينوس دياس
+es,es_0518,1,phr,study,polite_phrases,مساء الخير,buenas tardes,بويناس تارديس
+es,es_0519,1,phr,study,polite_phrases,تصبح على خير,buenas noches,بويناس نوتشيس
+es,es_0520,1,phr,study,polite_phrases,من فضلك,por favor,بور فابور
+es,es_0521,1,phr,study,polite_phrases,شكراً لك,gracias,غراثياث
+es,es_0522,1,phr,study,polite_phrases,عفواً,de nada,دي نادا
+es,es_0523,1,phr,study,polite_phrases,لو سمحت,disculpe,ديسكولبي
+es,es_0524,1,phr,study,polite_phrases,أنا آسف,lo siento,لو سيينتو
+es,es_0525,1,phr,study,polite_phrases,إلى اللقاء,adiós,أديوس
+es,es_0526,1,phr,study,polite_phrases,نعم,sí,سي
+es,es_0527,1,phr,study,polite_phrases,لا,no,نو
+es,es_0528,2,phr,study,polite_phrases,كيف حالك,cómo estás,كومو إستاس
+es,es_0529,2,phr,study,polite_phrases,أنا بخير,estoy bien,إستوي بيين
+es,es_0530,2,phr,study,polite_phrases,تشرفت بلقائك,mucho gusto,موتشو غوستو
+es,es_0531,2,phr,study,polite_phrases,أراك لاحقاً,hasta luego,أستا لويغو
+es,es_0532,2,phr,study,polite_phrases,اعتن بنفسك,cuídate,كويداتي
+es,es_0533,2,phr,study,polite_phrases,لا مشكلة,no hay problema,نو آي بروبليما
+es,es_0534,2,phr,study,polite_phrases,بالتأكيد,claro que sí,كلارو كي سي
+es,es_0535,2,phr,study,polite_phrases,عمل رائع,buen trabajo,بوين تراباخو
+es,es_0536,3,phr,study,polite_phrases,أقدر مساعدتك,agradezco tu ayuda,أغراديثكو تو أيودا
+es,es_0537,3,phr,study,polite_phrases,هل يمكنك المساعدة,me puedes ayudar,مي بويذيس أيودار
+es,es_0538,3,phr,study,polite_phrases,يوم سعيد لك,que tengas un buen día,كي تينغاس أون بوين ديا
+es,es_0539,3,phr,study,polite_phrases,أتمنى لك التوفيق,te deseo éxito,تي ديسيو إيكسيتو
+es,es_0540,3,phr,study,polite_phrases,أشكرك جزيلاً,muchas gracias,موتشاس غراثياث
