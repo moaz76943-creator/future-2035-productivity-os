@@ -4,6 +4,7 @@ import 'package:material_ui/material_ui.dart';
 import '../../../app/localization/app_format.dart';
 import '../../../app/routing/navigation.dart';
 import '../../../app/routing/routes.dart';
+import '../../../app/shell/app_shell.dart';
 import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/components/surfaces.dart';
 import '../../../core/theme/deep_focus_visuals.dart';
@@ -109,13 +110,20 @@ class SpacesScreen extends ConsumerWidget {
                 ),
               ),
               SliverPadding(
-                padding: const EdgeInsets.fromLTRB(Space.page, Space.xl, Space.page, 120),
+                // Clears the floating navigation bar and banner slot.
+                padding: EdgeInsets.fromLTRB(
+                  Space.page,
+                  Space.xl,
+                  Space.page,
+                  ShellScope.navHeight + MediaQuery.viewPaddingOf(context).bottom + Space.lg,
+                ),
                 sliver: SliverGrid.builder(
+                  // Ten tiles: two columns on phones (5 full rows) and five on wide
+                  // screens (2 full rows), so the last row is never left half empty.
                   // Tile height grows with the system font scale: orb (fixed) + up to two
-                  // label lines and a caption (scaled). A fixed 128px clipped the text at
-                  // 150%/200% font size.
-                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 120,
+                  // label lines and a caption (scaled).
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: MediaQuery.sizeOf(context).width >= 600 ? 5 : 2,
                     mainAxisExtent: 76 + MediaQuery.textScalerOf(context).scale(52),
                     crossAxisSpacing: Space.sm,
                     mainAxisSpacing: Space.md,

@@ -168,7 +168,7 @@ class _TaskList extends ConsumerWidget {
           },
           hue: ModuleHue.tasks,
           assetPath: DeepFocusAssets.emptyTasks,
-          title: l10n.tasksEmptyTitle,
+          title: tab == TasksTab.completed ? l10n.tasksViewCompleted : l10n.tasksEmptyTitle,
           message: switch (tab) {
             TasksTab.completed => l10n.tasksEmptyCompleted,
             TasksTab.archived => l10n.tasksEmptyArchived,

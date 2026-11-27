@@ -13,7 +13,7 @@ class _Header extends ConsumerWidget {
         ? l10n.greetingAfternoon
         : l10n.greetingEvening;
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(Space.page, Space.lg, Space.xs, Space.sm),
+      padding: const EdgeInsetsDirectional.fromSTEB(Space.page, Space.lg, Space.md, Space.sm),
       child: Row(
         children: [
           const ExcludeSemantics(

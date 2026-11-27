@@ -122,11 +122,17 @@ class _LanguageSheetState extends ConsumerState<_LanguageSheet> {
       ..sort((a, b) => languageDisplayName(a).compareTo(languageDisplayName(b)));
     final all = worldLanguages.keys.where(_matches).toList()
       ..sort((a, b) => worldLanguages[a]!.compareTo(worldLanguages[b]!));
-    return DraggableScrollableSheet(
-      expand: false,
-      initialChildSize: 0.85,
-      maxChildSize: 0.95,
-      builder: (context, scroll) => Column(
+    // A plain, bounded sheet: the list always starts at the top and fills a
+    // fixed share of the screen, lifted above the keyboard, so languages are
+    // never pushed down out of sight.
+    final media = MediaQuery.of(context);
+    final height = (media.size.height - media.viewInsets.bottom) * 0.82;
+    return AnimatedPadding(
+      duration: const Duration(milliseconds: 150),
+      padding: EdgeInsets.only(bottom: media.viewInsets.bottom),
+      child: SizedBox(
+        height: height,
+        child: Column(
         children: [
           Padding(
             padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.xs),
@@ -142,7 +148,7 @@ class _LanguageSheetState extends ConsumerState<_LanguageSheet> {
           ),
           Expanded(
             child: ListView(
-              controller: scroll,
+              primary: false,
               children: [
                 if (_query.isEmpty) _tile('', spoken: true),
                 if (onPhone.isNotEmpty) ...[
@@ -183,6 +189,7 @@ class _LanguageSheetState extends ConsumerState<_LanguageSheet> {
             ),
           ),
         ],
+        ),
       ),
     );
   }

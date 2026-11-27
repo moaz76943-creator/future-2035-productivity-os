@@ -156,7 +156,10 @@ class _TimerHero extends ConsumerWidget {
                             children: [
                               Text(
                                 phaseLabel,
-                                style: context.text.titleMedium?.copyWith(color: Colors.white),
+                                style: context.text.titleMedium?.copyWith(
+                                  color: Colors.white,
+                                  shadows: _timerTextShadow,
+                                ),
                                 textAlign: TextAlign.center,
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
@@ -173,6 +176,7 @@ class _TimerHero extends ConsumerWidget {
                                       fontFeatures: const [FontFeature.tabularFigures()],
                                       fontWeight: FontWeight.w600,
                                       color: Colors.white,
+                                      shadows: _timerTextShadow,
                                     ),
                                   ),
                                 ),
@@ -180,7 +184,10 @@ class _TimerHero extends ConsumerWidget {
                               const SizedBox(height: Space.xxs),
                               Text(
                                 status,
-                                style: context.text.bodyMedium?.copyWith(color: Colors.white),
+                                style: context.text.bodyMedium?.copyWith(
+                                  color: Colors.white,
+                                  shadows: _timerTextShadow,
+                                ),
                                 textAlign: TextAlign.center,
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
