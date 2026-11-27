@@ -9,7 +9,7 @@ class _QuickFocusBanner extends StatelessWidget {
     final l10n = context.l10n;
     final subtitle = '${l10n.focusModePomodoro} · ${l10n.focusMinutesLabel(25)}';
     return Padding(
-      padding: const EdgeInsets.fromLTRB(Space.sm, Space.md, Space.sm, 0),
+      padding: const EdgeInsets.fromLTRB(Space.sm, Space.xs, Space.sm, 0),
       child: Semantics(
         button: true,
         label: '${l10n.quickStartFocus}, $subtitle',
@@ -18,7 +18,7 @@ class _QuickFocusBanner extends StatelessWidget {
           padding: EdgeInsets.zero,
           onTap: () => context.push(Routes.focus),
           child: SizedBox(
-            height: 96,
+            height: 80,
             child: Row(
               children: [
                 ClipRRect(
@@ -27,11 +27,11 @@ class _QuickFocusBanner extends StatelessWidget {
                   ),
                   child: Image.asset(
                     DeepFocusAssets.quickFocusPlant,
-                    width: 120,
-                    height: 96,
+                    width: 104,
+                    height: 80,
                     fit: BoxFit.cover,
                     excludeFromSemantics: true,
-                    errorBuilder: (_, _, _) => const SizedBox(width: 120),
+                    errorBuilder: (_, _, _) => const SizedBox(width: 104),
                   ),
                 ),
                 const SizedBox(width: Space.md),
@@ -58,14 +58,14 @@ class _QuickFocusBanner extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  width: 52,
-                  height: 52,
+                  width: 44,
+                  height: 44,
                   margin: const EdgeInsetsDirectional.only(end: Space.md),
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: DeepFocusVisuals.tealPrimary,
                   ),
-                  child: const Icon(Icons.play_arrow_rounded, color: Colors.white, size: 30),
+                  child: const Icon(Icons.play_arrow_rounded, color: Colors.white, size: 28),
                 ),
               ],
             ),
