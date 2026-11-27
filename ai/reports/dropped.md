@@ -10,3 +10,4 @@
    info • The value of the argument is redundant because it matches the default value. Try removing the argument • lib/features/dashboard/presentation/dashboard
 - 08:24 task dropped by gates: failed: flutter analyze: se of multiple underscores. Try using '_' • lib/core/widgets/deep_focus_glass.dart:79:29 • unnecessary_underscores
    info • The value of the argument is redundant because it matches the default value. Try removing the argument • lib/features/dashboard/presentation/dashboard
+- 22:06 tests dropped by gates: not allowed for agents: lib/features/flashcards/presentation/decks_screen.dart
