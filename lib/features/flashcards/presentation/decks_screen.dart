@@ -10,6 +10,7 @@ import '../../../core/design_system/components/indicators.dart';
 import '../../../core/design_system/components/states.dart';
 import '../../../core/design_system/components/surfaces.dart';
 import '../../../core/design_system/tokens.dart';
+import '../../../core/theme/deep_focus_visuals.dart';
 import '../../../shared/widgets/async_value_view.dart';
 import '../../../shared/widgets/dialogs.dart';
 import '../../../shared/widgets/module_scaffold.dart';
@@ -128,6 +129,7 @@ class DecksScreen extends ConsumerWidget {
                       EmptyState(
                         icon: Icons.style_rounded,
                         hue: _hue,
+                        assetPath: DeepFocusAssets.spaceFlashcards,
                         title: l10n.flashEmptyTitle,
                         message: l10n.flashEmptyMessage,
                       ),

@@ -1,7 +1,11 @@
-import 'package:flutter/material.dart';
+import 'dart:convert';
 
-/// المسارات الرسمية الموحدة لأصول الهوية البصرية (22 صورة)
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+/// المسارات الرسمية الموحدة لأصول الهوية البصرية.
 abstract final class DeepFocusAssets {
+  static const String tuningConfig = 'assets/config/ui_tuning.json';
   static const String homeHeaderBg = 'assets/images/ui/home_header_bg.png';
   static const String timerCircleBg = 'assets/images/ui/timer_circle_bg.png';
   static const String quickFocusPlant = 'assets/images/ui/quick_focus_plant.png';
@@ -30,24 +34,33 @@ abstract final class DeepFocusAssets {
 /// ثوابت الألوان والبطاقات الزجاجية (Future 2035 Organic Glass)
 abstract final class DeepFocusVisuals {
   static const Color tealPrimary = Color(0xFF0D7A7E);
-  static const Color tealBright = Color(0xFF2FA4A9);
-  static const Color aquaGlow = Color(0xFF3BC4C0);
-  static const Color emeraldAccent = Color(0xFF34B37E);
-  static const Color canvasLight = Color(0xFFEEF4FA);
-  static const Color canvasSoft = Color(0xFFF5F9FD);
+  static const Color tealBright = Color(0xFF14B8A6);
+  static const Color aquaGlow = Color(0xFF14B8A6);
+  static const Color emeraldAccent = Color(0xFF14B8A6);
+  static const Color canvasLight = Color(0xFFF4F8FD);
+  static const Color canvasSoft = Color(0xFFDFEBF8);
+  static const double glassFillOpacity = 0.78;
+  static const double glassBorderOpacity = 0.92;
+  static const double glassBorderWidth = 1.2;
   static const Color textDark = Color(0xFF132A33);
   static const Color textMuted = Color(0xFF5A737E);
 
   static const double cardRadius = 22.0;
   static const double pillRadius = 999.0;
 
+  /// Loads the shared design tuning document for tooling and runtime audits.
+  static Future<Map<String, dynamic>> loadTuningConfig() async {
+    final source = await rootBundle.loadString(DeepFocusAssets.tuningConfig);
+    return jsonDecode(source) as Map<String, dynamic>;
+  }
+
   static BoxDecoration glassCard({double radius = cardRadius}) {
     return BoxDecoration(
-      color: Colors.white.withValues(alpha: 0.78),
+      color: Colors.white.withValues(alpha: glassFillOpacity),
       borderRadius: BorderRadius.circular(radius),
       border: Border.all(
-        color: Colors.white.withValues(alpha: 0.92),
-        width: 1.2,
+        color: Colors.white.withValues(alpha: glassBorderOpacity),
+        width: glassBorderWidth,
       ),
       boxShadow: const [
         BoxShadow(

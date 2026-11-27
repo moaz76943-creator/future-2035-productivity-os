@@ -12,6 +12,7 @@ import '../../../core/database/app_database.dart';
 import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/components/states.dart';
 import '../../../core/design_system/tokens.dart';
+import '../../../core/theme/deep_focus_visuals.dart';
 import '../../../core/providers/core_providers.dart';
 import '../../../core/time/clock.dart';
 import '../../../shared/widgets/async_value_view.dart';

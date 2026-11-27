@@ -89,6 +89,7 @@ flutter:
   generate: true
 
   assets:
+    - assets/config/
     - assets/images/ui/
     - assets/images/spaces/
     - assets/sound_art/

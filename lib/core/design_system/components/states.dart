@@ -53,6 +53,7 @@ class EmptyState extends StatelessWidget {
     required this.title,
     required this.message,
     this.hue = ModuleHue.focus,
+    this.assetPath,
     this.actionLabel,
     this.onAction,
     this.compact = false,
@@ -61,6 +62,7 @@ class EmptyState extends StatelessWidget {
   final String title;
   final String message;
   final ModuleHue hue;
+  final String? assetPath;
   final String? actionLabel;
   final VoidCallback? onAction;
   final bool compact;
@@ -80,7 +82,7 @@ class EmptyState extends StatelessWidget {
             SizedBox.square(
               dimension: size,
               child: Image.asset(
-                DeepFocusAssets.emptyStateNature,
+                assetPath ?? DeepFocusAssets.emptyStateNature,
                 fit: BoxFit.contain,
                 excludeFromSemantics: true,
                 errorBuilder: (_, _, _) => CustomPaint(
