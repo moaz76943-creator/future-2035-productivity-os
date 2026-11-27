@@ -6,6 +6,7 @@ import '../../core/design_system/tokens.dart';
 import '../../core/theme/deep_focus_visuals.dart';
 import '../../core/widgets/deep_focus_glass.dart';
 import '../localization/app_format.dart';
+import 'nav_icons.dart';
 import '../../core/ads/bottom_banner_ad_widget.dart';
 
 /// Root frame with the five primary destinations. The navigation bar is the
@@ -18,22 +19,12 @@ class AppShell extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final destinations = [
-      (Icons.blur_on_rounded, Icons.blur_circular_rounded, l10n.navHome, ModuleHue.focus),
-      (
-        Icons.check_circle_outline_rounded,
-        Icons.check_circle_rounded,
-        l10n.navTasks,
-        ModuleHue.tasks,
-      ),
-      (Icons.style_outlined, Icons.style_rounded, l10n.navCards, ModuleHue.flashcards),
-      (Icons.timer_outlined, Icons.timer_rounded, l10n.navFocus, ModuleHue.focus),
-      (
-        Icons.calendar_month_outlined,
-        Icons.calendar_month_rounded,
-        l10n.navCalendar,
-        ModuleHue.calendar,
-      ),
-      (Icons.grid_view_outlined, Icons.grid_view_rounded, l10n.navSpaces, ModuleHue.projects),
+      (NavGlyphKind.home, l10n.navHome),
+      (NavGlyphKind.tasks, l10n.navTasks),
+      (NavGlyphKind.cards, l10n.navCards),
+      (NavGlyphKind.focus, l10n.navFocus),
+      (NavGlyphKind.calendar, l10n.navCalendar),
+      (NavGlyphKind.spaces, l10n.navSpaces),
     ];
     return DeepFocusMeshScaffold(
       child: Scaffold(
@@ -89,16 +80,16 @@ class AppShell extends StatelessWidget {
                   destinations: [
                     for (final d in destinations)
                       NavigationDestination(
-                        icon: Icon(d.$1),
+                        icon: NavGlyph(d.$1, color: DeepFocusVisuals.textMuted),
                         selectedIcon: DecoratedBox(
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             boxShadow: DeepFocusVisuals.edgeGlow(),
                           ),
-                          child: Icon(d.$2, color: DeepFocusVisuals.tealPrimary),
+                          child: NavGlyph(d.$1, color: DeepFocusVisuals.tealPrimary, selected: true),
                         ),
-                        label: d.$3,
-                        tooltip: d.$3,
+                        label: d.$2,
+                        tooltip: d.$2,
                       ),
                   ],
                 ),

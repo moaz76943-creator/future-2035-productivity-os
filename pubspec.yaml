@@ -92,6 +92,8 @@ flutter:
     - assets/config/
     - assets/images/ui/
     - assets/images/spaces/
+    - assets/images/actions/
+    - assets/images/empty/
     - assets/sound_art/
     - assets/fonts/OFL-Manrope.txt
     - assets/fonts/OFL-ReadexPro.txt

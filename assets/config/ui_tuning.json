@@ -8,7 +8,11 @@
   },
   "accent": {
     "primary": "#0D7A7E",
-    "selectionGlow": "#14B8A6"
+    "selectionGlow": "#14B8A6",
+    "pearlSky": [
+      "#F4F8FD",
+      "#DFEBF8"
+    ]
   },
   "glassCards": {
     "fill": "#FFFFFF",
@@ -27,5 +31,15 @@
     "respectSafeArea": true,
     "directionalLayout": true,
     "minimumTouchTargetPx": 48
+  },
+  "navigation": {
+    "iconStrokePx": 2,
+    "glassFillOpacity": 0.78,
+    "contentBottomInsetPx": 120
+  },
+  "focusFullscreen": {
+    "background": "assets/images/ui/focus_fullscreen_bg.webp",
+    "contrastTopOpacity": 0.65,
+    "contrastBottomOpacity": 0.7
   }
 }

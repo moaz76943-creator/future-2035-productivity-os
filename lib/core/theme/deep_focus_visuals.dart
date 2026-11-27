@@ -1,34 +1,40 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
 
 /// المسارات الرسمية الموحدة لأصول الهوية البصرية.
 abstract final class DeepFocusAssets {
   static const String tuningConfig = 'assets/config/ui_tuning.json';
-  static const String homeHeaderBg = 'assets/images/ui/home_header_bg.png';
-  static const String timerCircleBg = 'assets/images/ui/timer_circle_bg.png';
-  static const String quickFocusPlant = 'assets/images/ui/quick_focus_plant.png';
-  static const String appMeshBg = 'assets/images/ui/app_mesh_bg.png';
-  static const String appLeafMark = 'assets/images/ui/app_leaf_mark.png';
-  static const String emptyStateNature = 'assets/images/ui/empty_state_nature.png';
-  static const String quickTask = 'assets/images/ui/quick_task.png';
-  static const String quickEvent = 'assets/images/ui/quick_event.png';
-  static const String quickFocus = 'assets/images/ui/quick_focus.png';
-  static const String startMyDay = 'assets/images/ui/start_my_day.png';
+  static const String homeHeaderBg = 'assets/images/ui/home_header_sunrise.webp';
+  static const String timerCircleBg = 'assets/images/ui/focus_timer_orb.webp';
+  static const String quickFocusPlant = 'assets/images/ui/quick_focus_plant_banner.webp';
+  static const String appMeshBg = 'assets/images/ui/app_bg_silk.webp';
+  static const String appLeafMark = 'assets/images/ui/app_logo_mark.webp';
+  static const String focusFullscreenBg = 'assets/images/ui/focus_fullscreen_bg.webp';
 
-  static const String spaceProjects = 'assets/images/spaces/space_projects.png';
-  static const String spaceFlashcards = 'assets/images/spaces/space_flashcards.png';
-  static const String spaceSounds = 'assets/images/spaces/space_sounds.png';
-  static const String spaceNotes = 'assets/images/spaces/space_notes.png';
-  static const String spaceGoals = 'assets/images/spaces/space_goals.png';
-  static const String spaceHabits = 'assets/images/spaces/space_habits.png';
-  static const String spaceInsights = 'assets/images/spaces/space_insights.png';
-  static const String spaceSearch = 'assets/images/spaces/space_search.png';
-  static const String spaceAssistant = 'assets/images/spaces/space_assistant.png';
-  static const String spaceSettings = 'assets/images/spaces/space_settings.png';
-  static const String spaceTrash = 'assets/images/spaces/space_trash.png';
-  static const String spaceHelp = 'assets/images/spaces/space_help.png';
+  static const String quickTask = 'assets/images/actions/action_new_task.webp';
+  static const String quickNote = 'assets/images/actions/action_new_note.webp';
+  static const String quickEvent = 'assets/images/actions/action_new_event.webp';
+  static const String quickFocus = 'assets/images/actions/action_focus.webp';
+  static const String startMyDay = 'assets/images/actions/action_start_day.webp';
+
+  static const String emptyTasks = 'assets/images/empty/empty_tasks.webp';
+  static const String emptyFlashcards = 'assets/images/empty/empty_flashcards.webp';
+  static const String emptyFocusHistory = 'assets/images/empty/empty_focus_history.webp';
+
+  static const String spaceProjects = 'assets/images/spaces/space_projects.webp';
+  static const String spaceFlashcards = 'assets/images/spaces/space_flashcards.webp';
+  static const String spaceSounds = 'assets/images/spaces/space_sounds.webp';
+  static const String spaceNotes = 'assets/images/spaces/space_notes.webp';
+  static const String spaceGoals = 'assets/images/spaces/space_goals.webp';
+  static const String spaceHabits = 'assets/images/spaces/space_habits.webp';
+  static const String spaceInsights = 'assets/images/spaces/space_insights.webp';
+  static const String spaceSearch = 'assets/images/spaces/space_search.webp';
+  static const String spaceAssistant = 'assets/images/spaces/space_assistant.webp';
+  static const String spaceSettings = 'assets/images/spaces/space_settings.webp';
+  static const String spaceTrash = 'assets/images/spaces/space_trash.webp';
+  static const String spaceHelp = 'assets/images/spaces/space_help.webp';
 }
 
 /// ثوابت الألوان والبطاقات الزجاجية (Future 2035 Organic Glass)

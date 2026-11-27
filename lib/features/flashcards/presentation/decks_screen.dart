@@ -129,7 +129,7 @@ class DecksScreen extends ConsumerWidget {
                       EmptyState(
                         icon: Icons.style_rounded,
                         hue: _hue,
-                        assetPath: DeepFocusAssets.spaceFlashcards,
+                        assetPath: DeepFocusAssets.emptyFlashcards,
                         title: l10n.flashEmptyTitle,
                         message: l10n.flashEmptyMessage,
                       ),

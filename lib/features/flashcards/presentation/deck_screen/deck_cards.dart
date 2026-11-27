@@ -15,6 +15,7 @@ extension _DeckCards on _DeckScreenState {
                 child: EmptyState(
                   icon: Icons.note_add_rounded,
                   hue: _hue,
+                  assetPath: DeepFocusAssets.emptyFlashcards,
                   compact: true,
                   title: l10n.deckCards(0),
                   message: l10n.deckEmptyCards,

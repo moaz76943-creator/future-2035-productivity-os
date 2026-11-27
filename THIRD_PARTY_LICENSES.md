@@ -52,6 +52,7 @@ documents each recording's source and licence. Each source page is listed so it 
 | Package | Version | License | Use |
 |---|---|---|---|
 | _fe_analyzer_shared | 111.0.0 | BSD-3-Clause | transitive |
+| alchemist | 0.15.0 | MIT | build/test only |
 | analyzer | 14.7.0 | BSD-3-Clause | transitive |
 | android_file_picker | 2.2.0 | MIT | transitive |
 | args | 2.7.0 | BSD-3-Clause | transitive |
@@ -186,6 +187,7 @@ documents each recording's source and licence. Each source page is listed so it 
 | url_launcher_windows | 3.1.6 | BSD-3-Clause | transitive |
 | uuid | 4.6.0 | MIT | app |
 | vector_math | 2.4.3 | BSD-3-Clause | transitive |
+| very_good_analysis | 11.0.0 | MIT | build/test only |
 | vm_service | 15.4.0 | BSD-3-Clause | transitive |
 | watcher | 1.2.1 | BSD-3-Clause | transitive |
 | web | 1.1.2 | BSD-3-Clause | transitive |

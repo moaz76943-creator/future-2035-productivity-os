@@ -70,6 +70,10 @@ class EmptyState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = compact ? 72.0 : 112.0;
+    final orbit = CustomPaint(
+      painter: _OrbitPainter(hue, context.lux.hairline),
+      child: Center(child: IconOrb(icon: icon, hue: hue, size: size * 0.46)),
+    );
     return Center(
       child: Padding(
         padding: EdgeInsets.symmetric(
@@ -81,17 +85,14 @@ class EmptyState extends StatelessWidget {
           children: [
             SizedBox.square(
               dimension: size,
-              child: Image.asset(
-                assetPath ?? DeepFocusAssets.emptyStateNature,
-                fit: BoxFit.contain,
-                excludeFromSemantics: true,
-                errorBuilder: (_, _, _) => CustomPaint(
-                  painter: _OrbitPainter(hue, context.lux.hairline),
-                  child: Center(
-                    child: IconOrb(icon: icon, hue: hue, size: size * 0.46),
-                  ),
-                ),
-              ),
+              child: assetPath == null
+                  ? orbit
+                  : Image.asset(
+                      assetPath!,
+                      fit: BoxFit.contain,
+                      excludeFromSemantics: true,
+                      errorBuilder: (_, _, _) => orbit,
+                    ),
             ),
             SizedBox(height: compact ? Space.sm : Space.lg),
             Text(

@@ -10,6 +10,7 @@ import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/tokens.dart';
 import '../../../core/platform/focus_tools.dart';
 import '../../../core/providers/core_providers.dart';
+import '../../../core/theme/deep_focus_visuals.dart';
 import '../../settings/application/settings_providers.dart';
 import '../../sounds/domain/nature_sound.dart';
 import '../../sounds/presentation/widgets/sound_art.dart';
@@ -115,9 +116,25 @@ class _ImmersiveFocusScreenState extends ConsumerState<ImmersiveFocusScreen> {
           fit: StackFit.expand,
           children: [
             if (!prefs.immersiveBlack) ...[
-              SoundArt(sound: scene),
-              // Dim enough to rest the eyes and keep the clock readable.
-              const ColoredBox(color: Color(0xB3000000)),
+              if (scene == NatureSound.night)
+                Image.asset(
+                  DeepFocusAssets.focusFullscreenBg,
+                  fit: BoxFit.cover,
+                  excludeFromSemantics: true,
+                  errorBuilder: (_, _, _) => SoundArt(sound: scene),
+                )
+              else
+                SoundArt(sound: scene),
+              // Soft contrast layer: keeps the clock and controls fully legible.
+              const DecoratedBox(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [Color(0xA6000000), Color(0x8C06161A), Color(0xB3000000)],
+                  ),
+                ),
+              ),
             ],
             SafeArea(
               child: Column(
@@ -219,7 +236,8 @@ class _Controls extends StatelessWidget {
           tooltip: running ? l10n.actionPause : (hasSession ? l10n.actionResume : l10n.actionStart),
           iconSize: 40,
           style: IconButton.styleFrom(
-            backgroundColor: white.withValues(alpha: 0.16),
+            backgroundColor: white.withValues(alpha: 0.26),
+            side: BorderSide(color: white.withValues(alpha: 0.55)),
             foregroundColor: white,
             padding: const EdgeInsets.all(Space.lg),
           ),
