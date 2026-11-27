@@ -121,7 +121,7 @@ class ShellScope extends InheritedWidget {
   const ShellScope({super.key, required super.child});
 
   /// Height of the floating navigation bar including its outer margin.
-  static const navHeight = 68.0 + Space.sm;
+  static const navHeight = 68.0 + Space.sm + 50.0; // navigation + standard banner slot
 
   static bool of(BuildContext context) =>
       context.getInheritedWidgetOfExactType<ShellScope>() != null;

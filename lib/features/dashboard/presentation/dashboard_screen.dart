@@ -5,6 +5,7 @@ import 'package:material_ui/material_ui.dart';
 import '../../../app/localization/app_format.dart';
 import '../../../app/routing/navigation.dart';
 import '../../../app/routing/routes.dart';
+import '../../../app/shell/app_shell.dart';
 import '../../../core/database/app_database.dart';
 import '../../../core/design_system/app_theme.dart';
 import '../../../core/design_system/components/indicators.dart';
@@ -61,10 +62,7 @@ class DashboardScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final sections = ref.watch(settingsProvider.select((s) => s.dashboardSections));
     return Scaffold(
-      floatingActionButton: const Padding(
-        padding: EdgeInsets.only(bottom: Space.xxl),
-        child: QuickAddButton(),
-      ),
+      floatingActionButton: const NavClearFab(child: QuickAddButton()),
       body: AuroraBackground(
         child: SafeArea(
           bottom: false,
@@ -92,7 +90,9 @@ class DashboardScreen extends ConsumerWidget {
                     _ => const SizedBox.shrink(),
                   },
                 ),
-              const SliverToBoxAdapter(child: SizedBox(height: 120)),
+              SliverToBoxAdapter(
+                child: SizedBox(height: 176 + MediaQuery.viewPaddingOf(context).bottom),
+              ),
             ],
           ),
         ),
