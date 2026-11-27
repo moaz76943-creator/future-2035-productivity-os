@@ -167,6 +167,7 @@ class _TaskList extends ConsumerWidget {
             _ => Icons.wb_twilight_rounded,
           },
           hue: ModuleHue.tasks,
+          assetPath: DeepFocusAssets.emptyTasks,
           title: l10n.tasksEmptyTitle,
           message: switch (tab) {
             TasksTab.completed => l10n.tasksEmptyCompleted,

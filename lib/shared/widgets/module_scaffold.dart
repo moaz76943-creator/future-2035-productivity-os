@@ -77,7 +77,9 @@ class ModuleScaffold extends StatelessWidget {
                 ),
               ),
             ...slivers,
-            const SliverToBoxAdapter(child: SizedBox(height: 120)),
+            SliverToBoxAdapter(
+              child: SizedBox(height: 176 + MediaQuery.viewPaddingOf(context).bottom),
+            ),
           ],
         ),
       ),

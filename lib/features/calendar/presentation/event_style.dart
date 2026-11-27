@@ -10,7 +10,7 @@ import '../data/events_repository.dart';
 abstract final class EventStyle {
   static Color kindColor(EventKind k) => switch (k) {
     EventKind.event => Palette.aurora,
-    EventKind.timeBlock => Palette.violet,
+    EventKind.timeBlock => Palette.seafoam,
     EventKind.focus => Palette.turquoise,
     EventKind.goal => Palette.emerald,
   };

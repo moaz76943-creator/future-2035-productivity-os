@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../theme/deep_focus_visuals.dart';
 import 'tokens.dart';
 
 part 'app_theme/language_fonts.g.dart';
@@ -60,7 +61,13 @@ abstract final class AppTheme {
           : (accent == null ? const Color(0xFF0B4A4D) : Color.lerp(primary, Palette.navy, 0.5)!),
       secondary: Palette.seafoam,
       onSecondary: Palette.white,
+      secondaryContainer: dark ? const Color(0xFF123B3D) : const Color(0xFFDCEFEE),
+      onSecondaryContainer: dark ? Palette.moon : const Color(0xFF0B4A4D),
       tertiary: Palette.turquoise,
+      tertiaryContainer: dark ? const Color(0xFF0F3F40) : const Color(0xFFD5F3EF),
+      onTertiaryContainer: dark ? Palette.moon : const Color(0xFF0B4A4D),
+      surfaceTint: Colors.transparent,
+      inversePrimary: DeepFocusVisuals.tealBright,
       onTertiary: Palette.white,
       error: lux.danger,
       onError: Palette.white,

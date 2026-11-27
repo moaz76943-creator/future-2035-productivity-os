@@ -30,13 +30,13 @@ abstract final class Palette {
   // Accents
   static const lagoon = Color(0xFF0D7A7E); // Calm teal (default accent)
   static const seafoam = Color(0xFF2FA4A9);
-  static const violet = Color(0xFF6C4CFF); // Electric Violet
+  static const violet = Color(0xFF0D7A7E); // Legacy key retained as Deep Focus teal
   static const aurora = Color(0xFF2F7BFF); // Aurora Blue
   static const turquoise = Color(0xFF00B8C4);
   static const emerald = Color(0xFF14B87A); // Soft Emerald
   static const coral = Color(0xFFFF6B5E);
   static const champagne = Color(0xFFD9A441); // Champagne Gold
-  static const lavender = Color(0xFF9B8CFF);
+  static const lavender = Color(0xFF14B8A6); // Legacy key retained as aqua teal
   static const rose = Color(0xFFF0569B);
   static const amber = Color(0xFFF59E0B);
 
@@ -50,9 +50,9 @@ abstract final class Palette {
     coral,
     rose,
     lavender,
-    Color(0xFF3B4CCA),
+    Color(0xFF14B8A6),
     Color(0xFF0EA5A0),
-    Color(0xFF7C3AED),
+    Color(0xFF0D7A7E),
     Color(0xFFE76F51),
   ];
 }

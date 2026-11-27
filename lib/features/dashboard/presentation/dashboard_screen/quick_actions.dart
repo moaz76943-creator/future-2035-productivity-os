@@ -21,7 +21,6 @@ class _QuickActions extends ConsumerWidget {
         excludeSemantics: true,
         child: DeepFocusGlassCard(
           padding: const EdgeInsets.symmetric(vertical: Space.xs, horizontal: 2),
-          radius: Radii.lg,
           onTap: () async {
             if (target is String) {
               context.push(target);
@@ -30,7 +29,6 @@ class _QuickActions extends ConsumerWidget {
             }
           },
           child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 asset == null
                     ? IconOrb(icon: icon, hue: hue, size: 48)
@@ -38,8 +36,6 @@ class _QuickActions extends ConsumerWidget {
                 const SizedBox(height: Space.xxs),
                 Text(
                   label,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
                   style: context.text.labelSmall?.copyWith(height: 1.15),
                 ),
@@ -59,7 +55,7 @@ class _QuickActions extends ConsumerWidget {
           action(Icons.edit_note_rounded, l10n.quickAddNote, ModuleHue.notes, () async {
             final id = await ref.read(notesRepositoryProvider).create();
             if (context.mounted) context.push(Routes.note(id));
-          }),
+          }, DeepFocusAssets.quickNote),
           action(Icons.event_rounded, l10n.quickAddEvent, ModuleHue.calendar, Routes.eventNew, DeepFocusAssets.quickEvent),
           action(Icons.timer_outlined, l10n.quickStartFocus, ModuleHue.focus, Routes.focus, DeepFocusAssets.quickFocus),
         ],

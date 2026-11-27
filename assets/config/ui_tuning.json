@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "background": {
+    "type": "silk-gradient",
+    "top": "#F4F8FD",
+    "bottom": "#DFEBF8",
+    "direction": "top-to-bottom"
+  },
+  "accent": {
+    "primary": "#0D7A7E",
+    "selectionGlow": "#14B8A6",
+    "pearlSky": [
+      "#F4F8FD",
+      "#DFEBF8"
+    ]
+  },
+  "glassCards": {
+    "fill": "#FFFFFF",
+    "fillOpacity": 0.78,
+    "border": "#FFFFFF",
+    "borderOpacity": 0.92,
+    "borderWidth": 1.2,
+    "cornerRadiusPx": 22,
+    "shadow": "#0D7A7E",
+    "shadowOpacity": 0.08,
+    "shadowBlurPx": 18,
+    "shadowOffsetX": 0,
+    "shadowOffsetYPx": 8
+  },
+  "responsive": {
+    "respectSafeArea": true,
+    "directionalLayout": true,
+    "minimumTouchTargetPx": 48
+  },
+  "navigation": {
+    "iconStrokePx": 2,
+    "glassFillOpacity": 0.78,
+    "contentBottomInsetPx": 120
+  },
+  "focusFullscreen": {
+    "background": "assets/images/ui/focus_fullscreen_bg.webp",
+    "contrastTopOpacity": 0.65,
+    "contrastBottomOpacity": 0.7
+  }
+}

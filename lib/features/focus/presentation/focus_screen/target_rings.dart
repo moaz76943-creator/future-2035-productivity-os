@@ -14,6 +14,7 @@ class _HistorySliver extends ConsumerWidget {
           return SliverToBoxAdapter(
             child: EmptyState(
               icon: Icons.timer_outlined,
+              assetPath: DeepFocusAssets.emptyFocusHistory,
               title: l10n.focusHistory,
               message: l10n.focusNoHistory,
               compact: true,

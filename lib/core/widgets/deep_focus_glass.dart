@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import '../theme/deep_focus_visuals.dart';
 
 /// خلفية التطبيق الحريرية الموحدة
@@ -76,7 +76,7 @@ class DeepFocusAssetIcon extends StatelessWidget {
       width: size,
       height: size,
       fit: BoxFit.contain,
-      errorBuilder: (_, __, ___) => Icon(
+      errorBuilder: (_, _, _) => Icon(
         fallbackIcon,
         size: size * 0.7,
         color: DeepFocusVisuals.tealPrimary,
