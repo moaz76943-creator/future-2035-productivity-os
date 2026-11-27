@@ -58,7 +58,7 @@ class _ModeSelector extends StatelessWidget {
       label: l10n.focusModeLabel,
       container: true,
       child: DeepFocusGlassCard(
-        padding: const EdgeInsets.all(4),
+        padding: EdgeInsets.zero,
         radius: DeepFocusVisuals.pillRadius,
         child: Row(
           children: [
@@ -71,7 +71,7 @@ class _ModeSelector extends StatelessWidget {
                     borderRadius: BorderRadius.circular(DeepFocusVisuals.pillRadius),
                     onTap: enabled ? () => onChanged(m) : null,
                     child: Container(
-                      constraints: const BoxConstraints(minHeight: kMinTouchTarget - 8),
+                      constraints: const BoxConstraints(minHeight: kMinTouchTarget),
                       alignment: Alignment.center,
                       padding: const EdgeInsets.symmetric(horizontal: 4),
                       decoration: m == value ? DeepFocusVisuals.activePill() : null,

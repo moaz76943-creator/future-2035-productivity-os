@@ -111,11 +111,13 @@ void main() {
   }
   // Every other language on a small phone with larger text: long words
   // (German, Polish) and tall scripts (Thai, Bengali, Urdu) must fit too.
+  // ~70 tests, minutes long: tagged `slow`, run by `check_all.sh --full` and CI.
   for (final lang in AppLocales.all) {
     if (lang.tag == 'en' || lang.tag == 'ar') continue;
     testWidgets(
       'all screens lay out at 360px, ${lang.tag}, text x1.3',
       (tester) => _checkAll(tester, lang.tag, 360, 1.3),
+      tags: ['slow'],
     );
   }
 }
