@@ -21,6 +21,7 @@ class ModuleScaffold extends StatelessWidget {
     this.subtitle,
     this.bottom,
     this.showBack,
+    this.frostedBar = false,
   });
 
   final String title;
@@ -33,56 +34,62 @@ class ModuleScaffold extends StatelessWidget {
   final PreferredSizeWidget? bottom;
   final bool? showBack;
 
+  /// Keeps a soft, nearly opaque veil behind the title bar at all times, so rows
+  /// scrolling beneath (calendar day numbers) never mix with the title text.
+  final bool frostedBar;
+
   @override
   Widget build(BuildContext context) {
     final canPop = showBack ?? Navigator.of(context).canPop();
     final lux = context.lux;
     return DeepFocusTealScope(
       child: Scaffold(
-      floatingActionButtonLocation: floatingActionButtonLocation,
-      floatingActionButton: floatingActionButton == null
-          ? null
-          : NavClearFab(child: floatingActionButton!),
-      body: AuroraBackground(
-        hue: hue,
-        intensity: 0.6,
-        child: CustomScrollView(
-          slivers: [
-            // Medium header: the large one left ~150px of empty space above the
-            // content on phones. Content scrolling under the pinned bar gets a
-            // solid backdrop instead of showing through the transparent bar.
-            SliverAppBar.medium(
-              automaticallyImplyLeading: canPop,
-              backgroundColor: WidgetStateColor.resolveWith(
-                (states) => states.contains(WidgetState.scrolledUnder)
-                    ? lux.background.withValues(alpha: 0.97)
-                    : Colors.transparent,
+        floatingActionButtonLocation: floatingActionButtonLocation,
+        floatingActionButton: floatingActionButton == null
+            ? null
+            : NavClearFab(child: floatingActionButton!),
+        body: AuroraBackground(
+          hue: hue,
+          intensity: 0.6,
+          child: CustomScrollView(
+            slivers: [
+              // Medium header: the large one left ~150px of empty space above the
+              // content on phones. Content scrolling under the pinned bar gets a
+              // solid backdrop instead of showing through the transparent bar.
+              SliverAppBar.medium(
+                automaticallyImplyLeading: canPop,
+                backgroundColor: WidgetStateColor.resolveWith(
+                  (states) => states.contains(WidgetState.scrolledUnder)
+                      ? lux.background.withValues(alpha: frostedBar ? 0.94 : 0.97)
+                      : (frostedBar ? lux.background.withValues(alpha: 0.82) : Colors.transparent),
+                ),
+                scrolledUnderElevation: frostedBar ? 2 : null,
+                shadowColor: frostedBar ? lux.shadow : null,
+                surfaceTintColor: Colors.transparent,
+                title: Text(title, maxLines: 1, overflow: TextOverflow.ellipsis),
+                actions: [
+                  ...actions,
+                  const SizedBox(width: Space.xs),
+                ],
+                bottom: bottom,
               ),
-              surfaceTintColor: Colors.transparent,
-              title: Text(title, maxLines: 1, overflow: TextOverflow.ellipsis),
-              actions: [
-                ...actions,
-                const SizedBox(width: Space.xs),
-              ],
-              bottom: bottom,
-            ),
-            if (subtitle != null)
-              SliverToBoxAdapter(
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.md),
-                  child: Text(
-                    subtitle!,
-                    style: context.text.bodyMedium?.copyWith(color: context.lux.ink2),
+              if (subtitle != null)
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.md),
+                    child: Text(
+                      subtitle!,
+                      style: context.text.bodyMedium?.copyWith(color: context.lux.ink2),
+                    ),
                   ),
                 ),
+              ...slivers,
+              SliverToBoxAdapter(
+                child: SizedBox(height: 176 + MediaQuery.viewPaddingOf(context).bottom),
               ),
-            ...slivers,
-            SliverToBoxAdapter(
-              child: SizedBox(height: 176 + MediaQuery.viewPaddingOf(context).bottom),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
       ),
     );
   }

@@ -114,7 +114,10 @@ class _TimerHero extends ConsumerWidget {
         .min(screen.width - Space.page * 2 - Space.xl * 2, screen.height * 0.3)
         .clamp(floor, 300.0);
 
-    final onScene = context.text.bodyMedium?.copyWith(color: Colors.white, shadows: _timerTextShadow);
+    final onScene = context.text.bodyMedium?.copyWith(
+      color: Colors.white,
+      shadows: _timerTextShadow,
+    );
     return LuxCard(
       onTap: a == null ? onAdjust : null,
       semanticLabel: a == null && onAdjust != null ? l10n.focusTapToAdjust : null,

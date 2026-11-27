@@ -103,12 +103,15 @@ class TasksScreen extends ConsumerWidget {
           onPressed: () => showTasksTransfer(context, ref),
         ),
       ],
-      floatingActionButton: FloatingActionButton(
-        heroTag: 'tasks-fab',
-        tooltip: l10n.taskNew,
-        onPressed: () => context.push(Routes.taskNew),
-        child: const Icon(Icons.add_rounded),
-      ),
+      // The quick-add bar already adds tasks; the + only returns on the tabs without it.
+      floatingActionButton: tab == TasksTab.completed || tab == TasksTab.archived
+          ? FloatingActionButton(
+              heroTag: 'tasks-fab',
+              tooltip: l10n.taskNew,
+              onPressed: () => context.push(Routes.taskNew),
+              child: const Icon(Icons.add_rounded),
+            )
+          : null,
       slivers: [
         SliverToBoxAdapter(child: _TabsRow(tab: tab)),
         SliverToBoxAdapter(

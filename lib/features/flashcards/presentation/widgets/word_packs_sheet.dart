@@ -59,7 +59,9 @@ class _WordPacksSheetState extends ConsumerState<WordPacksSheet> {
   /// Instant search by the name in the app language, the language's own name or English.
   bool _matches(SupportedLanguage l) =>
       _query.isEmpty ||
-      '${languageSearchText(l.tag)} ${l.nativeName} ${l.englishName}'.toLowerCase().contains(_query);
+      '${languageSearchText(l.tag)} ${l.nativeName} ${l.englishName}'.toLowerCase().contains(
+        _query,
+      );
 
   Widget _languageTile(SupportedLanguage l) {
     final local = languageDisplayName(l.tag);
@@ -133,7 +135,10 @@ class _WordPacksSheetState extends ConsumerState<WordPacksSheet> {
     final media = MediaQuery.of(context);
     final height = (media.size.height - media.viewInsets.bottom) * 0.88;
     final picked = _learn;
-    final choices = [for (final l in _choices) if (_matches(l)) l];
+    final choices = [
+      for (final l in _choices)
+        if (_matches(l)) l,
+    ];
     return AnimatedPadding(
       duration: const Duration(milliseconds: 150),
       padding: EdgeInsets.only(bottom: media.viewInsets.bottom),
@@ -210,67 +215,67 @@ class _WordPacksSheetState extends ConsumerState<WordPacksSheet> {
           ),
         ),
       if (_packs != null)
-          FutureBuilder(
-            future: _packs,
-            builder: (context, snap) {
-              if (snap.hasError) {
-                return Column(
-                  children: [
-                    Text(l10n.wordPacksFailed, style: muted),
-                    TextButton(onPressed: () => _pick(_learn!), child: Text(l10n.actionRetry)),
-                  ],
-                );
-              }
-              final data = snap.data;
-              if (data == null) return const Center(child: CircularProgressIndicator());
-              final (learn, mine, en) = data;
-              final tree = en.tree();
-              final ready = {
-                for (final t in tree.entries)
-                  t.key: [
-                    for (final b in t.value)
-                      if (learn.branch(b).length >= 5) b,
-                  ],
-              }..removeWhere((_, v) => v.isEmpty);
-              if (ready.isEmpty) return Text(l10n.wordPacksEmpty, style: muted);
-              String name(String k) => mine.names[k] ?? en.names[k] ?? k;
-              final branches = [for (final t in ready.values) ...t];
-              final words = branches.fold<int>(0, (n, b) => n + learn.branch(b).length);
-              final done = branches.every(_added.contains);
+        FutureBuilder(
+          future: _packs,
+          builder: (context, snap) {
+            if (snap.hasError) {
               return Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  // The whole language at once: one deck per branch, grouped by topic name.
-                  for (final t in ready.entries)
-                    ListTile(
-                      key: Key('wordTopic_${t.key}'),
-                      contentPadding: EdgeInsets.zero,
-                      leading: Text(en.emoji[t.key] ?? '', style: context.text.titleLarge),
-                      title: Text(name(t.key)),
-                      subtitle: Text(
-                        t.value.map(name).join(' · '),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                  const SizedBox(height: Space.md),
-                  FilledButton.icon(
-                    key: const Key('wordPacksAddAll'),
-                    onPressed: done || _busy != null
-                        ? null
-                        : () async {
-                            for (final b in branches) {
-                              if (!mounted) return;
-                              if (!_added.contains(b)) await _add(b, learn, mine, en);
-                            }
-                          },
-                    icon: Icon(done ? Icons.check_circle_rounded : Icons.download_rounded),
-                    label: Text('${l10n.starterAdd} · ${l10n.deckCards(words)}'),
-                  ),
+                  Text(l10n.wordPacksFailed, style: muted),
+                  TextButton(onPressed: () => _pick(_learn!), child: Text(l10n.actionRetry)),
                 ],
               );
-            },
-          ),
+            }
+            final data = snap.data;
+            if (data == null) return const Center(child: CircularProgressIndicator());
+            final (learn, mine, en) = data;
+            final tree = en.tree();
+            final ready = {
+              for (final t in tree.entries)
+                t.key: [
+                  for (final b in t.value)
+                    if (learn.branch(b).length >= 5) b,
+                ],
+            }..removeWhere((_, v) => v.isEmpty);
+            if (ready.isEmpty) return Text(l10n.wordPacksEmpty, style: muted);
+            String name(String k) => mine.names[k] ?? en.names[k] ?? k;
+            final branches = [for (final t in ready.values) ...t];
+            final words = branches.fold<int>(0, (n, b) => n + learn.branch(b).length);
+            final done = branches.every(_added.contains);
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                // The whole language at once: one deck per branch, grouped by topic name.
+                for (final t in ready.entries)
+                  ListTile(
+                    key: Key('wordTopic_${t.key}'),
+                    contentPadding: EdgeInsets.zero,
+                    leading: Text(en.emoji[t.key] ?? '', style: context.text.titleLarge),
+                    title: Text(name(t.key)),
+                    subtitle: Text(
+                      t.value.map(name).join(' · '),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                const SizedBox(height: Space.md),
+                FilledButton.icon(
+                  key: const Key('wordPacksAddAll'),
+                  onPressed: done || _busy != null
+                      ? null
+                      : () async {
+                          for (final b in branches) {
+                            if (!mounted) return;
+                            if (!_added.contains(b)) await _add(b, learn, mine, en);
+                          }
+                        },
+                  icon: Icon(done ? Icons.check_circle_rounded : Icons.download_rounded),
+                  label: Text('${l10n.starterAdd} · ${l10n.deckCards(words)}'),
+                ),
+              ],
+            );
+          },
+        ),
     ];
   }
 }

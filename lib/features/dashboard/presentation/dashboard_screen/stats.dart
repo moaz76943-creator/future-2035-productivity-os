@@ -46,37 +46,44 @@ class _StatTiles extends ConsumerWidget {
     final tasks = ref.watch(tasksProvider(const TaskFilter(view: TaskView.today))).value?.length;
     final events = ref.watch(todayAgendaProvider).value?.length;
     final goals = ref.watch(goalsListProvider(GoalStatus.active)).value?.length;
-    Widget tile(String key, String asset, IconData icon, String value, String label, String route) =>
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: Space.xxs),
-            child: LuxCard(
-              key: Key('dashStat-$key'),
-              onTap: () => context.go(route),
-              semanticLabel: '$label: $value',
-              padding: const EdgeInsets.symmetric(vertical: Space.sm, horizontal: Space.xxs),
-              child: Column(
-                children: [
-                  ExcludeSemantics(
-                    child: DeepFocusAssetIcon(assetPath: asset, size: 40, fallbackIcon: icon),
-                  ),
-                  const SizedBox(height: Space.xxs),
-                  FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Text(value, style: context.text.titleMedium, maxLines: 1),
-                  ),
-                  Text(
-                    label,
-                    style: context.text.labelSmall,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.center,
-                  ),
-                ],
+    Widget tile(
+      String key,
+      String asset,
+      IconData icon,
+      String value,
+      String label,
+      String route,
+    ) => Expanded(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: Space.xxs),
+        child: LuxCard(
+          glass: true,
+          key: Key('dashStat-$key'),
+          onTap: () => context.go(route),
+          semanticLabel: '$label: $value',
+          padding: const EdgeInsets.symmetric(vertical: Space.sm, horizontal: Space.xxs),
+          child: Column(
+            children: [
+              ExcludeSemantics(
+                child: DeepFocusAssetIcon(assetPath: asset, size: 40, fallbackIcon: icon),
               ),
-            ),
+              const SizedBox(height: Space.xxs),
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(value, style: context.text.titleMedium, maxLines: 1),
+              ),
+              Text(
+                label,
+                style: context.text.labelSmall,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
+              ),
+            ],
           ),
-        );
+        ),
+      ),
+    );
     String n(int? v) => v == null ? '–' : fmt.number(v);
     return Padding(
       padding: const EdgeInsets.fromLTRB(Space.md, Space.sm, Space.md, 0),
