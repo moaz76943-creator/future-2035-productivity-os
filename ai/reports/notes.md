@@ -1,1 +1,2 @@
 - 11-27 02:34 task lib/features/focus/presentation/focus_screen.dart: no patch; File likely exceeds 400 lines (multiple part files included), consider further decomposition
+- 11-27 08:24 task lib/features/flashcards/presentation/review_screen.dart: no patch; The flashcard surface/shadow and rating buttons are implemented in part files ('review_screen/flip_card.dart', 'review_screen/rating_button.dart', 'review_scree
