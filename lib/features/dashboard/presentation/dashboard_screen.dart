@@ -41,6 +41,7 @@ part 'dashboard_screen/header.dart';
 part 'dashboard_screen/goal_line.dart';
 part 'dashboard_screen/stats.dart';
 part 'dashboard_screen/quick_actions.dart';
+part 'dashboard_screen/quick_focus_banner.dart';
 
 /// Section ids persisted in settings.dashboardSections (order = display order).
 String dashSectionName(AppLocalizations l10n, String id) => switch (id) {
@@ -71,6 +72,7 @@ class DashboardScreen extends ConsumerWidget {
               const SliverToBoxAdapter(child: _HeroBackdrop(child: _Header())),
               const SliverToBoxAdapter(child: _StatTiles()),
               const SliverToBoxAdapter(child: _QuickActions()),
+              const SliverToBoxAdapter(child: _QuickFocusBanner()),
               // Flashcards are a pillar: always right under the quick actions.
               if (sections.contains('review')) const SliverToBoxAdapter(child: _ReviewSection()),
               const SliverToBoxAdapter(child: StartMyDayCard()),
