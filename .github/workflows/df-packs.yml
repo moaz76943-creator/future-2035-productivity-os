@@ -58,7 +58,7 @@ jobs:
           else
             echo "SKIP=1" >> "$GITHUB_ENV"   # shard 0 creates the branch first
           fi
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         if: env.SKIP != '1'
         with:
           path: .ai-state

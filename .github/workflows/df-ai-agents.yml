@@ -66,7 +66,7 @@ jobs:
           fi
 
       - name: Restore model health memory
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: .ai-state
           key: df-ai-health-${{ github.run_id }}
