@@ -36,7 +36,7 @@ class _TabsRow extends ConsumerWidget {
     final primary = Theme.of(context).colorScheme.primary;
     final ink = Theme.of(context).colorScheme.onSurface;
     final idleBg = context.lux.surface;
-    final idleSide = BorderSide(color: ink.withValues(alpha: 0.28));
+    final idleSide = BorderSide(color: ink.withValues(alpha: 0.14));
     final chipShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(Radii.pill));
     const chipPad = EdgeInsets.symmetric(horizontal: Space.sm, vertical: Space.xs);
     return SizedBox(
@@ -159,13 +159,20 @@ class _QuickAddState extends ConsumerState<_QuickAdd> {
         maxLength: 500,
         buildCounter: (_, {required currentLength, required isFocused, maxLength}) => null,
         decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white.withValues(alpha: context.lux.isDark ? 0.06 : 0.72),
           hintText: context.l10n.tasksQuickAddHint,
           prefixIcon: const Icon(Icons.add_task_rounded),
           suffixIcon: ValueListenableBuilder<TextEditingValue>(
             valueListenable: _c,
-            builder: (context, value, _) => IconButton(
+            builder: (context, value, _) => IconButton.filled(
               tooltip: context.l10n.actionAdd,
-              icon: const Icon(Icons.arrow_upward_rounded),
+              visualDensity: VisualDensity.compact,
+              style: IconButton.styleFrom(
+                backgroundColor: DeepFocusVisuals.tealPrimary,
+                foregroundColor: Colors.white,
+              ),
+              icon: const Icon(Icons.arrow_upward_rounded, size: 20),
               onPressed: value.text.trim().isEmpty || _busy ? null : _submit,
             ),
           ),
@@ -258,33 +265,6 @@ class _TaskList extends ConsumerWidget {
     }
 
     final children = <Widget>[];
-    // Today: when everything would be done if you started now (estimates, or
-    // 25 minutes for a task without one). Seeing the end time beats "later".
-    if (tab == TasksTab.today) {
-      final open = tasks.where((t) => t.completedAt == null).toList();
-      if (open.isNotEmpty) {
-        final minutes = finishMinutes(open.map((t) => t.estimateMinutes));
-        final end = now.add(Duration(minutes: minutes));
-        children.add(
-          Padding(
-            key: const Key('finishEstimate'),
-            padding: const EdgeInsets.fromLTRB(Space.page, Space.sm, Space.page, 0),
-            child: Row(
-              children: [
-                Icon(Icons.flag_circle_outlined, size: 20, color: ModuleHue.tasks.a),
-                const SizedBox(width: Space.xs),
-                Expanded(
-                  child: Text(
-                    l10n.tasksFinishAt(context.fmt.time(end)),
-                    style: context.text.bodyMedium?.copyWith(color: context.lux.ink2),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        );
-      }
-    }
     for (final (gi, (title, list)) in groups.indexed) {
       final drop = gi < drops.length ? drops[gi] : null;
       final groupChildren = <Widget>[];
