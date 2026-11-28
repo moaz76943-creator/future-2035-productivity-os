@@ -1,6 +1,8 @@
-name: Translate All Languages (9 Gemini Keys)
+name: Translate All Languages (9 Gemini Keys - 24/7)
 
 on:
+  schedule:
+    - cron: '0 * * * *'
   workflow_dispatch:
     inputs:
       langs:
@@ -18,6 +20,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: translate-all-languages
+  cancel-in-progress: false
 
 jobs:
   translate:
@@ -50,9 +56,31 @@ jobs:
             --repo . \
             --out /tmp/master_all.csv \
             --langs "${{ inputs.langs }}" \
-            --max-langs "${{ inputs.max_langs }}" \
+            --max-langs "${{ inputs.max_langs || '0' }}" \
             --model "${{ inputs.model }}" \
             --push-packs
+
+      - name: Sync unified master_all.csv back to repo
+        if: always()
+        run: |
+          if [ -s /tmp/master_all.csv ]; then
+            NEW_LINES=$(wc -l < /tmp/master_all.csv)
+            OLD_LINES=$(wc -l < packs/seed/master_all.csv 2>/dev/null || echo 0)
+            echo "Old lines: $OLD_LINES | New lines: $NEW_LINES"
+            if [ "$NEW_LINES" -gt "$OLD_LINES" ]; then
+              mkdir -p packs/seed packs/backup
+              cp -f /tmp/master_all.csv packs/seed/master_all.csv
+              cp -f /tmp/master_all.csv packs/backup/master_all.csv
+              git config user.name "github-actions[bot]"
+              git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+              git add packs/seed/master_all.csv packs/backup/master_all.csv
+              if ! git diff --cached --quiet; then
+                git commit -m "chore(vocab): sync cloud master_all.csv ($NEW_LINES lines)"
+                git pull --rebase origin "${{ github.ref_name }}" || true
+                git push
+              fi
+            fi
+          fi
 
       - name: Upload unified master_all.csv artifact
         uses: actions/upload-artifact@v4
