@@ -33,6 +33,7 @@ import '../application/focus_prefs.dart';
 import '../application/focus_providers.dart';
 import '../domain/focus_engine.dart';
 import '../domain/focus_timer_state.dart';
+import 'focus_screen/end_tone_strip.dart';
 import 'focus_time_sheet.dart';
 import 'session_plan.dart';
 
