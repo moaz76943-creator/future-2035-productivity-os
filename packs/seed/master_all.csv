@@ -2231,6 +2231,29 @@ as,as_0061,3,n,home,bedroom,ستائر معتمة,ব্ল্যাকআউট
 as,as_0679,1,n,home,bedroom,غرفة نوم,শোৱা কোঠা,xɔwa kotʰa
 as,as_0018,2,adj,home,colors,عنابي,bordô,/boɾˈdo/
 as,as_0025,3,adj,home,colors,نيلي,índigo,/ˈĩdigu/
+as,as_0529,1,adj,home,colors,أحمر,ৰঙা,/ɹɔŋa/
+as,as_0530,1,adj,home,colors,أزرق,নীলা,/nila/
+as,as_0531,1,adj,home,colors,أخضر,সেউজীয়া,/seuzija/
+as,as_0532,1,adj,home,colors,أصفر,হালধীয়া,/haldɦija/
+as,as_0533,1,adj,home,colors,أبيض,বগা,/bɔga/
+as,as_0534,1,adj,home,colors,أسود,কলা,/kɔla/
+as,as_0535,1,adj,home,colors,برتقالي,কমলা,/kɔmɔla/
+as,as_0536,1,adj,home,colors,وردي,গিলাপী,/gilapi/
+as,as_0537,1,adj,home,colors,بنفسجي,বেঙুনীয়া,/beŋunija/
+as,as_0538,1,adj,home,colors,بني,বজৰীয়া,/bɔzɔriya/
+as,as_0539,1,adj,home,colors,رمادي,ছাইৰঙীয়া,/sairaŋija/
+as,as_0540,1,adj,home,colors,ذهبي,সোণালী,/sonali/
+as,as_0541,1,adj,home,colors,فضي,ৰূপালী,/ɹupali/
+as,as_0542,2,adj,home,colors,بيج,বালিৰঙী,/balirɔŋi/
+as,as_0543,2,adj,home,colors,كحلي,গাঢ় নীলা,/gaɹh nila/
+as,as_0544,2,adj,home,colors,تركوازي,ফিৰোজা,/phiɹoza/
+as,as_0545,2,adj,home,colors,زيتوني,জলফাই,/zɔlphai/
+as,as_0546,2,adj,home,colors,سماوي,আকাশী,/akasi/
+as,as_0547,2,adj,home,colors,فاتح,হুক,/huk/
+as,as_0548,2,adj,home,colors,داكن,গাঢ়,/gaɹh/
+as,as_0549,3,adj,home,colors,قرمزي,গঢ়ালী,/gɔhali/
+as,as_0550,3,adj,home,colors,زمردي,মণিপুৰীয়া,/mɔnipuriya/
+as,as_0551,3,adj,home,colors,عاجي,দাঁতৰ ৰঙৰ,/dantɔɹ rɔŋɔɹ/
 as,as_0115,1,n,home,garden_clean,حديقة,κηπος,kipos
 as,as_0116,1,n,home,garden_clean,مكنسة يدوية,σκουπα,skoupa
 as,as_0117,1,n,home,garden_clean,دلو,κουβας,kouvas
@@ -2259,6 +2282,19 @@ as,as_0139,3,n,home,garden_clean,سماد طبيعي,সাৰ,sar
 as,as_0140,3,n,home,garden_clean,مقص تقليم,গছ কাটিবলৈ ব্যৱহাৰ কৰা কেচি,gosh katiboloi byabohar kora kesi
 as,as_0028,1,n,home,kitchen,كوب,chávena,/ˈʃavena/
 as,as_0039,1,n,home,kitchen,حوض المطبخ,lava-loiça,/ˈlavɐ ˈlojsɐ/
+as,as_0552,1,n,home,kitchen,مطبخ,ৰন্ধনশাল,/ɹɔndhɔnsal/
+as,as_0553,1,n,home,kitchen,طبق,থালি,/thali/
+as,as_0554,1,n,home,kitchen,كأس زجاجي,গিলাচ,/gilas/
+as,as_0555,1,n,home,kitchen,ملعقة,চামুচ,/samus/
+as,as_0556,1,n,home,kitchen,شوكة,কাঁটাচামুচ,/kantasamus/
+as,as_0557,1,n,home,kitchen,سكين طعام,কটাছুৰী,/kɔtasuɹi/
+as,as_0558,1,n,home,kitchen,وعاء عميق,বাতি,/bati/
+as,as_0559,1,n,home,kitchen,قدر طبخ,কেৰাহী,/keɹahi/
+as,as_0560,1,n,home,kitchen,مقلاة,তাৱা,/tawa/
+as,as_0561,1,n,home,kitchen,إبريق شاي,কেতেলী,/keteli/
+as,as_0562,1,n,home,kitchen,فنجان كبير,মগ,/mɔg/
+as,as_0563,1,n,home,kitchen,صينية,ট্ৰে,/tɹe/
+as,as_0564,1,n,home,kitchen,صنبور,কল,/kɔl/
 as,as_0640,2,n,home,kitchen,لوح تقطيع,কটা তক্তা,kɔta tɔkta
 as,as_0641,2,n,home,kitchen,مصفاة,ছাঁকনি,sãkɔni
 as,as_0642,2,n,home,kitchen,مبشرة,উঁহনি,ũhɔni
@@ -2309,9 +2345,59 @@ as,as_0243,2,n,life,body_health,صداع,মূৰৰ বিষ,muror bis
 as,as_0244,3,n,life,body_health,ضمادة,বেণ্ডেজ,bendez
 as,as_0245,3,n,life,body_health,فيتامين,ভিটামিন,vitamin
 as,as_0246,3,n,life,body_health,مناعة,ৰোগ প্ৰতিৰোধ ক্ষমতা,rog protirodh khomota
+as,as_0565,1,n,life,body_health,رأس,মূৰ,/muɹ/
+as,as_0566,1,n,life,body_health,وجه,মুখ,/mukʰ/
+as,as_0567,1,n,life,body_health,عين,চকু,/sɔku/
+as,as_0568,1,n,life,body_health,أذن,কান,/kan/
+as,as_0569,1,n,life,body_health,أنف,নাক,/nak/
+as,as_0570,1,n,life,body_health,فم,মুখ,/mukʰ/
+as,as_0571,1,n,life,body_health,سن,দাঁত,/dant/
+as,as_0572,1,n,life,body_health,شعر,চুলি,/suli/
+as,as_0573,1,n,life,body_health,يد,হাত,/hat/
+as,as_0574,1,n,life,body_health,إصبع,আঙুলি,/aŋuli/
+as,as_0575,1,n,life,body_health,ذراع,বাহু,/bahu/
+as,as_0576,1,n,life,body_health,ساق,ভৰি,/bɔɹi/
+as,as_0577,1,n,life,body_health,قدم,তালা,/tala/
+as,as_0578,1,n,life,body_health,صحة,স্বাস্থ্য,/swastha/
+as,as_0579,1,n,life,body_health,دواء,औषध,/ɔʊ.sɔdʱ/
+as,as_0580,2,n,life,body_health,رقبة,ঠোঁট,/tʰʊt/
+as,as_0581,2,n,life,body_health,كتف,কাষ,/kaʊs/
+as,as_0582,2,n,life,body_health,ظهر,পিঠি,/pi.tʱi/
+as,as_0583,2,n,life,body_health,ركبة,ঠুাঁৰি,/tʰũ.ri/
+as,as_0584,2,n,life,body_health,لسان,জিভা,/zi.bʱa/
+as,as_0585,2,n,life,body_health,جبين,কপালী,/kɔ.pa.li/
+as,as_0586,2,n,life,body_health,كوع,কলা,/kɔ.la/
+as,as_0587,2,n,life,body_health,كاحل,গোৰোহা,/ɡo.ɾɔ.ɦa/
 as,as_0707,1,n,life,body_health,قلب,corazón,koɾaˈθon
 as,as_0714,2,n,life,body_health,معدة,estómago,esˈtomaxo
 as,as_0718,2,n,life,body_health,معصم,muñeca,muˈɲeka
+as,as_0588,1,n,life,clothing,قميص,চোলা,/sɔ.la/
+as,as_0589,1,n,life,clothing,بنطال,পেন্ট,/pɛnt/
+as,as_0590,1,n,life,clothing,حذاء,জোতা,/zo.ta/
+as,as_0591,1,n,life,clothing,جورب,ম'জা,/mɔ.za/
+as,as_0592,1,n,life,clothing,معطف,কোট,/kot/
+as,as_0593,1,n,life,clothing,سترة,জেকেট,/ze.kɛt/
+as,as_0594,1,n,life,clothing,قبعة,টুপি,/tu.pi/
+as,as_0595,1,n,life,clothing,فستان,মেখেলা,/mɛ.kʰɛ.la/
+as,as_0596,1,n,life,clothing,تنورة,ফিৰিংগা,/pʰi.ɾiŋ.ɡa/
+as,as_0597,1,n,life,clothing,حزام,বেλ্ট,/bɛlt/
+as,as_0598,1,n,life,clothing,حقيبة,বেগ,/bɛɡ/
+as,as_0599,1,n,life,clothing,نظارات,চশমা,/sɔs.ma/
+as,as_0600,2,n,life,clothing,كنزة صوفية,চাৱেটাৰ,/sa.wɛ.taɾ/
+as,as_0601,2,n,life,clothing,وشاح,বান্ধনি,/ban.dʱɔ.ni/
+as,as_0602,2,n,life,clothing,قفازات,ম'জা,/mɔ.za/
+as,as_0603,2,n,life,clothing,حذاء رياضي,স্নিগাৰ,/sni.ɡaɾ/
+as,as_0604,2,n,life,clothing,حذاء طويل,বুট,/but/
+as,as_0605,2,n,life,clothing,صندل,চেণ্ডেল,/sɛn.dɛl/
+as,as_0606,2,n,life,clothing,خف منزلي,চান্দেল,/san.dɛl/
+as,as_0607,2,n,life,clothing,بدلة رسمية,ছুট,/sut/
+as,as_0608,2,n,life,clothing,ربطة عنق,টাই,/tai/
+as,as_0609,2,n,life,clothing,ملابس نوم,পাইজম,/pai.zɔm/
+as,as_0610,2,n,life,clothing,جيب,জেপ,/zɛp/
+as,as_0611,3,n,life,clothing,سحاب,চেইন,/sɛin/
+as,as_0612,3,n,life,clothing,ياقة,কলাৰ,/kɔ.laɾ/
+as,as_0613,3,n,life,clothing,كم القميص,হাতা,/ɦa.ta/
+as,as_0614,3,n,life,clothing,مظلة مطر,ছাতি,/sʱa.ti/
 as,as_0689,2,n,life,clothing,زر,botón,boˈton
 as,as_0247,1,n,life,family_traits,عائلة,পৰিয়াল,porial
 as,as_0248,1,n,life,family_traits,أب,দেউতা,deuta
@@ -2347,6 +2433,36 @@ as,as_0277,3,adj,life,family_traits,حكيم,জ্ঞানী,gyani
 as,as_0278,3,adj,life,family_traits,مسؤول,দায়িত্বশীল,dayittoshil
 as,as_0279,3,adj,life,family_traits,فضولي للعلم,জানিবলৈ উৎসুক,janiboloi utsuk
 as,as_0280,3,adj,life,family_traits,مبدع,সৃজনশীল,srijonshil
+as,as_0615,1,n,life,food_drink,ماء,পানী,/pa.ni/
+as,as_0616,1,n,life,food_drink,خبز,ৰুটি,/ɾu.ti/
+as,as_0617,1,n,life,food_drink,حليب,খীৰ,/kʰiɾ/
+as,as_0618,1,n,life,food_drink,جبن,পেনিৰ,/pɛ.niɾ/
+as,as_0619,1,n,life,food_drink,بيضة,কণী,/kɔ.ni/
+as,as_0620,1,n,life,food_drink,زبدة,মাখন,/ma.kʰɔn/
+as,as_0621,1,n,life,food_drink,عسل,মৌ,/mɔʊ/
+as,as_0622,1,n,life,food_drink,شاي,চাহ,/sʱaɦ/
+as,as_0623,1,n,life,food_drink,قهوة,কফি,/kɔ.fi/
+as,as_0624,1,n,life,food_drink,عصير,ৰস,/ɾɔs/
+as,as_0625,1,n,life,food_drink,دجاج,ছাগলী,/sʱa.ɡɔ.li/
+as,as_0626,1,n,life,food_drink,سمك,মাছ,/masʱ/
+as,as_0627,1,n,life,food_drink,لحم بقر,গৰুৰ মাংস,/ɡɔ.ɾuɾ maŋs/
+as,as_0628,1,n,life,food_drink,حساء,জোল,/zol/
+as,as_0629,1,n,life,food_drink,سلطة,চলাড,/salad/
+as,as_0630,1,n,life,food_drink,كعكة,পিঠা,/pitha/
+as,as_0631,2,n,life,food_drink,زبادي,দৈ,/doi/
+as,as_0632,2,n,life,food_drink,مربى,জেৱাম,/zewam/
+as,as_0633,2,n,life,food_drink,معكرونة,পাষ্টা,/pasta/
+as,as_0634,2,n,life,food_drink,شطيرة,ছেনৱিচ,/senwis/
+as,as_0635,2,n,life,food_drink,بسكويت,বিস্কুট,/biskut/
+as,as_0636,2,n,life,food_drink,مثلجات,আইচ ক্ৰীম,/ais krim/
+as,as_0637,2,n,life,food_drink,لحم ضأن,মেৰু পোৱালিৰ মাংস,/meru powalir mangso/
+as,as_0638,2,n,life,food_drink,فطيرة,পাই,/pai/
+as,as_0639,2,n,life,food_drink,فطور,প্ৰাতঃহাঁৰ,/pratahar/
+as,as_0640,2,n,life,food_drink,غداء,দুপৰীয়াৰ আহাৰ,/duporiyar ahar/
+as,as_0641,2,n,life,food_drink,عشاء,নিশাৰ আহাৰ,/nishar ahar/
+as,as_0642,3,n,life,food_drink,وجبة خفيفة,জলপান,/zolpan/
+as,as_0643,3,n,life,food_drink,حساء مرق,জোল,/zol/
+as,as_0644,3,n,life,food_drink,عجينة,ময়দা খিনি,/moyda khini/
 as,as_0141,1,n,life,produce,تفاحة,আপেল,apel
 as,as_0142,1,n,life,produce,موزة,কল,kol
 as,as_0143,1,n,life,produce,عنب,আ আঙুৰ,angur
@@ -2367,11 +2483,77 @@ as,as_0157,2,n,life,produce,مانجو,আম,am
 as,as_0158,2,n,life,produce,أناناس,আনাৰস,anaros
 as,as_0159,2,n,life,produce,كرز,বগৰী,bogori
 as,as_0160,2,n,life,produce,مشمش,খুবানী,khubani
+as,as_0645,2,n,life,produce,تين,ডিম্ব,/dimbo/
+as,as_0646,2,n,life,produce,رمان,ডালিম,/dalim/
+as,as_0647,2,n,life,produce,يوسفي,কমলা,/komola/
+as,as_0648,2,n,life,produce,فلفل حلو,মিঠা মৰিচ,/mitha moris/
+as,as_0649,2,n,life,produce,سبانخ,পালেং শাক,/paleng sak/
+as,as_0650,2,n,life,produce,ملفوف,বন্ধাকবি,/bondhakobi/
+as,as_0651,2,n,life,produce,باذنجان,বেঙেনা,/bengena/
+as,as_0652,2,n,life,produce,كوسا,লউ,/lou/
+as,as_0653,3,n,life,produce,بروكلي,ব্ৰকলি,/brokoli/
+as,as_0654,3,n,life,produce,قرنبيط,ফুলকবি,/phulkobi/
+as,as_0655,3,n,life,produce,فجل,মূলা,/mula/
+as,as_0656,3,n,life,produce,كرفس,কেলৰি,/kelori/
+as,as_0657,1,n,life,spices_grains,أرز,চাউল,/saul/
+as,as_0658,1,n,life,spices_grains,ملح,নিয়ম,/niyom/
+as,as_0659,1,n,life,spices_grains,سكر,চেনি,/zeni/
+as,as_0660,1,n,life,spices_grains,دقيق,আটা,/ata/
+as,as_0661,1,n,life,spices_grains,فلفل أسود,ক'লা মৰিচ,/ko'la moris/
+as,as_0662,1,n,life,spices_grains,قمح,গম,/gom/
+as,as_0663,1,n,life,spices_grains,فاصوليا,মটৰ,/motor/
+as,as_0664,2,n,life,spices_grains,عدس,মাইল,/mail/
+as,as_0665,2,n,life,spices_grains,حمص,বুট,/but/
+as,as_0666,2,n,life,spices_grains,شوفان,অটচ,/ots/
+as,as_0667,2,n,life,spices_grains,شعير,যৱ,/zob/
+as,as_0668,2,n,life,spices_grains,قرفة,দাৰচিনী,/darzini/
+as,as_0669,2,n,life,spices_grains,كمون,জিৰা,/zira/
+as,as_0670,2,n,life,spices_grains,نعناع,পদিনা,/podina/
+as,as_0671,2,n,life,spices_grains,زعتر,থাইম,/thaim/
+as,as_0672,2,n,life,spices_grains,زنجبيل,আদা,/ada/
+as,as_0673,2,n,life,spices_grains,سمسم,তিলে,/tile/
+as,as_0674,2,n,life,spices_grains,لوز,বাদাম,/badam/
+as,as_0675,2,n,life,spices_grains,جوز,জথ,/zoth/
+as,as_0676,3,n,life,spices_grains,كركم,হালধি,/haldhi/
+as,as_0677,3,n,life,spices_grains,هيل,ইলাচি,/ilasi/
+as,as_0678,3,n,life,spices_grains,قرنفل,লৱং,/lowong/
+as,as_0679,3,n,life,spices_grains,كزبرة,ধনিয়া,/dhonia/
+as,as_0680,3,n,life,spices_grains,بقدونس,ধানমরিচ,/dhanmoris/
 as,as_0361,3,v,study,core_verbs,يحلل,বিশ্লেষণ করা,bishle-shon kora
 as,as_0362,3,v,study,core_verbs,يقارن,তুলনা করা,tulona kora
 as,as_0363,3,v,study,core_verbs,ينظم,সংগঠিত করা,shongothito kora
 as,as_0364,3,v,study,core_verbs,يحسن,উন্নতি করা,unnoti kora
 as,as_0365,3,v,study,core_verbs,يكتشف,আবিষ্কার করা,abishkar kora
+as,as_0681,1,v,study,core_verbs,يقرأ,পঢ়,/poh/
+as,as_0682,1,v,study,core_verbs,يكتب,লিখ,/likh/
+as,as_0683,1,v,study,core_verbs,يتعلم,শিখ,/shikh/
+as,as_0684,1,v,study,core_verbs,يدرس,অধ্যয়ন কৰ,/odhyayon kor/
+as,as_0685,1,v,study,core_verbs,يسمع,শুনা,/shuna/
+as,as_0686,1,v,study,core_verbs,يتحدث,কথা কোৱಾ,/kotha kowa/
+as,as_0687,1,v,study,core_verbs,يرى,তোলা,/tula/
+as,as_0688,1,v,study,core_verbs,يذهب,যোৱা,/jowa/
+as,as_0689,1,v,study,core_verbs,يأتي,আহা,/aha/
+as,as_0690,1,v,study,core_verbs,يأكل,খোৱা,/khowa/
+as,as_0691,1,v,study,core_verbs,يشرب,খোৱা,/khowa/
+as,as_0692,1,v,study,core_verbs,ينام,শোৱা,/showa/
+as,as_0693,1,v,study,core_verbs,يعمل,কাম কৰ,/kam kor/
+as,as_0694,1,v,study,core_verbs,يلعب,খেলা,/khela/
+as,as_0695,1,v,study,core_verbs,يساعد,সহায় কৰ,/sohay kor/
+as,as_0696,1,v,study,core_verbs,يعرف,জানা,/jana/
+as,as_0697,1,v,study,core_verbs,يفكر,চিন্তা কৰ,/chinta kor/
+as,as_0698,1,v,study,core_verbs,يفتح,খোলা,/khola/
+as,as_0699,1,v,study,core_verbs,يغلق,বন্ধ কৰ,/bondho kor/
+as,as_0700,2,v,study,core_verbs,يفهم,বুজা,/buja/
+as,as_0701,2,v,study,core_verbs,يتذكر,মনত ৰাখ,/monot rakh/
+as,as_0702,2,v,study,core_verbs,يشرح,বুজাই দিয়া,/bujai diya/
+as,as_0703,2,v,study,core_verbs,يسأل,সোধা,/sodha/
+as,as_0704,2,v,study,core_verbs,يجيب,উত্তৰ দিয়া,/uttor diya/
+as,as_0705,2,v,study,core_verbs,يحاول,চেষ্টা কৰ,/sesta kor/
+as,as_0706,2,v,study,core_verbs,يبدأ,আৰম্ভ কৰ,/arambho kor/
+as,as_0707,2,v,study,core_verbs,ينهي,শেষ কৰ,/sesh kor/
+as,as_0708,2,v,study,core_verbs,يبني,সাঁজ,/saj/
+as,as_0709,2,v,study,core_verbs,يختار,বাছি লোৱা,/basi lowa/
+as,as_0720,2,v,study,core_verbs,ينسى,পাৰ হৈ যা,/paɹ ɦoi za/
 as,as_0366,1,n,study,grammar_links,أنا,আমি,ami
 as,as_0367,1,n,study,grammar_links,أنت,তুমি,tumi
 as,as_0368,1,n,study,grammar_links,نحن,আমরা,amra
@@ -2422,6 +2604,16 @@ as,as_0636,1,adv,study,numbers_time,اليوم,আজ,aj
 as,as_0637,1,adv,study,numbers_time,غداً,আগামীকাল,agamikal
 as,as_0638,1,adv,study,numbers_time,أمس,গতকাল,gotokal
 as,as_0639,2,n,study,numbers_time,ظهيرة,দুপুর,dupur
+as,as_0710,2,n,study,numbers_time,منتصف الليل,মধ্যৰাতি,/modhyorati/
+as,as_0711,2,n,study,numbers_time,تقويم,পঞ্জিকা,/ponjika/
+as,as_0712,2,n,study,numbers_time,جدول مواعيد,সূচী,/suchi/
+as,as_0713,2,n,study,numbers_time,فصل الربيع,বসন্ত,/bosonto/
+as,as_0714,2,n,study,numbers_time,فصل الصيف,গ্ৰীষ্ম,/grissho/
+as,as_0715,2,n,study,numbers_time,فصل الخريف,শৰৎ,/sorot/
+as,as_0716,2,n,study,numbers_time,فصل الشتاء,শীত,/shit/
+as,as_0717,3,n,study,numbers_time,عقد زمني,দহক,/dohok/
+as,as_0718,3,n,study,numbers_time,قرن زمني,শতিকা,/sotika/
+as,as_0719,3,n,study,numbers_time,موعد نهائي,সীমাবদ্ধতা,/simaboddhota/
 as,as_0311,1,n,study,office_tech,حاسوب,কম্পিউটার,kompiutar
 as,as_0312,1,n,study,office_tech,هاتف,ফোন,phon
 as,as_0313,1,n,study,office_tech,شاشة,স্ক্রিন,skrin
@@ -2712,6 +2904,7 @@ az,az_0151,3,n,home,appliances,محضر طعام,mətbəx kombaynı,mætˈbæx k
 az,az_0152,3,n,home,appliances,منقي هواء,hava təmizləyicisi,haˈva tæmizlæjiˈtʃisi
 az,az_0153,3,n,home,appliances,مرطب هواء,nəmləndirici,næmlændiriˈdʒɯ
 az,az_0154,3,n,home,appliances,منظم حرارة,termostat,termoˈstat
+az,az_0678,2,n,home,appliances,مجفف شعر,fen qurutqanı,/fæn ɡuɾutgɑnɯ/
 az,az_0058,1,n,home,bathroom,حمام,hamam,/hɑˈmɑm/
 az,az_0059,1,n,home,bathroom,صابون,sabun,/sɑˈbun/
 az,az_0060,1,n,home,bathroom,منشفة,dəsmal,/dæsmɑl/
@@ -2806,6 +2999,7 @@ az,az_0177,3,n,home,garden_clean,مشط حديقة,dırmıq,[dɯɾˈmɯɡ]
 az,az_0178,3,n,home,garden_clean,عربة يدوية,əl arabası,[æl ɑɾɑbɑˈsɯ]
 az,az_0179,3,n,home,garden_clean,سماد طبيعي,kompost,[komˈpost]
 az,az_0180,3,n,home,garden_clean,مقص تقليم,bağban qayçısı,[bɑɣˈbɑn qɑjtʃɯˈsɯ]
+az,az_0679,1,n,home,garden_clean,عشب,ot,/ot/
 az,az_0026,1,n,home,kitchen,مطبخ,mətbəx,/mætbæχ/
 az,az_0027,1,n,home,kitchen,طبق,boşqab,/boʃqɑb/
 az,az_0028,1,n,home,kitchen,كوب,fincan,/fintʃɑn/
@@ -2864,6 +3058,7 @@ az,az_0125,2,n,home,living,قفل,qıfıl,ɡɯˈfɯl
 az,az_0126,3,n,home,living,ثريا,çilçıraq,tʃiltʃɯˈrɑɡ
 az,az_0127,3,n,home,living,مسند قدمين,stulçabaşı,stultʃaˈbɑʃɯ
 az,az_0128,3,n,home,living,ستائر شرائح,jalüz,ʒaˈlyz
+az,az_0680,1,n,home,living,كرسي,stul,/stul/
 az,az_0293,1,n,life,body_health,رأس,baş,/bɑʃ/
 az,az_0294,1,n,life,body_health,وجه,üz,/yz/
 az,az_0295,1,n,life,body_health,عين,göz,/ɟoz/
@@ -3163,6 +3358,12 @@ az,az_0415,3,n,study,office_tech,عتاد حاسوب,aparat təminatı,/apaˈɾa
 az,az_0416,3,n,study,office_tech,قاعدة بيانات,verilənlər bazası,/veɾilænˈlæɾ baˈzasɯ/
 az,az_0417,3,n,study,office_tech,نسخة احتياطية,ehtiyat nüsxə,/ehtiˈjat nysˈxæ/
 az,az_0418,3,n,study,office_tech,تحديث,yeniləmə,/jenilæˈmæ/
+az,az_0681,1,n,study,office_tech,هاتف,telefon,/telefɔn/
+az,az_0682,1,n,study,office_tech,شاشة,ekran,/ekɾɑn/
+az,az_0683,1,n,study,office_tech,لوحة مفاتيح,klaviatura,/klaviatuɾɑ/
+az,az_0684,1,n,study,office_tech,إنترنت,internet,/inteɾnet/
+az,az_0685,1,n,study,office_tech,ملف,fayl,/fajl/
+az,az_0686,1,n,study,office_tech,رسالة,mesaj,/mesɑʒ/
 az,az_0514,1,phr,study,polite_phrases,مرحباً,salam,/sɑˈlɑm/
 az,az_0515,1,phr,study,polite_phrases,صباح الخير,sabahınız xeyir,/sɑbɑhɯˈnɯz xeˈjiɾ/
 az,az_0516,1,phr,study,polite_phrases,مساء الخير,axşamınız xeyir,/ɑxʃɑmɯˈnɯz xeˈjiɾ/
@@ -3185,6 +3386,9 @@ az,az_0534,3,phr,study,polite_phrases,أقدر مساعدتك,köməyinizi qiym�
 az,az_0535,3,phr,study,polite_phrases,هل يمكنك المساعدة,kömək edə bilərsinizmi,kömək edæ bilərsinizmi
 az,az_0536,3,phr,study,polite_phrases,يوم سعيد لك,xoş günlər,xosh günlər
 az,az_0538,3,phr,study,polite_phrases,أشكرك جزيلاً,çox sağ olun,chox sağ olun
+az,az_0687,1,phr,study,polite_phrases,لا,xeyr,/xejɾ/
+az,az_0688,2,phr,study,polite_phrases,لا مشكلة,problem yoxdur,/pɾɔblem jɔxtuɾ/
+az,az_0689,3,phr,study,polite_phrases,أتمنى لك التوفيق,uğurlar arzulayıram,/uʁuɾlɑɾ aɾzulɑjɯɾɑm/
 az,az_0359,1,n,study,school,مدرسة,məktəb,mæktæb
 az,az_0361,1,n,study,school,دفتر,dəftər,dæftær
 az,az_0362,1,n,study,school,قلم حبر,qələm,gælæm
@@ -3207,6 +3411,14 @@ az,az_0385,3,n,study,school,منهج دراسي,tədris proqramı,tædris proqra
 az,az_0386,3,n,study,school,محاضرة,mühazirə,myuhaziræ
 az,az_0387,3,n,study,school,بحث علمي,tədqiqat,tædqiqat
 az,az_0388,3,n,study,school,تخرج,məzuniyyət,mæzuniyyæt
+az,az_0690,1,n,study,school,كتاب,kitab,/kitɑb/
+az,az_0691,1,n,study,school,ممحاة,pozan,/pɔzɑn/
+az,az_0692,1,n,study,school,امتحان,imtahan,/imtahɑn/
+az,az_0693,1,n,study,school,مكتبة,kitabxana,/kitɑbxɑnɑ/
+az,az_0694,2,n,study,school,جامعة,universitet,/univeɾsitet/
+az,az_0695,2,n,study,school,مادة دراسية,fənn,/fæn/
+az,az_0696,2,n,study,school,شهادة,sertifikat,/seɾtifikat/
+az,az_0697,2,n,study,school,مختبر,laboratoriya,/lɑbɔɾatɔɾijɑ/
 az,az_0569,1,n,world,animals_plants,قطة,pişik,piˈʃik
 az,az_0571,1,n,world,animals_plants,طائر,quş,quʃ
 az,az_0573,1,n,world,animals_plants,بقرة,inək,iˈnæk
@@ -3234,6 +3446,9 @@ az,az_0595,3,n,world,animals_plants,بطريق,pinqvin,pinqˈvin
 az,az_0596,3,n,world,animals_plants,صقر,loçan,loˈtʃan
 az,az_0597,3,n,world,animals_plants,نخلة,xurma,xurˈma
 az,az_0598,3,n,world,animals_plants,مرجان,mərcan,mæɾˈdʒan
+az,az_0698,1,n,world,animals_plants,كلب,it,/it/
+az,az_0699,1,n,world,animals_plants,حصان,at,/ɑt/
+az,az_0700,1,n,world,animals_plants,فيل,fil,/fil/
 az,az_0629,1,n,world,city_directions,مدينة,şəhər,ʃæhæɾ
 az,az_0630,1,n,world,city_directions,قرية,kənd,kænd
 az,az_0631,1,n,world,city_directions,شارع,küçə,kyt͡ʃæ
@@ -3263,6 +3478,7 @@ az,az_0655,3,n,world,city_directions,موقف سيارات,dayanacaq,/dajanadʒ�
 az,az_0656,3,n,world,city_directions,حي سكني,məhəllə,/mæhælˈlæ/
 az,az_0657,3,n,world,city_directions,نفق,tunel,/tuˈnel/
 az,az_0658,3,n,world,city_directions,ممر مشاة,piyada keçidi,/piyada keçiˈdi/
+az,az_0701,1,n,world,city_directions,منزل,ev,/ev/
 az,az_0659,1,n,world,jobs_sports,طبيب,həkim,/hæˈkim/
 az,az_0660,1,n,world,jobs_sports,مهندس,mühəndis,/myhænˈdis/
 az,az_0661,1,n,world,jobs_sports,ممرض,tibb bacısı,/tibb baˈdʒɯsɯ/
@@ -3306,9 +3522,13 @@ az,az_0699,1,n,world,materials_shop,وزن,çəki,tʃæˈki
 az,az_0700,1,n,world,materials_shop,حجم,ölçü,ølˈtʃy
 az,az_0701,1,n,world,materials_shop,طول,uzunluq,uzunˈluq
 az,az_0702,1,n,world,materials_shop,متر,metr,mɛtr
+az,az_0702,1,n,world,materials_shop,نقود,pul,/pul/
 az,az_0703,1,n,world,materials_shop,كيلوغرام,kqram,kiqroˈgram
+az,az_0703,2,n,world,materials_shop,نحاس,mis,/mis/
 az,az_0704,2,n,world,materials_shop,حرير,ipək,iˈpæk
+az,az_0704,2,n,world,materials_shop,طين,gil,/gil/
 az,az_0705,2,n,world,materials_shop,مطاط,rezin,rɛˈzin
+az,az_0705,2,n,world,materials_shop,رمل,qum,/qum/
 az,az_0706,2,n,world,materials_shop,فولاذ,polad,poˈlad
 az,az_0710,2,n,world,materials_shop,إيصال شراء,qəbz,gæbz
 az,az_0711,2,n,world,materials_shop,خصم سعر,endirim,ɛndiˈrim
@@ -3336,6 +3556,19 @@ az,az_0564,2,n,world,nature_weather,كوكب,planet,plaˈnæt
 az,az_0565,3,n,world,nature_weather,مناخ,iqlim,iqˈlim
 az,az_0566,3,n,world,nature_weather,رطوبة,rütubət,rytyˈbæt
 az,az_0567,3,n,world,nature_weather,أفق,üfüq,yfyɣ
+az,az_0706,1,n,world,nature_weather,قمر,ay,/ɑj/
+az,az_0707,1,n,world,nature_weather,نجم,ulduz,/ulduz/
+az,az_0708,1,n,world,nature_weather,سحابة,bulud,/bulud/
+az,az_0709,1,n,world,nature_weather,ثلج,qar,/gɑɾ/
+az,az_0710,1,n,world,nature_weather,رياح,külək,/kylek/
+az,az_0711,1,n,world,nature_weather,بحر,dəniz,/deniz/
+az,az_0712,1,n,world,nature_weather,جبل,dağ,/dɑʁ/
+az,az_0713,1,n,world,nature_weather,جزيرة,ada,/ɑdɑ/
+az,az_0714,1,n,world,nature_weather,طقس,hava,/hɑvɑ/
+az,az_0715,2,n,world,nature_weather,محيط,okean,/ɔkeɑn/
+az,az_0716,2,n,world,nature_weather,بحيرة,göl,/gyl/
+az,az_0717,2,n,world,nature_weather,عاصفة,qasırğa,/qɑsɯɾʁɑ/
+az,az_0718,3,n,world,nature_weather,نسيم عليل,mlayim külək,/mlɑjim kylek/
 az,az_0599,1,n,world,transport_travel,سيارة,maşın,mɑʃɯn
 az,az_0600,1,n,world,transport_travel,حافلة,avtobus,ɑvtobus
 az,az_0601,1,n,world,transport_travel,قطار,qatar,qɑtɑr
@@ -3364,6 +3597,8 @@ az,az_0625,3,n,world,transport_travel,وجهة سفر,təyinat,tæjinɑt
 az,az_0626,3,n,world,transport_travel,مغادرة,uçuş,ut͡ʃuʃ
 az,az_0627,3,n,world,transport_travel,وصول,gəliş,gæliʃ
 az,az_0628,3,n,world,transport_travel,بوصلة,kompas,kompɑs
+az,az_0719,1,n,world,transport_travel,دراجة هوائية,velosiped,/velosiped/
+az,az_0720,1,n,world,transport_travel,تذكرة,bilet,/bilet/
 be,be_0129,1,n,home,appliances,ثلاجة,халадзільнік,xaladˈzʲilʲnik
 be,be_0130,1,n,home,appliances,فرن,духоўка,duˈxovka
 be,be_0131,1,n,home,appliances,موقد,пліта,plʲiˈta
