@@ -10,9 +10,9 @@ on:
         required: false
         default: ''
       max_langs:
-        description: 'Max languages per run (0 = all)'
+        description: 'Max languages per run (15 recommended for safe hourly sync)'
         required: false
-        default: '0'
+        default: '15'
       model:
         description: 'Optional model override (empty = auto-select strongest)'
         required: false
@@ -28,7 +28,7 @@ concurrency:
 jobs:
   translate:
     runs-on: ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 90
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -41,6 +41,7 @@ jobs:
           python-version: '3.12'
 
       - name: Run unified multi-key translator
+        timeout-minutes: 50
         env:
           DF_GEMINI_KEY_1: ${{ secrets.DF_GEMINI_KEY_1 }}
           DF_GEMINI_KEY_2: ${{ secrets.DF_GEMINI_KEY_2 }}
@@ -56,7 +57,7 @@ jobs:
             --repo . \
             --out /tmp/master_all.csv \
             --langs "${{ inputs.langs }}" \
-            --max-langs "${{ inputs.max_langs || '0' }}" \
+            --max-langs "${{ inputs.max_langs || '15' }}" \
             --model "${{ inputs.model }}" \
             --push-packs
 
@@ -83,6 +84,7 @@ jobs:
           fi
 
       - name: Upload unified master_all.csv artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: master-all-csv
