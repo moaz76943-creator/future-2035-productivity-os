@@ -410,6 +410,8 @@ def sync_content_packs(repo_root: str, master_path: str, store: dict, push: bool
 
         print(f"Synced {len(updated)} packs (ar={len(ar_pack['items'])}/720) + master_all.csv")
         if push:
+            subprocess.check_call(["git", "-C", wt, "config", "user.name", "github-actions[bot]"])
+            subprocess.check_call(["git", "-C", wt, "config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com"])
             subprocess.check_call(["git", "-C", wt, "add", "packs/"])
             diff = subprocess.run(["git", "-C", wt, "diff", "--cached", "--quiet"])
             if diff.returncode != 0:
