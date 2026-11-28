@@ -1,6 +1,6 @@
 part of '../dashboard_screen.dart';
 
-/// Home banner "quick focus session": plant photo, Pomodoro 25 min, play button.
+/// Home banner "quick focus session": plant photo, Pomodoro 25 min (the whole banner is the tap target).
 class _QuickFocusBanner extends StatelessWidget {
   const _QuickFocusBanner();
 
@@ -65,20 +65,6 @@ class _QuickFocusBanner extends StatelessWidget {
                                   ),
                                 ),
                               ],
-                            ),
-                          ),
-                          Container(
-                            width: 48,
-                            height: 48,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: DeepFocusVisuals.tealPrimary,
-                              border: Border.all(color: Colors.white, width: 1.5),
-                            ),
-                            child: const Icon(
-                              Icons.play_arrow_rounded,
-                              color: Colors.white,
-                              size: 30,
                             ),
                           ),
                         ],
