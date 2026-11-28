@@ -22,6 +22,8 @@ class MonthGrid extends StatelessWidget {
     required this.tasks,
     required this.onSelect,
     this.hijri = false,
+    this.days,
+    this.inMonth,
   });
 
   final DateTime month;
@@ -31,13 +33,18 @@ class MonthGrid extends StatelessWidget {
   final List<TaskRow> tasks;
   final ValueChanged<DateTime> onSelect;
 
-  /// Shows the Hijri day under each day number.
+  /// Shows Hijri day numbers instead of Gregorian ones (never both in one cell).
   final bool hijri;
+
+  /// Days to show instead of the Gregorian month grid (the Hijri month), and
+  /// which of them belong to the shown month.
+  final List<DateTime>? days;
+  final bool Function(DateTime)? inMonth;
 
   @override
   Widget build(BuildContext context) {
     final fmt = context.fmt;
-    final days = CalendarMath.monthGridDays(month);
+    final days = this.days ?? CalendarMath.monthGridDays(month);
     final tasksByDay = <int, int>{};
     for (final t in tasks) {
       final due = t.dueAt;
@@ -78,7 +85,7 @@ class MonthGrid extends StatelessWidget {
                       child: _DayCell(
                         hijriDay: hijri ? HijriDay.of(d)?.day : null,
                         day: d,
-                        inMonth: d.month == month.month,
+                        inMonth: inMonth?.call(d) ?? d.month == month.month,
                         selected: CalendarMath.sameDay(d, selected),
                         today: CalendarMath.sameDay(d, today),
                         events: itemsOnDay(
@@ -168,18 +175,13 @@ class _DayCell extends StatelessWidget {
                                 : null,
                           ),
                     child: Text(
-                      fmt.dayOfMonth(day),
+                      hijriDay != null ? '$hijriDay' : fmt.dayOfMonth(day),
                       style: context.text.bodyMedium?.copyWith(
                         color: numberColor,
                         fontWeight: today || selected ? FontWeight.w700 : FontWeight.w500,
                       ),
                     ),
                   ),
-                  if (hijriDay != null)
-                    Text(
-                      '$hijriDay',
-                      style: context.text.labelSmall?.copyWith(color: lux.ink3, height: 1.1),
-                    ),
                   const SizedBox(height: 4),
                   Wrap(
                     alignment: WrapAlignment.center,

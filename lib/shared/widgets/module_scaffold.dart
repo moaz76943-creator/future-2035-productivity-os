@@ -22,6 +22,7 @@ class ModuleScaffold extends StatelessWidget {
     this.bottom,
     this.showBack,
     this.frostedBar = false,
+    this.backgroundAsset,
   });
 
   final String title;
@@ -38,6 +39,9 @@ class ModuleScaffold extends StatelessWidget {
   /// scrolling beneath (calendar day numbers) never mix with the title text.
   final bool frostedBar;
 
+  /// Optional full-bleed picture behind the page (light theme only; dark keeps the aurora).
+  final String? backgroundAsset;
+
   @override
   Widget build(BuildContext context) {
     final canPop = showBack ?? Navigator.of(context).canPop();
@@ -48,9 +52,9 @@ class ModuleScaffold extends StatelessWidget {
         floatingActionButton: floatingActionButton == null
             ? null
             : NavClearFab(child: floatingActionButton!),
-        body: AuroraBackground(
+        body: _PageBackdrop(
+          asset: lux.isDark ? null : backgroundAsset,
           hue: hue,
-          intensity: 0.6,
           child: CustomScrollView(
             slivers: [
               // Medium header: the large one left ~150px of empty space above the
@@ -91,6 +95,33 @@ class ModuleScaffold extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+/// Aurora wash, or a cover-fitted picture anchored to the top (never stretched).
+class _PageBackdrop extends StatelessWidget {
+  const _PageBackdrop({required this.asset, required this.hue, required this.child});
+  final String? asset;
+  final ModuleHue hue;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final path = asset;
+    if (path == null) return AuroraBackground(hue: hue, intensity: 0.6, child: child);
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        Image.asset(
+          path,
+          fit: BoxFit.cover,
+          alignment: Alignment.topCenter,
+          excludeFromSemantics: true,
+          errorBuilder: (_, _, _) => ColoredBox(color: context.lux.background),
+        ),
+        child,
+      ],
     );
   }
 }
