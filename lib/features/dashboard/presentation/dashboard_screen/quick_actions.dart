@@ -82,7 +82,7 @@ class _QuickActions extends ConsumerWidget {
               'dashActionGoal',
               Icons.track_changes_rounded,
               l10n.goalNew,
-              DeepFocusAssets.spaceGoals,
+              DeepFocusAssets.quickGoal,
               () async {
                 await showGoalEditor(context);
               },

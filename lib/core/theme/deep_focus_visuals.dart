@@ -16,6 +16,7 @@ abstract final class DeepFocusAssets {
   static const String quickTask = 'assets/images/actions/action_new_task.webp';
   static const String quickNote = 'assets/images/actions/action_new_note.webp';
   static const String quickEvent = 'assets/images/actions/action_new_event.webp';
+  static const String quickGoal = 'assets/images/actions/action_new_goal.webp';
   static const String quickFocus = 'assets/images/actions/action_focus.webp';
   static const String startMyDay = 'assets/images/actions/action_start_day.webp';
 
