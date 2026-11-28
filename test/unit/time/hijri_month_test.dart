@@ -25,6 +25,6 @@ void main() {
     final prev = HijriMonth.step(DateTime(2026, 11, 23), -1);
     expect(HijriMonth.inMonth(DateTime(2026, 11, 23), prev), isFalse);
     expect(HijriMonth.pick(DateTime(2026, 11, 20), DateTime(2026, 11, 28)), DateTime(2026, 11, 28));
-    expect(HijriMonth.pick(DateTime(2026, 11, 20), DateTime(2027, 3, 1)), DateTime(2026, 11, 11));
+    expect(HijriMonth.pick(DateTime(2026, 11, 20), DateTime(2027, 3)), DateTime(2026, 11, 11));
   });
 }
