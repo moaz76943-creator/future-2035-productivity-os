@@ -14,8 +14,9 @@ class _QuickActions extends ConsumerWidget {
       IconData fallback,
       String label,
       String asset,
-      Future<void> Function() onTap,
-    ) => Expanded(
+      Future<void> Function() onTap, {
+      double scale = 1,
+    }) => Expanded(
       child: Semantics(
         button: true,
         label: label,
@@ -27,7 +28,11 @@ class _QuickActions extends ConsumerWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              DeepFocusAssetIcon(assetPath: asset, size: icon, fallbackIcon: fallback),
+              // [scale] evens out art that fills less of its square (the note is wide and short).
+              Transform.scale(
+                scale: scale,
+                child: DeepFocusAssetIcon(assetPath: asset, size: icon, fallbackIcon: fallback),
+              ),
               const SizedBox(height: Space.xs),
               Text(
                 label,
@@ -67,7 +72,7 @@ class _QuickActions extends ConsumerWidget {
                 () async {
               final id = await ref.read(notesRepositoryProvider).create();
               if (context.mounted) await context.push<void>(Routes.note(id));
-            }),
+            }, scale: 1.25),
           ]),
           const SizedBox(height: Space.sm),
           row([
