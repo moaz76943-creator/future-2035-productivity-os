@@ -3,13 +3,19 @@ part of '../calendar_screen.dart';
 class _CalendarScreenState extends ConsumerState<CalendarScreen> {
   bool get _hijri => ref.watch(settingsProvider).showHijri(context.language.tag);
 
-  /// The day's long date, followed by its Hijri date when turned on.
-  String _dayTitle(DateTime d) {
-    final h = _hijri ? HijriDay.of(d) : null;
-    return h == null
-        ? context.fmt.dayLong(d)
-        : '${context.fmt.dayLong(d)} · ${h.long(context.l10n)}';
-  }
+  /// Gregorian is the default; the Hijri month grid is a separate view the
+  /// user switches to by tapping the Hijri month under the title.
+  bool _hijriMode = false;
+  bool get _showHijri => _hijri && _hijriMode;
+
+  void _toggleHijri() => setState(() {
+    _hijriMode = !_hijriMode;
+    _anchor = _selected;
+  });
+
+  /// The day's long date in the calendar being shown.
+  String _dayTitle(DateTime d) =>
+      (_showHijri ? HijriDay.of(d)?.long(context.l10n) : null) ?? context.fmt.dayLong(d);
 
   CalendarView _view = CalendarView.month;
   late DateTime _anchor;
@@ -45,6 +51,14 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
   void _scheduleScroll() => setState(() => _scrollRequest++);
 
   void _step(int direction) {
+    if (_showHijri && _view == CalendarView.month) {
+      setState(() {
+        _anchor = HijriMonth.step(_anchor, direction);
+        _selected = HijriMonth.pick(_anchor, _now);
+        _anchor = _selected;
+      });
+      return;
+    }
     setState(() {
       _anchor = CalendarMath.step(_view, _anchor, direction);
       _selected = _view == CalendarView.month
@@ -115,7 +129,8 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
   String _title(BuildContext context) {
     final fmt = context.fmt;
     return switch (_view) {
-      CalendarView.month => fmt.monthYear(_anchor),
+      CalendarView.month =>
+        _showHijri ? HijriMonth.title(context.l10n, _anchor) : fmt.monthYear(_anchor),
       CalendarView.week => () {
         final days = CalendarMath.weekDays(_anchor);
         return context.l10n.calendarWeekRange(fmt.dayShort(days.first), fmt.dayShort(days.last));
@@ -131,7 +146,9 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    final range = CalendarMath.rangeFor(_view, _anchor);
+    final range = _showHijri && _view == CalendarView.month
+        ? HijriMonth.range(_anchor)
+        : CalendarMath.rangeFor(_view, _anchor);
     final occ = ref.watch(occurrencesProvider(range));
     final tasks = ref.watch(tasksDueProvider(range));
     final milestones = ref.watch(milestonesDueProvider(range)).value ?? const [];
@@ -175,54 +192,18 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
     );
   }
 
-  Widget _toolbar(BuildContext context) {
-    final l10n = context.l10n;
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.sm),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          SegmentedButton<CalendarView>(
-            showSelectedIcon: false,
-            segments: [
-              ButtonSegment(value: CalendarView.month, label: _segLabel(l10n.calendarMonth)),
-              ButtonSegment(value: CalendarView.week, label: _segLabel(l10n.calendarWeek)),
-              ButtonSegment(value: CalendarView.day, label: _segLabel(l10n.calendarDay)),
-              ButtonSegment(value: CalendarView.agenda, label: _segLabel(l10n.calendarAgenda)),
-            ],
-            selected: {_view},
-            onSelectionChanged: (s) => _setView(s.first),
-          ),
-          const SizedBox(height: Space.sm),
-          Row(
-            children: [
-              IconButton(
-                tooltip: l10n.calendarPrevious,
-                icon: const Icon(Icons.chevron_left_rounded),
-                onPressed: () => _step(-1),
-              ),
-              Expanded(
-                child: Semantics(
-                  liveRegion: true,
-                  header: true,
-                  child: Text(
-                    _title(context),
-                    textAlign: TextAlign.center,
-                    style: context.text.titleMedium,
-                  ),
-                ),
-              ),
-              IconButton(
-                tooltip: l10n.calendarNext,
-                icon: const Icon(Icons.chevron_right_rounded),
-                onPressed: () => _step(1),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
+  Widget _toolbar(BuildContext context) => _CalendarToolbar(
+    view: _view,
+    title: _title(context),
+    switchLabel: _hijri && _view == CalendarView.month
+        ? (_showHijri
+              ? context.fmt.monthYear(_anchor)
+              : HijriMonth.title(context.l10n, DateTime(_anchor.year, _anchor.month, 15)))
+        : null,
+    onView: _setView,
+    onStep: _step,
+    onSwitch: _toggleHijri,
+  );
 
   List<(MilestoneRow, ProjectRow)> _milestonesOn(
     List<(MilestoneRow, ProjectRow)> all,
@@ -258,7 +239,9 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
               occurrences: events,
               tasks: tasks,
               onSelect: (d) => setState(() => _selected = d),
-              hijri: _hijri,
+              hijri: _showHijri,
+              days: _showHijri ? HijriMonth.gridDays(_anchor) : null,
+              inMonth: _showHijri ? (d) => HijriMonth.inMonth(_anchor, d) : null,
             ),
             SectionHeader(title: _dayTitle(_selected)),
             DayAgenda(
