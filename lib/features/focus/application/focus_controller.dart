@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../app/routing/routes.dart';
 import '../../../core/ids.dart';
 import '../../../core/providers/core_providers.dart';
+import '../../../core/speech/audio_service.dart';
 import '../../notifications/application/notification_providers.dart';
 import '../../notifications/data/notification_service.dart';
 import '../../notifications/domain/notification_ids.dart';
@@ -291,8 +292,18 @@ class FocusController extends Notifier<FocusControllerState> {
   Future<void> checkCompletion() => _serial(() async {
     final s = state.active;
     if (s == null || !s.isRunning || !s.isComplete(_nowUtc)) return;
+    final late = _nowUtc.difference(s.completionMomentUtc() ?? _nowUtc).inSeconds;
     await _completeChain(s);
+    // Heard even when the system alert is muted; not for a phase that ended while away.
+    if (late < 30) await _playEndTone();
   });
+
+  Future<void> _playEndTone() async {
+    final settings = _settings;
+    final res = EndTone.byName(settings.focusEndTone).resource;
+    if (!settings.focusSound || res == null || !ref.mounted) return;
+    await ref.read(audioClipPlayerProvider).playTone(res);
+  }
 
   Future<void> onAppResumed() async {
     await checkCompletion();

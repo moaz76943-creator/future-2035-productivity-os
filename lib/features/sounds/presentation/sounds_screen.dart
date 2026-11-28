@@ -7,6 +7,7 @@ import '../../../core/design_system/components/states.dart';
 import '../../../core/design_system/tokens.dart';
 import '../../../shared/widgets/dialogs.dart';
 import '../../../shared/widgets/module_scaffold.dart';
+import '../../focus/presentation/focus_screen/end_tone_strip.dart';
 import '../application/sounds_controller.dart';
 import '../domain/nature_sound.dart';
 import 'widgets/music_card.dart';
@@ -63,6 +64,10 @@ class SoundsScreen extends ConsumerWidget {
               child: Text(l10n.soundsHint, style: context.text.bodySmall),
             ),
           ),
+        const SliverPadding(
+          padding: EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.md),
+          sliver: SliverToBoxAdapter(child: EndToneStrip()),
+        ),
         const SliverToBoxAdapter(child: SoundsExtras()),
         const SliverToBoxAdapter(child: MusicCard()),
         SliverToBoxAdapter(child: SectionHeader(title: l10n.soundsNature)),

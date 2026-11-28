@@ -197,6 +197,8 @@ class _FocusScreenState extends ConsumerState<FocusScreen> with WidgetsBindingOb
                 onUnlink: () => _ctrl.linkTask(null),
               ),
               const SizedBox(height: Space.md),
+              const EndToneStrip(),
+              const SizedBox(height: Space.md),
               // The plan sits under Start: the timer and its button stay above the fold.
               if ((fs.active?.mode ?? _mode) == FocusMode.pomodoro)
                 Padding(

@@ -18,7 +18,8 @@ import android.os.Looper
 import app.future2035.future_os.R
 
 /**
- * Keeps the nature sounds playing with the screen off or the app closed.
+ * Keeps the nature sounds playing with the screen off or the app in the background;
+ * closing the app from recents stops them.
  * Foreground (media playback) while it runs, with a notification to pause,
  * resume or stop. Pauses when headphones are unplugged; ends itself after
  * 10 minutes of pause or when the mix is stopped, so it never lingers.
@@ -83,6 +84,13 @@ class SoundscapeService : Service() {
     }
 
     override fun onBind(intent: Intent?): IBinder? = null
+
+    /** The app was swiped away from recents: stop the sound instead of playing on unseen. */
+    override fun onTaskRemoved(rootIntent: Intent?) {
+        SoundEngine.stop()
+        finish()
+        super.onTaskRemoved(rootIntent)
+    }
 
     override fun onDestroy() {
         SoundEngine.removeListener(listener)
