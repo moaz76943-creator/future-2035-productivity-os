@@ -1,1 +1,2 @@
 - 11-28 02:49 task lib/features/flashcards/presentation/review_screen.dart: no patch; The main review screen file delegates card rendering (FlipCard) and rating buttons (RatingButton) to part files not provided here, so the requested soft-shadow 
+- 11-28 08:45 task lib/features/notes/presentation/notes_screen.dart: no patch; Card layout, typography, date styling, and state UI are delegated to part files (notes_screen/note_card.dart, notes_screen/notes_screen_state.dart, notes_screen
