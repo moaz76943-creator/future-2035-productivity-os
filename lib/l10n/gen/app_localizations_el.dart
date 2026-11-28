@@ -969,8 +969,7 @@ class AppLocalizationsEl extends AppLocalizations {
   String get noteTitleHint => 'Τίτλος';
 
   @override
-  String get noteBodyHint =>
-      'Αρχίστε να γράφετε…';
+  String get noteBodyHint => 'Αρχίστε να γράφετε…';
 
   @override
   String get noteFavorite => 'Αγαπημένη';

@@ -994,8 +994,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get noteTitleHint => 'Pavadinimas';
 
   @override
-  String get noteBodyHint =>
-      'Pradėkite rašyti…';
+  String get noteBodyHint => 'Pradėkite rašyti…';
 
   @override
   String get noteFavorite => 'Į mėgstamus';

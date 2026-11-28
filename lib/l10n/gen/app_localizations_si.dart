@@ -992,8 +992,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get noteTitleHint => 'මාතෘකාව';
 
   @override
-  String get noteBodyHint =>
-      'ලිවීම අරඹන්න…';
+  String get noteBodyHint => 'ලිවීම අරඹන්න…';
 
   @override
   String get noteFavorite => 'ප්‍රියතම';

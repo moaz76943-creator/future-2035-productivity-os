@@ -962,8 +962,7 @@ class AppLocalizationsNe extends AppLocalizations {
   String get noteTitleHint => 'शीर्षक';
 
   @override
-  String get noteBodyHint =>
-      'लेख्न सुरु गर्नुहोस्…';
+  String get noteBodyHint => 'लेख्न सुरु गर्नुहोस्…';
 
   @override
   String get noteFavorite => 'मनपर्ने';

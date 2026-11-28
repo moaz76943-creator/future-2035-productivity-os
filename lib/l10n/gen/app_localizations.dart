@@ -1912,7 +1912,7 @@ abstract class AppLocalizations {
   /// Field hint
   ///
   /// In en, this message translates to:
-  /// **'Start writing… Use # for tags and [[Title]] to link notes.'**
+  /// **'Start writing…'**
   String get noteBodyHint;
 
   /// Action

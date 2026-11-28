@@ -937,8 +937,7 @@ class AppLocalizationsMs extends AppLocalizations {
   String get noteTitleHint => 'Tajuk';
 
   @override
-  String get noteBodyHint =>
-      'Mula menulis…';
+  String get noteBodyHint => 'Mula menulis…';
 
   @override
   String get noteFavorite => 'Kegemaran';

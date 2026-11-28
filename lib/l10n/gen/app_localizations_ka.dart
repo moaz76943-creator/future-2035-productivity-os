@@ -962,8 +962,7 @@ class AppLocalizationsKa extends AppLocalizations {
   String get noteTitleHint => 'სათაური';
 
   @override
-  String get noteBodyHint =>
-      'დაიწყეთ წერა…';
+  String get noteBodyHint => 'დაიწყეთ წერა…';
 
   @override
   String get noteFavorite => 'რჩეული';

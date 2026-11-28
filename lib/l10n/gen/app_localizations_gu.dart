@@ -991,8 +991,7 @@ class AppLocalizationsGu extends AppLocalizations {
   String get noteTitleHint => 'શીર્ષક';
 
   @override
-  String get noteBodyHint =>
-      'લખવાનું શરૂ કરો…';
+  String get noteBodyHint => 'લખવાનું શરૂ કરો…';
 
   @override
   String get noteFavorite => 'મનપસંદ';

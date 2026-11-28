@@ -963,8 +963,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get noteTitleHint => 'Cím';
 
   @override
-  String get noteBodyHint =>
-      'Kezdj el írni…';
+  String get noteBodyHint => 'Kezdj el írni…';
 
   @override
   String get noteFavorite => 'Kedvenc';

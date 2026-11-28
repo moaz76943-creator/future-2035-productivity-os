@@ -962,8 +962,7 @@ class AppLocalizationsAz extends AppLocalizations {
   String get noteTitleHint => 'Başlıq';
 
   @override
-  String get noteBodyHint =>
-      'Yazmağa başlayın…';
+  String get noteBodyHint => 'Yazmağa başlayın…';
 
   @override
   String get noteFavorite => 'Seçilmiş';

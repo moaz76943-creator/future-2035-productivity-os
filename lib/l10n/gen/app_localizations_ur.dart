@@ -961,8 +961,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get noteTitleHint => 'عنوان';
 
   @override
-  String get noteBodyHint =>
-      'لکھنا شروع کریں…';
+  String get noteBodyHint => 'لکھنا شروع کریں…';
 
   @override
   String get noteFavorite => 'پسندیدہ';

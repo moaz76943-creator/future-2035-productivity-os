@@ -981,8 +981,7 @@ class AppLocalizationsIs extends AppLocalizations {
   String get noteTitleHint => 'Titill';
 
   @override
-  String get noteBodyHint =>
-      'Byrjaðu að skrifa…';
+  String get noteBodyHint => 'Byrjaðu að skrifa…';
 
   @override
   String get noteFavorite => 'Eftirlæti';

@@ -966,8 +966,7 @@ class AppLocalizationsEt extends AppLocalizations {
   String get noteTitleHint => 'Pealkiri';
 
   @override
-  String get noteBodyHint =>
-      'Alustage kirjutamist…';
+  String get noteBodyHint => 'Alustage kirjutamist…';
 
   @override
   String get noteFavorite => 'Lemmik';

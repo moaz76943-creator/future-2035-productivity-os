@@ -966,8 +966,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get noteTitleHint => 'Rubrik';
 
   @override
-  String get noteBodyHint =>
-      'Börja skriva…';
+  String get noteBodyHint => 'Börja skriva…';
 
   @override
   String get noteFavorite => 'Favorit';
