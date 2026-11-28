@@ -4,3 +4,6 @@
 - 14:38 task dropped by gates: failed: python3 tool/check_l10n.py: unused key tasksFinishAt: remove it with python3 tool/l10n_remove_keys.py tasksFinishAt
 
 1 localization error(s)
+- 15:36 tests dropped by gates: failed: python3 tool/check_l10n.py: unused key tasksFinishAt: remove it with python3 tool/l10n_remove_keys.py tasksFinishAt
+
+1 localization error(s)
