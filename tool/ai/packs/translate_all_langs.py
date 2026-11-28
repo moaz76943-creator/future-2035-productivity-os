@@ -14,8 +14,9 @@ NON_LATIN_LANGS = {
     "lo", "ka", "hy", "am", "ti", "dv"
 }
 BAD_MODEL_TOKENS = (
-    "embedding", "imagen", "veo", "tts", "audio", "live", "aqa", "robotics",
-    "computer-use", "gemma", "learnlm", "nano", "vision"
+    "embedding", "imagen", "image", "veo", "tts", "audio", "live", "aqa",
+    "robotics", "computer-use", "gemma", "learnlm", "nano", "vision",
+    "lyria", "banana", "transcribe", "customtools", "deep-research", "antigravity"
 )
 
 
@@ -111,9 +112,10 @@ def discover_models(ring: KeyRing):
                     tier = 1
                 else:
                     tier = 0
-                is_pro_plus = 1 if tier >= 2 else 0
+                is_flash = 1 if ("flash" in low and "omni" not in low) else 0
+                is_latest = 1 if "latest" in low else 0
                 is_stable = 0 if any(t in low for t in ("exp", "preview", "001", "002")) else 1
-                score = (is_pro_plus, maj, minr, tier, is_neon, 1 - is_lite, is_stable, low)
+                score = (is_flash, is_lite, is_latest, maj, minr, is_stable, tier, low)
                 candidates.append((score, short, m.get("displayName", short)))
             candidates.sort(key=lambda x: x[0], reverse=True)
             return candidates
@@ -151,6 +153,10 @@ def read_csv_text(text: str, store: dict):
         _, wid, lvl, pos, main, sub, ar, target, pron = [x.strip() for x in r]
         if not (ar and target and pron):
             continue
+        if lang != "en":
+            ok, _ = validate_item(lang, target, pron)
+            if not ok:
+                continue
         key = (main.lower(), sub.lower(), ar)
         store[lang][key] = [lang, wid, lvl, pos, main, sub, ar, target, pron]
         count += 1
@@ -159,7 +165,7 @@ def read_csv_text(text: str, store: dict):
 
 def load_existing_data(repo_root: str, master_path: str):
     store = defaultdict(dict)
-    for fn in ("master_g1.csv", "master_g2.csv", "master_g3.csv"):
+    for fn in ("master_g1.csv", "master_g2.csv", "master_g3.csv", "master_all.csv"):
         try:
             raw = subprocess.check_output(
                 ["git", "-C", repo_root, "show", f"origin/content-packs:packs/seed/{fn}"],
@@ -168,8 +174,14 @@ def load_existing_data(repo_root: str, master_path: str):
             read_csv_text(raw, store)
         except Exception:
             pass
-    for fn in ("master_g1.csv", "master_g2.csv", "master_g3.csv"):
-        p = os.path.join(repo_root, "packs", "seed", fn)
+    for rel in (
+        ("packs", "seed", "master_g1.csv"),
+        ("packs", "seed", "master_g2.csv"),
+        ("packs", "seed", "master_g3.csv"),
+        ("packs", "backup", "master_all.csv"),
+        ("packs", "seed", "master_all.csv"),
+    ):
+        p = os.path.join(repo_root, *rel)
         if os.path.isfile(p):
             read_csv_text(open(p, encoding="utf-8-sig", errors="replace").read(), store)
     if os.path.isfile(master_path):
@@ -200,6 +212,10 @@ def validate_item(lang: str, target: str, pron: str):
     p = re.sub(r"\s+", " ", (pron or "").strip())
     if not t or not p:
         return False, "empty target or pron"
+    if any(ch in t for ch in "/():*\n") or len(t) > 45:
+        return False, "junk chars or too long"
+    if p.lower() == t.lower() or len(p) < 2:
+        return False, "pron equals target or too short"
     low = lang.lower()
     base = low.split("-")[0]
     if base not in ARABIC_SCRIPT_LANGS and AR_RE.search(t):
@@ -239,24 +255,20 @@ def call_gemini(ring: KeyRing, model: str, prompt: str):
             return json.loads(m.group(1))
         except urllib.error.HTTPError as e:
             body = e.read().decode("utf-8", errors="replace")[:200]
-            if e.code in (429, 403) and attempt < max_attempts - 1:
-                if ring.rotate() and rotated_count < len(ring.keys):
+            if e.code in (429, 403):
+                if rotated_count < len(ring.keys) - 1 and ring.rotate():
                     rotated_count += 1
-                    time.sleep(0.4)
-                else:
-                    rotated_count = 0
-                    time.sleep(backoff)
-                    backoff = min(backoff * 2, 40)
-                continue
-            if e.code in (500, 502, 503, 504) and attempt < max_attempts - 1:
-                time.sleep(backoff)
-                backoff = min(backoff * 2, 40)
+                    time.sleep(0.3)
+                    continue
+                raise RuntimeError(f"HTTP {e.code} on {model} (all keys): {body}")
+            if e.code in (500, 502, 503, 504) and attempt < 3:
+                time.sleep(min(backoff, 10))
+                backoff = min(backoff * 2, 10)
                 continue
             raise RuntimeError(f"HTTP {e.code} on {model}: {body}")
         except Exception:
-            if attempt < max_attempts - 1:
-                time.sleep(backoff)
-                backoff = min(backoff * 2, 25)
+            if attempt < 2:
+                time.sleep(3)
                 continue
             raise
 
