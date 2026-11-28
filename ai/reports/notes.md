@@ -7,3 +7,4 @@
 - 11-28 12:36 task lib/features/focus/presentation/focus_screen.dart: no patch; Controls row likely has multiple equal-prominence buttons creating visual clutter and weak hierarchy
 - 11-28 13:36 task lib/features/spaces/presentation/spaces_screen.dart: patch did not apply: error: patch failed: lib/features/space; Grid uses 5 columns on wide screens (≥600px) instead of a consistent 2-column layout
 - 11-28 14:38 task lib/features/calendar/presentation/month_view.dart: patch did not apply: error: patch failed: lib/features/calen; Today indicator is only a teal border (1.5px) instead of a filled teal circle as required
+- 11-28 16:36 task lib/features/flashcards/presentation/review_screen.dart: no patch; Card rendering (FlipCard in review_screen/flip_card.dart), rating buttons (RatingButton in review_screen/rating_button.dart), and view layout (review_screen/rev
