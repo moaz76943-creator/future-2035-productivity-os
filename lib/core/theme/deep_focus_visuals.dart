@@ -10,6 +10,7 @@ abstract final class DeepFocusAssets {
   static const String timerCircleBg = 'assets/images/ui/focus_timer_orb.webp';
   static const String quickFocusPlant = 'assets/images/ui/quick_focus_plant_banner.webp';
   static const String appMeshBg = 'assets/images/ui/app_bg_silk.webp';
+  static const String tasksBg = 'assets/images/ui/tasks_bg_leaf.webp';
   static const String appLeafMark = 'assets/images/ui/app_logo_mark.webp';
   static const String focusFullscreenBg = 'assets/images/ui/focus_fullscreen_bg.webp';
 

@@ -12,12 +12,14 @@ import '../../../core/design_system/components/states.dart';
 import '../../../core/design_system/tokens.dart';
 import '../../../core/providers/core_providers.dart';
 import '../../../core/time/hijri.dart';
+import '../../../core/theme/deep_focus_visuals.dart';
 import '../../settings/application/settings_providers.dart';
 import '../../../shared/widgets/async_value_view.dart';
 import '../../../shared/widgets/dialogs.dart';
 import '../../../shared/widgets/module_scaffold.dart';
 import '../application/calendar_layout.dart';
 import '../application/calendar_providers.dart';
+import '../application/hijri_month.dart';
 import '../data/events_repository.dart';
 import 'day_agenda.dart';
 import 'event_style.dart';
@@ -25,6 +27,7 @@ import 'month_view.dart';
 import 'time_grid.dart';
 
 part 'calendar_screen/calendar_screen_state.dart';
+part 'calendar_screen/calendar_switch.dart';
 
 /// Month / week / day calendar backed by the local events table and the
 /// due dates of tasks. Nothing here syncs with external calendars.

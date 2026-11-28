@@ -119,6 +119,7 @@ class TaskTile extends ConsumerWidget {
         }
       },
       child: LuxCard(
+        glass: true,
         padding: const EdgeInsetsDirectional.fromSTEB(Space.xs, Space.sm, Space.md, Space.sm),
         onTap: () => context.push(Routes.task(task.id)),
         // A coloured edge for every prioritised task, like the design; none for "no priority".
