@@ -21189,6 +21189,7 @@ fy,fy_0239,2,n,life,food_drink,عشاء,jûnsmiel,ˈjuːnsmiːl
 fy,fy_0240,3,n,life,food_drink,وجبة خفيفة,snack,snɛk
 fy,fy_0241,3,n,life,food_drink,حساء مرق,bouillon,/buːˈjɔn/
 fy,fy_0242,3,n,life,food_drink,عجينة,daai,/daːi/
+fy,fy_0716,2,n,life,food_drink,مربى,marmelade,/mɑrməˈlaːdə/
 fy,fy_0181,1,n,life,produce,تفاحة,apel,ˈaːpəl
 fy,fy_0182,1,n,life,produce,موزة,banaan,baːˈnaːn
 fy,fy_0183,1,n,life,produce,عنب,druven,ˈdryːvən
@@ -21308,6 +21309,8 @@ fy,fy_0512,2,adv,study,grammar_links,ببطء,stadich,ˈstaːdix
 fy,fy_0513,3,adv,study,grammar_links,ومع ذلك,lykwols,ˈlikwɔls
 fy,fy_0514,3,adv,study,grammar_links,لذلك,dêrom,ˈdɛːrɔm
 fy,fy_0515,3,adv,study,grammar_links,بينما,ûnderwilens,undərˈʋiːləns
+fy,fy_0717,1,n,study,grammar_links,أنا,ik,/ɪk/
+fy,fy_0718,1,adv,study,grammar_links,لكن,mar,/mɑr/
 fy,fy_0421,1,n,study,numbers_time,صفر,nul,/nʊl/
 fy,fy_0422,1,n,study,numbers_time,واحد,ien,/iːn/
 fy,fy_0423,1,n,study,numbers_time,عشرة,tsien,/tsiːn/
@@ -21571,6 +21574,8 @@ fy,fy_0567,3,n,world,nature_weather,مناخ,klimaat,/kliˈmaːt/
 fy,fy_0568,3,n,world,nature_weather,رطوبة,fochtigheid,/ˈfɔxtiɡhaɪt/
 fy,fy_0569,3,n,world,nature_weather,أفق,hoarizon,/hoːˈriːzɔn/
 fy,fy_0570,3,n,world,nature_weather,نسيم عليل,bries,/briːs/
+fy,fy_0719,1,n,world,nature_weather,سماء,loft,/lɔft/
+fy,fy_0720,1,n,world,nature_weather,غابة,bosk,/bɔsk/
 fy,fy_0601,1,n,world,transport_travel,سيارة,auto,/ˈoːtoː/
 fy,fy_0602,1,n,world,transport_travel,حافلة,bus,/bʏs/
 fy,fy_0603,1,n,world,transport_travel,قطار,trein,/treːn/
@@ -22715,6 +22720,7 @@ gd,gd_0482,3,v,study,core_verbs,يقارن,coimeas,/ˈkʰɔməs/
 gd,gd_0483,3,v,study,core_verbs,ينظم,eagraich,/ˈakəɾʲɪç/
 gd,gd_0484,3,v,study,core_verbs,يحسن,leasaich,/ˈl̪ˠas̪ˠɪç/
 gd,gd_0485,3,v,study,core_verbs,يكتشف,faigh a-mach,/fɤj əˈmax/
+gd,gd_0720,1,v,study,core_verbs,يأكل,ith,/ih/
 gd,gd_0486,1,n,study,grammar_links,أنا,mise,/ˈmɪʃə/
 gd,gd_0487,1,n,study,grammar_links,أنت,thusa,/ˈhʊs̪ə/
 gd,gd_0488,1,n,study,grammar_links,نحن,sinn,/ʃɪɲ/
@@ -23809,6 +23815,27 @@ gn,gn_0077,3,n,home,bathroom,خيط أسنان,dental-floss,/dental-floss/
 gn,gn_0078,3,n,home,bathroom,غسول فم,mouthwash,/mouthwash/
 gn,gn_0079,3,n,home,bathroom,مصرف ماء,drain,/drain/
 gn,gn_0080,1,n,home,bedroom,غرفة نوم,bedroom,/bedroom/
+gn,gn_0514,1,n,home,bedroom,سرير,upa,/uˈpa/
+gn,gn_0515,1,n,home,bedroom,وسادة,akãrapytu'uha,/akãɾapytuˈuha/
+gn,gn_0516,1,n,home,bedroom,بطانية,aopytuhũ,/aopytuˈhũ/
+gn,gn_0517,1,n,home,bedroom,ملاءة سرير,upa ao,/uˈpa aˈo/
+gn,gn_0518,1,n,home,bedroom,خزانة ملابس,ao ryru,/aˈo ɾyˈɾu/
+gn,gn_0519,1,n,home,bedroom,منبه,arandupy rehegua,/aɾanduˈpy ɾeheˈgwa/
+gn,gn_0520,1,n,home,bedroom,مصباح طاولة,tataendy,/tataˈeindu/
+gn,gn_0521,1,n,home,bedroom,علاقة ملابس,ao mbojyha,/aˈo mbojyˈha/
+gn,gn_0522,2,n,home,bedroom,مرتبة سرير,upa atã,/uˈpa aˈtã/
+gn,gn_0523,2,n,home,bedroom,لحاف,aopytu,/aopyˈtu/
+gn,gn_0524,2,n,home,bedroom,غطاء وسادة,akãrapytu'uha ao,/akãɾapytuˈuha aˈo/
+gn,gn_0525,2,n,home,bedroom,طاولة جانبية,upa ryepy mesa,/uˈpa ɾjeˈpy ˈmesa/
+gn,gn_0526,2,n,home,bedroom,خزانة أدراج,ryru hetáva,/ɾyˈɾu heˈtáva/
+gn,gn_0527,2,n,home,bedroom,درج,ryru,/ɾyˈɾu/
+gn,gn_0528,2,n,home,bedroom,سرير بطابقين,upa mokõi va,/uˈpa moˈkõi ˈva/
+gn,gn_0529,2,n,home,bedroom,مهد طفل,mitã ra'y upa,/miˈtã raˈɨ uˈpa/
+gn,gn_0530,3,n,home,bedroom,لحاف محشو,aopytu guasu,/aopyˈtu gwaˈsu/
+gn,gn_0531,3,n,home,bedroom,مفرش سرير,upa ao mboheha,/uˈpa aˈo mboheˈha/
+gn,gn_0532,3,n,home,bedroom,لوح رأس السرير,upa akã,/uˈpa aˈkã/
+gn,gn_0533,3,n,home,bedroom,طاولة زينة,jehecha mesa,/jeheˈtʃa ˈmesa/
+gn,gn_0534,3,n,home,bedroom,ستائر معتمة,ovapa'ũ pytu,/ovaˈpaʔũ pyˈtu/
 gn,gn_0001,1,adj,home,colors,أحمر,pira,/pi.ra/
 gn,gn_0002,1,adj,home,colors,أزرق,blu,/blu/
 gn,gn_0003,1,adj,home,colors,أخضر,ver,/ver/
@@ -23900,6 +23927,25 @@ gn,gn_0125,2,n,home,living,قفل,serrure,/sɛ.ʁyʁ/
 gn,gn_0126,3,n,home,living,ثريا,lustre,/lystʁ/
 gn,gn_0127,3,n,home,living,مسند قدمين,repose-pieds,/ʁə.poz.pje/
 gn,gn_0128,3,n,home,living,ستائر شرائح,stores,/stɔʁ/
+gn,gn_0535,1,n,home,living,غرفة معيشة,tenda guasu,/ˈtenda gwaˈsu/
+gn,gn_0536,1,n,home,living,أريكة,apỹi guasu,/aˈpỹi gwaˈsu/
+gn,gn_0537,1,n,home,living,كرسي,apyka,/aˈpyka/
+gn,gn_0538,1,n,home,living,طاولة,mesa,/ˈmesa/
+gn,gn_0539,1,n,home,living,سجادة,tapesã,/tapeˈsã/
+gn,gn_0540,1,n,home,living,ستارة,ova,/ˈova/
+gn,gn_0541,1,n,home,living,باب,ketymi,/keˈtymi/
+gn,gn_0542,1,n,home,living,نافذة,ventana,/venˈtana/
+gn,gn_0543,1,n,home,living,جدار,kotýva,/koˈtýva/
+gn,gn_0544,1,n,home,living,أرضية,yvy,/ɨˈvɨ/
+gn,gn_0545,1,n,home,living,سقف,apykue,/a.pyˈku.e/
+gn,gn_0546,1,n,home,living,رف,renda,/ˈrenda/
+gn,gn_0547,1,n,home,living,ساعة حائط,arandupy,/aɾanduˈpy/
+gn,gn_0548,1,n,home,living,مفتاح,ñerateha,/ɲeɾateˈha/
+gn,gn_0549,2,n,home,living,كرسي بذراعين,apyka guasu,/aˈpyka gwaˈsu/
+gn,gn_0550,2,n,home,living,طاولة قهوة,ka'ay mesa,/kaˈʔaj ˈmesa/
+gn,gn_0551,2,n,home,living,مكتبة كتب,aranduka ryru,/aɾanˈduka ɾyˈɾu/
+gn,gn_0552,2,n,home,living,بساط صغير,tapesã michĩ,/tapeˈsã miˈtʃĩ/
+gn,gn_0553,2,n,home,living,وسادة أريكة,apỹi ra'y,/aˈpỹi raˈɨ/
 gn,gn_0295,1,n,life,body_health,رأس,cabeza,/kaˈβeθa/
 gn,gn_0296,1,n,life,body_health,وجه,cara,/ˈkaɾa/
 gn,gn_0297,1,n,life,body_health,عين,ojo,/ˈoxo/
@@ -23926,6 +23972,12 @@ gn,gn_0317,2,n,life,body_health,جبين,frente,/ˈfɾente/
 gn,gn_0318,2,n,life,body_health,كوع,codo,/ˈkoðo/
 gn,gn_0319,2,n,life,body_health,معصم,muñeca,/muˈɲeka/
 gn,gn_0320,2,n,life,body_health,كاحل,tobillo,/toˈβiʝo/
+gn,gn_0554,2,n,life,body_health,حمى,tata,/taˈta/
+gn,gn_0555,2,n,life,body_health,سعال,ho'u,/hoˈu/
+gn,gn_0556,2,n,life,body_health,صداع,akã rasy,/aˈkã raˈsɨ/
+gn,gn_0557,3,n,life,body_health,ضمادة,ao pohã,/aˈo poˈhã/
+gn,gn_0558,3,n,life,body_health,فيتامين,pohã porã,/poˈhã poˈɾã/
+gn,gn_0559,3,n,life,body_health,مناعة,tekove mbarete,/tekoˈve mbaɾeˈte/
 gn,gn_0267,1,n,life,clothing,قميص,chemise,/ʃəmiz/
 gn,gn_0268,1,n,life,clothing,بنطال,pantalon,/pɑ̃talɔ̃/
 gn,gn_0269,1,n,life,clothing,حذاء,chaussures,/ʃosyʁ/
@@ -23954,6 +24006,40 @@ gn,gn_0291,3,n,life,clothing,سحاب,cremallera,/kɾemaˈʝeɾa/
 gn,gn_0292,3,n,life,clothing,ياقة,cuello,/ˈkweʝo/
 gn,gn_0293,3,n,life,clothing,كم القميص,manga,/ˈmaŋɡa/
 gn,gn_0294,3,n,life,clothing,مظلة مطر,paraguas,/paˈɾaɣwas/
+gn,gn_0560,1,n,life,family_traits,عائلة,pehẽngue,/peˈhẽŋɡwe/
+gn,gn_0561,1,n,life,family_traits,أب,ru,/ˈɾu/
+gn,gn_0562,1,n,life,family_traits,أم,sy,/ˈsɨ/
+gn,gn_0563,1,n,life,family_traits,أخ,kypy'y,/kɨ.pɨˈjɨ/
+gn,gn_0564,1,n,life,family_traits,أخت,henyói,/heɲˈjoi/
+gn,gn_0565,1,n,life,family_traits,ابن,ta'ýra,/taˈɨɾa/
+gn,gn_0566,1,n,life,family_traits,ابنة,memby,/memˈbɨ/
+gn,gn_0567,1,n,life,family_traits,جد,tamoýi,/tamɔˈji/
+gn,gn_0568,1,n,life,family_traits,جدة,jaryi,/haɾˈji/
+gn,gn_0569,1,n,life,family_traits,صديق,angirû,/aŋgiˈɾũ/
+gn,gn_0570,1,n,life,family_traits,طفل,mitã,/miˈtã/
+gn,gn_0571,1,adj,life,family_traits,سعيد,vy'a,/vjˈa/
+gn,gn_0572,1,adj,life,family_traits,لطيف,poriahuvereko,/poɾiahuveɾeˈko/
+gn,gn_0573,1,adj,life,family_traits,قوي,mbarete,/mbaɾeˈte/
+gn,gn_0574,1,adj,life,family_traits,ذكي,arandu,/aɾanˈdu/
+gn,gn_0575,1,adj,life,family_traits,هادئ,katu,/kaˈtu/
+gn,gn_0576,2,n,life,family_traits,عم أو خال,tã'ýi,/tãˈʔji/
+gn,gn_0577,2,n,life,family_traits,عمة أو خالة,tĩ'ýi,/tĩˈʔji/
+gn,gn_0578,2,n,life,family_traits,ابن العم,kypy'y,/kɨpɨˈɨ/
+gn,gn_0579,2,n,life,family_traits,جار,ypykue,/ɨpɨˈkue/
+gn,gn_0580,2,adj,life,family_traits,صادق,marangatu,/maɾaŋgaˈtu/
+gn,gn_0581,2,adj,life,family_traits,شجاع,py'aguasu,/pɨjaˈɣusu/
+gn,gn_0582,2,adj,life,family_traits,صبور,py'aporã,/pɨjapoˈɾã/
+gn,gn_0583,2,adj,life,family_traits,مهذب,poriahu,/poɾiaˈhu/
+gn,gn_0584,2,adj,life,family_traits,نشيط,mbovy,/mboˈvɨ/
+gn,gn_0585,2,adj,life,family_traits,متعاون,pytyvõhára,/pɨtɨvõˈhaɾa/
+gn,gn_0586,2,adj,life,family_traits,ممتن,aguyje,/aɣujˈe/
+gn,gn_0587,2,adj,life,family_traits,متفائل,vy'apavẽ,/vjapavẽ/
+gn,gn_0588,3,adj,life,family_traits,كريم,porã,/poˈɾã/
+gn,gn_0589,3,adj,life,family_traits,متواضع,kane'õ,/kaneˈõ/
+gn,gn_0590,3,adj,life,family_traits,حكيم,arandupave,/aɾandupave/
+gn,gn_0591,3,adj,life,family_traits,مسؤول,apopyre,/apopɨˈɾe/
+gn,gn_0592,3,adj,life,family_traits,فضولي للعلم,kuaase,/kuaaˈse/
+gn,gn_0593,3,adj,life,family_traits,مبدع,apohára,/apoˈhaɾa/
 gn,gn_0213,1,n,life,food_drink,ماء,water,ˈwɔː.tər
 gn,gn_0214,1,n,life,food_drink,خبز,bread,bred
 gn,gn_0215,1,n,life,food_drink,حليب,milk,mɪlk
@@ -24015,6 +24101,7 @@ gn,gn_0209,3,n,life,produce,بروكلي,broccoli,ˈbrɒk.əl.i
 gn,gn_0210,3,n,life,produce,قرنبيط,cauliflower,ˈkɒl.ɪˌflaʊ.ər
 gn,gn_0211,3,n,life,produce,فجل,radish,ˈræd.ɪʃ
 gn,gn_0212,3,n,life,produce,كرفس,celery,ˈsel.ər.i
+gn,gn_0594,2,n,life,produce,تين,yva,/ɨˈva/
 gn,gn_0243,1,n,life,spices_grains,أرز,riz,/ʁi/
 gn,gn_0244,1,n,life,spices_grains,ملح,sel,/sɛl/
 gn,gn_0245,1,n,life,spices_grains,سكر,sucre,/sykʁ/
@@ -24044,6 +24131,36 @@ gn,gn_0482,3,v,study,core_verbs,يقارن,kompara,/kom.pa.ra/
 gn,gn_0483,3,v,study,core_verbs,ينظم,organiza,/or.ga.ni.za/
 gn,gn_0484,3,v,study,core_verbs,يحسن,pluboniga,/plu.bo.ni.ga/
 gn,gn_0485,3,v,study,core_verbs,يكتشف,deskovra,/des.kov.ra/
+gn,gn_0595,1,v,study,core_verbs,يقرأ,moñe'ẽ,/moɲeˈẽ/
+gn,gn_0596,1,v,study,core_verbs,يكتب,hai,/haˈi/
+gn,gn_0597,1,v,study,core_verbs,يتعلم,kuaa,/kuˈaa/
+gn,gn_0598,1,v,study,core_verbs,يدرس,mbo'e,/mboˈe/
+gn,gn_0599,1,v,study,core_verbs,يسمع,hendu,/henˈdu/
+gn,gn_0600,1,v,study,core_verbs,يتحدث,ñe'ẽ,/ñeˈẽ/
+gn,gn_0601,1,v,study,core_verbs,يرى,hecha,/heˈtʃa/
+gn,gn_0602,1,v,study,core_verbs,يذهب,ho,/ho/
+gn,gn_0603,1,v,study,core_verbs,يأتي,u,/u/
+gn,gn_0604,1,v,study,core_verbs,يأكل,karu,/kaˈru/
+gn,gn_0605,1,v,study,core_verbs,يشرب,'u,/ʔu/
+gn,gn_0606,1,v,study,core_verbs,ينام,ke,/ke/
+gn,gn_0607,1,v,study,core_verbs,يعمل,apo,/aˈpo/
+gn,gn_0608,1,v,study,core_verbs,يلعب,ñembosarái,/ñembosaˈɾái/
+gn,gn_0609,1,v,study,core_verbs,يساعد,pytyvõ,/pɨtɨˈvõ/
+gn,gn_0610,1,v,study,core_verbs,يعرف,kuaa,/kuˈaa/
+gn,gn_0611,1,v,study,core_verbs,يفكر,mandu'a,/manduˈa/
+gn,gn_0612,1,v,study,core_verbs,يفتح,jera,/ʤeˈɾa/
+gn,gn_0613,1,v,study,core_verbs,يغلق,mboty,/mboˈtɨ/
+gn,gn_0614,2,v,study,core_verbs,يفهم,hesakā,/hesaˈka/
+gn,gn_0615,2,v,study,core_verbs,يتذكر,mandu,/mãˈdu/
+gn,gn_0616,2,v,study,core_verbs,ينسى,Nemandui,/nẽmãdũˈi/
+gn,gn_0617,2,v,study,core_verbs,يشرح,myakã,/mjaˈkã/
+gn,gn_0618,2,v,study,core_verbs,يسأل,porandu,/porãˈdu/
+gn,gn_0619,2,v,study,core_verbs,يجيب,mbohovái,/mbovoˈhai/
+gn,gn_0620,2,v,study,core_verbs,يحاول,ha'ã,/haˈʔã/
+gn,gn_0621,2,v,study,core_verbs,يبدأ,ñepyrũ,/ɲepɨˈrũ/
+gn,gn_0622,2,v,study,core_verbs,ينهي,mbopaha,/mbopaˈha/
+gn,gn_0623,2,v,study,core_verbs,يبني,mopu'ã,/mopuˈʔã/
+gn,gn_0624,2,v,study,core_verbs,يختار,poravo,/poraˈvo/
 gn,gn_0486,1,n,study,grammar_links,أنا,me,/me/
 gn,gn_0487,1,n,study,grammar_links,أنت,tu,/tu/
 gn,gn_0488,1,n,study,grammar_links,نحن,nos,/nos/
@@ -24094,6 +24211,16 @@ gn,gn_0437,1,adv,study,numbers_time,اليوم,tudei,/tu.dei/
 gn,gn_0438,1,adv,study,numbers_time,غداً,tumoro,/tu.mo.ro/
 gn,gn_0439,1,adv,study,numbers_time,أمس,yistedei,/yis.te.dei/
 gn,gn_0440,2,n,study,numbers_time,ظهيرة,afanun,/a.fa.nun/
+gn,gn_0625,2,n,study,numbers_time,منتصف الليل,pyhare mbyte,/pɨhaˈre ˈmbɨte/
+gn,gn_0626,2,n,study,numbers_time,تقويم,arapyre,/araˈpɨɾe/
+gn,gn_0627,2,n,study,numbers_time,جدول مواعيد,araporundy,/aɾapoɾũˈdɨ/
+gn,gn_0628,2,n,study,numbers_time,فصل الربيع,ararova,/aɾaɾoˈva/
+gn,gn_0629,2,n,study,numbers_time,فصل الصيف,arahaku,/aɾahaˈku/
+gn,gn_0630,2,n,study,numbers_time,فصل الخريف,arapotĩ,/aɾapoˈtĩ/
+gn,gn_0631,2,n,study,numbers_time,فصل الشتاء,arara'y,/aɾaɾaˈʔɨ/
+gn,gn_0632,3,n,study,numbers_time,عقد زمني,peteĩ su ary,/peteˈĩ su aˈɾɨ/
+gn,gn_0633,3,n,study,numbers_time,قرن زمني,peteĩ sa ary,/peteˈĩ sa aˈɾɨ/
+gn,gn_0634,3,n,study,numbers_time,موعد نهائي,arapy,/aɾaˈpɨ/
 gn,gn_0391,1,n,study,office_tech,حاسوب,mboka,/mboka/
 gn,gn_0392,1,n,study,office_tech,هاتف,mombyryñe'ẽ,/mombyryɲeʔẽ/
 gn,gn_0393,1,n,study,office_tech,شاشة,hecha,/hecha/
@@ -24209,10 +24336,23 @@ gn,gn_0597,3,n,world,animals_plants,بطريق,penguino,/penˈɡino/
 gn,gn_0598,3,n,world,animals_plants,صقر,karakara,/kaɾaˈkaɾa/
 gn,gn_0599,3,n,world,animals_plants,نخلة,pindo,/pinˈdo/
 gn,gn_0600,3,n,world,animals_plants,مرجان,ita morotĩ,/iˈta moɾoˈtĩ/
+gn,gn_0635,1,n,world,city_directions,مدينة,taité,/tajˈte/
+gn,gn_0636,1,n,world,city_directions,قرية,tekoha,/tekoˈha/
+gn,gn_0637,1,n,world,city_directions,شارع,tape,/taˈpe/
+gn,gn_0638,1,n,world,city_directions,منزل,roga,/ɾoˈga/
+gn,gn_0639,1,n,world,city_directions,مبنى,koty guasu,/koˈtɨ ˈgwasu/
+gn,gn_0640,1,n,world,city_directions,مستشفى,pohanoháva,/pohanoˈhaʋa/
+gn,gn_0641,1,n,world,city_directions,سوق,ñemuha,/ɲemuˈha/
 gn,gn_0642,1,n,world,city_directions,يسار,nif-kama,nif-ka-ma
+gn,gn_0642,1,n,world,city_directions,متجر,ñemuhakotý,/ɲemuhakoˈtɨ/
+gn,gn_0643,1,n,world,city_directions,حديقة عامة,ka'agury,/kaʔaguˈrɨ/
 gn,gn_0644,1,n,world,city_directions,جنوب,kpa-kama,kpa-ka-ma
+gn,gn_0644,1,n,world,city_directions,جسر,yvate,/jvaˈte/
+gn,gn_0645,1,n,world,city_directions,يمين,katupyry,/katupɨˈrɨ/
 gn,gn_0646,1,n,world,city_directions,غرب,kpa-nif-kama,kpa-nif-ka-ma
+gn,gn_0646,1,n,world,city_directions,شمال,yvate,/jvaˈte/
 gn,gn_0647,2,n,world,city_directions,صيدلية,drog-paka,drog-pa-ka
+gn,gn_0647,1,n,world,city_directions,شرق,korasũ,/koɾaˈsũ/
 gn,gn_0648,2,n,world,city_directions,مخبز,muka-paka,mu-ka-pa-ka
 gn,gn_0649,2,n,world,city_directions,مطعم,duma-paka,du-ma-pa-ka
 gn,gn_0650,2,n,world,city_directions,متحف,kuma-paka,ku-ma-pa-ka
@@ -24226,6 +24366,19 @@ gn,gn_0657,3,n,world,city_directions,موقف سيارات,paka-kpa,pa-ka-kpa
 gn,gn_0658,3,n,world,city_directions,حي سكني,paka-duma,pa-ka-du-ma
 gn,gn_0659,3,n,world,city_directions,نفق,paka-muka,pa-ka-mu-ka
 gn,gn_0660,3,n,world,city_directions,ممر مشاة,paka-drog,pa-ka-drog
+gn,gn_0648,1,n,world,jobs_sports,طبيب,pohānohára,/pohãnoˈhaɾa/
+gn,gn_0649,1,n,world,jobs_sports,مهندس,mba'aporeko,/mbaʔapoˈɾeko/
+gn,gn_0650,1,n,world,jobs_sports,ممرض,pohanohára pytyvõhára,/pohanoˈhaɾa pɨtɨvõˈhaɾa/
+gn,gn_0651,2,n,world,jobs_sports,سباك,y apopyhára,/j apopɨˈhaɾa/
+gn,gn_0652,2,n,world,jobs_sports,مدرب رياضي,mbo'ehára,/mboʔeˈhaɾa/
+gn,gn_0653,2,n,world,jobs_sports,كرة طائرة,mangapy,/mangaˈpɨ/
+gn,gn_0654,2,n,world,jobs_sports,تنس,tenisi,/teˈnisi/
+gn,gn_0655,2,n,world,jobs_sports,ركوب الدراجات,karugua,/kaɾuˈgwa/
+gn,gn_0656,2,n,world,jobs_sports,تسلق الجبال,ysaty,/jsaˈtɨ/
+gn,gn_0657,3,n,world,jobs_sports,صيدلي,pohánohára,/pohánoˈhaɾa/
+gn,gn_0658,3,n,world,jobs_sports,مترجم,ñe'ẽngue,/ɲeʔẽŋˈge/
+gn,gn_0659,3,n,world,jobs_sports,رماية بالقوس,yvyra,/jvɨˈɾa/
+gn,gn_0660,3,n,world,jobs_sports,ميدالية,ta'ãnga,/taˈʔãŋga/
 gn,gn_0664,1,n,world,jobs_sports,مزارع,drog-kpa-kama,drog-kpa-ka-ma
 gn,gn_0665,1,n,world,jobs_sports,طباخ,drog-nif-kama,drog-nif-ka-ma
 gn,gn_0666,1,n,world,jobs_sports,طيار,drog-kpa-nif-kama,drog-kpa-nif-ka-ma
@@ -24243,6 +24396,36 @@ gn,gn_0677,2,n,world,jobs_sports,عالم,drog-paka-kpa-nif,drog-pa-ka-kpa-nif
 gn,gn_0678,2,n,world,jobs_sports,معماري,drog-paka-kpa-kama,drog-pa-ka-kpa-ka-ma
 gn,gn_0679,2,n,world,jobs_sports,طبيب أسنان,drog-paka-nif-kama,drog-pa-ka-nif-ka-ma
 gn,gn_0680,2,n,world,jobs_sports,كهربائي,drog-paka-kpa-nif-kama,drog-pa-ka-kpa-nif-ka-ma
+gn,gn_0661,1,n,world,materials_shop,خشب,yvyra,/jvɨˈɾa/
+gn,gn_0662,1,n,world,materials_shop,معدن,itaguasu,/itaˈgwasu/
+gn,gn_0663,1,n,world,materials_shop,بلاستيك,plastiko,/plasˈtiko/
+gn,gn_0664,1,n,world,materials_shop,حجر,itá,/iˈta/
+gn,gn_0665,1,n,world,materials_shop,قطن,mandyju,/mãndʒu/
+gn,gn_0666,1,n,world,materials_shop,صوف,ovecha pire,/ovɛtʃa piɾe/
+gn,gn_0667,1,n,world,materials_shop,جلد طبيعي,pire,/piɾe/
+gn,gn_0668,1,n,world,materials_shop,سعر,epykue,/ɛpykue/
+gn,gn_0669,1,n,world,materials_shop,نقود,pire rupá,/piɾe ɾupa/
+gn,gn_0670,1,n,world,materials_shop,صندوق,caja,/kaʃa/
+gn,gn_0671,1,n,world,materials_shop,وزن,pohyikue,/pohjikue/
+gn,gn_0672,1,n,world,materials_shop,حجم,tuichakue,/tuiʃakue/
+gn,gn_0673,1,n,world,materials_shop,طول,pukukue,/pukukue/
+gn,gn_0674,1,n,world,materials_shop,متر,metro,/mɛtɾo/
+gn,gn_0675,1,n,world,materials_shop,كيلوغرام,kilon,/kilon/
+gn,gn_0676,2,n,world,materials_shop,حرير,seda,/sɛda/
+gn,gn_0677,2,n,world,materials_shop,مطاط,hũmbe,/hũmbɛ/
+gn,gn_0678,2,n,world,materials_shop,فولاذ,acero,/asɛɾo/
+gn,gn_0679,2,n,world,materials_shop,نحاس,cobre,/kobɾɛ/
+gn,gn_0680,2,n,world,materials_shop,طين,yvy,/yvy/
+gn,gn_0681,2,n,world,materials_shop,رمل,yvyku'i,/yvykuʔi/
+gn,gn_0682,2,n,world,materials_shop,إيصال شراء,kuatiañe'ẽ,/kuatʃañeʔẽ/
+gn,gn_0683,2,n,world,materials_shop,خصم سعر,mbovyve,/mbovjvɛ/
+gn,gn_0684,2,n,world,materials_shop,زبون,oñemuháva,/õjemuhava/
+gn,gn_0685,2,n,world,materials_shop,بائع,temuhára,/tɛmuhaɾa/
+gn,gn_0686,2,n,world,materials_shop,جودة,porãkue,/poɾãkue/
+gn,gn_0687,3,n,world,materials_shop,ألمنيوم,aluminio,/aluminjo/
+gn,gn_0688,3,n,world,materials_shop,رخام,mármol,/maɾmol/
+gn,gn_0689,3,n,world,materials_shop,ضمان منتج,pytyvõmby,/pytyvõmby/
+gn,gn_0690,3,n,world,materials_shop,فاتورة,kuatia,/kuatʃa/
 gn,gn_0541,1,n,world,nature_weather,شمس,kuarahy,kua-ra-hy
 gn,gn_0542,1,n,world,nature_weather,قمر,jasy,ja-sy
 gn,gn_0543,1,n,world,nature_weather,نجم,mbyja,mby-ja
@@ -24273,6 +24456,36 @@ gn,gn_0567,3,n,world,nature_weather,مناخ,arapo,/aɾaˈpo/
 gn,gn_0568,3,n,world,nature_weather,رطوبة,yrypy'a,/yɾypyˈʔa/
 gn,gn_0569,3,n,world,nature_weather,أفق,yvape,/yvaˈpe/
 gn,gn_0570,3,n,world,nature_weather,نسيم عليل,yvytu,/yvyˈtu/
+gn,gn_0691,1,n,world,transport_travel,سيارة,karameguã,/kaɾameguã/
+gn,gn_0692,1,n,world,transport_travel,حافلة,ómnibus,/omniwus/
+gn,gn_0693,1,n,world,transport_travel,قطار,tatatĩ,/tatatĩ/
+gn,gn_0694,1,n,world,transport_travel,طائرة,yvytu rupáva,/yvytu ɾupava/
+gn,gn_0695,1,n,world,transport_travel,دراجة هوائية,bicicleta,/bisiklɛta/
+gn,gn_0696,1,n,world,transport_travel,سفينة,ygaasu,/ygaasu/
+gn,gn_0697,1,n,world,transport_travel,قارب,ygá,/yga/
+gn,gn_0698,1,n,world,transport_travel,سيارة أجرة,taxi,/taksi/
+gn,gn_0699,1,n,world,transport_travel,طريق,tape,/tapɛ/
+gn,gn_0700,1,n,world,transport_travel,تذكرة,kuatiañe'ẽ,/kuatʃañeʔẽ/
+gn,gn_0701,1,n,world,transport_travel,حقيبة سفر,tembipuru,/tɛmbipuɾu/
+gn,gn_0702,1,n,world,transport_travel,سفر,veve,/vɛvɛ/
+gn,gn_0703,1,n,world,transport_travel,مطار,yvyturupa,/yvytuɾupa/
+gn,gn_0704,1,n,world,transport_travel,محطة,enda,/ɛnda/
+gn,gn_0705,1,n,world,transport_travel,خريطة,yvy rehegua,/yvy ɾɛhɛgua/
+gn,gn_0706,2,n,world,transport_travel,شاحنة,camión,/kamion/
+gn,gn_0707,2,n,world,transport_travel,قطار أنفاق,metro,/mɛtɾo/
+gn,gn_0708,2,n,world,transport_travel,جواز سفر,kuatia,/kuatʃa/
+gn,gn_0709,2,n,world,transport_travel,فندق,óga,/oga/
+gn,gn_0710,2,n,world,transport_travel,رحلة,guata,/guata/
+gn,gn_0711,2,n,world,transport_travel,سائق,mboguahára,/mboguahaɾa/
+gn,gn_0712,2,n,world,transport_travel,راكب,jeguatáva,/jɛguatava/
+gn,gn_0713,2,n,world,transport_travel,عجلة,apysá,/apysa/
+gn,gn_0714,2,n,world,transport_travel,وقود,mba'yrupyha,/mba.ʔɨ.ɾu.ˈpɨ.ha/
+gn,gn_0715,2,n,world,transport_travel,حركة المرور,mba'yrumýi,/mba.ʔɨ.ɾu.ˈmɨ.ʔi/
+gn,gn_0716,2,n,world,transport_travel,ميناء,ygarape,/ɨ.ɡa.ɾa.ˈpe/
+gn,gn_0717,3,n,world,transport_travel,وجهة سفر,tapeguahẽha,/ta.pe.ɡwa.ˈhẽ.ha/
+gn,gn_0718,3,n,world,transport_travel,مغادرة,jeho,/tʃe.ˈho/
+gn,gn_0719,3,n,world,transport_travel,وصول,guahẽ,/ɡwa.ˈhẽ/
+gn,gn_0720,3,n,world,transport_travel,بوصلة,yvatekuaaukaha,/ɨ.va.te.kwa.aw.ka.ˈha/
 gu,gu_0129,1,n,home,appliances,ثلاجة,ફ્રિજ,frij
 gu,gu_0130,1,n,home,appliances,فرن,ઓવન,ovan
 gu,gu_0131,1,n,home,appliances,موقد,સ્ટવ,stav
@@ -25063,6 +25276,31 @@ ha,ha_0098,3,n,home,bedroom,مفرش سرير,shuka,shu-ka
 ha,ha_0099,3,n,home,bedroom,لوح رأس السرير,gado,ga-do
 ha,ha_0100,3,n,home,bedroom,طاولة زينة,meza,me-za
 ha,ha_0101,3,n,home,bedroom,ستائر معتمة,pazia,pa-zi-a
+ha,ha_0636,1,adj,home,colors,أحمر,ja,/dʒa/
+ha,ha_0637,1,adj,home,colors,أزرق,shudi,/ʃudi/
+ha,ha_0638,1,adj,home,colors,أخضر,kore,/ko.ɾe/
+ha,ha_0639,1,adj,home,colors,أصفر,rawaya,/ɾa.wa.ja/
+ha,ha_0640,1,adj,home,colors,أبيض,fari,/fa.ɾi/
+ha,ha_0641,1,adj,home,colors,أسود,baki,/ba.ki/
+ha,ha_0642,1,adj,home,colors,برتقالي,launi,/law.ni/
+ha,ha_0643,1,adj,home,colors,وردي,hoda,/ho.da/
+ha,ha_0644,1,adj,home,colors,بنفسجي,shunayya,/ʃu.naj.ja/
+ha,ha_0645,1,adj,home,colors,بني,kasa-kasa,/ka.sa.ka.sa/
+ha,ha_0646,1,adj,home,colors,رمادي,toka-toka,/to.ka.to.ka/
+ha,ha_0647,1,adj,home,colors,ذهبي,zinariya,/zi.na.ɾi.ja/
+ha,ha_0648,1,adj,home,colors,فضي,azurfa,/a.zuɾ.fa/
+ha,ha_0649,2,adj,home,colors,بيج,fari-da-kasa,/fa.ɾi da ka.sa/
+ha,ha_0650,2,adj,home,colors,كحلي,shudi mai duhu,/ʃu.di maj du.hu/
+ha,ha_0651,2,adj,home,colors,تركوازي,koren-ruwa,/ko.ɾen ɾu.wa/
+ha,ha_0652,2,adj,home,colors,زيتوني,koren zaitun,/ko.ɾen zaj.tun/
+ha,ha_0653,2,adj,home,colors,عنابي,ja mai duhu,/dʒa maj du.hu/
+ha,ha_0654,2,adj,home,colors,سماوي,shudi mai haske,/ʃu.di maj has.ke/
+ha,ha_0655,2,adj,home,colors,فاتح,mai haske,/maj has.ke/
+ha,ha_0656,2,adj,home,colors,داكن,mai duhu,/maj du.hu/
+ha,ha_0657,3,adj,home,colors,قرمزي,ja mai kauri,/dʒa maj kaw.ɾi/
+ha,ha_0658,3,adj,home,colors,زمردي,koren zumar,/ko.ɾen zu.maɾ/
+ha,ha_0659,3,adj,home,colors,عاجي,fari mai launi,/fa.ɾi maj law.ni/
+ha,ha_0660,3,adj,home,colors,نيلي,shudi mai zurfi,/ʃu.di maj zuɾ.fi/
 ha,ha_0155,1,n,home,garden_clean,حديقة,jardín,/xaɾˈðin/
 ha,ha_0156,1,n,home,garden_clean,مكنسة يدوية,escoba,/esˈkoβa/
 ha,ha_0157,1,n,home,garden_clean,دلو,cubo,/ˈkuβo/
@@ -25106,6 +25344,21 @@ ha,ha_0054,3,n,home,kitchen,مصفاة معكرونة,kōlana,ko-la-na
 ha,ha_0055,3,n,home,kitchen,ملاقط طعام,toka,to-ka
 ha,ha_0056,3,n,home,kitchen,فتاحة علب,wehe,we-he
 ha,ha_0057,3,n,home,kitchen,مخزن المؤن,panatī,pa-na-ti
+ha,ha_0661,1,n,home,kitchen,مطبخ,dafa-abinci,/da.fa a.bin.tʃi/
+ha,ha_0662,1,n,home,kitchen,طبق,faranti,/fa.ɾan.ti/
+ha,ha_0663,1,n,home,kitchen,كوب,kofi,/ko.fi/
+ha,ha_0664,1,n,home,kitchen,كأس زجاجي,gilasi,/gi.la.si/
+ha,ha_0665,1,n,home,kitchen,ملعقة,cokali,/tʃo.ka.li/
+ha,ha_0666,1,n,home,kitchen,شوكة,forko,/foɾ.ko/
+ha,ha_0667,1,n,home,kitchen,سكين طعام,wuka,/wu.ka/
+ha,ha_0668,1,n,home,kitchen,وعاء عميق,kasko,/kas.ko/
+ha,ha_0669,1,n,home,kitchen,قدر طبخ,tukunya,/tu.kun.ja/
+ha,ha_0670,1,n,home,kitchen,مقلاة,kangaru,/kan.ga.ɾu/
+ha,ha_0671,1,n,home,kitchen,إبريق شاي,burbur,/buɾ.buɾ/
+ha,ha_0672,1,n,home,kitchen,فنجان كبير,babban kofi,/bab.ban ko.fi/
+ha,ha_0673,1,n,home,kitchen,صينية,teburin dauka,/te.bu.ɾin daw.ka/
+ha,ha_0674,1,n,home,kitchen,حوض المطبخ,matatar wanka,/ma.ta.taɾ wan.ka/
+ha,ha_0675,1,n,home,kitchen,صنبور,famfo,/fam.fo/
 ha,ha_0102,1,n,home,living,غرفة معيشة,daka,da-ka
 ha,ha_0103,1,n,home,living,أريكة,sofa,so-fa
 ha,ha_0104,1,n,home,living,كرسي,kiti,ki-ti
@@ -25226,6 +25479,7 @@ ha,ha_0357,3,adj,life,family_traits,حكيم,mai hikima,mai hi-ki-ma
 ha,ha_0358,3,adj,life,family_traits,مسؤول,mai alhaki,mai al-ha-ki
 ha,ha_0359,3,adj,life,family_traits,فضولي للعلم,mai son sani,mai son sa-ni
 ha,ha_0360,3,adj,life,family_traits,مبدع,mai kirkira,mai kir-ki-ra
+ha,ha_0676,1,n,life,family_traits,ابن,da,/da/
 ha,ha_0213,1,n,life,food_drink,ماء,ma,mɑː
 ha,ha_0214,1,n,life,food_drink,خبز,khubz,xubz
 ha,ha_0215,1,n,life,food_drink,حليب,halib,hɑːliːb
@@ -25255,6 +25509,7 @@ ha,ha_0239,2,n,life,food_drink,عشاء,asha,ʕɑːʃɑː
 ha,ha_0240,3,n,life,food_drink,وجبة خفيفة,wajba khafifa,wɑːʤbɑː xɑːfiːfɑː
 ha,ha_0241,3,n,life,food_drink,حساء مرق,isupu,i-su-pu
 ha,ha_0242,3,n,life,food_drink,عجينة,unga,u-nga
+ha,ha_0677,1,n,life,food_drink,جبن,cuku,/tʃu.ku/
 ha,ha_0181,1,n,life,produce,تفاحة,ipapayi,/i.pa.pa.ji/
 ha,ha_0182,1,n,life,produce,موزة,imineke,/i.mi.ne.ke/
 ha,ha_0183,1,n,life,produce,عنب,imizabibu,/i.mi.za.bi.bu/
@@ -25286,6 +25541,7 @@ ha,ha_0209,3,n,life,produce,بروكلي,burukli,buruːkli
 ha,ha_0210,3,n,life,produce,قرنبيط,qarnabit,qɑːrnɑːbiːt
 ha,ha_0211,3,n,life,produce,فجل,fijl,fiʤl
 ha,ha_0212,3,n,life,produce,كرفس,karafis,kɑːrɑːfis
+ha,ha_0678,2,n,life,produce,فلفل حلو,tattasai,/tat.ta.sai/
 ha,ha_0243,1,n,life,spices_grains,أرز,umuceri,u-mu-che-ri
 ha,ha_0244,1,n,life,spices_grains,ملح,umunyu,u-mu-nyu
 ha,ha_0245,1,n,life,spices_grains,سكر,isukari,i-su-ka-ri
@@ -25343,6 +25599,8 @@ ha,ha_0482,3,v,study,core_verbs,يقارن,hoahaka,/ho.a.ha.ka/
 ha,ha_0483,3,v,study,core_verbs,ينظم,hoʻonohonoho,/ho.ʔo.no.ho.no.ho/
 ha,ha_0484,3,v,study,core_verbs,يحسن,hoʻomaikaʻi,/ho.ʔo.mai.ka.ʔi/
 ha,ha_0485,3,v,study,core_verbs,يكتشف,ʻike,/ʔi.ke/
+ha,ha_0679,1,v,study,core_verbs,يأتي,zo,/zo/
+ha,ha_0680,1,v,study,core_verbs,يشرب,sha,/ʃa/
 ha,ha_0486,1,n,study,grammar_links,أنا,au,/au/
 ha,ha_0487,1,n,study,grammar_links,أنت,ʻoe,/ʔo.e/
 ha,ha_0488,1,n,study,grammar_links,نحن,kākou,/ka.kou/
@@ -25528,6 +25786,26 @@ ha,ha_0637,1,n,world,city_directions,سوق,soko,so-ko
 ha,ha_0638,1,n,world,city_directions,متجر,duka,du-ka
 ha,ha_0639,1,n,world,city_directions,حديقة عامة,bustani,bu-sta-ni
 ha,ha_0640,1,n,world,city_directions,جسر,daraja,da-ra-ja
+ha,ha_0681,1,n,world,city_directions,يمين,dama,/da.ma/
+ha,ha_0682,1,n,world,city_directions,يسار,hagu,/ha.gu/
+ha,ha_0683,1,n,world,city_directions,شمال,arewa,/a.ɾe.wa/
+ha,ha_0684,1,n,world,city_directions,جنوب,kudu,/ku.du/
+ha,ha_0685,1,n,world,city_directions,شرق,gabas,/ga.bas/
+ha,ha_0686,1,n,world,city_directions,غرب,yamma,/jám.mà/
+ha,ha_0687,2,n,world,city_directions,صيدلية,shago magani,/ʃá.ɡò ma.ɡá.ní/
+ha,ha_0688,2,n,world,city_directions,مخبز,masana anburodi,/ma.sá.ná am.bú.ɾó.di/
+ha,ha_0689,2,n,world,city_directions,مطعم,gidan abinci,/ɡí.dàn a.bín.tʃì/
+ha,ha_0690,2,n,world,city_directions,متحف,gidan kayan tarihi,/ɡí.dàn ka.ján ta.ɾí.hí/
+ha,ha_0691,2,n,world,city_directions,مكتب بريد,ofishin gidan posta,/ó.fí.ʃìn ɡí.dàn pós.tà/
+ha,ha_0692,2,n,world,city_directions,رصيف مشاة,tsakar gida,/tsá.kàɾ ɡí.dà/
+ha,ha_0693,2,n,world,city_directions,تقاطع طرق,mahaɗar hanya,/ma.há.ɖàɾ hàn.jà/
+ha,ha_0694,2,n,world,city_directions,إشارة مرور,fitilar theama,/fi.tí.làɾ tʃé.à.mà/
+ha,ha_0695,2,n,world,city_directions,وسط المدينة,tsakiyar gari,/tsá.kì.jàɾ ɡá.ɾì/
+ha,ha_0696,2,n,world,city_directions,ميدان عام,dandalin gari,/dán.dà.lìn ɡá.ɾì/
+ha,ha_0697,3,n,world,city_directions,موقف سيارات,wurin ajiyar motoci,/wú.ɾìn á.jí.jàɾ mó.tó.tʃì/
+ha,ha_0698,3,n,world,city_directions,حي سكني,unguwa,/ùŋ.ɡù.wá/
+ha,ha_0699,3,n,world,city_directions,نفق,rami,/ɾá.mì/
+ha,ha_0700,3,n,world,city_directions,ممر مشاة,hanyar masu yawo,/hán.jàɾ má.sù jà.wó/
 ha,ha_0681,2,n,world,jobs_sports,سباك,umubazi,u.mu.ba.zi
 ha,ha_0682,2,n,world,jobs_sports,مدرب رياضي,umutoza,u.mu.to.za
 ha,ha_0683,2,n,world,jobs_sports,كرة طائرة,volibolo,vo.li.bo.lo
@@ -25538,6 +25816,26 @@ ha,ha_0687,3,n,world,jobs_sports,صيدلي,farumasiye,fa.ru.ma.si.ye
 ha,ha_0688,3,n,world,jobs_sports,مترجم,umusemuzi,u.mu.se.mu.zi
 ha,ha_0689,3,n,world,jobs_sports,رماية بالقوس,kurasa,ku.ra.sa
 ha,ha_0690,3,n,world,jobs_sports,ميدالية,umudari,u.mu.da.ri
+ha,ha_0701,1,n,world,jobs_sports,طبيب,likita,/lí.kí.tà/
+ha,ha_0702,1,n,world,jobs_sports,مهندس,injiniya,/in.ʤí.ní.jà/
+ha,ha_0703,1,n,world,jobs_sports,ممرض,ma'aikacin jinya,/má.ʔàj.ka.tʃìn ʤín.jà/
+ha,ha_0704,1,n,world,jobs_sports,مزارع,manoma,/má.nó.mà/
+ha,ha_0705,1,n,world,jobs_sports,طباخ,mafaɗi,/ma.fá.ɖì/
+ha,ha_0706,1,n,world,jobs_sports,طيار,matukin jirgi,/má.tù.kìn ʤìɾ.ɡí/
+ha,ha_0707,1,n,world,jobs_sports,نجار,asska,/ás.ská/
+ha,ha_0708,1,n,world,jobs_sports,خياط,ɗinki,/ɗín.kì/
+ha,ha_0709,1,n,world,jobs_sports,رياضة,wasanni,/wá.sàn.ní/
+ha,ha_0710,1,n,world,jobs_sports,كرة قدم,kwallo,/kwál.ló/
+ha,ha_0711,1,n,world,jobs_sports,سباحة,iyo,/ì.jò/
+ha,ha_0712,1,n,world,jobs_sports,جري,gudu,/ɡù.dù/
+ha,ha_0713,1,n,world,jobs_sports,كرة سلة,kwando,/kwán.dò/
+ha,ha_0714,1,n,world,jobs_sports,فريق,ƙungiya,/ƙúŋ.ɡí.jà/
+ha,ha_0715,1,n,world,jobs_sports,ملعب,filin wasa,/fí.lìn wá.sá/
+ha,ha_0716,2,n,world,jobs_sports,مبرمج,mai tsara kwamfuta,/má.ì tsá.ɾá kwam.fú.tà/
+ha,ha_0717,2,n,world,jobs_sports,عالم,masani,/má.sá.ní/
+ha,ha_0718,2,n,world,jobs_sports,معماري,mai tsara gine-gine,/má.ì tsá.ɾá ɡí.né.ɡí.né/
+ha,ha_0719,2,n,world,jobs_sports,طبيب أسنان,likitan haƙora,/lí.kí.tàn há.ƙò.ɾá/
+ha,ha_0720,2,n,world,jobs_sports,كهربائي,mai wutar lantarki,/má.ì wú.tàɾ lán.tàɾ.kí/
 ha,ha_0691,1,n,world,materials_shop,خشب,imbaho,im.ba.ho
 ha,ha_0692,1,n,world,materials_shop,معدن,icyuma,i.cu.ma
 ha,ha_0693,1,n,world,materials_shop,بلاستيك,purasitiki,pu.ra.si.ti.ki
@@ -25746,6 +26044,9 @@ haw,haw_0177,3,n,home,garden_clean,مشط حديقة,kope,kopɛ
 haw,haw_0178,3,n,home,garden_clean,عربة يدوية,kāʻa huila,kaːʔa huila
 haw,haw_0179,3,n,home,garden_clean,سماد طبيعي,lepo momona,lɛpo momona
 haw,haw_0180,3,n,home,garden_clean,مقص تقليم,ʻūpā ʻoki lālā,ʔuːpaː ʔoki laːlaː
+haw,haw_0702,2,n,home,garden_clean,ممسحة أرضية,mōpū,/ˈmoː.puː/
+haw,haw_0703,2,n,home,garden_clean,خرطوم ماء,hose,/ˈho.se/
+haw,haw_0704,2,n,home,garden_clean,أصيص نبات,ipu pua,/ˈi.pu ˈpu.a/
 haw,haw_0026,1,n,home,kitchen,مطبخ,lumi kuke,ˈlumi ˈkuke
 haw,haw_0027,1,n,home,kitchen,طبق,pā,paː
 haw,haw_0028,1,n,home,kitchen,كوب,kīʻaha,ˈkiːˈʔaha
@@ -25834,6 +26135,9 @@ haw,haw_0323,2,n,life,body_health,صداع,poʻo ʻeha,po-o e-ha
 haw,haw_0324,3,n,life,body_health,ضمادة,kāwele,ka-we-le
 haw,haw_0325,3,n,life,body_health,فيتامين,wikamina,wi-ka-mi-na
 haw,haw_0326,3,n,life,body_health,مناعة,pale maʻi,pa-le ma-i
+haw,haw_0705,1,n,life,body_health,أنف,ihu,/ˈi.hu/
+haw,haw_0706,1,n,life,body_health,سن,niho,/ˈni.ho/
+haw,haw_0707,2,n,life,body_health,ركبة,kuli,/ˈku.li/
 haw,haw_0267,1,n,life,clothing,قميص,pālule,paːˈlule
 haw,haw_0268,1,n,life,clothing,بنطال,pālule wāwae,paːˈlule ˈwaːwəe
 haw,haw_0269,1,n,life,clothing,حذاء,kāmaʻa,kaːˈmɐʔə
@@ -25860,6 +26164,8 @@ haw,haw_0289,2,n,life,clothing,جيب,ʻeke,ʔeke
 haw,haw_0292,3,n,life,clothing,ياقة,kāʻei ʻāʻī,kaːʔei ʔaːʔiː
 haw,haw_0293,3,n,life,clothing,كم القميص,lima,limə
 haw,haw_0294,3,n,life,clothing,مظلة مطر,pale ua,pale uə
+haw,haw_0708,2,n,life,clothing,زر,pihi,/ˈpi.hi/
+haw,haw_0709,3,n,life,clothing,سحاب,kipā,/kiˈpaː/
 haw,haw_0327,1,n,life,family_traits,عائلة,ʻohana,o-ha-na
 haw,haw_0328,1,n,life,family_traits,أب,makuakāne,ma-ku-a-ka-ne
 haw,haw_0329,1,n,life,family_traits,أم,makuahine,ma-ku-a-hi-ne
@@ -25950,6 +26256,12 @@ haw,haw_0209,3,n,life,produce,بروكلي,polokoli,/poloˈkoli/
 haw,haw_0210,3,n,life,produce,قرنبيط,kolipelika,/kolipeˈlika/
 haw,haw_0211,3,n,life,produce,فجل,radisi,/raˈdisi/
 haw,haw_0212,3,n,life,produce,كرفس,kelekapa,/keleˈkapa/
+haw,haw_0710,1,n,life,produce,عنب,hua ʻainasika,/ˈhu.a ˈʔai̯.naˈsi.ka/
+haw,haw_0711,1,n,life,produce,بطيخ,ipu ʻawaʻawa,/ˈi.pu ˈʔa.waˈʔa.wa/
+haw,haw_0712,1,n,life,produce,خيار,kukama,/kuˈka.ma/
+haw,haw_0713,1,n,life,produce,خس,laku,/ˈla.ku/
+haw,haw_0714,2,n,life,produce,مانجو,mākeno,/ˈmaː.ke.no/
+haw,haw_0715,2,n,life,produce,أناناس,hala kahiki,/ˈha.la kaˈhi.ki/
 haw,haw_0243,1,n,life,spices_grains,أرز,laiki,ˈlɐi.ki
 haw,haw_0244,1,n,life,spices_grains,ملح,paʻakai,pəˈʔɐkəi
 haw,haw_0245,1,n,life,spices_grains,سكر,kō,koː
@@ -26123,6 +26435,7 @@ haw,haw_0537,3,phr,study,polite_phrases,هل يمكنك المساعدة,Hiki i�
 haw,haw_0538,3,phr,study,polite_phrases,يوم سعيد لك,He lā maikaʻi,he la mai-ka-i
 haw,haw_0539,3,phr,study,polite_phrases,أتمنى لك التوفيق,Pōmaikaʻi,po-mai-ka-i
 haw,haw_0540,3,phr,study,polite_phrases,أشكرك جزيلاً,Mahalo nui loa,ma-ha-lo nu-i lo-a
+haw,haw_0716,2,phr,study,polite_phrases,أراك لاحقاً,a hui hou,/a ˈhu.i ˈhow/
 haw,haw_0361,1,n,study,school,مدرسة,kula,ˈku.lə
 haw,haw_0362,1,n,study,school,كتاب,puke,ˈpu.kɛ
 haw,haw_0363,1,n,study,school,دفتر,puke kākau,ˈpu.kɛ ˈkaː.kau
@@ -26242,6 +26555,7 @@ haw,haw_0687,3,n,world,jobs_sports,صيدلي,lāʻau lapaʻau,la-au la-pa-au
 haw,haw_0688,3,n,world,jobs_sports,مترجم,mea unuhi,me-a u-nu-hi
 haw,haw_0689,3,n,world,jobs_sports,رماية بالقوس,pana pua,pa-na pu-a
 haw,haw_0690,3,n,world,jobs_sports,ميدالية,mekala,me-ka-la
+haw,haw_0717,1,n,world,jobs_sports,فريق,kūkulu,/ˈkuː.ku.lu/
 haw,haw_0691,1,n,world,materials_shop,خشب,lāʻau,la-au
 haw,haw_0692,1,n,world,materials_shop,معدن,metala,me-ta-la
 haw,haw_0693,1,n,world,materials_shop,بلاستيك,palakika,pa-la-ki-ka
@@ -26299,6 +26613,9 @@ haw,haw_0567,3,n,world,nature_weather,مناخ,aniau,ah-nee-ow
 haw,haw_0568,3,n,world,nature_weather,رطوبة,ha'u,hah-oo
 haw,haw_0569,3,n,world,nature_weather,أفق,pae lani,pah-eh lah-nee
 haw,haw_0570,3,n,world,nature_weather,نسيم عليل,aheahe,ah-heh-ah-heh
+haw,haw_0718,1,n,world,nature_weather,سحابة,ao,/ˈa.o/
+haw,haw_0719,1,n,world,nature_weather,مطر,ua,/ˈu.a/
+haw,haw_0720,1,n,world,nature_weather,ثلج,hau,/ˈhaw/
 haw,haw_0601,1,n,world,transport_travel,سيارة,kaʻa,/kaˈʔa/
 haw,haw_0602,1,n,world,transport_travel,حافلة,kaʻa ʻōhua,/kaˈʔa ˈʔoːhuwə/
 haw,haw_0603,1,n,world,transport_travel,قطار,kaʻaahi,/kaˈʔaːhi/
@@ -27096,6 +27413,7 @@ hmn,hmn_0076,3,n,home,bathroom,مغسلة يدين,lub dab ntxuav tes,loo-da-ntu
 hmn,hmn_0077,3,n,home,bathroom,خيط أسنان,xov ntxuav hniav,saw-ntua-nia
 hmn,hmn_0078,3,n,home,bathroom,غسول فم,tshuaj yaug qhov ncauj,tsua-yau-qho-ncau
 hmn,hmn_0079,3,n,home,bathroom,مصرف ماء,qhov dej ntws,qho-de-ntw
+hmn,hmn_0658,1,n,home,bathroom,إسفنجة,daus,/dau̯s/
 hmn,hmn_0080,1,n,home,bedroom,غرفة نوم,chav pw,cha-p
 hmn,hmn_0081,1,n,home,bedroom,سرير,txaj,tsa
 hmn,hmn_0082,1,n,home,bedroom,وسادة,lub hauv ncoo,lu haʊ n̥ɔ
@@ -27142,6 +27460,7 @@ hmn,hmn_0022,3,adj,home,colors,قرمزي,liab nti,lia nti
 hmn,hmn_0023,3,adj,home,colors,زمردي,ntsuab nti,ntsua nti
 hmn,hmn_0024,3,adj,home,colors,عاجي,dawb nti,da nti
 hmn,hmn_0025,3,adj,home,colors,نيلي,xiav nti,xia nti
+hmn,hmn_0659,2,adj,home,colors,فاتح,lub,/luŋ/
 hmn,hmn_0155,1,n,home,garden_clean,حديقة,vaj,va
 hmn,hmn_0156,1,n,home,garden_clean,مكنسة يدوية,txhuam,chua
 hmn,hmn_0157,1,n,home,garden_clean,دلو,thoob,tho
@@ -27164,6 +27483,10 @@ hmn,hmn_0177,3,n,home,garden_clean,مشط حديقة,rawg txhuam nyom,raw-chu-ny
 hmn,hmn_0178,3,n,home,garden_clean,عربة يدوية,lub laub,lu-lau
 hmn,hmn_0179,3,n,home,garden_clean,سماد طبيعي,chiv,chee
 hmn,hmn_0180,3,n,home,garden_clean,مقص تقليم,khiab txiav paj,kia-cia-pa
+hmn,hmn_0660,1,n,home,garden_clean,شجرة,tsob ntoo,/tsɔ pʰɔ/
+hmn,hmn_0661,1,n,home,garden_clean,بوابة,rooj vag,/ʐɔŋ vaŋ/
+hmn,hmn_0662,1,n,home,garden_clean,تربة,av,/a/
+hmn,hmn_0663,2,n,home,garden_clean,ممسحة أرضية,txhuam,/tʃu̯aŋ/
 hmn,hmn_0026,1,n,home,kitchen,مطبخ,chav ua mov,tsa ua mo
 hmn,hmn_0027,1,n,home,kitchen,طبق,phaj,pha
 hmn,hmn_0028,1,n,home,kitchen,كوب,khob,kho
@@ -27269,6 +27592,20 @@ hmn,hmn_0291,3,n,life,clothing,سحاب,zib,zi
 hmn,hmn_0292,3,n,life,clothing,ياقة,caj dab tsho,ca-da-cho
 hmn,hmn_0293,3,n,life,clothing,كم القميص,tes tsho,te-cho
 hmn,hmn_0294,3,n,life,clothing,مظلة مطر,kaus mom,kau-mo
+hmn,hmn_0664,1,n,life,clothing,قميص,tsho,/tʃɔ/
+hmn,hmn_0665,1,n,life,clothing,بنطال,ris,/ʐi/
+hmn,hmn_0666,1,n,life,clothing,حذاء,khau,/kʰau̯/
+hmn,hmn_0667,1,n,life,clothing,جورب,moos,/mɔ/
+hmn,hmn_0668,1,n,life,clothing,معطف,tsho loj,/tʃɔ lɔj/
+hmn,hmn_0669,1,n,life,clothing,سترة,tsho tswv,/tʃɔ tʃu̯ə/
+hmn,hmn_0670,1,n,life,clothing,قبعة,mom,/mɔŋ/
+hmn,hmn_0671,1,n,life,clothing,فستان,tiab,/ti̯a/
+hmn,hmn_0672,1,n,life,clothing,تنورة,tiab luv,/ti̯a lu/
+hmn,hmn_0673,1,n,life,clothing,حزام,siv,/si/
+hmn,hmn_0674,1,n,life,clothing,حقيبة,hnab,/n̥a/
+hmn,hmn_0675,1,n,life,clothing,نظارات,tsom iav,/tsɔ i̯a/
+hmn,hmn_0676,2,n,life,clothing,كنزة صوفية,tsho plaub,/tʃɔ plau̯/
+hmn,hmn_0677,2,n,life,clothing,وشاح,phuab,/pʰu̯a/
 hmn,hmn_0327,1,n,life,family_traits,عائلة,tsev neeg,tsɛ nɛ
 hmn,hmn_0328,1,n,life,family_traits,أب,txiv,tsǐ
 hmn,hmn_0329,1,n,life,family_traits,أم,niam,nǐa
@@ -27329,6 +27666,10 @@ hmn,hmn_0237,2,n,life,food_drink,فطور,noj tshais,no tshai
 hmn,hmn_0238,2,n,life,food_drink,غداء,noj su,no su
 hmn,hmn_0239,2,n,life,food_drink,عشاء,noj hmo,no hmo
 hmn,hmn_0240,3,n,life,food_drink,وجبة خفيفة,khoom noj txom ncauj,kho no tso ntsau
+hmn,hmn_0678,1,n,life,food_drink,بيضة,qe,/qɛ/
+hmn,hmn_0679,1,n,life,food_drink,سمك,ntses,/ntse/
+hmn,hmn_0680,3,n,life,food_drink,حساء مرق,kua ntses,/ku̯a ntse/
+hmn,hmn_0681,3,n,life,food_drink,عجينة,hmoov,/n̥u̯ɔ/
 hmn,hmn_0181,1,n,life,produce,تفاحة,txiv apple,chee-ah-pul
 hmn,hmn_0182,1,n,life,produce,موزة,txiv tsawb,chee-tsau
 hmn,hmn_0183,1,n,life,produce,عنب,txiv hmab,chee-hma
@@ -27361,6 +27702,30 @@ hmn,hmn_0209,3,n,life,produce,بروكلي,zaub paj,zau pa
 hmn,hmn_0210,3,n,life,produce,قرنبيط,zaub paj dawb,zau pa dw
 hmn,hmn_0211,3,n,life,produce,فجل,taub dag,tau da
 hmn,hmn_0212,3,n,life,produce,كرفس,zaub txhwb,zau tshw
+hmn,hmn_0682,1,n,life,spices_grains,أرز,mov,/mɔ/
+hmn,hmn_0683,1,n,life,spices_grains,ملح,ntsev,/ntse/
+hmn,hmn_0684,1,n,life,spices_grains,سكر,piam,/pi̯a/
+hmn,hmn_0685,1,n,life,spices_grains,دقيق,hmoov nplej,/n̥u̯ɔ ple/
+hmn,hmn_0686,1,n,life,spices_grains,فلفل أسود,kua txob,/ku̯a tʃɔ/
+hmn,hmn_0687,1,n,life,spices_grains,قمح,nplej,/nple/
+hmn,hmn_0688,1,n,life,spices_grains,فاصوليا,taub,/tau̯/
+hmn,hmn_0689,2,n,life,spices_grains,عدس,taum,/tau̯ŋ/
+hmn,hmn_0690,2,n,life,spices_grains,حمص,taum npleg,/tau̯ nplɛ/
+hmn,hmn_0691,2,n,life,spices_grains,شوفان,zov,/zɔ/
+hmn,hmn_0692,2,n,life,spices_grains,شعير,nplej tuam,/nple tu̯aŋ/
+hmn,hmn_0693,2,n,life,spices_grains,قرفة,ntoo tsis,/tʰɔ tsi/
+hmn,hmn_0694,2,n,life,spices_grains,كمون,cumin,/ku min/
+hmn,hmn_0695,2,n,life,spices_grains,نعناع,txiv,/tʃi/
+hmn,hmn_0696,2,n,life,spices_grains,زعتر,zaub,/zau̯/
+hmn,hmn_0697,2,n,life,spices_grains,زنجبيل,qhiav,/qi̯a/
+hmn,hmn_0698,2,n,life,spices_grains,سمسم,tshaus,/tʃau̯s/
+hmn,hmn_0699,2,n,life,spices_grains,لوز,txiv ntoo,/tʃi pʰɔ/
+hmn,hmn_0700,2,n,life,spices_grains,جوز,txiv ntuj,/tʃi ntuz/
+hmn,hmn_0701,3,n,life,spices_grains,كركم,turmeric,/tuɹ mɛɹ ik/
+hmn,hmn_0702,3,n,life,spices_grains,هيل,cardamom,/kaɹ da mɔm/
+hmn,hmn_0703,3,n,life,spices_grains,قرنفل,clove,/klɔv/
+hmn,hmn_0704,3,n,life,spices_grains,كزبرة,coriander,/kɔ ɹi an dɛɹ/
+hmn,hmn_0705,3,n,life,spices_grains,بقدونس,parsley,/pɑɹ sli/
 hmn,hmn_0451,1,v,study,core_verbs,يقرأ,nyeem,nye
 hmn,hmn_0453,1,v,study,core_verbs,يتعلم,kawm,kau
 hmn,hmn_0454,1,v,study,core_verbs,يدرس,kawm ntawv,kau-nta
@@ -27393,6 +27758,9 @@ hmn,hmn_0482,3,v,study,core_verbs,يقارن,muab piv,mua pi
 hmn,hmn_0483,3,v,study,core_verbs,ينظم,teeb tsa,te tsa
 hmn,hmn_0484,3,v,study,core_verbs,يحسن,txhim kho,tshi ko
 hmn,hmn_0485,3,v,study,core_verbs,يكتشف,nrhiav tau,nrhia tau
+hmn,hmn_0706,1,v,study,core_verbs,يكتب,sau,/sau̯/
+hmn,hmn_0707,2,v,study,core_verbs,يتذكر,nco,/ncɔ/
+hmn,hmn_0708,2,v,study,core_verbs,يبني,tsim,/tsim/
 hmn,hmn_0486,1,n,study,grammar_links,أنا,kuv,ku
 hmn,hmn_0487,1,n,study,grammar_links,أنت,koj,ko
 hmn,hmn_0488,1,n,study,grammar_links,نحن,peb,pe
@@ -27420,6 +27788,9 @@ hmn,hmn_0512,2,adv,study,grammar_links,ببطء,maj mam,ma ma
 hmn,hmn_0513,3,adv,study,grammar_links,ومع ذلك,txawm li cas los,tsau li ka lo
 hmn,hmn_0514,3,adv,study,grammar_links,لذلك,yog li ntawd,yo li tau
 hmn,hmn_0515,3,adv,study,grammar_links,بينما,thaum ntawd,thau tau
+hmn,hmn_0709,1,n,study,grammar_links,هو,nws,/n̥uə̯s/
+hmn,hmn_0710,1,n,study,grammar_links,هي,nws,/n̥uə̯s/
+hmn,hmn_0711,1,adv,study,grammar_links,معاً,ua keeg,/uə̯ keŋ/
 hmn,hmn_0421,1,n,study,numbers_time,صفر,xoom,som
 hmn,hmn_0423,1,n,study,numbers_time,عشرة,kaum,kau
 hmn,hmn_0425,1,n,study,numbers_time,ألف,txhiab,chia
@@ -27447,6 +27818,9 @@ hmn,hmn_0447,2,n,study,numbers_time,فصل الشتاء,lub caij ntuj no,lu-cai-
 hmn,hmn_0448,3,n,study,numbers_time,عقد زمني,kaum xyoo,kau-xyo
 hmn,hmn_0449,3,n,study,numbers_time,قرن زمني,ib puas xyoo,ee-pua-xyo
 hmn,hmn_0450,3,n,study,numbers_time,موعد نهائي,hnub kawg,nu-ka
+hmn,hmn_0712,1,n,study,numbers_time,واحد,ib,/iʔ/
+hmn,hmn_0713,1,n,study,numbers_time,مئة,pua,/puə̯/
+hmn,hmn_0714,1,n,study,numbers_time,شهر,hli,/hlḭ/
 hmn,hmn_0391,1,n,study,office_tech,حاسوب,lub computer,lu-kom-pyu-te
 hmn,hmn_0392,1,n,study,office_tech,هاتف,xov tooj,sho-to
 hmn,hmn_0393,1,n,study,office_tech,شاشة,lub npo,lu-po
@@ -27476,6 +27850,7 @@ hmn,hmn_0417,3,n,study,office_tech,عتاد حاسوب,hardware,ha-we
 hmn,hmn_0418,3,n,study,office_tech,قاعدة بيانات,chaw khaws ntaub ntawv,cha kau nta nta
 hmn,hmn_0419,3,n,study,office_tech,نسخة احتياطية,backup,bak-ap
 hmn,hmn_0420,3,n,study,office_tech,تحديث,hloov tshiab,hlo chia
+hmn,hmn_0715,1,n,study,office_tech,بطارية,roj tsab,/ʐɔi̯ tsaβ/
 hmn,hmn_0516,1,phr,study,polite_phrases,مرحباً,nyob zoo,nyo zo
 hmn,hmn_0517,1,phr,study,polite_phrases,صباح الخير,nyob zoo sawv ntxov,nyo zo sau ntsau
 hmn,hmn_0518,1,phr,study,polite_phrases,مساء الخير,nyob zoo tsaus ntuj,nyo zo tsau ntu
@@ -27560,6 +27935,7 @@ hmn,hmn_0597,3,n,world,animals_plants,بطريق,noog dej,no-de
 hmn,hmn_0598,3,n,world,animals_plants,صقر,dav hlau,da-hla
 hmn,hmn_0599,3,n,world,animals_plants,نخلة,ntoo xib,nto-xi
 hmn,hmn_0600,3,n,world,animals_plants,مرجان,pob zeb hiav txwv,po-ze-hia-twa
+hmn,hmn_0716,1,n,world,animals_plants,بطة,kaj,/kaḭ/
 hmn,hmn_0631,1,n,world,city_directions,مدينة,lub nroog,lu nro
 hmn,hmn_0632,1,n,world,city_directions,قرية,zog,zo
 hmn,hmn_0633,1,n,world,city_directions,شارع,kev,ke
@@ -27589,6 +27965,7 @@ hmn,hmn_0657,3,n,world,city_directions,موقف سيارات,chaw nres tsheb,cha
 hmn,hmn_0658,3,n,world,city_directions,حي سكني,zog,zo
 hmn,hmn_0659,3,n,world,city_directions,نفق,qhov tsua,kho tsua
 hmn,hmn_0660,3,n,world,city_directions,ممر مشاة,chaw hla kev,cha la ke
+hmn,hmn_0717,1,n,world,city_directions,سوق,khwv,/kʰwɯ̃/
 hmn,hmn_0661,1,n,world,jobs_sports,طبيب,kws kho mob,kwa kho mo
 hmn,hmn_0662,1,n,world,jobs_sports,مهندس,kws tsim qauv,kwa tsi kau
 hmn,hmn_0663,1,n,world,jobs_sports,ممرض,kws saib xyuas mob,kwa sai xu mo
@@ -27645,7 +28022,9 @@ hmn,hmn_0715,2,n,world,materials_shop,بائع,tus muag khoom,tu mua kho
 hmn,hmn_0716,2,n,world,materials_shop,جودة,zoo,zo
 hmn,hmn_0717,3,n,world,materials_shop,ألمنيوم,alumin,a-lu-min
 hmn,hmn_0718,3,n,world,materials_shop,رخام,pob zeb marble,po ze mar-ble
+hmn,hmn_0718,1,n,world,materials_shop,معدن,hlau,/hlau̯/
 hmn,hmn_0719,3,n,world,materials_shop,ضمان منتج,lav,la
+hmn,hmn_0719,1,n,world,materials_shop,سعر,nqe,/ɳqɘ/
 hmn,hmn_0720,3,n,world,materials_shop,فاتورة,daim nqi,dai nqi
 hmn,hmn_0541,1,n,world,nature_weather,شمس,hnub,nu
 hmn,hmn_0542,1,n,world,nature_weather,قمر,hli,li
@@ -27676,6 +28055,7 @@ hmn,hmn_0567,3,n,world,nature_weather,مناخ,huab cua,hua-cua
 hmn,hmn_0568,3,n,world,nature_weather,رطوبة,dej noo,de-no
 hmn,hmn_0569,3,n,world,nature_weather,أفق,ntug,ntu
 hmn,hmn_0570,3,n,world,nature_weather,نسيم عليل,cua daj,cua-da
+hmn,hmn_0720,1,n,world,nature_weather,رياح,cua,/tsuə̯/
 hmn,hmn_0601,1,n,world,transport_travel,سيارة,tsheb,tshe
 hmn,hmn_0602,1,n,world,transport_travel,حافلة,tsheb npav,tshe mpa
 hmn,hmn_0603,1,n,world,transport_travel,قطار,tsheb ciav hlau,tshe cia hla
@@ -27823,6 +28203,10 @@ hr,hr_0176,3,n,home,garden_clean,جزازة عشب,kosilica,kosilit͡sa
 hr,hr_0177,3,n,home,garden_clean,مشط حديقة,grablje,ɡrablje
 hr,hr_0178,3,n,home,garden_clean,عربة يدوية,tačke,tat͡ʃke
 hr,hr_0180,3,n,home,garden_clean,مقص تقليم,škare za obrezivanje,ʃkare za obreziʋanje
+hr,hr_0643,1,n,home,garden_clean,تربة,zemlja,/zěmlja/
+hr,hr_0644,2,n,home,garden_clean,ممسحة أرضية,metla,/mêtla/
+hr,hr_0645,2,n,home,garden_clean,مجرفة,lopata,/lòpata/
+hr,hr_0646,3,n,home,garden_clean,سماد طبيعي,kompost,/kȍmpost/
 hr,hr_0026,1,n,home,kitchen,مطبخ,kuhinja,/kûhiɲa/
 hr,hr_0027,1,n,home,kitchen,طبق,tanjur,/tâɲur/
 hr,hr_0028,1,n,home,kitchen,كوب,šalica,/ʃǎlitsa/
@@ -28031,6 +28415,13 @@ hr,hr_0209,3,n,life,produce,بروكلي,brokula,/brǒkula/
 hr,hr_0210,3,n,life,produce,قرنبيط,cvjetača,/t͡sʋjětat͡ʃa/
 hr,hr_0211,3,n,life,produce,فجل,rotkvica,/rôtkʋit͡sa/
 hr,hr_0212,3,n,life,produce,كرفس,celer,/t͡sêler/
+hr,hr_0647,1,n,life,produce,تفاحة,jabuka,/jǎbuka/
+hr,hr_0648,1,n,life,produce,موزة,banana,/bǎnaːna/
+hr,hr_0649,1,n,life,produce,ليمون,limun,/lîmun/
+hr,hr_0650,1,n,life,produce,بصل,luk,/lûːk/
+hr,hr_0651,1,n,life,produce,خس,salata,/salǎta/
+hr,hr_0652,1,n,life,produce,ذرة,kukuruz,/kukùruz/
+hr,hr_0653,2,n,life,produce,أناناس,ananas,/ànanas/
 hr,hr_0243,1,n,life,spices_grains,أرز,riža,/rîʒa/
 hr,hr_0244,1,n,life,spices_grains,ملح,sol,/sôl/
 hr,hr_0245,1,n,life,spices_grains,سكر,šećer,/ʃêt͡ɕer/
@@ -28085,6 +28476,41 @@ hr,hr_0477,2,v,study,core_verbs,يبدأ,početi,/pot͡ʃêti/
 hr,hr_0478,2,v,study,core_verbs,ينهي,završiti,/zavr̂ʃiti/
 hr,hr_0479,2,v,study,core_verbs,يبني,graditi,/grǎditi/
 hr,hr_0480,2,v,study,core_verbs,يختار,birati,/bǐrati/
+hr,hr_0654,3,v,study,core_verbs,يحلل,analizirati,/analizǐrati/
+hr,hr_0655,3,v,study,core_verbs,يقارن,usporediti,/uspòrediti/
+hr,hr_0656,3,v,study,core_verbs,ينظم,organizirati,/organizǐrati/
+hr,hr_0657,3,v,study,core_verbs,يحسن,poboljšati,/pobòljšati/
+hr,hr_0658,3,v,study,core_verbs,يكتشف,otkriti,/ôtkriti/
+hr,hr_0659,1,n,study,grammar_links,أنا,ja,/jà/
+hr,hr_0660,1,n,study,grammar_links,أنت,ti,/tî/
+hr,hr_0661,1,n,study,grammar_links,نحن,mi,/mî/
+hr,hr_0662,1,n,study,grammar_links,هو,on,/ȏn/
+hr,hr_0663,1,n,study,grammar_links,هي,ona,/ôna/
+hr,hr_0664,1,n,study,grammar_links,هم,oni,/ôni/
+hr,hr_0665,1,adv,study,grammar_links,هنا,ovdje,/ôvde/
+hr,hr_0666,1,adv,study,grammar_links,هناك,tamo,/tâmo/
+hr,hr_0667,1,adv,study,grammar_links,الآن,sada,/sǎda/
+hr,hr_0668,1,adv,study,grammar_links,دائماً,uvijek,/ûvijek/
+hr,hr_0669,1,adv,study,grammar_links,أبداً,nikada,/nǐkada/
+hr,hr_0670,1,adv,study,grammar_links,معاً,zajedno,/zajèdno/
+hr,hr_0671,1,adv,study,grammar_links,و,i,/î/
+hr,hr_0672,1,adv,study,grammar_links,أو,ili,/îli/
+hr,hr_0673,1,adv,study,grammar_links,لكن,ali,/âli/
+hr,hr_0674,1,adv,study,grammar_links,لأن,jer,/jêr/
+hr,hr_0675,1,adv,study,grammar_links,في,u,/û/
+hr,hr_0676,1,adv,study,grammar_links,على,na,/nâ/
+hr,hr_0677,1,adv,study,grammar_links,تحت,ispod,/îspod/
+hr,hr_0678,2,adv,study,grammar_links,بين,između,/îzmɛdu/
+hr,hr_0679,2,adv,study,grammar_links,قبل,prije,/prîje/
+hr,hr_0680,2,adv,study,grammar_links,بعد,nakon,/nǎkon/
+hr,hr_0681,2,adv,study,grammar_links,خلال,tijekom,/tǐjekom/
+hr,hr_0682,2,adv,study,grammar_links,أحياناً,ponekad,/pônekad/
+hr,hr_0683,2,adv,study,grammar_links,غالباً,često,/čêsto/
+hr,hr_0684,2,adv,study,grammar_links,سريعاً,brzo,/br̂zo/
+hr,hr_0685,2,adv,study,grammar_links,ببطء,polako,/polǎko/
+hr,hr_0686,3,adv,study,grammar_links,ومع ذلك,međutim,/međùtim/
+hr,hr_0687,3,adv,study,grammar_links,لذلك,stoga,/stôga/
+hr,hr_0688,3,adv,study,grammar_links,بينما,u međuvremenu,/û mèđuvrɛmenu/
 hr,hr_0421,1,n,study,numbers_time,صفر,nula,/nula/
 hr,hr_0422,1,n,study,numbers_time,واحد,jedan,/jedan/
 hr,hr_0423,1,n,study,numbers_time,عشرة,deset,/deset/
@@ -28163,6 +28589,13 @@ hr,hr_0537,3,phr,study,polite_phrases,هل يمكنك المساعدة,možete l
 hr,hr_0538,3,phr,study,polite_phrases,يوم سعيد لك,ugodan dan,ûɡodan dâːn
 hr,hr_0539,3,phr,study,polite_phrases,أتمنى لك التوفيق,želim vam uspjeh,ʒêlim ʋâm ǔspjeh
 hr,hr_0540,3,phr,study,polite_phrases,أشكرك جزيلاً,hvala lijepa,hʋǎːla lijěːpa
+hr,hr_0689,1,phr,study,polite_phrases,مرحباً,bok,/bôk/
+hr,hr_0690,1,phr,study,polite_phrases,صباح الخير,dobro jutro,/dòbro jûtro/
+hr,hr_0691,1,phr,study,polite_phrases,مساء الخير,dobra večer,/dòbra vêtʃer/
+hr,hr_0692,1,phr,study,polite_phrases,تصبح على خير,laku noć,/lâku nôtɕ/
+hr,hr_0693,1,phr,study,polite_phrases,من فضلك,molim,/môlim/
+hr,hr_0694,1,phr,study,polite_phrases,نعم,da,/dâ/
+hr,hr_0695,1,phr,study,polite_phrases,لا,ne,/nê/
 hr,hr_0361,1,n,study,school,مدرسة,škola,/ʃkɔːla/
 hr,hr_0362,1,n,study,school,كتاب,knjiga,/kɲiːɡa/
 hr,hr_0363,1,n,study,school,دفتر,bilježnica,/biʎeʒnit͡sa/
@@ -28252,6 +28685,7 @@ hr,hr_0657,3,n,world,city_directions,موقف سيارات,parkiralište,/parkî
 hr,hr_0658,3,n,world,city_directions,حي سكني,naselje,/nasêlje/
 hr,hr_0659,3,n,world,city_directions,نفق,tunel,/tûnêl/
 hr,hr_0660,3,n,world,city_directions,ممر مشاة,pješački,/pjêʃatʃki/
+hr,hr_0696,1,n,world,city_directions,سوق,tržnica,/trʃnit͡sa/
 hr,hr_0661,1,n,world,jobs_sports,طبيب,liječnik,/lijêtʃnik/
 hr,hr_0662,1,n,world,jobs_sports,مهندس,inženjer,/inʒênjer/
 hr,hr_0663,1,n,world,jobs_sports,ممرض,medicinska sestra,/medîcinska sêstra/
@@ -28276,6 +28710,12 @@ hr,hr_0681,2,n,world,jobs_sports,سباك,vodoinstalater,ʋodoinstalater
 hr,hr_0685,2,n,world,jobs_sports,ركوب الدراجات,biciklizam,bitsiklizam
 hr,hr_0688,3,n,world,jobs_sports,مترجم,prevoditelj,preʋoditelj
 hr,hr_0689,3,n,world,jobs_sports,رماية بالقوس,streličarstvo,streliːtʃarstvo
+hr,hr_0697,2,n,world,jobs_sports,مدرب رياضي,trener,/trěaner/
+hr,hr_0698,2,n,world,jobs_sports,كرة طائرة,odbojka,/odbojka/
+hr,hr_0699,2,n,world,jobs_sports,تنس,tenis,/těnis/
+hr,hr_0700,2,n,world,jobs_sports,تسلق الجبال,planinarenje,/planinarěnje/
+hr,hr_0701,3,n,world,jobs_sports,صيدلي,ljekarnik,/ljěkaɾnik/
+hr,hr_0702,3,n,world,jobs_sports,ميدالية,medalja,/medɑlja/
 hr,hr_0691,1,n,world,materials_shop,خشب,drvo,drʋo
 hr,hr_0696,1,n,world,materials_shop,صوف,vuna,ʋuna
 hr,hr_0697,1,n,world,materials_shop,جلد طبيعي,koža,koʒa
@@ -28283,12 +28723,29 @@ hr,hr_0698,1,n,world,materials_shop,سعر,cijena,tsijena
 hr,hr_0699,1,n,world,materials_shop,نقود,novac,noʋats
 hr,hr_0701,1,n,world,materials_shop,وزن,težina,teʒina
 hr,hr_0702,1,n,world,materials_shop,حجم,veličina,ʋelitʃina
+hr,hr_0703,1,n,world,materials_shop,معدن,metal,/mětal/
+hr,hr_0704,1,n,world,materials_shop,بلاستيك,plastika,/plastika/
+hr,hr_0705,1,n,world,materials_shop,حجر,kamen,/kaměn/
 hr,hr_0706,2,n,world,materials_shop,حرير,svila,sʋila
+hr,hr_0706,1,n,world,materials_shop,قطن,pamuk,/pamuk/
+hr,hr_0707,1,n,world,materials_shop,صندوق,kutija,/kutija/
 hr,hr_0708,2,n,world,materials_shop,فولاذ,čelik,tʃelik
+hr,hr_0708,1,n,world,materials_shop,طول,duljina,/duljina/
+hr,hr_0709,1,n,world,materials_shop,متر,metar,/metar/
+hr,hr_0710,1,n,world,materials_shop,كيلوغرام,kilogram,/kilogram/
+hr,hr_0711,2,n,world,materials_shop,مطاط,guma,/guma/
 hr,hr_0712,2,n,world,materials_shop,إيصال شراء,račun,ratʃun
+hr,hr_0712,2,n,world,materials_shop,نحاس,bakar,/bakar/
+hr,hr_0713,2,n,world,materials_shop,طين,glina,/glina/
 hr,hr_0714,2,n,world,materials_shop,زبون,kupac,kupats
+hr,hr_0714,2,n,world,materials_shop,رمل,pijesak,/pijěsak/
 hr,hr_0715,2,n,world,materials_shop,بائع,prodavač,prodaʋatʃ
+hr,hr_0715,2,n,world,materials_shop,خصم سعر,popust,/popust/
 hr,hr_0716,2,n,world,materials_shop,جودة,kvaliteta,kʋaliteta
+hr,hr_0716,3,n,world,materials_shop,ألمنيوم,aluminij,/aluminij/
+hr,hr_0717,3,n,world,materials_shop,رخام,mramor,/mramor/
+hr,hr_0718,3,n,world,materials_shop,ضمان منتج,jamstvo,/jamstvo/
+hr,hr_0719,3,n,world,materials_shop,فاتورة,račun,/račun/
 hr,hr_0541,1,n,world,nature_weather,شمس,sunce,sûntse
 hr,hr_0542,1,n,world,nature_weather,قمر,mjesec,mjêsets
 hr,hr_0543,1,n,world,nature_weather,نجم,zvijezda,zʋijěːzda
@@ -28348,6 +28805,7 @@ hr,hr_0627,3,n,world,transport_travel,وجهة سفر,odredište,odrèdište
 hr,hr_0628,3,n,world,transport_travel,مغادرة,polazak,polâzak
 hr,hr_0629,3,n,world,transport_travel,وصول,dolazak,dolâzak
 hr,hr_0630,3,n,world,transport_travel,بوصلة,kompas,kòmpas
+hr,hr_0720,1,n,world,transport_travel,قطار,vlak,/vlak/
 ht,ht_0129,1,n,home,appliances,ثلاجة,frijidè,/fʁi.ʒi.dɛ/
 ht,ht_0130,1,n,home,appliances,فرن,fou,/fu/
 ht,ht_0131,1,n,home,appliances,موقد,recho,/ʁə.ʃo/
@@ -28395,6 +28853,7 @@ ht,ht_0076,3,n,home,bathroom,مغسلة يدين,lavabo,la-va-bo
 ht,ht_0077,3,n,home,bathroom,خيط أسنان,fil-dan,fil-dã
 ht,ht_0078,3,n,home,bathroom,غسول فم,ben-bouch,bẽ-boush
 ht,ht_0079,3,n,home,bathroom,مصرف ماء,dren,drẽ
+ht,ht_0537,1,n,home,bathroom,مرآة,glas,/ɡlas/
 ht,ht_0080,1,n,home,bedroom,غرفة نوم,chanm,shãm
 ht,ht_0081,1,n,home,bedroom,سرير,kabann,ka-bã
 ht,ht_0082,1,n,home,bedroom,وسادة,zorye,zo-rye
@@ -28416,9 +28875,32 @@ ht,ht_0098,3,n,home,bedroom,مفرش سرير,kouvèti kabann,kou-vè-ti ka-bã
 ht,ht_0099,3,n,home,bedroom,لوح رأس السرير,tèt kabann,tèt ka-bã
 ht,ht_0100,3,n,home,bedroom,طاولة زينة,tab twalèt,tab twa-lèt
 ht,ht_0101,3,n,home,bedroom,ستائر معتمة,rido nwa,ri-do nwa
+ht,ht_0538,1,n,home,bedroom,ملاءة سرير,drapo kabann,/dʁapo kaband/
 ht,ht_0015,2,adj,home,colors,كحلي,ble fonse,ble fonsé
 ht,ht_0018,2,adj,home,colors,عنابي,mawon fonse,mawon fonsé
 ht,ht_0021,2,adj,home,colors,داكن,fonse,fonsé
+ht,ht_0539,1,adj,home,colors,أحمر,wouj,/wuzh/
+ht,ht_0540,1,adj,home,colors,أزرق,ble,/ble/
+ht,ht_0541,1,adj,home,colors,أخضر,vèt,/vɛt/
+ht,ht_0542,1,adj,home,colors,أصفر,ja,/ja/
+ht,ht_0543,1,adj,home,colors,أبيض,blan,/blan/
+ht,ht_0544,1,adj,home,colors,أسود,nwa,/nwa/
+ht,ht_0545,1,adj,home,colors,برتقالي,oran,/oʁan/
+ht,ht_0546,1,adj,home,colors,وردي,wouj woz,/wuzh woz/
+ht,ht_0547,1,adj,home,colors,بنفسجي,vyolèt,/vjolet/
+ht,ht_0548,1,adj,home,colors,بني,bren,/bʁen/
+ht,ht_0549,1,adj,home,colors,رمادي,gri,/ɡʁi/
+ht,ht_0550,1,adj,home,colors,ذهبي,lò,/lɔ/
+ht,ht_0551,1,adj,home,colors,فضي,lajan,/ladjan/
+ht,ht_0552,2,adj,home,colors,بيج,bèj,/bɛdzh/
+ht,ht_0553,2,adj,home,colors,تركوازي,tyèkwaz,/tjɛkwaz/
+ht,ht_0554,2,adj,home,colors,زيتوني,vèt oliv,/vɛt oliv/
+ht,ht_0555,2,adj,home,colors,سماوي,ble syèl,/ble sjɛl/
+ht,ht_0556,2,adj,home,colors,فاتح,klè,/klɛ/
+ht,ht_0557,3,adj,home,colors,قرمزي,wouj fonse,/wuzh fonse/
+ht,ht_0558,3,adj,home,colors,زمردي,vèt emwòd,/vɛt emwɔd/
+ht,ht_0559,3,adj,home,colors,عاجي,koulè ivwa,/kulɛ ivwa/
+ht,ht_0560,3,adj,home,colors,نيلي,ble lannwit,/ble lanwit/
 ht,ht_0155,1,n,home,garden_clean,حديقة,jaden,/ʒa.dɛ̃/
 ht,ht_0156,1,n,home,garden_clean,مكنسة يدوية,baley,/ba.le/
 ht,ht_0157,1,n,home,garden_clean,دلو,bokit,/bɔ.kit/
@@ -28440,6 +28922,11 @@ ht,ht_0175,2,n,home,garden_clean,مشبك غسيل,pikèt,pikɛt
 ht,ht_0176,3,n,home,garden_clean,جزازة عشب,tondez,tɔ̃dɛz
 ht,ht_0178,3,n,home,garden_clean,عربة يدوية,brouèt,bruɛt
 ht,ht_0179,3,n,home,garden_clean,سماد طبيعي,angrè,ɑ̃ɡrɛ
+ht,ht_0561,1,n,home,garden_clean,شجرة,pyebwa,/pjebwa/
+ht,ht_0562,2,n,home,garden_clean,مرشة ماء,wozWA,/wozwa/
+ht,ht_0563,2,n,home,garden_clean,منفضة غبار,plum,/plum/
+ht,ht_0564,3,n,home,garden_clean,مشط حديقة,rak,/rak/
+ht,ht_0565,3,n,home,garden_clean,مقص تقليم,sizo jaden,/sizo zhaden/
 ht,ht_0041,2,n,home,kitchen,لوح تقطيع,planche,plãsh
 ht,ht_0042,2,n,home,kitchen,مصفاة,paswa,pas-wa
 ht,ht_0044,2,n,home,kitchen,مغرفة,louch,loush
@@ -28455,6 +28942,23 @@ ht,ht_0054,3,n,home,kitchen,مصفاة معكرونة,paswa,pas-wa
 ht,ht_0055,3,n,home,kitchen,ملاقط طعام,pens,pẽs
 ht,ht_0056,3,n,home,kitchen,فتاحة علب,ouvri-bwat,ou-vri-bwat
 ht,ht_0057,3,n,home,kitchen,مخزن المؤن,depo,de-po
+ht,ht_0566,1,n,home,kitchen,مطبخ,kuizin,/kuizin/
+ht,ht_0567,1,n,home,kitchen,طبق,assiette,/asjɛt/
+ht,ht_0568,1,n,home,kitchen,كأس زجاجي,vè,/vɛ/
+ht,ht_0569,1,n,home,kitchen,ملعقة,kouto,/kuto/
+ht,ht_0570,1,n,home,kitchen,شوكة,fouchèt,/fuʃɛt/
+ht,ht_0571,1,n,home,kitchen,سكين طعام,kouto tab,/kuto tab/
+ht,ht_0572,1,n,home,kitchen,وعاء عميق,bòl,/bɔl/
+ht,ht_0573,1,n,home,kitchen,قدر طبخ,kòd,/kɔd/
+ht,ht_0574,1,n,home,kitchen,مقلاة,fò,/fɔ/
+ht,ht_0575,1,n,home,kitchen,إبريق شاي,kafe,/kafe/
+ht,ht_0576,1,n,home,kitchen,فنجان كبير,mok,/mok/
+ht,ht_0577,1,n,home,kitchen,صينية,plato,/plato/
+ht,ht_0578,1,n,home,kitchen,حوض المطبخ,evye,/evje/
+ht,ht_0579,1,n,home,kitchen,صنبور,tiyo,/tijo/
+ht,ht_0580,2,n,home,kitchen,مبشرة,rape,/ʁape/
+ht,ht_0581,3,n,home,kitchen,خفاقة يدوية,fwe,/fwe/
+ht,ht_0586,1,n,home,kitchen,كوب,tas,/tas/
 ht,ht_0102,1,n,home,living,غرفة معيشة,salon,sa-lõ
 ht,ht_0103,1,n,home,living,أريكة,kanape,ka-na-pe
 ht,ht_0106,1,n,home,living,سجادة,tapi,ta-pi
@@ -28478,6 +28982,10 @@ ht,ht_0125,2,n,home,living,قفل,kadna,/kad.na/
 ht,ht_0126,3,n,home,living,ثريا,lust,/lys/
 ht,ht_0127,3,n,home,living,مسند قدمين,repòpye,/ʁə.pɔ.pje/
 ht,ht_0128,3,n,home,living,ستائر شرائح,vlet,/vle/
+ht,ht_0582,1,n,home,living,كرسي,chèz,/ʃɛz/
+ht,ht_0583,1,n,home,living,طاولة,tab,/tab/
+ht,ht_0584,1,n,home,living,باب,pòt,/pɔt/
+ht,ht_0585,1,n,home,living,مفتاح,kle,/kle/
 ht,ht_0295,1,n,life,body_health,رأس,tèt,tɛt
 ht,ht_0296,1,n,life,body_health,وجه,figi,fiɡi
 ht,ht_0298,1,n,life,body_health,أذن,zòrèy,zɔrɛj
@@ -28507,6 +29015,9 @@ ht,ht_0323,2,n,life,body_health,صداع,maltèt,mal-tèt
 ht,ht_0324,3,n,life,body_health,ضمادة,bandaj,ban-daj
 ht,ht_0325,3,n,life,body_health,فيتامين,vitamin,vi-ta-min
 ht,ht_0326,3,n,life,body_health,مناعة,iminite,i-mi-ni-te
+ht,ht_0587,1,n,life,body_health,عين,je,/ʒe/
+ht,ht_0588,1,n,life,body_health,ذراع,bra,/bɾa/
+ht,ht_0589,2,n,life,body_health,ظهر,do,/do/
 ht,ht_0267,1,n,life,clothing,قميص,chemiz,ʃə-miz
 ht,ht_0268,1,n,life,clothing,بنطال,pantalon,pɑ̃-ta-lɔ̃
 ht,ht_0269,1,n,life,clothing,حذاء,soulye,su-je
@@ -28531,6 +29042,10 @@ ht,ht_0290,2,n,life,clothing,زر,bouton,butɔ̃
 ht,ht_0291,3,n,life,clothing,سحاب,fèmetir,fɛmetir
 ht,ht_0292,3,n,life,clothing,ياقة,kòl,kɔl
 ht,ht_0293,3,n,life,clothing,كم القميص,manch,mɑ̃ʃ
+ht,ht_0590,1,n,life,clothing,حقيبة,sak,/sak/
+ht,ht_0591,2,n,life,clothing,حذاء رياضي,tennis,/tenis/
+ht,ht_0592,2,n,life,clothing,ربطة عنق,gravat,/ɡravat/
+ht,ht_0593,3,n,life,clothing,مظلة مطر,parapli,/paɾapli/
 ht,ht_0327,1,n,life,family_traits,عائلة,fanmi,fan-mi
 ht,ht_0328,1,n,life,family_traits,أب,papa,pa-pa
 ht,ht_0329,1,n,life,family_traits,أم,manman,man-man
@@ -28560,6 +29075,11 @@ ht,ht_0356,3,adj,life,family_traits,متواضع,emble,em-ble
 ht,ht_0358,3,adj,life,family_traits,مسؤول,responsab,res-pon-sab
 ht,ht_0359,3,adj,life,family_traits,فضولي للعلم,kirye,ki-rye
 ht,ht_0360,3,adj,life,family_traits,مبدع,kreyatif,kre-ya-tif
+ht,ht_0594,1,n,life,family_traits,أخ,frè,/fɾɛ/
+ht,ht_0595,1,adj,life,family_traits,قوي,fò,/fɔ/
+ht,ht_0596,1,adj,life,family_traits,هادئ,kalm,/kalm/
+ht,ht_0635,1,n,life,family_traits,أخت,sè,/sɛ/
+ht,ht_0636,3,adj,life,family_traits,حكيم,saj,/saj/
 ht,ht_0214,1,n,life,food_drink,خبز,pen,pɛ̃
 ht,ht_0215,1,n,life,food_drink,حليب,lèt,lɛt
 ht,ht_0216,1,n,life,food_drink,جبن,fwomaj,fʁomaʒ
@@ -28581,6 +29101,15 @@ ht,ht_0237,2,n,life,food_drink,فطور,dejene,deʒene
 ht,ht_0239,2,n,life,food_drink,عشاء,soupe,supe
 ht,ht_0240,3,n,life,food_drink,وجبة خفيفة,ti goute,ti ɡute
 ht,ht_0241,3,n,life,food_drink,حساء مرق,bouyon,bu-jɔ̃
+ht,ht_0597,1,n,life,food_drink,ماء,dlo,/dlo/
+ht,ht_0598,1,n,life,food_drink,شاي,te,/te/
+ht,ht_0599,1,n,life,food_drink,قهوة,kafe,/kafe/
+ht,ht_0600,1,n,life,food_drink,سلطة,salad,/salad/
+ht,ht_0601,2,n,life,food_drink,معكرونة,pasta,/pasta/
+ht,ht_0602,2,n,life,food_drink,بسكويت,biskuit,/biskɥit/
+ht,ht_0603,2,n,life,food_drink,فطيرة,pat,/pat/
+ht,ht_0604,2,n,life,food_drink,غداء,dine,/dine/
+ht,ht_0605,3,n,life,food_drink,عجينة,pat,/pat/
 ht,ht_0181,1,n,life,produce,تفاحة,pòm,pɔm
 ht,ht_0182,1,n,life,produce,موزة,bannann,banan
 ht,ht_0183,1,n,life,produce,عنب,rezen,rezɛ̃
@@ -28605,6 +29134,14 @@ ht,ht_0209,3,n,life,produce,بروكلي,bwokoli,bʁokoli
 ht,ht_0210,3,n,life,produce,قرنبيط,choufleur,ʃuflœʁ
 ht,ht_0211,3,n,life,produce,فجل,radi,ʁadi
 ht,ht_0212,3,n,life,produce,كرفس,seleri,selɛʁi
+ht,ht_0606,1,n,life,produce,طماطم,tomat,/tomat/
+ht,ht_0607,1,n,life,produce,بطاطس,batat,/batat/
+ht,ht_0608,1,n,life,produce,خس,letti,/leti/
+ht,ht_0609,1,n,life,produce,كمثرى,pwa,/pwa/
+ht,ht_0610,2,n,life,produce,أناناس,anana,/anana/
+ht,ht_0611,2,n,life,produce,مشمش,abriko,/abriko/
+ht,ht_0612,2,n,life,produce,تين,fig,/fiɡ/
+ht,ht_0613,2,n,life,produce,سبانخ,epina,/epina/
 ht,ht_0243,1,n,life,spices_grains,أرز,diri,di-ʁi
 ht,ht_0244,1,n,life,spices_grains,ملح,sèl,sɛl
 ht,ht_0246,1,n,life,spices_grains,دقيق,farin,fa-ʁɛ̃
@@ -28623,6 +29160,12 @@ ht,ht_0263,3,n,life,spices_grains,هيل,kadamòm,ka-da-mɔm
 ht,ht_0264,3,n,life,spices_grains,قرنفل,klou girof,klu ʒi-ʁɔf
 ht,ht_0265,3,n,life,spices_grains,كزبرة,koryand,kɔ-ʁjɑ̃d
 ht,ht_0266,3,n,life,spices_grains,بقدونس,pèsi,pɛ-si
+ht,ht_0614,1,n,life,spices_grains,سكر,sik,/sik/
+ht,ht_0615,1,n,life,spices_grains,فلفل أسود,pwav nwa,/pwav nwa/
+ht,ht_0616,1,n,life,spices_grains,قمح,ble,/ble/
+ht,ht_0617,1,n,life,spices_grains,فاصوليا,pwa,/pwa/
+ht,ht_0618,2,n,life,spices_grains,زعتر,tim,/tim/
+ht,ht_0619,2,n,life,spices_grains,جوز,nwa,/nwa/
 ht,ht_0452,1,v,study,core_verbs,يكتب,ekri,e-kri
 ht,ht_0453,1,v,study,core_verbs,يتعلم,aprann,a-prann
 ht,ht_0454,1,v,study,core_verbs,يدرس,etidye,e-ti-dye
@@ -28654,6 +29197,10 @@ ht,ht_0482,3,v,study,core_verbs,يقارن,konpare,kon-pa-re
 ht,ht_0483,3,v,study,core_verbs,ينظم,òganize,ò-ga-ni-ze
 ht,ht_0484,3,v,study,core_verbs,يحسن,amelyore,a-me-lyo-re
 ht,ht_0485,3,v,study,core_verbs,يكتشف,dekouvri,de-kou-vri
+ht,ht_0620,1,v,study,core_verbs,يقرأ,li,/li/
+ht,ht_0621,1,v,study,core_verbs,يرى,vè,/vɛ/
+ht,ht_0622,1,v,study,core_verbs,يشرب,bwè,/bwɛ/
+ht,ht_0623,1,v,study,core_verbs,يلعب,jwe,/ʒwe/
 ht,ht_0492,1,adv,study,grammar_links,هنا,isit,i-sit
 ht,ht_0494,1,adv,study,grammar_links,الآن,kounye a,koun-ye-a
 ht,ht_0495,1,adv,study,grammar_links,دائماً,toujou,tou-jou
@@ -28671,6 +29218,19 @@ ht,ht_0510,2,adv,study,grammar_links,غالباً,souvan,sou-van
 ht,ht_0512,2,adv,study,grammar_links,ببطء,dousman,dous-man
 ht,ht_0513,3,adv,study,grammar_links,ومع ذلك,sepandan,se-pan-dan
 ht,ht_0515,3,adv,study,grammar_links,بينما,pandan tan sa a,pan-dan-tan-sa-a
+ht,ht_0624,1,n,study,grammar_links,أنا,mwen,/mwɛn/
+ht,ht_0625,1,n,study,grammar_links,أنت,ou,/u/
+ht,ht_0626,1,n,study,grammar_links,نحن,nou,/nu/
+ht,ht_0627,1,n,study,grammar_links,هو,li,/li/
+ht,ht_0628,1,n,study,grammar_links,هي,li,/li/
+ht,ht_0629,1,n,study,grammar_links,هم,yo,/jo/
+ht,ht_0630,1,adv,study,grammar_links,هناك,la,/la/
+ht,ht_0631,1,adv,study,grammar_links,لكن,men,/mɛn/
+ht,ht_0632,1,adv,study,grammar_links,في,nan,/nan/
+ht,ht_0633,1,adv,study,grammar_links,على,sou,/su/
+ht,ht_0634,2,adv,study,grammar_links,بين,ant,/ant/
+ht,ht_0637,2,adv,study,grammar_links,سريعاً,rapidman,/rapidmàn/
+ht,ht_0638,3,adv,study,grammar_links,لذلك,kid kon sa,/kid kò sa/
 ht,ht_0421,1,n,study,numbers_time,صفر,zewo,ze-ro
 ht,ht_0422,1,n,study,numbers_time,واحد,youn,jun
 ht,ht_0424,1,n,study,numbers_time,مئة,san,sɑ̃
@@ -28696,6 +29256,11 @@ ht,ht_0446,2,n,study,numbers_time,فصل الخريف,otòn,o-tòn
 ht,ht_0447,2,n,study,numbers_time,فصل الشتاء,ivè,i-vè
 ht,ht_0448,3,n,study,numbers_time,عقد زمني,disan,di-zan
 ht,ht_0450,3,n,study,numbers_time,موعد نهائي,dat limit,dat li-mit
+ht,ht_0639,1,n,study,numbers_time,عشرة,dis,/dis/
+ht,ht_0640,1,n,study,numbers_time,ألف,mil,/mil/
+ht,ht_0641,1,n,study,numbers_time,ساعة زمنية,èdtan,/ɛdtã/
+ht,ht_0642,1,n,study,numbers_time,شهر,mwa,/mwa/
+ht,ht_0643,3,n,study,numbers_time,قرن زمني,syèk,/sjɛk/
 ht,ht_0391,1,n,study,office_tech,حاسوب,òdinatè,ò-di-na-tè
 ht,ht_0392,1,n,study,office_tech,هاتف,telefòn,te-le-fòn
 ht,ht_0393,1,n,study,office_tech,شاشة,ekran,ek-ran
@@ -28725,6 +29290,7 @@ ht,ht_0417,3,n,study,office_tech,عتاد حاسوب,materyèl,ma-tɛ-rjɛl
 ht,ht_0418,3,n,study,office_tech,قاعدة بيانات,baz done,baz dɔ-ne
 ht,ht_0419,3,n,study,office_tech,نسخة احتياطية,sovgad,sɔv-ɡad
 ht,ht_0420,3,n,study,office_tech,تحديث,mizajou,mi-za-ʒu
+ht,ht_0644,2,n,study,office_tech,مشبك ورق,klip,/klip/
 ht,ht_0516,1,phr,study,polite_phrases,مرحباً,alo,a-lo
 ht,ht_0517,1,phr,study,polite_phrases,صباح الخير,bonjou,bon-jou
 ht,ht_0518,1,phr,study,polite_phrases,مساء الخير,bonswa,bon-swa
@@ -28749,6 +29315,7 @@ ht,ht_0537,3,phr,study,polite_phrases,هل يمكنك المساعدة,èske ou 
 ht,ht_0538,3,phr,study,polite_phrases,يوم سعيد لك,pase yon bon jounen,paze jɔ̃ bɔ̃ ʒune
 ht,ht_0539,3,phr,study,polite_phrases,أتمنى لك التوفيق,mwen swete ou siksè,mwɛ̃ swete u siksɛ
 ht,ht_0540,3,phr,study,polite_phrases,أشكرك جزيلاً,mèsi anpil,mɛsi ɑ̃pil
+ht,ht_0645,1,phr,study,polite_phrases,نعم,wi,/wi/
 ht,ht_0361,1,n,study,school,مدرسة,lekòl,le-kol
 ht,ht_0363,1,n,study,school,دفتر,kaye,ka-ye
 ht,ht_0365,1,n,study,school,قلم رصاص,kreyon,kre-yon
@@ -28772,6 +29339,13 @@ ht,ht_0387,3,n,study,school,منهج دراسي,kourikoulòm,kou-ri-kou-lòm
 ht,ht_0388,3,n,study,school,محاضرة,konferans,kon-fe-rans
 ht,ht_0389,3,n,study,school,بحث علمي,rechèch,re-chèch
 ht,ht_0390,3,n,study,school,تخرج,gradiyasyon,gra-di-ya-syon
+ht,ht_0646,1,n,study,school,كتاب,liv,/liv/
+ht,ht_0647,1,n,study,school,قلم حبر,plim,/plim/
+ht,ht_0648,1,n,study,school,ممحاة,egon,/egɔ̃/
+ht,ht_0649,1,n,study,school,مسطرة,rég,/reɡ/
+ht,ht_0650,1,n,study,school,فصل دراسي,klas,/klas/
+ht,ht_0651,2,n,study,school,صفحة,paj,/paʒ/
+ht,ht_0652,2,n,study,school,درجة علمية,nòt,/nɔt/
 ht,ht_0571,1,n,world,animals_plants,قطة,chat,/ʃa/
 ht,ht_0572,1,n,world,animals_plants,كلب,chen,/ʃɛ̃/
 ht,ht_0573,1,n,world,animals_plants,طائر,zwazo,/zwazo/
@@ -28808,25 +29382,81 @@ ht,ht_0635,1,n,world,city_directions,مبنى,bilding,bil-ding
 ht,ht_0636,1,n,world,city_directions,مستشفى,lopital,lo-pi-tal
 ht,ht_0637,1,n,world,city_directions,سوق,mache,ma-she
 ht,ht_0638,1,n,world,city_directions,متجر,magazen,ma-ga-zen
+ht,ht_0653,1,n,world,city_directions,مدينة,vil,/vil/
+ht,ht_0654,1,n,world,city_directions,منزل,kay,/kaj/
+ht,ht_0655,1,n,world,city_directions,حديقة عامة,pak,/pak/
+ht,ht_0656,1,n,world,city_directions,جسر,pon,/pɔ̃/
+ht,ht_0657,1,n,world,city_directions,يمين,dwa,/dwa/
+ht,ht_0658,1,n,world,city_directions,يسار,gòch,/ɡɔtʃ/
+ht,ht_0659,1,n,world,city_directions,شمال,nò,/nɔ/
+ht,ht_0660,1,n,world,city_directions,جنوب,sid,/sid/
+ht,ht_0661,1,n,world,city_directions,شرق,lès,/lɛs/
+ht,ht_0662,1,n,world,city_directions,غرب,lwès,/lwɛs/
+ht,ht_0663,2,n,world,city_directions,صيدلية,fòmasi,/fòmasi/
+ht,ht_0664,2,n,world,city_directions,مخبز,boulanjri,/bulãɡri/
+ht,ht_0665,2,n,world,city_directions,مطعم,restoran,/restɔrã/
+ht,ht_0666,2,n,world,city_directions,متحف,mize,/mize/
+ht,ht_0667,2,n,world,city_directions,مكتب بريد,biranpòs,/birãpòs/
+ht,ht_0668,2,n,world,city_directions,رصيف مشاة,trotwa,/trótwa/
+ht,ht_0669,2,n,world,city_directions,تقاطع طرق,kafou,/kafu/
+ht,ht_0670,2,n,world,city_directions,إشارة مرور,limyè,/limjɛ/
+ht,ht_0671,2,n,world,city_directions,وسط المدينة,santvil,/sãtvil/
+ht,ht_0672,2,n,world,city_directions,ميدان عام,plas,/plas/
+ht,ht_0673,3,n,world,city_directions,موقف سيارات,pakin,/pakin/
+ht,ht_0674,3,n,world,city_directions,حي سكني,katye,/katje/
+ht,ht_0675,3,n,world,city_directions,نفق,tinèl,/tinɛl/
+ht,ht_0676,3,n,world,city_directions,ممر مشاة,pasaj,/pasaʒ/
+ht,ht_0677,1,n,world,jobs_sports,طبيب,doktè,/dòktɛ/
+ht,ht_0678,1,n,world,jobs_sports,مهندس,enjenyè,/ɛ̃ʒenjɛ/
+ht,ht_0679,1,n,world,jobs_sports,ممرض,enfimyè,/ɛ̃fimjɛ/
+ht,ht_0680,1,n,world,jobs_sports,مزارع,peyizan,/pejizã/
 ht,ht_0681,2,n,world,jobs_sports,سباك,plonbye,plon-bye
+ht,ht_0681,1,n,world,jobs_sports,طباخ,chèf,/ʃɛf/
 ht,ht_0682,2,n,world,jobs_sports,مدرب رياضي,antrenè,an-tre-nè
+ht,ht_0682,1,n,world,jobs_sports,طيار,pilòt,/pilòt/
 ht,ht_0683,2,n,world,jobs_sports,كرة طائرة,volibòl,vo-li-bòl
+ht,ht_0683,1,n,world,jobs_sports,نجار,menuizye,/menujje/
 ht,ht_0684,2,n,world,jobs_sports,تنس,tenis,te-nis
+ht,ht_0684,1,n,world,jobs_sports,خياط,tayè,/tajɛ/
 ht,ht_0685,2,n,world,jobs_sports,ركوب الدراجات,siklis,sik-lis
+ht,ht_0685,1,n,world,jobs_sports,رياضة,espò,/ɛspò/
 ht,ht_0686,2,n,world,jobs_sports,تسلق الجبال,randone,ran-do-ne
+ht,ht_0686,1,n,world,jobs_sports,كرة قدم,foutbòl,/futbòl/
 ht,ht_0687,3,n,world,jobs_sports,صيدلي,famasyen,fa-ma-sye
+ht,ht_0687,1,n,world,jobs_sports,سباحة,naje,/naʒe/
 ht,ht_0688,3,n,world,jobs_sports,مترجم,tradiktè,tra-dik-tè
+ht,ht_0688,1,n,world,jobs_sports,جري,kous,/kus/
 ht,ht_0689,3,n,world,jobs_sports,رماية بالقوس,acheri,a-che-ri
+ht,ht_0689,1,n,world,jobs_sports,كرة سلة,baskèt,/basket/
 ht,ht_0690,3,n,world,jobs_sports,ميدالية,meday,me-day
+ht,ht_0690,1,n,world,jobs_sports,فريق,ekip,/ekip/
+ht,ht_0691,1,n,world,jobs_sports,ملعب,estad,/estad/
+ht,ht_0692,2,n,world,jobs_sports,مبرمج,pwogramè,/pwoɡrame/
+ht,ht_0693,2,n,world,jobs_sports,عالم,syantis,/sjantis/
+ht,ht_0694,2,n,world,jobs_sports,معماري,arkitèk,/arkitek/
+ht,ht_0695,2,n,world,jobs_sports,طبيب أسنان,dantis,/dantis/
+ht,ht_0696,2,n,world,jobs_sports,كهربائي,elektrisyen,/elektrisjɛ̃/
 ht,ht_0692,1,n,world,materials_shop,معدن,metal,me-tal
 ht,ht_0693,1,n,world,materials_shop,بلاستيك,plastik,plas-tik
 ht,ht_0695,1,n,world,materials_shop,قطن,koton,ko-ton
+ht,ht_0697,1,n,world,materials_shop,خشب,bwa,/bwa/
+ht,ht_0698,1,n,world,materials_shop,حجر,wòch,/wɔʃ/
 ht,ht_0699,1,n,world,materials_shop,نقود,lajan,la-jan
+ht,ht_0699,1,n,world,materials_shop,صوف,lenn,/lɛn/
+ht,ht_0700,1,n,world,materials_shop,جلد طبيعي,kwa,/kwa/
+ht,ht_0701,1,n,world,materials_shop,سعر,pri,/pri/
 ht,ht_0702,1,n,world,materials_shop,حجم,gwosè,gwo-sè
+ht,ht_0702,1,n,world,materials_shop,صندوق,bwat,/bwat/
 ht,ht_0703,1,n,world,materials_shop,طول,longè,lon-gè
+ht,ht_0703,1,n,world,materials_shop,وزن,pwa,/pwa/
+ht,ht_0704,1,n,world,materials_shop,متر,mèt,/mɛt/
 ht,ht_0705,1,n,world,materials_shop,كيلوغرام,kilogram,ki-lo-gram
+ht,ht_0705,2,n,world,materials_shop,حرير,swa,/swa/
+ht,ht_0706,2,n,world,materials_shop,نحاس,kòb kwiv,/kɔb kwiv/
 ht,ht_0707,2,n,world,materials_shop,مطاط,kawoutchou,ka-wout-chou
+ht,ht_0707,2,n,world,materials_shop,رمل,sab,/sab/
 ht,ht_0708,2,n,world,materials_shop,فولاذ,asye,a-sye
+ht,ht_0708,3,n,world,materials_shop,رخام,mab,/mab/
 ht,ht_0710,2,n,world,materials_shop,طين,ajil,a-jil
 ht,ht_0712,2,n,world,materials_shop,إيصال شراء,resi,re-si
 ht,ht_0713,2,n,world,materials_shop,خصم سعر,rabè,ra-bè
@@ -28860,6 +29490,12 @@ ht,ht_0567,3,n,world,nature_weather,مناخ,klima,/klima/
 ht,ht_0568,3,n,world,nature_weather,رطوبة,imidite,/imidite/
 ht,ht_0569,3,n,world,nature_weather,أفق,orizon,/ɔrizɔ̃/
 ht,ht_0570,3,n,world,nature_weather,نسيم عليل,briz,/briz/
+ht,ht_0709,1,n,world,nature_weather,قمر,lalin,/lalin/
+ht,ht_0710,1,n,world,nature_weather,نجم,zetwal,/zetwal/
+ht,ht_0711,1,n,world,nature_weather,مطر,lapli,/lapli/
+ht,ht_0712,1,n,world,nature_weather,جزيرة,èp,/ɛp/
+ht,ht_0713,2,n,world,nature_weather,بحيرة,lak,/lak/
+ht,ht_0714,2,n,world,nature_weather,وادي,vadi,/vadi/
 ht,ht_0601,1,n,world,transport_travel,سيارة,machin,ma-shin
 ht,ht_0604,1,n,world,transport_travel,طائرة,avyon,a-vyon
 ht,ht_0605,1,n,world,transport_travel,دراجة هوائية,bisiklet,bi-si-klet
@@ -28884,6 +29520,12 @@ ht,ht_0627,3,n,world,transport_travel,وجهة سفر,destinasyon,des-ti-na-syon
 ht,ht_0628,3,n,world,transport_travel,مغادرة,depa,de-pa
 ht,ht_0629,3,n,world,transport_travel,وصول,arive,a-ri-ve
 ht,ht_0630,3,n,world,transport_travel,بوصلة,konpa,kon-pa
+ht,ht_0715,1,n,world,transport_travel,حافلة,otobis,/otobis/
+ht,ht_0716,1,n,world,transport_travel,قطار,tren,/trɛ̃/
+ht,ht_0717,1,n,world,transport_travel,طريق,wout,/wut/
+ht,ht_0718,1,n,world,transport_travel,خريطة,kat,/kat/
+ht,ht_0719,2,n,world,transport_travel,وقود,gaz,/ɡaz/
+ht,ht_0720,2,n,world,transport_travel,ميناء,pò,/pɔ/
 hu,hu_0129,1,n,home,appliances,ثلاجة,hűtőszekrény,hyːtøːsɛkreːɲ
 hu,hu_0130,1,n,home,appliances,فرن,sütő,ʃytøː
 hu,hu_0131,1,n,home,appliances,موقد,tűzhely,tyːzhɛj
@@ -29123,6 +29765,7 @@ hu,hu_0291,3,n,life,clothing,سحاب,cipzár,ˈt͡sipzaːr
 hu,hu_0292,3,n,life,clothing,ياقة,gallér,ˈɡɒlleːr
 hu,hu_0293,3,n,life,clothing,كم القميص,ujja,ˈujːɒ
 hu,hu_0294,3,n,life,clothing,مظلة مطر,esernyő,ˈɛʃɛrɲøː
+hu,hu_0708,1,n,life,clothing,جورب,zokni,/zokni/
 hu,hu_0327,1,n,life,family_traits,عائلة,család,tʃɒlaːd
 hu,hu_0328,1,n,life,family_traits,أب,apa,ɒpɒ
 hu,hu_0329,1,n,life,family_traits,أم,anya,ɒɲɒ
@@ -29276,6 +29919,8 @@ hu,hu_0482,3,v,study,core_verbs,يقارن,összehasonlít,/øsːɛhɒʃɒnliːt
 hu,hu_0483,3,v,study,core_verbs,ينظم,rendez,/rɛndɛz/
 hu,hu_0484,3,v,study,core_verbs,يحسن,javít,/jɒviːt/
 hu,hu_0485,3,v,study,core_verbs,يكتشف,felfedez,/fɛlfɛdɛz/
+hu,hu_0709,1,v,study,core_verbs,يعمل,dolgozik,/dolɡozik/
+hu,hu_0710,1,v,study,core_verbs,يعرف,tud,/tud/
 hu,hu_0486,1,n,study,grammar_links,أنا,én,/eːn/
 hu,hu_0487,1,n,study,grammar_links,أنت,te,/tɛ/
 hu,hu_0488,1,n,study,grammar_links,نحن,mi,/mi/
@@ -29304,6 +29949,8 @@ hu,hu_0512,2,adv,study,grammar_links,ببطء,lassan,/lɒʃːɒn/
 hu,hu_0513,3,adv,study,grammar_links,ومع ذلك,azonban,/ɒzɒnbɒn/
 hu,hu_0514,3,adv,study,grammar_links,لذلك,ezért,/ɛzeːrt/
 hu,hu_0515,3,adv,study,grammar_links,بينما,közben,/køzbɛn/
+hu,hu_0711,1,adv,study,grammar_links,في,ban,/ban/
+hu,hu_0712,1,adv,study,grammar_links,على,on,/on/
 hu,hu_0421,1,n,study,numbers_time,صفر,nulla,nullɒ
 hu,hu_0422,1,n,study,numbers_time,واحد,egy,ɛɟ
 hu,hu_0423,1,n,study,numbers_time,عشرة,tíz,tiːz
@@ -29477,6 +30124,8 @@ hu,hu_0657,3,n,world,city_directions,موقف سيارات,parkoló,pɒrkoloː
 hu,hu_0658,3,n,world,city_directions,حي سكني,környék,kørɲeːk
 hu,hu_0659,3,n,world,city_directions,نفق,alagút,ɒlɒguːt
 hu,hu_0660,3,n,world,city_directions,ممر مشاة,gyalogátkelő,ɟɒlogɒtkeløː
+hu,hu_0713,1,n,world,city_directions,متجر,bolt,/bolt/
+hu,hu_0714,1,n,world,city_directions,شرق,kelet,/kelet/
 hu,hu_0661,1,n,world,jobs_sports,طبيب,orvos,orvoʃ
 hu,hu_0662,1,n,world,jobs_sports,مهندس,mérnök,meːrnøk
 hu,hu_0663,1,n,world,jobs_sports,ممرض,ápoló,aːpoloː
@@ -29506,6 +30155,7 @@ hu,hu_0687,3,n,world,jobs_sports,صيدلي,gyógyszerész,gyoːdyɛrsɛːs
 hu,hu_0688,3,n,world,jobs_sports,مترجم,tolmács,tolmaːtʃ
 hu,hu_0689,3,n,world,jobs_sports,رماية بالقوس,íjászat,iːjaːsɒt
 hu,hu_0690,3,n,world,jobs_sports,ميدالية,érem,eːrɛm
+hu,hu_0715,1,n,world,jobs_sports,رياضة,sport,/sport/
 hu,hu_0691,1,n,world,materials_shop,خشب,fa,fɒ
 hu,hu_0692,1,n,world,materials_shop,معدن,fém,feːm
 hu,hu_0693,1,n,world,materials_shop,بلاستيك,műanyag,myːɒnyɒg
@@ -29528,9 +30178,13 @@ hu,hu_0713,2,n,world,materials_shop,خصم سعر,kedvezmény,kɛdvɛzmeːny
 hu,hu_0714,2,n,world,materials_shop,زبون,vásárló,vaːʃaːrloː
 hu,hu_0715,2,n,world,materials_shop,بائع,eladó,ɛlɒdoː
 hu,hu_0716,2,n,world,materials_shop,جودة,minőség,minőʃeːg
+hu,hu_0716,1,n,world,materials_shop,حجر,kő,/køː/
 hu,hu_0717,3,n,world,materials_shop,ألمنيوم,alumínium,ɒlumiːnium
+hu,hu_0717,1,n,world,materials_shop,صندوق,doboz,/doboz/
 hu,hu_0718,3,n,world,materials_shop,رخام,márvány,maːrvaːny
+hu,hu_0718,2,n,world,materials_shop,مطاط,gumi,/ɡumi/
 hu,hu_0719,3,n,world,materials_shop,ضمان منتج,garancia,gɒrɒntsiɒ
+hu,hu_0719,2,n,world,materials_shop,رمل,homok,/homok/
 hu,hu_0720,3,n,world,materials_shop,فاتورة,számla,saːmlɒ
 hu,hu_0541,1,n,world,nature_weather,شمس,nap,nɒp
 hu,hu_0543,1,n,world,nature_weather,نجم,csillag,tʃillɒɡ
@@ -29561,6 +30215,7 @@ hu,hu_0567,3,n,world,nature_weather,مناخ,éghajlat,/eːɡhɒjlɒt/
 hu,hu_0568,3,n,world,nature_weather,رطوبة,páratartalom,/paːrɒtɒrtɒlom/
 hu,hu_0569,3,n,world,nature_weather,أفق,horizont,/horizont/
 hu,hu_0570,3,n,world,nature_weather,نسيم عليل,szellő,/sɛløː/
+hu,hu_0720,1,n,world,nature_weather,قمر,hold,/hold/
 hu,hu_0601,1,n,world,transport_travel,سيارة,autó,ɒtoː
 hu,hu_0602,1,n,world,transport_travel,حافلة,busz,bus
 hu,hu_0603,1,n,world,transport_travel,قطار,vonat,vonɒt
@@ -31209,6 +31864,8 @@ ig,ig_0125,2,n,home,living,قفل,mkpọchi,mkpo-chi
 ig,ig_0126,3,n,home,living,ثريا,oriọna ụlọ,o-rio-na u-lo
 ig,ig_0127,3,n,home,living,مسند قدمين,oche ụkwụ,o-che u-kwu
 ig,ig_0128,3,n,home,living,ستائر شرائح,ihe mkpuchi windo,i-he mkpu-chi win-do
+ig,ig_0663,1,n,home,living,سجادة,kaptet,/kàptɛ̀t/
+ig,ig_0664,2,n,home,living,بساط صغير,akwụkwọ,/àkwʊ́kwò/
 ig,ig_0295,1,n,life,body_health,رأس,isi,i-si
 ig,ig_0296,1,n,life,body_health,وجه,ihu,i-hu
 ig,ig_0297,1,n,life,body_health,عين,anya,a-nya
@@ -31266,6 +31923,9 @@ ig,ig_0291,3,n,life,clothing,سحاب,zipa,zi-pa
 ig,ig_0292,3,n,life,clothing,ياقة,kọla,ko-la
 ig,ig_0293,3,n,life,clothing,كم القميص,aka uwe,a-ka u-we
 ig,ig_0294,3,n,life,clothing,مظلة مطر,nche anwụ,n-che an-wu
+ig,ig_0665,1,n,life,clothing,تنورة,sketi,/skètì/
+ig,ig_0666,1,n,life,clothing,حزام,eriri úkwu,/èɾìɾì úkwù/
+ig,ig_0667,2,n,life,clothing,وشاح,akwa olu,/àkwá òlù/
 ig,ig_0327,1,n,life,family_traits,عائلة,ezinụlọ,eh-zee-noo-loh
 ig,ig_0328,1,n,life,family_traits,أب,nna,nnah
 ig,ig_0329,1,n,life,family_traits,أم,nne,nneh
@@ -31326,6 +31986,10 @@ ig,ig_0238,2,n,life,food_drink,غداء,nri ehihie,nri e-hi-hie
 ig,ig_0239,2,n,life,food_drink,عشاء,nri abalị,nri a-ba-lị
 ig,ig_0241,3,n,life,food_drink,حساء مرق,ofe,o-fe
 ig,ig_0242,3,n,life,food_drink,عجينة,ncha,n-cha
+ig,ig_0668,1,n,life,food_drink,شاي,tii,/tìː/
+ig,ig_0669,2,n,life,food_drink,مربى,jamu,/dʒàmù/
+ig,ig_0670,2,n,life,food_drink,فطيرة,paị,/páj/
+ig,ig_0671,3,n,life,food_drink,وجبة خفيفة,nri ntarata,/nɾì ntàɾàtà/
 ig,ig_0181,1,n,life,produce,تفاحة,apụl,/àpụ̀l/
 ig,ig_0182,1,n,life,produce,موزة,unere,/ùnèrè/
 ig,ig_0183,1,n,life,produce,عنب,mkpụrụ vaịn,/mkpụ̀rụ̀ vàịn/
@@ -31380,6 +32044,8 @@ ig,ig_0262,3,n,life,spices_grains,كركم,turmerik,tur-me-rik
 ig,ig_0263,3,n,life,spices_grains,هيل,kadamom,ka-da-mom
 ig,ig_0265,3,n,life,spices_grains,كزبرة,korịanda,ko-ri-an-da
 ig,ig_0266,3,n,life,spices_grains,بقدونس,pasli,pas-li
+ig,ig_0672,2,n,life,spices_grains,زعتر,taịm,/tàjm/
+ig,ig_0673,3,n,life,spices_grains,قرنفل,nzu,/nzù/
 ig,ig_0460,1,v,study,core_verbs,يأكل,dia,di-a
 ig,ig_0463,1,v,study,core_verbs,يعمل,nam utom,nam u-tom
 ig,ig_0466,1,v,study,core_verbs,يعرف,fiọk,fi-ọk
@@ -31395,6 +32061,26 @@ ig,ig_0482,3,v,study,core_verbs,يقارن,linganisha,liŋɡɑniʃɑ
 ig,ig_0483,3,v,study,core_verbs,ينظم,panga,pɑŋɡɑ
 ig,ig_0484,3,v,study,core_verbs,يحسن,boresha,boɾeʃɑ
 ig,ig_0485,3,v,study,core_verbs,يكتشف,gundua,ɡunduɑ
+ig,ig_0674,1,v,study,core_verbs,يقرأ,gụọ,/ɡʊ̀ɔ̀/
+ig,ig_0675,1,v,study,core_verbs,يكتب,dee,/dèː/
+ig,ig_0676,1,v,study,core_verbs,يتعلم,mụta,/mùtà/
+ig,ig_0677,1,v,study,core_verbs,يدرس,mụọ,/mʊ̀ɔ̀/
+ig,ig_0678,1,v,study,core_verbs,يسمع,ge ntị,/ɡè ǹtị̀/
+ig,ig_0679,1,v,study,core_verbs,يتحدث,kwuo okwu,/kwùò òkwù/
+ig,ig_0680,1,v,study,core_verbs,يرى,hụ,/hụ̀/
+ig,ig_0681,1,v,study,core_verbs,يذهب,gaa,/ɡàː/
+ig,ig_0682,1,v,study,core_verbs,يأتي,bịa,/bìà/
+ig,ig_0683,1,v,study,core_verbs,يشرب,ṅụọ,/ŋʊ̀ɔ̀/
+ig,ig_0684,1,v,study,core_verbs,ينام,hie ura,/hìè ùɾà/
+ig,ig_0685,1,v,study,core_verbs,يلعب,gwurie egwu,/ɡwùɾìè èɡwù/
+ig,ig_0686,1,v,study,core_verbs,يساعد,nyere aka,/ɲèɾè àkà/
+ig,ig_0687,2,v,study,core_verbs,يتذكر,cheta,/tʃètà/
+ig,ig_0688,2,v,study,core_verbs,ينسى,chefu,/tʃèfù/
+ig,ig_0689,2,v,study,core_verbs,يسأل,jụọ,/dʒʊ̀ɔ̀/
+ig,ig_0690,2,v,study,core_verbs,يبدأ,malite,/màlìtè/
+ig,ig_0691,2,v,study,core_verbs,ينهي,chaa,/tʃàː/
+ig,ig_0692,2,v,study,core_verbs,يبني,wuo,/wʊ̀ɔ̀/
+ig,ig_0693,2,v,study,core_verbs,يختار,họrọ,/hɔ̀ɾɔ̀/
 ig,ig_0491,1,n,study,grammar_links,هم,wao,wɑo
 ig,ig_0492,1,adv,study,grammar_links,هنا,hapa,hɑpɑ
 ig,ig_0493,1,adv,study,grammar_links,هناك,pale,pɑle
@@ -31419,6 +32105,12 @@ ig,ig_0511,2,adv,study,grammar_links,سريعاً,haraka,hɑɾɑkɑ
 ig,ig_0513,3,adv,study,grammar_links,ومع ذلك,hata hivyo,hɑtɑ hiwo
 ig,ig_0514,3,adv,study,grammar_links,لذلك,hivyo,hiwo
 ig,ig_0515,3,adv,study,grammar_links,بينما,wakati huo,wɑkɑti huo
+ig,ig_0694,1,n,study,grammar_links,أنا,m,/m̩/
+ig,ig_0695,1,n,study,grammar_links,أنت,gị,/ɡị̀/
+ig,ig_0696,1,n,study,grammar_links,نحن,anyị,/àɲị́/
+ig,ig_0697,1,n,study,grammar_links,هو,ya,/jà/
+ig,ig_0698,1,n,study,grammar_links,هي,ya,/jà/
+ig,ig_0699,2,adv,study,grammar_links,ببطء,nwayọọ,/nwàjɔ́ɔ́/
 ig,ig_0421,1,n,study,numbers_time,صفر,efu,/e.fʊ/
 ig,ig_0422,1,n,study,numbers_time,واحد,otu,/o.tʊ/
 ig,ig_0423,1,n,study,numbers_time,عشرة,iri,/i.ɾi/
@@ -31532,6 +32224,8 @@ ig,ig_0387,3,n,study,school,منهج دراسي,usoro ọmụmụ,u-so-ro o-mu-m
 ig,ig_0388,3,n,study,school,محاضرة,nkuzi,n-ku-zi
 ig,ig_0389,3,n,study,school,بحث علمي,nnyocha,n-n-yo-cha
 ig,ig_0390,3,n,study,school,تخرج,ngụsị akwụkwọ,n-gu-si a-ku-kwo
+ig,ig_0700,1,n,study,school,قلم حبر,pen,/pɛ́n/
+ig,ig_0701,2,n,study,school,صمغ,gluu,/ɡlùː/
 ig,ig_0571,1,n,world,animals_plants,قطة,nwamba,nwahm-bah
 ig,ig_0572,1,n,world,animals_plants,كلب,nkịta,nkee-tah
 ig,ig_0573,1,n,world,animals_plants,طائر,nnụnụ,nnoo-noo
@@ -31585,6 +32279,13 @@ ig,ig_0657,3,n,world,city_directions,موقف سيارات,ebe a na-adọba ụg
 ig,ig_0658,3,n,world,city_directions,حي سكني,ogbe,oɡbe
 ig,ig_0659,3,n,world,city_directions,نفق,ọwara,ɔwara
 ig,ig_0660,3,n,world,city_directions,ممر مشاة,ebe a na-agafe ụzọ,ebe a na-aɡafe ʊzɔ
+ig,ig_0702,1,n,world,city_directions,مدينة,obodo ukwu,/òbòdò úkwù/
+ig,ig_0703,1,n,world,city_directions,قرية,obodo nta,/òbòdò ǹtà/
+ig,ig_0704,1,n,world,city_directions,حديقة عامة,ogige,/òɡìɡè/
+ig,ig_0705,1,n,world,city_directions,يمين,aka nri,/àkà ǹɾì/
+ig,ig_0706,1,n,world,city_directions,يسار,aka ekpe,/àkà èkpè/
+ig,ig_0707,1,n,world,city_directions,جنوب,ndida,/ndìdà/
+ig,ig_0708,2,n,world,city_directions,ميدان عام,ama,/àmà/
 ig,ig_0661,1,n,world,jobs_sports,طبيب,dọkịta,dɔkɪta
 ig,ig_0662,1,n,world,jobs_sports,مهندس,injinia,ɪndʒɪnɪa
 ig,ig_0663,1,n,world,jobs_sports,ممرض,nọọsụ,nɔɔsʊ
@@ -31693,6 +32394,18 @@ ig,ig_0625,2,n,world,transport_travel,حركة المرور,okporo ụzọ,okpor
 ig,ig_0626,2,n,world,transport_travel,ميناء,ọdụ ụgbọ mmiri,odu ugbo mmiri
 ig,ig_0628,3,n,world,transport_travel,مغادرة,ọpụpụ,opupu
 ig,ig_0630,3,n,world,transport_travel,بوصلة,kọmpas,kompas
+ig,ig_0709,1,n,world,transport_travel,دراجة هوائية,igwe,/ìɡwè/
+ig,ig_0710,1,n,world,transport_travel,سيارة أجرة,tagzi,/tàɡzì/
+ig,ig_0711,1,n,world,transport_travel,تذكرة,tiketi,/tìkètì/
+ig,ig_0712,1,n,world,transport_travel,حقيبة سفر,akpa njem,/àkpà ǹdʒèṁ/
+ig,ig_0713,1,n,world,transport_travel,سفر,njem,/ɲɛm/
+ig,ig_0714,1,n,world,transport_travel,خريطة,maapụ,/maːpù/
+ig,ig_0715,2,n,world,transport_travel,شاحنة,gwongworo,/gwɔ́ŋwɔ̀ɾɔ/
+ig,ig_0716,2,n,world,transport_travel,رحلة,njem,/ɲɛm/
+ig,ig_0717,2,n,world,transport_travel,راكب,onye njem,/ɔɲé ɲɛm/
+ig,ig_0718,2,n,world,transport_travel,عجلة,wiil,/wiːl/
+ig,ig_0719,3,n,world,transport_travel,وجهة سفر,ebe aga,/ɛbɛ aɡa/
+ig,ig_0720,3,n,world,transport_travel,وصول,mbata,/mbata/
 is,is_0129,1,n,home,appliances,ثلاجة,ísskápur,ˈiːsˌskauːpʏr
 is,is_0130,1,n,home,appliances,فرن,ofn,ɔpn
 is,is_0131,1,n,home,appliances,موقد,eldavél,ˈɛltaˌvɛːl
@@ -32352,6 +33065,7 @@ is,is_0717,3,n,world,materials_shop,ألمنيوم,ál,auːl
 is,is_0718,3,n,world,materials_shop,رخام,marmari,ˈmarˌmarɪ
 is,is_0719,3,n,world,materials_shop,ضمان منتج,ábyrgð,ˈauːpɪrð
 is,is_0720,3,n,world,materials_shop,فاتورة,reikningur,ˈreiʰcˌniŋkʏr
+is,is_0720,1,n,world,materials_shop,بلاستيك,plastik,/ˈplas.tɪk/
 is,is_0541,1,n,world,nature_weather,شمس,sól,/souːl/
 is,is_0542,1,n,world,nature_weather,قمر,tungl,/tʰʏŋkl/
 is,is_0543,1,n,world,nature_weather,نجم,stjarna,/ˈstjartna/
@@ -34080,6 +34794,7 @@ jv,jv_0076,3,n,home,bathroom,مغسلة يدين,wastafel,was-ta-fel
 jv,jv_0077,3,n,home,bathroom,خيط أسنان,benang gigi,be-nang gi-gi
 jv,jv_0078,3,n,home,bathroom,غسول فم,obat kumur,o-bat ku-mur
 jv,jv_0079,3,n,home,bathroom,مصرف ماء,saluran,sa-lu-ran
+jv,jv_0552,1,n,home,bathroom,إسفنجة,spon,/spɔn/
 jv,jv_0080,1,n,home,bedroom,غرفة نوم,kamar tidur,ka-mar ti-dur
 jv,jv_0083,1,n,home,bedroom,بطانية,kemul,kəmʊl
 jv,jv_0084,1,n,home,bedroom,ملاءة سرير,sprei,sprɛi
@@ -34098,6 +34813,10 @@ jv,jv_0097,3,n,home,bedroom,لحاف محشو,kemul,kəmʊl
 jv,jv_0098,3,n,home,bedroom,مفرش سرير,sprei,sprɛi
 jv,jv_0100,3,n,home,bedroom,طاولة زينة,meja rias,məja rias
 jv,jv_0101,3,n,home,bedroom,ستائر معتمة,gorden peteng,gordən pətəŋ
+jv,jv_0553,1,n,home,bedroom,سرير,kasur,/kasur/
+jv,jv_0554,1,n,home,bedroom,وسادة,bantal,/bantal/
+jv,jv_0555,2,n,home,bedroom,مرتبة سرير,kasur,/kasur/
+jv,jv_0556,3,n,home,bedroom,لوح رأس السرير,pasaran,/pasaɾan/
 jv,jv_0001,1,adj,home,colors,أحمر,abang,a-bang
 jv,jv_0002,1,adj,home,colors,أزرق,biru,bi-ru
 jv,jv_0003,1,adj,home,colors,أخضر,ijo,i-jo
@@ -34122,6 +34841,7 @@ jv,jv_0022,3,adj,home,colors,قرمزي,abang getih,a-bang ge-tih
 jv,jv_0023,3,adj,home,colors,زمردي,ijo zamrud,i-jo zam-rud
 jv,jv_0024,3,adj,home,colors,عاجي,putih gading,pu-tih ga-ding
 jv,jv_0025,3,adj,home,colors,نيلي,nila,ni-la
+jv,jv_0557,2,adj,home,colors,بيج,krem,/kɾɛm/
 jv,jv_0155,1,n,home,garden_clean,حديقة,kebon,ke-bon
 jv,jv_0156,1,n,home,garden_clean,مكنسة يدوية,sapu,sa-pu
 jv,jv_0157,1,n,home,garden_clean,دلو,ember,em-ber
@@ -34142,6 +34862,12 @@ jv,jv_0175,2,n,home,garden_clean,مشبك غسيل,jepitan,jəpitan
 jv,jv_0176,3,n,home,garden_clean,جزازة عشب,mesin,məsın
 jv,jv_0178,3,n,home,garden_clean,عربة يدوية,angkong,aŋkoŋ
 jv,jv_0180,3,n,home,garden_clean,مقص تقليم,gunting,guntiŋ
+jv,jv_0558,1,n,home,garden_clean,شجرة,wit,/wit/
+jv,jv_0559,1,n,home,garden_clean,بوابة,gapura,/gapuɾa/
+jv,jv_0560,2,n,home,garden_clean,أصيص نبات,pot,/pɔt/
+jv,jv_0561,2,n,home,garden_clean,مجرفة,siyung,/sijuŋ/
+jv,jv_0562,3,n,home,garden_clean,مشط حديقة,garu,/gaɾu/
+jv,jv_0563,3,n,home,garden_clean,سماد طبيعي,pupuk,/pupuk/
 jv,jv_0026,1,n,home,kitchen,مطبخ,pawon,pa-won
 jv,jv_0027,1,n,home,kitchen,طبق,piring,pi-ring
 jv,jv_0028,1,n,home,kitchen,كوب,cangkir,cang-kir
@@ -34173,6 +34899,7 @@ jv,jv_0054,3,n,home,kitchen,مصفاة معكرونة,saringan,sa-ri-ngan
 jv,jv_0055,3,n,home,kitchen,ملاقط طعام,capitan,ca-pi-tan
 jv,jv_0056,3,n,home,kitchen,فتاحة علب,pembuka,pem-bu-ka
 jv,jv_0057,3,n,home,kitchen,مخزن المؤن,gudang,gu-dang
+jv,jv_0564,1,n,home,kitchen,صنبور,kran,/kɾan/
 jv,jv_0102,1,n,home,living,غرفة معيشة,ruang tamu,ruaŋ tamu
 jv,jv_0105,1,n,home,living,طاولة,meja,məja
 jv,jv_0106,1,n,home,living,سجادة,karpet,karpət
@@ -34192,6 +34919,14 @@ jv,jv_0125,2,n,home,living,قفل,kunci,kun-ci
 jv,jv_0126,3,n,home,living,ثريا,lampu gantung,lam-pu ga-ntung
 jv,jv_0127,3,n,home,living,مسند قدمين,dingklik,ding-klik
 jv,jv_0128,3,n,home,living,ستائر شرائح,krai,kra-i
+jv,jv_0565,1,n,home,living,أريكة,kursi,/kursi/
+jv,jv_0566,1,n,home,living,كرسي,kursi,/kursi/
+jv,jv_0567,1,n,home,living,أرضية,lantai,/lantaj/
+jv,jv_0568,1,n,home,living,رف,rak,/rak/
+jv,jv_0569,2,n,home,living,كرسي بذراعين,kursi,/kursi/
+jv,jv_0570,2,n,home,living,مكتبة كتب,lemari,/lemaɾi/
+jv,jv_0571,2,n,home,living,بساط صغير,tikar,/tikaɾ/
+jv,jv_0572,2,n,home,living,وسادة أريكة,bantal,/bantal/
 jv,jv_0295,1,n,life,body_health,رأس,sirah,si-rah
 jv,jv_0296,1,n,life,body_health,وجه,rai,ra-i
 jv,jv_0297,1,n,life,body_health,عين,mripat,mri-pat
@@ -34223,6 +34958,7 @@ jv,jv_0322,2,n,life,body_health,سعال,watuk,watʊk
 jv,jv_0323,2,n,life,body_health,صداع,puyeng,pujəŋ
 jv,jv_0324,3,n,life,body_health,ضمادة,plester,pləstər
 jv,jv_0326,3,n,life,body_health,مناعة,kekebalan,kəkəbalan
+jv,jv_0573,3,n,life,body_health,فيتامين,vitamin,/vitamin/
 jv,jv_0268,1,n,life,clothing,بنطال,celana,cəlɔnɔ
 jv,jv_0269,1,n,life,clothing,حذاء,sepatu,səpatu
 jv,jv_0271,1,n,life,clothing,معطف,mantel,mantəl
@@ -34245,6 +34981,12 @@ jv,jv_0291,3,n,life,clothing,سحاب,ritsleting,rit-sle-ting
 jv,jv_0292,3,n,life,clothing,ياقة,kerah,ke-rah
 jv,jv_0293,3,n,life,clothing,كم القميص,lengan baju,le-ngan ba-ju
 jv,jv_0294,3,n,life,clothing,مظلة مطر,payung,pa-yung
+jv,jv_0574,1,n,life,clothing,قميص,klambi,/klambi/
+jv,jv_0575,1,n,life,clothing,جورب,kaos,/kaɔs/
+jv,jv_0576,1,n,life,clothing,قبعة,kopeah,/kɔpɛah/
+jv,jv_0577,1,n,life,clothing,تنورة,rok,/rɔk/
+jv,jv_0578,1,n,life,clothing,حزام,sabuk,/sabuk/
+jv,jv_0579,1,n,life,clothing,حقيبة,tas,/tas/
 jv,jv_0330,1,n,life,family_traits,أخ,sedulur lanang,sədʊlʊr lanaŋ
 jv,jv_0331,1,n,life,family_traits,أخت,sedulur wadon,sədʊlʊr wadon
 jv,jv_0332,1,n,life,family_traits,ابن,anak lanang,anak lanaŋ
@@ -34261,6 +35003,24 @@ jv,jv_0353,2,adj,life,family_traits,ممتن,ngajeni,ŋajəni
 jv,jv_0354,2,adj,life,family_traits,متفائل,sumringah,sʊmriŋah
 jv,jv_0358,3,adj,life,family_traits,مسؤول,tanggung jawab,taŋgʊŋ jawab
 jv,jv_0359,3,adj,life,family_traits,فضولي للعلم,kepengin ngerti,kəpəŋin ngərti
+jv,jv_0580,1,n,life,family_traits,عائلة,kulawarga,/kulawaɾga/
+jv,jv_0581,1,n,life,family_traits,أب,bapak,/bapak/
+jv,jv_0582,1,n,life,family_traits,أم,ibu,/ibu/
+jv,jv_0583,1,n,life,family_traits,ابنة,anak,/anak/
+jv,jv_0584,1,n,life,family_traits,جدة,simbok,/simbɔk/
+jv,jv_0585,1,n,life,family_traits,صديق,kanca,/kanca/
+jv,jv_0586,1,n,life,family_traits,طفل,bocah,/bɔtʃah/
+jv,jv_0587,1,adj,life,family_traits,قوي,kuat,/kuat/
+jv,jv_0588,2,n,life,family_traits,عم أو خال,paklik,/paklik/
+jv,jv_0589,2,n,life,family_traits,عمة أو خالة,bulik,/bulik/
+jv,jv_0590,2,adj,life,family_traits,شجاع,kendel,/kəndɛl/
+jv,jv_0591,2,adj,life,family_traits,صبور,sabar,/sabaɾ/
+jv,jv_0592,2,adj,life,family_traits,مهذب,sopan,/sɔpan/
+jv,jv_0593,2,adj,life,family_traits,نشيط,resep,/rɛsɛp/
+jv,jv_0594,3,adj,life,family_traits,كريم,dermawan,/dɛrmawan/
+jv,jv_0595,3,adj,life,family_traits,متواضع,andhap,/andhap/
+jv,jv_0596,3,adj,life,family_traits,حكيم,wikan,/wikan/
+jv,jv_0597,3,adj,life,family_traits,مبدع,kreatif,/kreatif/
 jv,jv_0213,1,n,life,food_drink,ماء,banyu,baɲu
 jv,jv_0214,1,n,life,food_drink,خبز,roti,rɔti
 jv,jv_0216,1,n,life,food_drink,جبن,keju,kədʒu
@@ -34283,6 +35043,14 @@ jv,jv_0236,2,n,life,food_drink,فطيرة,pai,paɪ
 jv,jv_0238,2,n,life,food_drink,غداء,dhahar awan,dahar awan
 jv,jv_0239,2,n,life,food_drink,عشاء,dhahar bengi,dahar bəŋi
 jv,jv_0240,3,n,life,food_drink,وجبة خفيفة,camilan,tʃamilan
+jv,jv_0598,1,n,life,food_drink,حليب,susu,/susu/
+jv,jv_0599,1,n,life,food_drink,عسل,madu,/madu/
+jv,jv_0600,1,n,life,food_drink,سمك,iwak,/iwak/
+jv,jv_0601,1,n,life,food_drink,سلطة,urap,/uɾap/
+jv,jv_0602,2,n,life,food_drink,معكرونة,mi,/mi/
+jv,jv_0603,2,n,life,food_drink,فطور,nedha,/nəðah/
+jv,jv_0604,3,n,life,food_drink,حساء مرق,kaldu,/kaldu/
+jv,jv_0605,3,n,life,food_drink,عجينة,adonan,/adonan/
 jv,jv_0181,1,n,life,produce,تفاحة,apel,apəl
 jv,jv_0182,1,n,life,produce,موزة,gedhang,gəḍaŋ
 jv,jv_0183,1,n,life,produce,عنب,anggur,aŋgur
@@ -34305,6 +35073,16 @@ jv,jv_0207,2,n,life,produce,باذنجان,terong,təroŋ
 jv,jv_0210,3,n,life,produce,قرنبيط,kembang kol,kəmbang kɔl
 jv,jv_0211,3,n,life,produce,فجل,lobak,lɔbak
 jv,jv_0212,3,n,life,produce,كرفس,seledri,sələdri
+jv,jv_0606,1,n,life,produce,فراولة,setroberi,/sətrobəri/
+jv,jv_0607,1,n,life,produce,طماطم,tomat,/tomat/
+jv,jv_0608,1,n,life,produce,خيار,timun,/timun/
+jv,jv_0609,1,n,life,produce,كمثرى,kesemek,/kəsəmɛk/
+jv,jv_0610,2,n,life,produce,أناناس,nanas,/nanas/
+jv,jv_0611,2,n,life,produce,مشمش,kecapi,/kəcapi/
+jv,jv_0612,2,n,life,produce,تين,woh tin,/woh tin/
+jv,jv_0613,2,n,life,produce,سبانخ,bayam,/bayam/
+jv,jv_0614,2,n,life,produce,كوسا,oyong,/oyɔŋ/
+jv,jv_0615,3,n,life,produce,بروكلي,brokoli,/brokoli/
 jv,jv_0243,1,n,life,spices_grains,أرز,sega,səgɔ
 jv,jv_0244,1,n,life,spices_grains,ملح,uyah,ujah
 jv,jv_0245,1,n,life,spices_grains,سكر,gula,gulɔ
@@ -34326,6 +35104,9 @@ jv,jv_0263,3,n,life,spices_grains,هيل,kapulaga,kapulagɔ
 jv,jv_0264,3,n,life,spices_grains,قرنفل,cengkeh,cəŋkɛh
 jv,jv_0265,3,n,life,spices_grains,كزبرة,ketumbar,kətumbar
 jv,jv_0266,3,n,life,spices_grains,بقدونس,seledri,sələdri
+jv,jv_0616,1,n,life,spices_grains,قمح,gandum,/gandum/
+jv,jv_0617,2,n,life,spices_grains,زعتر,mlathi,/mlati/
+jv,jv_0618,3,n,life,spices_grains,كركم,kunir,/kunir/
 jv,jv_0454,1,v,study,core_verbs,يدرس,ngaji,ŋaji
 jv,jv_0455,1,v,study,core_verbs,يسمع,ngrungokake,ŋruŋokakɛ
 jv,jv_0456,1,v,study,core_verbs,يتحدث,ngomong,ŋomoŋ
@@ -34348,6 +35129,19 @@ jv,jv_0482,3,v,study,core_verbs,يقارن,mbandhingake,mbandiŋakɛ
 jv,jv_0483,3,v,study,core_verbs,ينظم,ngatur,ŋatur
 jv,jv_0484,3,v,study,core_verbs,يحسن,ngapikake,ŋapikakɛ
 jv,jv_0485,3,v,study,core_verbs,يكتشف,nemokake,nɛmokakɛ
+jv,jv_0619,1,v,study,core_verbs,يقرأ,maca,/maca/
+jv,jv_0620,1,v,study,core_verbs,يكتب,nulis,/nulis/
+jv,jv_0621,1,v,study,core_verbs,يتعلم,sinau,/sinaw/
+jv,jv_0622,1,v,study,core_verbs,ينام,turu,/turu/
+jv,jv_0623,1,v,study,core_verbs,يساعد,nulungi,/nulʊŋi/
+jv,jv_0624,1,v,study,core_verbs,يفكر,mikir,/mikir/
+jv,jv_0625,1,v,study,core_verbs,يفتح,mbukak,/mbukak/
+jv,jv_0626,1,v,study,core_verbs,يغلق,nutup,/nutup/
+jv,jv_0627,2,v,study,core_verbs,ينسى,lali,/lali/
+jv,jv_0628,2,v,study,core_verbs,يسأل,takon,/takɔn/
+jv,jv_0629,2,v,study,core_verbs,يجيب,mangsuli,/maŋsuli/
+jv,jv_0630,2,v,study,core_verbs,يبدأ,wiwit,/wiwit/
+jv,jv_0631,2,v,study,core_verbs,يختار,milih,/milih/
 jv,jv_0487,1,n,study,grammar_links,أنت,sampeyan,sampɛyan
 jv,jv_0489,1,n,study,grammar_links,هو,dheweke,ðɛwɛkɛ
 jv,jv_0490,1,n,study,grammar_links,هي,dheweke,ðɛwɛkɛ
@@ -34368,6 +35162,16 @@ jv,jv_0511,2,adv,study,grammar_links,سريعاً,cepet,cɛpɛt
 jv,jv_0513,3,adv,study,grammar_links,ومع ذلك,nanging,naŋiŋ
 jv,jv_0514,3,adv,study,grammar_links,لذلك,mulane,mulaŋɛ
 jv,jv_0515,3,adv,study,grammar_links,بينما,sawetara,sawɛtara
+jv,jv_0632,1,n,study,grammar_links,أنا,aku,/aku/
+jv,jv_0633,1,n,study,grammar_links,نحن,kowe,/kɔwɛ/
+jv,jv_0634,1,adv,study,grammar_links,هناك,ono,/ɔnɔ/
+jv,jv_0635,1,adv,study,grammar_links,الآن,saiki,/saiki/
+jv,jv_0636,1,adv,study,grammar_links,دائماً,selawase,/səlawasɛ/
+jv,jv_0637,1,adv,study,grammar_links,أبداً,ora tau,/ɔra taw/
+jv,jv_0638,1,adv,study,grammar_links,و,lan,/lan/
+jv,jv_0639,1,adv,study,grammar_links,أو,utawa,/utawa/
+jv,jv_0640,1,adv,study,grammar_links,لأن,amarga,/amarga/
+jv,jv_0641,2,adv,study,grammar_links,ببطء,alon-alon,/alɔn alɔn/
 jv,jv_0441,2,n,study,numbers_time,منتصف الليل,tengah wengi,təŋah wəŋi
 jv,jv_0442,2,n,study,numbers_time,تقويم,kalender,kalɛndər
 jv,jv_0444,2,n,study,numbers_time,فصل الربيع,mangsa semi,maŋsa səmi
@@ -34375,6 +35179,29 @@ jv,jv_0445,2,n,study,numbers_time,فصل الصيف,mangsa panas,maŋsa panas
 jv,jv_0446,2,n,study,numbers_time,فصل الخريف,mangsa rendheng,maŋsa rɛndhɛŋ
 jv,jv_0447,2,n,study,numbers_time,فصل الشتاء,mangsa adhem,maŋsa adhəm
 jv,jv_0450,3,n,study,numbers_time,موعد نهائي,wates wektu,watəs wəktu
+jv,jv_0642,1,n,study,numbers_time,صفر,nol,/nɔl/
+jv,jv_0643,1,n,study,numbers_time,واحد,siji,/siji/
+jv,jv_0644,1,n,study,numbers_time,عشرة,sepuluh,/səpuluh/
+jv,jv_0645,1,n,study,numbers_time,مئة,satus,/satus/
+jv,jv_0646,1,n,study,numbers_time,ألف,sewu,/səwu/
+jv,jv_0647,1,n,study,numbers_time,وقت,wektu,/wɛktu/
+jv,jv_0648,1,n,study,numbers_time,ثانية,detik,/dɛtik/
+jv,jv_0649,1,n,study,numbers_time,دقيقة,menit,/mɛnit/
+jv,jv_0650,1,n,study,numbers_time,ساعة زمنية,jam,/jam/
+jv,jv_0651,1,n,study,numbers_time,يوم,dina,/dina/
+jv,jv_0652,1,n,study,numbers_time,أسبوع,minggu,/mɪŋɡu/
+jv,jv_0653,1,n,study,numbers_time,شهر,sasi,/sasi/
+jv,jv_0654,1,n,study,numbers_time,سنة,taun,/taun/
+jv,jv_0655,1,n,study,numbers_time,صباح,esuk,/ɛsʊk/
+jv,jv_0656,1,n,study,numbers_time,مساء,sore,/sorɛ/
+jv,jv_0657,1,n,study,numbers_time,ليل,bengi,/bəŋi/
+jv,jv_0658,1,adv,study,numbers_time,اليوم,saiki,/saiki/
+jv,jv_0659,1,adv,study,numbers_time,غداً,sesuk,/sɛsʊk/
+jv,jv_0660,1,adv,study,numbers_time,أمس,wingi,/wiŋi/
+jv,jv_0661,2,n,study,numbers_time,ظهيرة,awan,/awan/
+jv,jv_0662,2,n,study,numbers_time,جدول مواعيد,jadwal,/dʒadwal/
+jv,jv_0663,3,n,study,numbers_time,عقد زمني,dasawarsa,/dasawarsa/
+jv,jv_0664,3,n,study,numbers_time,قرن زمني,abad,/abad/
 jv,jv_0391,1,n,study,office_tech,حاسوب,komputer,komputər
 jv,jv_0392,1,n,study,office_tech,هاتف,telepon,tələpon
 jv,jv_0394,1,n,study,office_tech,لوحة مفاتيح,papan ketik,papan kətik
@@ -34384,6 +35211,27 @@ jv,jv_0397,1,n,study,office_tech,مكتب,meja,məja
 jv,jv_0398,1,n,study,office_tech,ورقة,kertas,kərtas
 jv,jv_0399,1,n,study,office_tech,ملف,berkas,bərkas
 jv,jv_0400,1,n,study,office_tech,رسالة,pesen,pəsən
+jv,jv_0665,1,n,study,office_tech,شاشة,layar,/layar/
+jv,jv_0666,1,n,study,office_tech,بريد إلكتروني,surat elektronik,/sʊrat ɛlɛktrɔnik/
+jv,jv_0667,1,n,study,office_tech,بطارية,baterai,/batɛrai/
+jv,jv_0668,1,n,study,office_tech,شاحن,pangisi daya,/paŋisi daya/
+jv,jv_0669,2,n,study,office_tech,حاسوب محمول,laptop,/laptop/
+jv,jv_0670,2,n,study,office_tech,جهاز لوحي,tablet,/tablɛt/
+jv,jv_0671,2,n,study,office_tech,طابعة,printer,/printər/
+jv,jv_0672,2,n,study,office_tech,مجلد,berkas,/bərkas/
+jv,jv_0673,2,n,study,office_tech,كلمة مرور,sandi,/sandi/
+jv,jv_0674,2,n,study,office_tech,موقع إلكتروني,situs web,/sitʊs wɛb/
+jv,jv_0675,2,n,study,office_tech,تطبيق,aplikasi,/aplikasi/
+jv,jv_0676,2,n,study,office_tech,سماعات رأس,headphone,/hɛdfon/
+jv,jv_0677,2,n,study,office_tech,مكبر صوت,speaker,/spɛkər/
+jv,jv_0678,2,n,study,office_tech,كاميرا,kamera,/kamɛra/
+jv,jv_0679,2,n,study,office_tech,دباسة,hekter,/hɛktər/
+jv,jv_0680,2,n,study,office_tech,مشبك ورق,klip kertas,/klip kərtas/
+jv,jv_0681,3,n,study,office_tech,برمجيات,piranti lunak,/piranti lʊnak/
+jv,jv_0682,3,n,study,office_tech,عتاد حاسوب,piranti kasar,/piranti kasar/
+jv,jv_0683,3,n,study,office_tech,قاعدة بيانات,pangkalan data,/paŋkalan data/
+jv,jv_0684,3,n,study,office_tech,نسخة احتياطية,cadangan,/cadiaŋan/
+jv,jv_0685,3,n,study,office_tech,تحديث,anyaran,/aɲaran/
 jv,jv_0517,1,phr,study,polite_phrases,صباح الخير,sugeng enjang,sugɛŋ ɛnjaŋ
 jv,jv_0518,1,phr,study,polite_phrases,مساء الخير,sugeng sonten,sugɛŋ sontɛn
 jv,jv_0519,1,phr,study,polite_phrases,تصبح على خير,sugeng dalu,sugɛŋ dalu
@@ -34408,6 +35256,7 @@ jv,jv_0537,3,phr,study,polite_phrases,هل يمكنك المساعدة,saged nyu
 jv,jv_0538,3,phr,study,polite_phrases,يوم سعيد لك,sugeng dinten,su-geng din-ten
 jv,jv_0539,3,phr,study,polite_phrases,أتمنى لك التوفيق,mugi sukses,mu-gi suk-ses
 jv,jv_0540,3,phr,study,polite_phrases,أشكرك جزيلاً,matur nuwun sanget,ma-tur nu-wun sa-nget
+jv,jv_0686,1,phr,study,polite_phrases,مرحباً,sugeng rawuh,/sʊgɛŋ rawʊh/
 jv,jv_0361,1,n,study,school,مدرسة,sekolah,səkolah
 jv,jv_0366,1,n,study,school,ممحاة,pambusek,pambusək
 jv,jv_0369,1,n,study,school,فصل دراسي,kelas,kəlas
@@ -34420,6 +35269,24 @@ jv,jv_0380,2,n,study,school,صمغ,lem,ləm
 jv,jv_0383,2,n,study,school,مادة دراسية,mata pelajaran,mata pəlajaran
 jv,jv_0385,2,n,study,school,شهادة,sertifikat,sərtifikat
 jv,jv_0389,3,n,study,school,بحث علمي,panaliten,panalitən
+jv,jv_0687,1,n,study,school,كتاب,buku,/bʊku/
+jv,jv_0688,1,n,study,school,دفتر,buku tulis,/bʊku tʊlis/
+jv,jv_0689,1,n,study,school,قلم حبر,pulpen,/pʊlpɛn/
+jv,jv_0690,1,n,study,school,قلم رصاص,pensil,/pɛnsil/
+jv,jv_0691,1,n,study,school,مسطرة,garisan,/garisan/
+jv,jv_0692,1,n,study,school,حقيبة ظهر,tas punggung,/tas pʊŋgʊŋ/
+jv,jv_0693,1,n,study,school,معلم,guru,/gʊrʊ/
+jv,jv_0694,1,n,study,school,طالب,murid,/mʊrid/
+jv,jv_0695,1,n,study,school,امتحان,ujian,/ʊdʒian/
+jv,jv_0696,2,n,study,school,سبورة,papan tulis,/papan tʊlis/
+jv,jv_0697,2,n,study,school,مقص ورق,unting,/ʊntiŋ/
+jv,jv_0698,2,n,study,school,قاموس,kamus,/kamʊs/
+jv,jv_0699,2,n,study,school,صفحة,kaca,/kaca/
+jv,jv_0700,2,n,study,school,درجة علمية,biji,/bidʒi/
+jv,jv_0701,2,n,study,school,مختبر,laboratorium,/laboratorium/
+jv,jv_0702,3,n,study,school,منهج دراسي,kurikulum,/kurikulum/
+jv,jv_0703,3,n,study,school,محاضرة,kuliah,/kuliah/
+jv,jv_0704,3,n,study,school,تخرج,wisuda,/wisuda/
 jv,jv_0571,1,n,world,animals_plants,قطة,kucing,ku-tʃiŋ
 jv,jv_0572,1,n,world,animals_plants,كلب,asu,a-su
 jv,jv_0573,1,n,world,animals_plants,طائر,manuk,ma-nʊk
@@ -34474,6 +35341,12 @@ jv,jv_0655,2,n,world,city_directions,وسط المدينة,pusat kutha,pusat kut
 jv,jv_0658,3,n,world,city_directions,حي سكني,kampung,kampuŋ
 jv,jv_0659,3,n,world,city_directions,نفق,terowongan,tərəwɔŋan
 jv,jv_0660,3,n,world,city_directions,ممر مشاة,panyebrangan,paɲəbraŋan
+jv,jv_0705,1,n,world,city_directions,جنوب,kidul,/kidul/
+jv,jv_0706,2,n,world,city_directions,متحف,museum,/musium/
+jv,jv_0707,2,n,world,city_directions,تقاطع طرق,prapatan,/prapatan/
+jv,jv_0708,2,n,world,city_directions,إشارة مرور,lampu abang,/lampu abaŋ/
+jv,jv_0709,2,n,world,city_directions,ميدان عام,alun-alun,/alun alun/
+jv,jv_0710,3,n,world,city_directions,موقف سيارات,parkiran,/parkiran/
 jv,jv_0661,1,n,world,jobs_sports,طبيب,dhokter,ɖɔktər
 jv,jv_0663,1,n,world,jobs_sports,ممرض,perawat,pərawat
 jv,jv_0664,1,n,world,jobs_sports,مزارع,petani,pətani
@@ -34498,6 +35371,12 @@ jv,jv_0687,3,n,world,jobs_sports,صيدلي,apoteker,a-po-te-ker
 jv,jv_0688,3,n,world,jobs_sports,مترجم,penerjemah,pe-ner-je-mah
 jv,jv_0689,3,n,world,jobs_sports,رماية بالقوس,panahan,pa-na-han
 jv,jv_0690,3,n,world,jobs_sports,ميدالية,medali,me-da-li
+jv,jv_0711,1,n,world,jobs_sports,مهندس,insinyur,/insinyur/
+jv,jv_0712,1,n,world,jobs_sports,طباخ,koki,/koki/
+jv,jv_0713,1,n,world,jobs_sports,كرة قدم,bal--balan,/bal balan/
+jv,jv_0714,1,n,world,jobs_sports,جري,mlayu,/mlaju/
+jv,jv_0715,1,n,world,jobs_sports,فريق,tim,/tim/
+jv,jv_0716,2,n,world,jobs_sports,عالم,ilmuwan,/ilmuwan/
 jv,jv_0691,1,n,world,materials_shop,خشب,kayu,ka-yu
 jv,jv_0692,1,n,world,materials_shop,معدن,logam,lo-gam
 jv,jv_0693,1,n,world,materials_shop,بلاستيك,plastik,plas-tik
@@ -34524,6 +35403,7 @@ jv,jv_0714,2,n,world,materials_shop,زبون,pelanggan,pe-lang-gan
 jv,jv_0715,2,n,world,materials_shop,بائع,bakul,ba-kul
 jv,jv_0716,2,n,world,materials_shop,جودة,kualitas,ku-a-li-tas
 jv,jv_0717,3,n,world,materials_shop,ألمنيوم,aluminium,a-lu-mi-ni-um
+jv,jv_0717,1,n,world,materials_shop,صوف,wul,/wul/
 jv,jv_0718,3,n,world,materials_shop,رخام,marmer,mar-mer
 jv,jv_0719,3,n,world,materials_shop,ضمان منتج,garansi,ga-ran-si
 jv,jv_0720,3,n,world,materials_shop,فاتورة,faktur,fak-tur
@@ -34584,6 +35464,9 @@ jv,jv_0627,3,n,world,transport_travel,وجهة سفر,tujuan,tu-ju-an
 jv,jv_0628,3,n,world,transport_travel,مغادرة,budhalan,bud-ha-lan
 jv,jv_0629,3,n,world,transport_travel,وصول,tekan,tə-kan
 jv,jv_0630,3,n,world,transport_travel,بوصلة,kompas,kom-pas
+jv,jv_0718,1,n,world,transport_travel,حافلة,bis,/bis/
+jv,jv_0719,1,n,world,transport_travel,دراجة هوائية,sepedhah,/spɛdhaʔ/
+jv,jv_0720,2,n,world,transport_travel,شاحنة,truks,/truks/
 ka,ka_0129,1,n,home,appliances,ثلاجة,მაცივარი,matsivari
 ka,ka_0130,1,n,home,appliances,فرن,ღუმელი,ghumeli
 ka,ka_0131,1,n,home,appliances,موقد,ქურა,kura
@@ -38275,6 +39158,10 @@ ku,ku_0022,3,adj,home,colors,قرمزي,sorê vekirî,soɾeː vɛkiˈɾiː
 ku,ku_0023,3,adj,home,colors,زمردي,keskê zemerdî,kɛskeː zɛmɛɾˈdiː
 ku,ku_0024,3,adj,home,colors,عاجي,diranfîlî,diɾanfiːˈliː
 ku,ku_0025,3,adj,home,colors,نيلي,nîlî,niːˈliː
+ku,ku_0697,1,adj,home,colors,أحمر,sor,/soɾ/
+ku,ku_0698,1,adj,home,colors,أخضر,kesk,/kɛsk/
+ku,ku_0699,1,adj,home,colors,أصفر,zerî,/zeˈriː/
+ku,ku_0700,1,adj,home,colors,رمادي,boz,/boz/
 ku,ku_0155,1,n,home,garden_clean,حديقة,baxçe,/baːxˈtʃɛ/
 ku,ku_0156,1,n,home,garden_clean,مكنسة يدوية,gisk,/ɡɪsk/
 ku,ku_0157,1,n,home,garden_clean,دلو,satil,/saːˈtɪl/
@@ -38330,6 +39217,9 @@ ku,ku_0054,3,n,home,kitchen,مصفاة معكرونة,sifreya mezin,/sɪf.rɛˈj
 ku,ku_0055,3,n,home,kitchen,ملاقط طعام,girtok,/gɪrˈtoːk/
 ku,ku_0056,3,n,home,kitchen,فتاحة علب,girtokevkê,/gɪr.toːk.ɛvˈkeː/
 ku,ku_0057,3,n,home,kitchen,مخزن المؤن,anbar,/ɑːnˈbɑːr/
+ku,ku_0701,1,n,home,kitchen,طبق,tas,/tas/
+ku,ku_0702,1,n,home,kitchen,كأس زجاجي,dewran,/dɛwˈɾan/
+ku,ku_0703,1,n,home,kitchen,مقلاة,tawe,/taˈwɛ/
 ku,ku_0102,1,n,home,living,غرفة معيشة,odeya rûniştinê,oˈdɛja ɾuːnɪʃˈtiːnɛ
 ku,ku_0103,1,n,home,living,أريكة,divan,dɪˈvan
 ku,ku_0104,1,n,home,living,كرسي,kursî,kuʁˈsiː
@@ -38356,6 +39246,7 @@ ku,ku_0125,2,n,home,living,قفل,qufil,/quˈfɪl/
 ku,ku_0126,3,n,home,living,ثريا,çirokxane,/tʃiː.rokˈxaː.næ/
 ku,ku_0127,3,n,home,living,مسند قدمين,kursiya lingan,/kuːr.siˈjaː lɪnˈɡɑːn/
 ku,ku_0128,3,n,home,living,ستائر شرائح,perdeya slaît,/pɛr.dɛˈjaː slaːjts/
+ku,ku_0704,1,n,home,living,سقف,ban,/ban/
 ku,ku_0295,1,n,life,body_health,رأس,ser,/sɛr/
 ku,ku_0296,1,n,life,body_health,وجه,serî,/sɛˈriː/
 ku,ku_0297,1,n,life,body_health,عين,çav,/tʃɑːv/
@@ -38413,6 +39304,9 @@ ku,ku_0291,3,n,life,clothing,سحاب,ferfûr,/fɛrˈfuːr/
 ku,ku_0292,3,n,life,clothing,ياقة,gerden,/gɛrˈdɛn/
 ku,ku_0293,3,n,life,clothing,كم القميص,milê çakêt,/mɪˈleː tʃɑːˈkeːt/
 ku,ku_0294,3,n,life,clothing,مظلة مطر,sîwan,/siːˈwɑːn/
+ku,ku_0705,1,n,life,clothing,حذاء,pawî,/paˈwiː/
+ku,ku_0706,1,n,life,clothing,معطف,palto,/palˈto/
+ku,ku_0707,1,n,life,clothing,قبعة,kulav,/kuˈlav/
 ku,ku_0327,1,n,life,family_traits,عائلة,malbat,mal.bat
 ku,ku_0329,1,n,life,family_traits,أم,dayik,da.yik
 ku,ku_0330,1,n,life,family_traits,أخ,bira,bi.ra
@@ -38443,6 +39337,10 @@ ku,ku_0357,3,adj,life,family_traits,حكيم,zانا,zaː.na
 ku,ku_0358,3,adj,life,family_traits,مسؤول,berpirsiyar,ber.pir.si.yar
 ku,ku_0359,3,adj,life,family_traits,فضولي للعلم,pirsyar,pirs.yar
 ku,ku_0360,3,adj,life,family_traits,مبدع,afirîner,a.fi.riː.ner
+ku,ku_0708,1,n,life,family_traits,أب,bav,/baːv/
+ku,ku_0709,1,n,life,family_traits,ابن,kur,/kuɾ/
+ku,ku_0710,2,n,life,family_traits,عم أو خال,mam,/mam/
+ku,ku_0711,2,n,life,family_traits,عمة أو خالة,met,/mɛt/
 ku,ku_0213,1,n,life,food_drink,ماء,av,/ɑːv/
 ku,ku_0214,1,n,life,food_drink,خبز,nan,/nɑːn/
 ku,ku_0215,1,n,life,food_drink,حليب,îstir,/iːsˈtiːɾ/
@@ -38528,6 +39426,7 @@ ku,ku_0263,3,n,life,spices_grains,هيل,helel,hɛlɛl
 ku,ku_0264,3,n,life,spices_grains,قرنفل,qerenfîl,qɛɾɛnfiːl
 ku,ku_0265,3,n,life,spices_grains,كزبرة,kezeb,kɛzɛb
 ku,ku_0266,3,n,life,spices_grains,بقدونس,neqperest,nɛqpɛɾɛst
+ku,ku_0712,2,n,life,spices_grains,حمص,nixûn,/nɪˈxuːn/
 ku,ku_0451,1,v,study,core_verbs,يقرأ,xwendin,xwændɪn
 ku,ku_0452,1,v,study,core_verbs,يكتب,nivîsîn,nɪviːsiːn
 ku,ku_0453,1,v,study,core_verbs,يتعلم,hîn bûn,hiːn buːn
@@ -38676,6 +39575,8 @@ ku,ku_0537,3,phr,study,polite_phrases,هل يمكنك المساعدة,tu dikar�
 ku,ku_0538,3,phr,study,polite_phrases,يوم سعيد لك,rojek xweş,ro-jek xwash
 ku,ku_0539,3,phr,study,polite_phrases,أتمنى لك التوفيق,serkeftinê dixwazim,ser-kef-ti-ne dix-wa-zim
 ku,ku_0540,3,phr,study,polite_phrases,أشكرك جزيلاً,gelek spas,ge-lek spas
+ku,ku_0713,1,phr,study,polite_phrases,عفواً,sipas,/sɪˈpas/
+ku,ku_0714,1,phr,study,polite_phrases,لا,na,/na/
 ku,ku_0361,1,n,study,school,مدرسة,xwendekeh,/xʷɛn.dɛˈɡɛh/
 ku,ku_0362,1,n,study,school,كتاب,pirtûk,/pɪrˈtuːk/
 ku,ku_0363,1,n,study,school,دفتر,defter,/dɛfˈtɛr/
@@ -38850,6 +39751,12 @@ ku,ku_0567,3,n,world,nature_weather,مناخ,hewa,/hɛˈwɑː/
 ku,ku_0568,3,n,world,nature_weather,رطوبة,şilî,/ʃɪˈliː/
 ku,ku_0569,3,n,world,nature_weather,أفق,asoy,/ɑːˈsɔj/
 ku,ku_0570,3,n,world,nature_weather,نسيم عليل,ba,/bɑː/
+ku,ku_0715,1,n,world,nature_weather,شمس,roj,/ɾoj/
+ku,ku_0716,1,n,world,nature_weather,قمر,heyv,/hɛjv/
+ku,ku_0717,1,n,world,nature_weather,ثلج,berf,/bɛɾf/
+ku,ku_0718,1,n,world,nature_weather,رياح,ba,/baː/
+ku,ku_0719,1,n,world,nature_weather,صحراء,beis,/beːs/
+ku,ku_0720,2,n,world,nature_weather,بحيرة,gol,/gol/
 ku,ku_0601,1,n,world,transport_travel,سيارة,otomobîl,/o.to.moˈbiːl/
 ku,ku_0602,1,n,world,transport_travel,حافلة,otobus,/o.toˈbus/
 ku,ku_0603,1,n,world,transport_travel,قطار,trêb,/tɾɛːb/
@@ -40345,6 +41252,7 @@ lb,lb_0469,3,n,home,appliances,محضر طعام,food processor,fuːd prəˈses�
 lb,lb_0470,3,n,home,appliances,منقي هواء,naqqi hawa,ˈnaqqi haːˈwaː
 lb,lb_0471,3,n,home,appliances,مرطب هواء,mratteb hawa,mratˈteb haːˈwaː
 lb,lb_0472,3,n,home,appliances,منظم حرارة,termostad,termoˈstaːd
+lb,lb_0675,1,n,home,appliances,فرن,Uewen,/ˈuːvən/
 lb,lb_0018,1,n,home,bathroom,حمام,bad,baːd
 lb,lb_0019,1,n,home,bathroom,صابون,seifa,sɛifa
 lb,lb_0020,1,n,home,bathroom,منشفة,handtuach,handtuax
@@ -40366,6 +41274,7 @@ lb,lb_0035,2,n,home,bathroom,ستارة الدش,duschvorhang,duʃforhaŋ
 lb,lb_0036,3,n,home,bathroom,مغسلة يدين,waschbecki,waʃbɛki
 lb,lb_0037,3,n,home,bathroom,خيط أسنان,zandseid,tsandseid
 lb,lb_0038,3,n,home,bathroom,غسول فم,mundwasser,mundwasːər
+lb,lb_0676,3,n,home,bathroom,مصرف ماء,Offluss,/ˈɔflʊs/
 lb,lb_0040,1,n,home,bedroom,غرفة نوم,schlafzimmer,ʃlafzɪmər
 lb,lb_0399,1,n,home,bedroom,سرير,tak,/tak/
 lb,lb_0400,1,n,home,bedroom,وسادة,wsaadi,/wsaadi/
@@ -40467,6 +41376,7 @@ lb,lb_0674,1,n,home,kitchen,قدر طبخ,Pot,[pɔt]
 lb,lb_0675,1,n,home,kitchen,مقلاة,Pan,[paːn]
 lb,lb_0676,1,n,home,kitchen,إبريق شاي,Teekessel,[ˈteːˌkɛsəl]
 lb,lb_0677,1,n,home,kitchen,فنجان كبير,groossi Tass,[ˈɡʁoːsi tass]
+lb,lb_0677,2,n,home,kitchen,إبريق ماء,Kaféisskanter,/kaˈfeːɪskantɐ/
 lb,lb_0678,1,n,home,kitchen,صينية,Tray,[tʁɛː]
 lb,lb_0679,1,n,home,kitchen,حوض المطبخ,Spülbecken,[ˈʃpyːlˌbɛkən]
 lb,lb_0680,1,n,home,kitchen,صنبور,Kran,[kʁan]
@@ -40504,6 +41414,31 @@ lb,lb_0123,3,n,life,body_health,ضمادة,Verband,/fɛʁˈbant/
 lb,lb_0124,3,n,life,body_health,فيتامين,Vitamin,/vitaˈmiːn/
 lb,lb_0125,3,n,life,body_health,مناعة,Immunität,/ɪmuniˈtɛːt/
 lb,lb_0561,2,n,life,body_health,ركبة,Knéi,kneː
+lb,lb_0678,1,n,life,body_health,رأس,Kapp,/kap/
+lb,lb_0679,1,n,life,body_health,وجه,Gesiicht,/ɡəˈziːçt/
+lb,lb_0680,1,n,life,body_health,عين,A,/aː/
+lb,lb_0681,1,n,life,body_health,أذن,Ouer,/ˈoːɐ/
+lb,lb_0682,1,n,life,body_health,أنف,Nues,/nuːs/
+lb,lb_0683,1,n,life,body_health,فم,Mond,/moːnt/
+lb,lb_0684,1,n,life,body_health,سن,Zahn,/tsaːn/
+lb,lb_0685,1,n,life,body_health,شعر,Hoer,/hoːɐ/
+lb,lb_0686,1,n,life,body_health,يد,Hand,/hant/
+lb,lb_0687,1,n,life,body_health,إصبع,Fanger,/ˈfaŋɐ/
+lb,lb_0688,1,n,life,body_health,ذراع,Aarm,/aːʁm/
+lb,lb_0689,1,n,life,body_health,ساق,Been,/beːn/
+lb,lb_0690,1,n,life,body_health,قدم,Fouss,/fuːs/
+lb,lb_0691,1,n,life,body_health,قلب,Häerz,/hæːɐts/
+lb,lb_0692,1,n,life,body_health,صحة,Gesondheet,/ɡəˈzɔndeːt/
+lb,lb_0693,1,n,life,body_health,دواء,Medezin,/medəˈziːn/
+lb,lb_0694,2,n,life,body_health,رقبة,Hals,/hals/
+lb,lb_0695,2,n,life,body_health,كتف,Schëller,/ˈʃɛlɐ/
+lb,lb_0696,2,n,life,body_health,ظهر,Réck,/ʁɛk/
+lb,lb_0697,2,n,life,body_health,معدة,Mach,/maχ/
+lb,lb_0698,2,n,life,body_health,لسان,Zong,/tsɔŋ/
+lb,lb_0699,2,n,life,body_health,جبين,Stir,/stiːɐ/
+lb,lb_0700,2,n,life,body_health,كوع,Elbog,/ˈɛlbɔk/
+lb,lb_0701,2,n,life,body_health,معصم,Handgelenk,/ˈhantɡəleŋk/
+lb,lb_0702,2,n,life,body_health,كاحل,Foussgelenk,/ˈfuːsɡəleŋk/
 lb,lb_0081,2,n,life,clothing,قفازات,kufèfz,kufwèf
 lb,lb_0082,2,n,life,clothing,حذاء رياضي,sbèdr,sbèdar
 lb,lb_0088,2,n,life,clothing,ملابس نوم,tiyab nowm,tiyab nom
@@ -40521,6 +41456,17 @@ lb,lb_0557,1,n,life,clothing,حقيبة,Täsch,[tæʃ]
 lb,lb_0558,1,n,life,clothing,نظارات,Brëll,[bʀəl]
 lb,lb_0559,2,n,life,clothing,كنزة صوفية,Pullover,[ˈpuloːvɐ]
 lb,lb_0560,2,n,life,clothing,وشاح,Schal,[ʃaːl]
+lb,lb_0703,2,n,life,clothing,حذاء طويل,Stiwwel,/ˈʃtiwəl/
+lb,lb_0704,2,n,life,clothing,صندل,Sandälchen,/ˈzandɛːlçən/
+lb,lb_0705,2,n,life,clothing,خف منزلي,Pantoffel,/panˈtɔfəl/
+lb,lb_0706,2,n,life,clothing,بدلة رسمية,Costume,/kɔsˈtym/
+lb,lb_0707,2,n,life,clothing,ربطة عنق,Kravat,/kʁaˈvaːt/
+lb,lb_0708,2,n,life,clothing,جيب,Tas,/tas/
+lb,lb_0709,2,n,life,clothing,زر,Knäppchen,/ˈknæpçən/
+lb,lb_0710,3,n,life,clothing,سحاب,Zipp,/tsɪp/
+lb,lb_0711,3,n,life,clothing,ياقة,Kraach,/kʁaːχ/
+lb,lb_0712,3,n,life,clothing,كم القميص,Ärmel,/ˈɛʁməl/
+lb,lb_0713,3,n,life,clothing,مظلة مطر,Prabbeli,/ˈpʁabəli/
 lb,lb_0126,1,n,life,family_traits,عائلة,Famillje,/faˈmɪljə/
 lb,lb_0127,1,n,life,family_traits,أب,Papp,/pap/
 lb,lb_0128,1,n,life,family_traits,أم,Mamm,/mam/
@@ -40701,6 +41647,11 @@ lb,lb_0271,2,adv,study,grammar_links,ببطء,bi-botʾ,biˈbotʾ
 lb,lb_0272,3,adv,study,grammar_links,لذلك,la-heyk,la heyk
 lb,lb_0273,3,adv,study,grammar_links,بينما,beynama,beyˈnama
 lb,lb_0480,3,adv,study,grammar_links,ومع ذلك,aw-m-waħd,/aw.ma.waħd/
+lb,lb_0714,1,adv,study,grammar_links,هنا,hei,/haɪ̯/
+lb,lb_0715,1,adv,study,grammar_links,و,an,/an/
+lb,lb_0716,1,adv,study,grammar_links,أو,oder,/ˈoːdɐ/
+lb,lb_0717,1,adv,study,grammar_links,في,an,/an/
+lb,lb_0718,2,adv,study,grammar_links,بين,tëschent,/ˈtɛʃənt/
 lb,lb_0180,1,n,study,numbers_time,صفر,zero,ze.ʁo
 lb,lb_0181,1,n,study,numbers_time,واحد,un,œ̃
 lb,lb_0182,1,n,study,numbers_time,عشرة,dix,dis
@@ -40730,6 +41681,7 @@ lb,lb_0206,2,n,study,numbers_time,فصل الشتاء,winter,/ˈwɪntər/
 lb,lb_0207,3,n,study,numbers_time,عقد زمني,decade,/ˈdɛkeɪd/
 lb,lb_0208,3,n,study,numbers_time,قرن زمني,century,/ˈsɛntʃəri/
 lb,lb_0209,3,n,study,numbers_time,موعد نهائي,deadline,/ˈdɛdlaɪn/
+lb,lb_0719,1,n,study,numbers_time,ألف,Dausend,/ˈdɑʊzənt/
 lb,lb_0160,1,n,study,office_tech,بريد إلكتروني,e-mail,iː.meɪl
 lb,lb_0161,1,n,study,office_tech,بطارية,batterie,ba.tə.ʁi
 lb,lb_0162,1,n,study,office_tech,شاحن,cargadour,kaʁ.ɡa.duʁ
@@ -40814,6 +41766,7 @@ lb,lb_0588,3,n,study,school,منهج دراسي,Curriculum,kuˈʀikulum
 lb,lb_0589,3,n,study,school,محاضرة,Virliesung,ˈfiːʀˌliːzuŋ
 lb,lb_0590,3,n,study,school,بحث علمي,Fuerschung,ˈfuəʀʃuŋ
 lb,lb_0591,3,n,study,school,تخرج,Graduatioun,ɡʀaduɑˈtsion
+lb,lb_0720,1,n,study,school,دفتر,Kierchheft,/ˈkiːɐ̯çhɛft/
 lb,lb_0519,3,n,world,animals_plants,نخلة,tshila,tʃi.la
 lb,lb_0520,3,n,world,animals_plants,مرجان,merjan,mɛʁ.ʒan
 lb,lb_0613,1,n,world,animals_plants,قطة,Kaz,/kɑts/
@@ -40997,6 +41950,29 @@ lb,lb_0308,3,n,world,transport_travel,بوصلة,Kompass,ˈkɔmpas
 lg,lg_0132,1,n,home,appliances,غسالة ملابس,lave-linge,lavlinʒ
 lg,lg_0143,2,n,home,appliances,غسالة أطباق,lave-vaysel,lavvaysɛl
 lg,lg_0150,3,n,home,appliances,مجفف ملابس,sɛsɔw-lɔm,sɛsɔw lɔm
+lg,lg_0521,1,n,home,appliances,ثلاجة,firigigi,/fiɾigiɡi/
+lg,lg_0522,1,n,home,appliances,فرن,ofuuni,/ofuuni/
+lg,lg_0523,1,n,home,appliances,موقد,sitove,/sitove/
+lg,lg_0524,1,n,home,appliances,مروحة,fanisi,/fanisi/
+lg,lg_0525,1,n,home,appliances,مكيف هواء,akanyiga-mpewo,/akaɲiɡampewo/
+lg,lg_0526,1,n,home,appliances,مكواة,goya,/ɡoja/
+lg,lg_0527,1,n,home,appliances,غلاية كهربائية,kayira,/kajiɾa/
+lg,lg_0528,1,n,home,appliances,تلفاز,ttivi,/ttivi/
+lg,lg_0529,1,n,home,appliances,مصباح كهربائي,taala,/taala/
+lg,lg_0530,2,n,home,appliances,ميكروويف,mikuwafu,/mikuwafu/
+lg,lg_0531,2,n,home,appliances,خلاط,bulenda,/bulenda/
+lg,lg_0532,2,n,home,appliances,محمصة خبز,toyisa,/tojisa/
+lg,lg_0533,2,n,home,appliances,مكنسة كهربائية,mukono,/mukono/
+lg,lg_0534,2,n,home,appliances,مجمد,firigigi ey'omusana,/fiɾigiɡi ejomusana/
+lg,lg_0535,2,n,home,appliances,مدفأة,kiterekero ky'obugumu,/kiterekeɾo kjobuɡumu/
+lg,lg_0536,2,n,home,appliances,مجفف شعر,kalungi k'enviiri,/kalunɡi kenviːɾi/
+lg,lg_0537,2,n,home,appliances,مفتاح كهرباء,kisumuluzo ky'etaala,/kisumuluzo kjetaala/
+lg,lg_0538,2,n,home,appliances,مقبس كهرباء,soketi,/soketi/
+lg,lg_0539,2,n,home,appliances,قابس كهرباء,pulaagi,/pulaaɡi/
+lg,lg_0540,3,n,home,appliances,محضر طعام,kyuma ky'okulya,/kjuma kjokulja/
+lg,lg_0541,3,n,home,appliances,منقي هواء,musumuluzo w'omweyo,/musumuluzo womwejo/
+lg,lg_0542,3,n,home,appliances,مرطب هواء,kiyonjo ky'omweyo,/kijonjo kjomwejo/
+lg,lg_0543,3,n,home,appliances,منظم حرارة,kigereka ky'obugumu,/kiɡeɾeka kjobuɡumu/
 lg,lg_0058,1,n,home,bathroom,حمام,ekifo ky'okwoga,e.ki.fo kjo.wo.ga
 lg,lg_0059,1,n,home,bathroom,صابون,sawa,sa.wa
 lg,lg_0060,1,n,home,bathroom,منشفة,ekitambala,e.ki.tam.ba.la
@@ -41082,6 +42058,16 @@ lg,lg_0177,3,n,home,garden_clean,مشط حديقة,rek,rɛk
 lg,lg_0178,3,n,home,garden_clean,عربة يدوية,wilbaro,wilbaɾɔ
 lg,lg_0179,3,n,home,garden_clean,سماد طبيعي,kampost,kampɔst
 lg,lg_0180,3,n,home,garden_clean,مقص تقليم,pruning shia,pɾuning ʃia
+lg,lg_0544,1,n,home,garden_clean,حديقة,lusuku,/lusuku/
+lg,lg_0545,1,n,home,garden_clean,مكنسة يدوية,sayiro,/sajiɾo/
+lg,lg_0546,1,n,home,garden_clean,دلو,lubengo,/lubenɡo/
+lg,lg_0547,1,n,home,garden_clean,عشب,mwanyi,/mwaɲi/
+lg,lg_0548,1,n,home,garden_clean,زهرة,kyetuba,/kjetuba/
+lg,lg_0549,1,n,home,garden_clean,شجرة,muti,/muti/
+lg,lg_0550,1,n,home,garden_clean,تربة,taka,/taka/
+lg,lg_0551,2,n,home,garden_clean,مجرود غبار,kikowe,/kikowe/
+lg,lg_0552,2,n,home,garden_clean,منظف غسيل,sabuni y'engoye,/sabuni jeŋɡoje/
+lg,lg_0553,2,n,home,garden_clean,منفضة غبار,kizibirizi,/kizibiɾizi/
 lg,lg_0026,1,n,home,kitchen,مطبخ,kifo ky'okufumbira,ki-fo kyo-ku-fum-bi-ra
 lg,lg_0027,1,n,home,kitchen,طبق,luwalo,lu-wa-lo
 lg,lg_0028,1,n,home,kitchen,كوب,kopo,ko-po
@@ -41133,6 +42119,14 @@ lg,lg_0117,2,n,home,living,طاولة قهوة,mmeca y'amenvu,/ˈmmeeca jaˈmenu
 lg,lg_0118,2,n,home,living,مكتبة كتب,kabati y'ebitabo,/kaˈbati jebiˈtabo/
 lg,lg_0119,2,n,home,living,بساط صغير,kapeeti omuto,/kaˈpeeti oˈmuto/
 lg,lg_0120,2,n,home,living,وسادة أريكة,omuseke gw'oku sofa,/oˈmuseke ɡwoˈku sofa/
+lg,lg_0554,2,n,home,living,ممر,kisenge,/kisenɡe/
+lg,lg_0555,2,n,home,living,درج المنزل,madaala,/madaala/
+lg,lg_0556,2,n,home,living,شرفة,balcony,/balconi/
+lg,lg_0557,2,n,home,living,مقبض الباب,mukono gw'oluggi,/mukono ɡwolugɡi/
+lg,lg_0558,2,n,home,living,قفل,kisumuluzo,/kisumuluzo/
+lg,lg_0559,3,n,home,living,ثريا,tuliya,/tulija/
+lg,lg_0560,3,n,home,living,مسند قدمين,akalo k'amagulu,/akalo kamaguɾu/
+lg,lg_0561,3,n,home,living,ستائر شرائح,masanyu,/masanju/
 lg,lg_0295,1,n,life,body_health,رأس,mutwe,mu.twe
 lg,lg_0296,1,n,life,body_health,وجه,maaso,maː.so
 lg,lg_0297,1,n,life,body_health,عين,liiso,liː.so
@@ -41286,6 +42280,9 @@ lg,lg_0209,3,n,life,produce,بروكلي,mbrokoli,/m.bro.ko.li/
 lg,lg_0210,3,n,life,produce,قرنبيط,kaulifawa,/ka.u.li.fa.wa/
 lg,lg_0211,3,n,life,produce,فجل,nnamuuni,/nːa.muː.ni/
 lg,lg_0212,3,n,life,produce,كرفس,selesi,/se.le.si/
+lg,lg_0562,1,n,life,produce,موزة,matooke,/matooke/
+lg,lg_0563,1,n,life,produce,بطاطس,lumonde,/lumonde/
+lg,lg_0564,1,n,life,produce,كمثرى,kipapaali,/kipapaali/
 lg,lg_0243,1,n,life,spices_grains,أرز,omuceere,/o.mu.ʧeː.re/
 lg,lg_0244,1,n,life,spices_grains,ملح,omunnyu,/o.mu.ɲːu/
 lg,lg_0245,1,n,life,spices_grains,سكر,sukali,/su.ka.li/
@@ -41315,6 +42312,36 @@ lg,lg_0482,3,v,study,core_verbs,يقارن,okugerageranya,o-ke-ge-ra-ge-ra-nya
 lg,lg_0483,3,v,study,core_verbs,ينظم,okuteeka mu nteekateeka,o-ku-tee-ka mu n-tee-ka-tee-ka
 lg,lg_0484,3,v,study,core_verbs,يحسن,okulongoosa,o-ku-lon-goo-sa
 lg,lg_0485,3,v,study,core_verbs,يكتشف,okuzuula,o-ku-zuu-la
+lg,lg_0565,1,v,study,core_verbs,يقرأ,soma,/soma/
+lg,lg_0566,1,v,study,core_verbs,يكتب,wandiika,/wandiika/
+lg,lg_0567,1,v,study,core_verbs,يتعلم,yiga,/jiɡa/
+lg,lg_0568,1,v,study,core_verbs,يدرس,soma,/soma/
+lg,lg_0569,1,v,study,core_verbs,يسمع,wuliriza,/wuliɾiza/
+lg,lg_0570,1,v,study,core_verbs,يتحدث,yogera,/joɡeɾa/
+lg,lg_0571,1,v,study,core_verbs,يرى,laba,/laba/
+lg,lg_0572,1,v,study,core_verbs,يذهب,genda,/ɡenda/
+lg,lg_0573,1,v,study,core_verbs,يأتي,jija,/dʒidʒa/
+lg,lg_0574,1,v,study,core_verbs,يأكل,lya,/lya/
+lg,lg_0575,1,v,study,core_verbs,يشرب,nywa,/ɲwa/
+lg,lg_0576,1,v,study,core_verbs,ينام,sula,/sula/
+lg,lg_0577,1,v,study,core_verbs,يعمل,kola,/kola/
+lg,lg_0578,1,v,study,core_verbs,يلعب,zannya,/zaɲɲa/
+lg,lg_0579,1,v,study,core_verbs,يساعد,uyinga,/uwiŋɡa/
+lg,lg_0580,1,v,study,core_verbs,يعرف,manya,/maɲa/
+lg,lg_0581,1,v,study,core_verbs,يفكر,lowooza,/lowoːza/
+lg,lg_0582,1,v,study,core_verbs,يفتح,ggula,/ɡːula/
+lg,lg_0583,1,v,study,core_verbs,يغلق,ggala,/ɡːala/
+lg,lg_0584,2,v,study,core_verbs,يفهم,tegeera,/teɡeːra/
+lg,lg_0585,2,v,study,core_verbs,يتذكر,jjukira,/dʒukira/
+lg,lg_0586,2,v,study,core_verbs,ينسى,werabira,/werabira/
+lg,lg_0587,2,v,study,core_verbs,يشرح,annyonnyola,/aɲɲoɲɲola/
+lg,lg_0588,2,v,study,core_verbs,يسأل,buuza,/buːza/
+lg,lg_0589,2,v,study,core_verbs,يجيب,uddamu,/udːamu/
+lg,lg_0590,2,v,study,core_verbs,يحاول,gezaako,/ɡezaːko/
+lg,lg_0591,2,v,study,core_verbs,يبدأ,tandika,/tandika/
+lg,lg_0592,2,v,study,core_verbs,ينهي,maliriza,/maliriza/
+lg,lg_0593,2,v,study,core_verbs,يبني,zimba,/zimba/
+lg,lg_0594,2,v,study,core_verbs,يختار,londa,/londa/
 lg,lg_0492,1,adv,study,grammar_links,هنا,wano,wa-no
 lg,lg_0493,1,adv,study,grammar_links,هناك,eri,e-ri
 lg,lg_0494,1,adv,study,grammar_links,الآن,kati,ka-ti
@@ -41336,6 +42363,45 @@ lg,lg_0512,2,adv,study,grammar_links,ببطء,mpola,mpo-la
 lg,lg_0513,3,adv,study,grammar_links,ومع ذلك,naye nga,na-ye nga
 lg,lg_0514,3,adv,study,grammar_links,لذلك,kyekiva,kye-ki-va
 lg,lg_0515,3,adv,study,grammar_links,بينما,nga bw'osalawo,nga bwo-sa-la-wo
+lg,lg_0595,1,n,study,grammar_links,أنا,nze,/nze/
+lg,lg_0596,1,n,study,grammar_links,أنت,ggwe,/ɡːwe/
+lg,lg_0597,1,n,study,grammar_links,نحن,ffe,/fːe/
+lg,lg_0598,1,n,study,grammar_links,هو,ye,/ye/
+lg,lg_0599,1,n,study,grammar_links,هي,ye,/ye/
+lg,lg_0600,1,n,study,grammar_links,هم,bo,/bo/
+lg,lg_0601,1,adv,study,grammar_links,و,na,/na/
+lg,lg_0602,1,adv,study,grammar_links,في,mu,/mu/
+lg,lg_0603,1,adv,study,grammar_links,على,ku,/ku/
+lg,lg_0604,1,n,study,numbers_time,صفر,kisa,/kisa/
+lg,lg_0605,1,n,study,numbers_time,واحد,emu,/emu/
+lg,lg_0606,1,n,study,numbers_time,عشرة,kkumi,/kːumi/
+lg,lg_0607,1,n,study,numbers_time,مئة,kikumi,/kikumi/
+lg,lg_0608,1,n,study,numbers_time,ألف,kikumi,/kikumi/
+lg,lg_0609,1,n,study,numbers_time,وقت,obudde,/obudːe/
+lg,lg_0610,1,n,study,numbers_time,ثانية,kayinja,/kayindʒa/
+lg,lg_0611,1,n,study,numbers_time,دقيقة,ddakiika,/dːakiika/
+lg,lg_0612,1,n,study,numbers_time,ساعة زمنية,sawa,/sawa/
+lg,lg_0613,1,n,study,numbers_time,يوم,lunaku,/lunaku/
+lg,lg_0614,1,n,study,numbers_time,أسبوع,wiiki,/wiːki/
+lg,lg_0615,1,n,study,numbers_time,شهر,mwezi,/mwezi/
+lg,lg_0616,1,n,study,numbers_time,سنة,mwaka,/mwaka/
+lg,lg_0617,1,n,study,numbers_time,صباح,enkya,/enkya/
+lg,lg_0618,1,n,study,numbers_time,مساء,akawungeezi,/akawuŋɡeːzi/
+lg,lg_0619,1,n,study,numbers_time,ليل,kiro,/kiro/
+lg,lg_0620,1,adv,study,numbers_time,اليوم,leero,/leːro/
+lg,lg_0621,1,adv,study,numbers_time,غداً,nkya,/nka/
+lg,lg_0622,1,adv,study,numbers_time,أمس,jjo,/dʒo/
+lg,lg_0623,2,n,study,numbers_time,ظهيرة,munsana,/munsana/
+lg,lg_0624,2,n,study,numbers_time,منتصف الليل,wakati w'ekiro,/wakati wekiro/
+lg,lg_0625,2,n,study,numbers_time,تقويم,kalenda,/kalenda/
+lg,lg_0626,2,n,study,numbers_time,جدول مواعيد,nteekateeka,/nteekateeka/
+lg,lg_0627,2,n,study,numbers_time,فصل الربيع,ekiseera ky'ebimuli,/ekiseera kjeimuli/
+lg,lg_0628,2,n,study,numbers_time,فصل الصيف,ekiseera ky'omusana,/ekiseera kjomusana/
+lg,lg_0629,2,n,study,numbers_time,فصل الخريف,ekiseera ky'okukungula,/ekiseera kjokukungula/
+lg,lg_0630,2,n,study,numbers_time,فصل الشتاء,ekiseera ky'enkuba,/ekiseera kjenkuba/
+lg,lg_0631,3,n,study,numbers_time,عقد زمني,emyaka ebikaumi,/emjaka ebikaumi/
+lg,lg_0632,3,n,study,numbers_time,قرن زمني,kyaanda,/kjaanda/
+lg,lg_0633,3,n,study,numbers_time,موعد نهائي,ekiseera ky'okuggwaako,/ekiseera kjokuggwaako/
 lg,lg_0391,1,n,study,office_tech,حاسوب,kompyuta,/kom.pju.ta/
 lg,lg_0392,1,n,study,office_tech,هاتف,essimu,/e.sːi.mu/
 lg,lg_0393,1,n,study,office_tech,شاشة,akawugulu,/a.ka.wu.gu.lu/
@@ -41346,6 +42412,26 @@ lg,lg_0397,1,n,study,office_tech,مكتب,teza,/te.za/
 lg,lg_0398,1,n,study,office_tech,ورقة,olupapula,/o.lu.pa.pu.la/
 lg,lg_0399,1,n,study,office_tech,ملف,fayilo,/fa.ji.lo/
 lg,lg_0400,1,n,study,office_tech,رسالة,obubaka,/o.bu.ba.ka/
+lg,lg_0634,1,n,study,office_tech,بريد إلكتروني,emaili,/emaili/
+lg,lg_0635,1,n,study,office_tech,بطارية,batuleeha,/batuleeha/
+lg,lg_0636,1,n,study,office_tech,شاحن,omusika,/omusika/
+lg,lg_0637,2,n,study,office_tech,حاسوب محمول,kompyuta ey'oku kisenge,/kompjuta ejoku kisenge/
+lg,lg_0638,2,n,study,office_tech,جهاز لوحي,tabuli,/tabuli/
+lg,lg_0639,2,n,study,office_tech,طابعة,mizimba,/mizimba/
+lg,lg_0640,2,n,study,office_tech,مجلد,foloda,/foloda/
+lg,lg_0641,2,n,study,office_tech,كلمة مرور,ekigambo ekiggulawo,/ekigambo ekiggulawo/
+lg,lg_0642,2,n,study,office_tech,موقع إلكتروني,mukutu,/mukutu/
+lg,lg_0643,2,n,study,office_tech,تطبيق,pulogulaamu,/pulogulaamu/
+lg,lg_0644,2,n,study,office_tech,سماعات رأس,kawulikizo,/kawulikizo/
+lg,lg_0645,2,n,study,office_tech,مكبر صوت,muzindaalo,/muzindaalo/
+lg,lg_0646,2,n,study,office_tech,كاميرا,kamera,/kamera/
+lg,lg_0647,2,n,study,office_tech,دباسة,kabati,/kabati/
+lg,lg_0648,2,n,study,office_tech,مشبك ورق,kakwate k'empapula,/kakwate kempapula/
+lg,lg_0649,3,n,study,office_tech,برمجيات,pulogulaamu z'ekikompyuta,/pulogulaamu zekikompjuta/
+lg,lg_0650,3,n,study,office_tech,عتاد حاسوب,ebyuma by'ekikompyuta,/ebjuma bjekikompjuta/
+lg,lg_0651,3,n,study,office_tech,قاعدة بيانات,terane y'ebirimwa,/terane jebirimwa/
+lg,lg_0652,3,n,study,office_tech,نسخة احتياطية,okukaza ebikwata,/okukaza ebikwata/
+lg,lg_0653,3,n,study,office_tech,تحديث,okuzimba,/okuzimba/
 lg,lg_0516,1,phr,study,polite_phrases,مرحباً,gyebiri,gye-bi-ri
 lg,lg_0517,1,phr,study,polite_phrases,صباح الخير,wasuze otya,wa-su-ze o-tya
 lg,lg_0518,1,phr,study,polite_phrases,مساء الخير,osiibye otya,o-sii-bye o-tya
@@ -41428,21 +42514,69 @@ lg,lg_0597,3,n,world,animals_plants,بطريق,mpologoma,m-po-lo-go-ma
 lg,lg_0598,3,n,world,animals_plants,صقر,kamunye,ka-mu-nye
 lg,lg_0599,3,n,world,animals_plants,نخلة,mutuba,mu-tu-ba
 lg,lg_0600,3,n,world,animals_plants,مرجان,bwato,bwa-to
+lg,lg_0654,1,n,world,animals_plants,كلب,mbwa,/mbwa/
+lg,lg_0655,1,n,world,animals_plants,بقرة,nte,/nte/
+lg,lg_0656,2,n,world,animals_plants,نملة,bwogi,/bwogi/
 lg,lg_0631,1,n,world,city_directions,مدينة,kibuga,kibuɡa
 lg,lg_0632,1,n,world,city_directions,قرية,kyalo,kjalo
 lg,lg_0634,1,n,world,city_directions,منزل,nyumba,ɲumba
 lg,lg_0639,1,n,world,city_directions,حديقة عامة,mbuga,mbuɡa
 lg,lg_0640,1,n,world,city_directions,جسر,lugo,luɡo
+lg,lg_0657,1,n,world,city_directions,شارع,luguudo,/luguudo/
+lg,lg_0658,1,n,world,city_directions,مبنى,nyumba,/njumba/
+lg,lg_0659,1,n,world,city_directions,مستشفى,ddwaliro,/ddwaliro/
+lg,lg_0660,1,n,world,city_directions,متجر,duuka,/duuka/
+lg,lg_0661,1,n,world,city_directions,يمين,dyo,/djo/
+lg,lg_0662,1,n,world,city_directions,يسار,kkono,/kkono/
+lg,lg_0663,1,n,world,city_directions,شمال,bukiikakkono,/bukiikakkono/
+lg,lg_0664,1,n,world,city_directions,جنوب,bukiikaddyo,/bukiikaddyo/
+lg,lg_0665,1,n,world,city_directions,شرق,ebuvanjuba,/ebuvanjuba/
+lg,lg_0666,1,n,world,city_directions,غرب,ebugwanjuba,/ebugwanjuba/
+lg,lg_0667,2,n,world,city_directions,صيدلية,duuka ly'eddagala,/duuka ljeddagala/
+lg,lg_0668,2,n,world,city_directions,مخبز,mukyala w'omigaati,/mukyala womigaati/
+lg,lg_0669,2,n,world,city_directions,مطعم,mutoosi,/mutoosi/
+lg,lg_0670,1,n,world,city_directions,سوق,katale,/katale/
+lg,lg_0671,2,n,world,city_directions,متحف,mưwafu,/mʊwafu/
+lg,lg_0672,2,n,world,city_directions,مكتب بريد,offisi y'obufumbira,/ofisi jobufumbira/
+lg,lg_0673,2,n,world,city_directions,رصيف مشاة,oluguudo lw'abagenzi,/oluguudo lwabagenzi/
+lg,lg_0674,2,n,world,city_directions,تقاطع طرق,amasanja,/amasanja/
+lg,lg_0675,2,n,world,city_directions,إشارة مرور,taala y'oku luguudo,/taala joku luguudo/
+lg,lg_0676,2,n,world,city_directions,وسط المدينة,mu kibuga munda,/mu kibuga munda/
+lg,lg_0677,2,n,world,city_directions,ميدان عام,ekisaawe,/ekisaawe/
+lg,lg_0678,3,n,world,city_directions,موقف سيارات,ekifo ky'okuteekamu mmotoka,/ekifo kjokuteekamu mmotoka/
+lg,lg_0679,3,n,world,city_directions,حي سكني,kitundu,/kitundu/
+lg,lg_0680,3,n,world,city_directions,نفق,mengo,/mengo/
+lg,lg_0681,3,n,world,city_directions,ممر مشاة,akyambukirwako,/akjambukirwako/
 lg,lg_0681,2,n,world,jobs_sports,سباك,omukanika w'emidumu,o.mu.ka.ni.ka wɛ.mi.du.mu
 lg,lg_0682,2,n,world,jobs_sports,مدرب رياضي,omutendesi,o.mu.te.nde.si
+lg,lg_0682,1,n,world,jobs_sports,طبيب,omusajja w'ebyobulamu,/omusajja webjobulamu/
 lg,lg_0683,2,n,world,jobs_sports,كرة طائرة,voleboolo,vo.le.boː.lo
+lg,lg_0683,1,n,world,jobs_sports,مهندس,muyigiriza w'ebyuma,/mujigiriza webjuma/
 lg,lg_0684,2,n,world,jobs_sports,تنس,ttenisi,tte.ni.si
+lg,lg_0684,1,n,world,jobs_sports,ممرض,omusawo omuto,/omusawo omuto/
 lg,lg_0685,2,n,world,jobs_sports,ركوب الدراجات,okuvuga akagaali,o.ku.vu.ga a.ka.gaː.li
+lg,lg_0685,1,n,world,jobs_sports,مزارع,omusimba,/omusimba/
 lg,lg_0686,2,n,world,jobs_sports,تسلق الجبال,okulinnya ensozi,o.ku.li.ɲa e.nso.zi
+lg,lg_0686,1,n,world,jobs_sports,طباخ,omufumbizi,/omufumbizi/
 lg,lg_0687,3,n,world,jobs_sports,صيدلي,omusawo w'eddagala,o.mu.sa.wo wɛ.dda.ga.la
+lg,lg_0687,1,n,world,jobs_sports,طيار,omusajja w'ennyonyi,/omusajja wenjonyi/
 lg,lg_0688,3,n,world,jobs_sports,مترجم,omuvvuunuzi,o.mu.vvuː.nu.zi
+lg,lg_0688,1,n,world,jobs_sports,نجار,mwosi,/mwosi/
 lg,lg_0689,3,n,world,jobs_sports,رماية بالقوس,okukasa obusaale,o.ku.ka.sa o.bu.saː.le
+lg,lg_0689,1,n,world,jobs_sports,خياط,omukozi w'engoye,/omukozi wengoje/
 lg,lg_0690,3,n,world,jobs_sports,ميدالية,medali,me.da.li
+lg,lg_0690,1,n,world,jobs_sports,رياضة,emizannyo,/emizannjo/
+lg,lg_0691,1,n,world,jobs_sports,كرة قدم,omupiira gw'amagulu,/omupiira gwamagulu/
+lg,lg_0692,1,n,world,jobs_sports,سباحة,okuwuga,/okuwuga/
+lg,lg_0693,1,n,world,jobs_sports,جري,okubaka,/okubaka/
+lg,lg_0694,1,n,world,jobs_sports,كرة سلة,omupiira gw'omu ngalo,/omupiira gwomu ngalo/
+lg,lg_0695,1,n,world,jobs_sports,فريق,egibinja,/egibinja/
+lg,lg_0696,1,n,world,jobs_sports,ملعب,ekisaawe,/ekisaawe/
+lg,lg_0697,2,n,world,jobs_sports,مبرمج,omuwi w'amagezi g'ebyuma,/omuwi wamagezi gbjjuma/
+lg,lg_0698,2,n,world,jobs_sports,عالم,omusomi,/omusomi/
+lg,lg_0699,2,n,world,jobs_sports,معماري,omusajja w'amazimbe,/omusajja wamazimbe/
+lg,lg_0700,2,n,world,jobs_sports,طبيب أسنان,omusawo w'amannyo,/omusawo wamannjo/
+lg,lg_0701,2,n,world,jobs_sports,كهربائي,omukozi w'amasannyalaze,/omukozi wamasannyalaze/
 lg,lg_0691,1,n,world,materials_shop,خشب,embaawo,e.mbaː.wo
 lg,lg_0692,1,n,world,materials_shop,معدن,ekyuma,e.cu.ma
 lg,lg_0693,1,n,world,materials_shop,بلاستيك,pulasitiki,pu.la.si.ti.ki
@@ -41514,6 +42648,25 @@ lg,lg_0620,2,n,world,transport_travel,رحلة,lugendo,luɡendo
 lg,lg_0621,2,n,world,transport_travel,سائق,omusigazi,omusiɡazi
 lg,lg_0622,2,n,world,transport_travel,راكب,omugenzi,omuɡenzi
 lg,lg_0628,3,n,world,transport_travel,مغادرة,okugenda,okuɡenda
+lg,lg_0702,1,n,world,transport_travel,سيارة,mmotoka,/mmotoka/
+lg,lg_0703,1,n,world,transport_travel,حافلة,basi,/basi/
+lg,lg_0704,1,n,world,transport_travel,قطار,ggoli,/ggoli/
+lg,lg_0705,1,n,world,transport_travel,دراجة هوائية,gaali,/gaali/
+lg,lg_0706,1,n,world,transport_travel,قارب,wato,/wato/
+lg,lg_0707,1,n,world,transport_travel,سيارة أجرة,taksi,/taksi/
+lg,lg_0708,1,n,world,transport_travel,طريق,luguudo,/luguudo/
+lg,lg_0709,1,n,world,transport_travel,تذكرة,tikiti,/tikiti/
+lg,lg_0710,1,n,world,transport_travel,محطة,kitundu ky'okulinda,/kitundu kjokulinda/
+lg,lg_0711,1,n,world,transport_travel,خريطة,karte,/karte/
+lg,lg_0712,2,n,world,transport_travel,جواز سفر,paasipooti,/paasipooti/
+lg,lg_0713,2,n,world,transport_travel,فندق,hoteli,/hoteli/
+lg,lg_0714,2,n,world,transport_travel,عجلة,muzinga,/muzinga/
+lg,lg_0715,2,n,world,transport_travel,وقود,mafuta,/mafuta/
+lg,lg_0716,2,n,world,transport_travel,حركة المرور,obungi bw'ebifo,/obungi bwebifo/
+lg,lg_0717,2,n,world,transport_travel,ميناء,chombo,/tʃombo/
+lg,lg_0718,3,n,world,transport_travel,وجهة سفر,ekifo w'ogenda,/ekifo wogenda/
+lg,lg_0719,3,n,world,transport_travel,وصول,okutuuka,/okutuuka/
+lg,lg_0720,3,n,world,transport_travel,بوصلة,kyereka,/kjereka/
 ln,ln_0129,1,n,home,appliances,ثلاجة,frigo,fri.go
 ln,ln_0130,1,n,home,appliances,فرن,fulu,fu.lu
 ln,ln_0131,1,n,home,appliances,موقد,fofele,fo.fe.le
